@@ -118,7 +118,7 @@ export default function CameraOverlay({ mode, onQRDetected, onClose, onFrameCapt
       <canvas ref={canvasRef} className="hidden" />
 
       {/* Top bar */}
-      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/70 to-transparent p-4 flex items-center justify-between">
+      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/70 to-transparent px-4 pt-safe-snug pb-4 flex items-center justify-between">
         <button onClick={onClose} className="text-white bg-black/40 rounded-full p-2">
           <X size={22} />
         </button>
@@ -146,7 +146,7 @@ export default function CameraOverlay({ mode, onQRDetected, onClose, onFrameCapt
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8 text-center">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-8 pt-8 pb-safe-bar text-center">
             <p className="text-white text-sm">
               {detected ? "QR Code detected! Locating you..." : "Point camera at a QR code on the wall"}
             </p>

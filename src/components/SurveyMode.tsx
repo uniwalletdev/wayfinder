@@ -131,7 +131,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
       <canvas ref={canvasRef} className="hidden" />
 
       {/* Top bar */}
-      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/80 to-transparent p-4">
+      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/80 to-transparent px-4 pt-safe-snug pb-4">
         <div className="flex items-center justify-between mb-2">
           <button onClick={onClose} className="text-white bg-black/40 rounded-full p-2">
             <X size={22} />
@@ -159,7 +159,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
 
       {/* Bottom controls */}
       {!showAnnotation ? (
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-6 pt-6 pb-safe-bar">
           {!recording ? (
             <div className="text-center mb-4">
               <p className="text-white text-sm mb-1">Walk your route and the app will record it</p>
@@ -203,7 +203,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
         </div>
       ) : (
         /* Annotation panel */
-        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-4 slide-up">
+        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl px-4 pt-4 pb-safe-bar slide-up">
           <h3 className="font-bold text-gray-900 mb-3">What is at this location?</h3>
           <input
             autoFocus

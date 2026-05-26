@@ -82,7 +82,7 @@ function NavigatingSheet({
   const icon = WAYPOINT_TYPE_ICONS[destination.type]
 
   return (
-    <div className="px-4 pb-4">
+    <div className="px-4 pb-safe-bar">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <span className="text-2xl">{icon}</span>
@@ -156,7 +156,7 @@ function IdleSheet({
   currentFloor: number
 }) {
   return (
-    <div className="px-4 pb-4">
+    <div className="px-4 pb-safe-bar">
       <button
         onClick={onOpenSearch}
         className="w-full flex items-center gap-3 bg-gray-100 rounded-xl px-4 py-3 mb-3"

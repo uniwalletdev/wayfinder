@@ -55,8 +55,11 @@ export default function Home() {
           positionAccuracy: pos.coords.accuracy,
         }))
       },
-      () => setGpsStatus("denied"),
-      { enableHighAccuracy: true, timeout: 10000 }
+      (err) => {
+        // Only mark denied on explicit permission refusal; for timeout/unavailable keep trying
+        if (err.code === 1) setGpsStatus("denied")
+      },
+      { enableHighAccuracy: true, maximumAge: 5000 }
     )
     return () => navigator.geolocation.clearWatch(id)
   }, [])
@@ -119,7 +122,7 @@ export default function Home() {
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gray-100">
+    <div className="relative w-full h-dvh overflow-hidden bg-gray-100">
       <FloorPlanMap
         currentFloor={navState.currentFloor}
         currentPosition={navState.currentPosition}
@@ -134,7 +137,7 @@ export default function Home() {
       {!navState.isNavigating ? (
         <div className="absolute top-0 left-0 right-0 z-50">
           {/* Search bar */}
-          <div className="bg-[#005EB8] px-4 pt-10 pb-3">
+          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
             <button
               onClick={() => setOverlay("search")}
               className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"

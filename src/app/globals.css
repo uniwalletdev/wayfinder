@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* iOS safe-area helpers (requires viewport-fit: cover in <meta>) */
+.pt-safe-bar    { padding-top:    max(env(safe-area-inset-top),    2.5rem); }
+.pt-safe-snug   { padding-top:    max(env(safe-area-inset-top),    0.75rem); }
+.pb-safe-bar    { padding-bottom: max(env(safe-area-inset-bottom), 1rem); }
+.pb-safe-snug   { padding-bottom: max(env(safe-area-inset-bottom), 0.25rem); }
+
 :root {
   --nhs-blue: #005EB8;
   --nhs-dark-blue: #003087;

@@ -28,7 +28,7 @@ function StepIcon({ step }: { step: RouteStep }) {
 export default function TopInstructionBar({ step, stepIndex, totalSteps, isNavigating }: Props) {
   if (!isNavigating || !step) {
     return (
-      <div className="absolute top-0 left-0 right-0 z-50 bg-[#005EB8] text-white px-4 py-3 flex items-center gap-3 shadow-lg">
+      <div className="absolute top-0 left-0 right-0 z-50 bg-[#005EB8] text-white px-4 pt-safe-snug pb-3 flex items-center gap-3 shadow-lg">
         <Navigation size={22} className="text-white opacity-80" />
         <div>
           <p className="text-sm font-bold">GOSH Wayfinder</p>
@@ -42,7 +42,7 @@ export default function TopInstructionBar({ step, stepIndex, totalSteps, isNavig
 
   return (
     <div
-      className={`absolute top-0 left-0 right-0 z-50 text-white px-4 py-3 shadow-xl transition-colors duration-500 ${
+      className={`absolute top-0 left-0 right-0 z-50 text-white px-4 pt-safe-snug pb-3 shadow-xl transition-colors duration-500 ${
         isArrived ? "bg-green-600" : "bg-[#003087]"
       }`}
     >
