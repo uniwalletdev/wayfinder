@@ -26,6 +26,7 @@ interface MapHandle {
 
 export default function Home() {
   const leafletMapRef = useRef<MapHandle | null>(null)
+  const gpsActiveRef = useRef(false)
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
@@ -48,6 +49,7 @@ export default function Home() {
     }
     const id = navigator.geolocation.watchPosition(
       (pos) => {
+        gpsActiveRef.current = true
         setGpsStatus("active")
         setNavState((s) => ({
           ...s,
@@ -55,11 +57,11 @@ export default function Home() {
           positionAccuracy: pos.coords.accuracy,
         }))
       },
-      (err) => {
-        // Only mark denied on explicit permission refusal; for timeout/unavailable keep trying
-        if (err.code === 1) setGpsStatus("denied")
+      () => {
+        // Don't downgrade to denied once we have a live fix
+        if (!gpsActiveRef.current) setGpsStatus("denied")
       },
-      { enableHighAccuracy: true, maximumAge: 5000 }
+      { enableHighAccuracy: true, maximumAge: 5000, timeout: 12000 }
     )
     return () => navigator.geolocation.clearWatch(id)
   }, [])
