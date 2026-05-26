@@ -1,0 +1,9 @@
+{
+  "name": "wayfinder",
+  "private": true,
+  "workspaces": ["mobile", "admin"],
+  "scripts": {
+    "mobile": "npm run start --workspace=mobile",
+    "admin": "npm run dev --workspace=admin"
+  }
+}
