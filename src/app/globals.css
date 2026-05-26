@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --nhs-blue: #005EB8;
+  --nhs-dark-blue: #003087;
+  --nhs-bright-blue: #0072CE;
+  --nhs-green: #009639;
+  --nhs-warm-yellow: #FFB81C;
+  --nhs-red: #DA291C;
+  --waze-route: #00BFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#map-container {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #f0f0f0;
+}
+
+.position-marker {
+  background: var(--nhs-blue);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.destination-marker {
+  background: var(--nhs-red);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.route-line {
+  stroke: var(--waze-route);
+  stroke-width: 6;
+  stroke-dasharray: none;
+  fill: none;
+}
+
+.bottom-sheet-enter {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out;
+}
+
+.bottom-sheet-active {
+  transform: translateY(0);
+}
+
+.pulse-ring {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.camera-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: black;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
