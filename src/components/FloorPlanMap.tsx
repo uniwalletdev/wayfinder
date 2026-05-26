@@ -211,5 +211,5 @@ export default function FloorPlanMap({
     }
   }, [isNavigating, route, destination, currentPosition])
 
-  return <div id="map-container" className="w-full h-full" />
+  return <div id="map-container" className="w-full h-full" style={{ isolation: "isolate" }} />
 }
