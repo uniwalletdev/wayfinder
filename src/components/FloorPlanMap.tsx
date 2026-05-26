@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { Waypoint, Route, Coordinates } from "@/lib/types"
@@ -13,6 +13,7 @@ interface Props {
   route: Route | null
   isNavigating: boolean
   onMapReady: () => void
+  leafletMapRef?: React.MutableRefObject<L.Map | null>
 }
 
 export default function FloorPlanMap({
@@ -22,6 +23,7 @@ export default function FloorPlanMap({
   route,
   isNavigating,
   onMapReady,
+  leafletMapRef,
 }: Props) {
   const mapRef = useRef<L.Map | null>(null)
   const positionMarkerRef = useRef<L.Marker | null>(null)
@@ -46,11 +48,13 @@ export default function FloorPlanMap({
     }).addTo(map)
 
     mapRef.current = map
+    if (leafletMapRef) leafletMapRef.current = map
     onMapReady()
 
     return () => {
       map.remove()
       mapRef.current = null
+      if (leafletMapRef) leafletMapRef.current = null
     }
   }, [])
 

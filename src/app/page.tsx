@@ -1,7 +1,8 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
+import type L from "leaflet"
 import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
 import { GOSH_CENTER } from "@/lib/gosh-data"
 import { buildRoute } from "@/lib/routing"
@@ -19,6 +20,8 @@ const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: f
 type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
 
 export default function Home() {
+  const leafletMapRef = useRef<L.Map | null>(null)
+
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
     currentFloor: 0,
@@ -116,6 +119,7 @@ export default function Home() {
         route={navState.route}
         isNavigating={navState.isNavigating}
         onMapReady={() => {}}
+        leafletMapRef={leafletMapRef}
       />
 
       <TopInstructionBar
@@ -163,6 +167,10 @@ export default function Home() {
 
       {/* Recenter FAB */}
       <button
+        onClick={() => {
+          const pos = navState.currentPosition ?? GOSH_CENTER
+          leafletMapRef.current?.flyTo([pos.lat, pos.lng], 18)
+        }}
         className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
         title="Re-centre"
       >
@@ -198,6 +206,7 @@ export default function Home() {
       {overlay === "survey" && (
         <SurveyModeComponent
           currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
           onClose={() => setOverlay("none")}
           onSurveyComplete={handleSurveyComplete}
         />

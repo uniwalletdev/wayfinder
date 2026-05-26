@@ -39,10 +39,10 @@ export const GOSH_WAYPOINTS: Waypoint[] = [
 ]
 
 export const FLOOR_PLANS: FloorPlan[] = [
-  { id: "gf", floor: 0, label: "Ground", imageUrl: "/floorplans/ground.png", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-  { id: "f1", floor: 1, label: "Floor 1", imageUrl: "/floorplans/floor1.png", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-  { id: "f2", floor: 2, label: "Floor 2", imageUrl: "/floorplans/floor2.png", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-  { id: "f3", floor: 3, label: "Floor 3", imageUrl: "/floorplans/floor3.png", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
+  { id: "gf", floor: 0, label: "Ground", imageUrl: "/floorplans/ground.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
+  { id: "f1", floor: 1, label: "Floor 1", imageUrl: "/floorplans/floor1.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
+  { id: "f2", floor: 2, label: "Floor 2", imageUrl: "/floorplans/floor2.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
+  { id: "f3", floor: 3, label: "Floor 3", imageUrl: "/floorplans/floor3.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
 ]
 
 export const WAYPOINT_TYPE_ICONS: Record<string, string> = {
