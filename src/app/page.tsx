@@ -49,6 +49,7 @@ export default function Home() {
     }
     const id = navigator.geolocation.watchPosition(
       (pos) => {
+        const firstFix = !gpsActiveRef.current
         gpsActiveRef.current = true
         setGpsStatus("active")
         setNavState((s) => ({
@@ -56,6 +57,10 @@ export default function Home() {
           currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
           positionAccuracy: pos.coords.accuracy,
         }))
+        // Centre the map on the user the first time we get a real fix, so it works anywhere
+        if (firstFix) {
+          leafletMapRef.current?.flyTo([pos.coords.latitude, pos.coords.longitude], 18)
+        }
       },
       () => {
         // Don't downgrade to denied once we have a live fix
