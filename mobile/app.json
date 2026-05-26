@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Wayfinder",
+    "slug": "wayfinder",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#3B82F6"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "uk.co.wayfinder.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Wayfinder uses your camera to scan QR codes at hospital entrances to determine your location.",
+        "NSMicrophoneUsageDescription": "Wayfinder uses the microphone for voice commands."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#3B82F6"
+      },
+      "package": "uk.co.wayfinder.app",
+      "permissions": ["CAMERA", "RECORD_AUDIO"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      ["expo-camera", { "cameraPermission": "Allow Wayfinder to access your camera to scan QR codes." }],
+      ["expo-barcode-scanner", { "cameraPermission": "Allow Wayfinder to access your camera to scan QR codes." }]
+    ]
+  }
+}
