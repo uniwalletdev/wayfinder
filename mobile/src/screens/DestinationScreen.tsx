@@ -107,6 +107,14 @@ export default function DestinationScreen({ navigation, route }: Props) {
           style={[styles.navigateButton, !state.currentLocation && styles.navigateButtonDisabled]}
           onPress={handleNavigate}
           disabled={!state.currentLocation}
+          accessibilityRole="button"
+          accessibilityLabel={
+            state.currentLocation
+              ? `Start navigation to ${location.name}${estimatedTime ? `, approximately ${estimatedTime} minutes` : ''}`
+              : 'Scan QR code first to set your starting location'
+          }
+          accessibilityState={{ disabled: !state.currentLocation }}
+          accessible
         >
           <Text style={styles.navigateButtonText}>
             {state.currentLocation ? 'Start Navigation' : 'Scan QR Code First'}
@@ -117,6 +125,10 @@ export default function DestinationScreen({ navigation, route }: Props) {
           <TouchableOpacity
             style={styles.scanButton}
             onPress={() => navigation.navigate('QRScanner')}
+            accessibilityRole="button"
+            accessibilityLabel="Open QR code scanner"
+            accessibilityHint="Scan the entrance QR code to set your starting location"
+            accessible
           >
             <Text style={styles.scanButtonText}>Scan Entrance QR Code</Text>
           </TouchableOpacity>

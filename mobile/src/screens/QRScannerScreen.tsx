@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, AccessibilityInfo } from 'react-native';
 import { Camera, CameraView, BarcodeScanningResult } from 'expo-camera';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
@@ -22,9 +22,11 @@ export default function QRScannerScreen({ navigation }: Props) {
   const handleBarCodeScanned = async ({ data }: BarcodeScanningResult) => {
     if (scanned) return;
     setScanned(true);
+    AccessibilityInfo.announceForAccessibility('QR code scanned. Looking up location.');
 
     const location = await scanQRCode(data);
     if (location) {
+      AccessibilityInfo.announceForAccessibility(`Location found: ${location.name}`);
       Alert.alert(
         'Location Found',
         `You are at: ${location.name}`,
