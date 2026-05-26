@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { supabase } from '../services/supabase';
+import { api } from '../services/api';
 import { LocationType, Coordinates } from '../types';
 
 interface PinnedLocation {
@@ -21,20 +21,16 @@ export default function MapEditor() {
   const [uploading, setUploading] = useState(false);
   const mapRef = useRef<HTMLDivElement>(null);
 
-  const handleFloorPlanUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFloorPlanUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     setUploading(true);
-
-    const { data, error } = await supabase.storage
-      .from('floor-plans')
-      .upload(`plans/${Date.now()}-${file.name}`, file);
-
-    if (!error && data) {
-      const { data: urlData } = supabase.storage.from('floor-plans').getPublicUrl(data.path);
-      setFloorPlanUrl(urlData.publicUrl);
-    }
-    setUploading(false);
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      setFloorPlanUrl(ev.target?.result as string);
+      setUploading(false);
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -50,6 +46,22 @@ export default function MapEditor() {
     setPins((prev) => [...prev, { ...newLocation, coordinates: pendingPin }]);
     setPendingPin(null);
     setNewLocation({ name: '', type: 'department' });
+  };
+
+  const saveLocations = async (floorId: string) => {
+    await Promise.all(
+      pins.map((pin) =>
+        api.post('/api/locations', {
+          floor_id: floorId,
+          name: pin.name,
+          type: pin.type,
+          coordinates: pin.coordinates,
+          accessibility_features: [],
+          is_accessible: true,
+        })
+      )
+    );
+    alert(`Saved ${pins.length} locations`);
   };
 
   return (

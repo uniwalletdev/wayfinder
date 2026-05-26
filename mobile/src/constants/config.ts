@@ -1,6 +1,5 @@
 export const CONFIG = {
-  supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL ?? '',
-  supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '',
+  apiUrl: process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:3000',
   voiceRate: 0.85,
   voicePitch: 1.0,
   routeLineWidth: 8,

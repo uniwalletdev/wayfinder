@@ -1,5 +1,10 @@
--- Enable PostGIS for spatial queries (optional for MVP)
--- CREATE EXTENSION IF NOT EXISTS postgis;
+-- Admin users (for dashboard login)
+CREATE TABLE IF NOT EXISTS admin_users (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  email TEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
 
 -- Hospitals
 CREATE TABLE IF NOT EXISTS hospitals (
@@ -37,8 +42,9 @@ CREATE TABLE IF NOT EXISTS locations (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
-CREATE INDEX idx_locations_floor_id ON locations(floor_id);
-CREATE INDEX idx_locations_type ON locations(type);
+CREATE INDEX IF NOT EXISTS idx_locations_floor_id ON locations(floor_id);
+CREATE INDEX IF NOT EXISTS idx_locations_type ON locations(type);
+CREATE INDEX IF NOT EXISTS idx_locations_name ON locations USING gin(to_tsvector('english', name));
 
 -- QR Codes
 CREATE TABLE IF NOT EXISTS qr_codes (
@@ -48,7 +54,7 @@ CREATE TABLE IF NOT EXISTS qr_codes (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
-CREATE INDEX idx_qr_codes_code_uuid ON qr_codes(code_uuid);
+CREATE INDEX IF NOT EXISTS idx_qr_codes_uuid ON qr_codes(code_uuid);
 
 -- Routes
 CREATE TABLE IF NOT EXISTS routes (
@@ -63,16 +69,7 @@ CREATE TABLE IF NOT EXISTS routes (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
-CREATE INDEX idx_routes_start_end ON routes(start_location_id, end_location_id, is_accessible);
-
--- Appointments (mock for MVP — no real PII)
-CREATE TABLE IF NOT EXISTS appointments (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  patient_phone_hash TEXT,
-  location_id UUID NOT NULL REFERENCES locations(id),
-  appointment_time TIMESTAMPTZ NOT NULL,
-  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
-);
+CREATE INDEX IF NOT EXISTS idx_routes_lookup ON routes(start_location_id, end_location_id, is_accessible);
 
 -- Navigation sessions (analytics)
 CREATE TABLE IF NOT EXISTS navigation_sessions (
@@ -84,22 +81,4 @@ CREATE TABLE IF NOT EXISTS navigation_sessions (
   route_taken JSONB NOT NULL DEFAULT '[]'
 );
 
-CREATE INDEX idx_nav_sessions_started_at ON navigation_sessions(started_at);
-
--- Row-level security: public read for MVP, restrict writes
-ALTER TABLE hospitals ENABLE ROW LEVEL SECURITY;
-ALTER TABLE floors ENABLE ROW LEVEL SECURITY;
-ALTER TABLE locations ENABLE ROW LEVEL SECURITY;
-ALTER TABLE qr_codes ENABLE ROW LEVEL SECURITY;
-ALTER TABLE routes ENABLE ROW LEVEL SECURITY;
-ALTER TABLE navigation_sessions ENABLE ROW LEVEL SECURITY;
-
--- Allow public read access (patients navigating anonymously)
-CREATE POLICY "Public read hospitals" ON hospitals FOR SELECT USING (true);
-CREATE POLICY "Public read floors" ON floors FOR SELECT USING (true);
-CREATE POLICY "Public read locations" ON locations FOR SELECT USING (true);
-CREATE POLICY "Public read qr_codes" ON qr_codes FOR SELECT USING (true);
-CREATE POLICY "Public read routes" ON routes FOR SELECT USING (true);
-CREATE POLICY "Public insert sessions" ON navigation_sessions FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public read sessions" ON navigation_sessions FOR SELECT USING (true);
--- Admin writes require service role key (set in Supabase dashboard)
+CREATE INDEX IF NOT EXISTS idx_nav_sessions_started_at ON navigation_sessions(started_at);

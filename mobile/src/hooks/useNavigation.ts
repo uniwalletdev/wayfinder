@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useNavigationContext } from '../context/NavigationContext';
 import { fetchRoute } from '../services/routing';
-import { supabase } from '../services/supabase';
+import { api } from '../services/api';
 import { Location } from '../types';
 
 export function useNavigation() {
@@ -43,17 +43,13 @@ export function useNavigation() {
   }, [dispatch]);
 
   const scanQRCode = useCallback(async (codeUuid: string): Promise<Location | null> => {
-    const { data, error } = await supabase
-      .from('qr_codes')
-      .select('*, location:locations(*)')
-      .eq('code_uuid', codeUuid)
-      .single();
-
-    if (error || !data) return null;
-
-    const location = data.location as Location;
-    dispatch({ type: 'SET_CURRENT_LOCATION', payload: location });
-    return location;
+    try {
+      const data = await api.get<{ location: Location }>(`/api/qr-codes/scan/${codeUuid}`);
+      dispatch({ type: 'SET_CURRENT_LOCATION', payload: data.location });
+      return data.location;
+    } catch {
+      return null;
+    }
   }, [dispatch]);
 
   return {

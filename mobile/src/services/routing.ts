@@ -1,5 +1,5 @@
 import { Coordinates, Route, RouteInstruction } from '../types';
-import { supabase } from './supabase';
+import { api } from './api';
 
 export interface PathNode {
   x: number;
@@ -113,14 +113,11 @@ export async function fetchRoute(
   endLocationId: string,
   accessible = false
 ): Promise<Route | null> {
-  const { data, error } = await supabase
-    .from('routes')
-    .select('*')
-    .eq('start_location_id', startLocationId)
-    .eq('end_location_id', endLocationId)
-    .eq('is_accessible', accessible)
-    .single();
-
-  if (error || !data) return null;
-  return data as Route;
+  try {
+    return await api.get<Route>(
+      `/api/routes?start_location_id=${startLocationId}&end_location_id=${endLocationId}&accessible=${accessible}`
+    );
+  } catch {
+    return null;
+  }
 }

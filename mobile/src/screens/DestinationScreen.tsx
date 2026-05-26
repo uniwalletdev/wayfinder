@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../App';
-import { supabase } from '../services/supabase';
+import { api } from '../services/api';
 import { Location } from '../types';
 import { useNavigation } from '../hooks/useNavigation';
 import { COLORS } from '../constants/colors';
@@ -40,13 +40,9 @@ export default function DestinationScreen({ navigation, route }: Props) {
   const { setDestination, startNavigation, state } = useNavigation();
 
   useEffect(() => {
-    supabase
-      .from('locations')
-      .select('*')
-      .eq('id', locationId)
-      .single()
-      .then(({ data }) => {
-        if (data) setLocation(data as Location);
+    api.get<Location>(`/api/locations/${locationId}`)
+      .then((data) => {
+        if (data) setLocation(data);
         setLoading(false);
       });
   }, [locationId]);

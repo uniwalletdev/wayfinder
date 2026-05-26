@@ -12,7 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 import { COLORS } from '../constants/colors';
-import { supabase } from '../services/supabase';
+import { api } from '../services/api';
 import { Location } from '../types';
 
 type Props = { navigation: NativeStackNavigationProp<RootStackParamList, 'Home'> };
@@ -29,12 +29,10 @@ export default function HomeScreen({ navigation }: Props) {
       return;
     }
     setIsSearching(true);
-    const { data } = await supabase
-      .from('locations')
-      .select('*')
-      .ilike('name', `%${query}%`)
-      .limit(8);
-    setSearchResults((data as Location[]) ?? []);
+    try {
+      const data = await api.get<Location[]>(`/api/locations?search=${encodeURIComponent(query)}`);
+      setSearchResults(data);
+    } catch { setSearchResults([]); }
     setIsSearching(false);
   };
 

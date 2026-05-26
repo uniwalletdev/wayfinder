@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
-import { supabase } from '../services/supabase';
-import { Location } from '../types';
+import { api } from '../services/api';
+import { Location, QRCode } from '../types';
 
-interface QREntry {
-  id: string;
-  code_uuid: string;
-  location: Location;
-}
+interface QREntry extends QRCode { location: Location; }
 
 export default function QRCodes() {
   const [qrCodes, setQrCodes] = useState<QREntry[]>([]);
@@ -16,31 +12,18 @@ export default function QRCodes() {
   const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
-    supabase
-      .from('qr_codes')
-      .select('*, location:locations(*)')
-      .then(({ data }) => setQrCodes((data as QREntry[]) ?? []));
-
-    supabase
-      .from('locations')
-      .select('*')
-      .then(({ data }) => setLocations((data as Location[]) ?? []));
+    api.get<QREntry[]>('/api/qr-codes').then(setQrCodes).catch(() => {});
+    api.get<Location[]>('/api/locations').then(setLocations).catch(() => {});
   }, []);
 
   const generateQRCode = async () => {
     if (!selectedLocation) return;
     setGenerating(true);
-    const codeUuid = crypto.randomUUID();
-
-    const { data, error } = await supabase
-      .from('qr_codes')
-      .insert({ code_uuid: codeUuid, location_id: selectedLocation })
-      .select('*, location:locations(*)')
-      .single();
-
-    if (!error && data) {
-      setQrCodes((prev) => [...prev, data as QREntry]);
-    }
+    try {
+      const newCode = await api.post<QREntry>('/api/qr-codes', { location_id: selectedLocation });
+      setQrCodes((prev) => [newCode, ...prev]);
+      setSelectedLocation('');
+    } catch {}
     setGenerating(false);
   };
 
@@ -62,7 +45,6 @@ export default function QRCodes() {
         <h3 className="text-xl font-bold text-gray-900">QR Codes</h3>
         <p className="text-sm text-gray-500 mt-1">Generate and manage entrance QR codes</p>
       </div>
-
       <div className="bg-white rounded-xl border border-gray-200 p-6 flex items-end gap-4">
         <div className="flex-1">
           <label className="block text-sm font-medium text-gray-700 mb-1">Location</label>
@@ -72,9 +54,7 @@ export default function QRCodes() {
             onChange={(e) => setSelectedLocation(e.target.value)}
           >
             <option value="">Select a location...</option>
-            {locations.map((loc) => (
-              <option key={loc.id} value={loc.id}>{loc.name}</option>
-            ))}
+            {locations.map((loc) => <option key={loc.id} value={loc.id}>{loc.name}</option>)}
           </select>
         </div>
         <button
@@ -85,25 +65,15 @@ export default function QRCodes() {
           {generating ? 'Generating...' : 'Generate QR'}
         </button>
       </div>
-
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {qrCodes.map((code) => (
           <div key={code.id} className="bg-white rounded-xl border border-gray-200 p-4 flex flex-col items-center gap-3">
-            <QRCodeSVG
-              id={`qr-${code.id}`}
-              value={code.code_uuid}
-              size={140}
-              level="M"
-              includeMargin
-            />
+            <QRCodeSVG id={`qr-${code.id}`} value={code.code_uuid} size={140} level="M" includeMargin />
             <div className="text-center">
               <p className="font-semibold text-sm text-gray-800">{code.location.name}</p>
               <p className="text-xs text-gray-400 capitalize">{code.location.type}</p>
             </div>
-            <button
-              onClick={() => downloadQR(code)}
-              className="text-xs text-primary-500 font-medium hover:underline"
-            >
+            <button onClick={() => downloadQR(code)} className="text-xs text-primary-500 font-medium hover:underline">
               Download SVG
             </button>
           </div>
