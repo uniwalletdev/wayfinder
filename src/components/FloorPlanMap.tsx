@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, MutableRefObject } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { Waypoint, Route, Coordinates } from "@/lib/types"
@@ -13,7 +13,7 @@ interface Props {
   route: Route | null
   isNavigating: boolean
   onMapReady: () => void
-  leafletMapRef?: React.MutableRefObject<L.Map | null>
+  leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
 }
 
 export default function FloorPlanMap({

@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef } from "react"
-import type L from "leaflet"
 import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
 import { GOSH_CENTER } from "@/lib/gosh-data"
 import { buildRoute } from "@/lib/routing"
@@ -13,14 +12,20 @@ import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList } from "lucide-react"
+import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
 type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
+type GpsStatus = "requesting" | "active" | "denied"
+
+// Minimal interface — avoids importing Leaflet types on the server
+interface MapHandle {
+  flyTo: (latlng: [number, number], zoom: number) => void
+}
 
 export default function Home() {
-  const leafletMapRef = useRef<L.Map | null>(null)
+  const leafletMapRef = useRef<MapHandle | null>(null)
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
@@ -34,30 +39,32 @@ export default function Home() {
 
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
-  const [locating, setLocating] = useState(false)
+  const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
 
   useEffect(() => {
     if (!navigator.geolocation) {
-      setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 15 }))
+      setGpsStatus("denied")
       return
     }
-    setLocating(true)
     const id = navigator.geolocation.watchPosition(
       (pos) => {
-        setLocating(false)
+        setGpsStatus("active")
         setNavState((s) => ({
           ...s,
           currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
           positionAccuracy: pos.coords.accuracy,
         }))
       },
-      () => {
-        setLocating(false)
-        setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 15 }))
-      },
-      { enableHighAccuracy: true, timeout: 8000 }
+      () => setGpsStatus("denied"),
+      { enableHighAccuracy: true, timeout: 10000 }
     )
     return () => navigator.geolocation.clearWatch(id)
+  }, [])
+
+  const useGoshDemo = useCallback(() => {
+    setGpsStatus("active")
+    setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 0 }))
+    leafletMapRef.current?.flyTo([GOSH_CENTER.lat, GOSH_CENTER.lng], 18)
   }, [])
 
   const handleDestinationSelect = useCallback(
@@ -93,6 +100,7 @@ export default function Home() {
       const latIdx = parts.indexOf("lat")
       const lngIdx = parts.indexOf("lng")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
+        setGpsStatus("active")
         setNavState((s) => ({
           ...s,
           currentFloor: parseInt(parts[floorIdx + 1]),
@@ -122,32 +130,71 @@ export default function Home() {
         leafletMapRef={leafletMapRef}
       />
 
-      <TopInstructionBar
-        step={currentStep}
-        stepIndex={navState.currentStepIndex}
-        totalSteps={navState.route?.steps.length ?? 0}
-        isNavigating={navState.isNavigating}
-      />
+      {/* ── Top bar ──────────────────────────────────────────── */}
+      {!navState.isNavigating ? (
+        <div className="absolute top-0 left-0 right-0 z-50">
+          {/* Search bar */}
+          <div className="bg-[#005EB8] px-4 pt-10 pb-3">
+            <button
+              onClick={() => setOverlay("search")}
+              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
+            >
+              <Search size={18} className="text-[#005EB8] flex-shrink-0" />
+              <span className="flex-1 text-left text-gray-400 text-sm">
+                {navState.destination ? navState.destination.name : "Where are you going?"}
+              </span>
+              <MapPin size={16} className="text-gray-300 flex-shrink-0" />
+            </button>
+          </div>
+
+          {/* GPS status strip */}
+          {gpsStatus === "requesting" && (
+            <div className="bg-blue-50 border-b border-blue-100 px-4 py-2 flex items-center gap-2">
+              <div className="w-3 h-3 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin flex-shrink-0" />
+              <span className="text-xs text-[#005EB8]">Finding your location…</span>
+            </div>
+          )}
+          {gpsStatus === "denied" && (
+            <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 flex items-center gap-2">
+              <AlertCircle size={14} className="text-amber-600 flex-shrink-0" />
+              <span className="text-xs text-amber-700 flex-1">
+                GPS unavailable — browse destinations or use demo mode
+              </span>
+              <button
+                onClick={useGoshDemo}
+                className="text-xs font-bold text-[#005EB8] whitespace-nowrap ml-2"
+              >
+                Use demo
+              </button>
+            </div>
+          )}
+        </div>
+      ) : (
+        <TopInstructionBar
+          step={currentStep}
+          stepIndex={navState.currentStepIndex}
+          totalSteps={navState.route?.steps.length ?? 0}
+          isNavigating={navState.isNavigating}
+        />
+      )}
 
       <FloorSelector
         currentFloor={navState.currentFloor}
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
 
-      {/* Accuracy badge */}
-      {navState.positionAccuracy > 0 && (
-        <div className="absolute top-20 left-3 z-50 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
-          <div className={`w-2 h-2 rounded-full ${
-            navState.positionAccuracy <= 5 ? "bg-green-500"
-            : navState.positionAccuracy <= 15 ? "bg-yellow-500"
-            : "bg-red-400"
-          }`} />
-          <span className="text-xs text-gray-600 font-medium">±{Math.round(navState.positionAccuracy)}m</span>
+      {/* GPS accuracy badge */}
+      {gpsStatus === "active" && (
+        <div className="absolute top-36 left-3 z-40 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
+          <div className={`w-2 h-2 rounded-full ${navState.positionAccuracy === 0 ? "bg-blue-400" : navState.positionAccuracy <= 5 ? "bg-green-500" : navState.positionAccuracy <= 15 ? "bg-yellow-500" : "bg-red-400"}`} />
+          <span className="text-xs text-gray-600 font-medium">
+            {navState.positionAccuracy === 0 ? "Demo" : `±${Math.round(navState.positionAccuracy)}m`}
+          </span>
         </div>
       )}
 
       {/* Floor badge */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 z-50 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm">
+      <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
         <Layers size={12} className="text-[#005EB8]" />
         <span className="text-xs text-gray-700 font-semibold">
           {navState.currentFloor === 0 ? "Ground Floor" : `Floor ${navState.currentFloor}`}
@@ -199,7 +246,7 @@ export default function Home() {
           mode={overlay === "qr" ? "qr" : "live"}
           onQRDetected={handleQRDetected}
           onClose={() => setOverlay("none")}
-          onFrameCapture={overlay === "live-camera" ? (d) => console.log("frame", d.length) : undefined}
+          onFrameCapture={overlay === "live-camera" ? () => {} : undefined}
         />
       )}
 
@@ -210,13 +257,6 @@ export default function Home() {
           onClose={() => setOverlay("none")}
           onSurveyComplete={handleSurveyComplete}
         />
-      )}
-
-      {locating && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-2xl shadow-xl px-6 py-4 flex items-center gap-3">
-          <div className="w-5 h-5 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm text-gray-700 font-medium">Finding your location…</p>
-        </div>
       )}
     </div>
   )
