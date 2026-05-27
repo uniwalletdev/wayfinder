@@ -1,7 +1,7 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
 import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
 import { GOSH_CENTER } from "@/lib/gosh-data"
 import { buildRoute } from "@/lib/routing"
@@ -12,7 +12,7 @@ import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList } from "lucide-react"
+import { Layers, Navigation, ClipboardList, ArrowUpDown } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
@@ -29,28 +29,26 @@ export default function Home() {
     positionAccuracy: 0,
   })
 
+  const [heading, setHeading] = useState(0)
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [locating, setLocating] = useState(false)
   const [locationError, setLocationError] = useState<"denied" | "unavailable" | "https" | null>(null)
+  const [floorConfirm, setFloorConfirm] = useState<number | null>(null)
 
+  // Geolocation
   useEffect(() => {
-    // iOS Safari silently blocks geolocation on HTTP
     if (typeof window !== "undefined" && window.location.protocol === "http:" && window.location.hostname !== "localhost") {
       setLocationError("https")
       setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
       return
     }
-
     if (!navigator.geolocation) {
       setLocationError("unavailable")
       setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
       return
     }
-
     setLocating(true)
-
-    // First do a fast one-shot to get position quickly on iOS
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         setLocating(false)
@@ -63,17 +61,11 @@ export default function Home() {
       },
       (err) => {
         setLocating(false)
-        if (err.code === 1) {
-          setLocationError("denied")
-        } else {
-          setLocationError("unavailable")
-        }
+        setLocationError(err.code === 1 ? "denied" : "unavailable")
         setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 30000 }
     )
-
-    // Then watch for continuous updates
     const id = navigator.geolocation.watchPosition(
       (pos) => {
         setLocating(false)
@@ -84,13 +76,41 @@ export default function Home() {
           positionAccuracy: pos.coords.accuracy,
         }))
       },
-      (err) => {
-        if (err.code === 1) setLocationError("denied")
-      },
+      (err) => { if (err.code === 1) setLocationError("denied") },
       { enableHighAccuracy: true, timeout: 30000, maximumAge: 5000 }
     )
-
     return () => navigator.geolocation.clearWatch(id)
+  }, [])
+
+  // Device compass heading — iOS requires DeviceOrientationEvent permission
+  useEffect(() => {
+    function handleOrientation(e: DeviceOrientationEvent) {
+      const h = (e as DeviceOrientationEvent & { webkitCompassHeading?: number }).webkitCompassHeading
+      if (h != null) setHeading(h)
+      else if (e.alpha != null) setHeading(360 - e.alpha)
+    }
+
+    if (typeof DeviceOrientationEvent !== "undefined" &&
+      typeof (DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }).requestPermission === "function") {
+      // iOS 13+ — will request on first user interaction, handled by button below
+    } else {
+      window.addEventListener("deviceorientation", handleOrientation, true)
+      return () => window.removeEventListener("deviceorientation", handleOrientation, true)
+    }
+  }, [])
+
+  const requestCompass = useCallback(async () => {
+    const DOE = DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }
+    if (typeof DOE.requestPermission === "function") {
+      const result = await DOE.requestPermission()
+      if (result === "granted") {
+        window.addEventListener("deviceorientation", (e: DeviceOrientationEvent) => {
+          const h = (e as DeviceOrientationEvent & { webkitCompassHeading?: number }).webkitCompassHeading
+          if (h != null) setHeading(h)
+          else if (e.alpha != null) setHeading(360 - e.alpha)
+        }, true)
+      }
+    }
   }, [])
 
   const handleDestinationSelect = useCallback(
@@ -98,25 +118,14 @@ export default function Home() {
       setOverlay("none")
       const position = navState.currentPosition ?? GOSH_CENTER
       const route = buildRoute(position, navState.currentFloor, waypoint, GOSH_WAYPOINTS)
-      setNavState((s) => ({
-        ...s,
-        destination: waypoint,
-        route,
-        currentStepIndex: 0,
-        isNavigating: true,
-      }))
+      setNavState((s) => ({ ...s, destination: waypoint, route, currentStepIndex: 0, isNavigating: true }))
     },
     [navState.currentPosition, navState.currentFloor]
   )
 
   const handleStopNavigation = useCallback(() => {
-    setNavState((s) => ({
-      ...s,
-      destination: null,
-      route: null,
-      currentStepIndex: 0,
-      isNavigating: false,
-    }))
+    setNavState((s) => ({ ...s, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+    setFloorConfirm(null)
   }, [])
 
   const handleQRDetected = useCallback((data: string) => {
@@ -126,28 +135,49 @@ export default function Home() {
       const latIdx = parts.indexOf("lat")
       const lngIdx = parts.indexOf("lng")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
+        const newFloor = parseInt(parts[floorIdx + 1])
         setNavState((s) => ({
           ...s,
-          currentFloor: parseInt(parts[floorIdx + 1]),
+          currentFloor: newFloor,
           currentPosition: { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) },
           positionAccuracy: 1,
+          // Auto-advance past floor change step if navigating
+          currentStepIndex: s.route?.steps[s.currentStepIndex]?.floorChange ? s.currentStepIndex + 1 : s.currentStepIndex,
         }))
+        setFloorConfirm(null)
       }
     } catch {}
   }, [])
+
+  // When navigation hits a floor change step — show confirm prompt
+  const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
+  useEffect(() => {
+    if (currentStep?.floorChange && floorConfirm === null) {
+      setFloorConfirm(currentStep.floorChange.to)
+    }
+  }, [currentStep, floorConfirm])
+
+  const handleFloorConfirmed = useCallback(() => {
+    if (floorConfirm === null) return
+    setNavState((s) => ({
+      ...s,
+      currentFloor: floorConfirm,
+      currentStepIndex: s.currentStepIndex + 1,
+    }))
+    setFloorConfirm(null)
+  }, [floorConfirm])
 
   const handleSurveyComplete = useCallback((frames: SurveyFrame[]) => {
     setOverlay("none")
     alert(`Survey complete — ${frames.length} frames captured and ready to upload.`)
   }, [])
 
-  const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
-
   return (
     <div className="relative w-full h-screen overflow-hidden bg-gray-100">
       <FloorPlanMap
         currentFloor={navState.currentFloor}
         currentPosition={navState.currentPosition}
+        heading={heading}
         destination={navState.destination}
         route={navState.route}
         isNavigating={navState.isNavigating}
@@ -207,6 +237,37 @@ export default function Home() {
         </span>
       </div>
 
+      {/* Floor change confirmation prompt */}
+      {floorConfirm !== null && (
+        <div className="absolute bottom-48 left-4 right-4 z-50 bg-white rounded-2xl shadow-2xl overflow-hidden slide-up">
+          <div className="bg-[#003087] px-4 py-3 flex items-center gap-3">
+            <ArrowUpDown size={20} className="text-white" />
+            <p className="text-white font-bold text-sm">Floor change needed</p>
+          </div>
+          <div className="px-4 py-3">
+            <p className="text-gray-700 text-sm mb-3">
+              Take the lift or stairs to{" "}
+              <strong>{floorConfirm === 0 ? "Ground Floor" : `Floor ${floorConfirm}`}</strong>.
+              Tap when you arrive.
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setOverlay("qr")}
+                className="flex-1 bg-gray-100 text-gray-700 rounded-xl py-2.5 text-sm font-semibold"
+              >
+                📷 Scan QR on wall
+              </button>
+              <button
+                onClick={handleFloorConfirmed}
+                className="flex-1 bg-[#005EB8] text-white rounded-xl py-2.5 text-sm font-bold"
+              >
+                ✓ I'm on Floor {floorConfirm === 0 ? "G" : floorConfirm}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Survey FAB */}
       {!navState.isNavigating && (
         <button
@@ -218,10 +279,11 @@ export default function Home() {
         </button>
       )}
 
-      {/* Recenter FAB */}
+      {/* Recenter / compass button — also requests iOS compass permission */}
       <button
+        onClick={requestCompass}
         className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-        title="Re-centre"
+        title="Re-centre and enable compass"
       >
         <Navigation size={20} className="text-[#005EB8]" />
       </button>
