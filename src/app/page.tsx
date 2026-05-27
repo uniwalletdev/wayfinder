@@ -32,28 +32,64 @@ export default function Home() {
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [locating, setLocating] = useState(false)
+  const [locationError, setLocationError] = useState<"denied" | "unavailable" | "https" | null>(null)
 
   useEffect(() => {
-    if (!navigator.geolocation) {
-      setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 15 }))
+    // iOS Safari silently blocks geolocation on HTTP
+    if (typeof window !== "undefined" && window.location.protocol === "http:" && window.location.hostname !== "localhost") {
+      setLocationError("https")
+      setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
       return
     }
+
+    if (!navigator.geolocation) {
+      setLocationError("unavailable")
+      setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
+      return
+    }
+
     setLocating(true)
-    const id = navigator.geolocation.watchPosition(
+
+    // First do a fast one-shot to get position quickly on iOS
+    navigator.geolocation.getCurrentPosition(
       (pos) => {
         setLocating(false)
+        setLocationError(null)
         setNavState((s) => ({
           ...s,
           currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
           positionAccuracy: pos.coords.accuracy,
         }))
       },
-      () => {
+      (err) => {
         setLocating(false)
-        setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 15 }))
+        if (err.code === 1) {
+          setLocationError("denied")
+        } else {
+          setLocationError("unavailable")
+        }
+        setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
       },
-      { enableHighAccuracy: true, timeout: 8000 }
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 30000 }
     )
+
+    // Then watch for continuous updates
+    const id = navigator.geolocation.watchPosition(
+      (pos) => {
+        setLocating(false)
+        setLocationError(null)
+        setNavState((s) => ({
+          ...s,
+          currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
+          positionAccuracy: pos.coords.accuracy,
+        }))
+      },
+      (err) => {
+        if (err.code === 1) setLocationError("denied")
+      },
+      { enableHighAccuracy: true, timeout: 30000, maximumAge: 5000 }
+    )
+
     return () => navigator.geolocation.clearWatch(id)
   }, [])
 
@@ -130,8 +166,29 @@ export default function Home() {
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
 
+      {/* Location error banner */}
+      {locationError && (
+        <div className="absolute top-16 left-3 right-3 z-50 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2.5 shadow-sm">
+          {locationError === "denied" && (
+            <p className="text-xs text-amber-800 font-medium">
+              📍 Location blocked — go to <strong>Settings → Safari → Location</strong> and allow access, then reload.
+            </p>
+          )}
+          {locationError === "https" && (
+            <p className="text-xs text-amber-800 font-medium">
+              🔒 Location requires HTTPS. Open the app via your secure deployment URL.
+            </p>
+          )}
+          {locationError === "unavailable" && (
+            <p className="text-xs text-amber-800 font-medium">
+              📍 Could not get your location. Showing a default map position.
+            </p>
+          )}
+        </div>
+      )}
+
       {/* Accuracy badge */}
-      {navState.positionAccuracy > 0 && (
+      {!locationError && navState.positionAccuracy > 0 && navState.positionAccuracy < 999 && (
         <div className="absolute top-20 left-3 z-50 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
           <div className={`w-2 h-2 rounded-full ${
             navState.positionAccuracy <= 5 ? "bg-green-500"
