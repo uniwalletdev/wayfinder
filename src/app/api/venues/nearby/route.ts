@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { query } from "@/lib/db"
+import { slog } from "@/lib/logger"
 
 export async function GET(req: NextRequest) {
   try {
@@ -44,6 +45,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(venues)
   } catch (error) {
+    slog.error("api:nearby", error)
     return NextResponse.json({ error: String(error) }, { status: 500 })
   }
 }

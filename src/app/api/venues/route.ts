@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { query, queryOne } from "@/lib/db"
+import { slog } from "@/lib/logger"
 
 export async function GET() {
   try {
@@ -15,6 +16,7 @@ export async function GET() {
     `)
     return NextResponse.json(venues)
   } catch (error) {
+    slog.error("api:venues", error)
     return NextResponse.json({ error: String(error) }, { status: 500 })
   }
 }
@@ -31,6 +33,7 @@ export async function POST(req: NextRequest) {
     )
     return NextResponse.json(venue, { status: 201 })
   } catch (error) {
+    slog.error("api:venues", error)
     return NextResponse.json({ error: String(error) }, { status: 500 })
   }
 }

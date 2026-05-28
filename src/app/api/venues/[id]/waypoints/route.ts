@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { query, queryOne } from "@/lib/db"
+import { slog } from "@/lib/logger"
 
 export async function GET(
   _req: NextRequest,
@@ -13,6 +14,7 @@ export async function GET(
     )
     return NextResponse.json(waypoints)
   } catch (error) {
+    slog.error("api:waypoints", error)
     return NextResponse.json({ error: String(error) }, { status: 500 })
   }
 }
@@ -36,6 +38,7 @@ export async function POST(
     )
     return NextResponse.json(waypoint, { status: 201 })
   } catch (error) {
+    slog.error("api:waypoints", error)
     return NextResponse.json({ error: String(error) }, { status: 500 })
   }
 }
@@ -64,6 +67,7 @@ export async function PATCH(
     if (!updated) return NextResponse.json({ error: "not found" }, { status: 404 })
     return NextResponse.json(updated)
   } catch (error) {
+    slog.error("api:waypoints", error)
     return NextResponse.json({ error: String(error) }, { status: 500 })
   }
 }
@@ -84,6 +88,7 @@ export async function DELETE(
     )
     return NextResponse.json({ ok: true })
   } catch (error) {
+    slog.error("api:waypoints", error)
     return NextResponse.json({ error: String(error) }, { status: 500 })
   }
 }

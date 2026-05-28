@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { pool } from "@/lib/db"
+import { slog } from "@/lib/logger"
 
 const SCHEMA = `
 CREATE TABLE IF NOT EXISTS venues (
@@ -78,10 +79,12 @@ SELECT setval('venues_id_seq', GREATEST((SELECT MAX(id) FROM venues), 1));
 
 export async function GET() {
   try {
+    slog.info("api:db-init", "Running schema migration")
     await pool.query(SCHEMA)
+    slog.info("api:db-init", "Schema migration complete")
     return NextResponse.json({ ok: true, message: "Database schema created successfully" })
   } catch (error) {
-    console.error("DB init error:", error)
+    slog.error("api:db-init", error)
     return NextResponse.json({ ok: false, error: String(error) }, { status: 500 })
   }
 }
