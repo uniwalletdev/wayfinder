@@ -123,20 +123,32 @@ export default function Home() {
 
   // Geolocation
   useEffect(() => {
+    // Fallback so the map always renders even if location fails — user can tap to set position
+    const FALLBACK: Coordinates = { lat: 51.505, lng: -0.09 }
+    const fallbackTimer = setTimeout(() => {
+      setLocating(false)
+      setNavState((s) => (s.currentPosition ? s : { ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
+    }, 12000)
+
     if (typeof window !== "undefined" && window.location.protocol === "http:" && window.location.hostname !== "localhost") {
       setLocationError("https")
       setLocating(false)
+      setNavState((s) => ({ ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
+      clearTimeout(fallbackTimer)
       return
     }
     if (!navigator.geolocation) {
       setLocationError("unavailable")
       setLocating(false)
+      setNavState((s) => ({ ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
+      clearTimeout(fallbackTimer)
       return
     }
 
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+        clearTimeout(fallbackTimer)
         setLocating(false)
         setLocationError(null)
         lastGPSFixRef.current = { pos: coords, time: Date.now() }
@@ -146,6 +158,7 @@ export default function Home() {
       (err) => {
         setLocating(false)
         setLocationError(err.code === 1 ? "denied" : "unavailable")
+        setNavState((s) => (s.currentPosition ? s : { ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 30000 }
     )
@@ -170,7 +183,10 @@ export default function Home() {
       (err) => { if (err.code === 1) setLocationError("denied") },
       { enableHighAccuracy: true, timeout: 30000, maximumAge: 5000 }
     )
-    return () => navigator.geolocation.clearWatch(id)
+    return () => {
+      clearTimeout(fallbackTimer)
+      navigator.geolocation.clearWatch(id)
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
