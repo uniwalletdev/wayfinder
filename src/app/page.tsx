@@ -4,7 +4,7 @@ import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyFrame, Coordinates } from "@/lib/types"
 import { buildRoute } from "@/lib/routing"
-import { deadReckon } from "@/lib/positioning"
+import { deadReckon, haversineDistance } from "@/lib/positioning"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
 import FloorSelector from "@/components/FloorSelector"
@@ -53,6 +53,7 @@ export default function Home() {
   const [waypoints, setWaypoints] = useState<Waypoint[]>([])
   const [isMoving, setIsMoving] = useState(false)
   const [tappedPoint, setTappedPoint] = useState<Coordinates | null>(null)
+  const [arrived, setArrived] = useState(false)
 
   // Dead reckoning refs
   const lastGPSFixRef = useRef<{ pos: Coordinates; time: number } | null>(null)
@@ -265,6 +266,20 @@ export default function Home() {
     setTappedPoint(null)
   }, [])
 
+  // Arrival detection — within 15m of destination
+  useEffect(() => {
+    if (!navState.isNavigating || !navState.currentPosition || !navState.destination || arrived) return
+    const dist = haversineDistance(navState.currentPosition, navState.destination.coordinates)
+    if (dist < 15) {
+      setArrived(true)
+      setTimeout(() => {
+        setArrived(false)
+        setNavState((s) => ({ ...s, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+        setFloorConfirm(null)
+      }, 3500)
+    }
+  }, [navState.currentPosition, navState.isNavigating, navState.destination, arrived])
+
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
   useEffect(() => {
     if (currentStep?.floorChange && floorConfirm === null) {
@@ -300,8 +315,8 @@ export default function Home() {
     } catch {}
   }, [venue])
 
-  // Map center: use current GPS or fallback — map flies to GPS once acquired
-  const mapCenter: Coordinates = navState.currentPosition ?? { lat: 51.505, lng: -0.09 }
+  // Only set once GPS is real — map never mounts without a known position
+  const mapCenter: Coordinates | null = navState.currentPosition
 
   // Floors available: from venue's declared floor count, plus any floor with waypoints
   const venueFloors = useMemo(() => {
@@ -316,19 +331,22 @@ export default function Home() {
   const showVenueSelector = !locating && !venue && overlay !== "venue-select"
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gray-100">
-      <FloorPlanMap
-        currentFloor={navState.currentFloor}
-        currentPosition={navState.currentPosition}
-        initialCenter={mapCenter}
-        heading={heading}
-        destination={navState.destination}
-        route={navState.route}
-        isNavigating={navState.isNavigating}
-        waypoints={waypoints}
-        onMapTap={handleMapTap}
-        onMapReady={() => {}}
-      />
+    <div className="relative w-full h-screen overflow-hidden bg-[#e8e0d8]">
+      {/* Map only mounts once we have a real GPS fix — never blank, always at correct location */}
+      {mapCenter && (
+        <FloorPlanMap
+          currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          initialCenter={mapCenter}
+          heading={heading}
+          destination={navState.destination}
+          route={navState.route}
+          isNavigating={navState.isNavigating}
+          waypoints={waypoints}
+          onMapTap={handleMapTap}
+          onMapReady={() => {}}
+        />
+      )}
 
       <TopInstructionBar
         step={currentStep}
@@ -352,6 +370,22 @@ export default function Home() {
           <Building2 size={12} className="text-[#005EB8] flex-shrink-0" />
           <span className="text-xs text-gray-700 font-semibold truncate">{venue.name}</span>
         </button>
+      )}
+
+      {/* Tap-to-place hint when adding a location */}
+      {overlay === "add-location" && (
+        <div className="absolute top-16 left-1/2 -translate-x-1/2 z-50 bg-black/75 text-white text-xs font-semibold px-4 py-2 rounded-full pointer-events-none whitespace-nowrap">
+          {tappedPoint ? "📍 Point set — name it below" : "Tap the map to place your pin"}
+        </div>
+      )}
+
+      {/* Arrived toast */}
+      {arrived && navState.destination && (
+        <div className="absolute top-1/3 left-4 right-4 z-[500] bg-[#009639] text-white rounded-2xl px-5 py-4 shadow-2xl text-center slide-up">
+          <p className="text-2xl mb-1">✓</p>
+          <p className="font-bold text-lg">You&apos;ve arrived!</p>
+          <p className="text-sm text-green-100 mt-0.5">{navState.destination.name}</p>
+        </div>
       )}
 
       {/* Location error banner */}
@@ -518,10 +552,14 @@ export default function Home() {
       )}
 
       {locating && (
-        <div className="absolute inset-0 z-[400] bg-white flex flex-col items-center justify-center gap-4">
-          <div className="w-12 h-12 border-3 border-[#005EB8] border-t-transparent rounded-full animate-spin" style={{ borderWidth: 3 }} />
-          <p className="text-base font-semibold text-gray-700">Finding your location…</p>
-          <p className="text-sm text-gray-400">Please allow location access</p>
+        <div className="absolute inset-0 z-[400] bg-[#005EB8] flex flex-col items-center justify-center gap-5">
+          <div className="flex flex-col items-center gap-2 mb-2">
+            <span className="text-white text-5xl">🧭</span>
+            <h1 className="text-white text-2xl font-bold tracking-tight">Wayfinder</h1>
+            <p className="text-blue-200 text-sm">Free indoor navigation, anywhere</p>
+          </div>
+          <div className="w-10 h-10 border-[3px] border-white/30 border-t-white rounded-full animate-spin" />
+          <p className="text-blue-200 text-sm">Finding your location…</p>
         </div>
       )}
     </div>

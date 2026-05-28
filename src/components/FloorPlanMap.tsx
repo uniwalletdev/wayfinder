@@ -96,6 +96,16 @@ export default function FloorPlanMap({
         paint: { "line-color": "#00BFFF", "line-width": 7, "line-opacity": 0.95 },
       })
 
+      // Fly to user's real GPS immediately on load — no blank/wrong map
+      map.flyTo({
+        center: [initialCenter.lng, initialCenter.lat],
+        zoom: 18,
+        pitch: 45,
+        bearing: 0,
+        duration: 1200,
+        essential: true,
+      })
+
       onMapReady()
     })
 
