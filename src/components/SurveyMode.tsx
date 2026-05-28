@@ -1,20 +1,32 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { SurveyFrame } from "@/lib/types"
+import { SurveyFrame, Coordinates } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
-import { X, Square, MapPin, Upload, Check } from "lucide-react"
+import { X, Square, MapPin, Check } from "lucide-react"
+
+const WAYPOINT_TYPE_ICONS: Record<string, string> = {
+  ward: "🏥", department: "🏢", lift: "🛗", stairs: "🪜",
+  toilet: "🚻", exit: "🚪", reception: "📋", canteen: "🍽️",
+  pharmacy: "💊", other: "📍",
+}
+const WAYPOINT_TYPE_LABELS: Record<string, string> = {
+  ward: "Room", department: "Area", lift: "Lift", stairs: "Stairs",
+  toilet: "Toilet", exit: "Exit", reception: "Entrance", canteen: "Food",
+  pharmacy: "Pharmacy", other: "Other",
+}
 
 interface Props {
   currentFloor: number
+  currentPosition: Coordinates | null
+  heading: number
   onClose: () => void
   onSurveyComplete: (frames: SurveyFrame[]) => void
 }
 
 const ANNOTATION_TYPES: WaypointType[] = ["ward", "department", "lift", "stairs", "toilet", "exit", "reception", "canteen", "pharmacy", "other"]
 
-export default function SurveyMode({ currentFloor, onClose, onSurveyComplete }: Props) {
+export default function SurveyMode({ currentFloor, currentPosition, heading, onClose, onSurveyComplete }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const streamRef = useRef<MediaStream | null>(null)
@@ -90,8 +102,8 @@ export default function SurveyMode({ currentFloor, onClose, onSurveyComplete }: 
     const frame: SurveyFrame = {
       timestamp: Date.now(),
       imageData,
-      coordinates: { lat: 51.5225, lng: -0.1199 },
-      heading: 0,
+      coordinates: currentPosition ?? { lat: 0, lng: 0 },
+      heading,
       floor: currentFloor,
       annotation,
     }

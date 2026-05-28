@@ -1,7 +1,7 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyFrame, Coordinates } from "@/lib/types"
 import { buildRoute } from "@/lib/routing"
 import { deadReckon } from "@/lib/positioning"
@@ -12,11 +12,12 @@ import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
 import VenueSelector, { VenueInfo } from "@/components/VenueSelector"
-import { Layers, Navigation, ClipboardList, ArrowUpDown, Building2 } from "lucide-react"
+import AddLocationPanel from "@/components/AddLocationPanel"
+import { Layers, Navigation, ClipboardList, ArrowUpDown, Building2, Plus } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey" | "venue-select"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey" | "venue-select" | "add-location"
 
 // DB waypoint row → Waypoint type
 function rowToWaypoint(r: Record<string, unknown>): Waypoint {
@@ -51,6 +52,7 @@ export default function Home() {
   const [venue, setVenue] = useState<VenueInfo | null>(null)
   const [waypoints, setWaypoints] = useState<Waypoint[]>([])
   const [isMoving, setIsMoving] = useState(false)
+  const [tappedPoint, setTappedPoint] = useState<Coordinates | null>(null)
 
   // Dead reckoning refs
   const lastGPSFixRef = useRef<{ pos: Coordinates; time: number } | null>(null)
@@ -246,13 +248,22 @@ export default function Home() {
     } catch {}
   }, [])
 
-  // "I'm here" — tap map to manually correct position
+  // Map tap: when adding a location, set the pin point; otherwise "I'm here" correction
   const handleMapTap = useCallback((coords: Coordinates) => {
+    if (overlay === "add-location") {
+      setTappedPoint(coords)
+      return
+    }
     if (navState.isNavigating) return // don't hijack taps during navigation
     lastGPSFixRef.current = { pos: coords, time: Date.now() }
     lastGPSUpdateRef.current = Date.now()
     setNavState((s) => ({ ...s, currentPosition: coords, positionAccuracy: 5 }))
-  }, [navState.isNavigating])
+  }, [navState.isNavigating, overlay])
+
+  const handleLocationAdded = useCallback((w: Waypoint) => {
+    setWaypoints((prev) => [...prev, w])
+    setTappedPoint(null)
+  }, [])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
   useEffect(() => {
@@ -289,8 +300,17 @@ export default function Home() {
     } catch {}
   }, [venue])
 
-  // Map center: use current GPS or fallback to a world center (0,0) — map flies to GPS once acquired
+  // Map center: use current GPS or fallback — map flies to GPS once acquired
   const mapCenter: Coordinates = navState.currentPosition ?? { lat: 51.505, lng: -0.09 }
+
+  // Floors available: from venue's declared floor count, plus any floor with waypoints
+  const venueFloors = useMemo(() => {
+    const set = new Set<number>([0])
+    if (venue?.floors) for (let i = 0; i < venue.floors; i++) set.add(i)
+    waypoints.forEach((w) => set.add(w.floor))
+    set.add(navState.currentFloor)
+    return [...set].sort((a, b) => a - b)
+  }, [venue, waypoints, navState.currentFloor])
 
   // Show venue selector if no venue chosen and GPS is ready
   const showVenueSelector = !locating && !venue && overlay !== "venue-select"
@@ -318,6 +338,7 @@ export default function Home() {
       />
 
       <FloorSelector
+        floors={venueFloors}
         currentFloor={navState.currentFloor}
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
@@ -405,6 +426,18 @@ export default function Home() {
         </div>
       )}
 
+      {/* Add Location FAB */}
+      {!navState.isNavigating && venue && overlay === "none" && (
+        <button
+          onClick={() => { setTappedPoint(null); setOverlay("add-location") }}
+          className="absolute left-3 bottom-[17rem] z-50 px-4 h-12 bg-[#005EB8] rounded-full shadow-lg flex items-center justify-center gap-1.5 text-white font-semibold text-sm"
+          title="Add a location"
+        >
+          <Plus size={18} />
+          Add location
+        </button>
+      )}
+
       {/* Survey FAB */}
       {!navState.isNavigating && venue && (
         <button
@@ -465,8 +498,22 @@ export default function Home() {
       {overlay === "survey" && venue && (
         <SurveyModeComponent
           currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          heading={heading}
           onClose={() => setOverlay("none")}
           onSurveyComplete={handleSurveyComplete}
+        />
+      )}
+
+      {overlay === "add-location" && venue && (
+        <AddLocationPanel
+          venueId={venue.id}
+          currentFloor={navState.currentFloor}
+          position={tappedPoint ?? navState.currentPosition}
+          accuracy={tappedPoint ? 2 : navState.positionAccuracy}
+          usingTappedPoint={tappedPoint !== null}
+          onClose={() => { setTappedPoint(null); setOverlay("none") }}
+          onAdded={handleLocationAdded}
         />
       )}
 
