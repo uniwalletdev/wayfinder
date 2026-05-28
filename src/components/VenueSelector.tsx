@@ -43,6 +43,7 @@ export default function VenueSelector({ userPosition, onSelectVenue, onClose }: 
   const [newName, setNewName] = useState("")
   const [newType, setNewType] = useState("home")
   const [newFloors, setNewFloors] = useState(1)
+  const [createError, setCreateError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch(`/api/venues/nearby?lat=${userPosition.lat}&lng=${userPosition.lng}&radius=1000`)
@@ -58,6 +59,7 @@ export default function VenueSelector({ userPosition, onSelectVenue, onClose }: 
     const name = newName.trim()
     if (!name) return
     setSaving(true)
+    setCreateError(null)
     try {
       const res = await fetch("/api/venues", {
         method: "POST",
@@ -70,10 +72,18 @@ export default function VenueSelector({ userPosition, onSelectVenue, onClose }: 
           lng: userPosition.lng,
         }),
       })
-      const venue = await res.json()
-      if (venue?.id) {
+      const venue = await res.json().catch(() => null)
+      if (res.ok && venue?.id) {
         onSelectVenue({ ...venue, waypoint_count: 0, distance_m: 0 })
+        return
       }
+      setCreateError(
+        venue?.error
+          ? `Couldn't save: ${venue.error}`
+          : `Couldn't save (HTTP ${res.status}). The database may need initialising — open /api/db-init once.`
+      )
+    } catch (e) {
+      setCreateError(`Network error: ${String(e)}`)
     } finally {
       setSaving(false)
     }
@@ -169,6 +179,11 @@ export default function VenueSelector({ userPosition, onSelectVenue, onClose }: 
           </div>
 
           <div className="px-4 pb-8 pt-3 border-t border-gray-100 flex-shrink-0">
+            {createError && (
+              <p className="mb-3 text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                {createError}
+              </p>
+            )}
             <button
               onClick={handleCreate}
               disabled={!newName.trim() || saving}
