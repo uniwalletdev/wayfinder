@@ -14,6 +14,8 @@ import SurveyModeComponent from "@/components/SurveyMode"
 import VenueSelector, { VenueInfo } from "@/components/VenueSelector"
 import AddLocationPanel from "@/components/AddLocationPanel"
 import EditLocationPanel from "@/components/EditLocationPanel"
+import DebugPanel from "@/components/DebugPanel"
+import { logInfo, logWarn, logError } from "@/lib/debug"
 import { Layers, Navigation, ClipboardList, ArrowUpDown, Building2, Plus, Share2 } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
@@ -69,6 +71,25 @@ export default function Home() {
   // Passive trace buffer
   const traceBufferRef = useRef<Array<{ lat: number; lng: number; heading: number; accuracy: number; floor: number; timestamp: number }>>([])
   const traceFlushTimerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Global error + lifecycle capture for the in-app diagnostics panel
+  useEffect(() => {
+    logInfo(`App loaded · ${window.location.protocol} · secure=${window.isSecureContext} · online=${navigator.onLine}`)
+    const onErr = (e: ErrorEvent) => logError(`JS error: ${e.message}`)
+    const onRej = (e: PromiseRejectionEvent) => logError(`Unhandled: ${String(e.reason)}`)
+    const onOnline = () => logInfo("Network: back online")
+    const onOffline = () => logWarn("Network: went offline")
+    window.addEventListener("error", onErr)
+    window.addEventListener("unhandledrejection", onRej)
+    window.addEventListener("online", onOnline)
+    window.addEventListener("offline", onOffline)
+    return () => {
+      window.removeEventListener("error", onErr)
+      window.removeEventListener("unhandledrejection", onRej)
+      window.removeEventListener("online", onOnline)
+      window.removeEventListener("offline", onOffline)
+    }
+  }, [])
 
   // Detect motion via accelerometer
   useEffect(() => {
@@ -126,11 +147,13 @@ export default function Home() {
     // Fallback so the map always renders even if location fails — user can tap to set position
     const FALLBACK: Coordinates = { lat: 51.505, lng: -0.09 }
     const fallbackTimer = setTimeout(() => {
+      logWarn("Location timed out (12s) — using fallback position")
       setLocating(false)
       setNavState((s) => (s.currentPosition ? s : { ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
     }, 12000)
 
     if (typeof window !== "undefined" && window.location.protocol === "http:" && window.location.hostname !== "localhost") {
+      logError("Location needs HTTPS — page is on http")
       setLocationError("https")
       setLocating(false)
       setNavState((s) => ({ ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
@@ -138,6 +161,7 @@ export default function Home() {
       return
     }
     if (!navigator.geolocation) {
+      logError("navigator.geolocation not available")
       setLocationError("unavailable")
       setLocating(false)
       setNavState((s) => ({ ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
@@ -145,10 +169,12 @@ export default function Home() {
       return
     }
 
+    logInfo("Requesting location…")
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude }
         clearTimeout(fallbackTimer)
+        logInfo(`GPS fix: ${coords.lat.toFixed(5)}, ${coords.lng.toFixed(5)} (±${Math.round(pos.coords.accuracy)}m)`)
         setLocating(false)
         setLocationError(null)
         lastGPSFixRef.current = { pos: coords, time: Date.now() }
@@ -156,6 +182,7 @@ export default function Home() {
         setNavState((s) => ({ ...s, currentPosition: coords, positionAccuracy: pos.coords.accuracy }))
       },
       (err) => {
+        logError(`Location error (code ${err.code}): ${err.message}`)
         setLocating(false)
         setLocationError(err.code === 1 ? "denied" : "unavailable")
         setNavState((s) => (s.currentPosition ? s : { ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
@@ -195,24 +222,32 @@ export default function Home() {
     if (typeof window === "undefined") return
     const vid = new URLSearchParams(window.location.search).get("venue")
     if (!vid) return
+    logInfo(`Opening shared venue #${vid}`)
     fetch(`/api/venues/${vid}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((v) => {
         if (v?.id) setVenue({ ...v, waypoint_count: Number(v.waypoint_count ?? 0) })
+        else logWarn(`Shared venue #${vid} not found`)
       })
-      .catch(() => {})
+      .catch((e) => logError(`Shared venue fetch failed: ${e}`))
       .finally(() => setAwaitingSharedVenue(false))
   }, [])
 
   // Load waypoints when venue changes
   useEffect(() => {
     if (!venue) return
+    logInfo(`Loading waypoints for venue #${venue.id}`)
     fetch(`/api/venues/${venue.id}/waypoints`)
       .then((r) => r.json())
       .then((rows) => {
-        if (Array.isArray(rows)) setWaypoints(rows.map(rowToWaypoint))
+        if (Array.isArray(rows)) {
+          setWaypoints(rows.map(rowToWaypoint))
+          logInfo(`Loaded ${rows.length} waypoints`)
+        } else {
+          logWarn(`Waypoints response not an array: ${JSON.stringify(rows).slice(0, 120)}`)
+        }
       })
-      .catch(() => {})
+      .catch((e) => logError(`Waypoints fetch failed: ${e}`))
   }, [venue])
 
   // Compass
@@ -668,6 +703,19 @@ export default function Home() {
           {toast}
         </div>
       )}
+
+      {/* In-app diagnostics — tap the bug icon */}
+      <DebugPanel
+        position={navState.currentPosition}
+        accuracy={navState.positionAccuracy}
+        heading={heading}
+        locating={locating}
+        locationError={locationError}
+        isMoving={isMoving}
+        venueName={venue?.name}
+        venueId={venue?.id}
+        waypointCount={waypoints.length}
+      />
 
       {locating && (
         <div className="absolute inset-0 z-[400] bg-[#005EB8] flex flex-col items-center justify-center gap-5">
