@@ -21,13 +21,13 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, address, city, country } = await req.json()
+    const { name, address, city, country, lat, lng } = await req.json()
     if (!name) return NextResponse.json({ error: "name is required" }, { status: 400 })
 
     const venue = await queryOne(
-      `INSERT INTO venues (name, address, city, country)
-       VALUES ($1, $2, $3, $4) RETURNING *`,
-      [name, address ?? null, city ?? null, country ?? "UK"]
+      `INSERT INTO venues (name, address, city, country, lat, lng)
+       VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+      [name, address ?? null, city ?? null, country ?? "UK", lat ?? null, lng ?? null]
     )
     return NextResponse.json(venue, { status: 201 })
   } catch (error) {

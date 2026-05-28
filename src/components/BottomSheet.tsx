@@ -1,33 +1,33 @@
 "use client"
 
 import { Waypoint, Route } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
-import { Clock, MapPin, Layers, Camera, QrCode, X, ChevronUp } from "lucide-react"
+import { Clock, MapPin, Layers, Camera, QrCode, X, ChevronUp, Building2 } from "lucide-react"
+
+const WAYPOINT_TYPE_ICONS: Record<string, string> = {
+  ward: "🏥", department: "🏢", lift: "🛗", stairs: "🪜",
+  toilet: "🚻", exit: "🚪", reception: "📋", canteen: "🍽️",
+  pharmacy: "💊", other: "📍",
+}
 
 interface Props {
   destination: Waypoint | null
   route: Route | null
   currentFloor: number
   isNavigating: boolean
+  venueName?: string
   onStopNavigation: () => void
   onOpenCamera: () => void
   onScanQR: () => void
   onOpenSearch: () => void
+  onSelectVenue: () => void
   expanded: boolean
   onToggleExpand: () => void
 }
 
 export default function BottomSheet({
-  destination,
-  route,
-  currentFloor,
-  isNavigating,
-  onStopNavigation,
-  onOpenCamera,
-  onScanQR,
-  onOpenSearch,
-  expanded,
-  onToggleExpand,
+  destination, route, currentFloor, isNavigating, venueName,
+  onStopNavigation, onOpenCamera, onScanQR, onOpenSearch, onSelectVenue,
+  expanded, onToggleExpand,
 }: Props) {
   return (
     <div
@@ -35,7 +35,6 @@ export default function BottomSheet({
         expanded ? "max-h-72" : "max-h-44"
       }`}
     >
-      {/* Handle */}
       <div className="flex justify-center pt-2 pb-1 cursor-pointer" onClick={onToggleExpand}>
         <div className="w-10 h-1 bg-gray-300 rounded-full" />
       </div>
@@ -52,9 +51,11 @@ export default function BottomSheet({
         />
       ) : (
         <IdleSheet
+          venueName={venueName}
           onOpenSearch={onOpenSearch}
           onOpenCamera={onOpenCamera}
           onScanQR={onScanQR}
+          onSelectVenue={onSelectVenue}
           currentFloor={currentFloor}
         />
       )}
@@ -63,24 +64,12 @@ export default function BottomSheet({
 }
 
 function NavigatingSheet({
-  destination,
-  route,
-  currentFloor,
-  onStop,
-  onOpenCamera,
-  onScanQR,
-  expanded,
+  destination, route, currentFloor, onStop, onOpenCamera, onScanQR, expanded,
 }: {
-  destination: Waypoint
-  route: Route
-  currentFloor: number
-  onStop: () => void
-  onOpenCamera: () => void
-  onScanQR: () => void
-  expanded: boolean
+  destination: Waypoint; route: Route; currentFloor: number
+  onStop: () => void; onOpenCamera: () => void; onScanQR: () => void; expanded: boolean
 }) {
-  const icon = WAYPOINT_TYPE_ICONS[destination.type]
-
+  const icon = WAYPOINT_TYPE_ICONS[destination.type] ?? "📍"
   return (
     <div className="px-4 pb-4">
       <div className="flex items-center justify-between mb-3">
@@ -88,15 +77,10 @@ function NavigatingSheet({
           <span className="text-2xl">{icon}</span>
           <div>
             <p className="font-bold text-gray-900 text-base leading-tight">{destination.name}</p>
-            {destination.description && (
-              <p className="text-xs text-gray-500">{destination.description}</p>
-            )}
+            {destination.description && <p className="text-xs text-gray-500">{destination.description}</p>}
           </div>
         </div>
-        <button
-          onClick={onStop}
-          className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
-        >
+        <button onClick={onStop} className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
           <X size={16} className="text-red-600" />
         </button>
       </div>
@@ -114,7 +98,7 @@ function NavigatingSheet({
         </div>
         <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-3 py-1.5">
           <Layers size={14} className="text-[#005EB8]" />
-          <span className="text-sm font-semibold text-[#005EB8]">Floor {destination.floor}</span>
+          <span className="text-sm font-semibold text-[#005EB8]">Floor {destination.floor === 0 ? "G" : destination.floor}</span>
         </div>
       </div>
 
@@ -125,19 +109,11 @@ function NavigatingSheet({
       )}
 
       <div className="flex gap-2">
-        <button
-          onClick={onScanQR}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#005EB8] text-white rounded-xl py-2.5 text-sm font-semibold"
-        >
-          <QrCode size={16} />
-          Scan to locate me
+        <button onClick={onScanQR} className="flex-1 flex items-center justify-center gap-2 bg-[#005EB8] text-white rounded-xl py-2.5 text-sm font-semibold">
+          <QrCode size={16} />Scan to locate me
         </button>
-        <button
-          onClick={onOpenCamera}
-          className="flex-1 flex items-center justify-center gap-2 bg-gray-100 text-gray-800 rounded-xl py-2.5 text-sm font-semibold"
-        >
-          <Camera size={16} />
-          Live camera
+        <button onClick={onOpenCamera} className="flex-1 flex items-center justify-center gap-2 bg-gray-100 text-gray-800 rounded-xl py-2.5 text-sm font-semibold">
+          <Camera size={16} />Live camera
         </button>
       </div>
     </div>
@@ -145,15 +121,10 @@ function NavigatingSheet({
 }
 
 function IdleSheet({
-  onOpenSearch,
-  onOpenCamera,
-  onScanQR,
-  currentFloor,
+  venueName, onOpenSearch, onOpenCamera, onScanQR, onSelectVenue, currentFloor,
 }: {
-  onOpenSearch: () => void
-  onOpenCamera: () => void
-  onScanQR: () => void
-  currentFloor: number
+  venueName?: string; onOpenSearch: () => void; onOpenCamera: () => void
+  onScanQR: () => void; onSelectVenue: () => void; currentFloor: number
 }) {
   return (
     <div className="px-4 pb-4">
@@ -162,23 +133,20 @@ function IdleSheet({
         className="w-full flex items-center gap-3 bg-gray-100 rounded-xl px-4 py-3 mb-3"
       >
         <MapPin size={18} className="text-[#005EB8]" />
-        <span className="text-gray-500 text-sm">Where do you want to go?</span>
+        <span className="text-gray-500 text-sm">
+          {venueName ? `Where in ${venueName}?` : "Select a place to navigate…"}
+        </span>
       </button>
 
       <div className="flex gap-2 mb-2">
-        <button
-          onClick={onScanQR}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#005EB8] text-white rounded-xl py-2.5 text-sm font-semibold"
-        >
-          <QrCode size={16} />
-          Scan QR code
+        <button onClick={onScanQR} className="flex-1 flex items-center justify-center gap-2 bg-[#005EB8] text-white rounded-xl py-2.5 text-sm font-semibold">
+          <QrCode size={16} />Scan QR
         </button>
-        <button
-          onClick={onOpenCamera}
-          className="flex-1 flex items-center justify-center gap-2 bg-gray-100 text-gray-800 rounded-xl py-2.5 text-sm font-semibold"
-        >
-          <Camera size={16} />
-          Live camera
+        <button onClick={onOpenCamera} className="flex-1 flex items-center justify-center gap-2 bg-gray-100 text-gray-800 rounded-xl py-2.5 text-sm font-semibold">
+          <Camera size={16} />Live camera
+        </button>
+        <button onClick={onSelectVenue} className="flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-xl px-3 py-2.5 text-sm font-semibold">
+          <Building2 size={16} />
         </button>
       </div>
 

@@ -9,8 +9,13 @@ CREATE TABLE IF NOT EXISTS venues (
   city        TEXT,
   country     TEXT DEFAULT 'UK',
   logo_url    TEXT,
+  lat         DOUBLE PRECISION,
+  lng         DOUBLE PRECISION,
   created_at  TIMESTAMPTZ DEFAULT NOW()
 );
+
+ALTER TABLE venues ADD COLUMN IF NOT EXISTS lat DOUBLE PRECISION;
+ALTER TABLE venues ADD COLUMN IF NOT EXISTS lng DOUBLE PRECISION;
 
 CREATE TABLE IF NOT EXISTS floor_plans (
   id          SERIAL PRIMARY KEY,
@@ -48,10 +53,23 @@ CREATE TABLE IF NOT EXISTS survey_frames (
   created_at  TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Seed GOSH as venue 1 if not exists
-INSERT INTO venues (id, name, address, city)
-VALUES (1, 'Great Ormond Street Hospital', 'Great Ormond Street', 'London')
+CREATE TABLE IF NOT EXISTS gps_traces (
+  id          SERIAL PRIMARY KEY,
+  venue_id    INTEGER REFERENCES venues(id) ON DELETE CASCADE,
+  lat         DOUBLE PRECISION NOT NULL,
+  lng         DOUBLE PRECISION NOT NULL,
+  heading     DOUBLE PRECISION,
+  accuracy    DOUBLE PRECISION,
+  floor       INTEGER DEFAULT 0,
+  captured_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Seed GOSH as venue 1 with real coordinates
+INSERT INTO venues (id, name, address, city, lat, lng)
+VALUES (1, 'Great Ormond Street Hospital', 'Great Ormond Street', 'London', 51.5225, -0.1199)
 ON CONFLICT (id) DO NOTHING;
+
+UPDATE venues SET lat = 51.5225, lng = -0.1199 WHERE id = 1 AND lat IS NULL;
 
 SELECT setval('venues_id_seq', GREATEST((SELECT MAX(id) FROM venues), 1));
 `

@@ -66,3 +66,13 @@ export interface NavigationState {
   isNavigating: boolean
   positionAccuracy: number
 }
+
+export interface Venue {
+  id: number
+  name: string
+  address?: string
+  city?: string
+  lat?: number
+  lng?: number
+  waypoint_count?: number
+}

@@ -2,21 +2,34 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef } from "react"
-import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
-import { GOSH_CENTER } from "@/lib/gosh-data"
+import { Waypoint, NavigationState, SurveyFrame, Coordinates } from "@/lib/types"
 import { buildRoute } from "@/lib/routing"
-import { GOSH_WAYPOINTS } from "@/lib/gosh-data"
+import { deadReckon } from "@/lib/positioning"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
 import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, ArrowUpDown } from "lucide-react"
+import VenueSelector, { VenueInfo } from "@/components/VenueSelector"
+import { Layers, Navigation, ClipboardList, ArrowUpDown, Building2 } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey" | "venue-select"
+
+// DB waypoint row → Waypoint type
+function rowToWaypoint(r: Record<string, unknown>): Waypoint {
+  return {
+    id: String(r.id),
+    name: r.name as string,
+    type: r.type as Waypoint["type"],
+    floor: Number(r.floor),
+    coordinates: { lat: Number(r.lat), lng: Number(r.lng) },
+    description: r.description as string | undefined,
+    qrCode: r.qr_code as string | undefined,
+  }
+}
 
 export default function Home() {
   const [navState, setNavState] = useState<NavigationState>({
@@ -32,68 +45,146 @@ export default function Home() {
   const [heading, setHeading] = useState(0)
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
-  const [locating, setLocating] = useState(false)
+  const [locating, setLocating] = useState(true)
   const [locationError, setLocationError] = useState<"denied" | "unavailable" | "https" | null>(null)
   const [floorConfirm, setFloorConfirm] = useState<number | null>(null)
+  const [venue, setVenue] = useState<VenueInfo | null>(null)
+  const [waypoints, setWaypoints] = useState<Waypoint[]>([])
+  const [isMoving, setIsMoving] = useState(false)
+
+  // Dead reckoning refs
+  const lastGPSFixRef = useRef<{ pos: Coordinates; time: number } | null>(null)
+  const lastGPSUpdateRef = useRef<number>(0)
+  const deadReckonTimerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Passive trace buffer
+  const traceBufferRef = useRef<Array<{ lat: number; lng: number; heading: number; accuracy: number; floor: number; timestamp: number }>>([])
+  const traceFlushTimerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Detect motion via accelerometer
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    let lastMag = 0
+    function handleMotion(e: DeviceMotionEvent) {
+      const a = e.acceleration
+      if (!a) return
+      const mag = Math.sqrt((a.x ?? 0) ** 2 + (a.y ?? 0) ** 2 + (a.z ?? 0) ** 2)
+      const delta = Math.abs(mag - lastMag)
+      lastMag = mag
+      setIsMoving(delta > 0.3) // threshold: 0.3 m/s² change = walking
+    }
+    window.addEventListener("devicemotion", handleMotion)
+    return () => window.removeEventListener("devicemotion", handleMotion)
+  }, [])
+
+  // Dead reckoning — runs every second when GPS is stale (>5s) and user is moving
+  useEffect(() => {
+    deadReckonTimerRef.current = setInterval(() => {
+      const staleness = Date.now() - lastGPSUpdateRef.current
+      if (staleness < 5000 || !lastGPSFixRef.current || !isMoving) return
+
+      const estimated = deadReckon(
+        lastGPSFixRef.current.pos,
+        lastGPSFixRef.current.time,
+        heading,
+        isMoving
+      )
+      setNavState((s) => ({ ...s, currentPosition: estimated, positionAccuracy: 15 }))
+    }, 1000)
+    return () => {
+      if (deadReckonTimerRef.current) clearInterval(deadReckonTimerRef.current)
+    }
+  }, [heading, isMoving])
+
+  // Flush trace buffer to API every 30s
+  useEffect(() => {
+    traceFlushTimerRef.current = setInterval(() => {
+      const buf = traceBufferRef.current.splice(0)
+      if (buf.length === 0 || !venue) return
+      fetch("/api/traces", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ venue_id: venue.id, points: buf }),
+      }).catch(() => {}) // fire-and-forget
+    }, 30000)
+    return () => {
+      if (traceFlushTimerRef.current) clearInterval(traceFlushTimerRef.current)
+    }
+  }, [venue])
 
   // Geolocation
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.protocol === "http:" && window.location.hostname !== "localhost") {
       setLocationError("https")
-      setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
+      setLocating(false)
       return
     }
     if (!navigator.geolocation) {
       setLocationError("unavailable")
-      setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
+      setLocating(false)
       return
     }
-    setLocating(true)
+
     navigator.geolocation.getCurrentPosition(
       (pos) => {
+        const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude }
         setLocating(false)
         setLocationError(null)
-        setNavState((s) => ({
-          ...s,
-          currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
-          positionAccuracy: pos.coords.accuracy,
-        }))
+        lastGPSFixRef.current = { pos: coords, time: Date.now() }
+        lastGPSUpdateRef.current = Date.now()
+        setNavState((s) => ({ ...s, currentPosition: coords, positionAccuracy: pos.coords.accuracy }))
       },
       (err) => {
         setLocating(false)
         setLocationError(err.code === 1 ? "denied" : "unavailable")
-        setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 999 }))
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 30000 }
     )
+
     const id = navigator.geolocation.watchPosition(
       (pos) => {
+        const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude }
         setLocating(false)
         setLocationError(null)
-        setNavState((s) => ({
-          ...s,
-          currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
-          positionAccuracy: pos.coords.accuracy,
-        }))
+        lastGPSFixRef.current = { pos: coords, time: Date.now() }
+        lastGPSUpdateRef.current = Date.now()
+        setNavState((s) => ({ ...s, currentPosition: coords, positionAccuracy: pos.coords.accuracy }))
+
+        // Buffer trace point
+        traceBufferRef.current.push({
+          lat: coords.lat, lng: coords.lng,
+          heading, accuracy: pos.coords.accuracy,
+          floor: navState.currentFloor,
+          timestamp: Date.now(),
+        })
       },
       (err) => { if (err.code === 1) setLocationError("denied") },
       { enableHighAccuracy: true, timeout: 30000, maximumAge: 5000 }
     )
     return () => navigator.geolocation.clearWatch(id)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Device compass heading — iOS requires DeviceOrientationEvent permission
+  // Load waypoints when venue changes
+  useEffect(() => {
+    if (!venue) return
+    fetch(`/api/venues/${venue.id}/waypoints`)
+      .then((r) => r.json())
+      .then((rows) => {
+        if (Array.isArray(rows)) setWaypoints(rows.map(rowToWaypoint))
+      })
+      .catch(() => {})
+  }, [venue])
+
+  // Compass
   useEffect(() => {
     function handleOrientation(e: DeviceOrientationEvent) {
       const h = (e as DeviceOrientationEvent & { webkitCompassHeading?: number }).webkitCompassHeading
       if (h != null) setHeading(h)
       else if (e.alpha != null) setHeading(360 - e.alpha)
     }
-
-    if (typeof DeviceOrientationEvent !== "undefined" &&
-      typeof (DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }).requestPermission === "function") {
-      // iOS 13+ — will request on first user interaction, handled by button below
-    } else {
+    const DOE = DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }
+    if (typeof DOE.requestPermission !== "function") {
       window.addEventListener("deviceorientation", handleOrientation, true)
       return () => window.removeEventListener("deviceorientation", handleOrientation, true)
     }
@@ -113,14 +204,19 @@ export default function Home() {
     }
   }, [])
 
+  const handleVenueSelect = useCallback((v: VenueInfo) => {
+    setVenue(v)
+    setOverlay("none")
+  }, [])
+
   const handleDestinationSelect = useCallback(
     (waypoint: Waypoint) => {
       setOverlay("none")
-      const position = navState.currentPosition ?? GOSH_CENTER
-      const route = buildRoute(position, navState.currentFloor, waypoint, GOSH_WAYPOINTS)
+      if (!navState.currentPosition) return
+      const route = buildRoute(navState.currentPosition, navState.currentFloor, waypoint, waypoints)
       setNavState((s) => ({ ...s, destination: waypoint, route, currentStepIndex: 0, isNavigating: true }))
     },
-    [navState.currentPosition, navState.currentFloor]
+    [navState.currentPosition, navState.currentFloor, waypoints]
   )
 
   const handleStopNavigation = useCallback(() => {
@@ -135,13 +231,14 @@ export default function Home() {
       const latIdx = parts.indexOf("lat")
       const lngIdx = parts.indexOf("lng")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
-        const newFloor = parseInt(parts[floorIdx + 1])
+        const newPos = { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) }
+        lastGPSFixRef.current = { pos: newPos, time: Date.now() }
+        lastGPSUpdateRef.current = Date.now()
         setNavState((s) => ({
           ...s,
-          currentFloor: newFloor,
-          currentPosition: { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) },
+          currentFloor: parseInt(parts[floorIdx + 1]),
+          currentPosition: newPos,
           positionAccuracy: 1,
-          // Auto-advance past floor change step if navigating
           currentStepIndex: s.route?.steps[s.currentStepIndex]?.floorChange ? s.currentStepIndex + 1 : s.currentStepIndex,
         }))
         setFloorConfirm(null)
@@ -149,7 +246,14 @@ export default function Home() {
     } catch {}
   }, [])
 
-  // When navigation hits a floor change step — show confirm prompt
+  // "I'm here" — tap map to manually correct position
+  const handleMapTap = useCallback((coords: Coordinates) => {
+    if (navState.isNavigating) return // don't hijack taps during navigation
+    lastGPSFixRef.current = { pos: coords, time: Date.now() }
+    lastGPSUpdateRef.current = Date.now()
+    setNavState((s) => ({ ...s, currentPosition: coords, positionAccuracy: 5 }))
+  }, [navState.isNavigating])
+
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
   useEffect(() => {
     if (currentStep?.floorChange && floorConfirm === null) {
@@ -159,28 +263,50 @@ export default function Home() {
 
   const handleFloorConfirmed = useCallback(() => {
     if (floorConfirm === null) return
-    setNavState((s) => ({
-      ...s,
-      currentFloor: floorConfirm,
-      currentStepIndex: s.currentStepIndex + 1,
-    }))
+    setNavState((s) => ({ ...s, currentFloor: floorConfirm, currentStepIndex: s.currentStepIndex + 1 }))
     setFloorConfirm(null)
   }, [floorConfirm])
 
-  const handleSurveyComplete = useCallback((frames: SurveyFrame[]) => {
+  const handleSurveyComplete = useCallback(async (frames: SurveyFrame[]) => {
     setOverlay("none")
-    alert(`Survey complete — ${frames.length} frames captured and ready to upload.`)
-  }, [])
+    if (!venue || frames.length === 0) return
+    try {
+      await fetch("/api/survey", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          venue_id: venue.id,
+          frames: frames.map((f) => ({
+            floor: f.floor,
+            coordinates: f.coordinates,
+            heading: f.heading,
+            annotation: f.annotation,
+            imageData: f.imageData,
+            timestamp: f.timestamp,
+          })),
+        }),
+      })
+    } catch {}
+  }, [venue])
+
+  // Map center: use current GPS or fallback to a world center (0,0) — map flies to GPS once acquired
+  const mapCenter: Coordinates = navState.currentPosition ?? { lat: 51.505, lng: -0.09 }
+
+  // Show venue selector if no venue chosen and GPS is ready
+  const showVenueSelector = !locating && !venue && overlay !== "venue-select"
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-gray-100">
       <FloorPlanMap
         currentFloor={navState.currentFloor}
         currentPosition={navState.currentPosition}
+        initialCenter={mapCenter}
         heading={heading}
         destination={navState.destination}
         route={navState.route}
         isNavigating={navState.isNavigating}
+        waypoints={waypoints}
+        onMapTap={handleMapTap}
         onMapReady={() => {}}
       />
 
@@ -196,22 +322,33 @@ export default function Home() {
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
 
+      {/* Venue badge */}
+      {venue && (
+        <button
+          onClick={() => setOverlay("venue-select")}
+          className="absolute top-3 left-1/2 -translate-x-1/2 z-50 bg-white/95 rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow-sm max-w-[60vw]"
+        >
+          <Building2 size={12} className="text-[#005EB8] flex-shrink-0" />
+          <span className="text-xs text-gray-700 font-semibold truncate">{venue.name}</span>
+        </button>
+      )}
+
       {/* Location error banner */}
       {locationError && (
         <div className="absolute top-16 left-3 right-3 z-50 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2.5 shadow-sm">
           {locationError === "denied" && (
             <p className="text-xs text-amber-800 font-medium">
-              📍 Location blocked — go to <strong>Settings → Safari → Location</strong> and allow access, then reload.
+              📍 Location blocked — go to <strong>Settings → Safari → Location</strong> and allow, then reload.
             </p>
           )}
           {locationError === "https" && (
             <p className="text-xs text-amber-800 font-medium">
-              🔒 Location requires HTTPS. Open the app via your secure deployment URL.
+              🔒 Location requires HTTPS. Open via your secure deployment URL.
             </p>
           )}
           {locationError === "unavailable" && (
             <p className="text-xs text-amber-800 font-medium">
-              📍 Could not get your location. Showing a default map position.
+              📍 Tap the map to set your position manually.
             </p>
           )}
         </div>
@@ -237,7 +374,7 @@ export default function Home() {
         </span>
       </div>
 
-      {/* Floor change confirmation prompt */}
+      {/* Floor change confirmation */}
       {floorConfirm !== null && (
         <div className="absolute bottom-48 left-4 right-4 z-50 bg-white rounded-2xl shadow-2xl overflow-hidden slide-up">
           <div className="bg-[#003087] px-4 py-3 flex items-center gap-3">
@@ -261,7 +398,7 @@ export default function Home() {
                 onClick={handleFloorConfirmed}
                 className="flex-1 bg-[#005EB8] text-white rounded-xl py-2.5 text-sm font-bold"
               >
-                ✓ I'm on Floor {floorConfirm === 0 ? "G" : floorConfirm}
+                ✓ I&apos;m on Floor {floorConfirm === 0 ? "G" : floorConfirm}
               </button>
             </div>
           </div>
@@ -269,7 +406,7 @@ export default function Home() {
       )}
 
       {/* Survey FAB */}
-      {!navState.isNavigating && (
+      {!navState.isNavigating && venue && (
         <button
           onClick={() => setOverlay("survey")}
           className="absolute left-3 bottom-52 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
@@ -279,7 +416,7 @@ export default function Home() {
         </button>
       )}
 
-      {/* Recenter / compass button — also requests iOS compass permission */}
+      {/* Recenter / compass */}
       <button
         onClick={requestCompass}
         className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
@@ -293,16 +430,27 @@ export default function Home() {
         route={navState.route}
         currentFloor={navState.currentFloor}
         isNavigating={navState.isNavigating}
+        venueName={venue?.name}
         onStopNavigation={handleStopNavigation}
         onOpenCamera={() => setOverlay("live-camera")}
         onScanQR={() => setOverlay("qr")}
-        onOpenSearch={() => setOverlay("search")}
+        onOpenSearch={() => venue ? setOverlay("search") : setOverlay("venue-select")}
+        onSelectVenue={() => setOverlay("venue-select")}
         expanded={bottomSheetExpanded}
         onToggleExpand={() => setBottomSheetExpanded((v) => !v)}
       />
 
-      {overlay === "search" && (
-        <SearchModal onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
+      {/* Venue selector overlay */}
+      {(overlay === "venue-select" || showVenueSelector) && navState.currentPosition && (
+        <VenueSelector
+          userPosition={navState.currentPosition}
+          onSelectVenue={handleVenueSelect}
+          onClose={venue ? () => setOverlay("none") : undefined}
+        />
+      )}
+
+      {overlay === "search" && venue && (
+        <SearchModal waypoints={waypoints} onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
       )}
 
       {(overlay === "qr" || overlay === "live-camera") && (
@@ -314,7 +462,7 @@ export default function Home() {
         />
       )}
 
-      {overlay === "survey" && (
+      {overlay === "survey" && venue && (
         <SurveyModeComponent
           currentFloor={navState.currentFloor}
           onClose={() => setOverlay("none")}
@@ -323,9 +471,10 @@ export default function Home() {
       )}
 
       {locating && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-2xl shadow-xl px-6 py-4 flex items-center gap-3">
-          <div className="w-5 h-5 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm text-gray-700 font-medium">Finding your location…</p>
+        <div className="absolute inset-0 z-[400] bg-white flex flex-col items-center justify-center gap-4">
+          <div className="w-12 h-12 border-3 border-[#005EB8] border-t-transparent rounded-full animate-spin" style={{ borderWidth: 3 }} />
+          <p className="text-base font-semibold text-gray-700">Finding your location…</p>
+          <p className="text-sm text-gray-400">Please allow location access</p>
         </div>
       )}
     </div>
