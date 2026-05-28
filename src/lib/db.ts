@@ -1,15 +1,20 @@
 import { Pool } from "pg"
 
-// Singleton pool — reused across requests in the same container
 const globalForPg = globalThis as unknown as { pool: Pool | undefined }
+
+const connectionString =
+  process.env.DATABASE_PUBLIC_URL ?? process.env.DATABASE_URL
+
+const isRemote =
+  connectionString &&
+  !connectionString.includes("localhost") &&
+  !connectionString.includes("127.0.0.1")
 
 export const pool =
   globalForPg.pool ??
   new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: process.env.DATABASE_URL?.includes("railway.app")
-      ? { rejectUnauthorized: false }
-      : false,
+    connectionString,
+    ssl: isRemote ? { rejectUnauthorized: false } : false,
     max: 10,
     idleTimeoutMillis: 30000,
   })
