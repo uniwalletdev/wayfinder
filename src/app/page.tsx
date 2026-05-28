@@ -3,9 +3,9 @@
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyFrame, Coordinates } from "@/lib/types"
-import { buildRoute } from "@/lib/routing"
+import { buildRoute, bearing, relativeTurn } from "@/lib/routing"
 import { deadReckon, haversineDistance } from "@/lib/positioning"
-import TopInstructionBar from "@/components/TopInstructionBar"
+import TopInstructionBar, { LiveNav } from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
 import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
@@ -13,7 +13,8 @@ import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
 import VenueSelector, { VenueInfo } from "@/components/VenueSelector"
 import AddLocationPanel from "@/components/AddLocationPanel"
-import { Layers, Navigation, ClipboardList, ArrowUpDown, Building2, Plus } from "lucide-react"
+import EditLocationPanel from "@/components/EditLocationPanel"
+import { Layers, Navigation, ClipboardList, ArrowUpDown, Building2, Plus, Share2 } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
@@ -54,6 +55,11 @@ export default function Home() {
   const [isMoving, setIsMoving] = useState(false)
   const [tappedPoint, setTappedPoint] = useState<Coordinates | null>(null)
   const [arrived, setArrived] = useState(false)
+  const [editingWaypoint, setEditingWaypoint] = useState<Waypoint | null>(null)
+  const [toast, setToast] = useState<string | null>(null)
+  const [awaitingSharedVenue, setAwaitingSharedVenue] = useState(
+    typeof window !== "undefined" && new URLSearchParams(window.location.search).has("venue")
+  )
 
   // Dead reckoning refs
   const lastGPSFixRef = useRef<{ pos: Coordinates; time: number } | null>(null)
@@ -168,6 +174,20 @@ export default function Home() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // Shared link: ?venue=ID auto-opens that venue, skipping the selector
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const vid = new URLSearchParams(window.location.search).get("venue")
+    if (!vid) return
+    fetch(`/api/venues/${vid}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((v) => {
+        if (v?.id) setVenue({ ...v, waypoint_count: Number(v.waypoint_count ?? 0) })
+      })
+      .catch(() => {})
+      .finally(() => setAwaitingSharedVenue(false))
+  }, [])
+
   // Load waypoints when venue changes
   useEffect(() => {
     if (!venue) return
@@ -266,6 +286,39 @@ export default function Home() {
     setTappedPoint(null)
   }, [])
 
+  const handleWaypointUpdated = useCallback((w: Waypoint) => {
+    setWaypoints((prev) => prev.map((p) => (p.id === w.id ? w : p)))
+    setEditingWaypoint(null)
+    setToast("Location updated")
+  }, [])
+
+  const handleWaypointDeleted = useCallback((id: string) => {
+    setWaypoints((prev) => prev.filter((p) => p.id !== id))
+    setEditingWaypoint(null)
+    setToast("Location deleted")
+  }, [])
+
+  const handleShare = useCallback(async () => {
+    if (!venue) return
+    const url = `${window.location.origin}/?venue=${venue.id}`
+    const shareData = { title: `${venue.name} — Wayfinder`, text: `Navigate ${venue.name} with Wayfinder`, url }
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData)
+      } else {
+        await navigator.clipboard.writeText(url)
+        setToast("Link copied to clipboard")
+      }
+    } catch {}
+  }, [venue])
+
+  // Auto-dismiss toast
+  useEffect(() => {
+    if (!toast) return
+    const t = setTimeout(() => setToast(null), 2500)
+    return () => clearTimeout(t)
+  }, [toast])
+
   // Arrival detection — within 15m of destination
   useEffect(() => {
     if (!navState.isNavigating || !navState.currentPosition || !navState.destination || arrived) return
@@ -281,6 +334,25 @@ export default function Home() {
   }, [navState.currentPosition, navState.isNavigating, navState.destination, arrived])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
+
+  // Live turn-by-turn: recompute direction + distance from live GPS and compass
+  const liveNav: LiveNav | null = useMemo(() => {
+    if (!navState.isNavigating || !navState.currentPosition || !currentStep || currentStep.floorChange) return null
+    const target = currentStep.waypoint?.coordinates ?? navState.destination?.coordinates
+    const name = currentStep.waypoint?.name ?? navState.destination?.name ?? ""
+    if (!target) return null
+    const dist = haversineDistance(navState.currentPosition, target)
+    const turn = relativeTurn(heading, bearing(navState.currentPosition, target))
+    const arriving = dist < 12
+    return {
+      label: arriving ? `Arriving at ${name}` : turn.label,
+      distance: Math.round(dist),
+      dir: turn.dir,
+      name,
+      arriving,
+    }
+  }, [navState.isNavigating, navState.currentPosition, currentStep, heading, navState.destination])
+
   useEffect(() => {
     if (currentStep?.floorChange && floorConfirm === null) {
       setFloorConfirm(currentStep.floorChange.to)
@@ -327,8 +399,8 @@ export default function Home() {
     return [...set].sort((a, b) => a - b)
   }, [venue, waypoints, navState.currentFloor])
 
-  // Show venue selector if no venue chosen and GPS is ready
-  const showVenueSelector = !locating && !venue && overlay !== "venue-select"
+  // Show venue selector if no venue chosen and GPS is ready (but not while a shared link is loading)
+  const showVenueSelector = !locating && !venue && !awaitingSharedVenue && overlay !== "venue-select"
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-[#e8e0d8]">
@@ -344,15 +416,18 @@ export default function Home() {
           isNavigating={navState.isNavigating}
           waypoints={waypoints}
           onMapTap={handleMapTap}
+          onWaypointClick={!navState.isNavigating && overlay === "none" ? setEditingWaypoint : undefined}
           onMapReady={() => {}}
         />
       )}
 
       <TopInstructionBar
         step={currentStep}
+        live={liveNav}
         stepIndex={navState.currentStepIndex}
         totalSteps={navState.route?.steps.length ?? 0}
         isNavigating={navState.isNavigating}
+        venueName={venue?.name}
       />
 
       <FloorSelector
@@ -361,15 +436,24 @@ export default function Home() {
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
 
-      {/* Venue badge */}
-      {venue && (
-        <button
-          onClick={() => setOverlay("venue-select")}
-          className="absolute top-3 left-1/2 -translate-x-1/2 z-50 bg-white/95 rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow-sm max-w-[60vw]"
-        >
-          <Building2 size={12} className="text-[#005EB8] flex-shrink-0" />
-          <span className="text-xs text-gray-700 font-semibold truncate">{venue.name}</span>
-        </button>
+      {/* Venue badge + share */}
+      {venue && !navState.isNavigating && (
+        <div className="absolute top-3 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 max-w-[80vw]">
+          <button
+            onClick={() => setOverlay("venue-select")}
+            className="bg-white/95 rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow-sm min-w-0"
+          >
+            <Building2 size={12} className="text-[#005EB8] flex-shrink-0" />
+            <span className="text-xs text-gray-700 font-semibold truncate">{venue.name}</span>
+          </button>
+          <button
+            onClick={handleShare}
+            className="bg-white/95 rounded-full w-8 h-8 flex items-center justify-center shadow-sm flex-shrink-0"
+            title="Share this place"
+          >
+            <Share2 size={14} className="text-[#005EB8]" />
+          </button>
+        </div>
       )}
 
       {/* Tap-to-place hint when adding a location */}
@@ -549,6 +633,24 @@ export default function Home() {
           onClose={() => { setTappedPoint(null); setOverlay("none") }}
           onAdded={handleLocationAdded}
         />
+      )}
+
+      {editingWaypoint && venue && (
+        <EditLocationPanel
+          venueId={venue.id}
+          waypoint={editingWaypoint}
+          myPosition={navState.currentPosition}
+          onClose={() => setEditingWaypoint(null)}
+          onUpdated={handleWaypointUpdated}
+          onDeleted={handleWaypointDeleted}
+        />
+      )}
+
+      {/* Toast */}
+      {toast && (
+        <div className="absolute bottom-44 left-1/2 -translate-x-1/2 z-[500] bg-gray-900 text-white text-sm font-medium px-4 py-2.5 rounded-full shadow-lg slide-up whitespace-nowrap">
+          {toast}
+        </div>
       )}
 
       {locating && (

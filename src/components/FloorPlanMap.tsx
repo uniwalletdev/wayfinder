@@ -21,6 +21,7 @@ interface Props {
   isNavigating: boolean
   waypoints: Waypoint[]
   onMapTap?: (coords: Coordinates) => void
+  onWaypointClick?: (w: Waypoint) => void
   onMapReady: () => void
 }
 
@@ -34,8 +35,11 @@ export default function FloorPlanMap({
   isNavigating,
   waypoints,
   onMapTap,
+  onWaypointClick,
   onMapReady,
 }: Props) {
+  const onWaypointClickRef = useRef(onWaypointClick)
+  onWaypointClickRef.current = onWaypointClick
   const mapRef = useRef<maplibregl.Map | null>(null)
   const positionMarkerRef = useRef<maplibregl.Marker | null>(null)
   const destMarkerRef = useRef<maplibregl.Marker | null>(null)
@@ -216,11 +220,13 @@ export default function FloorPlanMap({
       el.innerHTML = `
         <div style="background:${isDestination ? "#DA291C" : "white"};border:2.5px solid ${isDestination ? "#DA291C" : "#005EB8"};border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.2);cursor:pointer;">${WAYPOINT_TYPE_ICONS[w.type] ?? "📍"}</div>`
       el.style.cssText = "width:34px;height:34px;"
+      el.addEventListener("click", (ev) => {
+        ev.stopPropagation()
+        if (onWaypointClickRef.current) onWaypointClickRef.current(w)
+      })
 
       const marker = new maplibregl.Marker({ element: el })
         .setLngLat([w.coordinates.lng, w.coordinates.lat])
-        .setPopup(new maplibregl.Popup({ offset: 20, closeButton: false })
-          .setHTML(`<b style="font-size:13px">${w.name}</b>${w.description ? `<br><span style="font-size:11px;color:#666">${w.description}</span>` : ""}`))
         .addTo(mapRef.current)
 
       waypointMarkersRef.current.push(marker)

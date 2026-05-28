@@ -40,6 +40,34 @@ export async function POST(
   }
 }
 
+export async function PATCH(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params
+    const { waypointId, name, type, floor, lat, lng, description } = await req.json()
+    if (!waypointId) return NextResponse.json({ error: "waypointId required" }, { status: 400 })
+
+    const updated = await queryOne(
+      `UPDATE waypoints SET
+         name        = COALESCE($1, name),
+         type        = COALESCE($2, type),
+         floor       = COALESCE($3, floor),
+         lat         = COALESCE($4, lat),
+         lng         = COALESCE($5, lng),
+         description = COALESCE($6, description)
+       WHERE id = $7 AND venue_id = $8
+       RETURNING *`,
+      [name ?? null, type ?? null, floor ?? null, lat ?? null, lng ?? null, description ?? null, waypointId, id]
+    )
+    if (!updated) return NextResponse.json({ error: "not found" }, { status: 404 })
+    return NextResponse.json(updated)
+  } catch (error) {
+    return NextResponse.json({ error: String(error) }, { status: 500 })
+  }
+}
+
 export async function DELETE(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }

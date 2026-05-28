@@ -10,13 +10,28 @@ function distanceMeters(a: Coordinates, b: Coordinates): number {
   return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x))
 }
 
-function bearing(a: Coordinates, b: Coordinates): number {
+export function bearing(a: Coordinates, b: Coordinates): number {
   const dLng = ((b.lng - a.lng) * Math.PI) / 180
   const lat1 = (a.lat * Math.PI) / 180
   const lat2 = (b.lat * Math.PI) / 180
   const y = Math.sin(dLng) * Math.cos(lat2)
   const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng)
   return ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360
+}
+
+export type TurnDir =
+  | "straight" | "slight-left" | "left" | "sharp-left"
+  | "slight-right" | "right" | "sharp-right" | "around"
+
+// Turn direction relative to the way you're currently facing (compass heading)
+export function relativeTurn(currentHeading: number, targetBearing: number): { dir: TurnDir; label: string } {
+  const diff = ((targetBearing - currentHeading + 540) % 360) - 180 // -180..180, +ve = right
+  const a = Math.abs(diff)
+  if (a < 20) return { dir: "straight", label: "Continue straight" }
+  if (a < 55) return diff > 0 ? { dir: "slight-right", label: "Bear right" } : { dir: "slight-left", label: "Bear left" }
+  if (a < 125) return diff > 0 ? { dir: "right", label: "Turn right" } : { dir: "left", label: "Turn left" }
+  if (a < 160) return diff > 0 ? { dir: "sharp-right", label: "Sharp right" } : { dir: "sharp-left", label: "Sharp left" }
+  return { dir: "around", label: "Turn around" }
 }
 
 function headingToInstruction(deg: number): string {
