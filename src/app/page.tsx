@@ -430,7 +430,6 @@ export default function Home() {
             coordinates: f.coordinates,
             heading: f.heading,
             annotation: f.annotation,
-            imageData: f.imageData,
             timestamp: f.timestamp,
           })),
         }),

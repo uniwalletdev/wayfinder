@@ -52,10 +52,12 @@ CREATE TABLE IF NOT EXISTS survey_frames (
   lng         DOUBLE PRECISION,
   heading     DOUBLE PRECISION,
   annotation  TEXT,
-  image_data  TEXT,
   captured_at TIMESTAMPTZ NOT NULL,
   created_at  TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- Privacy: never store camera imagery. Purge any previously captured frames.
+ALTER TABLE survey_frames DROP COLUMN IF EXISTS image_data;
 
 CREATE TABLE IF NOT EXISTS gps_traces (
   id          SERIAL PRIMARY KEY,

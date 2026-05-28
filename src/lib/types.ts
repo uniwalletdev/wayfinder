@@ -50,7 +50,6 @@ export interface RouteStep {
 
 export interface SurveyFrame {
   timestamp: number
-  imageData: string
   coordinates: Coordinates
   heading: number
   floor: number

@@ -28,7 +28,6 @@ const ANNOTATION_TYPES: WaypointType[] = ["ward", "department", "lift", "stairs"
 
 export default function SurveyMode({ currentFloor, currentPosition, heading, onClose, onSurveyComplete }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
   const streamRef = useRef<MediaStream | null>(null)
   const captureInterval = useRef<NodeJS.Timeout | null>(null)
   const frames = useRef<SurveyFrame[]>([])
@@ -87,21 +86,11 @@ export default function SurveyMode({ currentFloor, currentPosition, heading, onC
     onSurveyComplete(frames.current)
   }
 
+  // We record position + heading + named locations only — never the camera image.
+  // The camera stays on for the walking UX, but no pixels leave the device.
   function captureFrame(annotation?: string) {
-    if (!videoRef.current || !canvasRef.current) return
-    const video = videoRef.current
-    const canvas = canvasRef.current
-    const ctx = canvas.getContext("2d")
-    if (!ctx || video.readyState < 2) return
-
-    canvas.width = 640
-    canvas.height = 360
-    ctx.drawImage(video, 0, 0, 640, 360)
-    const imageData = canvas.toDataURL("image/jpeg", 0.5)
-
     const frame: SurveyFrame = {
       timestamp: Date.now(),
-      imageData,
       coordinates: currentPosition ?? { lat: 0, lng: 0 },
       heading,
       floor: currentFloor,
@@ -139,7 +128,6 @@ export default function SurveyMode({ currentFloor, currentPosition, heading, onC
   return (
     <div className="fixed inset-0 z-[300] bg-black">
       <video ref={videoRef} playsInline muted className="w-full h-full object-cover" />
-      <canvas ref={canvasRef} className="hidden" />
 
       {/* Top bar */}
       <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/80 to-transparent p-4">
@@ -174,7 +162,7 @@ export default function SurveyMode({ currentFloor, currentPosition, heading, onC
           {!recording ? (
             <div className="text-center mb-4">
               <p className="text-white text-sm mb-1">Walk your route and the app will record it</p>
-              <p className="text-gray-400 text-xs">Captures a frame every 3 seconds automatically</p>
+              <p className="text-gray-400 text-xs">Records your path only — no video is saved or uploaded</p>
             </div>
           ) : (
             <div className="text-center mb-4">
@@ -206,7 +194,7 @@ export default function SurveyMode({ currentFloor, currentPosition, heading, onC
                   className="flex-1 bg-white text-gray-900 rounded-2xl py-3.5 font-semibold text-sm flex items-center justify-center gap-2"
                 >
                   <Square size={18} />
-                  Stop & Upload
+                  Stop & Save
                 </button>
               </>
             )}

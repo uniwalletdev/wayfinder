@@ -16,8 +16,8 @@ export async function POST(req: NextRequest) {
       frames.map((f) =>
         queryOne(
           `INSERT INTO survey_frames
-             (venue_id, floor, lat, lng, heading, annotation, image_data, captured_at)
-           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+             (venue_id, floor, lat, lng, heading, annotation, captured_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7)
            RETURNING id`,
           [
             venue_id,
@@ -26,7 +26,6 @@ export async function POST(req: NextRequest) {
             f.coordinates?.lng ?? null,
             f.heading ?? null,
             f.annotation ?? null,
-            f.imageData ?? null,
             new Date(f.timestamp),
           ]
         )
