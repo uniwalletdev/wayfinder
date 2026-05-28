@@ -486,22 +486,15 @@ export default function Home() {
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
 
-      {/* Venue badge + share */}
+      {/* Venue badge */}
       {venue && !navState.isNavigating && (
-        <div className="absolute top-3 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 max-w-[80vw]">
+        <div className="absolute top-3 left-1/2 -translate-x-1/2 z-50 max-w-[80vw]">
           <button
             onClick={() => setOverlay("venue-select")}
-            className="bg-white/95 rounded-full px-3 py-1.5 flex items-center gap-1.5 shadow-sm min-w-0"
+            className="bg-white rounded-full pl-3 pr-4 py-2 flex items-center gap-2 shadow-lg min-w-0 active:scale-95 transition-transform"
           >
-            <Building2 size={12} className="text-[#005EB8] flex-shrink-0" />
-            <span className="text-xs text-gray-700 font-semibold truncate">{venue.name}</span>
-          </button>
-          <button
-            onClick={handleShare}
-            className="bg-white/95 rounded-full w-8 h-8 flex items-center justify-center shadow-sm flex-shrink-0"
-            title="Share this place"
-          >
-            <Share2 size={14} className="text-[#005EB8]" />
+            <Building2 size={14} className="text-[#005EB8] flex-shrink-0" />
+            <span className="text-sm text-gray-800 font-bold truncate">{venue.name}</span>
           </button>
         </div>
       )}
@@ -594,37 +587,50 @@ export default function Home() {
         </div>
       )}
 
-      {/* Add Location FAB */}
-      {!navState.isNavigating && venue && overlay === "none" && (
-        <button
-          onClick={() => { setTappedPoint(null); setOverlay("add-location") }}
-          className="absolute left-3 bottom-[17rem] z-50 px-4 h-12 bg-[#005EB8] rounded-full shadow-lg flex items-center justify-center gap-1.5 text-white font-semibold text-sm"
-          title="Add a location"
-        >
-          <Plus size={18} />
-          Add location
-        </button>
-      )}
+      {/* ── Floating controls (Google-Maps style, right side) ── */}
+      <div className="absolute right-3 bottom-[12.5rem] z-50 flex flex-col items-end gap-3">
+        {/* Share */}
+        {venue && !navState.isNavigating && (
+          <button
+            onClick={handleShare}
+            className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+            title="Share this place"
+          >
+            <Share2 size={20} className="text-gray-700" />
+          </button>
+        )}
 
-      {/* Survey FAB */}
-      {!navState.isNavigating && venue && (
-        <button
-          onClick={() => setOverlay("survey")}
-          className="absolute left-3 bottom-52 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-          title="Survey Mode"
-        >
-          <ClipboardList size={20} className="text-[#005EB8]" />
-        </button>
-      )}
+        {/* Survey */}
+        {!navState.isNavigating && venue && (
+          <button
+            onClick={() => setOverlay("survey")}
+            className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+            title="Survey Mode"
+          >
+            <ClipboardList size={20} className="text-gray-700" />
+          </button>
+        )}
 
-      {/* Recenter / compass */}
-      <button
-        onClick={requestCompass}
-        className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-        title="Re-centre and enable compass"
-      >
-        <Navigation size={20} className="text-[#005EB8]" />
-      </button>
+        {/* Recenter / compass */}
+        <button
+          onClick={requestCompass}
+          className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+          title="Re-centre and enable compass"
+        >
+          <Navigation size={20} className="text-[#005EB8]" />
+        </button>
+
+        {/* Primary: Add location — teal rounded-square FAB */}
+        {!navState.isNavigating && venue && overlay === "none" && (
+          <button
+            onClick={() => { setTappedPoint(null); setOverlay("add-location") }}
+            className="w-14 h-14 bg-[#009688] rounded-2xl shadow-xl shadow-teal-300/50 flex items-center justify-center active:scale-95 transition-transform"
+            title="Add a location"
+          >
+            <Plus size={26} className="text-white" />
+          </button>
+        )}
+      </div>
 
       <BottomSheet
         destination={navState.destination}
