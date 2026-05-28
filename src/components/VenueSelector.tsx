@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Coordinates } from "@/lib/types"
-import { MapPin, Plus, Building2, ChevronRight, Loader2, X, Minus } from "lucide-react"
+import { MapPin, Plus, Building2, ChevronRight, Loader2, X, Minus, Lock, Globe } from "lucide-react"
 
 export interface VenueInfo {
   id: number
@@ -13,6 +13,7 @@ export interface VenueInfo {
   center_lng?: number
   floors?: number
   venue_type?: string
+  is_private?: boolean
   waypoint_count: number
   distance_m?: number
 }
@@ -43,6 +44,7 @@ export default function VenueSelector({ userPosition, onSelectVenue, onClose }: 
   const [newName, setNewName] = useState("")
   const [newType, setNewType] = useState("home")
   const [newFloors, setNewFloors] = useState(1)
+  const [newPrivate, setNewPrivate] = useState(true)
   const [createError, setCreateError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -68,6 +70,7 @@ export default function VenueSelector({ userPosition, onSelectVenue, onClose }: 
           name,
           venue_type: newType,
           floors: newFloors,
+          is_private: newPrivate,
           lat: userPosition.lat,
           lng: userPosition.lng,
         }),
@@ -139,7 +142,7 @@ export default function VenueSelector({ userPosition, onSelectVenue, onClose }: 
               {VENUE_TYPES.map((t) => (
                 <button
                   key={t.key}
-                  onClick={() => setNewType(t.key)}
+                  onClick={() => { setNewType(t.key); setNewPrivate(t.key === "home") }}
                   className={`flex flex-col items-center gap-1 py-3 rounded-xl border text-xs font-medium transition-all ${
                     newType === t.key
                       ? "bg-blue-50 border-[#005EB8] text-[#005EB8]"
@@ -173,8 +176,47 @@ export default function VenueSelector({ userPosition, onSelectVenue, onClose }: 
                 <Plus size={20} />
               </button>
             </div>
-            <p className="text-xs text-gray-400 mb-4">
+            <p className="text-xs text-gray-400 mb-6">
               Ground floor + {newFloors - 1} above. You can add locations on each floor afterwards.
+            </p>
+
+            <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              Who can find this place?
+            </label>
+            <div className="grid grid-cols-2 gap-2 mb-4">
+              <button
+                onClick={() => setNewPrivate(false)}
+                className={`flex items-center gap-2 px-3 py-3 rounded-xl border text-left transition-all ${
+                  !newPrivate
+                    ? "bg-blue-50 border-[#005EB8] text-[#005EB8]"
+                    : "bg-white border-gray-200 text-gray-600"
+                }`}
+              >
+                <Globe size={18} className="flex-shrink-0" />
+                <span>
+                  <span className="block text-sm font-semibold">Public</span>
+                  <span className="block text-[11px] text-gray-400 leading-tight">Shows in nearby search</span>
+                </span>
+              </button>
+              <button
+                onClick={() => setNewPrivate(true)}
+                className={`flex items-center gap-2 px-3 py-3 rounded-xl border text-left transition-all ${
+                  newPrivate
+                    ? "bg-blue-50 border-[#005EB8] text-[#005EB8]"
+                    : "bg-white border-gray-200 text-gray-600"
+                }`}
+              >
+                <Lock size={18} className="flex-shrink-0" />
+                <span>
+                  <span className="block text-sm font-semibold">Private</span>
+                  <span className="block text-[11px] text-gray-400 leading-tight">Only via your share link</span>
+                </span>
+              </button>
+            </div>
+            <p className="text-xs text-gray-400 mb-4">
+              {newPrivate
+                ? "Hidden from everyone. Only people you send the link to can open it."
+                : "Anyone nearby can discover and navigate this place."}
             </p>
           </div>
 

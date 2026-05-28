@@ -31,6 +31,7 @@ export async function GET(req: NextRequest) {
       FROM venues v
       LEFT JOIN waypoints w  ON w.venue_id  = v.id
       LEFT JOIN floor_plans fp ON fp.venue_id = v.id
+      WHERE COALESCE(v.is_private, FALSE) = FALSE
       GROUP BY v.id
       HAVING
         COALESCE(v.lat, AVG(w.lat)) IS NOT NULL
