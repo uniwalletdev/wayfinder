@@ -1,4 +1,4 @@
-import { Waypoint, Route, RouteStep, Coordinates } from "./types"
+import { MapLocation, Route, RouteStep, Coordinates } from "./types"
 
 function distanceMeters(a: Coordinates, b: Coordinates): number {
   const R = 6371000
@@ -30,78 +30,51 @@ function headingToInstruction(deg: number): string {
   return "Head north-west"
 }
 
-export function buildRoute(
-  from: Coordinates,
-  fromFloor: number,
-  destination: Waypoint,
-  allWaypoints: Waypoint[]
-): Route {
+/** Where, inside the destination building, the location sits. */
+function arrivalDetail(dest: MapLocation): string {
+  const bits: string[] = []
+  if (dest.building && dest.building !== "Site entrance") bits.push(dest.building)
+  if (dest.floorLabel) bits.push(dest.floorLabel)
+  if (dest.sideLabel) bits.push(dest.sideLabel)
+  return bits.join(" · ")
+}
+
+/**
+ * Builds a simple campus route from the user's position to a destination's
+ * building. Room-level coordinates aren't in the source data, so navigation is
+ * to the correct building, then the arrival step states the floor / side.
+ */
+export function buildRoute(from: Coordinates, destination: MapLocation): Route {
   const steps: RouteStep[] = []
-  let totalDistance = 0
+  const d = distanceMeters(from, destination.coordinates)
+  const heading = bearing(from, destination.coordinates)
 
-  if (fromFloor !== destination.floor) {
-    // Find nearest lift on current floor
-    const liftsOnFloor = allWaypoints.filter(
-      (w) => w.type === "lift" && w.floor === fromFloor
-    )
-    const nearestLift = liftsOnFloor.sort(
-      (a, b) => distanceMeters(from, a.coordinates) - distanceMeters(from, b.coordinates)
-    )[0]
-
-    if (nearestLift) {
-      const d1 = distanceMeters(from, nearestLift.coordinates)
-      totalDistance += d1
-      steps.push({
-        instruction: `Head to ${nearestLift.name}`,
-        distance: Math.round(d1),
-        heading: bearing(from, nearestLift.coordinates),
-        waypoint: nearestLift,
-      })
-      steps.push({
-        instruction: `Take lift to Floor ${destination.floor}`,
-        distance: 0,
-        heading: 0,
-        floorChange: { from: fromFloor, to: destination.floor, via: "lift" },
-      })
-
-      const liftOnDestFloor = allWaypoints.find(
-        (w) => w.type === "lift" && w.floor === destination.floor && w.name.includes("Lift A")
-      ) || allWaypoints.find((w) => w.type === "lift" && w.floor === destination.floor)
-
-      if (liftOnDestFloor) {
-        const d2 = distanceMeters(liftOnDestFloor.coordinates, destination.coordinates)
-        totalDistance += d2
-        steps.push({
-          instruction: `Exit lift and head to ${destination.name}`,
-          distance: Math.round(d2),
-          heading: bearing(liftOnDestFloor.coordinates, destination.coordinates),
-          waypoint: destination,
-        })
-      }
-    }
-  } else {
-    const d = distanceMeters(from, destination.coordinates)
-    totalDistance += d
+  if (d > 8) {
+    const where =
+      destination.building && destination.building !== "Site entrance"
+        ? destination.building
+        : destination.name
     steps.push({
-      instruction: `${headingToInstruction(bearing(from, destination.coordinates))} toward ${destination.name}`,
+      instruction: `${headingToInstruction(heading)} toward ${where}`,
       distance: Math.round(d),
-      heading: bearing(from, destination.coordinates),
+      heading,
     })
   }
 
+  const detail = arrivalDetail(destination)
   steps.push({
-    instruction: `You have arrived at ${destination.name}`,
+    instruction: detail
+      ? `${destination.name} — ${detail}`
+      : `You have arrived at ${destination.name}`,
     distance: 0,
     heading: 0,
     waypoint: destination,
   })
 
-  const floorChanges = steps.filter((s) => s.floorChange).length
-
   return {
     steps,
-    totalDistance: Math.round(totalDistance),
-    estimatedMinutes: Math.max(1, Math.round(totalDistance / 80)),
-    floorChanges,
+    totalDistance: Math.round(d),
+    estimatedMinutes: Math.max(1, Math.round(d / 75)),
+    destination,
   }
 }

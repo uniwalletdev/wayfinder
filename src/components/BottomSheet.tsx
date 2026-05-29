@@ -1,13 +1,12 @@
 "use client"
 
-import { Waypoint, Route } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
-import { Clock, MapPin, Layers, Camera, QrCode, X, ChevronUp } from "lucide-react"
+import { MapLocation, Route } from "@/lib/types"
+import { WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
+import { Clock, MapPin, Building2, Camera, QrCode, X } from "lucide-react"
 
 interface Props {
-  destination: Waypoint | null
+  destination: MapLocation | null
   route: Route | null
-  currentFloor: number
   isNavigating: boolean
   onStopNavigation: () => void
   onOpenCamera: () => void
@@ -20,7 +19,6 @@ interface Props {
 export default function BottomSheet({
   destination,
   route,
-  currentFloor,
   isNavigating,
   onStopNavigation,
   onOpenCamera,
@@ -32,10 +30,9 @@ export default function BottomSheet({
   return (
     <div
       className={`absolute bottom-0 left-0 right-0 z-50 bg-white rounded-t-2xl shadow-2xl transition-all duration-300 ${
-        expanded ? "max-h-72" : "max-h-44"
+        expanded ? "max-h-80" : "max-h-44"
       }`}
     >
-      {/* Handle */}
       <div className="flex justify-center pt-2 pb-1 cursor-pointer" onClick={onToggleExpand}>
         <div className="w-10 h-1 bg-gray-300 rounded-full" />
       </div>
@@ -44,19 +41,13 @@ export default function BottomSheet({
         <NavigatingSheet
           destination={destination}
           route={route}
-          currentFloor={currentFloor}
           onStop={onStopNavigation}
           onOpenCamera={onOpenCamera}
           onScanQR={onScanQR}
           expanded={expanded}
         />
       ) : (
-        <IdleSheet
-          onOpenSearch={onOpenSearch}
-          onOpenCamera={onOpenCamera}
-          onScanQR={onScanQR}
-          currentFloor={currentFloor}
-        />
+        <IdleSheet onOpenSearch={onOpenSearch} onOpenCamera={onOpenCamera} onScanQR={onScanQR} />
       )}
     </div>
   )
@@ -65,63 +56,60 @@ export default function BottomSheet({
 function NavigatingSheet({
   destination,
   route,
-  currentFloor,
   onStop,
   onOpenCamera,
   onScanQR,
   expanded,
 }: {
-  destination: Waypoint
+  destination: MapLocation
   route: Route
-  currentFloor: number
   onStop: () => void
   onOpenCamera: () => void
   onScanQR: () => void
   expanded: boolean
 }) {
-  const icon = WAYPOINT_TYPE_ICONS[destination.type]
+  const where = [destination.building, destination.floorLabel, destination.sideLabel]
+    .filter(Boolean)
+    .join(" · ")
 
   return (
     <div className="px-4 pb-safe-bar">
       <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl">{icon}</span>
-          <div>
-            <p className="font-bold text-gray-900 text-base leading-tight">{destination.name}</p>
-            {destination.description && (
-              <p className="text-xs text-gray-500">{destination.description}</p>
-            )}
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="text-2xl flex-shrink-0">{destination.icon}</span>
+          <div className="min-w-0">
+            <p className="font-bold text-gray-900 text-base leading-tight truncate">{destination.name}</p>
+            <p className="text-xs text-gray-500 truncate">{where || WAYPOINT_TYPE_LABELS[destination.type]}</p>
           </div>
         </div>
-        <button
-          onClick={onStop}
-          className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center"
-        >
+        <button onClick={onStop} className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
           <X size={16} className="text-red-600" />
         </button>
       </div>
 
-      <div className="flex gap-4 mb-3">
-        <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-3 py-1.5">
-          <Clock size={14} className="text-[#005EB8]" />
-          <span className="text-sm font-semibold text-[#005EB8]">{route.estimatedMinutes} min</span>
-        </div>
-        <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-3 py-1.5">
-          <MapPin size={14} className="text-[#005EB8]" />
-          <span className="text-sm font-semibold text-[#005EB8]">
-            {route.totalDistance < 1000 ? `${route.totalDistance}m` : `${(route.totalDistance / 1000).toFixed(1)}km`}
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-3 py-1.5">
-          <Layers size={14} className="text-[#005EB8]" />
-          <span className="text-sm font-semibold text-[#005EB8]">Floor {destination.floor}</span>
-        </div>
+      <div className="flex gap-3 mb-3">
+        <Stat icon={<Clock size={14} className="text-[#005EB8]" />} text={`${route.estimatedMinutes} min`} />
+        <Stat
+          icon={<MapPin size={14} className="text-[#005EB8]" />}
+          text={route.totalDistance < 1000 ? `${route.totalDistance}m` : `${(route.totalDistance / 1000).toFixed(1)}km`}
+        />
+        {destination.building && destination.building !== "Site entrance" && (
+          <Stat icon={<Building2 size={14} className="text-[#005EB8]" />} text={destination.floorLabel || "—"} />
+        )}
       </div>
 
-      {expanded && route.floorChanges > 0 && (
-        <p className="text-xs text-gray-500 mb-3">
-          {route.floorChanges} floor change{route.floorChanges > 1 ? "s" : ""} via lift
-        </p>
+      {expanded && (
+        <div className="mb-3 text-xs text-gray-600 bg-gray-50 rounded-lg p-2.5 leading-relaxed">
+          {route.steps.map((s, i) => (
+            <p key={i} className={i < route.steps.length - 1 ? "mb-1" : ""}>
+              <span className="font-semibold text-[#005EB8]">{i + 1}.</span> {s.instruction}
+              {s.distance > 0 ? ` (${s.distance}m)` : ""}
+            </p>
+          ))}
+          {destination.access === "staff" && (
+            <p className="mt-2 text-amber-700">⚠️ Staff-access area — ask at reception for directions.</p>
+          )}
+        </div>
       )}
 
       <div className="flex gap-2">
@@ -144,16 +132,23 @@ function NavigatingSheet({
   )
 }
 
+function Stat({ icon, text }: { icon: React.ReactNode; text: string }) {
+  return (
+    <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-3 py-1.5">
+      {icon}
+      <span className="text-sm font-semibold text-[#005EB8]">{text}</span>
+    </div>
+  )
+}
+
 function IdleSheet({
   onOpenSearch,
   onOpenCamera,
   onScanQR,
-  currentFloor,
 }: {
   onOpenSearch: () => void
   onOpenCamera: () => void
   onScanQR: () => void
-  currentFloor: number
 }) {
   return (
     <div className="px-4 pb-safe-bar">
@@ -165,7 +160,7 @@ function IdleSheet({
         <span className="text-gray-500 text-sm">Where do you want to go?</span>
       </button>
 
-      <div className="flex gap-2 mb-2">
+      <div className="flex gap-2">
         <button
           onClick={onScanQR}
           className="flex-1 flex items-center justify-center gap-2 bg-[#005EB8] text-white rounded-xl py-2.5 text-sm font-semibold"
@@ -180,15 +175,6 @@ function IdleSheet({
           <Camera size={16} />
           Live camera
         </button>
-      </div>
-
-      <div className="flex items-center justify-center gap-1.5">
-        <Layers size={12} className="text-gray-400" />
-        <p className="text-xs text-gray-400">
-          You are on: <span className="font-semibold text-gray-600">
-            {currentFloor === 0 ? "Ground Floor" : `Floor ${currentFloor}`}
-          </span>
-        </p>
       </div>
     </div>
   )

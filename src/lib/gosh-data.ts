@@ -1,72 +1,72 @@
-import { Waypoint, FloorPlan } from "./types"
+import { Building, LocationType, MapLocation } from "./types"
+import { getSite } from "./sites"
 
-// GOSH approximate center coordinates
-export const GOSH_CENTER = { lat: 51.5225, lng: -0.1199 }
+// Active site (GOSH by default). Swap the id here — or add a picker — to support
+// additional sites; everything below is derived generically from the dataset.
+const active = getSite()
 
-export const GOSH_WAYPOINTS: Waypoint[] = [
-  // Ground Floor — coordinates derived from SVG room centres mapped to floor plan bounds
-  { id: "ae-entrance",  name: "A&E Entrance",      type: "exit",      coordinates: { lat: 51.522829, lng: -0.120551 }, floor: 0, description: "Emergency department entrance" },
-  { id: "stairs-1-gf", name: "Staircase 1",        type: "stairs",    coordinates: { lat: 51.522829, lng: -0.120143 }, floor: 0 },
-  { id: "pharmacy-gf", name: "Pharmacy",           type: "pharmacy",  coordinates: { lat: 51.522829, lng: -0.119622 }, floor: 0, description: "Main pharmacy" },
-  { id: "lift-b-gf",   name: "Lift B",             type: "lift",      coordinates: { lat: 51.522829, lng: -0.119236 }, floor: 0 },
-  { id: "lift-a-gf",   name: "Lift A",             type: "lift",      coordinates: { lat: 51.522374, lng: -0.119878 }, floor: 0 },
-  { id: "canteen-gf",  name: "Restaurant & Café",  type: "canteen",   coordinates: { lat: 51.522159, lng: -0.120551 }, floor: 0, description: "Patient and visitor restaurant" },
-  { id: "toilet-gf",   name: "Toilets",            type: "toilet",    coordinates: { lat: 51.522159, lng: -0.120143 }, floor: 0 },
-  { id: "reception",   name: "Main Reception",     type: "reception", coordinates: { lat: 51.522159, lng: -0.119622 }, floor: 0, description: "Main reception desk" },
-  { id: "main-entrance", name: "Main Entrance",    type: "reception", coordinates: { lat: 51.522159, lng: -0.119236 }, floor: 0, description: "Great Ormond Street main entrance" },
+export const ACTIVE_SITE = active.site
+export const GOSH_CENTER = active.site.center
+export const SITE_MAP = active.site.map
 
-  // Floor 1
-  { id: "ward-1a",       name: "Ward 1A",             type: "ward",       coordinates: { lat: 51.522829, lng: -0.120346 }, floor: 1, description: "Haematology ward" },
-  { id: "ward-1b",       name: "Ward 1B",             type: "ward",       coordinates: { lat: 51.522829, lng: -0.119431 }, floor: 1, description: "Oncology ward" },
-  { id: "lift-a-f1",     name: "Lift A — Floor 1",    type: "lift",       coordinates: { lat: 51.522374, lng: -0.119878 }, floor: 1 },
-  { id: "outpatients-1", name: "Outpatients Clinic 1",type: "department", coordinates: { lat: 51.522159, lng: -0.120346 }, floor: 1 },
-  { id: "toilet-f1",     name: "Toilets — Floor 1",   type: "toilet",     coordinates: { lat: 51.522159, lng: -0.119431 }, floor: 1 },
+export const GOSH_BUILDINGS: Building[] = active.buildings
+export const GOSH_LOCATIONS: MapLocation[] = active.locations
+// Legacy name kept so existing imports keep resolving.
+export const GOSH_WAYPOINTS: MapLocation[] = active.locations
 
-  // Floor 2
-  { id: "ward-2a",   name: "Ward 2A",          type: "ward",       coordinates: { lat: 51.522829, lng: -0.120346 }, floor: 2, description: "Cardiology ward" },
-  { id: "ward-2b",   name: "Ward 2B",          type: "ward",       coordinates: { lat: 51.522829, lng: -0.119431 }, floor: 2, description: "Neurology ward" },
-  { id: "lift-a-f2", name: "Lift A — Floor 2", type: "lift",       coordinates: { lat: 51.522374, lng: -0.119878 }, floor: 2 },
-  { id: "xray",      name: "X-Ray & Imaging",  type: "department", coordinates: { lat: 51.522159, lng: -0.120346 }, floor: 2, description: "Radiology department" },
-  { id: "toilet-f2", name: "Toilets — Floor 2",type: "toilet",     coordinates: { lat: 51.522159, lng: -0.119431 }, floor: 2 },
+const buildingById = new Map(active.buildings.map((b) => [b.id, b]))
+export function getBuilding(id: string): Building | undefined {
+  return buildingById.get(id)
+}
 
-  // Floor 3
-  { id: "ward-3a",   name: "Ward 3A",           type: "ward",       coordinates: { lat: 51.522829, lng: -0.120551 }, floor: 3, description: "Surgical ward" },
-  { id: "ward-3b",   name: "Ward 3B",           type: "ward",       coordinates: { lat: 51.522829, lng: -0.120143 }, floor: 3, description: "Critical care" },
-  { id: "ward-5b",   name: "Ward 5B",           type: "ward",       coordinates: { lat: 51.522829, lng: -0.119431 }, floor: 3, description: "General paediatrics" },
-  { id: "lift-a-f3", name: "Lift A — Floor 3",  type: "lift",       coordinates: { lat: 51.522374, lng: -0.119878 }, floor: 3 },
-  { id: "theatre",   name: "Operating Theatres",type: "department", coordinates: { lat: 51.522159, lng: -0.120346 }, floor: 3, description: "Surgical theatres" },
-  { id: "toilet-f3", name: "Toilets — Floor 3", type: "toilet",     coordinates: { lat: 51.522159, lng: -0.119431 }, floor: 3 },
-]
+/** Locations grouped by building id (directory order preserved). */
+export function locationsByBuilding(): Map<string, MapLocation[]> {
+  const m = new Map<string, MapLocation[]>()
+  for (const l of active.locations) {
+    const arr = m.get(l.buildingId) ?? []
+    arr.push(l)
+    m.set(l.buildingId, arr)
+  }
+  return m
+}
 
-export const FLOOR_PLANS: FloorPlan[] = [
-  { id: "gf", floor: 0, label: "Ground", imageUrl: "/floorplans/ground.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-  { id: "f1", floor: 1, label: "Floor 1", imageUrl: "/floorplans/floor1.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-  { id: "f2", floor: 2, label: "Floor 2", imageUrl: "/floorplans/floor2.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-  { id: "f3", floor: 3, label: "Floor 3", imageUrl: "/floorplans/floor3.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-]
-
-export const WAYPOINT_TYPE_ICONS: Record<string, string> = {
-  ward: "🏥",
-  department: "🏢",
-  lift: "🛗",
-  stairs: "🪜",
-  toilet: "🚻",
-  exit: "🚪",
-  reception: "💁",
-  canteen: "🍽️",
-  pharmacy: "💊",
+export const WAYPOINT_TYPE_ICONS: Record<LocationType, string> = {
+  ward: "🛏️",
+  clinical: "🩺",
+  "clinical-support": "🔬",
+  "non-clinical-support": "🛎️",
+  office: "🏢",
+  storage: "📦",
+  residential: "🏨",
+  "teaching-research": "📚",
+  changing: "🚿",
+  theatres: "🔪",
+  workshop: "🛠️",
+  entrance: "🚪",
   other: "📍",
 }
 
-export const WAYPOINT_TYPE_LABELS: Record<string, string> = {
+export const WAYPOINT_TYPE_LABELS: Record<LocationType, string> = {
   ward: "Ward",
-  department: "Department",
-  lift: "Lift",
-  stairs: "Stairs",
-  toilet: "Toilets",
-  exit: "Exit / Entrance",
-  reception: "Reception",
-  canteen: "Café / Restaurant",
-  pharmacy: "Pharmacy",
+  clinical: "Clinical",
+  "clinical-support": "Clinical support",
+  "non-clinical-support": "Support services",
+  office: "Office",
+  storage: "Storage",
+  residential: "Residential",
+  "teaching-research": "Teaching & research",
+  changing: "Changing facilities",
+  theatres: "Theatres",
+  workshop: "Workshop",
+  entrance: "Entrance",
   other: "Other",
 }
+
+/** Categories surfaced as filter chips in search (rest grouped under "More"). */
+export const PRIMARY_CATEGORIES: LocationType[] = [
+  "ward",
+  "clinical",
+  "clinical-support",
+  "entrance",
+  "office",
+]
