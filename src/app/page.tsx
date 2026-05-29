@@ -1,33 +1,41 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { useState, useEffect, useCallback, useRef } from "react"
-import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
-import { GOSH_CENTER } from "@/lib/gosh-data"
-import { buildRoute } from "@/lib/routing"
-import { GOSH_WAYPOINTS } from "@/lib/gosh-data"
-import TopInstructionBar from "@/components/TopInstructionBar"
+import { useState, useEffect, useCallback, useRef, useMemo } from "react"
+import { Waypoint, NavigationState, SurveyFrame, Coordinates } from "@/lib/types"
+import { buildRoute, bearing, relativeTurn } from "@/lib/routing"
+import { deadReckon, haversineDistance } from "@/lib/positioning"
+import TopInstructionBar, { LiveNav } from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
 import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import VenueSelector, { VenueInfo } from "@/components/VenueSelector"
+import AddLocationPanel from "@/components/AddLocationPanel"
+import EditLocationPanel from "@/components/EditLocationPanel"
+import DebugPanel from "@/components/DebugPanel"
+import { logInfo, logWarn, logError } from "@/lib/debug"
+import { Layers, Navigation, ClipboardList, ArrowUpDown, Building2, Plus, Share2 } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
-type GpsStatus = "requesting" | "active" | "denied"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey" | "venue-select" | "add-location"
 
-// Minimal interface — avoids importing Leaflet types on the server
-interface MapHandle {
-  flyTo: (latlng: [number, number], zoom: number) => void
+// DB waypoint row → Waypoint type
+function rowToWaypoint(r: Record<string, unknown>): Waypoint {
+  return {
+    id: String(r.id),
+    name: r.name as string,
+    type: r.type as Waypoint["type"],
+    floor: Number(r.floor),
+    coordinates: { lat: Number(r.lat), lng: Number(r.lng) },
+    description: r.description as string | undefined,
+    qrCode: r.qr_code as string | undefined,
+  }
 }
 
 export default function Home() {
-  const leafletMapRef = useRef<MapHandle | null>(null)
-  const gpsActiveRef = useRef(false)
-
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
     currentFloor: 0,
@@ -38,69 +46,256 @@ export default function Home() {
     positionAccuracy: 0,
   })
 
+  const [heading, setHeading] = useState(0)
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
-  const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
+  const [locating, setLocating] = useState(true)
+  const [locationError, setLocationError] = useState<"denied" | "unavailable" | "https" | null>(null)
+  const [floorConfirm, setFloorConfirm] = useState<number | null>(null)
+  const [venue, setVenue] = useState<VenueInfo | null>(null)
+  const [waypoints, setWaypoints] = useState<Waypoint[]>([])
+  const [isMoving, setIsMoving] = useState(false)
+  const [tappedPoint, setTappedPoint] = useState<Coordinates | null>(null)
+  const [arrived, setArrived] = useState(false)
+  const [editingWaypoint, setEditingWaypoint] = useState<Waypoint | null>(null)
+  const [toast, setToast] = useState<string | null>(null)
+  const [awaitingSharedVenue, setAwaitingSharedVenue] = useState(
+    typeof window !== "undefined" && new URLSearchParams(window.location.search).has("venue")
+  )
 
+  // Dead reckoning refs
+  const lastGPSFixRef = useRef<{ pos: Coordinates; time: number } | null>(null)
+  const lastGPSUpdateRef = useRef<number>(0)
+  const deadReckonTimerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Passive trace buffer
+  const traceBufferRef = useRef<Array<{ lat: number; lng: number; heading: number; accuracy: number; floor: number; timestamp: number }>>([])
+  const traceFlushTimerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Global error + lifecycle capture for the in-app diagnostics panel
   useEffect(() => {
-    if (!navigator.geolocation) {
-      setGpsStatus("denied")
-      return
+    logInfo(`App loaded · ${window.location.protocol} · secure=${window.isSecureContext} · online=${navigator.onLine}`)
+    const onErr = (e: ErrorEvent) => logError(`JS error: ${e.message}`)
+    const onRej = (e: PromiseRejectionEvent) => logError(`Unhandled: ${String(e.reason)}`)
+    const onOnline = () => logInfo("Network: back online")
+    const onOffline = () => logWarn("Network: went offline")
+    window.addEventListener("error", onErr)
+    window.addEventListener("unhandledrejection", onRej)
+    window.addEventListener("online", onOnline)
+    window.addEventListener("offline", onOffline)
+    return () => {
+      window.removeEventListener("error", onErr)
+      window.removeEventListener("unhandledrejection", onRej)
+      window.removeEventListener("online", onOnline)
+      window.removeEventListener("offline", onOffline)
     }
-    const id = navigator.geolocation.watchPosition(
-      (pos) => {
-        const firstFix = !gpsActiveRef.current
-        gpsActiveRef.current = true
-        setGpsStatus("active")
-        setNavState((s) => ({
-          ...s,
-          currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
-          positionAccuracy: pos.coords.accuracy,
-        }))
-        // Centre the map on the user the first time we get a real fix, so it works anywhere
-        if (firstFix) {
-          leafletMapRef.current?.flyTo([pos.coords.latitude, pos.coords.longitude], 18)
-        }
-      },
-      () => {
-        // Don't downgrade to denied once we have a live fix
-        if (!gpsActiveRef.current) setGpsStatus("denied")
-      },
-      { enableHighAccuracy: true, maximumAge: 5000, timeout: 12000 }
-    )
-    return () => navigator.geolocation.clearWatch(id)
   }, [])
 
-  const useGoshDemo = useCallback(() => {
-    setGpsStatus("active")
-    setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 0 }))
-    leafletMapRef.current?.flyTo([GOSH_CENTER.lat, GOSH_CENTER.lng], 18)
+  // Detect motion via accelerometer
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    let lastMag = 0
+    function handleMotion(e: DeviceMotionEvent) {
+      const a = e.acceleration
+      if (!a) return
+      const mag = Math.sqrt((a.x ?? 0) ** 2 + (a.y ?? 0) ** 2 + (a.z ?? 0) ** 2)
+      const delta = Math.abs(mag - lastMag)
+      lastMag = mag
+      setIsMoving(delta > 0.3) // threshold: 0.3 m/s² change = walking
+    }
+    window.addEventListener("devicemotion", handleMotion)
+    return () => window.removeEventListener("devicemotion", handleMotion)
+  }, [])
+
+  // Dead reckoning — runs every second when GPS is stale (>5s) and user is moving
+  useEffect(() => {
+    deadReckonTimerRef.current = setInterval(() => {
+      const staleness = Date.now() - lastGPSUpdateRef.current
+      if (staleness < 5000 || !lastGPSFixRef.current || !isMoving) return
+
+      const estimated = deadReckon(
+        lastGPSFixRef.current.pos,
+        lastGPSFixRef.current.time,
+        heading,
+        isMoving
+      )
+      setNavState((s) => ({ ...s, currentPosition: estimated, positionAccuracy: 15 }))
+    }, 1000)
+    return () => {
+      if (deadReckonTimerRef.current) clearInterval(deadReckonTimerRef.current)
+    }
+  }, [heading, isMoving])
+
+  // Flush trace buffer to API every 30s
+  useEffect(() => {
+    traceFlushTimerRef.current = setInterval(() => {
+      const buf = traceBufferRef.current.splice(0)
+      if (buf.length === 0 || !venue) return
+      fetch("/api/traces", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ venue_id: venue.id, points: buf }),
+      }).catch(() => {}) // fire-and-forget
+    }, 30000)
+    return () => {
+      if (traceFlushTimerRef.current) clearInterval(traceFlushTimerRef.current)
+    }
+  }, [venue])
+
+  // Geolocation
+  useEffect(() => {
+    // Fallback so the map always renders even if location fails — user can tap to set position
+    const FALLBACK: Coordinates = { lat: 51.505, lng: -0.09 }
+    const fallbackTimer = setTimeout(() => {
+      logWarn("Location timed out (12s) — using fallback position")
+      setLocating(false)
+      setNavState((s) => (s.currentPosition ? s : { ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
+    }, 12000)
+
+    if (typeof window !== "undefined" && window.location.protocol === "http:" && window.location.hostname !== "localhost") {
+      logError("Location needs HTTPS — page is on http")
+      setLocationError("https")
+      setLocating(false)
+      setNavState((s) => ({ ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
+      clearTimeout(fallbackTimer)
+      return
+    }
+    if (!navigator.geolocation) {
+      logError("navigator.geolocation not available")
+      setLocationError("unavailable")
+      setLocating(false)
+      setNavState((s) => ({ ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
+      clearTimeout(fallbackTimer)
+      return
+    }
+
+    logInfo("Requesting location…")
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+        clearTimeout(fallbackTimer)
+        logInfo(`GPS fix: ${coords.lat.toFixed(5)}, ${coords.lng.toFixed(5)} (±${Math.round(pos.coords.accuracy)}m)`)
+        setLocating(false)
+        setLocationError(null)
+        lastGPSFixRef.current = { pos: coords, time: Date.now() }
+        lastGPSUpdateRef.current = Date.now()
+        setNavState((s) => ({ ...s, currentPosition: coords, positionAccuracy: pos.coords.accuracy }))
+      },
+      (err) => {
+        logError(`Location error (code ${err.code}): ${err.message}`)
+        setLocating(false)
+        setLocationError(err.code === 1 ? "denied" : "unavailable")
+        setNavState((s) => (s.currentPosition ? s : { ...s, currentPosition: FALLBACK, positionAccuracy: 9999 }))
+      },
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 30000 }
+    )
+
+    const id = navigator.geolocation.watchPosition(
+      (pos) => {
+        const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+        setLocating(false)
+        setLocationError(null)
+        lastGPSFixRef.current = { pos: coords, time: Date.now() }
+        lastGPSUpdateRef.current = Date.now()
+        setNavState((s) => ({ ...s, currentPosition: coords, positionAccuracy: pos.coords.accuracy }))
+
+        // Buffer trace point
+        traceBufferRef.current.push({
+          lat: coords.lat, lng: coords.lng,
+          heading, accuracy: pos.coords.accuracy,
+          floor: navState.currentFloor,
+          timestamp: Date.now(),
+        })
+      },
+      (err) => { if (err.code === 1) setLocationError("denied") },
+      { enableHighAccuracy: true, timeout: 30000, maximumAge: 5000 }
+    )
+    return () => {
+      clearTimeout(fallbackTimer)
+      navigator.geolocation.clearWatch(id)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Shared link: ?venue=ID auto-opens that venue, skipping the selector
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const vid = new URLSearchParams(window.location.search).get("venue")
+    if (!vid) return
+    logInfo(`Opening shared venue #${vid}`)
+    fetch(`/api/venues/${vid}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((v) => {
+        if (v?.id) setVenue({ ...v, waypoint_count: Number(v.waypoint_count ?? 0) })
+        else logWarn(`Shared venue #${vid} not found`)
+      })
+      .catch((e) => logError(`Shared venue fetch failed: ${e}`))
+      .finally(() => setAwaitingSharedVenue(false))
+  }, [])
+
+  // Load waypoints when venue changes
+  useEffect(() => {
+    if (!venue) return
+    logInfo(`Loading waypoints for venue #${venue.id}`)
+    fetch(`/api/venues/${venue.id}/waypoints`)
+      .then((r) => r.json())
+      .then((rows) => {
+        if (Array.isArray(rows)) {
+          setWaypoints(rows.map(rowToWaypoint))
+          logInfo(`Loaded ${rows.length} waypoints`)
+        } else {
+          logWarn(`Waypoints response not an array: ${JSON.stringify(rows).slice(0, 120)}`)
+        }
+      })
+      .catch((e) => logError(`Waypoints fetch failed: ${e}`))
+  }, [venue])
+
+  // Compass
+  useEffect(() => {
+    function handleOrientation(e: DeviceOrientationEvent) {
+      const h = (e as DeviceOrientationEvent & { webkitCompassHeading?: number }).webkitCompassHeading
+      if (h != null) setHeading(h)
+      else if (e.alpha != null) setHeading(360 - e.alpha)
+    }
+    const DOE = DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }
+    if (typeof DOE.requestPermission !== "function") {
+      window.addEventListener("deviceorientation", handleOrientation, true)
+      return () => window.removeEventListener("deviceorientation", handleOrientation, true)
+    }
+  }, [])
+
+  const requestCompass = useCallback(async () => {
+    const DOE = DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }
+    if (typeof DOE.requestPermission === "function") {
+      const result = await DOE.requestPermission()
+      if (result === "granted") {
+        window.addEventListener("deviceorientation", (e: DeviceOrientationEvent) => {
+          const h = (e as DeviceOrientationEvent & { webkitCompassHeading?: number }).webkitCompassHeading
+          if (h != null) setHeading(h)
+          else if (e.alpha != null) setHeading(360 - e.alpha)
+        }, true)
+      }
+    }
+  }, [])
+
+  const handleVenueSelect = useCallback((v: VenueInfo) => {
+    setVenue(v)
+    setOverlay("none")
   }, [])
 
   const handleDestinationSelect = useCallback(
     (waypoint: Waypoint) => {
       setOverlay("none")
-      const position = navState.currentPosition ?? GOSH_CENTER
-      const route = buildRoute(position, navState.currentFloor, waypoint, GOSH_WAYPOINTS)
-      setNavState((s) => ({
-        ...s,
-        destination: waypoint,
-        route,
-        currentStepIndex: 0,
-        isNavigating: true,
-      }))
+      if (!navState.currentPosition) return
+      const route = buildRoute(navState.currentPosition, navState.currentFloor, waypoint, waypoints)
+      setNavState((s) => ({ ...s, destination: waypoint, route, currentStepIndex: 0, isNavigating: true }))
     },
-    [navState.currentPosition, navState.currentFloor]
+    [navState.currentPosition, navState.currentFloor, waypoints]
   )
 
   const handleStopNavigation = useCallback(() => {
-    setNavState((s) => ({
-      ...s,
-      destination: null,
-      route: null,
-      currentStepIndex: 0,
-      isNavigating: false,
-    }))
+    setNavState((s) => ({ ...s, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+    setFloorConfirm(null)
   }, [])
 
   const handleQRDetected = useCallback((data: string) => {
@@ -110,145 +305,359 @@ export default function Home() {
       const latIdx = parts.indexOf("lat")
       const lngIdx = parts.indexOf("lng")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
-        setGpsStatus("active")
+        const newPos = { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) }
+        lastGPSFixRef.current = { pos: newPos, time: Date.now() }
+        lastGPSUpdateRef.current = Date.now()
         setNavState((s) => ({
           ...s,
           currentFloor: parseInt(parts[floorIdx + 1]),
-          currentPosition: { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) },
+          currentPosition: newPos,
           positionAccuracy: 1,
+          currentStepIndex: s.route?.steps[s.currentStepIndex]?.floorChange ? s.currentStepIndex + 1 : s.currentStepIndex,
         }))
+        setFloorConfirm(null)
       }
     } catch {}
   }, [])
 
-  const handleSurveyComplete = useCallback((frames: SurveyFrame[]) => {
-    setOverlay("none")
-    alert(`Survey complete — ${frames.length} frames captured and ready to upload.`)
+  // Map tap: when adding a location, set the pin point; otherwise "I'm here" correction
+  const handleMapTap = useCallback((coords: Coordinates) => {
+    if (overlay === "add-location") {
+      setTappedPoint(coords)
+      return
+    }
+    if (navState.isNavigating) return // don't hijack taps during navigation
+    lastGPSFixRef.current = { pos: coords, time: Date.now() }
+    lastGPSUpdateRef.current = Date.now()
+    setNavState((s) => ({ ...s, currentPosition: coords, positionAccuracy: 5 }))
+  }, [navState.isNavigating, overlay])
+
+  const handleLocationAdded = useCallback((w: Waypoint) => {
+    setWaypoints((prev) => [...prev, w])
+    setTappedPoint(null)
   }, [])
+
+  const handleWaypointUpdated = useCallback((w: Waypoint) => {
+    setWaypoints((prev) => prev.map((p) => (p.id === w.id ? w : p)))
+    setEditingWaypoint(null)
+    setToast("Location updated")
+  }, [])
+
+  const handleWaypointDeleted = useCallback((id: string) => {
+    setWaypoints((prev) => prev.filter((p) => p.id !== id))
+    setEditingWaypoint(null)
+    setToast("Location deleted")
+  }, [])
+
+  const handleShare = useCallback(async () => {
+    if (!venue) return
+    const url = `${window.location.origin}/?venue=${venue.id}`
+    const shareData = { title: `${venue.name} — Wayfinder`, text: `Navigate ${venue.name} with Wayfinder`, url }
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData)
+      } else {
+        await navigator.clipboard.writeText(url)
+        setToast("Link copied to clipboard")
+      }
+    } catch {}
+  }, [venue])
+
+  // Auto-dismiss toast
+  useEffect(() => {
+    if (!toast) return
+    const t = setTimeout(() => setToast(null), 2500)
+    return () => clearTimeout(t)
+  }, [toast])
+
+  // Arrival detection — within 15m of destination
+  useEffect(() => {
+    if (!navState.isNavigating || !navState.currentPosition || !navState.destination || arrived) return
+    const dist = haversineDistance(navState.currentPosition, navState.destination.coordinates)
+    if (dist < 15) {
+      setArrived(true)
+      setTimeout(() => {
+        setArrived(false)
+        setNavState((s) => ({ ...s, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+        setFloorConfirm(null)
+      }, 3500)
+    }
+  }, [navState.currentPosition, navState.isNavigating, navState.destination, arrived])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
+  // Live turn-by-turn: recompute direction + distance from live GPS and compass
+  const liveNav: LiveNav | null = useMemo(() => {
+    if (!navState.isNavigating || !navState.currentPosition || !currentStep || currentStep.floorChange) return null
+    const target = currentStep.waypoint?.coordinates ?? navState.destination?.coordinates
+    const name = currentStep.waypoint?.name ?? navState.destination?.name ?? ""
+    if (!target) return null
+    const dist = haversineDistance(navState.currentPosition, target)
+    const turn = relativeTurn(heading, bearing(navState.currentPosition, target))
+    const arriving = dist < 12
+    return {
+      label: arriving ? `Arriving at ${name}` : turn.label,
+      distance: Math.round(dist),
+      dir: turn.dir,
+      name,
+      arriving,
+    }
+  }, [navState.isNavigating, navState.currentPosition, currentStep, heading, navState.destination])
+
+  useEffect(() => {
+    if (currentStep?.floorChange && floorConfirm === null) {
+      setFloorConfirm(currentStep.floorChange.to)
+    }
+  }, [currentStep, floorConfirm])
+
+  const handleFloorConfirmed = useCallback(() => {
+    if (floorConfirm === null) return
+    setNavState((s) => ({ ...s, currentFloor: floorConfirm, currentStepIndex: s.currentStepIndex + 1 }))
+    setFloorConfirm(null)
+  }, [floorConfirm])
+
+  const handleSurveyComplete = useCallback(async (frames: SurveyFrame[]) => {
+    setOverlay("none")
+    if (!venue || frames.length === 0) return
+    try {
+      await fetch("/api/survey", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          venue_id: venue.id,
+          frames: frames.map((f) => ({
+            floor: f.floor,
+            coordinates: f.coordinates,
+            heading: f.heading,
+            annotation: f.annotation,
+            timestamp: f.timestamp,
+          })),
+        }),
+      })
+    } catch {}
+  }, [venue])
+
+  // Only set once GPS is real — map never mounts without a known position
+  const mapCenter: Coordinates | null = navState.currentPosition
+
+  // Floors available: from venue's declared floor count, plus any floor with waypoints
+  const venueFloors = useMemo(() => {
+    const set = new Set<number>([0])
+    if (venue?.floors) for (let i = 0; i < venue.floors; i++) set.add(i)
+    waypoints.forEach((w) => set.add(w.floor))
+    set.add(navState.currentFloor)
+    return [...set].sort((a, b) => a - b)
+  }, [venue, waypoints, navState.currentFloor])
+
+  // Show venue selector if no venue chosen and GPS is ready (but not while a shared link is loading)
+  const showVenueSelector = !locating && !venue && !awaitingSharedVenue && overlay !== "venue-select"
+
   return (
-    <div className="relative w-full h-dvh overflow-hidden bg-gray-100">
-      <FloorPlanMap
-        currentFloor={navState.currentFloor}
-        currentPosition={navState.currentPosition}
-        destination={navState.destination}
-        route={navState.route}
-        isNavigating={navState.isNavigating}
-        onMapReady={() => {}}
-        leafletMapRef={leafletMapRef}
-      />
-
-      {/* ── Top bar ──────────────────────────────────────────── */}
-      {!navState.isNavigating ? (
-        <div className="absolute top-0 left-0 right-0 z-50">
-          {/* Search bar */}
-          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
-            <button
-              onClick={() => setOverlay("search")}
-              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
-            >
-              <Search size={18} className="text-[#005EB8] flex-shrink-0" />
-              <span className="flex-1 text-left text-gray-400 text-sm">
-                {navState.destination ? navState.destination.name : "Where are you going?"}
-              </span>
-              <MapPin size={16} className="text-gray-300 flex-shrink-0" />
-            </button>
-          </div>
-
-          {/* GPS status strip */}
-          {gpsStatus === "requesting" && (
-            <div className="bg-blue-50 border-b border-blue-100 px-4 py-2 flex items-center gap-2">
-              <div className="w-3 h-3 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin flex-shrink-0" />
-              <span className="text-xs text-[#005EB8]">Finding your location…</span>
-            </div>
-          )}
-          {gpsStatus === "denied" && (
-            <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 flex items-center gap-2">
-              <AlertCircle size={14} className="text-amber-600 flex-shrink-0" />
-              <span className="text-xs text-amber-700 flex-1">
-                GPS unavailable — browse destinations or use demo mode
-              </span>
-              <button
-                onClick={useGoshDemo}
-                className="text-xs font-bold text-[#005EB8] whitespace-nowrap ml-2"
-              >
-                Use demo
-              </button>
-            </div>
-          )}
-        </div>
-      ) : (
-        <TopInstructionBar
-          step={currentStep}
-          stepIndex={navState.currentStepIndex}
-          totalSteps={navState.route?.steps.length ?? 0}
+    <div className="relative w-full h-screen overflow-hidden bg-[#e8e0d8]">
+      {/* Map only mounts once we have a real GPS fix — never blank, always at correct location */}
+      {mapCenter && (
+        <FloorPlanMap
+          currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          initialCenter={mapCenter}
+          heading={heading}
+          destination={navState.destination}
+          route={navState.route}
           isNavigating={navState.isNavigating}
+          waypoints={waypoints}
+          onMapTap={handleMapTap}
+          onWaypointClick={!navState.isNavigating && overlay === "none" ? setEditingWaypoint : undefined}
+          onMapReady={() => {}}
         />
       )}
 
+      <TopInstructionBar
+        step={currentStep}
+        live={liveNav}
+        stepIndex={navState.currentStepIndex}
+        totalSteps={navState.route?.steps.length ?? 0}
+        isNavigating={navState.isNavigating}
+        venueName={venue?.name}
+      />
+
       <FloorSelector
+        floors={venueFloors}
         currentFloor={navState.currentFloor}
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
 
-      {/* GPS accuracy badge */}
-      {gpsStatus === "active" && (
-        <div className="absolute top-36 left-3 z-40 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
-          <div className={`w-2 h-2 rounded-full ${navState.positionAccuracy === 0 ? "bg-blue-400" : navState.positionAccuracy <= 5 ? "bg-green-500" : navState.positionAccuracy <= 15 ? "bg-yellow-500" : "bg-red-400"}`} />
-          <span className="text-xs text-gray-600 font-medium">
-            {navState.positionAccuracy === 0 ? "Demo" : `±${Math.round(navState.positionAccuracy)}m`}
-          </span>
+      {/* Venue badge */}
+      {venue && !navState.isNavigating && (
+        <div className="absolute top-3 left-1/2 -translate-x-1/2 z-50 max-w-[80vw]">
+          <button
+            onClick={() => setOverlay("venue-select")}
+            className="bg-white rounded-full pl-3 pr-4 py-2 flex items-center gap-2 shadow-lg min-w-0 active:scale-95 transition-transform"
+          >
+            <Building2 size={14} className="text-[#005EB8] flex-shrink-0" />
+            <span className="text-sm text-gray-800 font-bold truncate">{venue.name}</span>
+          </button>
+        </div>
+      )}
+
+      {/* Tap-to-place hint when adding a location */}
+      {overlay === "add-location" && (
+        <div className="absolute top-16 left-1/2 -translate-x-1/2 z-50 bg-black/75 text-white text-xs font-semibold px-4 py-2 rounded-full pointer-events-none whitespace-nowrap">
+          {tappedPoint ? "📍 Point set — name it below" : "Tap the map to place your pin"}
+        </div>
+      )}
+
+      {/* Arrived toast */}
+      {arrived && navState.destination && (
+        <div className="absolute top-1/3 left-4 right-4 z-[500] bg-[#009639] text-white rounded-2xl px-5 py-4 shadow-2xl text-center slide-up">
+          <p className="text-2xl mb-1">✓</p>
+          <p className="font-bold text-lg">You&apos;ve arrived!</p>
+          <p className="text-sm text-green-100 mt-0.5">{navState.destination.name}</p>
+        </div>
+      )}
+
+      {/* Location error banner */}
+      {locationError && (
+        <div className="absolute top-16 left-3 right-3 z-50 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2.5 shadow-sm">
+          {locationError === "denied" && (
+            <p className="text-xs text-amber-800 font-medium">
+              📍 Location blocked — go to <strong>Settings → Safari → Location</strong> and allow, then reload.
+            </p>
+          )}
+          {locationError === "https" && (
+            <p className="text-xs text-amber-800 font-medium">
+              🔒 Location requires HTTPS. Open via your secure deployment URL.
+            </p>
+          )}
+          {locationError === "unavailable" && (
+            <p className="text-xs text-amber-800 font-medium">
+              📍 Tap the map to set your position manually.
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* Accuracy badge */}
+      {!locationError && navState.positionAccuracy > 0 && navState.positionAccuracy < 999 && (
+        <div className="absolute top-20 left-3 z-50 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
+          <div className={`w-2 h-2 rounded-full ${
+            navState.positionAccuracy <= 5 ? "bg-green-500"
+            : navState.positionAccuracy <= 15 ? "bg-yellow-500"
+            : "bg-red-400"
+          }`} />
+          <span className="text-xs text-gray-600 font-medium">±{Math.round(navState.positionAccuracy)}m</span>
         </div>
       )}
 
       {/* Floor badge */}
-      <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 z-50 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm">
         <Layers size={12} className="text-[#005EB8]" />
         <span className="text-xs text-gray-700 font-semibold">
           {navState.currentFloor === 0 ? "Ground Floor" : `Floor ${navState.currentFloor}`}
         </span>
       </div>
 
-      {/* Survey FAB */}
-      {!navState.isNavigating && (
-        <button
-          onClick={() => setOverlay("survey")}
-          className="absolute left-3 bottom-52 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-          title="Survey Mode"
-        >
-          <ClipboardList size={20} className="text-[#005EB8]" />
-        </button>
+      {/* Floor change confirmation */}
+      {floorConfirm !== null && (
+        <div className="absolute bottom-48 left-4 right-4 z-50 bg-white rounded-2xl shadow-2xl overflow-hidden slide-up">
+          <div className="bg-[#003087] px-4 py-3 flex items-center gap-3">
+            <ArrowUpDown size={20} className="text-white" />
+            <p className="text-white font-bold text-sm">Floor change needed</p>
+          </div>
+          <div className="px-4 py-3">
+            <p className="text-gray-700 text-sm mb-3">
+              Take the lift or stairs to{" "}
+              <strong>{floorConfirm === 0 ? "Ground Floor" : `Floor ${floorConfirm}`}</strong>.
+              Tap when you arrive.
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setOverlay("qr")}
+                className="flex-1 bg-gray-100 text-gray-700 rounded-xl py-2.5 text-sm font-semibold"
+              >
+                📷 Scan QR on wall
+              </button>
+              <button
+                onClick={handleFloorConfirmed}
+                className="flex-1 bg-[#005EB8] text-white rounded-xl py-2.5 text-sm font-bold"
+              >
+                ✓ I&apos;m on Floor {floorConfirm === 0 ? "G" : floorConfirm}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
-      {/* Recenter FAB */}
-      <button
-        onClick={() => {
-          const pos = navState.currentPosition ?? GOSH_CENTER
-          leafletMapRef.current?.flyTo([pos.lat, pos.lng], 18)
-        }}
-        className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-        title="Re-centre"
-      >
-        <Navigation size={20} className="text-[#005EB8]" />
-      </button>
+      {/* ── Floating controls (Google-Maps style, right side) ── */}
+      <div className="absolute right-3 bottom-[12.5rem] z-50 flex flex-col items-end gap-3">
+        {/* Share */}
+        {venue && !navState.isNavigating && (
+          <button
+            onClick={handleShare}
+            className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+            title="Share this place"
+          >
+            <Share2 size={20} className="text-gray-700" />
+          </button>
+        )}
+
+        {/* Survey */}
+        {!navState.isNavigating && venue && (
+          <button
+            onClick={() => setOverlay("survey")}
+            className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+            title="Survey Mode"
+          >
+            <ClipboardList size={20} className="text-gray-700" />
+          </button>
+        )}
+
+        {/* Recenter / compass */}
+        <button
+          onClick={requestCompass}
+          className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+          title="Re-centre and enable compass"
+        >
+          <Navigation size={20} className="text-[#005EB8]" />
+        </button>
+
+        {/* Primary: Add location — teal rounded-square FAB */}
+        {!navState.isNavigating && venue && overlay === "none" && (
+          <button
+            onClick={() => { setTappedPoint(null); setOverlay("add-location") }}
+            className="w-14 h-14 bg-[#009688] rounded-2xl shadow-xl shadow-teal-300/50 flex items-center justify-center active:scale-95 transition-transform"
+            title="Add a location"
+          >
+            <Plus size={26} className="text-white" />
+          </button>
+        )}
+      </div>
 
       <BottomSheet
         destination={navState.destination}
         route={navState.route}
         currentFloor={navState.currentFloor}
         isNavigating={navState.isNavigating}
+        venueName={venue?.name}
         onStopNavigation={handleStopNavigation}
         onOpenCamera={() => setOverlay("live-camera")}
         onScanQR={() => setOverlay("qr")}
-        onOpenSearch={() => setOverlay("search")}
+        onOpenSearch={() => venue ? setOverlay("search") : setOverlay("venue-select")}
+        onSelectVenue={() => setOverlay("venue-select")}
         expanded={bottomSheetExpanded}
         onToggleExpand={() => setBottomSheetExpanded((v) => !v)}
       />
 
-      {overlay === "search" && (
-        <SearchModal onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
+      {/* Venue selector overlay */}
+      {(overlay === "venue-select" || showVenueSelector) && navState.currentPosition && (
+        <VenueSelector
+          userPosition={navState.currentPosition}
+          onSelectVenue={handleVenueSelect}
+          onClose={venue ? () => setOverlay("none") : undefined}
+        />
+      )}
+
+      {overlay === "search" && venue && (
+        <SearchModal waypoints={waypoints} onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
       )}
 
       {(overlay === "qr" || overlay === "live-camera") && (
@@ -256,17 +665,73 @@ export default function Home() {
           mode={overlay === "qr" ? "qr" : "live"}
           onQRDetected={handleQRDetected}
           onClose={() => setOverlay("none")}
-          onFrameCapture={overlay === "live-camera" ? () => {} : undefined}
+          onFrameCapture={overlay === "live-camera" ? (d) => console.log("frame", d.length) : undefined}
         />
       )}
 
-      {overlay === "survey" && (
+      {overlay === "survey" && venue && (
         <SurveyModeComponent
           currentFloor={navState.currentFloor}
           currentPosition={navState.currentPosition}
+          heading={heading}
           onClose={() => setOverlay("none")}
           onSurveyComplete={handleSurveyComplete}
         />
+      )}
+
+      {overlay === "add-location" && venue && (
+        <AddLocationPanel
+          venueId={venue.id}
+          currentFloor={navState.currentFloor}
+          position={tappedPoint ?? navState.currentPosition}
+          accuracy={tappedPoint ? 2 : navState.positionAccuracy}
+          usingTappedPoint={tappedPoint !== null}
+          onClose={() => { setTappedPoint(null); setOverlay("none") }}
+          onAdded={handleLocationAdded}
+        />
+      )}
+
+      {editingWaypoint && venue && (
+        <EditLocationPanel
+          venueId={venue.id}
+          waypoint={editingWaypoint}
+          myPosition={navState.currentPosition}
+          onClose={() => setEditingWaypoint(null)}
+          onUpdated={handleWaypointUpdated}
+          onDeleted={handleWaypointDeleted}
+        />
+      )}
+
+      {/* Toast */}
+      {toast && (
+        <div className="absolute bottom-44 left-1/2 -translate-x-1/2 z-[500] bg-gray-900 text-white text-sm font-medium px-4 py-2.5 rounded-full shadow-lg slide-up whitespace-nowrap">
+          {toast}
+        </div>
+      )}
+
+      {/* In-app diagnostics — tap the bug icon */}
+      <DebugPanel
+        position={navState.currentPosition}
+        accuracy={navState.positionAccuracy}
+        heading={heading}
+        locating={locating}
+        locationError={locationError}
+        isMoving={isMoving}
+        venueName={venue?.name}
+        venueId={venue?.id}
+        waypointCount={waypoints.length}
+      />
+
+      {locating && (
+        <div className="absolute inset-0 z-[400] bg-[#005EB8] flex flex-col items-center justify-center gap-5">
+          <div className="flex flex-col items-center gap-2 mb-2">
+            <span className="text-white text-5xl">🧭</span>
+            <h1 className="text-white text-2xl font-bold tracking-tight">Wayfinder</h1>
+            <p className="text-blue-200 text-sm">Free indoor navigation, anywhere</p>
+          </div>
+          <div className="w-10 h-10 border-[3px] border-white/30 border-t-white rounded-full animate-spin" />
+          <p className="text-blue-200 text-sm">Finding your location…</p>
+        </div>
       )}
     </div>
   )
