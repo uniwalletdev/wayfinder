@@ -13,7 +13,7 @@ interface Props {
   onSurveyComplete: (frames: SurveyFrame[]) => void
 }
 
-const ANNOTATION_TYPES: WaypointType[] = ["ward", "department", "lift", "stairs", "toilet", "exit", "reception", "canteen", "pharmacy", "other"]
+const ANNOTATION_TYPES: WaypointType[] = ["ward", "clinical", "clinical-support", "office", "entrance", "other"]
 
 export default function SurveyMode({ currentFloor, currentPosition, onClose, onSurveyComplete }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)

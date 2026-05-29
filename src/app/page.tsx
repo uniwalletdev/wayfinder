@@ -2,27 +2,21 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef } from "react"
-import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
-import { GOSH_CENTER } from "@/lib/gosh-data"
+import { MapLocation, NavigationState, SurveyFrame } from "@/lib/types"
+import { GOSH_CENTER, ACTIVE_SITE, getBuilding } from "@/lib/gosh-data"
 import { buildRoute } from "@/lib/routing"
-import { GOSH_WAYPOINTS } from "@/lib/gosh-data"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
-import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import type { MapHandle } from "@/components/FloorPlanMap"
+import { Navigation, ClipboardList, Search, MapPin, AlertCircle, Compass } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
 type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
 type GpsStatus = "requesting" | "active" | "denied"
-
-// Minimal interface — avoids importing Leaflet types on the server
-interface MapHandle {
-  flyTo: (latlng: [number, number], zoom: number) => void
-}
 
 export default function Home() {
   const leafletMapRef = useRef<MapHandle | null>(null)
@@ -30,7 +24,6 @@ export default function Home() {
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
-    currentFloor: 0,
     destination: null,
     route: null,
     currentStepIndex: 0,
@@ -39,8 +32,25 @@ export default function Home() {
   })
 
   const [overlay, setOverlay] = useState<OverlayMode>("none")
+  const [searchSeed, setSearchSeed] = useState("")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
+  const [compassOn, setCompassOn] = useState(false)
+
+  const toggleCompass = useCallback(async () => {
+    const handle = leafletMapRef.current
+    if (!handle) return
+    if (compassOn) {
+      handle.disableCompass()
+      setCompassOn(false)
+    } else {
+      const ok = await handle.enableCompass()
+      setCompassOn(ok)
+      if (!ok) {
+        alert("Compass unavailable — your device or browser didn't allow motion & orientation access.")
+      }
+    }
+  }, [compassOn])
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -57,13 +67,11 @@ export default function Home() {
           currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
           positionAccuracy: pos.coords.accuracy,
         }))
-        // Centre the map on the user the first time we get a real fix, so it works anywhere
         if (firstFix) {
           leafletMapRef.current?.flyTo([pos.coords.latitude, pos.coords.longitude], 18)
         }
       },
       () => {
-        // Don't downgrade to denied once we have a live fix
         if (!gpsActiveRef.current) setGpsStatus("denied")
       },
       { enableHighAccuracy: true, maximumAge: 5000, timeout: 12000 }
@@ -71,49 +79,50 @@ export default function Home() {
     return () => navigator.geolocation.clearWatch(id)
   }, [])
 
-  const useGoshDemo = useCallback(() => {
+  const useDemo = useCallback(() => {
     setGpsStatus("active")
     setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 0 }))
     leafletMapRef.current?.flyTo([GOSH_CENTER.lat, GOSH_CENTER.lng], 18)
   }, [])
 
   const handleDestinationSelect = useCallback(
-    (waypoint: Waypoint) => {
+    (location: MapLocation) => {
       setOverlay("none")
+      setSearchSeed("")
       const position = navState.currentPosition ?? GOSH_CENTER
-      const route = buildRoute(position, navState.currentFloor, waypoint, GOSH_WAYPOINTS)
+      const route = buildRoute(position, location)
       setNavState((s) => ({
         ...s,
-        destination: waypoint,
+        destination: location,
         route,
         currentStepIndex: 0,
         isNavigating: true,
       }))
     },
-    [navState.currentPosition, navState.currentFloor]
+    [navState.currentPosition]
   )
 
   const handleStopNavigation = useCallback(() => {
-    setNavState((s) => ({
-      ...s,
-      destination: null,
-      route: null,
-      currentStepIndex: 0,
-      isNavigating: false,
-    }))
+    setNavState((s) => ({ ...s, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+  }, [])
+
+  const handleSelectBuilding = useCallback((buildingId: string) => {
+    const b = getBuilding(buildingId)
+    if (b) {
+      setSearchSeed(b.name)
+      setOverlay("search")
+    }
   }, [])
 
   const handleQRDetected = useCallback((data: string) => {
     try {
       const parts = data.split(":")
-      const floorIdx = parts.indexOf("floor")
       const latIdx = parts.indexOf("lat")
       const lngIdx = parts.indexOf("lng")
-      if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
+      if (latIdx >= 0 && lngIdx >= 0) {
         setGpsStatus("active")
         setNavState((s) => ({
           ...s,
-          currentFloor: parseInt(parts[floorIdx + 1]),
           currentPosition: { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) },
           positionAccuracy: 1,
         }))
@@ -131,33 +140,34 @@ export default function Home() {
   return (
     <div className="relative w-full h-dvh overflow-hidden bg-gray-100">
       <FloorPlanMap
-        currentFloor={navState.currentFloor}
         currentPosition={navState.currentPosition}
         destination={navState.destination}
         route={navState.route}
         isNavigating={navState.isNavigating}
         onMapReady={() => {}}
+        onSelectBuilding={handleSelectBuilding}
         leafletMapRef={leafletMapRef}
       />
 
       {/* ── Top bar ──────────────────────────────────────────── */}
       {!navState.isNavigating ? (
         <div className="absolute top-0 left-0 right-0 z-50">
-          {/* Search bar */}
           <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
             <button
-              onClick={() => setOverlay("search")}
+              onClick={() => {
+                setSearchSeed("")
+                setOverlay("search")
+              }}
               className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
             >
               <Search size={18} className="text-[#005EB8] flex-shrink-0" />
               <span className="flex-1 text-left text-gray-400 text-sm">
-                {navState.destination ? navState.destination.name : "Where are you going?"}
+                {navState.destination ? navState.destination.name : `Search ${ACTIVE_SITE.shortName}…`}
               </span>
               <MapPin size={16} className="text-gray-300 flex-shrink-0" />
             </button>
           </div>
 
-          {/* GPS status strip */}
           {gpsStatus === "requesting" && (
             <div className="bg-blue-50 border-b border-blue-100 px-4 py-2 flex items-center gap-2">
               <div className="w-3 h-3 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin flex-shrink-0" />
@@ -167,13 +177,8 @@ export default function Home() {
           {gpsStatus === "denied" && (
             <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 flex items-center gap-2">
               <AlertCircle size={14} className="text-amber-600 flex-shrink-0" />
-              <span className="text-xs text-amber-700 flex-1">
-                GPS unavailable — browse destinations or use demo mode
-              </span>
-              <button
-                onClick={useGoshDemo}
-                className="text-xs font-bold text-[#005EB8] whitespace-nowrap ml-2"
-              >
+              <span className="text-xs text-amber-700 flex-1">GPS unavailable — browse destinations or use demo mode</span>
+              <button onClick={useDemo} className="text-xs font-bold text-[#005EB8] whitespace-nowrap ml-2">
                 Use demo
               </button>
             </div>
@@ -188,10 +193,11 @@ export default function Home() {
         />
       )}
 
-      <FloorSelector
-        currentFloor={navState.currentFloor}
-        onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
-      />
+      {/* Site badge */}
+      <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
+        <MapPin size={12} className="text-[#005EB8]" />
+        <span className="text-xs text-gray-700 font-semibold">{ACTIVE_SITE.shortName}</span>
+      </div>
 
       {/* GPS accuracy badge */}
       {gpsStatus === "active" && (
@@ -203,14 +209,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Floor badge */}
-      <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
-        <Layers size={12} className="text-[#005EB8]" />
-        <span className="text-xs text-gray-700 font-semibold">
-          {navState.currentFloor === 0 ? "Ground Floor" : `Floor ${navState.currentFloor}`}
-        </span>
-      </div>
-
       {/* Survey FAB */}
       {!navState.isNavigating && (
         <button
@@ -221,6 +219,17 @@ export default function Home() {
           <ClipboardList size={20} className="text-[#005EB8]" />
         </button>
       )}
+
+      {/* Compass / heading-up FAB */}
+      <button
+        onClick={toggleCompass}
+        className={`absolute left-3 bottom-[5.5rem] z-50 w-12 h-12 rounded-full shadow-lg flex items-center justify-center border ${
+          compassOn ? "bg-[#005EB8] border-[#005EB8]" : "bg-white border-gray-200"
+        }`}
+        title={compassOn ? "Heading-up: on (tap for north-up)" : "Align map to the way I'm facing"}
+      >
+        <Compass size={20} className={compassOn ? "text-white" : "text-[#005EB8]"} />
+      </button>
 
       {/* Recenter FAB */}
       <button
@@ -237,18 +246,20 @@ export default function Home() {
       <BottomSheet
         destination={navState.destination}
         route={navState.route}
-        currentFloor={navState.currentFloor}
         isNavigating={navState.isNavigating}
         onStopNavigation={handleStopNavigation}
         onOpenCamera={() => setOverlay("live-camera")}
         onScanQR={() => setOverlay("qr")}
-        onOpenSearch={() => setOverlay("search")}
+        onOpenSearch={() => {
+          setSearchSeed("")
+          setOverlay("search")
+        }}
         expanded={bottomSheetExpanded}
         onToggleExpand={() => setBottomSheetExpanded((v) => !v)}
       />
 
       {overlay === "search" && (
-        <SearchModal onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
+        <SearchModal initialQuery={searchSeed} onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
       )}
 
       {(overlay === "qr" || overlay === "live-camera") && (
@@ -262,7 +273,7 @@ export default function Home() {
 
       {overlay === "survey" && (
         <SurveyModeComponent
-          currentFloor={navState.currentFloor}
+          currentFloor={0}
           currentPosition={navState.currentPosition}
           onClose={() => setOverlay("none")}
           onSurveyComplete={handleSurveyComplete}
