@@ -6,19 +6,27 @@ import "leaflet/dist/leaflet.css"
 import { Waypoint, Route, Coordinates } from "@/lib/types"
 import { GOSH_WAYPOINTS, FLOOR_PLANS, GOSH_CENTER, WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
 
+interface MapHandle {
+  flyTo: (latlng: [number, number], zoom: number) => void
+  zoomIn: () => void
+  zoomOut: () => void
+}
+
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
+  heading: number | null
   destination: Waypoint | null
   route: Route | null
   isNavigating: boolean
   onMapReady: () => void
-  leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
+  leafletMapRef?: MutableRefObject<MapHandle | null>
 }
 
 export default function FloorPlanMap({
   currentFloor,
   currentPosition,
+  heading,
   destination,
   route,
   isNavigating,
@@ -39,8 +47,14 @@ export default function FloorPlanMap({
     const map = L.map("map-container", {
       center: [GOSH_CENTER.lat, GOSH_CENTER.lng],
       zoom: 18,
+      minZoom: 3,
+      maxZoom: 22,
       zoomControl: false,
       attributionControl: false,
+      scrollWheelZoom: true,
+      touchZoom: true,
+      doubleClickZoom: true,
+      zoomSnap: 0.5,
     })
 
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -48,7 +62,13 @@ export default function FloorPlanMap({
     }).addTo(map)
 
     mapRef.current = map
-    if (leafletMapRef) leafletMapRef.current = map
+    if (leafletMapRef) {
+      leafletMapRef.current = {
+        flyTo: (latlng, zoom) => map.flyTo(latlng, zoom),
+        zoomIn: () => map.zoomIn(1),
+        zoomOut: () => map.zoomOut(1),
+      }
+    }
     onMapReady()
 
     return () => {
@@ -128,26 +148,47 @@ export default function FloorPlanMap({
 
     if (currentPosition) {
       const icon = L.divIcon({
-        html: `<div style="position:relative;">
+        html: `<div style="position:relative;width:48px;height:48px;">
+          <!-- accuracy halo -->
           <div style="
-            width:20px;height:20px;
+            position:absolute;top:50%;left:50%;
+            transform:translate(-50%,-50%);
+            width:44px;height:44px;
+            background:rgba(0,94,184,0.18);
+            border-radius:50%;
+          "></div>
+          <!-- forward-direction cone -->
+          <div class="heading-cone" style="
+            position:absolute;top:50%;left:50%;
+            transform:translate(-50%,-50%) rotate(${heading ?? 0}deg);
+            transform-origin:center center;
+            width:48px;height:48px;
+            display:${heading == null ? "none" : "block"};
+            pointer-events:none;z-index:1;
+          ">
+            <div style="
+              position:absolute;left:50%;top:-2px;
+              transform:translateX(-50%);
+              width:0;height:0;
+              border-left:13px solid transparent;
+              border-right:13px solid transparent;
+              border-bottom:22px solid rgba(0,94,184,0.55);
+            "></div>
+          </div>
+          <!-- position dot -->
+          <div style="
+            position:absolute;top:50%;left:50%;
+            transform:translate(-50%,-50%);
+            width:18px;height:18px;
             background:#005EB8;
             border:3px solid white;
             border-radius:50%;
             box-shadow:0 2px 8px rgba(0,94,184,0.6);
-            position:relative;z-index:2;
-          "></div>
-          <div style="
-            position:absolute;top:50%;left:50%;
-            transform:translate(-50%,-50%);
-            width:40px;height:40px;
-            background:rgba(0,94,184,0.2);
-            border-radius:50%;
-            animation:none;
+            z-index:2;
           "></div>
         </div>`,
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
+        iconSize: [48, 48],
+        iconAnchor: [24, 24],
         className: "",
       })
 
@@ -156,6 +197,20 @@ export default function FloorPlanMap({
       positionMarkerRef.current = marker
     }
   }, [currentPosition])
+
+  // Rotate the heading cone without re-creating the marker (orientation fires often)
+  useEffect(() => {
+    const marker = positionMarkerRef.current
+    if (!marker) return
+    const cone = marker.getElement()?.querySelector<HTMLElement>(".heading-cone")
+    if (!cone) return
+    if (heading == null) {
+      cone.style.display = "none"
+    } else {
+      cone.style.display = "block"
+      cone.style.transform = `translate(-50%,-50%) rotate(${heading}deg)`
+    }
+  }, [heading, currentPosition])
 
   // Update route
   useEffect(() => {

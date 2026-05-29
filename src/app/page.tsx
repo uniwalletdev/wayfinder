@@ -12,7 +12,7 @@ import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, Plus, Minus } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
@@ -22,11 +22,14 @@ type GpsStatus = "requesting" | "active" | "denied"
 // Minimal interface — avoids importing Leaflet types on the server
 interface MapHandle {
   flyTo: (latlng: [number, number], zoom: number) => void
+  zoomIn: () => void
+  zoomOut: () => void
 }
 
 export default function Home() {
   const leafletMapRef = useRef<MapHandle | null>(null)
   const gpsActiveRef = useRef(false)
+  const [heading, setHeading] = useState<number | null>(null)
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
@@ -57,6 +60,11 @@ export default function Home() {
           currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
           positionAccuracy: pos.coords.accuracy,
         }))
+        // GPS reports the direction of travel while moving — use it as a heading source
+        const gpsHeading = pos.coords.heading
+        if (gpsHeading != null && !Number.isNaN(gpsHeading) && (pos.coords.speed ?? 0) > 0.5) {
+          setHeading(gpsHeading)
+        }
         // Centre the map on the user the first time we get a real fix, so it works anywhere
         if (firstFix) {
           leafletMapRef.current?.flyTo([pos.coords.latitude, pos.coords.longitude], 18)
@@ -69,6 +77,41 @@ export default function Home() {
       { enableHighAccuracy: true, maximumAge: 5000, timeout: 12000 }
     )
     return () => navigator.geolocation.clearWatch(id)
+  }, [])
+
+  // Compass / device-orientation heading — which way the phone is facing
+  useEffect(() => {
+    const handle = (e: DeviceOrientationEvent & { webkitCompassHeading?: number }) => {
+      let h: number | null = null
+      if (typeof e.webkitCompassHeading === "number") {
+        // iOS: already degrees clockwise from true north
+        h = e.webkitCompassHeading
+      } else if (e.absolute && e.alpha != null) {
+        // Android/standard: alpha is counter-clockwise from north
+        h = 360 - e.alpha
+      }
+      if (h != null && !Number.isNaN(h)) setHeading(((h % 360) + 360) % 360)
+    }
+    window.addEventListener("deviceorientationabsolute", handle as EventListener, true)
+    window.addEventListener("deviceorientation", handle as EventListener, true)
+    return () => {
+      window.removeEventListener("deviceorientationabsolute", handle as EventListener, true)
+      window.removeEventListener("deviceorientation", handle as EventListener, true)
+    }
+  }, [])
+
+  // iOS 13+ requires an explicit permission request from a user gesture
+  const enableCompass = useCallback(async () => {
+    const D = window.DeviceOrientationEvent as unknown as {
+      requestPermission?: () => Promise<"granted" | "denied">
+    }
+    if (D && typeof D.requestPermission === "function") {
+      try {
+        await D.requestPermission()
+      } catch {
+        /* user declined — heading simply stays unavailable */
+      }
+    }
   }, [])
 
   const useGoshDemo = useCallback(() => {
@@ -133,6 +176,7 @@ export default function Home() {
       <FloorPlanMap
         currentFloor={navState.currentFloor}
         currentPosition={navState.currentPosition}
+        heading={heading}
         destination={navState.destination}
         route={navState.route}
         isNavigating={navState.isNavigating}
@@ -222,9 +266,30 @@ export default function Home() {
         </button>
       )}
 
+      {/* Zoom controls */}
+      <div className="absolute right-3 bottom-52 z-50 flex flex-col rounded-full shadow-lg overflow-hidden border border-gray-200">
+        <button
+          onClick={() => leafletMapRef.current?.zoomIn()}
+          className="w-12 h-12 bg-white flex items-center justify-center border-b border-gray-200 active:bg-gray-100"
+          title="Zoom in"
+          aria-label="Zoom in"
+        >
+          <Plus size={20} className="text-[#005EB8]" />
+        </button>
+        <button
+          onClick={() => leafletMapRef.current?.zoomOut()}
+          className="w-12 h-12 bg-white flex items-center justify-center active:bg-gray-100"
+          title="Zoom out"
+          aria-label="Zoom out"
+        >
+          <Minus size={20} className="text-[#005EB8]" />
+        </button>
+      </div>
+
       {/* Recenter FAB */}
       <button
         onClick={() => {
+          enableCompass()
           const pos = navState.currentPosition ?? GOSH_CENTER
           leafletMapRef.current?.flyTo([pos.lat, pos.lng], 18)
         }}
