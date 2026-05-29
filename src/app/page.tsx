@@ -10,16 +10,13 @@ import BottomSheet from "@/components/BottomSheet"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import type { MapHandle } from "@/components/FloorPlanMap"
+import { Navigation, ClipboardList, Search, MapPin, AlertCircle, Compass } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
 type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
 type GpsStatus = "requesting" | "active" | "denied"
-
-interface MapHandle {
-  flyTo: (latlng: [number, number], zoom: number) => void
-}
 
 export default function Home() {
   const leafletMapRef = useRef<MapHandle | null>(null)
@@ -38,6 +35,22 @@ export default function Home() {
   const [searchSeed, setSearchSeed] = useState("")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
+  const [compassOn, setCompassOn] = useState(false)
+
+  const toggleCompass = useCallback(async () => {
+    const handle = leafletMapRef.current
+    if (!handle) return
+    if (compassOn) {
+      handle.disableCompass()
+      setCompassOn(false)
+    } else {
+      const ok = await handle.enableCompass()
+      setCompassOn(ok)
+      if (!ok) {
+        alert("Compass unavailable — your device or browser didn't allow motion & orientation access.")
+      }
+    }
+  }, [compassOn])
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -206,6 +219,17 @@ export default function Home() {
           <ClipboardList size={20} className="text-[#005EB8]" />
         </button>
       )}
+
+      {/* Compass / heading-up FAB */}
+      <button
+        onClick={toggleCompass}
+        className={`absolute left-3 bottom-[5.5rem] z-50 w-12 h-12 rounded-full shadow-lg flex items-center justify-center border ${
+          compassOn ? "bg-[#005EB8] border-[#005EB8]" : "bg-white border-gray-200"
+        }`}
+        title={compassOn ? "Heading-up: on (tap for north-up)" : "Align map to the way I'm facing"}
+      >
+        <Compass size={20} className={compassOn ? "text-white" : "text-[#005EB8]"} />
+      </button>
 
       {/* Recenter FAB */}
       <button

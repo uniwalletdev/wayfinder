@@ -166,8 +166,29 @@ def render_map(pdf_path, out_png):
     doc = fitz.open(pdf_path)
     pix = doc[0].get_pixmap(matrix=fitz.Matrix(4, 4))
     os.makedirs(os.path.dirname(out_png), exist_ok=True)
-    pix.save(out_png)
-    print(f"  wrote {out_png} ({pix.width}x{pix.height})")
+    # Knock out the near-white page background so the campus artwork floats over
+    # the live street map instead of reading as an opaque paper sheet.
+    try:
+        from PIL import Image
+        import io
+        img = Image.open(io.BytesIO(pix.tobytes("png"))).convert("RGBA")
+        try:
+            import numpy as np
+            arr = np.array(img)
+            white = (arr[:, :, 0] > 243) & (arr[:, :, 1] > 243) & (arr[:, :, 2] > 243)
+            arr[white, 3] = 0
+            img = Image.fromarray(arr)
+        except ImportError:
+            px = img.load()
+            for y in range(img.height):
+                for x in range(img.width):
+                    r, g, b, a = px[x, y]
+                    if r > 243 and g > 243 and b > 243:
+                        px[x, y] = (r, g, b, 0)
+        img.save(out_png)
+    except ImportError:
+        pix.save(out_png)
+    print(f"  wrote {out_png} ({pix.width}x{pix.height}, transparent background)")
 
 
 def main():
