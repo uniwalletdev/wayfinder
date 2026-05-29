@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "GOSH Wayfinder",
-  description: "Indoor navigation for Great Ormond Street Hospital",
+  title: "Wayfinder",
+  description: "Free indoor navigation — any building, anywhere",
   manifest: "/manifest.json",
 }
 

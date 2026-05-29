@@ -3,21 +3,31 @@
 import { useEffect, useRef, useState } from "react"
 import { SurveyFrame, Coordinates } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
-import { X, Square, MapPin, Upload, Check } from "lucide-react"
+import { X, Square, MapPin, Check, EyeOff } from "lucide-react"
+
+const WAYPOINT_TYPE_ICONS: Record<string, string> = {
+  ward: "🏥", department: "🏢", lift: "🛗", stairs: "🪜",
+  toilet: "🚻", exit: "🚪", reception: "📋", canteen: "🍽️",
+  pharmacy: "💊", other: "📍",
+}
+const WAYPOINT_TYPE_LABELS: Record<string, string> = {
+  ward: "Room", department: "Area", lift: "Lift", stairs: "Stairs",
+  toilet: "Toilet", exit: "Exit", reception: "Entrance", canteen: "Food",
+  pharmacy: "Pharmacy", other: "Other",
+}
 
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
+  heading: number
   onClose: () => void
   onSurveyComplete: (frames: SurveyFrame[]) => void
 }
 
 const ANNOTATION_TYPES: WaypointType[] = ["ward", "department", "lift", "stairs", "toilet", "exit", "reception", "canteen", "pharmacy", "other"]
 
-export default function SurveyMode({ currentFloor, currentPosition, onClose, onSurveyComplete }: Props) {
+export default function SurveyMode({ currentFloor, currentPosition, heading, onClose, onSurveyComplete }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
   const streamRef = useRef<MediaStream | null>(null)
   const captureInterval = useRef<NodeJS.Timeout | null>(null)
   const frames = useRef<SurveyFrame[]>([])
@@ -29,6 +39,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
   const [annotationName, setAnnotationName] = useState("")
   const [annotationType, setAnnotationType] = useState<WaypointType>("ward")
   const [permissionDenied, setPermissionDenied] = useState(false)
+  const [stealth, setStealth] = useState(false)
   const elapsedRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -76,23 +87,13 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     onSurveyComplete(frames.current)
   }
 
+  // We record position + heading + named locations only — never the camera image.
+  // The camera stays on for the walking UX, but no pixels leave the device.
   function captureFrame(annotation?: string) {
-    if (!videoRef.current || !canvasRef.current) return
-    const video = videoRef.current
-    const canvas = canvasRef.current
-    const ctx = canvas.getContext("2d")
-    if (!ctx || video.readyState < 2) return
-
-    canvas.width = 640
-    canvas.height = 360
-    ctx.drawImage(video, 0, 0, 640, 360)
-    const imageData = canvas.toDataURL("image/jpeg", 0.5)
-
     const frame: SurveyFrame = {
       timestamp: Date.now(),
-      imageData,
-      coordinates: currentPosition ?? { lat: 51.5225, lng: -0.1199 },
-      heading: 0,
+      coordinates: currentPosition ?? { lat: 0, lng: 0 },
+      heading,
       floor: currentFloor,
       annotation,
     }
@@ -125,13 +126,29 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     )
   }
 
+  // Stealth mode: show only a small pulsing dot; recording continues normally
+  if (stealth) {
+    return (
+      <div className="fixed inset-0 z-[300] bg-black">
+        <video ref={videoRef} playsInline muted className="w-full h-full object-cover" />
+        {/* Discrete stealth indicator — tap to exit stealth */}
+        <button
+          onClick={() => setStealth(false)}
+          className="absolute bottom-8 right-5 z-10 flex items-center justify-center"
+          title="Exit stealth mode"
+        >
+          <span className={`w-4 h-4 rounded-full ${recording ? "bg-red-500 animate-pulse" : "bg-white/70"}`} />
+        </button>
+      </div>
+    )
+  }
+
   return (
     <div className="fixed inset-0 z-[300] bg-black">
       <video ref={videoRef} playsInline muted className="w-full h-full object-cover" />
-      <canvas ref={canvasRef} className="hidden" />
 
       {/* Top bar */}
-      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/80 to-transparent px-4 pt-safe-snug pb-4">
+      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/80 to-transparent p-4">
         <div className="flex items-center justify-between mb-2">
           <button onClick={onClose} className="text-white bg-black/40 rounded-full p-2">
             <X size={22} />
@@ -142,7 +159,14 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
               {recording ? `● REC  ${formatTime(elapsed)}` : "SURVEY MODE"}
             </span>
           </div>
-          <div className="w-10" />
+          {/* Stealth toggle */}
+          <button
+            onClick={() => setStealth(true)}
+            className="text-white bg-black/40 rounded-full p-2"
+            title="Enable stealth mode"
+          >
+            <EyeOff size={20} />
+          </button>
         </div>
 
         {recording && (
@@ -159,11 +183,11 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
 
       {/* Bottom controls */}
       {!showAnnotation ? (
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-6 pt-6 pb-safe-bar">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
           {!recording ? (
             <div className="text-center mb-4">
               <p className="text-white text-sm mb-1">Walk your route and the app will record it</p>
-              <p className="text-gray-400 text-xs">Captures a frame every 3 seconds automatically</p>
+              <p className="text-gray-400 text-xs">Records your path only — no video is saved or uploaded</p>
             </div>
           ) : (
             <div className="text-center mb-4">
@@ -195,7 +219,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
                   className="flex-1 bg-white text-gray-900 rounded-2xl py-3.5 font-semibold text-sm flex items-center justify-center gap-2"
                 >
                   <Square size={18} />
-                  Stop & Upload
+                  Stop & Save
                 </button>
               </>
             )}
@@ -203,7 +227,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
         </div>
       ) : (
         /* Annotation panel */
-        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl px-4 pt-4 pb-safe-bar slide-up">
+        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-4 slide-up">
           <h3 className="font-bold text-gray-900 mb-3">What is at this location?</h3>
           <input
             autoFocus

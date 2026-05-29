@@ -1,215 +1,267 @@
 "use client"
 
-import React, { useEffect, useRef, MutableRefObject } from "react"
-import L from "leaflet"
-import "leaflet/dist/leaflet.css"
-import { Waypoint, Route, Coordinates } from "@/lib/types"
-import { GOSH_WAYPOINTS, FLOOR_PLANS, GOSH_CENTER, WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
+import { useEffect, useRef } from "react"
+import maplibregl from "maplibre-gl"
+import "maplibre-gl/dist/maplibre-gl.css"
+import { Waypoint, Route, Coordinates, FloorPlan } from "@/lib/types"
+
+const WAYPOINT_TYPE_ICONS: Record<string, string> = {
+  ward: "🏥", department: "🏢", lift: "🛗", stairs: "🪜",
+  toilet: "🚻", exit: "🚪", reception: "📋", canteen: "🍽️",
+  pharmacy: "💊", other: "📍",
+}
 
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
+  initialCenter: Coordinates
+  heading: number
   destination: Waypoint | null
   route: Route | null
   isNavigating: boolean
+  waypoints: Waypoint[]
+  onMapTap?: (coords: Coordinates) => void
+  onWaypointClick?: (w: Waypoint) => void
   onMapReady: () => void
-  leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
+  floorPlan?: FloorPlan | null
 }
 
 export default function FloorPlanMap({
   currentFloor,
   currentPosition,
+  initialCenter,
+  heading,
   destination,
   route,
   isNavigating,
+  waypoints,
+  onMapTap,
+  onWaypointClick,
   onMapReady,
-  leafletMapRef,
+  floorPlan,
 }: Props) {
-  const mapRef = useRef<L.Map | null>(null)
-  const positionMarkerRef = useRef<L.Marker | null>(null)
-  const destMarkerRef = useRef<L.Marker | null>(null)
-  const routeLayerRef = useRef<L.Polyline | null>(null)
-  const floorPlanLayerRef = useRef<L.ImageOverlay | null>(null)
-  const waypointLayersRef = useRef<L.Marker[]>([])
+  const onWaypointClickRef = useRef(onWaypointClick)
+  onWaypointClickRef.current = onWaypointClick
+  const mapRef = useRef<maplibregl.Map | null>(null)
+  const positionMarkerRef = useRef<maplibregl.Marker | null>(null)
+  const destMarkerRef = useRef<maplibregl.Marker | null>(null)
+  const waypointMarkersRef = useRef<maplibregl.Marker[]>([])
+  const initializedRef = useRef(false)
 
-  // Init map once
+  // Init map once — centered on user GPS
   useEffect(() => {
-    if (mapRef.current) return
+    if (initializedRef.current) return
+    initializedRef.current = true
 
-    const map = L.map("map-container", {
-      center: [GOSH_CENTER.lat, GOSH_CENTER.lng],
+    const map = new maplibregl.Map({
+      container: "map-container",
+      style: "https://tiles.openfreemap.org/styles/liberty",
+      center: [initialCenter.lng, initialCenter.lat],
       zoom: 18,
-      zoomControl: false,
+      pitch: 45,
+      bearing: 0,
       attributionControl: false,
+      maxZoom: 22,
     })
 
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-      maxZoom: 22,
-    }).addTo(map)
+    map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-left")
+
+    map.on("load", () => {
+      map.addLayer({
+        id: "3d-buildings",
+        source: "openmaptiles",
+        "source-layer": "building",
+        type: "fill-extrusion",
+        minzoom: 15,
+        paint: {
+          "fill-extrusion-color": "#e8e0d8",
+          "fill-extrusion-height": ["get", "render_height"],
+          "fill-extrusion-base": ["get", "render_min_height"],
+          "fill-extrusion-opacity": 0.7,
+        },
+      })
+
+      map.addSource("route", {
+        type: "geojson",
+        data: { type: "Feature", geometry: { type: "LineString", coordinates: [] }, properties: {} },
+      })
+
+      map.addLayer({
+        id: "route-glow",
+        type: "line",
+        source: "route",
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: { "line-color": "#00BFFF", "line-width": 16, "line-opacity": 0.2, "line-blur": 4 },
+      })
+
+      map.addLayer({
+        id: "route-line",
+        type: "line",
+        source: "route",
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: { "line-color": "#00BFFF", "line-width": 7, "line-opacity": 0.95 },
+      })
+
+      // Fly to user's real GPS immediately on load — no blank/wrong map
+      map.flyTo({
+        center: [initialCenter.lng, initialCenter.lat],
+        zoom: 18,
+        pitch: 45,
+        bearing: 0,
+        duration: 1200,
+        essential: true,
+      })
+
+      onMapReady()
+    })
+
+    // Tap to set position
+    map.on("click", (e) => {
+      if (onMapTap) onMapTap({ lat: e.lngLat.lat, lng: e.lngLat.lng })
+    })
 
     mapRef.current = map
-    if (leafletMapRef) leafletMapRef.current = map
-    onMapReady()
 
     return () => {
       map.remove()
       mapRef.current = null
-      if (leafletMapRef) leafletMapRef.current = null
+      initializedRef.current = false
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Update floor plan overlay
+  // Smooth camera follow
+  useEffect(() => {
+    if (!mapRef.current || !currentPosition) return
+    mapRef.current.easeTo({
+      center: [currentPosition.lng, currentPosition.lat],
+      bearing: isNavigating ? heading : 0,
+      pitch: isNavigating ? 52 : 45,
+      zoom: isNavigating ? 19 : 18,
+      duration: 800,
+      easing: (t) => t * (2 - t),
+    })
+  }, [currentPosition, heading, isNavigating])
+
+  // Position dot
   useEffect(() => {
     if (!mapRef.current) return
-    const map = mapRef.current
+    if (positionMarkerRef.current) { positionMarkerRef.current.remove(); positionMarkerRef.current = null }
+    if (!currentPosition) return
 
-    if (floorPlanLayerRef.current) {
-      map.removeLayer(floorPlanLayerRef.current)
-      floorPlanLayerRef.current = null
-    }
+    const el = document.createElement("div")
+    el.innerHTML = `
+      <div style="position:relative;width:52px;height:52px;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;width:52px;height:52px;background:rgba(0,94,184,0.15);border-radius:50%;animation:pulse 2s infinite;"></div>
+        <div style="width:22px;height:22px;background:#005EB8;border:3px solid white;border-radius:50%;box-shadow:0 2px 10px rgba(0,94,184,0.7);position:relative;z-index:2;"></div>
+        <div style="position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid #005EB8;"></div>
+      </div>`
+    el.style.cssText = "width:52px;height:52px;cursor:default;"
 
-    const plan = FLOOR_PLANS.find((fp) => fp.floor === currentFloor)
-    if (plan) {
-      const overlay = L.imageOverlay(plan.imageUrl, plan.bounds as L.LatLngBoundsExpression, {
-        opacity: 0.85,
-        interactive: false,
+    positionMarkerRef.current = new maplibregl.Marker({ element: el, rotationAlignment: "map", pitchAlignment: "map" })
+      .setLngLat([currentPosition.lng, currentPosition.lat])
+      .addTo(mapRef.current)
+  }, [currentPosition])
+
+  // Rotate arrow
+  useEffect(() => {
+    if (positionMarkerRef.current) positionMarkerRef.current.setRotation(heading)
+  }, [heading])
+
+  // Destination pin
+  useEffect(() => {
+    if (!mapRef.current) return
+    if (destMarkerRef.current) { destMarkerRef.current.remove(); destMarkerRef.current = null }
+    if (!destination || !isNavigating) return
+
+    const el = document.createElement("div")
+    el.innerHTML = `
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div style="background:#DA291C;border:3px solid white;border-radius:50% 50% 50% 0;transform:rotate(-45deg);width:32px;height:32px;box-shadow:0 3px 10px rgba(218,41,28,0.5);"></div>
+        <div style="background:white;border:2px solid #DA291C;border-radius:8px;padding:2px 6px;font-size:10px;font-weight:700;color:#DA291C;margin-top:4px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.15);max-width:120px;overflow:hidden;text-overflow:ellipsis;">${destination.name}</div>
+      </div>`
+    el.style.cssText = "cursor:default;"
+
+    destMarkerRef.current = new maplibregl.Marker({ element: el, anchor: "bottom" })
+      .setLngLat([destination.coordinates.lng, destination.coordinates.lat])
+      .addTo(mapRef.current)
+  }, [destination, isNavigating])
+
+  // Route line
+  useEffect(() => {
+    if (!mapRef.current || !mapRef.current.getSource("route")) return
+    const source = mapRef.current.getSource("route") as maplibregl.GeoJSONSource
+    if (isNavigating && route && destination && currentPosition) {
+      source.setData({
+        type: "Feature",
+        geometry: { type: "LineString", coordinates: [
+          [currentPosition.lng, currentPosition.lat],
+          [destination.coordinates.lng, destination.coordinates.lat],
+        ]},
+        properties: {},
       })
-      overlay.addTo(map)
-      floorPlanLayerRef.current = overlay
+    } else {
+      source.setData({ type: "Feature", geometry: { type: "LineString", coordinates: [] }, properties: {} })
     }
-  }, [currentFloor])
+  }, [isNavigating, route, destination, currentPosition])
 
-  // Update waypoint markers
+  // Floor plan image overlay
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map) return
+    // Remove old overlay if present
+    if (map.getLayer("floor-plan-image")) map.removeLayer("floor-plan-image")
+    if (map.getSource("floor-plan")) map.removeSource("floor-plan")
+    if (!floorPlan?.imageUrl || !floorPlan.bounds) return
+
+    const [[south, west], [north, east]] = floorPlan.bounds
+    map.addSource("floor-plan", {
+      type: "image",
+      url: floorPlan.imageUrl,
+      coordinates: [
+        [west, north],
+        [east, north],
+        [east, south],
+        [west, south],
+      ],
+    })
+    map.addLayer({
+      id: "floor-plan-image",
+      type: "raster",
+      source: "floor-plan",
+      paint: { "raster-opacity": 0.8 },
+    })
+  }, [floorPlan])
+
+  // Waypoint markers per floor
   useEffect(() => {
     if (!mapRef.current) return
-    const map = mapRef.current
+    waypointMarkersRef.current.forEach((m) => m.remove())
+    waypointMarkersRef.current = []
 
-    waypointLayersRef.current.forEach((m) => map.removeLayer(m))
-    waypointLayersRef.current = []
-
-    const floorWaypoints = GOSH_WAYPOINTS.filter(
+    const floorWaypoints = waypoints.filter(
       (w) => w.floor === currentFloor && !["lift", "stairs"].includes(w.type)
     )
 
     floorWaypoints.forEach((w) => {
-      const icon = L.divIcon({
-        html: `<div style="
-          background:white;
-          border:2px solid #005EB8;
-          border-radius:50%;
-          width:32px;height:32px;
-          display:flex;align-items:center;justify-content:center;
-          font-size:16px;
-          box-shadow:0 2px 6px rgba(0,0,0,0.25);
-          ${destination?.id === w.id ? "border-color:#DA291C;background:#DA291C;" : ""}
-        ">${WAYPOINT_TYPE_ICONS[w.type]}</div>`,
-        iconSize: [32, 32],
-        iconAnchor: [16, 16],
-        className: "",
+      if (!mapRef.current) return
+      const isDestination = destination?.id === w.id
+      const el = document.createElement("div")
+      el.innerHTML = `
+        <div style="background:${isDestination ? "#DA291C" : "white"};border:2.5px solid ${isDestination ? "#DA291C" : "#005EB8"};border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.2);cursor:pointer;">${WAYPOINT_TYPE_ICONS[w.type] ?? "📍"}</div>`
+      el.style.cssText = "width:34px;height:34px;"
+      el.addEventListener("click", (ev) => {
+        ev.stopPropagation()
+        if (onWaypointClickRef.current) onWaypointClickRef.current(w)
       })
 
-      const marker = L.marker([w.coordinates.lat, w.coordinates.lng], { icon })
-        .bindPopup(`<b>${w.name}</b>${w.description ? `<br><small>${w.description}</small>` : ""}`)
-        .addTo(map)
+      const marker = new maplibregl.Marker({ element: el })
+        .setLngLat([w.coordinates.lng, w.coordinates.lat])
+        .addTo(mapRef.current)
 
-      waypointLayersRef.current.push(marker)
+      waypointMarkersRef.current.push(marker)
     })
-  }, [currentFloor, destination])
+  }, [currentFloor, destination, waypoints])
 
-  // Update position marker
-  useEffect(() => {
-    if (!mapRef.current) return
-    const map = mapRef.current
-
-    if (positionMarkerRef.current) {
-      map.removeLayer(positionMarkerRef.current)
-      positionMarkerRef.current = null
-    }
-
-    if (currentPosition) {
-      const icon = L.divIcon({
-        html: `<div style="position:relative;">
-          <div style="
-            width:20px;height:20px;
-            background:#005EB8;
-            border:3px solid white;
-            border-radius:50%;
-            box-shadow:0 2px 8px rgba(0,94,184,0.6);
-            position:relative;z-index:2;
-          "></div>
-          <div style="
-            position:absolute;top:50%;left:50%;
-            transform:translate(-50%,-50%);
-            width:40px;height:40px;
-            background:rgba(0,94,184,0.2);
-            border-radius:50%;
-            animation:none;
-          "></div>
-        </div>`,
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
-        className: "",
-      })
-
-      const marker = L.marker([currentPosition.lat, currentPosition.lng], { icon, zIndexOffset: 1000 })
-      marker.addTo(map)
-      positionMarkerRef.current = marker
-    }
-  }, [currentPosition])
-
-  // Update route
-  useEffect(() => {
-    if (!mapRef.current) return
-    const map = mapRef.current
-
-    if (routeLayerRef.current) {
-      map.removeLayer(routeLayerRef.current)
-      routeLayerRef.current = null
-    }
-
-    if (destMarkerRef.current) {
-      map.removeLayer(destMarkerRef.current)
-      destMarkerRef.current = null
-    }
-
-    if (isNavigating && route && destination && currentPosition) {
-      const routePoints: L.LatLngExpression[] = [
-        [currentPosition.lat, currentPosition.lng],
-        [destination.coordinates.lat, destination.coordinates.lng],
-      ]
-
-      const polyline = L.polyline(routePoints, {
-        color: "#00BFFF",
-        weight: 6,
-        opacity: 0.9,
-        lineCap: "round",
-        lineJoin: "round",
-        dashArray: "1, 12",
-      })
-      polyline.addTo(map)
-      routeLayerRef.current = polyline
-
-      const destIcon = L.divIcon({
-        html: `<div style="
-          background:#DA291C;
-          border:3px solid white;
-          border-radius:50% 50% 50% 0;
-          transform:rotate(-45deg);
-          width:28px;height:28px;
-          box-shadow:0 2px 8px rgba(218,41,28,0.5);
-        "></div>`,
-        iconSize: [28, 28],
-        iconAnchor: [14, 28],
-        className: "",
-      })
-      destMarkerRef.current = L.marker(
-        [destination.coordinates.lat, destination.coordinates.lng],
-        { icon: destIcon, zIndexOffset: 900 }
-      ).addTo(map)
-
-      map.fitBounds(polyline.getBounds(), { padding: [80, 80] })
-    }
-  }, [isNavigating, route, destination, currentPosition])
-
-  return <div id="map-container" className="w-full h-full" style={{ isolation: "isolate" }} />
+  return <div id="map-container" className="w-full h-full" />
 }

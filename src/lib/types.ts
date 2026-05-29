@@ -50,7 +50,6 @@ export interface RouteStep {
 
 export interface SurveyFrame {
   timestamp: number
-  imageData: string
   coordinates: Coordinates
   heading: number
   floor: number
@@ -65,4 +64,14 @@ export interface NavigationState {
   currentStepIndex: number
   isNavigating: boolean
   positionAccuracy: number
+}
+
+export interface Venue {
+  id: number
+  name: string
+  address?: string
+  city?: string
+  lat?: number
+  lng?: number
+  waypoint_count?: number
 }
