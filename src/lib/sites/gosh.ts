@@ -3,7 +3,7 @@
 // Regenerate via: python3 scripts/import-gosh.py — do not hand-edit.
 import { Site, Building, MapLocation } from "../types"
 
-export const GOSH_SITE: Site = {"id": "gosh", "name": "Great Ormond Street Hospital", "shortName": "GOSH", "description": "NHS children’s hospital, Bloomsbury, London", "center": {"lat": 51.5225, "lng": -0.1199}, "defaultZoom": 18, "brandColor": "#005EB8", "map": {"imageUrl": "/map/gosh-site.png", "bounds": [[51.521153, -0.121431], [51.523847, -0.118369]]}}
+export const GOSH_SITE: Site = {"id": "gosh", "name": "Great Ormond Street Hospital", "shortName": "GOSH", "description": "NHS children’s hospital, Bloomsbury, London", "center": {"lat": 51.5224, "lng": -0.1203}, "defaultZoom": 18, "brandColor": "#005EB8", "map": {"imageUrl": "/map/gosh-site.png", "corners": {"topLeft": [51.521258, -0.121826], "topRight": [51.522915, -0.122539], "bottomLeft": [51.521885, -0.118061]}, "bounds": [[51.521258, -0.122539], [51.523542, -0.118061]]}}
 
 export const GOSH_BUILDINGS: Building[] = [
   {
@@ -12,8 +12,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "40 Bernard Street",
     "aliases": [],
     "coordinates": {
-      "lat": 51.523739,
-      "lng": -0.121278
+      "lat": 51.521366,
+      "lng": -0.121711
     },
     "precise": false
   },
@@ -23,8 +23,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "45 Great Ormond Street",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522392,
-      "lng": -0.121064
+      "lat": 51.521795,
+      "lng": -0.119878
     },
     "precise": false
   },
@@ -34,8 +34,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "51 Great Ormond Street",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522231,
-      "lng": -0.121064
+      "lat": 51.521833,
+      "lng": -0.119652
     },
     "precise": false
   },
@@ -45,8 +45,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "55 Great Ormond Street",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.121064
+      "lat": 51.521745,
+      "lng": -0.120179
     },
     "precise": false
   },
@@ -58,8 +58,8 @@ export const GOSH_BUILDINGS: Building[] = [
       "York House"
     ],
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     },
     "precise": true
   },
@@ -69,8 +69,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Boiler House",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522069,
-      "lng": -0.120512
+      "lat": 51.522127,
+      "lng": -0.119698
     },
     "precise": false
   },
@@ -80,8 +80,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Camelia Botnar Laboratories",
     "aliases": [],
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     },
     "precise": true
   },
@@ -91,8 +91,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Cardiac Wing",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522231,
-      "lng": -0.1199
+      "lat": 51.522475,
+      "lng": -0.119848
     },
     "precise": false
   },
@@ -102,8 +102,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Frontage Building",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     },
     "precise": false
   },
@@ -113,8 +113,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Italian Building",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     },
     "precise": false
   },
@@ -129,8 +129,8 @@ export const GOSH_BUILDINGS: Building[] = [
       "MSCB"
     ],
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     },
     "precise": true
   },
@@ -140,8 +140,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Nurses Home",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     },
     "precise": true
   },
@@ -151,8 +151,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Nurses Home Porta Cabins",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.118614
+      "lat": 51.523046,
+      "lng": -0.120901
     },
     "precise": false
   },
@@ -164,8 +164,8 @@ export const GOSH_BUILDINGS: Building[] = [
       "OBW"
     ],
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     },
     "precise": true
   },
@@ -175,8 +175,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Orangery",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.11941
+      "lat": 51.522609,
+      "lng": -0.120753
     },
     "precise": false
   },
@@ -186,8 +186,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Ormond House",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522823,
-      "lng": -0.121064
+      "lat": 51.521695,
+      "lng": -0.120481
     },
     "precise": false
   },
@@ -197,8 +197,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Paul O'Gorman Building",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     },
     "precise": false
   },
@@ -208,8 +208,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Southwood Building",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     },
     "precise": true
   },
@@ -219,8 +219,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Southwood Courtyard",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.118981
+      "lat": 51.522841,
+      "lng": -0.120853
     },
     "precise": false
   },
@@ -233,8 +233,8 @@ export const GOSH_BUILDINGS: Building[] = [
       "Maple, Rabbit & Zebra Outpatients"
     ],
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120237
+      "lat": 51.522048,
+      "lng": -0.121238
     },
     "precise": true
   },
@@ -246,8 +246,8 @@ export const GOSH_BUILDINGS: Building[] = [
       "VCB"
     ],
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     },
     "precise": true
   },
@@ -257,8 +257,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "West Link",
     "aliases": [],
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     },
     "precise": false
   },
@@ -268,8 +268,8 @@ export const GOSH_BUILDINGS: Building[] = [
     "fullName": "Weston House",
     "aliases": [],
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     },
     "precise": true
   }
@@ -290,8 +290,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523739,
-      "lng": -0.121278
+      "lat": 51.521366,
+      "lng": -0.121711
     }
   },
   {
@@ -308,8 +308,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522392,
-      "lng": -0.121064
+      "lat": 51.521795,
+      "lng": -0.119878
     }
   },
   {
@@ -326,8 +326,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522231,
-      "lng": -0.121064
+      "lat": 51.521833,
+      "lng": -0.119652
     }
   },
   {
@@ -344,8 +344,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.121064
+      "lat": 51.521745,
+      "lng": -0.120179
     }
   },
   {
@@ -362,8 +362,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.121064
+      "lat": 51.521745,
+      "lng": -0.120179
     }
   },
   {
@@ -380,8 +380,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.121064
+      "lat": 51.521745,
+      "lng": -0.120179
     }
   },
   {
@@ -398,8 +398,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -416,8 +416,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -434,8 +434,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -452,8 +452,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -470,8 +470,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -488,8 +488,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -506,8 +506,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -524,8 +524,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -542,8 +542,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -560,8 +560,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -578,8 +578,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -596,8 +596,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -614,8 +614,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -632,8 +632,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -650,8 +650,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -668,8 +668,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -686,8 +686,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -704,8 +704,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -722,8 +722,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -740,8 +740,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -758,8 +758,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -776,8 +776,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -794,8 +794,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -812,8 +812,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -830,8 +830,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -848,8 +848,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -866,8 +866,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -884,8 +884,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -902,8 +902,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523416,
-      "lng": -0.120849
+      "lat": 51.521673,
+      "lng": -0.121359
     }
   },
   {
@@ -920,8 +920,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522069,
-      "lng": -0.120512
+      "lat": 51.522127,
+      "lng": -0.119698
     }
   },
   {
@@ -938,8 +938,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522069,
-      "lng": -0.120512
+      "lat": 51.522127,
+      "lng": -0.119698
     }
   },
   {
@@ -956,8 +956,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522069,
-      "lng": -0.120512
+      "lat": 51.522127,
+      "lng": -0.119698
     }
   },
   {
@@ -974,8 +974,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522069,
-      "lng": -0.120512
+      "lat": 51.522127,
+      "lng": -0.119698
     }
   },
   {
@@ -992,8 +992,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522069,
-      "lng": -0.120512
+      "lat": 51.522127,
+      "lng": -0.119698
     }
   },
   {
@@ -1010,8 +1010,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1028,8 +1028,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1046,8 +1046,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1064,8 +1064,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1082,8 +1082,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1100,8 +1100,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1118,8 +1118,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1136,8 +1136,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1154,8 +1154,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1172,8 +1172,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1190,8 +1190,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1208,8 +1208,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1226,8 +1226,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1244,8 +1244,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1262,8 +1262,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1280,8 +1280,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.119747
+      "lat": 51.522627,
+      "lng": -0.11947
     }
   },
   {
@@ -1298,8 +1298,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522231,
-      "lng": -0.1199
+      "lat": 51.522475,
+      "lng": -0.119848
     }
   },
   {
@@ -1316,8 +1316,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522231,
-      "lng": -0.1199
+      "lat": 51.522475,
+      "lng": -0.119848
     }
   },
   {
@@ -1334,8 +1334,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522231,
-      "lng": -0.1199
+      "lat": 51.522475,
+      "lng": -0.119848
     }
   },
   {
@@ -1352,8 +1352,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1370,8 +1370,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1388,8 +1388,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1406,8 +1406,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1424,8 +1424,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1442,8 +1442,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1460,8 +1460,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1478,8 +1478,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1496,8 +1496,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1514,8 +1514,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Contractors remit",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1532,8 +1532,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1550,8 +1550,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1568,8 +1568,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1586,8 +1586,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1604,8 +1604,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1622,8 +1622,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1640,8 +1640,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1658,8 +1658,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522608,
-      "lng": -0.120359
+      "lat": 51.522072,
+      "lng": -0.120562
     }
   },
   {
@@ -1676,8 +1676,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1694,8 +1694,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1712,8 +1712,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1730,8 +1730,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1748,8 +1748,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1766,8 +1766,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1784,8 +1784,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1802,8 +1802,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1820,8 +1820,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1838,8 +1838,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1856,8 +1856,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.120053
+      "lat": 51.52229,
+      "lng": -0.120535
     }
   },
   {
@@ -1874,8 +1874,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -1892,8 +1892,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -1910,8 +1910,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -1928,8 +1928,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -1946,8 +1946,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -1964,8 +1964,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -1982,8 +1982,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2000,8 +2000,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2018,8 +2018,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2036,8 +2036,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2054,8 +2054,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2072,8 +2072,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2090,8 +2090,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2108,8 +2108,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2126,8 +2126,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2144,8 +2144,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2162,8 +2162,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2180,8 +2180,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522473,
-      "lng": -0.119533
+      "lat": 51.522605,
+      "lng": -0.120348
     }
   },
   {
@@ -2198,8 +2198,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2216,8 +2216,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2234,8 +2234,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2252,8 +2252,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2270,8 +2270,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2288,8 +2288,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2306,8 +2306,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2324,8 +2324,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2342,8 +2342,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2360,8 +2360,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2378,8 +2378,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2396,8 +2396,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2414,8 +2414,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2432,8 +2432,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2450,8 +2450,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2468,8 +2468,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2486,8 +2486,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2504,8 +2504,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2522,8 +2522,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2540,8 +2540,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2558,8 +2558,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2576,8 +2576,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2594,8 +2594,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2612,8 +2612,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2630,8 +2630,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2648,8 +2648,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2666,8 +2666,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2684,8 +2684,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2702,8 +2702,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2720,8 +2720,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2738,8 +2738,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2756,8 +2756,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2774,8 +2774,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2792,8 +2792,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2810,8 +2810,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522877,
-      "lng": -0.118798
+      "lat": 51.522909,
+      "lng": -0.121084
     }
   },
   {
@@ -2828,8 +2828,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.118614
+      "lat": 51.523046,
+      "lng": -0.120901
     }
   },
   {
@@ -2846,8 +2846,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -2864,8 +2864,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -2882,8 +2882,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -2900,8 +2900,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -2918,8 +2918,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -2936,8 +2936,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -2954,8 +2954,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -2972,8 +2972,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -2990,8 +2990,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -3008,8 +3008,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -3026,8 +3026,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -3044,8 +3044,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.52188,
-      "lng": -0.120267
+      "lat": 51.522346,
+      "lng": -0.119348
     }
   },
   {
@@ -3062,8 +3062,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "other",
     "status": "Contractors remit",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.11941
+      "lat": 51.522609,
+      "lng": -0.120753
     }
   },
   {
@@ -3080,8 +3080,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522823,
-      "lng": -0.121064
+      "lat": 51.521695,
+      "lng": -0.120481
     }
   },
   {
@@ -3098,8 +3098,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522823,
-      "lng": -0.121064
+      "lat": 51.521695,
+      "lng": -0.120481
     }
   },
   {
@@ -3116,8 +3116,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3134,8 +3134,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3152,8 +3152,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3170,8 +3170,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3188,8 +3188,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3206,8 +3206,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3224,8 +3224,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3242,8 +3242,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3260,8 +3260,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3278,8 +3278,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3296,8 +3296,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3314,8 +3314,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3332,8 +3332,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3350,8 +3350,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3368,8 +3368,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3386,8 +3386,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3404,8 +3404,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3422,8 +3422,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3440,8 +3440,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3458,8 +3458,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.120114
+      "lat": 51.522603,
+      "lng": -0.120145
     }
   },
   {
@@ -3476,8 +3476,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3494,8 +3494,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3512,8 +3512,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3530,8 +3530,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3548,8 +3548,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3566,8 +3566,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3584,8 +3584,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3602,8 +3602,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3620,8 +3620,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3638,8 +3638,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3656,8 +3656,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3674,8 +3674,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3692,8 +3692,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3710,8 +3710,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3728,8 +3728,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3746,8 +3746,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3764,8 +3764,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3782,8 +3782,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3800,8 +3800,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3818,8 +3818,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3836,8 +3836,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3854,8 +3854,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Contractors remit",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3872,8 +3872,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Contractors remit",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3890,8 +3890,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Contractors remit",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3908,8 +3908,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3926,8 +3926,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3944,8 +3944,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3962,8 +3962,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3980,8 +3980,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -3998,8 +3998,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4016,8 +4016,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4034,8 +4034,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4052,8 +4052,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4070,8 +4070,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4088,8 +4088,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4106,8 +4106,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4124,8 +4124,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4142,8 +4142,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4160,8 +4160,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4178,8 +4178,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4196,8 +4196,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4214,8 +4214,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4232,8 +4232,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4250,8 +4250,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4268,8 +4268,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4286,8 +4286,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4304,8 +4304,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4322,8 +4322,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4340,8 +4340,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4358,8 +4358,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4376,8 +4376,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4394,8 +4394,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4412,8 +4412,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4430,8 +4430,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4448,8 +4448,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4466,8 +4466,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522931,
-      "lng": -0.119165
+      "lat": 51.522697,
+      "lng": -0.121074
     }
   },
   {
@@ -4484,8 +4484,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Contractors remit",
     "coordinates": {
-      "lat": 51.522742,
-      "lng": -0.118981
+      "lat": 51.522841,
+      "lng": -0.120853
     }
   },
   {
@@ -4502,8 +4502,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120237
+      "lat": 51.522048,
+      "lng": -0.121238
     }
   },
   {
@@ -4520,8 +4520,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120237
+      "lat": 51.522048,
+      "lng": -0.121238
     }
   },
   {
@@ -4538,8 +4538,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120237
+      "lat": 51.522048,
+      "lng": -0.121238
     }
   },
   {
@@ -4556,8 +4556,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120237
+      "lat": 51.522048,
+      "lng": -0.121238
     }
   },
   {
@@ -4574,8 +4574,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120237
+      "lat": 51.522048,
+      "lng": -0.121238
     }
   },
   {
@@ -4592,8 +4592,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4610,8 +4610,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4628,8 +4628,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4646,8 +4646,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4664,8 +4664,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4682,8 +4682,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4700,8 +4700,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4718,8 +4718,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4736,8 +4736,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4754,8 +4754,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4772,8 +4772,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4790,8 +4790,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4808,8 +4808,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4826,8 +4826,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4844,8 +4844,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4862,8 +4862,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4880,8 +4880,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4898,8 +4898,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4916,8 +4916,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Contractors remit",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4934,8 +4934,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4952,8 +4952,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4970,8 +4970,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -4988,8 +4988,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5006,8 +5006,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5024,8 +5024,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5042,8 +5042,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5060,8 +5060,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5078,8 +5078,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5096,8 +5096,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5114,8 +5114,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5132,8 +5132,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5150,8 +5150,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5168,8 +5168,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5186,8 +5186,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5204,8 +5204,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5222,8 +5222,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5240,8 +5240,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5258,8 +5258,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5276,8 +5276,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5294,8 +5294,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522527,
-      "lng": -0.119931
+      "lat": 51.522377,
+      "lng": -0.120331
     }
   },
   {
@@ -5312,8 +5312,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     }
   },
   {
@@ -5330,8 +5330,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     }
   },
   {
@@ -5348,8 +5348,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     }
   },
   {
@@ -5366,8 +5366,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     }
   },
   {
@@ -5384,8 +5384,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     }
   },
   {
@@ -5402,8 +5402,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     }
   },
   {
@@ -5420,8 +5420,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     }
   },
   {
@@ -5438,8 +5438,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.522662,
-      "lng": -0.120512
+      "lat": 51.522085,
+      "lng": -0.120487
     }
   },
   {
@@ -5456,8 +5456,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5474,8 +5474,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "staff",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5492,8 +5492,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5510,8 +5510,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5528,8 +5528,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5546,8 +5546,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5564,8 +5564,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5582,8 +5582,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5600,8 +5600,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "access": "public",
     "status": "Occupied",
     "coordinates": {
-      "lat": 51.523227,
-      "lng": -0.120788
+      "lat": 51.52175,
+      "lng": -0.12111
     }
   },
   {
@@ -5619,8 +5619,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "status": "Occupied",
     "description": "Main hospital entrance (off Guilford Street)",
     "coordinates": {
-      "lat": 51.522716,
-      "lng": -0.118522
+      "lat": 51.523095,
+      "lng": -0.120922
     }
   },
   {
@@ -5638,8 +5638,8 @@ export const GOSH_LOCATIONS: MapLocation[] = [
     "status": "Occupied",
     "description": "Emergency / ambulance access only",
     "coordinates": {
-      "lat": 51.522985,
-      "lng": -0.119747
+      "lat": 51.52237,
+      "lng": -0.121013
     }
   }
 ]

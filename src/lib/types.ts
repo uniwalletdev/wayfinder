@@ -18,7 +18,16 @@ export interface Site {
   /** Georeferenced site map image laid over the real-world map. */
   map: {
     imageUrl: string
-    /** Leaflet bounds: [[south, west], [north, east]]. */
+    /**
+     * Real-world corners for a rotated overlay (the artwork is not north-up).
+     * Each is [lat, lng]; topLeft/topRight/bottomLeft map to image pixel corners.
+     */
+    corners: {
+      topLeft: [number, number]
+      topRight: [number, number]
+      bottomLeft: [number, number]
+    }
+    /** Axis-aligned bbox of the corners: [[south, west], [north, east]]. */
     bounds: [[number, number], [number, number]]
   }
 }

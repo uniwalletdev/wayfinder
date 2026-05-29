@@ -1,9 +1,9 @@
 "use client"
 
 import { useEffect, useRef, MutableRefObject } from "react"
-import L from "leaflet"
+import L from "@/lib/leaflet-setup" // exposes global L + leaflet-rotate, must precede the plugin below
 import "leaflet/dist/leaflet.css"
-import "leaflet-rotate"
+import "leaflet-imageoverlay-rotated"
 import { MapLocation, Route, Coordinates } from "@/lib/types"
 import { GOSH_BUILDINGS, ACTIVE_SITE, SITE_MAP } from "@/lib/gosh-data"
 
@@ -97,11 +97,30 @@ export default function FloorPlanMap({
       maxZoom: 22,
     }).addTo(map)
 
-    // Georeferenced official site map (transparent background) over the real world.
-    L.imageOverlay(SITE_MAP.imageUrl, SITE_MAP.bounds as L.LatLngBoundsExpression, {
-      opacity: 0.95,
-      interactive: false,
-    }).addTo(map)
+    // Georeferenced official site map (transparent bg, rotated to the real
+    // street grid) laid over the live map via three real-world corners.
+    const c = SITE_MAP.corners
+    const rotatedFactory = (L.imageOverlay as unknown as {
+      rotated?: (
+        url: string,
+        tl: L.LatLngExpression,
+        tr: L.LatLngExpression,
+        bl: L.LatLngExpression,
+        opts: L.ImageOverlayOptions
+      ) => L.Layer
+    }).rotated
+    if (rotatedFactory) {
+      rotatedFactory(SITE_MAP.imageUrl, c.topLeft, c.topRight, c.bottomLeft, {
+        opacity: 0.95,
+        interactive: false,
+      }).addTo(map)
+    } else {
+      // Fallback: axis-aligned overlay (un-rotated) if the plugin is unavailable.
+      L.imageOverlay(SITE_MAP.imageUrl, SITE_MAP.bounds as L.LatLngBoundsExpression, {
+        opacity: 0.95,
+        interactive: false,
+      }).addTo(map)
+    }
 
     map.on("rotate", updateCone)
 

@@ -31,13 +31,29 @@ OUT_TS = os.path.join(ROOT, "src/lib/sites/gosh.ts")
 OUT_PNG = os.path.join(ROOT, "public/map/gosh-site.png")
 
 # --- georeferencing -------------------------------------------------------
-# Bounding box around the GOSH campus (central London), matched to the
-# portrait aspect ratio of the site-map artwork.
-NORTH, SOUTH = 51.523847, 51.521153
-WEST, EAST = -0.121431, -0.118369
+# The site-map artwork is a schematic, rotated ~90deg from true north: Great
+# Ormond Street / Guilford Street are drawn vertically but really run roughly
+# E-W along the tilted Bloomsbury grid. We georeference in local metres so the
+# artwork (and every building derived from the same transform) sits over the
+# real street grid. Tune these four constants if the overlay needs nudging.
+import math
 
-def to_latlng(x, y):  # x: 0..1 left->right, y: 0..1 top->bottom
-    return round(NORTH - y * (NORTH - SOUTH), 6), round(WEST + x * (EAST - WEST), 6)
+CENTER_LAT, CENTER_LNG = 51.52240, -0.12030     # campus centre (artwork u=v=0.5)
+ART_BEARING_DOWN = 75.0                          # compass bearing of artwork "down" (along Great Ormond St, eastward)
+SPAN_DOWN_M = 270.0                              # real length of the artwork's vertical (v) span, metres
+IMG_W, IMG_H = 2382, 3368                        # rendered artwork pixels (keeps scale isotropic)
+SPAN_RIGHT_M = SPAN_DOWN_M * IMG_W / IMG_H       # real length of the horizontal (u) span, metres
+
+_M_PER_DEG_LAT = 111320.0
+_M_PER_DEG_LNG = 111320.0 * math.cos(math.radians(CENTER_LAT))
+_PHI_V = math.radians(ART_BEARING_DOWN)
+_PHI_U = math.radians(ART_BEARING_DOWN - 90.0)
+
+def to_latlng(x, y):  # x: 0..1 left->right (u), y: 0..1 top->bottom (v)
+    du, dv = x - 0.5, y - 0.5
+    east = du * SPAN_RIGHT_M * math.sin(_PHI_U) + dv * SPAN_DOWN_M * math.sin(_PHI_V)
+    north = du * SPAN_RIGHT_M * math.cos(_PHI_U) + dv * SPAN_DOWN_M * math.cos(_PHI_V)
+    return round(CENTER_LAT + north / _M_PER_DEG_LAT, 6), round(CENTER_LNG + east / _M_PER_DEG_LNG, 6)
 
 # Normalised building centroids read off the artwork (x, y, precise?).
 CENTROIDS = {
@@ -45,18 +61,18 @@ CENTROIDS = {
     "Variety Club Building": (0.49, 0.49, True),
     "Nurses Home": (0.86, 0.36, True),
     "Barclay (formerly York) House": (0.19, 0.16, True),
-    "Paul O'Gorman Building": (0.43, 0.41, False),
-    "Frontage Building": (0.35, 0.46, False),
+    "Paul O'Gorman Building": (0.60, 0.56, False),
+    "Frontage Building": (0.34, 0.40, False),   # the hatched "Construction" frontage on Great Ormond St
     "Morgan Stanley Clinical Building\nMittal Children's Medical Centre": (0.62, 0.51, True),
     "Camelia Botnar Laboratories": (0.55, 0.73, True),
     "Octav Botnar Wing": (0.38, 0.73, True),
-    "Italian Building": (0.45, 0.42, False),
+    "Italian Building": (0.46, 0.43, False),
     "Weston House": (0.21, 0.23, True),
-    "West Link": (0.30, 0.44, False),
-    "Boiler House": (0.30, 0.66, False),
+    "West Link": (0.34, 0.42, False),
+    "Boiler House": (0.29, 0.62, False),
     "The Royal London Hospital for Integrated Medicine": (0.39, 0.23, True),
     "55 Great Ormond Street": (0.12, 0.46, False),
-    "Cardiac Wing": (0.50, 0.60, False),
+    "Cardiac Wing": (0.50, 0.62, False),
     "Ormond House": (0.12, 0.38, False),
     "40 Bernard Street": (0.05, 0.04, False),
     "45 Great Ormond Street": (0.12, 0.54, False),
@@ -241,12 +257,22 @@ def main():
             "description": desc, "coordinates": {"lat": lat, "lng": lng},
         })
 
+    # Rotated overlay corners (image pixel corners -> real lat/lng) + bbox.
+    top_left, top_right, bottom_left = to_latlng(0, 0), to_latlng(1, 0), to_latlng(0, 1)
+    bottom_right = to_latlng(1, 1)
+    all_lat = [c[0] for c in (top_left, top_right, bottom_left, bottom_right)]
+    all_lng = [c[1] for c in (top_left, top_right, bottom_left, bottom_right)]
+
     site = {
         "id": "gosh", "name": "Great Ormond Street Hospital", "shortName": "GOSH",
         "description": "NHS children’s hospital, Bloomsbury, London",
-        "center": {"lat": round((NORTH + SOUTH) / 2, 6), "lng": round((WEST + EAST) / 2, 6)},
+        "center": {"lat": CENTER_LAT, "lng": CENTER_LNG},
         "defaultZoom": 18, "brandColor": "#005EB8",
-        "map": {"imageUrl": "/map/gosh-site.png", "bounds": [[SOUTH, WEST], [NORTH, EAST]]},
+        "map": {
+            "imageUrl": "/map/gosh-site.png",
+            "corners": {"topLeft": list(top_left), "topRight": list(top_right), "bottomLeft": list(bottom_left)},
+            "bounds": [[min(all_lat), min(all_lng)], [max(all_lat), max(all_lng)]],
+        },
     }
 
     header = (
