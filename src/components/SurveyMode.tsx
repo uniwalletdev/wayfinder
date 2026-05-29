@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { SurveyFrame, Coordinates } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
-import { X, Square, MapPin, Check } from "lucide-react"
+import { X, Square, MapPin, Check, EyeOff } from "lucide-react"
 
 const WAYPOINT_TYPE_ICONS: Record<string, string> = {
   ward: "🏥", department: "🏢", lift: "🛗", stairs: "🪜",
@@ -39,6 +39,7 @@ export default function SurveyMode({ currentFloor, currentPosition, heading, onC
   const [annotationName, setAnnotationName] = useState("")
   const [annotationType, setAnnotationType] = useState<WaypointType>("ward")
   const [permissionDenied, setPermissionDenied] = useState(false)
+  const [stealth, setStealth] = useState(false)
   const elapsedRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -125,6 +126,23 @@ export default function SurveyMode({ currentFloor, currentPosition, heading, onC
     )
   }
 
+  // Stealth mode: show only a small pulsing dot; recording continues normally
+  if (stealth) {
+    return (
+      <div className="fixed inset-0 z-[300] bg-black">
+        <video ref={videoRef} playsInline muted className="w-full h-full object-cover" />
+        {/* Discrete stealth indicator — tap to exit stealth */}
+        <button
+          onClick={() => setStealth(false)}
+          className="absolute bottom-8 right-5 z-10 flex items-center justify-center"
+          title="Exit stealth mode"
+        >
+          <span className={`w-4 h-4 rounded-full ${recording ? "bg-red-500 animate-pulse" : "bg-white/70"}`} />
+        </button>
+      </div>
+    )
+  }
+
   return (
     <div className="fixed inset-0 z-[300] bg-black">
       <video ref={videoRef} playsInline muted className="w-full h-full object-cover" />
@@ -141,7 +159,14 @@ export default function SurveyMode({ currentFloor, currentPosition, heading, onC
               {recording ? `● REC  ${formatTime(elapsed)}` : "SURVEY MODE"}
             </span>
           </div>
-          <div className="w-10" />
+          {/* Stealth toggle */}
+          <button
+            onClick={() => setStealth(true)}
+            className="text-white bg-black/40 rounded-full p-2"
+            title="Enable stealth mode"
+          >
+            <EyeOff size={20} />
+          </button>
         </div>
 
         {recording && (

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
-import { Waypoint, Route, Coordinates } from "@/lib/types"
+import { Waypoint, Route, Coordinates, FloorPlan } from "@/lib/types"
 
 const WAYPOINT_TYPE_ICONS: Record<string, string> = {
   ward: "🏥", department: "🏢", lift: "🛗", stairs: "🪜",
@@ -23,6 +23,7 @@ interface Props {
   onMapTap?: (coords: Coordinates) => void
   onWaypointClick?: (w: Waypoint) => void
   onMapReady: () => void
+  floorPlan?: FloorPlan | null
 }
 
 export default function FloorPlanMap({
@@ -37,6 +38,7 @@ export default function FloorPlanMap({
   onMapTap,
   onWaypointClick,
   onMapReady,
+  floorPlan,
 }: Props) {
   const onWaypointClickRef = useRef(onWaypointClick)
   onWaypointClickRef.current = onWaypointClick
@@ -202,6 +204,34 @@ export default function FloorPlanMap({
       source.setData({ type: "Feature", geometry: { type: "LineString", coordinates: [] }, properties: {} })
     }
   }, [isNavigating, route, destination, currentPosition])
+
+  // Floor plan image overlay
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map) return
+    // Remove old overlay if present
+    if (map.getLayer("floor-plan-image")) map.removeLayer("floor-plan-image")
+    if (map.getSource("floor-plan")) map.removeSource("floor-plan")
+    if (!floorPlan?.imageUrl || !floorPlan.bounds) return
+
+    const [[south, west], [north, east]] = floorPlan.bounds
+    map.addSource("floor-plan", {
+      type: "image",
+      url: floorPlan.imageUrl,
+      coordinates: [
+        [west, north],
+        [east, north],
+        [east, south],
+        [west, south],
+      ],
+    })
+    map.addLayer({
+      id: "floor-plan-image",
+      type: "raster",
+      source: "floor-plan",
+      paint: { "raster-opacity": 0.8 },
+    })
+  }, [floorPlan])
 
   // Waypoint markers per floor
   useEffect(() => {

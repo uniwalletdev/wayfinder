@@ -28,7 +28,8 @@ CREATE TABLE IF NOT EXISTS floor_plans (
   label       TEXT NOT NULL,
   image_url   TEXT,
   bounds      JSONB,
-  created_at  TIMESTAMPTZ DEFAULT NOW()
+  created_at  TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (venue_id, floor)
 );
 
 CREATE TABLE IF NOT EXISTS waypoints (

@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { Waypoint, NavigationState, SurveyFrame, Coordinates } from "@/lib/types"
+import { Waypoint, NavigationState, SurveyFrame, Coordinates, FloorPlan } from "@/lib/types"
 import { buildRoute, bearing, relativeTurn } from "@/lib/routing"
 import { deadReckon, haversineDistance } from "@/lib/positioning"
 import TopInstructionBar, { LiveNav } from "@/components/TopInstructionBar"
@@ -54,6 +54,7 @@ export default function Home() {
   const [floorConfirm, setFloorConfirm] = useState<number | null>(null)
   const [venue, setVenue] = useState<VenueInfo | null>(null)
   const [waypoints, setWaypoints] = useState<Waypoint[]>([])
+  const [floorPlans, setFloorPlans] = useState<FloorPlan[]>([])
   const [isMoving, setIsMoving] = useState(false)
   const [tappedPoint, setTappedPoint] = useState<Coordinates | null>(null)
   const [arrived, setArrived] = useState(false)
@@ -248,6 +249,22 @@ export default function Home() {
         }
       })
       .catch((e) => logError(`Waypoints fetch failed: ${e}`))
+
+    // Load floor plans for this venue
+    fetch(`/api/venues/${venue.id}/floor-plans`)
+      .then((r) => r.json())
+      .then((rows) => {
+        if (Array.isArray(rows)) {
+          setFloorPlans(rows.map((r: Record<string, unknown>) => ({
+            id: String(r.id),
+            floor: Number(r.floor),
+            label: r.label as string,
+            imageUrl: r.image_url as string,
+            bounds: r.bounds as FloorPlan["bounds"],
+          })))
+        }
+      })
+      .catch(() => {}) // non-fatal
   }, [venue])
 
   // Compass
@@ -440,6 +457,11 @@ export default function Home() {
   // Only set once GPS is real — map never mounts without a known position
   const mapCenter: Coordinates | null = navState.currentPosition
 
+  // Floor plan for current floor (if any has an image)
+  const currentFloorPlan = floorPlans.find(
+    (fp) => fp.floor === navState.currentFloor && fp.imageUrl
+  ) ?? null
+
   // Floors available: from venue's declared floor count, plus any floor with waypoints
   const venueFloors = useMemo(() => {
     const set = new Set<number>([0])
@@ -468,6 +490,7 @@ export default function Home() {
           onMapTap={handleMapTap}
           onWaypointClick={!navState.isNavigating && overlay === "none" ? setEditingWaypoint : undefined}
           onMapReady={() => {}}
+          floorPlan={currentFloorPlan}
         />
       )}
 
