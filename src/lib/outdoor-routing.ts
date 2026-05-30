@@ -3,11 +3,11 @@ import { Coordinates, TransportMode, OutdoorLeg, OutdoorStep } from "./types"
 const OSRM_BASE = "https://router.project-osrm.org/route/v1"
 
 const OSRM_PROFILE: Record<TransportMode, string | null> = {
-  walking:     "foot",
-  wheelchair:  "foot",
-  cycling:     "bike",
-  driving:     "driving",
-  transit:     null,
+  walking:    "foot",
+  wheelchair: "foot",
+  cycling:    "bike",
+  driving:    "driving",
+  transit:    null,
 }
 
 type OsrmManeuverType =
@@ -19,20 +19,13 @@ interface OsrmStep {
   name: string
   distance: number
   duration: number
-  maneuver: {
-    type: OsrmManeuverType
-    modifier?: string
-    bearing_after?: number
-  }
+  maneuver: { type: OsrmManeuverType; modifier?: string }
 }
 
 interface OsrmRoute {
   distance: number
   duration: number
-  geometry: {
-    type: "LineString"
-    coordinates: [number, number][]
-  }
+  geometry: { type: "LineString"; coordinates: [number, number][] }
   legs: Array<{ steps: OsrmStep[] }>
 }
 
@@ -97,16 +90,4 @@ export async function fetchOutdoorRoute(
   } catch {
     return null
   }
-}
-
-// Building bounds with a small outward buffer
-const BUILDING = { latMin: 51.5214, latMax: 51.5236, lngMin: -0.1215, lngMax: -0.1185 }
-
-export function isInsideBuilding(pos: Coordinates): boolean {
-  return (
-    pos.lat >= BUILDING.latMin &&
-    pos.lat <= BUILDING.latMax &&
-    pos.lng >= BUILDING.lngMin &&
-    pos.lng <= BUILDING.lngMax
-  )
 }

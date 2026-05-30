@@ -1,5 +1,5 @@
-import { Waypoint, Route, RouteStep, Coordinates, TransportMode } from "./types"
-import { GOSH_NAV_GRAPH, nearestNode } from "./nav-graph"
+import { Waypoint, Route, RouteStep, Coordinates, TransportMode, NavGraph } from "./types"
+import { nearestNode } from "./nav-graph"
 import { findPath, pathToCoordinates } from "./pathfinder"
 
 function distanceMeters(a: Coordinates, b: Coordinates): number {
@@ -23,7 +23,7 @@ function bearing(a: Coordinates, b: Coordinates): number {
 
 function headingToInstruction(deg: number): string {
   if (deg > 337.5 || deg <= 22.5) return "Head north"
-  if (deg <= 67.5) return "Head north-east"
+  if (deg <= 67.5)  return "Head north-east"
   if (deg <= 112.5) return "Head east"
   if (deg <= 157.5) return "Head south-east"
   if (deg <= 202.5) return "Head south"
@@ -42,53 +42,52 @@ function speedMpm(mode: TransportMode): number {
   }
 }
 
+/**
+ * Build an indoor route.
+ * navGraph is taken from the active venue — not hardcoded to any building.
+ */
 export function buildRoute(
   from: Coordinates,
   fromFloor: number,
   destination: Waypoint,
   allWaypoints: Waypoint[],
+  navGraph: NavGraph,
   mode: TransportMode = "walking"
 ): Route {
   const wheelchair = mode === "wheelchair"
-  const graph = GOSH_NAV_GRAPH
 
-  // Map user position to the nearest graph node on their current floor
-  const startNodeId = nearestNode(graph, from.lat, from.lng, fromFloor)
+  const startNodeId = nearestNode(navGraph, from.lat, from.lng, fromFloor)
+  const destNodeId  =
+    Object.values(navGraph.nodes).find((n) => n.waypointId === destination.id)?.id ??
+    nearestNode(navGraph, destination.coordinates.lat, destination.coordinates.lng, destination.floor)
 
-  // Map destination to its graph node (prefer waypointId match, else nearest on dest floor)
-  const destNodeId =
-    Object.values(graph.nodes).find((n) => n.waypointId === destination.id)?.id ??
-    nearestNode(graph, destination.coordinates.lat, destination.coordinates.lng, destination.floor)
-
-  let isMapped = false
+  let isMapped  = false
   let indoorPath: Coordinates[] = [from, destination.coordinates]
   let steps: RouteStep[] = []
   let totalDistance = 0
-  let floorChanges = 0
+  let floorChanges  = 0
 
   if (startNodeId && destNodeId) {
-    const nodePath = findPath(graph, startNodeId, destNodeId, wheelchair)
+    const nodePath = findPath(navGraph, startNodeId, destNodeId, wheelchair)
 
     if (nodePath && nodePath.length > 1) {
       isMapped = true
-      indoorPath = [from, ...pathToCoordinates(graph, nodePath.slice(1))]
+      indoorPath = [from, ...pathToCoordinates(navGraph, nodePath.slice(1))]
 
-      // Build turn-by-turn steps from the node path
       let prevCoords = from
-      let prevFloor = fromFloor
+      let prevFloor  = fromFloor
 
       for (let i = 1; i < nodePath.length; i++) {
-        const node = graph.nodes[nodePath[i]]
+        const node = navGraph.nodes[nodePath[i]]
         const d = distanceMeters(prevCoords, node.coordinates)
         totalDistance += d
 
         if (node.floor !== prevFloor) {
-          // Floor transition step
           floorChanges++
-          const edgeType = graph.edges.find(
+          const edgeType = navGraph.edges.find(
             (e) =>
               ((e.from === nodePath[i - 1] && e.to === nodePath[i]) ||
-               (e.to === nodePath[i - 1] && e.from === nodePath[i])) &&
+               (e.to   === nodePath[i - 1] && e.from === nodePath[i])) &&
               e.type !== "corridor"
           )?.type
           const viaType: "lift" | "stairs" = edgeType === "stairs" ? "stairs" : "lift"
@@ -101,16 +100,14 @@ export function buildRoute(
           })
           prevFloor = node.floor
         } else {
-          // Walking step — only emit when reaching a named waypoint or last node
           const isWaypoint = node.waypointId !== undefined
-          const isLast = i === nodePath.length - 1
+          const isLast     = i === nodePath.length - 1
           if (isWaypoint || isLast) {
             const target = node.waypointId
               ? allWaypoints.find((w) => w.id === node.waypointId)
               : undefined
-            const label = target?.name ?? destination.name
             steps.push({
-              instruction: `${headingToInstruction(bearing(prevCoords, node.coordinates))} toward ${label}`,
+              instruction: `${headingToInstruction(bearing(prevCoords, node.coordinates))} toward ${target?.name ?? destination.name}`,
               distance: Math.round(d),
               heading: bearing(prevCoords, node.coordinates),
               waypoint: target,
@@ -122,52 +119,36 @@ export function buildRoute(
     }
   }
 
-  // Fallback: straight line when no graph path found
+  // Straight-line fallback when graph has no path
   if (!isMapped) {
     const d = distanceMeters(from, destination.coordinates)
     totalDistance = d
     const b = bearing(from, destination.coordinates)
-    steps = [
-      {
-        instruction: `${headingToInstruction(b)} toward ${destination.name}`,
-        distance: Math.round(d),
-        heading: b,
-      },
-    ]
-
-    if (fromFloor !== destination.floor) {
-      floorChanges = Math.abs(destination.floor - fromFloor)
-      steps = [
-        { instruction: `Head to nearest lift`, distance: Math.round(d / 2), heading: b },
-        {
-          instruction: `Take lift to ${destination.floor === 0 ? "Ground" : `Floor ${destination.floor}`}`,
-          distance: 0,
-          heading: 0,
-          floorChange: { from: fromFloor, to: destination.floor, via: "lift" },
-        },
-        {
-          instruction: `${headingToInstruction(b)} toward ${destination.name}`,
-          distance: Math.round(d / 2),
-          heading: b,
-          waypoint: destination,
-        },
-      ]
-    }
+    steps =
+      fromFloor === destination.floor
+        ? [{ instruction: `${headingToInstruction(b)} toward ${destination.name}`, distance: Math.round(d), heading: b }]
+        : [
+            { instruction: "Head to nearest lift", distance: Math.round(d / 2), heading: b },
+            {
+              instruction: `Take lift to ${destination.floor === 0 ? "Ground" : `Floor ${destination.floor}`}`,
+              distance: 0, heading: 0,
+              floorChange: { from: fromFloor, to: destination.floor, via: "lift" },
+            },
+            {
+              instruction: `${headingToInstruction(b)} toward ${destination.name}`,
+              distance: Math.round(d / 2), heading: b,
+              waypoint: destination,
+            },
+          ]
+    floorChanges = Math.abs(destination.floor - fromFloor)
   }
 
-  steps.push({
-    instruction: `You have arrived at ${destination.name}`,
-    distance: 0,
-    heading: 0,
-    waypoint: destination,
-  })
-
-  const speed = speedMpm(mode)
+  steps.push({ instruction: `You have arrived at ${destination.name}`, distance: 0, heading: 0, waypoint: destination })
 
   return {
     steps,
     totalDistance: Math.round(totalDistance),
-    estimatedMinutes: Math.max(1, Math.round(totalDistance / speed)),
+    estimatedMinutes: Math.max(1, Math.round(totalDistance / speedMpm(mode))),
     floorChanges,
     transportMode: mode,
     isMapped,

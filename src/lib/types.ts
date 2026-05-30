@@ -54,6 +54,32 @@ export interface FloorPlan {
   bounds: [[number, number], [number, number]]
 }
 
+export interface VenueEntrance {
+  id: string
+  name: string
+  coordinates: Coordinates
+  floor: number
+  accessible: boolean
+}
+
+export interface Venue {
+  id: string
+  name: string
+  campusId?: string
+  center: Coordinates
+  /** Rectangular footprint used for geofence detection */
+  footprint: { latMin: number; latMax: number; lngMin: number; lngMax: number }
+  entrances: VenueEntrance[]
+  floorPlans: FloorPlan[]
+  waypoints: Waypoint[]
+  navGraph: NavGraph
+  /** Waypoint IDs shown in Search quick-access */
+  quickAccessIds: string[]
+}
+
+/** Three-state navigation context driven by GPS geofence + user intent */
+export type AppMode = "world" | "approaching" | "indoor"
+
 export interface OutdoorStep {
   instruction: string
   distance: number

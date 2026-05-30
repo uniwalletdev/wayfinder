@@ -1,16 +1,18 @@
 "use client"
 
-import { FLOOR_PLANS } from "@/lib/gosh-data"
+import { FloorPlan } from "@/lib/types"
 
 interface Props {
+  floorPlans: FloorPlan[]
   currentFloor: number
   onChange: (floor: number) => void
 }
 
-export default function FloorSelector({ currentFloor, onChange }: Props) {
+export default function FloorSelector({ floorPlans, currentFloor, onChange }: Props) {
+  if (floorPlans.length === 0) return null
   return (
     <div className="absolute right-3 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1.5">
-      {[...FLOOR_PLANS].reverse().map((fp) => (
+      {[...floorPlans].reverse().map((fp) => (
         <button
           key={fp.id}
           onClick={() => onChange(fp.floor)}
