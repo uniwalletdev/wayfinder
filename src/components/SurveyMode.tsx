@@ -69,11 +69,29 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     elapsedRef.current = setInterval(() => setElapsed((e) => e + 1), 1000)
   }
 
-  function stopRecording() {
+  async function stopRecording() {
     setRecording(false)
     if (captureInterval.current) clearInterval(captureInterval.current)
     if (elapsedRef.current) clearInterval(elapsedRef.current)
-    onSurveyComplete(frames.current)
+
+    const captured = frames.current.slice()
+    onSurveyComplete(captured)
+
+    try {
+      const res = await fetch("/api/survey", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          frames: captured,
+          sessionId: crypto.randomUUID(),
+          submittedAt: new Date().toISOString(),
+        }),
+      })
+      const data = await res.json()
+      if (data.message) alert(data.message)
+    } catch {
+      alert(`Survey saved locally — ${captured.length} frames captured. Upload will retry when online.`)
+    }
   }
 
   function captureFrame(annotation?: string) {

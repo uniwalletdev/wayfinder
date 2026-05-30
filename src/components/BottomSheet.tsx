@@ -1,14 +1,23 @@
 "use client"
 
-import { Waypoint, Route } from "@/lib/types"
+import { Waypoint, Route, TransportMode } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
-import { Clock, MapPin, Layers, Camera, QrCode, X, ChevronUp } from "lucide-react"
+import { Clock, MapPin, Layers, Camera, QrCode, X, AlertTriangle } from "lucide-react"
+
+const MODE_ICON: Record<TransportMode, string> = {
+  walking:    "🚶",
+  driving:    "🚗",
+  cycling:    "🚴",
+  wheelchair: "♿",
+  transit:    "🚌",
+}
 
 interface Props {
   destination: Waypoint | null
   route: Route | null
   currentFloor: number
   isNavigating: boolean
+  isLoadingOutdoor: boolean
   onStopNavigation: () => void
   onOpenCamera: () => void
   onScanQR: () => void
@@ -22,6 +31,7 @@ export default function BottomSheet({
   route,
   currentFloor,
   isNavigating,
+  isLoadingOutdoor,
   onStopNavigation,
   onOpenCamera,
   onScanQR,
@@ -35,7 +45,6 @@ export default function BottomSheet({
         expanded ? "max-h-72" : "max-h-44"
       }`}
     >
-      {/* Handle */}
       <div className="flex justify-center pt-2 pb-1 cursor-pointer" onClick={onToggleExpand}>
         <div className="w-10 h-1 bg-gray-300 rounded-full" />
       </div>
@@ -45,6 +54,7 @@ export default function BottomSheet({
           destination={destination}
           route={route}
           currentFloor={currentFloor}
+          isLoadingOutdoor={isLoadingOutdoor}
           onStop={onStopNavigation}
           onOpenCamera={onOpenCamera}
           onScanQR={onScanQR}
@@ -66,6 +76,7 @@ function NavigatingSheet({
   destination,
   route,
   currentFloor,
+  isLoadingOutdoor,
   onStop,
   onOpenCamera,
   onScanQR,
@@ -74,12 +85,20 @@ function NavigatingSheet({
   destination: Waypoint
   route: Route
   currentFloor: number
+  isLoadingOutdoor: boolean
   onStop: () => void
   onOpenCamera: () => void
   onScanQR: () => void
   expanded: boolean
 }) {
   const icon = WAYPOINT_TYPE_ICONS[destination.type]
+  const modeIcon = MODE_ICON[route.transportMode]
+  const totalDist = route.outdoorLeg
+    ? route.outdoorLeg.distance + route.totalDistance
+    : route.totalDistance
+  const totalMins = route.outdoorLeg
+    ? Math.round(route.outdoorLeg.duration / 60) + route.estimatedMinutes
+    : route.estimatedMinutes
 
   return (
     <div className="px-4 pb-safe-bar">
@@ -101,27 +120,50 @@ function NavigatingSheet({
         </button>
       </div>
 
-      <div className="flex gap-4 mb-3">
+      <div className="flex gap-2 mb-3 flex-wrap">
         <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-3 py-1.5">
           <Clock size={14} className="text-[#005EB8]" />
-          <span className="text-sm font-semibold text-[#005EB8]">{route.estimatedMinutes} min</span>
+          <span className="text-sm font-semibold text-[#005EB8]">
+            {isLoadingOutdoor ? "…" : `${totalMins} min`}
+          </span>
         </div>
         <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-3 py-1.5">
           <MapPin size={14} className="text-[#005EB8]" />
           <span className="text-sm font-semibold text-[#005EB8]">
-            {route.totalDistance < 1000 ? `${route.totalDistance}m` : `${(route.totalDistance / 1000).toFixed(1)}km`}
+            {totalDist < 1000 ? `${totalDist}m` : `${(totalDist / 1000).toFixed(1)}km`}
           </span>
         </div>
         <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-3 py-1.5">
           <Layers size={14} className="text-[#005EB8]" />
           <span className="text-sm font-semibold text-[#005EB8]">Floor {destination.floor}</span>
         </div>
+        <div className="flex items-center gap-1 bg-blue-50 rounded-lg px-2.5 py-1.5">
+          <span className="text-sm">{modeIcon}</span>
+        </div>
       </div>
 
-      {expanded && route.floorChanges > 0 && (
-        <p className="text-xs text-gray-500 mb-3">
-          {route.floorChanges} floor change{route.floorChanges > 1 ? "s" : ""} via lift
-        </p>
+      {expanded && (
+        <>
+          {route.floorChanges > 0 && (
+            <p className="text-xs text-gray-500 mb-2">
+              {route.floorChanges} floor change{route.floorChanges > 1 ? "s" : ""} via lift
+            </p>
+          )}
+          {!route.isMapped && (
+            <div className="flex items-center gap-1.5 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-2">
+              <AlertTriangle size={13} className="text-amber-600 flex-shrink-0" />
+              <p className="text-xs text-amber-700">
+                Indoor area not fully mapped — dotted line shows direct path.
+                Use Survey Mode to help map it.
+              </p>
+            </div>
+          )}
+          {route.outdoorLeg && (
+            <p className="text-xs text-gray-500 mb-2">
+              {Math.round(route.outdoorLeg.distance)}m outdoors → enter at Main Entrance
+            </p>
+          )}
+        </>
       )}
 
       <div className="flex gap-2">
@@ -185,7 +227,8 @@ function IdleSheet({
       <div className="flex items-center justify-center gap-1.5">
         <Layers size={12} className="text-gray-400" />
         <p className="text-xs text-gray-400">
-          You are on: <span className="font-semibold text-gray-600">
+          You are on:{" "}
+          <span className="font-semibold text-gray-600">
             {currentFloor === 0 ? "Ground Floor" : `Floor ${currentFloor}`}
           </span>
         </p>

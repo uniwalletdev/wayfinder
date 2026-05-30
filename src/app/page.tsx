@@ -2,16 +2,17 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef } from "react"
-import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
-import { GOSH_CENTER } from "@/lib/gosh-data"
+import { Waypoint, NavigationState, SurveyFrame, TransportMode } from "@/lib/types"
+import { GOSH_CENTER, GOSH_WAYPOINTS } from "@/lib/gosh-data"
 import { buildRoute } from "@/lib/routing"
-import { GOSH_WAYPOINTS } from "@/lib/gosh-data"
+import { fetchOutdoorRoute, isInsideBuilding } from "@/lib/outdoor-routing"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
 import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
+import TransportModeSelector from "@/components/TransportModeSelector"
 import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
@@ -19,14 +20,16 @@ const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: f
 type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
 type GpsStatus = "requesting" | "active" | "denied"
 
-// Minimal interface — avoids importing Leaflet types on the server
 interface MapHandle {
   flyTo: (latlng: [number, number], zoom: number) => void
 }
 
+// Entrance waypoint used as outdoor-routing target
+const MAIN_ENTRANCE = GOSH_WAYPOINTS.find((w) => w.id === "main-entrance")!
+
 export default function Home() {
   const leafletMapRef = useRef<MapHandle | null>(null)
-  const gpsActiveRef = useRef(false)
+  const gpsActiveRef  = useRef(false)
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
@@ -38,15 +41,16 @@ export default function Home() {
     positionAccuracy: 0,
   })
 
-  const [overlay, setOverlay] = useState<OverlayMode>("none")
+  const [transportMode, setTransportMode]     = useState<TransportMode>("walking")
+  const [overlay, setOverlay]                 = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
-  const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
+  const [gpsStatus, setGpsStatus]             = useState<GpsStatus>("requesting")
+  const [isLoadingOutdoor, setIsLoadingOutdoor] = useState(false)
 
+  // ── GPS watch ─────────────────────────────────────────────────────────────
   useEffect(() => {
-    if (!navigator.geolocation) {
-      setGpsStatus("denied")
-      return
-    }
+    if (!navigator.geolocation) { setGpsStatus("denied"); return }
+
     const id = navigator.geolocation.watchPosition(
       (pos) => {
         const firstFix = !gpsActiveRef.current
@@ -57,15 +61,11 @@ export default function Home() {
           currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
           positionAccuracy: pos.coords.accuracy,
         }))
-        // Centre the map on the user the first time we get a real fix, so it works anywhere
         if (firstFix) {
           leafletMapRef.current?.flyTo([pos.coords.latitude, pos.coords.longitude], 18)
         }
       },
-      () => {
-        // Don't downgrade to denied once we have a live fix
-        if (!gpsActiveRef.current) setGpsStatus("denied")
-      },
+      () => { if (!gpsActiveRef.current) setGpsStatus("denied") },
       { enableHighAccuracy: true, maximumAge: 5000, timeout: 12000 }
     )
     return () => navigator.geolocation.clearWatch(id)
@@ -77,11 +77,14 @@ export default function Home() {
     leafletMapRef.current?.flyTo([GOSH_CENTER.lat, GOSH_CENTER.lng], 18)
   }, [])
 
+  // ── Destination selection ─────────────────────────────────────────────────
   const handleDestinationSelect = useCallback(
-    (waypoint: Waypoint) => {
+    async (waypoint: Waypoint) => {
       setOverlay("none")
       const position = navState.currentPosition ?? GOSH_CENTER
-      const route = buildRoute(position, navState.currentFloor, waypoint, GOSH_WAYPOINTS)
+
+      // 1. Build indoor route synchronously — map updates immediately
+      const route = buildRoute(position, navState.currentFloor, waypoint, GOSH_WAYPOINTS, transportMode)
       setNavState((s) => ({
         ...s,
         destination: waypoint,
@@ -89,8 +92,20 @@ export default function Home() {
         currentStepIndex: 0,
         isNavigating: true,
       }))
+
+      // 2. If the user is outside the building, fetch outdoor leg async
+      if (!isInsideBuilding(position) && transportMode !== "transit") {
+        setIsLoadingOutdoor(true)
+        const outdoorLeg = await fetchOutdoorRoute(position, MAIN_ENTRANCE.coordinates, transportMode)
+        setIsLoadingOutdoor(false)
+        if (outdoorLeg) {
+          setNavState((s) =>
+            s.route ? { ...s, route: { ...s.route, outdoorLeg } } : s
+          )
+        }
+      }
     },
-    [navState.currentPosition, navState.currentFloor]
+    [navState.currentPosition, navState.currentFloor, transportMode]
   )
 
   const handleStopNavigation = useCallback(() => {
@@ -101,14 +116,15 @@ export default function Home() {
       currentStepIndex: 0,
       isNavigating: false,
     }))
+    setIsLoadingOutdoor(false)
   }, [])
 
   const handleQRDetected = useCallback((data: string) => {
     try {
       const parts = data.split(":")
       const floorIdx = parts.indexOf("floor")
-      const latIdx = parts.indexOf("lat")
-      const lngIdx = parts.indexOf("lng")
+      const latIdx   = parts.indexOf("lat")
+      const lngIdx   = parts.indexOf("lng")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
         setGpsStatus("active")
         setNavState((s) => ({
@@ -123,8 +139,26 @@ export default function Home() {
 
   const handleSurveyComplete = useCallback((frames: SurveyFrame[]) => {
     setOverlay("none")
-    alert(`Survey complete — ${frames.length} frames captured and ready to upload.`)
+    void frames // API upload is handled inside SurveyMode
   }, [])
+
+  // Rebuild route when transport mode changes mid-navigation
+  useEffect(() => {
+    if (!navState.isNavigating || !navState.destination) return
+    const position = navState.currentPosition ?? GOSH_CENTER
+    const route = buildRoute(position, navState.currentFloor, navState.destination, GOSH_WAYPOINTS, transportMode)
+    setNavState((s) => ({ ...s, route, currentStepIndex: 0 }))
+
+    if (!isInsideBuilding(position) && transportMode !== "transit") {
+      setIsLoadingOutdoor(true)
+      fetchOutdoorRoute(position, MAIN_ENTRANCE.coordinates, transportMode).then((outdoorLeg) => {
+        setIsLoadingOutdoor(false)
+        if (outdoorLeg) {
+          setNavState((s) => s.route ? { ...s, route: { ...s.route, outdoorLeg } } : s)
+        }
+      })
+    }
+  }, [transportMode]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
@@ -138,16 +172,16 @@ export default function Home() {
         isNavigating={navState.isNavigating}
         onMapReady={() => {}}
         leafletMapRef={leafletMapRef}
+        onRequestMap={() => setOverlay("survey")}
       />
 
-      {/* ── Top bar ──────────────────────────────────────────── */}
+      {/* ── Top bar ───────────────────────────────────────────────────────── */}
       {!navState.isNavigating ? (
         <div className="absolute top-0 left-0 right-0 z-50">
-          {/* Search bar */}
-          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
+          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-2">
             <button
               onClick={() => setOverlay("search")}
-              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
+              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow mb-2"
             >
               <Search size={18} className="text-[#005EB8] flex-shrink-0" />
               <span className="flex-1 text-left text-gray-400 text-sm">
@@ -155,9 +189,9 @@ export default function Home() {
               </span>
               <MapPin size={16} className="text-gray-300 flex-shrink-0" />
             </button>
+            <TransportModeSelector mode={transportMode} onChange={setTransportMode} />
           </div>
 
-          {/* GPS status strip */}
           {gpsStatus === "requesting" && (
             <div className="bg-blue-50 border-b border-blue-100 px-4 py-2 flex items-center gap-2">
               <div className="w-3 h-3 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin flex-shrink-0" />
@@ -180,12 +214,20 @@ export default function Home() {
           )}
         </div>
       ) : (
-        <TopInstructionBar
-          step={currentStep}
-          stepIndex={navState.currentStepIndex}
-          totalSteps={navState.route?.steps.length ?? 0}
-          isNavigating={navState.isNavigating}
-        />
+        <div className="absolute top-0 left-0 right-0 z-50">
+          <TopInstructionBar
+            step={currentStep}
+            stepIndex={navState.currentStepIndex}
+            totalSteps={navState.route?.steps.length ?? 0}
+            isNavigating={navState.isNavigating}
+          />
+          {isLoadingOutdoor && (
+            <div className="bg-blue-50 border-b border-blue-200 px-4 py-1.5 flex items-center gap-2">
+              <div className="w-3 h-3 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin flex-shrink-0" />
+              <span className="text-xs text-[#005EB8]">Loading outdoor directions…</span>
+            </div>
+          )}
+        </div>
       )}
 
       <FloorSelector
@@ -196,7 +238,12 @@ export default function Home() {
       {/* GPS accuracy badge */}
       {gpsStatus === "active" && (
         <div className="absolute top-36 left-3 z-40 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
-          <div className={`w-2 h-2 rounded-full ${navState.positionAccuracy === 0 ? "bg-blue-400" : navState.positionAccuracy <= 5 ? "bg-green-500" : navState.positionAccuracy <= 15 ? "bg-yellow-500" : "bg-red-400"}`} />
+          <div className={`w-2 h-2 rounded-full ${
+            navState.positionAccuracy === 0 ? "bg-blue-400"
+            : navState.positionAccuracy <= 5 ? "bg-green-500"
+            : navState.positionAccuracy <= 15 ? "bg-yellow-500"
+            : "bg-red-400"
+          }`} />
           <span className="text-xs text-gray-600 font-medium">
             {navState.positionAccuracy === 0 ? "Demo" : `±${Math.round(navState.positionAccuracy)}m`}
           </span>
@@ -204,7 +251,7 @@ export default function Home() {
       )}
 
       {/* Floor badge */}
-      <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
+      <div className={`absolute ${navState.isNavigating ? "top-20" : "top-40"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
         <Layers size={12} className="text-[#005EB8]" />
         <span className="text-xs text-gray-700 font-semibold">
           {navState.currentFloor === 0 ? "Ground Floor" : `Floor ${navState.currentFloor}`}
@@ -216,7 +263,7 @@ export default function Home() {
         <button
           onClick={() => setOverlay("survey")}
           className="absolute left-3 bottom-52 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-          title="Survey Mode"
+          title="Survey Mode — help map this area"
         >
           <ClipboardList size={20} className="text-[#005EB8]" />
         </button>
@@ -239,6 +286,7 @@ export default function Home() {
         route={navState.route}
         currentFloor={navState.currentFloor}
         isNavigating={navState.isNavigating}
+        isLoadingOutdoor={isLoadingOutdoor}
         onStopNavigation={handleStopNavigation}
         onOpenCamera={() => setOverlay("live-camera")}
         onScanQR={() => setOverlay("qr")}
