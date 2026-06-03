@@ -80,6 +80,36 @@ html, body {
   100% { transform: scale(1); opacity: 1; }
 }
 
+/* "You are here" radar ping — expands and fades outward behind the dot */
+.position-pulse {
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: position-pulse 2.2s ease-out infinite;
+}
+
+@keyframes position-pulse {
+  0%   { transform: translate(-50%, -50%) scale(0.4); opacity: 0.7; }
+  70%  { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+}
+
+/* Route line — dots flow toward the destination */
+.route-flow {
+  animation: route-flow 0.8s linear infinite;
+}
+
+@keyframes route-flow {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -13; }
+}
+
+/* Respect users who prefer reduced motion (belt-and-braces with the JS guard) */
+@media (prefers-reduced-motion: reduce) {
+  .position-pulse,
+  .route-flow {
+    animation: none;
+  }
+}
+
 .camera-overlay {
   position: fixed;
   inset: 0;

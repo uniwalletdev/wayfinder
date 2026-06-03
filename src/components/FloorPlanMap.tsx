@@ -6,6 +6,15 @@ import "leaflet/dist/leaflet.css"
 import { Waypoint, Route, Coordinates } from "@/lib/types"
 import { GOSH_WAYPOINTS, FLOOR_PLANS, GOSH_CENTER, WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
 
+// Honour users who ask for less motion (vestibular comfort — important in a care setting)
+function prefersReducedMotion(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+}
+
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
@@ -36,11 +45,19 @@ export default function FloorPlanMap({
   useEffect(() => {
     if (mapRef.current) return
 
+    // Start pulled back when motion is allowed, so we can descend into the building.
+    const reduceMotion = prefersReducedMotion()
+
     const map = L.map("map-container", {
       center: [GOSH_CENTER.lat, GOSH_CENTER.lng],
-      zoom: 18,
+      zoom: reduceMotion ? 18 : 15,
       zoomControl: false,
       attributionControl: false,
+      // Fractional zoom + gentle wheel steps = buttery pan/zoom
+      zoomSnap: 0.25,
+      zoomDelta: 0.5,
+      wheelPxPerZoomLevel: 120,
+      inertia: true,
     })
 
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
@@ -51,7 +68,21 @@ export default function FloorPlanMap({
     if (leafletMapRef) leafletMapRef.current = map
     onMapReady()
 
+    // Cinematic intro — glide down from the establishing shot into the building.
+    let introTimer: ReturnType<typeof setTimeout> | undefined
+    if (!reduceMotion) {
+      map.whenReady(() => {
+        introTimer = setTimeout(() => {
+          map.flyTo([GOSH_CENTER.lat, GOSH_CENTER.lng], 18, {
+            duration: 2.2,
+            easeLinearity: 0.18,
+          })
+        }, 150)
+      })
+    }
+
     return () => {
+      if (introTimer) clearTimeout(introTimer)
       map.remove()
       mapRef.current = null
       if (leafletMapRef) leafletMapRef.current = null
@@ -116,45 +147,52 @@ export default function FloorPlanMap({
     })
   }, [currentFloor, destination])
 
-  // Update position marker
+  // Update position marker — reuse the marker across fixes so the pulse never restarts
   useEffect(() => {
     if (!mapRef.current) return
     const map = mapRef.current
 
+    if (!currentPosition) {
+      if (positionMarkerRef.current) {
+        map.removeLayer(positionMarkerRef.current)
+        positionMarkerRef.current = null
+      }
+      return
+    }
+
+    const latlng: L.LatLngExpression = [currentPosition.lat, currentPosition.lng]
+
+    // Move the existing dot rather than recreating it (keeps the radar ping continuous)
     if (positionMarkerRef.current) {
-      map.removeLayer(positionMarkerRef.current)
-      positionMarkerRef.current = null
+      positionMarkerRef.current.setLatLng(latlng)
+      return
     }
 
-    if (currentPosition) {
-      const icon = L.divIcon({
-        html: `<div style="position:relative;">
-          <div style="
-            width:20px;height:20px;
-            background:#005EB8;
-            border:3px solid white;
-            border-radius:50%;
-            box-shadow:0 2px 8px rgba(0,94,184,0.6);
-            position:relative;z-index:2;
-          "></div>
-          <div style="
-            position:absolute;top:50%;left:50%;
-            transform:translate(-50%,-50%);
-            width:40px;height:40px;
-            background:rgba(0,94,184,0.2);
-            border-radius:50%;
-            animation:none;
-          "></div>
-        </div>`,
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
-        className: "",
-      })
+    const icon = L.divIcon({
+      html: `<div style="position:relative;width:40px;height:40px;">
+        <div class="position-pulse" style="
+          position:absolute;top:50%;left:50%;
+          width:40px;height:40px;
+          background:rgba(0,94,184,0.25);
+          border-radius:50%;
+        "></div>
+        <div style="
+          position:absolute;top:50%;left:50%;
+          transform:translate(-50%,-50%);
+          width:18px;height:18px;
+          background:#005EB8;
+          border:3px solid white;
+          border-radius:50%;
+          box-shadow:0 2px 8px rgba(0,94,184,0.6);
+          z-index:2;
+        "></div>
+      </div>`,
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
+      className: "",
+    })
 
-      const marker = L.marker([currentPosition.lat, currentPosition.lng], { icon, zIndexOffset: 1000 })
-      marker.addTo(map)
-      positionMarkerRef.current = marker
-    }
+    positionMarkerRef.current = L.marker(latlng, { icon, zIndexOffset: 1000 }).addTo(map)
   }, [currentPosition])
 
   // Update route
@@ -185,6 +223,7 @@ export default function FloorPlanMap({
         lineCap: "round",
         lineJoin: "round",
         dashArray: "1, 12",
+        className: "route-flow",
       })
       polyline.addTo(map)
       routeLayerRef.current = polyline
@@ -207,7 +246,15 @@ export default function FloorPlanMap({
         { icon: destIcon, zIndexOffset: 900 }
       ).addTo(map)
 
-      map.fitBounds(polyline.getBounds(), { padding: [80, 80] })
+      if (prefersReducedMotion()) {
+        map.fitBounds(polyline.getBounds(), { padding: [80, 80] })
+      } else {
+        map.flyToBounds(polyline.getBounds(), {
+          padding: [80, 80],
+          duration: 1.2,
+          easeLinearity: 0.2,
+        })
+      }
     }
   }, [isNavigating, route, destination, currentPosition])
 
