@@ -12,6 +12,7 @@ interface Props {
   destination: Waypoint | null
   route: Route | null
   isNavigating: boolean
+  waypoints?: Waypoint[]
   onMapReady: () => void
   leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
 }
@@ -22,6 +23,7 @@ export default function FloorPlanMap({
   destination,
   route,
   isNavigating,
+  waypoints = GOSH_WAYPOINTS,
   onMapReady,
   leafletMapRef,
 }: Props) {
@@ -87,7 +89,7 @@ export default function FloorPlanMap({
     waypointLayersRef.current.forEach((m) => map.removeLayer(m))
     waypointLayersRef.current = []
 
-    const floorWaypoints = GOSH_WAYPOINTS.filter(
+    const floorWaypoints = waypoints.filter(
       (w) => w.floor === currentFloor && !["lift", "stairs"].includes(w.type)
     )
 
@@ -114,7 +116,7 @@ export default function FloorPlanMap({
 
       waypointLayersRef.current.push(marker)
     })
-  }, [currentFloor, destination])
+  }, [currentFloor, destination, waypoints])
 
   // Update position marker
   useEffect(() => {

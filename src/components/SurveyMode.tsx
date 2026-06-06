@@ -1,16 +1,16 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { SurveyFrame, Coordinates } from "@/lib/types"
+import { SurveyFrame, Coordinates, Waypoint } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
-import { X, Square, MapPin, Upload, Check } from "lucide-react"
+import { GOSH_CENTER, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
+import { X, Square, MapPin, Check } from "lucide-react"
 
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
   onClose: () => void
-  onSurveyComplete: (frames: SurveyFrame[]) => void
+  onSurveyComplete: (frames: SurveyFrame[], markedWaypoints: Waypoint[]) => void
 }
 
 const ANNOTATION_TYPES: WaypointType[] = ["ward", "department", "lift", "stairs", "toilet", "exit", "reception", "canteen", "pharmacy", "other"]
@@ -21,9 +21,11 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
   const streamRef = useRef<MediaStream | null>(null)
   const captureInterval = useRef<NodeJS.Timeout | null>(null)
   const frames = useRef<SurveyFrame[]>([])
+  const markedWaypoints = useRef<Waypoint[]>([])
 
   const [recording, setRecording] = useState(false)
   const [frameCount, setFrameCount] = useState(0)
+  const [markedCount, setMarkedCount] = useState(0)
   const [elapsed, setElapsed] = useState(0)
   const [showAnnotation, setShowAnnotation] = useState(false)
   const [annotationName, setAnnotationName] = useState("")
@@ -63,7 +65,9 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     setRecording(true)
     setElapsed(0)
     frames.current = []
+    markedWaypoints.current = []
     setFrameCount(0)
+    setMarkedCount(0)
 
     captureInterval.current = setInterval(captureFrame, 3000)
     elapsedRef.current = setInterval(() => setElapsed((e) => e + 1), 1000)
@@ -73,7 +77,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     setRecording(false)
     if (captureInterval.current) clearInterval(captureInterval.current)
     if (elapsedRef.current) clearInterval(elapsedRef.current)
-    onSurveyComplete(frames.current)
+    onSurveyComplete(frames.current, markedWaypoints.current)
   }
 
   function captureFrame(annotation?: string) {
@@ -102,8 +106,21 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
   }
 
   function saveAnnotation() {
-    if (!annotationName.trim()) return
-    captureFrame(`${WAYPOINT_TYPE_ICONS[annotationType]} ${annotationName} (${WAYPOINT_TYPE_LABELS[annotationType]})`)
+    const name = annotationName.trim()
+    if (!name) return
+    captureFrame(`${WAYPOINT_TYPE_ICONS[annotationType]} ${name} (${WAYPOINT_TYPE_LABELS[annotationType]})`)
+
+    // Persist the marked spot as a real waypoint so it appears on the map and in search.
+    markedWaypoints.current.push({
+      id: `survey-${Date.now()}`,
+      name,
+      type: annotationType,
+      coordinates: currentPosition ?? GOSH_CENTER,
+      floor: currentFloor,
+      description: "Added via Survey Mode",
+    })
+    setMarkedCount((c) => c + 1)
+
     setShowAnnotation(false)
     setAnnotationName("")
   }
@@ -152,6 +169,9 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
             </div>
             <div className="bg-black/50 rounded-full px-3 py-1">
               <p className="text-white text-xs">🏢 Floor {currentFloor === 0 ? "G" : currentFloor}</p>
+            </div>
+            <div className="bg-black/50 rounded-full px-3 py-1">
+              <p className="text-white text-xs">📍 {markedCount} marked</p>
             </div>
           </div>
         )}

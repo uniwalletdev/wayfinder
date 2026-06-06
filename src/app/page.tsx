@@ -1,11 +1,11 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
-import { GOSH_CENTER } from "@/lib/gosh-data"
+import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
+import { loadCustomWaypoints, saveCustomWaypoints } from "@/lib/custom-waypoints"
 import { buildRoute } from "@/lib/routing"
-import { GOSH_WAYPOINTS } from "@/lib/gosh-data"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
 import FloorSelector from "@/components/FloorSelector"
@@ -41,6 +41,15 @@ export default function Home() {
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
+  const [customWaypoints, setCustomWaypoints] = useState<Waypoint[]>([])
+
+  // Restore user-mapped locations from previous sessions.
+  useEffect(() => {
+    setCustomWaypoints(loadCustomWaypoints())
+  }, [])
+
+  const allWaypoints = useMemo(() => [...GOSH_WAYPOINTS, ...customWaypoints], [customWaypoints])
+  const availableFloors = useMemo(() => getAvailableFloors(allWaypoints), [allWaypoints])
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -81,7 +90,7 @@ export default function Home() {
     (waypoint: Waypoint) => {
       setOverlay("none")
       const position = navState.currentPosition ?? GOSH_CENTER
-      const route = buildRoute(position, navState.currentFloor, waypoint, GOSH_WAYPOINTS)
+      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints)
       setNavState((s) => ({
         ...s,
         destination: waypoint,
@@ -90,7 +99,7 @@ export default function Home() {
         isNavigating: true,
       }))
     },
-    [navState.currentPosition, navState.currentFloor]
+    [navState.currentPosition, navState.currentFloor, allWaypoints]
   )
 
   const handleStopNavigation = useCallback(() => {
@@ -121,9 +130,22 @@ export default function Home() {
     } catch {}
   }, [])
 
-  const handleSurveyComplete = useCallback((frames: SurveyFrame[]) => {
+  const handleSurveyComplete = useCallback((frames: SurveyFrame[], markedWaypoints: Waypoint[]) => {
     setOverlay("none")
-    alert(`Survey complete — ${frames.length} frames captured and ready to upload.`)
+    if (markedWaypoints.length > 0) {
+      setCustomWaypoints((prev) => {
+        const next = [...prev, ...markedWaypoints]
+        saveCustomWaypoints(next)
+        return next
+      })
+    }
+    const added = markedWaypoints.length
+    alert(
+      `Survey complete — ${frames.length} frames captured` +
+        (added > 0
+          ? ` and ${added} location${added !== 1 ? "s" : ""} added to the map.`
+          : ".")
+    )
   }, [])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
@@ -136,6 +158,7 @@ export default function Home() {
         destination={navState.destination}
         route={navState.route}
         isNavigating={navState.isNavigating}
+        waypoints={allWaypoints}
         onMapReady={() => {}}
         leafletMapRef={leafletMapRef}
       />
@@ -189,6 +212,7 @@ export default function Home() {
       )}
 
       <FloorSelector
+        floors={availableFloors}
         currentFloor={navState.currentFloor}
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
@@ -211,14 +235,15 @@ export default function Home() {
         </span>
       </div>
 
-      {/* Survey FAB */}
+      {/* Survey / self-map FAB */}
       {!navState.isNavigating && (
         <button
           onClick={() => setOverlay("survey")}
-          className="absolute left-3 bottom-52 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-          title="Survey Mode"
+          className="absolute left-3 bottom-52 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
+          title="Survey Mode — map an area yourself"
         >
-          <ClipboardList size={20} className="text-[#005EB8]" />
+          <ClipboardList size={20} />
+          Map area
         </button>
       )}
 
@@ -248,7 +273,7 @@ export default function Home() {
       />
 
       {overlay === "search" && (
-        <SearchModal onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
+        <SearchModal waypoints={allWaypoints} onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
       )}
 
       {(overlay === "qr" || overlay === "live-camera") && (

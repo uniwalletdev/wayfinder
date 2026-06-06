@@ -6,17 +6,18 @@ import { GOSH_WAYPOINTS, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib
 import { Search, X, ChevronRight } from "lucide-react"
 
 interface Props {
+  waypoints?: Waypoint[]
   onSelect: (waypoint: Waypoint) => void
   onClose: () => void
 }
 
 const QUICK_ACCESS = ["Main Entrance", "A&E Entrance", "Restaurant & Café", "Pharmacy", "Ward 5B", "X-Ray & Imaging"]
 
-export default function SearchModal({ onSelect, onClose }: Props) {
+export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onClose }: Props) {
   const [query, setQuery] = useState("")
 
   const filtered = query.trim()
-    ? GOSH_WAYPOINTS.filter(
+    ? waypoints.filter(
         (w) =>
           w.name.toLowerCase().includes(query.toLowerCase()) ||
           w.description?.toLowerCase().includes(query.toLowerCase()) ||
@@ -24,7 +25,7 @@ export default function SearchModal({ onSelect, onClose }: Props) {
       )
     : []
 
-  const quickWaypoints = GOSH_WAYPOINTS.filter((w) => QUICK_ACCESS.includes(w.name))
+  const quickWaypoints = waypoints.filter((w) => QUICK_ACCESS.includes(w.name))
 
   return (
     <div className="fixed inset-0 z-[200] bg-white flex flex-col">
@@ -63,7 +64,7 @@ export default function SearchModal({ onSelect, onClose }: Props) {
             <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               All locations
             </p>
-            {GOSH_WAYPOINTS.filter((w) => !["lift", "stairs"].includes(w.type)).map((w) => (
+            {waypoints.filter((w) => !["lift", "stairs"].includes(w.type)).map((w) => (
               <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
             ))}
           </>

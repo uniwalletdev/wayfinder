@@ -45,6 +45,27 @@ export const FLOOR_PLANS: FloorPlan[] = [
   { id: "f3", floor: 3, label: "Floor 3", imageUrl: "/floorplans/floor3.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
 ]
 
+// Build the list of floors that actually have data, rather than a fixed list.
+// Combines floors that have a plan with any floor referenced by a waypoint, so
+// that surveyed/custom locations on new floors automatically become selectable.
+export function getAvailableFloors(waypoints: Waypoint[] = GOSH_WAYPOINTS): number[] {
+  const floors = new Set<number>(FLOOR_PLANS.map((fp) => fp.floor))
+  waypoints.forEach((w) => floors.add(w.floor))
+  return [...floors].sort((a, b) => a - b)
+}
+
+export function floorLabel(floor: number): string {
+  if (floor === 0) return "Ground Floor"
+  if (floor < 0) return `Basement ${Math.abs(floor)}`
+  return `Floor ${floor}`
+}
+
+export function floorShortLabel(floor: number): string {
+  if (floor === 0) return "G"
+  if (floor < 0) return `B${Math.abs(floor)}`
+  return String(floor)
+}
+
 export const WAYPOINT_TYPE_ICONS: Record<string, string> = {
   ward: "🏥",
   department: "🏢",
