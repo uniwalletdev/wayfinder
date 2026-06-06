@@ -64,7 +64,7 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
             <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               All locations
             </p>
-            {waypoints.filter((w) => !["lift", "stairs"].includes(w.type)).map((w) => (
+            {waypoints.map((w) => (
               <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
             ))}
           </>

@@ -92,9 +92,7 @@ export default function FloorPlanMap({
     waypointLayersRef.current.forEach((m) => map.removeLayer(m))
     waypointLayersRef.current = []
 
-    const floorWaypoints = waypoints.filter(
-      (w) => w.floor === currentFloor && !["lift", "stairs"].includes(w.type)
-    )
+    const floorWaypoints = waypoints.filter((w) => w.floor === currentFloor)
 
     floorWaypoints.forEach((w) => {
       const icon = L.divIcon({
