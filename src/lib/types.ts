@@ -57,6 +57,12 @@ export interface SurveyFrame {
   annotation?: string
 }
 
+export interface SurveyTrail {
+  id: string
+  floor: number
+  points: Coordinates[]
+}
+
 export interface NavigationState {
   currentPosition: Coordinates | null
   currentFloor: number

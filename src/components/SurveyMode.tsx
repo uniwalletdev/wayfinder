@@ -1,16 +1,24 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { SurveyFrame, Coordinates, Waypoint } from "@/lib/types"
+import { SurveyFrame, Coordinates, Waypoint, SurveyTrail } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
 import { GOSH_CENTER, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
 import { X, Square, MapPin, Check } from "lucide-react"
+
+export interface SurveyResult {
+  frames: SurveyFrame[]
+  markedWaypoints: Waypoint[]
+  aiWaypoints: Waypoint[]
+  trail: SurveyTrail | null
+  aiError?: string
+}
 
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
   onClose: () => void
-  onSurveyComplete: (frames: SurveyFrame[], markedWaypoints: Waypoint[]) => void
+  onSurveyComplete: (result: SurveyResult) => void
 }
 
 const ANNOTATION_TYPES: WaypointType[] = ["ward", "department", "lift", "stairs", "toilet", "exit", "reception", "canteen", "pharmacy", "other"]
@@ -22,6 +30,11 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
   const captureInterval = useRef<NodeJS.Timeout | null>(null)
   const frames = useRef<SurveyFrame[]>([])
   const markedWaypoints = useRef<Waypoint[]>([])
+  const trailPoints = useRef<Coordinates[]>([])
+  // Keep the latest GPS fix in a ref so the capture interval always reads a fresh
+  // position rather than the one captured in its closure when recording started.
+  const positionRef = useRef<Coordinates | null>(currentPosition)
+  positionRef.current = currentPosition
 
   const [recording, setRecording] = useState(false)
   const [frameCount, setFrameCount] = useState(0)
@@ -31,6 +44,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
   const [annotationName, setAnnotationName] = useState("")
   const [annotationType, setAnnotationType] = useState<WaypointType>("ward")
   const [permissionDenied, setPermissionDenied] = useState(false)
+  const [analyzing, setAnalyzing] = useState(false)
   const elapsedRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -66,6 +80,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     setElapsed(0)
     frames.current = []
     markedWaypoints.current = []
+    trailPoints.current = []
     setFrameCount(0)
     setMarkedCount(0)
 
@@ -73,11 +88,43 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     elapsedRef.current = setInterval(() => setElapsed((e) => e + 1), 1000)
   }
 
-  function stopRecording() {
+  async function stopRecording() {
     setRecording(false)
     if (captureInterval.current) clearInterval(captureInterval.current)
     if (elapsedRef.current) clearInterval(elapsedRef.current)
-    onSurveyComplete(frames.current, markedWaypoints.current)
+
+    const trail: SurveyTrail | null =
+      trailPoints.current.length >= 2
+        ? { id: `trail-${Date.now()}`, floor: currentFloor, points: [...trailPoints.current] }
+        : null
+
+    // Send the captured frames to the server to read on-camera signage into waypoints.
+    let aiWaypoints: Waypoint[] = []
+    let aiError: string | undefined
+    if (frames.current.length > 0) {
+      setAnalyzing(true)
+      try {
+        const res = await fetch("/api/survey", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ frames: frames.current }),
+        })
+        const data = await res.json()
+        aiWaypoints = Array.isArray(data.waypoints) ? data.waypoints : []
+        if (data.error) aiError = data.error as string
+      } catch {
+        aiError = "network"
+      }
+      setAnalyzing(false)
+    }
+
+    onSurveyComplete({
+      frames: frames.current,
+      markedWaypoints: markedWaypoints.current,
+      aiWaypoints,
+      trail,
+      aiError,
+    })
   }
 
   function captureFrame(annotation?: string) {
@@ -92,16 +139,19 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     ctx.drawImage(video, 0, 0, 640, 360)
     const imageData = canvas.toDataURL("image/jpeg", 0.5)
 
+    const position = positionRef.current ?? GOSH_CENTER
     const frame: SurveyFrame = {
       timestamp: Date.now(),
       imageData,
-      coordinates: currentPosition ?? { lat: 51.5225, lng: -0.1199 },
+      coordinates: position,
       heading: 0,
       floor: currentFloor,
       annotation,
     }
 
     frames.current.push(frame)
+    // Drop a breadcrumb at our live position so the walked route can be drawn.
+    if (positionRef.current) trailPoints.current.push(positionRef.current)
     setFrameCount((c) => c + 1)
   }
 
@@ -115,7 +165,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
       id: `survey-${Date.now()}`,
       name,
       type: annotationType,
-      coordinates: currentPosition ?? GOSH_CENTER,
+      coordinates: positionRef.current ?? GOSH_CENTER,
       floor: currentFloor,
       description: "Added via Survey Mode",
     })
@@ -138,6 +188,16 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
         <h2 className="text-xl font-bold mb-2">Camera access needed</h2>
         <p className="text-sm text-gray-300 mb-6">Allow camera access to use Survey Mode.</p>
         <button onClick={onClose} className="bg-[#005EB8] text-white px-6 py-3 rounded-xl font-semibold">Go back</button>
+      </div>
+    )
+  }
+
+  if (analyzing) {
+    return (
+      <div className="fixed inset-0 z-[300] bg-black flex flex-col items-center justify-center text-white p-6 text-center">
+        <div className="w-10 h-10 border-4 border-white/30 border-t-white rounded-full animate-spin mb-5" />
+        <h2 className="text-lg font-bold mb-1">Reading your survey…</h2>
+        <p className="text-sm text-gray-300">Scanning the footage for signs and rooms to add to the map.</p>
       </div>
     )
   }
@@ -182,13 +242,15 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-6 pt-6 pb-safe-bar">
           {!recording ? (
             <div className="text-center mb-4">
-              <p className="text-white text-sm mb-1">Walk your route and the app will record it</p>
-              <p className="text-gray-400 text-xs">Captures a frame every 3 seconds automatically</p>
+              <p className="text-white text-sm mb-1">Walk through the area with the camera up</p>
+              <p className="text-gray-400 text-xs">
+                A frame is captured every 3s. When you stop, signs in the footage are read into map points — and tap “Mark Location” to add a spot yourself.
+              </p>
             </div>
           ) : (
             <div className="text-center mb-4">
-              <p className="text-white text-sm">Walking and recording…</p>
-              <p className="text-gray-400 text-xs">Tap "Mark Location" when you reach a key point</p>
+              <p className="text-white text-sm">Recording — keep signs &amp; door plates in view</p>
+              <p className="text-gray-400 text-xs">Tap “Mark Location” at a key point, or just keep walking</p>
             </div>
           )}
 
@@ -215,7 +277,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
                   className="flex-1 bg-white text-gray-900 rounded-2xl py-3.5 font-semibold text-sm flex items-center justify-center gap-2"
                 >
                   <Square size={18} />
-                  Stop & Upload
+                  Stop &amp; Map
                 </button>
               </>
             )}
@@ -260,7 +322,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
               className="flex-1 bg-[#005EB8] text-white rounded-xl py-3 font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50"
             >
               <Check size={16} />
-              Save & Continue
+              Save &amp; Continue
             </button>
           </div>
         </div>

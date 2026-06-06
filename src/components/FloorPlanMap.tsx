@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, MutableRefObject } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
-import { Waypoint, Route, Coordinates } from "@/lib/types"
+import { Waypoint, Route, Coordinates, SurveyTrail } from "@/lib/types"
 import { GOSH_WAYPOINTS, FLOOR_PLANS, GOSH_CENTER, WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
 
 interface Props {
@@ -13,6 +13,7 @@ interface Props {
   route: Route | null
   isNavigating: boolean
   waypoints?: Waypoint[]
+  trails?: SurveyTrail[]
   onMapReady: () => void
   leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
 }
@@ -24,6 +25,7 @@ export default function FloorPlanMap({
   route,
   isNavigating,
   waypoints = GOSH_WAYPOINTS,
+  trails = [],
   onMapReady,
   leafletMapRef,
 }: Props) {
@@ -33,6 +35,7 @@ export default function FloorPlanMap({
   const routeLayerRef = useRef<L.Polyline | null>(null)
   const floorPlanLayerRef = useRef<L.ImageOverlay | null>(null)
   const waypointLayersRef = useRef<L.Marker[]>([])
+  const trailLayersRef = useRef<L.Polyline[]>([])
 
   // Init map once
   useEffect(() => {
@@ -117,6 +120,26 @@ export default function FloorPlanMap({
       waypointLayersRef.current.push(marker)
     })
   }, [currentFloor, destination, waypoints])
+
+  // Draw walked survey trails (breadcrumbs) for the current floor
+  useEffect(() => {
+    if (!mapRef.current) return
+    const map = mapRef.current
+
+    trailLayersRef.current.forEach((l) => map.removeLayer(l))
+    trailLayersRef.current = []
+
+    trails
+      .filter((t) => t.floor === currentFloor && t.points.length >= 2)
+      .forEach((t) => {
+        const line = L.polyline(
+          t.points.map((p) => [p.lat, p.lng] as L.LatLngExpression),
+          { color: "#7C3AED", weight: 4, opacity: 0.55, lineCap: "round", lineJoin: "round", dashArray: "6, 8" }
+        )
+        line.addTo(map)
+        trailLayersRef.current.push(line)
+      })
+  }, [currentFloor, trails])
 
   // Update position marker
   useEffect(() => {

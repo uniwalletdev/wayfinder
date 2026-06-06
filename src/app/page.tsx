@@ -2,10 +2,11 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { Waypoint, NavigationState, SurveyFrame } from "@/lib/types"
+import { Waypoint, NavigationState, SurveyTrail } from "@/lib/types"
 import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
-import { loadCustomWaypoints, saveCustomWaypoints } from "@/lib/custom-waypoints"
+import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails } from "@/lib/custom-waypoints"
 import { buildRoute } from "@/lib/routing"
+import type { SurveyResult } from "@/components/SurveyMode"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
 import FloorSelector from "@/components/FloorSelector"
@@ -42,10 +43,12 @@ export default function Home() {
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
   const [customWaypoints, setCustomWaypoints] = useState<Waypoint[]>([])
+  const [surveyTrails, setSurveyTrails] = useState<SurveyTrail[]>([])
 
-  // Restore user-mapped locations from previous sessions.
+  // Restore user-mapped locations and walked trails from previous sessions.
   useEffect(() => {
     setCustomWaypoints(loadCustomWaypoints())
+    setSurveyTrails(loadSurveyTrails())
   }, [])
 
   const allWaypoints = useMemo(() => [...GOSH_WAYPOINTS, ...customWaypoints], [customWaypoints])
@@ -130,22 +133,41 @@ export default function Home() {
     } catch {}
   }, [])
 
-  const handleSurveyComplete = useCallback((frames: SurveyFrame[], markedWaypoints: Waypoint[]) => {
+  const handleSurveyComplete = useCallback((result: SurveyResult) => {
     setOverlay("none")
-    if (markedWaypoints.length > 0) {
+    const newWaypoints = [...result.markedWaypoints, ...result.aiWaypoints]
+    if (newWaypoints.length > 0) {
       setCustomWaypoints((prev) => {
-        const next = [...prev, ...markedWaypoints]
+        const next = [...prev, ...newWaypoints]
         saveCustomWaypoints(next)
         return next
       })
     }
-    const added = markedWaypoints.length
-    alert(
-      `Survey complete — ${frames.length} frames captured` +
-        (added > 0
-          ? ` and ${added} location${added !== 1 ? "s" : ""} added to the map.`
-          : ".")
-    )
+    if (result.trail) {
+      setSurveyTrails((prev) => {
+        const next = [...prev, result.trail!]
+        saveSurveyTrails(next)
+        return next
+      })
+    }
+
+    const marked = result.markedWaypoints.length
+    const detected = result.aiWaypoints.length
+    const parts: string[] = []
+    if (marked > 0) parts.push(`${marked} marked`)
+    if (detected > 0) parts.push(`${detected} read from the footage`)
+
+    let message: string
+    if (parts.length > 0) {
+      message = `Survey complete — ${parts.join(" and ")} location${marked + detected !== 1 ? "s" : ""} added to the map.`
+    } else if (result.aiError === "not_configured") {
+      message = "Survey saved. AI sign-reading isn't enabled on the server, so nothing was auto-detected — use “Mark Location” to add points yourself."
+    } else if (result.aiError) {
+      message = "Survey saved, but the footage couldn't be read this time. Try again, or use “Mark Location” to add points yourself."
+    } else {
+      message = "Survey complete — no clear signs were found in the footage. Try keeping signs and door plates in view, or use “Mark Location”."
+    }
+    alert(message)
   }, [])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
@@ -159,6 +181,7 @@ export default function Home() {
         route={navState.route}
         isNavigating={navState.isNavigating}
         waypoints={allWaypoints}
+        trails={surveyTrails}
         onMapReady={() => {}}
         leafletMapRef={leafletMapRef}
       />
