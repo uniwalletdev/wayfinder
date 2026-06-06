@@ -28,6 +28,10 @@ interface DetectedLocation {
   name: string
   type: WaypointType
   frameIndex: number
+  // Floor read from a visible indicator in the frame (lift display, level sign,
+  // stairwell marker). null when no floor is legible — we then fall back to the
+  // floor the surveyor set on the in-camera stepper for that frame.
+  floor: number | null
 }
 
 function sampleEvenly<T>(items: T[], max: number): { item: T; originalIndex: number }[] {
@@ -98,7 +102,10 @@ export async function POST(request: Request) {
       "e.g. a named ward, a department, a lift, a staircase, toilets, a pharmacy, a café/restaurant, a reception, " +
       "or an entrance/exit. Only include a location if you can actually read its name or an unambiguous label in a frame. " +
       "Do not guess, do not invent names, and do not include generic corridors or people. " +
-      "For each location, return the frame index it is most clearly visible in.",
+      "For each location, return the frame index it is most clearly visible in. " +
+      "Also set `floor` ONLY if the floor is legible from something in that frame — a lift floor display, a stairwell or " +
+      "corridor level sign, or signage that states the level (e.g. 'Level 2', '2nd floor'). Map the ground floor to 0, " +
+      "'Level N'/'Floor N' to N, and a basement to a negative number. If no floor indicator is readable in the frame, set `floor` to null — do not guess it.",
   })
 
   const schema = {
@@ -114,8 +121,9 @@ export async function POST(request: Request) {
             name: { type: "string" },
             type: { type: "string", enum: WAYPOINT_TYPES },
             frameIndex: { type: "integer" },
+            floor: { anyOf: [{ type: "integer" }, { type: "null" }] },
           },
-          required: ["name", "type", "frameIndex"],
+          required: ["name", "type", "frameIndex", "floor"],
         },
       },
     },
@@ -146,12 +154,15 @@ export async function POST(request: Request) {
       .map((loc, i) => {
         const frame = frames[loc.frameIndex]
         const type: WaypointType = WAYPOINT_TYPES.includes(loc.type) ? loc.type : "other"
+        // Prefer a floor read from a sign in the footage; otherwise use the floor
+        // the surveyor set on the stepper for that frame.
+        const floor = typeof loc.floor === "number" ? loc.floor : frame.floor
         return {
           id: `survey-ai-${Date.now()}-${i}`,
           name: loc.name.trim(),
           type,
           coordinates: frame.coordinates,
-          floor: frame.floor,
+          floor,
           description: "Detected by Survey Mode",
         }
       })
