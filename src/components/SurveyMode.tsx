@@ -3,14 +3,14 @@
 import { useEffect, useRef, useState } from "react"
 import { SurveyFrame, Coordinates, Waypoint, SurveyTrail } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
-import { GOSH_CENTER, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
-import { X, Square, MapPin, Check } from "lucide-react"
+import { GOSH_CENTER, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorShortLabel } from "@/lib/gosh-data"
+import { X, Square, MapPin, Check, ChevronUp, ChevronDown } from "lucide-react"
 
 export interface SurveyResult {
   frames: SurveyFrame[]
   markedWaypoints: Waypoint[]
   aiWaypoints: Waypoint[]
-  trail: SurveyTrail | null
+  trails: SurveyTrail[]
   aiError?: string
 }
 
@@ -30,11 +30,18 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
   const captureInterval = useRef<NodeJS.Timeout | null>(null)
   const frames = useRef<SurveyFrame[]>([])
   const markedWaypoints = useRef<Waypoint[]>([])
-  const trailPoints = useRef<Coordinates[]>([])
+  const trailPoints = useRef<{ lat: number; lng: number; floor: number }[]>([])
   // Keep the latest GPS fix in a ref so the capture interval always reads a fresh
   // position rather than the one captured in its closure when recording started.
   const positionRef = useRef<Coordinates | null>(currentPosition)
   positionRef.current = currentPosition
+
+  // The floor being surveyed right now. You step this as you move between floors
+  // so each captured frame / mark is tagged with the floor it was actually on,
+  // instead of everything collapsing onto the floor you started on.
+  const [surveyFloor, setSurveyFloor] = useState(currentFloor)
+  const surveyFloorRef = useRef(surveyFloor)
+  surveyFloorRef.current = surveyFloor
 
   const [recording, setRecording] = useState(false)
   const [frameCount, setFrameCount] = useState(0)
@@ -93,10 +100,18 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     if (captureInterval.current) clearInterval(captureInterval.current)
     if (elapsedRef.current) clearInterval(elapsedRef.current)
 
-    const trail: SurveyTrail | null =
-      trailPoints.current.length >= 2
-        ? { id: `trail-${Date.now()}`, floor: currentFloor, points: [...trailPoints.current] }
-        : null
+    // Split the walked breadcrumbs into one trail per floor, so a multi-floor
+    // walk draws a separate route on each floor rather than one tangled line.
+    const trails: SurveyTrail[] = []
+    let segment: SurveyTrail | null = null
+    trailPoints.current.forEach((p) => {
+      if (!segment || segment.floor !== p.floor) {
+        segment = { id: `trail-${Date.now()}-${trails.length}`, floor: p.floor, points: [] }
+        trails.push(segment)
+      }
+      segment.points.push({ lat: p.lat, lng: p.lng })
+    })
+    const floorTrails = trails.filter((t) => t.points.length >= 2)
 
     // Send the captured frames to the server to read on-camera signage into waypoints.
     let aiWaypoints: Waypoint[] = []
@@ -122,7 +137,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
       frames: frames.current,
       markedWaypoints: markedWaypoints.current,
       aiWaypoints,
-      trail,
+      trails: floorTrails,
       aiError,
     })
   }
@@ -140,18 +155,22 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     const imageData = canvas.toDataURL("image/jpeg", 0.5)
 
     const position = positionRef.current ?? GOSH_CENTER
+    const floor = surveyFloorRef.current
     const frame: SurveyFrame = {
       timestamp: Date.now(),
       imageData,
       coordinates: position,
       heading: 0,
-      floor: currentFloor,
+      floor,
       annotation,
     }
 
     frames.current.push(frame)
-    // Drop a breadcrumb at our live position so the walked route can be drawn.
-    if (positionRef.current) trailPoints.current.push(positionRef.current)
+    // Drop a breadcrumb at our live position (tagged with the current floor) so
+    // the walked route can be drawn per floor.
+    if (positionRef.current) {
+      trailPoints.current.push({ ...positionRef.current, floor })
+    }
     setFrameCount((c) => c + 1)
   }
 
@@ -166,7 +185,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
       name,
       type: annotationType,
       coordinates: positionRef.current ?? GOSH_CENTER,
-      floor: currentFloor,
+      floor: surveyFloorRef.current,
       description: "Added via Survey Mode",
     })
     setMarkedCount((c) => c + 1)
@@ -207,6 +226,30 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
       <video ref={videoRef} playsInline muted className="w-full h-full object-cover" />
       <canvas ref={canvasRef} className="hidden" />
 
+      {/* Floor stepper — set the floor as you move between floors */}
+      {!showAnnotation && (
+        <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex flex-col items-center bg-black/55 rounded-2xl p-1.5 gap-1">
+          <button
+            onClick={() => setSurveyFloor((f) => Math.min(f + 1, 30))}
+            className="w-11 h-11 rounded-xl bg-white/15 text-white flex items-center justify-center active:bg-white/30"
+            aria-label="Floor up"
+          >
+            <ChevronUp size={22} />
+          </button>
+          <div className="text-white text-center leading-tight py-1">
+            <div className="text-[10px] text-gray-300">Floor</div>
+            <div className="text-lg font-bold">{floorShortLabel(surveyFloor)}</div>
+          </div>
+          <button
+            onClick={() => setSurveyFloor((f) => Math.max(f - 1, -5))}
+            className="w-11 h-11 rounded-xl bg-white/15 text-white flex items-center justify-center active:bg-white/30"
+            aria-label="Floor down"
+          >
+            <ChevronDown size={22} />
+          </button>
+        </div>
+      )}
+
       {/* Top bar */}
       <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/80 to-transparent px-4 pt-safe-snug pb-4">
         <div className="flex items-center justify-between mb-2">
@@ -228,7 +271,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
               <p className="text-white text-xs">📸 {frameCount} frames</p>
             </div>
             <div className="bg-black/50 rounded-full px-3 py-1">
-              <p className="text-white text-xs">🏢 Floor {currentFloor === 0 ? "G" : currentFloor}</p>
+              <p className="text-white text-xs">🏢 {surveyFloor === 0 ? "Ground" : `Floor ${surveyFloor}`}</p>
             </div>
             <div className="bg-black/50 rounded-full px-3 py-1">
               <p className="text-white text-xs">📍 {markedCount} marked</p>
@@ -244,7 +287,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
             <div className="text-center mb-4">
               <p className="text-white text-sm mb-1">Walk through the area with the camera up</p>
               <p className="text-gray-400 text-xs">
-                A frame is captured every 3s. When you stop, signs in the footage are read into map points — and tap “Mark Location” to add a spot yourself.
+                A frame is captured every 3s. When you stop, signs in the footage are read into map points — and tap “Mark Location” to add a spot yourself. Use the ▲▼ floor buttons each time you change floor.
               </p>
             </div>
           ) : (

@@ -143,9 +143,9 @@ export default function Home() {
         return next
       })
     }
-    if (result.trail) {
+    if (result.trails.length > 0) {
       setSurveyTrails((prev) => {
-        const next = [...prev, result.trail!]
+        const next = [...prev, ...result.trails]
         saveSurveyTrails(next)
         return next
       })
