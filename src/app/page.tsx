@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail } from "@/lib/types"
 import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
 import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails } from "@/lib/custom-waypoints"
-import { buildRoute } from "@/lib/routing"
+import { buildRoute, distanceMeters } from "@/lib/routing"
 import type { SurveyResult } from "@/components/SurveyMode"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
@@ -104,6 +104,33 @@ export default function Home() {
     },
     [navState.currentPosition, navState.currentFloor, allWaypoints]
   )
+
+  // Advance through the route as the user moves. A step is "done" once they are
+  // within a few metres of its target waypoint (or, for a lift step, once they
+  // reach the destination floor), which lets the guidance progress all the way
+  // to "You have arrived" instead of staying frozen on the first instruction.
+  const ARRIVE_RADIUS_M = 12
+  useEffect(() => {
+    if (!navState.currentPosition) return
+    setNavState((s) => {
+      if (!s.isNavigating || !s.route || !s.currentPosition) return s
+      const steps = s.route.steps
+      let idx = s.currentStepIndex
+      while (idx < steps.length - 1) {
+        const step = steps[idx]
+        let reached: boolean
+        if (step.floorChange) {
+          reached = s.currentFloor === step.floorChange.to
+        } else {
+          const target = step.waypoint?.coordinates ?? s.destination?.coordinates
+          reached = !!target && distanceMeters(s.currentPosition, target) <= ARRIVE_RADIUS_M
+        }
+        if (!reached) break
+        idx++
+      }
+      return idx === s.currentStepIndex ? s : { ...s, currentStepIndex: idx }
+    })
+  }, [navState.currentPosition, navState.currentFloor])
 
   const handleStopNavigation = useCallback(() => {
     setNavState((s) => ({

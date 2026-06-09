@@ -1,9 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Waypoint } from "@/lib/types"
 import { GOSH_WAYPOINTS, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
-import { Search, X, ChevronRight } from "lucide-react"
+import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
 
 interface Props {
   waypoints?: Waypoint[]
@@ -11,12 +11,38 @@ interface Props {
   onClose: () => void
 }
 
+interface GeoResult {
+  id: string
+  name: string
+  description: string
+  lat: number
+  lng: number
+}
+
 const QUICK_ACCESS = ["Main Entrance", "A&E Entrance", "Restaurant & Café", "Pharmacy", "Ward 5B", "X-Ray & Imaging"]
+
+// A geocoded hit is outside the hospital's mapped floors, so it lands on the
+// ground floor as a generic point the router can still head toward.
+function geoToWaypoint(r: GeoResult): Waypoint {
+  return {
+    id: r.id,
+    name: r.name,
+    type: "other",
+    coordinates: { lat: r.lat, lng: r.lng },
+    floor: 0,
+    description: r.description,
+  }
+}
 
 export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onClose }: Props) {
   const [query, setQuery] = useState("")
+  const [geoResults, setGeoResults] = useState<GeoResult[]>([])
+  const [geoLoading, setGeoLoading] = useState(false)
+  const [geoError, setGeoError] = useState<string | null>(null)
 
-  const filtered = query.trim()
+  const trimmed = query.trim()
+
+  const filtered = trimmed
     ? waypoints.filter(
         (w) =>
           w.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -26,6 +52,47 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
     : []
 
   const quickWaypoints = waypoints.filter((w) => QUICK_ACCESS.includes(w.name))
+
+  // Geocode anything the user types that the indoor list doesn't already cover,
+  // so destinations beyond the hospital's mapped points are still navigable.
+  // Debounced, and any in-flight request is abandoned when the query changes.
+  useEffect(() => {
+    if (trimmed.length < 3) return
+    const controller = new AbortController()
+    const handle = setTimeout(async () => {
+      setGeoLoading(true)
+      setGeoError(null)
+      try {
+        const res = await fetch(`/api/geocode?q=${encodeURIComponent(trimmed)}`, {
+          signal: controller.signal,
+        })
+        const data = (await res.json()) as { results?: GeoResult[]; error?: string }
+        setGeoResults(Array.isArray(data.results) ? data.results : [])
+        setGeoError(data.error ?? null)
+      } catch (err) {
+        if (!(err instanceof Error && err.name === "AbortError")) {
+          setGeoResults([])
+          setGeoError("unreachable")
+        }
+      } finally {
+        setGeoLoading(false)
+      }
+    }, 350)
+    return () => {
+      controller.abort()
+      clearTimeout(handle)
+    }
+  }, [trimmed])
+
+  // Only surface geocoding state once the query is long enough to have been
+  // searched; below that the stored results belong to an earlier, longer query.
+  const geoActive = trimmed.length >= 3
+  // Hide geocoded hits that just duplicate an indoor result by name.
+  const indoorNames = new Set(filtered.map((w) => w.name.toLowerCase()))
+  const extraResults = geoActive ? geoResults.filter((r) => !indoorNames.has(r.name.toLowerCase())) : []
+  const showLoading = geoActive && geoLoading
+
+  const showEmpty = trimmed !== "" && filtered.length === 0 && extraResults.length === 0 && !showLoading
 
   return (
     <div className="fixed inset-0 z-[200] bg-white flex flex-col">
@@ -40,7 +107,7 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search ward, department..."
+            placeholder="Search ward, department or place..."
             className="flex-1 py-2.5 text-sm text-gray-800 outline-none bg-transparent"
           />
           {query && (
@@ -52,7 +119,7 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
       </div>
 
       <div className="flex-1 overflow-y-auto">
-        {query.trim() === "" ? (
+        {trimmed === "" ? (
           <>
             <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               Quick access
@@ -68,20 +135,51 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
               <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
             ))}
           </>
-        ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
-            <span className="text-5xl mb-3">🔍</span>
-            <p className="text-gray-600 font-medium">No results for "{query}"</p>
-            <p className="text-sm text-gray-400 mt-1">Try a ward name, department, or floor number</p>
-          </div>
         ) : (
           <>
-            <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-              {filtered.length} result{filtered.length !== 1 ? "s" : ""}
-            </p>
-            {filtered.map((w) => (
-              <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
-            ))}
+            {filtered.length > 0 && (
+              <>
+                <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                  In the hospital · {filtered.length} result{filtered.length !== 1 ? "s" : ""}
+                </p>
+                {filtered.map((w) => (
+                  <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
+                ))}
+              </>
+            )}
+
+            {extraResults.length > 0 && (
+              <>
+                <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                  On the map
+                </p>
+                {extraResults.map((r) => (
+                  <GeoRow key={r.id} result={r} onSelect={() => onSelect(geoToWaypoint(r))} />
+                ))}
+              </>
+            )}
+
+            {showLoading && (
+              <div className="flex items-center justify-center gap-2 py-6 text-gray-400">
+                <Loader2 size={16} className="animate-spin" />
+                <span className="text-sm">Searching the map…</span>
+              </div>
+            )}
+
+            {showEmpty && (
+              <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
+                <span className="text-5xl mb-3">🔍</span>
+                <p className="text-gray-600 font-medium">No results for "{query}"</p>
+                {geoError ? (
+                  <p className="text-sm text-gray-400 mt-1">
+                    Couldn&apos;t reach the map search just now — check your connection, or try a ward,
+                    department or floor number.
+                  </p>
+                ) : (
+                  <p className="text-sm text-gray-400 mt-1">Try a ward name, department, or a nearby place</p>
+                )}
+              </div>
+            )}
           </>
         )}
       </div>
@@ -105,6 +203,24 @@ function WaypointRow({ waypoint, onSelect }: { waypoint: Waypoint; onSelect: (w:
           {waypoint.floor === 0 ? "Ground Floor" : `Floor ${waypoint.floor}`}
           {waypoint.description ? ` • ${waypoint.description}` : ""}
         </p>
+      </div>
+      <ChevronRight size={16} className="text-gray-300 flex-shrink-0" />
+    </button>
+  )
+}
+
+function GeoRow({ result, onSelect }: { result: GeoResult; onSelect: () => void }) {
+  return (
+    <button
+      onClick={onSelect}
+      className="w-full flex items-center gap-3 px-4 py-3 border-b border-gray-100 hover:bg-gray-50 active:bg-gray-100 text-left"
+    >
+      <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+        <MapPin size={18} className="text-[#005EB8]" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-semibold text-gray-900 truncate">{result.name}</p>
+        <p className="text-xs text-gray-500 truncate">{result.description}</p>
       </div>
       <ChevronRight size={16} className="text-gray-300 flex-shrink-0" />
     </button>

@@ -1,6 +1,6 @@
 import { Waypoint, Route, RouteStep, Coordinates } from "./types"
 
-function distanceMeters(a: Coordinates, b: Coordinates): number {
+export function distanceMeters(a: Coordinates, b: Coordinates): number {
   const R = 6371000
   const dLat = ((b.lat - a.lat) * Math.PI) / 180
   const dLng = ((b.lng - a.lng) * Math.PI) / 180
