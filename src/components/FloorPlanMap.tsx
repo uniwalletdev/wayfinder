@@ -36,6 +36,7 @@ export default function FloorPlanMap({
   const floorPlanLayerRef = useRef<L.ImageOverlay | null>(null)
   const waypointLayersRef = useRef<L.Marker[]>([])
   const trailLayersRef = useRef<L.Polyline[]>([])
+  const framedDestRef = useRef<string | null>(null)
 
   // Init map once
   useEffect(() => {
@@ -139,45 +140,57 @@ export default function FloorPlanMap({
       })
   }, [currentFloor, trails])
 
-  // Update position marker
+  // Update position marker. We keep a single marker alive across position
+  // fixes and slide it (via the .wf-live-marker transform transition) rather
+  // than destroying it each tick — that keeps the pulse animation continuous
+  // and makes movement read as fluid rather than teleporting.
   useEffect(() => {
     if (!mapRef.current) return
     const map = mapRef.current
 
+    if (!currentPosition) {
+      if (positionMarkerRef.current) {
+        map.removeLayer(positionMarkerRef.current)
+        positionMarkerRef.current = null
+      }
+      return
+    }
+
+    const latlng: L.LatLngExpression = [currentPosition.lat, currentPosition.lng]
+
     if (positionMarkerRef.current) {
-      map.removeLayer(positionMarkerRef.current)
-      positionMarkerRef.current = null
+      positionMarkerRef.current.setLatLng(latlng)
+      return
     }
 
-    if (currentPosition) {
-      const icon = L.divIcon({
-        html: `<div style="position:relative;">
-          <div style="
-            width:20px;height:20px;
-            background:#005EB8;
-            border:3px solid white;
-            border-radius:50%;
-            box-shadow:0 2px 8px rgba(0,94,184,0.6);
-            position:relative;z-index:2;
-          "></div>
-          <div style="
-            position:absolute;top:50%;left:50%;
-            transform:translate(-50%,-50%);
-            width:40px;height:40px;
-            background:rgba(0,94,184,0.2);
-            border-radius:50%;
-            animation:none;
-          "></div>
-        </div>`,
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
-        className: "",
-      })
+    const icon = L.divIcon({
+      html: `<div style="position:relative;width:44px;height:44px;">
+        <div class="wf-locate-ring" style="
+          position:absolute;top:50%;left:50%;margin:-11px 0 0 -11px;
+          width:22px;height:22px;border-radius:50%;
+          background:rgba(0,94,184,0.30);
+        "></div>
+        <div class="wf-locate-core" style="
+          position:absolute;top:50%;left:50%;margin:-9px 0 0 -9px;
+          width:18px;height:18px;
+          background:#005EB8;border:3px solid white;border-radius:50%;
+          box-shadow:0 2px 8px rgba(0,94,184,0.6);
+        "></div>
+      </div>`,
+      iconSize: [44, 44],
+      iconAnchor: [22, 22],
+      className: "",
+    })
 
-      const marker = L.marker([currentPosition.lat, currentPosition.lng], { icon, zIndexOffset: 1000 })
-      marker.addTo(map)
-      positionMarkerRef.current = marker
-    }
+    const marker = L.marker(latlng, { icon, zIndexOffset: 1000, keyboard: false })
+    marker.addTo(map)
+    positionMarkerRef.current = marker
+
+    // Enable the glide only after first paint, so the marker doesn't visibly
+    // fly in from the map origin when Leaflet sets its initial transform.
+    requestAnimationFrame(() => {
+      positionMarkerRef.current?.getElement()?.classList.add("wf-live-marker")
+    })
   }, [currentPosition])
 
   // Update route
@@ -208,19 +221,22 @@ export default function FloorPlanMap({
         lineCap: "round",
         lineJoin: "round",
         dashArray: "1, 12",
+        className: "wf-route-flow",
       })
       polyline.addTo(map)
       routeLayerRef.current = polyline
 
       const destIcon = L.divIcon({
-        html: `<div style="
+        // Outer wrapper carries the bob animation; inner teardrop keeps the
+        // rotate so the two transforms don't fight.
+        html: `<div class="wf-dest-pin"><div style="
           background:#DA291C;
           border:3px solid white;
           border-radius:50% 50% 50% 0;
           transform:rotate(-45deg);
           width:28px;height:28px;
           box-shadow:0 2px 8px rgba(218,41,28,0.5);
-        "></div>`,
+        "></div></div>`,
         iconSize: [28, 28],
         iconAnchor: [14, 28],
         className: "",
@@ -230,7 +246,16 @@ export default function FloorPlanMap({
         { icon: destIcon, zIndexOffset: 900 }
       ).addTo(map)
 
-      map.fitBounds(polyline.getBounds(), { padding: [80, 80] })
+      // Frame the whole route once when the destination is set, then follow the
+      // walker by gently keeping their dot centred as they move.
+      if (framedDestRef.current !== destination.id) {
+        map.fitBounds(polyline.getBounds(), { padding: [80, 80] })
+        framedDestRef.current = destination.id
+      } else {
+        map.panTo([currentPosition.lat, currentPosition.lng], { animate: true, duration: 0.8 })
+      }
+    } else {
+      framedDestRef.current = null
     }
   }, [isNavigating, route, destination, currentPosition])
 

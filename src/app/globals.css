@@ -80,6 +80,43 @@ html, body {
   100% { transform: scale(1); opacity: 1; }
 }
 
+/* --- Live map motion ---------------------------------------------------- */
+
+/* Expanding "sonar" halo behind the you-are-here dot */
+.wf-locate-ring { animation: wf-locate 2.4s ease-out infinite; }
+@keyframes wf-locate {
+  0%   { transform: scale(0.5); opacity: 0.7; }
+  70%  { opacity: 0; }
+  100% { transform: scale(3.4); opacity: 0; }
+}
+
+/* Gentle breathing on the solid core so it reads as "live" */
+.wf-locate-core { animation: wf-breathe 2.4s ease-in-out infinite; }
+@keyframes wf-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+
+/* Glide the live marker between position fixes instead of teleporting.
+   Leaflet positions markers via transform, so easing transform follows it. */
+.wf-live-marker { transition: transform 0.9s ease-out; }
+
+/* Energy flowing along the route toward the destination (marching dashes) */
+.wf-route-flow { animation: wf-flow 0.9s linear infinite; }
+@keyframes wf-flow { to { stroke-dashoffset: -26; } }
+
+/* Soft bob on the destination pin to draw the eye */
+.wf-dest-pin { animation: wf-dest-bob 1.8s ease-in-out infinite; }
+@keyframes wf-dest-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-locate-ring, .wf-locate-core, .wf-route-flow, .wf-dest-pin { animation: none; }
+  .wf-live-marker { transition: none; }
+}
+
 .camera-overlay {
   position: fixed;
   inset: 0;
