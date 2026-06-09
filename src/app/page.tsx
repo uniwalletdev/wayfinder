@@ -5,7 +5,8 @@ import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail } from "@/lib/types"
 import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
 import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails } from "@/lib/custom-waypoints"
-import { buildRoute, distanceMeters } from "@/lib/routing"
+import { buildRoute, distanceMeters, fetchOutdoorRoute, isOutdoorDestination } from "@/lib/routing"
+import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
@@ -37,7 +38,10 @@ export default function Home() {
     currentStepIndex: 0,
     isNavigating: false,
     positionAccuracy: 0,
+    travelMode: "walking",
   })
+  const [routeLoading, setRouteLoading] = useState(false)
+  const dirAbortRef = useRef<AbortController | null>(null)
 
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
@@ -89,21 +93,67 @@ export default function Home() {
     leafletMapRef.current?.flyTo([GOSH_CENTER.lat, GOSH_CENTER.lng], 18)
   }, [])
 
+  // Fetch a real street/footpath route for outdoor destinations and fold it in,
+  // replacing the placeholder offline route. Aborts any earlier in-flight fetch.
+  const refreshOutdoorRoute = useCallback(
+    async (from: typeof GOSH_CENTER, waypoint: Waypoint, mode: TravelMode) => {
+      dirAbortRef.current?.abort()
+      const ac = new AbortController()
+      dirAbortRef.current = ac
+      setRouteLoading(true)
+      const real = await fetchOutdoorRoute(from, waypoint, mode, ac.signal)
+      if (ac.signal.aborted) return
+      setRouteLoading(false)
+      if (real) {
+        setNavState((s) => (s.destination?.id === waypoint.id ? { ...s, route: real } : s))
+      }
+    },
+    []
+  )
+
+  // Selecting a destination shows a route *preview* (overview + travel mode +
+  // ETA) — the user taps Start to begin turn-by-turn, rather than jumping
+  // straight into navigation.
   const handleDestinationSelect = useCallback(
     (waypoint: Waypoint) => {
       setOverlay("none")
       const position = navState.currentPosition ?? GOSH_CENTER
-      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints)
+      // Offline route renders instantly; outdoor destinations then upgrade to
+      // real street geometry once Directions responds.
+      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode)
       setNavState((s) => ({
         ...s,
         destination: waypoint,
         route,
         currentStepIndex: 0,
-        isNavigating: true,
+        isNavigating: false,
       }))
+      if (isOutdoorDestination(waypoint)) {
+        void refreshOutdoorRoute(position, waypoint, navState.travelMode)
+      }
     },
-    [navState.currentPosition, navState.currentFloor, allWaypoints]
+    [navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, refreshOutdoorRoute]
   )
+
+  const handleTravelModeChange = useCallback(
+    (mode: TravelMode) => {
+      setNavState((s) => ({ ...s, travelMode: mode }))
+      const dest = navState.destination
+      if (!dest) return
+      const from = navState.currentPosition ?? GOSH_CENTER
+      if (isOutdoorDestination(dest)) {
+        void refreshOutdoorRoute(from, dest, mode)
+      } else {
+        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode)
+        setNavState((s) => ({ ...s, route }))
+      }
+    },
+    [navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, refreshOutdoorRoute]
+  )
+
+  const handleStartNavigation = useCallback(() => {
+    setNavState((s) => (s.route ? { ...s, isNavigating: true } : s))
+  }, [])
 
   // Advance through the route as the user moves. A step is "done" once they are
   // within a few metres of its target waypoint (or, for a lift step, once they
@@ -133,6 +183,8 @@ export default function Home() {
   }, [navState.currentPosition, navState.currentFloor])
 
   const handleStopNavigation = useCallback(() => {
+    dirAbortRef.current?.abort()
+    setRouteLoading(false)
     setNavState((s) => ({
       ...s,
       destination: null,
@@ -317,6 +369,10 @@ export default function Home() {
         route={navState.route}
         currentFloor={navState.currentFloor}
         isNavigating={navState.isNavigating}
+        travelMode={navState.travelMode}
+        routeLoading={routeLoading}
+        onTravelModeChange={handleTravelModeChange}
+        onStartNavigation={handleStartNavigation}
         onStopNavigation={handleStopNavigation}
         onOpenCamera={() => setOverlay("live-camera")}
         onScanQR={() => setOverlay("qr")}

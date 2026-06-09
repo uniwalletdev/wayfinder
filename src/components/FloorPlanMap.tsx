@@ -217,7 +217,10 @@ export default function FloorPlanMap({
     })
   }, [currentPosition])
 
-  // Update route
+  // Draw the route path + destination pin. The line follows the route's actual
+  // geometry (real street/footpath geometry outdoors, a connected multi-point
+  // path indoors) rather than a single straight line. Drawn in both preview and
+  // navigation; only the framing/follow behaviour differs between them.
   useEffect(() => {
     if (!mapRef.current) return
     const map = mapRef.current
@@ -226,68 +229,77 @@ export default function FloorPlanMap({
       map.removeLayer(routeLayerRef.current)
       routeLayerRef.current = null
     }
-
     if (destMarkerRef.current) {
       map.removeLayer(destMarkerRef.current)
       destMarkerRef.current = null
     }
 
-    if (isNavigating && route && destination && currentPosition) {
-      const routePoints: L.LatLngExpression[] = [
-        [currentPosition.lat, currentPosition.lng],
-        [destination.coordinates.lat, destination.coordinates.lng],
-      ]
-
-      const polyline = L.polyline(routePoints, {
-        color: "#00BFFF",
-        weight: 6,
-        opacity: 0.9,
-        lineCap: "round",
-        lineJoin: "round",
-        dashArray: "1, 12",
-        className: "wf-route-flow",
-      })
-      polyline.addTo(map)
-      routeLayerRef.current = polyline
-
-      const destIcon = L.divIcon({
-        // Outer wrapper carries the bob animation; inner teardrop keeps the
-        // rotate so the two transforms don't fight.
-        html: `<div class="wf-dest-pin"><div style="
-          background:#DA291C;
-          border:3px solid white;
-          border-radius:50% 50% 50% 0;
-          transform:rotate(-45deg);
-          width:28px;height:28px;
-          box-shadow:0 2px 8px rgba(218,41,28,0.5);
-        "></div></div>`,
-        iconSize: [28, 28],
-        iconAnchor: [14, 28],
-        className: "",
-      })
-      destMarkerRef.current = L.marker(
-        [destination.coordinates.lat, destination.coordinates.lng],
-        { icon: destIcon, zIndexOffset: 900 }
-      ).addTo(map)
-
-      // Frame the whole route once when the destination is set, then (while
-      // following) gently keep the walker's dot centred as they move.
-      if (framedDestRef.current !== destination.id) {
-        programmaticRef.current = true
-        map.fitBounds(polyline.getBounds(), { padding: [80, 80] })
-        map.once("moveend", () => {
-          programmaticRef.current = false
-        })
-        framedDestRef.current = destination.id
-        setFollow(true)
-      } else if (followingRef.current) {
-        map.panTo([currentPosition.lat, currentPosition.lng], { animate: true, duration: 0.8 })
-      }
-    } else {
+    if (!route || !destination || route.geometry.length < 2) {
       framedDestRef.current = null
       setFollow(true)
+      return
     }
-  }, [isNavigating, route, destination, currentPosition])
+
+    const pts = route.geometry.map((p) => [p.lat, p.lng] as L.LatLngExpression)
+    const polyline = L.polyline(pts, {
+      color: "#00BFFF",
+      weight: 6,
+      opacity: 0.9,
+      lineCap: "round",
+      lineJoin: "round",
+      dashArray: "1, 12",
+      className: "wf-route-flow",
+    })
+    polyline.addTo(map)
+    routeLayerRef.current = polyline
+
+    const destIcon = L.divIcon({
+      // Outer wrapper carries the bob animation; inner teardrop keeps the
+      // rotate so the two transforms don't fight.
+      html: `<div class="wf-dest-pin"><div style="
+        background:#DA291C;
+        border:3px solid white;
+        border-radius:50% 50% 50% 0;
+        transform:rotate(-45deg);
+        width:28px;height:28px;
+        box-shadow:0 2px 8px rgba(218,41,28,0.5);
+      "></div></div>`,
+      iconSize: [28, 28],
+      iconAnchor: [14, 28],
+      className: "",
+    })
+    destMarkerRef.current = L.marker(
+      [destination.coordinates.lat, destination.coordinates.lng],
+      { icon: destIcon, zIndexOffset: 900 }
+    ).addTo(map)
+
+    const frame = () => {
+      programmaticRef.current = true
+      map.fitBounds(polyline.getBounds(), { padding: [70, 70] })
+      map.once("moveend", () => {
+        programmaticRef.current = false
+      })
+    }
+
+    if (!isNavigating) {
+      // Preview: keep the whole route in view so the user can size it up.
+      frame()
+      framedDestRef.current = null
+    } else if (framedDestRef.current !== destination.id) {
+      // Navigation just started: frame once, then follow takes over.
+      frame()
+      framedDestRef.current = destination.id
+      setFollow(true)
+    }
+  }, [isNavigating, route, destination])
+
+  // Follow the walker while navigating: gently keep their dot centred as new
+  // position fixes arrive (unless they've panned away to explore).
+  useEffect(() => {
+    if (!mapRef.current || !isNavigating || !currentPosition) return
+    if (!followingRef.current) return
+    mapRef.current.panTo([currentPosition.lat, currentPosition.lng], { animate: true, duration: 0.8 })
+  }, [currentPosition, isNavigating])
 
   const recenter = () => {
     const pos = positionRef.current

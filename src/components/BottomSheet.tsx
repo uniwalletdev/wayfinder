@@ -1,14 +1,18 @@
 "use client"
 
-import { Waypoint, Route } from "@/lib/types"
+import { Waypoint, Route, TravelMode } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
-import { Clock, MapPin, Layers, Camera, QrCode, X, ChevronUp } from "lucide-react"
+import { Clock, MapPin, Layers, Camera, QrCode, X, Navigation, PersonStanding, Bike, Car, Loader2 } from "lucide-react"
 
 interface Props {
   destination: Waypoint | null
   route: Route | null
   currentFloor: number
   isNavigating: boolean
+  travelMode: TravelMode
+  routeLoading: boolean
+  onTravelModeChange: (mode: TravelMode) => void
+  onStartNavigation: () => void
   onStopNavigation: () => void
   onOpenCamera: () => void
   onScanQR: () => void
@@ -22,6 +26,10 @@ export default function BottomSheet({
   route,
   currentFloor,
   isNavigating,
+  travelMode,
+  routeLoading,
+  onTravelModeChange,
+  onStartNavigation,
   onStopNavigation,
   onOpenCamera,
   onScanQR,
@@ -50,6 +58,16 @@ export default function BottomSheet({
           onScanQR={onScanQR}
           expanded={expanded}
         />
+      ) : destination && route ? (
+        <PreviewSheet
+          destination={destination}
+          route={route}
+          travelMode={travelMode}
+          routeLoading={routeLoading}
+          onTravelModeChange={onTravelModeChange}
+          onStart={onStartNavigation}
+          onCancel={onStopNavigation}
+        />
       ) : (
         <IdleSheet
           onOpenSearch={onOpenSearch}
@@ -58,6 +76,116 @@ export default function BottomSheet({
           currentFloor={currentFloor}
         />
       )}
+    </div>
+  )
+}
+
+const TRAVEL_MODES: { mode: TravelMode; label: string; Icon: typeof PersonStanding }[] = [
+  { mode: "walking", label: "Walk", Icon: PersonStanding },
+  { mode: "cycling", label: "Cycle", Icon: Bike },
+  { mode: "driving", label: "Drive", Icon: Car },
+]
+
+function fmtDistance(m: number): string {
+  return m < 1000 ? `${m}m` : `${(m / 1000).toFixed(1)}km`
+}
+
+// Route overview shown after a destination is picked but before navigation
+// starts: lets the user choose how they're travelling and confirm with Start.
+function PreviewSheet({
+  destination,
+  route,
+  travelMode,
+  routeLoading,
+  onTravelModeChange,
+  onStart,
+  onCancel,
+}: {
+  destination: Waypoint
+  route: Route
+  travelMode: TravelMode
+  routeLoading: boolean
+  onTravelModeChange: (mode: TravelMode) => void
+  onStart: () => void
+  onCancel: () => void
+}) {
+  const icon = WAYPOINT_TYPE_ICONS[destination.type]
+
+  return (
+    <div className="px-4 pb-safe-bar">
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="text-2xl flex-shrink-0">{icon}</span>
+          <div className="min-w-0">
+            <p className="font-bold text-gray-900 text-base leading-tight truncate">{destination.name}</p>
+            {destination.description && (
+              <p className="text-xs text-gray-500 truncate">{destination.description}</p>
+            )}
+          </div>
+        </div>
+        <button
+          onClick={onCancel}
+          aria-label="Cancel"
+          className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+        >
+          <X size={16} className="text-gray-600" />
+        </button>
+      </div>
+
+      {/* Travel mode selector — only meaningful outdoors, where it changes the
+          path and ETA. Indoor routes are always on foot. */}
+      {route.outdoor && (
+        <div className="flex gap-2 mb-3">
+          {TRAVEL_MODES.map(({ mode, label, Icon }) => {
+            const active = mode === travelMode
+            return (
+              <button
+                key={mode}
+                onClick={() => onTravelModeChange(mode)}
+                className={`flex-1 flex items-center justify-center gap-1.5 rounded-xl py-2 text-sm font-semibold border transition-colors ${
+                  active
+                    ? "bg-[#005EB8] text-white border-[#005EB8]"
+                    : "bg-white text-gray-600 border-gray-200"
+                }`}
+              >
+                <Icon size={16} />
+                {label}
+              </button>
+            )
+          })}
+        </div>
+      )}
+
+      <div className="flex items-center gap-4 mb-3">
+        <div className="flex items-center gap-1.5">
+          <Clock size={15} className="text-[#005EB8]" />
+          <span className="text-sm font-semibold text-gray-900">
+            {routeLoading ? "—" : `${route.estimatedMinutes} min`}
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <MapPin size={15} className="text-[#005EB8]" />
+          <span className="text-sm font-semibold text-gray-900">
+            {routeLoading ? "—" : fmtDistance(route.totalDistance)}
+          </span>
+        </div>
+        {route.floorChanges > 0 && (
+          <div className="flex items-center gap-1.5">
+            <Layers size={15} className="text-[#005EB8]" />
+            <span className="text-sm font-semibold text-gray-900">
+              {route.floorChanges} lift{route.floorChanges > 1 ? "s" : ""}
+            </span>
+          </div>
+        )}
+      </div>
+
+      <button
+        onClick={onStart}
+        className="w-full flex items-center justify-center gap-2 bg-[#009639] text-white rounded-xl py-3 text-base font-bold active:scale-[0.98] transition-transform"
+      >
+        {routeLoading ? <Loader2 size={18} className="animate-spin" /> : <Navigation size={18} />}
+        {routeLoading ? "Finding route…" : "Start"}
+      </button>
     </div>
   )
 }

@@ -1,4 +1,21 @@
-import { Waypoint, Route, RouteStep, Coordinates } from "./types"
+import { Waypoint, Route, RouteStep, Coordinates, TravelMode } from "./types"
+
+// Geocoded destinations (beyond the hospital's mapped floors) carry a "geo-"
+// id. Those are the ones worth routing along real streets/footpaths; indoor
+// waypoints stay on the offline waypoint path.
+export function isOutdoorDestination(w: Waypoint): boolean {
+  return w.id.startsWith("geo-")
+}
+
+const WALK_SPEED_M_PER_MIN = 80
+
+// Walking speed in metres/min per mode, used to estimate indoor ETAs (outdoor
+// ETAs come straight from the Directions API).
+const SPEED_BY_MODE: Record<TravelMode, number> = {
+  walking: WALK_SPEED_M_PER_MIN,
+  cycling: 250,
+  driving: 500,
+}
 
 export function distanceMeters(a: Coordinates, b: Coordinates): number {
   const R = 6371000
@@ -34,9 +51,13 @@ export function buildRoute(
   from: Coordinates,
   fromFloor: number,
   destination: Waypoint,
-  allWaypoints: Waypoint[]
+  allWaypoints: Waypoint[],
+  mode: TravelMode = "walking"
 ): Route {
   const steps: RouteStep[] = []
+  // The path the map draws — connected through any intermediate waypoints
+  // (e.g. the lift) rather than a single straight line to the destination.
+  const geometry: Coordinates[] = [from]
   let totalDistance = 0
 
   if (fromFloor !== destination.floor) {
@@ -57,6 +78,7 @@ export function buildRoute(
         heading: bearing(from, nearestLift.coordinates),
         waypoint: nearestLift,
       })
+      geometry.push(nearestLift.coordinates)
       steps.push({
         instruction: `Take lift to Floor ${destination.floor}`,
         distance: 0,
@@ -69,6 +91,9 @@ export function buildRoute(
       ) || allWaypoints.find((w) => w.type === "lift" && w.floor === destination.floor)
 
       if (liftOnDestFloor) {
+        // The walker re-enters at the lift on the destination floor, so the
+        // drawn path continues from there to the destination.
+        geometry.push(liftOnDestFloor.coordinates)
         const d2 = distanceMeters(liftOnDestFloor.coordinates, destination.coordinates)
         totalDistance += d2
         steps.push({
@@ -89,6 +114,8 @@ export function buildRoute(
     })
   }
 
+  geometry.push(destination.coordinates)
+
   steps.push({
     instruction: `You have arrived at ${destination.name}`,
     distance: 0,
@@ -101,7 +128,63 @@ export function buildRoute(
   return {
     steps,
     totalDistance: Math.round(totalDistance),
-    estimatedMinutes: Math.max(1, Math.round(totalDistance / 80)),
+    estimatedMinutes: Math.max(1, Math.round(totalDistance / SPEED_BY_MODE[mode])),
     floorChanges,
+    geometry,
+    mode,
+    outdoor: false,
+  }
+}
+
+interface DirectionsResponse {
+  geometry?: Coordinates[]
+  distance?: number
+  duration?: number
+  error?: string
+}
+
+// Fetch a real street/footpath route from our Directions proxy and fold it into
+// a Route. Returns null on any failure so the caller can fall back to the
+// offline straight-line/waypoint route.
+export async function fetchOutdoorRoute(
+  from: Coordinates,
+  destination: Waypoint,
+  mode: TravelMode,
+  signal?: AbortSignal
+): Promise<Route | null> {
+  try {
+    const params = new URLSearchParams({
+      from: `${from.lat},${from.lng}`,
+      to: `${destination.coordinates.lat},${destination.coordinates.lng}`,
+      mode,
+    })
+    const res = await fetch(`/api/directions?${params}`, { signal })
+    if (!res.ok) return null
+    const data = (await res.json()) as DirectionsResponse
+    if (data.error || !data.geometry || data.geometry.length < 2) return null
+
+    const distance = data.distance ?? 0
+    const minutes = data.duration
+      ? Math.max(1, Math.round(data.duration / 60))
+      : Math.max(1, Math.round(distance / SPEED_BY_MODE[mode]))
+
+    return {
+      steps: [
+        {
+          instruction: `${headingToInstruction(bearing(from, destination.coordinates))} toward ${destination.name}`,
+          distance,
+          heading: bearing(from, destination.coordinates),
+        },
+        { instruction: `You have arrived at ${destination.name}`, distance: 0, heading: 0, waypoint: destination },
+      ],
+      totalDistance: distance,
+      estimatedMinutes: minutes,
+      floorChanges: 0,
+      geometry: data.geometry,
+      mode,
+      outdoor: true,
+    }
+  } catch {
+    return null
   }
 }

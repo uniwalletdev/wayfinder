@@ -38,7 +38,16 @@ export interface Route {
   totalDistance: number
   estimatedMinutes: number
   floorChanges: number
+  // The line to actually draw on the map: real street/footpath geometry
+  // outdoors, or a connected multi-point indoor path. Always has ≥2 points.
+  geometry: Coordinates[]
+  mode: TravelMode
+  // True when the path came from real street routing (Mapbox Directions),
+  // false for indoor waypoint-to-waypoint paths.
+  outdoor: boolean
 }
+
+export type TravelMode = "walking" | "cycling" | "driving"
 
 export interface RouteStep {
   instruction: string
@@ -71,4 +80,5 @@ export interface NavigationState {
   currentStepIndex: number
   isNavigating: boolean
   positionAccuracy: number
+  travelMode: TravelMode
 }
