@@ -1,8 +1,9 @@
 "use client"
 
-import React, { useEffect, useRef, MutableRefObject } from "react"
+import React, { useEffect, useRef, useState, MutableRefObject } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
+import { LocateFixed } from "lucide-react"
 import { Waypoint, Route, Coordinates, SurveyTrail } from "@/lib/types"
 import { GOSH_WAYPOINTS, FLOOR_PLANS, GOSH_CENTER, WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
 
@@ -38,6 +39,21 @@ export default function FloorPlanMap({
   const trailLayersRef = useRef<L.Polyline[]>([])
   const framedDestRef = useRef<string | null>(null)
 
+  // Auto-follow keeps the walker centred (Google/Waze style). When the user
+  // drags or zooms to explore — e.g. to see the whole route — we pause follow
+  // and surface a re-centre button. followingRef mirrors the state so map event
+  // handlers and effects can read it without re-subscribing.
+  const [following, setFollowing] = useState(true)
+  const followingRef = useRef(true)
+  const programmaticRef = useRef(false)
+  const positionRef = useRef<Coordinates | null>(currentPosition)
+  positionRef.current = currentPosition
+
+  const setFollow = (v: boolean) => {
+    followingRef.current = v
+    setFollowing(v)
+  }
+
   // Init map once
   useEffect(() => {
     if (mapRef.current) return
@@ -52,6 +68,14 @@ export default function FloorPlanMap({
     L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
       maxZoom: 22,
     }).addTo(map)
+
+    // A user-initiated drag or zoom means they want to explore — pause follow.
+    // Programmatic moves (fitBounds/panTo) set programmaticRef to opt out.
+    const onUserInteract = () => setFollow(false)
+    map.on("dragstart", onUserInteract)
+    map.on("zoomstart", () => {
+      if (!programmaticRef.current) onUserInteract()
+    })
 
     mapRef.current = map
     if (leafletMapRef) leafletMapRef.current = map
@@ -246,18 +270,52 @@ export default function FloorPlanMap({
         { icon: destIcon, zIndexOffset: 900 }
       ).addTo(map)
 
-      // Frame the whole route once when the destination is set, then follow the
-      // walker by gently keeping their dot centred as they move.
+      // Frame the whole route once when the destination is set, then (while
+      // following) gently keep the walker's dot centred as they move.
       if (framedDestRef.current !== destination.id) {
+        programmaticRef.current = true
         map.fitBounds(polyline.getBounds(), { padding: [80, 80] })
+        map.once("moveend", () => {
+          programmaticRef.current = false
+        })
         framedDestRef.current = destination.id
-      } else {
+        setFollow(true)
+      } else if (followingRef.current) {
         map.panTo([currentPosition.lat, currentPosition.lng], { animate: true, duration: 0.8 })
       }
     } else {
       framedDestRef.current = null
+      setFollow(true)
     }
   }, [isNavigating, route, destination, currentPosition])
 
-  return <div id="map-container" className="w-full h-full" style={{ isolation: "isolate" }} />
+  const recenter = () => {
+    const pos = positionRef.current
+    if (pos && mapRef.current) {
+      programmaticRef.current = true
+      mapRef.current.panTo([pos.lat, pos.lng], { animate: true, duration: 0.6 })
+      mapRef.current.once("moveend", () => {
+        programmaticRef.current = false
+      })
+    }
+    setFollow(true)
+  }
+
+  const showRecenter = isNavigating && !following && currentPosition
+
+  return (
+    <div className="relative w-full h-full" style={{ isolation: "isolate" }}>
+      <div id="map-container" className="w-full h-full" />
+      {showRecenter && (
+        <button
+          onClick={recenter}
+          aria-label="Re-centre on my location"
+          className="absolute bottom-28 right-4 z-[1000] flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-[#005EB8] shadow-lg active:scale-95 transition-transform"
+        >
+          <LocateFixed size={18} />
+          Re-centre
+        </button>
+      )}
+    </div>
+  )
 }
