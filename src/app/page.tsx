@@ -13,7 +13,8 @@ import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import LaunchScreen, { AppMode } from "@/components/LaunchScreen"
+import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, Home as HomeIcon } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
@@ -39,6 +40,9 @@ export default function Home() {
     positionAccuracy: 0,
   })
 
+  // Which journey the user picked on the launch screen. `null` = still choosing.
+  // "directions" shows the search/navigation tools; "map" focuses on Survey Mode.
+  const [appMode, setAppMode] = useState<AppMode | null>(null)
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
@@ -104,6 +108,26 @@ export default function Home() {
     },
     [navState.currentPosition, navState.currentFloor, allWaypoints]
   )
+
+  const handleChooseMode = useCallback((mode: AppMode) => {
+    setAppMode(mode)
+    // Map mode is all about surveying, so drop the user straight into it.
+    setOverlay(mode === "map" ? "survey" : "none")
+  }, [])
+
+  const handleGoHome = useCallback(() => {
+    setOverlay("none")
+    setBottomSheetExpanded(false)
+    // Drop any active navigation so the chooser starts clean.
+    setNavState((s) => ({
+      ...s,
+      destination: null,
+      route: null,
+      currentStepIndex: 0,
+      isNavigating: false,
+    }))
+    setAppMode(null)
+  }, [])
 
   const handleStopNavigation = useCallback(() => {
     setNavState((s) => ({
@@ -187,13 +211,38 @@ export default function Home() {
       />
 
       {/* ── Top bar ──────────────────────────────────────────── */}
-      {!navState.isNavigating ? (
+      {appMode === "map" ? (
+        <div className="absolute top-0 left-0 right-0 z-50">
+          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3 flex items-center gap-3">
+            <button
+              onClick={handleGoHome}
+              className="w-10 h-10 flex-shrink-0 bg-white/15 rounded-full flex items-center justify-center"
+              title="Back to home"
+            >
+              <HomeIcon size={18} className="text-white" />
+            </button>
+            <div className="flex-1 min-w-0">
+              <p className="text-white font-bold text-sm leading-tight flex items-center gap-1.5">
+                <ClipboardList size={15} /> Mapping mode
+              </p>
+              <p className="text-white/70 text-xs">Survey an area to add it to the map</p>
+            </div>
+          </div>
+        </div>
+      ) : !navState.isNavigating ? (
         <div className="absolute top-0 left-0 right-0 z-50">
           {/* Search bar */}
-          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
+          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3 flex items-center gap-2">
+            <button
+              onClick={handleGoHome}
+              className="w-11 h-11 flex-shrink-0 bg-white/15 rounded-full flex items-center justify-center"
+              title="Back to home"
+            >
+              <HomeIcon size={18} className="text-white" />
+            </button>
             <button
               onClick={() => setOverlay("search")}
-              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
+              className="flex-1 flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
             >
               <Search size={18} className="text-[#005EB8] flex-shrink-0" />
               <span className="flex-1 text-left text-gray-400 text-sm">
@@ -258,15 +307,15 @@ export default function Home() {
         </span>
       </div>
 
-      {/* Survey / self-map FAB */}
-      {!navState.isNavigating && (
+      {/* Survey / self-map FAB — only in mapping mode */}
+      {appMode === "map" && (
         <button
           onClick={() => setOverlay("survey")}
-          className="absolute left-3 bottom-52 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
+          className="absolute left-1/2 -translate-x-1/2 bottom-10 z-50 h-14 px-6 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-base"
           title="Survey Mode — map an area yourself"
         >
-          <ClipboardList size={20} />
-          Map area
+          <ClipboardList size={22} />
+          Map this area
         </button>
       )}
 
@@ -282,18 +331,20 @@ export default function Home() {
         <Navigation size={20} className="text-[#005EB8]" />
       </button>
 
-      <BottomSheet
-        destination={navState.destination}
-        route={navState.route}
-        currentFloor={navState.currentFloor}
-        isNavigating={navState.isNavigating}
-        onStopNavigation={handleStopNavigation}
-        onOpenCamera={() => setOverlay("live-camera")}
-        onScanQR={() => setOverlay("qr")}
-        onOpenSearch={() => setOverlay("search")}
-        expanded={bottomSheetExpanded}
-        onToggleExpand={() => setBottomSheetExpanded((v) => !v)}
-      />
+      {appMode === "directions" && (
+        <BottomSheet
+          destination={navState.destination}
+          route={navState.route}
+          currentFloor={navState.currentFloor}
+          isNavigating={navState.isNavigating}
+          onStopNavigation={handleStopNavigation}
+          onOpenCamera={() => setOverlay("live-camera")}
+          onScanQR={() => setOverlay("qr")}
+          onOpenSearch={() => setOverlay("search")}
+          expanded={bottomSheetExpanded}
+          onToggleExpand={() => setBottomSheetExpanded((v) => !v)}
+        />
+      )}
 
       {overlay === "search" && (
         <SearchModal waypoints={allWaypoints} onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
@@ -316,6 +367,9 @@ export default function Home() {
           onSurveyComplete={handleSurveyComplete}
         />
       )}
+
+      {/* Launch chooser — shown until the user picks a journey */}
+      {appMode === null && <LaunchScreen onChoose={handleChooseMode} />}
     </div>
   )
 }
