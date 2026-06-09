@@ -170,7 +170,7 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
               <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
                 <span className="text-5xl mb-3">🔍</span>
                 <p className="text-gray-600 font-medium">No results for "{query}"</p>
-                {geoError ? (
+                {geoError && geoError !== "not_configured" ? (
                   <p className="text-sm text-gray-400 mt-1">
                     Couldn&apos;t reach the map search just now — check your connection, or try a ward,
                     department or floor number.
