@@ -297,17 +297,20 @@ export default function Home() {
         </button>
       )}
 
-      {/* Recenter FAB */}
-      <button
-        onClick={() => {
-          const pos = navState.currentPosition ?? GOSH_CENTER
-          leafletMapRef.current?.flyTo([pos.lat, pos.lng], 18)
-        }}
-        className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-        title="Re-centre"
-      >
-        <Navigation size={20} className="text-[#005EB8]" />
-      </button>
+      {/* Recenter FAB — hidden while navigating, where the follow-aware
+          re-centre control inside the map takes over. */}
+      {!navState.isNavigating && (
+        <button
+          onClick={() => {
+            const pos = navState.currentPosition ?? GOSH_CENTER
+            leafletMapRef.current?.flyTo([pos.lat, pos.lng], 18)
+          }}
+          className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
+          title="Re-centre"
+        >
+          <Navigation size={20} className="text-[#005EB8]" />
+        </button>
+      )}
 
       <BottomSheet
         destination={navState.destination}
