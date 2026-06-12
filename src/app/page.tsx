@@ -14,7 +14,8 @@ import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import RoleSelect, { type AppRole } from "@/components/RoleSelect"
+import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, UserRound } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
@@ -42,6 +43,11 @@ export default function Home() {
   })
   const [routeLoading, setRouteLoading] = useState(false)
   const dirAbortRef = useRef<AbortController | null>(null)
+
+  // Visitors choose on entry whether they're here to navigate ("user") or to
+  // survey and add areas to the map ("mapper"). Until they pick, the role
+  // screen covers the app.
+  const [role, setRole] = useState<AppRole | null>(null)
 
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
@@ -337,8 +343,26 @@ export default function Home() {
         </span>
       </div>
 
-      {/* Survey / self-map FAB */}
-      {!navState.isNavigating && (
+      {/* Role chip — shows how you entered, tap to switch */}
+      {!navState.isNavigating && role && (
+        <button
+          onClick={() => setRole(null)}
+          className="absolute top-48 left-3 z-40 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm"
+          title="Switch between User and Mapper"
+        >
+          {role === "mapper" ? (
+            <ClipboardList size={12} className="text-[#005EB8]" />
+          ) : (
+            <UserRound size={12} className="text-[#005EB8]" />
+          )}
+          <span className="text-xs text-gray-700 font-semibold">
+            {role === "mapper" ? "Mapper" : "User"}
+          </span>
+        </button>
+      )}
+
+      {/* Survey / self-map FAB — mappers only */}
+      {!navState.isNavigating && role === "mapper" && (
         <button
           onClick={() => setOverlay("survey")}
           className="absolute left-3 bottom-52 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
@@ -402,6 +426,8 @@ export default function Home() {
           onSurveyComplete={handleSurveyComplete}
         />
       )}
+
+      {role === null && <RoleSelect onSelect={setRole} />}
     </div>
   )
 }
