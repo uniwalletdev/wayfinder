@@ -5,6 +5,9 @@ import { Waypoint, SurveyTrail } from "./types"
 // reload instead of being discarded.
 const STORAGE_KEY = "wayfinder.customWaypoints"
 const TRAILS_KEY = "wayfinder.surveyTrails"
+// GPS can't tell us the floor, so remember the last one the user was on
+// (set via the floor selector, a QR scan, or finishing a survey) across visits.
+const FLOOR_KEY = "wayfinder.currentFloor"
 
 export function loadCustomWaypoints(): Waypoint[] {
   if (typeof window === "undefined") return []
@@ -43,6 +46,27 @@ export function saveSurveyTrails(trails: SurveyTrail[]): void {
   if (typeof window === "undefined") return
   try {
     window.localStorage.setItem(TRAILS_KEY, JSON.stringify(trails))
+  } catch {
+    // Storage may be unavailable (private mode, quota) — fail silently.
+  }
+}
+
+export function loadLastFloor(): number | null {
+  if (typeof window === "undefined") return null
+  try {
+    const raw = window.localStorage.getItem(FLOOR_KEY)
+    if (raw === null) return null
+    const floor = parseInt(raw, 10)
+    return Number.isFinite(floor) ? floor : null
+  } catch {
+    return null
+  }
+}
+
+export function saveLastFloor(floor: number): void {
+  if (typeof window === "undefined") return
+  try {
+    window.localStorage.setItem(FLOOR_KEY, String(floor))
   } catch {
     // Storage may be unavailable (private mode, quota) — fail silently.
   }

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail } from "@/lib/types"
 import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
-import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails } from "@/lib/custom-waypoints"
+import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails, loadLastFloor, saveLastFloor } from "@/lib/custom-waypoints"
 import { buildRoute, distanceMeters, fetchOutdoorRoute, isOutdoorDestination } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
@@ -59,10 +59,22 @@ export default function Home() {
   const [customWaypoints, setCustomWaypoints] = useState<Waypoint[]>([])
   const [surveyTrails, setSurveyTrails] = useState<SurveyTrail[]>([])
 
-  // Restore user-mapped locations and walked trails from previous sessions.
+  // Restore user-mapped locations, walked trails and the last known floor
+  // from previous sessions. GPS can't detect floors, so without this the app
+  // would snap back to Ground every visit even in a spot you've mapped.
   useEffect(() => {
     setCustomWaypoints(loadCustomWaypoints())
     setSurveyTrails(loadSurveyTrails())
+    const lastFloor = loadLastFloor()
+    if (lastFloor !== null) {
+      setNavState((s) => ({ ...s, currentFloor: lastFloor }))
+    }
+  }, [])
+
+  // Any floor change — selector tap, QR scan, or survey — is remembered.
+  const setCurrentFloor = useCallback((floor: number) => {
+    saveLastFloor(floor)
+    setNavState((s) => ({ ...s, currentFloor: floor }))
   }, [])
 
   const allWaypoints = useMemo(() => [...GOSH_WAYPOINTS, ...customWaypoints], [customWaypoints])
@@ -212,6 +224,7 @@ export default function Home() {
       const lngIdx = parts.indexOf("lng")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
         setGpsStatus("active")
+        saveLastFloor(parseInt(parts[floorIdx + 1]))
         setNavState((s) => ({
           ...s,
           currentFloor: parseInt(parts[floorIdx + 1]),
@@ -224,6 +237,9 @@ export default function Home() {
 
   const handleSurveyComplete = useCallback((result: SurveyResult) => {
     setOverlay("none")
+    // Stay on the floor the mapper ended the survey on — they're physically
+    // there, so don't snap the app back to Ground.
+    setCurrentFloor(result.endFloor)
     const newWaypoints = [...result.markedWaypoints, ...result.aiWaypoints]
     if (newWaypoints.length > 0) {
       setCustomWaypoints((prev) => {
@@ -257,7 +273,7 @@ export default function Home() {
       message = "Survey complete — no clear signs were found in the footage. Try keeping signs and door plates in view, or use “Mark Location”."
     }
     alert(message)
-  }, [])
+  }, [setCurrentFloor])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
@@ -348,7 +364,7 @@ export default function Home() {
       <FloorSelector
         floors={availableFloors}
         currentFloor={navState.currentFloor}
-        onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
+        onChange={setCurrentFloor}
       />
 
       {/* GPS accuracy badge */}
