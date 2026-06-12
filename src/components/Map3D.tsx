@@ -15,6 +15,9 @@ interface Props {
   isNavigating: boolean
   waypoints?: Waypoint[]
   trails?: SurveyTrail[]
+  // Fade the extruded buildings so indoor content (floor plan, route,
+  // markers) reads as "inside" rather than buried underneath.
+  dimBuildings?: boolean
   onMapReady: () => void
   leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
 }
@@ -35,6 +38,7 @@ export default function Map3DView({
   isNavigating,
   waypoints = GOSH_WAYPOINTS,
   trails = [],
+  dimBuildings = false,
   onMapReady,
   leafletMapRef,
 }: Props) {
@@ -115,6 +119,19 @@ export default function Map3DView({
       if (leafletMapRef) leafletMapRef.current = null
     }
   }, [])
+
+  // Fade all extruded buildings when the focus is indoors, so the floor plan
+  // and route read as inside the building rather than hidden under it.
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !styleReady) return
+    const layers = map.getStyle().layers ?? []
+    layers
+      .filter((l) => l.type === "fill-extrusion")
+      .forEach((l) => {
+        map.setPaintProperty(l.id, "fill-extrusion-opacity", dimBuildings ? 0.2 : 0.85)
+      })
+  }, [dimBuildings, styleReady])
 
   // Floor plan image overlay
   useEffect(() => {

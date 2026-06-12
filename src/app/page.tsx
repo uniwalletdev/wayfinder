@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail } from "@/lib/types"
-import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
+import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors, isInsideBuilding } from "@/lib/gosh-data"
 import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails, loadLastFloor, saveLastFloor } from "@/lib/custom-waypoints"
 import { buildRoute, distanceMeters, fetchOutdoorRoute, isOutdoorDestination } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
@@ -52,6 +52,19 @@ export default function Home() {
 
   // 2D (Leaflet floor plan) or 3D (MapLibre, tilted with extruded buildings)
   const [mapView, setMapView] = useState<"2d" | "3d">("2d")
+  // Transient pill explaining an automatic view change
+  const [viewNotice, setViewNotice] = useState<string | null>(null)
+  const noticeTimerRef = useRef<NodeJS.Timeout | null>(null)
+  // True when WE switched 3D→2D on entering the building, so we know to
+  // switch back outdoors. A manual toggle clears it — the user's choice wins.
+  const autoSwitchedRef = useRef(false)
+  const prevIndoorsRef = useRef<boolean | null>(null)
+
+  const showViewNotice = useCallback((text: string) => {
+    if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current)
+    setViewNotice(text)
+    noticeTimerRef.current = setTimeout(() => setViewNotice(null), 3500)
+  }, [])
 
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
@@ -76,6 +89,37 @@ export default function Home() {
     saveLastFloor(floor)
     setNavState((s) => ({ ...s, currentFloor: floor }))
   }, [])
+
+  // Indoor/outdoor with hysteresis: you're "indoors" once inside the building
+  // footprint, and only "outdoors" again 25m clear of it — so a jittery GPS
+  // fix at the entrance doesn't flap the view back and forth.
+  const [indoors, setIndoors] = useState(false)
+  useEffect(() => {
+    const pos = navState.currentPosition
+    if (!pos) return
+    setIndoors((prev) => (prev ? isInsideBuilding(pos, 25) : isInsideBuilding(pos)))
+  }, [navState.currentPosition])
+
+  // Auto-switch on the indoor/outdoor transition: 3D is great for finding the
+  // building, but indoors the 2D floor plan is the clearer guide. Only restore
+  // 3D outdoors if we were the ones who switched away from it.
+  useEffect(() => {
+    const prev = prevIndoorsRef.current
+    prevIndoorsRef.current = indoors
+    if (prev === null || prev === indoors) return
+    if (indoors) {
+      setMapView((v) => {
+        if (v !== "3d") return v
+        autoSwitchedRef.current = true
+        showViewNotice("You're indoors — switched to the floor plan")
+        return "2d"
+      })
+    } else if (autoSwitchedRef.current) {
+      autoSwitchedRef.current = false
+      setMapView("3d")
+      showViewNotice("Back outdoors — switched to 3D")
+    }
+  }, [indoors, showViewNotice])
 
   const allWaypoints = useMemo(() => [...GOSH_WAYPOINTS, ...customWaypoints], [customWaypoints])
   const availableFloors = useMemo(() => getAvailableFloors(allWaypoints), [allWaypoints])
@@ -300,6 +344,7 @@ export default function Home() {
           isNavigating={navState.isNavigating}
           waypoints={allWaypoints}
           trails={surveyTrails}
+          dimBuildings={indoors || (!!navState.destination && !isOutdoorDestination(navState.destination))}
           onMapReady={() => {}}
           leafletMapRef={leafletMapRef}
         />
@@ -377,6 +422,13 @@ export default function Home() {
         </div>
       )}
 
+      {/* Auto view-switch notice */}
+      {viewNotice && (
+        <div className="absolute top-[12.5rem] left-1/2 -translate-x-1/2 z-50 bg-gray-900/85 text-white text-xs font-medium rounded-full px-4 py-2 shadow-lg whitespace-nowrap">
+          {viewNotice}
+        </div>
+      )}
+
       {/* Floor badge */}
       <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
         <Layers size={12} className="text-[#005EB8]" />
@@ -418,7 +470,10 @@ export default function Home() {
       {/* 2D / 3D view toggle */}
       {!navState.isNavigating && (
         <button
-          onClick={() => setMapView((v) => (v === "2d" ? "3d" : "2d"))}
+          onClick={() => {
+            autoSwitchedRef.current = false
+            setMapView((v) => (v === "2d" ? "3d" : "2d"))
+          }}
           className="absolute left-3 bottom-52 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200 text-sm font-bold text-[#005EB8]"
           title={mapView === "2d" ? "Switch to 3D view" : "Switch to 2D view"}
         >

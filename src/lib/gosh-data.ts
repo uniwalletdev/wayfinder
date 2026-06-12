@@ -54,6 +54,19 @@ export function getAvailableFloors(waypoints: Waypoint[] = GOSH_WAYPOINTS): numb
   return [...floors].sort((a, b) => a - b)
 }
 
+// Whether a position falls inside the mapped building footprint (the union of
+// the floor plan bounds). GPS gives no floor, but it does tell us
+// indoors-vs-outdoors well enough to drive view switching. A positive
+// marginMeters expands the footprint — callers use that as hysteresis so a
+// jittery GPS fix at the building edge doesn't flap between the two states.
+export function isInsideBuilding(c: { lat: number; lng: number }, marginMeters = 0): boolean {
+  const dLat = marginMeters / 111320
+  const dLng = marginMeters / (111320 * Math.cos((c.lat * Math.PI) / 180))
+  return FLOOR_PLANS.some(({ bounds: [[s, w], [n, e]] }) =>
+    c.lat >= s - dLat && c.lat <= n + dLat && c.lng >= w - dLng && c.lng <= e + dLng
+  )
+}
+
 export function floorLabel(floor: number): string {
   if (floor === 0) return "Ground Floor"
   if (floor < 0) return `Basement ${Math.abs(floor)}`
