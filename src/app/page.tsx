@@ -15,9 +15,10 @@ import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
 import RoleSelect, { type AppRole } from "@/components/RoleSelect"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, UserRound } from "lucide-react"
+import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, UserRound, Home as HomeIcon } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
+const Map3D = dynamic(() => import("@/components/Map3D"), { ssr: false })
 
 type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
 type GpsStatus = "requesting" | "active" | "denied"
@@ -48,6 +49,9 @@ export default function Home() {
   // survey and add areas to the map ("mapper"). Until they pick, the role
   // screen covers the app.
   const [role, setRole] = useState<AppRole | null>(null)
+
+  // 2D (Leaflet floor plan) or 3D (MapLibre, tilted with extruded buildings)
+  const [mapView, setMapView] = useState<"2d" | "3d">("2d")
 
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
@@ -259,26 +263,48 @@ export default function Home() {
 
   return (
     <div className="relative w-full h-dvh overflow-hidden bg-gray-100">
-      <FloorPlanMap
-        currentFloor={navState.currentFloor}
-        currentPosition={navState.currentPosition}
-        destination={navState.destination}
-        route={navState.route}
-        isNavigating={navState.isNavigating}
-        waypoints={allWaypoints}
-        trails={surveyTrails}
-        onMapReady={() => {}}
-        leafletMapRef={leafletMapRef}
-      />
+      {mapView === "2d" ? (
+        <FloorPlanMap
+          currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          destination={navState.destination}
+          route={navState.route}
+          isNavigating={navState.isNavigating}
+          waypoints={allWaypoints}
+          trails={surveyTrails}
+          onMapReady={() => {}}
+          leafletMapRef={leafletMapRef}
+        />
+      ) : (
+        <Map3D
+          currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          destination={navState.destination}
+          route={navState.route}
+          isNavigating={navState.isNavigating}
+          waypoints={allWaypoints}
+          trails={surveyTrails}
+          onMapReady={() => {}}
+          leafletMapRef={leafletMapRef}
+        />
+      )}
 
       {/* ── Top bar ──────────────────────────────────────────── */}
       {!navState.isNavigating ? (
         <div className="absolute top-0 left-0 right-0 z-50">
-          {/* Search bar */}
-          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
+          {/* Home + search bar */}
+          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3 flex items-center gap-3">
+            <button
+              onClick={() => setRole(null)}
+              className="w-11 h-11 flex-shrink-0 bg-white rounded-full shadow flex items-center justify-center"
+              title="Back to start — choose Mapper or User"
+              aria-label="Back to start screen"
+            >
+              <HomeIcon size={20} className="text-[#005EB8]" />
+            </button>
             <button
               onClick={() => setOverlay("search")}
-              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
+              className="flex-1 flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
             >
               <Search size={18} className="text-[#005EB8] flex-shrink-0" />
               <span className="flex-1 text-left text-gray-400 text-sm">
@@ -365,11 +391,22 @@ export default function Home() {
       {!navState.isNavigating && role === "mapper" && (
         <button
           onClick={() => setOverlay("survey")}
-          className="absolute left-3 bottom-52 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
+          className="absolute left-3 bottom-68 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
           title="Survey Mode — map an area yourself"
         >
           <ClipboardList size={20} />
           Map area
+        </button>
+      )}
+
+      {/* 2D / 3D view toggle */}
+      {!navState.isNavigating && (
+        <button
+          onClick={() => setMapView((v) => (v === "2d" ? "3d" : "2d"))}
+          className="absolute left-3 bottom-52 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200 text-sm font-bold text-[#005EB8]"
+          title={mapView === "2d" ? "Switch to 3D view" : "Switch to 2D view"}
+        >
+          {mapView === "2d" ? "3D" : "2D"}
         </button>
       )}
 
