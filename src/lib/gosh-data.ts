@@ -1,4 +1,5 @@
 import { Waypoint, FloorPlan } from "./types"
+import { DoorOpen, Cross, Pill, UtensilsCrossed, type LucideIcon } from "lucide-react"
 
 // GOSH approximate center coordinates
 export const GOSH_CENTER = { lat: 51.5225, lng: -0.1199 }
@@ -78,6 +79,21 @@ export const WAYPOINT_TYPE_ICONS: Record<string, string> = {
   pharmacy: "💊",
   other: "📍",
 }
+
+// "Favourites" row shown on the idle sheet and search screen — Apple Maps'
+// Home/Work shortcuts, adapted to the destinations visitors look for most.
+export interface QuickAccessItem {
+  waypointId: string
+  label: string
+  icon: LucideIcon
+}
+
+export const QUICK_ACCESS: QuickAccessItem[] = [
+  { waypointId: "main-entrance", label: "Entrance", icon: DoorOpen },
+  { waypointId: "ae-entrance", label: "A&E", icon: Cross },
+  { waypointId: "pharmacy-gf", label: "Pharmacy", icon: Pill },
+  { waypointId: "canteen-gf", label: "Café", icon: UtensilsCrossed },
+]
 
 export const WAYPOINT_TYPE_LABELS: Record<string, string> = {
   ward: "Ward",

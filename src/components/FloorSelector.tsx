@@ -8,20 +8,22 @@ interface Props {
   onChange: (floor: number) => void
 }
 
+// Apple Maps' indoor "level picker": a single rounded pill of stacked floor
+// numbers, with the active floor highlighted in system blue.
 export default function FloorSelector({ floors, currentFloor, onChange }: Props) {
   if (floors.length <= 1) return null
 
+  const sorted = [...floors].sort((a, b) => b - a)
+
   return (
-    <div className="absolute right-3 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1.5">
-      {[...floors].sort((a, b) => b - a).map((floor) => (
+    <div className="absolute right-3 top-1/2 -translate-y-1/2 z-40 flex flex-col bg-white rounded-2xl shadow-lg overflow-hidden">
+      {sorted.map((floor, i) => (
         <button
           key={floor}
           onClick={() => onChange(floor)}
-          className={`w-10 h-10 rounded-xl text-xs font-bold shadow-md transition-all duration-200 ${
-            currentFloor === floor
-              ? "bg-[#005EB8] text-white scale-110 shadow-lg"
-              : "bg-white text-gray-700 hover:bg-gray-50"
-          }`}
+          className={`w-11 h-11 flex items-center justify-center text-sm font-bold transition-colors ${
+            currentFloor === floor ? "bg-[#007AFF] text-white" : "text-gray-700 active:bg-gray-100"
+          } ${i !== 0 ? "border-t border-gray-100" : ""}`}
         >
           {floorShortLabel(floor)}
         </button>

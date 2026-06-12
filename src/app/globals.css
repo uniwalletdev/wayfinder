@@ -6,6 +6,9 @@
 .pb-safe-bar    { padding-bottom: max(env(safe-area-inset-bottom), 1rem); }
 .pb-safe-snug   { padding-bottom: max(env(safe-area-inset-bottom), 0.25rem); }
 
+/* Floating controls over a full-bleed map, positioned clear of the notch */
+.top-safe-fab   { top:  max(env(safe-area-inset-top),  0.75rem); }
+
 :root {
   --nhs-blue: #005EB8;
   --nhs-dark-blue: #003087;
@@ -14,6 +17,14 @@
   --nhs-warm-yellow: #FFB81C;
   --nhs-red: #DA291C;
   --waze-route: #00BFFF;
+
+  /* Apple Maps-style system colors */
+  --ios-blue: #007AFF;
+  --ios-green: #34C759;
+  --ios-red: #FF3B30;
+  --ios-gray: #8E8E93;
+  --ios-gray-bg: #F2F2F7;
+  --ios-label: #1C1C1E;
 }
 
 * {
@@ -55,7 +66,7 @@ html, body {
 }
 
 .route-line {
-  stroke: var(--waze-route);
+  stroke: var(--ios-blue);
   stroke-width: 6;
   stroke-dasharray: none;
   fill: none;

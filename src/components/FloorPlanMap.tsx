@@ -123,13 +123,13 @@ export default function FloorPlanMap({
       const icon = L.divIcon({
         html: `<div style="
           background:white;
-          border:2px solid #005EB8;
+          border:2px solid #007AFF;
           border-radius:50%;
           width:32px;height:32px;
           display:flex;align-items:center;justify-content:center;
           font-size:16px;
           box-shadow:0 2px 6px rgba(0,0,0,0.25);
-          ${destination?.id === w.id ? "border-color:#DA291C;background:#DA291C;" : ""}
+          ${destination?.id === w.id ? "border-color:#FF3B30;background:#FF3B30;" : ""}
         ">${WAYPOINT_TYPE_ICONS[w.type]}</div>`,
         iconSize: [32, 32],
         iconAnchor: [16, 16],
@@ -192,13 +192,13 @@ export default function FloorPlanMap({
         <div class="wf-locate-ring" style="
           position:absolute;top:50%;left:50%;margin:-11px 0 0 -11px;
           width:22px;height:22px;border-radius:50%;
-          background:rgba(0,94,184,0.30);
+          background:rgba(0,122,255,0.30);
         "></div>
         <div class="wf-locate-core" style="
           position:absolute;top:50%;left:50%;margin:-9px 0 0 -9px;
           width:18px;height:18px;
-          background:#005EB8;border:3px solid white;border-radius:50%;
-          box-shadow:0 2px 8px rgba(0,94,184,0.6);
+          background:#007AFF;border:3px solid white;border-radius:50%;
+          box-shadow:0 2px 8px rgba(0,122,255,0.6);
         "></div>
       </div>`,
       iconSize: [44, 44],
@@ -242,7 +242,7 @@ export default function FloorPlanMap({
 
     const pts = route.geometry.map((p) => [p.lat, p.lng] as L.LatLngExpression)
     const polyline = L.polyline(pts, {
-      color: "#00BFFF",
+      color: "#007AFF",
       weight: 6,
       opacity: 0.9,
       lineCap: "round",
@@ -257,12 +257,12 @@ export default function FloorPlanMap({
       // Outer wrapper carries the bob animation; inner teardrop keeps the
       // rotate so the two transforms don't fight.
       html: `<div class="wf-dest-pin"><div style="
-        background:#DA291C;
+        background:#FF3B30;
         border:3px solid white;
         border-radius:50% 50% 50% 0;
         transform:rotate(-45deg);
         width:28px;height:28px;
-        box-shadow:0 2px 8px rgba(218,41,28,0.5);
+        box-shadow:0 2px 8px rgba(255,59,48,0.5);
       "></div></div>`,
       iconSize: [28, 28],
       iconAnchor: [14, 28],
@@ -322,7 +322,7 @@ export default function FloorPlanMap({
         <button
           onClick={recenter}
           aria-label="Re-centre on my location"
-          className="absolute bottom-28 right-4 z-[1000] flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-[#005EB8] shadow-lg active:scale-95 transition-transform"
+          className="absolute bottom-44 right-4 z-[1000] flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-[#007AFF] shadow-lg active:scale-95 transition-transform"
         >
           <LocateFixed size={18} />
           Re-centre
