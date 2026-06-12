@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Waypoint } from "@/lib/types"
-import { GOSH_WAYPOINTS, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
+import { GOSH_WAYPOINTS, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, QUICK_ACCESS } from "@/lib/gosh-data"
 import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
 
 interface Props {
@@ -18,8 +18,6 @@ interface GeoResult {
   lat: number
   lng: number
 }
-
-const QUICK_ACCESS = ["Main Entrance", "A&E Entrance", "Restaurant & Café", "Pharmacy", "Ward 5B", "X-Ray & Imaging"]
 
 // A geocoded hit is outside the hospital's mapped floors, so it lands on the
 // ground floor as a generic point the router can still head toward.
@@ -51,7 +49,9 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
       )
     : []
 
-  const quickWaypoints = waypoints.filter((w) => QUICK_ACCESS.includes(w.name))
+  const favourites = QUICK_ACCESS.map((q) => ({ ...q, waypoint: waypoints.find((w) => w.id === q.waypointId) })).filter(
+    (q): q is typeof q & { waypoint: Waypoint } => !!q.waypoint
+  )
 
   // Geocode anything the user types that the indoor list doesn't already cover,
   // so destinations beyond the hospital's mapped points are still navigable.
@@ -96,18 +96,15 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
 
   return (
     <div className="fixed inset-0 z-[200] bg-white flex flex-col">
-      {/* Header */}
-      <div className="bg-[#005EB8] px-4 pt-12 pb-4 flex items-center gap-3">
-        <button onClick={onClose} className="text-white">
-          <X size={22} />
-        </button>
-        <div className="flex-1 bg-white rounded-xl flex items-center px-3 gap-2">
-          <Search size={18} className="text-gray-400" />
+      {/* Header — Apple Maps' "Search Maps" pill with a Cancel link */}
+      <div className="bg-white px-4 pt-safe-snug pb-3 flex items-center gap-3 border-b border-gray-100">
+        <div className="flex-1 bg-[#F2F2F7] rounded-full flex items-center px-3.5 gap-2">
+          <Search size={18} className="text-gray-400 flex-shrink-0" />
           <input
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search ward, department or place..."
+            placeholder="Search ward, department or place"
             className="flex-1 py-2.5 text-sm text-gray-800 outline-none bg-transparent"
           />
           {query && (
@@ -116,17 +113,18 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
             </button>
           )}
         </div>
+        <button onClick={onClose} className="text-[#007AFF] text-base font-medium flex-shrink-0">
+          Cancel
+        </button>
       </div>
 
       <div className="flex-1 overflow-y-auto">
         {trimmed === "" ? (
           <>
             <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-              Quick access
+              Favourites
             </p>
-            {quickWaypoints.map((w) => (
-              <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
-            ))}
+            <FavouritesRow favourites={favourites} onSelect={onSelect} />
 
             <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               All locations
@@ -183,6 +181,31 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
           </>
         )}
       </div>
+    </div>
+  )
+}
+
+function FavouritesRow({
+  favourites,
+  onSelect,
+}: {
+  favourites: { waypoint: Waypoint; label: string; icon: typeof MapPin }[]
+  onSelect: (w: Waypoint) => void
+}) {
+  return (
+    <div className="flex gap-1 px-4 pb-2">
+      {favourites.map(({ waypoint, label, icon: Icon }) => (
+        <button
+          key={waypoint.id}
+          onClick={() => onSelect(waypoint)}
+          className="flex flex-col items-center gap-1.5 flex-1 active:opacity-60"
+        >
+          <div className="w-12 h-12 rounded-full bg-[#F2F2F7] flex items-center justify-center">
+            <Icon size={20} className="text-[#007AFF]" />
+          </div>
+          <span className="text-xs text-gray-600 font-medium truncate w-full text-center">{label}</span>
+        </button>
+      ))}
     </div>
   )
 }

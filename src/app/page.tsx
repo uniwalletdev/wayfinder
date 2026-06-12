@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail } from "@/lib/types"
-import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
+import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors, floorLabel } from "@/lib/gosh-data"
 import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails } from "@/lib/custom-waypoints"
 import { buildRoute, distanceMeters, fetchOutdoorRoute, isOutdoorDestination } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
@@ -14,7 +14,7 @@ import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import { LocateFixed, ClipboardList, AlertCircle } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
@@ -265,52 +265,39 @@ export default function Home() {
         leafletMapRef={leafletMapRef}
       />
 
-      {/* ── Top bar ──────────────────────────────────────────── */}
-      {!navState.isNavigating ? (
-        <div className="absolute top-0 left-0 right-0 z-50">
-          {/* Search bar */}
-          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
-            <button
-              onClick={() => setOverlay("search")}
-              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
-            >
-              <Search size={18} className="text-[#005EB8] flex-shrink-0" />
-              <span className="flex-1 text-left text-gray-400 text-sm">
-                {navState.destination ? navState.destination.name : "Where are you going?"}
-              </span>
-              <MapPin size={16} className="text-gray-300 flex-shrink-0" />
-            </button>
-          </div>
+      {/* ── Turn-by-turn banner — full-bleed map otherwise, Apple Maps style ── */}
+      <TopInstructionBar
+        step={currentStep}
+        nextStep={navState.route?.steps[navState.currentStepIndex + 1] ?? null}
+        stepIndex={navState.currentStepIndex}
+        totalSteps={navState.route?.steps.length ?? 0}
+        isNavigating={navState.isNavigating}
+      />
 
-          {/* GPS status strip */}
+      {/* Floating status pills, top-left */}
+      {!navState.isNavigating && (
+        <div className="absolute top-safe-fab left-3 z-40 flex flex-col items-start gap-2">
+          {availableFloors.length > 1 && (
+            <div className="bg-white/90 backdrop-blur rounded-full px-3 py-1.5 shadow-sm">
+              <span className="text-xs font-semibold text-gray-700">{floorLabel(navState.currentFloor)}</span>
+            </div>
+          )}
           {gpsStatus === "requesting" && (
-            <div className="bg-blue-50 border-b border-blue-100 px-4 py-2 flex items-center gap-2">
-              <div className="w-3 h-3 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin flex-shrink-0" />
-              <span className="text-xs text-[#005EB8]">Finding your location…</span>
+            <div className="bg-white/90 backdrop-blur rounded-full px-3 py-1.5 shadow-sm flex items-center gap-2">
+              <div className="w-3 h-3 border-2 border-[#007AFF] border-t-transparent rounded-full animate-spin flex-shrink-0" />
+              <span className="text-xs text-gray-700">Finding your location…</span>
             </div>
           )}
           {gpsStatus === "denied" && (
-            <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 flex items-center gap-2">
-              <AlertCircle size={14} className="text-amber-600 flex-shrink-0" />
-              <span className="text-xs text-amber-700 flex-1">
-                GPS unavailable — browse destinations or use demo mode
-              </span>
-              <button
-                onClick={useGoshDemo}
-                className="text-xs font-bold text-[#005EB8] whitespace-nowrap ml-2"
-              >
+            <div className="bg-white/90 backdrop-blur rounded-full px-3 py-1.5 shadow-sm flex items-center gap-2">
+              <AlertCircle size={14} className="text-amber-500 flex-shrink-0" />
+              <span className="text-xs text-gray-700">GPS unavailable</span>
+              <button onClick={useGoshDemo} className="text-xs font-bold text-[#007AFF] whitespace-nowrap">
                 Use demo
               </button>
             </div>
           )}
         </div>
-      ) : (
-        <TopInstructionBar
-          step={currentStep}
-          stepIndex={navState.currentStepIndex}
-          totalSteps={navState.route?.steps.length ?? 0}
-          isNavigating={navState.isNavigating}
-        />
       )}
 
       <FloorSelector
@@ -319,58 +306,40 @@ export default function Home() {
         onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
       />
 
-      {/* GPS accuracy badge */}
-      {gpsStatus === "active" && (
-        <div className="absolute top-36 left-3 z-40 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
-          <div className={`w-2 h-2 rounded-full ${navState.positionAccuracy === 0 ? "bg-blue-400" : navState.positionAccuracy <= 5 ? "bg-green-500" : navState.positionAccuracy <= 15 ? "bg-yellow-500" : "bg-red-400"}`} />
-          <span className="text-xs text-gray-600 font-medium">
-            {navState.positionAccuracy === 0 ? "Demo" : `±${Math.round(navState.positionAccuracy)}m`}
-          </span>
-        </div>
-      )}
+      {/* Floating controls above the bottom sheet, Apple Maps style — hidden
+          once a destination is picked so they don't collide with the sheet. */}
+      {!navState.isNavigating && !navState.destination && (
+        <>
+          <button
+            onClick={() => setOverlay("survey")}
+            className="absolute left-3 bottom-60 z-50 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+            title="Survey Mode — map an area yourself"
+          >
+            <ClipboardList size={20} className="text-[#007AFF]" />
+          </button>
 
-      {/* Floor badge */}
-      <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
-        <Layers size={12} className="text-[#005EB8]" />
-        <span className="text-xs text-gray-700 font-semibold">
-          {navState.currentFloor === 0 ? "Ground Floor" : `Floor ${navState.currentFloor}`}
-        </span>
-      </div>
-
-      {/* Survey / self-map FAB */}
-      {!navState.isNavigating && (
-        <button
-          onClick={() => setOverlay("survey")}
-          className="absolute left-3 bottom-52 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
-          title="Survey Mode — map an area yourself"
-        >
-          <ClipboardList size={20} />
-          Map area
-        </button>
-      )}
-
-      {/* Recenter FAB — hidden while navigating, where the follow-aware
-          re-centre control inside the map takes over. */}
-      {!navState.isNavigating && (
-        <button
-          onClick={() => {
-            const pos = navState.currentPosition ?? GOSH_CENTER
-            leafletMapRef.current?.flyTo([pos.lat, pos.lng], 18)
-          }}
-          className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-          title="Re-centre"
-        >
-          <Navigation size={20} className="text-[#005EB8]" />
-        </button>
+          <button
+            onClick={() => {
+              const pos = navState.currentPosition ?? GOSH_CENTER
+              leafletMapRef.current?.flyTo([pos.lat, pos.lng], 18)
+            }}
+            className="absolute right-3 bottom-60 z-50 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform"
+            title="Re-centre"
+          >
+            <LocateFixed size={20} className="text-[#007AFF]" />
+          </button>
+        </>
       )}
 
       <BottomSheet
         destination={navState.destination}
         route={navState.route}
-        currentFloor={navState.currentFloor}
+        currentStepIndex={navState.currentStepIndex}
         isNavigating={navState.isNavigating}
         travelMode={navState.travelMode}
         routeLoading={routeLoading}
+        waypoints={allWaypoints}
+        onSelectWaypoint={handleDestinationSelect}
         onTravelModeChange={handleTravelModeChange}
         onStartNavigation={handleStartNavigation}
         onStopNavigation={handleStopNavigation}

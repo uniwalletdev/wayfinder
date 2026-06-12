@@ -8,68 +8,77 @@ import {
 
 interface Props {
   step: RouteStep | null
+  nextStep: RouteStep | null
   stepIndex: number
   totalSteps: number
   isNavigating: boolean
 }
 
-function StepIcon({ step }: { step: RouteStep }) {
-  if (step.instruction.includes("arrived")) return <CheckCircle2 size={28} className="text-green-400" />
-  if (step.floorChange) return <ArrowUpDown size={28} className="text-white" />
-  if (step.instruction.includes("north")) return <ArrowUp size={28} className="text-white" />
-  if (step.instruction.includes("east")) return <ArrowUpRight size={28} className="text-white" />
-  if (step.instruction.includes("west")) return <ArrowUpLeft size={28} className="text-white" />
-  if (step.instruction.includes("south")) return <Footprints size={28} className="text-white" />
-  if (step.instruction.includes("left")) return <ArrowLeft size={28} className="text-white" />
-  if (step.instruction.includes("right")) return <ArrowRight size={28} className="text-white" />
-  return <Navigation size={28} className="text-white" />
+function StepIcon({ step, size }: { step: RouteStep; size: number }) {
+  if (step.instruction.includes("arrived")) return <CheckCircle2 size={size} className="text-white" />
+  if (step.floorChange) return <ArrowUpDown size={size} className="text-white" />
+  if (step.instruction.includes("north")) return <ArrowUp size={size} className="text-white" />
+  if (step.instruction.includes("east")) return <ArrowUpRight size={size} className="text-white" />
+  if (step.instruction.includes("west")) return <ArrowUpLeft size={size} className="text-white" />
+  if (step.instruction.includes("south")) return <Footprints size={size} className="text-white" />
+  if (step.instruction.includes("left")) return <ArrowLeft size={size} className="text-white" />
+  if (step.instruction.includes("right")) return <ArrowRight size={size} className="text-white" />
+  return <Navigation size={size} className="text-white" />
 }
 
-export default function TopInstructionBar({ step, stepIndex, totalSteps, isNavigating }: Props) {
-  if (!isNavigating || !step) {
-    return (
-      <div className="absolute top-0 left-0 right-0 z-50 bg-[#005EB8] text-white px-4 pt-safe-snug pb-3 flex items-center gap-3 shadow-lg">
-        <Navigation size={22} className="text-white opacity-80" />
-        <div>
-          <p className="text-sm font-bold">GOSH Wayfinder</p>
-          <p className="text-xs opacity-80">Great Ormond Street Hospital</p>
-        </div>
-      </div>
-    )
-  }
+function fmtDistance(m: number): string {
+  return m < 1000 ? `${m} m` : `${(m / 1000).toFixed(1)} km`
+}
+
+// Apple Maps' active-navigation banner: a big icon tile on the left, a huge
+// "next turn" distance, and the instruction underneath. Hidden entirely off
+// the full-bleed map until turn-by-turn starts.
+export default function TopInstructionBar({ step, nextStep, stepIndex, totalSteps, isNavigating }: Props) {
+  if (!isNavigating || !step) return null
 
   const isArrived = step.instruction.includes("arrived")
+  const primaryText = isArrived || step.distance === 0 ? step.instruction : fmtDistance(step.distance)
+  const secondaryText = isArrived
+    ? ""
+    : step.distance > 0
+      ? step.instruction
+      : step.floorChange
+        ? `Floor ${step.floorChange.from} → Floor ${step.floorChange.to}`
+        : ""
 
   return (
     <div
-      className={`absolute top-0 left-0 right-0 z-50 text-white px-4 pt-safe-snug pb-3 shadow-xl transition-colors duration-500 ${
-        isArrived ? "bg-green-600" : "bg-[#003087]"
+      className={`absolute top-0 left-0 right-0 z-50 text-white pt-safe-snug pb-4 px-4 shadow-xl rounded-b-[28px] transition-colors duration-500 ${
+        isArrived ? "bg-[#1E8E3E]" : "bg-[#003087]"
       }`}
     >
-      <div className="flex items-center gap-3">
-        <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
-          isArrived ? "bg-green-500" : "bg-[#005EB8]"
-        }`}>
-          <StepIcon step={step} />
+      <div className="flex items-center gap-4">
+        <div
+          className={`w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 ${
+            isArrived ? "bg-[#34C759]" : "bg-[#0072CE]"
+          }`}
+        >
+          <StepIcon step={step} size={isArrived ? 32 : 36} />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-base font-bold leading-tight truncate">{step.instruction}</p>
-          {step.distance > 0 && (
-            <p className="text-sm opacity-80 mt-0.5">
-              {step.distance < 1000 ? `${step.distance}m` : `${(step.distance / 1000).toFixed(1)}km`}
-            </p>
-          )}
-          {step.floorChange && (
-            <p className="text-xs opacity-80 mt-0.5">
-              Floor {step.floorChange.from} → Floor {step.floorChange.to}
-            </p>
-          )}
+          <p className="text-3xl font-bold leading-tight truncate">{primaryText}</p>
+          {secondaryText && <p className="text-base opacity-80 truncate mt-0.5">{secondaryText}</p>}
         </div>
         <div className="text-right flex-shrink-0">
-          <p className="text-xs opacity-70">Step</p>
-          <p className="text-sm font-bold">{stepIndex + 1}/{totalSteps}</p>
+          <p className="text-[11px] opacity-60 uppercase tracking-wide">Step</p>
+          <p className="text-sm font-semibold opacity-90">
+            {stepIndex + 1}/{totalSteps}
+          </p>
         </div>
       </div>
+
+      {nextStep && (
+        <div className="flex items-center gap-2 mt-3 pt-3 border-t border-white/15 text-sm opacity-70">
+          <span className="uppercase tracking-wide text-[11px] font-semibold flex-shrink-0">Then</span>
+          <StepIcon step={nextStep} size={16} />
+          <span className="truncate">{nextStep.instruction}</span>
+        </div>
+      )}
     </div>
   )
 }
