@@ -11,6 +11,9 @@ export interface SurveyResult {
   markedWaypoints: Waypoint[]
   aiWaypoints: Waypoint[]
   trails: SurveyTrail[]
+  // The floor the mapper was on when the survey ended, so the app can stay on
+  // it instead of snapping back to Ground.
+  endFloor: number
   aiError?: string
 }
 
@@ -138,6 +141,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
       markedWaypoints: markedWaypoints.current,
       aiWaypoints,
       trails: floorTrails,
+      endFloor: surveyFloorRef.current,
       aiError,
     })
   }

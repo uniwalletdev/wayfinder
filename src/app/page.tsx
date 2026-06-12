@@ -3,8 +3,8 @@
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail } from "@/lib/types"
-import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
-import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails } from "@/lib/custom-waypoints"
+import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors, isInsideBuilding } from "@/lib/gosh-data"
+import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails, loadLastFloor, saveLastFloor } from "@/lib/custom-waypoints"
 import { buildRoute, distanceMeters, fetchOutdoorRoute, isOutdoorDestination } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
@@ -14,9 +14,11 @@ import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import RoleSelect, { type AppRole } from "@/components/RoleSelect"
+import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, UserRound, Home as HomeIcon } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
+const Map3D = dynamic(() => import("@/components/Map3D"), { ssr: false })
 
 type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
 type GpsStatus = "requesting" | "active" | "denied"
@@ -43,17 +45,81 @@ export default function Home() {
   const [routeLoading, setRouteLoading] = useState(false)
   const dirAbortRef = useRef<AbortController | null>(null)
 
+  // Visitors choose on entry whether they're here to navigate ("user") or to
+  // survey and add areas to the map ("mapper"). Until they pick, the role
+  // screen covers the app.
+  const [role, setRole] = useState<AppRole | null>(null)
+
+  // 2D (Leaflet floor plan) or 3D (MapLibre, tilted with extruded buildings)
+  const [mapView, setMapView] = useState<"2d" | "3d">("2d")
+  // Transient pill explaining an automatic view change
+  const [viewNotice, setViewNotice] = useState<string | null>(null)
+  const noticeTimerRef = useRef<NodeJS.Timeout | null>(null)
+  // True when WE switched 3D→2D on entering the building, so we know to
+  // switch back outdoors. A manual toggle clears it — the user's choice wins.
+  const autoSwitchedRef = useRef(false)
+  const prevIndoorsRef = useRef<boolean | null>(null)
+
+  const showViewNotice = useCallback((text: string) => {
+    if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current)
+    setViewNotice(text)
+    noticeTimerRef.current = setTimeout(() => setViewNotice(null), 3500)
+  }, [])
+
   const [overlay, setOverlay] = useState<OverlayMode>("none")
   const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
   const [customWaypoints, setCustomWaypoints] = useState<Waypoint[]>([])
   const [surveyTrails, setSurveyTrails] = useState<SurveyTrail[]>([])
 
-  // Restore user-mapped locations and walked trails from previous sessions.
+  // Restore user-mapped locations, walked trails and the last known floor
+  // from previous sessions. GPS can't detect floors, so without this the app
+  // would snap back to Ground every visit even in a spot you've mapped.
   useEffect(() => {
     setCustomWaypoints(loadCustomWaypoints())
     setSurveyTrails(loadSurveyTrails())
+    const lastFloor = loadLastFloor()
+    if (lastFloor !== null) {
+      setNavState((s) => ({ ...s, currentFloor: lastFloor }))
+    }
   }, [])
+
+  // Any floor change — selector tap, QR scan, or survey — is remembered.
+  const setCurrentFloor = useCallback((floor: number) => {
+    saveLastFloor(floor)
+    setNavState((s) => ({ ...s, currentFloor: floor }))
+  }, [])
+
+  // Indoor/outdoor with hysteresis: you're "indoors" once inside the building
+  // footprint, and only "outdoors" again 25m clear of it — so a jittery GPS
+  // fix at the entrance doesn't flap the view back and forth.
+  const [indoors, setIndoors] = useState(false)
+  useEffect(() => {
+    const pos = navState.currentPosition
+    if (!pos) return
+    setIndoors((prev) => (prev ? isInsideBuilding(pos, 25) : isInsideBuilding(pos)))
+  }, [navState.currentPosition])
+
+  // Auto-switch on the indoor/outdoor transition: 3D is great for finding the
+  // building, but indoors the 2D floor plan is the clearer guide. Only restore
+  // 3D outdoors if we were the ones who switched away from it.
+  useEffect(() => {
+    const prev = prevIndoorsRef.current
+    prevIndoorsRef.current = indoors
+    if (prev === null || prev === indoors) return
+    if (indoors) {
+      setMapView((v) => {
+        if (v !== "3d") return v
+        autoSwitchedRef.current = true
+        showViewNotice("You're indoors — switched to the floor plan")
+        return "2d"
+      })
+    } else if (autoSwitchedRef.current) {
+      autoSwitchedRef.current = false
+      setMapView("3d")
+      showViewNotice("Back outdoors — switched to 3D")
+    }
+  }, [indoors, showViewNotice])
 
   const allWaypoints = useMemo(() => [...GOSH_WAYPOINTS, ...customWaypoints], [customWaypoints])
   const availableFloors = useMemo(() => getAvailableFloors(allWaypoints), [allWaypoints])
@@ -202,6 +268,7 @@ export default function Home() {
       const lngIdx = parts.indexOf("lng")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
         setGpsStatus("active")
+        saveLastFloor(parseInt(parts[floorIdx + 1]))
         setNavState((s) => ({
           ...s,
           currentFloor: parseInt(parts[floorIdx + 1]),
@@ -214,6 +281,9 @@ export default function Home() {
 
   const handleSurveyComplete = useCallback((result: SurveyResult) => {
     setOverlay("none")
+    // Stay on the floor the mapper ended the survey on — they're physically
+    // there, so don't snap the app back to Ground.
+    setCurrentFloor(result.endFloor)
     const newWaypoints = [...result.markedWaypoints, ...result.aiWaypoints]
     if (newWaypoints.length > 0) {
       setCustomWaypoints((prev) => {
@@ -247,32 +317,55 @@ export default function Home() {
       message = "Survey complete — no clear signs were found in the footage. Try keeping signs and door plates in view, or use “Mark Location”."
     }
     alert(message)
-  }, [])
+  }, [setCurrentFloor])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
   return (
     <div className="relative w-full h-dvh overflow-hidden bg-gray-100">
-      <FloorPlanMap
-        currentFloor={navState.currentFloor}
-        currentPosition={navState.currentPosition}
-        destination={navState.destination}
-        route={navState.route}
-        isNavigating={navState.isNavigating}
-        waypoints={allWaypoints}
-        trails={surveyTrails}
-        onMapReady={() => {}}
-        leafletMapRef={leafletMapRef}
-      />
+      {mapView === "2d" ? (
+        <FloorPlanMap
+          currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          destination={navState.destination}
+          route={navState.route}
+          isNavigating={navState.isNavigating}
+          waypoints={allWaypoints}
+          trails={surveyTrails}
+          onMapReady={() => {}}
+          leafletMapRef={leafletMapRef}
+        />
+      ) : (
+        <Map3D
+          currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          destination={navState.destination}
+          route={navState.route}
+          isNavigating={navState.isNavigating}
+          waypoints={allWaypoints}
+          trails={surveyTrails}
+          dimBuildings={indoors || (!!navState.destination && !isOutdoorDestination(navState.destination))}
+          onMapReady={() => {}}
+          leafletMapRef={leafletMapRef}
+        />
+      )}
 
       {/* ── Top bar ──────────────────────────────────────────── */}
       {!navState.isNavigating ? (
         <div className="absolute top-0 left-0 right-0 z-50">
-          {/* Search bar */}
-          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
+          {/* Home + search bar */}
+          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3 flex items-center gap-3">
+            <button
+              onClick={() => setRole(null)}
+              className="w-11 h-11 flex-shrink-0 bg-white rounded-full shadow flex items-center justify-center"
+              title="Back to start — choose Mapper or User"
+              aria-label="Back to start screen"
+            >
+              <HomeIcon size={20} className="text-[#005EB8]" />
+            </button>
             <button
               onClick={() => setOverlay("search")}
-              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
+              className="flex-1 flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
             >
               <Search size={18} className="text-[#005EB8] flex-shrink-0" />
               <span className="flex-1 text-left text-gray-400 text-sm">
@@ -316,7 +409,7 @@ export default function Home() {
       <FloorSelector
         floors={availableFloors}
         currentFloor={navState.currentFloor}
-        onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
+        onChange={setCurrentFloor}
       />
 
       {/* GPS accuracy badge */}
@@ -329,6 +422,13 @@ export default function Home() {
         </div>
       )}
 
+      {/* Auto view-switch notice */}
+      {viewNotice && (
+        <div className="absolute top-[12.5rem] left-1/2 -translate-x-1/2 z-50 bg-gray-900/85 text-white text-xs font-medium rounded-full px-4 py-2 shadow-lg whitespace-nowrap">
+          {viewNotice}
+        </div>
+      )}
+
       {/* Floor badge */}
       <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
         <Layers size={12} className="text-[#005EB8]" />
@@ -337,15 +437,47 @@ export default function Home() {
         </span>
       </div>
 
-      {/* Survey / self-map FAB */}
-      {!navState.isNavigating && (
+      {/* Role chip — shows how you entered, tap to switch */}
+      {!navState.isNavigating && role && (
+        <button
+          onClick={() => setRole(null)}
+          className="absolute top-48 left-3 z-40 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm"
+          title="Switch between User and Mapper"
+        >
+          {role === "mapper" ? (
+            <ClipboardList size={12} className="text-[#005EB8]" />
+          ) : (
+            <UserRound size={12} className="text-[#005EB8]" />
+          )}
+          <span className="text-xs text-gray-700 font-semibold">
+            {role === "mapper" ? "Mapper" : "User"}
+          </span>
+        </button>
+      )}
+
+      {/* Survey / self-map FAB — mappers only */}
+      {!navState.isNavigating && role === "mapper" && (
         <button
           onClick={() => setOverlay("survey")}
-          className="absolute left-3 bottom-52 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
+          className="absolute left-3 bottom-68 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
           title="Survey Mode — map an area yourself"
         >
           <ClipboardList size={20} />
           Map area
+        </button>
+      )}
+
+      {/* 2D / 3D view toggle */}
+      {!navState.isNavigating && (
+        <button
+          onClick={() => {
+            autoSwitchedRef.current = false
+            setMapView((v) => (v === "2d" ? "3d" : "2d"))
+          }}
+          className="absolute left-3 bottom-52 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200 text-sm font-bold text-[#005EB8]"
+          title={mapView === "2d" ? "Switch to 3D view" : "Switch to 2D view"}
+        >
+          {mapView === "2d" ? "3D" : "2D"}
         </button>
       )}
 
@@ -402,6 +534,8 @@ export default function Home() {
           onSurveyComplete={handleSurveyComplete}
         />
       )}
+
+      {role === null && <RoleSelect onSelect={setRole} />}
     </div>
   )
 }
