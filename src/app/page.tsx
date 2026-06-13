@@ -20,11 +20,15 @@ import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
 import VenuePicker from "@/components/VenuePicker"
+import AuthModal from "@/components/AuthModal"
+import { useSupabaseSession } from "@/lib/supabase/use-session"
+import { getSupabaseBrowserClient } from "@/lib/supabase/client"
+import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
 import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, ChevronDown } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey" | "venues"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey" | "venues" | "auth"
 type GpsStatus = "requesting" | "active" | "denied"
 
 // Minimal interface — avoids importing Leaflet types on the server
@@ -44,6 +48,13 @@ export default function Home() {
   const [userVenues, setUserVenues] = useState<Venue[]>([])
   const venue = useMemo(() => getVenueById(activeVenueId, userVenues) ?? DEFAULT_VENUE, [activeVenueId, userVenues])
   const allVenues = useMemo(() => [...SEED_VENUES, ...userVenues], [userVenues])
+
+  // Accounts (optional). In local mode this is { user: null, cloudEnabled: false }
+  // and nothing below changes. When signed in, venues sync to Supabase and the
+  // public/private rules are enforced server-side by Row-Level Security.
+  const { user, cloudEnabled } = useSupabaseSession()
+  const cloud = cloudEnabled && !!user
+  const isSeedVenue = (id: string) => SEED_VENUES.some((s) => s.id === id)
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
@@ -78,6 +89,19 @@ export default function Home() {
     setCustomWaypoints(loadVenueWaypoints(startId))
     setSurveyTrails(loadVenueTrails(startId))
   }, [])
+
+  // When signed in, the backend is the source of truth for the user's venues:
+  // fetch the ones they're allowed to see (RLS-filtered) — each already carries
+  // its waypoints — and use them in place of the local list. Sign-out reverts to
+  // local in the handler. The fetch is async, so it never blocks local mode.
+  useEffect(() => {
+    if (!cloud) return
+    let active = true
+    fetchAccessibleVenues()
+      .then((vs) => { if (active) setUserVenues(vs) })
+      .catch((e) => console.warn("Could not load venues from the server:", e))
+    return () => { active = false }
+  }, [cloud])
 
   const allWaypoints = useMemo(() => [...venue.waypoints, ...customWaypoints], [venue, customWaypoints])
   const availableFloors = useMemo(() => getAvailableFloors(venue.floorPlans, allWaypoints), [venue, allWaypoints])
@@ -236,15 +260,29 @@ export default function Home() {
     } catch {}
   }, [])
 
-  const handleSurveyComplete = useCallback((result: SurveyResult) => {
+  const handleSurveyComplete = useCallback(async (result: SurveyResult) => {
     setOverlay("none")
     const newWaypoints = [...result.markedWaypoints, ...result.aiWaypoints]
     if (newWaypoints.length > 0) {
-      setCustomWaypoints((prev) => {
-        const next = [...prev, ...newWaypoints]
-        saveVenueWaypoints(activeVenueId, next)
-        return next
-      })
+      if (cloud && !isSeedVenue(activeVenueId)) {
+        // Cloud venue: persist to the backend (RLS checks write access). Show the
+        // saved rows immediately; they're not also written to local storage, so
+        // they won't double up against the venue's server-loaded waypoints.
+        try {
+          const saved = await addRemoteWaypoints(activeVenueId, newWaypoints)
+          setCustomWaypoints((prev) => [...prev, ...saved])
+        } catch (e) {
+          console.warn("Could not sync points to the server:", e)
+          setCustomWaypoints((prev) => [...prev, ...newWaypoints])
+        }
+      } else {
+        // Seed venue or local mode: keep points on this device.
+        setCustomWaypoints((prev) => {
+          const next = [...prev, ...newWaypoints]
+          saveVenueWaypoints(activeVenueId, next)
+          return next
+        })
+      }
     }
     if (result.trails.length > 0) {
       setSurveyTrails((prev) => {
@@ -271,7 +309,7 @@ export default function Home() {
       message = "Survey complete — no clear signs were found in the footage. Try keeping signs and door plates in view, or use “Mark Location”."
     }
     alert(message)
-  }, [activeVenueId])
+  }, [cloud, activeVenueId])
 
   // Switching place clears the current route and re-centres on the new venue, so
   // navigation state never leaks across venues.
@@ -290,7 +328,20 @@ export default function Home() {
     if (v) goToVenue(v)
   }, [userVenues, goToVenue])
 
-  const handleCreateVenue = useCallback((input: NewVenueInput) => {
+  const handleCreateVenue = useCallback(async (input: NewVenueInput) => {
+    if (cloud) {
+      // Stored server-side; the DB forces verified=false so a public place can't
+      // self-verify. RLS ties ownership to the signed-in user.
+      try {
+        const v = await createRemoteVenue(input)
+        setUserVenues((prev) => [...prev, v])
+        goToVenue(v)
+        alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
+      } catch (e) {
+        alert(`Couldn't create the place on the server: ${e instanceof Error ? e.message : "error"}`)
+      }
+      return
+    }
     const v = createVenue(input)
     setUserVenues((prev) => {
       const next = [...prev, v]
@@ -299,14 +350,32 @@ export default function Home() {
     })
     goToVenue(v)
     alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
-  }, [goToVenue])
+  }, [cloud, goToVenue])
 
-  const handleDeleteVenue = useCallback((id: string) => {
-    deleteUserVenue(id)
-    setUserVenues(loadUserVenues())
+  const handleDeleteVenue = useCallback(async (id: string) => {
+    if (cloud && !isSeedVenue(id)) {
+      try {
+        await deleteRemoteVenue(id)
+        setUserVenues((prev) => prev.filter((v) => v.id !== id))
+      } catch (e) {
+        alert(`Couldn't delete on the server: ${e instanceof Error ? e.message : "error"}`)
+        return
+      }
+    } else {
+      deleteUserVenue(id)
+      setUserVenues(loadUserVenues())
+    }
     // If the open venue was deleted, fall back to the default and reload its map.
     if (activeVenueId === id) goToVenue(DEFAULT_VENUE)
-  }, [activeVenueId, goToVenue])
+  }, [cloud, activeVenueId, goToVenue])
+
+  const handleSignOut = useCallback(async () => {
+    await getSupabaseBrowserClient()?.auth.signOut()
+    // Back to local venues; onAuthStateChange clears the user, disabling cloud.
+    setUserVenues(loadUserVenues())
+    setOverlay("none")
+    goToVenue(DEFAULT_VENUE)
+  }, [goToVenue])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
@@ -468,11 +537,19 @@ export default function Home() {
           activeVenueId={activeVenueId}
           currentCenter={navState.currentPosition ?? venue.center}
           hasGps={gpsStatus === "active" && navState.currentPosition !== null && navState.positionAccuracy > 0}
+          cloudEnabled={cloudEnabled}
+          userEmail={user?.email ?? null}
+          onSignIn={() => setOverlay("auth")}
+          onSignOut={handleSignOut}
           onSelect={handleSelectVenue}
           onCreate={handleCreateVenue}
           onDelete={handleDeleteVenue}
           onClose={() => setOverlay("none")}
         />
+      )}
+
+      {overlay === "auth" && (
+        <AuthModal onClose={() => setOverlay("venues")} onAuthed={() => setOverlay("venues")} />
       )}
 
       {(overlay === "qr" || overlay === "live-camera") && (

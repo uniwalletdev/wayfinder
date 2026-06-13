@@ -6,6 +6,7 @@ import { NewVenueInput } from "@/lib/venues"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
+  LogIn, LogOut, Cloud, CloudOff,
 } from "lucide-react"
 
 interface Props {
@@ -15,6 +16,11 @@ interface Props {
   // otherwise the current map centre.
   currentCenter: Coordinates
   hasGps: boolean
+  // Account state. cloudEnabled = a backend is configured; userEmail set = signed in.
+  cloudEnabled: boolean
+  userEmail: string | null
+  onSignIn: () => void
+  onSignOut: () => void
   onSelect: (id: string) => void
   onCreate: (input: NewVenueInput) => void
   onDelete: (id: string) => void
@@ -63,7 +69,8 @@ const VISIBILITY_META: {
 ]
 
 export default function VenuePicker({
-  venues, activeVenueId, currentCenter, hasGps, onSelect, onCreate, onDelete, onClose,
+  venues, activeVenueId, currentCenter, hasGps, cloudEnabled, userEmail,
+  onSignIn, onSignOut, onSelect, onCreate, onDelete, onClose,
 }: Props) {
   const [view, setView] = useState<"list" | "create">("list")
 
@@ -115,6 +122,28 @@ export default function VenuePicker({
 
       {view === "list" ? (
         <div className="flex-1 overflow-y-auto pb-safe-bar">
+          {/* Account / sync status */}
+          {!cloudEnabled ? (
+            <div className="flex items-center gap-2.5 px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <CloudOff size={16} className="text-gray-400 flex-shrink-0" />
+              <p className="text-xs text-gray-500">Saved on this device. Sign-in isn&apos;t set up on this server yet.</p>
+            </div>
+          ) : userEmail ? (
+            <div className="flex items-center gap-2.5 px-4 py-3 border-b border-gray-100">
+              <Cloud size={16} className="text-[#005EB8] flex-shrink-0" />
+              <p className="text-xs text-gray-600 flex-1 truncate">Synced · {userEmail}</p>
+              <button onClick={onSignOut} className="flex items-center gap-1 text-xs font-semibold text-gray-500">
+                <LogOut size={14} /> Sign out
+              </button>
+            </div>
+          ) : (
+            <button onClick={onSignIn} className="w-full flex items-center gap-2.5 px-4 py-3 border-b border-gray-100 active:bg-gray-50 text-left">
+              <LogIn size={16} className="text-[#005EB8] flex-shrink-0" />
+              <p className="text-xs text-gray-600 flex-1">Sign in to publish public places and sync private ones across devices</p>
+              <ChevronRight size={16} className="text-gray-300" />
+            </button>
+          )}
+
           <button
             onClick={() => setView("create")}
             className="w-full flex items-center gap-3 px-4 py-4 border-b border-gray-100 active:bg-gray-50 text-left"
