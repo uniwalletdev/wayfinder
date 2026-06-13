@@ -33,6 +33,55 @@ export interface FloorPlan {
   bounds: [[number, number], [number, number]]
 }
 
+// A mappable place. Replaces the single hard-coded hospital: anywhere — public
+// (a mall, station, hospital) or private (an office, clinic, home) — is modelled
+// as a Venue, which is what makes "map any place" possible.
+export type VenueVisibility = "public" | "unlisted" | "private"
+
+export type VenueCategory =
+  | "hospital"
+  | "mall"
+  | "airport"
+  | "station"
+  | "university"
+  | "office"
+  | "home"
+  | "other"
+
+// Accessibility & safety facts a place may need to surface. Optional everywhere
+// so a quick survey isn't blocked, but encouraged for public venues people rely on.
+export interface AccessibilityInfo {
+  stepFreeRoute?: boolean
+  accessibleToilets?: boolean
+  hearingLoop?: boolean
+  notes?: string
+}
+
+export interface Venue {
+  id: string
+  slug: string
+  name: string
+  // Optional second line, e.g. the full official name of the place.
+  subtitle?: string
+  category: VenueCategory
+  center: Coordinates
+  defaultZoom: number
+  floorPlans: FloorPlan[]
+  waypoints: Waypoint[]
+  // Who can find and navigate this venue. Drives the "measures required
+  // accordingly": discovery, consent, and (with accounts) access enforcement.
+  visibility: VenueVisibility
+  // Ownership/authority confirmed — public venues earn a "verified" badge.
+  verified: boolean
+  // Set once accounts exist; until then venues are anonymous/local.
+  ownerId?: string
+  accessibility?: AccessibilityInfo
+  // Waypoint names to surface as shortcuts in search.
+  quickAccess?: string[]
+  createdAt?: string
+  updatedAt?: string
+}
+
 export interface Route {
   steps: RouteStep[]
   totalDistance: number

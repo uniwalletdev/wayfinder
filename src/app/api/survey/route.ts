@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     )
   }
 
-  let body: { frames?: IncomingFrame[] }
+  let body: { frames?: IncomingFrame[]; venueName?: string }
   try {
     body = await request.json()
   } catch {
@@ -69,6 +69,9 @@ export async function POST(request: Request) {
   }
 
   const frames = Array.isArray(body.frames) ? body.frames : []
+  // Grounds the model in the place being surveyed. Generic fallback so the route
+  // works for any venue, not just the one the app shipped with.
+  const venueName = typeof body.venueName === "string" && body.venueName.trim() ? body.venueName.trim() : "a building"
   if (frames.length === 0) {
     return Response.json({ waypoints: [] }, { status: 200 })
   }
@@ -97,7 +100,7 @@ export async function POST(request: Request) {
   content.push({
     type: "text",
     text:
-      "These frames were captured while walking through Great Ormond Street Hospital with a phone camera. " +
+      `These frames were captured while walking through ${venueName} with a phone camera. ` +
       "Identify distinct, navigable places that are clearly indicated by on-camera signage or door plates — " +
       "e.g. a named ward, a department, a lift, a staircase, toilets, a pharmacy, a café/restaurant, a reception, " +
       "or an entrance/exit. Only include a location if you can actually read its name or an unambiguous label in a frame. " +

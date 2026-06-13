@@ -1,7 +1,7 @@
 {
-  "name": "GOSH Wayfinder",
+  "name": "Wayfinder",
   "short_name": "Wayfinder",
-  "description": "Indoor navigation for Great Ormond Street Hospital",
+  "description": "Indoor navigation for any place — map a venue and find your way, indoors or out.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

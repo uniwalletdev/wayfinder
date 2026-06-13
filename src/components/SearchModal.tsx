@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react"
 import { Waypoint } from "@/lib/types"
-import { GOSH_WAYPOINTS, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/gosh-data"
+import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/waypoint-meta"
 import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
 
 interface Props {
-  waypoints?: Waypoint[]
+  waypoints: Waypoint[]
+  // Waypoint names to surface as shortcuts, supplied by the active venue.
+  quickAccess?: string[]
   onSelect: (waypoint: Waypoint) => void
   onClose: () => void
 }
@@ -19,9 +21,7 @@ interface GeoResult {
   lng: number
 }
 
-const QUICK_ACCESS = ["Main Entrance", "A&E Entrance", "Restaurant & Café", "Pharmacy", "Ward 5B", "X-Ray & Imaging"]
-
-// A geocoded hit is outside the hospital's mapped floors, so it lands on the
+// A geocoded hit is outside the venue's mapped floors, so it lands on the
 // ground floor as a generic point the router can still head toward.
 function geoToWaypoint(r: GeoResult): Waypoint {
   return {
@@ -34,7 +34,7 @@ function geoToWaypoint(r: GeoResult): Waypoint {
   }
 }
 
-export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onClose }: Props) {
+export default function SearchModal({ waypoints, quickAccess = [], onSelect, onClose }: Props) {
   const [query, setQuery] = useState("")
   const [geoResults, setGeoResults] = useState<GeoResult[]>([])
   const [geoLoading, setGeoLoading] = useState(false)
@@ -51,10 +51,10 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
       )
     : []
 
-  const quickWaypoints = waypoints.filter((w) => QUICK_ACCESS.includes(w.name))
+  const quickWaypoints = waypoints.filter((w) => quickAccess.includes(w.name))
 
   // Geocode anything the user types that the indoor list doesn't already cover,
-  // so destinations beyond the hospital's mapped points are still navigable.
+  // so destinations beyond the venue's mapped points are still navigable.
   // Debounced, and any in-flight request is abandoned when the query changes.
   useEffect(() => {
     if (trimmed.length < 3) return
@@ -107,7 +107,7 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search ward, department or place..."
+            placeholder="Search a room, place or address..."
             className="flex-1 py-2.5 text-sm text-gray-800 outline-none bg-transparent"
           />
           {query && (
@@ -121,12 +121,16 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
       <div className="flex-1 overflow-y-auto">
         {trimmed === "" ? (
           <>
-            <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-              Quick access
-            </p>
-            {quickWaypoints.map((w) => (
-              <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
-            ))}
+            {quickWaypoints.length > 0 && (
+              <>
+                <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                  Quick access
+                </p>
+                {quickWaypoints.map((w) => (
+                  <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
+                ))}
+              </>
+            )}
 
             <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               All locations
@@ -140,7 +144,7 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
             {filtered.length > 0 && (
               <>
                 <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                  In the hospital · {filtered.length} result{filtered.length !== 1 ? "s" : ""}
+                  In this place · {filtered.length} result{filtered.length !== 1 ? "s" : ""}
                 </p>
                 {filtered.map((w) => (
                   <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
@@ -172,11 +176,11 @@ export default function SearchModal({ waypoints = GOSH_WAYPOINTS, onSelect, onCl
                 <p className="text-gray-600 font-medium">No results for "{query}"</p>
                 {geoError && geoError !== "not_configured" ? (
                   <p className="text-sm text-gray-400 mt-1">
-                    Couldn&apos;t reach the map search just now — check your connection, or try a ward,
-                    department or floor number.
+                    Couldn&apos;t reach the map search just now — check your connection, or try a room,
+                    place or floor number.
                   </p>
                 ) : (
-                  <p className="text-sm text-gray-400 mt-1">Try a ward name, department, or a nearby place</p>
+                  <p className="text-sm text-gray-400 mt-1">Try a room or place name, or a nearby address</p>
                 )}
               </div>
             )}

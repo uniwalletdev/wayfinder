@@ -1,6 +1,6 @@
 "use client"
 
-import { floorShortLabel } from "@/lib/gosh-data"
+import { floorShortLabel } from "@/lib/waypoint-meta"
 
 interface Props {
   floors: number[]

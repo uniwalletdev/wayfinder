@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { SurveyFrame, Coordinates, Waypoint, SurveyTrail } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
-import { GOSH_CENTER, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorShortLabel } from "@/lib/gosh-data"
+import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorShortLabel } from "@/lib/waypoint-meta"
 import { X, Square, MapPin, Check, ChevronUp, ChevronDown } from "lucide-react"
 
 export interface SurveyResult {
@@ -17,13 +17,17 @@ export interface SurveyResult {
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
+  // Fallback location for marks/frames when there's no live GPS fix, and the
+  // venue name used to ground the AI sign-reading prompt.
+  venueCenter: Coordinates
+  venueName: string
   onClose: () => void
   onSurveyComplete: (result: SurveyResult) => void
 }
 
 const ANNOTATION_TYPES: WaypointType[] = ["ward", "department", "lift", "stairs", "toilet", "exit", "reception", "canteen", "pharmacy", "other"]
 
-export default function SurveyMode({ currentFloor, currentPosition, onClose, onSurveyComplete }: Props) {
+export default function SurveyMode({ currentFloor, currentPosition, venueCenter, venueName, onClose, onSurveyComplete }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const streamRef = useRef<MediaStream | null>(null)
@@ -122,7 +126,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
         const res = await fetch("/api/survey", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ frames: frames.current }),
+          body: JSON.stringify({ frames: frames.current, venueName }),
         })
         const data = await res.json()
         aiWaypoints = Array.isArray(data.waypoints) ? data.waypoints : []
@@ -154,7 +158,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
     ctx.drawImage(video, 0, 0, 640, 360)
     const imageData = canvas.toDataURL("image/jpeg", 0.5)
 
-    const position = positionRef.current ?? GOSH_CENTER
+    const position = positionRef.current ?? venueCenter
     const floor = surveyFloorRef.current
     const frame: SurveyFrame = {
       timestamp: Date.now(),
@@ -184,7 +188,7 @@ export default function SurveyMode({ currentFloor, currentPosition, onClose, onS
       id: `survey-${Date.now()}`,
       name,
       type: annotationType,
-      coordinates: positionRef.current ?? GOSH_CENTER,
+      coordinates: positionRef.current ?? venueCenter,
       floor: surveyFloorRef.current,
       description: "Added via Survey Mode",
     })

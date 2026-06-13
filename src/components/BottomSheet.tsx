@@ -1,7 +1,7 @@
 "use client"
 
 import { Waypoint, Route, TravelMode } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
+import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
 import { Clock, MapPin, Layers, Camera, QrCode, X, Navigation, PersonStanding, Bike, Car, Loader2 } from "lucide-react"
 
 interface Props {

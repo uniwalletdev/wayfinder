@@ -2,8 +2,9 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { Waypoint, NavigationState, SurveyTrail } from "@/lib/types"
-import { GOSH_CENTER, GOSH_WAYPOINTS, getAvailableFloors } from "@/lib/gosh-data"
+import { Waypoint, NavigationState, SurveyTrail, Coordinates } from "@/lib/types"
+import { getAvailableFloors } from "@/lib/waypoint-meta"
+import { DEFAULT_VENUE } from "@/lib/venues"
 import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails } from "@/lib/custom-waypoints"
 import { buildRoute, distanceMeters, fetchOutdoorRoute, isOutdoorDestination } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
@@ -30,6 +31,12 @@ export default function Home() {
   const leafletMapRef = useRef<MapHandle | null>(null)
   const gpsActiveRef = useRef(false)
 
+  // The place currently being navigated. Today this is the default seed venue;
+  // a later phase lets the user switch between or create venues, at which point
+  // this becomes state. Everything below reads the venue rather than hard-coded
+  // hospital constants, so any mapped place renders and routes the same way.
+  const venue = DEFAULT_VENUE
+
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
     currentFloor: 0,
@@ -55,8 +62,8 @@ export default function Home() {
     setSurveyTrails(loadSurveyTrails())
   }, [])
 
-  const allWaypoints = useMemo(() => [...GOSH_WAYPOINTS, ...customWaypoints], [customWaypoints])
-  const availableFloors = useMemo(() => getAvailableFloors(allWaypoints), [allWaypoints])
+  const allWaypoints = useMemo(() => [...venue.waypoints, ...customWaypoints], [venue, customWaypoints])
+  const availableFloors = useMemo(() => getAvailableFloors(venue.floorPlans, allWaypoints), [venue, allWaypoints])
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -87,16 +94,16 @@ export default function Home() {
     return () => navigator.geolocation.clearWatch(id)
   }, [])
 
-  const useGoshDemo = useCallback(() => {
+  const useDemoLocation = useCallback(() => {
     setGpsStatus("active")
-    setNavState((s) => ({ ...s, currentPosition: GOSH_CENTER, positionAccuracy: 0 }))
-    leafletMapRef.current?.flyTo([GOSH_CENTER.lat, GOSH_CENTER.lng], 18)
-  }, [])
+    setNavState((s) => ({ ...s, currentPosition: venue.center, positionAccuracy: 0 }))
+    leafletMapRef.current?.flyTo([venue.center.lat, venue.center.lng], venue.defaultZoom)
+  }, [venue])
 
   // Fetch a real street/footpath route for outdoor destinations and fold it in,
   // replacing the placeholder offline route. Aborts any earlier in-flight fetch.
   const refreshOutdoorRoute = useCallback(
-    async (from: typeof GOSH_CENTER, waypoint: Waypoint, mode: TravelMode) => {
+    async (from: Coordinates, waypoint: Waypoint, mode: TravelMode) => {
       dirAbortRef.current?.abort()
       const ac = new AbortController()
       dirAbortRef.current = ac
@@ -117,7 +124,7 @@ export default function Home() {
   const handleDestinationSelect = useCallback(
     (waypoint: Waypoint) => {
       setOverlay("none")
-      const position = navState.currentPosition ?? GOSH_CENTER
+      const position = navState.currentPosition ?? venue.center
       // Offline route renders instantly; outdoor destinations then upgrade to
       // real street geometry once Directions responds.
       const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode)
@@ -132,7 +139,7 @@ export default function Home() {
         void refreshOutdoorRoute(position, waypoint, navState.travelMode)
       }
     },
-    [navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, refreshOutdoorRoute]
+    [venue, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, refreshOutdoorRoute]
   )
 
   const handleTravelModeChange = useCallback(
@@ -140,7 +147,7 @@ export default function Home() {
       setNavState((s) => ({ ...s, travelMode: mode }))
       const dest = navState.destination
       if (!dest) return
-      const from = navState.currentPosition ?? GOSH_CENTER
+      const from = navState.currentPosition ?? venue.center
       if (isOutdoorDestination(dest)) {
         void refreshOutdoorRoute(from, dest, mode)
       } else {
@@ -148,7 +155,7 @@ export default function Home() {
         setNavState((s) => ({ ...s, route }))
       }
     },
-    [navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, refreshOutdoorRoute]
+    [venue, navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, refreshOutdoorRoute]
   )
 
   const handleStartNavigation = useCallback(() => {
@@ -259,6 +266,9 @@ export default function Home() {
         destination={navState.destination}
         route={navState.route}
         isNavigating={navState.isNavigating}
+        center={venue.center}
+        defaultZoom={venue.defaultZoom}
+        floorPlans={venue.floorPlans}
         waypoints={allWaypoints}
         trails={surveyTrails}
         onMapReady={() => {}}
@@ -296,7 +306,7 @@ export default function Home() {
                 GPS unavailable — browse destinations or use demo mode
               </span>
               <button
-                onClick={useGoshDemo}
+                onClick={useDemoLocation}
                 className="text-xs font-bold text-[#005EB8] whitespace-nowrap ml-2"
               >
                 Use demo
@@ -310,6 +320,8 @@ export default function Home() {
           stepIndex={navState.currentStepIndex}
           totalSteps={navState.route?.steps.length ?? 0}
           isNavigating={navState.isNavigating}
+          title={venue.name}
+          subtitle={venue.subtitle}
         />
       )}
 
@@ -354,8 +366,8 @@ export default function Home() {
       {!navState.isNavigating && (
         <button
           onClick={() => {
-            const pos = navState.currentPosition ?? GOSH_CENTER
-            leafletMapRef.current?.flyTo([pos.lat, pos.lng], 18)
+            const pos = navState.currentPosition ?? venue.center
+            leafletMapRef.current?.flyTo([pos.lat, pos.lng], venue.defaultZoom)
           }}
           className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
           title="Re-centre"
@@ -382,7 +394,12 @@ export default function Home() {
       />
 
       {overlay === "search" && (
-        <SearchModal waypoints={allWaypoints} onSelect={handleDestinationSelect} onClose={() => setOverlay("none")} />
+        <SearchModal
+          waypoints={allWaypoints}
+          quickAccess={venue.quickAccess}
+          onSelect={handleDestinationSelect}
+          onClose={() => setOverlay("none")}
+        />
       )}
 
       {(overlay === "qr" || overlay === "live-camera") && (
@@ -398,6 +415,8 @@ export default function Home() {
         <SurveyModeComponent
           currentFloor={navState.currentFloor}
           currentPosition={navState.currentPosition}
+          venueCenter={venue.center}
+          venueName={venue.subtitle ?? venue.name}
           onClose={() => setOverlay("none")}
           onSurveyComplete={handleSurveyComplete}
         />

@@ -4,8 +4,8 @@ import React, { useEffect, useRef, useState, MutableRefObject } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { LocateFixed } from "lucide-react"
-import { Waypoint, Route, Coordinates, SurveyTrail } from "@/lib/types"
-import { GOSH_WAYPOINTS, FLOOR_PLANS, GOSH_CENTER, WAYPOINT_TYPE_ICONS } from "@/lib/gosh-data"
+import { Waypoint, Route, Coordinates, SurveyTrail, FloorPlan } from "@/lib/types"
+import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
 
 interface Props {
   currentFloor: number
@@ -13,7 +13,11 @@ interface Props {
   destination: Waypoint | null
   route: Route | null
   isNavigating: boolean
-  waypoints?: Waypoint[]
+  // Where the map opens when there is no live GPS fix — the active venue's centre.
+  center: Coordinates
+  defaultZoom?: number
+  floorPlans: FloorPlan[]
+  waypoints: Waypoint[]
   trails?: SurveyTrail[]
   onMapReady: () => void
   leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
@@ -25,7 +29,10 @@ export default function FloorPlanMap({
   destination,
   route,
   isNavigating,
-  waypoints = GOSH_WAYPOINTS,
+  center,
+  defaultZoom = 18,
+  floorPlans,
+  waypoints,
   trails = [],
   onMapReady,
   leafletMapRef,
@@ -59,8 +66,8 @@ export default function FloorPlanMap({
     if (mapRef.current) return
 
     const map = L.map("map-container", {
-      center: [GOSH_CENTER.lat, GOSH_CENTER.lng],
-      zoom: 18,
+      center: [center.lat, center.lng],
+      zoom: defaultZoom,
       zoomControl: false,
       attributionControl: false,
     })
@@ -98,7 +105,7 @@ export default function FloorPlanMap({
       floorPlanLayerRef.current = null
     }
 
-    const plan = FLOOR_PLANS.find((fp) => fp.floor === currentFloor)
+    const plan = floorPlans.find((fp) => fp.floor === currentFloor)
     if (plan) {
       const overlay = L.imageOverlay(plan.imageUrl, plan.bounds as L.LatLngBoundsExpression, {
         opacity: 0.85,
@@ -107,7 +114,7 @@ export default function FloorPlanMap({
       overlay.addTo(map)
       floorPlanLayerRef.current = overlay
     }
-  }, [currentFloor])
+  }, [currentFloor, floorPlans])
 
   // Update waypoint markers
   useEffect(() => {
