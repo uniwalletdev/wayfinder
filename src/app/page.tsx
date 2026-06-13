@@ -2,10 +2,14 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { Waypoint, NavigationState, SurveyTrail, Coordinates } from "@/lib/types"
+import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue } from "@/lib/types"
 import { getAvailableFloors } from "@/lib/waypoint-meta"
-import { DEFAULT_VENUE } from "@/lib/venues"
-import { loadCustomWaypoints, saveCustomWaypoints, loadSurveyTrails, saveSurveyTrails } from "@/lib/custom-waypoints"
+import { DEFAULT_VENUE, SEED_VENUES, getVenueById, createVenue, type NewVenueInput } from "@/lib/venues"
+import {
+  loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
+  loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
+  migrateLegacyData, deleteUserVenue,
+} from "@/lib/venue-store"
 import { buildRoute, distanceMeters, fetchOutdoorRoute, isOutdoorDestination } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
@@ -15,11 +19,12 @@ import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle } from "lucide-react"
+import VenuePicker from "@/components/VenuePicker"
+import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, ChevronDown } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey" | "venues"
 type GpsStatus = "requesting" | "active" | "denied"
 
 // Minimal interface — avoids importing Leaflet types on the server
@@ -31,11 +36,14 @@ export default function Home() {
   const leafletMapRef = useRef<MapHandle | null>(null)
   const gpsActiveRef = useRef(false)
 
-  // The place currently being navigated. Today this is the default seed venue;
-  // a later phase lets the user switch between or create venues, at which point
-  // this becomes state. Everything below reads the venue rather than hard-coded
-  // hospital constants, so any mapped place renders and routes the same way.
-  const venue = DEFAULT_VENUE
+  // The place currently being navigated. The user can switch between seed
+  // venues and ones they create, or map a brand-new place. Everything below
+  // reads the active venue rather than hard-coded constants, so any mapped
+  // place — public or private — renders and routes the same way.
+  const [activeVenueId, setActiveVenueId] = useState<string>(DEFAULT_VENUE.id)
+  const [userVenues, setUserVenues] = useState<Venue[]>([])
+  const venue = useMemo(() => getVenueById(activeVenueId, userVenues) ?? DEFAULT_VENUE, [activeVenueId, userVenues])
+  const allVenues = useMemo(() => [...SEED_VENUES, ...userVenues], [userVenues])
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
@@ -56,10 +64,19 @@ export default function Home() {
   const [customWaypoints, setCustomWaypoints] = useState<Waypoint[]>([])
   const [surveyTrails, setSurveyTrails] = useState<SurveyTrail[]>([])
 
-  // Restore user-mapped locations and walked trails from previous sessions.
+  // On first load, fold any pre-multi-venue data into the default venue, restore
+  // the user's saved venues and which one they last had open, and load the
+  // points/trails mapped inside it. Switching venues afterwards reloads data in
+  // the handler (goToVenue), so this stays a one-time hydration on mount.
   useEffect(() => {
-    setCustomWaypoints(loadCustomWaypoints())
-    setSurveyTrails(loadSurveyTrails())
+    migrateLegacyData(DEFAULT_VENUE.id)
+    const restored = loadUserVenues()
+    const savedActive = loadActiveVenueId()
+    const startId = savedActive && getVenueById(savedActive, restored) ? savedActive : DEFAULT_VENUE.id
+    setUserVenues(restored)
+    setActiveVenueId(startId)
+    setCustomWaypoints(loadVenueWaypoints(startId))
+    setSurveyTrails(loadVenueTrails(startId))
   }, [])
 
   const allWaypoints = useMemo(() => [...venue.waypoints, ...customWaypoints], [venue, customWaypoints])
@@ -225,14 +242,14 @@ export default function Home() {
     if (newWaypoints.length > 0) {
       setCustomWaypoints((prev) => {
         const next = [...prev, ...newWaypoints]
-        saveCustomWaypoints(next)
+        saveVenueWaypoints(activeVenueId, next)
         return next
       })
     }
     if (result.trails.length > 0) {
       setSurveyTrails((prev) => {
         const next = [...prev, ...result.trails]
-        saveSurveyTrails(next)
+        saveVenueTrails(activeVenueId, next)
         return next
       })
     }
@@ -254,7 +271,42 @@ export default function Home() {
       message = "Survey complete — no clear signs were found in the footage. Try keeping signs and door plates in view, or use “Mark Location”."
     }
     alert(message)
+  }, [activeVenueId])
+
+  // Switching place clears the current route and re-centres on the new venue, so
+  // navigation state never leaks across venues.
+  const goToVenue = useCallback((v: Venue) => {
+    setActiveVenueId(v.id)
+    saveActiveVenueId(v.id)
+    setCustomWaypoints(loadVenueWaypoints(v.id))
+    setSurveyTrails(loadVenueTrails(v.id))
+    setOverlay("none")
+    setNavState((s) => ({ ...s, currentFloor: 0, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+    leafletMapRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
   }, [])
+
+  const handleSelectVenue = useCallback((id: string) => {
+    const v = getVenueById(id, userVenues)
+    if (v) goToVenue(v)
+  }, [userVenues, goToVenue])
+
+  const handleCreateVenue = useCallback((input: NewVenueInput) => {
+    const v = createVenue(input)
+    setUserVenues((prev) => {
+      const next = [...prev, v]
+      saveUserVenues(next)
+      return next
+    })
+    goToVenue(v)
+    alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
+  }, [goToVenue])
+
+  const handleDeleteVenue = useCallback((id: string) => {
+    deleteUserVenue(id)
+    setUserVenues(loadUserVenues())
+    // If the open venue was deleted, fall back to the default and reload its map.
+    if (activeVenueId === id) goToVenue(DEFAULT_VENUE)
+  }, [activeVenueId, goToVenue])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
@@ -278,8 +330,16 @@ export default function Home() {
       {/* ── Top bar ──────────────────────────────────────────── */}
       {!navState.isNavigating ? (
         <div className="absolute top-0 left-0 right-0 z-50">
-          {/* Search bar */}
+          {/* Venue selector + search bar */}
           <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
+            <button
+              onClick={() => setOverlay("venues")}
+              className="flex items-center gap-1.5 mb-2 max-w-full text-white"
+            >
+              <MapPin size={14} className="flex-shrink-0 opacity-90" />
+              <span className="text-sm font-semibold truncate">{venue.name}</span>
+              <ChevronDown size={16} className="flex-shrink-0 opacity-90" />
+            </button>
             <button
               onClick={() => setOverlay("search")}
               className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
@@ -398,6 +458,19 @@ export default function Home() {
           waypoints={allWaypoints}
           quickAccess={venue.quickAccess}
           onSelect={handleDestinationSelect}
+          onClose={() => setOverlay("none")}
+        />
+      )}
+
+      {overlay === "venues" && (
+        <VenuePicker
+          venues={allVenues}
+          activeVenueId={activeVenueId}
+          currentCenter={navState.currentPosition ?? venue.center}
+          hasGps={gpsStatus === "active" && navState.currentPosition !== null && navState.positionAccuracy > 0}
+          onSelect={handleSelectVenue}
+          onCreate={handleCreateVenue}
+          onDelete={handleDeleteVenue}
           onClose={() => setOverlay("none")}
         />
       )}
