@@ -1,4 +1,4 @@
-import { Waypoint, FloorPlan } from "./types"
+import { Waypoint, FloorPlan, Coordinates } from "./types"
 
 // Generic, venue-agnostic presentation helpers for waypoints and floors. These
 // used to live in `gosh-data.ts`, hard-wired to a single hospital; they are now
@@ -49,4 +49,18 @@ export function getAvailableFloors(floorPlans: FloorPlan[], waypoints: Waypoint[
   const floors = new Set<number>(floorPlans.map((fp) => fp.floor))
   waypoints.forEach((w) => floors.add(w.floor))
   return [...floors].sort((a, b) => a - b)
+}
+
+// Whether a position falls inside the venue's mapped building footprint (the
+// union of its floor plan bounds). GPS gives no floor, but it does tell us
+// indoors-vs-outdoors well enough to drive the 3D ⇄ 2D view switch. A positive
+// marginMeters expands the footprint — callers use it as hysteresis so a
+// jittery GPS fix at the building edge doesn't flap between the two states. A
+// venue with no floor plans has no footprint, so this is always false there.
+export function isInsideBuilding(c: Coordinates, floorPlans: FloorPlan[], marginMeters = 0): boolean {
+  const dLat = marginMeters / 111320
+  const dLng = marginMeters / (111320 * Math.cos((c.lat * Math.PI) / 180))
+  return floorPlans.some(({ bounds: [[s, w], [n, e]] }) =>
+    c.lat >= s - dLat && c.lat <= n + dLat && c.lng >= w - dLng && c.lng <= e + dLng
+  )
 }
