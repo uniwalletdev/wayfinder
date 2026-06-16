@@ -27,6 +27,36 @@ export function distanceMeters(a: Coordinates, b: Coordinates): number {
   return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x))
 }
 
+// Perpendicular distance (metres) from a point to a single segment, via a local
+// equirectangular projection around the segment's start — accurate at the short
+// ranges an indoor/campus route spans, and cheap enough to run on every GPS fix.
+function distanceToSegment(p: Coordinates, a: Coordinates, b: Coordinates): number {
+  const mPerDegLat = 111320
+  const mPerDegLng = 111320 * Math.cos((a.lat * Math.PI) / 180)
+  const bx = (b.lng - a.lng) * mPerDegLng
+  const by = (b.lat - a.lat) * mPerDegLat
+  const px = (p.lng - a.lng) * mPerDegLng
+  const py = (p.lat - a.lat) * mPerDegLat
+  const len2 = bx * bx + by * by
+  if (len2 === 0) return Math.hypot(px, py)
+  let t = (px * bx + py * by) / len2
+  t = Math.max(0, Math.min(1, t))
+  return Math.hypot(px - t * bx, py - t * by)
+}
+
+// Shortest distance (metres) from a point to a polyline — used while navigating
+// to measure how far off the drawn route the walker has strayed.
+export function distanceToPath(p: Coordinates, path: Coordinates[]): number {
+  if (path.length === 0) return Infinity
+  if (path.length === 1) return distanceMeters(p, path[0])
+  let best = Infinity
+  for (let i = 0; i < path.length - 1; i++) {
+    const d = distanceToSegment(p, path[i], path[i + 1])
+    if (d < best) best = d
+  }
+  return best
+}
+
 function bearing(a: Coordinates, b: Coordinates): number {
   const dLng = ((b.lng - a.lng) * Math.PI) / 180
   const lat1 = (a.lat * Math.PI) / 180
