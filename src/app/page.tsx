@@ -10,7 +10,7 @@ import {
   loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
   migrateLegacyData, deleteUserVenue,
 } from "@/lib/venue-store"
-import { buildRoute, distanceMeters, fetchOutdoorRoute, isOutdoorDestination } from "@/lib/routing"
+import { buildRoute, distanceMeters, fetchOutdoorRoute, shouldRouteOutdoors } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
 import TopInstructionBar from "@/components/TopInstructionBar"
@@ -168,7 +168,7 @@ export default function Home() {
       const position = navState.currentPosition ?? venue.center
       // Offline route renders instantly; outdoor destinations then upgrade to
       // real street geometry once Directions responds.
-      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode)
+      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode, surveyTrails)
       setNavState((s) => ({
         ...s,
         destination: waypoint,
@@ -176,11 +176,11 @@ export default function Home() {
         currentStepIndex: 0,
         isNavigating: false,
       }))
-      if (isOutdoorDestination(waypoint)) {
+      if (shouldRouteOutdoors(position, navState.currentFloor, waypoint, surveyTrails)) {
         void refreshOutdoorRoute(position, waypoint, navState.travelMode)
       }
     },
-    [venue, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, refreshOutdoorRoute]
+    [venue, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails, refreshOutdoorRoute]
   )
 
   const handleTravelModeChange = useCallback(
@@ -189,14 +189,14 @@ export default function Home() {
       const dest = navState.destination
       if (!dest) return
       const from = navState.currentPosition ?? venue.center
-      if (isOutdoorDestination(dest)) {
+      if (shouldRouteOutdoors(from, navState.currentFloor, dest, surveyTrails)) {
         void refreshOutdoorRoute(from, dest, mode)
       } else {
-        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode)
+        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode, surveyTrails)
         setNavState((s) => ({ ...s, route }))
       }
     },
-    [venue, navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, refreshOutdoorRoute]
+    [venue, navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, surveyTrails, refreshOutdoorRoute]
   )
 
   const handleStartNavigation = useCallback(() => {
