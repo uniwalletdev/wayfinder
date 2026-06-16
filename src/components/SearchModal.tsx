@@ -1,14 +1,18 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Waypoint } from "@/lib/types"
+import { useEffect, useRef, useState } from "react"
+import { Waypoint, Coordinates } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/waypoint-meta"
+import { rankWaypoints } from "@/lib/search"
 import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
 
 interface Props {
   waypoints: Waypoint[]
   // Waypoint names to surface as shortcuts, supplied by the active venue.
   quickAccess?: string[]
+  // The active venue's centre or the user's live position — biases worldwide
+  // place search toward nearby results.
+  proximity?: Coordinates
   onSelect: (waypoint: Waypoint) => void
   onClose: () => void
 }
@@ -34,22 +38,23 @@ function geoToWaypoint(r: GeoResult): Waypoint {
   }
 }
 
-export default function SearchModal({ waypoints, quickAccess = [], onSelect, onClose }: Props) {
+export default function SearchModal({ waypoints, quickAccess = [], proximity, onSelect, onClose }: Props) {
   const [query, setQuery] = useState("")
   const [geoResults, setGeoResults] = useState<GeoResult[]>([])
   const [geoLoading, setGeoLoading] = useState(false)
   const [geoError, setGeoError] = useState<string | null>(null)
 
+  // Latest proximity, read at fetch time so a moving GPS fix doesn't re-trigger
+  // the debounced geocode on every position update.
+  const proximityRef = useRef(proximity)
+  useEffect(() => {
+    proximityRef.current = proximity
+  }, [proximity])
+
   const trimmed = query.trim()
 
-  const filtered = trimmed
-    ? waypoints.filter(
-        (w) =>
-          w.name.toLowerCase().includes(query.toLowerCase()) ||
-          w.description?.toLowerCase().includes(query.toLowerCase()) ||
-          WAYPOINT_TYPE_LABELS[w.type].toLowerCase().includes(query.toLowerCase())
-      )
-    : []
+  // Ranked best-match-first, so the closest name wins among similar ones.
+  const filtered = trimmed ? rankWaypoints(trimmed, waypoints, (w) => WAYPOINT_TYPE_LABELS[w.type]) : []
 
   const quickWaypoints = waypoints.filter((w) => quickAccess.includes(w.name))
 
@@ -63,9 +68,13 @@ export default function SearchModal({ waypoints, quickAccess = [], onSelect, onC
       setGeoLoading(true)
       setGeoError(null)
       try {
-        const res = await fetch(`/api/geocode?q=${encodeURIComponent(trimmed)}`, {
-          signal: controller.signal,
-        })
+        const params = new URLSearchParams({ q: trimmed })
+        const prox = proximityRef.current
+        if (prox) {
+          params.set("lat", String(prox.lat))
+          params.set("lng", String(prox.lng))
+        }
+        const res = await fetch(`/api/geocode?${params}`, { signal: controller.signal })
         const data = (await res.json()) as { results?: GeoResult[]; error?: string }
         setGeoResults(Array.isArray(data.results) ? data.results : [])
         setGeoError(data.error ?? null)
