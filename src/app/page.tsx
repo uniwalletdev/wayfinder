@@ -78,9 +78,10 @@ export default function Home() {
   const [role, setRole] = useState<AppRole | null>(null)
 
   // 2D (Leaflet floor plan) or 3D (MapLibre, tilted with extruded buildings).
-  // Opens in 3D so the map reads like Apple/Google Maps; the auto-switch below
-  // hands over to the 2D floor plan once you're inside a mapped building.
-  const [mapView, setMapView] = useState<"2d" | "3d">("3d")
+  // The starting view is chosen on the entry screen — navigators pick 2D or 3D,
+  // mappers default to the 2D floor plan. The on-map toggle and the
+  // indoor/outdoor auto-switch can change it afterwards.
+  const [mapView, setMapView] = useState<"2d" | "3d">("2d")
   // Transient pill explaining an automatic view change
   const [viewNotice, setViewNotice] = useState<string | null>(null)
   const noticeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -175,6 +176,17 @@ export default function Home() {
       showViewNotice("Back outdoors — switched to 3D")
     }
   }, [indoors, showViewNotice])
+
+  // Entry-screen choice: set the role and (for navigators) the starting view.
+  // Seed the auto-switch bookkeeping from the current indoor/outdoor state so it
+  // won't immediately override the view they just picked — it only kicks in once
+  // they actually cross the building boundary afterwards.
+  const handleEnter = useCallback((r: AppRole, view: "2d" | "3d") => {
+    autoSwitchedRef.current = false
+    prevIndoorsRef.current = indoors
+    setMapView(view)
+    setRole(r)
+  }, [indoors])
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -508,7 +520,7 @@ export default function Home() {
               <button
                 onClick={() => setRole(null)}
                 className="w-11 h-11 flex-shrink-0 bg-white rounded-full shadow flex items-center justify-center"
-                title="Back to start — choose Explorer or Mapper"
+                title="Back to start — choose what to do"
                 aria-label="Back to start screen"
               >
                 <HomeIcon size={20} className="text-[#005EB8]" />
@@ -595,7 +607,7 @@ export default function Home() {
         <button
           onClick={() => setRole(null)}
           className="absolute top-48 left-3 z-40 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm"
-          title="Switch between Explorer and Mapper"
+          title="Switch between Navigate and Map area"
         >
           {role === "mapper" ? (
             <ClipboardList size={12} className="text-[#005EB8]" />
@@ -603,7 +615,7 @@ export default function Home() {
             <Compass size={12} className="text-[#005EB8]" />
           )}
           <span className="text-xs text-gray-700 font-semibold">
-            {role === "mapper" ? "Mapper" : "Explorer"}
+            {role === "mapper" ? "Mapper" : "Navigator"}
           </span>
         </button>
       )}
@@ -716,7 +728,7 @@ export default function Home() {
         />
       )}
 
-      {role === null && <RoleSelect onSelect={setRole} />}
+      {role === null && <RoleSelect onEnter={handleEnter} />}
     </div>
   )
 }
