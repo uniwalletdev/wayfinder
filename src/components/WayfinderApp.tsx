@@ -10,7 +10,7 @@ import {
   loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
   migrateLegacyData, deleteUserVenue,
 } from "@/lib/venue-store"
-import { buildRoute, distanceMeters, fetchOutdoorRoute, shouldRouteOutdoors } from "@/lib/routing"
+import { buildRoute, distanceMeters, distanceToPath, fetchOutdoorRoute, shouldRouteOutdoors } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
 import TopInstructionBar from "@/components/TopInstructionBar"
@@ -41,6 +41,12 @@ interface MapHandle {
 // landing page (src/app/page.tsx) routes to /navigate or /map, which render
 // this component with the matching mode.
 export type WayfinderMode = "navigate" | "map"
+
+// While navigating, recompute the route once the walker strays this far (metres)
+// from the drawn line — a wrong turn or a deliberate diversion. The trigger is
+// widened by the GPS fix's reported accuracy so ordinary jitter doesn't
+// needlessly re-route.
+const OFF_ROUTE_TRIGGER_M = 25
 
 export default function WayfinderApp({ initialMode = "navigate" }: { initialMode?: WayfinderMode }) {
   const leafletMapRef = useRef<MapHandle | null>(null)
@@ -235,6 +241,34 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       return idx === s.currentStepIndex ? s : { ...s, currentStepIndex: idx }
     })
   }, [navState.currentPosition, navState.currentFloor])
+
+  // Live re-routing: while navigating, if the walker drifts too far from the
+  // drawn path, rebuild the route from where they actually are instead of
+  // leaving them on a stale line. Indoor journeys recompute instantly via
+  // buildRoute; outdoor ones re-fetch real street geometry. The arrival logic
+  // above keeps advancing steps; this only fires on a genuine off-route gap.
+  useEffect(() => {
+    if (!navState.isNavigating || !navState.route || !navState.destination || !navState.currentPosition) return
+    // An outdoor recompute is already in flight — let it settle before judging.
+    if (routeLoading) return
+
+    const here = navState.currentPosition
+    const dest = navState.destination
+    const offBy = distanceToPath(here, navState.route.geometry)
+    if (offBy <= OFF_ROUTE_TRIGGER_M + (navState.positionAccuracy || 0)) return
+
+    if (shouldRouteOutdoors(here, navState.currentFloor, dest, surveyTrails)) {
+      setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, currentStepIndex: 0 } : s))
+      void refreshOutdoorRoute(here, dest, navState.travelMode)
+    } else {
+      const rebuilt = buildRoute(here, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails)
+      setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, route: rebuilt, currentStepIndex: 0 } : s))
+    }
+  }, [
+    navState.currentPosition, navState.isNavigating, navState.route, navState.destination,
+    navState.currentFloor, navState.travelMode, navState.positionAccuracy,
+    routeLoading, allWaypoints, surveyTrails, refreshOutdoorRoute,
+  ])
 
   const handleStopNavigation = useCallback(() => {
     dirAbortRef.current?.abort()
@@ -484,8 +518,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         </span>
       </div>
 
-      {/* Survey / self-map FAB */}
-      {!navState.isNavigating && (
+      {/* Survey / self-map FAB — only in Map mode, so the Navigate screen stays
+          navigation-only. Mapping lives under /map (and is opened on entry there). */}
+      {!navState.isNavigating && initialMode === "map" && (
         <button
           onClick={() => setOverlay("survey")}
           className="absolute left-3 bottom-52 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
