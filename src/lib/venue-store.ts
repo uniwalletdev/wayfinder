@@ -15,11 +15,15 @@ const VENUES_KEY = "wayfinder.userVenues"
 const ACTIVE_KEY = "wayfinder.activeVenueId"
 const wpKey = (venueId: string) => `wayfinder.venue.${venueId}.waypoints`
 const trailKey = (venueId: string) => `wayfinder.venue.${venueId}.trails`
+// GPS can't sense which floor you're on, so remember the last one per venue
+// (set via the selector, a QR scan, or finishing a survey) across visits.
+const floorKey = (venueId: string) => `wayfinder.venue.${venueId}.floor`
 
 // Pre-multi-venue keys. Anything saved under these belonged to the single
 // hard-coded venue, so we fold them into it the first time we load.
 const LEGACY_WP_KEY = "wayfinder.customWaypoints"
 const LEGACY_TRAILS_KEY = "wayfinder.surveyTrails"
+const LEGACY_FLOOR_KEY = "wayfinder.currentFloor"
 
 function readJSON<T>(key: string, fallback: T): T {
   if (typeof window === "undefined") return fallback
@@ -87,6 +91,27 @@ export function saveVenueTrails(venueId: string, trails: SurveyTrail[]): void {
   writeJSON(trailKey(venueId), trails)
 }
 
+export function loadVenueFloor(venueId: string): number | null {
+  if (typeof window === "undefined") return null
+  try {
+    const raw = window.localStorage.getItem(floorKey(venueId))
+    if (raw === null) return null
+    const floor = parseInt(raw, 10)
+    return Number.isFinite(floor) ? floor : null
+  } catch {
+    return null
+  }
+}
+
+export function saveVenueFloor(venueId: string, floor: number): void {
+  if (typeof window === "undefined") return
+  try {
+    window.localStorage.setItem(floorKey(venueId), String(floor))
+  } catch {
+    // Storage may be unavailable (private mode, quota) — fail silently.
+  }
+}
+
 // One-time migration: move any pre-multi-venue custom waypoints/trails onto the
 // default venue, then clear the legacy keys so this is a no-op afterwards.
 export function migrateLegacyData(defaultVenueId: string): void {
@@ -103,6 +128,12 @@ export function migrateLegacyData(defaultVenueId: string): void {
       window.localStorage.setItem(trailKey(defaultVenueId), legacyTrails)
     }
     if (legacyTrails) window.localStorage.removeItem(LEGACY_TRAILS_KEY)
+
+    const legacyFloor = window.localStorage.getItem(LEGACY_FLOOR_KEY)
+    if (legacyFloor && !window.localStorage.getItem(floorKey(defaultVenueId))) {
+      window.localStorage.setItem(floorKey(defaultVenueId), legacyFloor)
+    }
+    if (legacyFloor) window.localStorage.removeItem(LEGACY_FLOOR_KEY)
   } catch {
     // ignore
   }
@@ -116,6 +147,7 @@ export function deleteUserVenue(venueId: string): void {
     saveUserVenues(remaining)
     window.localStorage.removeItem(wpKey(venueId))
     window.localStorage.removeItem(trailKey(venueId))
+    window.localStorage.removeItem(floorKey(venueId))
   } catch {
     // ignore
   }
