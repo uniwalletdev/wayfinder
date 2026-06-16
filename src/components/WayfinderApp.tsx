@@ -567,6 +567,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         <SearchModal
           waypoints={allWaypoints}
           quickAccess={venue.quickAccess}
+          proximity={navState.currentPosition ?? venue.center}
           onSelect={handleDestinationSelect}
           onClose={() => setOverlay("none")}
         />

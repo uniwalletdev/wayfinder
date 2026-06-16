@@ -2,16 +2,14 @@
 // known waypoints, the client falls back to this route, which geocodes the query
 // via the Mapbox Geocoding API and returns navigable coordinates. We proxy it
 // server-side so the access token stays off the client, and keep failures soft
-// (an empty list rather than a thrown error). Results are biased to the UK and
-// toward the active venue (passed as `lat`/`lng`) so nearby places rank first.
+// (an empty list rather than a thrown error). Results are worldwide, biased
+// toward the caller's location (passed as `lat`/`lng`) so nearby places rank first.
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 const MAPBOX_URL = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 const MAX_RESULTS = 6
-// Used to bias results when the caller doesn't supply a venue centre.
-const DEFAULT_PROXIMITY = { lat: 51.5225, lng: -0.1199 }
 
 interface GeocodeResult {
   id: string
@@ -41,21 +39,20 @@ export async function GET(request: Request) {
     return Response.json({ results: [] }, { status: 200 })
   }
 
-  // Bias toward the active venue when its centre is supplied; otherwise fall back.
+  // Bias toward the caller's location (the active venue's centre or the user's
+  // live position) so the nearest match ranks first — worldwide, no country lock.
   const lat = Number(sp.get("lat"))
   const lng = Number(sp.get("lng"))
-  const proxLat = Number.isFinite(lat) ? lat : DEFAULT_PROXIMITY.lat
-  const proxLng = Number.isFinite(lng) ? lng : DEFAULT_PROXIMITY.lng
 
   const params = new URLSearchParams({
     access_token: token,
     limit: String(MAX_RESULTS),
     autocomplete: "true",
-    country: "gb",
-    // Bias toward places near the venue so the closest match ranks first.
-    proximity: `${proxLng},${proxLat}`,
     language: "en",
   })
+  if (Number.isFinite(lat) && Number.isFinite(lng)) {
+    params.set("proximity", `${lng},${lat}`)
+  }
   const url = `${MAPBOX_URL}/${encodeURIComponent(q)}.json?${params}`
 
   const controller = new AbortController()
