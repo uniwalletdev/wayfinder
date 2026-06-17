@@ -291,7 +291,7 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
             <div className="text-center mb-4">
               <p className="text-white text-sm mb-1">Walk through the area with the camera up</p>
               <p className="text-gray-400 text-xs">
-                A frame is captured every 3s. When you stop, signs in the footage are read into map points — and tap “Mark Location” to add a spot yourself. Use the ▲▼ floor buttons each time you change floor.
+                Walk down the middle of corridors — your path is drawn as the floor layout, with rooms placed alongside. A frame is captured every 3s; signs in the footage are read into map points when you stop, and tap “Mark Location” to add a spot yourself. Use the ▲▼ floor buttons each time you change floor.
               </p>
             </div>
           ) : (

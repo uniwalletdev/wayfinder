@@ -1,11 +1,12 @@
 "use client"
 
-import React, { useEffect, useRef, useState, MutableRefObject } from "react"
+import React, { useEffect, useMemo, useRef, useState, MutableRefObject } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { LocateFixed } from "lucide-react"
 import { Waypoint, Route, Coordinates, SurveyTrail, FloorPlan } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
+import { buildFloorSchematic } from "@/lib/schematic"
 
 interface Props {
   currentFloor: number
@@ -44,7 +45,20 @@ export default function FloorPlanMap({
   const floorPlanLayerRef = useRef<L.ImageOverlay | null>(null)
   const waypointLayersRef = useRef<L.Marker[]>([])
   const trailLayersRef = useRef<L.Polyline[]>([])
+  const schematicLayerRef = useRef<L.LayerGroup | null>(null)
   const framedDestRef = useRef<string | null>(null)
+
+  // Whether the current floor already has a pre-drawn plan image. When it does
+  // (e.g. seed venues with real SVG plans) we leave it alone; the generated
+  // schematic is for floors that were only walked, so they don't look blank.
+  const hasPlanImage = floorPlans.some((fp) => fp.floor === currentFloor)
+
+  // Derive a simple corridor/room schematic from the walked trails + points on
+  // this floor. Memoised so it only rebuilds when the underlying data changes.
+  const schematic = useMemo(
+    () => (hasPlanImage ? null : buildFloorSchematic(currentFloor, trails, waypoints)),
+    [currentFloor, trails, waypoints, hasPlanImage]
+  )
 
   // Auto-follow keeps the walker centred (Google/Waze style). When the user
   // drags or zooms to explore — e.g. to see the whole route — we pause follow
@@ -150,6 +164,51 @@ export default function FloorPlanMap({
       waypointLayersRef.current.push(marker)
     })
   }, [currentFloor, destination, waypoints])
+
+  // Draw the generated floor schematic: filled corridors (the walked path given
+  // real width) with room blocks beside them, so a surveyed floor reads like a
+  // building interior. Sits beneath the trail line, markers and route.
+  useEffect(() => {
+    if (!mapRef.current) return
+    const map = mapRef.current
+
+    if (schematicLayerRef.current) {
+      map.removeLayer(schematicLayerRef.current)
+      schematicLayerRef.current = null
+    }
+    if (!schematic) return
+
+    const group = L.layerGroup()
+
+    schematic.corridors.forEach((ring) => {
+      L.polygon(
+        ring.map((p) => [p.lat, p.lng] as L.LatLngExpression),
+        { color: "#94A3B8", weight: 1.5, opacity: 0.7, fillColor: "#E2E8F0", fillOpacity: 0.7, interactive: false }
+      ).addTo(group)
+    })
+
+    schematic.rooms.forEach((room) => {
+      L.polygon(
+        room.polygon.map((p) => [p.lat, p.lng] as L.LatLngExpression),
+        { color: "#64748B", weight: 1.5, opacity: 0.8, fillColor: "#F8FAFC", fillOpacity: 0.85, interactive: false }
+      ).addTo(group)
+
+      const label = L.divIcon({
+        html: `<div style="
+          display:flex;align-items:center;gap:3px;
+          font-size:10px;font-weight:600;color:#334155;white-space:nowrap;
+          transform:translate(-50%,-50%);
+          text-shadow:0 1px 2px rgba(255,255,255,0.9);
+        ">${WAYPOINT_TYPE_ICONS[room.type]}<span>${room.name}</span></div>`,
+        iconSize: [0, 0],
+        className: "",
+      })
+      L.marker([room.center.lat, room.center.lng], { icon: label, interactive: false, keyboard: false }).addTo(group)
+    })
+
+    group.addTo(map)
+    schematicLayerRef.current = group
+  }, [schematic])
 
   // Draw walked survey trails (breadcrumbs) for the current floor
   useEffect(() => {

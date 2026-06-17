@@ -338,9 +338,14 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     if (marked > 0) parts.push(`${marked} marked`)
     if (detected > 0) parts.push(`${detected} read from the footage`)
 
+    // A multi-point walk on a floor with no pre-drawn plan becomes a corridor
+    // layout, so call that out rather than just listing points.
+    const drewLayout = result.trails.some((t) => t.points.length >= 2)
+    const layoutNote = drewLayout ? " Your walk was drawn as the floor layout." : ""
+
     let message: string
     if (parts.length > 0) {
-      message = `Survey complete — ${parts.join(" and ")} location${marked + detected !== 1 ? "s" : ""} added to the map.`
+      message = `Survey complete — ${parts.join(" and ")} location${marked + detected !== 1 ? "s" : ""} added to the map.${layoutNote}`
     } else if (result.aiError === "not_configured") {
       message = "Survey saved. AI sign-reading isn't enabled on the server, so nothing was auto-detected — use “Mark Location” to add points yourself."
     } else if (result.aiError) {
