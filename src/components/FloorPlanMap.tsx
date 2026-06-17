@@ -11,6 +11,9 @@ import { buildFloorSchematic } from "@/lib/schematic"
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
+  // Compass heading in degrees clockwise from north (0–359), or null when the
+  // device has no usable compass — then we fall back to a plain dot.
+  heading: number | null
   destination: Waypoint | null
   route: Route | null
   isNavigating: boolean
@@ -27,6 +30,7 @@ interface Props {
 export default function FloorPlanMap({
   currentFloor,
   currentPosition,
+  heading,
   destination,
   route,
   isNavigating,
@@ -69,6 +73,13 @@ export default function FloorPlanMap({
   const programmaticRef = useRef(false)
   const positionRef = useRef<Coordinates | null>(currentPosition)
   positionRef.current = currentPosition
+
+  // Latest heading, read when the marker is (re)created so it spawns pointing
+  // the right way. `contRotRef` tracks an unwrapped, ever-accumulating angle so
+  // the CSS transition always rotates the short way and never spins through 360.
+  const headingRef = useRef<number | null>(heading)
+  headingRef.current = heading
+  const contRotRef = useRef(0)
 
   const setFollow = (v: boolean) => {
     followingRef.current = v
@@ -255,6 +266,11 @@ export default function FloorPlanMap({
 
     const icon = L.divIcon({
       html: `<div style="position:relative;width:44px;height:44px;">
+        <div class="wf-heading-cone" style="
+          position:absolute;top:0;left:0;width:44px;height:44px;
+          transform:rotate(${headingRef.current ?? 0}deg);
+          opacity:${headingRef.current === null ? 0 : 1};
+        "></div>
         <div class="wf-locate-ring" style="
           position:absolute;top:50%;left:50%;margin:-11px 0 0 -11px;
           width:22px;height:22px;border-radius:50%;
@@ -275,6 +291,9 @@ export default function FloorPlanMap({
     const marker = L.marker(latlng, { icon, zIndexOffset: 1000, keyboard: false })
     marker.addTo(map)
     positionMarkerRef.current = marker
+    // Match the accumulator to the cone's inline starting angle so the first
+    // heading update animates a small delta, not a full revolution.
+    contRotRef.current = headingRef.current ?? 0
 
     // Enable the glide only after first paint, so the marker doesn't visibly
     // fly in from the map origin when Leaflet sets its initial transform.
@@ -282,6 +301,22 @@ export default function FloorPlanMap({
       positionMarkerRef.current?.getElement()?.classList.add("wf-live-marker")
     })
   }, [currentPosition])
+
+  // Spin the heading cone to match the compass without rebuilding the marker.
+  // We feed the cone an unwrapped angle (prev + shortest signed delta) so a
+  // 359°→1° step rotates 2° forward rather than 358° backward.
+  useEffect(() => {
+    const cone = positionMarkerRef.current?.getElement()?.querySelector<HTMLElement>(".wf-heading-cone")
+    if (!cone) return
+    if (heading === null) {
+      cone.style.opacity = "0"
+      return
+    }
+    const delta = (((heading - contRotRef.current) % 360) + 540) % 360 - 180
+    contRotRef.current += delta
+    cone.style.opacity = "1"
+    cone.style.transform = `rotate(${contRotRef.current}deg)`
+  }, [heading, currentPosition])
 
   // Draw the route path + destination pin. The line follows the route's actual
   // geometry (real street/footpath geometry outdoors, a connected multi-point
