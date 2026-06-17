@@ -11,6 +11,7 @@ import {
   migrateLegacyData, deleteUserVenue,
 } from "@/lib/venue-store"
 import { buildRoute, distanceMeters, distanceToPath, fetchOutdoorRoute, shouldRouteOutdoors } from "@/lib/routing"
+import { useDeviceHeading } from "@/lib/use-device-heading"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
 import TopInstructionBar from "@/components/TopInstructionBar"
@@ -51,6 +52,10 @@ const OFF_ROUTE_TRIGGER_M = 25
 export default function WayfinderApp({ initialMode = "navigate" }: { initialMode?: WayfinderMode }) {
   const leafletMapRef = useRef<MapHandle | null>(null)
   const gpsActiveRef = useRef(false)
+
+  // The phone's compass heading (0–359°, or null when unavailable), used to
+  // spin the "you are here, facing this way" arrow on the live marker.
+  const { heading, enableCompass } = useDeviceHeading()
 
   // The place currently being navigated. The user can switch between seed
   // venues and ones they create, or map a brand-new place. Everything below
@@ -148,10 +153,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   }, [])
 
   const useDemoLocation = useCallback(() => {
+    void enableCompass()
     setGpsStatus("active")
     setNavState((s) => ({ ...s, currentPosition: venue.center, positionAccuracy: 0 }))
     leafletMapRef.current?.flyTo([venue.center.lat, venue.center.lng], venue.defaultZoom)
-  }, [venue])
+  }, [venue, enableCompass])
 
   // Fetch a real street/footpath route for outdoor destinations and fold it in,
   // replacing the placeholder offline route. Aborts any earlier in-flight fetch.
@@ -212,8 +218,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   )
 
   const handleStartNavigation = useCallback(() => {
+    // Starting navigation is a user tap — the moment iOS will let us ask for
+    // compass access, so the heading arrow can light up for the walk.
+    void enableCompass()
     setNavState((s) => (s.route ? { ...s, isNavigating: true } : s))
-  }, [])
+  }, [enableCompass])
 
   // Advance through the route as the user moves. A step is "done" once they are
   // within a few metres of its target waypoint (or, for a lift step, once they
@@ -429,6 +438,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       <FloorPlanMap
         currentFloor={navState.currentFloor}
         currentPosition={navState.currentPosition}
+        heading={heading}
         destination={navState.destination}
         route={navState.route}
         isNavigating={navState.isNavigating}

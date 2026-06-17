@@ -101,6 +101,24 @@ html, body {
    Leaflet positions markers via transform, so easing transform follows it. */
 .wf-live-marker { transition: transform 0.9s ease-out; }
 
+/* Google-Maps-style heading beam fanning out from the live dot, pointing the
+   way the phone faces. A translucent wedge with its tip at the dot centre; it's
+   left fuzzy on purpose since the indoor compass is only approximate. The
+   parent inline `transform: rotate(...)` aims it; this draws the shape. */
+.wf-heading-cone {
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out, opacity 0.3s ease-out;
+  /* Wedge from the dot centre (50% 50%) up to the top edge. */
+  clip-path: polygon(50% 50%, 22% 4%, 78% 4%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 94, 184, 0.55) 0%,
+    rgba(0, 94, 184, 0.18) 55%,
+    rgba(0, 94, 184, 0) 100%
+  );
+}
+
 /* Energy flowing along the route toward the destination (marching dashes) */
 .wf-route-flow { animation: wf-flow 0.9s linear infinite; }
 @keyframes wf-flow { to { stroke-dashoffset: -26; } }
@@ -114,7 +132,7 @@ html, body {
 
 @media (prefers-reduced-motion: reduce) {
   .wf-locate-ring, .wf-locate-core, .wf-route-flow, .wf-dest-pin { animation: none; }
-  .wf-live-marker { transition: none; }
+  .wf-live-marker, .wf-heading-cone { transition: none; }
 }
 
 .camera-overlay {
