@@ -11,6 +11,9 @@ import { buildFloorSchematic } from "@/lib/schematic"
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
+  // Compass heading in degrees clockwise from north, or null when unknown. Drives
+  // the facing beam on the you-are-here dot so the user can orient themselves.
+  heading: number | null
   destination: Waypoint | null
   route: Route | null
   isNavigating: boolean
@@ -27,6 +30,7 @@ interface Props {
 export default function FloorPlanMap({
   currentFloor,
   currentPosition,
+  heading,
   destination,
   route,
   isNavigating,
@@ -254,7 +258,11 @@ export default function FloorPlanMap({
     }
 
     const icon = L.divIcon({
-      html: `<div style="position:relative;width:44px;height:44px;">
+      html: `<div style="position:relative;width:72px;height:72px;">
+        <div class="wf-heading-cone" style="
+          position:absolute;top:50%;left:50%;margin:-36px 0 0 -36px;
+          width:72px;height:72px;border-radius:50%;
+        "></div>
         <div class="wf-locate-ring" style="
           position:absolute;top:50%;left:50%;margin:-11px 0 0 -11px;
           width:22px;height:22px;border-radius:50%;
@@ -267,8 +275,8 @@ export default function FloorPlanMap({
           box-shadow:0 2px 8px rgba(0,94,184,0.6);
         "></div>
       </div>`,
-      iconSize: [44, 44],
-      iconAnchor: [22, 22],
+      iconSize: [72, 72],
+      iconAnchor: [36, 36],
       className: "",
     })
 
@@ -282,6 +290,21 @@ export default function FloorPlanMap({
       positionMarkerRef.current?.getElement()?.classList.add("wf-live-marker")
     })
   }, [currentPosition])
+
+  // Aim the facing beam at the live compass heading. Updated independently of the
+  // marker so the cone rotates smoothly without recreating the dot. Depends on
+  // currentPosition too, so it re-applies once the marker first exists.
+  useEffect(() => {
+    const el = positionMarkerRef.current?.getElement()
+    const cone = el?.querySelector(".wf-heading-cone") as HTMLElement | null
+    if (!cone) return
+    if (heading == null) {
+      cone.style.opacity = "0"
+      return
+    }
+    cone.style.opacity = "1"
+    cone.style.transform = `rotate(${heading}deg)`
+  }, [heading, currentPosition])
 
   // Draw the route path + destination pin. The line follows the route's actual
   // geometry (real street/footpath geometry outdoors, a connected multi-point

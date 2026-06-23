@@ -32,6 +32,13 @@ interface DetectedLocation {
   // stairwell marker). null when no floor is legible — we then fall back to the
   // floor the surveyor set on the in-camera stepper for that frame.
   floor: number | null
+  // Which side of the walking direction the place's door/sign sits on, as seen
+  // from the camera. Lets navigation say "on your right". null when unclear.
+  side: "left" | "right" | "ahead" | null
+  // A short, recognisable visual cue at the spot ("blue double doors",
+  // "yellow reception desk") so a walker can confirm they've found it. null when
+  // there's nothing distinctive to call out.
+  landmark: string | null
 }
 
 function sampleEvenly<T>(items: T[], max: number): { item: T; originalIndex: number }[] {
@@ -108,7 +115,11 @@ export async function POST(request: Request) {
       "For each location, return the frame index it is most clearly visible in. " +
       "Also set `floor` ONLY if the floor is legible from something in that frame — a lift floor display, a stairwell or " +
       "corridor level sign, or signage that states the level (e.g. 'Level 2', '2nd floor'). Map the ground floor to 0, " +
-      "'Level N'/'Floor N' to N, and a basement to a negative number. If no floor indicator is readable in the frame, set `floor` to null — do not guess it.",
+      "'Level N'/'Floor N' to N, and a basement to a negative number. If no floor indicator is readable in the frame, set `floor` to null — do not guess it. " +
+      "Set `side` to whether the place's door or sign is on the left, right, or straight ahead from the camera's point of view as it walks past; " +
+      "use null if it isn't clear. " +
+      "Set `landmark` to a short, concrete visual cue someone could use to recognise the spot (e.g. 'blue double doors', 'yellow reception desk', 'large red sign'); " +
+      "keep it under about 6 words, and use null if there's nothing distinctive.",
   })
 
   const schema = {
@@ -125,8 +136,10 @@ export async function POST(request: Request) {
             type: { type: "string", enum: WAYPOINT_TYPES },
             frameIndex: { type: "integer" },
             floor: { anyOf: [{ type: "integer" }, { type: "null" }] },
+            side: { anyOf: [{ type: "string", enum: ["left", "right", "ahead"] }, { type: "null" }] },
+            landmark: { anyOf: [{ type: "string" }, { type: "null" }] },
           },
-          required: ["name", "type", "frameIndex", "floor"],
+          required: ["name", "type", "frameIndex", "floor", "side", "landmark"],
         },
       },
     },
@@ -160,13 +173,20 @@ export async function POST(request: Request) {
         // Prefer a floor read from a sign in the footage; otherwise use the floor
         // the surveyor set on the stepper for that frame.
         const floor = typeof loc.floor === "number" ? loc.floor : frame.floor
+        // Surface the extra cues read from the footage as the waypoint's
+        // description, so they show up in search, the route preview and the
+        // navigating sheet — helping the walker confirm they've arrived.
+        const cues: string[] = []
+        if (loc.side === "left" || loc.side === "right") cues.push(`On your ${loc.side}`)
+        if (typeof loc.landmark === "string" && loc.landmark.trim()) cues.push(`Look for ${loc.landmark.trim()}`)
+        const description = cues.length > 0 ? cues.join(" · ") : "Detected by Survey Mode"
         return {
           id: `survey-ai-${Date.now()}-${i}`,
           name: loc.name.trim(),
           type,
           coordinates: frame.coordinates,
           floor,
-          description: "Detected by Survey Mode",
+          description,
         }
       })
 

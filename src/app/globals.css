@@ -101,6 +101,23 @@ html, body {
    Leaflet positions markers via transform, so easing transform follows it. */
 .wf-live-marker { transition: transform 0.9s ease-out; }
 
+/* Facing beam projected from the you-are-here dot. A wedge pointing "up" by
+   default (north); JS rotates it to the live compass heading so it shows which
+   way the user is looking. Hidden until a heading is available. */
+.wf-heading-cone {
+  opacity: 0;
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 0.3s ease, transform 0.25s ease-out;
+  background: conic-gradient(from -25deg at 50% 50%,
+    rgba(10, 132, 255, 0.45), rgba(10, 132, 255, 0) 50deg);
+  -webkit-mask: radial-gradient(circle at 50% 50%, #000 18%, rgba(0, 0, 0, 0.5) 55%, transparent 75%);
+  mask: radial-gradient(circle at 50% 50%, #000 18%, rgba(0, 0, 0, 0.5) 55%, transparent 75%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .wf-heading-cone { transition: opacity 0.3s ease; }
+}
+
 /* Energy flowing along the route toward the destination (marching dashes) */
 .wf-route-flow { animation: wf-flow 0.9s linear infinite; }
 @keyframes wf-flow { to { stroke-dashoffset: -26; } }

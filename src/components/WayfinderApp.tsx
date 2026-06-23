@@ -21,6 +21,7 @@ import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
 import VenuePicker from "@/components/VenuePicker"
 import AuthModal from "@/components/AuthModal"
+import { useDeviceHeading } from "@/lib/use-heading"
 import { useSupabaseSession } from "@/lib/supabase/use-session"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
@@ -51,6 +52,11 @@ const OFF_ROUTE_TRIGGER_M = 25
 export default function WayfinderApp({ initialMode = "navigate" }: { initialMode?: WayfinderMode }) {
   const leafletMapRef = useRef<MapHandle | null>(null)
   const gpsActiveRef = useRef(false)
+
+  // Live compass heading for the facing beam. The sensor is permission-gated on
+  // iOS and must be unlocked from a user gesture, so we call enableHeading() from
+  // taps (Start navigation, re-centre).
+  const { heading, enable: enableHeading } = useDeviceHeading()
 
   // The place currently being navigated. The user can switch between seed
   // venues and ones they create, or map a brand-new place. Everything below
@@ -212,8 +218,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   )
 
   const handleStartNavigation = useCallback(() => {
+    void enableHeading()
     setNavState((s) => (s.route ? { ...s, isNavigating: true } : s))
-  }, [])
+  }, [enableHeading])
 
   // Advance through the route as the user moves. A step is "done" once they are
   // within a few metres of its target waypoint (or, for a lift step, once they
@@ -429,6 +436,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       <FloorPlanMap
         currentFloor={navState.currentFloor}
         currentPosition={navState.currentPosition}
+        heading={heading}
         destination={navState.destination}
         route={navState.route}
         isNavigating={navState.isNavigating}
@@ -541,6 +549,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       {!navState.isNavigating && (
         <button
           onClick={() => {
+            void enableHeading()
             const pos = navState.currentPosition ?? venue.center
             leafletMapRef.current?.flyTo([pos.lat, pos.lng], venue.defaultZoom)
           }}
