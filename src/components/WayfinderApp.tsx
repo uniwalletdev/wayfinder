@@ -22,6 +22,7 @@ import SurveyModeComponent from "@/components/SurveyMode"
 import VenuePicker from "@/components/VenuePicker"
 import AuthModal from "@/components/AuthModal"
 import { useDeviceHeading } from "@/lib/use-heading"
+import { usePedestrianPosition } from "@/lib/use-pedestrian-position"
 import { useSupabaseSession } from "@/lib/supabase/use-session"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
@@ -57,6 +58,19 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // iOS and must be unlocked from a user gesture, so we call enableHeading() from
   // taps (Start navigation, re-centre).
   const { heading, enable: enableHeading } = useDeviceHeading()
+
+  // Indoor positioning. GPS, QR scans and the demo fix feed in as anchors;
+  // between fixes the position is carried forward by dead-reckoning (step count
+  // × compass heading), which is what makes the dot move indoors where GPS can't.
+  const { position: fusedPosition, accuracy: fusedAccuracy, setAnchor, enableMotion } =
+    usePedestrianPosition(heading)
+
+  // Both motion sensors are gesture-gated on iOS, so unlock them together from a
+  // tap (Start navigation, re-centre, Scan to locate me).
+  const enableSensors = useCallback(() => {
+    void enableHeading()
+    void enableMotion()
+  }, [enableHeading, enableMotion])
 
   // The place currently being navigated. The user can switch between seed
   // venues and ones they create, or map a brand-new place. Everything below
@@ -134,11 +148,13 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         const firstFix = !gpsActiveRef.current
         gpsActiveRef.current = true
         setGpsStatus("active")
-        setNavState((s) => ({
-          ...s,
-          currentPosition: { lat: pos.coords.latitude, lng: pos.coords.longitude },
-          positionAccuracy: pos.coords.accuracy,
-        }))
+        // Feed GPS in as an anchor; indoors it's ignored in favour of
+        // dead-reckoning, outdoors it (re-)anchors the estimate.
+        setAnchor({
+          position: { lat: pos.coords.latitude, lng: pos.coords.longitude },
+          accuracy: pos.coords.accuracy,
+          source: "gps",
+        })
         // Centre the map on the user the first time we get a real fix, so it works anywhere
         if (firstFix) {
           leafletMapRef.current?.flyTo([pos.coords.latitude, pos.coords.longitude], 18)
@@ -151,13 +167,26 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       { enableHighAccuracy: true, maximumAge: 5000, timeout: 12000 }
     )
     return () => navigator.geolocation.clearWatch(id)
-  }, [])
+  }, [setAnchor])
+
+  // Mirror the fused (dead-reckoned) estimate into navigation state, so the rest
+  // of the app — the map dot, off-route checks, step advance — reads one position.
+  useEffect(() => {
+    if (!fusedPosition) return
+    setNavState((s) =>
+      s.currentPosition?.lat === fusedPosition.lat &&
+      s.currentPosition?.lng === fusedPosition.lng &&
+      s.positionAccuracy === fusedAccuracy
+        ? s
+        : { ...s, currentPosition: fusedPosition, positionAccuracy: fusedAccuracy }
+    )
+  }, [fusedPosition, fusedAccuracy])
 
   const useDemoLocation = useCallback(() => {
     setGpsStatus("active")
-    setNavState((s) => ({ ...s, currentPosition: venue.center, positionAccuracy: 0 }))
+    setAnchor({ position: venue.center, accuracy: 0, source: "demo" })
     leafletMapRef.current?.flyTo([venue.center.lat, venue.center.lng], venue.defaultZoom)
-  }, [venue])
+  }, [venue, setAnchor])
 
   // Fetch a real street/footpath route for outdoor destinations and fold it in,
   // replacing the placeholder offline route. Aborts any earlier in-flight fetch.
@@ -218,9 +247,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   )
 
   const handleStartNavigation = useCallback(() => {
-    void enableHeading()
+    enableSensors()
     setNavState((s) => (s.route ? { ...s, isNavigating: true } : s))
-  }, [enableHeading])
+  }, [enableSensors])
 
   // Advance through the route as the user moves. A step is "done" once they are
   // within a few metres of its target waypoint (or, for a lift step, once they
@@ -297,15 +326,16 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       const lngIdx = parts.indexOf("lng")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
         setGpsStatus("active")
-        setNavState((s) => ({
-          ...s,
-          currentFloor: parseInt(parts[floorIdx + 1]),
-          currentPosition: { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) },
-          positionAccuracy: 1,
-        }))
+        setNavState((s) => ({ ...s, currentFloor: parseInt(parts[floorIdx + 1]) }))
+        // An exact known fix — re-anchor dead-reckoning here and clear drift.
+        setAnchor({
+          position: { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) },
+          accuracy: 1,
+          source: "qr",
+        })
       }
     } catch {}
-  }, [])
+  }, [setAnchor])
 
   const handleSurveyComplete = useCallback(async (result: SurveyResult) => {
     setOverlay("none")
@@ -549,7 +579,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       {!navState.isNavigating && (
         <button
           onClick={() => {
-            void enableHeading()
+            enableSensors()
             const pos = navState.currentPosition ?? venue.center
             leafletMapRef.current?.flyTo([pos.lat, pos.lng], venue.defaultZoom)
           }}
@@ -571,7 +601,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         onStartNavigation={handleStartNavigation}
         onStopNavigation={handleStopNavigation}
         onOpenCamera={() => setOverlay("live-camera")}
-        onScanQR={() => setOverlay("qr")}
+        onScanQR={() => { enableSensors(); setOverlay("qr") }}
         onOpenSearch={() => setOverlay("search")}
         expanded={bottomSheetExpanded}
         onToggleExpand={() => setBottomSheetExpanded((v) => !v)}

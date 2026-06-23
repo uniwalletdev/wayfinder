@@ -11,6 +11,10 @@ export interface Waypoint {
   floor: number
   description?: string
   qrCode?: string
+  // Which side of the walking direction the place sits on, as read from the
+  // survey footage. Drives which side of the corridor its room is drawn on in
+  // the generated floor schematic. Absent when unknown.
+  side?: "left" | "right" | "ahead"
 }
 
 export type WaypointType =

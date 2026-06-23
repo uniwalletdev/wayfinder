@@ -181,9 +181,19 @@ export function buildFloorSchematic(
     }
 
     const n = leftNormal(nearest.dir)
-    // Which side of the corridor the point is on; default left when on the line.
-    const sideDot = sub(p, nearest.point).x * n.x + sub(p, nearest.point).y * n.y
-    const side = sideDot < -0.05 ? -1 : 1
+    // `nearest.dir` runs in the surveyor's walking direction, so the side read
+    // from the footage (the walker's own left/right) maps straight onto it.
+    // When the footage didn't resolve a side, fall back to which side of the
+    // corridor the point already leans toward (defaulting left when on the line).
+    let side: number
+    if (w.side === "left") {
+      side = 1
+    } else if (w.side === "right") {
+      side = -1
+    } else {
+      const sideDot = sub(p, nearest.point).x * n.x + sub(p, nearest.point).y * n.y
+      side = sideDot < -0.05 ? -1 : 1
+    }
 
     const [rw, rh] = ROOM_SIZE[w.type] ?? ROOM_SIZE.other
     const offset = CORRIDOR_HALF_WIDTH + CORRIDOR_GAP + rh / 2

@@ -180,6 +180,7 @@ export async function POST(request: Request) {
         if (loc.side === "left" || loc.side === "right") cues.push(`On your ${loc.side}`)
         if (typeof loc.landmark === "string" && loc.landmark.trim()) cues.push(`Look for ${loc.landmark.trim()}`)
         const description = cues.length > 0 ? cues.join(" · ") : "Detected by Survey Mode"
+        const side = loc.side === "left" || loc.side === "right" || loc.side === "ahead" ? loc.side : undefined
         return {
           id: `survey-ai-${Date.now()}-${i}`,
           name: loc.name.trim(),
@@ -187,6 +188,7 @@ export async function POST(request: Request) {
           coordinates: frame.coordinates,
           floor,
           description,
+          side,
         }
       })
 
