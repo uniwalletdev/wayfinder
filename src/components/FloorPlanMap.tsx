@@ -41,7 +41,7 @@ export default function FloorPlanMap({
   const mapRef = useRef<L.Map | null>(null)
   const positionMarkerRef = useRef<L.Marker | null>(null)
   const destMarkerRef = useRef<L.Marker | null>(null)
-  const routeLayerRef = useRef<L.Polyline | null>(null)
+  const routeLayerRef = useRef<L.FeatureGroup | null>(null)
   const floorPlanLayerRef = useRef<L.ImageOverlay | null>(null)
   const waypointLayersRef = useRef<L.Marker[]>([])
   const trailLayersRef = useRef<L.Polyline[]>([])
@@ -307,17 +307,36 @@ export default function FloorPlanMap({
     }
 
     const pts = route.geometry.map((p) => [p.lat, p.lng] as L.LatLngExpression)
-    const polyline = L.polyline(pts, {
-      color: "#00BFFF",
-      weight: 6,
-      opacity: 0.9,
+    // A real-navigation style line: a white halo (casing) under a bold solid
+    // blue core, with a thin animated dashed overlay marching toward the
+    // destination. The previous "1, 12" dotted line read as faint specks on the
+    // map; this stays legible at every zoom and clearly shows direction of travel.
+    const casing = L.polyline(pts, {
+      color: "#FFFFFF",
+      weight: 11,
+      opacity: 0.95,
       lineCap: "round",
       lineJoin: "round",
-      dashArray: "1, 12",
+    })
+    const core = L.polyline(pts, {
+      color: "#0A84FF",
+      weight: 7,
+      opacity: 1,
+      lineCap: "round",
+      lineJoin: "round",
+    })
+    const flow = L.polyline(pts, {
+      color: "#FFFFFF",
+      weight: 3,
+      opacity: 0.85,
+      lineCap: "round",
+      lineJoin: "round",
+      dashArray: "2, 14",
       className: "wf-route-flow",
     })
-    polyline.addTo(map)
-    routeLayerRef.current = polyline
+    const group = L.featureGroup([casing, core, flow])
+    group.addTo(map)
+    routeLayerRef.current = group
 
     const destIcon = L.divIcon({
       // Outer wrapper carries the bob animation; inner teardrop keeps the
@@ -341,7 +360,7 @@ export default function FloorPlanMap({
 
     const frame = () => {
       programmaticRef.current = true
-      map.fitBounds(polyline.getBounds(), { padding: [70, 70] })
+      map.fitBounds(group.getBounds(), { padding: [70, 70] })
       map.once("moveend", () => {
         programmaticRef.current = false
       })
@@ -360,12 +379,23 @@ export default function FloorPlanMap({
   }, [isNavigating, route, destination])
 
   // Follow the walker while navigating: gently keep their dot centred as new
-  // position fixes arrive (unless they've panned away to explore).
+  // position fixes arrive (unless they've panned away to explore). We use
+  // setView at a close zoom so that, after the initial whole-route overview, the
+  // map zooms back in to a level where the floor plan and the next turn are
+  // actually readable — rather than leaving the building as a tiny box.
   useEffect(() => {
     if (!mapRef.current || !isNavigating || !currentPosition) return
     if (!followingRef.current) return
-    mapRef.current.panTo([currentPosition.lat, currentPosition.lng], { animate: true, duration: 0.8 })
-  }, [currentPosition, isNavigating])
+    const map = mapRef.current
+    programmaticRef.current = true
+    map.setView([currentPosition.lat, currentPosition.lng], Math.max(map.getZoom(), defaultZoom), {
+      animate: true,
+      duration: 0.8,
+    })
+    map.once("moveend", () => {
+      programmaticRef.current = false
+    })
+  }, [currentPosition, isNavigating, defaultZoom])
 
   const recenter = () => {
     const pos = positionRef.current
