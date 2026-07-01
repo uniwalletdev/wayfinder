@@ -23,14 +23,18 @@ import VenuePicker from "@/components/VenuePicker"
 import AuthModal from "@/components/AuthModal"
 import { useDeviceHeading } from "@/lib/use-heading"
 import { usePedestrianPosition } from "@/lib/use-pedestrian-position"
+import { useArSupport } from "@/lib/use-ar-support"
 import { useSupabaseSession } from "@/lib/supabase/use-session"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
 import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, ChevronDown } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
+// WebXR + three.js: only ever loaded in the browser, and only when the device
+// actually supports immersive AR.
+const ArNavView = dynamic(() => import("@/components/ArNavView"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "survey" | "venues" | "auth"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "ar-camera" | "survey" | "venues" | "auth"
 type GpsStatus = "requesting" | "active" | "denied"
 
 // Minimal interface — avoids importing Leaflet types on the server
@@ -86,6 +90,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // public/private rules are enforced server-side by Row-Level Security.
   const { user, cloudEnabled } = useSupabaseSession()
   const cloud = cloudEnabled && !!user
+
+  // Whether this phone can run immersive WebXR AR (native SLAM). Decides whether
+  // "Live camera" opens the floor-anchored AR view or the compass overlay.
+  const arSupported = useArSupport()
   const isSeedVenue = (id: string) => SEED_VENUES.some((s) => s.id === id)
 
   const [navState, setNavState] = useState<NavigationState>({
@@ -600,7 +608,13 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         onTravelModeChange={handleTravelModeChange}
         onStartNavigation={handleStartNavigation}
         onStopNavigation={handleStopNavigation}
-        onOpenCamera={() => { enableSensors(); setOverlay("live-camera") }}
+        onOpenCamera={() => {
+          enableSensors()
+          // Prefer floor-anchored immersive AR when the device supports it and we
+          // have a route to draw; otherwise the compass overlay (which also
+          // prompts to pick a destination when there isn't one yet).
+          setOverlay(arSupported && navState.route && navState.destination ? "ar-camera" : "live-camera")
+        }}
         onScanQR={() => { enableSensors(); setOverlay("qr") }}
         onOpenSearch={() => setOverlay("search")}
         expanded={bottomSheetExpanded}
@@ -654,9 +668,30 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
                   destination: navState.destination,
                   onPickDestination: () => setOverlay("search"),
                   onScanQR: () => { enableSensors(); setOverlay("qr") },
+                  // Offer the floor-anchored view only when the device can run it
+                  // and there's a route to anchor.
+                  onStartAr:
+                    arSupported && navState.route && navState.destination
+                      ? () => setOverlay("ar-camera")
+                      : undefined,
                 }
               : undefined
           }
+        />
+      )}
+
+      {overlay === "ar-camera" && navState.route && navState.destination && (
+        <ArNavView
+          position={navState.currentPosition}
+          heading={heading}
+          route={navState.route}
+          currentStep={currentStep}
+          destination={navState.destination}
+          onExit={() => setOverlay("none")}
+          onScanQR={() => { enableSensors(); setOverlay("qr") }}
+          // If the session can't start, drop to the compass overlay so the user
+          // still gets guidance instead of a dead screen.
+          onFallback={() => setOverlay("live-camera")}
         />
       )}
 

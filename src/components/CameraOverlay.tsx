@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import jsQR from "jsqr"
-import { X, QrCode, Search, Compass, ArrowUp, RotateCw, CheckCircle2, MapPin } from "lucide-react"
+import { X, QrCode, Search, Compass, ArrowUp, RotateCw, CheckCircle2, MapPin, Sparkles } from "lucide-react"
 import type { Coordinates, Route, RouteStep, Waypoint } from "@/lib/types"
 import { distanceMeters, bearingBetween } from "@/lib/routing"
 import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
@@ -22,6 +22,9 @@ interface LiveNav {
   // is picked), and hop to the QR scanner to re-fix an exact position.
   onPickDestination: () => void
   onScanQR: () => void
+  // Present only when the device supports immersive AR and a route exists: lets
+  // the user upgrade from the flat compass overlay to the floor-anchored view.
+  onStartAr?: () => void
 }
 
 interface Props {
@@ -263,6 +266,19 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
           </div>
         </div>
       </div>
+
+      {/* Upgrade to floor-anchored immersive AR, when the device supports it. */}
+      {nav.onStartAr && (
+        <div className="absolute top-32 left-0 right-0 px-4 flex justify-center">
+          <button
+            onClick={nav.onStartAr}
+            className="flex items-center gap-2 bg-white/90 text-[#005EB8] rounded-full pl-3 pr-4 py-1.5 text-xs font-bold shadow-lg"
+          >
+            <Sparkles size={14} />
+            Try immersive AR
+          </button>
+        </div>
+      )}
 
       {/* Centre: the AR cue */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
