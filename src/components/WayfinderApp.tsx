@@ -600,7 +600,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         onTravelModeChange={handleTravelModeChange}
         onStartNavigation={handleStartNavigation}
         onStopNavigation={handleStopNavigation}
-        onOpenCamera={() => setOverlay("live-camera")}
+        onOpenCamera={() => { enableSensors(); setOverlay("live-camera") }}
         onScanQR={() => { enableSensors(); setOverlay("qr") }}
         onOpenSearch={() => setOverlay("search")}
         expanded={bottomSheetExpanded}
@@ -643,7 +643,20 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           mode={overlay === "qr" ? "qr" : "live"}
           onQRDetected={handleQRDetected}
           onClose={() => setOverlay("none")}
-          onFrameCapture={overlay === "live-camera" ? () => {} : undefined}
+          nav={
+            overlay === "live-camera"
+              ? {
+                  position: navState.currentPosition,
+                  heading,
+                  route: navState.route,
+                  currentStep,
+                  stepIndex: navState.currentStepIndex,
+                  destination: navState.destination,
+                  onPickDestination: () => setOverlay("search"),
+                  onScanQR: () => { enableSensors(); setOverlay("qr") },
+                }
+              : undefined
+          }
         />
       )}
 
