@@ -1,4 +1,4 @@
-import { Venue, Waypoint, SurveyTrail } from "./types"
+import { Venue, Waypoint, SurveyTrail, FloorPlan } from "./types"
 
 // Client-side persistence for venues the user creates and the places they map
 // inside them. Everything lives in localStorage for now — a later phase moves
@@ -10,11 +10,13 @@ import { Venue, Waypoint, SurveyTrail } from "./types"
 //   wayfinder.activeVenueId              -> string         (last selected venue)
 //   wayfinder.venue.<id>.waypoints       -> Waypoint[]     (points mapped in venue)
 //   wayfinder.venue.<id>.trails          -> SurveyTrail[]  (walked breadcrumbs)
+//   wayfinder.venue.<id>.floorPlans      -> FloorPlan[]    (uploaded plan images)
 
 const VENUES_KEY = "wayfinder.userVenues"
 const ACTIVE_KEY = "wayfinder.activeVenueId"
 const wpKey = (venueId: string) => `wayfinder.venue.${venueId}.waypoints`
 const trailKey = (venueId: string) => `wayfinder.venue.${venueId}.trails`
+const floorPlanKey = (venueId: string) => `wayfinder.venue.${venueId}.floorPlans`
 
 // Pre-multi-venue keys. Anything saved under these belonged to the single
 // hard-coded venue, so we fold them into it the first time we load.
@@ -87,6 +89,15 @@ export function saveVenueTrails(venueId: string, trails: SurveyTrail[]): void {
   writeJSON(trailKey(venueId), trails)
 }
 
+export function loadVenueFloorPlans(venueId: string): FloorPlan[] {
+  const v = readJSON<FloorPlan[]>(floorPlanKey(venueId), [])
+  return Array.isArray(v) ? v : []
+}
+
+export function saveVenueFloorPlans(venueId: string, floorPlans: FloorPlan[]): void {
+  writeJSON(floorPlanKey(venueId), floorPlans)
+}
+
 // One-time migration: move any pre-multi-venue custom waypoints/trails onto the
 // default venue, then clear the legacy keys so this is a no-op afterwards.
 export function migrateLegacyData(defaultVenueId: string): void {
@@ -116,6 +127,7 @@ export function deleteUserVenue(venueId: string): void {
     saveUserVenues(remaining)
     window.localStorage.removeItem(wpKey(venueId))
     window.localStorage.removeItem(trailKey(venueId))
+    window.localStorage.removeItem(floorPlanKey(venueId))
   } catch {
     // ignore
   }

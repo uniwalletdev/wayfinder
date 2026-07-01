@@ -151,6 +151,28 @@ export async function addRemoteWaypoints(venueId: string, waypoints: Waypoint[])
   return ((data ?? []) as WaypointRow[]).map(rowToWaypoint)
 }
 
+// Persist an uploaded plan image onto the venue's floor_plans column. Like the
+// rest of the venue row (see venues_update policy), only the owner can write
+// this — an editor's upload still shows on their own device via local state,
+// it just won't sync back to the venue for others until the owner re-saves it.
+// Read-then-write, not atomic: two uploads to the same venue landing at the
+// same moment can race and one can clobber the other's entry. Acceptable for
+// how rarely a venue gets two plans uploaded within the same instant; a
+// Postgres function doing the append server-side would close this properly.
+export async function addRemoteFloorPlan(venueId: string, floorPlan: FloorPlan): Promise<void> {
+  const sb = client()
+  const { data, error: fetchErr } = await sb.from("venues").select("floor_plans").eq("id", venueId).single()
+  if (fetchErr) throw fetchErr
+  const current: FloorPlan[] = Array.isArray((data as { floor_plans: FloorPlan[] | null })?.floor_plans)
+    ? (data as { floor_plans: FloorPlan[] }).floor_plans
+    : []
+  const { error } = await sb
+    .from("venues")
+    .update({ floor_plans: [...current, floorPlan] })
+    .eq("id", venueId)
+  if (error) throw error
+}
+
 export async function deleteRemoteVenue(venueId: string): Promise<void> {
   const sb = client()
   const { error } = await sb.from("venues").delete().eq("id", venueId)

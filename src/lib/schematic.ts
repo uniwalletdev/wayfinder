@@ -53,7 +53,9 @@ interface Vec {
   y: number // metres north
 }
 
-const M_PER_LAT = 111320
+// Metres per degree of latitude — near-constant across the Earth's surface,
+// shared with the plan-upload georeferencer (see plan-georeference.ts).
+export const M_PER_LAT = 111320
 
 function project(ref: Coordinates) {
   const mPerLng = M_PER_LAT * Math.cos((ref.lat * Math.PI) / 180)

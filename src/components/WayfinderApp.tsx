@@ -2,17 +2,19 @@
 
 import dynamic from "next/dynamic"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue } from "@/lib/types"
+import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan } from "@/lib/types"
 import { getAvailableFloors } from "@/lib/waypoint-meta"
 import { DEFAULT_VENUE, SEED_VENUES, getVenueById, createVenue, type NewVenueInput } from "@/lib/venues"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
   loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
+  loadVenueFloorPlans, saveVenueFloorPlans,
   migrateLegacyData, deleteUserVenue,
 } from "@/lib/venue-store"
 import { buildRoute, distanceMeters, distanceToPath, fetchOutdoorRoute, shouldRouteOutdoors } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
+import type { UploadPlanResult } from "@/components/UploadPlanMode"
 import TopInstructionBar from "@/components/TopInstructionBar"
 import BottomSheet from "@/components/BottomSheet"
 import FloorSelector from "@/components/FloorSelector"
@@ -26,15 +28,18 @@ import { usePedestrianPosition } from "@/lib/use-pedestrian-position"
 import { useArSupport } from "@/lib/use-ar-support"
 import { useSupabaseSession } from "@/lib/supabase/use-session"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
-import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
-import { Layers, Navigation, ClipboardList, Search, MapPin, AlertCircle, ChevronDown } from "lucide-react"
+import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, addRemoteFloorPlan, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
+import { Layers, Navigation, ClipboardList, UploadCloud, Search, MapPin, AlertCircle, ChevronDown } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 // WebXR + three.js: only ever loaded in the browser, and only when the device
 // actually supports immersive AR.
 const ArNavView = dynamic(() => import("@/components/ArNavView"), { ssr: false })
+// Statically imports Leaflet for the georeferencing mini-map, so — like
+// FloorPlanMap — it must never be pulled into the server bundle.
+const UploadPlanMode = dynamic(() => import("@/components/UploadPlanMode"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "ar-camera" | "survey" | "venues" | "auth"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "ar-camera" | "survey" | "upload-plan" | "venues" | "auth"
 type GpsStatus = "requesting" | "active" | "denied"
 
 // Minimal interface — avoids importing Leaflet types on the server
@@ -114,11 +119,12 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
   const [customWaypoints, setCustomWaypoints] = useState<Waypoint[]>([])
   const [surveyTrails, setSurveyTrails] = useState<SurveyTrail[]>([])
+  const [customFloorPlans, setCustomFloorPlans] = useState<FloorPlan[]>([])
 
   // On first load, fold any pre-multi-venue data into the default venue, restore
   // the user's saved venues and which one they last had open, and load the
-  // points/trails mapped inside it. Switching venues afterwards reloads data in
-  // the handler (goToVenue), so this stays a one-time hydration on mount.
+  // points/trails/plans mapped inside it. Switching venues afterwards reloads
+  // data in the handler (goToVenue), so this stays a one-time hydration on mount.
   useEffect(() => {
     migrateLegacyData(DEFAULT_VENUE.id)
     const restored = loadUserVenues()
@@ -128,6 +134,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setActiveVenueId(startId)
     setCustomWaypoints(loadVenueWaypoints(startId))
     setSurveyTrails(loadVenueTrails(startId))
+    setCustomFloorPlans(loadVenueFloorPlans(startId))
   }, [])
 
   // When signed in, the backend is the source of truth for the user's venues:
@@ -144,7 +151,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   }, [cloud])
 
   const allWaypoints = useMemo(() => [...venue.waypoints, ...customWaypoints], [venue, customWaypoints])
-  const availableFloors = useMemo(() => getAvailableFloors(venue.floorPlans, allWaypoints), [venue, allWaypoints])
+  // Plans uploaded via "Upload plan" layer onto whatever the venue already
+  // ships with (seed venues' hand-drawn plans, or ones a cloud venue already
+  // persisted), the same way customWaypoints layers onto venue.waypoints.
+  const allFloorPlans = useMemo(() => [...venue.floorPlans, ...customFloorPlans], [venue, customFloorPlans])
+  const availableFloors = useMemo(() => getAvailableFloors(allFloorPlans, allWaypoints), [allFloorPlans, allWaypoints])
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -401,6 +412,59 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     alert(message)
   }, [cloud, activeVenueId])
 
+  // Mirrors handleSurveyComplete above for plans uploaded via UploadPlanMode:
+  // any detected waypoints/corridors are persisted exactly the same way, plus
+  // the plan image itself is saved so it renders as the floor's map layer.
+  const handleUploadComplete = useCallback(async (result: UploadPlanResult) => {
+    setOverlay("none")
+    if (result.waypoints.length > 0) {
+      if (cloud && !isSeedVenue(activeVenueId)) {
+        try {
+          const saved = await addRemoteWaypoints(activeVenueId, result.waypoints)
+          setCustomWaypoints((prev) => [...prev, ...saved])
+        } catch (e) {
+          console.warn("Could not sync points to the server:", e)
+          setCustomWaypoints((prev) => [...prev, ...result.waypoints])
+        }
+      } else {
+        setCustomWaypoints((prev) => {
+          const next = [...prev, ...result.waypoints]
+          saveVenueWaypoints(activeVenueId, next)
+          return next
+        })
+      }
+    }
+    if (result.trails.length > 0) {
+      setSurveyTrails((prev) => {
+        const next = [...prev, ...result.trails]
+        saveVenueTrails(activeVenueId, next)
+        return next
+      })
+    }
+    if (result.floorPlan) {
+      const plan = result.floorPlan
+      if (cloud && !isSeedVenue(activeVenueId)) {
+        try {
+          await addRemoteFloorPlan(activeVenueId, plan)
+        } catch (e) {
+          console.warn("Could not sync the plan image to the server:", e)
+        }
+        setCustomFloorPlans((prev) => [...prev, plan])
+      } else {
+        setCustomFloorPlans((prev) => {
+          const next = [...prev, plan]
+          saveVenueFloorPlans(activeVenueId, next)
+          return next
+        })
+      }
+    }
+
+    const parts: string[] = []
+    if (result.waypoints.length > 0) parts.push(`${result.waypoints.length} location${result.waypoints.length !== 1 ? "s" : ""}`)
+    if (result.floorPlan) parts.push("the plan image")
+    alert(parts.length > 0 ? `Upload complete — ${parts.join(" and ")} added to the map.` : "Upload complete, but nothing usable was found on the plan.")
+  }, [cloud, activeVenueId])
+
   // Switching place clears the current route and re-centres on the new venue, so
   // navigation state never leaks across venues.
   const goToVenue = useCallback((v: Venue) => {
@@ -408,6 +472,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     saveActiveVenueId(v.id)
     setCustomWaypoints(loadVenueWaypoints(v.id))
     setSurveyTrails(loadVenueTrails(v.id))
+    setCustomFloorPlans(loadVenueFloorPlans(v.id))
     setOverlay("none")
     setNavState((s) => ({ ...s, currentFloor: 0, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
     leafletMapRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
@@ -480,7 +545,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         isNavigating={navState.isNavigating}
         center={venue.center}
         defaultZoom={venue.defaultZoom}
-        floorPlans={venue.floorPlans}
+        floorPlans={allFloorPlans}
         waypoints={allWaypoints}
         trails={surveyTrails}
         onMapReady={() => {}}
@@ -569,17 +634,27 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         </span>
       </div>
 
-      {/* Survey / self-map FAB — only in Map mode, so the Navigate screen stays
+      {/* Survey / self-map FABs — only in Map mode, so the Navigate screen stays
           navigation-only. Mapping lives under /map (and is opened on entry there). */}
       {!navState.isNavigating && initialMode === "map" && (
-        <button
-          onClick={() => setOverlay("survey")}
-          className="absolute left-3 bottom-52 z-50 h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
-          title="Survey Mode — map an area yourself"
-        >
-          <ClipboardList size={20} />
-          Map area
-        </button>
+        <div className="absolute left-3 bottom-52 z-50 flex flex-col items-start gap-2">
+          <button
+            onClick={() => setOverlay("survey")}
+            className="h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
+            title="Survey Mode — map an area yourself"
+          >
+            <ClipboardList size={20} />
+            Map area
+          </button>
+          <button
+            onClick={() => setOverlay("upload-plan")}
+            className="h-12 px-4 bg-white text-[#005EB8] border border-[#005EB8] rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
+            title="Upload an existing floor plan"
+          >
+            <UploadCloud size={20} />
+            Upload plan
+          </button>
+        </div>
       )}
 
       {/* Recenter FAB — hidden while navigating, where the follow-aware
@@ -703,6 +778,16 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           venueName={venue.subtitle ?? venue.name}
           onClose={() => setOverlay("none")}
           onSurveyComplete={handleSurveyComplete}
+        />
+      )}
+
+      {overlay === "upload-plan" && (
+        <UploadPlanMode
+          currentFloor={navState.currentFloor}
+          venueCenter={venue.center}
+          venueName={venue.subtitle ?? venue.name}
+          onClose={() => setOverlay("none")}
+          onUploadComplete={handleUploadComplete}
         />
       )}
     </div>
