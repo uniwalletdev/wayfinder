@@ -1,6 +1,8 @@
 "use client"
 
 import dynamic from "next/dynamic"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan } from "@/lib/types"
 import { getAvailableFloors } from "@/lib/waypoint-meta"
@@ -29,7 +31,7 @@ import { useArSupport } from "@/lib/use-ar-support"
 import { useSupabaseSession } from "@/lib/supabase/use-session"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, addRemoteFloorPlan, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
-import { Layers, Navigation, ClipboardList, UploadCloud, Search, MapPin, AlertCircle, ChevronDown } from "lucide-react"
+import { Layers, Navigation, ClipboardList, UploadCloud, Search, MapPin, AlertCircle, ChevronDown, Home } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 // WebXR + three.js: only ever loaded in the browser, and only when the device
@@ -60,6 +62,7 @@ export type WayfinderMode = "navigate" | "map"
 const OFF_ROUTE_TRIGGER_M = 25
 
 export default function WayfinderApp({ initialMode = "navigate" }: { initialMode?: WayfinderMode }) {
+  const router = useRouter()
   const leafletMapRef = useRef<MapHandle | null>(null)
   const gpsActiveRef = useRef(false)
 
@@ -483,6 +486,13 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     if (v) goToVenue(v)
   }, [userVenues, goToVenue])
 
+  // Mapping tools (Survey Mode, Upload plan) only ever show on the /map screen,
+  // so a venue created while browsing /navigate needs to hand off there —
+  // otherwise "Tap Map area" below would point at a button that isn't on screen.
+  const goMapNewVenue = useCallback(() => {
+    if (initialMode !== "map") router.push("/map")
+  }, [initialMode, router])
+
   const handleCreateVenue = useCallback(async (input: NewVenueInput) => {
     if (cloud) {
       // Stored server-side; the DB forces verified=false so a public place can't
@@ -491,6 +501,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         const v = await createRemoteVenue(input)
         setUserVenues((prev) => [...prev, v])
         goToVenue(v)
+        goMapNewVenue()
         alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
       } catch (e) {
         alert(`Couldn't create the place on the server: ${e instanceof Error ? e.message : "error"}`)
@@ -504,8 +515,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       return next
     })
     goToVenue(v)
+    goMapNewVenue()
     alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
-  }, [cloud, goToVenue])
+  }, [cloud, goToVenue, goMapNewVenue])
 
   const handleDeleteVenue = useCallback(async (id: string) => {
     if (cloud && !isSeedVenue(id)) {
@@ -557,14 +569,24 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         <div className="absolute top-0 left-0 right-0 z-50">
           {/* Venue selector + search bar */}
           <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
-            <button
-              onClick={() => setOverlay("venues")}
-              className="flex items-center gap-1.5 mb-2 max-w-full text-white"
-            >
-              <MapPin size={14} className="flex-shrink-0 opacity-90" />
-              <span className="text-sm font-semibold truncate">{venue.name}</span>
-              <ChevronDown size={16} className="flex-shrink-0 opacity-90" />
-            </button>
+            <div className="flex items-center justify-between gap-2 mb-2">
+              <button
+                onClick={() => setOverlay("venues")}
+                className="flex items-center gap-1.5 min-w-0 text-white"
+              >
+                <MapPin size={14} className="flex-shrink-0 opacity-90" />
+                <span className="text-sm font-semibold truncate">{venue.name}</span>
+                <ChevronDown size={16} className="flex-shrink-0 opacity-90" />
+              </button>
+              <Link
+                href="/"
+                className="flex-shrink-0 text-white/90 bg-white/10 rounded-full p-2 active:bg-white/20"
+                aria-label="Back to home — choose Navigate or Map"
+                title="Back to home"
+              >
+                <Home size={18} />
+              </Link>
+            </div>
             <button
               onClick={() => setOverlay("search")}
               className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
