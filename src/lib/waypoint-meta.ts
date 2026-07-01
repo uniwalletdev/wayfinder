@@ -1,8 +1,13 @@
-import { Waypoint, FloorPlan } from "./types"
+import { Waypoint, FloorPlan, WaypointType } from "./types"
 
 // Generic, venue-agnostic presentation helpers for waypoints and floors. These
 // used to live in `gosh-data.ts`, hard-wired to a single hospital; they are now
 // shared by every venue so any mapped place can render the same way.
+
+export const ALL_WAYPOINT_TYPES: WaypointType[] = [
+  "ward", "department", "lift", "stairs", "toilet",
+  "exit", "reception", "canteen", "pharmacy", "other",
+]
 
 export const WAYPOINT_TYPE_ICONS: Record<string, string> = {
   ward: "🏥",

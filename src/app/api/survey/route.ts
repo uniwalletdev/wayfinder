@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk"
 import { WaypointType } from "@/lib/types"
+import { ALL_WAYPOINT_TYPES } from "@/lib/waypoint-meta"
 
 // Survey Mode posts the frames it captured here. We run them through Claude's
 // vision model to read on-camera signage (ward names, "Lift", "Toilets", door
@@ -9,11 +10,6 @@ import { WaypointType } from "@/lib/types"
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 export const maxDuration = 60
-
-const WAYPOINT_TYPES: WaypointType[] = [
-  "ward", "department", "lift", "stairs", "toilet",
-  "exit", "reception", "canteen", "pharmacy", "other",
-]
 
 // Cap how many frames we send to bound latency/cost. Sample evenly across the walk.
 const MAX_FRAMES = 8
@@ -133,7 +129,7 @@ export async function POST(request: Request) {
           additionalProperties: false,
           properties: {
             name: { type: "string" },
-            type: { type: "string", enum: WAYPOINT_TYPES },
+            type: { type: "string", enum: ALL_WAYPOINT_TYPES },
             frameIndex: { type: "integer" },
             floor: { anyOf: [{ type: "integer" }, { type: "null" }] },
             side: { anyOf: [{ type: "string", enum: ["left", "right", "ahead"] }, { type: "null" }] },
@@ -169,7 +165,7 @@ export async function POST(request: Request) {
       .filter((loc) => loc.name?.trim() && frames[loc.frameIndex])
       .map((loc, i) => {
         const frame = frames[loc.frameIndex]
-        const type: WaypointType = WAYPOINT_TYPES.includes(loc.type) ? loc.type : "other"
+        const type: WaypointType = ALL_WAYPOINT_TYPES.includes(loc.type) ? loc.type : "other"
         // Prefer a floor read from a sign in the footage; otherwise use the floor
         // the surveyor set on the stepper for that frame.
         const floor = typeof loc.floor === "number" ? loc.floor : frame.floor
