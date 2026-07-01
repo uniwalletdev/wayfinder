@@ -57,13 +57,20 @@ export function distanceToPath(p: Coordinates, path: Coordinates[]): number {
   return best
 }
 
-function bearing(a: Coordinates, b: Coordinates): number {
+// Initial great-circle bearing from a→b, in degrees clockwise from north
+// (0 = north, 90 = east). Exported for the live AR camera, which points its
+// arrow at the next waypoint relative to the device's compass heading.
+export function bearingBetween(a: Coordinates, b: Coordinates): number {
   const dLng = ((b.lng - a.lng) * Math.PI) / 180
   const lat1 = (a.lat * Math.PI) / 180
   const lat2 = (b.lat * Math.PI) / 180
   const y = Math.sin(dLng) * Math.cos(lat2)
   const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng)
   return ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360
+}
+
+function bearing(a: Coordinates, b: Coordinates): number {
+  return bearingBetween(a, b)
 }
 
 function headingToInstruction(deg: number): string {
