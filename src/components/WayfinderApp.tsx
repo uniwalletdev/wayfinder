@@ -31,9 +31,12 @@ import { useArSupport } from "@/lib/use-ar-support"
 import { useSupabaseSession } from "@/lib/supabase/use-session"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, addRemoteFloorPlan, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
-import { Layers, Navigation, ClipboardList, UploadCloud, Search, MapPin, AlertCircle, ChevronDown, Home } from "lucide-react"
+import { Layers, Navigation, ClipboardList, UploadCloud, Search, MapPin, AlertCircle, ChevronDown, Home, Box, Map as MapIcon } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
+// The 3D half of the map's 2D/3D toggle. three.js is browser-only, and the
+// chunk loads lazily the first time the user switches to 3D.
+const Map3DView = dynamic(() => import("@/components/Map3DView"), { ssr: false })
 // WebXR + three.js: only ever loaded in the browser, and only when the device
 // actually supports immersive AR.
 const ArNavView = dynamic(() => import("@/components/ArNavView"), { ssr: false })
@@ -44,10 +47,15 @@ const UploadPlanMode = dynamic(() => import("@/components/UploadPlanMode"), { ss
 type OverlayMode = "none" | "search" | "qr" | "live-camera" | "ar-camera" | "survey" | "upload-plan" | "venues" | "auth"
 type GpsStatus = "requesting" | "active" | "denied"
 
-// Minimal interface — avoids importing Leaflet types on the server
+// Minimal interface — avoids importing Leaflet types on the server. Both map
+// views (2D Leaflet, 3D three.js) implement it, so callers fly the camera the
+// same way whichever one is mounted.
 interface MapHandle {
   flyTo: (latlng: [number, number], zoom: number) => void
 }
+
+// Remembered across visits, like the active venue.
+const MAP_VIEW_KEY = "wayfinder.mapView"
 
 // "navigate" opens straight into the search/route flow; "map" opens the
 // self-survey overlay so the user starts mapping an area immediately. The
@@ -63,8 +71,19 @@ const OFF_ROUTE_TRIGGER_M = 25
 
 export default function WayfinderApp({ initialMode = "navigate" }: { initialMode?: WayfinderMode }) {
   const router = useRouter()
-  const leafletMapRef = useRef<MapHandle | null>(null)
+  const mapHandleRef = useRef<MapHandle | null>(null)
   const gpsActiveRef = useRef(false)
+
+  // Which map rendering the user is looking at: the flat Leaflet plan or the
+  // rotatable three.js building model. Both read the same navigation state.
+  const [mapView, setMapView] = useState<"2d" | "3d">("2d")
+  const toggleMapView = useCallback(() => {
+    setMapView((v) => {
+      const next = v === "2d" ? "3d" : "2d"
+      try { window.localStorage.setItem(MAP_VIEW_KEY, next) } catch {}
+      return next
+    })
+  }, [])
 
   // Live compass heading for the facing beam. The sensor is permission-gated on
   // iOS and must be unlocked from a user gesture, so we call enableHeading() from
@@ -130,6 +149,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // data in the handler (goToVenue), so this stays a one-time hydration on mount.
   useEffect(() => {
     migrateLegacyData(DEFAULT_VENUE.id)
+    try {
+      if (window.localStorage.getItem(MAP_VIEW_KEY) === "3d") setMapView("3d")
+    } catch {}
     const restored = loadUserVenues()
     const savedActive = loadActiveVenueId()
     const startId = savedActive && getVenueById(savedActive, restored) ? savedActive : DEFAULT_VENUE.id
@@ -179,7 +201,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         })
         // Centre the map on the user the first time we get a real fix, so it works anywhere
         if (firstFix) {
-          leafletMapRef.current?.flyTo([pos.coords.latitude, pos.coords.longitude], 18)
+          mapHandleRef.current?.flyTo([pos.coords.latitude, pos.coords.longitude], 18)
         }
       },
       () => {
@@ -207,7 +229,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const useDemoLocation = useCallback(() => {
     setGpsStatus("active")
     setAnchor({ position: venue.center, accuracy: 0, source: "demo" })
-    leafletMapRef.current?.flyTo([venue.center.lat, venue.center.lng], venue.defaultZoom)
+    mapHandleRef.current?.flyTo([venue.center.lat, venue.center.lng], venue.defaultZoom)
   }, [venue, setAnchor])
 
   // Fetch a real street/footpath route for outdoor destinations and fold it in,
@@ -478,7 +500,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setCustomFloorPlans(loadVenueFloorPlans(v.id))
     setOverlay("none")
     setNavState((s) => ({ ...s, currentFloor: 0, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
-    leafletMapRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
+    mapHandleRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
   }, [])
 
   const handleSelectVenue = useCallback((id: string) => {
@@ -548,21 +570,39 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
 
   return (
     <div className="relative w-full h-dvh overflow-hidden bg-gray-100">
-      <FloorPlanMap
-        currentFloor={navState.currentFloor}
-        currentPosition={navState.currentPosition}
-        heading={heading}
-        destination={navState.destination}
-        route={navState.route}
-        isNavigating={navState.isNavigating}
-        center={venue.center}
-        defaultZoom={venue.defaultZoom}
-        floorPlans={allFloorPlans}
-        waypoints={allWaypoints}
-        trails={surveyTrails}
-        onMapReady={() => {}}
-        leafletMapRef={leafletMapRef}
-      />
+      {mapView === "2d" ? (
+        <FloorPlanMap
+          currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          heading={heading}
+          destination={navState.destination}
+          route={navState.route}
+          isNavigating={navState.isNavigating}
+          center={venue.center}
+          defaultZoom={venue.defaultZoom}
+          floorPlans={allFloorPlans}
+          waypoints={allWaypoints}
+          trails={surveyTrails}
+          onMapReady={() => {}}
+          leafletMapRef={mapHandleRef}
+        />
+      ) : (
+        <Map3DView
+          currentFloor={navState.currentFloor}
+          currentPosition={navState.currentPosition}
+          heading={heading}
+          destination={navState.destination}
+          route={navState.route}
+          isNavigating={navState.isNavigating}
+          center={venue.center}
+          defaultZoom={venue.defaultZoom}
+          floorPlans={allFloorPlans}
+          waypoints={allWaypoints}
+          trails={surveyTrails}
+          onMapReady={() => {}}
+          mapHandleRef={mapHandleRef}
+        />
+      )}
 
       {/* ── Top bar ──────────────────────────────────────────── */}
       {!navState.isNavigating ? (
@@ -656,6 +696,21 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         </span>
       </div>
 
+      {/* 2D/3D map view toggle — labelled with the view it switches to */}
+      <button
+        onClick={toggleMapView}
+        className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} right-3 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm active:scale-95 transition-transform`}
+        title={mapView === "2d" ? "Switch to 3D view" : "Switch to 2D view"}
+        aria-label={mapView === "2d" ? "Switch to 3D view" : "Switch to 2D view"}
+      >
+        {mapView === "2d" ? (
+          <Box size={12} className="text-[#005EB8]" />
+        ) : (
+          <MapIcon size={12} className="text-[#005EB8]" />
+        )}
+        <span className="text-xs text-gray-700 font-semibold">{mapView === "2d" ? "3D" : "2D"}</span>
+      </button>
+
       {/* Survey / self-map FABs — only in Map mode, so the Navigate screen stays
           navigation-only. Mapping lives under /map (and is opened on entry there). */}
       {!navState.isNavigating && initialMode === "map" && (
@@ -686,7 +741,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           onClick={() => {
             enableSensors()
             const pos = navState.currentPosition ?? venue.center
-            leafletMapRef.current?.flyTo([pos.lat, pos.lng], venue.defaultZoom)
+            mapHandleRef.current?.flyTo([pos.lat, pos.lng], venue.defaultZoom)
           }}
           className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
           title="Re-centre"
