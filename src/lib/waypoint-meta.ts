@@ -1,4 +1,4 @@
-import { Waypoint, FloorPlan, WaypointType } from "./types"
+import { Waypoint, FloorPlan, WaypointType, FloorNaming } from "./types"
 
 // Generic, venue-agnostic presentation helpers for waypoints and floors. These
 // used to live in `gosh-data.ts`, hard-wired to a single hospital; they are now
@@ -35,13 +35,20 @@ export const WAYPOINT_TYPE_LABELS: Record<string, string> = {
   other: "Other",
 }
 
-export function floorLabel(floor: number): string {
+// Full label for a floor. A venue can override the generic scheme with its own
+// storey numbering (e.g. GOSH's "Level 2" ground floor); without one, floor 0
+// is the Ground Floor, positives are Floor N and negatives are Basement N.
+export function floorLabel(floor: number, naming?: FloorNaming): string {
+  if (naming) return `${naming.word ?? "Level"} ${floor + naming.groundLevel}`
   if (floor === 0) return "Ground Floor"
   if (floor < 0) return `Basement ${Math.abs(floor)}`
   return `Floor ${floor}`
 }
 
-export function floorShortLabel(floor: number): string {
+// Compact label for the floor rail. Mirrors floorLabel: with a venue scheme it
+// uses the word's initial + level number (GOSH → "L2"…"L5"); otherwise G / N / BN.
+export function floorShortLabel(floor: number, naming?: FloorNaming): string {
+  if (naming) return `${(naming.word ?? "Level").charAt(0).toUpperCase()}${floor + naming.groundLevel}`
   if (floor === 0) return "G"
   if (floor < 0) return `B${Math.abs(floor)}`
   return String(floor)

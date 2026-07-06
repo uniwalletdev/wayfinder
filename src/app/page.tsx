@@ -99,7 +99,7 @@ export default function Landing() {
               <Map size={19} className="text-wf-primary" />
             </span>
             <div className="min-w-0">
-              <p className="truncate text-[15px] font-semibold text-wf-ink">Outpatients, Level 2</p>
+              <p className="truncate text-[15px] font-semibold text-wf-ink">Cardiology, Level 4</p>
               <p className="truncate text-xs text-wf-muted">Great Ormond Street Hospital</p>
             </div>
           </div>
@@ -121,11 +121,11 @@ export default function Landing() {
 
         {/* Floating floor capsule */}
         <div className="absolute right-[352px] top-[340px] z-10 hidden flex-col gap-1 rounded-full bg-white/97 p-2 sm:right-[392px] lg:right-[432px] xl:right-[456px] lg:flex">
-          {["3", "2", "1", "G"].map((f) => (
+          {["L5", "L4", "L3", "L2"].map((f) => (
             <span
               key={f}
               className={`flex h-[38px] w-[38px] items-center justify-center rounded-full font-display text-[13px] font-bold ${
-                f === "2" ? "bg-wf-primary text-white shadow-[0_4px_12px_rgba(10,93,194,0.4)]" : "text-wf-muted"
+                f === "L4" ? "bg-wf-primary text-white shadow-[0_4px_12px_rgba(10,93,194,0.4)]" : "text-wf-muted"
               }`}
             >
               {f}

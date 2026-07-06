@@ -20,12 +20,17 @@ export const GOSH_VENUE: Venue = {
     accessibleToilets: true,
     notes: "Lifts serve all mapped floors; step-free routes available throughout.",
   },
+  // GOSH's Great Ormond Street main entrance and Main Reception are at Level 2 —
+  // the street/ground level (the site slopes, so there are levels below it). So
+  // the entrance floor (internal index 0) displays as "Level 2", and the floors
+  // above read Level 3, 4 and 5, matching the hospital's own signage.
+  floorNaming: { word: "Level", groundLevel: 2 },
   quickAccess: ["Main Entrance", "A&E Entrance", "Restaurant & Café", "Pharmacy", "Ward 5B", "X-Ray & Imaging"],
   floorPlans: [
-    { id: "gf", floor: 0, label: "Ground", imageUrl: "/floorplans/ground.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-    { id: "f1", floor: 1, label: "Floor 1", imageUrl: "/floorplans/floor1.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-    { id: "f2", floor: 2, label: "Floor 2", imageUrl: "/floorplans/floor2.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
-    { id: "f3", floor: 3, label: "Floor 3", imageUrl: "/floorplans/floor3.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
+    { id: "gf", floor: 0, label: "Level 2 (entrance)", imageUrl: "/floorplans/ground.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
+    { id: "f1", floor: 1, label: "Level 3", imageUrl: "/floorplans/floor1.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
+    { id: "f2", floor: 2, label: "Level 4", imageUrl: "/floorplans/floor2.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
+    { id: "f3", floor: 3, label: "Level 5", imageUrl: "/floorplans/floor3.svg", bounds: [[51.5218, -0.1208], [51.5232, -0.1190]] },
   ],
   waypoints: [
     // Ground Floor — coordinates derived from SVG room centres mapped to floor plan bounds

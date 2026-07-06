@@ -1,10 +1,12 @@
 "use client"
 
 import { floorShortLabel } from "@/lib/waypoint-meta"
+import type { FloorNaming } from "@/lib/types"
 
 interface Props {
   floors: number[]
   currentFloor: number
+  naming?: FloorNaming
   onChange: (floor: number) => void
 }
 
@@ -12,7 +14,7 @@ interface Props {
 // rail in MapControls — this component only renders the list, and scrolls
 // within the space the rail gives it when a venue has more floors than fit,
 // so it can never collide with the controls above or below it.
-export default function FloorSelector({ floors, currentFloor, onChange }: Props) {
+export default function FloorSelector({ floors, currentFloor, naming, onChange }: Props) {
   if (floors.length <= 1) return null
 
   return (
@@ -27,7 +29,7 @@ export default function FloorSelector({ floors, currentFloor, onChange }: Props)
               : "text-wf-muted hover:bg-wf-surface"
           }`}
         >
-          {floorShortLabel(floor)}
+          {floorShortLabel(floor, naming)}
         </button>
       ))}
     </div>

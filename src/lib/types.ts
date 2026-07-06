@@ -66,6 +66,21 @@ export interface AccessibilityInfo {
   notes?: string
 }
 
+// How a venue numbers its storeys for display. Most places use the generic
+// Ground Floor / Floor N scheme, so they set nothing. Some number differently:
+// Great Ormond Street Hospital's street-level main entrance is "Level 2" (the
+// site slopes, with levels below it), so it sets { word: "Level", groundLevel: 2 }
+// and its floors read Level 2 (the entrance) upward. This only changes the
+// labels shown to people — internal floor indices stay 0-based for routing,
+// geometry and floor plans.
+export interface FloorNaming {
+  // The word shown before the number, e.g. "Level". Defaults to "Level" when a
+  // groundLevel is given.
+  word?: string
+  // The level number displayed for internal floor 0 (the entrance/ground floor).
+  groundLevel: number
+}
+
 export interface Venue {
   id: string
   slug: string
@@ -85,6 +100,9 @@ export interface Venue {
   // Set once accounts exist; until then venues are anonymous/local.
   ownerId?: string
   accessibility?: AccessibilityInfo
+  // Non-standard storey numbering (e.g. GOSH's "Level 2" ground floor). Absent
+  // for venues that use the plain Ground Floor / Floor N scheme.
+  floorNaming?: FloorNaming
   // Waypoint names to surface as shortcuts in search.
   quickAccess?: string[]
   createdAt?: string

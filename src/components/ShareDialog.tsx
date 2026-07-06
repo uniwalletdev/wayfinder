@@ -105,7 +105,7 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-[15px] font-semibold text-wf-ink">{waypoint.name}</p>
-              <p className="truncate text-xs text-wf-muted">{venue.name} · {floorLabel(waypoint.floor)}</p>
+              <p className="truncate text-xs text-wf-muted">{venue.name} · {floorLabel(waypoint.floor, venue.floorNaming)}</p>
             </div>
             {qrThumb && (
               <img src={qrThumb} alt="" className="h-16 w-16 flex-shrink-0 rounded-md border border-wf-border" />

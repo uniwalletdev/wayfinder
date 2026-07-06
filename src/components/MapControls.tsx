@@ -2,6 +2,7 @@
 
 import { Moon, Sun, Navigation, Plus, Minus, Layers } from "lucide-react"
 import FloorSelector from "@/components/FloorSelector"
+import type { FloorNaming } from "@/lib/types"
 
 interface Props {
   mapView: "2d" | "3d"
@@ -17,6 +18,7 @@ interface Props {
   floorLabel: string
   floors: number[]
   currentFloor: number
+  floorNaming?: FloorNaming
   onChangeFloor: (floor: number) => void
 }
 
@@ -42,6 +44,7 @@ export default function MapControls({
   floorLabel,
   floors,
   currentFloor,
+  floorNaming,
   onChangeFloor,
 }: Props) {
   return (
@@ -78,7 +81,7 @@ export default function MapControls({
             min-h-0 lets it shrink and scroll instead of colliding. */}
         <div className="hidden min-h-0 lg:block lg:flex-1" />
         <div className="mt-3 flex min-h-0 flex-col lg:mt-0">
-          <FloorSelector floors={floors} currentFloor={currentFloor} onChange={onChangeFloor} />
+          <FloorSelector floors={floors} currentFloor={currentFloor} naming={floorNaming} onChange={onChangeFloor} />
         </div>
         <div className="hidden min-h-0 lg:block lg:flex-1" />
 

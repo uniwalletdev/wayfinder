@@ -1,4 +1,5 @@
-import { Waypoint, Route, RouteStep, Coordinates, TravelMode, SurveyTrail, RoutePreference } from "./types"
+import { Waypoint, Route, RouteStep, Coordinates, TravelMode, SurveyTrail, RoutePreference, FloorNaming } from "./types"
+import { floorLabel } from "./waypoint-meta"
 
 // Geocoded destinations (beyond the hospital's mapped floors) carry a "geo-"
 // id. Those are the ones worth routing along real streets/footpaths; indoor
@@ -255,7 +256,10 @@ export function buildRoute(
   // "stepfree" (default) only ever uses a lift for a floor change. "fastest"
   // also considers stairs, taking whichever is nearer — stairs are quicker when
   // they're right there, at the cost of not being step-free.
-  preference: RoutePreference = "stepfree"
+  preference: RoutePreference = "stepfree",
+  // The active venue's storey-numbering scheme, so floor-change instructions
+  // say "…to Level 5" at GOSH rather than the generic "…to Floor 3".
+  floorNaming?: FloorNaming
 ): Route {
   const steps: RouteStep[] = []
   // The path the map draws — follows the walked trails where available and is
@@ -285,7 +289,7 @@ export function buildRoute(
         waypoint: nearest,
       })
       steps.push({
-        instruction: via === "stairs" ? `Take the stairs to Floor ${destination.floor}` : `Take lift to Floor ${destination.floor}`,
+        instruction: via === "stairs" ? `Take the stairs to ${floorLabel(destination.floor, floorNaming)}` : `Take lift to ${floorLabel(destination.floor, floorNaming)}`,
         distance: 0,
         heading: 0,
         floorChange: { from: fromFloor, to: destination.floor, via },

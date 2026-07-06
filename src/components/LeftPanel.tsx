@@ -8,7 +8,7 @@ import {
   ArrowUp, ArrowUpLeft, ArrowUpRight, ArrowLeft, ArrowRight, ArrowUpDown, Footprints, CheckCircle2,
   Info, MapPin,
 } from "lucide-react"
-import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference } from "@/lib/types"
+import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
 import Toggle from "@/components/Toggle"
 
@@ -253,6 +253,7 @@ export default function LeftPanel({
             destination={destination}
             route={route}
             currentStepIndex={currentStepIndex}
+            floorNaming={venue.floorNaming}
             onStop={onStop}
             onScanQR={onScanQR}
             onOpenCamera={onOpenCamera}
@@ -271,6 +272,7 @@ export default function LeftPanel({
             destination={destination}
             route={route}
             routeLoading={routeLoading}
+            floorNaming={venue.floorNaming}
             travelMode={travelMode}
             onTravelModeChange={onTravelModeChange}
             routePreference={routePreference}
@@ -283,7 +285,7 @@ export default function LeftPanel({
             onShare={onShare}
           />
         ) : (
-          <NearbyList nearby={nearby} currentFloor={currentFloor} onSelect={onSelectDestination} />
+          <NearbyList nearby={nearby} currentFloor={currentFloor} floorNaming={venue.floorNaming} onSelect={onSelectDestination} />
         )}
       </div>
 
@@ -318,10 +320,12 @@ export default function LeftPanel({
 function NearbyList({
   nearby,
   currentFloor,
+  floorNaming,
   onSelect,
 }: {
   nearby: NearbyItem[]
   currentFloor: number
+  floorNaming?: FloorNaming
   onSelect: (w: Waypoint) => void
 }) {
   if (nearby.length === 0) return null
@@ -340,7 +344,7 @@ function NearbyList({
             </span>
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold text-wf-ink">{w.name}</p>
-              <p className="truncate text-xs text-wf-muted">{floorLabel(currentFloor)}{w.description ? ` · ${w.description}` : ""}</p>
+              <p className="truncate text-xs text-wf-muted">{floorLabel(currentFloor, floorNaming)}{w.description ? ` · ${w.description}` : ""}</p>
             </div>
             <span className="flex-shrink-0 font-display text-[12.5px] font-semibold text-wf-primary">
               {fmtDistance(w.distanceM)}
@@ -380,7 +384,7 @@ function FarFromVenueCard({
           </span>
           <div className="min-w-0">
             <p className="truncate text-[15.5px] font-semibold text-wf-ink">{destination.name}</p>
-            <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor)} · {venue.name}</p>
+            <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor, venue.floorNaming)} · {venue.name}</p>
           </div>
         </div>
         <button onClick={onStop} aria-label="Clear destination" className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
@@ -428,6 +432,7 @@ function RoutePreviewCard({
   destination,
   route,
   routeLoading,
+  floorNaming,
   travelMode,
   onTravelModeChange,
   routePreference,
@@ -441,6 +446,7 @@ function RoutePreviewCard({
   destination: Waypoint
   route: Route
   routeLoading: boolean
+  floorNaming?: FloorNaming
   travelMode: TravelMode
   onTravelModeChange: (m: TravelMode) => void
   routePreference: RoutePreference
@@ -464,7 +470,7 @@ function RoutePreviewCard({
           </span>
           <div className="min-w-0">
             <p className="truncate text-[15.5px] font-semibold text-wf-ink">{destination.name}</p>
-            <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor)}{destination.description ? ` · ${destination.description}` : ""}</p>
+            <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor, floorNaming)}{destination.description ? ` · ${destination.description}` : ""}</p>
           </div>
         </div>
       </div>
@@ -674,6 +680,7 @@ function NavigatingSummary({
   destination,
   route,
   currentStepIndex,
+  floorNaming,
   onStop,
   onScanQR,
   onOpenCamera,
@@ -681,6 +688,7 @@ function NavigatingSummary({
   destination: Waypoint
   route: Route
   currentStepIndex: number
+  floorNaming?: FloorNaming
   onStop: () => void
   onScanQR: () => void
   onOpenCamera: () => void
@@ -718,7 +726,7 @@ function NavigatingSummary({
       <div className="mb-4 grid grid-cols-3 gap-2">
         <StatTile label="time" value={`${route.estimatedMinutes} min`} />
         <StatTile label="distance" value={fmtDistance(route.totalDistance)} />
-        <StatTile label="floor" value={floorLabel(destination.floor)} />
+        <StatTile label="floor" value={floorLabel(destination.floor, floorNaming)} />
       </div>
 
       <div className="mb-2.5 flex gap-2.5">

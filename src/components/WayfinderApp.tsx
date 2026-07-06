@@ -318,7 +318,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       setRoutePreference(pref)
       // Offline route renders instantly; outdoor destinations then upgrade to
       // real street geometry once Directions responds.
-      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode, surveyTrails, pref)
+      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode, surveyTrails, pref, venue.floorNaming)
       setNavState((s) => ({
         ...s,
         destination: waypoint,
@@ -342,7 +342,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       if (shouldRouteOutdoors(from, navState.currentFloor, dest, surveyTrails)) {
         void refreshOutdoorRoute(from, dest, mode)
       } else {
-        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode, surveyTrails, routePreference)
+        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode, surveyTrails, routePreference, venue.floorNaming)
         setNavState((s) => ({ ...s, route }))
       }
     },
@@ -358,7 +358,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       const dest = navState.destination
       if (!dest) return
       const from = navState.currentPosition ?? venue.center
-      const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, pref)
+      const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, pref, venue.floorNaming)
       setNavState((s) => ({ ...s, route }))
     },
     [venue, navState.destination, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails]
@@ -415,7 +415,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, currentStepIndex: 0 } : s))
       void refreshOutdoorRoute(here, dest, navState.travelMode)
     } else {
-      const rebuilt = buildRoute(here, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, routePreference)
+      const rebuilt = buildRoute(here, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, routePreference, venue.floorNaming)
       setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, route: rebuilt, currentStepIndex: 0 } : s))
     }
   }, [
@@ -443,7 +443,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const dest = navState.destination
     activateDemoLocation()
     if (!dest) return
-    const route = buildRoute(venue.center, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, routePreference)
+    const route = buildRoute(venue.center, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, routePreference, venue.floorNaming)
     setNavState((s) => ({ ...s, route, currentStepIndex: 0 }))
   }, [venue, navState.destination, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails, routePreference, activateDemoLocation])
 
@@ -686,8 +686,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const dest = navState.destination
     if (!dest || navState.route?.outdoor || dest.floor === navState.currentFloor) return null
     const position = navState.currentPosition ?? venue.center
-    const fastest = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, "fastest")
-    const stepfree = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, "stepfree")
+    const fastest = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, "fastest", venue.floorNaming)
+    const stepfree = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, "stepfree", venue.floorNaming)
     if (fastest.estimatedMinutes === stepfree.estimatedMinutes && fastest.totalDistance === stepfree.totalDistance) return null
     return { fastest, stepfree }
   }, [navState.destination, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, surveyTrails, venue.center])
@@ -799,9 +799,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           showRecenter={!navState.isNavigating}
           gpsLabel={gpsLabel}
           gpsDotClass={gpsDotClass}
-          floorLabel={floorLabel(navState.currentFloor)}
+          floorLabel={floorLabel(navState.currentFloor, venue.floorNaming)}
           floors={availableFloors}
           currentFloor={navState.currentFloor}
+          floorNaming={venue.floorNaming}
           onChangeFloor={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
         />
       </div>
@@ -811,6 +812,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           venueId={activeVenueId}
           waypoints={allWaypoints}
           quickAccess={venue.quickAccess}
+          floorNaming={venue.floorNaming}
           proximity={navState.currentPosition ?? venue.center}
           onSelect={handleDestinationSelect}
           onClose={() => setOverlay("none")}

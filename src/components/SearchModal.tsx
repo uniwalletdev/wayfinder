@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Waypoint, Coordinates } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/waypoint-meta"
+import { Waypoint, Coordinates, FloorNaming } from "@/lib/types"
+import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel } from "@/lib/waypoint-meta"
 import { rankWaypoints, rankNearMisses } from "@/lib/search"
 import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
 
@@ -13,6 +13,8 @@ interface Props {
   waypoints: Waypoint[]
   // Waypoint names to surface as shortcuts, supplied by the active venue.
   quickAccess?: string[]
+  // The active venue's storey numbering (e.g. GOSH's "Level 2" ground floor).
+  floorNaming?: FloorNaming
   // The active venue's centre or the user's live position — biases worldwide
   // place search toward nearby results.
   proximity?: Coordinates
@@ -51,7 +53,7 @@ function geoToWaypoint(r: GeoResult): Waypoint {
   }
 }
 
-export default function SearchModal({ venueId, waypoints, quickAccess = [], proximity, onSelect, onClose }: Props) {
+export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, onSelect, onClose }: Props) {
   const [query, setQuery] = useState("")
   const [geoResults, setGeoResults] = useState<GeoResult[]>([])
   const [geoLoading, setGeoLoading] = useState(false)
@@ -173,7 +175,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], prox
                   Quick access
                 </p>
                 {quickWaypoints.map((w) => (
-                  <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
+                  <WaypointRow key={w.id} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />
                 ))}
               </>
             )}
@@ -182,7 +184,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], prox
               All locations
             </p>
             {waypoints.map((w) => (
-              <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
+              <WaypointRow key={w.id} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />
             ))}
           </>
         ) : (
@@ -193,7 +195,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], prox
                   In this place · {filtered.length} result{filtered.length !== 1 ? "s" : ""}
                 </p>
                 {filtered.map((w) => (
-                  <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
+                  <WaypointRow key={w.id} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />
                 ))}
               </>
             )}
@@ -224,7 +226,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], prox
                       Did you mean…
                     </p>
                     {nearMisses.map((w) => (
-                      <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
+                      <WaypointRow key={w.id} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />
                     ))}
                   </>
                 )}
@@ -288,7 +290,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], prox
   )
 }
 
-function WaypointRow({ waypoint, onSelect }: { waypoint: Waypoint; onSelect: (w: Waypoint) => void }) {
+function WaypointRow({ waypoint, floorNaming, onSelect }: { waypoint: Waypoint; floorNaming?: FloorNaming; onSelect: (w: Waypoint) => void }) {
   return (
     <button
       onClick={() => onSelect(waypoint)}
@@ -301,7 +303,7 @@ function WaypointRow({ waypoint, onSelect }: { waypoint: Waypoint; onSelect: (w:
         <p className="text-sm font-semibold text-gray-900 truncate">{waypoint.name}</p>
         <p className="text-xs text-gray-500">
           {WAYPOINT_TYPE_LABELS[waypoint.type]} •{" "}
-          {waypoint.floor === 0 ? "Ground Floor" : `Floor ${waypoint.floor}`}
+          {floorLabel(waypoint.floor, floorNaming)}
           {waypoint.description ? ` • ${waypoint.description}` : ""}
         </p>
       </div>
