@@ -1,4 +1,4 @@
-import { Waypoint, Route, RouteStep, Coordinates, TravelMode, SurveyTrail } from "./types"
+import { Waypoint, Route, RouteStep, Coordinates, TravelMode, SurveyTrail, RoutePreference } from "./types"
 
 // Geocoded destinations (beyond the hospital's mapped floors) carry a "geo-"
 // id. Those are the ones worth routing along real streets/footpaths; indoor
@@ -251,7 +251,11 @@ export function buildRoute(
   mode: TravelMode = "walking",
   // The surveyor's walked trails. When they connect the route's ends, the drawn
   // path follows them (the mapped corridors) instead of a straight line.
-  trails: SurveyTrail[] = []
+  trails: SurveyTrail[] = [],
+  // "stepfree" (default) only ever uses a lift for a floor change. "fastest"
+  // also considers stairs, taking whichever is nearer — stairs are quicker when
+  // they're right there, at the cost of not being step-free.
+  preference: RoutePreference = "stepfree"
 ): Route {
   const steps: RouteStep[] = []
   // The path the map draws — follows the walked trails where available and is
@@ -261,53 +265,58 @@ export function buildRoute(
   let totalDistance = 0
 
   if (fromFloor !== destination.floor) {
-    // Find nearest lift on current floor
-    const liftsOnFloor = allWaypoints.filter(
-      (w) => w.type === "lift" && w.floor === fromFloor
+    const candidateTypes = preference === "fastest" ? (["lift", "stairs"] as const) : (["lift"] as const)
+    const candidatesOnFloor = allWaypoints.filter(
+      (w) => (candidateTypes as readonly string[]).includes(w.type) && w.floor === fromFloor
     )
-    const nearestLift = liftsOnFloor.sort(
+    const nearest = candidatesOnFloor.sort(
       (a, b) => distanceMeters(from, a.coordinates) - distanceMeters(from, b.coordinates)
     )[0]
 
-    if (nearestLift) {
-      const leg1 = indoorLeg(from, nearestLift.coordinates, fromFloor, trails)
+    if (nearest) {
+      const via: "lift" | "stairs" = nearest.type === "stairs" ? "stairs" : "lift"
+      const leg1 = indoorLeg(from, nearest.coordinates, fromFloor, trails)
       totalDistance += leg1.distance
       geometry = leg1.points
       steps.push({
-        instruction: `Head to ${nearestLift.name}`,
+        instruction: `Head to ${nearest.name}`,
         distance: Math.round(leg1.distance),
-        heading: bearing(from, nearestLift.coordinates),
-        waypoint: nearestLift,
+        heading: bearing(from, nearest.coordinates),
+        waypoint: nearest,
       })
       steps.push({
-        instruction: `Take lift to Floor ${destination.floor}`,
+        instruction: via === "stairs" ? `Take the stairs to Floor ${destination.floor}` : `Take lift to Floor ${destination.floor}`,
         distance: 0,
         heading: 0,
-        floorChange: { from: fromFloor, to: destination.floor, via: "lift" },
+        floorChange: { from: fromFloor, to: destination.floor, via },
       })
 
-      const liftOnDestFloor = allWaypoints.find(
-        (w) => w.type === "lift" && w.floor === destination.floor && w.name.includes("Lift A")
-      ) || allWaypoints.find((w) => w.type === "lift" && w.floor === destination.floor)
+      // Same bank/stairwell on the destination floor — e.g. "Lift A" mirrors
+      // "Lift A — Floor 1". Falls back to any waypoint of the same type on
+      // that floor if nothing matches by name.
+      const baseName = nearest.name.replace(/\s*—.*$/, "").trim()
+      const matchOnDestFloor =
+        allWaypoints.find((w) => w.type === nearest.type && w.floor === destination.floor && w.name.replace(/\s*—.*$/, "").trim() === baseName) ||
+        allWaypoints.find((w) => w.type === nearest.type && w.floor === destination.floor)
 
-      if (liftOnDestFloor) {
-        // The walker re-enters at the lift on the destination floor, so the
-        // drawn path continues from there to the destination.
-        const leg2 = indoorLeg(liftOnDestFloor.coordinates, destination.coordinates, destination.floor, trails)
+      if (matchOnDestFloor) {
+        // The walker re-enters at the lift/stairs on the destination floor, so
+        // the drawn path continues from there to the destination.
+        const leg2 = indoorLeg(matchOnDestFloor.coordinates, destination.coordinates, destination.floor, trails)
         totalDistance += leg2.distance
         geometry = geometry.concat(leg2.points)
         steps.push({
-          instruction: `Exit lift and head to ${destination.name}`,
+          instruction: `Exit and head to ${destination.name}`,
           distance: Math.round(leg2.distance),
-          heading: bearing(liftOnDestFloor.coordinates, destination.coordinates),
+          heading: bearing(matchOnDestFloor.coordinates, destination.coordinates),
           waypoint: destination,
         })
       } else {
-        // No lift modelled on the destination floor — finish straight to the door.
+        // Nothing modelled on the destination floor — finish straight to the door.
         geometry.push(destination.coordinates)
       }
     } else {
-      // No lift on the current floor — fall back to a direct hop.
+      // No lift/stairs on the current floor — fall back to a direct hop.
       const leg = indoorLeg(from, destination.coordinates, fromFloor, trails)
       totalDistance += leg.distance
       geometry = leg.points

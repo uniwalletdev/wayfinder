@@ -1,11 +1,10 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan } from "@/lib/types"
-import { getAvailableFloors } from "@/lib/waypoint-meta"
+import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan, RoutePreference } from "@/lib/types"
+import { getAvailableFloors, floorLabel } from "@/lib/waypoint-meta"
 import { DEFAULT_VENUE, SEED_VENUES, getVenueById, createVenue, type NewVenueInput } from "@/lib/venues"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
@@ -17,8 +16,9 @@ import { buildRoute, distanceMeters, distanceToPath, fetchOutdoorRoute, shouldRo
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
 import type { UploadPlanResult } from "@/components/UploadPlanMode"
-import TopInstructionBar from "@/components/TopInstructionBar"
-import BottomSheet from "@/components/BottomSheet"
+import LeftPanel from "@/components/LeftPanel"
+import MapControls from "@/components/MapControls"
+import ShareDialog from "@/components/ShareDialog"
 import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
@@ -31,7 +31,6 @@ import { useArSupport } from "@/lib/use-ar-support"
 import { useSupabaseSession } from "@/lib/supabase/use-session"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
 import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, addRemoteFloorPlan, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
-import { Layers, Navigation, ClipboardList, UploadCloud, Search, MapPin, AlertCircle, ChevronDown, Home, Box, Map as MapIcon } from "lucide-react"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 // The 3D half of the map's 2D/3D toggle. three.js is browser-only, and the
@@ -44,7 +43,7 @@ const ArNavView = dynamic(() => import("@/components/ArNavView"), { ssr: false }
 // FloorPlanMap — it must never be pulled into the server bundle.
 const UploadPlanMode = dynamic(() => import("@/components/UploadPlanMode"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "ar-camera" | "survey" | "upload-plan" | "venues" | "auth"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "ar-camera" | "survey" | "upload-plan" | "venues" | "auth" | "share"
 type GpsStatus = "requesting" | "active" | "denied"
 
 // Minimal interface — avoids importing Leaflet types on the server. Both map
@@ -52,10 +51,14 @@ type GpsStatus = "requesting" | "active" | "denied"
 // same way whichever one is mounted.
 interface MapHandle {
   flyTo: (latlng: [number, number], zoom: number) => void
+  zoomIn: () => void
+  zoomOut: () => void
 }
 
 // Remembered across visits, like the active venue.
 const MAP_VIEW_KEY = "wayfinder.mapView"
+const MAP_STYLE_KEY = "wayfinder.mapStyle"
+const ALWAYS_STEPFREE_KEY = "wayfinder.alwaysStepFree"
 
 // "navigate" opens straight into the search/route flow; "map" opens the
 // self-survey overlay so the user starts mapping an area immediately. The
@@ -77,12 +80,30 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // Which map rendering the user is looking at: the flat Leaflet plan or the
   // rotatable three.js building model. Both read the same navigation state.
   const [mapView, setMapView] = useState<"2d" | "3d">("2d")
-  const toggleMapView = useCallback(() => {
-    setMapView((v) => {
-      const next = v === "2d" ? "3d" : "2d"
-      try { window.localStorage.setItem(MAP_VIEW_KEY, next) } catch {}
+  const changeMapView = useCallback((next: "2d" | "3d") => {
+    setMapView(next)
+    try { window.localStorage.setItem(MAP_VIEW_KEY, next) } catch {}
+  }, [])
+
+  // Light (default) or dark basemap/scene — the map-style floating control.
+  const [mapStyle, setMapStyle] = useState<"light" | "dark">("light")
+  const toggleMapStyle = useCallback(() => {
+    setMapStyle((v) => {
+      const next = v === "light" ? "dark" : "light"
+      try { window.localStorage.setItem(MAP_STYLE_KEY, next) } catch {}
       return next
     })
+  }, [])
+
+  // Accessibility-first routing (2b): "stepfree" only ever uses a lift for a
+  // floor change; "fastest" also considers stairs. alwaysStepFree is the
+  // persisted default applied whenever a new destination is picked; the user
+  // can still override per-destination via the route-choice cards.
+  const [routePreference, setRoutePreference] = useState<RoutePreference>("stepfree")
+  const [alwaysStepFree, setAlwaysStepFree] = useState(true)
+  const handleChangeAlwaysStepFree = useCallback((v: boolean) => {
+    setAlwaysStepFree(v)
+    try { window.localStorage.setItem(ALWAYS_STEPFREE_KEY, String(v)) } catch {}
   }, [])
 
   // Live compass heading for the facing beam. The sensor is permission-gated on
@@ -137,11 +158,28 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const dirAbortRef = useRef<AbortController | null>(null)
 
   const [overlay, setOverlay] = useState<OverlayMode>(initialMode === "map" ? "survey" : "none")
-  const [bottomSheetExpanded, setBottomSheetExpanded] = useState(false)
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("requesting")
   const [customWaypoints, setCustomWaypoints] = useState<Waypoint[]>([])
   const [surveyTrails, setSurveyTrails] = useState<SurveyTrail[]>([])
   const [customFloorPlans, setCustomFloorPlans] = useState<FloorPlan[]>([])
+
+  // "/" focuses the search field (desktop convention), unless the user is
+  // already typing somewhere or another overlay is open.
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return
+      const target = e.target as HTMLElement | null
+      const typing = target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)
+      if (typing) return
+      setOverlay((o) => {
+        if (o !== "none") return o
+        e.preventDefault()
+        return "search"
+      })
+    }
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [])
 
   // On first load, fold any pre-multi-venue data into the default venue, restore
   // the user's saved venues and which one they last had open, and load the
@@ -151,6 +189,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     migrateLegacyData(DEFAULT_VENUE.id)
     try {
       if (window.localStorage.getItem(MAP_VIEW_KEY) === "3d") setMapView("3d")
+      if (window.localStorage.getItem(MAP_STYLE_KEY) === "dark") setMapStyle("dark")
+      if (window.localStorage.getItem(ALWAYS_STEPFREE_KEY) === "false") setAlwaysStepFree(false)
     } catch {}
     const restored = loadUserVenues()
     const savedActive = loadActiveVenueId()
@@ -257,9 +297,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     (waypoint: Waypoint) => {
       setOverlay("none")
       const position = navState.currentPosition ?? venue.center
+      const pref: RoutePreference = alwaysStepFree ? "stepfree" : "fastest"
+      setRoutePreference(pref)
       // Offline route renders instantly; outdoor destinations then upgrade to
       // real street geometry once Directions responds.
-      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode, surveyTrails)
+      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode, surveyTrails, pref)
       setNavState((s) => ({
         ...s,
         destination: waypoint,
@@ -271,7 +313,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         void refreshOutdoorRoute(position, waypoint, navState.travelMode)
       }
     },
-    [venue, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails, refreshOutdoorRoute]
+    [venue, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails, refreshOutdoorRoute, alwaysStepFree]
   )
 
   const handleTravelModeChange = useCallback(
@@ -283,11 +325,26 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       if (shouldRouteOutdoors(from, navState.currentFloor, dest, surveyTrails)) {
         void refreshOutdoorRoute(from, dest, mode)
       } else {
-        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode, surveyTrails)
+        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode, surveyTrails, routePreference)
         setNavState((s) => ({ ...s, route }))
       }
     },
-    [venue, navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, surveyTrails, refreshOutdoorRoute]
+    [venue, navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, surveyTrails, refreshOutdoorRoute, routePreference]
+  )
+
+  // Accessibility-first routing (2b): switch between the fastest and
+  // step-free floor-change strategy for the destination already picked, and
+  // re-run the (indoor) route build immediately so the step list/ETA follow.
+  const handleChangeRoutePreference = useCallback(
+    (pref: RoutePreference) => {
+      setRoutePreference(pref)
+      const dest = navState.destination
+      if (!dest) return
+      const from = navState.currentPosition ?? venue.center
+      const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, pref)
+      setNavState((s) => ({ ...s, route }))
+    },
+    [venue, navState.destination, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails]
   )
 
   const handleStartNavigation = useCallback(() => {
@@ -341,13 +398,13 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, currentStepIndex: 0 } : s))
       void refreshOutdoorRoute(here, dest, navState.travelMode)
     } else {
-      const rebuilt = buildRoute(here, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails)
+      const rebuilt = buildRoute(here, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, routePreference)
       setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, route: rebuilt, currentStepIndex: 0 } : s))
     }
   }, [
     navState.currentPosition, navState.isNavigating, navState.route, navState.destination,
     navState.currentFloor, navState.travelMode, navState.positionAccuracy,
-    routeLoading, allWaypoints, surveyTrails, refreshOutdoorRoute,
+    routeLoading, allWaypoints, surveyTrails, refreshOutdoorRoute, routePreference,
   ])
 
   const handleStopNavigation = useCallback(() => {
@@ -362,12 +419,17 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     }))
   }, [])
 
+  // Also understands the shareable-destination poster format (2a): the same
+  // positioning anchor plus a trailing `dest:<waypointId>`, so scanning a
+  // poster both re-anchors your position at the entrance it's posted at and
+  // starts guidance to the destination it advertises.
   const handleQRDetected = useCallback((data: string) => {
     try {
       const parts = data.split(":")
       const floorIdx = parts.indexOf("floor")
       const latIdx = parts.indexOf("lat")
       const lngIdx = parts.indexOf("lng")
+      const destIdx = parts.indexOf("dest")
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
         setGpsStatus("active")
         setNavState((s) => ({ ...s, currentFloor: parseInt(parts[floorIdx + 1]) }))
@@ -378,8 +440,12 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           source: "qr",
         })
       }
+      if (destIdx >= 0) {
+        const wp = allWaypoints.find((w) => w.id === parts[destIdx + 1])
+        if (wp) handleDestinationSelect(wp)
+      }
     } catch {}
-  }, [setAnchor])
+  }, [setAnchor, allWaypoints, handleDestinationSelect])
 
   const handleSurveyComplete = useCallback(async (result: SurveyResult) => {
     setOverlay("none")
@@ -568,198 +634,78 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
+  const userInitials = useMemo(() => (user?.email ? user.email.slice(0, 2).toUpperCase() : null), [user])
+
+  const quickAccessWaypoints = useMemo(
+    () => (venue.quickAccess ?? []).map((name) => allWaypoints.find((w) => w.name === name)).filter((w): w is Waypoint => !!w),
+    [venue.quickAccess, allWaypoints]
+  )
+
+  const nearby = useMemo(() => {
+    const pos = navState.currentPosition ?? venue.center
+    return allWaypoints
+      .filter((w) => w.floor === navState.currentFloor && w.id !== navState.destination?.id)
+      .map((w) => ({ ...w, distanceM: distanceMeters(pos, w.coordinates) }))
+      .sort((a, b) => a.distanceM - b.distanceM)
+      .slice(0, 6)
+  }, [allWaypoints, navState.currentFloor, navState.destination, navState.currentPosition, venue.center])
+
+  // Accessibility-first routing (2b): when the destination sits on another
+  // floor, compare the fastest and step-free strategies so the panel can
+  // offer a real choice — but only surface it when they actually differ.
+  const routeOptions = useMemo(() => {
+    const dest = navState.destination
+    if (!dest || navState.route?.outdoor || dest.floor === navState.currentFloor) return null
+    const position = navState.currentPosition ?? venue.center
+    const fastest = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, "fastest")
+    const stepfree = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, "stepfree")
+    if (fastest.estimatedMinutes === stepfree.estimatedMinutes && fastest.totalDistance === stepfree.totalDistance) return null
+    return { fastest, stepfree }
+  }, [navState.destination, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, surveyTrails, venue.center])
+
+  const gpsLabel =
+    gpsStatus === "requesting" ? "Locating…" :
+    gpsStatus === "denied" ? "GPS unavailable" :
+    navState.positionAccuracy === 0 ? "Demo mode" : `GPS ±${Math.round(navState.positionAccuracy)}m`
+
+  const gpsDotClass =
+    gpsStatus !== "active" ? "bg-gray-300" :
+    navState.positionAccuracy === 0 ? "bg-blue-400" :
+    navState.positionAccuracy <= 5 ? "bg-wf-green" :
+    navState.positionAccuracy <= 15 ? "bg-yellow-400" : "bg-red-400"
+
   return (
-    <div className="relative w-full h-dvh overflow-hidden bg-gray-100">
-      {mapView === "2d" ? (
-        <FloorPlanMap
-          currentFloor={navState.currentFloor}
-          currentPosition={navState.currentPosition}
-          heading={heading}
-          destination={navState.destination}
-          route={navState.route}
-          isNavigating={navState.isNavigating}
-          center={venue.center}
-          defaultZoom={venue.defaultZoom}
-          floorPlans={allFloorPlans}
-          waypoints={allWaypoints}
-          trails={surveyTrails}
-          onMapReady={() => {}}
-          leafletMapRef={mapHandleRef}
-        />
-      ) : (
-        <Map3DView
-          currentFloor={navState.currentFloor}
-          currentPosition={navState.currentPosition}
-          heading={heading}
-          destination={navState.destination}
-          route={navState.route}
-          isNavigating={navState.isNavigating}
-          center={venue.center}
-          defaultZoom={venue.defaultZoom}
-          floorPlans={allFloorPlans}
-          waypoints={allWaypoints}
-          trails={surveyTrails}
-          onMapReady={() => {}}
-          mapHandleRef={mapHandleRef}
-        />
-      )}
-
-      {/* ── Top bar ──────────────────────────────────────────── */}
-      {!navState.isNavigating ? (
-        <div className="absolute top-0 left-0 right-0 z-50">
-          {/* Venue selector + search bar */}
-          <div className="bg-[#005EB8] px-4 pt-safe-bar pb-3">
-            <div className="flex items-center justify-between gap-2 mb-2">
-              <button
-                onClick={() => setOverlay("venues")}
-                className="flex items-center gap-1.5 min-w-0 text-white"
-              >
-                <MapPin size={14} className="flex-shrink-0 opacity-90" />
-                <span className="text-sm font-semibold truncate">{venue.name}</span>
-                <ChevronDown size={16} className="flex-shrink-0 opacity-90" />
-              </button>
-              <Link
-                href="/"
-                className="flex-shrink-0 text-white/90 bg-white/10 rounded-full p-2 active:bg-white/20"
-                aria-label="Back to home — choose Navigate or Map"
-                title="Back to home"
-              >
-                <Home size={18} />
-              </Link>
-            </div>
-            <button
-              onClick={() => setOverlay("search")}
-              className="w-full flex items-center gap-3 bg-white rounded-full px-4 py-3 shadow"
-            >
-              <Search size={18} className="text-[#005EB8] flex-shrink-0" />
-              <span className="flex-1 text-left text-gray-400 text-sm">
-                {navState.destination ? navState.destination.name : "Where are you going?"}
-              </span>
-              <MapPin size={16} className="text-gray-300 flex-shrink-0" />
-            </button>
-          </div>
-
-          {/* GPS status strip */}
-          {gpsStatus === "requesting" && (
-            <div className="bg-blue-50 border-b border-blue-100 px-4 py-2 flex items-center gap-2">
-              <div className="w-3 h-3 border-2 border-[#005EB8] border-t-transparent rounded-full animate-spin flex-shrink-0" />
-              <span className="text-xs text-[#005EB8]">Finding your location…</span>
-            </div>
-          )}
-          {gpsStatus === "denied" && (
-            <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 flex items-center gap-2">
-              <AlertCircle size={14} className="text-amber-600 flex-shrink-0" />
-              <span className="text-xs text-amber-700 flex-1">
-                GPS unavailable — browse destinations or use demo mode
-              </span>
-              <button
-                onClick={useDemoLocation}
-                className="text-xs font-bold text-[#005EB8] whitespace-nowrap ml-2"
-              >
-                Use demo
-              </button>
-            </div>
-          )}
-        </div>
-      ) : (
-        <TopInstructionBar
-          step={currentStep}
-          stepIndex={navState.currentStepIndex}
-          totalSteps={navState.route?.steps.length ?? 0}
-          isNavigating={navState.isNavigating}
-          title={venue.name}
-          subtitle={venue.subtitle}
-        />
-      )}
-
-      <FloorSelector
-        floors={availableFloors}
+    <div className="relative flex h-dvh w-full overflow-hidden bg-wf-map-light-bg">
+      <LeftPanel
+        venue={venue}
+        userInitials={userInitials}
+        onOpenVenues={() => setOverlay("venues")}
+        onOpenSearch={() => setOverlay("search")}
+        quickAccess={quickAccessWaypoints}
+        onSelectDestination={handleDestinationSelect}
+        nearby={nearby}
         currentFloor={navState.currentFloor}
-        onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
-      />
-
-      {/* GPS accuracy badge */}
-      {gpsStatus === "active" && (
-        <div className="absolute top-36 left-3 z-40 bg-white/90 rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
-          <div className={`w-2 h-2 rounded-full ${navState.positionAccuracy === 0 ? "bg-blue-400" : navState.positionAccuracy <= 5 ? "bg-green-500" : navState.positionAccuracy <= 15 ? "bg-yellow-500" : "bg-red-400"}`} />
-          <span className="text-xs text-gray-600 font-medium">
-            {navState.positionAccuracy === 0 ? "Demo" : `±${Math.round(navState.positionAccuracy)}m`}
-          </span>
-        </div>
-      )}
-
-      {/* Floor badge */}
-      <div className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} left-1/2 -translate-x-1/2 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm`}>
-        <Layers size={12} className="text-[#005EB8]" />
-        <span className="text-xs text-gray-700 font-semibold">
-          {navState.currentFloor === 0 ? "Ground Floor" : `Floor ${navState.currentFloor}`}
-        </span>
-      </div>
-
-      {/* 2D/3D map view toggle — labelled with the view it switches to */}
-      <button
-        onClick={toggleMapView}
-        className={`absolute ${navState.isNavigating ? "top-20" : "top-36"} right-3 z-40 bg-white/90 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm active:scale-95 transition-transform`}
-        title={mapView === "2d" ? "Switch to 3D view" : "Switch to 2D view"}
-        aria-label={mapView === "2d" ? "Switch to 3D view" : "Switch to 2D view"}
-      >
-        {mapView === "2d" ? (
-          <Box size={12} className="text-[#005EB8]" />
-        ) : (
-          <MapIcon size={12} className="text-[#005EB8]" />
-        )}
-        <span className="text-xs text-gray-700 font-semibold">{mapView === "2d" ? "3D" : "2D"}</span>
-      </button>
-
-      {/* Survey / self-map FABs — only in Map mode, so the Navigate screen stays
-          navigation-only. Mapping lives under /map (and is opened on entry there). */}
-      {!navState.isNavigating && initialMode === "map" && (
-        <div className="absolute left-3 bottom-52 z-50 flex flex-col items-start gap-2">
-          <button
-            onClick={() => setOverlay("survey")}
-            className="h-12 px-4 bg-[#005EB8] text-white rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
-            title="Survey Mode — map an area yourself"
-          >
-            <ClipboardList size={20} />
-            Map area
-          </button>
-          <button
-            onClick={() => setOverlay("upload-plan")}
-            className="h-12 px-4 bg-white text-[#005EB8] border border-[#005EB8] rounded-full shadow-lg flex items-center gap-2 font-semibold text-sm"
-            title="Upload an existing floor plan"
-          >
-            <UploadCloud size={20} />
-            Upload plan
-          </button>
-        </div>
-      )}
-
-      {/* Recenter FAB — hidden while navigating, where the follow-aware
-          re-centre control inside the map takes over. */}
-      {!navState.isNavigating && (
-        <button
-          onClick={() => {
-            enableSensors()
-            const pos = navState.currentPosition ?? venue.center
-            mapHandleRef.current?.flyTo([pos.lat, pos.lng], venue.defaultZoom)
-          }}
-          className="absolute left-3 bottom-36 z-50 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-200"
-          title="Re-centre"
-        >
-          <Navigation size={20} className="text-[#005EB8]" />
-        </button>
-      )}
-
-      <BottomSheet
         destination={navState.destination}
         route={navState.route}
-        currentFloor={navState.currentFloor}
-        isNavigating={navState.isNavigating}
-        travelMode={navState.travelMode}
         routeLoading={routeLoading}
+        isNavigating={navState.isNavigating}
+        currentStepIndex={navState.currentStepIndex}
+        travelMode={navState.travelMode}
         onTravelModeChange={handleTravelModeChange}
-        onStartNavigation={handleStartNavigation}
-        onStopNavigation={handleStopNavigation}
+        routePreference={routePreference}
+        onChangeRoutePreference={handleChangeRoutePreference}
+        alwaysStepFree={alwaysStepFree}
+        onChangeAlwaysStepFree={handleChangeAlwaysStepFree}
+        routeOptions={routeOptions}
+        onStart={handleStartNavigation}
+        onStop={handleStopNavigation}
+        onShare={() => setOverlay("share")}
+        showMapTools={initialMode === "map"}
+        onMapArea={() => setOverlay("survey")}
+        onUploadPlan={() => setOverlay("upload-plan")}
+        gpsStatus={gpsStatus}
+        onUseDemo={useDemoLocation}
+        onScanQR={() => { enableSensors(); setOverlay("qr") }}
         onOpenCamera={() => {
           enableSensors()
           // Prefer floor-anchored immersive AR when the device supports it and we
@@ -767,11 +713,69 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           // prompts to pick a destination when there isn't one yet).
           setOverlay(arSupported && navState.route && navState.destination ? "ar-camera" : "live-camera")
         }}
-        onScanQR={() => { enableSensors(); setOverlay("qr") }}
-        onOpenSearch={() => setOverlay("search")}
-        expanded={bottomSheetExpanded}
-        onToggleExpand={() => setBottomSheetExpanded((v) => !v)}
       />
+
+      <div className="relative flex-1">
+        {mapView === "2d" ? (
+          <FloorPlanMap
+            currentFloor={navState.currentFloor}
+            currentPosition={navState.currentPosition}
+            heading={heading}
+            destination={navState.destination}
+            route={navState.route}
+            isNavigating={navState.isNavigating}
+            center={venue.center}
+            defaultZoom={venue.defaultZoom}
+            floorPlans={allFloorPlans}
+            waypoints={allWaypoints}
+            trails={surveyTrails}
+            onMapReady={() => {}}
+            leafletMapRef={mapHandleRef}
+            dark={mapStyle === "dark"}
+          />
+        ) : (
+          <Map3DView
+            currentFloor={navState.currentFloor}
+            currentPosition={navState.currentPosition}
+            heading={heading}
+            destination={navState.destination}
+            route={navState.route}
+            isNavigating={navState.isNavigating}
+            center={venue.center}
+            defaultZoom={venue.defaultZoom}
+            floorPlans={allFloorPlans}
+            waypoints={allWaypoints}
+            trails={surveyTrails}
+            onMapReady={() => {}}
+            mapHandleRef={mapHandleRef}
+            dark={mapStyle === "dark"}
+          />
+        )}
+
+        <FloorSelector
+          floors={availableFloors}
+          currentFloor={navState.currentFloor}
+          onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
+        />
+
+        <MapControls
+          mapView={mapView}
+          onToggleMapView={changeMapView}
+          mapStyle={mapStyle}
+          onToggleMapStyle={toggleMapStyle}
+          onZoomIn={() => mapHandleRef.current?.zoomIn()}
+          onZoomOut={() => mapHandleRef.current?.zoomOut()}
+          onRecenter={() => {
+            enableSensors()
+            const pos = navState.currentPosition ?? venue.center
+            mapHandleRef.current?.flyTo([pos.lat, pos.lng], venue.defaultZoom)
+          }}
+          showRecenter={!navState.isNavigating}
+          gpsLabel={gpsLabel}
+          gpsDotClass={gpsDotClass}
+          floorLabel={floorLabel(navState.currentFloor)}
+        />
+      </div>
 
       {overlay === "search" && (
         <SearchModal
@@ -866,6 +870,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           onClose={() => setOverlay("none")}
           onUploadComplete={handleUploadComplete}
         />
+      )}
+
+      {overlay === "share" && navState.destination && (
+        <ShareDialog venue={venue} waypoint={navState.destination} onClose={() => setOverlay("none")} />
       )}
     </div>
   )

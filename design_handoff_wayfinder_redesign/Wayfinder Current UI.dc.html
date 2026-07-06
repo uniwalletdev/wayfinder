@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <style>
+    body { margin: 0; background: #E9EDF2; font-family: Arial, Helvetica, sans-serif; }
+    @keyframes wf-locate { 0% { transform: scale(0.5); opacity: 0.7; } 70% { opacity: 0; } 100% { transform: scale(3.4); opacity: 0; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</helmet>
+
+<section style="padding:48px;">
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
+    <span style="background:#0B1526; color:#fff; font:700 13px/1 Arial; padding:6px 12px; border-radius:999px;">Current UI — recreated from uniwalletdev/wayfinder</span>
+    <span style="color:#5B6B7C; font-size:13px;">Mobile app as it exists today · see redesign in <a href="Wayfinder Redesign.dc.html" style="color:#005EB8;">Wayfinder Redesign</a></span>
+  </div>
+
+  <div style="display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap;">
+
+    <!-- ============ A. Landing (src/app/page.tsx) ============ -->
+    <div>
+      <p style="margin:0 0 10px; font:600 13px Arial; color:#5B6B7C;">A · Landing — src/app/page.tsx</p>
+      <div data-screen-label="Current Landing" style="position:relative; width:390px; height:844px; border-radius:28px; overflow:hidden; box-shadow:0 20px 50px rgba(11,21,38,0.25); background:#005EB8; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 24px; box-sizing:border-box;">
+        <div style="text-align:center; margin-bottom:48px;">
+          <h1 style="margin:0; font-size:36px; font-weight:700; letter-spacing:-0.9px; color:#fff;">Wayfinder</h1>
+          <p style="margin:8px 0 0; font-size:14px; color:rgba(255,255,255,0.8);">Map a place, or find your way through one.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px; width:100%; max-width:384px;">
+          <div style="display:flex; align-items:center; gap:16px; border-radius:16px; background:#fff; padding:20px 24px; color:#005EB8; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1); cursor:pointer;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            <span style="display:flex; flex-direction:column; text-align:left;">
+              <span style="font-size:18px; font-weight:600;">Navigate</span>
+              <span style="font-size:14px; color:rgba(0,94,184,0.7);">Find your way to a destination</span>
+            </span>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px; border-radius:16px; border:1px solid rgba(255,255,255,0.3); background:rgba(255,255,255,0.1); padding:20px 24px; color:#fff; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1); cursor:pointer;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path><path d="M15 5.764v15"></path><path d="M9 3.236v15"></path></svg>
+            <span style="display:flex; flex-direction:column; text-align:left;">
+              <span style="font-size:18px; font-weight:600;">Map</span>
+              <span style="font-size:14px; color:rgba(255,255,255,0.7);">Walk an area and add it to the map</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ B. Navigate home (WayfinderApp) ============ -->
+    <div>
+      <p style="margin:0 0 10px; font:600 13px Arial; color:#5B6B7C;">B · Navigate home — WayfinderApp.tsx</p>
+      <div data-screen-label="Current Navigate Home" style="position:relative; width:390px; height:844px; border-radius:28px; overflow:hidden; box-shadow:0 20px 50px rgba(11,21,38,0.25); background:#f0f0f0;">
+        <!-- Map layer -->
+        <div style="position:absolute; inset:0; background:#f0f0f0;">
+          <img src="public/floorplans/ground.svg" alt="Ground floor plan" style="position:absolute; left:-90px; top:190px; width:580px; opacity:0.98;">
+          <!-- position marker -->
+          <div style="position:absolute; left:180px; top:520px; width:40px; height:40px;">
+            <div style="position:absolute; inset:0; border-radius:50%; background:rgba(0,94,184,0.35); animation:wf-locate 2.4s ease-out infinite;"></div>
+            <div style="position:absolute; left:10px; top:10px; width:20px; height:20px; border-radius:50%; background:#005EB8; border:3px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,0.4); box-sizing:border-box;"></div>
+          </div>
+        </div>
+        <!-- Top bar -->
+        <div style="position:absolute; top:0; left:0; right:0; z-index:5;">
+          <div style="background:#005EB8; padding:40px 16px 12px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px;">
+              <div style="display:flex; align-items:center; gap:6px; min-width:0; color:#fff; cursor:pointer;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.9; flex-shrink:0;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span style="font-size:14px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">GOSH</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.9; flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg>
+              </div>
+              <div style="flex-shrink:0; color:rgba(255,255,255,0.9); background:rgba(255,255,255,0.1); border-radius:999px; padding:8px; display:flex; cursor:pointer;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+              </div>
+            </div>
+            <div style="width:100%; display:flex; align-items:center; gap:12px; background:#fff; border-radius:999px; padding:12px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.1); box-sizing:border-box; cursor:pointer;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+              <span style="flex:1; text-align:left; color:#9ca3af; font-size:14px;">Where are you going?</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+          </div>
+        </div>
+        <!-- GPS accuracy badge -->
+        <div style="position:absolute; top:144px; left:12px; z-index:4; background:rgba(255,255,255,0.9); border-radius:999px; padding:4px 10px; display:flex; align-items:center; gap:6px; box-shadow:0 1px 2px rgba(0,0,0,0.05);">
+          <div style="width:8px; height:8px; border-radius:50%; background:#22c55e;"></div>
+          <span style="font-size:12px; color:#4b5563; font-weight:500;">±4m</span>
+        </div>
+        <!-- Floor badge -->
+        <div style="position:absolute; top:144px; left:50%; transform:translateX(-50%); z-index:4; background:rgba(255,255,255,0.9); border-radius:999px; padding:4px 12px; display:flex; align-items:center; gap:6px; box-shadow:0 1px 2px rgba(0,0,0,0.05);">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
+          <span style="font-size:12px; color:#374151; font-weight:600;">Ground Floor</span>
+        </div>
+        <!-- 2D/3D toggle -->
+        <div style="position:absolute; top:144px; right:12px; z-index:4; background:rgba(255,255,255,0.9); border-radius:999px; padding:4px 12px; display:flex; align-items:center; gap:6px; box-shadow:0 1px 2px rgba(0,0,0,0.05); cursor:pointer;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+          <span style="font-size:12px; color:#374151; font-weight:600;">3D</span>
+        </div>
+        <!-- Floor selector -->
+        <div style="position:absolute; right:12px; top:50%; transform:translateY(-50%); z-index:5; display:flex; flex-direction:column; gap:6px;">
+          <div style="width:40px; height:40px; border-radius:12px; font-size:12px; font-weight:700; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); background:#fff; color:#374151; display:flex; align-items:center; justify-content:center; cursor:pointer;">3</div>
+          <div style="width:40px; height:40px; border-radius:12px; font-size:12px; font-weight:700; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); background:#fff; color:#374151; display:flex; align-items:center; justify-content:center; cursor:pointer;">2</div>
+          <div style="width:40px; height:40px; border-radius:12px; font-size:12px; font-weight:700; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); background:#fff; color:#374151; display:flex; align-items:center; justify-content:center; cursor:pointer;">1</div>
+          <div style="width:40px; height:40px; border-radius:12px; font-size:12px; font-weight:700; box-shadow:0 6px 10px rgba(0,0,0,0.15); background:#005EB8; color:#fff; transform:scale(1.1); display:flex; align-items:center; justify-content:center; cursor:pointer;">G</div>
+        </div>
+        <!-- Recenter FAB -->
+        <div style="position:absolute; left:12px; bottom:144px; z-index:5; width:48px; height:48px; background:#fff; border-radius:50%; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center; border:1px solid #e5e7eb; box-sizing:border-box; cursor:pointer;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+        </div>
+        <!-- Idle bottom sheet -->
+        <div style="position:absolute; bottom:0; left:0; right:0; z-index:6; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 -8px 30px rgba(0,0,0,0.2);">
+          <div style="display:flex; justify-content:center; padding:8px 0 4px;"><div style="width:40px; height:4px; background:#d1d5db; border-radius:999px;"></div></div>
+          <div style="padding:0 16px 20px;">
+            <div style="width:100%; display:flex; align-items:center; gap:12px; background:#f3f4f6; border-radius:12px; padding:12px 16px; margin-bottom:12px; box-sizing:border-box; cursor:pointer;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span style="color:#6b7280; font-size:14px;">Where do you want to go?</span>
+            </div>
+            <div style="display:flex; gap:8px; margin-bottom:8px;">
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#005EB8; color:#fff; border-radius:12px; padding:10px 0; font-size:14px; font-weight:600; cursor:pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="5" height="5" x="3" y="3" rx="1"></rect><rect width="5" height="5" x="16" y="3" rx="1"></rect><rect width="5" height="5" x="3" y="16" rx="1"></rect><path d="M21 16h-3a2 2 0 0 0-2 2v3"></path><path d="M21 21v.01"></path><path d="M12 7v3a2 2 0 0 1-2 2H7"></path><path d="M3 12h.01"></path><path d="M12 3h.01"></path><path d="M12 16v.01"></path><path d="M16 12h1"></path><path d="M21 12v.01"></path><path d="M12 21v-1"></path></svg>
+                Scan QR code
+              </div>
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#f3f4f6; color:#1f2937; border-radius:12px; padding:10px 0; font-size:14px; font-weight:600; cursor:pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>
+                Live camera
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:center; gap:6px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
+              <p style="margin:0; font-size:12px; color:#9ca3af;">You are on: <span style="font-weight:600; color:#4b5563;">Ground Floor</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ C. Route preview (BottomSheet PreviewSheet) ============ -->
+    <div>
+      <p style="margin:0 0 10px; font:600 13px Arial; color:#5B6B7C;">C · Route preview — BottomSheet.tsx</p>
+      <div data-screen-label="Current Route Preview" style="position:relative; width:390px; height:844px; border-radius:28px; overflow:hidden; box-shadow:0 20px 50px rgba(11,21,38,0.25); background:#f0f0f0;">
+        <div style="position:absolute; inset:0; background:#f0f0f0;">
+          <img src="public/floorplans/ground.svg" alt="Ground floor plan" style="position:absolute; left:-90px; top:190px; width:580px;">
+          <svg style="position:absolute; inset:0; width:100%; height:100%;" viewBox="0 0 390 844">
+            <path d="M 185 540 L 240 470 L 240 380 L 300 330 L 330 250" fill="none" stroke="#00BFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="330" cy="250" r="10" fill="#DA291C" stroke="#fff" stroke-width="3"></circle>
+          </svg>
+          <div style="position:absolute; left:165px; top:520px; width:40px; height:40px;">
+            <div style="position:absolute; inset:0; border-radius:50%; background:rgba(0,94,184,0.35); animation:wf-locate 2.4s ease-out infinite;"></div>
+            <div style="position:absolute; left:10px; top:10px; width:20px; height:20px; border-radius:50%; background:#005EB8; border:3px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,0.4); box-sizing:border-box;"></div>
+          </div>
+        </div>
+        <div style="position:absolute; top:0; left:0; right:0; z-index:5;">
+          <div style="background:#005EB8; padding:40px 16px 12px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px;">
+              <div style="display:flex; align-items:center; gap:6px; color:#fff;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.9;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span style="font-size:14px; font-weight:600;">GOSH</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.9;"><path d="m6 9 6 6 6-6"></path></svg>
+              </div>
+              <div style="color:rgba(255,255,255,0.9); background:rgba(255,255,255,0.1); border-radius:999px; padding:8px; display:flex;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; background:#fff; border-radius:999px; padding:12px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+              <span style="flex:1; text-align:left; color:#9ca3af; font-size:14px;">Russell Square Station</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Preview bottom sheet -->
+        <div style="position:absolute; bottom:0; left:0; right:0; z-index:6; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 -8px 30px rgba(0,0,0,0.2);">
+          <div style="display:flex; justify-content:center; padding:8px 0 4px;"><div style="width:40px; height:4px; background:#d1d5db; border-radius:999px;"></div></div>
+          <div style="padding:0 16px 20px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+              <div style="display:flex; align-items:center; gap:8px; min-width:0;">
+                <span style="font-size:24px; flex-shrink:0;">🚉</span>
+                <div style="min-width:0;">
+                  <p style="margin:0; font-weight:700; color:#111827; font-size:16px; line-height:1.2;">Russell Square Station</p>
+                  <p style="margin:0; font-size:12px; color:#6b7280;">Piccadilly line · Bernard St entrance</p>
+                </div>
+              </div>
+              <div style="width:32px; height:32px; background:#f3f4f6; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; cursor:pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+              </div>
+            </div>
+            <div style="display:flex; gap:8px; margin-bottom:12px;">
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; border-radius:12px; padding:8px 0; font-size:14px; font-weight:600; border:1px solid #005EB8; background:#005EB8; color:#fff; cursor:pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1"></circle><path d="m9 20 3-6 3 6"></path><path d="m6 8 6 2 6-2"></path><path d="M12 10v4"></path></svg>
+                Walk
+              </div>
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; border-radius:12px; padding:8px 0; font-size:14px; font-weight:600; border:1px solid #e5e7eb; background:#fff; color:#4b5563; cursor:pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"></circle><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="15" cy="5" r="1"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h2"></path></svg>
+                Cycle
+              </div>
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:6px; border-radius:12px; padding:8px 0; font-size:14px; font-weight:600; border:1px solid #e5e7eb; background:#fff; color:#4b5563; cursor:pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+                Drive
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:16px; margin-bottom:12px;">
+              <div style="display:flex; align-items:center; gap:6px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span style="font-size:14px; font-weight:600; color:#111827;">8 min</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span style="font-size:14px; font-weight:600; color:#111827;">650m</span>
+              </div>
+            </div>
+            <div style="width:100%; display:flex; align-items:center; justify-content:center; gap:8px; background:#009639; color:#fff; border-radius:12px; padding:12px 0; font-size:16px; font-weight:700; cursor:pointer;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              Start
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ D. Search modal ============ -->
+    <div>
+      <p style="margin:0 0 10px; font:600 13px Arial; color:#5B6B7C;">D · Search — SearchModal.tsx</p>
+      <div data-screen-label="Current Search Modal" style="position:relative; width:390px; height:844px; border-radius:28px; overflow:hidden; box-shadow:0 20px 50px rgba(11,21,38,0.25); background:#fff; display:flex; flex-direction:column;">
+        <div style="background:#005EB8; padding:48px 16px 16px; display:flex; align-items:center; gap:12px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+          <div style="flex:1; background:#fff; border-radius:12px; display:flex; align-items:center; padding:0 12px; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <span style="flex:1; padding:10px 0; font-size:14px; color:#9ca3af;">Search a room, place or address...</span>
+          </div>
+        </div>
+        <div style="flex:1; overflow:hidden;">
+          <p style="margin:0; padding:16px 16px 8px; font-size:12px; font-weight:600; color:#9ca3af; text-transform:uppercase; letter-spacing:0.05em;">Quick access</p>
+          <sc-for list="{{ quickRows }}" as="row" hint-placeholder-count="3">
+            <div style="width:100%; display:flex; align-items:center; gap:12px; padding:12px 16px; border-bottom:1px solid #f3f4f6; box-sizing:border-box; cursor:pointer;">
+              <div style="width:40px; height:40px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;">{{ row.icon }}</div>
+              <div style="flex:1; min-width:0;">
+                <p style="margin:0; font-size:14px; font-weight:600; color:#111827;">{{ row.name }}</p>
+                <p style="margin:0; font-size:12px; color:#6b7280;">{{ row.meta }}</p>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"></path></svg>
+            </div>
+          </sc-for>
+          <p style="margin:0; padding:16px 16px 8px; font-size:12px; font-weight:600; color:#9ca3af; text-transform:uppercase; letter-spacing:0.05em;">All locations</p>
+          <sc-for list="{{ allRows }}" as="row" hint-placeholder-count="5">
+            <div style="width:100%; display:flex; align-items:center; gap:12px; padding:12px 16px; border-bottom:1px solid #f3f4f6; box-sizing:border-box; cursor:pointer;">
+              <div style="width:40px; height:40px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;">{{ row.icon }}</div>
+              <div style="flex:1; min-width:0;">
+                <p style="margin:0; font-size:14px; font-weight:600; color:#111827;">{{ row.name }}</p>
+                <p style="margin:0; font-size:12px; color:#6b7280;">{{ row.meta }}</p>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"></path></svg>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ E. Venue picker ============ -->
+    <div>
+      <p style="margin:0 0 10px; font:600 13px Arial; color:#5B6B7C;">E · Places — VenuePicker.tsx</p>
+      <div data-screen-label="Current Venue Picker" style="position:relative; width:390px; height:844px; border-radius:28px; overflow:hidden; box-shadow:0 20px 50px rgba(11,21,38,0.25); background:#fff; display:flex; flex-direction:column;">
+        <div style="background:#005EB8; padding:40px 16px 16px; display:flex; align-items:center; gap:12px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer;"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+          <h2 style="margin:0; color:#fff; font-weight:700; font-size:18px; flex:1;">Places</h2>
+        </div>
+        <div style="flex:1; overflow:hidden;">
+          <div style="display:flex; align-items:center; gap:10px; padding:12px 16px; border-bottom:1px solid #f3f4f6; background:#f9fafb;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m2 2 20 20"></path><path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193"></path><path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07"></path></svg>
+            <p style="margin:0; font-size:12px; color:#6b7280;">Saved on this device. Sign-in isn't set up on this server yet.</p>
+          </div>
+          <div style="width:100%; display:flex; align-items:center; gap:12px; padding:16px; border-bottom:1px solid #f3f4f6; box-sizing:border-box; cursor:pointer;">
+            <div style="width:40px; height:40px; background:#005EB8; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+            </div>
+            <div style="flex:1;">
+              <p style="margin:0; font-size:14px; font-weight:600; color:#111827;">Map a new place</p>
+              <p style="margin:0; font-size:12px; color:#6b7280;">Public or private — you choose who can see it</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+          </div>
+          <p style="margin:0; padding:16px 16px 8px; font-size:12px; font-weight:600; color:#9ca3af; text-transform:uppercase; letter-spacing:0.05em;">Public places</p>
+          <div style="width:100%; display:flex; align-items:center; gap:12px; padding:12px 16px; border-bottom:1px solid #f3f4f6; background:#eff6ff; box-sizing:border-box;">
+            <div style="width:40px; height:40px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;">🏥</div>
+            <div style="flex:1; min-width:0;">
+              <p style="margin:0; font-size:14px; font-weight:600; color:#111827; display:flex; align-items:center; gap:4px;">GOSH
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76"></path><path d="m9 12 2 2 4-4"></path></svg>
+              </p>
+              <p style="margin:0; font-size:12px; color:#6b7280;">Great Ormond Street Hospital · Public</p>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"></path></svg>
+          </div>
+          <p style="margin:0; padding:16px 16px 8px; font-size:12px; font-weight:600; color:#9ca3af; text-transform:uppercase; letter-spacing:0.05em;">Your places</p>
+          <sc-for list="{{ userPlaces }}" as="p" hint-placeholder-count="2">
+            <div style="width:100%; display:flex; align-items:center; gap:12px; padding:12px 16px; border-bottom:1px solid #f3f4f6; box-sizing:border-box;">
+              <div style="width:40px; height:40px; background:#eff6ff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;">{{ p.icon }}</div>
+              <div style="flex:1; min-width:0;">
+                <p style="margin:0; font-size:14px; font-weight:600; color:#111827;">{{ p.name }}</p>
+                <p style="margin:0; font-size:12px; color:#6b7280;">{{ p.meta }}</p>
+              </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ F. Map mode ============ -->
+    <div>
+      <p style="margin:0 0 10px; font:600 13px Arial; color:#5B6B7C;">F · Map mode — /map with survey FABs</p>
+      <div data-screen-label="Current Map Mode" style="position:relative; width:390px; height:844px; border-radius:28px; overflow:hidden; box-shadow:0 20px 50px rgba(11,21,38,0.25); background:#f0f0f0;">
+        <div style="position:absolute; inset:0; background:#f0f0f0;">
+          <img src="public/floorplans/ground.svg" alt="Ground floor plan" style="position:absolute; left:-90px; top:190px; width:580px;">
+        </div>
+        <div style="position:absolute; top:0; left:0; right:0; z-index:5;">
+          <div style="background:#005EB8; padding:40px 16px 12px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px;">
+              <div style="display:flex; align-items:center; gap:6px; color:#fff;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.9;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span style="font-size:14px; font-weight:600;">GOSH</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.9;"><path d="m6 9 6 6 6-6"></path></svg>
+              </div>
+              <div style="color:rgba(255,255,255,0.9); background:rgba(255,255,255,0.1); border-radius:999px; padding:8px; display:flex;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; background:#fff; border-radius:999px; padding:12px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+              <span style="flex:1; text-align:left; color:#9ca3af; font-size:14px;">Where are you going?</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+          </div>
+        </div>
+        <!-- Survey FABs -->
+        <div style="position:absolute; left:12px; bottom:208px; z-index:5; display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
+          <div style="height:48px; padding:0 16px; background:#005EB8; color:#fff; border-radius:999px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1); display:flex; align-items:center; gap:8px; font-weight:600; font-size:14px; cursor:pointer;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg>
+            Map area
+          </div>
+          <div style="height:48px; padding:0 16px; background:#fff; color:#005EB8; border:1px solid #005EB8; border-radius:999px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1); display:flex; align-items:center; gap:8px; font-weight:600; font-size:14px; box-sizing:border-box; cursor:pointer;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M12 12v9"></path><path d="m16 16-4-4-4 4"></path></svg>
+            Upload plan
+          </div>
+        </div>
+        <div style="position:absolute; left:12px; bottom:144px; z-index:5; width:48px; height:48px; background:#fff; border-radius:50%; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center; border:1px solid #e5e7eb; box-sizing:border-box; cursor:pointer;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+        </div>
+        <div style="position:absolute; bottom:0; left:0; right:0; z-index:6; background:#fff; border-radius:16px 16px 0 0; box-shadow:0 -8px 30px rgba(0,0,0,0.2);">
+          <div style="display:flex; justify-content:center; padding:8px 0 4px;"><div style="width:40px; height:4px; background:#d1d5db; border-radius:999px;"></div></div>
+          <div style="padding:0 16px 20px;">
+            <div style="display:flex; align-items:center; gap:12px; background:#f3f4f6; border-radius:12px; padding:12px 16px; margin-bottom:12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#005EB8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span style="color:#6b7280; font-size:14px;">Where do you want to go?</span>
+            </div>
+            <div style="display:flex; gap:8px; margin-bottom:8px;">
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#005EB8; color:#fff; border-radius:12px; padding:10px 0; font-size:14px; font-weight:600;">Scan QR code</div>
+              <div style="flex:1; display:flex; align-items:center; justify-content:center; gap:8px; background:#f3f4f6; color:#1f2937; border-radius:12px; padding:10px 0; font-size:14px; font-weight:600;">Live camera</div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:center; gap:6px;">
+              <p style="margin:0; font-size:12px; color:#9ca3af;">You are on: <span style="font-weight:600; color:#4b5563;">Ground Floor</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      quickRows: [
+        { icon: "🚑", name: "A&E Entrance", meta: "Entrance • Ground Floor • Emergency dept" },
+        { icon: "🛎️", name: "Main Reception", meta: "Reception • Ground Floor" },
+        { icon: "💊", name: "Pharmacy", meta: "Pharmacy • Ground Floor • Main pharmacy" },
+      ],
+      allRows: [
+        { icon: "🚑", name: "A&E Entrance", meta: "Entrance • Ground Floor • Emergency dept" },
+        { icon: "🚪", name: "Main Entrance", meta: "Entrance • Ground Floor" },
+        { icon: "🛎️", name: "Main Reception", meta: "Reception • Ground Floor" },
+        { icon: "💊", name: "Pharmacy", meta: "Pharmacy • Ground Floor • Main pharmacy" },
+        { icon: "🍽️", name: "Restaurant & Café", meta: "Food • Ground Floor" },
+        { icon: "🚻", name: "Toilets", meta: "Toilets • Ground Floor" },
+        { icon: "🛗", name: "Lift A", meta: "Lift • All floors" },
+      ],
+      userPlaces: [
+        { icon: "🏢", name: "5th-floor office", meta: "Private" },
+        { icon: "🏠", name: "Home", meta: "Private" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

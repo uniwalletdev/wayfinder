@@ -14,6 +14,54 @@
   --nhs-warm-yellow: #FFB81C;
   --nhs-red: #DA291C;
   --waze-route: #00BFFF;
+
+  /* Wayfinder redesign tokens */
+  --wf-primary: #0A5DC2;
+  --wf-primary-deep: #06336B;
+  --wf-ink: #0B1B2E;
+  --wf-ink-hero: #0A1626;
+  --wf-teal: #0FB5AE;
+  --wf-teal-tint: #E9FBF6;
+  --wf-teal-text: #0B7A75;
+  --wf-route-cyan: #22C9FF;
+  --wf-route-blue: #0A8CFF;
+  --wf-green: #0BA84A;
+  --wf-green-tint: #E9F8EE;
+  --wf-green-text: #0A7C36;
+  --wf-body: #3D4E66;
+  --wf-muted: #51627A;
+  --wf-faint: #8494A9;
+  --wf-surface: #F2F6FB;
+  --wf-surface-2: #F5F8FC;
+  --wf-border: #E4EAF2;
+  --wf-border-faint: #F0F4F9;
+  --wf-map-light-bg: #EAEFF4;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+
+  --color-wf-primary: var(--wf-primary);
+  --color-wf-primary-deep: var(--wf-primary-deep);
+  --color-wf-ink: var(--wf-ink);
+  --color-wf-ink-hero: var(--wf-ink-hero);
+  --color-wf-teal: var(--wf-teal);
+  --color-wf-teal-tint: var(--wf-teal-tint);
+  --color-wf-teal-text: var(--wf-teal-text);
+  --color-wf-route-cyan: var(--wf-route-cyan);
+  --color-wf-route-blue: var(--wf-route-blue);
+  --color-wf-green: var(--wf-green);
+  --color-wf-green-tint: var(--wf-green-tint);
+  --color-wf-green-text: var(--wf-green-text);
+  --color-wf-body: var(--wf-body);
+  --color-wf-muted: var(--wf-muted);
+  --color-wf-faint: var(--wf-faint);
+  --color-wf-surface: var(--wf-surface);
+  --color-wf-surface-2: var(--wf-surface-2);
+  --color-wf-border: var(--wf-border);
+  --color-wf-border-faint: var(--wf-border-faint);
+  --color-wf-map-light-bg: var(--wf-map-light-bg);
 }
 
 * {
@@ -25,8 +73,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
 
 #map-container {
@@ -166,4 +213,12 @@ html, body {
 @keyframes slideUp {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
+}
+
+/* Isolates the QR poster (see ShareDialog) when the user prints/downloads it,
+   so the app chrome behind it doesn't also end up on the page. */
+@media print {
+  body * { visibility: hidden; }
+  .wf-poster-print, .wf-poster-print * { visibility: visible; }
+  .wf-poster-print { position: fixed; inset: 0; box-shadow: none !important; }
 }

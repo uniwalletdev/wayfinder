@@ -35,7 +35,9 @@ interface Props {
   waypoints: Waypoint[]
   trails?: SurveyTrail[]
   onMapReady: () => void
-  mapHandleRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
+  mapHandleRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void; zoomIn: () => void; zoomOut: () => void } | null>
+  // Light (default) or dark scene background — the map-style floating control.
+  dark?: boolean
 }
 
 const NHS_BLUE = 0x005eb8
@@ -70,11 +72,13 @@ export default function Map3DView({
   trails = [],
   onMapReady,
   mapHandleRef,
+  dark = false,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null)
   const sceneRef = useRef<THREE.Scene | null>(null)
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null)
+  const groundRef = useRef<THREE.Mesh | null>(null)
   const controlsRef = useRef<OrbitControls | null>(null)
   const buildingRef = useRef<THREE.Group | null>(null)
   const markersRef = useRef<THREE.Group | null>(null)
@@ -157,6 +161,7 @@ export default function Map3DView({
     ground.rotation.x = -Math.PI / 2
     ground.position.y = -0.5
     scene.add(ground)
+    groundRef.current = ground
 
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.target.set(0, floorY(currentFloorRef.current), 0)
@@ -236,6 +241,13 @@ export default function Map3DView({
     // unchanged: retarget the orbit, keep the current viewing direction, and
     // set the range from the requested zoom.
     if (mapHandleRef) {
+      const scaleDistance = (factor: number) => {
+        const dir = camera.position.clone().sub(controls.target)
+        if (dir.lengthSq() < 1e-6) dir.set(0, 1, 1)
+        const dist = THREE.MathUtils.clamp(dir.length() * factor, controls.minDistance, controls.maxDistance)
+        dir.normalize().multiplyScalar(dist)
+        camera.position.copy(controls.target).add(dir)
+      }
       mapHandleRef.current = {
         flyTo: ([lat, lng], zoom) => {
           const target = toLocalRef.current({ lat, lng }, floorY(currentFloorRef.current))
@@ -245,6 +257,8 @@ export default function Map3DView({
           controls.target.copy(target)
           camera.position.copy(target).add(dir)
         },
+        zoomIn: () => scaleDistance(0.8),
+        zoomOut: () => scaleDistance(1.25),
       }
     }
     onMapReady()
@@ -265,6 +279,17 @@ export default function Map3DView({
     // The scene is built once; data changes are applied by the effects below.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // Light/dark scene background — the 3D cousin of the 2D map's tile swap.
+  useEffect(() => {
+    const scene = sceneRef.current
+    const ground = groundRef.current
+    if (!scene || !ground) return
+    const bg = dark ? 0x0c1928 : 0xd9e6f2
+    scene.background = new THREE.Color(bg)
+    if (scene.fog && scene.fog instanceof THREE.Fog) scene.fog.color.set(bg)
+    ;(ground.material as THREE.MeshLambertMaterial).color.set(dark ? 0x0f2036 : 0xece9e1)
+  }, [dark])
 
   // Build the building: one deck group per floor. Plan floors get a textured
   // plate; floors that were only walked get their corridor/room schematic

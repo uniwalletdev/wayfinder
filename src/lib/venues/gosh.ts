@@ -42,21 +42,38 @@ export const GOSH_VENUE: Venue = {
     // Floor 1
     { id: "ward-1a",       name: "Ward 1A",             type: "ward",       coordinates: { lat: 51.522829, lng: -0.120346 }, floor: 1, description: "Haematology ward" },
     { id: "ward-1b",       name: "Ward 1B",             type: "ward",       coordinates: { lat: 51.522829, lng: -0.119431 }, floor: 1, description: "Oncology ward" },
+    { id: "stairs-1-f1",   name: "Staircase 1 — Floor 1", type: "stairs",   coordinates: { lat: 51.522829, lng: -0.120143 }, floor: 1 },
     { id: "lift-a-f1",     name: "Lift A — Floor 1",    type: "lift",       coordinates: { lat: 51.522374, lng: -0.119878 }, floor: 1 },
-    { id: "outpatients-1", name: "Outpatients Clinic 1",type: "department", coordinates: { lat: 51.522159, lng: -0.120346 }, floor: 1 },
+    {
+      id: "outpatients-1", name: "Outpatients Clinic 1", type: "department",
+      coordinates: { lat: 51.522159, lng: -0.120346 }, floor: 1,
+      description: "General outpatients",
+      hours: "Open now · Closes 17:00",
+      arrivalNotes: "Check in at the touchscreen kiosk by the entrance, then take a seat in the waiting area — you'll be called by first name.",
+      typicalWait: "10–20 min after check-in",
+    },
     { id: "toilet-f1",     name: "Toilets — Floor 1",   type: "toilet",     coordinates: { lat: 51.522159, lng: -0.119431 }, floor: 1 },
 
     // Floor 2
     { id: "ward-2a",   name: "Ward 2A",          type: "ward",       coordinates: { lat: 51.522829, lng: -0.120346 }, floor: 2, description: "Cardiology ward" },
     { id: "ward-2b",   name: "Ward 2B",          type: "ward",       coordinates: { lat: 51.522829, lng: -0.119431 }, floor: 2, description: "Neurology ward" },
+    { id: "stairs-1-f2", name: "Staircase 1 — Floor 2", type: "stairs",   coordinates: { lat: 51.522829, lng: -0.120143 }, floor: 2 },
     { id: "lift-a-f2", name: "Lift A — Floor 2", type: "lift",       coordinates: { lat: 51.522374, lng: -0.119878 }, floor: 2 },
-    { id: "xray",      name: "X-Ray & Imaging",  type: "department", coordinates: { lat: 51.522159, lng: -0.120346 }, floor: 2, description: "Radiology department" },
+    {
+      id: "xray", name: "X-Ray & Imaging", type: "department",
+      coordinates: { lat: 51.522159, lng: -0.120346 }, floor: 2,
+      description: "Radiology department",
+      hours: "Open now · Closes 18:00",
+      arrivalNotes: "Report to the imaging reception desk with your referral letter. Please arrive 15 minutes early for changing, if needed.",
+      typicalWait: "15–25 min after check-in",
+    },
     { id: "toilet-f2", name: "Toilets — Floor 2",type: "toilet",     coordinates: { lat: 51.522159, lng: -0.119431 }, floor: 2 },
 
     // Floor 3
     { id: "ward-3a",   name: "Ward 3A",           type: "ward",       coordinates: { lat: 51.522829, lng: -0.120551 }, floor: 3, description: "Surgical ward" },
     { id: "ward-3b",   name: "Ward 3B",           type: "ward",       coordinates: { lat: 51.522829, lng: -0.120143 }, floor: 3, description: "Critical care" },
     { id: "ward-5b",   name: "Ward 5B",           type: "ward",       coordinates: { lat: 51.522829, lng: -0.119431 }, floor: 3, description: "General paediatrics" },
+    { id: "stairs-1-f3", name: "Staircase 1 — Floor 3", type: "stairs", coordinates: { lat: 51.522829, lng: -0.120143 }, floor: 3 },
     { id: "lift-a-f3", name: "Lift A — Floor 3",  type: "lift",       coordinates: { lat: 51.522374, lng: -0.119878 }, floor: 3 },
     { id: "theatre",   name: "Operating Theatres",type: "department", coordinates: { lat: 51.522159, lng: -0.120346 }, floor: 3, description: "Surgical theatres" },
     { id: "toilet-f3", name: "Toilets — Floor 3", type: "toilet",     coordinates: { lat: 51.522159, lng: -0.119431 }, floor: 3 },

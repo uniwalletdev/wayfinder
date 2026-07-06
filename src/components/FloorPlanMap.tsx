@@ -24,8 +24,13 @@ interface Props {
   waypoints: Waypoint[]
   trails?: SurveyTrail[]
   onMapReady: () => void
-  leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void } | null>
+  leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void; zoomIn: () => void; zoomOut: () => void } | null>
+  // Light (default) or dark basemap tiles — the map-style floating control.
+  dark?: boolean
 }
+
+const LIGHT_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+const DARK_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png"
 
 export default function FloorPlanMap({
   currentFloor,
@@ -41,8 +46,10 @@ export default function FloorPlanMap({
   trails = [],
   onMapReady,
   leafletMapRef,
+  dark = false,
 }: Props) {
   const mapRef = useRef<L.Map | null>(null)
+  const tileLayerRef = useRef<L.TileLayer | null>(null)
   const positionMarkerRef = useRef<L.Marker | null>(null)
   const destMarkerRef = useRef<L.Marker | null>(null)
   const routeLayerRef = useRef<L.FeatureGroup | null>(null)
@@ -90,10 +97,6 @@ export default function FloorPlanMap({
       attributionControl: false,
     })
 
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-      maxZoom: 22,
-    }).addTo(map)
-
     // A user-initiated drag or zoom means they want to explore — pause follow.
     // Programmatic moves (fitBounds/panTo) set programmaticRef to opt out.
     const onUserInteract = () => setFollow(false)
@@ -112,6 +115,15 @@ export default function FloorPlanMap({
       if (leafletMapRef) leafletMapRef.current = null
     }
   }, [])
+
+  // Swap basemap tiles when the light/dark map-style control is toggled.
+  useEffect(() => {
+    if (!mapRef.current) return
+    const map = mapRef.current
+    if (tileLayerRef.current) map.removeLayer(tileLayerRef.current)
+    tileLayerRef.current = L.tileLayer(dark ? DARK_TILES : LIGHT_TILES, { maxZoom: 22 }).addTo(map)
+    tileLayerRef.current.bringToBack()
+  }, [dark])
 
   // Update floor plan overlay
   useEffect(() => {

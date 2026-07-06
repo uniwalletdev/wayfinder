@@ -15,6 +15,11 @@ export interface Waypoint {
   // survey footage. Drives which side of the corridor its room is drawn on in
   // the generated floor schematic. Absent when unknown.
   side?: "left" | "right" | "ahead"
+  // Venue-authored arrival context, shown on the destination card once someone
+  // is on their way. All optional — most waypoints won't have any of this.
+  hours?: string
+  arrivalNotes?: string
+  typicalWait?: string
 }
 
 export type WaypointType =
@@ -101,6 +106,10 @@ export interface Route {
 }
 
 export type TravelMode = "walking" | "cycling" | "driving"
+
+// Floor-change strategy: always use a lift ("stepfree"), or allow stairs when
+// they're the quicker option ("fastest").
+export type RoutePreference = "fastest" | "stepfree"
 
 export interface RouteStep {
   instruction: string
