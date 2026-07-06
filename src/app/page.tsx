@@ -37,21 +37,21 @@ export default function Landing() {
         />
 
         {/* Nav */}
-        <nav className="relative z-10 flex items-center justify-between px-24 pt-9">
-          <div className="flex items-center gap-2.5">
+        <nav className="relative z-10 flex items-center justify-between gap-4 px-6 pt-9 sm:px-10 lg:px-16 xl:px-24">
+          <div className="flex flex-shrink-0 items-center gap-2.5">
             <span className="flex h-[34px] w-[34px] items-center justify-center rounded-[10px] bg-gradient-to-br from-wf-primary to-wf-teal">
               <Navigation size={17} className="text-white" />
             </span>
             <span className="font-display text-xl font-bold text-white">Wayfinder</span>
           </div>
-          <div className="hidden items-center gap-9 lg:flex">
+          <div className="hidden items-center gap-9 xl:flex">
             {NAV_LINKS.map((link) => (
               <span key={link} className="text-[14.5px] font-medium text-white/85">{link}</span>
             ))}
           </div>
           <Link
             href="/navigate"
-            className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-wf-ink transition-transform active:scale-95"
+            className="flex flex-shrink-0 items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-wf-ink transition-transform active:scale-95"
           >
             Open the map
             <ArrowRight size={15} />
@@ -59,7 +59,7 @@ export default function Landing() {
         </nav>
 
         {/* Copy */}
-        <div className="relative z-10 max-w-[640px] px-24 pt-24">
+        <div className="relative z-10 max-w-[640px] px-6 pt-20 sm:px-10 lg:px-16 xl:px-24 xl:pt-24">
           <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(34,201,255,0.35)] bg-[rgba(34,201,255,0.08)] px-3.5 py-1.5 text-[13px] text-[#8FDFFF]">
             <span className="h-[7px] w-[7px] rounded-full bg-wf-route-cyan" />
             Indoor navigation, now on the web
@@ -92,7 +92,7 @@ export default function Landing() {
         </div>
 
         {/* Floating route card */}
-        <div className="absolute right-24 top-[120px] z-10 hidden w-80 rounded-[20px] bg-white/97 p-5 shadow-[0_24px_60px_rgba(11,27,46,0.25)] backdrop-blur xl:block">
+        <div className="absolute right-6 top-[120px] z-10 hidden w-80 rounded-[20px] bg-white/97 p-5 shadow-[0_24px_60px_rgba(11,27,46,0.25)] backdrop-blur sm:right-10 lg:right-16 xl:right-24 lg:block">
           <div className="flex items-center gap-2.5">
             <span className="flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center rounded-xl bg-[#E7F2FF]">
               <Map size={19} className="text-wf-primary" />
@@ -119,7 +119,7 @@ export default function Landing() {
         </div>
 
         {/* Floating floor capsule */}
-        <div className="absolute right-[456px] top-[340px] z-10 hidden flex-col gap-1 rounded-full bg-white/97 p-2 xl:flex">
+        <div className="absolute right-[352px] top-[340px] z-10 hidden flex-col gap-1 rounded-full bg-white/97 p-2 sm:right-[392px] lg:right-[432px] xl:right-[456px] lg:flex">
           {["3", "2", "1", "G"].map((f) => (
             <span
               key={f}
@@ -134,7 +134,7 @@ export default function Landing() {
       </section>
 
       {/* ── Trust strip ──────────────────────────────────────────────────── */}
-      <section className="flex flex-wrap items-center justify-center gap-14 border-b border-[#E8EDF4] px-24 py-[30px]">
+      <section className="flex flex-wrap items-center justify-center gap-14 border-b border-[#E8EDF4] px-6 py-[30px] sm:px-10 lg:px-16 xl:px-24">
         <span className="text-xs font-semibold uppercase tracking-[0.1em] text-wf-faint">Built for</span>
         {TRUST_ITEMS.map((item) => (
           <span key={item} className="font-display text-base font-semibold text-wf-body">{item}</span>
@@ -142,7 +142,7 @@ export default function Landing() {
       </section>
 
       {/* ── Features ─────────────────────────────────────────────────────── */}
-      <section className="px-24 pb-[88px] pt-24">
+      <section className="px-6 pb-[88px] pt-24 sm:px-10 lg:px-16 xl:px-24">
         <p className="text-sm font-semibold uppercase tracking-[0.08em] text-wf-primary">How it works</p>
         <h2 className="mt-3 max-w-2xl font-display text-[44px] font-bold leading-[1.1] -tracking-[1px] text-wf-ink">
           From front door to final room, in three moves
@@ -164,7 +164,7 @@ export default function Landing() {
       </section>
 
       {/* ── Dark band: 2D · 3D · Every level ─────────────────────────────── */}
-      <section className="grid grid-cols-1 gap-16 bg-wf-ink px-24 py-[88px] lg:grid-cols-2 lg:items-center">
+      <section className="grid grid-cols-1 gap-16 bg-wf-ink px-6 py-[88px] sm:px-10 lg:grid-cols-2 lg:items-center lg:px-16 xl:px-24">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.1em] text-wf-route-cyan">2D · 3D · Every level</p>
           <h2 className="mt-3 font-display text-[40px] font-bold leading-[1.12] -tracking-[1px] text-white">
@@ -229,7 +229,7 @@ export default function Landing() {
       </section>
 
       {/* ── Footer ────────────────────────────────────────────────────────── */}
-      <footer className="flex flex-col items-center justify-between gap-4 border-t border-[#E8EDF4] px-24 py-7 sm:flex-row">
+      <footer className="flex flex-col items-center justify-between gap-4 border-t border-[#E8EDF4] px-6 py-7 sm:flex-row sm:px-10 lg:px-16 xl:px-24">
         <div className="flex items-center gap-2">
           <span className="flex h-6 w-6 items-center justify-center rounded-[7px] bg-gradient-to-br from-wf-primary to-wf-teal">
             <Navigation size={12} className="text-white" />
@@ -276,14 +276,22 @@ function HeroMap() {
           className="wf-route-flow"
         />
       </svg>
-      <div className="absolute" style={{ left: 240, top: 680, width: 40, height: 40 }}>
+      {/*
+        The SVG's viewBox height (780) always matches the hero's fixed height,
+        so preserveAspectRatio="slice" never actually rescales it — it only
+        crops left/right edges, centred, when the container is narrower than
+        the 1440 design width. So these overlays track the artwork by offsetting
+        from the horizontal centre by the same design-pixel delta, rather than
+        a naive percentage (which would drift once the SVG starts cropping).
+      */}
+      <div className="absolute" style={{ left: "calc(50% - 480px)", top: 680, width: 40, height: 40 }}>
         <div className="wf-locate-ring absolute inset-0 rounded-full" style={{ background: "rgba(34,201,255,0.4)" }} />
         <div
           className="wf-locate-core absolute left-[10px] top-[10px] h-5 w-5 rounded-full border-[3px] border-white"
           style={{ background: "#22C9FF", boxShadow: "0 0 18px rgba(34,201,255,0.9)" }}
         />
       </div>
-      <div className="wf-dest-pin absolute" style={{ left: 1000, top: 240 }}>
+      <div className="wf-dest-pin absolute" style={{ left: "calc(50% + 280px)", top: 240 }}>
         <div
           className="h-[34px] w-[34px] rounded-full border-[3px] border-white"
           style={{ background: "#0FB5AE", borderRadius: "50% 50% 50% 0", transform: "rotate(-45deg)" }}

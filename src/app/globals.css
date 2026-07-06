@@ -64,10 +64,16 @@
   --color-wf-map-light-bg: var(--wf-map-light-bg);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Must live in Tailwind's `base` layer (not as unlayered CSS) — unlayered
+   rules always beat layered ones in the cascade regardless of specificity,
+   which would otherwise make this reset override every padding/margin
+   utility class (p-*, px-*, m-*, ...) site-wide. */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 html, body {
