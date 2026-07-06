@@ -262,6 +262,11 @@ export default function Landing() {
 // a bobbing destination pin. Reuses the same `wf-*` motion classes/keyframes
 // as the live map, so hero and app share one set of animations.
 function HeroMap() {
+  // The route steps up and across the street grid in right-angled legs with
+  // rounded corners — a real turn-by-turn line, not a freehand curve — from the
+  // position dot at (240,680) to just under the destination pin near (1000,270).
+  const routePath =
+    "M240 680 L240 516 Q240 490 266 490 L634 490 Q660 490 660 464 L660 316 Q660 290 686 290 L1004 290"
   return (
     <div className="absolute inset-0">
       <svg viewBox="0 0 1440 780" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
@@ -275,13 +280,15 @@ function HeroMap() {
         <rect x="660" y="380" width="260" height="140" fill="#0F2138" stroke="#1B3252" />
         <rect x="960" y="400" width="220" height="160" fill="#0D2A33" stroke="#155263" />
         <rect x="1240" y="0" width="200" height="780" fill="#0C1928" />
-        <path d="M240 680 C 420 560, 520 520, 640 430 S 900 300, 1020 260" stroke="#22C9FF" strokeWidth="14" opacity="0.16" fill="none" />
-        <path d="M240 680 C 420 560, 520 520, 640 430 S 900 300, 1020 260" stroke="#22C9FF" strokeWidth="5" fill="none" />
+        <path d={routePath} stroke="#22C9FF" strokeWidth="14" opacity="0.16" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <path d={routePath} stroke="#22C9FF" strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
         <path
-          d="M240 680 C 420 560, 520 520, 640 430 S 900 300, 1020 260"
+          d={routePath}
           stroke="#B7ECFF"
           strokeWidth="5"
           fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           strokeDasharray="4 24"
           className="wf-route-flow"
         />
@@ -301,7 +308,7 @@ function HeroMap() {
           style={{ background: "#22C9FF", boxShadow: "0 0 18px rgba(34,201,255,0.9)" }}
         />
       </div>
-      <div className="wf-dest-pin absolute" style={{ left: "calc(50% + 280px)", top: 240 }}>
+      <div className="wf-dest-pin absolute" style={{ left: "calc(50% + 272px)", top: 250 }}>
         <div
           className="h-[34px] w-[34px] rounded-full border-[3px] border-white"
           style={{ background: "#0FB5AE", borderRadius: "50% 50% 50% 0", transform: "rotate(-45deg)" }}
