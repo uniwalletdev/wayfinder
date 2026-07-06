@@ -1,11 +1,12 @@
 "use client"
 
 import Link from "next/link"
+import { useRef, useState } from "react"
 import {
   Building, ChevronsUpDown, Search, BadgeCheck, X, Navigation, Share2, ChevronRight,
   Loader2, PersonStanding, Bike, Car, ClipboardList, UploadCloud, QrCode, Camera,
   ArrowUp, ArrowUpLeft, ArrowUpRight, ArrowLeft, ArrowRight, ArrowUpDown, Footprints, CheckCircle2,
-  Info,
+  Info, MapPin,
 } from "lucide-react"
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
@@ -51,12 +52,23 @@ interface Props {
   onUseDemo: () => void
   onScanQR: () => void
   onOpenCamera: () => void
+  // Set when the user's live position is a long way from the venue and they've
+  // picked an indoor destination — the panel offers alternatives instead of a
+  // straight-faced multi-hour walking route.
+  farFromVenue: { distanceM: number } | null
+  onPreviewFromVenue: () => void
+  onRouteFromHereAnyway: () => void
 }
 
 function fmtDistance(m: number): string {
   return m < 1000 ? `${Math.round(m)}m` : `${(m / 1000).toFixed(1)}km`
 }
 
+// Desktop (lg+): the fixed 392px side column of the app-home layout.
+// Phones: a bottom sheet over a full-bleed map — collapsed it peeks just the
+// search field and quick chips (or the active route card), the grab handle
+// expands it to the full panel. This is what keeps the floating map controls
+// and the panel from ever fighting over the same pixels on small screens.
 export default function LeftPanel({
   venue,
   userInitials,
@@ -88,11 +100,60 @@ export default function LeftPanel({
   onUseDemo,
   onScanQR,
   onOpenCamera,
+  farFromVenue,
+  onPreviewFromVenue,
+  onRouteFromHereAnyway,
 }: Props) {
+  const [expanded, setExpanded] = useState(false)
+  const touchY = useRef<number | null>(null)
+  const swiped = useRef(false)
+
+  // Collapse the sheet whenever a destination is picked or guidance starts, so
+  // the route being talked about is actually visible on the map behind it.
+  // (State adjusted during render rather than in an effect — see the React
+  // docs on adjusting state when props change.)
+  const collapseKey = `${destination?.id ?? ""}:${isNavigating}`
+  const [prevCollapseKey, setPrevCollapseKey] = useState(collapseKey)
+  if (collapseKey !== prevCollapseKey) {
+    setPrevCollapseKey(collapseKey)
+    setExpanded(false)
+  }
+
+  // Peek-state sections only hide on phones; lg+ always shows everything.
+  const expandable = `${expanded ? "flex" : "hidden"} lg:flex`
+
   return (
-    <div className="relative z-30 flex h-full w-[392px] flex-shrink-0 flex-col bg-white shadow-[8px_0_32px_rgba(11,27,46,0.10)]">
+    <div className="pointer-events-auto absolute inset-x-0 bottom-0 z-40 flex max-h-[85dvh] flex-col rounded-t-3xl bg-white pb-safe-snug shadow-[0_-12px_40px_rgba(11,27,46,0.18)] lg:static lg:h-full lg:max-h-none lg:w-[392px] lg:flex-shrink-0 lg:rounded-none lg:pb-0 lg:shadow-[8px_0_32px_rgba(11,27,46,0.10)]">
+      {/* Grab handle (phones): tap or swipe to expand/collapse */}
+      <button
+        type="button"
+        aria-label={expanded ? "Collapse panel" : "Expand panel"}
+        onClick={() => {
+          if (swiped.current) {
+            swiped.current = false
+            return
+          }
+          setExpanded((v) => !v)
+        }}
+        onTouchStart={(e) => {
+          touchY.current = e.touches[0].clientY
+        }}
+        onTouchEnd={(e) => {
+          if (touchY.current === null) return
+          const dy = e.changedTouches[0].clientY - touchY.current
+          touchY.current = null
+          if (Math.abs(dy) > 30) {
+            swiped.current = true
+            setExpanded(dy < 0)
+          }
+        }}
+        className="flex w-full flex-shrink-0 items-center justify-center pb-1 pt-2.5 lg:hidden"
+      >
+        <span className="h-1 w-10 rounded-full bg-wf-border" />
+      </button>
+
       {/* Brand row */}
-      <div className="flex items-center justify-between px-6 pt-[22px]">
+      <div className={`${expandable} items-center justify-between px-6 pt-1 lg:pt-[22px]`}>
         <Link href="/" className="flex items-center gap-2.5" title="Back to home">
           <span className="flex h-[30px] w-[30px] items-center justify-center rounded-[10px] bg-gradient-to-br from-wf-primary to-wf-teal">
             <Navigation size={15} className="text-white" />
@@ -117,11 +178,11 @@ export default function LeftPanel({
         </div>
       )}
 
-      <div className="flex flex-col gap-3 px-6 pt-4">
+      <div className="flex flex-col gap-3 px-6 pt-3 lg:pt-4">
         {/* Venue switcher */}
         <button
           onClick={onOpenVenues}
-          className="flex items-center gap-2.5 rounded-[14px] border border-wf-border bg-wf-surface px-3.5 py-3 text-left"
+          className={`${expandable} items-center gap-2.5 rounded-[14px] border border-wf-border bg-wf-surface px-3.5 py-3 text-left`}
         >
           <span className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-[11px] bg-[#E7F2FF]">
             <Building size={17} className="text-wf-primary" />
@@ -148,17 +209,17 @@ export default function LeftPanel({
               <span className="flex-1 truncate text-sm text-wf-faint">
                 {destination ? destination.name : "Search a room, place or address…"}
               </span>
-              <span className="flex-shrink-0 rounded-md border border-wf-border px-1.5 py-0.5 text-[11px] text-wf-faint">/</span>
+              <span className="hidden flex-shrink-0 rounded-md border border-wf-border px-1.5 py-0.5 text-[11px] text-wf-faint lg:block">/</span>
             </button>
 
-            {/* Quick chips */}
+            {/* Quick chips: one scrollable row in the peek sheet, wrapping on lg */}
             {quickAccess.length > 0 && (
-              <div className="flex flex-wrap gap-2">
+              <div className="flex gap-2 overflow-x-auto lg:flex-wrap lg:overflow-visible">
                 {quickAccess.map((w) => (
                   <button
                     key={w.id}
                     onClick={() => onSelectDestination(w)}
-                    className="rounded-full border border-wf-border bg-white px-[13px] py-[7px] text-[13px] font-medium text-wf-body transition-colors hover:border-wf-primary hover:text-wf-primary"
+                    className="flex-shrink-0 whitespace-nowrap rounded-full border border-wf-border bg-white px-[13px] py-[7px] text-[13px] font-medium text-wf-body transition-colors hover:border-wf-primary hover:text-wf-primary"
                   >
                     {WAYPOINT_TYPE_ICONS[w.type]} {w.name}
                   </button>
@@ -167,7 +228,7 @@ export default function LeftPanel({
             )}
 
             {!destination && (
-              <div className="flex gap-2">
+              <div className={`${expandable} gap-2`}>
                 <button
                   onClick={onScanQR}
                   className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-wf-border py-2 text-xs font-semibold text-wf-body"
@@ -186,7 +247,7 @@ export default function LeftPanel({
         )}
       </div>
 
-      <div className="mt-4 flex-1 overflow-y-auto px-6 pb-4">
+      <div className={`mt-4 flex-1 overflow-y-auto px-6 pb-4 ${destination || expanded ? "" : "hidden lg:block"}`}>
         {isNavigating && destination && route ? (
           <NavigatingSummary
             destination={destination}
@@ -195,6 +256,15 @@ export default function LeftPanel({
             onStop={onStop}
             onScanQR={onScanQR}
             onOpenCamera={onOpenCamera}
+          />
+        ) : destination && route && farFromVenue ? (
+          <FarFromVenueCard
+            venue={venue}
+            destination={destination}
+            distanceM={farFromVenue.distanceM}
+            onPreviewFromVenue={onPreviewFromVenue}
+            onRouteFromHereAnyway={onRouteFromHereAnyway}
+            onStop={onStop}
           />
         ) : destination && route ? (
           <RoutePreviewCard
@@ -277,6 +347,72 @@ function NearbyList({
             </span>
           </button>
         ))}
+      </div>
+    </div>
+  )
+}
+
+// Shown instead of the route preview when the walker's live GPS fix is far from
+// the venue but they picked somewhere *inside* it — a 27km "walking route" into
+// a hospital ward helps nobody. Offers a preview from the venue itself, or an
+// explicit opt-in to the long route (they might genuinely be walking there).
+function FarFromVenueCard({
+  venue,
+  destination,
+  distanceM,
+  onPreviewFromVenue,
+  onRouteFromHereAnyway,
+  onStop,
+}: {
+  venue: Venue
+  destination: Waypoint
+  distanceM: number
+  onPreviewFromVenue: () => void
+  onRouteFromHereAnyway: () => void
+  onStop: () => void
+}) {
+  return (
+    <div className="rounded-[18px] border border-wf-border p-[18px] shadow-[0_10px_30px_rgba(11,27,46,0.08)]">
+      <div className="mb-3.5 flex items-start justify-between gap-2">
+        <div className="flex min-w-0 items-center gap-2.5">
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] bg-wf-teal-tint text-lg">
+            {WAYPOINT_TYPE_ICONS[destination.type]}
+          </span>
+          <div className="min-w-0">
+            <p className="truncate text-[15.5px] font-semibold text-wf-ink">{destination.name}</p>
+            <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor)} · {venue.name}</p>
+          </div>
+        </div>
+        <button onClick={onStop} aria-label="Clear destination" className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+          <X size={15} />
+        </button>
+      </div>
+
+      <div className="mb-4 rounded-[14px] border border-[#F0E3B4] bg-[#FFFAEA] px-3.5 py-3">
+        <p className="flex items-center gap-1.5 text-[13px] font-semibold text-[#8A6D1A]">
+          <MapPin size={14} /> You&apos;re {fmtDistance(distanceM)} from {venue.name}
+        </p>
+        <p className="mt-1 text-[12.5px] leading-snug text-[#9C8137]">
+          Indoor directions start making sense once you arrive. Preview the route from the venue, or keep
+          routing from where you are now.
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-2.5">
+        <button
+          onClick={onPreviewFromVenue}
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]"
+        >
+          <Building size={16} />
+          Preview from {venue.name}
+        </button>
+        <button
+          onClick={onRouteFromHereAnyway}
+          className="flex w-full items-center justify-center gap-2 rounded-xl border border-wf-border py-3 text-sm font-semibold text-wf-ink"
+        >
+          <Navigation size={16} />
+          Route from my location anyway
+        </button>
       </div>
     </div>
   )

@@ -92,3 +92,44 @@ export function rankWaypoints(
     .sort((a, b) => b.score - a.score || a.w.name.localeCompare(b.w.name))
     .map((x) => x.w)
 }
+
+// Letters and digits only — so "X-Ray"/"xray" and "farmacy"/"pharmacy" compare
+// on their sounds-alike core rather than punctuation and spacing.
+function fuzzyKey(s: string): string {
+  return normalize(s).replace(/[^\p{L}\p{N}]+/gu, "")
+}
+
+// Sørensen–Dice similarity over character bigrams (0..1). Cheap, and tolerant
+// of exactly the errors people type: swapped/missing letters, joined words.
+function diceSimilarity(a: string, b: string): number {
+  if (a.length < 2 || b.length < 2) return a === b ? 1 : 0
+  const bCounts = new Map<string, number>()
+  for (let i = 0; i < b.length - 1; i++) {
+    const g = b.slice(i, i + 2)
+    bCounts.set(g, (bCounts.get(g) ?? 0) + 1)
+  }
+  let common = 0
+  for (let i = 0; i < a.length - 1; i++) {
+    const g = a.slice(i, i + 2)
+    const c = bCounts.get(g) ?? 0
+    if (c > 0) {
+      common++
+      bCounts.set(g, c - 1)
+    }
+  }
+  return (2 * common) / (a.length - 1 + (b.length - 1))
+}
+
+// "Did you mean …?" candidates for a query that matched nothing. Deliberately
+// looser than rankWaypoints — these are suggestions to tap, not results — but
+// thresholded so unrelated names don't surface as noise.
+export function rankNearMisses(query: string, waypoints: Waypoint[], limit = 3): Waypoint[] {
+  const q = fuzzyKey(query)
+  if (q.length < 3) return []
+  return waypoints
+    .map((w) => ({ w, score: diceSimilarity(q, fuzzyKey(w.name)) }))
+    .filter((x) => x.score >= 0.34)
+    .sort((a, b) => b.score - a.score || a.w.name.localeCompare(b.w.name))
+    .slice(0, limit)
+    .map((x) => x.w)
+}

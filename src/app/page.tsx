@@ -29,7 +29,7 @@ export default function Landing() {
   return (
     <main className="bg-white">
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative h-[780px] overflow-hidden bg-wf-ink-hero">
+      <section className="relative min-h-[600px] overflow-hidden bg-wf-ink-hero pb-16 lg:h-[780px] lg:pb-0">
         <HeroMap />
         <div
           className="pointer-events-none absolute inset-0"
@@ -59,31 +59,31 @@ export default function Landing() {
         </nav>
 
         {/* Copy */}
-        <div className="relative z-10 max-w-[640px] px-6 pt-20 sm:px-10 lg:px-16 xl:px-24 xl:pt-24">
+        <div className="relative z-10 max-w-[640px] px-6 pt-14 sm:px-10 sm:pt-20 lg:px-16 xl:px-24 xl:pt-24">
           <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(34,201,255,0.35)] bg-[rgba(34,201,255,0.08)] px-3.5 py-1.5 text-[13px] text-[#8FDFFF]">
             <span className="h-[7px] w-[7px] rounded-full bg-wf-route-cyan" />
             Indoor navigation, now on the web
           </span>
-          <h1 className="mt-6 font-display text-[68px] font-bold leading-[1.05] -tracking-[2.2px] text-white">
+          <h1 className="mt-6 font-display text-[42px] font-bold leading-[1.08] -tracking-[1.2px] text-white sm:text-[56px] sm:-tracking-[1.8px] xl:text-[68px] xl:leading-[1.05] xl:-tracking-[2.2px]">
             Every building, mapped.
             <br />
             Every step, guided.
           </h1>
-          <p className="mt-6 max-w-[520px] text-[19px] leading-relaxed text-white/72">
+          <p className="mt-6 max-w-[520px] text-[17px] leading-relaxed text-white/72 sm:text-[19px]">
             Wayfinder turns any venue&apos;s floor plans into turn-by-turn directions — for visitors finding a ward, a
             gate or a meeting room, and for the teams who run the place.
           </p>
-          <div className="mt-9 flex items-center gap-4">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Link
               href="/navigate"
-              className="flex items-center gap-2 rounded-2xl bg-wf-primary px-7 py-4 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(10,93,194,0.45)] transition-transform active:scale-95"
+              className="flex items-center justify-center gap-2 rounded-2xl bg-wf-primary px-7 py-4 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(10,93,194,0.45)] transition-transform active:scale-95"
             >
               <Navigation size={17} />
               Start navigating
             </Link>
             <Link
               href="/map"
-              className="flex items-center gap-2 rounded-2xl border-[1.5px] border-white/35 px-7 py-4 text-sm font-semibold text-white transition-colors hover:border-white/60"
+              className="flex items-center justify-center gap-2 rounded-2xl border-[1.5px] border-white/35 px-7 py-4 text-sm font-semibold text-white transition-colors hover:border-white/60"
             >
               <Map size={17} />
               Map a place
@@ -134,17 +134,24 @@ export default function Landing() {
       </section>
 
       {/* ── Trust strip ──────────────────────────────────────────────────── */}
-      <section className="flex flex-wrap items-center justify-center gap-14 border-b border-[#E8EDF4] px-6 py-[30px] sm:px-10 lg:px-16 xl:px-24">
-        <span className="text-xs font-semibold uppercase tracking-[0.1em] text-wf-faint">Built for</span>
-        {TRUST_ITEMS.map((item) => (
-          <span key={item} className="font-display text-base font-semibold text-wf-body">{item}</span>
-        ))}
+      <section className="border-b border-[#E8EDF4] px-6 py-8 sm:px-10 lg:px-16 xl:px-24">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.1em] text-wf-faint">Built for</p>
+        <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+          {TRUST_ITEMS.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-[#E8EDF4] bg-wf-surface-2 px-4 py-2 font-display text-[13.5px] font-semibold text-wf-body sm:px-5 sm:text-sm"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
       </section>
 
       {/* ── Features ─────────────────────────────────────────────────────── */}
       <section className="px-6 pb-[88px] pt-24 sm:px-10 lg:px-16 xl:px-24">
         <p className="text-sm font-semibold uppercase tracking-[0.08em] text-wf-primary">How it works</p>
-        <h2 className="mt-3 max-w-2xl font-display text-[44px] font-bold leading-[1.1] -tracking-[1px] text-wf-ink">
+        <h2 className="mt-3 max-w-2xl font-display text-[32px] font-bold leading-[1.12] -tracking-[0.5px] text-wf-ink sm:text-[38px] lg:text-[44px] lg:leading-[1.1] lg:-tracking-[1px]">
           From front door to final room, in three moves
         </h2>
         <p className="mt-4 max-w-xl text-base text-wf-muted">
@@ -167,7 +174,7 @@ export default function Landing() {
       <section className="grid grid-cols-1 gap-16 bg-wf-ink px-6 py-[88px] sm:px-10 lg:grid-cols-2 lg:items-center lg:px-16 xl:px-24">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.1em] text-wf-route-cyan">2D · 3D · Every level</p>
-          <h2 className="mt-3 font-display text-[40px] font-bold leading-[1.12] -tracking-[1px] text-white">
+          <h2 className="mt-3 font-display text-[30px] font-bold leading-[1.14] -tracking-[0.5px] text-white sm:text-[36px] lg:text-[40px] lg:leading-[1.12] lg:-tracking-[1px]">
             One map that knows about floors
           </h2>
           <p className="mt-4 max-w-md text-base leading-relaxed text-white/65">
@@ -206,13 +213,13 @@ export default function Landing() {
 
       {/* ── CTA band ──────────────────────────────────────────────────────── */}
       <section className="bg-gradient-to-b from-white to-[#EFF5FB] px-6 py-24 text-center">
-        <h2 className="font-display text-[42px] font-bold leading-[1.1] -tracking-[1px] text-wf-ink">
+        <h2 className="font-display text-[32px] font-bold leading-[1.12] -tracking-[0.5px] text-wf-ink sm:text-[38px] lg:text-[42px] lg:leading-[1.1] lg:-tracking-[1px]">
           Put your place on the map
         </h2>
         <p className="mx-auto mt-4 max-w-md text-base text-wf-muted">
           Walk it with your phone or upload a floor plan — Wayfinder does the rest.
         </p>
-        <div className="mt-8 flex items-center justify-center gap-4">
+        <div className="mx-auto mt-8 flex max-w-xs flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center sm:gap-4">
           <Link
             href="/map"
             className="rounded-2xl bg-wf-primary px-7 py-4 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(10,93,194,0.3)] transition-transform active:scale-95"

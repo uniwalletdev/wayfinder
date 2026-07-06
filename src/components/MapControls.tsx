@@ -1,6 +1,7 @@
 "use client"
 
 import { Moon, Sun, Navigation, Plus, Minus, Layers } from "lucide-react"
+import FloorSelector from "@/components/FloorSelector"
 
 interface Props {
   mapView: "2d" | "3d"
@@ -14,11 +15,19 @@ interface Props {
   gpsLabel: string
   gpsDotClass: string
   floorLabel: string
+  floors: number[]
+  currentFloor: number
+  onChangeFloor: (floor: number) => void
 }
 
-// Floating controls layered over the map canvas: top-right view/style toggles,
-// bottom-right zoom + re-centre, bottom-left status pill. Replaces the old
-// scattered mobile badges/FABs with the desktop app-home layout.
+// All floating map furniture lives in ONE flex column pinned to the right edge
+// (the "right rail"): view/style toggles at the top, the floor selector in the
+// middle, zoom + re-centre at the bottom. Flex children are laid out
+// sequentially, so — unlike the old independently absolute-positioned
+// elements — nothing here can ever overlap, however many floors the venue has
+// or however short the viewport is. On phones the bottom sheet owns the lower
+// half of the screen, so the rail top-anchors, the zoom stack hides (pinch to
+// zoom) and the re-centre FAB joins the rail below the floor list.
 export default function MapControls({
   mapView,
   onToggleMapView,
@@ -31,39 +40,50 @@ export default function MapControls({
   gpsLabel,
   gpsDotClass,
   floorLabel,
+  floors,
+  currentFloor,
+  onChangeFloor,
 }: Props) {
   return (
     <>
-      {/* Top-right: 2D/3D segmented pill + map-style toggle */}
-      <div className="absolute top-5 right-5 z-40 flex items-center gap-3">
-        <div className="flex items-center gap-1 rounded-full bg-white/96 p-1 shadow-[0_8px_24px_rgba(11,27,46,0.16)]">
-          {(["2d", "3d"] as const).map((v) => (
-            <button
-              key={v}
-              onClick={() => onToggleMapView(v)}
-              className={`rounded-full px-[18px] py-2 text-[13.5px] font-semibold transition-colors ${
-                mapView === v
-                  ? "bg-wf-primary text-white shadow-[0_4px_12px_rgba(10,93,194,0.35)]"
-                  : "text-wf-muted"
-              }`}
-            >
-              {v.toUpperCase()}
-            </button>
-          ))}
+      <div className="pointer-events-none absolute right-4 top-4 z-30 flex max-h-[calc(100%-32px)] flex-col items-end lg:inset-y-0 lg:right-5 lg:top-0 lg:max-h-none lg:py-5">
+        {/* Top: 2D/3D segmented pill + map-style toggle */}
+        <div className="pointer-events-auto flex items-center gap-2 lg:gap-3">
+          <div className="flex items-center gap-1 rounded-full bg-white/96 p-1 shadow-[0_8px_24px_rgba(11,27,46,0.16)]">
+            {(["2d", "3d"] as const).map((v) => (
+              <button
+                key={v}
+                onClick={() => onToggleMapView(v)}
+                className={`rounded-full px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors lg:px-[18px] lg:py-2 lg:text-[13.5px] ${
+                  mapView === v
+                    ? "bg-wf-primary text-white shadow-[0_4px_12px_rgba(10,93,194,0.35)]"
+                    : "text-wf-muted"
+                }`}
+              >
+                {v.toUpperCase()}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={onToggleMapStyle}
+            title={mapStyle === "light" ? "Switch to dark map" : "Switch to light map"}
+            aria-label={mapStyle === "light" ? "Switch to dark map" : "Switch to light map"}
+            className="flex h-[38px] w-[38px] items-center justify-center rounded-full bg-white/96 text-wf-ink shadow-[0_8px_24px_rgba(11,27,46,0.16)] transition-transform active:scale-95 lg:h-[42px] lg:w-[42px]"
+          >
+            {mapStyle === "light" ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
         </div>
-        <button
-          onClick={onToggleMapStyle}
-          title={mapStyle === "light" ? "Switch to dark map" : "Switch to light map"}
-          aria-label={mapStyle === "light" ? "Switch to dark map" : "Switch to light map"}
-          className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white/96 text-wf-ink shadow-[0_8px_24px_rgba(11,27,46,0.16)] transition-transform active:scale-95"
-        >
-          {mapStyle === "light" ? <Moon size={18} /> : <Sun size={18} />}
-        </button>
-      </div>
 
-      {/* Bottom-right: zoom stack + re-centre FAB */}
-      <div className="absolute bottom-6 right-5 z-40 flex flex-col items-center gap-2.5">
-        <div className="flex flex-col overflow-hidden rounded-2xl bg-white/96 shadow-[0_8px_24px_rgba(11,27,46,0.16)]">
+        {/* Middle: floor selector, centred on desktop by the flexible spacers.
+            min-h-0 lets it shrink and scroll instead of colliding. */}
+        <div className="hidden min-h-0 lg:block lg:flex-1" />
+        <div className="mt-3 flex min-h-0 flex-col lg:mt-0">
+          <FloorSelector floors={floors} currentFloor={currentFloor} onChange={onChangeFloor} />
+        </div>
+        <div className="hidden min-h-0 lg:block lg:flex-1" />
+
+        {/* Bottom: zoom stack (desktop only — phones pinch) + re-centre FAB */}
+        <div className="pointer-events-auto mt-3 hidden flex-col overflow-hidden rounded-2xl bg-white/96 shadow-[0_8px_24px_rgba(11,27,46,0.16)] lg:flex">
           <button
             onClick={onZoomIn}
             aria-label="Zoom in"
@@ -84,26 +104,27 @@ export default function MapControls({
             onClick={onRecenter}
             aria-label="Re-centre on my location"
             title="Re-centre"
-            className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-wf-primary text-white shadow-[0_10px_24px_rgba(10,93,194,0.4)] transition-transform active:scale-95"
+            className="pointer-events-auto mt-3 flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center rounded-full bg-wf-primary text-white shadow-[0_10px_24px_rgba(10,93,194,0.4)] transition-transform active:scale-95 lg:mt-2.5"
           >
             <Navigation size={18} />
           </button>
         )}
       </div>
 
-      {/* Bottom-left: status pill */}
-      <div className="absolute bottom-6 left-5 z-40 flex items-center gap-3 rounded-full bg-white/96 px-[18px] py-2.5 shadow-[0_8px_24px_rgba(11,27,46,0.16)]">
+      {/* Status pill: top-left on phones (the bottom sheet owns the bottom of
+          the screen), bottom-left on desktop where the panel is a side column. */}
+      <div className="absolute left-4 top-4 z-30 flex items-center gap-2.5 rounded-full bg-white/96 px-3.5 py-2 shadow-[0_8px_24px_rgba(11,27,46,0.16)] lg:bottom-6 lg:left-5 lg:top-auto lg:gap-3 lg:px-[18px] lg:py-2.5">
         <div className="flex items-center gap-1.5">
           <span className={`h-2 w-2 rounded-full ${gpsDotClass}`} />
-          <span className="text-[13px] font-medium text-wf-body">{gpsLabel}</span>
+          <span className="text-[12px] font-medium text-wf-body lg:text-[13px]">{gpsLabel}</span>
         </div>
-        <span className="h-3.5 w-px bg-wf-border" />
-        <div className="flex items-center gap-1.5">
+        <span className="hidden h-3.5 w-px bg-wf-border sm:block" />
+        <div className="hidden items-center gap-1.5 sm:flex">
           <Layers size={13} className="text-wf-primary" />
-          <span className="text-[13px] font-medium text-wf-body">{floorLabel}</span>
+          <span className="text-[12px] font-medium text-wf-body lg:text-[13px]">{floorLabel}</span>
         </div>
-        <span className="h-3.5 w-px bg-wf-border" />
-        <span className="text-[13px] font-medium text-wf-body">{mapView.toUpperCase()} view</span>
+        <span className="hidden h-3.5 w-px bg-wf-border lg:block" />
+        <span className="hidden text-[13px] font-medium text-wf-body lg:block">{mapView.toUpperCase()} view</span>
       </div>
     </>
   )

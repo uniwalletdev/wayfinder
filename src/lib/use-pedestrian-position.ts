@@ -79,8 +79,15 @@ export function usePedestrianPosition(heading: number | null) {
   // offset. QR and demo are always trusted; GPS only when it's accurate enough
   // (and a poor fix is ignored once we already have an anchor to carry forward).
   const setAnchor = useCallback((fix: Fix) => {
-    if (fix.source === "gps" && anchorRef.current && fix.accuracy > GPS_ANCHOR_MAX_ACCURACY_M) {
-      return
+    const current = anchorRef.current
+    if (fix.source === "gps" && current) {
+      // A demo fix is the user deliberately saying "treat me as being there"
+      // (GPS denied, or previewing a route at a venue they haven't reached
+      // yet) — background GPS fixes must not yank the position back to
+      // wherever their body actually is. A QR scan, being another deliberate
+      // act, still re-anchors over it.
+      if (current.source === "demo") return
+      if (fix.accuracy > GPS_ANCHOR_MAX_ACCURACY_M) return
     }
     anchorRef.current = { position: fix.position, source: fix.source }
     offsetRef.current = { x: 0, y: 0 }

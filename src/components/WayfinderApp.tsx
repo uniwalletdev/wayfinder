@@ -12,14 +12,13 @@ import {
   loadVenueFloorPlans, saveVenueFloorPlans,
   migrateLegacyData, deleteUserVenue,
 } from "@/lib/venue-store"
-import { buildRoute, distanceMeters, distanceToPath, fetchOutdoorRoute, shouldRouteOutdoors } from "@/lib/routing"
+import { buildRoute, distanceMeters, distanceToPath, fetchOutdoorRoute, isOutdoorDestination, shouldRouteOutdoors } from "@/lib/routing"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
 import type { UploadPlanResult } from "@/components/UploadPlanMode"
 import LeftPanel from "@/components/LeftPanel"
 import MapControls from "@/components/MapControls"
 import ShareDialog from "@/components/ShareDialog"
-import FloorSelector from "@/components/FloorSelector"
 import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
@@ -71,6 +70,11 @@ export type WayfinderMode = "navigate" | "map"
 // widened by the GPS fix's reported accuracy so ordinary jitter doesn't
 // needlessly re-route.
 const OFF_ROUTE_TRIGGER_M = 25
+
+// Beyond this distance from the venue, an indoor destination gets the
+// "you're far from the venue" card instead of a straight-faced multi-hour
+// walking route computed from the user's sofa.
+const FAR_FROM_VENUE_M = 2000
 
 export default function WayfinderApp({ initialMode = "navigate" }: { initialMode?: WayfinderMode }) {
   const router = useRouter()
@@ -266,7 +270,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     )
   }, [fusedPosition, fusedAccuracy])
 
-  const useDemoLocation = useCallback(() => {
+  const activateDemoLocation = useCallback(() => {
     setGpsStatus("active")
     setAnchor({ position: venue.center, accuracy: 0, source: "demo" })
     mapHandleRef.current?.flyTo([venue.center.lat, venue.center.lng], venue.defaultZoom)
@@ -290,12 +294,25 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     []
   )
 
+  // A far-off GPS fix plus an *indoor* destination triggers the LeftPanel's
+  // "you're away from the venue" card; the user can dismiss it per-destination.
+  const [farRouteOverride, setFarRouteOverride] = useState(false)
+  const farFromVenue = useMemo(() => {
+    const dest = navState.destination
+    if (!dest || farRouteOverride || isOutdoorDestination(dest)) return null
+    // Accuracy 0 means the demo/QR anchor — the user is (virtually) on site.
+    if (!navState.currentPosition || navState.positionAccuracy === 0) return null
+    const d = distanceMeters(navState.currentPosition, venue.center)
+    return d > FAR_FROM_VENUE_M ? { distanceM: d } : null
+  }, [navState.destination, navState.currentPosition, navState.positionAccuracy, venue.center, farRouteOverride])
+
   // Selecting a destination shows a route *preview* (overview + travel mode +
   // ETA) — the user taps Start to begin turn-by-turn, rather than jumping
   // straight into navigation.
   const handleDestinationSelect = useCallback(
     (waypoint: Waypoint) => {
       setOverlay("none")
+      setFarRouteOverride(false)
       const position = navState.currentPosition ?? venue.center
       const pref: RoutePreference = alwaysStepFree ? "stepfree" : "fastest"
       setRoutePreference(pref)
@@ -418,6 +435,17 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       isNavigating: false,
     }))
   }, [])
+
+  // From the far-from-venue card: move the demo anchor onto the venue and
+  // rebuild the route from there, so the preview shows the indoor journey the
+  // user actually asked about rather than the trek to reach the building.
+  const handlePreviewFromVenue = useCallback(() => {
+    const dest = navState.destination
+    activateDemoLocation()
+    if (!dest) return
+    const route = buildRoute(venue.center, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, routePreference)
+    setNavState((s) => ({ ...s, route, currentStepIndex: 0 }))
+  }, [venue, navState.destination, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails, routePreference, activateDemoLocation])
 
   // Also understands the shareable-destination poster format (2a): the same
   // positioning anchor plus a trailing `dest:<waypointId>`, so scanning a
@@ -565,6 +593,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setSurveyTrails(loadVenueTrails(v.id))
     setCustomFloorPlans(loadVenueFloorPlans(v.id))
     setOverlay("none")
+    setFarRouteOverride(false)
     setNavState((s) => ({ ...s, currentFloor: 0, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
     mapHandleRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
   }, [])
@@ -704,7 +733,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         onMapArea={() => setOverlay("survey")}
         onUploadPlan={() => setOverlay("upload-plan")}
         gpsStatus={gpsStatus}
-        onUseDemo={useDemoLocation}
+        onUseDemo={activateDemoLocation}
+        farFromVenue={navState.isNavigating ? null : farFromVenue}
+        onPreviewFromVenue={handlePreviewFromVenue}
+        onRouteFromHereAnyway={() => setFarRouteOverride(true)}
         onScanQR={() => { enableSensors(); setOverlay("qr") }}
         onOpenCamera={() => {
           enableSensors()
@@ -752,12 +784,6 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           />
         )}
 
-        <FloorSelector
-          floors={availableFloors}
-          currentFloor={navState.currentFloor}
-          onChange={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
-        />
-
         <MapControls
           mapView={mapView}
           onToggleMapView={changeMapView}
@@ -774,11 +800,15 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           gpsLabel={gpsLabel}
           gpsDotClass={gpsDotClass}
           floorLabel={floorLabel(navState.currentFloor)}
+          floors={availableFloors}
+          currentFloor={navState.currentFloor}
+          onChangeFloor={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
         />
       </div>
 
       {overlay === "search" && (
         <SearchModal
+          venueId={activeVenueId}
           waypoints={allWaypoints}
           quickAccess={venue.quickAccess}
           proximity={navState.currentPosition ?? venue.center}

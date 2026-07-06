@@ -3,10 +3,13 @@
 import { useEffect, useRef, useState } from "react"
 import { Waypoint, Coordinates } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS } from "@/lib/waypoint-meta"
-import { rankWaypoints } from "@/lib/search"
+import { rankWaypoints, rankNearMisses } from "@/lib/search"
 import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
 
 interface Props {
+  // Which venue the search ran against — recorded with unmatched queries so
+  // the venue's mappers can see what visitors looked for and didn't find.
+  venueId: string
   waypoints: Waypoint[]
   // Waypoint names to surface as shortcuts, supplied by the active venue.
   quickAccess?: string[]
@@ -15,6 +18,16 @@ interface Props {
   proximity?: Coordinates
   onSelect: (waypoint: Waypoint) => void
   onClose: () => void
+}
+
+// Fire-and-forget: a missed search is telemetry for the venue's mappers, never
+// something the visitor should wait on or see fail.
+function reportSearchMiss(venueId: string, query: string, suggested: boolean) {
+  void fetch("/api/search-misses", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ venueId, query, suggested }),
+  }).catch(() => {})
 }
 
 interface GeoResult {
@@ -38,11 +51,17 @@ function geoToWaypoint(r: GeoResult): Waypoint {
   }
 }
 
-export default function SearchModal({ waypoints, quickAccess = [], proximity, onSelect, onClose }: Props) {
+export default function SearchModal({ venueId, waypoints, quickAccess = [], proximity, onSelect, onClose }: Props) {
   const [query, setQuery] = useState("")
   const [geoResults, setGeoResults] = useState<GeoResult[]>([])
   const [geoLoading, setGeoLoading] = useState(false)
   const [geoError, setGeoError] = useState<string | null>(null)
+  // Which query "Suggest this place" was pressed for — deriving the sent state
+  // from the live query means it resets naturally as the visitor types.
+  const [suggestedQuery, setSuggestedQuery] = useState<string | null>(null)
+  // Queries already logged this session, so retyping the same thing doesn't
+  // count the miss twice.
+  const loggedMissesRef = useRef<Set<string>>(new Set())
 
   // Latest proximity, read at fetch time so a moving GPS fix doesn't re-trigger
   // the debounced geocode on every position update.
@@ -102,6 +121,24 @@ export default function SearchModal({ waypoints, quickAccess = [], proximity, on
   const showLoading = geoActive && geoLoading
 
   const showEmpty = trimmed !== "" && filtered.length === 0 && extraResults.length === 0 && !showLoading
+
+  // Close near-misses to offer as "Did you mean …?" when nothing matched.
+  const nearMisses = showEmpty ? rankNearMisses(trimmed, waypoints) : []
+
+  // Record settled empty queries (debounced so half-typed words don't count).
+  // This is what tells a venue owner which places people expect to find here.
+  useEffect(() => {
+    if (!showEmpty || trimmed.length < 3) return
+    const key = trimmed.toLowerCase()
+    if (loggedMissesRef.current.has(key)) return
+    const handle = setTimeout(() => {
+      loggedMissesRef.current.add(key)
+      reportSearchMiss(venueId, trimmed, false)
+    }, 1500)
+    return () => clearTimeout(handle)
+  }, [showEmpty, trimmed, venueId])
+
+  const suggestSent = suggestedQuery !== null && suggestedQuery === trimmed
 
   return (
     <div className="fixed inset-0 z-[200] bg-white flex flex-col">
@@ -180,18 +217,69 @@ export default function SearchModal({ waypoints, quickAccess = [], proximity, on
             )}
 
             {showEmpty && (
-              <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
-                <span className="text-5xl mb-3">🔍</span>
-                <p className="text-gray-600 font-medium">No results for "{query}"</p>
-                {geoError && geoError !== "not_configured" ? (
-                  <p className="text-sm text-gray-400 mt-1">
-                    Couldn&apos;t reach the map search just now — check your connection, or try a room,
-                    place or floor number.
-                  </p>
-                ) : (
-                  <p className="text-sm text-gray-400 mt-1">Try a room or place name, or a nearby address</p>
+              <>
+                {nearMisses.length > 0 && (
+                  <>
+                    <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                      Did you mean…
+                    </p>
+                    {nearMisses.map((w) => (
+                      <WaypointRow key={w.id} waypoint={w} onSelect={onSelect} />
+                    ))}
+                  </>
                 )}
-              </div>
+
+                <div className="flex flex-col items-center justify-center px-6 py-10 text-center">
+                  <span className="text-5xl mb-3">🔍</span>
+                  <p className="text-gray-600 font-medium">No results for &ldquo;{query}&rdquo;</p>
+                  {geoError === "not_configured" ? (
+                    <p className="text-sm text-gray-400 mt-1">
+                      It isn&apos;t mapped here yet, and address search isn&apos;t enabled on this deployment —
+                      only mapped places can be found.
+                    </p>
+                  ) : geoError ? (
+                    <p className="text-sm text-gray-400 mt-1">
+                      Couldn&apos;t reach the map search just now — check your connection, or try a room,
+                      place or floor number.
+                    </p>
+                  ) : (
+                    <p className="text-sm text-gray-400 mt-1">
+                      It may not be mapped yet. Try another name, or a nearby address.
+                    </p>
+                  )}
+
+                  {quickWaypoints.length > 0 && (
+                    <div className="mt-5 flex flex-wrap justify-center gap-2">
+                      {quickWaypoints.map((w) => (
+                        <button
+                          key={w.id}
+                          onClick={() => onSelect(w)}
+                          className="rounded-full border border-gray-200 bg-white px-3.5 py-2 text-[13px] font-medium text-gray-700 active:bg-gray-100"
+                        >
+                          {WAYPOINT_TYPE_ICONS[w.type]} {w.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => {
+                      if (suggestSent) return
+                      setSuggestedQuery(trimmed)
+                      reportSearchMiss(venueId, trimmed, true)
+                    }}
+                    disabled={suggestSent}
+                    className={`mt-6 flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold ${
+                      suggestSent
+                        ? "bg-gray-100 text-gray-500"
+                        : "bg-[#005EB8] text-white active:bg-[#004a93]"
+                    }`}
+                  >
+                    <MapPin size={15} />
+                    {suggestSent ? "Thanks — noted for the venue team" : "Suggest this place to the venue team"}
+                  </button>
+                </div>
+              </>
             )}
           </>
         )}
