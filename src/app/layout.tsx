@@ -17,8 +17,9 @@ const ibmPlexSans = IBM_Plex_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Wayfinder",
-  description: "Indoor navigation for any place — map a venue and find your way, indoors or out.",
+  title: "Wayfinder — NHS hospitals, mapped",
+  description:
+    "Wayfinder maps NHS hospitals floor by floor and guides patients, visitors and staff from the front door to the right ward, clinic or bedside — one clear step at a time.",
   manifest: "/manifest.json",
 }
 

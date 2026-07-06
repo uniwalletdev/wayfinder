@@ -1,27 +1,27 @@
 import Link from "next/link"
 import { Navigation, Map, ArrowRight, Search, ClipboardList } from "lucide-react"
 
-const NAV_LINKS = ["Product", "Venues", "For teams", "Help"]
-const TRUST_ITEMS = ["Hospitals", "Shopping centres", "Airports", "Stations", "Campuses", "Offices"]
+const NAV_LINKS = ["Product", "Hospitals", "For trusts", "Help"]
+const TRUST_ITEMS = ["A&E", "Outpatients", "Wards", "Pharmacy", "X-Ray & Imaging", "Maternity"]
 
 const FEATURES = [
   {
     Icon: Search,
     tile: "bg-wf-primary",
-    title: "Search any room or department",
-    body: "Type a ward, a shop, a gate number — Wayfinder finds it across every floor of the venue, indoors and out.",
+    title: "Search any ward or clinic",
+    body: "Type a ward, a clinic or a department. Every floor of the hospital ranks in one list, nearest first — no more squinting at wall signs.",
   },
   {
     Icon: Navigation,
     tile: "bg-wf-teal",
-    title: "Turn-by-turn, floor by floor",
-    body: "Step-by-step directions that account for lifts, stairs and floor changes, with a live position on the map.",
+    title: "Follow the line",
+    body: "Turn-by-turn guidance across floors — lifts included — with live re-routing the moment you take a wrong turn.",
   },
   {
     Icon: ClipboardList,
     tile: "bg-wf-ink",
-    title: "Arrive knowing what to expect",
-    body: "Opening hours, check-in instructions and typical waits, authored by the people who run the place.",
+    title: "Map it yourself",
+    body: "Estates teams walk an area or upload a floor plan — the route becomes the corridor layout, and signs are read straight from footage.",
   },
 ]
 
@@ -59,19 +59,20 @@ export default function Landing() {
         </nav>
 
         {/* Copy */}
-        <div className="relative z-10 max-w-[640px] px-6 pt-14 sm:px-10 sm:pt-20 lg:px-16 xl:px-24 xl:pt-24">
+        <div className="relative z-10 max-w-[640px] px-6 pt-14 sm:px-10 sm:pt-20 lg:px-16 xl:max-w-[820px] xl:px-24 xl:pt-24">
           <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(34,201,255,0.35)] bg-[rgba(34,201,255,0.08)] px-3.5 py-1.5 text-[13px] text-[#8FDFFF]">
             <span className="h-[7px] w-[7px] rounded-full bg-wf-route-cyan" />
-            Indoor navigation, now on the web
+            Wayfinding for NHS hospitals
           </span>
-          <h1 className="mt-6 font-display text-[42px] font-bold leading-[1.08] -tracking-[1.2px] text-white sm:text-[56px] sm:-tracking-[1.8px] xl:text-[68px] xl:leading-[1.05] xl:-tracking-[2.2px]">
-            Every building, mapped.
+          <h1 className="mt-6 font-display text-[40px] font-bold leading-[1.08] -tracking-[1.2px] text-white sm:text-[52px] sm:-tracking-[1.6px] xl:text-[60px] xl:leading-[1.06] xl:-tracking-[1.8px]">
+            Every NHS hospital, mapped.
             <br />
-            Every step, guided.
+            Every appointment, <span className="whitespace-nowrap">on time.</span>
           </h1>
           <p className="mt-6 max-w-[520px] text-[17px] leading-relaxed text-white/72 sm:text-[19px]">
-            Wayfinder turns any venue&apos;s floor plans into turn-by-turn directions — for visitors finding a ward, a
-            gate or a meeting room, and for the teams who run the place.
+            A hospital is the easiest place in Britain to get lost — and the worst place to be late. Wayfinder maps
+            NHS hospitals floor by floor, then walks patients, visitors and staff from the front door to the right
+            ward, clinic or bedside — one clear step at a time.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Link
@@ -86,7 +87,7 @@ export default function Landing() {
               className="flex items-center justify-center gap-2 rounded-2xl border-[1.5px] border-white/35 px-7 py-4 text-sm font-semibold text-white transition-colors hover:border-white/60"
             >
               <Map size={17} />
-              Map a place
+              Map your hospital
             </Link>
           </div>
         </div>
@@ -99,7 +100,7 @@ export default function Landing() {
             </span>
             <div className="min-w-0">
               <p className="truncate text-[15px] font-semibold text-wf-ink">Outpatients, Level 2</p>
-              <p className="truncate text-xs text-wf-muted">GOSH Wayfinder</p>
+              <p className="truncate text-xs text-wf-muted">Great Ormond Street Hospital</p>
             </div>
           </div>
           <div className="mt-4 grid grid-cols-2 gap-2">
@@ -135,7 +136,7 @@ export default function Landing() {
 
       {/* ── Trust strip ──────────────────────────────────────────────────── */}
       <section className="border-b border-[#E8EDF4] px-6 py-8 sm:px-10 lg:px-16 xl:px-24">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.1em] text-wf-faint">Built for</p>
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.1em] text-wf-faint">Guiding patients to</p>
         <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 sm:gap-3">
           {TRUST_ITEMS.map((item) => (
             <span
@@ -155,7 +156,8 @@ export default function Landing() {
           From front door to final room, in three moves
         </h2>
         <p className="mt-4 max-w-xl text-base text-wf-muted">
-          One map that already understands the building — its floors, its lifts, its opening hours.
+          No beacons, no hardware. Wayfinder fuses GPS, your steps and your compass to keep the blue dot
+          moving — even deep inside the building, where satellites can&apos;t see you.
         </p>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           {FEATURES.map(({ Icon, tile, title, body }) => (
@@ -178,8 +180,8 @@ export default function Landing() {
             One map that knows about floors
           </h2>
           <p className="mt-4 max-w-md text-base leading-relaxed text-white/65">
-            Switch between a flat plan and a rotatable 3D building model, and Wayfinder always knows which storey
-            you&apos;re on and how to get to the next one.
+            Flip between a flat plan and a rotatable building model. The floor rail keeps you oriented, and routes
+            carry across levels — &ldquo;take Lift A to 2&rdquo; is a single step, not a leap of faith.
           </p>
           <div className="mt-7 inline-flex rounded-full bg-white/8 p-1" style={{ border: "1px solid rgba(255,255,255,0.14)" }}>
             <span className="rounded-full bg-white px-[22px] py-2 text-sm font-semibold text-wf-ink">2D</span>
@@ -214,23 +216,24 @@ export default function Landing() {
       {/* ── CTA band ──────────────────────────────────────────────────────── */}
       <section className="bg-gradient-to-b from-white to-[#EFF5FB] px-6 py-24 text-center">
         <h2 className="font-display text-[32px] font-bold leading-[1.12] -tracking-[0.5px] text-wf-ink sm:text-[38px] lg:text-[42px] lg:leading-[1.1] lg:-tracking-[1px]">
-          Put your place on the map
+          Put your hospital on the map
         </h2>
         <p className="mx-auto mt-4 max-w-md text-base text-wf-muted">
-          Walk it with your phone or upload a floor plan — Wayfinder does the rest.
+          Walk it with your phone or upload a floor plan — Wayfinder does the rest. Fewer missed
+          appointments, fewer stopped-in-the-corridor directions, calmer arrivals.
         </p>
         <div className="mx-auto mt-8 flex max-w-xs flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center sm:gap-4">
           <Link
             href="/map"
-            className="rounded-2xl bg-wf-primary px-7 py-4 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(10,93,194,0.3)] transition-transform active:scale-95"
+            className="rounded-2xl bg-wf-primary px-7 py-4 text-center text-sm font-semibold text-white shadow-[0_10px_24px_rgba(10,93,194,0.3)] transition-transform active:scale-95"
           >
-            Map a place
+            Map your hospital
           </Link>
           <Link
             href="/navigate"
-            className="rounded-2xl border border-wf-border px-7 py-4 text-sm font-semibold text-wf-ink transition-colors hover:border-wf-primary"
+            className="rounded-2xl border border-wf-border px-7 py-4 text-center text-sm font-semibold text-wf-ink transition-colors hover:border-wf-primary"
           >
-            Explore the map
+            Explore Great Ormond Street
           </Link>
         </div>
       </section>
