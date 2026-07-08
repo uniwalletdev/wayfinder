@@ -90,8 +90,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   }, [])
 
   // Basemap/scene style — the map-style floating control cycles through a light
-  // street map, a dark one, and real satellite/aerial imagery.
-  const [mapStyle, setMapStyle] = useState<"light" | "dark" | "satellite">("light")
+  // street map, a dark one, and real satellite/aerial imagery. Defaults to
+  // satellite so places open over their actual buildings and read as a real map
+  // rather than a flat diagram; a returning user's saved choice overrides this.
+  const [mapStyle, setMapStyle] = useState<"light" | "dark" | "satellite">("satellite")
   const toggleMapStyle = useCallback(() => {
     setMapStyle((v) => {
       const next = v === "light" ? "dark" : v === "dark" ? "satellite" : "light"

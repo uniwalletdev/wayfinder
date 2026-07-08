@@ -27,7 +27,7 @@ export const ST_GEORGES_VENUE: Venue = {
     accessibleToilets: true,
     notes: "Large multi-building site. Lifts serve all mapped floors; step-free routes and Blue Badge parking available.",
   },
-  quickAccess: ["Main Entrance", "Emergency Department (A&E)", "Radiology & Imaging", "Pharmacy", "Restaurant & Café"],
+  quickAccess: ["Grosvenor Wing Main Entrance", "Emergency Department (A&E)", "Major Trauma Centre", "Radiology & Imaging", "Ingredients Restaurant"],
   floorPlans: [
     { id: "gf", floor: 0, label: "Ground Floor",  imageUrl: "/floorplans/stgeorges/ground.svg", bounds: [[51.4258363, -0.1741006], [51.4272363, -0.1723006]] },
     { id: "f1", floor: 1, label: "First Floor",   imageUrl: "/floorplans/stgeorges/floor1.svg", bounds: [[51.4258363, -0.1741006], [51.4272363, -0.1723006]] },
@@ -41,10 +41,11 @@ export const ST_GEORGES_VENUE: Venue = {
     { id: "pharmacy-gf",   name: "Pharmacy",                  type: "pharmacy",  coordinates: { lat: 51.4268653, lng: -0.1729226 }, floor: 0, description: "Outpatient pharmacy" },
     { id: "lift-b-gf",     name: "Lift B",                    type: "lift",      coordinates: { lat: 51.4268653, lng: -0.1725366 }, floor: 0 },
     { id: "lift-a-gf",     name: "Lift A",                    type: "lift",      coordinates: { lat: 51.4264103, lng: -0.1731786 }, floor: 0 },
-    { id: "canteen-gf",    name: "Restaurant & Café",         type: "canteen",   coordinates: { lat: 51.4261953, lng: -0.1738516 }, floor: 0, description: "Patient and visitor restaurant" },
+    { id: "canteen-gf",    name: "Ingredients Restaurant",    type: "canteen",   coordinates: { lat: 51.4261953, lng: -0.1738516 }, floor: 0, description: "Patient and visitor restaurant & café" },
     { id: "toilet-gf",     name: "Toilets",                   type: "toilet",    coordinates: { lat: 51.4261953, lng: -0.1734436 }, floor: 0 },
     { id: "reception",     name: "Main Reception",            type: "reception", coordinates: { lat: 51.4261953, lng: -0.1729226 }, floor: 0, description: "Main reception desk" },
-    { id: "main-entrance", name: "Main Entrance",             type: "reception", coordinates: { lat: 51.4261953, lng: -0.1725366 }, floor: 0, description: "St George's Hospital main entrance, off Blackshaw Road (Grosvenor Wing)" },
+    { id: "main-entrance", name: "Grosvenor Wing Main Entrance", type: "reception", coordinates: { lat: 51.4261953, lng: -0.1725366 }, floor: 0, description: "St George's Hospital main entrance, off Blackshaw Road (Grosvenor Wing)" },
+    { id: "mtc",           name: "Major Trauma Centre",       type: "department",coordinates: { lat: 51.4264103, lng: -0.1738516 }, floor: 0, description: "St George's is a designated Major Trauma Centre" },
 
     // First Floor
     { id: "cardiology-opd", name: "Cardiology Outpatients",   type: "department", coordinates: { lat: 51.4268653, lng: -0.1736466 }, floor: 1, description: "Cardiology outpatient clinics" },
