@@ -16,8 +16,8 @@ export const ST_GEORGES_VENUE: Venue = {
   name: "St George's Wayfinder",
   subtitle: "St George's Hospital, Tooting",
   category: "hospital",
-  // Blackshaw Road, Tooting, London SW17 0QT.
-  center: { lat: 51.4266, lng: -0.1747 },
+  // Blackshaw Road, Tooting, London SW17 0QT — Google's pin for the site.
+  center: { lat: 51.4265363, lng: -0.1732006 },
   defaultZoom: 17,
   visibility: "public",
   verified: true,
