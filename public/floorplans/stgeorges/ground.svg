@@ -1,0 +1,60 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 620'>
+
+  <rect width='800' height='44' fill='#005EB8'/>
+  <text x='400' y='28' text-anchor='middle' font-family='Arial,sans-serif' font-size='17' font-weight='bold' fill='white'>Ground Floor — St George&apos;s Hospital</text>
+
+
+  <rect x='20' y='50' width='760' height='540' fill='white' stroke='#374151' stroke-width='3'/>
+  <rect x='20' y='278' width='760' height='54' fill='#d1d5db'/>
+  <rect x='383' y='50' width='54' height='540' fill='#d1d5db'/>
+
+
+  <rect x='20' y='50' width='181' height='228' fill='#fee2e2' stroke='#fca5a5' stroke-width='1.5'/>
+  <text x='110.5' y='156' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='#1f2937'>Emergency Dept</text>
+  <text x='110.5' y='176' text-anchor='middle' font-family='Arial,sans-serif' font-size='11' fill='#6b7280'>A&amp;E · Grosvenor Wing</text>
+
+
+  <rect x='201' y='50' width='182' height='228' fill='#ede9fe' stroke='#c4b5fd' stroke-width='1.5'/>
+  <text x='292' y='169' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='#1f2937'>Staircase 1</text>
+
+
+
+  <rect x='437' y='50' width='173' height='228' fill='#fef9c3' stroke='#fcd34d' stroke-width='1.5'/>
+  <text x='523.5' y='156' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='#1f2937'>Pharmacy</text>
+  <text x='523.5' y='176' text-anchor='middle' font-family='Arial,sans-serif' font-size='11' fill='#6b7280'>Outpatient pharmacy</text>
+
+
+  <rect x='610' y='50' width='170' height='228' fill='#ede9fe' stroke='#c4b5fd' stroke-width='1.5'/>
+  <text x='695' y='169' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='#1f2937'>Lift B</text>
+
+
+
+  <rect x='388' y='340' width='44' height='52' rx='3' fill='#005EB8' stroke='#003d7a' stroke-width='1.5'/>
+  <text x='410' y='360' text-anchor='middle' font-family='Arial,sans-serif' font-size='18' fill='white'>🛗</text>
+  <text x='410' y='380' text-anchor='middle' font-family='Arial,sans-serif' font-size='9' fill='white'>Lift A</text>
+
+
+  <rect x='20' y='332' width='181' height='258' fill='#fef9c3' stroke='#fcd34d' stroke-width='1.5'/>
+  <text x='110.5' y='453' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='#1f2937'>Restaurant</text>
+  <text x='110.5' y='473' text-anchor='middle' font-family='Arial,sans-serif' font-size='11' fill='#6b7280'>&amp; Café</text>
+
+
+  <rect x='201' y='332' width='182' height='258' fill='#e0f7fa' stroke='#80deea' stroke-width='1.5'/>
+  <text x='292' y='466' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='#1f2937'>Toilets</text>
+
+
+
+  <rect x='437' y='332' width='173' height='258' fill='#dcfce7' stroke='#86efac' stroke-width='1.5'/>
+  <text x='523.5' y='466' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='#1f2937'>Main Reception</text>
+
+
+
+  <rect x='610' y='332' width='170' height='258' fill='#dcfce7' stroke='#86efac' stroke-width='1.5'/>
+  <text x='695' y='459' text-anchor='middle' font-family='Arial,sans-serif' font-size='13' font-weight='bold' fill='#1f2937'>Main Entrance</text>
+  <text x='695' y='479' text-anchor='middle' font-family='Arial,sans-serif' font-size='11' fill='#6b7280'>Grosvenor Wing</text>
+
+
+<rect x='640' y='587' width='110' height='5' rx='2' fill='#22c55e'/>
+<text x='695' y='610' text-anchor='middle' font-family='Arial,sans-serif' font-size='10' fill='#6b7280'>▼ Public Entrance</text>
+<text x='775' y='600' text-anchor='middle' font-family='Arial,sans-serif' font-size='12' fill='#9ca3af'>N↑</text>
+</svg>
