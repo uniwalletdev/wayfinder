@@ -1,13 +1,13 @@
 "use client"
 
-import { Moon, Sun, Navigation, Plus, Minus, Layers, Plug } from "lucide-react"
+import { Moon, Sun, Satellite, Navigation, Plus, Minus, Layers, Plug } from "lucide-react"
 import FloorSelector from "@/components/FloorSelector"
 import type { FloorNaming } from "@/lib/types"
 
 interface Props {
   mapView: "2d" | "3d"
   onToggleMapView: (view: "2d" | "3d") => void
-  mapStyle: "light" | "dark"
+  mapStyle: "light" | "dark" | "satellite"
   onToggleMapStyle: () => void
   // The facility-asset overlay toggle only appears when the current floor
   // actually has assets to show, so it doesn't clutter venues without any.
@@ -75,13 +75,15 @@ export default function MapControls({
               </button>
             ))}
           </div>
+          {/* Cycles the basemap: light → dark → satellite → light. The icon shows
+              the style you'll get on tap. */}
           <button
             onClick={onToggleMapStyle}
-            title={mapStyle === "light" ? "Switch to dark map" : "Switch to light map"}
-            aria-label={mapStyle === "light" ? "Switch to dark map" : "Switch to light map"}
+            title={mapStyle === "light" ? "Switch to dark map" : mapStyle === "dark" ? "Switch to satellite map" : "Switch to light map"}
+            aria-label={mapStyle === "light" ? "Switch to dark map" : mapStyle === "dark" ? "Switch to satellite map" : "Switch to light map"}
             className="flex h-[38px] w-[38px] items-center justify-center rounded-full bg-white/96 text-wf-ink shadow-[0_8px_24px_rgba(11,27,46,0.16)] transition-transform active:scale-95 lg:h-[42px] lg:w-[42px]"
           >
-            {mapStyle === "light" ? <Moon size={18} /> : <Sun size={18} />}
+            {mapStyle === "light" ? <Moon size={18} /> : mapStyle === "dark" ? <Satellite size={18} /> : <Sun size={18} />}
           </button>
           {assetsPresent && onToggleAssets && (
             <button

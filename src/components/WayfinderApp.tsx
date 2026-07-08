@@ -89,11 +89,12 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     try { window.localStorage.setItem(MAP_VIEW_KEY, next) } catch {}
   }, [])
 
-  // Light (default) or dark basemap/scene — the map-style floating control.
-  const [mapStyle, setMapStyle] = useState<"light" | "dark">("light")
+  // Basemap/scene style — the map-style floating control cycles through a light
+  // street map, a dark one, and real satellite/aerial imagery.
+  const [mapStyle, setMapStyle] = useState<"light" | "dark" | "satellite">("light")
   const toggleMapStyle = useCallback(() => {
     setMapStyle((v) => {
-      const next = v === "light" ? "dark" : "light"
+      const next = v === "light" ? "dark" : v === "dark" ? "satellite" : "light"
       try { window.localStorage.setItem(MAP_STYLE_KEY, next) } catch {}
       return next
     })
@@ -196,7 +197,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     migrateLegacyData(DEFAULT_VENUE.id)
     try {
       if (window.localStorage.getItem(MAP_VIEW_KEY) === "3d") setMapView("3d")
-      if (window.localStorage.getItem(MAP_STYLE_KEY) === "dark") setMapStyle("dark")
+      const savedStyle = window.localStorage.getItem(MAP_STYLE_KEY)
+      if (savedStyle === "dark" || savedStyle === "satellite") setMapStyle(savedStyle)
       if (window.localStorage.getItem(ALWAYS_STEPFREE_KEY) === "false") setAlwaysStepFree(false)
     } catch {}
     const restored = loadUserVenues()
@@ -788,7 +790,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
             showAssets={showAssets}
             onMapReady={() => {}}
             leafletMapRef={mapHandleRef}
-            dark={mapStyle === "dark"}
+            mapStyle={mapStyle}
           />
         ) : (
           <Map3DView
