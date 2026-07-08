@@ -34,6 +34,32 @@ export type WaypointType =
   | "pharmacy"
   | "other"
 
+// A fixed facility element placed at a precise point — the kind of thing a
+// "proper" CAD/BIM plan carries as located symbols: plug sockets, data points,
+// fire equipment, etc. Assets are NOT wayfinding destinations and never take
+// part in routing or search; they render as a separate, toggleable overlay for
+// facilities/estates views. Kept deliberately separate from Waypoint so mapping
+// a socket can't accidentally become "navigate me to a socket".
+export type AssetCategory =
+  | "power"
+  | "data"
+  | "lighting"
+  | "fire"
+  | "plumbing"
+  | "hvac"
+  | "security"
+  | "other"
+
+export interface Asset {
+  id: string
+  name: string
+  category: AssetCategory
+  coordinates: Coordinates
+  floor: number
+  // Where it came from, e.g. the CAD layer/block it was read off.
+  source?: string
+}
+
 export interface FloorPlan {
   id: string
   floor: number
@@ -103,6 +129,9 @@ export interface Venue {
   // Non-standard storey numbering (e.g. GOSH's "Level 2" ground floor). Absent
   // for venues that use the plain Ground Floor / Floor N scheme.
   floorNaming?: FloorNaming
+  // Located facility fixtures (plug sockets, data points, fire equipment…),
+  // typically read off a CAD plan. A separate overlay layer — not routable.
+  assets?: Asset[]
   // Waypoint names to surface as shortcuts in search.
   quickAccess?: string[]
   createdAt?: string

@@ -1,6 +1,6 @@
 "use client"
 
-import { Moon, Sun, Navigation, Plus, Minus, Layers } from "lucide-react"
+import { Moon, Sun, Navigation, Plus, Minus, Layers, Plug } from "lucide-react"
 import FloorSelector from "@/components/FloorSelector"
 import type { FloorNaming } from "@/lib/types"
 
@@ -9,6 +9,11 @@ interface Props {
   onToggleMapView: (view: "2d" | "3d") => void
   mapStyle: "light" | "dark"
   onToggleMapStyle: () => void
+  // The facility-asset overlay toggle only appears when the current floor
+  // actually has assets to show, so it doesn't clutter venues without any.
+  assetsPresent?: boolean
+  showAssets?: boolean
+  onToggleAssets?: () => void
   onZoomIn: () => void
   onZoomOut: () => void
   onRecenter: () => void
@@ -35,6 +40,9 @@ export default function MapControls({
   onToggleMapView,
   mapStyle,
   onToggleMapStyle,
+  assetsPresent,
+  showAssets,
+  onToggleAssets,
   onZoomIn,
   onZoomOut,
   onRecenter,
@@ -75,6 +83,19 @@ export default function MapControls({
           >
             {mapStyle === "light" ? <Moon size={18} /> : <Sun size={18} />}
           </button>
+          {assetsPresent && onToggleAssets && (
+            <button
+              onClick={onToggleAssets}
+              title={showAssets ? "Hide fixtures & assets" : "Show fixtures & assets"}
+              aria-label={showAssets ? "Hide fixtures and assets" : "Show fixtures and assets"}
+              aria-pressed={showAssets}
+              className={`flex h-[38px] w-[38px] items-center justify-center rounded-full shadow-[0_8px_24px_rgba(11,27,46,0.16)] transition-transform active:scale-95 lg:h-[42px] lg:w-[42px] ${
+                showAssets ? "bg-wf-primary text-white" : "bg-white/96 text-wf-ink"
+              }`}
+            >
+              <Plug size={18} />
+            </button>
+          )}
         </div>
 
         {/* Middle: floor selector, centred on desktop by the flexible spacers.

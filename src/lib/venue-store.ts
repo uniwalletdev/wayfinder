@@ -1,4 +1,4 @@
-import { Venue, Waypoint, SurveyTrail, FloorPlan } from "./types"
+import { Venue, Waypoint, SurveyTrail, FloorPlan, Asset } from "./types"
 
 // Client-side persistence for venues the user creates and the places they map
 // inside them. Everything lives in localStorage for now — a later phase moves
@@ -11,12 +11,14 @@ import { Venue, Waypoint, SurveyTrail, FloorPlan } from "./types"
 //   wayfinder.venue.<id>.waypoints       -> Waypoint[]     (points mapped in venue)
 //   wayfinder.venue.<id>.trails          -> SurveyTrail[]  (walked breadcrumbs)
 //   wayfinder.venue.<id>.floorPlans      -> FloorPlan[]    (uploaded plan images)
+//   wayfinder.venue.<id>.assets          -> Asset[]        (located CAD fixtures)
 
 const VENUES_KEY = "wayfinder.userVenues"
 const ACTIVE_KEY = "wayfinder.activeVenueId"
 const wpKey = (venueId: string) => `wayfinder.venue.${venueId}.waypoints`
 const trailKey = (venueId: string) => `wayfinder.venue.${venueId}.trails`
 const floorPlanKey = (venueId: string) => `wayfinder.venue.${venueId}.floorPlans`
+const assetKey = (venueId: string) => `wayfinder.venue.${venueId}.assets`
 
 // Pre-multi-venue keys. Anything saved under these belonged to the single
 // hard-coded venue, so we fold them into it the first time we load.
@@ -98,6 +100,15 @@ export function saveVenueFloorPlans(venueId: string, floorPlans: FloorPlan[]): v
   writeJSON(floorPlanKey(venueId), floorPlans)
 }
 
+export function loadVenueAssets(venueId: string): Asset[] {
+  const v = readJSON<Asset[]>(assetKey(venueId), [])
+  return Array.isArray(v) ? v : []
+}
+
+export function saveVenueAssets(venueId: string, assets: Asset[]): void {
+  writeJSON(assetKey(venueId), assets)
+}
+
 // One-time migration: move any pre-multi-venue custom waypoints/trails onto the
 // default venue, then clear the legacy keys so this is a no-op afterwards.
 export function migrateLegacyData(defaultVenueId: string): void {
@@ -128,6 +139,7 @@ export function deleteUserVenue(venueId: string): void {
     window.localStorage.removeItem(wpKey(venueId))
     window.localStorage.removeItem(trailKey(venueId))
     window.localStorage.removeItem(floorPlanKey(venueId))
+    window.localStorage.removeItem(assetKey(venueId))
   } catch {
     // ignore
   }

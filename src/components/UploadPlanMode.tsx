@@ -3,16 +3,18 @@
 import { useEffect, useRef, useState } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
-import { Coordinates, FloorPlan, SurveyTrail, Waypoint, WaypointType } from "@/lib/types"
+import { Asset, AssetCategory, Coordinates, FloorPlan, SurveyTrail, Waypoint, WaypointType } from "@/lib/types"
 import { ALL_WAYPOINT_TYPES, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel } from "@/lib/waypoint-meta"
-import { loadPlanFile, VectorPlanFeature } from "@/lib/plan-import"
+import { ALL_ASSET_CATEGORIES, ASSET_CATEGORY_ICONS, ASSET_CATEGORY_LABELS } from "@/lib/asset-meta"
+import { loadPlanFile, VectorPlanFeature, NormalisedAsset } from "@/lib/plan-import"
 import { PlanCorners, cornersToBounds, defaultPlanCorners, projectPlanPoint } from "@/lib/plan-georeference"
-import { X, Check, ChevronUp, ChevronDown, UploadCloud, MapPinned, Trash2 } from "lucide-react"
+import { X, Check, ChevronUp, ChevronDown, UploadCloud, MapPinned, Trash2, Plug } from "lucide-react"
 
 export interface UploadPlanResult {
   floorPlan: FloorPlan | null
   waypoints: Waypoint[]
   trails: SurveyTrail[]
+  assets: Asset[]
 }
 
 interface Props {
@@ -26,6 +28,13 @@ interface Props {
 interface ReviewRoom {
   name: string
   type: WaypointType
+  include: boolean
+  coordinates: Coordinates
+}
+
+interface ReviewAsset {
+  name: string
+  category: AssetCategory
   include: boolean
   coordinates: Coordinates
 }
@@ -45,12 +54,16 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
   const [rasterImage, setRasterImage] = useState<{ dataUrl: string; width: number; height: number } | null>(null)
   const [rawRooms, setRawRooms] = useState<{ name: string; type: WaypointType; x: number; y: number }[]>([])
   const [rawCorridors, setRawCorridors] = useState<{ x: number; y: number }[][]>([])
+  // Located fixtures (plug sockets, data points…) read from a CAD plan, in
+  // image-normalised space until georeferenced.
+  const [rawAssets, setRawAssets] = useState<NormalisedAsset[]>([])
   const [corners, setCorners] = useState<PlanCorners | null>(null)
 
   // Final, real-world list to confirm — populated after georeferencing a raster
   // plan, or immediately for a vector file that's already georeferenced.
   const [reviewRooms, setReviewRooms] = useState<ReviewRoom[]>([])
   const [reviewTrails, setReviewTrails] = useState<Coordinates[][]>([])
+  const [reviewAssets, setReviewAssets] = useState<ReviewAsset[]>([])
 
   async function handleFile(file: File) {
     setError(null)
@@ -66,6 +79,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         setCorners(null)
         setReviewRooms(rooms.map((r) => ({ name: r.name, type: r.type, include: true, coordinates: r.point })))
         setReviewTrails(lines.map((l) => l.line))
+        setReviewAssets([])
         if (rooms.length === 0) {
           setNotice("That file only had corridor lines — no named point locations to add as waypoints.")
         }
@@ -73,7 +87,29 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         return
       }
 
+      // CAD (DXF): geometry is already extracted from the file, so there's no AI
+      // reader step — but its coordinates are local to the drawing, so it still
+      // goes through corner-drag georeferencing like a raster plan does.
+      if (parsed.kind === "cad") {
+        setRasterImage({ dataUrl: parsed.dataUrl, width: parsed.width, height: parsed.height })
+        setRawRooms(parsed.rooms)
+        setRawCorridors(parsed.corridors)
+        setRawAssets(parsed.assets)
+        setCorners(defaultPlanCorners(venueCenter, parsed.width / parsed.height))
+        const bits: string[] = []
+        if (parsed.rooms.length) bits.push(`${parsed.rooms.length} location${parsed.rooms.length === 1 ? "" : "s"}`)
+        if (parsed.assets.length) bits.push(`${parsed.assets.length} fixture${parsed.assets.length === 1 ? "" : "s"}`)
+        setNotice(
+          bits.length
+            ? `Read ${bits.join(" and ")} from the CAD file. Position the plan, then review before saving.`
+            : "Rendered the CAD line-work. Position the plan, then add points yourself if needed."
+        )
+        setStep("georeference")
+        return
+      }
+
       setRasterImage({ dataUrl: parsed.dataUrl, width: parsed.width, height: parsed.height })
+      setRawAssets([])
 
       let rooms: { name: string; type: WaypointType; x: number; y: number }[] = []
       let corridors: { x: number; y: number }[][] = []
@@ -118,7 +154,23 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
       }))
     )
     setReviewTrails(rawCorridors.map((pts) => pts.map((p) => projectPlanPoint(finalCorners, p.x, p.y))))
+    setReviewAssets(
+      rawAssets.map((a) => ({
+        name: a.name,
+        category: a.category,
+        include: true,
+        coordinates: projectPlanPoint(finalCorners, a.x, a.y),
+      }))
+    )
     setStep("review")
+  }
+
+  function updateAsset(index: number, patch: Partial<ReviewAsset>) {
+    setReviewAssets((prev) => prev.map((a, i) => (i === index ? { ...a, ...patch } : a)))
+  }
+
+  function removeAsset(index: number) {
+    setReviewAssets((prev) => prev.filter((_, i) => i !== index))
   }
 
   function updateRoom(index: number, patch: Partial<ReviewRoom>) {
@@ -142,6 +194,16 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
     const trails: SurveyTrail[] = reviewTrails
       .filter((pts) => pts.length >= 2)
       .map((pts, i) => ({ id: `plan-trail-${Date.now()}-${i}`, floor: planFloor, points: pts }))
+    const assets: Asset[] = reviewAssets
+      .filter((a) => a.name.trim() && a.include)
+      .map((a, i) => ({
+        id: `plan-asset-${Date.now()}-${i}`,
+        name: a.name.trim(),
+        category: a.category,
+        coordinates: a.coordinates,
+        floor: planFloor,
+        source: "Uploaded CAD plan",
+      }))
     const plan: FloorPlan | null =
       rasterImage && corners
         ? {
@@ -152,7 +214,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
             bounds: cornersToBounds(corners),
           }
         : null
-    onUploadComplete({ floorPlan: plan, waypoints, trails })
+    onUploadComplete({ floorPlan: plan, waypoints, trails, assets })
   }
 
   if (step === "analyzing") {
@@ -205,6 +267,9 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
             {reviewTrails.length > 0
               ? ` · ${reviewTrails.length} corridor${reviewTrails.length === 1 ? "" : "s"} traced`
               : ""}
+            {reviewAssets.length > 0
+              ? ` · ${reviewAssets.length} fixture${reviewAssets.length === 1 ? "" : "s"}`
+              : ""}
             . Untick anything wrong, or fix a name or type before saving.
           </p>
 
@@ -256,6 +321,62 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
               ))}
             </div>
           )}
+
+          {reviewAssets.length > 0 && (
+            <div className="mt-6">
+              <div className="flex items-center gap-1.5 mb-2">
+                <Plug size={14} className="text-[#005EB8]" />
+                <h3 className="text-xs font-semibold text-gray-600">
+                  Fixtures &amp; assets ({reviewAssets.length})
+                </h3>
+              </div>
+              <p className="text-xs text-gray-400 mb-2.5">
+                Located fixtures like plug sockets — saved as a separate overlay layer, not navigation destinations.
+              </p>
+              <div className="flex flex-col gap-2">
+                {reviewAssets.map((a, i) => (
+                  <div
+                    key={i}
+                    className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 ${
+                      a.include ? "border-gray-200 bg-white" : "border-gray-100 bg-gray-50 opacity-60"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={a.include}
+                      onChange={(e) => updateAsset(i, { include: e.target.checked })}
+                      className="w-4 h-4 accent-[#005EB8] flex-shrink-0"
+                      aria-label={`Include ${a.name}`}
+                    />
+                    <span className="text-lg flex-shrink-0">{ASSET_CATEGORY_ICONS[a.category]}</span>
+                    <input
+                      value={a.name}
+                      onChange={(e) => updateAsset(i, { name: e.target.value })}
+                      className="flex-1 min-w-0 text-sm font-medium text-gray-900 outline-none border-b border-transparent focus:border-[#005EB8]"
+                    />
+                    <select
+                      value={a.category}
+                      onChange={(e) => updateAsset(i, { category: e.target.value as AssetCategory })}
+                      className="text-xs text-gray-500 bg-transparent outline-none flex-shrink-0"
+                    >
+                      {ALL_ASSET_CATEGORIES.map((c) => (
+                        <option key={c} value={c}>
+                          {ASSET_CATEGORY_LABELS[c]}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => removeAsset(i)}
+                      className="text-gray-300 hover:text-red-500 flex-shrink-0"
+                      aria-label={`Remove ${a.name}`}
+                    >
+                      <Trash2 size={15} />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
         <div className="px-4 pt-3 pb-safe-bar border-t border-gray-100">
           <button
@@ -281,9 +402,10 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
       </div>
       <div className="flex-1 overflow-y-auto px-4 py-4 pb-safe-bar">
         <p className="text-sm text-gray-600 mb-4">
-          Already have a plan? Upload a photo, scan, exported PDF, SVG diagram, or GeoJSON export and it&apos;s read
-          automatically — rooms and corridors are detected and turned into a navigable layout, the same way a Survey Mode
-          walk would.
+          Already have a plan? Upload a photo, scan, exported PDF, SVG diagram, GeoJSON export, or a DXF CAD drawing and
+          it&apos;s read automatically — rooms and corridors are detected and turned into a navigable layout, the same way
+          a Survey Mode walk would. A DXF also carries its located fixtures (plug sockets, data points…) onto a separate
+          overlay.
         </p>
 
         <div className="flex items-center justify-between rounded-xl border border-gray-200 px-4 py-3 mb-4">
@@ -327,10 +449,10 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         >
           <UploadCloud size={32} className="text-[#005EB8]" />
           <p className="text-sm font-semibold text-gray-800">Tap to choose a file, or drag one here</p>
-          <p className="text-xs text-gray-400">Image (JPG/PNG/WEBP/SVG) · PDF · GeoJSON</p>
+          <p className="text-xs text-gray-400">Image (JPG/PNG/WEBP/SVG) · PDF · GeoJSON · DXF</p>
           <input
             type="file"
-            accept="image/*,.pdf,application/pdf,.svg,image/svg+xml,.geojson,.json,application/geo+json,application/json"
+            accept="image/*,.pdf,application/pdf,.svg,image/svg+xml,.geojson,.json,application/geo+json,application/json,.dxf,image/vnd.dxf,application/dxf"
             className="hidden"
             onChange={(e) => {
               const file = e.target.files?.[0]
@@ -343,7 +465,8 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
 
         <p className="mt-4 text-xs text-gray-400">
-          CAD/BIM files (DWG, RVT, IFC…) aren&apos;t read yet — export the plan as an image, PDF, or GeoJSON first.
+          DXF CAD drawings are read directly. Binary/BIM formats (DWG, RVT, IFC…) aren&apos;t yet — export those to DXF,
+          an image, PDF, or GeoJSON first.
         </p>
       </div>
     </div>

@@ -1,4 +1,6 @@
-import { Coordinates, WaypointType } from "./types"
+import { AssetCategory, Coordinates, WaypointType } from "./types"
+import { classifyAsset, defaultAssetName } from "./asset-meta"
+import { parseDxf, renderDxf, normalisePoint, DxfDrawing } from "./dxf"
 
 // Turns whatever file a mapper drops in — a photo of a plan, an exported PDF,
 // an SVG diagram, or a GeoJSON export from other mapping tools — into either a
@@ -11,6 +13,38 @@ export interface RasterPlan {
   dataUrl: string
   width: number
   height: number
+}
+
+// A point/asset read off a plan, positioned in image-normalised space (x, y in
+// 0..1 from the top-left) — the same frame a raster plan's AI-detected rooms
+// use, so a CAD plan hands off to the identical georeferencing step.
+export interface NormalisedRoom {
+  name: string
+  type: WaypointType
+  x: number
+  y: number
+}
+
+export interface NormalisedAsset {
+  name: string
+  category: AssetCategory
+  x: number
+  y: number
+  source?: string
+}
+
+// A parsed CAD (DXF) file. Behaves like a raster plan for placement — it
+// carries a rendered image of the line-work plus normalised points — but the
+// rooms/corridors/assets are already extracted from the file's structure, so it
+// skips the AI vision reader entirely.
+export interface CadPlan {
+  kind: "cad"
+  dataUrl: string
+  width: number
+  height: number
+  rooms: NormalisedRoom[]
+  corridors: { x: number; y: number }[][]
+  assets: NormalisedAsset[]
 }
 
 export interface VectorPlanFeature {
@@ -27,7 +61,7 @@ export interface VectorPlan {
   features: VectorPlanFeature[]
 }
 
-export type ParsedPlan = RasterPlan | VectorPlan
+export type ParsedPlan = RasterPlan | VectorPlan | CadPlan
 
 const MAX_DIM = 1400
 
@@ -208,19 +242,108 @@ async function parseVectorFile(file: File): Promise<VectorPlan> {
   return { kind: "vector", features }
 }
 
-// Formats we can't yet parse (CAD/BIM). Named explicitly so the error message
-// can point mappers to a format we do support.
-const UNSUPPORTED_EXTENSIONS = [".dwg", ".dxf", ".rvt", ".ifc", ".skp"]
+// Layers whose line-work represents walkable circulation (so their polylines
+// become corridor trails). Everything else stays as wall imagery only — turning
+// every wall into a walkable path would wreck routing.
+const CORRIDOR_LAYER = /corridor|circulation|route|walkway|path|access|egress/i
+
+// Read a DXF drawing into the same normalised room/corridor/asset shape a raster
+// plan produces after the AI reader — but sourced from the file's real geometry.
+// Rooms come from text labels + navigational block symbols; assets from fixture
+// symbols (plug sockets, data points…); corridors from circulation-layer lines.
+function extractCadFeatures(drawing: DxfDrawing): {
+  rooms: NormalisedRoom[]
+  corridors: { x: number; y: number }[][]
+  assets: NormalisedAsset[]
+} {
+  const rooms: NormalisedRoom[] = []
+  const corridors: { x: number; y: number }[][] = []
+  const assets: NormalisedAsset[] = []
+
+  for (const e of drawing.entities) {
+    const hint = [e.block, e.layer, e.text].filter(Boolean).join(" ")
+
+    // Circulation line-work → corridor trails.
+    if (e.vertices && e.vertices.length >= 2 && CORRIDOR_LAYER.test(e.layer)) {
+      corridors.push(e.vertices.map((v) => normalisePoint(drawing, v)))
+      continue
+    }
+
+    // Point-like entities (placed symbols, labels) become rooms or assets.
+    if (!e.point) continue
+
+    const category = classifyAsset(hint)
+    if (category) {
+      const p = normalisePoint(drawing, e.point)
+      assets.push({
+        name: defaultAssetName(category, e.text || e.block || e.layer),
+        category,
+        x: p.x,
+        y: p.y,
+        source: e.block || e.layer,
+      })
+      continue
+    }
+
+    // A room only if it's a text label, or a symbol that clearly names a
+    // navigational feature — not every stray block.
+    const isLabel = e.type === "TEXT" || e.type === "MTEXT"
+    const type = guessWaypointType(hint)
+    if (isLabel && e.text) {
+      const p = normalisePoint(drawing, e.point)
+      rooms.push({ name: e.text, type, x: p.x, y: p.y })
+    } else if (e.type === "INSERT" && type !== "other") {
+      const p = normalisePoint(drawing, e.point)
+      rooms.push({ name: e.block || WAYPOINT_TYPE_FALLBACK[type], type, x: p.x, y: p.y })
+    }
+  }
+
+  return { rooms, corridors, assets }
+}
+
+// A readable name for a navigational symbol that carried only a block code.
+const WAYPOINT_TYPE_FALLBACK: Record<WaypointType, string> = {
+  ward: "Ward",
+  department: "Department",
+  lift: "Lift",
+  stairs: "Stairs",
+  toilet: "Toilets",
+  exit: "Exit",
+  reception: "Reception",
+  canteen: "Café",
+  pharmacy: "Pharmacy",
+  other: "Location",
+}
+
+async function parseDxfFile(file: File): Promise<CadPlan> {
+  const text = await file.text()
+  const drawing = parseDxf(text)
+  if (drawing.entities.length === 0) {
+    throw new Error("That DXF file had no readable drawing entities.")
+  }
+  const rendered = renderDxf(drawing, MAX_DIM)
+  if (!rendered) {
+    throw new Error("Couldn't render that DXF — it may contain no 2D line-work on the plan.")
+  }
+  const { rooms, corridors, assets } = extractCadFeatures(drawing)
+  return { kind: "cad", dataUrl: rendered.dataUrl, width: rendered.width, height: rendered.height, rooms, corridors, assets }
+}
+
+// Binary CAD (DWG) and BIM (RVT/IFC/SKP) still need server-side conversion; only
+// text DXF is parseable in the browser. Named explicitly so the message can
+// point mappers at the format we DO read.
+const UNSUPPORTED_EXTENSIONS = [".dwg", ".rvt", ".ifc", ".skp"]
 
 export async function loadPlanFile(file: File): Promise<ParsedPlan> {
   const name = file.name.toLowerCase()
+  if (name.endsWith(".dxf")) return parseDxfFile(file)
   if (UNSUPPORTED_EXTENSIONS.some((ext) => name.endsWith(ext))) {
     throw new Error(
-      "CAD/BIM files aren't supported yet. Export the floor plan as an image, PDF, or GeoJSON and upload that instead."
+      "That CAD/BIM format isn't supported yet. Export the plan as DXF, an image, a PDF, or GeoJSON and upload that instead."
     )
   }
   if (isVectorFile(file)) return parseVectorFile(file)
   if (file.type === "application/pdf" || name.endsWith(".pdf")) return rasterizePdf(file)
   if (file.type.startsWith("image/") || /\.(png|jpe?g|webp|gif|svg)$/.test(name)) return rasterizeImageFile(file)
-  throw new Error("Unsupported file. Upload an image (JPG/PNG/WEBP/SVG), a PDF, or a GeoJSON file.")
+  throw new Error("Unsupported file. Upload a DXF, an image (JPG/PNG/WEBP/SVG), a PDF, or a GeoJSON file.")
 }

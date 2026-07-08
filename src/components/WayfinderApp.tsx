@@ -3,13 +3,13 @@
 import dynamic from "next/dynamic"
 import { useRouter } from "next/navigation"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan, RoutePreference } from "@/lib/types"
+import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan, RoutePreference, Asset } from "@/lib/types"
 import { getAvailableFloors, floorLabel } from "@/lib/waypoint-meta"
 import { DEFAULT_VENUE, SEED_VENUES, getVenueById, createVenue, type NewVenueInput } from "@/lib/venues"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
   loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
-  loadVenueFloorPlans, saveVenueFloorPlans,
+  loadVenueFloorPlans, saveVenueFloorPlans, loadVenueAssets, saveVenueAssets,
   migrateLegacyData, deleteUserVenue,
 } from "@/lib/venue-store"
 import { buildRoute, distanceMeters, distanceToPath, fetchOutdoorRoute, isOutdoorDestination, shouldRouteOutdoors } from "@/lib/routing"
@@ -166,6 +166,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const [customWaypoints, setCustomWaypoints] = useState<Waypoint[]>([])
   const [surveyTrails, setSurveyTrails] = useState<SurveyTrail[]>([])
   const [customFloorPlans, setCustomFloorPlans] = useState<FloorPlan[]>([])
+  const [customAssets, setCustomAssets] = useState<Asset[]>([])
+  // Whether the facility-asset overlay (plug sockets, data points…) is shown.
+  const [showAssets, setShowAssets] = useState(true)
 
   // "/" focuses the search field (desktop convention), unless the user is
   // already typing somewhere or another overlay is open.
@@ -204,6 +207,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setCustomWaypoints(loadVenueWaypoints(startId))
     setSurveyTrails(loadVenueTrails(startId))
     setCustomFloorPlans(loadVenueFloorPlans(startId))
+    setCustomAssets(loadVenueAssets(startId))
   }, [])
 
   // When signed in, the backend is the source of truth for the user's venues:
@@ -224,7 +228,14 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // ships with (seed venues' hand-drawn plans, or ones a cloud venue already
   // persisted), the same way customWaypoints layers onto venue.waypoints.
   const allFloorPlans = useMemo(() => [...venue.floorPlans, ...customFloorPlans], [venue, customFloorPlans])
+  // Located fixtures layer on top of anything the venue already ships with,
+  // mirroring how customWaypoints layer onto venue.waypoints.
+  const allAssets = useMemo(() => [...(venue.assets ?? []), ...customAssets], [venue, customAssets])
   const availableFloors = useMemo(() => getAvailableFloors(allFloorPlans, allWaypoints), [allFloorPlans, allWaypoints])
+  const assetsOnCurrentFloor = useMemo(
+    () => allAssets.some((a) => a.floor === navState.currentFloor),
+    [allAssets, navState.currentFloor]
+  )
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -578,10 +589,21 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       }
     }
 
+    // Assets have no backend table yet, so they persist to this device
+    // regardless of cloud mode. Show them straight away.
+    if (result.assets.length > 0) {
+      setCustomAssets((prev) => {
+        const next = [...prev, ...result.assets]
+        saveVenueAssets(activeVenueId, next)
+        return next
+      })
+    }
+
     const parts: string[] = []
     if (result.waypoints.length > 0) parts.push(`${result.waypoints.length} location${result.waypoints.length !== 1 ? "s" : ""}`)
+    if (result.assets.length > 0) parts.push(`${result.assets.length} fixture${result.assets.length !== 1 ? "s" : ""}`)
     if (result.floorPlan) parts.push("the plan image")
-    alert(parts.length > 0 ? `Upload complete — ${parts.join(" and ")} added to the map.` : "Upload complete, but nothing usable was found on the plan.")
+    alert(parts.length > 0 ? `Upload complete — ${parts.join(", ")} added to the map.` : "Upload complete, but nothing usable was found on the plan.")
   }, [cloud, activeVenueId])
 
   // Switching place clears the current route and re-centres on the new venue, so
@@ -592,6 +614,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setCustomWaypoints(loadVenueWaypoints(v.id))
     setSurveyTrails(loadVenueTrails(v.id))
     setCustomFloorPlans(loadVenueFloorPlans(v.id))
+    setCustomAssets(loadVenueAssets(v.id))
     setOverlay("none")
     setFarRouteOverride(false)
     setNavState((s) => ({ ...s, currentFloor: 0, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
@@ -761,6 +784,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
             floorPlans={allFloorPlans}
             waypoints={allWaypoints}
             trails={surveyTrails}
+            assets={allAssets}
+            showAssets={showAssets}
             onMapReady={() => {}}
             leafletMapRef={mapHandleRef}
             dark={mapStyle === "dark"}
@@ -789,6 +814,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           onToggleMapView={changeMapView}
           mapStyle={mapStyle}
           onToggleMapStyle={toggleMapStyle}
+          assetsPresent={mapView === "2d" && assetsOnCurrentFloor}
+          showAssets={showAssets}
+          onToggleAssets={() => setShowAssets((s) => !s)}
           onZoomIn={() => mapHandleRef.current?.zoomIn()}
           onZoomOut={() => mapHandleRef.current?.zoomOut()}
           onRecenter={() => {

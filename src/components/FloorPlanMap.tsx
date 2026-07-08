@@ -4,8 +4,9 @@ import React, { useEffect, useMemo, useRef, useState, MutableRefObject } from "r
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { LocateFixed } from "lucide-react"
-import { Waypoint, Route, Coordinates, SurveyTrail, FloorPlan } from "@/lib/types"
+import { Waypoint, Route, Coordinates, SurveyTrail, FloorPlan, Asset } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
+import { ASSET_CATEGORY_ICONS, ASSET_CATEGORY_LABELS } from "@/lib/asset-meta"
 import { buildFloorSchematic } from "@/lib/schematic"
 
 interface Props {
@@ -23,6 +24,10 @@ interface Props {
   floorPlans: FloorPlan[]
   waypoints: Waypoint[]
   trails?: SurveyTrail[]
+  // Located facility fixtures (plug sockets, data points…) drawn as a separate,
+  // non-interactive overlay layer. Toggled by showAssets.
+  assets?: Asset[]
+  showAssets?: boolean
   onMapReady: () => void
   leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void; zoomIn: () => void; zoomOut: () => void } | null>
   // Light (default) or dark basemap tiles — the map-style floating control.
@@ -44,6 +49,8 @@ export default function FloorPlanMap({
   floorPlans,
   waypoints,
   trails = [],
+  assets = [],
+  showAssets = true,
   onMapReady,
   leafletMapRef,
   dark = false,
@@ -55,6 +62,7 @@ export default function FloorPlanMap({
   const routeLayerRef = useRef<L.FeatureGroup | null>(null)
   const floorPlanLayerRef = useRef<L.ImageOverlay | null>(null)
   const waypointLayersRef = useRef<L.Marker[]>([])
+  const assetLayersRef = useRef<L.Marker[]>([])
   const trailLayersRef = useRef<L.Polyline[]>([])
   const schematicLayerRef = useRef<L.LayerGroup | null>(null)
   const framedDestRef = useRef<string | null>(null)
@@ -180,6 +188,43 @@ export default function FloorPlanMap({
       waypointLayersRef.current.push(marker)
     })
   }, [currentFloor, destination, waypoints])
+
+  // Draw the facility-asset overlay (plug sockets, data points, fire equipment…)
+  // for the current floor as small square chips, clearly distinct from the round
+  // waypoint pins so they don't read as navigation destinations. Non-routable —
+  // purely a facilities view — and hidden when the layer is toggled off.
+  useEffect(() => {
+    if (!mapRef.current) return
+    const map = mapRef.current
+
+    assetLayersRef.current.forEach((m) => map.removeLayer(m))
+    assetLayersRef.current = []
+
+    if (!showAssets) return
+
+    assets
+      .filter((a) => a.floor === currentFloor)
+      .forEach((a) => {
+        const icon = L.divIcon({
+          html: `<div style="
+            background:#0B1B2E;
+            border:1.5px solid #F59E0B;
+            border-radius:5px;
+            width:20px;height:20px;
+            display:flex;align-items:center;justify-content:center;
+            font-size:11px;
+            box-shadow:0 1px 4px rgba(0,0,0,0.35);
+          ">${ASSET_CATEGORY_ICONS[a.category]}</div>`,
+          iconSize: [20, 20],
+          iconAnchor: [10, 10],
+          className: "",
+        })
+        const marker = L.marker([a.coordinates.lat, a.coordinates.lng], { icon, zIndexOffset: 200 })
+          .bindPopup(`<b>${a.name}</b><br><small>${ASSET_CATEGORY_LABELS[a.category]}</small>`)
+          .addTo(map)
+        assetLayersRef.current.push(marker)
+      })
+  }, [currentFloor, assets, showAssets])
 
   // Draw the generated floor schematic: filled corridors (the walked path given
   // real width) with room blocks beside them, so a surveyed floor reads like a
