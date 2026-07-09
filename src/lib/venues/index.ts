@@ -1,13 +1,14 @@
 import { Venue, VenueCategory, VenueVisibility, Coordinates, AccessibilityInfo } from "../types"
 import { GOSH_VENUE } from "./gosh"
 import { ST_GEORGES_VENUE } from "./st-georges"
+import { CANNERY_TRAILS_VENUE } from "./cannery-trails"
 
 // Registry of venues the app knows about. Seed venues ship with the build;
 // user-created venues (added via "Map a place") are layered on top of these at
 // runtime and passed in via the `extra` argument so this module stays free of
 // browser/storage concerns.
 
-export const SEED_VENUES: Venue[] = [GOSH_VENUE, ST_GEORGES_VENUE]
+export const SEED_VENUES: Venue[] = [GOSH_VENUE, ST_GEORGES_VENUE, CANNERY_TRAILS_VENUE]
 
 // The venue the app opens into until the user picks or creates another.
 export const DEFAULT_VENUE: Venue = GOSH_VENUE
