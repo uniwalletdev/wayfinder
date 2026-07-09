@@ -1,13 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { Venue, VenueCategory, VenueVisibility, Coordinates } from "@/lib/types"
 import { NewVenueInput } from "@/lib/venues"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
-  LogIn, LogOut, Cloud, CloudOff,
+  LogIn, LogOut, Cloud, CloudOff, Search,
 } from "lucide-react"
+
+// Cap how many public venues render at once. The NHS hospital directory adds
+// hundreds of places; showing them all would bloat the DOM, so the list is
+// capped and the search box narrows it down.
+const PUBLIC_LIST_LIMIT = 60
 
 interface Props {
   venues: Venue[]
@@ -85,8 +90,30 @@ export default function VenuePicker({
   const [hearingLoop, setHearingLoop] = useState(false)
   const [accessNotes, setAccessNotes] = useState("")
 
+  const [query, setQuery] = useState("")
+
   const publicVenues = venues.filter((v) => v.visibility === "public")
   const otherVenues = venues.filter((v) => v.visibility !== "public")
+
+  // Search + rank public venues: fully-mapped places (real floor plans) always
+  // sort ahead of location-only directory pins, then alphabetically. Capped so
+  // the 700+ NHS hospital directory never renders all at once.
+  const matchedPublic = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    const matches = q
+      ? publicVenues.filter(
+          (v) => v.name.toLowerCase().includes(q) || (v.subtitle?.toLowerCase().includes(q) ?? false)
+        )
+      : publicVenues
+    return matches.slice().sort((a, b) => {
+      const am = a.floorPlans.length > 0 ? 0 : 1
+      const bm = b.floorPlans.length > 0 ? 0 : 1
+      return am - bm || a.name.localeCompare(b.name)
+    })
+  }, [publicVenues, query])
+
+  const shownPublic = matchedPublic.slice(0, PUBLIC_LIST_LIMIT)
+  const hiddenPublicCount = matchedPublic.length - shownPublic.length
 
   // A public venue can only be published once the user attests they're allowed to.
   const canCreate = name.trim().length > 0 && (visibility !== "public" || authorised)
@@ -159,9 +186,33 @@ export default function VenuePicker({
           </button>
 
           <SectionLabel>Public places</SectionLabel>
-          {publicVenues.map((v) => (
+          <div className="px-4 py-2.5">
+            <div className="flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5">
+              <Search size={16} className="text-gray-400 flex-shrink-0" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search hospitals & places"
+                className="flex-1 bg-transparent text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none"
+              />
+              {query && (
+                <button onClick={() => setQuery("")} aria-label="Clear search" className="text-gray-400">
+                  <X size={16} />
+                </button>
+              )}
+            </div>
+          </div>
+          {shownPublic.map((v) => (
             <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
           ))}
+          {shownPublic.length === 0 && (
+            <p className="px-4 py-6 text-sm text-gray-500 text-center">No places match “{query}”.</p>
+          )}
+          {hiddenPublicCount > 0 && (
+            <p className="px-4 py-3 text-xs text-gray-400 text-center">
+              Showing {shownPublic.length} of {matchedPublic.length}. Keep typing to narrow it down.
+            </p>
+          )}
 
           {otherVenues.length > 0 && (
             <>

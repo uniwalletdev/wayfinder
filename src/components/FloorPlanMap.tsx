@@ -143,6 +143,28 @@ export default function FloorPlanMap({
     tileLayerRef.current.bringToBack()
   }, [mapStyle])
 
+  // Recentre when the active venue changes. The map is only positioned at mount
+  // and by route/floor-plan framing, so switching to a venue elsewhere in the
+  // country used to leave the view where it was — invisible while every venue
+  // sat in the same city, but obvious once the NHS hospital directory spans the
+  // whole map. We key off the centre coordinates (which change per venue) and
+  // skip the initial mount and active navigation so we don't fight follow mode.
+  const lastCenterRef = useRef<string>("")
+  useEffect(() => {
+    if (!mapRef.current) return
+    const key = `${center.lat},${center.lng}`
+    if (lastCenterRef.current === key) return
+    const isFirst = lastCenterRef.current === ""
+    lastCenterRef.current = key
+    if (isFirst || isNavigating) return
+    programmaticRef.current = true
+    mapRef.current.setView([center.lat, center.lng], defaultZoom, { animate: false })
+    mapRef.current.once("moveend", () => {
+      programmaticRef.current = false
+    })
+    setFollow(true)
+  }, [center.lat, center.lng, defaultZoom, isNavigating])
+
   // Update floor plan overlay
   useEffect(() => {
     if (!mapRef.current) return
