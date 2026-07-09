@@ -7,9 +7,10 @@ import { Venue } from "../types"
 // Like GOSH, this ships as a navigable seed venue: schematic floor plans plus
 // waypoints positioned to match them, so the floor selector, plan overlay,
 // search and routing all work out of the box. The interior layout is a
-// schematic placeholder (the site has many more wings and floors than four) and
-// is meant to be replaced with a real in-app survey — the department and ward
-// names are genuine to St George's, but their exact positions are illustrative.
+// schematic placeholder covering the building's real storey range (ground to
+// fifth floor) and is meant to be replaced with a real in-app survey — the
+// department and ward names are genuine to St George's, but their exact
+// positions are illustrative.
 //
 // Placement was originally a naive box around Google's "St George's Hospital"
 // pin, which sits at the eastern edge of the site — so the overlay spilled
@@ -45,6 +46,8 @@ export const ST_GEORGES_VENUE: Venue = {
     { id: "f1", floor: 1, label: "First Floor",   imageUrl: "/floorplans/stgeorges/floor1.svg", bounds: [[51.4256122, -0.1761831], [51.4274851, -0.1733777]] },
     { id: "f2", floor: 2, label: "Second Floor",  imageUrl: "/floorplans/stgeorges/floor2.svg", bounds: [[51.4256122, -0.1761831], [51.4274851, -0.1733777]] },
     { id: "f3", floor: 3, label: "Third Floor",   imageUrl: "/floorplans/stgeorges/floor3.svg", bounds: [[51.4256122, -0.1761831], [51.4274851, -0.1733777]] },
+    { id: "f4", floor: 4, label: "Fourth Floor",  imageUrl: "/floorplans/stgeorges/floor4.svg", bounds: [[51.4256122, -0.1761831], [51.4274851, -0.1733777]] },
+    { id: "f5", floor: 5, label: "Fifth Floor",   imageUrl: "/floorplans/stgeorges/floor5.svg", bounds: [[51.4256122, -0.1761831], [51.4274851, -0.1733777]] },
   ],
   waypoints: [
     // Ground Floor — coordinates mapped to the schematic floor plan bounds
@@ -97,5 +100,21 @@ export const ST_GEORGES_VENUE: Venue = {
     { id: "lift-a-f3",      name: "Lift A — Third Floor",     type: "lift",       coordinates: { lat: 51.4263801, lng: -0.1747461 }, floor: 3 },
     { id: "theatre",        name: "Operating Theatres",       type: "department", coordinates: { lat: 51.4260925, lng: -0.1754755 }, floor: 3, description: "Surgical theatres" },
     { id: "toilet-f3",      name: "Toilets — Third Floor",    type: "toilet",     coordinates: { lat: 51.4260925, lng: -0.1740494 }, floor: 3 },
+
+    // Fourth Floor — maternity level (Lanesborough Wing)
+    { id: "delivery-suite", name: "Delivery Suite",           type: "department", coordinates: { lat: 51.4269888, lng: -0.1754755 }, floor: 4, description: "Maternity — Delivery Suite, Lanesborough Wing" },
+    { id: "carmen-suite",   name: "Carmen Suite",             type: "department", coordinates: { lat: 51.4269888, lng: -0.1740494 }, floor: 4, description: "Midwife-led birth centre, Lanesborough Wing" },
+    { id: "stairs-1-f4",    name: "Staircase 1 — Fourth Floor", type: "stairs",   coordinates: { lat: 51.4269888, lng: -0.1751591 }, floor: 4 },
+    { id: "lift-a-f4",      name: "Lift A — Fourth Floor",    type: "lift",       coordinates: { lat: 51.4263801, lng: -0.1747461 }, floor: 4 },
+    { id: "nnu",            name: "Neonatal Unit",            type: "ward",       coordinates: { lat: 51.4260925, lng: -0.1754755 }, floor: 4, description: "Neonatal intensive care, Lanesborough Wing" },
+    { id: "toilet-f4",      name: "Toilets — Fourth Floor",   type: "toilet",     coordinates: { lat: 51.4260925, lng: -0.1740494 }, floor: 4 },
+
+    // Fifth Floor
+    { id: "gwillim-ward",   name: "Gwillim Ward",             type: "ward",       coordinates: { lat: 51.4269888, lng: -0.1754755 }, floor: 5, description: "Postnatal ward, Lanesborough Wing" },
+    { id: "allingham-ward", name: "Allingham Ward",           type: "ward",       coordinates: { lat: 51.4269888, lng: -0.1740494 }, floor: 5, description: "General surgery ward, St James' Wing" },
+    { id: "stairs-1-f5",    name: "Staircase 1 — Fifth Floor", type: "stairs",    coordinates: { lat: 51.4269888, lng: -0.1751591 }, floor: 5 },
+    { id: "lift-a-f5",      name: "Lift A — Fifth Floor",     type: "lift",       coordinates: { lat: 51.4263801, lng: -0.1747461 }, floor: 5 },
+    { id: "keate-ward",     name: "Keate Ward",               type: "ward",       coordinates: { lat: 51.4260925, lng: -0.1754755 }, floor: 5, description: "Surgical ward, St James' Wing" },
+    { id: "toilet-f5",      name: "Toilets — Fifth Floor",    type: "toilet",     coordinates: { lat: 51.4260925, lng: -0.1740494 }, floor: 5 },
   ],
 }
