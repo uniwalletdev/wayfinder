@@ -1,8 +1,9 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 import { Venue, VenueCategory, VenueVisibility, Coordinates } from "@/lib/types"
 import { NewVenueInput } from "@/lib/venues"
+import { listMappedVenueIds } from "@/lib/venue-store"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
@@ -92,12 +93,25 @@ export default function VenuePicker({
 
   const [query, setQuery] = useState("")
 
-  const publicVenues = venues.filter((v) => v.visibility === "public")
-  const otherVenues = venues.filter((v) => v.visibility !== "public")
+  // Mapping created in-app (survey waypoints, uploaded plans) is stored under
+  // per-venue keys, not on the venue object — so a directory hospital someone
+  // has mapped still shows floorPlans: []. Union both sources: what the venue
+  // ships/synced with, and what this device has saved for it.
+  const locallyMapped = useMemo(() => listMappedVenueIds(), [])
+  const hasIndoorMap = useCallback(
+    (v: Venue) => v.floorPlans.length > 0 || v.waypoints.length > 0 || locallyMapped.has(v.id),
+    [locallyMapped]
+  )
 
-  // Search + rank public venues: fully-mapped places (real floor plans) always
-  // sort ahead of location-only directory pins, then alphabetically. Capped so
-  // the 700+ NHS hospital directory never renders all at once.
+  const publicVenues = venues.filter((v) => v.visibility === "public")
+  // Your places: mapped ones float to the top, keeping creation order otherwise.
+  const otherVenues = venues
+    .filter((v) => v.visibility !== "public")
+    .sort((a, b) => (hasIndoorMap(a) ? 0 : 1) - (hasIndoorMap(b) ? 0 : 1))
+
+  // Search + rank public venues: places with an indoor map always sort ahead
+  // of location-only directory pins, then alphabetically. Capped so the 700+
+  // NHS hospital directory never renders all at once.
   const matchedPublic = useMemo(() => {
     const q = query.trim().toLowerCase()
     const matches = q
@@ -106,11 +120,11 @@ export default function VenuePicker({
         )
       : publicVenues
     return matches.slice().sort((a, b) => {
-      const am = a.floorPlans.length > 0 ? 0 : 1
-      const bm = b.floorPlans.length > 0 ? 0 : 1
+      const am = hasIndoorMap(a) ? 0 : 1
+      const bm = hasIndoorMap(b) ? 0 : 1
       return am - bm || a.name.localeCompare(b.name)
     })
-  }, [publicVenues, query])
+  }, [publicVenues, query, hasIndoorMap])
 
   const shownPublic = matchedPublic.slice(0, PUBLIC_LIST_LIMIT)
   const hiddenPublicCount = matchedPublic.length - shownPublic.length
@@ -203,7 +217,7 @@ export default function VenuePicker({
             </div>
           </div>
           {shownPublic.map((v) => (
-            <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
+            <VenueRow key={v.id} venue={v} mapped={hasIndoorMap(v)} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
           ))}
           {shownPublic.length === 0 && (
             <p className="px-4 py-6 text-sm text-gray-500 text-center">No places match “{query}”.</p>
@@ -218,7 +232,7 @@ export default function VenuePicker({
             <>
               <SectionLabel>Your places</SectionLabel>
               {otherVenues.map((v) => (
-                <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
+                <VenueRow key={v.id} venue={v} mapped={hasIndoorMap(v)} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
               ))}
             </>
           )}
@@ -370,7 +384,7 @@ function Toggle({ label, Icon, on, onChange }: { label: string; Icon: typeof Glo
   )
 }
 
-function VenueRow({ venue, active, onSelect, onDelete }: { venue: Venue; active: boolean; onSelect: (id: string) => void; onDelete: (id: string) => void }) {
+function VenueRow({ venue, mapped, active, onSelect, onDelete }: { venue: Venue; mapped: boolean; active: boolean; onSelect: (id: string) => void; onDelete: (id: string) => void }) {
   const isUserVenue = venue.id.startsWith("venue-")
   return (
     <div className={`w-full flex items-center gap-3 px-4 py-3 border-b border-gray-100 ${active ? "bg-blue-50" : ""}`}>
@@ -384,6 +398,7 @@ function VenueRow({ venue, active, onSelect, onDelete }: { venue: Venue; active:
             {venue.verified && <BadgeCheck size={14} className="text-[#005EB8] flex-shrink-0" />}
           </p>
           <p className="text-xs text-gray-500 truncate">
+            {mapped && <span className="font-semibold text-[#005EB8]">Indoor map · </span>}
             {venue.subtitle ? `${venue.subtitle} · ` : ""}
             {venue.visibility[0].toUpperCase() + venue.visibility.slice(1)}
           </p>

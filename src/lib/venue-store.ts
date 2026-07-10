@@ -109,6 +109,28 @@ export function saveVenueAssets(venueId: string, assets: Asset[]): void {
   writeJSON(assetKey(venueId), assets)
 }
 
+// IDs of venues with indoor mapping saved on this device — surveyed waypoints
+// or uploaded floor plans under their per-venue keys. Scans key names rather
+// than loading each venue's data: plan images can be megabytes, and a stored
+// non-empty array of ours always contains an object literal, so a "{" check
+// avoids parsing them.
+export function listMappedVenueIds(): Set<string> {
+  const ids = new Set<string>()
+  if (typeof window === "undefined") return ids
+  try {
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const key = window.localStorage.key(i)
+      const m = key?.match(/^wayfinder\.venue\.(.+)\.(waypoints|floorPlans)$/)
+      if (!m) continue
+      const raw = window.localStorage.getItem(m[0])
+      if (raw && raw.includes("{")) ids.add(m[1])
+    }
+  } catch {
+    // Storage may be unavailable — treat as nothing mapped locally.
+  }
+  return ids
+}
+
 // One-time migration: move any pre-multi-venue custom waypoints/trails onto the
 // default venue, then clear the legacy keys so this is a no-op afterwards.
 export function migrateLegacyData(defaultVenueId: string): void {
