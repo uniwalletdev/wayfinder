@@ -232,10 +232,18 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   }, [cloud])
 
   const allWaypoints = useMemo(() => [...venue.waypoints, ...customWaypoints], [venue, customWaypoints])
-  // Plans uploaded via "Upload plan" layer onto whatever the venue already
-  // ships with (seed venues' hand-drawn plans, or ones a cloud venue already
-  // persisted), the same way customWaypoints layers onto venue.waypoints.
-  const allFloorPlans = useMemo(() => [...venue.floorPlans, ...customFloorPlans], [venue, customFloorPlans])
+  // Plans uploaded via "Upload plan" *override* whatever the venue already
+  // ships with for that floor — a newer, more detailed plan replaces the seed
+  // plan rather than being hidden behind it. Both map views pick a floor's plan
+  // with .find (the first match), so an appended upload would otherwise never
+  // show; keying by floor (venue first, uploads last) makes the upload win, and
+  // a later upload wins over an earlier one for the same floor.
+  const allFloorPlans = useMemo(() => {
+    const byFloor = new Map<number, FloorPlan>()
+    for (const fp of venue.floorPlans) byFloor.set(fp.floor, fp)
+    for (const fp of customFloorPlans) byFloor.set(fp.floor, fp)
+    return [...byFloor.values()]
+  }, [venue, customFloorPlans])
   // Located fixtures layer on top of anything the venue already ships with,
   // mirroring how customWaypoints layer onto venue.waypoints.
   const allAssets = useMemo(() => [...(venue.assets ?? []), ...customAssets], [venue, customAssets])
