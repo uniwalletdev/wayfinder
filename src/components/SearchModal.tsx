@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { Waypoint, Coordinates, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel } from "@/lib/waypoint-meta"
 import { rankWaypoints, rankNearMisses } from "@/lib/search"
+import { useEscapeClose } from "@/lib/use-escape"
 import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
 
 interface Props {
@@ -73,6 +74,8 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
   }, [proximity])
 
   const trimmed = query.trim()
+
+  useEscapeClose(onClose)
 
   // Ranked best-match-first, so the closest name wins among similar ones.
   const filtered = trimmed ? rankWaypoints(trimmed, waypoints, (w) => WAYPOINT_TYPE_LABELS[w.type]) : []
@@ -145,8 +148,8 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
   return (
     <div className="fixed inset-0 z-[200] bg-white flex flex-col">
       {/* Header */}
-      <div className="bg-[#005EB8] px-4 pt-12 pb-4 flex items-center gap-3">
-        <button onClick={onClose} className="text-white">
+      <div className="bg-[#005EB8] px-4 pt-safe-bar pb-4 flex items-center gap-3">
+        <button onClick={onClose} aria-label="Close search" className="text-white">
           <X size={22} />
         </button>
         <div className="flex-1 bg-white rounded-xl flex items-center px-3 gap-2">

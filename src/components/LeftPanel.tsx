@@ -136,6 +136,10 @@ export default function LeftPanel({
           setExpanded((v) => !v)
         }}
         onTouchStart={(e) => {
+          // A new touch always starts a fresh gesture. Browsers don't fire a
+          // click after a swipe, so without this reset the flag from the last
+          // swipe would swallow the next genuine tap.
+          swiped.current = false
           touchY.current = e.touches[0].clientY
         }}
         onTouchEnd={(e) => {
@@ -441,6 +445,7 @@ function RoutePreviewCard({
   onChangeAlwaysStepFree,
   routeOptions,
   onStart,
+  onStop,
   onShare,
 }: {
   destination: Waypoint
@@ -473,6 +478,9 @@ function RoutePreviewCard({
             <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor, floorNaming)}{destination.description ? ` · ${destination.description}` : ""}</p>
           </div>
         </div>
+        <button onClick={onStop} aria-label="Clear destination" className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+          <X size={15} />
+        </button>
       </div>
 
       {hasArrivalInfo && (

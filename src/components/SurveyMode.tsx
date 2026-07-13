@@ -57,12 +57,16 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
   const [permissionDenied, setPermissionDenied] = useState(false)
   const [analyzing, setAnalyzing] = useState(false)
   const elapsedRef = useRef<NodeJS.Timeout | null>(null)
+  // Lets the analyzing screen's skip button (and unmount) abandon a slow or
+  // hung AI request instead of trapping the user on a spinner they can't close.
+  const aiAbortRef = useRef<AbortController | null>(null)
 
   useEffect(() => {
     startCamera()
     return () => {
       stopCamera()
       if (elapsedRef.current) clearInterval(elapsedRef.current)
+      aiAbortRef.current?.abort()
     }
   }, [])
 
@@ -122,17 +126,20 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
     let aiError: string | undefined
     if (frames.current.length > 0) {
       setAnalyzing(true)
+      const ac = new AbortController()
+      aiAbortRef.current = ac
       try {
         const res = await fetch("/api/survey", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ frames: frames.current, venueName }),
+          signal: ac.signal,
         })
         const data = await res.json()
         aiWaypoints = Array.isArray(data.waypoints) ? data.waypoints : []
         if (data.error) aiError = data.error as string
-      } catch {
-        aiError = "network"
+      } catch (e) {
+        aiError = e instanceof Error && e.name === "AbortError" ? "cancelled" : "network"
       }
       setAnalyzing(false)
     }
@@ -221,6 +228,12 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
         <div className="w-10 h-10 border-4 border-white/30 border-t-white rounded-full animate-spin mb-5" />
         <h2 className="text-lg font-bold mb-1">Reading your survey…</h2>
         <p className="text-sm text-gray-300">Scanning the footage for signs and rooms to add to the map.</p>
+        <button
+          onClick={() => aiAbortRef.current?.abort()}
+          className="mt-6 rounded-xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white"
+        >
+          Skip — save what I marked
+        </button>
       </div>
     )
   }

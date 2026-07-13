@@ -538,6 +538,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       message = `Survey complete — ${parts.join(" and ")} location${marked + detected !== 1 ? "s" : ""} added to the map.${layoutNote}`
     } else if (result.aiError === "not_configured") {
       message = "Survey saved. AI sign-reading isn't enabled on the server, so nothing was auto-detected — use “Mark Location” to add points yourself."
+    } else if (result.aiError === "cancelled") {
+      message = "Survey saved — sign-reading was skipped."
     } else if (result.aiError) {
       message = "Survey saved, but the footage couldn't be read this time. Try again, or use “Mark Location” to add points yourself."
     } else {

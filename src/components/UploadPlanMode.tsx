@@ -48,6 +48,17 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
   const [planFloor, setPlanFloor] = useState(currentFloor)
   const [dragOver, setDragOver] = useState(false)
 
+  // Cancelling analysis bumps the run token so a still-running handleFile
+  // abandons its results, and aborts the in-flight AI request. Without this the
+  // analyzing spinner has no way out if the file parse or AI read hangs.
+  const runRef = useRef(0)
+  const parseAbortRef = useRef<AbortController | null>(null)
+  function cancelAnalyzing() {
+    runRef.current++
+    parseAbortRef.current?.abort()
+    setStep("pick")
+  }
+
   // Raster path (image/PDF/SVG): the flattened image plus whatever the AI reader
   // found, in coordinates normalised to the image — held until the mapper
   // georeferences it onto the real map.
@@ -66,11 +77,13 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
   const [reviewAssets, setReviewAssets] = useState<ReviewAsset[]>([])
 
   async function handleFile(file: File) {
+    const run = ++runRef.current
     setError(null)
     setNotice(null)
     setStep("analyzing")
     try {
       const parsed = await loadPlanFile(file)
+      if (run !== runRef.current) return
 
       if (parsed.kind === "vector") {
         const rooms = parsed.features.filter((f): f is VectorPlanFeature & { point: Coordinates } => !!f.point)
@@ -114,10 +127,13 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
       let rooms: { name: string; type: WaypointType; x: number; y: number }[] = []
       let corridors: { x: number; y: number }[][] = []
       try {
+        const ac = new AbortController()
+        parseAbortRef.current = ac
         const res = await fetch("/api/parse-plan", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ imageData: parsed.dataUrl, venueName, floor: planFloor }),
+          signal: ac.signal,
         })
         const data = await res.json()
         rooms = Array.isArray(data.rooms) ? data.rooms : []
@@ -132,12 +148,14 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
       } catch {
         setNotice("Couldn't reach the AI reader — the image will still be placed on the map; add its points yourself afterwards.")
       }
+      if (run !== runRef.current) return
 
       setRawRooms(rooms)
       setRawCorridors(corridors)
       setCorners(defaultPlanCorners(venueCenter, parsed.width / parsed.height))
       setStep("georeference")
     } catch (e) {
+      if (run !== runRef.current) return
       setError(e instanceof Error ? e.message : "Couldn't read that file.")
       setStep("pick")
     }
@@ -223,6 +241,12 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         <div className="w-10 h-10 border-4 border-gray-200 border-t-[#005EB8] rounded-full animate-spin mb-5" />
         <h2 className="text-lg font-bold text-gray-900 mb-1">Reading your plan…</h2>
         <p className="text-sm text-gray-500">Scanning the file for rooms, labels and corridors.</p>
+        <button
+          onClick={cancelAnalyzing}
+          className="mt-6 rounded-xl border border-gray-200 px-5 py-2.5 text-sm font-semibold text-gray-700"
+        >
+          Cancel
+        </button>
       </div>
     )
   }

@@ -5,6 +5,7 @@ import QRCode from "qrcode"
 import { X, Link2, Download, Check, MapPin, Accessibility } from "lucide-react"
 import { Venue, Waypoint } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
+import { useEscapeClose } from "@/lib/use-escape"
 
 interface Props {
   venue: Venue
@@ -32,6 +33,9 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
   const [copied, setCopied] = useState(false)
   const [qrThumb, setQrThumb] = useState<string | null>(null)
   const [showPoster, setShowPoster] = useState(false)
+
+  // Escape steps back like the X buttons do: poster first, then the dialog.
+  useEscapeClose(() => (showPoster ? setShowPoster(false) : onClose()))
 
   const payload = buildQrPayload(venue, waypoint)
   const url = shareUrl(venue, waypoint)
@@ -85,7 +89,10 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-[250] flex items-center justify-center bg-black/40 px-4">
+    <div
+      className="fixed inset-0 z-[250] flex items-center justify-center bg-black/40 px-4"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
       <div className="w-full max-w-[420px] rounded-[20px] bg-white p-0 shadow-[0_24px_60px_rgba(11,27,46,0.25)]">
         <div className="flex items-center justify-between px-6 pt-5 pb-1">
           <h2 className="font-display text-lg font-semibold text-wf-ink">Share this destination</h2>
@@ -196,7 +203,10 @@ function Poster({
   }, [payload])
 
   return (
-    <div className="fixed inset-0 z-[260] flex items-center justify-center bg-black/50 px-4 print:bg-white print:px-0">
+    <div
+      className="fixed inset-0 z-[260] flex items-center justify-center bg-black/50 px-4 print:bg-white print:px-0"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
       <div className="wf-poster-print flex w-full max-w-[480px] flex-col overflow-hidden rounded-lg bg-white shadow-[0_24px_60px_rgba(11,27,46,0.25)]">
         <div className="flex items-center justify-between bg-wf-ink px-9 py-[26px] print:hidden">
           <button

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react"
 import { Venue, VenueCategory, VenueVisibility, Coordinates } from "@/lib/types"
 import { NewVenueInput } from "@/lib/venues"
+import { useEscapeClose } from "@/lib/use-escape"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
@@ -78,6 +79,9 @@ export default function VenuePicker({
   onSignIn, onSignOut, onSelect, onCreate, onDelete, onClose,
 }: Props) {
   const [view, setView] = useState<"list" | "create">("list")
+
+  // Escape mirrors the header X: back out of the create form first, then close.
+  useEscapeClose(() => (view === "create" ? setView("list") : onClose()))
 
   // Create-form state
   const [name, setName] = useState("")

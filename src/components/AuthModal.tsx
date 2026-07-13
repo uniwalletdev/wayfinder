@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
+import { useEscapeClose } from "@/lib/use-escape"
 import { X, Loader2, LogIn, UserPlus } from "lucide-react"
 
 interface Props {
@@ -16,6 +17,8 @@ export default function AuthModal({ onClose, onAuthed }: Props) {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [info, setInfo] = useState<string | null>(null)
+
+  useEscapeClose(onClose)
 
   async function submit() {
     const sb = getSupabaseBrowserClient()
@@ -55,7 +58,10 @@ export default function AuthModal({ onClose, onAuthed }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-[250] bg-black/40 flex items-end sm:items-center justify-center">
+    <div
+      className="fixed inset-0 z-[250] bg-black/40 flex items-end sm:items-center justify-center"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
       <div className="w-full sm:max-w-sm bg-white rounded-t-2xl sm:rounded-2xl px-5 pt-5 pb-safe-bar sm:pb-5 slide-up">
         <div className="flex items-center justify-between mb-1">
           <h2 className="text-lg font-bold text-gray-900">{mode === "in" ? "Sign in" : "Create account"}</h2>

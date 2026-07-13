@@ -6,6 +6,7 @@ import { X, QrCode, Search, Compass, ArrowUp, RotateCw, CheckCircle2, MapPin, Sp
 import type { Coordinates, Route, RouteStep, Waypoint } from "@/lib/types"
 import { distanceMeters, bearingBetween } from "@/lib/routing"
 import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
+import { useEscapeClose } from "@/lib/use-escape"
 
 // Live-mode AR navigation context. The camera view reads the same fused
 // position, compass heading and route the map uses, and paints turn guidance on
@@ -44,6 +45,8 @@ export default function CameraOverlay({ mode, onQRDetected, onClose, nav }: Prop
   const scanInterval = useRef<NodeJS.Timeout | null>(null)
   const [detected, setDetected] = useState(false)
   const [permissionDenied, setPermissionDenied] = useState(false)
+
+  useEscapeClose(onClose)
 
   async function startCamera() {
     try {
