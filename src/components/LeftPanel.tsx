@@ -258,6 +258,7 @@ export default function LeftPanel({
             route={route}
             currentStepIndex={currentStepIndex}
             floorNaming={venue.floorNaming}
+            expanded={expanded}
             onStop={onStop}
             onScanQR={onScanQR}
             onOpenCamera={onOpenCamera}
@@ -277,6 +278,7 @@ export default function LeftPanel({
             route={route}
             routeLoading={routeLoading}
             floorNaming={venue.floorNaming}
+            expanded={expanded}
             travelMode={travelMode}
             onTravelModeChange={onTravelModeChange}
             routePreference={routePreference}
@@ -437,6 +439,7 @@ function RoutePreviewCard({
   route,
   routeLoading,
   floorNaming,
+  expanded,
   travelMode,
   onTravelModeChange,
   routePreference,
@@ -452,6 +455,7 @@ function RoutePreviewCard({
   route: Route
   routeLoading: boolean
   floorNaming?: FloorNaming
+  expanded: boolean
   travelMode: TravelMode
   onTravelModeChange: (m: TravelMode) => void
   routePreference: RoutePreference
@@ -465,6 +469,12 @@ function RoutePreviewCard({
 }) {
   const hasArrivalInfo = !!(destination.hours || destination.arrivalNotes || destination.typicalWait)
   const isOpen = destination.hours?.toLowerCase().includes("open") ?? false
+
+  // On phones the peek sheet shows just the essentials — destination, a compact
+  // ETA glance and Start — so the map stays usable; swiping up (or lg+) reveals
+  // arrival notes, travel modes and the step-by-step / route choice.
+  const detailBlock = `${expanded ? "block" : "hidden"} lg:block`
+  const detailFlex = `${expanded ? "flex" : "hidden"} lg:flex`
 
   return (
     <div className="rounded-[18px] border border-wf-border p-[18px] shadow-[0_10px_30px_rgba(11,27,46,0.08)]">
@@ -484,7 +494,7 @@ function RoutePreviewCard({
       </div>
 
       {hasArrivalInfo && (
-        <div className="mb-4">
+        <div className={`${detailBlock} mb-4`}>
           {destination.hours && (
             <div className="mb-2 flex items-center gap-2">
               <span className={`flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${
@@ -513,7 +523,7 @@ function RoutePreviewCard({
       )}
 
       {route.outdoor && (
-        <div className="mb-3 flex gap-2">
+        <div className={`${detailFlex} mb-3 gap-2`}>
           {TRAVEL_MODES.map(({ mode, label, Icon }) => {
             const active = mode === travelMode
             return (
@@ -533,17 +543,30 @@ function RoutePreviewCard({
       )}
 
       {routeOptions ? (
-        <RouteChoice
-          routeOptions={routeOptions}
-          routePreference={routePreference}
-          onChangeRoutePreference={onChangeRoutePreference}
-          alwaysStepFree={alwaysStepFree}
-          onChangeAlwaysStepFree={onChangeAlwaysStepFree}
-          activeSteps={route.steps}
-        />
+        <>
+          {/* Full route chooser — expanded / desktop only */}
+          <div className={detailBlock}>
+            <RouteChoice
+              routeOptions={routeOptions}
+              routePreference={routePreference}
+              onChangeRoutePreference={onChangeRoutePreference}
+              alwaysStepFree={alwaysStepFree}
+              onChangeAlwaysStepFree={onChangeAlwaysStepFree}
+              activeSteps={route.steps}
+            />
+          </div>
+          {/* Compact glance for the peek sheet on phones */}
+          <div className={`${expanded ? "hidden" : "grid"} lg:hidden mb-4 grid-cols-3 gap-2`}>
+            <StatTile label={route.outdoor ? travelMode : "walking"} value={`${route.estimatedMinutes} min`} />
+            <StatTile label={route.floorChanges > 0 ? `${route.floorChanges} floor change${route.floorChanges > 1 ? "s" : ""}` : "same floor"} value={fmtDistance(route.totalDistance)} />
+            <StatTile label="accuracy" value="±4 m" />
+          </div>
+        </>
       ) : (
         <>
-          <StepDots destination={destination} />
+          <div className={detailBlock}>
+            <StepDots destination={destination} />
+          </div>
           <div className="mb-4 grid grid-cols-3 gap-2">
             <StatTile label={routeLoading ? "…" : route.outdoor ? travelMode : "walking"} value={routeLoading ? "—" : `${route.estimatedMinutes} min`} />
             <StatTile label={route.floorChanges > 0 ? `${route.floorChanges} floor change${route.floorChanges > 1 ? "s" : ""}` : "same floor"} value={routeLoading ? "—" : fmtDistance(route.totalDistance)} />
@@ -689,6 +712,7 @@ function NavigatingSummary({
   route,
   currentStepIndex,
   floorNaming,
+  expanded,
   onStop,
   onScanQR,
   onOpenCamera,
@@ -697,12 +721,19 @@ function NavigatingSummary({
   route: Route
   currentStepIndex: number
   floorNaming?: FloorNaming
+  expanded: boolean
   onStop: () => void
   onScanQR: () => void
   onOpenCamera: () => void
 }) {
   const step = route.steps[currentStepIndex] ?? route.steps[route.steps.length - 1]
   const isArrived = step.instruction.includes("arrived")
+
+  // On phones the peek sheet shows just the maneuver + a one-line ETA glance, so
+  // the map keeps most of the screen; swiping up (or lg+) reveals stats and
+  // actions. `detail` gates the heavier rows.
+  const detailFlex = `${expanded ? "flex" : "hidden"} lg:flex`
+  const detailGrid = `${expanded ? "grid" : "hidden"} lg:grid`
 
   return (
     <div className="rounded-[18px] border border-wf-border p-[18px] shadow-[0_10px_30px_rgba(11,27,46,0.08)]">
@@ -713,7 +744,9 @@ function NavigatingSummary({
           </span>
           <div className="min-w-0">
             <p className="truncate text-[15.5px] font-semibold text-wf-ink">{destination.name}</p>
-            <p className="text-xs text-wf-muted">Step {currentStepIndex + 1} of {route.steps.length}</p>
+            <p className="truncate text-xs text-wf-muted">
+              Step {currentStepIndex + 1} of {route.steps.length} · {route.estimatedMinutes} min · {fmtDistance(route.totalDistance)}
+            </p>
           </div>
         </div>
         <button onClick={onStop} aria-label="Stop navigating" className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
@@ -721,23 +754,23 @@ function NavigatingSummary({
         </button>
       </div>
 
-      <div className={`mb-4 flex items-center gap-3 rounded-[14px] px-4 py-3.5 ${isArrived ? "bg-wf-green-tint" : "bg-wf-primary"}`}>
+      <div className={`flex items-center gap-3 rounded-[14px] px-4 py-3.5 ${isArrived ? "bg-wf-green-tint" : "bg-wf-primary"}`}>
         <span className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full ${isArrived ? "bg-wf-green" : "bg-wf-primary-deep"}`}>
           <StepIcon step={step} />
         </span>
         <div className="min-w-0">
-          <p className={`truncate text-[14.5px] font-semibold ${isArrived ? "text-wf-green-text" : "text-white"}`}>{step.instruction}</p>
+          <p className={`text-[14.5px] font-semibold leading-snug line-clamp-2 ${isArrived ? "text-wf-green-text" : "text-white"}`}>{step.instruction}</p>
           {step.distance > 0 && <p className={`text-xs ${isArrived ? "text-wf-green-text" : "text-white/80"}`}>{fmtDistance(step.distance)}</p>}
         </div>
       </div>
 
-      <div className="mb-4 grid grid-cols-3 gap-2">
+      <div className={`${detailGrid} mt-4 grid-cols-3 gap-2`}>
         <StatTile label="time" value={`${route.estimatedMinutes} min`} />
         <StatTile label="distance" value={fmtDistance(route.totalDistance)} />
         <StatTile label="floor" value={floorLabel(destination.floor, floorNaming)} />
       </div>
 
-      <div className="mb-2.5 flex gap-2.5">
+      <div className={`${detailFlex} mt-4 gap-2.5`}>
         <button
           onClick={onScanQR}
           className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-wf-primary py-2.5 text-xs font-semibold text-white"
@@ -754,7 +787,7 @@ function NavigatingSummary({
 
       <button
         onClick={onStop}
-        className="flex w-full items-center justify-center gap-2 rounded-xl border border-wf-border py-3 text-sm font-semibold text-wf-ink"
+        className={`${detailFlex} mt-2.5 w-full items-center justify-center gap-2 rounded-xl border border-wf-border py-3 text-sm font-semibold text-wf-ink`}
       >
         Stop navigating
       </button>
