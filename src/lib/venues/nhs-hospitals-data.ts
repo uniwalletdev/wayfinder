@@ -1,8 +1,9 @@
 // Auto-generated NHS hospital locations for the seed venue directory.
 // Source: England NHS hospital sites with coordinates (open data). Each entry
 // is [name, latitude, longitude]. These are LOCATION pins only — interior
-// floor plans are added per-site via in-app survey/upload. GOSH and St George's
-// are omitted here because they ship as full interior venues.
+// floor plans are added per-site via in-app survey/upload. GOSH, St George's
+// and Addenbrooke's (CUH) are omitted here because they ship as full interior
+// venues.
 
 export type NhsHospitalSite = [name: string, lat: number, lng: number]
 
@@ -10,7 +11,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["1b St Catherines Way, Gorleston", 52.572983, 1.7169],
   ["Abbey Sefton Hospital", 53.466328, -2.931089],
   ["Accrington Victoria Hospital", 53.759586, -2.366906],
-  ["Addenbrooke's", 52.175133, 0.140753],
   ["Aintree University Hospital", 53.466328, -2.931089],
   ["Aire Court", 53.74659, -1.53906],
   ["Airedale Centre for Mental Health", 53.898018, -1.96268],

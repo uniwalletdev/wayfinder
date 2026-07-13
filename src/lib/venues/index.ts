@@ -1,6 +1,7 @@
 import { Venue, VenueCategory, VenueVisibility, Coordinates, AccessibilityInfo } from "../types"
 import { GOSH_VENUE } from "./gosh"
 import { ST_GEORGES_VENUE } from "./st-georges"
+import { CUH_VENUE } from "./cuh"
 import { CANNERY_TRAILS_VENUE } from "./cannery-trails"
 import { NHS_HOSPITAL_VENUES } from "./nhs-hospitals"
 
@@ -14,6 +15,7 @@ import { NHS_HOSPITAL_VENUES } from "./nhs-hospitals"
 export const SEED_VENUES: Venue[] = [
   GOSH_VENUE,
   ST_GEORGES_VENUE,
+  CUH_VENUE,
   CANNERY_TRAILS_VENUE,
   ...NHS_HOSPITAL_VENUES,
 ]

@@ -5,8 +5,9 @@ import { NHS_HOSPITAL_SITES } from "./nhs-hospitals-data"
 // as a located, public "hospital" venue. These carry a real map position but no
 // interior floor plan or waypoints — selecting one drops you on the hospital so
 // its inside can then be surveyed/mapped in-app (the same starting point a
-// user-created venue has). GOSH and St George's are excluded from the dataset
-// because they ship as full interior venues in their own modules.
+// user-created venue has). GOSH, St George's and Addenbrooke's (CUH) are
+// excluded from the dataset because they ship as full interior venues in
+// their own modules.
 
 function slugify(name: string): string {
   return name
