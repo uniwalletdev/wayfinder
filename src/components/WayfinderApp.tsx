@@ -247,6 +247,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // Located fixtures layer on top of anything the venue already ships with,
   // mirroring how customWaypoints layer onto venue.waypoints.
   const allAssets = useMemo(() => [...(venue.assets ?? []), ...customAssets], [venue, customAssets])
+  // The corridor network routing follows: the venue's own corridor
+  // centre-lines plus whatever the user has walked in Survey Mode. Only the
+  // walked trails are drawn on the map (the plan image already shows the
+  // venue's corridors), so this merged list goes to buildRoute — not the views.
+  const allTrails = useMemo(() => [...(venue.trails ?? []), ...surveyTrails], [venue, surveyTrails])
   const availableFloors = useMemo(() => getAvailableFloors(allFloorPlans, allWaypoints), [allFloorPlans, allWaypoints])
   const assetsOnCurrentFloor = useMemo(
     () => allAssets.some((a) => a.floor === navState.currentFloor),
@@ -345,7 +350,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       setRoutePreference(pref)
       // Offline route renders instantly; outdoor destinations then upgrade to
       // real street geometry once Directions responds.
-      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode, surveyTrails, pref, venue.floorNaming)
+      const route = buildRoute(position, navState.currentFloor, waypoint, allWaypoints, navState.travelMode, allTrails, pref, venue.floorNaming)
       setNavState((s) => ({
         ...s,
         destination: waypoint,
@@ -353,11 +358,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         currentStepIndex: 0,
         isNavigating: false,
       }))
-      if (shouldRouteOutdoors(position, navState.currentFloor, waypoint, surveyTrails)) {
+      if (shouldRouteOutdoors(position, navState.currentFloor, waypoint, allTrails)) {
         void refreshOutdoorRoute(position, waypoint, navState.travelMode)
       }
     },
-    [venue, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails, refreshOutdoorRoute, alwaysStepFree]
+    [venue, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, allTrails, refreshOutdoorRoute, alwaysStepFree]
   )
 
   const handleTravelModeChange = useCallback(
@@ -366,14 +371,14 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       const dest = navState.destination
       if (!dest) return
       const from = navState.currentPosition ?? venue.center
-      if (shouldRouteOutdoors(from, navState.currentFloor, dest, surveyTrails)) {
+      if (shouldRouteOutdoors(from, navState.currentFloor, dest, allTrails)) {
         void refreshOutdoorRoute(from, dest, mode)
       } else {
-        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode, surveyTrails, routePreference, venue.floorNaming)
+        const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, mode, allTrails, routePreference, venue.floorNaming)
         setNavState((s) => ({ ...s, route }))
       }
     },
-    [venue, navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, surveyTrails, refreshOutdoorRoute, routePreference]
+    [venue, navState.destination, navState.currentPosition, navState.currentFloor, allWaypoints, allTrails, refreshOutdoorRoute, routePreference]
   )
 
   // Accessibility-first routing (2b): switch between the fastest and
@@ -385,10 +390,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       const dest = navState.destination
       if (!dest) return
       const from = navState.currentPosition ?? venue.center
-      const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, pref, venue.floorNaming)
+      const route = buildRoute(from, navState.currentFloor, dest, allWaypoints, navState.travelMode, allTrails, pref, venue.floorNaming)
       setNavState((s) => ({ ...s, route }))
     },
-    [venue, navState.destination, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails]
+    [venue, navState.destination, navState.currentPosition, navState.currentFloor, navState.travelMode, allWaypoints, allTrails]
   )
 
   const handleStartNavigation = useCallback(() => {
@@ -438,17 +443,17 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const offBy = distanceToPath(here, navState.route.geometry)
     if (offBy <= OFF_ROUTE_TRIGGER_M + (navState.positionAccuracy || 0)) return
 
-    if (shouldRouteOutdoors(here, navState.currentFloor, dest, surveyTrails)) {
+    if (shouldRouteOutdoors(here, navState.currentFloor, dest, allTrails)) {
       setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, currentStepIndex: 0 } : s))
       void refreshOutdoorRoute(here, dest, navState.travelMode)
     } else {
-      const rebuilt = buildRoute(here, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, routePreference, venue.floorNaming)
+      const rebuilt = buildRoute(here, navState.currentFloor, dest, allWaypoints, navState.travelMode, allTrails, routePreference, venue.floorNaming)
       setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, route: rebuilt, currentStepIndex: 0 } : s))
     }
   }, [
     navState.currentPosition, navState.isNavigating, navState.route, navState.destination,
     navState.currentFloor, navState.travelMode, navState.positionAccuracy,
-    routeLoading, allWaypoints, surveyTrails, refreshOutdoorRoute, routePreference,
+    routeLoading, allWaypoints, allTrails, refreshOutdoorRoute, routePreference,
   ])
 
   const handleStopNavigation = useCallback(() => {
@@ -470,9 +475,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const dest = navState.destination
     activateDemoLocation()
     if (!dest) return
-    const route = buildRoute(venue.center, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, routePreference, venue.floorNaming)
+    const route = buildRoute(venue.center, navState.currentFloor, dest, allWaypoints, navState.travelMode, allTrails, routePreference, venue.floorNaming)
     setNavState((s) => ({ ...s, route, currentStepIndex: 0 }))
-  }, [venue, navState.destination, navState.currentFloor, navState.travelMode, allWaypoints, surveyTrails, routePreference, activateDemoLocation])
+  }, [venue, navState.destination, navState.currentFloor, navState.travelMode, allWaypoints, allTrails, routePreference, activateDemoLocation])
 
   // Also understands the shareable-destination poster format (2a): the same
   // positioning anchor plus a trailing `dest:<waypointId>`, so scanning a
@@ -589,6 +594,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         return next
       })
     }
+    // A new plan replaces any earlier upload for the same floor — the map only
+    // ever shows one plan per floor, and hoarding superseded multi-hundred-KB
+    // images is what used to blow through the localStorage quota (silently, so
+    // re-uploads looked saved but were gone after a reload).
+    let planStored = true
     if (result.floorPlan) {
       const plan = result.floorPlan
       if (cloud && !isSeedVenue(activeVenueId)) {
@@ -597,13 +607,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         } catch (e) {
           console.warn("Could not sync the plan image to the server:", e)
         }
-        setCustomFloorPlans((prev) => [...prev, plan])
+        setCustomFloorPlans((prev) => [...prev.filter((p) => p.floor !== plan.floor), plan])
       } else {
-        setCustomFloorPlans((prev) => {
-          const next = [...prev, plan]
-          saveVenueFloorPlans(activeVenueId, next)
-          return next
-        })
+        const next = [...customFloorPlans.filter((p) => p.floor !== plan.floor), plan]
+        planStored = saveVenueFloorPlans(activeVenueId, next)
+        setCustomFloorPlans(next)
       }
     }
 
@@ -621,8 +629,13 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     if (result.waypoints.length > 0) parts.push(`${result.waypoints.length} location${result.waypoints.length !== 1 ? "s" : ""}`)
     if (result.assets.length > 0) parts.push(`${result.assets.length} fixture${result.assets.length !== 1 ? "s" : ""}`)
     if (result.floorPlan) parts.push("the plan image")
-    alert(parts.length > 0 ? `Upload complete — ${parts.join(", ")} added to the map.` : "Upload complete, but nothing usable was found on the plan.")
-  }, [cloud, activeVenueId])
+    let message = parts.length > 0 ? `Upload complete — ${parts.join(", ")} added to the map.` : "Upload complete, but nothing usable was found on the plan."
+    if (!planStored) {
+      message +=
+        "\n\nHeads up: this device's storage is full, so the plan image will only last until you close the app. Free up space (e.g. delete unused places) or upload a smaller file to keep it."
+    }
+    alert(message)
+  }, [cloud, activeVenueId, customFloorPlans])
 
   // Switching place clears the current route and re-centres on the new venue, so
   // navigation state never leaks across venues.
@@ -727,11 +740,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const dest = navState.destination
     if (!dest || navState.route?.outdoor || dest.floor === navState.currentFloor) return null
     const position = navState.currentPosition ?? venue.center
-    const fastest = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, "fastest", venue.floorNaming)
-    const stepfree = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, surveyTrails, "stepfree", venue.floorNaming)
+    const fastest = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, allTrails, "fastest", venue.floorNaming)
+    const stepfree = buildRoute(position, navState.currentFloor, dest, allWaypoints, navState.travelMode, allTrails, "stepfree", venue.floorNaming)
     if (fastest.estimatedMinutes === stepfree.estimatedMinutes && fastest.totalDistance === stepfree.totalDistance) return null
     return { fastest, stepfree }
-  }, [navState.destination, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, surveyTrails, venue.center])
+  }, [navState.destination, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, allTrails, venue.center])
 
   const gpsLabel =
     gpsStatus === "requesting" ? "Locating…" :

@@ -132,6 +132,12 @@ export interface Venue {
   // Located facility fixtures (plug sockets, data points, fire equipment…),
   // typically read off a CAD plan. A separate overlay layer — not routable.
   assets?: Asset[]
+  // The venue's own walkable corridor network (corridor centre-lines per
+  // floor), in the same shape Survey Mode records. Routing merges these with
+  // the user's walked trails so indoor routes follow the mapped corridors
+  // instead of cutting through rooms. Unlike walked trails they are not drawn
+  // on the map — the floor-plan image already shows the corridors.
+  trails?: SurveyTrail[]
   // Waypoint names to surface as shortcuts in search.
   quickAccess?: string[]
   createdAt?: string

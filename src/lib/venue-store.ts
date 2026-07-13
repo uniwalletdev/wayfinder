@@ -37,12 +37,18 @@ function readJSON<T>(key: string, fallback: T): T {
   }
 }
 
-function writeJSON(key: string, value: unknown): void {
-  if (typeof window === "undefined") return
+// Returns whether the value actually reached storage. Floor-plan images are
+// multi-hundred-KB data URLs, so localStorage's ~5MB quota is a real failure
+// mode — callers that persist something the user would miss on reload must
+// check the result and say so, rather than letting the data silently vanish.
+function writeJSON(key: string, value: unknown): boolean {
+  if (typeof window === "undefined") return false
   try {
     window.localStorage.setItem(key, JSON.stringify(value))
+    return true
   } catch {
-    // Storage may be unavailable (private mode, quota) — fail silently.
+    // Storage unavailable (private mode) or full (quota exceeded).
+    return false
   }
 }
 
@@ -96,8 +102,8 @@ export function loadVenueFloorPlans(venueId: string): FloorPlan[] {
   return Array.isArray(v) ? v : []
 }
 
-export function saveVenueFloorPlans(venueId: string, floorPlans: FloorPlan[]): void {
-  writeJSON(floorPlanKey(venueId), floorPlans)
+export function saveVenueFloorPlans(venueId: string, floorPlans: FloorPlan[]): boolean {
+  return writeJSON(floorPlanKey(venueId), floorPlans)
 }
 
 export function loadVenueAssets(venueId: string): Asset[] {
