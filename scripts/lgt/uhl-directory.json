@@ -1,0 +1,785 @@
+[
+ {
+  "name": "Acute Foot Service (Suite 9)",
+  "floor": 2,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Alexis Clinic",
+  "floor": 2,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Same Day Emergency Care",
+  "floor": 0,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Audiology",
+  "floor": 0,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Assisted Ventilation Unit (AVU)",
+  "floor": 3,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Bell Admissions Suite",
+  "floor": 2,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Blood Tests (Suite 1)",
+  "floor": 0,
+  "zone": "Purple",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Cardiology",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Chest Clinic (Suite 5 - External entrance)",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Children’s Day Care Unit",
+  "floor": 2,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Children’s Emergency",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Children’s Outpatients",
+  "floor": 0,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Clinical Decision Unit",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Community Foot Health",
+  "floor": 0,
+  "zone": "Purple",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Delivery Suite",
+  "floor": 3,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Dermatology (External entrance)",
+  "floor": 0,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Diabetes (Suite 9)",
+  "floor": 2,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Dietetics (Suite 9)",
+  "floor": 2,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Discharge Lounge",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "ECG",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Emergency Department",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Endoscopy",
+  "floor": 0,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "ENT (Ear, Nose and Throat)",
+  "floor": 1,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "GP Urgent Care Hub",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Hydrotherapy",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Lewisham Surgical Centre",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Occupational Therapy",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Orthopaedics (Suite 3)",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Orthotics",
+  "floor": 0,
+  "zone": "Purple",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Suite 1 (Blood Tests)",
+  "floor": 0,
+  "zone": "Purple",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Suite 2",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Suite 3 (Orthopaedics)",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Suite 4",
+  "floor": 1,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Suite 5 (Chest Clinic - external entrance)",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Suite 8",
+  "floor": 1,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Suite 9 (Acute Foot Service)",
+  "floor": 2,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Pathology",
+  "floor": 1,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Patient Photography (Owen Centre)",
+  "floor": 0,
+  "zone": "None",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Physiotherapy (Therapies)",
+  "floor": 1,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Radiology (X-Ray/Imaging)",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Riverside Treatment Centre",
+  "floor": 0,
+  "zone": "Orange",
+  "desc": "Day Surgery · Endoscopy Unit · Vanguard Admission Suite",
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Speech & Language Therapy",
+  "floor": 2,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Surgical Pre-Assessment Clinic",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Urgent Treatment Centre",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Vascular Laboratory",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Woman’s Health Centre",
+  "floor": 0,
+  "zone": "Green",
+  "desc": "Gynaecology & Antenatal outpatients",
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "X-Ray (Radiology/Imaging)",
+  "floor": 1,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Bereavement Office",
+  "floor": 0,
+  "zone": "None",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Café - Ravensbourne Restaurant",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Café - Muffin Break",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Café - Gaff",
+  "floor": 0,
+  "zone": "Orange",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Chapel - (Waterloo Block)",
+  "floor": 0,
+  "zone": "None",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "General Office",
+  "floor": 0,
+  "zone": "None",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Main Reception",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Overseas Office",
+  "floor": 0,
+  "zone": "None",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "PALS (Main Reception)",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Patient Transport",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Pharmacies",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": "Inpatient (IP) & Outpatient (OP) pharmacy",
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Security",
+  "floor": 0,
+  "zone": "None",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Voluntary Services",
+  "floor": 0,
+  "zone": "None",
+  "desc": null,
+  "cat": "Services",
+  "col": 1,
+  "group": "Services"
+ },
+ {
+  "name": "Alder",
+  "floor": 4,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Antenatal",
+  "floor": 5,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Ash",
+  "floor": 6,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Aspen",
+  "floor": 5,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Beech",
+  "floor": 1,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Birth Centre",
+  "floor": 0,
+  "zone": "Pink",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Cedar",
+  "floor": 2,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Cherry",
+  "floor": 3,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Chestnut (MAU)",
+  "floor": 1,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Children’s Day Care",
+  "floor": 2,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Children’s Inpatient",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Delivery Suite (Labour)",
+  "floor": 3,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Elm",
+  "floor": 6,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Hawthorn",
+  "floor": 4,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "High Dependency Unit (HDU)",
+  "floor": 3,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Intensive Care Unit (ICU)",
+  "floor": 3,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Juniper",
+  "floor": 2,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Labour (Delivery Suite)",
+  "floor": 3,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Larch",
+  "floor": 2,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Laurel",
+  "floor": 5,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Linden",
+  "floor": 4,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Maple",
+  "floor": 2,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Maternity",
+  "floor": 5,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Mulberry",
+  "floor": 5,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Neonatal Intensive Care",
+  "floor": 4,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Oak",
+  "floor": 6,
+  "zone": "Orange",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ },
+ {
+  "name": "Sapphire",
+  "floor": 2,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Wards"
+ }
+]

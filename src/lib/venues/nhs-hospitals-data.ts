@@ -3,7 +3,8 @@
 // is [name, latitude, longitude]. These are LOCATION pins only — interior
 // floor plans are added per-site via in-app survey/upload. GOSH, St George's
 // and Addenbrooke's (CUH) are omitted here because they ship as full interior
-// venues.
+// venues, as are Queen Elizabeth Hospital (Woolwich) and University Hospital
+// Lewisham, which ship as mapped venues built from their trust's own site maps.
 
 export type NhsHospitalSite = [name: string, lat: number, lng: number]
 
@@ -460,7 +461,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Queen Alexandra Hospital", 50.8503, -1.069918],
   ["Queen Charlotte's & Chelsea Hospital", 51.517422, -0.234707],
   ["Queen Elizabeth Hospital", 54.939384, -1.580765],
-  ["Queen Elizabeth Hospital", 51.478191, 0.050057],
   ["Queen Elizabeth Hospital Birmingham", 52.45015, -1.941762],
   ["Queen Elizabeth The Queen Mother Hospital", 51.378052, 1.389399],
   ["Queen Mary", 51.419041, 0.101675],
@@ -679,7 +679,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["University College Hospital", 51.524891, -0.136896],
   ["University College Hospital at Westmoreland Street", 51.519581, -0.149754],
   ["University Hospital (Coventry)", 52.421215, -1.438389],
-  ["University Hospital Lewisham", 51.45433, -0.017036],
   ["University Hospital Of Hartlepool", 54.7024, -1.227821],
   ["University Hospital Of North Durham", 54.788502, -1.593819],
   ["University Hospital Of North Tees", 54.582859, -1.347565],

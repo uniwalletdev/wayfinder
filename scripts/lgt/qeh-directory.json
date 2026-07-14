@@ -1,0 +1,614 @@
+[
+ {
+  "name": "Alexandra Clinic",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Ambulatory Care Unit",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Blood Tests",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Cardiac Department",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Childrens Assessment Unit",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Clinical Decisions Unit",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Day Care Unit",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Delivery Suite",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Diabetic Day Care",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Discharge Lounge",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Dolphin Childrens OPD",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Fracture Clinic",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "General Ultrasound",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Imaging X-ray",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Kings Greenwich Renal Centre",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Macmillan Brook Unit",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Maternity OPD",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Medical Diagnostic Centre",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Medical Photography (Ranken House)",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Obstetrics Ultrasound",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Outpatients Departments A - G",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Pathology",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Pharmacy",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Physiotherapy (Outpatients)",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Renal Centre",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Respiratory Laboratory",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Sleep Unit",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "Theatres",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 0,
+  "group": "Outpatients"
+ },
+ {
+  "name": "A&E (Children’s and Adults)",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Critical Care Centre",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Greenwich Birth Centre",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "ITU / HDU / CCU",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "SCBU",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Therapy Services (Inpatients)",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Therapy Services (Inpatients)",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Urgent Care Centre",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 1",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 2",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Wards 3 & 4",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 5 (Safari Childrens Ward)",
+  "floor": 0,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 7",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 12 (Coronary Care Unit)",
+  "floor": 1,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 14",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 15",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 16",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 17",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 18",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 19",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 20",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 21",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 22",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Ward 23",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 1,
+  "group": "Wards"
+ },
+ {
+  "name": "Facilities",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Elixir Gallery",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Medical Records (Education Centre)",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "PALS",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Patient Access Office",
+  "floor": 1,
+  "zone": "Green",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Patient & Transport Services",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Prayer Room",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Restaurant",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Shop",
+  "floor": 0,
+  "zone": "Red",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Mortuary",
+  "floor": 0,
+  "zone": "Blue",
+  "desc": null,
+  "cat": null,
+  "col": 2,
+  "group": "Services"
+ },
+ {
+  "name": "Brook House",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "External Departments",
+  "col": 2,
+  "group": "External"
+ },
+ {
+  "name": "Education Centre",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "External Departments",
+  "col": 2,
+  "group": "External"
+ },
+ {
+  "name": "Oxleas Mental Health Unit",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "External Departments",
+  "col": 2,
+  "group": "External"
+ },
+ {
+  "name": "Trafalgar Clinic",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "External Departments",
+  "col": 2,
+  "group": "External"
+ },
+ {
+  "name": "Conference Centre",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "External Departments",
+  "col": 2,
+  "group": "External"
+ },
+ {
+  "name": "Health Care Library",
+  "floor": 0,
+  "zone": "Yellow",
+  "desc": null,
+  "cat": "External Departments",
+  "col": 2,
+  "group": "External"
+ }
+]
