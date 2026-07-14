@@ -463,7 +463,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Queen Elizabeth Hospital Birmingham", 52.45015, -1.941762],
   ["Queen Elizabeth The Queen Mother Hospital", 51.378052, 1.389399],
   ["Queen Mary", 51.419041, 0.101675],
-  ["Queen Mary - St George's University Hospitals NHS Foundation Trust", 51.455551, -0.241715],
   ["Queen Mary's Hospital For Children", 51.380314, -0.183627],
   ["Queen Victoria Hospital", 54.072872, -2.858618],
   ["Queen Victoria Hospital (East Grinstead)", 51.135075, -0.002886],

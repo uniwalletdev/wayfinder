@@ -15,6 +15,7 @@ import { QUEENS_VENUE } from "./queens"
 import { KGH_VENUE } from "./kgh"
 import { BROOMFIELD_VENUE } from "./broomfield"
 import { BASILDON_VENUE } from "./basildon"
+import { QMH_VENUE } from "./qmh"
 import { NHS_HOSPITAL_VENUES } from "./nhs-hospitals"
 
 // Registry of venues the app knows about. Seed venues ship with the build;
@@ -40,6 +41,7 @@ export const SEED_VENUES: Venue[] = [
   KGH_VENUE,
   BROOMFIELD_VENUE,
   BASILDON_VENUE,
+  QMH_VENUE,
   CANNERY_TRAILS_VENUE,
   ...NHS_HOSPITAL_VENUES,
 ]
