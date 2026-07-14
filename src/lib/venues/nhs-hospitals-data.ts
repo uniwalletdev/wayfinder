@@ -4,7 +4,9 @@
 // floor plans are added per-site via in-app survey/upload. GOSH, St George's
 // and Addenbrooke's (CUH) are omitted here because they ship as full interior
 // venues, as are Queen Elizabeth Hospital (Woolwich) and University Hospital
-// Lewisham, which ship as mapped venues built from their trust's own site maps.
+// Lewisham, St Bartholomew's, St Mary's Paddington, The Royal London (both its
+// duplicate pins), Newham and Mile End, which ship as mapped venues built from
+// their trusts' own published site maps.
 
 export type NhsHospitalSite = [name: string, lat: number, lng: number]
 
@@ -355,7 +357,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Medway Maritime Hospital", 51.37986, 0.542076],
   ["Memorial Hospital (Greenwich)", 51.468575, 0.064125],
   ["Michael Carlisle Centre", 53.361412, -1.497589],
-  ["Mile End Hospital", 51.525047, -0.042192],
   ["Mill Lodge Hospital", 52.836224, -1.275923],
   ["Mill View Court - Inpatient Unit", 53.776733, -0.444969],
   ["Mill View Hospital", 50.842041, -0.189752],
@@ -380,7 +381,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Newbridges - Inpatient Unit", 53.749939, -0.308325],
   ["Newcastle Dental Hospital", 54.981503, -1.622702],
   ["Newham Centre for Mental Health", 51.520473, 0.03842],
-  ["Newham Hospital", 51.522778, 0.034732],
   ["Newholme Hospital", 53.218796, -1.672325],
   ["Newquay Hospital - Cornwall Partnership NHS Foundation Trust", 50.411064, -5.074198],
   ["Newsam Centre", 53.804939, -1.471472],
@@ -504,7 +504,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Royal Hospital For Neuro-Disability (West Hill)", 51.452206, -0.21372],
   ["Royal Lancaster Infirmary", 54.042732, -2.799217],
   ["Royal Liverpool University Hospital", 53.409512, -2.964794],
-  ["Royal London Hospital", 51.519016, -0.058119],
   ["Royal National ENT and Eastman Dental Hospitals", 51.521683, -0.133553],
   ["Royal National Orthopaedic Hospital (Bolsover Street)", 51.523312, -0.143275],
   ["Royal Oldham Hospital", 53.553253, -2.121816],
@@ -562,7 +561,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["St Augustine's Independent Hospital", 53.03344, -2.187805],
   ["St Austell Community Hospital - Cornwall Partnership NHS Foundation Trust", 50.327885, -4.77235],
   ["St Barnabas Hospital", 50.407372, -4.214307],
-  ["St Bartholomew's Hospital", 51.51775, -0.10039],
   ["St Catherine's Hospital", 53.380035, -3.026516],
   ["St Charles Hospital, Mental Health Unit", 51.522362, -0.217204],
   ["St George's", 52.810593, -2.109074],
@@ -587,7 +585,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["St Mary's Hospital", 52.3941, -0.722185],
   ["St Mary's Hospital", 52.765938, -0.877281],
   ["St Mary's Hospital", 50.710846, -1.301316],
-  ["St Mary's Hospital (HQ)", 51.516972, -0.173555],
   ["St Michael's Hospital", 51.459137, -2.599377],
   ["St Michael's Hospital", 50.180363, -5.424411],
   ["St Michael's Hospital", 52.288841, -1.594397],
@@ -649,7 +646,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["The Riverside Centre", 51.526077, -0.46116],
   ["The Robert Jones and Agnes Hunt Orthopaedic Hospital", 52.884529, -3.033115],
   ["The Royal Buckinghamshire Hospital Ltd", 51.820724, -0.815903],
-  ["The Royal London Hospital", 51.5187, -0.06015],
   ["The Royal London Hospital For Integrated Medicine", 51.52174, -0.121385],
   ["The Royal Marsden Hospital (London)", 51.490562, -0.172551],
   ["The Royal Marsden Hospital (Surrey)", 51.343479, -0.1911],
