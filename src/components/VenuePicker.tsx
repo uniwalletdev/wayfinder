@@ -7,13 +7,20 @@ import { useEscapeClose } from "@/lib/use-escape"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
-  LogIn, LogOut, Cloud, CloudOff, Search,
+  LogIn, LogOut, Cloud, CloudOff, Search, Footprints,
 } from "lucide-react"
 
-// Cap how many public venues render at once. The NHS hospital directory adds
-// hundreds of places; showing them all would bloat the DOM, so the list is
-// capped and the search box narrows it down.
+// Cap how many directory venues render at once. The NHS hospital directory adds
+// hundreds of location-only pins; showing them all would bloat the DOM, so that
+// list is capped and the search box narrows it down. Fully-mapped venues are
+// never capped — there are only a handful and they always show first.
 const PUBLIC_LIST_LIMIT = 60
+
+// A venue you can actually walk inside: it ships a real floor plan or mapped
+// points, as opposed to a location-only directory pin (empty plans + points).
+function isMapped(v: Venue): boolean {
+  return v.floorPlans.length > 0 || v.waypoints.length > 0
+}
 
 interface Props {
   venues: Venue[]
@@ -99,25 +106,25 @@ export default function VenuePicker({
   const publicVenues = venues.filter((v) => v.visibility === "public")
   const otherVenues = venues.filter((v) => v.visibility !== "public")
 
-  // Search + rank public venues: fully-mapped places (real floor plans) always
-  // sort ahead of location-only directory pins, then alphabetically. Capped so
-  // the 700+ NHS hospital directory never renders all at once.
-  const matchedPublic = useMemo(() => {
+  // Split public venues into the fully-mapped places (real floor plans / points
+  // — walk inside) and the location-only directory pins, each alphabetical. The
+  // mapped places are shown first and in full; the huge directory is capped.
+  const { mappedVenues, directoryVenues } = useMemo(() => {
     const q = query.trim().toLowerCase()
     const matches = q
       ? publicVenues.filter(
           (v) => v.name.toLowerCase().includes(q) || (v.subtitle?.toLowerCase().includes(q) ?? false)
         )
       : publicVenues
-    return matches.slice().sort((a, b) => {
-      const am = a.floorPlans.length > 0 ? 0 : 1
-      const bm = b.floorPlans.length > 0 ? 0 : 1
-      return am - bm || a.name.localeCompare(b.name)
-    })
+    const byName = (a: Venue, b: Venue) => a.name.localeCompare(b.name)
+    return {
+      mappedVenues: matches.filter(isMapped).sort(byName),
+      directoryVenues: matches.filter((v) => !isMapped(v)).sort(byName),
+    }
   }, [publicVenues, query])
 
-  const shownPublic = matchedPublic.slice(0, PUBLIC_LIST_LIMIT)
-  const hiddenPublicCount = matchedPublic.length - shownPublic.length
+  const shownDirectory = directoryVenues.slice(0, PUBLIC_LIST_LIMIT)
+  const hiddenDirectoryCount = directoryVenues.length - shownDirectory.length
 
   // A public venue can only be published once the user attests they're allowed to.
   const canCreate = name.trim().length > 0 && (visibility !== "public" || authorised)
@@ -206,15 +213,35 @@ export default function VenuePicker({
               )}
             </div>
           </div>
-          {shownPublic.map((v) => (
+          {/* Fully-mapped hospitals first — you can walk inside these. */}
+          {mappedVenues.length > 0 && (
+            <div className="flex items-center gap-1.5 px-4 pt-3 pb-1.5">
+              <Footprints size={13} className="text-[#005EB8]" />
+              <p className="text-xs font-semibold text-[#005EB8] uppercase tracking-wider">
+                Mapped hospitals · walk inside
+              </p>
+            </div>
+          )}
+          {mappedVenues.map((v) => (
+            <VenueRow key={v.id} venue={v} mapped active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
+          ))}
+
+          {/* Then the location-only directory pins. */}
+          {shownDirectory.length > 0 && (
+            <p className="px-4 pt-4 pb-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              Hospital directory · location only
+            </p>
+          )}
+          {shownDirectory.map((v) => (
             <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
           ))}
-          {shownPublic.length === 0 && (
+
+          {mappedVenues.length === 0 && shownDirectory.length === 0 && (
             <p className="px-4 py-6 text-sm text-gray-500 text-center">No places match “{query}”.</p>
           )}
-          {hiddenPublicCount > 0 && (
+          {hiddenDirectoryCount > 0 && (
             <p className="px-4 py-3 text-xs text-gray-400 text-center">
-              Showing {shownPublic.length} of {matchedPublic.length}. Keep typing to narrow it down.
+              Showing {shownDirectory.length} of {directoryVenues.length} directory hospitals. Keep typing to narrow it down.
             </p>
           )}
 
@@ -374,12 +401,12 @@ function Toggle({ label, Icon, on, onChange }: { label: string; Icon: typeof Glo
   )
 }
 
-function VenueRow({ venue, active, onSelect, onDelete }: { venue: Venue; active: boolean; onSelect: (id: string) => void; onDelete: (id: string) => void }) {
+function VenueRow({ venue, active, mapped = false, onSelect, onDelete }: { venue: Venue; active: boolean; mapped?: boolean; onSelect: (id: string) => void; onDelete: (id: string) => void }) {
   const isUserVenue = venue.id.startsWith("venue-")
   return (
-    <div className={`w-full flex items-center gap-3 px-4 py-3 border-b border-gray-100 ${active ? "bg-blue-50" : ""}`}>
+    <div className={`w-full flex items-center gap-3 px-4 py-3 border-b border-gray-100 ${active ? "bg-blue-50" : mapped ? "bg-blue-50/30" : ""}`}>
       <button onClick={() => onSelect(venue.id)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
-        <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-xl flex-shrink-0">
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 ${mapped ? "bg-[#005EB8]/10 ring-1 ring-[#005EB8]/30" : "bg-gray-100"}`}>
           {categoryIcon(venue.category)}
         </div>
         <div className="flex-1 min-w-0">
@@ -387,9 +414,16 @@ function VenueRow({ venue, active, onSelect, onDelete }: { venue: Venue; active:
             {venue.name}
             {venue.verified && <BadgeCheck size={14} className="text-[#005EB8] flex-shrink-0" />}
           </p>
-          <p className="text-xs text-gray-500 truncate">
-            {venue.subtitle ? `${venue.subtitle} · ` : ""}
-            {venue.visibility[0].toUpperCase() + venue.visibility.slice(1)}
+          <p className="text-xs text-gray-500 truncate flex items-center gap-1.5">
+            {mapped && (
+              <span className="inline-flex items-center gap-0.5 rounded-full bg-[#005EB8] text-white px-1.5 py-0.5 text-[10px] font-semibold leading-none flex-shrink-0">
+                <Footprints size={9} /> Mapped
+              </span>
+            )}
+            <span className="truncate">
+              {venue.subtitle ? `${venue.subtitle} · ` : ""}
+              {venue.visibility[0].toUpperCase() + venue.visibility.slice(1)}
+            </span>
           </p>
         </div>
       </button>

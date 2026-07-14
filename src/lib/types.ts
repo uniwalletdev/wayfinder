@@ -156,6 +156,10 @@ export interface Route {
   // True when the path came from real street routing (Mapbox Directions),
   // false for indoor waypoint-to-waypoint paths.
   outdoor: boolean
+  // True when an indoor leg had no mapped corridor to follow, so the drawn line
+  // is a straight-line direction guide rather than a precise walkable path. The
+  // map renders these dashed and the UI tells the walker to follow local signs.
+  approximate?: boolean
 }
 
 export type TravelMode = "walking" | "cycling" | "driving"

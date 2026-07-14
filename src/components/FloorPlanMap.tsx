@@ -425,6 +425,11 @@ export default function FloorPlanMap({
     // blue core, with a thin animated dashed overlay marching toward the
     // destination. The previous "1, 12" dotted line read as faint specks on the
     // map; this stays legible at every zoom and clearly shows direction of travel.
+    //
+    // When the route is `approximate` — an indoor leg with no mapped corridor to
+    // follow — the core is drawn as a bold dash instead of a solid line, so it
+    // reads as a "head this way, follow the signs" guide rather than a precise
+    // walkable path it isn't.
     const casing = L.polyline(pts, {
       color: "#FFFFFF",
       weight: 11,
@@ -438,17 +443,25 @@ export default function FloorPlanMap({
       opacity: 1,
       lineCap: "round",
       lineJoin: "round",
+      ...(route.approximate ? { dashArray: "10, 12" } : {}),
     })
-    const flow = L.polyline(pts, {
-      color: "#FFFFFF",
-      weight: 3,
-      opacity: 0.85,
-      lineCap: "round",
-      lineJoin: "round",
-      dashArray: "2, 14",
-      className: "wf-route-flow",
-    })
-    const group = L.featureGroup([casing, core, flow])
+    const layers = [casing, core]
+    // The marching-ants overlay only makes sense on a precise path; an
+    // approximate guide keeps just the dashed core.
+    if (!route.approximate) {
+      layers.push(
+        L.polyline(pts, {
+          color: "#FFFFFF",
+          weight: 3,
+          opacity: 0.85,
+          lineCap: "round",
+          lineJoin: "round",
+          dashArray: "2, 14",
+          className: "wf-route-flow",
+        })
+      )
+    }
+    const group = L.featureGroup(layers)
     group.addTo(map)
     routeLayerRef.current = group
 

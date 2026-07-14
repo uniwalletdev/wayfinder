@@ -549,6 +549,16 @@ function RoutePreviewCard({
             <StatTile label={route.floorChanges > 0 ? `${route.floorChanges} floor change${route.floorChanges > 1 ? "s" : ""}` : "same floor"} value={routeLoading ? "—" : fmtDistance(route.totalDistance)} />
             <StatTile label="accuracy" value={destination ? "±4 m" : "—"} />
           </div>
+          {/* This venue has no mapped corridors on this leg, so the drawn line is
+              a direction guide, not a precise path. Be honest about that. */}
+          {route.approximate && !routeLoading && (
+            <div className="mb-4 flex items-start gap-2 rounded-xl bg-amber-50 border border-amber-200 px-3 py-2.5">
+              <MapPin size={14} className="mt-0.5 flex-shrink-0 text-amber-600" />
+              <p className="text-[12px] leading-snug text-amber-700">
+                Approximate direction — corridors aren&apos;t mapped inside this building yet, so follow the on-site signs for the exact route.
+              </p>
+            </div>
+          )}
         </>
       )}
 

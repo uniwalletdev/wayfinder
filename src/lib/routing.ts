@@ -233,15 +233,17 @@ export function buildTrailPath(
 
 // One indoor leg: follow the floor's walked trails when they connect the two
 // ends, otherwise a straight hop. Always returns both ends in the points list.
+// `mapped` is false when it fell back to the straight hop — i.e. there was no
+// corridor network to follow, so the drawn line only shows the direction.
 function indoorLeg(
   a: Coordinates,
   b: Coordinates,
   floor: number,
   trails: SurveyTrail[]
-): { points: Coordinates[]; distance: number } {
+): { points: Coordinates[]; distance: number; mapped: boolean } {
   const path = buildTrailPath(a, b, trails.filter((t) => t.floor === floor))
-  if (path) return { points: path.geometry, distance: path.distance }
-  return { points: [a, b], distance: distanceMeters(a, b) }
+  if (path) return { points: path.geometry, distance: path.distance, mapped: true }
+  return { points: [a, b], distance: distanceMeters(a, b), mapped: false }
 }
 
 export function buildRoute(
@@ -267,6 +269,9 @@ export function buildRoute(
   // single straight line to the destination.
   let geometry: Coordinates[] = []
   let totalDistance = 0
+  // Flips true as soon as any indoor leg has no corridor network to follow, so
+  // the whole route is flagged approximate (drawn as a direction guide).
+  let approximate = false
 
   if (fromFloor !== destination.floor) {
     const candidateTypes = preference === "fastest" ? (["lift", "stairs"] as const) : (["lift"] as const)
@@ -280,6 +285,7 @@ export function buildRoute(
     if (nearest) {
       const via: "lift" | "stairs" = nearest.type === "stairs" ? "stairs" : "lift"
       const leg1 = indoorLeg(from, nearest.coordinates, fromFloor, trails)
+      approximate = approximate || !leg1.mapped
       totalDistance += leg1.distance
       geometry = leg1.points
       steps.push({
@@ -307,6 +313,7 @@ export function buildRoute(
         // The walker re-enters at the lift/stairs on the destination floor, so
         // the drawn path continues from there to the destination.
         const leg2 = indoorLeg(matchOnDestFloor.coordinates, destination.coordinates, destination.floor, trails)
+        approximate = approximate || !leg2.mapped
         totalDistance += leg2.distance
         geometry = geometry.concat(leg2.points)
         steps.push({
@@ -322,15 +329,17 @@ export function buildRoute(
     } else {
       // No lift/stairs on the current floor — fall back to a direct hop.
       const leg = indoorLeg(from, destination.coordinates, fromFloor, trails)
+      approximate = approximate || !leg.mapped
       totalDistance += leg.distance
       geometry = leg.points
     }
   } else {
     const leg = indoorLeg(from, destination.coordinates, fromFloor, trails)
+    approximate = approximate || !leg.mapped
     totalDistance += leg.distance
     geometry = leg.points
     steps.push({
-      instruction: `${headingToInstruction(bearing(from, destination.coordinates))} toward ${destination.name}`,
+      instruction: `${headingToInstruction(bearing(from, destination.coordinates))} toward ${destination.name}${approximate ? " — follow the corridor signs" : ""}`,
       distance: Math.round(leg.distance),
       heading: bearing(from, destination.coordinates),
     })
@@ -356,6 +365,7 @@ export function buildRoute(
     geometry,
     mode,
     outdoor: false,
+    approximate,
   }
 }
 
