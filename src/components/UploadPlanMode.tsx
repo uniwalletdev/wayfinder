@@ -8,10 +8,11 @@ import { ALL_WAYPOINT_TYPES, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLab
 import { ALL_ASSET_CATEGORIES, ASSET_CATEGORY_ICONS, ASSET_CATEGORY_LABELS } from "@/lib/asset-meta"
 import { loadPlanFile, VectorPlanFeature, NormalisedAsset } from "@/lib/plan-import"
 import { PlanCorners, cornersToBounds, defaultPlanCorners, projectPlanPoint } from "@/lib/plan-georeference"
+import { SheetData, cropToMapRegion, remapToCrop, sampleZoneFootprints, placeDirectoryEntries } from "@/lib/sheet-import"
 import { X, Check, ChevronUp, ChevronDown, UploadCloud, MapPinned, Trash2, Plug } from "lucide-react"
 
 export interface UploadPlanResult {
-  floorPlan: FloorPlan | null
+  floorPlans: FloorPlan[]
   waypoints: Waypoint[]
   trails: SurveyTrail[]
   assets: Asset[]
@@ -30,6 +31,10 @@ interface ReviewRoom {
   type: WaypointType
   include: boolean
   coordinates: Coordinates
+  floor: number
+  // The sheet's colour zone this place belongs to, when it came from a map
+  // sheet's directory table.
+  zone?: string
 }
 
 interface ReviewAsset {
@@ -65,6 +70,10 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
   const [rasterImage, setRasterImage] = useState<{ dataUrl: string; width: number; height: number } | null>(null)
   const [rawRooms, setRawRooms] = useState<{ name: string; type: WaypointType; x: number; y: number }[]>([])
   const [rawCorridors, setRawCorridors] = useState<{ x: number; y: number }[][]>([])
+  // Set when the AI reader recognised a full map sheet (designed site map +
+  // Floor/Zone directory table). rasterImage then holds the CROPPED artwork
+  // and rawRooms/rawCorridors are already remapped into its frame.
+  const [rawSheet, setRawSheet] = useState<SheetData | null>(null)
   // Located fixtures (plug sockets, data points…) read from a CAD plan, in
   // image-normalised space until georeferenced.
   const [rawAssets, setRawAssets] = useState<NormalisedAsset[]>([])
@@ -90,7 +99,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         const lines = parsed.features.filter((f): f is VectorPlanFeature & { line: Coordinates[] } => !!f.line)
         setRasterImage(null)
         setCorners(null)
-        setReviewRooms(rooms.map((r) => ({ name: r.name, type: r.type, include: true, coordinates: r.point })))
+        setReviewRooms(rooms.map((r) => ({ name: r.name, type: r.type, include: true, coordinates: r.point, floor: planFloor })))
         setReviewTrails(lines.map((l) => l.line))
         setReviewAssets([])
         if (rooms.length === 0) {
@@ -123,9 +132,11 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
 
       setRasterImage({ dataUrl: parsed.dataUrl, width: parsed.width, height: parsed.height })
       setRawAssets([])
+      setRawSheet(null)
 
       let rooms: { name: string; type: WaypointType; x: number; y: number }[] = []
       let corridors: { x: number; y: number }[][] = []
+      let sheet: SheetData | null = null
       try {
         const ac = new AbortController()
         parseAbortRef.current = ac
@@ -138,17 +149,54 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         const data = await res.json()
         rooms = Array.isArray(data.rooms) ? data.rooms : []
         corridors = Array.isArray(data.corridors) ? data.corridors : []
+        sheet = data.sheet && data.sheet.isSheet && Array.isArray(data.sheet.directory) ? (data.sheet as SheetData) : null
         if (data.error === "not_configured") {
           setNotice("AI plan-reading isn't enabled on the server — the image will still be placed on the map; add its points yourself afterwards.")
         } else if (data.error) {
           setNotice("Couldn't automatically read the plan — the image will still be placed on the map; add its points yourself afterwards.")
-        } else if (rooms.length === 0) {
+        } else if (rooms.length === 0 && !sheet) {
           setNotice("No clearly labelled rooms were found — the image will still be placed on the map; add its points yourself afterwards.")
         }
       } catch {
         setNotice("Couldn't reach the AI reader — the image will still be placed on the map; add its points yourself afterwards.")
       }
       if (run !== runRef.current) return
+
+      if (sheet) {
+        // A full map sheet: crop the overlay to the map artwork (the page
+        // title and directory tables must not be draped over real streets)
+        // and remap everything the reader saw into the cropped frame.
+        try {
+          const cropped = await cropToMapRegion(parsed.dataUrl, sheet.mapRegion)
+          if (run !== runRef.current) return
+          const remappedRooms = rooms
+            .map((r) => {
+              const p = remapToCrop(sheet!.mapRegion, r)
+              return p ? { ...r, x: p.x, y: p.y } : null
+            })
+            .filter((r): r is { name: string; type: WaypointType; x: number; y: number } => r !== null)
+          const remappedCorridors = corridors
+            .map((pts) => pts.map((p) => remapToCrop(sheet!.mapRegion, p)).filter((p): p is { x: number; y: number } => p !== null))
+            .filter((pts) => pts.length >= 2)
+          setRasterImage(cropped)
+          setRawRooms(remappedRooms)
+          setRawCorridors(remappedCorridors)
+          setRawSheet(sheet)
+          const floors = new Set(sheet.directory.map((d) => d.floor))
+          setNotice(
+            `This looks like a full map sheet: ${sheet.directory.length} places across ${floors.size} floor${floors.size === 1 ? "" : "s"}` +
+              (sheet.zones.length ? ` in ${sheet.zones.length} colour zones` : "") +
+              ". Position the map artwork over the real building, then review."
+          )
+          // A whole-site sheet starts at a site-ish span instead of a single
+          // building's, so the mapper isn't dragging corners across the town.
+          setCorners(defaultPlanCorners(venueCenter, cropped.width / cropped.height, 300))
+          setStep("georeference")
+          return
+        } catch {
+          // Fall through to the plain-plan path with the uncropped image.
+        }
+      }
 
       setRawRooms(rooms)
       setRawCorridors(corridors)
@@ -161,14 +209,55 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
     }
   }
 
-  function confirmGeoreference(finalCorners: PlanCorners) {
+  async function confirmGeoreference(finalCorners: PlanCorners) {
     setCorners(finalCorners)
+
+    if (rawSheet && rasterImage) {
+      // Sheet path: every directory entry becomes a reviewable place. Entries
+      // the reader also saw drawn on the map anchor to their true position;
+      // the rest are spread across their colour zone's sampled footprint.
+      let placed
+      try {
+        const cells = await sampleZoneFootprints(rasterImage, rawSheet.zones)
+        placed = placeDirectoryEntries(rawSheet.directory, cells, rawRooms)
+      } catch {
+        placed = placeDirectoryEntries(rawSheet.directory, new Map(), rawRooms)
+      }
+      const key = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()
+      const directoryKeys = new Set(rawSheet.directory.map((d) => key(d.name)))
+      // Drawn labels that aren't directory rows (entrances, standalone
+      // buildings…) still deserve pins — on the ground floor.
+      const extraDrawn = rawRooms.filter((r) => !directoryKeys.has(key(r.name)))
+      setReviewRooms([
+        ...placed.map((p) => ({
+          name: p.name,
+          type: p.type,
+          include: true,
+          coordinates: projectPlanPoint(finalCorners, p.x, p.y),
+          floor: p.floor,
+          zone: p.zone || undefined,
+        })),
+        ...extraDrawn.map((r) => ({
+          name: r.name,
+          type: r.type,
+          include: true,
+          coordinates: projectPlanPoint(finalCorners, r.x, r.y),
+          floor: 0,
+        })),
+      ])
+      setReviewTrails(rawCorridors.map((pts) => pts.map((p) => projectPlanPoint(finalCorners, p.x, p.y))))
+      setReviewAssets([])
+      setStep("review")
+      return
+    }
+
     setReviewRooms(
       rawRooms.map((r) => ({
         name: r.name,
         type: r.type,
         include: true,
         coordinates: projectPlanPoint(finalCorners, r.x, r.y),
+        floor: planFloor,
       }))
     )
     setReviewTrails(rawCorridors.map((pts) => pts.map((p) => projectPlanPoint(finalCorners, p.x, p.y))))
@@ -206,12 +295,13 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
       name: r.name.trim(),
       type: r.type,
       coordinates: r.coordinates,
-      floor: planFloor,
-      description: "Added from an uploaded floor plan",
+      floor: r.floor,
+      description: r.zone ? `${r.zone} zone` : "Added from an uploaded floor plan",
     }))
+    const trailFloor = rawSheet ? 0 : planFloor
     const trails: SurveyTrail[] = reviewTrails
       .filter((pts) => pts.length >= 2)
-      .map((pts, i) => ({ id: `plan-trail-${Date.now()}-${i}`, floor: planFloor, points: pts }))
+      .map((pts, i) => ({ id: `plan-trail-${Date.now()}-${i}`, floor: trailFloor, points: pts }))
     const assets: Asset[] = reviewAssets
       .filter((a) => a.name.trim() && a.include)
       .map((a, i) => ({
@@ -222,17 +312,34 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         floor: planFloor,
         source: "Uploaded CAD plan",
       }))
-    const plan: FloorPlan | null =
-      rasterImage && corners
-        ? {
+
+    let floorPlans: FloorPlan[] = []
+    if (rasterImage && corners) {
+      const bounds = cornersToBounds(corners)
+      if (rawSheet) {
+        // One sheet serves every floor it mentions: wards above ground are
+        // found by zone colour + floor, exactly how the trust's sheet works.
+        const floors = [...new Set([0, ...included.map((w) => w.floor)])].sort((a, b) => a - b)
+        floorPlans = floors.map((f) => ({
+          id: `plan-${Date.now()}-f${f}`,
+          floor: f,
+          label: floorLabel(f),
+          imageUrl: rasterImage.dataUrl,
+          bounds,
+        }))
+      } else {
+        floorPlans = [
+          {
             id: `plan-${Date.now()}`,
             floor: planFloor,
             label: floorLabel(planFloor),
             imageUrl: rasterImage.dataUrl,
-            bounds: cornersToBounds(corners),
-          }
-        : null
-    onUploadComplete({ floorPlan: plan, waypoints, trails, assets })
+            bounds,
+          },
+        ]
+      }
+    }
+    onUploadComplete({ floorPlans, waypoints, trails, assets })
   }
 
   if (step === "analyzing") {
@@ -287,7 +394,10 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
             <p className="mb-3 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2.5">{notice}</p>
           )}
           <p className="text-xs text-gray-500 mb-3">
-            {reviewRooms.length} place{reviewRooms.length === 1 ? "" : "s"} detected on {floorLabel(planFloor)}
+            {reviewRooms.length} place{reviewRooms.length === 1 ? "" : "s"} detected{" "}
+            {rawSheet
+              ? `across ${new Set(reviewRooms.map((r) => r.floor)).size} floor${new Set(reviewRooms.map((r) => r.floor)).size === 1 ? "" : "s"}`
+              : `on ${floorLabel(planFloor)}`}
             {reviewTrails.length > 0
               ? ` · ${reviewTrails.length} corridor${reviewTrails.length === 1 ? "" : "s"} traced`
               : ""}
@@ -323,6 +433,12 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
                     onChange={(e) => updateRoom(i, { name: e.target.value })}
                     className="flex-1 min-w-0 text-sm font-medium text-gray-900 outline-none border-b border-transparent focus:border-[#005EB8]"
                   />
+                  {rawSheet && (
+                    <span className="text-[10px] font-semibold text-gray-400 bg-gray-100 rounded-md px-1.5 py-0.5 flex-shrink-0 whitespace-nowrap">
+                      {floorLabel(r.floor)}
+                      {r.zone ? ` · ${r.zone}` : ""}
+                    </span>
+                  )}
                   <select
                     value={r.type}
                     onChange={(e) => updateRoom(i, { type: e.target.value as WaypointType })}
@@ -430,6 +546,11 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
           it&apos;s read automatically — rooms and corridors are detected and turned into a navigable layout, the same way
           a Survey Mode walk would. A DXF also carries its located fixtures (plug sockets, data points…) onto a separate
           overlay.
+        </p>
+        <p className="text-sm text-gray-600 mb-4">
+          Full map sheets work too: a hospital-style site map with colour-coded zones and a Floor/Zone directory table is
+          recognised as a whole — every listed ward and department is placed on its zone at the right floor, even ones
+          only listed in the table, and the map serves every floor at once.
         </p>
 
         <div className="flex items-center justify-between rounded-xl border border-gray-200 px-4 py-3 mb-4">

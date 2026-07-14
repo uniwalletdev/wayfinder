@@ -29,15 +29,16 @@ export function cornersToBounds(corners: PlanCorners): [[number, number], [numbe
 }
 
 // Metres spanned by the longer edge of the default placement rectangle, before
-// the mapper drags it into position — roughly a small building footprint.
+// the mapper drags it into position — roughly a small building footprint. A
+// whole-site map sheet passes a larger span instead.
 const DEFAULT_SPAN_M = 40
 
 // A starting rectangle around `center`, sized to the plan image's aspect ratio,
 // for the mapper to then drag into alignment with the real building.
-export function defaultPlanCorners(center: Coordinates, aspectRatio: number): PlanCorners {
+export function defaultPlanCorners(center: Coordinates, aspectRatio: number, spanM: number = DEFAULT_SPAN_M): PlanCorners {
   const mPerLng = M_PER_LAT * Math.cos((center.lat * Math.PI) / 180)
-  const halfWidthM = aspectRatio >= 1 ? DEFAULT_SPAN_M / 2 : (DEFAULT_SPAN_M * aspectRatio) / 2
-  const halfHeightM = aspectRatio >= 1 ? DEFAULT_SPAN_M / 2 / aspectRatio : DEFAULT_SPAN_M / 2
+  const halfWidthM = aspectRatio >= 1 ? spanM / 2 : (spanM * aspectRatio) / 2
+  const halfHeightM = aspectRatio >= 1 ? spanM / 2 / aspectRatio : spanM / 2
   return {
     topLeft: {
       lat: center.lat + halfHeightM / M_PER_LAT,

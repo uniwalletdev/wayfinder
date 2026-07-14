@@ -597,19 +597,21 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     // A new plan replaces any earlier upload for the same floor — the map only
     // ever shows one plan per floor, and hoarding superseded multi-hundred-KB
     // images is what used to blow through the localStorage quota (silently, so
-    // re-uploads looked saved but were gone after a reload).
+    // re-uploads looked saved but were gone after a reload). A map-sheet import
+    // may carry one plan per floor (the same artwork serving every floor).
     let planStored = true
-    if (result.floorPlan) {
-      const plan = result.floorPlan
+    if (result.floorPlans.length > 0) {
+      const plans = result.floorPlans
+      const replaced = new Set(plans.map((p) => p.floor))
       if (cloud && !isSeedVenue(activeVenueId)) {
         try {
-          await addRemoteFloorPlan(activeVenueId, plan)
+          for (const plan of plans) await addRemoteFloorPlan(activeVenueId, plan)
         } catch (e) {
-          console.warn("Could not sync the plan image to the server:", e)
+          console.warn("Could not sync the plan image(s) to the server:", e)
         }
-        setCustomFloorPlans((prev) => [...prev.filter((p) => p.floor !== plan.floor), plan])
+        setCustomFloorPlans((prev) => [...prev.filter((p) => !replaced.has(p.floor)), ...plans])
       } else {
-        const next = [...customFloorPlans.filter((p) => p.floor !== plan.floor), plan]
+        const next = [...customFloorPlans.filter((p) => !replaced.has(p.floor)), ...plans]
         planStored = saveVenueFloorPlans(activeVenueId, next)
         setCustomFloorPlans(next)
       }
@@ -628,7 +630,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const parts: string[] = []
     if (result.waypoints.length > 0) parts.push(`${result.waypoints.length} location${result.waypoints.length !== 1 ? "s" : ""}`)
     if (result.assets.length > 0) parts.push(`${result.assets.length} fixture${result.assets.length !== 1 ? "s" : ""}`)
-    if (result.floorPlan) parts.push("the plan image")
+    if (result.floorPlans.length === 1) parts.push("the plan image")
+    if (result.floorPlans.length > 1) parts.push(`the map on ${result.floorPlans.length} floors`)
     let message = parts.length > 0 ? `Upload complete — ${parts.join(", ")} added to the map.` : "Upload complete, but nothing usable was found on the plan."
     if (!planStored) {
       message +=
