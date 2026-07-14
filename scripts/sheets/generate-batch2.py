@@ -201,6 +201,11 @@ def barts_wps():
         {"name": "Cafe (North-East corner)", "type": "canteen", "pos": bx(520, 315), "group": "Entrances"},
         {"name": "St Bartholomew's-the-Less", "type": "other", "pos": bx(262, 315), "group": "Entrances"},
         {"name": "Pet CT Scanner (mobile)", "type": "department", "pos": bx(322, 750), "group": "Entrances"},
+        # Cycle parking from the trust's 'Cycle parking at St Bartholomew's' sheet
+        {"name": "Cycle parking — Robin Brook Centre (52 spaces)", "type": "other", "pos": bx(248, 640), "group": "Cycle parking"},
+        {"name": "Cycle parking — Kenton & Lucas Wing (40 spaces)", "type": "other", "pos": bx(370, 240), "group": "Cycle parking"},
+        {"name": "Cycle parking — Patient drop off/collection, Giltspur St (28 spaces)", "type": "other", "pos": bx(105, 545), "group": "Cycle parking"},
+        {"name": "Cycle parking — West Smithfield (King Henry VIII Gate)", "type": "other", "pos": bx(320, 290), "group": "Cycle parking"},
     ]
     return wps
 
@@ -299,6 +304,24 @@ RLH_WPS = [
     {"name": "Cycle parking — Cavell Street", "type": "other", "pos": rx(94, 380), "group": "Cycle parking"},
     {"name": "Cycle parking — Mount Terrace", "type": "other", "pos": rx(472, 538), "group": "Cycle parking"},
     {"name": "Cycle parking — Newark Street", "type": "other", "pos": rx(455, 318), "group": "Cycle parking"},
+]
+
+# Ground-floor lifts, receptions and further entrances from the trust's
+# 'Ground Floor lifts' map of the main building. That sheet is drawn north-up
+# while the site sheet is south-up, so positions are mapped into the site
+# sheet's frame with a two-anchor 180° transform (anchors: Main Entrance and
+# Luckes Entrance, which appear on both sheets — residual error a few px).
+RLH_WPS += [
+    {"name": "Lift 1", "type": "lift", "pos": rx(144, 431), "group": "Lifts & interior"},
+    {"name": "Lift 5", "type": "lift", "pos": rx(120, 386), "group": "Lifts & interior"},
+    {"name": "Lift 6", "type": "lift", "pos": rx(129, 353), "group": "Lifts & interior"},
+    {"name": "Lift 8", "type": "lift", "pos": rx(169, 427), "group": "Lifts & interior"},
+    {"name": "Lift 9", "type": "lift", "pos": rx(157, 435), "group": "Lifts & interior"},
+    {"name": "Main Reception", "type": "reception", "pos": rx(161, 454), "group": "Lifts & interior"},
+    {"name": "Emergency Department", "type": "department", "pos": rx(122, 444), "group": "Lifts & interior"},
+    {"name": "Cavell Entrance", "type": "exit", "pos": rx(172, 359), "group": "Lifts & interior"},
+    {"name": "Children's Hospital & Women's Centre Entrance", "type": "exit", "pos": rx(160, 471), "group": "Lifts & interior"},
+    {"name": "Renal & Urology Entrance", "type": "exit", "pos": rx(146, 465), "group": "Lifts & interior"},
 ]
 
 RLH = {
@@ -441,55 +464,70 @@ NUH = {
     "subtitle": "Barts Health NHS Trust · Glen Road, Plaistow, London E13 8SL",
     "center": (51.522778, 0.034732),
     "bounds": ((51.521278, 0.031123), (51.524278, 0.038341)),
-    "floors": [0, 1, 2, 3], "plan": "/floorplans/nuh/sitemap.png",
+    "floors": [0, 1, 2, 3], "plan": "/floorplans/nuh/sitemap.svg",
     "quick": ["Main Hospital Entrance", "Emergency Department", "Urgent Care Centre (UCC)", "Main Reception St Andrews Wing", "Pharmacy"],
     "accessibility": "Disabled parking and drop-off marked at the main entrances; pedestrian crossings marked on the welcome map.",
     "comment": [
         "Newham University Hospital — Barts Health NHS Trust. The floor plan is the",
-        "trust's own 'Welcome' sheet (aerial site view + full Department/Floor/Zone",
-        "directory). Zones here are NUMBERED points (1-12) along the main building,",
-        "so each directory entry sits at its zone circle on the correct floor; the",
-        "Gateway Surgical Centre carries its own floors (G-3). Cycle parking and",
-        "entrances come from the trust's cycle-parking edition of the same sheet.",
+        "trust's own 'Welcome' sheet as clean VECTOR artwork (aerial site view +",
+        "full Department/Floor/Zone directory). Zones here are NUMBERED points",
+        "(1-12) along the main building, so each directory entry sits at its zone",
+        "circle on the correct floor; the Gateway Surgical Centre carries its own",
+        "floors (G-3). Cycle parking and entrances come from the same sheet family.",
     ],
 }
 
 # ══ Mile End Hospital ═════════════════════════════════════════════════════════
-# Overlay image is cropped to the site plan: (245,55)-(709,572) of the sheet.
+# Rebuilt from the trust's current VECTOR site map ('Mile End Hospital site
+# map', 03/26 v2): numbered blocks with a full contents directory, crisper
+# artwork, and exact vector positions for every block circle and label.
+# Overlay crop: (8,12)-(640,595) of the sheet (the directory panel to the
+# right becomes the waypoints below).
 def mx(x, y):
-    return ((x - 245) / 464, (y - 55) / 517)
+    return ((x - 8) / 632, (y - 12) / 583)
 
-MEH_BLOCKS = [  # (block no, contents, x, y) — demolished/removed blocks omitted
-    (1, "THPCT Headquarters", 340, 449), (2, "Primary Care Building", 380, 494),
-    (3, "Emily Graham Building", 420, 477), (4, "Alderney Building", 375, 411),
-    (5, "Bancroft Unit", 310, 264), (6, "Beaumont House (SAU)", 455, 491),
-    (7, "X-Ray / Theatres / Pharmacy", 397, 350),
-    (8, "RHT Rheumatology / Moorfields Eye Clinic / Foot Health / Well Women", 452, 391),
-    (9, "Hospital Generator Building", 520, 428), (11, "Boiler House & Estates Workshops", 545, 381),
-    (12, "The Wheelchair Centre", 610, 321), (13, "Burdett House", 589, 216),
-    (14, "Restaurant", 536, 158), (15, "Therapy Unit", 497, 141), (16, "Hydrotherapy Pool", 457, 126),
-    (17, "Mortuary", 426, 150), (18, "Laundry Building", 355, 206),
-    (19, "Physiotherapy / Hastings Ward / Public Health & Improvement", 455, 183),
-    (20, "MHU — Leadenhall / Roman Ward", 526, 228),
-    (21, "Catering Department / Social Services / Chapel / Community Diabetics", 417, 209),
-    (22, "MHU — Globe / Brick Lane Ward", 486, 225),
-    (23, "Robinson Ward / Sports Medicine / PALS", 388, 243),
-    (24, "MHU — Rosebank / Millharbour / Lea Ward", 445, 295),
-    (25, "Bancroft Generator Building", 280, 392), (27, "Main Corridor", 410, 282),
-    (29, "GSL / Clinical Equipment / Dietitian", 497, 183),
-]
-MEH_CYCLE = [  # (spaces, x, y) — positions approximate to the sheet's arrows
-    (20, 500, 300), (14, 560, 240), (10, 600, 320), (14, 610, 215), (6, 525, 420),
-    (10, 445, 500), (4, 395, 505), (4, 430, 455), (8, 330, 430), (6, 355, 465),
+# (block no, block name, [contents], x, y) — circle positions from vector text
+MEH_BLOCKS = [
+    (1, "The Bridge", [], 189, 490),
+    (2, "Block 2", [], 232, 542),
+    (3, "Emily Graham", [], 290, 510),
+    (4, "Alderney", ["Central OP Offices", "XX Place Health Centre"], 235, 454),
+    (5, "Bancroft Unit", ["Café", "Community Diagnostic Centre (CDC)", "Early Diagnosis Centre",
+                          "Shadwell", "Gerry Bennett", "Columbia Annex"], 159, 384),
+    (6, "Beaumont House", [], 353, 526),
+    (7, "Block 7", ["Imaging Department", "Theatre"], 265, 364),
+    (8, "Grove Outpatients", [], 337, 429),
+    (9, "Block 9", [], 409, 469),
+    (11, "Block 11", ["BH Estates & Workshop"], 448, 402),
+    (12, "Block 12", [], 520, 341),
+    (13, "Burdett House", ["Education Academy", "Mental Health Outpatients (ELFT)"], 495, 218),
+    (14, "Restaurant", [], 441, 137),
+    (15, "Therapy Gyms", ["Physiotherapy Gym", "Children's Therapy Gym", "NHS Supply Chain", "Post Room"], 391, 116),
+    (16, "Hydro Pool", [], 349, 99),
+    (17, "Mortuary", [], 312, 127),
+    (18, "Laundry", [], 225, 194),
+    (19, "Diabetes Centre & Therapies", ["Diabetes Centre", "Therapies"], 341, 159),
+    (20, "MHU (ELFT) — Blocks 20", ["Leadenhall Ward", "Roman Ward"], 421, 220),
+    (21, "Security, Catering & Domestics", [], 292, 208),
+    (22, "MHU (ELFT) — Block 22", ["Brick Lane Ward", "Globe Ward"], 379, 262),
+    (23, "Block 23", ["Max Caplin Clinic", "QMUL Sports Medicine", "Robinson Centre (ELFT)"], 251, 241),
+    (24, "MHU (ELFT) — Block 24", ["Lea Ward", "Millharbour Ward", "Rosebank Ward", "Tribunal Rooms"], 334, 303),
+    (30, "Education Academy (Burdett House)", [], 547, 226),
 ]
 
 def meh_wps():
     wps = []
-    for no, contents, x, y in MEH_BLOCKS:
-        t = "canteen" if contents == "Restaurant" else ("ward" if "Ward" in contents and "MHU" in contents else None)
-        wps.append({"name": contents, "pos": mx(x, y), "desc": f"Block {no}", "group": "Buildings", "type": t})
-    for spaces, x, y in MEH_CYCLE:
-        wps.append({"name": f"Cycle parking ({spaces} spaces)", "type": "other", "pos": mx(x, y), "group": "Cycle parking"})
+    for no, bname, contents, x, y in MEH_BLOCKS:
+        t = "canteen" if bname == "Restaurant" else ("ward" if bname.startswith("MHU") else None)
+        wps.append({"name": bname, "pos": mx(x, y), "desc": f"Block {no}", "group": "Buildings", "type": t})
+        for i, c in enumerate(contents):
+            ct = "canteen" if c == "Café" else ("ward" if "Ward" in c else None)
+            pos = mx(x + (i % 3) * 13 - 13, y + (i // 3) * 11 + 12)
+            wps.append({"name": c, "pos": pos, "desc": f"Block {no} — {bname}", "group": "Buildings", "type": ct})
+    wps += [
+        {"name": "Moody Street Entrance", "type": "exit", "pos": mx(65, 286), "group": "Entrances"},
+        {"name": "MHU Reception", "type": "reception", "pos": mx(396, 278), "group": "Entrances"},
+    ]
     return wps
 
 
@@ -498,16 +536,114 @@ MEH = {
     "name": "Mile End Hospital",
     "subtitle": "Barts Health NHS Trust · Bancroft Road, London E1 4DG",
     "center": (51.525047, -0.042192),
-    "bounds": ((51.52343, -0.044524), (51.526664, -0.03986)),
-    "floors": [0], "plan": "/floorplans/meh/sitemap.png",
-    "quick": ["X-Ray / Theatres / Pharmacy", "Restaurant", "Therapy Unit", "Robinson Ward / Sports Medicine / PALS"],
-    "accessibility": "Level site with marked pedestrian routes between blocks.",
+    "bounds": ((51.523556, -0.044791), (51.526538, -0.039593)),
+    "floors": [0], "plan": "/floorplans/meh/sitemap.svg",
+    "quick": ["MHU Reception", "Grove Outpatients", "Imaging Department", "Restaurant", "Community Diagnostic Centre (CDC)"],
+    "accessibility": "Level site with marked building entrances, disabled parking by the Bancroft Unit, and lifts marked per block.",
     "comment": [
         "Mile End Hospital — Barts Health NHS Trust. The floor plan is the trust's",
-        "numbered-block site plan (from its cycle-parking sheet); each block's",
-        "'Building Contents' entry is a waypoint at the block's marker. Demolished",
-        "or removed blocks (10, 26, 28) are omitted. Cycle-parking positions are",
-        "approximate to the sheet's photo arrows.",
+        "current vector site map (03/26 v2): numbered blocks, whose 'contents'",
+        "directory becomes waypoints at each block's circle, plus the Moody Street",
+        "entrance and MHU Reception at their printed positions.",
+    ],
+}
+
+# ══ Whipps Cross Hospital (cycle map) ═════════════════════════════════════════
+# Overlay is the trust's cycle-parking site map image (1189x683). Departments,
+# wards and entrances read off the sheet at high zoom; the sheet notes
+# "Departments noted on map reflect ground floor", so everything is floor 0.
+def wx(x, y):
+    return (x / 1189, y / 683)
+
+WXH_WPS = [
+    # Emergency / assessment (red zone)
+    {"name": "A&E", "type": "department", "pos": wx(700, 150), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "Children's A&E", "type": "department", "pos": wx(690, 130), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "Urgent Care Centre (UCC)", "type": "department", "pos": wx(747, 128), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "AAU1 (Acute Assessment Unit)", "type": "department", "pos": wx(575, 168), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "AAU2 (Acute Assessment Unit)", "type": "department", "pos": wx(485, 235), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "Ambulatory Care", "type": "department", "pos": wx(565, 205), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "Forest Assessment", "type": "department", "pos": wx(555, 238), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "Clinical Decisions Unit (CDU)", "type": "department", "pos": wx(605, 258), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "A&E X-Ray", "type": "department", "pos": wx(608, 232), "desc": "Red zone", "group": "Emergency & assessment"},
+    {"name": "CT & Interventional", "type": "department", "pos": wx(500, 260), "desc": "Red zone", "group": "Emergency & assessment"},
+    # Diagnostics & clinics (orange zone)
+    {"name": "MRI", "type": "department", "pos": wx(365, 235), "desc": "Orange zone", "group": "Diagnostics & clinics"},
+    {"name": "Ultrasound", "type": "department", "pos": wx(412, 216), "desc": "Orange zone", "group": "Diagnostics & clinics"},
+    {"name": "Medical Photography", "type": "department", "pos": wx(388, 260), "desc": "Orange zone", "group": "Diagnostics & clinics"},
+    {"name": "Nuclear Medicine", "type": "department", "pos": wx(658, 255), "desc": "Pink zone", "group": "Diagnostics & clinics"},
+    {"name": "Theatres 3 & 4", "type": "department", "pos": wx(678, 255), "desc": "Pink zone", "group": "Diagnostics & clinics"},
+    {"name": "X-Ray", "type": "department", "pos": wx(717, 262), "desc": "Pink zone", "group": "Diagnostics & clinics"},
+    {"name": "Breast Clinic", "type": "department", "pos": wx(660, 330), "desc": "Pink zone", "group": "Diagnostics & clinics"},
+    {"name": "GP-OPD X-Ray", "type": "department", "pos": wx(710, 328), "desc": "Pink zone", "group": "Diagnostics & clinics"},
+    {"name": "Orthodontics", "type": "department", "pos": wx(372, 320), "desc": "Orange zone", "group": "Diagnostics & clinics"},
+    {"name": "Endoscopy", "type": "department", "pos": wx(398, 322), "desc": "Orange zone", "group": "Diagnostics & clinics"},
+    {"name": "Bereavement & Chaplaincy", "type": "other", "pos": wx(428, 342), "desc": "Orange zone", "group": "Diagnostics & clinics"},
+    {"name": "Learning Centre", "type": "department", "pos": wx(420, 373), "desc": "Orange zone", "group": "Diagnostics & clinics"},
+    {"name": "Gillian Hanson Unit", "type": "department", "pos": wx(485, 322), "desc": "Red zone", "group": "Diagnostics & clinics"},
+    {"name": "Chest Clinic", "type": "department", "pos": wx(290, 370), "desc": "Grey zone", "group": "Diagnostics & clinics"},
+    # Wards & units (green zone)
+    {"name": "Intensive Care Unit (ICU)", "type": "ward", "pos": wx(780, 250), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "High Dependency Unit (HDU)", "type": "ward", "pos": wx(780, 350), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Curie Ward", "type": "ward", "pos": wx(830, 250), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Nightingale Ward", "type": "ward", "pos": wx(877, 248), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Cath Labs", "type": "department", "pos": wx(902, 255), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Byron Ward", "type": "ward", "pos": wx(925, 242), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Elm Lodge", "type": "ward", "pos": wx(822, 350), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Mary Ward", "type": "ward", "pos": wx(838, 352), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Willow Lodge", "type": "ward", "pos": wx(880, 350), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Faraday Ward", "type": "ward", "pos": wx(888, 348), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Acorn Unit", "type": "ward", "pos": wx(902, 360), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Lister Ward", "type": "ward", "pos": wx(927, 350), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Pre-Assessment", "type": "department", "pos": wx(908, 352), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Aspen House", "type": "ward", "pos": wx(922, 405), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Margaret Centre", "type": "department", "pos": wx(1002, 258), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Woodlands Day Unit", "type": "department", "pos": wx(1055, 250), "desc": "Green zone", "group": "Wards & units"},
+    {"name": "Connaught Day Hospital", "type": "department", "pos": wx(1065, 312), "desc": "Green zone", "group": "Wards & units"},
+    # Outpatients & maternity (yellow / purple zones)
+    {"name": "Eye Treatment Centre", "type": "department", "pos": wx(702, 477), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Children's Outpatients", "type": "department", "pos": wx(785, 478), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Outpatients Reception", "type": "reception", "pos": wx(890, 505), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Outpatients A & B", "type": "department", "pos": wx(757, 562), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Outpatients 1-5", "type": "department", "pos": wx(862, 565), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Plane Tree Ward", "type": "ward", "pos": wx(660, 565), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Renal Unit", "type": "department", "pos": wx(705, 602), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Phlebotomy", "type": "department", "pos": wx(815, 560), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Audiology", "type": "department", "pos": wx(915, 570), "desc": "Yellow zone", "group": "Outpatients & maternity"},
+    {"name": "Maternity", "type": "department", "pos": wx(1022, 490), "desc": "Purple zone", "group": "Outpatients & maternity"},
+    {"name": "Antenatal", "type": "department", "pos": wx(1030, 438), "desc": "Purple zone", "group": "Outpatients & maternity"},
+    {"name": "EGU (Emergency Gynaecology Unit)", "type": "department", "pos": wx(975, 557), "desc": "Purple zone", "group": "Outpatients & maternity"},
+    {"name": "Restaurant", "type": "canteen", "pos": wx(565, 362), "desc": "Red zone", "group": "Outpatients & maternity"},
+    # Entrances, buildings & cycle parking
+    {"name": "Main Entrance", "type": "exit", "pos": wx(305, 262), "group": "Entrances & parking"},
+    {"name": "Sorbus House", "type": "other", "pos": wx(255, 140), "group": "Entrances & parking"},
+    {"name": "Gate Lodge", "type": "other", "pos": wx(300, 140), "group": "Entrances & parking"},
+    {"name": "Tarnswood Health & Wellbeing", "type": "department", "pos": wx(925, 78), "group": "Entrances & parking"},
+    {"name": "Woodbury Unit", "type": "department", "pos": wx(990, 132), "group": "Entrances & parking"},
+    {"name": "M&S", "type": "other", "pos": wx(992, 447), "group": "Entrances & parking"},
+    {"name": "Cycle parking — Main entrance (12 spaces)", "type": "other", "pos": wx(300, 300), "group": "Entrances & parking"},
+    {"name": "Cycle parking — A&E (6 spaces)", "type": "other", "pos": wx(640, 165), "group": "Entrances & parking"},
+    {"name": "Cycle parking — Hospital road (18 spaces)", "type": "other", "pos": wx(860, 470), "group": "Entrances & parking"},
+    {"name": "Cycle parking — Eye Treatment Centre (8 spaces)", "type": "other", "pos": wx(690, 460), "group": "Entrances & parking"},
+    {"name": "Cycle parking — Children's Outpatients (12 spaces)", "type": "other", "pos": wx(790, 500), "group": "Entrances & parking"},
+]
+
+WXH = {
+    "const": "WXH_VENUE", "id": "whipps-cross-hospital", "slug": "whipps-cross-hospital",
+    "name": "Whipps Cross Hospital",
+    "subtitle": "Barts Health NHS Trust · Whipps Cross Road, Leytonstone, London E11 1NR",
+    "center": (51.578831, 0.002653),
+    "bounds": ((51.577666, -0.000602), (51.579996, 0.005908)),
+    "floors": [0], "plan": "/floorplans/wxh/sitemap.png",
+    "quick": ["Main Entrance", "A&E", "Urgent Care Centre (UCC)", "Outpatients Reception", "Maternity"],
+    "accessibility": "Colour-coded zones with numbered wayfinding junctions; disabled parking marked; step-free routes along Hospital Road.",
+    "comment": [
+        "Whipps Cross Hospital — Barts Health NHS Trust. The floor plan is the",
+        "trust's colour-zoned site map (from its cycle-parking sheet): red",
+        "(emergency), orange/pink (diagnostics), green (wards), yellow",
+        "(outpatients) and purple (maternity) zones with numbered wayfinding",
+        "junctions. Departments are placed at their labels; the sheet notes they",
+        "reflect the ground floor, so all waypoints are floor 0.",
     ],
 }
 
@@ -517,5 +653,6 @@ for cfg, wps, fname in (
     (RLH, RLH_WPS, "rlh.ts"),
     (NUH, nuh_wps(), "nuh.ts"),
     (MEH, meh_wps(), "meh.ts"),
+    (WXH, WXH_WPS, "wxh.ts"),
 ):
     emit(cfg, wps, os.path.join(REPO, "src", "lib", "venues", fname))

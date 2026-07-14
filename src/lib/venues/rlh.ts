@@ -52,5 +52,16 @@ export const RLH_VENUE: Venue = {
     { id: "cycle-parking-cavell-street-f0", name: "Cycle parking — Cavell Street", type: "other", coordinates: { lat: 51.518731, lng: -0.061178 }, floor: 0 },
     { id: "cycle-parking-mount-terrace-f0", name: "Cycle parking — Mount Terrace", type: "other", coordinates: { lat: 51.517688, lng: -0.057167 }, floor: 0 },
     { id: "cycle-parking-newark-street-f0", name: "Cycle parking — Newark Street", type: "other", coordinates: { lat: 51.519141, lng: -0.057347 }, floor: 0 },
+    // ── Lifts & interior ──────────────────────────────────────────────────
+    { id: "lift-1-f0", name: "Lift 1", type: "lift", coordinates: { lat: 51.518394, lng: -0.060648 }, floor: 0 },
+    { id: "lift-5-f0", name: "Lift 5", type: "lift", coordinates: { lat: 51.518692, lng: -0.060902 }, floor: 0 },
+    { id: "lift-6-f0", name: "Lift 6", type: "lift", coordinates: { lat: 51.51891, lng: -0.060807 }, floor: 0 },
+    { id: "lift-8-f0", name: "Lift 8", type: "lift", coordinates: { lat: 51.518421, lng: -0.060382 }, floor: 0 },
+    { id: "lift-9-f0", name: "Lift 9", type: "lift", coordinates: { lat: 51.518368, lng: -0.06051 }, floor: 0 },
+    { id: "main-reception-f0", name: "Main Reception", type: "reception", coordinates: { lat: 51.518242, lng: -0.060467 }, floor: 0 },
+    { id: "emergency-department-f0", name: "Emergency Department", type: "department", coordinates: { lat: 51.518309, lng: -0.060881 }, floor: 0 },
+    { id: "cavell-entrance-f0", name: "Cavell Entrance", type: "exit", coordinates: { lat: 51.51887, lng: -0.060351 }, floor: 0 },
+    { id: "childrens-hospital-womens-centre-entrance-f0", name: "Children's Hospital & Women's Centre Entrance", type: "exit", coordinates: { lat: 51.51813, lng: -0.060478 }, floor: 0 },
+    { id: "renal-urology-entrance-f0", name: "Renal & Urology Entrance", type: "exit", coordinates: { lat: 51.51817, lng: -0.060626 }, floor: 0 },
   ],
 }

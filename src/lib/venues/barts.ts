@@ -98,5 +98,10 @@ export const BARTS_VENUE: Venue = {
     { id: "cafe-north-east-corner-f0", name: "Cafe (North-East corner)", type: "canteen", coordinates: { lat: 51.518342, lng: -0.099641 }, floor: 0 },
     { id: "st-bartholomews-the-less-f0", name: "St Bartholomew's-the-Less", type: "other", coordinates: { lat: 51.518342, lng: -0.101175 }, floor: 0 },
     { id: "pet-ct-scanner-mobile-f0", name: "Pet CT Scanner (mobile)", type: "department", coordinates: { lat: 51.516732, lng: -0.100818 }, floor: 0 },
+    // ── Cycle parking ─────────────────────────────────────────────────────
+    { id: "cycle-parking-robin-brook-centre-52-spaces-f0", name: "Cycle parking — Robin Brook Centre (52 spaces)", type: "other", coordinates: { lat: 51.517139, lng: -0.101258 }, floor: 0 },
+    { id: "cycle-parking-kenton-lucas-wing-40-spaces-f0", name: "Cycle parking — Kenton & Lucas Wing (40 spaces)", type: "other", coordinates: { lat: 51.51862, lng: -0.100533 }, floor: 0 },
+    { id: "cycle-parking-patient-drop-off-collection-giltspur-st-28-spaces-f0", name: "Cycle parking — Patient drop off/collection, Giltspur St (28 spaces)", type: "other", coordinates: { lat: 51.517491, lng: -0.102109 }, floor: 0 },
+    { id: "cycle-parking-west-smithfield-king-henry-viii-gate-f0", name: "Cycle parking — West Smithfield (King Henry VIII Gate)", type: "other", coordinates: { lat: 51.518435, lng: -0.10083 }, floor: 0 },
   ],
 }

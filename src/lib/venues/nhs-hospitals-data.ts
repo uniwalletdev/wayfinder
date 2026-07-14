@@ -6,7 +6,7 @@
 // venues, as are Queen Elizabeth Hospital (Woolwich) and University Hospital
 // Lewisham, St Bartholomew's, St Mary's Paddington, The Royal London (both its
 // duplicate pins), Newham and Mile End, which ship as mapped venues built from
-// their trusts' own published site maps.
+// their trusts' own published site maps (Whipps Cross too).
 
 export type NhsHospitalSite = [name: string, lat: number, lng: number]
 
@@ -716,7 +716,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Weymouth Community Hospital", 50.62104, -2.450998],
   ["Weymouth Street Hospital", 51.520218, -0.15068],
   ["Wharfedale Hospital", 53.91436, -1.700584],
-  ["Whipps Cross Hospital", 51.578831, 0.002653],
   ["Whiston Hospital", 53.420475, -2.784939],
   ["Whitchurch Community Hospital", 52.97274, -2.679202],
   ["White Cross Rehabilitation Hospital", 53.971653, -1.076466],
