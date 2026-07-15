@@ -30,16 +30,13 @@ interface Props {
   showAssets?: boolean
   onMapReady: () => void
   leafletMapRef?: MutableRefObject<{ flyTo: (latlng: [number, number], zoom: number) => void; zoomIn: () => void; zoomOut: () => void } | null>
-  // Basemap tiles: light/dark street maps or real satellite imagery — set by the
-  // map-style floating control.
-  mapStyle?: "light" | "dark" | "satellite"
+  // Basemap tiles: light or dark street map — set by the map-style floating
+  // control.
+  mapStyle?: "light" | "dark"
 }
 
 const LIGHT_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
 const DARK_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png"
-// Esri World Imagery — real satellite/aerial photography, free to use with
-// attribution and no API key. Lets the map show the actual buildings from above.
-const SATELLITE_TILES = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
 
 export default function FloorPlanMap({
   currentFloor,
@@ -128,17 +125,14 @@ export default function FloorPlanMap({
     }
   }, [])
 
-  // Swap basemap tiles when the map-style control cycles light/dark/satellite.
+  // Swap basemap tiles when the map-style control toggles light/dark.
   useEffect(() => {
     if (!mapRef.current) return
     const map = mapRef.current
     if (tileLayerRef.current) map.removeLayer(tileLayerRef.current)
-    const url = mapStyle === "satellite" ? SATELLITE_TILES : mapStyle === "dark" ? DARK_TILES : LIGHT_TILES
+    const url = mapStyle === "dark" ? DARK_TILES : LIGHT_TILES
     tileLayerRef.current = L.tileLayer(url, {
       maxZoom: 22,
-      // Esri imagery is served natively up to z19; upscale beyond that instead
-      // of dropping to blank tiles when someone zooms in close on a floor.
-      ...(mapStyle === "satellite" ? { maxNativeZoom: 19 } : {}),
     }).addTo(map)
     tileLayerRef.current.bringToBack()
   }, [mapStyle])
@@ -178,15 +172,14 @@ export default function FloorPlanMap({
     const plan = floorPlans.find((fp) => fp.floor === currentFloor)
     if (plan) {
       const overlay = L.imageOverlay(plan.imageUrl, plan.bounds as L.LatLngBoundsExpression, {
-        // Over satellite imagery, drop the schematic to a faint tint so the real
-        // buildings below stay visible; over the flat street maps keep it solid.
-        opacity: mapStyle === "satellite" ? 0.4 : 0.85,
+        // Keep the floor plan solid over the flat street maps.
+        opacity: 0.85,
         interactive: false,
       })
       overlay.addTo(map)
       floorPlanLayerRef.current = overlay
     }
-  }, [currentFloor, floorPlans, mapStyle])
+  }, [currentFloor, floorPlans])
 
   // Update waypoint markers
   useEffect(() => {

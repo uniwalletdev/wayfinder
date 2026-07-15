@@ -89,18 +89,17 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     try { window.localStorage.setItem(MAP_VIEW_KEY, next) } catch {}
   }, [])
 
-  // Basemap/scene style — the map-style floating control cycles through a light
-  // street map, a dark one, and real satellite/aerial imagery. Defaults to the
-  // light map: this is an indoor-navigation app, and satellite only ever shows a
-  // building's *roof*, over which the floor plan has to be faded to a ghost to
-  // stay visible. The clean street map lets the floor plan render crisp and
-  // full-strength on top — the actual thing you navigate by indoors, the way
-  // Google/Apple indoor maps do it. Satellite stays one tap away for outdoor
-  // context, and a returning user's saved choice still overrides this.
-  const [mapStyle, setMapStyle] = useState<"light" | "dark" | "satellite">("light")
+  // Basemap/scene style — the map-style floating control toggles between a light
+  // street map and a dark one. This is an indoor-navigation app: satellite
+  // imagery only ever shows a building's *roof*, over which the floor plan had to
+  // be faded to a ghost to stay visible, so it was dropped as unhelpful. The
+  // clean street maps let the floor plan render crisp and full-strength on top —
+  // the actual thing you navigate by indoors, the way Google/Apple indoor maps
+  // do it. A returning user's saved choice still overrides the default.
+  const [mapStyle, setMapStyle] = useState<"light" | "dark">("light")
   const toggleMapStyle = useCallback(() => {
     setMapStyle((v) => {
-      const next = v === "light" ? "dark" : v === "dark" ? "satellite" : "light"
+      const next = v === "light" ? "dark" : "light"
       try { window.localStorage.setItem(MAP_STYLE_KEY, next) } catch {}
       return next
     })
@@ -204,7 +203,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     try {
       if (window.localStorage.getItem(MAP_VIEW_KEY) === "3d") setMapView("3d")
       const savedStyle = window.localStorage.getItem(MAP_STYLE_KEY)
-      if (savedStyle === "dark" || savedStyle === "satellite") setMapStyle(savedStyle)
+      // "satellite" is a legacy value from before it was removed — fall back to dark.
+      if (savedStyle === "dark" || savedStyle === "satellite") setMapStyle("dark")
       if (window.localStorage.getItem(ALWAYS_STEPFREE_KEY) === "false") setAlwaysStepFree(false)
     } catch {}
     const restored = loadUserVenues()
