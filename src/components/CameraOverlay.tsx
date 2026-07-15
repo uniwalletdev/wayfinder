@@ -38,6 +38,12 @@ interface Props {
 
 const WALK_SPEED_M_PER_MIN = 80
 
+// How far ahead along the route the direction arrow aims. It chases a point this
+// many metres further down the drawn path than where the walker currently sits
+// on it, so the arrow follows the route's next bend rather than pointing as the
+// crow flies at a far destination (which can aim straight through walls/fences).
+const ARROW_LOOK_AHEAD_M = 20
+
 export default function CameraOverlay({ mode, onQRDetected, onClose, nav }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -178,6 +184,63 @@ function fmtDistance(m: number): string {
   return `${(m / 1000).toFixed(1)}km`
 }
 
+function lerpCoord(a: Coordinates, b: Coordinates, t: number): Coordinates {
+  return { lat: a.lat + (b.lat - a.lat) * t, lng: a.lng + (b.lng - a.lng) * t }
+}
+
+// Fraction along segment a→b (clamped to [0,1]) of the point nearest p, using a
+// local equirectangular projection — accurate at the short ranges a walking
+// route spans.
+function nearestFractionOnSegment(p: Coordinates, a: Coordinates, b: Coordinates): number {
+  const mPerDegLat = 111320
+  const mPerDegLng = 111320 * Math.cos((a.lat * Math.PI) / 180)
+  const bx = (b.lng - a.lng) * mPerDegLng
+  const by = (b.lat - a.lat) * mPerDegLat
+  const px = (p.lng - a.lng) * mPerDegLng
+  const py = (p.lat - a.lat) * mPerDegLat
+  const len2 = bx * bx + by * by
+  if (len2 === 0) return 0
+  return Math.max(0, Math.min(1, (px * bx + py * by) / len2))
+}
+
+// The point ~lookAheadM metres further along `path` than where `pos` projects
+// onto it. The arrow chases this so it tracks the actual route ahead — following
+// corridors and footpaths round their bends — instead of beelining at the far
+// destination. Returns null when there's no usable path.
+function lookAheadOnPath(pos: Coordinates, path: Coordinates[], lookAheadM: number): Coordinates | null {
+  if (path.length < 2) return null
+
+  // Project the walker onto the polyline: nearest point across all segments.
+  let bestSeg = 0
+  let bestPoint = path[0]
+  let bestDist = Infinity
+  for (let i = 0; i < path.length - 1; i++) {
+    const t = nearestFractionOnSegment(pos, path[i], path[i + 1])
+    const pt = lerpCoord(path[i], path[i + 1], t)
+    const d = distanceMeters(pos, pt)
+    if (d < bestDist) {
+      bestDist = d
+      bestSeg = i
+      bestPoint = pt
+    }
+  }
+
+  // Walk forward from that projected point by lookAheadM along the remaining path.
+  let remaining = lookAheadM
+  let from = bestPoint
+  for (let i = bestSeg; i < path.length - 1; i++) {
+    const to = path[i + 1]
+    const segLen = distanceMeters(from, to)
+    if (segLen >= remaining) {
+      return lerpCoord(from, to, segLen === 0 ? 1 : remaining / segLen)
+    }
+    remaining -= segLen
+    from = to
+  }
+  // Ran off the end of the path — the destination itself is the target.
+  return path[path.length - 1]
+}
+
 // Shortest signed turn a→b in (-180, 180]. Positive = target is to the right of
 // where the phone is pointing, negative = to the left.
 function relativeAngle(target: number, heading: number): number {
@@ -204,8 +267,8 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
 
     const arrived = /arrived/i.test(currentStep.instruction) && stepIndex >= route.steps.length - 1
 
-    // Point the arrow at the current step's waypoint if it has one, otherwise
-    // straight at the destination.
+    // The "next turn" target names the distance in the banner: the current
+    // step's waypoint if it has one, otherwise the final destination.
     const target = currentStep.waypoint?.coordinates ?? destination.coordinates
     const distToNext = position ? distanceMeters(position, target) : currentStep.distance
 
@@ -214,7 +277,14 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
     for (let i = stepIndex + 1; i < route.steps.length; i++) remaining += route.steps[i].distance
     const eta = Math.max(1, Math.round(remaining / WALK_SPEED_M_PER_MIN))
 
-    const bearingToTarget = position ? bearingBetween(position, target) : null
+    // Aim the arrow along the drawn route, not straight at the far destination:
+    // chase a point a short way ahead on the actual path so the cue follows the
+    // route's next bend (round buildings, down corridors) instead of pointing
+    // through them. Falls back to the beeline target when there's no usable path
+    // (e.g. an approximate indoor hop, which is already a straight line anyway).
+    const arrowTarget =
+      (position ? lookAheadOnPath(position, route.geometry, ARROW_LOOK_AHEAD_M) : null) ?? target
+    const bearingToTarget = position ? bearingBetween(position, arrowTarget) : null
     const rel =
       bearingToTarget != null && heading != null ? relativeAngle(bearingToTarget, heading) : null
 
