@@ -9,6 +9,19 @@ import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
 import { ASSET_CATEGORY_ICONS, ASSET_CATEGORY_LABELS } from "@/lib/asset-meta"
 import { buildFloorSchematic } from "@/lib/schematic"
 
+// Escape strings before they go into Leaflet popup/label HTML. Waypoint names and
+// descriptions come from other users (shared server venues), AI sign-reading, and
+// imported files, so a name like `<img src=x onerror=…>` would otherwise run
+// script in every visitor's browser. Always wrap interpolated user text with this.
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+}
+
 interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
@@ -209,7 +222,7 @@ export default function FloorPlanMap({
       })
 
       const marker = L.marker([w.coordinates.lat, w.coordinates.lng], { icon })
-        .bindPopup(`<b>${w.name}</b>${w.description ? `<br><small>${w.description}</small>` : ""}`)
+        .bindPopup(`<b>${escapeHtml(w.name)}</b>${w.description ? `<br><small>${escapeHtml(w.description)}</small>` : ""}`)
         .addTo(map)
 
       waypointLayersRef.current.push(marker)
@@ -247,7 +260,7 @@ export default function FloorPlanMap({
           className: "",
         })
         const marker = L.marker([a.coordinates.lat, a.coordinates.lng], { icon, zIndexOffset: 200 })
-          .bindPopup(`<b>${a.name}</b><br><small>${ASSET_CATEGORY_LABELS[a.category]}</small>`)
+          .bindPopup(`<b>${escapeHtml(a.name)}</b><br><small>${ASSET_CATEGORY_LABELS[a.category]}</small>`)
           .addTo(map)
         assetLayersRef.current.push(marker)
       })
@@ -287,7 +300,7 @@ export default function FloorPlanMap({
           font-size:10px;font-weight:600;color:#334155;white-space:nowrap;
           transform:translate(-50%,-50%);
           text-shadow:0 1px 2px rgba(255,255,255,0.9);
-        ">${WAYPOINT_TYPE_ICONS[room.type]}<span>${room.name}</span></div>`,
+        ">${WAYPOINT_TYPE_ICONS[room.type]}<span>${escapeHtml(room.name)}</span></div>`,
         iconSize: [0, 0],
         className: "",
       })

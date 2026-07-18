@@ -258,6 +258,7 @@ export default function LeftPanel({
             route={route}
             currentStepIndex={currentStepIndex}
             floorNaming={venue.floorNaming}
+            expanded={expanded}
             onStop={onStop}
             onScanQR={onScanQR}
             onOpenCamera={onOpenCamera}
@@ -277,6 +278,7 @@ export default function LeftPanel({
             route={route}
             routeLoading={routeLoading}
             floorNaming={venue.floorNaming}
+            expanded={expanded}
             travelMode={travelMode}
             onTravelModeChange={onTravelModeChange}
             routePreference={routePreference}
@@ -437,6 +439,7 @@ function RoutePreviewCard({
   route,
   routeLoading,
   floorNaming,
+  expanded,
   travelMode,
   onTravelModeChange,
   routePreference,
@@ -452,6 +455,7 @@ function RoutePreviewCard({
   route: Route
   routeLoading: boolean
   floorNaming?: FloorNaming
+  expanded: boolean
   travelMode: TravelMode
   onTravelModeChange: (m: TravelMode) => void
   routePreference: RoutePreference
@@ -465,6 +469,9 @@ function RoutePreviewCard({
 }) {
   const hasArrivalInfo = !!(destination.hours || destination.arrivalNotes || destination.typicalWait)
   const isOpen = destination.hours?.toLowerCase().includes("open") ?? false
+  // Phones peek the destination header + Start button and fold away the options
+  // so the previewed route is visible on the map; the grab handle expands them.
+  const detail = expanded ? "" : "hidden lg:block"
 
   return (
     <div className="rounded-[18px] border border-wf-border p-[18px] shadow-[0_10px_30px_rgba(11,27,46,0.08)]">
@@ -483,6 +490,7 @@ function RoutePreviewCard({
         </button>
       </div>
 
+      <div className={detail}>
       {hasArrivalInfo && (
         <div className="mb-4">
           {destination.hours && (
@@ -561,6 +569,7 @@ function RoutePreviewCard({
           )}
         </>
       )}
+      </div>
 
       <div className="flex gap-2.5">
         <button
@@ -699,6 +708,7 @@ function NavigatingSummary({
   route,
   currentStepIndex,
   floorNaming,
+  expanded,
   onStop,
   onScanQR,
   onOpenCamera,
@@ -707,12 +717,17 @@ function NavigatingSummary({
   route: Route
   currentStepIndex: number
   floorNaming?: FloorNaming
+  expanded: boolean
   onStop: () => void
   onScanQR: () => void
   onOpenCamera: () => void
 }) {
   const step = route.steps[currentStepIndex] ?? route.steps[route.steps.length - 1]
   const isArrived = step.instruction.includes("arrived")
+  // On phones the sheet collapses to a peek so the map is visible while walking:
+  // the destination header and the current-step banner stay, the details drop
+  // away. The grab handle brings them back. lg+ always shows everything.
+  const detail = expanded ? "" : "hidden lg:block"
 
   return (
     <div className="rounded-[18px] border border-wf-border p-[18px] shadow-[0_10px_30px_rgba(11,27,46,0.08)]">
@@ -741,33 +756,35 @@ function NavigatingSummary({
         </div>
       </div>
 
-      <div className="mb-4 grid grid-cols-3 gap-2">
-        <StatTile label="time" value={`${route.estimatedMinutes} min`} />
-        <StatTile label="distance" value={fmtDistance(route.totalDistance)} />
-        <StatTile label="floor" value={floorLabel(destination.floor, floorNaming)} />
-      </div>
+      <div className={detail}>
+        <div className="mb-4 grid grid-cols-3 gap-2">
+          <StatTile label="time" value={`${route.estimatedMinutes} min`} />
+          <StatTile label="distance" value={fmtDistance(route.totalDistance)} />
+          <StatTile label="floor" value={floorLabel(destination.floor, floorNaming)} />
+        </div>
 
-      <div className="mb-2.5 flex gap-2.5">
+        <div className="mb-2.5 flex gap-2.5">
+          <button
+            onClick={onScanQR}
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-wf-primary py-2.5 text-xs font-semibold text-white"
+          >
+            <QrCode size={14} /> Scan to locate me
+          </button>
+          <button
+            onClick={onOpenCamera}
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-wf-border py-2.5 text-xs font-semibold text-wf-ink"
+          >
+            <Camera size={14} /> Live camera
+          </button>
+        </div>
+
         <button
-          onClick={onScanQR}
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-wf-primary py-2.5 text-xs font-semibold text-white"
+          onClick={onStop}
+          className="flex w-full items-center justify-center gap-2 rounded-xl border border-wf-border py-3 text-sm font-semibold text-wf-ink"
         >
-          <QrCode size={14} /> Scan to locate me
-        </button>
-        <button
-          onClick={onOpenCamera}
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-wf-border py-2.5 text-xs font-semibold text-wf-ink"
-        >
-          <Camera size={14} /> Live camera
+          Stop navigating
         </button>
       </div>
-
-      <button
-        onClick={onStop}
-        className="flex w-full items-center justify-center gap-2 rounded-xl border border-wf-border py-3 text-sm font-semibold text-wf-ink"
-      >
-        Stop navigating
-      </button>
     </div>
   )
 }

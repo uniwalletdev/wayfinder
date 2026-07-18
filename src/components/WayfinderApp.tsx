@@ -23,13 +23,11 @@ import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
 import VenuePicker from "@/components/VenuePicker"
-import AuthModal from "@/components/AuthModal"
 import { useDeviceHeading } from "@/lib/use-heading"
 import { usePedestrianPosition } from "@/lib/use-pedestrian-position"
+import { useTrailRecorder } from "@/lib/use-trail-recorder"
 import { useArSupport } from "@/lib/use-ar-support"
-import { useSupabaseSession } from "@/lib/supabase/use-session"
-import { getSupabaseBrowserClient } from "@/lib/supabase/client"
-import { fetchAccessibleVenues, createRemoteVenue, addRemoteWaypoints, addRemoteFloorPlan, deleteRemoteVenue } from "@/lib/supabase/venues-remote"
+import { fetchServerVenues, createServerVenue, addServerWaypoints, deleteServerVenue, ownsVenue } from "@/lib/venues-server"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 // The 3D half of the map's 2D/3D toggle. three.js is browser-only, and the
@@ -42,7 +40,7 @@ const ArNavView = dynamic(() => import("@/components/ArNavView"), { ssr: false }
 // FloorPlanMap — it must never be pulled into the server bundle.
 const UploadPlanMode = dynamic(() => import("@/components/UploadPlanMode"), { ssr: false })
 
-type OverlayMode = "none" | "search" | "qr" | "live-camera" | "ar-camera" | "survey" | "upload-plan" | "venues" | "auth" | "share"
+type OverlayMode = "none" | "search" | "qr" | "live-camera" | "ar-camera" | "survey" | "upload-plan" | "venues" | "share"
 type GpsStatus = "requesting" | "active" | "denied"
 
 // Minimal interface — avoids importing Leaflet types on the server. Both map
@@ -140,19 +138,16 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // place — public or private — renders and routes the same way.
   const [activeVenueId, setActiveVenueId] = useState<string>(DEFAULT_VENUE.id)
   const [userVenues, setUserVenues] = useState<Venue[]>([])
+  // Whether a shared-venue backend is reachable. When true, user-created venues
+  // and their surveyed/AI-read points live on the server (reusable across
+  // devices) instead of only in this browser's localStorage.
+  const [serverConfigured, setServerConfigured] = useState(false)
   const venue = useMemo(() => getVenueById(activeVenueId, userVenues) ?? DEFAULT_VENUE, [activeVenueId, userVenues])
   const allVenues = useMemo(() => [...SEED_VENUES, ...userVenues], [userVenues])
-
-  // Accounts (optional). In local mode this is { user: null, cloudEnabled: false }
-  // and nothing below changes. When signed in, venues sync to Supabase and the
-  // public/private rules are enforced server-side by Row-Level Security.
-  const { user, cloudEnabled } = useSupabaseSession()
-  const cloud = cloudEnabled && !!user
 
   // Whether this phone can run immersive WebXR AR (native SLAM). Decides whether
   // "Live camera" opens the floor-anchored AR view or the compass overlay.
   const arSupported = useArSupport()
-  const isSeedVenue = (id: string) => SEED_VENUES.some((s) => s.id === id)
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
@@ -218,18 +213,25 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setCustomAssets(loadVenueAssets(startId))
   }, [])
 
-  // When signed in, the backend is the source of truth for the user's venues:
-  // fetch the ones they're allowed to see (RLS-filtered) — each already carries
-  // its waypoints — and use them in place of the local list. Sign-out reverts to
-  // local in the handler. The fetch is async, so it never blocks local mode.
+  // If a shared-venue backend is configured, fold the server's venues into the
+  // list (each already carries its waypoints). Merged by id with the server
+  // winning, so a venue this device created and synced shows once, not twice.
+  // No backend → this is a no-op and everything stays device-local.
   useEffect(() => {
-    if (!cloud) return
     let active = true
-    fetchAccessibleVenues()
-      .then((vs) => { if (active) setUserVenues(vs) })
-      .catch((e) => console.warn("Could not load venues from the server:", e))
+    fetchServerVenues().then(({ configured, venues }) => {
+      if (!active) return
+      setServerConfigured(configured)
+      if (configured && venues.length > 0) {
+        setUserVenues((prev) => {
+          const byId = new Map(prev.map((v) => [v.id, v]))
+          for (const v of venues) byId.set(v.id, v)
+          return [...byId.values()]
+        })
+      }
+    })
     return () => { active = false }
-  }, [cloud])
+  }, [])
 
   const allWaypoints = useMemo(() => [...venue.waypoints, ...customWaypoints], [venue, customWaypoints])
   // Plans uploaded via "Upload plan" *override* whatever the venue already
@@ -301,6 +303,17 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         : { ...s, currentPosition: fusedPosition, positionAccuracy: fusedAccuracy }
     )
   }, [fusedPosition, fusedAccuracy])
+
+  // Passively record the path walked while navigating and post it to the shared
+  // backend as a corridor 'trail' — the map learning from being used. Purely a
+  // byproduct: it never changes what the navigator sees, and with no database
+  // configured the signal is simply dropped (see /api/signals).
+  useTrailRecorder({
+    active: navState.isNavigating,
+    venueId: activeVenueId,
+    position: navState.currentPosition,
+    floor: navState.currentFloor,
+  })
 
   const activateDemoLocation = useCallback(() => {
     setGpsStatus("active")
@@ -507,29 +520,32 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     } catch {}
   }, [setAnchor, allWaypoints, handleDestinationSelect])
 
+  // Persist points added by surveying / AI sign-reading. For a server venue this
+  // device owns, they go to the shared backend (and are shown from the returned
+  // rows, not re-saved locally, so they don't double up against the venue's
+  // server-loaded points). Otherwise — seed venues, someone else's venue, or
+  // local mode — they stay on this device.
+  const persistNewWaypoints = useCallback(
+    async (newWaypoints: Waypoint[]) => {
+      if (serverConfigured && ownsVenue(activeVenueId)) {
+        const { ok, saved } = await addServerWaypoints(activeVenueId, newWaypoints)
+        setCustomWaypoints((prev) => [...prev, ...(ok && saved.length ? saved : newWaypoints)])
+        return
+      }
+      setCustomWaypoints((prev) => {
+        const next = [...prev, ...newWaypoints]
+        saveVenueWaypoints(activeVenueId, next)
+        return next
+      })
+    },
+    [activeVenueId, serverConfigured]
+  )
+
   const handleSurveyComplete = useCallback(async (result: SurveyResult) => {
     setOverlay("none")
     const newWaypoints = [...result.markedWaypoints, ...result.aiWaypoints]
     if (newWaypoints.length > 0) {
-      if (cloud && !isSeedVenue(activeVenueId)) {
-        // Cloud venue: persist to the backend (RLS checks write access). Show the
-        // saved rows immediately; they're not also written to local storage, so
-        // they won't double up against the venue's server-loaded waypoints.
-        try {
-          const saved = await addRemoteWaypoints(activeVenueId, newWaypoints)
-          setCustomWaypoints((prev) => [...prev, ...saved])
-        } catch (e) {
-          console.warn("Could not sync points to the server:", e)
-          setCustomWaypoints((prev) => [...prev, ...newWaypoints])
-        }
-      } else {
-        // Seed venue or local mode: keep points on this device.
-        setCustomWaypoints((prev) => {
-          const next = [...prev, ...newWaypoints]
-          saveVenueWaypoints(activeVenueId, next)
-          return next
-        })
-      }
+      await persistNewWaypoints(newWaypoints)
     }
     if (result.trails.length > 0) {
       setSurveyTrails((prev) => {
@@ -563,7 +579,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       message = "Survey complete — no clear signs were found in the footage. Try keeping signs and door plates in view, or use “Mark Location”."
     }
     alert(message)
-  }, [cloud, activeVenueId])
+  }, [activeVenueId, persistNewWaypoints])
 
   // Mirrors handleSurveyComplete above for plans uploaded via UploadPlanMode:
   // any detected waypoints/corridors are persisted exactly the same way, plus
@@ -571,21 +587,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const handleUploadComplete = useCallback(async (result: UploadPlanResult) => {
     setOverlay("none")
     if (result.waypoints.length > 0) {
-      if (cloud && !isSeedVenue(activeVenueId)) {
-        try {
-          const saved = await addRemoteWaypoints(activeVenueId, result.waypoints)
-          setCustomWaypoints((prev) => [...prev, ...saved])
-        } catch (e) {
-          console.warn("Could not sync points to the server:", e)
-          setCustomWaypoints((prev) => [...prev, ...result.waypoints])
-        }
-      } else {
-        setCustomWaypoints((prev) => {
-          const next = [...prev, ...result.waypoints]
-          saveVenueWaypoints(activeVenueId, next)
-          return next
-        })
-      }
+      await persistNewWaypoints(result.waypoints)
     }
     if (result.trails.length > 0) {
       setSurveyTrails((prev) => {
@@ -603,22 +605,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     if (result.floorPlans.length > 0) {
       const plans = result.floorPlans
       const replaced = new Set(plans.map((p) => p.floor))
-      if (cloud && !isSeedVenue(activeVenueId)) {
-        try {
-          for (const plan of plans) await addRemoteFloorPlan(activeVenueId, plan)
-        } catch (e) {
-          console.warn("Could not sync the plan image(s) to the server:", e)
-        }
-        setCustomFloorPlans((prev) => [...prev.filter((p) => !replaced.has(p.floor)), ...plans])
-      } else {
-        const next = [...customFloorPlans.filter((p) => !replaced.has(p.floor)), ...plans]
-        planStored = saveVenueFloorPlans(activeVenueId, next)
-        setCustomFloorPlans(next)
-      }
+      const next = [...customFloorPlans.filter((p) => !replaced.has(p.floor)), ...plans]
+      planStored = saveVenueFloorPlans(activeVenueId, next)
+      setCustomFloorPlans(next)
     }
 
-    // Assets have no backend table yet, so they persist to this device
-    // regardless of cloud mode. Show them straight away.
     if (result.assets.length > 0) {
       setCustomAssets((prev) => {
         const next = [...prev, ...result.assets]
@@ -638,7 +629,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         "\n\nHeads up: this device's storage is full, so the plan image will only last until you close the app. Free up space (e.g. delete unused places) or upload a smaller file to keep it."
     }
     alert(message)
-  }, [cloud, activeVenueId, customFloorPlans])
+  }, [activeVenueId, customFloorPlans, persistNewWaypoints])
 
   // Switching place clears the current route and re-centres on the new venue, so
   // navigation state never leaks across venues.
@@ -668,19 +659,18 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   }, [initialMode, router])
 
   const handleCreateVenue = useCallback(async (input: NewVenueInput) => {
-    if (cloud) {
-      // Stored server-side; the DB forces verified=false so a public place can't
-      // self-verify. RLS ties ownership to the signed-in user.
-      try {
-        const v = await createRemoteVenue(input)
-        setUserVenues((prev) => [...prev, v])
-        goToVenue(v)
+    // With a backend, create the venue server-side so it's reusable across
+    // devices; this device keeps its edit token. Fall back to a device-local
+    // venue when there's no backend (or the create didn't land).
+    if (serverConfigured) {
+      const { configured, venue } = await createServerVenue(input)
+      if (configured && venue) {
+        setUserVenues((prev) => [...prev, venue])
+        goToVenue(venue)
         goMapNewVenue()
-        alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
-      } catch (e) {
-        alert(`Couldn't create the place on the server: ${e instanceof Error ? e.message : "error"}`)
+        alert(`“${venue.name}” created. Tap “Map area” to walk through and add points to it.`)
+        return
       }
-      return
     }
     const v = createVenue(input)
     setUserVenues((prev) => {
@@ -691,36 +681,27 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     goToVenue(v)
     goMapNewVenue()
     alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
-  }, [cloud, goToVenue, goMapNewVenue])
+  }, [serverConfigured, goToVenue, goMapNewVenue])
 
   const handleDeleteVenue = useCallback(async (id: string) => {
-    if (cloud && !isSeedVenue(id)) {
-      try {
-        await deleteRemoteVenue(id)
-        setUserVenues((prev) => prev.filter((v) => v.id !== id))
-      } catch (e) {
-        alert(`Couldn't delete on the server: ${e instanceof Error ? e.message : "error"}`)
+    // A server venue this device owns is deleted on the backend; a device-local
+    // one is removed from storage. (A shared venue we don't own can't be deleted.)
+    if (serverConfigured && ownsVenue(id)) {
+      const { ok } = await deleteServerVenue(id)
+      if (!ok) {
+        alert("Couldn't delete this place.")
         return
       }
+      setUserVenues((prev) => prev.filter((v) => v.id !== id))
     } else {
       deleteUserVenue(id)
       setUserVenues(loadUserVenues())
     }
     // If the open venue was deleted, fall back to the default and reload its map.
     if (activeVenueId === id) goToVenue(DEFAULT_VENUE)
-  }, [cloud, activeVenueId, goToVenue])
-
-  const handleSignOut = useCallback(async () => {
-    await getSupabaseBrowserClient()?.auth.signOut()
-    // Back to local venues; onAuthStateChange clears the user, disabling cloud.
-    setUserVenues(loadUserVenues())
-    setOverlay("none")
-    goToVenue(DEFAULT_VENUE)
-  }, [goToVenue])
+  }, [serverConfigured, activeVenueId, goToVenue])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
-
-  const userInitials = useMemo(() => (user?.email ? user.email.slice(0, 2).toUpperCase() : null), [user])
 
   const quickAccessWaypoints = useMemo(
     () => (venue.quickAccess ?? []).map((name) => allWaypoints.find((w) => w.name === name)).filter((w): w is Waypoint => !!w),
@@ -764,7 +745,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     <div className="relative flex h-dvh w-full overflow-hidden bg-wf-map-light-bg">
       <LeftPanel
         venue={venue}
-        userInitials={userInitials}
+        userInitials={null}
         onOpenVenues={() => setOverlay("venues")}
         onOpenSearch={() => setOverlay("search")}
         quickAccess={quickAccessWaypoints}
@@ -887,19 +868,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           activeVenueId={activeVenueId}
           currentCenter={navState.currentPosition ?? venue.center}
           hasGps={gpsStatus === "active" && navState.currentPosition !== null && navState.positionAccuracy > 0}
-          cloudEnabled={cloudEnabled}
-          userEmail={user?.email ?? null}
-          onSignIn={() => setOverlay("auth")}
-          onSignOut={handleSignOut}
           onSelect={handleSelectVenue}
           onCreate={handleCreateVenue}
           onDelete={handleDeleteVenue}
           onClose={() => setOverlay("none")}
         />
-      )}
-
-      {overlay === "auth" && (
-        <AuthModal onClose={() => setOverlay("venues")} onAuthed={() => setOverlay("venues")} />
       )}
 
       {(overlay === "qr" || overlay === "live-camera") && (
