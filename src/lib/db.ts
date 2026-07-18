@@ -69,6 +69,42 @@ create table if not exists public.search_misses (
 );
 create index if not exists search_misses_venue_idx
   on public.search_misses (venue_key, created_at desc);
+
+-- Shared venue maps: the authored map (Claude-read or surveyed points, and the
+-- places themselves) lifted off a single device so it persists and can be reused
+-- across devices/users. There are no accounts, so a venue carries an edit_token
+-- minted to its creator: reads are open, writes require the token. visibility is
+-- metadata (public venues are listed; unlisted/private are reachable by id only).
+create table if not exists public.venues (
+  id           uuid primary key default gen_random_uuid(),
+  slug         text,
+  name         text not null,
+  subtitle     text,
+  category     text not null default 'other',
+  center_lat   double precision not null,
+  center_lng   double precision not null,
+  default_zoom int not null default 18,
+  visibility   text not null default 'public' check (visibility in ('public','unlisted','private')),
+  edit_token   text not null,
+  created_at   timestamptz not null default now(),
+  updated_at   timestamptz not null default now(),
+  constraint venues_name_len check (char_length(name) between 1 and 120)
+);
+create index if not exists venues_visibility_idx on public.venues (visibility, created_at desc);
+
+create table if not exists public.waypoints (
+  id          uuid primary key default gen_random_uuid(),
+  venue_id    uuid not null references public.venues (id) on delete cascade,
+  name        text not null,
+  type        text not null default 'other',
+  lat         double precision not null,
+  lng         double precision not null,
+  floor       int not null default 0,
+  description text,
+  created_at  timestamptz not null default now(),
+  constraint waypoints_name_len check (char_length(name) between 1 and 200)
+);
+create index if not exists waypoints_venue_idx on public.waypoints (venue_id);
 `
 
 // Run the schema once per process. Cheap, and keeps setup zero-touch: a fresh

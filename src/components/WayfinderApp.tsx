@@ -27,6 +27,7 @@ import { useDeviceHeading } from "@/lib/use-heading"
 import { usePedestrianPosition } from "@/lib/use-pedestrian-position"
 import { useTrailRecorder } from "@/lib/use-trail-recorder"
 import { useArSupport } from "@/lib/use-ar-support"
+import { fetchServerVenues, createServerVenue, addServerWaypoints, deleteServerVenue, ownsVenue } from "@/lib/venues-server"
 
 const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
 // The 3D half of the map's 2D/3D toggle. three.js is browser-only, and the
@@ -137,6 +138,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // place — public or private — renders and routes the same way.
   const [activeVenueId, setActiveVenueId] = useState<string>(DEFAULT_VENUE.id)
   const [userVenues, setUserVenues] = useState<Venue[]>([])
+  // Whether a shared-venue backend is reachable. When true, user-created venues
+  // and their surveyed/AI-read points live on the server (reusable across
+  // devices) instead of only in this browser's localStorage.
+  const [serverConfigured, setServerConfigured] = useState(false)
   const venue = useMemo(() => getVenueById(activeVenueId, userVenues) ?? DEFAULT_VENUE, [activeVenueId, userVenues])
   const allVenues = useMemo(() => [...SEED_VENUES, ...userVenues], [userVenues])
 
@@ -206,6 +211,26 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setSurveyTrails(loadVenueTrails(startId))
     setCustomFloorPlans(loadVenueFloorPlans(startId))
     setCustomAssets(loadVenueAssets(startId))
+  }, [])
+
+  // If a shared-venue backend is configured, fold the server's venues into the
+  // list (each already carries its waypoints). Merged by id with the server
+  // winning, so a venue this device created and synced shows once, not twice.
+  // No backend → this is a no-op and everything stays device-local.
+  useEffect(() => {
+    let active = true
+    fetchServerVenues().then(({ configured, venues }) => {
+      if (!active) return
+      setServerConfigured(configured)
+      if (configured && venues.length > 0) {
+        setUserVenues((prev) => {
+          const byId = new Map(prev.map((v) => [v.id, v]))
+          for (const v of venues) byId.set(v.id, v)
+          return [...byId.values()]
+        })
+      }
+    })
+    return () => { active = false }
   }, [])
 
   const allWaypoints = useMemo(() => [...venue.waypoints, ...customWaypoints], [venue, customWaypoints])
@@ -495,15 +520,32 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     } catch {}
   }, [setAnchor, allWaypoints, handleDestinationSelect])
 
-  const handleSurveyComplete = useCallback(async (result: SurveyResult) => {
-    setOverlay("none")
-    const newWaypoints = [...result.markedWaypoints, ...result.aiWaypoints]
-    if (newWaypoints.length > 0) {
+  // Persist points added by surveying / AI sign-reading. For a server venue this
+  // device owns, they go to the shared backend (and are shown from the returned
+  // rows, not re-saved locally, so they don't double up against the venue's
+  // server-loaded points). Otherwise — seed venues, someone else's venue, or
+  // local mode — they stay on this device.
+  const persistNewWaypoints = useCallback(
+    async (newWaypoints: Waypoint[]) => {
+      if (serverConfigured && ownsVenue(activeVenueId)) {
+        const { ok, saved } = await addServerWaypoints(activeVenueId, newWaypoints)
+        setCustomWaypoints((prev) => [...prev, ...(ok && saved.length ? saved : newWaypoints)])
+        return
+      }
       setCustomWaypoints((prev) => {
         const next = [...prev, ...newWaypoints]
         saveVenueWaypoints(activeVenueId, next)
         return next
       })
+    },
+    [activeVenueId, serverConfigured]
+  )
+
+  const handleSurveyComplete = useCallback(async (result: SurveyResult) => {
+    setOverlay("none")
+    const newWaypoints = [...result.markedWaypoints, ...result.aiWaypoints]
+    if (newWaypoints.length > 0) {
+      await persistNewWaypoints(newWaypoints)
     }
     if (result.trails.length > 0) {
       setSurveyTrails((prev) => {
@@ -537,7 +579,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       message = "Survey complete — no clear signs were found in the footage. Try keeping signs and door plates in view, or use “Mark Location”."
     }
     alert(message)
-  }, [activeVenueId])
+  }, [activeVenueId, persistNewWaypoints])
 
   // Mirrors handleSurveyComplete above for plans uploaded via UploadPlanMode:
   // any detected waypoints/corridors are persisted exactly the same way, plus
@@ -545,11 +587,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const handleUploadComplete = useCallback(async (result: UploadPlanResult) => {
     setOverlay("none")
     if (result.waypoints.length > 0) {
-      setCustomWaypoints((prev) => {
-        const next = [...prev, ...result.waypoints]
-        saveVenueWaypoints(activeVenueId, next)
-        return next
-      })
+      await persistNewWaypoints(result.waypoints)
     }
     if (result.trails.length > 0) {
       setSurveyTrails((prev) => {
@@ -591,7 +629,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         "\n\nHeads up: this device's storage is full, so the plan image will only last until you close the app. Free up space (e.g. delete unused places) or upload a smaller file to keep it."
     }
     alert(message)
-  }, [activeVenueId, customFloorPlans])
+  }, [activeVenueId, customFloorPlans, persistNewWaypoints])
 
   // Switching place clears the current route and re-centres on the new venue, so
   // navigation state never leaks across venues.
@@ -621,6 +659,19 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   }, [initialMode, router])
 
   const handleCreateVenue = useCallback(async (input: NewVenueInput) => {
+    // With a backend, create the venue server-side so it's reusable across
+    // devices; this device keeps its edit token. Fall back to a device-local
+    // venue when there's no backend (or the create didn't land).
+    if (serverConfigured) {
+      const { configured, venue } = await createServerVenue(input)
+      if (configured && venue) {
+        setUserVenues((prev) => [...prev, venue])
+        goToVenue(venue)
+        goMapNewVenue()
+        alert(`“${venue.name}” created. Tap “Map area” to walk through and add points to it.`)
+        return
+      }
+    }
     const v = createVenue(input)
     setUserVenues((prev) => {
       const next = [...prev, v]
@@ -630,14 +681,25 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     goToVenue(v)
     goMapNewVenue()
     alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
-  }, [goToVenue, goMapNewVenue])
+  }, [serverConfigured, goToVenue, goMapNewVenue])
 
   const handleDeleteVenue = useCallback(async (id: string) => {
-    deleteUserVenue(id)
-    setUserVenues(loadUserVenues())
+    // A server venue this device owns is deleted on the backend; a device-local
+    // one is removed from storage. (A shared venue we don't own can't be deleted.)
+    if (serverConfigured && ownsVenue(id)) {
+      const { ok } = await deleteServerVenue(id)
+      if (!ok) {
+        alert("Couldn't delete this place.")
+        return
+      }
+      setUserVenues((prev) => prev.filter((v) => v.id !== id))
+    } else {
+      deleteUserVenue(id)
+      setUserVenues(loadUserVenues())
+    }
     // If the open venue was deleted, fall back to the default and reload its map.
     if (activeVenueId === id) goToVenue(DEFAULT_VENUE)
-  }, [activeVenueId, goToVenue])
+  }, [serverConfigured, activeVenueId, goToVenue])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
