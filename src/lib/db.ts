@@ -19,6 +19,30 @@ export function isDatabaseConfigured(): boolean {
   return DATABASE_URL.length > 0
 }
 
+// Decide whether to open the connection over TLS. Railway's private URL
+// (…​.railway.internal) and local dev need no TLS and reject it; the public URL
+// — the one used when the app runs on Vercel and reaches Railway over the
+// internet — needs it. Rather than depend on the pasted URL carrying
+// `?sslmode=require`, default to SSL for any remote host and turn it off only
+// for local/private hosts (or an explicit sslmode=disable). rejectUnauthorized
+// is false because Railway's proxy presents a cert outside the default CA set.
+function sslOption(url: string): { rejectUnauthorized: boolean } | undefined {
+  if (/sslmode=disable/.test(url)) return undefined
+  if (/sslmode=(require|verify|prefer|allow)/.test(url)) return { rejectUnauthorized: false }
+  let host = ""
+  try {
+    host = new URL(url).hostname
+  } catch {
+    return undefined
+  }
+  const isLocalOrPrivate =
+    host === "localhost" ||
+    host === "127.0.0.1" ||
+    host === "::1" ||
+    host.endsWith(".railway.internal")
+  return isLocalOrPrivate ? undefined : { rejectUnauthorized: false }
+}
+
 // The pooled connection, created lazily on first use so importing this module is
 // always side-effect-free (route files can import it even in device-only mode).
 let pool: Pool | null = null
@@ -28,11 +52,12 @@ function getPool(): Pool | null {
   if (!pool) {
     pool = new Pool({
       connectionString: DATABASE_URL,
-      // Railway's private URL (…​.railway.internal) needs no TLS and rejects it;
-      // the public URL requires it. Enable SSL only when the connection string
-      // asks for it, and don't reject Railway's self-signed certificate.
-      ssl: /sslmode=(require|verify)/.test(DATABASE_URL) ? { rejectUnauthorized: false } : undefined,
-      max: 5,
+      ssl: sslOption(DATABASE_URL),
+      // Vercel is serverless: each warm instance keeps its own pool, so keep it
+      // small to stay well under Postgres's connection limit, and let idle
+      // connections drop between bursts.
+      max: 3,
+      idleTimeoutMillis: 10_000,
     })
   }
   return pool
