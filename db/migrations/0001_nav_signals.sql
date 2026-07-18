@@ -16,11 +16,11 @@
 -- device-local venues ("venue-…") never exist in a venues table, yet the signals
 -- they generate are just as useful to whoever curates them.
 --
--- Unlike supabase/migrations/*, this targets a raw Postgres (Railway's plugin)
--- with no Supabase Auth, so there is no RLS here — access is enforced in the API
--- route. The app also applies this DDL automatically on first use (see
--- src/lib/db.ts); this file is the ops/version-controlled copy and must stay in
--- step with it. Apply manually with: psql "$DATABASE_URL" -f db/migrations/0001_nav_signals.sql
+-- Targets Railway's Postgres (a raw connection string via DATABASE_URL). There
+-- is no row-level security here — access is enforced in the API route. The app
+-- also applies this DDL automatically on first use (see src/lib/db.ts); this
+-- file is the ops/version-controlled copy and must stay in step with it. Apply
+-- manually with: psql "$DATABASE_URL" -f db/migrations/0001_nav_signals.sql
 
 -- gen_random_uuid() is core in Postgres 13+, so no pgcrypto extension is needed.
 create table if not exists public.nav_signals (

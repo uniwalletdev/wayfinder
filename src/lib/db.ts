@@ -5,13 +5,13 @@ import { Pool, type QueryResult, type QueryResultRow } from "pg"
 // map improves from being navigated" work: a single navigator's device can't
 // pool evidence from everyone, a shared table can.
 //
-// It mirrors the rest of the backend's stance (see supabase/server.ts and
-// .env.example): every dependency is OPTIONAL. With no DATABASE_URL the app runs
-// in device-only mode and these helpers report "not configured" instead of
-// throwing, so a deployment without a database behaves exactly as before.
+// It mirrors the rest of the backend's stance (see .env.example): every
+// dependency is OPTIONAL. With no DATABASE_URL the app runs in device-only mode
+// and these helpers report "not configured" instead of throwing, so a
+// deployment without a database behaves exactly as before.
 //
-// Unlike the (dormant) Supabase layer, this talks to a raw Postgres connection
-// string — which is what Railway's Postgres plugin provides via DATABASE_URL.
+// It talks to a raw Postgres connection string — what Railway's Postgres plugin
+// provides via DATABASE_URL.
 
 const DATABASE_URL = process.env.DATABASE_URL ?? ""
 
@@ -57,6 +57,18 @@ create table if not exists public.nav_signals (
 );
 create index if not exists nav_signals_venue_kind_idx
   on public.nav_signals (venue_key, kind, created_at desc);
+
+create table if not exists public.search_misses (
+  id         uuid primary key default gen_random_uuid(),
+  venue_key  text not null,
+  query      text not null,
+  suggested  boolean not null default false,
+  created_at timestamptz not null default now(),
+  constraint search_misses_query_len check (char_length(query) between 1 and 160),
+  constraint search_misses_venue_len check (char_length(venue_key) between 1 and 80)
+);
+create index if not exists search_misses_venue_idx
+  on public.search_misses (venue_key, created_at desc);
 `
 
 // Run the schema once per process. Cheap, and keeps setup zero-touch: a fresh
