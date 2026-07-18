@@ -14,14 +14,18 @@ import type { VenueCategory, VenueVisibility } from "@/lib/types"
 const CATEGORIES: VenueCategory[] = ["hospital", "mall", "airport", "station", "university", "office", "home", "other"]
 const VISIBILITIES: VenueVisibility[] = ["public", "unlisted", "private"]
 
-export async function GET() {
+export async function GET(request: Request) {
   if (!isDatabaseConfigured()) return Response.json({ configured: false, venues: [] })
   try {
     const venues = await listPublicVenues()
     return Response.json({ configured: true, venues })
   } catch (err) {
     console.warn("Could not list venues:", err instanceof Error ? err.message : err)
-    return Response.json({ configured: true, venues: [], error: "read_failed" }, { status: 200 })
+    // Opt-in diagnostic: /api/venues?debug=1 surfaces the underlying error so a
+    // failing connection can be diagnosed without digging through host logs.
+    const debug = new URL(request.url).searchParams.get("debug") === "1"
+    const detail = debug ? (err instanceof Error ? err.message : String(err)) : undefined
+    return Response.json({ configured: true, venues: [], error: "read_failed", detail }, { status: 200 })
   }
 }
 
