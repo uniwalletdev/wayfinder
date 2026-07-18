@@ -78,7 +78,7 @@ async function withWaypoints(rows: VenueRow[]): Promise<Venue[]> {
   const ids = rows.map((r) => r.id)
   const { rows: wpRows } = await query<WaypointRow>(
     `select id, venue_id, name, type, lat, lng, floor, description
-       from public.waypoints where venue_id = any($1::uuid[])`,
+       from public.wf_waypoints where venue_id = any($1::uuid[])`,
     [ids]
   )
   const byVenue = new Map<string, Waypoint[]>()
@@ -93,13 +93,13 @@ async function withWaypoints(rows: VenueRow[]): Promise<Venue[]> {
 // Public venues, listed for discovery. Unlisted/private are reachable by id only.
 export async function listPublicVenues(): Promise<Venue[]> {
   const { rows } = await query<VenueRow>(
-    `select ${VENUE_COLS} from public.venues where visibility = 'public' order by created_at asc`
+    `select ${VENUE_COLS} from public.wf_venues where visibility = 'public' order by created_at asc`
   )
   return withWaypoints(rows)
 }
 
 export async function getVenue(id: string): Promise<Venue | null> {
-  const { rows } = await query<VenueRow>(`select ${VENUE_COLS} from public.venues where id = $1`, [id])
+  const { rows } = await query<VenueRow>(`select ${VENUE_COLS} from public.wf_venues where id = $1`, [id])
   if (rows.length === 0) return null
   return (await withWaypoints(rows))[0]
 }
@@ -109,7 +109,7 @@ export async function getVenue(id: string): Promise<Venue | null> {
 export async function createVenue(input: NewVenueInput): Promise<{ venue: Venue; editToken: string }> {
   const editToken = randomUUID()
   const { rows } = await query<VenueRow>(
-    `insert into public.venues (slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, edit_token)
+    `insert into public.wf_venues (slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, edit_token)
      values ($1,$2,$3,$4,$5,$6,$7,$8,$9)
      returning ${VENUE_COLS}`,
     [
@@ -132,7 +132,7 @@ export async function createVenue(input: NewVenueInput): Promise<{ venue: Venue;
 async function ownsVenue(id: string, editToken: string): Promise<boolean> {
   if (!editToken) return false
   const { rows } = await query<{ ok: boolean }>(
-    `select (edit_token = $2) as ok from public.venues where id = $1`,
+    `select (edit_token = $2) as ok from public.wf_venues where id = $1`,
     [id, editToken]
   )
   return rows.length > 0 && rows[0].ok === true
@@ -148,19 +148,19 @@ export async function addWaypoints(
   const saved: Waypoint[] = []
   for (const w of waypoints) {
     const { rows } = await query<WaypointRow>(
-      `insert into public.waypoints (venue_id, name, type, lat, lng, floor, description)
+      `insert into public.wf_waypoints (venue_id, name, type, lat, lng, floor, description)
        values ($1,$2,$3,$4,$5,$6,$7)
        returning id, venue_id, name, type, lat, lng, floor, description`,
       [venueId, w.name, w.type, w.coordinates.lat, w.coordinates.lng, w.floor, w.description ?? null]
     )
     saved.push(rowToWaypoint(rows[0]))
   }
-  await query(`update public.venues set updated_at = now() where id = $1`, [venueId])
+  await query(`update public.wf_venues set updated_at = now() where id = $1`, [venueId])
   return { ok: true, saved }
 }
 
 export async function deleteVenue(venueId: string, editToken: string): Promise<boolean> {
   if (!(await ownsVenue(venueId, editToken))) return false
-  await query(`delete from public.venues where id = $1`, [venueId])
+  await query(`delete from public.wf_venues where id = $1`, [venueId])
   return true
 }

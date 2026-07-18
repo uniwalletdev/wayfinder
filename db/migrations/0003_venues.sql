@@ -13,7 +13,7 @@
 -- ops/version-controlled copy and must stay in step with it. Apply manually with:
 --   psql "$DATABASE_URL" -f db/migrations/0003_venues.sql
 
-create table if not exists public.venues (
+create table if not exists public.wf_venues (
   id           uuid primary key default gen_random_uuid(),
   slug         text,
   name         text not null,
@@ -26,13 +26,13 @@ create table if not exists public.venues (
   edit_token   text not null,
   created_at   timestamptz not null default now(),
   updated_at   timestamptz not null default now(),
-  constraint venues_name_len check (char_length(name) between 1 and 120)
+  constraint wf_venues_name_len check (char_length(name) between 1 and 120)
 );
-create index if not exists venues_visibility_idx on public.venues (visibility, created_at desc);
+create index if not exists wf_venues_visibility_idx on public.wf_venues (visibility, created_at desc);
 
-create table if not exists public.waypoints (
+create table if not exists public.wf_waypoints (
   id          uuid primary key default gen_random_uuid(),
-  venue_id    uuid not null references public.venues (id) on delete cascade,
+  venue_id    uuid not null references public.wf_venues (id) on delete cascade,
   name        text not null,
   type        text not null default 'other',
   lat         double precision not null,
@@ -40,6 +40,6 @@ create table if not exists public.waypoints (
   floor       int not null default 0,
   description text,
   created_at  timestamptz not null default now(),
-  constraint waypoints_name_len check (char_length(name) between 1 and 200)
+  constraint wf_waypoints_name_len check (char_length(name) between 1 and 200)
 );
-create index if not exists waypoints_venue_idx on public.waypoints (venue_id);
+create index if not exists wf_waypoints_venue_idx on public.wf_waypoints (venue_id);

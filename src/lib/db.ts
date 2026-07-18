@@ -145,7 +145,12 @@ create index if not exists search_misses_venue_idx
 -- across devices/users. There are no accounts, so a venue carries an edit_token
 -- minted to its creator: reads are open, writes require the token. visibility is
 -- metadata (public venues are listed; unlisted/private are reachable by id only).
-create table if not exists public.venues (
+--
+-- Named wf_venues / wf_waypoints, not the generic venues / waypoints: the target
+-- database may already hold unrelated tables by those names (from an earlier
+-- schema), and CREATE TABLE IF NOT EXISTS won't reconcile a mismatched existing
+-- table. The wf_ prefix guarantees these are ours and match this exact shape.
+create table if not exists public.wf_venues (
   id           uuid primary key default gen_random_uuid(),
   slug         text,
   name         text not null,
@@ -158,13 +163,13 @@ create table if not exists public.venues (
   edit_token   text not null,
   created_at   timestamptz not null default now(),
   updated_at   timestamptz not null default now(),
-  constraint venues_name_len check (char_length(name) between 1 and 120)
+  constraint wf_venues_name_len check (char_length(name) between 1 and 120)
 );
-create index if not exists venues_visibility_idx on public.venues (visibility, created_at desc);
+create index if not exists wf_venues_visibility_idx on public.wf_venues (visibility, created_at desc);
 
-create table if not exists public.waypoints (
+create table if not exists public.wf_waypoints (
   id          uuid primary key default gen_random_uuid(),
-  venue_id    uuid not null references public.venues (id) on delete cascade,
+  venue_id    uuid not null references public.wf_venues (id) on delete cascade,
   name        text not null,
   type        text not null default 'other',
   lat         double precision not null,
@@ -172,9 +177,9 @@ create table if not exists public.waypoints (
   floor       int not null default 0,
   description text,
   created_at  timestamptz not null default now(),
-  constraint waypoints_name_len check (char_length(name) between 1 and 200)
+  constraint wf_waypoints_name_len check (char_length(name) between 1 and 200)
 );
-create index if not exists waypoints_venue_idx on public.waypoints (venue_id);
+create index if not exists wf_waypoints_venue_idx on public.wf_waypoints (venue_id);
 `
 
 // Run the schema once per process. Cheap, and keeps setup zero-touch: a fresh
