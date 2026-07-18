@@ -50,13 +50,16 @@ function sslOption(url: string): { rejectUnauthorized: boolean } | undefined {
 // The pooled connection, created lazily on first use so importing this module is
 // always side-effect-free (route files can import it even in device-only mode).
 let pool: Pool | null = null
+// Set once we learn the server refuses SSL (some Railway Postgres instances have
+// no server certificate), so we stop offering it on the rebuilt pool.
+let disableSsl = false
 
 function getPool(): Pool | null {
   if (!isDatabaseConfigured()) return null
   if (!pool) {
     pool = new Pool({
       connectionString: DATABASE_URL,
-      ssl: sslOption(DATABASE_URL),
+      ssl: disableSsl ? undefined : sslOption(DATABASE_URL),
       // Vercel is serverless: each warm instance keeps its own pool, so keep it
       // small to stay well under Postgres's connection limit, and let idle
       // connections drop between bursts.
@@ -65,6 +68,24 @@ function getPool(): Pool | null {
     })
   }
   return pool
+}
+
+// pg throws this when we offer SSL to a server that has none configured. We then
+// rebuild the pool without SSL and retry once — so the connection works whether
+// or not the Postgres was set up with TLS, without the operator tuning sslmode.
+function isSslUnsupported(err: unknown): boolean {
+  return /does not support SSL/i.test(err instanceof Error ? err.message : String(err))
+}
+
+async function dropPool(): Promise<void> {
+  const old = pool
+  pool = null
+  schemaReady = null
+  try {
+    await old?.end()
+  } catch {
+    // ignore — we're discarding it anyway
+  }
 }
 
 // The tables this module owns, as idempotent DDL. Kept here as the runtime
@@ -163,6 +184,19 @@ export async function query<T extends QueryResultRow = QueryResultRow>(
 ): Promise<QueryResult<T>> {
   const p = getPool()
   if (!p) throw new Error("DATABASE_URL is not configured")
-  await ensureSchema(p)
-  return p.query<T>(text, params)
+  try {
+    await ensureSchema(p)
+    return await p.query<T>(text, params)
+  } catch (err) {
+    // First time the server rejects SSL: drop the pool, disable SSL, retry once.
+    if (isSslUnsupported(err) && !disableSsl) {
+      disableSsl = true
+      await dropPool()
+      const p2 = getPool()
+      if (!p2) throw new Error("DATABASE_URL is not configured")
+      await ensureSchema(p2)
+      return await p2.query<T>(text, params)
+    }
+    throw err
+  }
 }
