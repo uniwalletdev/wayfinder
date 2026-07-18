@@ -6,7 +6,7 @@
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
-import { isDatabaseConfigured } from "@/lib/db"
+import { isDatabaseConfigured, describeDatabaseUrl } from "@/lib/db"
 import { listPublicVenues, createVenue } from "@/lib/venues-db"
 import type { NewVenueInput } from "@/lib/venues"
 import type { VenueCategory, VenueVisibility } from "@/lib/types"
@@ -25,7 +25,8 @@ export async function GET(request: Request) {
     // failing connection can be diagnosed without digging through host logs.
     const debug = new URL(request.url).searchParams.get("debug") === "1"
     const detail = debug ? (err instanceof Error ? err.message : String(err)) : undefined
-    return Response.json({ configured: true, venues: [], error: "read_failed", detail }, { status: 200 })
+    const url = debug ? describeDatabaseUrl() : undefined
+    return Response.json({ configured: true, venues: [], error: "read_failed", detail, url }, { status: 200 })
   }
 }
 
