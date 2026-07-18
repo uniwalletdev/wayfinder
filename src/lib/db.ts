@@ -10,10 +10,14 @@ import { Pool, type QueryResult, type QueryResultRow } from "pg"
 // and these helpers report "not configured" instead of throwing, so a
 // deployment without a database behaves exactly as before.
 //
-// It talks to a raw Postgres connection string — what Railway's Postgres plugin
-// provides via DATABASE_URL.
+// It talks to a raw Postgres connection string. Railway's Postgres plugin exposes
+// two: DATABASE_URL (the private …​.railway.internal host, used when the app runs
+// on Railway) and DATABASE_PUBLIC_URL (reachable over the internet, used when the
+// app runs on Vercel). Accept either name — whichever is set — so the value works
+// no matter which one was copied into the host's env. An explicit DATABASE_URL
+// wins when both are present.
 
-const DATABASE_URL = process.env.DATABASE_URL ?? ""
+const DATABASE_URL = process.env.DATABASE_URL || process.env.DATABASE_PUBLIC_URL || ""
 
 export function isDatabaseConfigured(): boolean {
   return DATABASE_URL.length > 0
