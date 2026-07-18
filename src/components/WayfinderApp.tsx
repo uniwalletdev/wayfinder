@@ -26,6 +26,7 @@ import VenuePicker from "@/components/VenuePicker"
 import AuthModal from "@/components/AuthModal"
 import { useDeviceHeading } from "@/lib/use-heading"
 import { usePedestrianPosition } from "@/lib/use-pedestrian-position"
+import { useTrailRecorder } from "@/lib/use-trail-recorder"
 import { useArSupport } from "@/lib/use-ar-support"
 import { useSupabaseSession } from "@/lib/supabase/use-session"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
@@ -301,6 +302,17 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         : { ...s, currentPosition: fusedPosition, positionAccuracy: fusedAccuracy }
     )
   }, [fusedPosition, fusedAccuracy])
+
+  // Passively record the path walked while navigating and post it to the shared
+  // backend as a corridor 'trail' — the map learning from being used. Purely a
+  // byproduct: it never changes what the navigator sees, and with no database
+  // configured the signal is simply dropped (see /api/signals).
+  useTrailRecorder({
+    active: navState.isNavigating,
+    venueId: activeVenueId,
+    position: navState.currentPosition,
+    floor: navState.currentFloor,
+  })
 
   const activateDemoLocation = useCallback(() => {
     setGpsStatus("active")
