@@ -1,7 +1,8 @@
 // Offline support for Wayfinder.
 //
-// The point of this file is a specific, concrete failure: someone standing on
-// Level 6 of the Octav Botnar Wing with no signal, trying to find Sky Ward.
+// The point of this file is a specific, concrete failure: someone deep inside a
+// building with no signal, trying to find a ward — GOSH's Level 6 Octav Botnar
+// Wing is the example that prompted it, but this applies to every mapped venue.
 // Hospitals are exactly where phone reception dies and exactly where wayfinding
 // matters most, so the core journey has to survive losing the network.
 //
