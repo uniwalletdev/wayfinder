@@ -60,16 +60,103 @@ const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")
 const SVG_DIR = path.join(REPO, "public", "floorplans", "gosh")
 
 // ── Coordinate system ────────────────────────────────────────────────────────
-// SVG space 1000 x 706 (x east, y south) mapped onto the venue bounds below.
-// The bounds span ~180 m east-west and ~127 m north-south, so 1000 x 706 gives
-// square pixels at ~0.180 m/px.
+// SVG space 1000 x 706 (x east, y south). Two ways to place it on the globe:
+//
+//   * DEFAULT (GCPS empty): the original north-up box below — four hand-estimated
+//     corners, no rotation. Quick to set up, but the real GOSH site is tilted a
+//     few degrees off north, so this drifts against GPS, worst at the corners.
+//   * FITTED (>= 2 ground-control points in GCPS): a 2-D similarity transform —
+//     position + one uniform scale + one rotation — least-squares-fitted to real
+//     landmark coordinates. Waypoints, trails, the floor-plan bounds AND the plan
+//     artwork are all re-projected through it, so nothing drifts apart.
+//
+// Fill in GCPS to switch from DEFAULT to FITTED; empty it again to fall back. The
+// DEFAULT path is byte-for-byte the historical output, so committing this engine
+// changes nothing on the map until real coordinates are supplied.
 const W = 1000, H = 706
 const LAT_N = 51.52325, LAT_S = 51.5221, LNG_W = -0.1212, LNG_E = -0.1186
 const M_PER_PX = 0.18
+const M_PER_DEG_LAT = 111320
 
-const px2lat = (y) => +(LAT_N - (y / H) * (LAT_N - LAT_S)).toFixed(6)
-const px2lng = (x) => +(LNG_W + (x / W) * (LNG_E - LNG_W)).toFixed(6)
-const ll = (x, y) => ({ lat: px2lat(y), lng: px2lng(x) })
+// ── Ground-control points ─────────────────────────────────────────────────────
+// `x,y` are the pixel positions (already fixed in this schematic) of features you
+// can also pinpoint on a real map. Fill `lat,lng` from Google Maps or
+// OpenStreetMap: right-click the exact spot → the coordinates appear → copy them.
+//
+// The five below are the road-CENTRE junctions that box in the site plus the Main
+// Entrance: they are unambiguous on satellite imagery and span the whole canvas,
+// which is exactly what makes the rotation + scale fit stable. Two points are the
+// minimum (4 degrees of freedom); four or five let the fit report and drive down
+// its own error. Spread and sharpness matter far more than count.
+const GCPS = [
+  { name: "Guilford St × Powis Pl (NW)",           x: 114, y: 82,  lat: null, lng: null },
+  { name: "Guilford St × Lamb's Conduit St (NE)",  x: 866, y: 82,  lat: null, lng: null },
+  { name: "Great Ormond St × Lamb's Conduit (SE)", x: 866, y: 614, lat: null, lng: null },
+  { name: "Great Ormond St × Powis Pl (SW)",       x: 114, y: 614, lat: null, lng: null },
+  { name: "Main Entrance (Guilford St doors)",     x: 524, y: 84,  lat: null, lng: null },
+].filter((g) => Number.isFinite(g.lat) && Number.isFinite(g.lng))
+
+// Complex-number least squares for the similarity w = a·z + b (a = scale·e^{iθ}),
+// no external dependencies. Fits pixel space to a local East/North metre plane
+// about the GCP centroid, then converts back to lat/lng. Returns null with < 2
+// points so the caller falls back to the DEFAULT box.
+const cAdd = (p, q) => ({ re: p.re + q.re, im: p.im + q.im })
+const cSub = (p, q) => ({ re: p.re - q.re, im: p.im - q.im })
+const cMul = (p, q) => ({ re: p.re * q.re - p.im * q.im, im: p.re * q.im + p.im * q.re })
+const cConj = (p) => ({ re: p.re, im: -p.im })
+
+function fitTransform() {
+  if (GCPS.length < 2) return null
+  const O = {
+    lat: GCPS.reduce((s, g) => s + g.lat, 0) / GCPS.length,
+    lng: GCPS.reduce((s, g) => s + g.lng, 0) / GCPS.length,
+  }
+  const kLng = M_PER_DEG_LAT * Math.cos((O.lat * Math.PI) / 180)
+  // z: pixel with y flipped so +im points north; w: metres east/north of O.
+  const zs = GCPS.map((g) => ({ re: g.x, im: H - g.y }))
+  const ws = GCPS.map((g) => ({ re: (g.lng - O.lng) * kLng, im: (g.lat - O.lat) * M_PER_DEG_LAT }))
+  const mean = (arr) => ({
+    re: arr.reduce((s, p) => s + p.re, 0) / arr.length,
+    im: arr.reduce((s, p) => s + p.im, 0) / arr.length,
+  })
+  const zbar = mean(zs), wbar = mean(ws)
+  let num = { re: 0, im: 0 }, den = 0
+  for (let i = 0; i < zs.length; i++) {
+    const zc = cSub(zs[i], zbar), wc = cSub(ws[i], wbar)
+    num = cAdd(num, cMul(wc, cConj(zc)))
+    den += zc.re * zc.re + zc.im * zc.im
+  }
+  const a = { re: num.re / den, im: num.im / den }
+  const b = cSub(wbar, cMul(a, zbar))
+  const toLL = (x, y) => {
+    const w = cAdd(cMul(a, { re: x, im: H - y }), b)
+    return { lat: O.lat + w.im / M_PER_DEG_LAT, lng: O.lng + w.re / kLng }
+  }
+  return { toLL, kLng, scale: Math.hypot(a.re, a.im), theta: Math.atan2(a.im, a.re) }
+}
+const TF = fitTransform()
+
+const round6 = (n) => +n.toFixed(6)
+const px2lat = (y) => round6(LAT_N - (y / H) * (LAT_N - LAT_S))
+const px2lng = (x) => round6(LNG_W + (x / W) * (LNG_E - LNG_W))
+const ll = TF
+  ? (x, y) => { const g = TF.toLL(x, y); return { lat: round6(g.lat), lng: round6(g.lng) } }
+  : (x, y) => ({ lat: px2lat(y), lng: px2lng(x) })
+
+// Floor-plan overlay bounds: the axis-aligned lat/lng box the plan image is
+// stretched onto (Leaflet's imageOverlay cannot rotate). DEFAULT keeps the hand
+// box; FITTED uses the geographic bounding box of the re-projected canvas, with
+// the artwork pre-rotated inside it (see frameSvg) so the north-up overlay still
+// lands every feature at its true bearing.
+const BB = TF
+  ? (() => {
+      const c = [[0, 0], [W, 0], [0, H], [W, H]].map(([x, y]) => TF.toLL(x, y))
+      return {
+        S: Math.min(...c.map((p) => p.lat)), N: Math.max(...c.map((p) => p.lat)),
+        W: Math.min(...c.map((p) => p.lng)), E: Math.max(...c.map((p) => p.lng)),
+      }
+    })()
+  : { S: LAT_S, N: LAT_N, W: LNG_W, E: LNG_E }
 
 const LEVELS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const idxOf = (level) => level - 2
@@ -612,12 +699,33 @@ function roomSvg(r) {
   return s
 }
 
+// Wrap a level's drawing body in the outer <svg>. DEFAULT reproduces the
+// historical markup exactly. FITTED emits onto a canvas whose viewBox is the
+// axis-aligned geographic bounding box (BB), with the whole body pushed through a
+// single affine <g transform> that maps the original upright pixel space onto
+// that canvas — so stretching the north-up image onto BB reproduces the site's
+// true rotation, without touching any of the drawing code below.
+function frameSvg(body) {
+  if (!TF) return `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${W} ${H}'>\n${body}</svg>\n`
+  const widthM = (BB.E - BB.W) * TF.kLng
+  const heightM = (BB.N - BB.S) * M_PER_DEG_LAT
+  const WS = W, HS = Math.max(1, Math.round((WS * heightM) / widthM))
+  // original pixel (x,y) → emitted-canvas pixel, via true lat/lng then the
+  // axis-aligned BB→canvas scaling. Affine, so three basis points define it.
+  const f = (x, y) => {
+    const g = TF.toLL(x, y)
+    return { X: ((g.lng - BB.W) / (BB.E - BB.W)) * WS, Y: ((BB.N - g.lat) / (BB.N - BB.S)) * HS }
+  }
+  const o = f(0, 0), ux = f(1, 0), uy = f(0, 1)
+  const m = [ux.X - o.X, ux.Y - o.Y, uy.X - o.X, uy.Y - o.Y, o.X, o.Y].map((v) => +v.toFixed(5))
+  return `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${WS} ${HS}'>\n  <g transform='matrix(${m.join(" ")})'>\n${body}  </g>\n</svg>\n`
+}
+
 function buildSvg(level) {
   const keys = buildingsOn(level)
   const lays = Object.fromEntries(keys.map((k) => [k, layout(k, level)]))
 
-  let s = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${W} ${H}'>\n`
-  s += `  <rect width='${W}' height='${H}' fill='${PAGE}'/>\n`
+  let s = `  <rect width='${W}' height='${H}' fill='${PAGE}'/>\n`
 
   // Streets
   for (const st of STREETS) {
@@ -706,8 +814,7 @@ function buildSvg(level) {
   s += `    <line x1='811' y1='670' x2='811' y2='682' stroke='#475569' stroke-width='2'/>\n`
   s += `    <text x='755' y='668' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='9' fill='#475569'>20 m</text>\n  </g>\n`
 
-  s += `</svg>\n`
-  return s
+  return frameSvg(s)
 }
 
 const LEVEL_SUB = {
@@ -854,7 +961,7 @@ let ts = `import { Venue } from "../types"
 // internal floor index 0 display as "Level 2"; displayed level = index + 2.
 // Levels 8-10 are the upper Nurses Home only.
 
-const B: [[number, number], [number, number]] = [[${LAT_S}, ${LNG_W}], [${LAT_N}, ${LNG_E}]]
+const B: [[number, number], [number, number]] = [[${round6(BB.S)}, ${round6(BB.W)}], [${round6(BB.N)}, ${round6(BB.E)}]]
 
 export const GOSH_VENUE: Venue = {
   id: "gosh",
@@ -942,3 +1049,25 @@ for (const level of LEVELS) for (const w of waypointsFor(level)) {
   seen.set(w.id, level)
 }
 console.log(`${seen.size} unique waypoint ids — no collisions`)
+
+// ── Georeferencing report ─────────────────────────────────────────────────────
+// How well the fitted transform reproduces each control point, in metres. A large
+// residual on one point usually means a mistyped or mis-clicked coordinate.
+if (TF) {
+  let maxM = 0, sum2 = 0
+  console.log(`\ngeoreference: fitted from ${GCPS.length} ground-control point(s)`)
+  for (const g of GCPS) {
+    const p = TF.toLL(g.x, g.y)
+    const dN = (p.lat - g.lat) * M_PER_DEG_LAT
+    const dE = (p.lng - g.lng) * TF.kLng
+    const m = Math.hypot(dN, dE)
+    sum2 += m * m; maxM = Math.max(maxM, m)
+    console.log(`  ${g.name}: ${m.toFixed(2)} m off`)
+  }
+  const bearing = ((90 - (TF.theta * 180) / Math.PI) % 360 + 360) % 360
+  console.log(`  scale ${TF.scale.toFixed(3)} m/px · site up-axis bearing ${bearing.toFixed(1)}° from true north`)
+  console.log(`  max residual ${maxM.toFixed(2)} m · RMS ${Math.sqrt(sum2 / GCPS.length).toFixed(2)} m (aim < ~5 m)`)
+} else {
+  console.log("\ngeoreference: no ground-control points — using the original north-up box.")
+  console.log("Fill GCPS in this script with real lat/lng to fit position + scale + rotation.")
+}
