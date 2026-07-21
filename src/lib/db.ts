@@ -24,21 +24,6 @@ const RAW_DATABASE_URL = process.env.DATABASE_URL || process.env.DATABASE_PUBLIC
 // paste mistakes just work.
 const DATABASE_URL = RAW_DATABASE_URL.trim().replace(/^['"]+|['"]+$/g, "").trim()
 
-// A credentials-safe description of the configured URL, for the ?debug=1 route.
-// Never returns anything past the scheme (no host, user, or password).
-export function describeDatabaseUrl(): Record<string, unknown> {
-  const schemeEnd = DATABASE_URL.indexOf("://")
-  return {
-    present: DATABASE_URL.length > 0,
-    length: DATABASE_URL.length,
-    scheme: schemeEnd >= 0 ? DATABASE_URL.slice(0, schemeEnd + 3) : "(no scheme)",
-    startsWithPostgres: /^postgres(ql)?:\/\//i.test(DATABASE_URL),
-    hasUnresolvedReference: /\$\{/.test(RAW_DATABASE_URL),
-    hadSurroundingQuotes: /^\s*['"]/.test(RAW_DATABASE_URL) || /['"]\s*$/.test(RAW_DATABASE_URL),
-    hadSurroundingWhitespace: RAW_DATABASE_URL !== RAW_DATABASE_URL.trim(),
-  }
-}
-
 export function isDatabaseConfigured(): boolean {
   return DATABASE_URL.length > 0
 }

@@ -6,7 +6,7 @@
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
-import { isDatabaseConfigured, describeDatabaseUrl } from "@/lib/db"
+import { isDatabaseConfigured } from "@/lib/db"
 import { listPublicVenues, createVenue } from "@/lib/venues-db"
 import type { NewVenueInput } from "@/lib/venues"
 import type { VenueCategory, VenueVisibility } from "@/lib/types"
@@ -14,19 +14,14 @@ import type { VenueCategory, VenueVisibility } from "@/lib/types"
 const CATEGORIES: VenueCategory[] = ["hospital", "mall", "airport", "station", "university", "office", "home", "other"]
 const VISIBILITIES: VenueVisibility[] = ["public", "unlisted", "private"]
 
-export async function GET(request: Request) {
+export async function GET() {
   if (!isDatabaseConfigured()) return Response.json({ configured: false, venues: [] })
   try {
     const venues = await listPublicVenues()
     return Response.json({ configured: true, venues })
   } catch (err) {
     console.warn("Could not list venues:", err instanceof Error ? err.message : err)
-    // Opt-in diagnostic: /api/venues?debug=1 surfaces the underlying error so a
-    // failing connection can be diagnosed without digging through host logs.
-    const debug = new URL(request.url).searchParams.get("debug") === "1"
-    const detail = debug ? (err instanceof Error ? err.message : String(err)) : undefined
-    const url = debug ? describeDatabaseUrl() : undefined
-    return Response.json({ configured: true, venues: [], error: "read_failed", detail, url }, { status: 200 })
+    return Response.json({ configured: true, venues: [], error: "read_failed" }, { status: 200 })
   }
 }
 
