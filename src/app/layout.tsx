@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
+import ServiceWorkerRegistrar from "@/components/ServiceWorkerRegistrar"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -32,10 +34,20 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 }
 
+// Sign-in is optional and additive: it exists to carry saved places and venue
+// ownership across devices, never to stand between someone and a route. So when
+// no Clerk publishable key is configured the provider is left out entirely and
+// the app renders exactly as it always has — the same "no key → feature quietly
+// off" contract the Mapbox and Anthropic integrations follow.
+const clerkEnabled = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`h-full ${spaceGrotesk.variable} ${ibmPlexSans.variable}`}>
-      <body className="h-full">{children}</body>
+      <body className="h-full">
+        <ServiceWorkerRegistrar />
+        {clerkEnabled ? <ClerkProvider>{children}</ClerkProvider> : children}
+      </body>
     </html>
   )
 }

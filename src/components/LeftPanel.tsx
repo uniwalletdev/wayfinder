@@ -11,6 +11,7 @@ import {
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
 import Toggle from "@/components/Toggle"
+import AuthButton from "@/components/AuthButton"
 
 interface NearbyItem extends Waypoint {
   distanceM: number
@@ -164,9 +165,7 @@ export default function LeftPanel({
           </span>
           <span className="font-display text-lg font-bold text-wf-ink">Wayfinder</span>
         </Link>
-        <div className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-wf-surface text-[13px] font-semibold text-wf-muted">
-          {userInitials ?? "?"}
-        </div>
+        <AuthButton initials={userInitials} />
       </div>
 
       {gpsStatus !== "active" && (
