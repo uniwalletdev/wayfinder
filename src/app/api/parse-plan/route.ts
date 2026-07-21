@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk"
 import { WaypointType } from "@/lib/types"
 import { ALL_WAYPOINT_TYPES } from "@/lib/waypoint-meta"
+import { rateLimit, LIMITS } from "@/lib/rate-limit"
 
 // A mapper can upload an existing floor plan (photo, scan, exported diagram)
 // instead of walking it with Survey Mode. We read the flattened image with
@@ -68,7 +69,17 @@ const clamp01 = (n: unknown): number => (typeof n === "number" && isFinite(n) ? 
 
 const HEX_COLOR = /^#[0-9a-fA-F]{6}$/
 
+// An uploaded plan is a base64 data URL, and the cost of reading it scales with
+// its size. 8 MB is comfortably above a phone photo of a wall-mounted plan and
+// well below anything that could be used to inflate a single call's cost.
+const MAX_BODY_BYTES = 8 * 1024 * 1024
+
 export async function POST(request: Request) {
+  // Rate limit BEFORE the key check and before reading the body: the whole point
+  // is to spend as little as possible on an abusive caller.
+  const limited = rateLimit(request, "parse-plan", LIMITS.parsePlan.limit, LIMITS.parsePlan.windowMs)
+  if (limited) return limited
+
   const apiKey = process.env.ANTHROPIC_API_KEY
   if (!apiKey) {
     // Not an error from the user's perspective — the feature just isn't wired up.
@@ -80,7 +91,14 @@ export async function POST(request: Request) {
 
   let body: { imageData?: string; venueName?: string; floor?: number }
   try {
-    body = await request.json()
+    const text = await request.text()
+    if (text.length > MAX_BODY_BYTES) {
+      return Response.json(
+        { rooms: [], corridors: [], sheet: null, error: "too_large", message: "That plan image is too large. Try a smaller photo." },
+        { status: 413 }
+      )
+    }
+    body = JSON.parse(text)
   } catch {
     return Response.json({ rooms: [], corridors: [], sheet: null, error: "bad_request" }, { status: 400 })
   }

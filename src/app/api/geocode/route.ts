@@ -8,6 +8,8 @@
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
+import { rateLimit, LIMITS } from "@/lib/rate-limit"
+
 const MAPBOX_URL = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 const MAX_RESULTS = 6
 
@@ -27,6 +29,9 @@ interface MapboxFeature {
 }
 
 export async function GET(request: Request) {
+  const limited = rateLimit(request, "geocode", LIMITS.geocode.limit, LIMITS.geocode.windowMs)
+  if (limited) return limited
+
   const token = process.env.MAPBOX_ACCESS_TOKEN
   if (!token) {
     // Not an error from the user's perspective — the feature just isn't wired up.

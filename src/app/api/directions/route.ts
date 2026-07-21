@@ -7,6 +7,8 @@
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
+import { rateLimit, LIMITS } from "@/lib/rate-limit"
+
 const MAPBOX_URL = "https://api.mapbox.com/directions/v5/mapbox"
 const PROFILES: Record<string, string> = {
   walking: "walking",
@@ -21,6 +23,9 @@ interface MapboxRoute {
 }
 
 export async function GET(request: Request) {
+  const limited = rateLimit(request, "directions", LIMITS.directions.limit, LIMITS.directions.windowMs)
+  if (limited) return limited
+
   const token = process.env.MAPBOX_ACCESS_TOKEN
   if (!token) {
     return Response.json({ error: "not_configured" }, { status: 200 })
