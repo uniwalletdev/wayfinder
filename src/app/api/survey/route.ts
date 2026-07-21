@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk"
 import { WaypointType } from "@/lib/types"
 import { ALL_WAYPOINT_TYPES } from "@/lib/waypoint-meta"
+import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
 
 // Survey Mode posts the frames it captured here. We run them through Claude's
 // vision model to read on-camera signage (ward names, "Lift", "Toilets", door
@@ -55,6 +56,11 @@ function parseDataUrl(dataUrl: string): { mediaType: string; base64: string } | 
 }
 
 export async function POST(request: Request) {
+  // Limit before anything else: this runs a vision model over 8 frames, so an
+  // abusive caller should cost as little as possible.
+  const limited = rateLimit(request, "survey", LIMITS.survey.limit, LIMITS.survey.windowMs)
+  if (limited) return limited
+
   const apiKey = process.env.ANTHROPIC_API_KEY
   if (!apiKey) {
     // Not an error from the user's perspective — the feature just isn't wired up.
@@ -64,12 +70,16 @@ export async function POST(request: Request) {
     )
   }
 
-  let body: { frames?: IncomingFrame[]; venueName?: string }
-  try {
-    body = await request.json()
-  } catch {
-    return Response.json({ waypoints: [], error: "bad_request" }, { status: 400 })
+  const read = await readCappedJson<{ frames?: IncomingFrame[]; venueName?: string }>(request, BODY_LIMITS.survey)
+  if (!read.ok) {
+    return read.reason === "too_large"
+      ? Response.json(
+          { waypoints: [], error: "too_large", message: "Those frames are too large. Try capturing fewer, or retake them." },
+          { status: 413 }
+        )
+      : Response.json({ waypoints: [], error: "bad_request" }, { status: 400 })
   }
+  const body = read.body
 
   const frames = Array.isArray(body.frames) ? body.frames : []
   // Grounds the model in the place being surveyed. Generic fallback so the route

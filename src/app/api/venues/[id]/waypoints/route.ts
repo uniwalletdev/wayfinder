@@ -6,6 +6,7 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 import { isDatabaseConfigured } from "@/lib/db"
+import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
 import { addWaypoints } from "@/lib/venues-db"
 import type { Waypoint, WaypointType } from "@/lib/types"
 
@@ -44,15 +45,20 @@ function sanitize(raw: unknown): Waypoint[] {
 }
 
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const limited = rateLimit(request, "venue-write", LIMITS.venueWrite.limit, LIMITS.venueWrite.windowMs)
+  if (limited) return limited
+
   if (!isDatabaseConfigured()) return Response.json({ configured: false })
   const { id } = await params
 
-  let body: { editToken?: unknown; waypoints?: unknown }
-  try {
-    body = await request.json()
-  } catch {
-    return Response.json({ configured: true, ok: false, error: "bad_request" }, { status: 400 })
+  const read = await readCappedJson<{ editToken?: unknown; waypoints?: unknown }>(request, BODY_LIMITS.waypoints)
+  if (!read.ok) {
+    return Response.json(
+      { configured: true, ok: false, error: read.reason === "too_large" ? "too_large" : "bad_request" },
+      { status: read.reason === "too_large" ? 413 : 400 }
+    )
   }
+  const body = read.body
   const editToken = typeof body.editToken === "string" ? body.editToken : ""
   const waypoints = sanitize(body.waypoints)
   if (waypoints.length === 0) {

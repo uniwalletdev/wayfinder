@@ -7,17 +7,18 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 import { isDatabaseConfigured, query } from "@/lib/db"
+import { readCappedJson, BODY_LIMITS } from "@/lib/rate-limit"
 
 const MAX_QUERY_CHARS = 160
 const MAX_VENUE_KEY_CHARS = 80
 
 export async function POST(request: Request) {
-  let payload: { venueId?: unknown; query?: unknown; suggested?: unknown }
-  try {
-    payload = await request.json()
-  } catch {
-    return Response.json({ ok: false }, { status: 400 })
-  }
+  const read = await readCappedJson<{ venueId?: unknown; query?: unknown; suggested?: unknown }>(
+    request,
+    BODY_LIMITS.searchMiss
+  )
+  if (!read.ok) return Response.json({ ok: false }, { status: read.reason === "too_large" ? 413 : 400 })
+  const payload = read.body
 
   const venueId = typeof payload.venueId === "string" ? payload.venueId.trim().slice(0, MAX_VENUE_KEY_CHARS) : ""
   const q = typeof payload.query === "string" ? payload.query.trim().slice(0, MAX_QUERY_CHARS) : ""

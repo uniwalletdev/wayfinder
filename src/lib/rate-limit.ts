@@ -84,10 +84,74 @@ export function rateLimit(
 
 // Per-endpoint budgets. Geocode and directions are on the normal navigation path
 // and are set generously so a real person searching and re-routing never trips
-// them; parse-plan is a deliberate, occasional mapping action whose per-call cost
-// is orders of magnitude higher, so it is much tighter.
+// them; the LLM routes are deliberate, occasional mapping actions whose per-call
+// cost is orders of magnitude higher, so they are much tighter.
 export const LIMITS = {
   parsePlan: { limit: 10, windowMs: 60 * 60 * 1000 }, // 10/hour
+  // Survey Mode calls this repeatedly while someone walks a building, so it
+  // cannot be as tight as parse-plan without breaking the core mapping flow —
+  // but each call is claude-opus-4-8 over 8 frames with adaptive thinking, so it
+  // still needs a ceiling. Tune this if real mapping sessions hit it.
+  survey: { limit: 20, windowMs: 60 * 60 * 1000 }, // 20/hour
   geocode: { limit: 60, windowMs: 60 * 1000 }, // 60/min
   directions: { limit: 60, windowMs: 60 * 1000 }, // 60/min
+  // Venue writes are unauthenticated, and POST /api/venues defaults to
+  // visibility:"public" — so without a ceiling an anonymous loop can inject spam
+  // straight into the directory every user sees. Generous enough for a real
+  // mapper working through a site.
+  venueCreate: { limit: 20, windowMs: 60 * 60 * 1000 }, // 20/hour
+  venueWrite: { limit: 120, windowMs: 60 * 60 * 1000 }, // 120/hour
 } as const
+
+// ── Request body caps ───────────────────────────────────────────────────────
+// `await request.json()` buffers the whole body before any validation runs, so
+// an oversized POST is a memory-exhaustion vector regardless of how well the
+// parsed value is then checked. App Router handlers have no default limit (the
+// old Pages `api` routes had 1 MB), so each route must cap for itself.
+//
+// /api/signals established this pattern; these are the same idea applied
+// uniformly. Read as text first, check the length, then parse.
+
+// NOTE: Next.js 16 already imposes a GLOBAL 10 MB ceiling. When a proxy is
+// active — and src/proxy.ts is, for Clerk — Next buffers the request body so it
+// can be read twice, capping that buffer at `proxyClientMaxBodySize` (default
+// 10 MB). Past that it silently truncates and logs a warning, so the handler
+// sees malformed JSON rather than an oversized body. Every value here must
+// therefore stay UNDER 10 MB to mean anything; a larger cap is dead code that
+// turns a clean 413 into a confusing 400.
+export const BODY_LIMITS = {
+  // 8 frames of base64-encoded JPEG from a phone camera — roughly 3 MB in
+  // practice, so this leaves headroom while staying below Next's 10 MB.
+  survey: 8 * 1024 * 1024,
+  // Up to MAX_WAYPOINTS (500) waypoint objects.
+  waypoints: 512 * 1024,
+  // A venue is a name, subtitle, category and a centre point.
+  venue: 16 * 1024,
+  // A venue key plus a search string.
+  searchMiss: 8 * 1024,
+} as const
+
+export type CappedBody<T> =
+  | { ok: true; body: T }
+  | { ok: false; reason: "too_large" | "bad_json" }
+
+/**
+ * Read and parse a JSON body, rejecting anything over `maxBytes` before parsing.
+ * Returns a discriminated result rather than throwing or returning a Response,
+ * so each route keeps its own error shape — they differ deliberately (some
+ * return `{ ok: false }`, some `{ configured: true, error }`).
+ */
+export async function readCappedJson<T>(request: Request, maxBytes: number): Promise<CappedBody<T>> {
+  let text: string
+  try {
+    text = await request.text()
+  } catch {
+    return { ok: false, reason: "bad_json" }
+  }
+  if (text.length > maxBytes) return { ok: false, reason: "too_large" }
+  try {
+    return { ok: true, body: JSON.parse(text) as T }
+  } catch {
+    return { ok: false, reason: "bad_json" }
+  }
+}

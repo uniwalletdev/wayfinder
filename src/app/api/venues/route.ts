@@ -7,6 +7,7 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 import { isDatabaseConfigured } from "@/lib/db"
+import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
 import { listPublicVenues, createVenue } from "@/lib/venues-db"
 import type { NewVenueInput } from "@/lib/venues"
 import type { VenueCategory, VenueVisibility } from "@/lib/types"
@@ -30,14 +31,22 @@ function isFiniteNumber(v: unknown): v is number {
 }
 
 export async function POST(request: Request) {
+  // Venue creation is unauthenticated and defaults to visibility:"public"
+  // below, so every venue created here is served to every user's picker.
+  // Without a ceiling, one loop can deface the directory.
+  const limited = rateLimit(request, "venue-create", LIMITS.venueCreate.limit, LIMITS.venueCreate.windowMs)
+  if (limited) return limited
+
   if (!isDatabaseConfigured()) return Response.json({ configured: false })
 
-  let body: Record<string, unknown>
-  try {
-    body = await request.json()
-  } catch {
-    return Response.json({ configured: true, error: "bad_request" }, { status: 400 })
+  const read = await readCappedJson<Record<string, unknown>>(request, BODY_LIMITS.venue)
+  if (!read.ok) {
+    return Response.json(
+      { configured: true, error: read.reason === "too_large" ? "too_large" : "bad_request" },
+      { status: read.reason === "too_large" ? 413 : 400 }
+    )
   }
+  const body = read.body
 
   const name = typeof body.name === "string" ? body.name.trim() : ""
   const category = CATEGORIES.includes(body.category as VenueCategory) ? (body.category as VenueCategory) : "other"
