@@ -6,7 +6,12 @@
 // venues, as are Queen Elizabeth Hospital (Woolwich) and University Hospital
 // Lewisham, St Bartholomew's, St Mary's Paddington, The Royal London (both its
 // duplicate pins), Newham and Mile End, which ship as mapped venues built from
-// their trusts' own published site maps (Whipps Cross too).
+// their trusts' own published site maps (Whipps Cross too). Also omitted for the
+// same reason: Charing Cross, Hammersmith, Queen Charlotte's & Chelsea and
+// Western Eye (Imperial), the Queen Elizabeth Hospital Birmingham, and North
+// Manchester General — all now full sheet-derived venues. Birmingham Women's,
+// Wythenshawe, Trafford General and the MFT Oxford Road campus ship as mapped
+// venues too but weren't in this dataset to begin with.
 
 export type NhsHospitalSite = [name: string, lat: number, lng: number]
 
@@ -118,7 +123,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Chalkhill", 50.991138, -0.093586],
   ["Chapel Allerton Hospital", 53.822639, -1.529795],
   ["Chard Community Hospital", 50.875, -2.952359],
-  ["Charing Cross Hospital", 51.487045, -0.219921],
   ["Charles Clifford Dental Hospital", 53.379799, -1.493765],
   ["Charlton Lane Hospital", 51.881054, -2.073667],
   ["Chelsea and Westminster Hospital", 51.48431, -0.18163],
@@ -252,7 +256,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Halstead Hospital", 51.948093, 0.637966],
   ["Halton General Hospital", 53.323273, -2.694666],
   ["Haltwhistle War Memorial Hospital", 54.970108, -2.46292],
-  ["Hammersmith Hospital", 51.517422, -0.234707],
   ["Harefield Hospital", 51.606731, -0.482754],
   ["Harley Street Specialist Hospital", 51.513374, -0.083018],
   ["Harley Street Specialist Hospital (Queen Anne Street)", 51.5182, -0.147028],
@@ -393,7 +396,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["North Cambridgeshire Hospital - Cambridgeshire and Peterborough NHS Foundation Trust", 52.664936, 0.163928],
   ["North Devon District Hospital", 51.092175, -4.050418],
   ["North Lincs Adult Mental Health Service - Access Team including Crisis Resolution Service", 53.566986, -0.63856],
-  ["North Manchester General Hospital", 53.517887, -2.229487],
   ["North Middlesex University Hospital", 51.613094, -0.073735],
   ["North Somerset Community Hospital", 51.437195, -2.847193],
   ["North Tyneside General Hospital", 55.025242, -1.467324],
@@ -458,9 +460,7 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["Prospect Park Hospital", 51.449146, -1.014734],
   ["Purley War Memorial Hospital", 51.34074, -0.114451],
   ["Queen Alexandra Hospital", 50.8503, -1.069918],
-  ["Queen Charlotte's & Chelsea Hospital", 51.517422, -0.234707],
   ["Queen Elizabeth Hospital", 54.939384, -1.580765],
-  ["Queen Elizabeth Hospital Birmingham", 52.45015, -1.941762],
   ["Queen Elizabeth The Queen Mother Hospital", 51.378052, 1.389399],
   ["Queen Mary", 51.419041, 0.101675],
   ["Queen Mary's Hospital For Children", 51.380314, -0.183627],
@@ -702,7 +702,6 @@ export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [
   ["West Park Hospital, Darlington", 54.543488, -1.591123],
   ["West Suffolk Hospital", 52.231663, 0.70919],
   ["West Valley Hospital", 51.380142, -0.100364],
-  ["Western Eye Hospital", 51.520702, -0.163316],
   ["Westhaven Hospital", 50.615242, -2.480031],
   ["Westlands - Inpatient Unit", 53.742012, -0.384643],
   ["Westminster Memorial Hospital", 51.004726, -2.200136],

@@ -16,6 +16,16 @@ import { KGH_VENUE } from "./kgh"
 import { BROOMFIELD_VENUE } from "./broomfield"
 import { BASILDON_VENUE } from "./basildon"
 import { QMH_VENUE } from "./qmh"
+import { CHARING_CROSS_VENUE } from "./charing-cross"
+import { HAMMERSMITH_VENUE } from "./hammersmith"
+import { QCCH_VENUE } from "./qcch"
+import { WESTERN_EYE_VENUE } from "./western-eye"
+import { BWH_VENUE } from "./bwh"
+import { QEHB_VENUE } from "./qehb"
+import { NMGH_VENUE } from "./nmgh"
+import { OXFORD_ROAD_VENUE } from "./oxford-road"
+import { TRAFFORD_VENUE } from "./trafford"
+import { WYTHENSHAWE_VENUE } from "./wythenshawe"
 import { NHS_HOSPITAL_VENUES } from "./nhs-hospitals"
 
 // Registry of venues the app knows about. Seed venues ship with the build;
@@ -42,6 +52,18 @@ export const SEED_VENUES: Venue[] = [
   BROOMFIELD_VENUE,
   BASILDON_VENUE,
   QMH_VENUE,
+  // Sheet-derived venues rebuilt from trusts' own published site maps
+  // (scripts/maps/build-venues.mjs).
+  CHARING_CROSS_VENUE,
+  HAMMERSMITH_VENUE,
+  QCCH_VENUE,
+  WESTERN_EYE_VENUE,
+  BWH_VENUE,
+  QEHB_VENUE,
+  NMGH_VENUE,
+  OXFORD_ROAD_VENUE,
+  TRAFFORD_VENUE,
+  WYTHENSHAWE_VENUE,
   CANNERY_TRAILS_VENUE,
   ...NHS_HOSPITAL_VENUES,
 ]
