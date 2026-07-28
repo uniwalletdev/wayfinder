@@ -28,6 +28,10 @@ interface Props {
   // Compass heading in degrees clockwise from north, or null when unknown. Drives
   // the facing beam on the you-are-here dot so the user can orient themselves.
   heading: number | null
+  // A user-chosen starting point. Null means the route starts from the live
+  // position (which the blue you-are-here dot already marks), so a separate
+  // start pin is only drawn when this is set.
+  origin: Waypoint | null
   destination: Waypoint | null
   route: Route | null
   isNavigating: boolean
@@ -55,6 +59,7 @@ export default function FloorPlanMap({
   currentFloor,
   currentPosition,
   heading,
+  origin,
   destination,
   route,
   isNavigating,
@@ -72,6 +77,7 @@ export default function FloorPlanMap({
   const mapRef = useRef<L.Map | null>(null)
   const tileLayerRef = useRef<L.TileLayer | null>(null)
   const positionMarkerRef = useRef<L.Marker | null>(null)
+  const originMarkerRef = useRef<L.Marker | null>(null)
   const destMarkerRef = useRef<L.Marker | null>(null)
   const routeLayerRef = useRef<L.FeatureGroup | null>(null)
   const floorPlanLayerRef = useRef<L.ImageOverlay | null>(null)
@@ -419,6 +425,10 @@ export default function FloorPlanMap({
       map.removeLayer(destMarkerRef.current)
       destMarkerRef.current = null
     }
+    if (originMarkerRef.current) {
+      map.removeLayer(originMarkerRef.current)
+      originMarkerRef.current = null
+    }
 
     if (!route || !destination || route.geometry.length < 2) {
       framedDestRef.current = null
@@ -491,6 +501,30 @@ export default function FloorPlanMap({
       { icon: destIcon, zIndexOffset: 900 }
     ).addTo(map)
 
+    // Green "start" pin — only when the user chose a custom starting point.
+    // Without one the route starts at the live position, already marked by the
+    // pulsing blue dot, so a second start pin there would just be noise.
+    if (origin) {
+      const originIcon = L.divIcon({
+        html: `<div style="
+          background:#16A34A;
+          border:3px solid white;
+          border-radius:50%;
+          width:22px;height:22px;
+          box-shadow:0 2px 8px rgba(22,163,74,0.5);
+        "></div>`,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        className: "",
+      })
+      originMarkerRef.current = L.marker(
+        [origin.coordinates.lat, origin.coordinates.lng],
+        { icon: originIcon, zIndexOffset: 850 }
+      )
+        .bindPopup(`<b>Start:</b> ${escapeHtml(origin.name)}`)
+        .addTo(map)
+    }
+
     const frame = () => {
       programmaticRef.current = true
       map.fitBounds(group.getBounds(), { padding: [70, 70] })
@@ -509,7 +543,7 @@ export default function FloorPlanMap({
       framedDestRef.current = destination.id
       setFollow(true)
     }
-  }, [isNavigating, route, destination])
+  }, [isNavigating, route, destination, origin])
 
   // Follow the walker while navigating: gently keep their dot centred as new
   // position fixes arrive (unless they've panned away to explore). We use

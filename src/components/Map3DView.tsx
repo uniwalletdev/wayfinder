@@ -25,6 +25,10 @@ interface Props {
   currentFloor: number
   currentPosition: Coordinates | null
   heading: number | null
+  // A user-chosen starting point. Null means the route starts from the live
+  // position (already marked by the blue dot), so a start node is only drawn
+  // when this is set.
+  origin: Waypoint | null
   destination: Waypoint | null
   route: Route | null
   isNavigating: boolean
@@ -43,6 +47,8 @@ interface Props {
 const NHS_BLUE = 0x005eb8
 const NHS_RED = 0xda291c
 const ROUTE_BLUE = 0x0a84ff
+// "Start" green, for the custom-origin node — matches the 2D map's start pin.
+const START_GREEN = 0x16a34a
 
 // Vertical rhythm of the model. A storey of ~4m reads correctly next to
 // metre-scaled plan footprints; everything on a floor sits just above its deck.
@@ -62,6 +68,7 @@ export default function Map3DView({
   currentFloor,
   currentPosition,
   heading,
+  origin,
   destination,
   route,
   isNavigating,
@@ -506,6 +513,29 @@ export default function Map3DView({
     beacon.position.set(dest.x, y, dest.z)
     group.add(beacon)
 
+    // Green "start" node — only when the user chose a custom starting point.
+    // Without one the route starts at the live position (the blue dot), so no
+    // extra node is needed there.
+    if (origin) {
+      const originPos = toLocal(origin.coordinates, 0)
+      const startNode = new THREE.Group()
+      const startRing = new THREE.Mesh(
+        new THREE.TorusGeometry(1.0, 0.14, 12, 32),
+        new THREE.MeshLambertMaterial({ color: START_GREEN, emissive: START_GREEN, emissiveIntensity: 0.55 })
+      )
+      startRing.rotation.x = Math.PI / 2
+      startRing.position.y = 0.2
+      startNode.add(startRing)
+      const startCore = new THREE.Mesh(
+        new THREE.SphereGeometry(0.5, 18, 14),
+        new THREE.MeshLambertMaterial({ color: START_GREEN, emissive: START_GREEN, emissiveIntensity: 0.4 })
+      )
+      startCore.position.y = 0.5
+      startNode.add(startCore)
+      startNode.position.set(originPos.x, y, originPos.z)
+      group.add(startNode)
+    }
+
     if (!controls || !camera) return
     const frame = () => frameBox(new THREE.Box3().setFromPoints(pts), camera, controls)
     if (!isNavigating) {
@@ -516,7 +546,7 @@ export default function Map3DView({
       framedDestRef.current = destination.id
       setFollow(true)
     }
-  }, [route, destination, isNavigating, currentFloor, toLocal])
+  }, [route, destination, origin, isNavigating, currentFloor, toLocal])
 
   // You-are-here dot: move the persistent marker, aim its facing cone.
   useEffect(() => {
