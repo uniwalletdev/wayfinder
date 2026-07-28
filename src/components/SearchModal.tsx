@@ -19,6 +19,10 @@ interface Props {
   // The active venue's centre or the user's live position — biases worldwide
   // place search toward nearby results.
   proximity?: Coordinates
+  // What the picked place is for. "destination" (default) is the everyday
+  // "where to?" search; "origin" is picking a custom starting point, which only
+  // changes the wording so it's clear which end of the journey is being set.
+  purpose?: "origin" | "destination"
   onSelect: (waypoint: Waypoint) => void
   onClose: () => void
 }
@@ -54,7 +58,8 @@ function geoToWaypoint(r: GeoResult): Waypoint {
   }
 }
 
-export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, onSelect, onClose }: Props) {
+export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", onSelect, onClose }: Props) {
+  const searchPlaceholder = purpose === "origin" ? "Choose a starting point…" : "Search a room, place or address..."
   const [query, setQuery] = useState("")
   const [geoResults, setGeoResults] = useState<GeoResult[]>([])
   const [geoLoading, setGeoLoading] = useState(false)
@@ -149,7 +154,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
     <div className="fixed inset-0 z-[200] bg-white flex flex-col">
       {/* Header */}
       <div className="bg-[#005EB8] px-4 pt-safe-bar pb-4 flex items-center gap-3">
-        <button onClick={onClose} aria-label="Close search" className="text-white">
+        <button onClick={onClose} aria-label={purpose === "origin" ? "Close starting point picker" : "Close search"} className="text-white">
           <X size={22} />
         </button>
         <div className="flex-1 bg-white rounded-xl flex items-center px-3 gap-2">
@@ -158,7 +163,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search a room, place or address..."
+            placeholder={searchPlaceholder}
             className="flex-1 py-2.5 text-sm text-gray-800 outline-none bg-transparent"
           />
           {query && (

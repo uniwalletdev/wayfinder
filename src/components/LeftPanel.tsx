@@ -6,7 +6,7 @@ import {
   Building, ChevronsUpDown, Search, BadgeCheck, X, Navigation, Share2, ChevronRight,
   Loader2, PersonStanding, Bike, Car, ClipboardList, UploadCloud, QrCode, Camera,
   ArrowUp, ArrowUpLeft, ArrowUpRight, ArrowLeft, ArrowRight, ArrowUpDown, Footprints, CheckCircle2,
-  Info, MapPin,
+  Info, MapPin, Pencil,
 } from "lucide-react"
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
@@ -31,6 +31,10 @@ interface Props {
   onSelectDestination: (w: Waypoint) => void
   nearby: NearbyItem[]
   currentFloor: number
+  // The user-chosen starting point, or null to route from their live location.
+  origin: Waypoint | null
+  onEditOrigin: () => void
+  onResetOrigin: () => void
   destination: Waypoint | null
   route: Route | null
   routeLoading: boolean
@@ -79,6 +83,9 @@ export default function LeftPanel({
   onSelectDestination,
   nearby,
   currentFloor,
+  origin,
+  onEditOrigin,
+  onResetOrigin,
   destination,
   route,
   routeLoading,
@@ -273,6 +280,9 @@ export default function LeftPanel({
           />
         ) : destination && route ? (
           <RoutePreviewCard
+            origin={origin}
+            onEditOrigin={onEditOrigin}
+            onResetOrigin={onResetOrigin}
             destination={destination}
             route={route}
             routeLoading={routeLoading}
@@ -434,6 +444,9 @@ const TRAVEL_MODES: { mode: TravelMode; label: string; Icon: typeof PersonStandi
 ]
 
 function RoutePreviewCard({
+  origin,
+  onEditOrigin,
+  onResetOrigin,
   destination,
   route,
   routeLoading,
@@ -450,6 +463,9 @@ function RoutePreviewCard({
   onStop,
   onShare,
 }: {
+  origin: Waypoint | null
+  onEditOrigin: () => void
+  onResetOrigin: () => void
   destination: Waypoint
   route: Route
   routeLoading: boolean
@@ -539,6 +555,14 @@ function RoutePreviewCard({
         </div>
       )}
 
+      <RouteEndpoints
+        origin={origin}
+        destination={destination}
+        floorNaming={floorNaming}
+        onEditOrigin={onEditOrigin}
+        onResetOrigin={onResetOrigin}
+      />
+
       {routeOptions ? (
         <RouteChoice
           routeOptions={routeOptions}
@@ -550,7 +574,6 @@ function RoutePreviewCard({
         />
       ) : (
         <>
-          <StepDots destination={destination} />
           <div className="mb-4 grid grid-cols-3 gap-2">
             <StatTile label={routeLoading ? "…" : route.outdoor ? travelMode : "walking"} value={routeLoading ? "—" : `${route.estimatedMinutes} min`} />
             <StatTile label={route.floorChanges > 0 ? `${route.floorChanges} floor change${route.floorChanges > 1 ? "s" : ""}` : "same floor"} value={routeLoading ? "—" : fmtDistance(route.totalDistance)} />
@@ -599,17 +622,53 @@ function StatTile({ label, value }: { label: string; value: string }) {
   )
 }
 
-function StepDots({ destination }: { destination: Waypoint }) {
+// The route's two endpoints. The start row is a button: tap it to pick a
+// specific starting point instead of "Your location" (the live-GPS default) —
+// e.g. to plan a route from the Main Entrance before you've arrived. Once a
+// custom start is set, a reset control returns it to the live position.
+function RouteEndpoints({
+  origin,
+  destination,
+  floorNaming,
+  onEditOrigin,
+  onResetOrigin,
+}: {
+  origin: Waypoint | null
+  destination: Waypoint
+  floorNaming?: FloorNaming
+  onEditOrigin: () => void
+  onResetOrigin: () => void
+}) {
   return (
     <div className="mb-4 flex flex-col gap-0">
       <div className="flex items-center gap-3">
         <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full border-2 border-[#CFE3FA] bg-wf-primary" />
-        <span className="text-[13.5px] text-wf-body">Your location</span>
+        <button
+          onClick={onEditOrigin}
+          className="group flex min-w-0 flex-1 items-center gap-1.5 rounded-lg py-0.5 text-left hover:bg-[#F7FAFD]"
+        >
+          <span className={`truncate text-[13.5px] ${origin ? "font-medium text-wf-ink" : "text-wf-body"}`}>
+            {origin ? origin.name : "Your location"}
+          </span>
+          {origin && (
+            <span className="flex-shrink-0 text-[11.5px] text-wf-muted">{floorLabel(origin.floor, floorNaming)}</span>
+          )}
+          <Pencil size={12} className="flex-shrink-0 text-wf-faint group-hover:text-wf-primary" />
+        </button>
+        {origin && (
+          <button
+            onClick={onResetOrigin}
+            aria-label="Start from my location instead"
+            className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-wf-faint hover:bg-wf-surface hover:text-wf-ink"
+          >
+            <X size={13} />
+          </button>
+        )}
       </div>
       <div className="ml-[5px] h-[22px] w-0.5 bg-wf-border" />
       <div className="flex items-center gap-3">
         <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full border-2 border-[#CFF3EF] bg-wf-teal" />
-        <span className="text-[13.5px] font-medium text-wf-ink">{destination.name}</span>
+        <span className="truncate text-[13.5px] font-medium text-wf-ink">{destination.name}</span>
       </div>
     </div>
   )

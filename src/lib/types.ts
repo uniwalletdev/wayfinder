@@ -194,6 +194,12 @@ export interface SurveyTrail {
 export interface NavigationState {
   currentPosition: Coordinates | null
   currentFloor: number
+  // An optional user-chosen starting point. Null (the default) means routes
+  // start from the walker's live position — the everyday case. When someone
+  // picks a specific place to start from (e.g. to plan "Main Entrance → Ward 5"
+  // before they've arrived), routes are built from this waypoint's coordinates
+  // and floor instead.
+  origin: Waypoint | null
   destination: Waypoint | null
   route: Route | null
   currentStepIndex: number
