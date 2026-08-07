@@ -18,7 +18,7 @@
 //
 // Lives here rather than in the script so tests can assert against it instead of
 // hardcoding a number that goes stale on the next bump.
-export const CRAWLER_VERSION = 2
+export const CRAWLER_VERSION = 3
 
 // Turn a URL or filename into something the word-based patterns can read.
 //
@@ -143,16 +143,44 @@ const PAGE_SIGNALS = [
   { re: /\bcontact\b|\babout\s?us\b/i, score: 2 },
 ]
 
+// Hosts that differ only by "www." are the same site. A trust's sitemap
+// routinely lists the bare domain while ODS records the www one, and treating
+// those as different silently discarded an entire sitemap — 424 URLs found and
+// then thrown away, with the crawl reporting it had fallen back to links.
+export function sameHost(a, b) {
+  const strip = (h) => String(h ?? "").toLowerCase().replace(/^www\./, "")
+  return strip(a) === strip(b)
+}
+
 export function scorePage(text, href) {
   const haystack = `${normaliseForMatching(text)} ${normaliseForMatching(href)}`
   let score = 0
   for (const signal of PAGE_SIGNALS) {
     if (signal.re.test(haystack)) score = Math.max(score, signal.score)
   }
-  // Deep URLs are usually specific pages rather than section landing pages, and
-  // the specific ones are where the maps hang.
-  const depth = (href.match(/\//g) ?? []).length
-  if (score > 0 && depth >= 5) score += 1
+  if (score === 0) return 0
+
+  // Tie-breaking matters more than the base score. On a site with 1,483 pages,
+  // dozens tie at the top and only a handful get fetched — so which ones win is
+  // the difference between finding the map and finding nothing.
+  let path = href
+  try {
+    path = new URL(href, "https://x.invalid").pathname
+  } catch {
+    // Already a path.
+  }
+  const last = path.replace(/\/$/, "").split("/").pop() ?? ""
+
+  // A page that says "map" in its own URL is the single best lead there is.
+  if (/\bmaps?\b/.test(normaliseForMatching(path))) score += 6
+  // …especially when it is the last segment, rather than a parent section.
+  if (/\bmaps?\b/.test(normaliseForMatching(last))) score += 2
+  // Specific pages carry the maps; section landing pages merely link to them.
+  // Both are worth visiting, but the specific one first.
+  const depth = path.split("/").filter(Boolean).length
+  if (depth >= 2) score += 1
+  if (depth >= 3) score += 1
+
   return score
 }
 
@@ -160,7 +188,7 @@ export function scorePage(text, href) {
 export function rankPages(links, { host, limit }) {
   const seen = new Set()
   return links
-    .filter((l) => l.host === host && !/\.(pdf|jpe?g|png|gif|zip|docx?|xlsx?)(\?|$)/i.test(l.url))
+    .filter((l) => sameHost(l.host, host) && !/\.(pdf|jpe?g|png|gif|zip|docx?|xlsx?)(\?|$)/i.test(l.url))
     .map((l) => ({ ...l, score: scorePage(l.text, l.url) }))
     .filter((l) => {
       if (l.score <= 0 || seen.has(l.url)) return false

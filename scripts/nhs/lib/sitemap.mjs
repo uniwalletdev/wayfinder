@@ -12,6 +12,7 @@
 // following links.
 import { fetchRetry, BROWSER_HEADERS } from "./net.mjs"
 import { isAllowed } from "./robots.mjs"
+import { sameHost } from "./discovery-match.mjs"
 
 // Trust sites are big but not unbounded. This is enough to hold every page of a
 // large trust while refusing to load a runaway index into memory.
@@ -93,7 +94,7 @@ export async function fetchSitemapUrls(origin, { log } = {}) {
       const children = extractLocs(xml)
         .filter((u) => {
           try {
-            return new URL(u).host === host
+            return sameHost(new URL(u).host, host)
           } catch {
             return false
           }
@@ -126,7 +127,10 @@ export async function fetchSitemapUrls(origin, { log } = {}) {
       try {
         const parsed = new URL(u)
         parsed.hash = ""
-        return parsed.host === host ? parsed.href : null
+        // www. and the bare domain are the same site. Requiring an exact match
+        // threw away entire sitemaps: a trust recorded in ODS as www.x.nhs.uk
+        // lists x.nhs.uk in its own sitemap, and 424 URLs were silently dropped.
+        return sameHost(parsed.host, host) ? parsed.href : null
       } catch {
         return null
       }
