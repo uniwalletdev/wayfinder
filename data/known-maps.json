@@ -1,0 +1,13 @@
+{
+  "description": "Hospital map PDFs added by hand, merged into data/plan-candidates.json on every crawl. This is the escape hatch for maps a crawler cannot reach: sites behind a JavaScript bot challenge, navigation built entirely in script, or a page the ranking never picks out of several thousand. Entries here are treated exactly like discovered candidates — approve-plans still applies its own-domain and confidence rules — so adding one is not a way to bypass review, only a way to get a URL in front of it.",
+  "howToAdd": "Find the PDF in a browser, check it is genuinely a hospital map, then add an entry with the trust's ODS code (the crawl prints it on failure), the trust name, the URL, and a note saying why the crawl missed it.",
+  "maps": [
+    {
+      "trustCode": "RNZ",
+      "trustName": "Salisbury NHS Foundation Trust",
+      "url": "https://www.stsft.nhs.uk/application/files/6417/7382/2879/SRH_Map_update.pdf",
+      "linkText": "Salisbury District Hospital site map",
+      "note": "Found by hand at /our-locations/our-locations. Six crawler revisions failed to reach it: the site publishes 1,483 sitemap URLs and this page never survives ranking against them. Rather than keep tuning heuristics against one example, it is recorded here."
+    }
+  ]
+}

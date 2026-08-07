@@ -106,7 +106,10 @@ async function fetchHtml(url) {
   }
   const type = res.headers.get("content-type") ?? ""
   if (!/text\/html/i.test(type)) return null
-  return res.text()
+  // The final URL matters as much as the body: a trust recorded in ODS under one
+  // domain may redirect to another, and its sitemap will list the new one. Read
+  // through the redirect and everything downstream agrees on which host this is.
+  return { html: await res.text(), finalUrl: res.url || url }
 }
 
 // The ORD API gives per-organisation detail including contact records; a website
@@ -279,23 +282,32 @@ async function crawlTrust(trust) {
       return { outcome: "robots-blocked", found: 0, via: "-", note: "robots.txt disallows crawling" }
     }
 
-    const host = new URL(origin).host
+    // Load the homepage first, because it settles which host this trust really
+    // is. Solent is recorded in ODS under one domain and serves its sitemap
+    // listing another; comparing against the ODS host discarded all 424 of its
+    // URLs and the crawl quietly fell back to following links.
+    const home = await fetchHtml(origin)
+    const effectiveOrigin = home ? new URL(home.finalUrl).origin : origin
+    const host = new URL(effectiveOrigin).host
+    if (effectiveOrigin !== origin) {
+      log(STAGE, `  ${trust.odsCode}: redirects to ${host}`)
+    }
 
-    // Ask the site for its own index first. Where a sitemap exists this finds
-    // pages — and often PDFs — that no amount of following navigation reaches.
-    const sitemapUrls = await fetchSitemapUrls(origin, { log: (m) => log(STAGE, m) })
+    // Ask the site for its own index. Where a sitemap exists it finds pages —
+    // and often PDFs — that no amount of following navigation reaches.
+    const sitemapUrls = await fetchSitemapUrls(effectiveOrigin, { log: (m) => log(STAGE, m) })
     if (sitemapUrls.length) {
       via = "sitemap"
       collect(sitemapUrls.map((url) => ({ url, text: "", host })))
     }
 
-    const home = await fetchHtml(origin)
     if (!home && !sitemapUrls.length) {
       return { outcome: "failed", found: 0, via: "-", note: "homepage unreadable" }
     }
     visited.add(origin)
+    visited.add(effectiveOrigin)
 
-    const homeLinks = home ? extractLinks(home, origin) : []
+    const homeLinks = home ? extractLinks(home.html, home.finalUrl) : []
     collect(homeLinks)
 
     // Two separate budgets. Pooling them let hundreds of sitemap entries crowd
@@ -329,9 +341,9 @@ async function crawlTrust(trust) {
       fetched++
       if (page.depth === 1) fetchedAtDepthOne++
       try {
-        const html = await fetchHtml(page.url)
-        if (!html) continue
-        const links = extractLinks(html, page.url)
+        const page_ = await fetchHtml(page.url)
+        if (!page_) continue
+        const links = extractLinks(page_.html, page_.finalUrl)
         collect(links)
 
         if (page.depth < MAX_DEPTH) {
@@ -373,6 +385,40 @@ async function crawlTrust(trust) {
 // the same factor. Tuning the budget downwards to save time was solving the
 // wrong problem — and each downward tweak lost a trust that the previous one had
 // found.
+// Maps added by hand, for the sites a crawler cannot reach.
+//
+// Some trusts sit behind a JavaScript bot challenge; some build their navigation
+// in script; and on a site with thousands of pages a single map page can lose
+// the ranking no matter how it is tuned. Six revisions failed to reach
+// Salisbury's, so rather than keep adjusting heuristics against one example it
+// is recorded in data/known-maps.json and merged here. approve-plans still
+// applies its own rules to these, so this gets a URL reviewed rather than
+// around review.
+const knownMaps = readJson(dataPath("known-maps.json"), { maps: [] }).maps ?? []
+let knownAdded = 0
+for (const entry of knownMaps) {
+  if (!entry?.url) continue
+  const url = decodeEntities(entry.url)
+  const signal = classifyPdf(decodeEntities(entry.linkText ?? ""), url)
+  if (!signal) {
+    console.warn(`[${STAGE}] known map does not look like a map, skipping: ${url}`)
+    continue
+  }
+  const key = canonicalUrl(url)
+  if (candidates.some((c) => canonicalUrl(c.url) === key)) continue
+  candidates.push({
+    trustCode: entry.trustCode ?? null,
+    trustName: entry.trustName ?? "(added by hand)",
+    url,
+    linkText: entry.linkText ?? "",
+    kind: signal.kind,
+    confidence: signal.confidence,
+    addedByHand: true,
+  })
+  knownAdded++
+}
+if (knownAdded) log(STAGE, `${knownAdded} map(s) added from data/known-maps.json`)
+
 const pending = trusts.filter((t) => !crawled.has(t.odsCode))
 let completed = 0
 let sinceCheckpoint = 0
