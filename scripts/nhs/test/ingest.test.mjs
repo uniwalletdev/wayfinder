@@ -8,7 +8,7 @@
 //
 // Run: node scripts/nhs/test/ingest.test.mjs
 import { execFileSync } from "child_process"
-import { mkdtempSync, writeFileSync, readFileSync, rmSync, cpSync } from "fs"
+import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync, cpSync } from "fs"
 import { tmpdir } from "os"
 import { join } from "path"
 import { REPO_ROOT } from "../lib/paths.mjs"
@@ -118,6 +118,49 @@ try {
   check("skips a sheet with no venue module", !barrel.includes("not-built-yet"), "dangling import emitted")
   check("still exports the array", /export const GENERATED_SHEET_VENUES: Venue\[\]/.test(barrel))
 
+  group("discover resume")
+  // A full crawl runs for hours, so an interrupted run must continue rather than
+  // start over. Exercised without network: every trust here fails its website
+  // lookup, which still counts as a conclusion the resume should not revisit.
+  const FIELDS = 27
+  const trustRow = (code, name) => {
+    const r = new Array(FIELDS).fill("")
+    r[0] = code; r[1] = name; r[4] = "1 Test Road"; r[9] = "SE1 7EH"; r[10] = "19910401"; r[12] = "A"
+    return r.join(",")
+  }
+  mkdirSync("data/raw/ods", { recursive: true })
+  writeFileSync("data/raw/ods/etr.csv", [
+    trustRow("RJ1", "ALPHA NHS FOUNDATION TRUST"),
+    trustRow("RJ2", "BETA NHS FOUNDATION TRUST"),
+    trustRow("RJ3", "GAMMA NHS FOUNDATION TRUST"),
+  ].join("\n") + "\n")
+
+  // Prior state: one trust already crawled, one candidate already banked.
+  writeFileSync("data/plan-candidates.json", JSON.stringify({
+    count: 1,
+    crawled: { RJ1: "ok" },
+    candidates: [{
+      trustCode: "RJ1", trustName: "Alpha NHS Foundation Trust",
+      url: "https://alpha.nhs.uk/site-map.pdf", linkText: "Site map",
+      kind: "site-map", confidence: "high",
+    }],
+  }))
+
+  const resumeOut = execFileSync("node", ["scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
+  const resumed = JSON.parse(readFileSync("data/plan-candidates.json", "utf8"))
+
+  check("announces that it is resuming", /resuming — 1 candidate\(s\) and 1 trust\(s\) already done/.test(resumeOut), resumeOut.slice(0, 300))
+  check("reports only the outstanding trusts", /3 trusts in scope, 2 still to crawl/.test(resumeOut))
+  check("keeps the candidate banked by the earlier run", resumed.candidates.some((c) => c.trustCode === "RJ1"), "prior work was discarded")
+  check("does not duplicate it", resumed.candidates.filter((c) => c.url === "https://alpha.nhs.uk/site-map.pdf").length === 1)
+  check("does not re-crawl a completed trust", resumed.crawled.RJ1 === "ok")
+  check("records an outcome for each trust it attempted", !!resumed.crawled.RJ2 && !!resumed.crawled.RJ3, JSON.stringify(resumed.crawled))
+  check("counts outcomes across the whole run, not just this one", resumed.stats.crawled === 3, JSON.stringify(resumed.stats))
+
+  // A second run with everything already recorded should do no work at all.
+  const secondOut = execFileSync("node", ["scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
+  check("a finished crawl re-runs as a no-op", /3 trusts in scope, 0 still to crawl/.test(secondOut), secondOut.slice(0, 300))
+
   group("doctor")
   // The doctor is the first thing anyone runs on a new machine, so its advice
   // has to track what the pipeline has actually produced. It is also the only
@@ -133,7 +176,11 @@ try {
 
   check("recognises a checkout that has the pipeline", /ok\s+pipeline scripts present/.test(doctorOut), doctorOut.slice(0, 200))
   check("does not hard-fail on a healthy checkout", !doctorFailed, "exited non-zero")
-  check("notices the ODS extracts are missing", /ODS extracts — not fetched yet/.test(doctorOut))
+  // The resume group above wrote an etr.csv, so the doctor must now report the
+  // extracts as present — the point being that it reads real state off disk
+  // rather than printing a fixed list.
+  check("reads pipeline state off disk", /ok\s+ODS extracts/.test(doctorOut), doctorOut.slice(0, 400))
+  check("notices the geocode cache is still missing", /geocode cache — not built yet/.test(doctorOut))
   check("sees the discovery results this test wrote", /candidates found/.test(doctorOut), "did not read plan-candidates.json")
   check("always ends with a next step", /\nNext: \S/.test(doctorOut))
   // A proxy denial must never read as "reachable" — a doctor that green-lights a

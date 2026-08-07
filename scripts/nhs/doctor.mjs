@@ -8,7 +8,12 @@
 //
 // Every check prints what to do about a failure, not just that it failed.
 //
-// Run: node scripts/nhs/doctor.mjs
+// Run: node scripts/nhs/doctor.mjs [--strict]
+//
+// --strict also fails when no upstream is reachable. Run on its own the doctor
+// reports that as information — it is perfectly reasonable to check the state of
+// a machine you already know is offline. But the one-command runners use it as a
+// gate, and there it should stop rather than let a fetching stage start.
 import { existsSync, readFileSync } from "fs"
 import { dataPath, repoPath, RAW_DIR } from "./lib/paths.mjs"
 import { join } from "path"
@@ -17,6 +22,7 @@ const OK = "  ok  "
 const WARN = " warn "
 const FAIL = " FAIL "
 
+const STRICT = process.argv.includes("--strict")
 let hardFailures = 0
 const notes = []
 
@@ -172,7 +178,8 @@ else next = "git add data && git commit -m \"Add NHS map discovery results\" && 
 
 console.log(`\nNext: ${next}\n`)
 
-// Unreachable upstreams are reported, not treated as a failure: the doctor is
-// also useful for confirming the state of an environment where you already know
-// the network is closed.
-process.exit(hardFailures ? 1 : 0)
+// Run on its own, unreachable upstreams are reported rather than treated as a
+// failure — checking the state of a machine you already know is offline is a
+// legitimate thing to do. Under --strict they are fatal, because the caller is
+// about to start a fetching stage that cannot possibly work.
+process.exit(hardFailures || (STRICT && reachable === 0) ? 1 : 0)

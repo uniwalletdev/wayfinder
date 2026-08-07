@@ -15,7 +15,10 @@
 // Trust websites come from the ODS ORD API, which exposes each organisation's
 // contacts including its website — so even this doesn't require a hand-kept list.
 //
-// Run: node scripts/nhs/discover-plans.mjs [--limit N]
+// A full run takes hours, so it checkpoints as it goes and a re-run resumes from
+// where it stopped. Interrupting it is safe.
+//
+// Run: node scripts/nhs/discover-plans.mjs [--limit N] [--restart] [--retry-failed]
 import { fetchRetry } from "./lib/net.mjs"
 import { isAllowed, crawlDelayFor } from "./lib/robots.mjs"
 import { loadOdsRecords } from "./lib/sites.mjs"
@@ -26,9 +29,14 @@ const ORD_API = "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations"
 const WEBSITE_CACHE = dataPath("trust-websites.json")
 const MIN_PAUSE_MS = 1500
 const MAX_PAGES_PER_TRUST = 6
+// Every ten trusts is roughly every few minutes of crawling — often enough that
+// an interruption costs almost nothing, rare enough not to thrash the disk.
+const CHECKPOINT_EVERY = 10
 
 const limitArg = process.argv.indexOf("--limit")
 const LIMIT = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity
+const RESTART = process.argv.includes("--restart")
+const RETRY_FAILED = process.argv.includes("--retry-failed")
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
@@ -98,13 +106,76 @@ async function websiteForTrust(code) {
 }
 
 const trusts = loadOdsRecords("etr").slice(0, LIMIT === Infinity ? undefined : LIMIT)
-log(STAGE, `${trusts.length} trusts to check`)
 
 const websites = readJson(WEBSITE_CACHE, {})
-const candidates = []
-const stats = { noWebsite: 0, crawlFailed: 0, robotsBlocked: 0, withCandidates: 0 }
+let candidates = []
+// ODS code -> how the crawl of that trust ended. Resuming skips anything already
+// recorded here, so an interrupted run continues rather than starting over.
+const crawled = new Map()
 
+// A full run visits ~215 trusts at a deliberately polite pace and takes hours.
+// Writing the results only at the end would mean a dropped connection, a closed
+// window or a sleeping laptop at trust 180 threw away all of it — so state goes
+// to disk as we go, and a re-run picks up where it stopped.
+if (!RESTART) {
+  const prior = readJson(dataPath("plan-candidates.json"))
+  if (prior?.candidates) {
+    candidates = prior.candidates
+    for (const [code, outcome] of Object.entries(prior.crawled ?? {})) {
+      // A failed trust is usually a site that was down or too slow. Keep it
+      // marked so a resume converges instead of retrying forever, unless the
+      // run explicitly asks for another go at them.
+      if (RETRY_FAILED && outcome === "failed") continue
+      crawled.set(code, outcome)
+    }
+    log(STAGE, `resuming — ${candidates.length} candidate(s) and ${crawled.size} trust(s) already done`)
+  }
+}
+
+const remaining = trusts.filter((t) => !crawled.has(t.odsCode))
+log(STAGE, `${trusts.length} trusts in scope, ${remaining.length} still to crawl`)
+if (remaining.length > 100) {
+  log(STAGE, "this will take a few hours — it honours every site's robots.txt and crawl delay")
+  log(STAGE, "safe to interrupt: re-run the same command and it continues from here")
+}
+
+// Outcomes are counted from `crawled` rather than incremented as we go, so the
+// totals stay correct across any number of resumed runs.
+function summarise() {
+  const stats = { noWebsite: 0, crawlFailed: 0, robotsBlocked: 0, withCandidates: 0, crawled: crawled.size }
+  for (const outcome of crawled.values()) {
+    if (outcome === "no-website") stats.noWebsite++
+    else if (outcome === "robots-blocked") stats.robotsBlocked++
+    else if (outcome === "failed") stats.crawlFailed++
+  }
+  stats.withCandidates = new Set(candidates.map((c) => c.trustCode)).size
+  return stats
+}
+
+function writeCheckpoint() {
+  const order = { high: 0, medium: 1, low: 2 }
+  const sorted = [...candidates].sort(
+    (a, b) => order[a.confidence] - order[b.confidence] || a.trustName.localeCompare(b.trustName)
+  )
+  writeJson(WEBSITE_CACHE, Object.fromEntries(Object.keys(websites).sort().map((k) => [k, websites[k]])))
+  writeJson(dataPath("plan-candidates.json"), {
+    generatedAt: new Date().toISOString(),
+    description:
+      "Candidate site-map / floor-plan PDFs found on NHS trust websites. THIS IS A TRIAGE QUEUE, NOT AN IMPORT LIST. " +
+      "These PDFs are the trusts' copyright. scripts/nhs/approve-plans.mjs promotes eligible entries into " +
+      "data/plan-sources.json, which is the only list scripts/nhs/fetch-plans.mjs will download.",
+    stats: summarise(),
+    count: candidates.length,
+    // Which trusts have been visited, so an interrupted run can resume.
+    crawled: Object.fromEntries([...crawled.entries()].sort()),
+    candidates: sorted,
+  })
+  return sorted
+}
+
+let sinceCheckpoint = 0
 for (const [i, trust] of trusts.entries()) {
+  if (crawled.has(trust.odsCode)) continue
   // Website lookups are cached: they change far less often than the maps do,
   // and re-asking ORD for 215 organisations every month is pointless load.
   if (!(trust.odsCode in websites)) {
@@ -117,16 +188,17 @@ for (const [i, trust] of trusts.entries()) {
     await sleep(500)
   }
   const origin = websites[trust.odsCode]
-  if (!origin) { stats.noWebsite++; continue }
+  if (!origin) { crawled.set(trust.odsCode, "no-website"); continue }
 
   const pause = Math.max(MIN_PAUSE_MS, await crawlDelayFor(origin))
   const found = new Map()
   const visited = new Set()
+  let outcome = "ok"
 
   try {
-    if (!(await isAllowed(origin))) { stats.robotsBlocked++; continue }
+    if (!(await isAllowed(origin))) { crawled.set(trust.odsCode, "robots-blocked"); continue }
     const home = await fetchHtml(origin)
-    if (!home) { stats.crawlFailed++; continue }
+    if (!home) { crawled.set(trust.odsCode, "failed"); continue }
     visited.add(origin)
 
     const homeLinks = extractLinks(home, origin)
@@ -168,42 +240,39 @@ for (const [i, trust] of trusts.entries()) {
       }
     }
   } catch (err) {
-    stats.crawlFailed++
+    outcome = "failed"
     console.warn(`[${STAGE}] ${trust.odsCode} (${trust.name}): crawl failed — ${err.message}`)
   }
 
-  if (found.size) {
-    stats.withCandidates++
-    candidates.push(...found.values())
+  if (found.size) candidates.push(...found.values())
+  crawled.set(trust.odsCode, outcome)
+
+  log(STAGE, `[${i + 1}/${trusts.length}] ${trust.name} — ${found.size} candidate(s)`)
+
+  if (++sinceCheckpoint >= CHECKPOINT_EVERY) {
+    writeCheckpoint()
+    sinceCheckpoint = 0
+    log(STAGE, `  … saved (${candidates.length} candidates so far)`)
   }
-  log(STAGE, `${i + 1}/${trusts.length} ${trust.name}: ${found.size} candidate(s)`)
   await sleep(pause)
 }
 
-writeJson(WEBSITE_CACHE, Object.fromEntries(Object.keys(websites).sort().map((k) => [k, websites[k]])))
-
-const order = { high: 0, medium: 1, low: 2 }
-candidates.sort((a, b) => order[a.confidence] - order[b.confidence] || a.trustName.localeCompare(b.trustName))
-
-writeJson(dataPath("plan-candidates.json"), {
-  generatedAt: new Date().toISOString(),
-  description:
-    "Candidate site-map / floor-plan PDFs found on NHS trust websites. THIS IS A TRIAGE QUEUE, NOT AN IMPORT LIST. " +
-    "These PDFs are the trusts' copyright. Move an entry into data/plan-sources.json only after checking it is the right " +
-    "map and that reuse is acceptable; scripts/nhs/fetch-plans.mjs downloads only what is listed there.",
-  stats,
-  count: candidates.length,
-  candidates,
-})
+const sorted = writeCheckpoint()
+const stats = summarise()
 
 updateManifest("plans.candidates", {
   description: "Floor-plan PDF discovery queue",
-  trustsChecked: trusts.length,
-  candidates: candidates.length,
+  trustsInScope: trusts.length,
+  candidates: sorted.length,
   ...stats,
 })
 
-log(STAGE, `${candidates.length} candidates across ${stats.withCandidates} trusts`)
-log(STAGE, `high confidence: ${candidates.filter((c) => c.confidence === "high").length}`)
+const high = sorted.filter((c) => c.confidence === "high").length
+const floorPlans = sorted.filter((c) => c.kind === "floor-plan").length
+log(STAGE, `${sorted.length} candidates across ${stats.withCandidates} trusts`)
+log(STAGE, `high confidence: ${high} (of which ${floorPlans} look like indoor floor plans)`)
 log(STAGE, `no website: ${stats.noWebsite}, crawl failed: ${stats.crawlFailed}, robots-blocked: ${stats.robotsBlocked}`)
-log(STAGE, "done — review data/plan-candidates.json before running fetch-plans.mjs")
+if (stats.crawlFailed) {
+  log(STAGE, `re-run with --retry-failed to have another go at the ${stats.crawlFailed} that failed`)
+}
+log(STAGE, "done — next: node scripts/nhs/approve-plans.mjs --dry-run")

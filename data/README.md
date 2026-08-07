@@ -17,27 +17,43 @@ regardless of where anyone is working, and makes every refresh a reviewable diff
 
 ## Running it
 
-**Start here.** It checks your toolchain, works out which stages have already
-run, tells you whether this machine can actually reach the upstreams, and prints
-the next command to run:
+**To find hospital maps, run one command from the repository root.** Windows:
+
+```
+nhs-discover
+```
+
+macOS and Linux:
+
+```
+./nhs-discover.sh
+```
+
+That preflights the machine, fetches the NHS trust register, crawls every trust
+website for published map PDFs, and commits and pushes the results. A full run
+covers ~215 trusts and takes a few hours, because it honours every site's
+robots.txt and crawl delay. **It saves as it goes** — if it stops for any reason,
+run it again and it continues from where it left off rather than starting over.
+
+Add a number to check only that many trusts, e.g. `nhs-discover 20` for a trial.
+
+Everything else is a normal npm script:
 
 ```
 npm run nhs:doctor
 ```
 
-Then, one command per line:
+```
+npm run nhs:refresh
+```
 
 ```
-npm run nhs:fetch
-npm run nhs:discover:quick
-npm run nhs:refresh
 npm run nhs:ingest
 ```
 
-`nhs:discover:quick` crawls 20 trusts as a trial. `nhs:discover` does all ~215
-and takes hours — it honours every site's robots.txt and crawl delay.
-`nhs:refresh` rebuilds the hospital directory; `nhs:ingest` turns discovered
-PDFs into venues.
+`nhs:doctor` reports the toolchain, which stages have run, and whether this
+machine can reach the upstreams. `nhs:refresh` rebuilds the hospital directory;
+`nhs:ingest` turns discovered PDFs into venues.
 
 Individual stages: `nhs:fetch`, `nhs:geocode`, `nhs:osm`, `nhs:build`,
 `nhs:venues`, `nhs:approve`, `nhs:plans`, `nhs:draft`, `nhs:registry`,
