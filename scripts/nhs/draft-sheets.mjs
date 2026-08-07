@@ -133,7 +133,10 @@ for (const source of sourcesDoc.sources) {
 
   let labels, W, H
   try {
-    ({ labels, W, H } = await extractLabels(source.file, 1))
+    // The resolved path, not source.file — the existence check above already
+    // resolved it, and reading the relative one would only work when the stage
+    // happens to be run from the repo root.
+    ({ labels, W, H } = await extractLabels(file, 1))
   } catch (err) {
     reject("unreadable-pdf", err.message)
     continue

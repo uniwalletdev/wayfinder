@@ -17,11 +17,27 @@ regardless of where anyone is working, and makes every refresh a reviewable diff
 
 ## Running it
 
-```bash
-npm run nhs:refresh       # the directory: fetch -> geocode -> footprints -> merge -> generate
-npm run nhs:discover      # search every trust website for map PDFs (writes a candidate list)
-npm run nhs:ingest        # turn those candidates into mapped venues
+**Start here.** It checks your toolchain, works out which stages have already
+run, tells you whether this machine can actually reach the upstreams, and prints
+the next command to run:
+
 ```
+npm run nhs:doctor
+```
+
+Then, one command per line:
+
+```
+npm run nhs:fetch
+npm run nhs:discover:quick
+npm run nhs:refresh
+npm run nhs:ingest
+```
+
+`nhs:discover:quick` crawls 20 trusts as a trial. `nhs:discover` does all ~215
+and takes hours — it honours every site's robots.txt and crawl delay.
+`nhs:refresh` rebuilds the hospital directory; `nhs:ingest` turns discovered
+PDFs into venues.
 
 Individual stages: `nhs:fetch`, `nhs:geocode`, `nhs:osm`, `nhs:build`,
 `nhs:venues`, `nhs:approve`, `nhs:plans`, `nhs:draft`, `nhs:registry`,
@@ -29,8 +45,26 @@ Individual stages: `nhs:fetch`, `nhs:geocode`, `nhs:osm`, `nhs:build`,
 doesn't discard earlier work. `npm run nhs:test` covers the parsing, merge and
 approval logic.
 
-Start with `node scripts/nhs/approve-plans.mjs --dry-run` — it prints what the
-ingest would publish without downloading anything.
+Before letting the ingest publish anything, see what it would pick:
+
+```
+node scripts/nhs/approve-plans.mjs --dry-run
+```
+
+### Notes for Windows, and for npm 11+
+
+- **Don't paste `#` comments into cmd or PowerShell.** `#` isn't a comment
+  character there, so `npm run nhs:fetch  # trust register` passes
+  `# trust register` to npm as arguments. One bare command per line.
+- **Passing flags through npm needs `--`.** `npm run nhs:discover --limit 20`
+  makes npm eat the flag itself; the correct form is
+  `npm run nhs:discover -- --limit 20`. `nhs:discover:quick` exists so the
+  common case doesn't need it.
+- **npm 11 blocks install scripts by default.** `npm ci` will say sharp's was
+  skipped. Usually harmless — the prebuilt binary is a normal dependency — but
+  `npm run nhs:doctor` verifies sharp actually works, and tells you to run
+  `npm approve-scripts sharp && npm rebuild sharp` if it doesn't. Only the
+  preview stage needs it.
 
 ## How a discovered PDF becomes a venue
 

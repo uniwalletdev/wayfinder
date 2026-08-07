@@ -117,6 +117,32 @@ try {
   const barrel = readFileSync("src/lib/venues/generated-sheets.ts", "utf8")
   check("skips a sheet with no venue module", !barrel.includes("not-built-yet"), "dangling import emitted")
   check("still exports the array", /export const GENERATED_SHEET_VENUES: Venue\[\]/.test(barrel))
+
+  group("doctor")
+  // The doctor is the first thing anyone runs on a new machine, so its advice
+  // has to track what the pipeline has actually produced. It is also the only
+  // check that has to stay correct in an environment with no network at all.
+  let doctorOut = ""
+  let doctorFailed = false
+  try {
+    doctorOut = execFileSync("node", ["scripts/nhs/doctor.mjs"], { encoding: "utf8" })
+  } catch (err) {
+    doctorFailed = true
+    doctorOut = String(err.stdout ?? "")
+  }
+
+  check("recognises a checkout that has the pipeline", /ok\s+pipeline scripts present/.test(doctorOut), doctorOut.slice(0, 200))
+  check("does not hard-fail on a healthy checkout", !doctorFailed, "exited non-zero")
+  check("notices the ODS extracts are missing", /ODS extracts — not fetched yet/.test(doctorOut))
+  check("sees the discovery results this test wrote", /candidates found/.test(doctorOut), "did not read plan-candidates.json")
+  check("always ends with a next step", /\nNext: \S/.test(doctorOut))
+  // A proxy denial must never read as "reachable" — a doctor that green-lights a
+  // machine which cannot fetch anything is worse than no doctor.
+  check(
+    "never reports a 403 as reachable",
+    !/ok\s+\S+ — .*\(HTTP 40[37]\)/.test(doctorOut),
+    "a policy-blocked host was reported ok"
+  )
 } finally {
   rmSync("data", { recursive: true, force: true })
   cpSync(backup, "data", { recursive: true })

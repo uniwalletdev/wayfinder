@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p ${PORT:-3000}",
+    "start": "next start",
     "lint": "eslint",
     "nhs:fetch": "node scripts/nhs/fetch-ods.mjs",
     "nhs:geocode": "node scripts/nhs/geocode.mjs",
@@ -21,7 +21,9 @@
     "nhs:draft": "node scripts/nhs/draft-sheets.mjs",
     "nhs:registry": "node scripts/nhs/generate-registry.mjs",
     "nhs:previews": "node scripts/nhs/preview-sheets.mjs",
-    "nhs:ingest": "npm run nhs:approve && npm run nhs:plans && npm run nhs:draft && node scripts/maps/generate-all.mjs && node scripts/maps/build-venues.mjs && npm run nhs:registry && npm run nhs:previews && npm run nhs:build && npm run nhs:venues"
+    "nhs:ingest": "npm run nhs:approve && npm run nhs:plans && npm run nhs:draft && node scripts/maps/generate-all.mjs && node scripts/maps/build-venues.mjs && npm run nhs:registry && npm run nhs:previews && npm run nhs:build && npm run nhs:venues",
+    "nhs:doctor": "node scripts/nhs/doctor.mjs",
+    "nhs:discover:quick": "node scripts/nhs/discover-plans.mjs --limit 20"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.101.0",
