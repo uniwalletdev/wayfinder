@@ -213,4 +213,60 @@ check(
 )
 check("sitemap gets its own allowance", rankPages(flood, { host: "www.x.nhs.uk", limit: 14 }).length === 14)
 
+
+group("the second hop must be reachable")
+// The bug this pins: depth-1 seeds exactly filled the fetch budget, so a section
+// page was fetched, its child queued — and the run ended with the child never
+// visited. On every trust with a sitemap the second hop simply never happened,
+// which is where Salisbury keeps its map.
+function simulateQueue({ seeds, reserved, budget, childBonus }) {
+  const queue = seeds.map((s) => ({ ...s, depth: 1 }))
+  const depthOneCap = Math.max(6, budget - reserved)
+  const fetchedUrls = []
+  let fetched = 0
+  let atDepthOne = 0
+  while (queue.length && fetched < budget) {
+    let index = 0
+    if (atDepthOne >= depthOneCap) {
+      index = queue.findIndex((p) => p.depth > 1)
+      if (index === -1) break
+    }
+    const [page] = queue.splice(index, 1)
+    fetched++
+    if (page.depth === 1) atDepthOne++
+    fetchedUrls.push(page.url)
+    // The section page yields the child that actually carries the map.
+    if (page.url === "/our-locations" && page.depth < 2) {
+      queue.push({ url: "/our-locations/our-locations", score: 11 + childBonus, depth: 2 })
+      queue.sort((a, b) => b.score - a.score)
+    }
+  }
+  return fetchedUrls
+}
+
+// 26 depth-1 seeds and a 26-page budget: exactly the real configuration.
+const seeds = [
+  { url: "/our-locations", score: 11 },
+  ...Array.from({ length: 25 }, (_, i) => ({ url: `/other-${i}`, score: 11 })),
+]
+
+// The old behaviour: no reserve, and a child scored the same as an untried
+// seed, so a stable sort left it behind 25 equals it could never overtake.
+const withoutReserve = simulateQueue({ seeds, reserved: 0, budget: 26, childBonus: 0 })
+check(
+  "reproduces the bug with no reserve",
+  !withoutReserve.includes("/our-locations/our-locations"),
+  "expected the child to be starved without a reserve"
+)
+
+// Both mechanisms together: slots held back, and a child of a promising page
+// outranking an untried seed.
+const withReserve = simulateQueue({ seeds, reserved: 10, budget: 26, childBonus: 3 })
+check(
+  "reaches the child once slots are reserved",
+  withReserve.includes("/our-locations/our-locations"),
+  JSON.stringify(withReserve.slice(-4))
+)
+check("still spends most of the budget on the first hop", withReserve.filter((u) => u.startsWith("/other-")).length >= 10)
+
 report()

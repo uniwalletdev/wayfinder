@@ -40,6 +40,9 @@ const MAX_DEPTH = 2
 // A separate allowance for pages the sitemap pointed at, so they never compete
 // with the homepage's own navigation for slots.
 const MAX_SITEMAP_PAGES = 14
+// Fetches held back for the second hop. The maps that matter sit under a section
+// page rather than on it, so the deeper pass must be guaranteed a share.
+const RESERVED_FOR_DEEPER = 10
 // Every ten trusts is roughly every few minutes of crawling — often enough that
 // an interruption costs almost nothing, rare enough not to thrash the disk.
 const CHECKPOINT_EVERY = 10
@@ -317,13 +320,31 @@ for (const [i, trust] of trusts.entries()) {
       .map((p) => ({ ...p, depth: 1 }))
 
     const budget = MAX_PAGES_PER_TRUST + (sitemapUrls.length ? MAX_SITEMAP_PAGES : 0)
+    // Slots the first hop may not touch.
+    //
+    // Without this the second hop never happened at all on any trust with a
+    // sitemap: the depth-1 seeds exactly filled the budget, so a section page
+    // like "Our locations" was fetched, its child queued — and the run stopped
+    // with the child untouched. That child is where Salisbury keeps its map.
+    const depthOneCap = Math.max(6, budget - RESERVED_FOR_DEEPER)
+
     let fetched = 0
+    let fetchedAtDepthOne = 0
     while (queue.length && fetched < budget) {
-      const page = queue.shift()
+      // Once the first hop has had its share, only deeper pages are eligible —
+      // they came from a page already judged promising, so they are the better
+      // lead anyway.
+      let index = 0
+      if (fetchedAtDepthOne >= depthOneCap) {
+        index = queue.findIndex((p) => p.depth > 1)
+        if (index === -1) break
+      }
+      const [page] = queue.splice(index, 1)
       if (visited.has(page.url)) continue
       visited.add(page.url)
       await sleep(pause)
       fetched++
+      if (page.depth === 1) fetchedAtDepthOne++
       try {
         const html = await fetchHtml(page.url)
         if (!html) continue
@@ -333,11 +354,12 @@ for (const [i, trust] of trusts.entries()) {
         // One more hop. Section landing pages ("Our locations") list the pages
         // that actually carry the maps, so stopping at depth 1 misses them.
         if (page.depth < MAX_DEPTH) {
-          const next = rankPages(links, { host, limit: budget - fetched })
+          const next = rankPages(links, { host, limit: budget })
             .filter((l) => !visited.has(l.url) && l.score >= 8)
-            .map((l) => ({ ...l, depth: page.depth + 1 }))
+            // A child of a page we already rated highly is a more targeted lead
+            // than an untried seed, so it outranks one of equal raw score.
+            .map((l) => ({ ...l, score: l.score + 3, depth: page.depth + 1 }))
           queue.push(...next)
-          // Best-scoring pages first regardless of which hop they came from.
           queue.sort((a, b) => b.score - a.score)
         }
       } catch {
