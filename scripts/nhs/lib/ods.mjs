@@ -96,9 +96,13 @@ function titleCase(s) {
           const lower = part.toLowerCase()
           // "and", "on", "of" stay lower-case mid-name (Stoke-on-Trent, Guy's
           // and St Thomas') but are capitalised if the name opens with them.
+          //
+          // Capitalise the first *letter*, not the first character: a segment
+          // can open with punctuation (a quote, a bracket), and uppercasing that
+          // silently leaves the actual word lower-case.
           const recased = !isFirst && LOWER_WORDS.has(lower)
             ? lower
-            : lower.charAt(0).toUpperCase() + lower.slice(1)
+            : lower.replace(/[a-z0-9]/, (c) => c.toUpperCase())
           isFirst = false
           return recased
         })
@@ -152,6 +156,41 @@ export function parseOdsRows(rows, { sourceName }) {
     })
   }
   return { records, skipped }
+}
+
+// Write records back out in the published fixed-column layout.
+//
+// This is what lets the ORD API stand in for a bulk download: the fallback
+// synthesises a CSV in exactly the shape the extracts use, so every stage
+// downstream reads data/raw/ods/<key>.csv without knowing or caring which source
+// produced it. One code path, one record shape, one thing to test.
+export function recordsToCsv(records) {
+  const quote = (v) => {
+    const s = String(v ?? "")
+    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+  }
+  return (
+    records
+      .map((r) => {
+        const row = new Array(ODS_EXPECTED_FIELDS).fill("")
+        row[ODS_COL.code] = r.odsCode
+        row[ODS_COL.name] = r.name
+        const address = r.address ?? []
+        row[ODS_COL.address1] = address[0] ?? ""
+        row[ODS_COL.address2] = address[1] ?? ""
+        row[ODS_COL.address3] = address[2] ?? ""
+        row[ODS_COL.address4] = address[3] ?? ""
+        row[ODS_COL.address5] = address[4] ?? ""
+        row[ODS_COL.postcode] = r.postcode
+        row[ODS_COL.openDate] = r.openDate ?? ""
+        // Only active organisations are requested, so every synthesised row is
+        // open — closed ones are filtered out before they reach here.
+        row[ODS_COL.statusCode] = "A"
+        row[ODS_COL.parentCode] = r.parentCode ?? ""
+        return row.map(quote).join(",")
+      })
+      .join("\n") + "\n"
+  )
 }
 
 // Canonical UK postcode spacing: postcodes.io and ONS both key on the spaced

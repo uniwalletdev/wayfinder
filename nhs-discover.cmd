@@ -91,10 +91,20 @@ goto :end
 
 :fetch_failed
 echo.
-echo === Stopped: could not download the NHS trust register ===
+echo === Stopped: could not get the NHS trust register ===
 echo.
-echo This machine could not reach files.digital.nhs.uk. Check the internet
-echo connection, then run nhs-discover again.
+echo Every source was refused - the messages above name which and why. This is
+echo not necessarily your internet connection; some networks block the download
+echo host specifically.
+echo.
+echo Manual way round it: open this in a browser,
+echo.
+echo     https://files.digital.nhs.uk/assets/ods/current/etr.zip
+echo.
+echo save the file into  data\raw\ods\  and then run:
+echo.
+echo     node scripts/nhs/fetch-ods.mjs --use-local
+echo.
 goto :end
 
 :crawl_failed
