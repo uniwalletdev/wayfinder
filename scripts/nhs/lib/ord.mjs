@@ -12,7 +12,7 @@
 //
 // Licence: Open Government Licence v3.0, as with the bulk extracts.
 import { fetchRetry } from "./net.mjs"
-import { normalisePostcode } from "./ods.mjs"
+import { normalisePostcode, looksPublicFacing } from "./ods.mjs"
 import { dataPath, readJson, writeJson } from "./paths.mjs"
 
 const ORD_API = "https://directory.spineservices.nhs.uk/ORD/2-0-0"
@@ -28,6 +28,9 @@ const PAGE_SIZE = 1000
 // The API is a shared national service. Paging is a handful of requests, but the
 // per-organisation enrichment below is thousands, so it is paced.
 const DETAIL_PAUSE_MS = 120
+// A handful of requests in flight, not a stampede. With the pause above this is
+// roughly 50 requests/second at most against a free national service.
+const DETAIL_CONCURRENCY = 6
 const PARENT_CACHE = dataPath("ods-parents.json")
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -156,39 +159,58 @@ export async function fetchOrganisations(roleId, { onProgress, log } = {}) {
     : all
 }
 
+async function parentOf(code) {
+  const res = await fetchRetry(
+    `${ORD_API}/organisations/${encodeURIComponent(code)}`,
+    // Whatever the listing negotiated successfully — this endpoint is the same
+    // service and refuses the same headers.
+    { headers: chosen?.headers ?? {} },
+    { retries: 2, timeoutMs: 30_000 }
+  )
+  const rels = (await res.json())?.Organisation?.Rels?.Rel ?? []
+  // "is a site of"/"is operated by" style relationships point at the parent.
+  // Take the first active one; a site belongs to one trust.
+  const parent = rels.find(
+    (r) => String(r?.Status).toLowerCase() === "active" && r?.Target?.OrgId?.extension
+  )
+  return parent?.Target?.OrgId?.extension ?? null
+}
+
 // The summary listing carries the code, name and postcode but not the site's
-// parent trust — that is only on the detail record. Cached, because it is one
-// request per site and the relationships barely change between refreshes.
+// parent trust — that is only on the detail record, one request per site.
+//
+// Run strictly one at a time this took hours against the real register, which is
+// why callers now filter the list down before asking and why a few requests are
+// in flight at once. Still deliberately modest: this is a shared national
+// service, and the cache means a second run pays almost nothing.
 export async function enrichParentCodes(codes, { onProgress } = {}) {
   const cache = readJson(PARENT_CACHE, {})
   const missing = codes.filter((code) => !(code in cache))
+  let done = 0
 
-  for (const [i, code] of missing.entries()) {
-    try {
-      const res = await fetchRetry(
-        `${ORD_API}/organisations/${encodeURIComponent(code)}`,
-        // Whatever the listing negotiated successfully — this endpoint is the
-        // same service and refuses the same headers.
-        { headers: chosen?.headers ?? {} },
-        { retries: 2, timeoutMs: 30_000 }
-      )
-      const rels = (await res.json())?.Organisation?.Rels?.Rel ?? []
-      // "is a site of"/"is operated by" style relationships point at the parent.
-      // Take the first active one; a site belongs to one trust.
-      const parent = rels.find(
-        (r) => String(r?.Status).toLowerCase() === "active" && r?.Target?.OrgId?.extension
-      )
-      cache[code] = parent?.Target?.OrgId?.extension ?? null
-    } catch {
-      // Leave it unresolved rather than caching a wrong answer — the next run
-      // retries it, and the site still works as a directory pin meanwhile.
+  async function worker(queue) {
+    for (const code of queue) {
+      try {
+        cache[code] = await parentOf(code)
+      } catch {
+        // Leave it unresolved rather than caching a wrong answer — the next run
+        // retries it, and the site still works as a directory pin meanwhile.
+      }
+      done++
+      // Checkpoint often enough that an interrupted run keeps nearly all of its
+      // work, which matters when the list is long.
+      if (done % 50 === 0) {
+        writeJson(PARENT_CACHE, cache)
+        onProgress?.(done, missing.length)
+      }
+      await sleep(DETAIL_PAUSE_MS)
     }
-    if ((i + 1) % 50 === 0) {
-      writeJson(PARENT_CACHE, cache)
-      onProgress?.(i + 1, missing.length)
-    }
-    await sleep(DETAIL_PAUSE_MS)
   }
+
+  // Deal the work out round-robin so every worker finishes at about the same time.
+  const queues = Array.from({ length: DETAIL_CONCURRENCY }, () => [])
+  missing.forEach((code, i) => queues[i % DETAIL_CONCURRENCY].push(code))
+  await Promise.all(queues.map(worker))
 
   writeJson(PARENT_CACHE, cache)
   return cache
@@ -226,8 +248,19 @@ export async function fetchOdsViaOrd(sourceKey, { log, withParents = false } = {
 
   let parents = {}
   if (withParents) {
-    const codes = orgs.map((o) => String(o?.OrgId ?? "").trim().toUpperCase()).filter(Boolean)
-    log?.(`  resolving parent trusts for ${codes.length} sites (cached between runs)`)
+    // Enrich only what survives filtering. looksPublicFacing() already knows a
+    // mailroom or a finance office isn't somewhere a patient goes, but it used
+    // to run several stages later — so every one of those records cost a
+    // request before being discarded. Filtering first is the difference between
+    // hundreds of requests and tens of thousands.
+    const codes = orgs
+      .filter((o) => looksPublicFacing(String(o?.Name ?? "")))
+      .map((o) => String(o?.OrgId ?? "").trim().toUpperCase())
+      .filter(Boolean)
+    log?.(
+      `  resolving parent trusts for ${codes.length} of ${orgs.length} sites ` +
+        `(the rest are administrative registrations; cached between runs)`
+    )
     parents = await enrichParentCodes(codes, {
       onProgress: (done, total) => log?.(`  parents ${done}/${total}…`),
     })
@@ -240,5 +273,36 @@ export async function fetchOdsViaOrd(sourceKey, { log, withParents = false } = {
         `the field names have probably changed. First entry: ${JSON.stringify(orgs[0]).slice(0, 300)}`
     )
   }
+
+  // RO198 returns ~38,000 active organisations, but NHS trust *sites* number a
+  // few thousand — so either that role covers far more than hospitals or the
+  // mapping is wrong. That can't be settled without looking at the data, and it
+  // can't be looked at from where this was written, so record a sample instead
+  // of guessing again. A committed sample is one round trip; a guess is several.
+  const publicFacing = orgs.filter((o) => looksPublicFacing(String(o?.Name ?? ""))).length
+  writeJson(dataPath("ord-sample.json"), {
+    generatedAt: new Date().toISOString(),
+    description:
+      "A sample of what the ORD API returns for each role, recorded so the population can be checked " +
+      "against what the pipeline actually wants. Diagnostic only — nothing reads this at build time.",
+    role: roleId,
+    source: sourceKey,
+    total: orgs.length,
+    withUsableCodeAndPostcode: records.length,
+    survivingPublicFacingFilter: publicFacing,
+    sample: orgs.slice(0, 200).map((o) => ({
+      OrgId: o?.OrgId ?? null,
+      Name: o?.Name ?? null,
+      Status: o?.Status ?? null,
+      PrimaryRoleId: o?.PrimaryRoleId ?? null,
+      PrimaryRoleDescription: o?.PrimaryRoleDescription ?? null,
+      PostCode: o?.PostCode ?? null,
+    })),
+  })
+  log?.(
+    `  ${orgs.length} organisations, ${records.length} usable, ${publicFacing} look public-facing ` +
+      `— sample written to data/ord-sample.json`
+  )
+
   return records
 }

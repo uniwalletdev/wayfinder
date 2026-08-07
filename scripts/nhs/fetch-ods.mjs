@@ -17,7 +17,12 @@
 //      a browser, drop it in, carry on. Last because it may be stale, and using
 //      a stale register silently would be worse than failing.
 //
-// Run: node scripts/nhs/fetch-ods.mjs [--use-local]
+// Run: node scripts/nhs/fetch-ods.mjs [--only etr,ets] [--with-parents] [--use-local]
+//
+// `--only` matters more than it looks. The discovery crawl needs the ~250 trusts
+// and nothing else, while the full register is tens of thousands of records —
+// fetching everything before a crawl that was only ever waiting on the trust list
+// cost hours for no benefit.
 import { existsSync, readFileSync, writeFileSync } from "fs"
 import { join } from "path"
 import { fetchFile, sha256 } from "./lib/net.mjs"
@@ -29,6 +34,13 @@ import { RAW_DIR, ensureDir, updateManifest, log } from "./lib/paths.mjs"
 
 const STAGE = "fetch-ods"
 const USE_LOCAL = process.argv.includes("--use-local")
+// Resolving each site's parent trust is one request per site. That is reasonable
+// for a monthly directory rebuild and absurd as a prelude to a crawl, so it only
+// happens when something actually asks for it.
+const WITH_PARENTS = process.argv.includes("--with-parents")
+
+const onlyArg = process.argv.indexOf("--only")
+const ONLY = onlyArg > -1 ? String(process.argv[onlyArg + 1] ?? "").split(",").map((s) => s.trim()).filter(Boolean) : null
 
 const csvPathFor = (key) => join(ensureDir(join(RAW_DIR, "ods")), `${key}.csv`)
 
@@ -52,8 +64,8 @@ async function viaOrdApi(key) {
   const records = await fetchOdsViaOrd(key, {
     log: (m) => log(STAGE, m),
     // Sites need their parent trust, which only the per-organisation detail
-    // records carry. Trusts have no parent, so they skip that entirely.
-    withParents: key === "ets",
+    // records carry — one request each. Trusts have no parent and never need it.
+    withParents: WITH_PARENTS && key === "ets",
   })
   return {
     csv: recordsToCsv(records),
@@ -124,8 +136,18 @@ async function fetchSource(key, source) {
   return records.length
 }
 
+const wanted = Object.entries(ODS_SOURCES).filter(([key]) => !ONLY || ONLY.includes(key))
+if (ONLY) {
+  const unknown = ONLY.filter((k) => !(k in ODS_SOURCES))
+  if (unknown.length) {
+    console.error(`[${STAGE}] unknown source(s): ${unknown.join(", ")}. Known: ${Object.keys(ODS_SOURCES).join(", ")}`)
+    process.exit(1)
+  }
+  log(STAGE, `fetching only: ${ONLY.join(", ")}`)
+}
+
 let failures = 0
-for (const [key, source] of Object.entries(ODS_SOURCES)) {
+for (const [key, source] of wanted) {
   try {
     await fetchSource(key, source)
   } catch (err) {

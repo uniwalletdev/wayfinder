@@ -43,7 +43,7 @@ fi
 echo
 echo "=== Fetching the NHS trust register ==="
 echo
-if ! npm run nhs:fetch; then
+if ! node scripts/nhs/fetch-ods.mjs --only etr; then
   cat <<'MSG'
 
 === Stopped: could not get the NHS trust register ===
