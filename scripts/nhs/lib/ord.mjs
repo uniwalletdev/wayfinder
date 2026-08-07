@@ -48,19 +48,68 @@ function assertOrganisations(body, url) {
   return list
 }
 
-// One page of organisations for a role. `Offset` paging is what the API exposes;
-// it returns fewer than Limit on the last page.
-async function fetchPage(roleId, offset) {
-  const url = `${ORD_API}/organisations?PrimaryRoleId=${encodeURIComponent(roleId)}&Limit=${PAGE_SIZE}&Offset=${offset}&Status=Active`
-  const res = await fetchRetry(url, { headers: { accept: "application/json" } }, { retries: 3, timeoutMs: 60_000 })
-  return assertOrganisations(await res.json(), url)
+// Request shapes to try, most-likely-correct first.
+//
+// Asking for `Accept: application/json` — the obvious thing for a JSON API —
+// gets HTTP 406 Not Acceptable from this service, while the identical URL with
+// no Accept header returns 200. Rather than hard-code a guess about a remote
+// server's content negotiation, the client tries variants until one answers and
+// then reuses it. A national data API changing its handling shouldn't cost a
+// round trip through someone else's terminal to diagnose.
+const HEADER_VARIANTS = [
+  { name: "no Accept header", headers: {} },
+  { name: "Accept: */*", headers: { accept: "*/*" } },
+  { name: "Accept: application/json", headers: { accept: "application/json" } },
+]
+
+// Likewise for query parameters: `Status=Active` is documented, but if the
+// service rejects it we would rather have every organisation and filter locally
+// than have nothing at all.
+const QUERY_VARIANTS = [
+  { name: "with Status=Active", status: true },
+  { name: "without Status", status: false },
+]
+
+const pageUrl = (roleId, offset, useStatus) =>
+  `${ORD_API}/organisations?PrimaryRoleId=${encodeURIComponent(roleId)}&Limit=${PAGE_SIZE}&Offset=${offset}` +
+  (useStatus ? "&Status=Active" : "")
+
+// Locked in after the first successful page so the rest of the paging doesn't
+// re-negotiate on every request.
+let chosen = null
+
+async function fetchPage(roleId, offset, log) {
+  if (chosen) {
+    const url = pageUrl(roleId, offset, chosen.status)
+    const res = await fetchRetry(url, { headers: chosen.headers }, { retries: 3, timeoutMs: 60_000 })
+    return assertOrganisations(await res.json(), url)
+  }
+
+  const failures = []
+  for (const query of QUERY_VARIANTS) {
+    for (const variant of HEADER_VARIANTS) {
+      const url = pageUrl(roleId, offset, query.status)
+      try {
+        const res = await fetchRetry(url, { headers: variant.headers }, { retries: 1, timeoutMs: 60_000 })
+        const list = assertOrganisations(await res.json(), url)
+        chosen = { headers: variant.headers, status: query.status }
+        log?.(`  ORD accepted: ${variant.name}, ${query.name}`)
+        return list
+      } catch (err) {
+        failures.push(`${variant.name} + ${query.name}: ${err.message}`)
+      }
+    }
+  }
+  throw new Error(
+    `every ORD request shape was rejected.\n    ` + failures.join("\n    ")
+  )
 }
 
-// Fetch every active organisation holding a role.
-export async function fetchOrganisations(roleId, { onProgress } = {}) {
+// Fetch every organisation holding a role.
+export async function fetchOrganisations(roleId, { onProgress, log } = {}) {
   const all = []
   for (let offset = 0; ; offset += PAGE_SIZE) {
-    const page = await fetchPage(roleId, offset)
+    const page = await fetchPage(roleId, offset, log)
     all.push(...page)
     onProgress?.(all.length)
     if (page.length < PAGE_SIZE) break
@@ -68,7 +117,12 @@ export async function fetchOrganisations(roleId, { onProgress } = {}) {
     // pages; bail rather than loop forever if paging misbehaves.
     if (offset > PAGE_SIZE * 50) throw new Error(`${roleId}: paging did not terminate`)
   }
-  return all
+  // When the Status filter had to be dropped, closed organisations come back
+  // too. parseOdsRows drops them downstream on the status column, but filtering
+  // here keeps the synthesised CSV honest about what it contains.
+  return chosen?.status === false
+    ? all.filter((o) => String(o?.Status ?? "Active").toLowerCase() === "active")
+    : all
 }
 
 // The summary listing carries the code, name and postcode but not the site's
@@ -82,7 +136,9 @@ export async function enrichParentCodes(codes, { onProgress } = {}) {
     try {
       const res = await fetchRetry(
         `${ORD_API}/organisations/${encodeURIComponent(code)}`,
-        { headers: { accept: "application/json" } },
+        // Whatever the listing negotiated successfully — this endpoint is the
+        // same service and refuses the same headers.
+        { headers: chosen?.headers ?? {} },
         { retries: 2, timeoutMs: 30_000 }
       )
       const rels = (await res.json())?.Organisation?.Rels?.Rel ?? []
@@ -134,6 +190,7 @@ export async function fetchOdsViaOrd(sourceKey, { log, withParents = false } = {
 
   const orgs = await fetchOrganisations(roleId, {
     onProgress: (n) => log?.(`  ${n} organisations…`),
+    log,
   })
 
   let parents = {}

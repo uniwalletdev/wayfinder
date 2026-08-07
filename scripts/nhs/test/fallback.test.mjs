@@ -97,6 +97,16 @@ try {
     offlineOut = String(err.stdout ?? "") + String(err.stderr ?? "")
   }
   check("tries the ORD API when the download is refused", /trying the ORD API/.test(offlineOut), offlineOut.slice(0, 400))
+  // Asking this service for application/json gets a 406 while the same URL with
+  // no Accept header returns 200, so the client negotiates rather than assuming.
+  // If it ever stops trying the alternatives, that is silent breakage.
+  for (const variant of ["no Accept header", "Accept: \\*/\\*", "Accept: application/json"]) {
+    check(`negotiates ${variant.replace(/\\/g, "")}`, new RegExp(variant).test(offlineOut), offlineOut.slice(0, 300))
+  }
+  check("also tries dropping the Status filter", /without Status/.test(offlineOut), offlineOut.slice(0, 300))
+  // A bare status code is a poor diagnostic when the run is on someone else's
+  // machine; the server's own explanation is usually the answer.
+  check("reports the server's explanation, not just the code", /-> HTTP \d+ [^—]*— \S/.test(offlineOut), offlineOut.slice(0, 400))
   check("falls back to an existing file before giving up", /may be out of date/.test(offlineOut), offlineOut.slice(-500))
   // With a stale local file present it should still succeed — losing the
   // network must not lose a register we already have.
