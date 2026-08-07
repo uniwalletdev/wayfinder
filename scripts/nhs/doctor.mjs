@@ -114,16 +114,20 @@ if (has.candidates) {
 // This is the whole reason the pipeline runs here rather than wherever it was
 // written, so it is worth confirming before starting a job that takes hours.
 console.log("\nUpstream reachability")
+// `required` marks a host the pipeline genuinely cannot work without. The bulk
+// download host is NOT one: the ORD API serves the same register, so losing the
+// downloads costs nothing but a fallback.
 const UPSTREAMS = [
-  ["files.digital.nhs.uk", "https://files.digital.nhs.uk/assets/ods/current/etr.zip", "NHS ODS bulk downloads"],
-  ["api.postcodes.io", "https://api.postcodes.io/postcodes/SW1A1AA", "postcode geocoding"],
-  ["directory.spineservices.nhs.uk", "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations?Limit=1", "trust websites"],
-  ["overpass-api.de", "https://overpass-api.de/api/status", "OpenStreetMap footprints"],
+  ["directory.spineservices.nhs.uk", "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations?Limit=1", "NHS organisation register", true],
+  ["files.digital.nhs.uk", "https://files.digital.nhs.uk/assets/ods/current/etr.zip", "register bulk downloads (optional — ORD covers this)", false],
+  ["api.postcodes.io", "https://api.postcodes.io/postcodes/SW1A1AA", "postcode geocoding", false],
+  ["overpass-api.de", "https://overpass-api.de/api/status", "OpenStreetMap footprints", false],
 ]
 
 let reachable = 0
 let policyBlocked = 0
-for (const [host, url, purpose] of UPSTREAMS) {
+let registerReachable = false
+for (const [host, url, purpose, required] of UPSTREAMS) {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), 12_000)
   try {
@@ -131,6 +135,7 @@ for (const [host, url, purpose] of UPSTREAMS) {
     if (res.ok || (res.status >= 300 && res.status < 400)) {
       report(OK, host, `${purpose} (HTTP ${res.status})`)
       reachable++
+      if (required) registerReachable = true
     } else if (res.status === 403 || res.status === 407) {
       // Every one of these URLs answers 200 when it is genuinely reachable, so a
       // 403 or 407 here is an egress proxy refusing the connection rather than
@@ -161,6 +166,20 @@ if (reachable === 0) {
       : "No upstream is reachable from this machine. Check your internet connection, or run\n" +
           "  the fetching stages somewhere else — nothing in the pipeline is broken by this."
   )
+} else if (registerReachable && policyBlocked) {
+  // The common real-world case, and the one that used to look like a hard stop:
+  // a CDN refuses the download host while the API it duplicates answers fine.
+  notes.push(
+    "Some hosts are blocked, but the NHS organisation register is reachable, which is the\n" +
+      "  one that matters — the fetch stage falls back to it automatically. Nothing to fix."
+  )
+} else if (!registerReachable) {
+  notes.push(
+    "The NHS organisation register (directory.spineservices.nhs.uk) is not reachable, and\n" +
+      "  neither is the bulk download host. If a browser can download\n" +
+      "  https://files.digital.nhs.uk/assets/ods/current/etr.zip, save it into\n" +
+      "  data/raw/ods/ and run:  node scripts/nhs/fetch-ods.mjs --use-local"
+  )
 }
 
 // ── What to do next ────────────────────────────────────────────────────────
@@ -169,7 +188,7 @@ for (const note of notes) console.log(`\n${note}`)
 
 let next
 if (hardFailures) next = "Fix the failures above first."
-else if (reachable === 0) next = "Run the fetching stages on a machine with internet access."
+else if (!registerReachable && !has.ods) next = "Run the fetching stages on a machine that can reach the NHS register."
 else if (!has.ods) next = "npm run nhs:fetch"
 else if (!has.candidates) next = "npm run nhs:discover:quick        (then: npm run nhs:discover for all trusts)"
 else if (!has.geocode) next = "npm run nhs:geocode"
@@ -180,6 +199,8 @@ console.log(`\nNext: ${next}\n`)
 
 // Run on its own, unreachable upstreams are reported rather than treated as a
 // failure — checking the state of a machine you already know is offline is a
-// legitimate thing to do. Under --strict they are fatal, because the caller is
-// about to start a fetching stage that cannot possibly work.
-process.exit(hardFailures || (STRICT && reachable === 0) ? 1 : 0)
+// legitimate thing to do. Under --strict, only losing the register is fatal:
+// blocking the bulk-download host is survivable now that ORD covers it, and
+// failing on that was stopping runs that would have worked.
+const blocked = STRICT && !registerReachable && !has.ods
+process.exit(hardFailures || blocked ? 1 : 0)

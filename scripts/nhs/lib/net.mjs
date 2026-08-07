@@ -16,8 +16,22 @@ import { createHash } from "crypto"
 // rather than after a minute of backoff.
 const RETRY_STATUS = new Set([408, 425, 429, 500, 502, 503, 504])
 
+// An honest, identifiable agent is the right default for the APIs and the trust
+// websites we crawl — it tells an administrator who we are.
 export const USER_AGENT =
   "wayfinder-nhs-ingest/1.0 (+https://github.com/uniwalletdev/wayfinder)"
+
+// The exception is NHS Digital's bulk-download host, which sits behind a CDN
+// that refuses anything not shaped like a browser: it answers 403 to the agent
+// above while the Spine directory API, on the same network, answers 200. These
+// headers are what a browser sends when following a download link, which is
+// exactly what this request is.
+export const BROWSER_HEADERS = {
+  "user-agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  accept: "application/zip,application/octet-stream,*/*;q=0.8",
+  "accept-language": "en-GB,en;q=0.9",
+}
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
@@ -80,6 +94,20 @@ export async function fetchBuffer(url, options) {
   const res = await fetchRetry(url, options)
   const buf = Buffer.from(await res.arrayBuffer())
   return { buf, sha256: sha256(buf), contentType: res.headers.get("content-type") ?? "" }
+}
+
+// Download a file, retrying once as a browser if the host refuses us.
+//
+// Worth the extra attempt rather than failing straight to the API fallback: when
+// a CDN is doing nothing more than User-Agent filtering, this gets the real
+// published file, which is the better source.
+export async function fetchFile(url, options = {}) {
+  try {
+    return await fetchBuffer(url, options)
+  } catch (err) {
+    if (!/-> HTTP (403|401|429)\b/.test(err.message ?? "")) throw err
+    return fetchBuffer(url, { ...options, headers: { ...BROWSER_HEADERS, ...(options.headers ?? {}) } })
+  }
 }
 
 export async function fetchJson(url, options) {

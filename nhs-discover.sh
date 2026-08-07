@@ -44,10 +44,23 @@ echo
 echo "=== Fetching the NHS trust register ==="
 echo
 if ! npm run nhs:fetch; then
-  echo
-  echo "=== Stopped: could not download the NHS trust register ==="
-  echo "This machine could not reach files.digital.nhs.uk. Check the connection,"
-  echo "then run this again."
+  cat <<'MSG'
+
+=== Stopped: could not get the NHS trust register ===
+
+Every source was refused — the messages above name which and why. This is not
+necessarily your internet connection; some networks block the download host
+specifically.
+
+Manual way round it: open this in a browser,
+
+    https://files.digital.nhs.uk/assets/ods/current/etr.zip
+
+save the file into  data\raw\ods\  and then run:
+
+    node scripts/nhs/fetch-ods.mjs --use-local
+
+MSG
   exit 1
 fi
 
