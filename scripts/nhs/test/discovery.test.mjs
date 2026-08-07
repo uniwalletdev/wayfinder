@@ -11,6 +11,7 @@
 //
 // Run: node scripts/nhs/test/discovery.test.mjs
 import { createServer } from "http"
+import { readFileSync } from "fs"
 import { classifyPdf, normaliseForMatching, scorePage, rankPages, decodeEntities, canonicalUrl, sameHost } from "../lib/discovery-match.mjs"
 import { group, check, report } from "./harness.mjs"
 
@@ -318,6 +319,61 @@ try {
   check("six trusts cost about the time of one", elapsed < MIN_PAUSE * 6 * 3, `${elapsed}ms`)
 } finally {
   await new Promise((resolve) => polite.close(resolve))
+}
+
+
+group("redirects and hand-added maps")
+// Solent's sitemap listed 424 URLs that were all discarded, because ODS records
+// one domain and the site serves another. Following the redirect first settles
+// which host the trust actually is.
+const redirectTarget = createServer((req, res) => {
+  if (req.url === "/robots.txt") {
+    res.writeHead(200, { "content-type": "text/plain" })
+    return res.end("User-agent: *\nAllow: /\n")
+  }
+  res.writeHead(200, { "content-type": "text/html" })
+  res.end('<html><body><a href="/our-locations">Our locations</a></body></html>')
+})
+await new Promise((r) => redirectTarget.listen(0, "127.0.0.1", r))
+const targetPort = redirectTarget.address().port
+
+const redirector = createServer((req, res) => {
+  res.writeHead(302, { location: `http://127.0.0.1:${targetPort}${req.url}` })
+  res.end()
+})
+await new Promise((r) => redirector.listen(0, "127.0.0.1", r))
+const fromPort = redirector.address().port
+
+try {
+  const res = await fetch(`http://127.0.0.1:${fromPort}/`)
+  const finalOrigin = new URL(res.url).origin
+  check(
+    "reads through a redirect to the real origin",
+    finalOrigin === `http://127.0.0.1:${targetPort}`,
+    finalOrigin
+  )
+  check(
+    "the redirected host is what sitemap URLs are compared against",
+    sameHost(new URL(res.url).host, `127.0.0.1:${targetPort}`)
+  )
+} finally {
+  await new Promise((r) => redirectTarget.close(r))
+  await new Promise((r) => redirector.close(r))
+}
+
+// Some maps no crawler will reach: bot challenges, script-built navigation, or a
+// page that loses the ranking among thousands. Those go in by hand — but they
+// must still look like maps, so the file cannot be used to smuggle anything past
+// the classifier.
+const known = JSON.parse(readFileSync(new URL("../../../data/known-maps.json", import.meta.url), "utf8"))
+check("known-maps file is present and shaped right", Array.isArray(known.maps), typeof known.maps)
+for (const entry of known.maps) {
+  check(
+    `hand-added entry still classifies as a map: ${entry.url.split("/").pop()}`,
+    !!classifyPdf(entry.linkText ?? "", entry.url),
+    entry.url
+  )
+  check(`hand-added entry records why the crawl missed it: ${entry.trustName}`, !!entry.note)
 }
 
 report()
