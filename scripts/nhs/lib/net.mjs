@@ -69,7 +69,19 @@ export async function fetchRetry(url, options = {}, { retries = 4, baseMs = 1000
       })
       if (res.ok) return res
       if (!RETRY_STATUS.has(res.status)) {
-        throw new Error(`${options.method ?? "GET"} ${url} -> HTTP ${res.status} ${res.statusText}`)
+        // Include a snippet of the body. A bare status is a poor diagnostic when
+        // the run is happening on someone else's machine — a 406 or a 400 often
+        // says exactly what the server wanted, and without this that explanation
+        // is discarded.
+        const body = await res.text().catch(() => "")
+        const detail = body.trim().replace(/\s+/g, " ").slice(0, 300)
+        throw Object.assign(
+          new Error(
+            `${options.method ?? "GET"} ${url} -> HTTP ${res.status} ${res.statusText}` +
+              (detail ? ` — ${detail}` : "")
+          ),
+          { status: res.status }
+        )
       }
       lastErr = Object.assign(new Error(`HTTP ${res.status} from ${url}`), { res })
       // Drain the body so the socket can be reused on the retry.
