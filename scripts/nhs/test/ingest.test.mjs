@@ -13,6 +13,7 @@ import { tmpdir } from "os"
 import { join } from "path"
 import { REPO_ROOT } from "../lib/paths.mjs"
 import { nameTokens, tokenOverlap, footprintSpanM, DOCUMENT_STOPWORDS } from "../lib/match.mjs"
+import { CRAWLER_VERSION } from "../lib/discovery-match.mjs"
 import { group, check, report } from "./harness.mjs"
 
 process.chdir(REPO_ROOT)
@@ -138,6 +139,8 @@ try {
   // Prior state: one trust already crawled, one candidate already banked.
   writeFileSync("data/plan-candidates.json", JSON.stringify({
     count: 1,
+    // Results only resume when they came from this crawler; older ones re-crawl.
+    crawlerVersion: CRAWLER_VERSION,
     crawled: { RJ1: "ok" },
     candidates: [{
       trustCode: "RJ1", trustName: "Alpha NHS Foundation Trust",
