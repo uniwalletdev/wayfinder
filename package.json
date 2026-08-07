@@ -6,7 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p ${PORT:-3000}",
-    "lint": "eslint"
+    "lint": "eslint",
+    "nhs:fetch": "node scripts/nhs/fetch-ods.mjs",
+    "nhs:geocode": "node scripts/nhs/geocode.mjs",
+    "nhs:osm": "node scripts/nhs/fetch-osm.mjs",
+    "nhs:build": "node scripts/nhs/build-sites.mjs",
+    "nhs:venues": "node scripts/nhs/generate-venues.mjs",
+    "nhs:discover": "node scripts/nhs/discover-plans.mjs",
+    "nhs:plans": "node scripts/nhs/fetch-plans.mjs",
+    "nhs:refresh": "npm run nhs:fetch && npm run nhs:geocode && npm run nhs:osm && npm run nhs:build && npm run nhs:venues",
+    "typecheck": "tsc --noEmit",
+    "nhs:test": "node scripts/nhs/test/parsing.test.mjs && node scripts/nhs/test/build.test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.101.0",
@@ -37,6 +47,7 @@
     "@types/three": "^0.171.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "sharp": "^0.34.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

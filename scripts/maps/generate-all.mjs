@@ -1,20 +1,11 @@
 import { pdfPageToSvg } from "./pdf2svg.mjs";
 import sharp from "sharp";
 import { writeFileSync, mkdirSync } from "fs";
+import { readSheets } from "./sheets.mjs";
 
-// [pdf file, page, venue-slug]
-export const MAPS = [
-  ["map/Charing Cross.pdf", 1, "charing-cross"],
-  ["map/Hammersmith Hospital location map.pdf", 1, "hammersmith"],
-  ["map/Queen Charlottes and Chelsea Hospital location map.pdf", 1, "qcch"],
-  ["map/Western Eye Hospital location map.pdf", 1, "western-eye"],
-  ["map/Clinical-Genetics-BWH-site-map.pdf", 1, "bwh"],
-  ["map/map-qehb.pdf", 1, "qehb"],
-  ["map/NMGHMap_Flat_UpdateDec2023_External-VB-Block-Naviagation-V2_.pdf", 1, "nmgh"],
-  ["map/ORC-map-with-directory-Feb-25.pdf", 1, "oxford-road"],
-  ["map/Trafford-General-Hospital-map.pdf", 1, "trafford"],
-  ["map/wythenshawe-hospital-sitemap-updated-logo.pdf", 1, "wythenshawe"],
-];
+// [pdf file, page, venue-slug] — derived from data/mapped-sites.json, which
+// build-venues.mjs reads too. These used to be two hand-kept arrays in two files.
+export const MAPS = readSheets().map((s) => [s.file, s.page, s.slug]);
 
 if (process.argv[1].endsWith("generate-all.mjs")) {
   const thumbOut = process.argv[2];

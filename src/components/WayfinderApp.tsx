@@ -855,6 +855,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
             onMapReady={() => {}}
             leafletMapRef={mapHandleRef}
             mapStyle={mapStyle}
+            siteOdsCode={venue.odsCode}
           />
         ) : (
           <Map3DView

@@ -24,6 +24,12 @@
 .DS_Store
 *.pem
 
+# Source site-map / floor-plan PDFs downloaded by scripts/nhs/fetch-plans.mjs.
+# These are the trusts' copyright, so the repo records where each one came from
+# (data/plan-sources.json) and ships only the derived SVGs the app needs, rather
+# than mirroring the originals.
+/map/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

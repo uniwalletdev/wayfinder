@@ -1,0 +1,3 @@
+{"type":"FeatureCollection","attribution":"© OpenStreetMap contributors, ODbL 1.0","features":[
+{"type":"Feature","properties":{"osmId":"way/1","name":"Great Ormond Street Hospital","odsCode":"RP401"},"geometry":{"type":"Polygon","coordinates":[[[-0.1199,51.5226],[-0.1195,51.5226],[-0.1195,51.5229],[-0.1199,51.5226]]]}},
+{"type":"Feature","properties":{"osmId":"way/2","name":"Other Site","odsCode":"RJ122"},"geometry":{"type":"Polygon","coordinates":[[[-0.119,51.498],[-0.118,51.498],[-0.118,51.499],[-0.119,51.498]]]}}]}

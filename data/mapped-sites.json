@@ -1,0 +1,280 @@
+{
+  "description": "Build configuration for venues reconstructed from a trust's own published site-map sheet. Single source of truth for both scripts/maps/generate-all.mjs (which rasterises the sheet) and scripts/maps/build-venues.mjs (which places waypoints on it) — these were previously two hardcoded arrays that had to be kept in step by hand. Source PDFs are listed in data/plan-sources.json and downloaded into map/ by scripts/nhs/fetch-plans.mjs; map/ is untracked because the PDFs are the trusts' copyright.",
+  "fields": {
+    "center": "[lat, lng] the plan centre is anchored to",
+    "spanM": "full-sheet width in metres",
+    "plan": "[x0, y0, x1, y1] normalised crop limiting waypoint extraction to the site-plan area; the floor-plan image is always the whole sheet",
+    "quick": "waypoint names surfaced as search shortcuts"
+  },
+  "sheets": [
+    {
+      "slug": "charing-cross",
+      "id": "charing-cross-hospital",
+      "name": "Charing Cross Hospital",
+      "subtitle": "Imperial College Healthcare NHS Trust · Fulham Palace Road, London W6 8RF",
+      "file": "map/Charing Cross.pdf",
+      "page": 1,
+      "center": [
+        51.487045,
+        -0.219921
+      ],
+      "spanM": 470,
+      "plan": [
+        0,
+        0.16,
+        1,
+        0.97
+      ],
+      "quick": [
+        "Main entrance",
+        "A&E",
+        "A&E and Urgent Treatment Centre entrance",
+        "Main outpatients (First floor)",
+        "Tower block"
+      ],
+      "notes": "Site map with building entrances, step-free routes and the nearest Underground stations (Hammersmith, Barons Court, West Kensington)."
+    },
+    {
+      "slug": "hammersmith",
+      "id": "hammersmith-hospital",
+      "name": "Hammersmith Hospital",
+      "subtitle": "Imperial College Healthcare NHS Trust · Du Cane Road, London W12 0HS",
+      "file": "map/Hammersmith Hospital location map.pdf",
+      "page": 1,
+      "center": [
+        51.517422,
+        -0.234707
+      ],
+      "spanM": 430,
+      "plan": [
+        0,
+        0.12,
+        1,
+        0.95
+      ],
+      "quick": [
+        "Main entrance",
+        "Urgent Treatment Centre",
+        "A Block",
+        "Heart attack centre",
+        "Outpatients, x-ray and pharmacy"
+      ],
+      "notes": "Site map with lettered building zones, main and Urgent Treatment Centre entrances, and bus stops on Du Cane Road."
+    },
+    {
+      "slug": "qcch",
+      "id": "queen-charlottes-chelsea-hospital",
+      "name": "Queen Charlotte's & Chelsea Hospital",
+      "subtitle": "Imperial College Healthcare NHS Trust · Du Cane Road, London W12 0HS",
+      "file": "map/Queen Charlottes and Chelsea Hospital location map.pdf",
+      "page": 1,
+      "center": [
+        51.51706,
+        -0.235544
+      ],
+      "spanM": 430,
+      "plan": [
+        0,
+        0.14,
+        1,
+        0.95
+      ],
+      "quick": [
+        "Main entrance",
+        "Delivery suite",
+        "Birth centre",
+        "Centre for fetal care",
+        "Neonatal intensive Care - Unit"
+      ],
+      "notes": "Maternity and neonatal hospital sharing the Hammersmith Hospital site; floor legend runs GF (main reception) up to level 4 (neonatal intensive care)."
+    },
+    {
+      "slug": "western-eye",
+      "id": "western-eye-hospital",
+      "name": "Western Eye Hospital",
+      "subtitle": "Imperial College Healthcare NHS Trust · 153-173 Marylebone Road, London NW1 5QH",
+      "file": "map/Western Eye Hospital location map.pdf",
+      "page": 1,
+      "center": [
+        51.520702,
+        -0.163316
+      ],
+      "spanM": 300,
+      "plan": [
+        0,
+        0.14,
+        1,
+        0.95
+      ],
+      "quick": [
+        "Main entrance",
+        "Eye A&E department",
+        "Macular clinic",
+        "Day care unit",
+        "Alex Cross ward"
+      ],
+      "notes": "24-hour eye A&E. Nearest stations Marylebone, Baker Street and Edgware Road; floor legend GF–4."
+    },
+    {
+      "slug": "bwh",
+      "id": "birmingham-womens-hospital",
+      "name": "Birmingham Women's Hospital",
+      "subtitle": "Birmingham Women's and Children's NHS FT · Mindelsohn Way, Edgbaston, Birmingham B15 2TG",
+      "file": "map/Clinical-Genetics-BWH-site-map.pdf",
+      "page": 1,
+      "center": [
+        52.45378,
+        -1.94261
+      ],
+      "spanM": 620,
+      "plan": [
+        0,
+        0.06,
+        1,
+        0.84
+      ],
+      "quick": [
+        "Main Entrance (BWH)",
+        "A&E",
+        "Birmingham Women's Hospital",
+        "Lavender House",
+        "Clinical Genetics Clinic"
+      ],
+      "notes": "Site map (from the Clinical Genetics sheet) showing Birmingham Women's Hospital and the adjacent Queen Elizabeth Hospital Birmingham; nearest station University."
+    },
+    {
+      "slug": "qehb",
+      "id": "queen-elizabeth-hospital-birmingham",
+      "name": "Queen Elizabeth Hospital Birmingham",
+      "subtitle": "University Hospitals Birmingham NHS FT · Mindelsohn Way, Birmingham B15 2GW",
+      "file": "map/map-qehb.pdf",
+      "page": 1,
+      "center": [
+        52.45015,
+        -1.941762
+      ],
+      "spanM": 720,
+      "plan": [
+        0,
+        0.05,
+        0.71,
+        0.85
+      ],
+      "quick": [
+        "Main Entrance",
+        "A&E",
+        "Acute Medical Unit (AMU)",
+        "Heritage Building",
+        "Cancer Centre"
+      ],
+      "notes": "Large acute site with numbered entrances 1–6; free shuttle bus between car parks and entrances. Nearest station University."
+    },
+    {
+      "slug": "nmgh",
+      "id": "north-manchester-general-hospital",
+      "name": "North Manchester General Hospital",
+      "subtitle": "Manchester University NHS FT · Delaunays Road, Crumpsall, Manchester M8 5RB",
+      "file": "map/NMGHMap_Flat_UpdateDec2023_External-VB-Block-Naviagation-V2_.pdf",
+      "page": 1,
+      "center": [
+        53.517887,
+        -2.229487
+      ],
+      "spanM": 620,
+      "plan": [
+        0.18,
+        0.11,
+        1,
+        0.97
+      ],
+      "quick": [
+        "Main Entrance",
+        "Emergency Department (A&E)",
+        "North Manchester General Hospital",
+        "MRI Scanner"
+      ],
+      "notes": "Site map with lettered blocks A–J, colour-coded car parks and pedestrian/emergency entrances. Nearest Metrolink at Crumpsall."
+    },
+    {
+      "slug": "oxford-road",
+      "id": "mft-oxford-road-campus",
+      "name": "Manchester Royal Infirmary — Oxford Road Campus",
+      "subtitle": "Manchester University NHS FT · Oxford Road, Manchester M13 9WL",
+      "file": "map/ORC-map-with-directory-Feb-25.pdf",
+      "page": 1,
+      "center": [
+        53.46247,
+        -2.22546
+      ],
+      "spanM": 720,
+      "plan": [
+        0,
+        0.18,
+        0.72,
+        0.85
+      ],
+      "quick": [
+        "Manchester Royal Infirmary",
+        "Manchester Royal Eye Hospital",
+        "Saint Mary's Hospital",
+        "Royal Manchester Children's Hospital",
+        "Adult Emergency Department (A&E)"
+      ],
+      "notes": "Shared campus of Manchester Royal Infirmary, Saint Mary's, the Royal Eye Hospital and Royal Manchester Children's Hospital; zones A–N map to building entrances."
+    },
+    {
+      "slug": "trafford",
+      "id": "trafford-general-hospital",
+      "name": "Trafford General Hospital",
+      "subtitle": "Manchester University NHS FT · Moorside Road, Davyhulme, Manchester M41 5SL",
+      "file": "map/Trafford-General-Hospital-map.pdf",
+      "page": 1,
+      "center": [
+        53.45619,
+        -2.35566
+      ],
+      "spanM": 300,
+      "plan": [
+        0,
+        0.1,
+        0.5,
+        0.92
+      ],
+      "quick": [
+        "Main Entrance",
+        "Blue Zone",
+        "Green Zone",
+        "Red Zone",
+        "Urgent Care Centre"
+      ],
+      "notes": "Colour-zoned map (Blue / Green / Red) with a ground and first-floor plan and a full department directory. AccessAble accessibility guide available."
+    },
+    {
+      "slug": "wythenshawe",
+      "id": "wythenshawe-hospital",
+      "name": "Wythenshawe Hospital",
+      "subtitle": "Manchester University NHS FT · Southmoor Road, Wythenshawe, Manchester M23 9LT",
+      "file": "map/wythenshawe-hospital-sitemap-updated-logo.pdf",
+      "page": 1,
+      "center": [
+        53.38757,
+        -2.29174
+      ],
+      "spanM": 700,
+      "plan": [
+        0,
+        0.02,
+        1,
+        0.72
+      ],
+      "quick": [
+        "Main Entrance",
+        "Acute Block",
+        "North West Heart Centre",
+        "Treatment & Diagnostic Centre",
+        "Education & Research Centre"
+      ],
+      "notes": "Colour-zoned campus (purple, green, blue, yellow, orange) with numbered entrances; specialist heart, lung and cystic-fibrosis centres."
+    }
+  ]
+}

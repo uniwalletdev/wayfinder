@@ -1,0 +1,125 @@
+# Search every NHS trust's website for published hospital map PDFs.
+#
+# This is the "find all the NHS hospital maps" job, and it lives in CI for a
+# specific reason: sandboxed development environments (including agent sessions)
+# routinely have no outbound network access, so nobody working on this repo can
+# reliably run a 215-website crawl from their own machine. A GitHub runner can.
+#
+# It commits the results as data/plan-candidates.json on a branch, so the findings
+# come back into the repo where they can actually be read and worked through —
+# rather than an artifact someone has to download by hand.
+#
+# It does NOT download or import any map. Trust site maps are the trusts' own
+# copyright, and the crawl's job is to produce a reviewed worklist: move entries
+# you want into data/plan-sources.json, then `npm run nhs:plans` fetches those and
+# the existing scripts/maps generators turn them into venues.
+name: NHS floor-plan discovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Only check the first N trusts (blank = all ~215). Useful for a quick trial run."
+        type: string
+        default: ""
+
+concurrency:
+  group: nhs-plan-discovery
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    # The crawl paces itself: it honours robots.txt, respects any Crawl-delay,
+    # and waits between requests. Visiting a few pages on every NHS trust website
+    # politely takes hours, not minutes.
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Discovery needs the trust list, which comes from the ODS extract.
+      - name: Fetch ODS extracts
+        run: npm run nhs:fetch
+
+      - name: Crawl trust websites for map PDFs
+        run: |
+          if [ -n "${{ inputs.limit }}" ]; then
+            node scripts/nhs/discover-plans.mjs --limit "${{ inputs.limit }}"
+          else
+            node scripts/nhs/discover-plans.mjs
+          fi
+
+      - name: Summarise what was found
+        if: always()
+        run: |
+          {
+            echo "## NHS floor-plan discovery"
+            echo
+            if [ -f data/plan-candidates.json ]; then
+              node -e '
+                const d = require("./data/plan-candidates.json");
+                const by = (c) => d.candidates.filter(x => x.confidence === c).length;
+                const kinds = {};
+                for (const c of d.candidates) kinds[c.kind] = (kinds[c.kind] ?? 0) + 1;
+                console.log(`- **${d.count}** candidate PDFs across **${d.stats.withCandidates}** trusts`);
+                console.log(`- confidence: **${by("high")}** high, ${by("medium")} medium, ${by("low")} low`);
+                console.log(`- kinds: ${Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+                console.log(`- skipped: ${d.stats.noWebsite} with no website, ${d.stats.crawlFailed} unreachable, ${d.stats.robotsBlocked} disallowed by robots.txt`);
+                console.log("");
+                console.log("### Highest-confidence finds");
+                console.log("");
+                console.log("| Trust | Kind | Link text |");
+                console.log("|---|---|---|");
+                for (const c of d.candidates.filter(x => x.confidence === "high").slice(0, 40)) {
+                  console.log(`| ${c.trustName} | ${c.kind} | ${(c.linkText || "").replace(/\|/g, "\\|").slice(0, 80)} |`);
+                }
+              '
+            else
+              echo "No candidates file was produced — check the crawl step above."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open a pull request with the findings
+        if: always()
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/nhs-plan-discovery
+          base: main
+          add-paths: |
+            data/plan-candidates.json
+            data/trust-websites.json
+          commit-message: "Add discovered NHS hospital map candidates"
+          title: "NHS hospital map discovery results"
+          body: |
+            Every candidate site-map / floor-plan PDF found across NHS trust
+            websites, from `.github/workflows/nhs-plan-discovery.yml`. Counts and
+            the highest-confidence finds are in the run summary.
+
+            **This is a worklist, not an import.** Nothing has been downloaded.
+            To turn a candidate into a mapped venue:
+
+            1. Check the PDF is really a usable hospital map, and that reuse is
+               acceptable — these are the trusts' copyright, not open data.
+            2. Add it to `data/plan-sources.json` with its URL.
+            3. `npm run nhs:plans` to download it into `map/`.
+            4. Add a sheet entry to `data/mapped-sites.json` (centre, span, crop),
+               then `node scripts/maps/generate-all.mjs` and
+               `node scripts/maps/build-venues.mjs`.
+
+            Worth knowing before working through this: most trusts publish
+            *outdoor* site maps. Genuine indoor floor plans are much rarer, which
+            is why `kind` distinguishes `floor-plan` from `site-map`.
+          labels: automated, data
+          delete-branch: true
