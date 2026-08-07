@@ -26,6 +26,7 @@ import { NMGH_VENUE } from "./nmgh"
 import { OXFORD_ROAD_VENUE } from "./oxford-road"
 import { TRAFFORD_VENUE } from "./trafford"
 import { WYTHENSHAWE_VENUE } from "./wythenshawe"
+import { GENERATED_SHEET_VENUES } from "./generated-sheets"
 import { NHS_HOSPITAL_VENUES } from "./nhs-hospitals"
 
 // Registry of venues the app knows about. Seed venues ship with the build;
@@ -65,6 +66,12 @@ export const SEED_VENUES: Venue[] = [
   TRAFFORD_VENUE,
   WYTHENSHAWE_VENUE,
   CANNERY_TRAILS_VENUE,
+  // Venues built automatically from trust site maps found by the ingestion
+  // pipeline (scripts/nhs/). Generated as one module so this list doesn't need
+  // an import line per hospital as the batch grows. They come after the
+  // hand-built venues — their placement is derived rather than checked by eye —
+  // but ahead of the location-only directory, keeping "mapped places first".
+  ...GENERATED_SHEET_VENUES,
   ...NHS_HOSPITAL_VENUES,
 ]
 

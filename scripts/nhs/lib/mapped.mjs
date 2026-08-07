@@ -15,8 +15,15 @@ import { repoPath } from "./paths.mjs"
 
 const VENUE_DIR = repoPath("src", "lib", "venues")
 
-// Not venue modules: the registry, and the directory data this pipeline writes.
-const NOT_A_VENUE = new Set(["index.ts", "nhs-hospitals.ts", "nhs-hospitals-data.ts"])
+// Not venue modules: the registry, the directory data this pipeline writes, and
+// the generated barrel that re-exports auto-built sheet venues (the venues
+// themselves are separate modules in this directory and are scanned normally).
+const NOT_A_VENUE = new Set([
+  "index.ts",
+  "nhs-hospitals.ts",
+  "nhs-hospitals-data.ts",
+  "generated-sheets.ts",
+])
 
 // Venue modules are either hand-written or generated, but all of them declare
 // the same three fields in the same shape near the top of the object literal.

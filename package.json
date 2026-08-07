@@ -16,7 +16,12 @@
     "nhs:plans": "node scripts/nhs/fetch-plans.mjs",
     "nhs:refresh": "npm run nhs:fetch && npm run nhs:geocode && npm run nhs:osm && npm run nhs:build && npm run nhs:venues",
     "typecheck": "tsc --noEmit",
-    "nhs:test": "node scripts/nhs/test/parsing.test.mjs && node scripts/nhs/test/build.test.mjs"
+    "nhs:test": "node scripts/nhs/test/parsing.test.mjs && node scripts/nhs/test/build.test.mjs && node scripts/nhs/test/ingest.test.mjs",
+    "nhs:approve": "node scripts/nhs/approve-plans.mjs",
+    "nhs:draft": "node scripts/nhs/draft-sheets.mjs",
+    "nhs:registry": "node scripts/nhs/generate-registry.mjs",
+    "nhs:previews": "node scripts/nhs/preview-sheets.mjs",
+    "nhs:ingest": "npm run nhs:approve && npm run nhs:plans && npm run nhs:draft && node scripts/maps/generate-all.mjs && node scripts/maps/build-venues.mjs && npm run nhs:registry && npm run nhs:previews && npm run nhs:build && npm run nhs:venues"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.101.0",

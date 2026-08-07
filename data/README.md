@@ -18,14 +18,43 @@ regardless of where anyone is working, and makes every refresh a reviewable diff
 ## Running it
 
 ```bash
-npm run nhs:refresh       # stages 1-5: fetch -> geocode -> footprints -> merge -> generate
-npm run nhs:discover      # stage 6: find candidate floor-plan PDFs (writes a triage queue)
-npm run nhs:plans         # stage 7: download the PDFs approved in plan-sources.json
+npm run nhs:refresh       # the directory: fetch -> geocode -> footprints -> merge -> generate
+npm run nhs:discover      # search every trust website for map PDFs (writes a candidate list)
+npm run nhs:ingest        # turn those candidates into mapped venues
 ```
 
 Individual stages: `nhs:fetch`, `nhs:geocode`, `nhs:osm`, `nhs:build`,
-`nhs:venues`. Each writes its own output, so a failure late in the chain doesn't
-discard earlier work.
+`nhs:venues`, `nhs:approve`, `nhs:plans`, `nhs:draft`, `nhs:registry`,
+`nhs:previews`. Each writes its own output, so a failure late in the chain
+doesn't discard earlier work. `npm run nhs:test` covers the parsing, merge and
+approval logic.
+
+Start with `node scripts/nhs/approve-plans.mjs --dry-run` — it prints what the
+ingest would publish without downloading anything.
+
+## How a discovered PDF becomes a venue
+
+`nhs:ingest` chains these. The interesting part is that nothing is placed by hand:
+
+1. **approve-plans** — promotes candidates into `plan-sources.json`. Only `high`
+   confidence `floor-plan`/`site-map` finds, and only on the trust's own web host
+   (an unattributable third-party mirror is refused).
+2. **fetch-plans** — downloads exactly what's approved, into `map/auto/`.
+3. **draft-sheets** — works out where each sheet belongs: `center` from the
+   hospital's ODS coordinates, `spanM` from the width of its OpenStreetMap
+   footprint. Sheets that aren't usable maps (too few labels, too tall to be a
+   site plan, ambiguous which of a trust's hospitals they show) are refused and
+   recorded in `plan-rejected.json`.
+4. **generate-all / build-venues** — renders the sheet and places its labels as
+   waypoints, the same generators the ten hand-built venues use.
+5. **generate-registry** — writes `src/lib/venues/generated-sheets.ts`, so
+   `index.ts` doesn't need an import per hospital.
+6. **preview-sheets** — renders each sheet to `previews/<slug>.jpg` for review.
+
+Step 3 gets sheets close, not correct. Scale is measured where a footprint
+exists and guessed otherwise, and the crop is the full sheet. **Check the
+previews** — `previews/index.json` lists which sheets used a guessed scale — then
+fix `spanM` and `plan` in `mapped-sites.json` and re-run `build-venues.mjs`.
 
 ## Files
 
@@ -39,8 +68,11 @@ discard earlier work.
 | `mapped-coverage.json` | `build-sites` | sites skipped because a fully-mapped venue covers them |
 | `mapped-sites.json` | hand-maintained | build config for sheet-derived venues (see below) |
 | `trust-websites.json` | `discover-plans` | trust ODS code → website, from the ODS ORD API |
-| `plan-candidates.json` | `discover-plans` | **triage queue** of candidate floor-plan PDFs |
-| `plan-sources.json` | hand-maintained | the **approved** PDFs `fetch-plans` may download |
+| `plan-candidates.json` | `discover-plans` | everything the crawl found |
+| `plan-sources.json` | `approve-plans` | the **approved** PDFs `fetch-plans` may download |
+| `plan-rejected.json` | `draft-sheets` | sheets refused, with the reason |
+| `previews/*.jpg` | `preview-sheets` | rendered sheets for visual review |
+| `venue-aliases.json` | hand-maintained | other names a mapped venue is known by in ODS |
 
 `mapped-sites.json` is the single source of truth for both
 `scripts/maps/generate-all.mjs` and `scripts/maps/build-venues.mjs`, which
@@ -50,11 +82,17 @@ previously each carried their own copy of the same list.
 
 Sites, coordinates and building footprints reach full national coverage with no
 human in the loop. Indoor floor plans don't, and no amount of scripting changes
-that: there is no national dataset, so each trust's own PDFs are the only source.
+that: there is no national dataset, so each trust's own PDFs are the only source,
+and **most trusts publish an outdoor site map rather than an indoor plan**. The
+`kind` field distinguishes the two so it's clear what's actually out there.
 
-`discover-plans` therefore produces a **queue, not an import**. A person decides
-what's usable and moves it into `plan-sources.json`; `fetch-plans` downloads only
-what's listed there. That boundary is deliberate — see licensing.
+Approval currently runs automatically over high-confidence, same-domain finds.
+That is a deliberate project decision, not an oversight — it means derived copies
+of trust material are published without anyone reviewing each sheet. The domain
+restriction and the recorded source URL and hash limit the exposure; they don't
+remove it. To go back to reviewing by hand, stop running `nhs:approve` and add
+entries to `plan-sources.json` yourself — `fetch-plans` downloads only what's
+listed there either way.
 
 ## Licensing
 

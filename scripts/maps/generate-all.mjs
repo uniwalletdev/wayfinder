@@ -9,6 +9,7 @@ export const MAPS = readSheets().map((s) => [s.file, s.page, s.slug]);
 
 if (process.argv[1].endsWith("generate-all.mjs")) {
   const thumbOut = process.argv[2];
+  if (thumbOut) mkdirSync(thumbOut, { recursive: true });
   for (const [file, page, slug] of MAPS) {
     const { svg, width, height } = await pdfPageToSvg(file, page);
     mkdirSync(`public/floorplans/${slug}`, { recursive: true });

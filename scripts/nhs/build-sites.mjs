@@ -10,6 +10,7 @@
 //
 // Run: node scripts/nhs/build-sites.mjs
 import { loadLocatedSites, metresBetween, inUk } from "./lib/sites.mjs"
+import { nameTokens, tokenOverlap } from "./lib/match.mjs"
 import { readMappedVenues } from "./lib/mapped.mjs"
 import { dataPath, readJson, writeJson, updateManifest, log } from "./lib/paths.mjs"
 
@@ -23,32 +24,9 @@ const STAGE = "build-sites"
 const NEAR_M = 600
 const SAME_BUILDING_M = 120
 
-// Words that appear in almost every NHS site name and so carry no signal when
-// deciding whether two names refer to the same place.
-const STOPWORDS = new Set([
-  "hospital", "hospitals", "nhs", "trust", "foundation", "the", "and", "of", "site",
-  "centre", "center", "university", "general", "royal", "community", "health", "care",
-])
-
-function nameTokens(name) {
-  return new Set(
-    name
-      .toLowerCase()
-      .replace(/['’]/g, "")
-      .split(/[^a-z0-9]+/)
-      .filter((t) => t.length > 2 && !STOPWORDS.has(t))
-  )
-}
-
-function tokenOverlap(a, b) {
-  if (!a.size || !b.size) return 0
-  let shared = 0
-  for (const t of a) if (b.has(t)) shared++
-  // Containment rather than Jaccard: "Queen Elizabeth Hospital Birmingham" in
-  // ODS vs "Queen Elizabeth Hospital" as a venue should score as a match even
-  // though one name carries an extra token.
-  return shared / Math.min(a.size, b.size)
-}
+// Name matching lives in lib/match.mjs — draft-sheets.mjs asks the same question
+// about the same names, and two answers to "are these the same hospital" is one
+// too many.
 
 const { sites, dropped, trusts } = loadLocatedSites()
 log(STAGE, `${sites.length} located sites (dropped ${JSON.stringify(dropped)}, ${trusts.size} trusts)`)
@@ -93,7 +71,9 @@ const mapped = readMappedVenues().map((v) => ({
   ...v,
   // Each name gets its own token set, compared independently: merging them
   // would dilute every set and make weak matches look strong.
-  tokenSets: [v.name, ...(aliasDoc.aliases?.[v.slug] ?? [])].map(nameTokens),
+  // Wrapped rather than passed by reference: map() supplies the index as a
+  // second argument, which nameTokens takes as its stopword set.
+  tokenSets: [v.name, ...(aliasDoc.aliases?.[v.slug] ?? [])].map((n) => nameTokens(n)),
 }))
 log(STAGE, `${mapped.length} fully-mapped venues to reconcile against`)
 
