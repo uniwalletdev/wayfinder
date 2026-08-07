@@ -32,17 +32,21 @@ const WEBSITE_CACHE = dataPath("trust-websites.json")
 const MIN_PAUSE_MS = 1500
 // Pages fetched per trust, across both hops. Six was too few and, worse, was
 // spent on whichever nav links happened to come first in the markup.
-const MAX_PAGES_PER_TRUST = 12
+const MAX_PAGES_PER_TRUST = 20
 // Hospital maps are routinely two hops from the homepage — Salisbury's sits at
 // /our-locations/our-locations, under a section landing page. One hop could
 // never reach it.
 const MAX_DEPTH = 2
 // A separate allowance for pages the sitemap pointed at, so they never compete
 // with the homepage's own navigation for slots.
-const MAX_SITEMAP_PAGES = 14
+const MAX_SITEMAP_PAGES = 40
 // Fetches held back for the second hop. The maps that matter sit under a section
 // page rather than on it, so the deeper pass must be guaranteed a share.
-const RESERVED_FOR_DEEPER = 10
+const RESERVED_FOR_DEEPER = 15
+// How many trusts to crawl at once. Politeness is per host and these are 247
+// different hosts, so this costs no site any extra load — it just stops the
+// wall clock being the reason the page budget has to be small.
+const TRUST_CONCURRENCY = 6
 // Every ten trusts is roughly every few minutes of crawling — often enough that
 // an interruption costs almost nothing, rare enough not to thrash the disk.
 const CHECKPOINT_EVERY = 10
@@ -225,11 +229,12 @@ function writeCheckpoint() {
   return sorted
 }
 
-let sinceCheckpoint = 0
-for (const [i, trust] of trusts.entries()) {
-  if (crawled.has(trust.odsCode)) continue
-  // Website lookups are cached: they change far less often than the maps do,
-  // and re-asking ORD for 215 organisations every month is pointless load.
+// One trust, start to finish. Returns how it ended; the caller records it.
+//
+// Per-trust work stays strictly sequential with its pause, so a single site
+// never sees more than one request per MIN_PAUSE_MS however many trusts run at
+// once.
+async function crawlTrust(trust) {
   if (!(trust.odsCode in websites)) {
     try {
       websites[trust.odsCode] = await websiteForTrust(trust.odsCode)
@@ -240,13 +245,7 @@ for (const [i, trust] of trusts.entries()) {
     await sleep(500)
   }
   const origin = websites[trust.odsCode]
-  if (!origin) {
-    crawled.set(trust.odsCode, "no-website")
-    // Log it. These used to `continue` before the progress line, so the run
-    // printed [3] [4] [6] [7] and looked like it was skipping at random.
-    log(STAGE, `[${i + 1}/${trusts.length}] ${trust.name} — no website recorded in ODS`)
-    continue
-  }
+  if (!origin) return { outcome: "no-website", found: 0, via: "-", note: "no website recorded in ODS" }
 
   const pause = Math.max(MIN_PAUSE_MS, await crawlDelayFor(origin))
   const found = new Map()
@@ -260,7 +259,7 @@ for (const [i, trust] of trusts.entries()) {
       const signal = classifyPdf(link.text, link.url)
       if (!signal) continue
       // Key on the canonical URL so a cache-busting parameter can't present the
-      // same document twice — a real run banked one map under two `?t=` values.
+      // same document twice.
       const key = canonicalUrl(link.url)
       if (!found.has(key)) {
         found.set(key, {
@@ -277,16 +276,13 @@ for (const [i, trust] of trusts.entries()) {
 
   try {
     if (!(await isAllowed(origin))) {
-      crawled.set(trust.odsCode, "robots-blocked")
-      log(STAGE, `[${i + 1}/${trusts.length}] ${trust.name} — robots.txt disallows crawling`)
-      continue
+      return { outcome: "robots-blocked", found: 0, via: "-", note: "robots.txt disallows crawling" }
     }
 
     const host = new URL(origin).host
 
     // Ask the site for its own index first. Where a sitemap exists this finds
-    // pages — and often PDFs — that no amount of following navigation would
-    // reach, for one or two requests instead of a dozen.
+    // pages — and often PDFs — that no amount of following navigation reaches.
     const sitemapUrls = await fetchSitemapUrls(origin, { log: (m) => log(STAGE, m) })
     if (sitemapUrls.length) {
       via = "sitemap"
@@ -295,21 +291,16 @@ for (const [i, trust] of trusts.entries()) {
 
     const home = await fetchHtml(origin)
     if (!home && !sitemapUrls.length) {
-      crawled.set(trust.odsCode, "failed")
-      log(STAGE, `[${i + 1}/${trusts.length}] ${trust.name} — homepage unreadable`)
-      continue
+      return { outcome: "failed", found: 0, via: "-", note: "homepage unreadable" }
     }
     visited.add(origin)
 
     const homeLinks = home ? extractLinks(home, origin) : []
     collect(homeLinks)
 
-    // Two separate budgets, deliberately.
-    //
-    // Pooling them made things worse: a trust with 1,483 sitemap URLs has dozens
-    // tying at the top score, and they crowded out the homepage's own navigation
-    // — so trusts whose maps had previously been found via links started
-    // returning nothing. The sitemap should add reach, never take it away.
+    // Two separate budgets. Pooling them let hundreds of sitemap entries crowd
+    // out the homepage's own navigation, and trusts whose maps had been found
+    // via links started returning nothing.
     const fromLinks = rankPages(homeLinks, { host, limit: MAX_PAGES_PER_TRUST })
     const fromSitemap = rankPages(
       sitemapUrls.map((url) => ({ url, text: "", host })),
@@ -320,20 +311,12 @@ for (const [i, trust] of trusts.entries()) {
       .map((p) => ({ ...p, depth: 1 }))
 
     const budget = MAX_PAGES_PER_TRUST + (sitemapUrls.length ? MAX_SITEMAP_PAGES : 0)
-    // Slots the first hop may not touch.
-    //
-    // Without this the second hop never happened at all on any trust with a
-    // sitemap: the depth-1 seeds exactly filled the budget, so a section page
-    // like "Our locations" was fetched, its child queued — and the run stopped
-    // with the child untouched. That child is where Salisbury keeps its map.
+    // Slots the first hop may not touch, so the second hop can happen at all.
     const depthOneCap = Math.max(6, budget - RESERVED_FOR_DEEPER)
 
     let fetched = 0
     let fetchedAtDepthOne = 0
     while (queue.length && fetched < budget) {
-      // Once the first hop has had its share, only deeper pages are eligible —
-      // they came from a page already judged promising, so they are the better
-      // lead anyway.
       let index = 0
       if (fetchedAtDepthOne >= depthOneCap) {
         index = queue.findIndex((p) => p.depth > 1)
@@ -351,8 +334,6 @@ for (const [i, trust] of trusts.entries()) {
         const links = extractLinks(html, page.url)
         collect(links)
 
-        // One more hop. Section landing pages ("Our locations") list the pages
-        // that actually carry the maps, so stopping at depth 1 misses them.
         if (page.depth < MAX_DEPTH) {
           const next = rankPages(links, { host, limit: budget })
             .filter((l) => !visited.has(l.url) && l.score >= 8)
@@ -368,9 +349,8 @@ for (const [i, trust] of trusts.entries()) {
     }
   } catch (err) {
     // A Cloudflare interstitial ("Just a moment…") is a JavaScript challenge, not
-    // a refusal we can talk our way past with headers — it needs a real browser.
-    // Recording it separately keeps the failure count honest about what is a
-    // transient problem and what is a wall.
+    // a refusal headers can talk past — it needs a real browser. Recording it
+    // separately keeps the failure count honest.
     const challenged = /just a moment|cf-browser-verification|challenge-platform|attention required/i.test(err.message ?? "")
     outcome = challenged ? "bot-challenge" : "failed"
     console.warn(
@@ -382,23 +362,47 @@ for (const [i, trust] of trusts.entries()) {
   }
 
   if (found.size) candidates.push(...found.values())
-  crawled.set(trust.odsCode, outcome)
-
-  const high = [...found.values()].filter((c) => c.confidence === "high").length
-  log(
-    STAGE,
-    `[${i + 1}/${trusts.length}] ${trust.name} — ${found.size} candidate(s)` +
-      (high ? ` (${high} high)` : "") +
-      ` [via ${via}]`
-  )
-
-  if (++sinceCheckpoint >= CHECKPOINT_EVERY) {
-    writeCheckpoint()
-    sinceCheckpoint = 0
-    log(STAGE, `  … saved (${candidates.length} candidates so far)`)
-  }
-  await sleep(pause)
+  return { outcome, found: found.size, via, high: [...found.values()].filter((c) => c.confidence === "high").length }
 }
+
+// Crawl several trusts at once.
+//
+// This is what makes a useful page budget affordable. Politeness is per host,
+// and these are 247 different hosts, so running a handful concurrently leaves
+// every individual site at one request per pause while cutting the wall clock by
+// the same factor. Tuning the budget downwards to save time was solving the
+// wrong problem — and each downward tweak lost a trust that the previous one had
+// found.
+const pending = trusts.filter((t) => !crawled.has(t.odsCode))
+let completed = 0
+let sinceCheckpoint = 0
+
+async function worker(queue) {
+  for (const { trust, index } of queue) {
+    const result = await crawlTrust(trust)
+    crawled.set(trust.odsCode, result.outcome)
+    completed++
+
+    log(
+      STAGE,
+      `[${index + 1}/${trusts.length}] ${trust.name} — ` +
+        (result.note ?? `${result.found} candidate(s)${result.high ? ` (${result.high} high)` : ""} [via ${result.via}]`)
+    )
+
+    if (++sinceCheckpoint >= CHECKPOINT_EVERY) {
+      sinceCheckpoint = 0
+      writeCheckpoint()
+      log(STAGE, `  … saved (${completed}/${pending.length} trusts, ${candidates.length} candidates so far)`)
+    }
+  }
+}
+
+// Deal trusts round-robin so the workers finish at roughly the same time.
+const queues = Array.from({ length: TRUST_CONCURRENCY }, () => [])
+pending.forEach((trust, i) => {
+  queues[i % TRUST_CONCURRENCY].push({ trust, index: trusts.indexOf(trust) })
+})
+await Promise.all(queues.map(worker))
 
 const sorted = writeCheckpoint()
 const stats = summarise()

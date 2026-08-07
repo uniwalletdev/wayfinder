@@ -18,7 +18,7 @@
 //
 // Lives here rather than in the script so tests can assert against it instead of
 // hardcoding a number that goes stale on the next bump.
-export const CRAWLER_VERSION = 4
+export const CRAWLER_VERSION = 5
 
 // Turn a URL or filename into something the word-based patterns can read.
 //
