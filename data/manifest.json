@@ -1,0 +1,28 @@
+{
+  "ods.etr": {
+    "via": "ORD API fallback",
+    "url": "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations",
+    "description": "NHS Trusts (England)",
+    "sha256": "279d1d0dc3487d79de1d6961ec6ed6f3cf98887bf5637c65611bd0c723863d49",
+    "rows": 247,
+    "usableRecords": 247,
+    "skipped": {
+      "short": 0,
+      "closed": 0,
+      "noPostcode": 0
+    },
+    "licence": "Open Government Licence v3.0",
+    "fetchedAt": "2026-08-07T19:55:12.827Z"
+  },
+  "plans.candidates": {
+    "description": "Floor-plan PDF discovery queue",
+    "trustsInScope": 20,
+    "candidates": 21,
+    "noWebsite": 18,
+    "crawlFailed": 14,
+    "robotsBlocked": 0,
+    "withCandidates": 13,
+    "crawled": 108,
+    "fetchedAt": "2026-08-07T19:55:12.975Z"
+  }
+}
