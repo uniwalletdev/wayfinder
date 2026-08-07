@@ -19,16 +19,24 @@
 // where it stopped. Interrupting it is safe.
 //
 // Run: node scripts/nhs/discover-plans.mjs [--limit N] [--restart] [--retry-failed]
-import { fetchRetry } from "./lib/net.mjs"
+import { fetchRetry, BROWSER_HEADERS } from "./lib/net.mjs"
 import { isAllowed, crawlDelayFor } from "./lib/robots.mjs"
 import { loadOdsRecords } from "./lib/sites.mjs"
+import { classifyPdf, rankPages, scorePage } from "./lib/discovery-match.mjs"
+import { fetchSitemapUrls } from "./lib/sitemap.mjs"
 import { dataPath, readJson, writeJson, updateManifest, log } from "./lib/paths.mjs"
 
 const STAGE = "discover-plans"
 const ORD_API = "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations"
 const WEBSITE_CACHE = dataPath("trust-websites.json")
 const MIN_PAUSE_MS = 1500
-const MAX_PAGES_PER_TRUST = 6
+// Pages fetched per trust, across both hops. Six was too few and, worse, was
+// spent on whichever nav links happened to come first in the markup.
+const MAX_PAGES_PER_TRUST = 12
+// Hospital maps are routinely two hops from the homepage — Salisbury's sits at
+// /our-locations/our-locations, under a section landing page. One hop could
+// never reach it.
+const MAX_DEPTH = 2
 // Every ten trusts is roughly every few minutes of crawling — often enough that
 // an interruption costs almost nothing, rare enough not to thrash the disk.
 const CHECKPOINT_EVERY = 10
@@ -40,27 +48,10 @@ const RETRY_FAILED = process.argv.includes("--retry-failed")
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-// A link is worth following if it looks like the part of a hospital website
-// where a map would live.
-const NAV_PAGE = /getting[- ]here|how[- ]to[- ]find|find[- ]us|visiting|visitor|your[- ]visit|contact|location|travel|patient[- ]information|our[- ]hospitals|site[- ]map/i
-
-// A PDF is a candidate if its link text or filename says so. Ordered by how
-// specific the signal is — that ordering becomes the confidence score.
-const PDF_SIGNALS = [
-  { re: /floor[- ]?plan/i, confidence: "high", kind: "floor-plan" },
-  { re: /site[- ]?map|campus[- ]?map|hospital[- ]?map/i, confidence: "high", kind: "site-map" },
-  { re: /\bmap\b.*\b(hospital|site|campus|ward|department)\b|\b(hospital|site|campus)\b.*\bmap\b/i, confidence: "medium", kind: "site-map" },
-  { re: /ward[- ]?(map|guide|directory)|department[- ]?(map|directory)/i, confidence: "medium", kind: "directory" },
-  { re: /\bmap\b/i, confidence: "low", kind: "unknown" },
-]
-
-function classify(text, href) {
-  const haystack = `${text} ${decodeURIComponent(href)}`
-  for (const signal of PDF_SIGNALS) {
-    if (signal.re.test(haystack)) return signal
-  }
-  return null
-}
+// Which links are worth following and which PDFs are worth keeping now lives in
+// lib/discovery-match.mjs, where it can be tested without a network. The old
+// patterns matched on raw hrefs, so "SRH_Map_update.pdf" was invisible: `_` is a
+// word character, leaving no boundary around "Map".
 
 // Deliberately regex-based rather than a DOM parser: this repo has no HTML
 // parsing dependency, and all we need is href plus link text. Malformed markup
@@ -84,7 +75,21 @@ function extractLinks(html, baseUrl) {
 
 async function fetchHtml(url) {
   if (!(await isAllowed(url))) return null
-  const res = await fetchRetry(url, { headers: { accept: "text/html" } }, { retries: 1, timeoutMs: 30_000 })
+  let res
+  try {
+    res = await fetchRetry(url, { headers: { accept: "text/html" } }, { retries: 1, timeoutMs: 30_000 })
+  } catch (err) {
+    // Several trust sites refuse or reset a request that doesn't look like a
+    // browser — the same filtering that blocked the ODS download host. Worth one
+    // more attempt before writing the whole trust off.
+    res = await fetchRetry(
+      url,
+      { headers: { ...BROWSER_HEADERS, accept: "text/html,application/xhtml+xml" } },
+      { retries: 1, timeoutMs: 30_000 }
+    ).catch(() => {
+      throw err
+    })
+  }
   const type = res.headers.get("content-type") ?? ""
   if (!/text\/html/i.test(type)) return null
   return res.text()
@@ -188,53 +193,99 @@ for (const [i, trust] of trusts.entries()) {
     await sleep(500)
   }
   const origin = websites[trust.odsCode]
-  if (!origin) { crawled.set(trust.odsCode, "no-website"); continue }
+  if (!origin) {
+    crawled.set(trust.odsCode, "no-website")
+    // Log it. These used to `continue` before the progress line, so the run
+    // printed [3] [4] [6] [7] and looked like it was skipping at random.
+    log(STAGE, `[${i + 1}/${trusts.length}] ${trust.name} — no website recorded in ODS`)
+    continue
+  }
 
   const pause = Math.max(MIN_PAUSE_MS, await crawlDelayFor(origin))
   const found = new Map()
   const visited = new Set()
   let outcome = "ok"
+  let via = "links"
 
-  try {
-    if (!(await isAllowed(origin))) { crawled.set(trust.odsCode, "robots-blocked"); continue }
-    const home = await fetchHtml(origin)
-    if (!home) { crawled.set(trust.odsCode, "failed"); continue }
-    visited.add(origin)
-
-    const homeLinks = extractLinks(home, origin)
-    // Same-host only. Following a trust's link to a third-party site would turn
-    // a polite two-page visit into an unbounded crawl of the internet.
-    const host = new URL(origin).host
-    const toVisit = homeLinks
-      .filter((l) => l.host === host && !/\.pdf(\?|$)/i.test(l.url) && NAV_PAGE.test(`${l.text} ${l.url}`))
-      .slice(0, MAX_PAGES_PER_TRUST)
-
-    const collect = (links) => {
-      for (const link of links) {
-        if (!/\.pdf(\?|$)/i.test(link.url)) continue
-        const signal = classify(link.text, link.url)
-        if (!signal) continue
-        if (!found.has(link.url)) {
-          found.set(link.url, {
-            trustCode: trust.odsCode,
-            trustName: trust.name,
-            url: link.url,
-            linkText: link.text.slice(0, 200),
-            kind: signal.kind,
-            confidence: signal.confidence,
-          })
-        }
+  const collect = (links) => {
+    for (const link of links) {
+      if (!/\.pdf(\?|$)/i.test(link.url)) continue
+      const signal = classifyPdf(link.text, link.url)
+      if (!signal) continue
+      if (!found.has(link.url)) {
+        found.set(link.url, {
+          trustCode: trust.odsCode,
+          trustName: trust.name,
+          url: link.url,
+          linkText: link.text.slice(0, 200),
+          kind: signal.kind,
+          confidence: signal.confidence,
+        })
       }
     }
+  }
+
+  try {
+    if (!(await isAllowed(origin))) {
+      crawled.set(trust.odsCode, "robots-blocked")
+      log(STAGE, `[${i + 1}/${trusts.length}] ${trust.name} — robots.txt disallows crawling`)
+      continue
+    }
+
+    const host = new URL(origin).host
+
+    // Ask the site for its own index first. Where a sitemap exists this finds
+    // pages — and often PDFs — that no amount of following navigation would
+    // reach, for one or two requests instead of a dozen.
+    const sitemapUrls = await fetchSitemapUrls(origin, { log: (m) => log(STAGE, m) })
+    if (sitemapUrls.length) {
+      via = "sitemap"
+      collect(sitemapUrls.map((url) => ({ url, text: "", host })))
+    }
+
+    const home = await fetchHtml(origin)
+    if (!home && !sitemapUrls.length) {
+      crawled.set(trust.odsCode, "failed")
+      log(STAGE, `[${i + 1}/${trusts.length}] ${trust.name} — homepage unreadable`)
+      continue
+    }
+    visited.add(origin)
+
+    const homeLinks = home ? extractLinks(home, origin) : []
     collect(homeLinks)
 
-    for (const page of toVisit) {
+    // Seed the queue from the homepage's links and from any promising sitemap
+    // URLs, ranked by how likely they are to hold a map rather than by the order
+    // they happen to appear in the markup.
+    const seeds = [
+      ...homeLinks,
+      ...sitemapUrls.filter((url) => scorePage("", url) > 0).map((url) => ({ url, text: "", host })),
+    ]
+    const queue = rankPages(seeds, { host, limit: MAX_PAGES_PER_TRUST }).map((p) => ({ ...p, depth: 1 }))
+
+    let fetched = 0
+    while (queue.length && fetched < MAX_PAGES_PER_TRUST) {
+      const page = queue.shift()
       if (visited.has(page.url)) continue
       visited.add(page.url)
       await sleep(pause)
+      fetched++
       try {
         const html = await fetchHtml(page.url)
-        if (html) collect(extractLinks(html, page.url))
+        if (!html) continue
+        const links = extractLinks(html, page.url)
+        collect(links)
+
+        // One more hop. Section landing pages ("Our locations") list the pages
+        // that actually carry the maps, so stopping at depth 1 misses them.
+        if (page.depth < MAX_DEPTH) {
+          const next = rankPages(links, { host, limit: MAX_PAGES_PER_TRUST - fetched })
+            .filter((l) => !visited.has(l.url) && l.score >= 8)
+            .map((l) => ({ ...l, depth: page.depth + 1 }))
+          queue.push(...next)
+          // Best-scoring pages first regardless of which hop they came from.
+          queue.sort((a, b) => b.score - a.score)
+        }
       } catch {
         // A single dead sub-page is not worth failing the trust over.
       }
@@ -247,7 +298,13 @@ for (const [i, trust] of trusts.entries()) {
   if (found.size) candidates.push(...found.values())
   crawled.set(trust.odsCode, outcome)
 
-  log(STAGE, `[${i + 1}/${trusts.length}] ${trust.name} — ${found.size} candidate(s)`)
+  const high = [...found.values()].filter((c) => c.confidence === "high").length
+  log(
+    STAGE,
+    `[${i + 1}/${trusts.length}] ${trust.name} — ${found.size} candidate(s)` +
+      (high ? ` (${high} high)` : "") +
+      ` [via ${via}]`
+  )
 
   if (++sinceCheckpoint >= CHECKPOINT_EVERY) {
     writeCheckpoint()
