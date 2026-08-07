@@ -97,6 +97,31 @@ try {
   check("records which source was used", manifest["ods.etr"]?.via === "local file", JSON.stringify(manifest["ods.etr"]))
   check("still hashes what it wrote", /^[0-9a-f]{64}$/.test(manifest["ods.etr"]?.sha256 ?? ""), manifest["ods.etr"]?.sha256)
 
+  // The discovery crawl needs the ~250 trusts and nothing else. Fetching the
+  // whole register first meant tens of thousands of records and, with parent
+  // resolution, hours of requests before a crawl that was only ever waiting on
+  // the trust list. --only is what stops that happening again.
+  rmSync("data/manifest.json", { force: true })
+  const onlyOut = execFileSync("node", ["scripts/nhs/fetch-ods.mjs", "--only", "etr", "--use-local"], { encoding: "utf8" })
+  const onlyManifest = JSON.parse(readFileSync("data/manifest.json", "utf8"))
+  check("--only fetches the named source", !!onlyManifest["ods.etr"], Object.keys(onlyManifest).join(", "))
+  check("--only skips everything else", !onlyManifest["ods.ets"] && !onlyManifest["ods.epraccur"], Object.keys(onlyManifest).join(", "))
+  check("--only says what it narrowed to", /fetching only: etr/.test(onlyOut), onlyOut.slice(0, 200))
+
+  let unknownFailed = false
+  let unknownOut = ""
+  try {
+    execFileSync("node", ["scripts/nhs/fetch-ods.mjs", "--only", "nonsense"], { encoding: "utf8", stdio: "pipe" })
+  } catch (err) {
+    unknownFailed = true
+    unknownOut = String(err.stdout ?? "") + String(err.stderr ?? "")
+  }
+  check("rejects an unknown source name", unknownFailed && /unknown source/.test(unknownOut), unknownOut.slice(0, 200))
+
+  // Parent resolution is one request per site. It must never happen just because
+  // somebody ran the fetch stage.
+  check("does not resolve parent trusts unless asked", !/resolving parent trusts/.test(out + onlyOut), "enrichment ran unprompted")
+
   // Without --use-local and with no network, every source is refused and the
   // stage must fail with the manual instructions rather than a bare stack trace.
   rmSync("data/manifest.json", { force: true })

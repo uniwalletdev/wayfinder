@@ -14,7 +14,7 @@
     "nhs:venues": "node scripts/nhs/generate-venues.mjs",
     "nhs:discover": "node scripts/nhs/discover-plans.mjs",
     "nhs:plans": "node scripts/nhs/fetch-plans.mjs",
-    "nhs:refresh": "npm run nhs:fetch && npm run nhs:geocode && npm run nhs:osm && npm run nhs:build && npm run nhs:venues",
+    "nhs:refresh": "node scripts/nhs/fetch-ods.mjs --with-parents && npm run nhs:geocode && npm run nhs:osm && npm run nhs:build && npm run nhs:venues",
     "typecheck": "tsc --noEmit",
     "nhs:test": "node scripts/nhs/test/parsing.test.mjs && node scripts/nhs/test/build.test.mjs && node scripts/nhs/test/ingest.test.mjs && node scripts/nhs/test/fallback.test.mjs",
     "nhs:approve": "node scripts/nhs/approve-plans.mjs",

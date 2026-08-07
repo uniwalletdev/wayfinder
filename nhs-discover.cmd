@@ -41,7 +41,7 @@ if errorlevel 1 goto :preflight_failed
 echo.
 echo === Fetching the NHS trust register ===
 echo.
-call npm run nhs:fetch
+call node scripts/nhs/fetch-ods.mjs --only etr
 if errorlevel 1 goto :fetch_failed
 
 echo.
