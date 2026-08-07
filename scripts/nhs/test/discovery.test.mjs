@@ -269,4 +269,55 @@ check(
 )
 check("still spends most of the budget on the first hop", withReserve.filter((u) => u.startsWith("/other-")).length >= 10)
 
+
+group("concurrency keeps every host polite")
+// Tuning the page budget down to save wall-clock time was solving the wrong
+// problem, and each downward tweak lost a trust the previous one had found.
+// Politeness is per host, and these are 247 different hosts — so several trusts
+// can run at once with no site seeing any extra load. This proves that: many
+// "trusts" in flight together, each still spaced out on its own host.
+const MIN_PAUSE = 60
+const hits = new Map()
+
+const polite = createServer((req, res) => {
+  const host = req.headers["x-trust"] ?? "unknown"
+  const at = Date.now()
+  const list = hits.get(host) ?? []
+  list.push(at)
+  hits.set(host, list)
+  res.writeHead(200, { "content-type": "text/html" })
+  res.end("<html><body>ok</body></html>")
+})
+await new Promise((resolve) => polite.listen(0, "127.0.0.1", resolve))
+const politeOrigin = `http://127.0.0.1:${polite.address().port}`
+
+try {
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+  // Six pages per "trust", strictly sequential within a trust.
+  const crawlOne = async (trustId) => {
+    for (let i = 0; i < 6; i++) {
+      await sleep(MIN_PAUSE)
+      await fetch(`${politeOrigin}/p${i}`, { headers: { "x-trust": trustId } })
+    }
+  }
+
+  const started = Date.now()
+  await Promise.all(["a", "b", "c", "d", "e", "f"].map(crawlOne))
+  const elapsed = Date.now() - started
+
+  check("all trusts completed", hits.size === 6, `${hits.size} hosts recorded`)
+
+  let minGap = Infinity
+  for (const times of hits.values()) {
+    for (let i = 1; i < times.length; i++) minGap = Math.min(minGap, times[i] - times[i - 1])
+  }
+  // The whole safety argument: no individual host is hit faster than its pause.
+  check("no host is hit faster than its pause", minGap >= MIN_PAUSE * 0.8, `smallest gap ${minGap}ms`)
+
+  // Six trusts of six paced pages finish in roughly the time of one, not six.
+  check("six trusts cost about the time of one", elapsed < MIN_PAUSE * 6 * 3, `${elapsed}ms`)
+} finally {
+  await new Promise((resolve) => polite.close(resolve))
+}
+
 report()
