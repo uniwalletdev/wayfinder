@@ -70,9 +70,21 @@ const QUERY_VARIANTS = [
   { name: "without Status", status: false },
 ]
 
-const pageUrl = (roleId, offset, useStatus) =>
-  `${ORD_API}/organisations?PrimaryRoleId=${encodeURIComponent(roleId)}&Limit=${PAGE_SIZE}&Offset=${offset}` +
-  (useStatus ? "&Status=Active" : "")
+// Paging here is 1-based, and the service says so in its own words: an
+// `Offset=0` is rejected with
+//
+//     {"errorCode":406,"errorText":"Suppied Offset must be greater than 1"}
+//
+// So the first request omits Offset entirely rather than guessing whether the
+// first page is 1 or 2, and later pages skip by however many records are already
+// held. That count is always well past the minimum, so the boundary never
+// arises again.
+export function buildPageUrl(roleId, offset, useStatus, limit = PAGE_SIZE) {
+  const params = [`PrimaryRoleId=${encodeURIComponent(roleId)}`, `Limit=${limit}`]
+  if (offset > 0) params.push(`Offset=${offset}`)
+  if (useStatus) params.push("Status=Active")
+  return `${ORD_API}/organisations?${params.join("&")}`
+}
 
 // Locked in after the first successful page so the rest of the paging doesn't
 // re-negotiate on every request.
@@ -80,7 +92,7 @@ let chosen = null
 
 async function fetchPage(roleId, offset, log) {
   if (chosen) {
-    const url = pageUrl(roleId, offset, chosen.status)
+    const url = buildPageUrl(roleId, offset, chosen.status)
     const res = await fetchRetry(url, { headers: chosen.headers }, { retries: 3, timeoutMs: 60_000 })
     return assertOrganisations(await res.json(), url)
   }
@@ -88,7 +100,7 @@ async function fetchPage(roleId, offset, log) {
   const failures = []
   for (const query of QUERY_VARIANTS) {
     for (const variant of HEADER_VARIANTS) {
-      const url = pageUrl(roleId, offset, query.status)
+      const url = buildPageUrl(roleId, offset, query.status)
       try {
         const res = await fetchRetry(url, { headers: variant.headers }, { retries: 1, timeoutMs: 60_000 })
         const list = assertOrganisations(await res.json(), url)
@@ -106,17 +118,36 @@ async function fetchPage(roleId, offset, log) {
 }
 
 // Fetch every organisation holding a role.
+//
+// The offset for each page is simply how many records are already held. If the
+// service reads that as "skip this many" we get the next page exactly; if it
+// reads it as "start at this record" we get one record of overlap, which the
+// de-duplication absorbs. That asymmetry is the point — an off-by-one that
+// repeats a hospital is harmless, one that drops a hospital is not, and without
+// being able to call the API from here it is not worth betting on which
+// interpretation is right.
 export async function fetchOrganisations(roleId, { onProgress, log } = {}) {
+  const seen = new Set()
   const all = []
-  for (let offset = 0; ; offset += PAGE_SIZE) {
-    const page = await fetchPage(roleId, offset, log)
-    all.push(...page)
+
+  for (let page = 0; ; page++) {
+    const batch = await fetchPage(roleId, all.length, log)
+    let added = 0
+    for (const org of batch) {
+      const code = String(org?.OrgId ?? "").trim().toUpperCase()
+      if (!code || seen.has(code)) continue
+      seen.add(code)
+      all.push(org)
+      added++
+    }
     onProgress?.(all.length)
-    if (page.length < PAGE_SIZE) break
-    // A national register of a few thousand rows should never need this many
-    // pages; bail rather than loop forever if paging misbehaves.
-    if (offset > PAGE_SIZE * 50) throw new Error(`${roleId}: paging did not terminate`)
+
+    // A short page is the last one. No new records means the service is handing
+    // back the same window, which would otherwise loop forever.
+    if (batch.length < PAGE_SIZE || added === 0) break
+    if (page > 50) throw new Error(`${roleId}: paging did not terminate after ${all.length} records`)
   }
+
   // When the Status filter had to be dropped, closed organisations come back
   // too. parseOdsRows drops them downstream on the status column, but filtering
   // here keeps the synthesised CSV honest about what it contains.
