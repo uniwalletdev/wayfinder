@@ -1,0 +1,31 @@
+{
+  "description": "Extra names a fully-mapped venue is known by in the NHS ODS register, used by scripts/nhs/build-sites.mjs to recognise that a directory site is already covered. Most venues need no entry — their own name matches the ODS one closely enough. These are the ones where it doesn't: a venue called 'GOSH Wayfinder' shares no words with ODS's 'Great Ormond Street Hospital For Children', so without an alias it would get a duplicate, unnavigable pin sitting on top of the mapped venue. Add an entry whenever a mapped venue's display name diverges from its official name, or when one venue covers several ODS sites.",
+  "aliases": {
+    "gosh": [
+      "Great Ormond Street Hospital for Children"
+    ],
+    "cuh": [
+      "Addenbrooke's Hospital",
+      "Cambridge University Hospitals"
+    ],
+    "oxford-road": [
+      "Manchester Royal Infirmary",
+      "Royal Manchester Children's Hospital",
+      "Manchester Royal Eye Hospital",
+      "Saint Mary's Hospital",
+      "University Dental Hospital of Manchester"
+    ],
+    "st-georges": [
+      "St George's Hospital Tooting"
+    ],
+    "qehb": [
+      "Queen Elizabeth Hospital Birmingham"
+    ],
+    "bwh": [
+      "Birmingham Women's Hospital"
+    ],
+    "qcch": [
+      "Queen Charlotte's and Chelsea Hospital"
+    ]
+  }
+}

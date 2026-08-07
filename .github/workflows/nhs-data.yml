@@ -1,0 +1,173 @@
+# Refresh the NHS hospital directory from open data.
+#
+# This workflow is the pipeline's network. The upstreams it needs — NHS ODS,
+# postcodes.io, Overpass — are unreachable from sandboxed or proxied development
+# environments, so the fetching happens here, where egress is unrestricted, and
+# the results arrive back as a reviewable pull request.
+#
+# It never pushes to the default branch. A refresh can move thousands of map
+# pins, which is exactly the kind of change that deserves a human looking at the
+# diff before it ships.
+name: NHS data refresh
+
+on:
+  schedule:
+    # ODS republishes monthly. Early on the 5th, after the month's extract has
+    # settled, at a quiet hour.
+    - cron: "17 3 5 * *"
+  workflow_dispatch:
+    inputs:
+      skip_osm:
+        description: "Skip the OpenStreetMap footprint stage (it is the slow one)"
+        type: boolean
+        default: false
+      discover_plans:
+        description: "Also crawl trust websites for candidate floor-plan PDFs"
+        type: boolean
+        default: false
+
+# Two refreshes racing each other would fight over the same branch.
+concurrency:
+  group: nhs-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    # The OSM stage deliberately paces itself to stay welcome on a free shared
+    # endpoint, so the whole run is measured in tens of minutes, not seconds.
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Fail before spending twenty minutes on network fetches if the parsing
+      # layer is already broken.
+      - name: Test the pipeline
+        run: npm run nhs:test
+
+      # Geocoding results barely change month to month. Restoring the cache
+      # turns ~2,500 postcode lookups into a handful, and means a postcodes.io
+      # outage degrades to "no new sites" rather than "no coordinates at all".
+      - name: Restore geocode cache
+        uses: actions/cache/restore@v4
+        with:
+          path: data/geocode-cache.json
+          key: nhs-geocode-${{ github.run_id }}
+          restore-keys: nhs-geocode-
+
+      - name: Fetch ODS extracts
+        run: npm run nhs:fetch
+
+      - name: Geocode postcodes
+        run: npm run nhs:geocode
+
+      - name: Save geocode cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: data/geocode-cache.json
+          key: nhs-geocode-${{ github.run_id }}
+
+      - name: Fetch OpenStreetMap footprints
+        if: inputs.skip_osm != true
+        run: npm run nhs:osm
+
+      - name: Merge into canonical site list
+        run: npm run nhs:build
+
+      - name: Generate venue data
+        run: npm run nhs:venues
+
+      # The generated file is imported by the app, so a refresh that doesn't
+      # compile must fail here rather than in a PR nobody can merge.
+      #
+      # Typecheck only, deliberately: `npm run lint` currently reports
+      # pre-existing errors elsewhere in the app, so gating a data refresh on it
+      # would mean every scheduled run failed for reasons that have nothing to do
+      # with the data. Worth adding back once lint is clean on the default branch.
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Discover floor-plan candidates
+        if: inputs.discover_plans == true
+        run: npm run nhs:discover
+        continue-on-error: true
+
+      # A triage queue is useful even when the rest of the run is uneventful,
+      # and it is not committed — it is a worklist, not data the app depends on.
+      - name: Upload floor-plan triage queue
+        if: inputs.discover_plans == true
+        uses: actions/upload-artifact@v4
+        with:
+          name: plan-candidates
+          path: data/plan-candidates.json
+          if-no-files-found: ignore
+
+      - name: Summarise the refresh
+        run: |
+          {
+            echo "## NHS data refresh"
+            echo
+            if [ -f data/nhs-sites.json ]; then
+              node -e '
+                const d = require("./data/nhs-sites.json");
+                const withFp = d.sites.filter(s => s.footprints > 0).length;
+                const covered = d.sites.filter(s => s.mappedVenueSlug).length;
+                console.log(`- **${d.count}** NHS sites`);
+                console.log(`- **${withFp}** with an OpenStreetMap footprint`);
+                console.log(`- **${covered}** already covered by a fully-mapped venue (excluded from the directory)`);
+                console.log(`- generated \`${d.generatedAt}\``);
+              '
+            fi
+            echo
+            echo "### Changed files"
+            echo '```'
+            git status --porcelain -- data src/lib/venues || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open a pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/nhs-data-refresh
+          base: main
+          add-paths: |
+            data/manifest.json
+            data/geocode-cache.json
+            data/nhs-sites.json
+            data/mapped-coverage.json
+            data/footprints.geojson
+            data/trust-websites.json
+            data/raw/ods/*.csv
+            data/plan-candidates.json
+            src/lib/venues/nhs-hospitals-data.ts
+          commit-message: "Refresh the NHS hospital directory from ODS open data"
+          title: "Refresh the NHS hospital directory from ODS open data"
+          body: |
+            Automated refresh from the NHS Organisation Data Service, run by
+            `.github/workflows/nhs-data.yml`.
+
+            The run summary has the site counts and the full list of changed
+            files. Worth checking before merging:
+
+            - the site count hasn't moved by an implausible amount
+            - `data/mapped-coverage.json` still excludes every fully-mapped
+              venue, and hasn't started excluding one it shouldn't
+            - `data/manifest.json` shows the upstream SHA-256 actually changed
+
+            Contains public sector information licensed under the Open Government
+            Licence v3.0. Building footprints © OpenStreetMap contributors, ODbL 1.0.
+          labels: automated, data
+          delete-branch: true

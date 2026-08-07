@@ -101,6 +101,11 @@ export const LIMITS = {
   // mapper working through a site.
   venueCreate: { limit: 20, windowMs: 60 * 60 * 1000 }, // 20/hour
   venueWrite: { limit: 120, windowMs: 60 * 60 * 1000 }, // 120/hour
+  // Reads a slice of a large local file rather than calling a paid upstream, so
+  // this costs nothing per call — but it is unauthenticated and each response is
+  // served from an in-process index, so a ceiling keeps a loop from pinning a
+  // server instance. Generous: the map asks once per venue switch.
+  footprints: { limit: 120, windowMs: 60 * 1000 }, // 120/min
 } as const
 
 // ── Request body caps ───────────────────────────────────────────────────────

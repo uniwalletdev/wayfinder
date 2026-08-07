@@ -59,6 +59,15 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+
+  // /api/footprints reads data/footprints.geojson at runtime with fs, rather
+  // than importing it — the national collection of OpenStreetMap hospital
+  // outlines is far too large to bundle for the one site a user is looking at.
+  // Nothing statically references the file, so file tracing can't infer it and
+  // the route would find nothing in production while working fine locally.
+  outputFileTracingIncludes: {
+    "/api/footprints": ["./data/footprints.geojson"],
+  },
 };
 
 export default nextConfig;

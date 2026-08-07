@@ -1,0 +1,75 @@
+{
+  "description": "APPROVED floor-plan / site-map sources. scripts/nhs/fetch-plans.mjs downloads exactly what is listed here and nothing else. Entries arrive from data/plan-candidates.json (produced by scripts/nhs/discover-plans.mjs) only after a human has confirmed the PDF is the right map and that reuse is acceptable — these are the trusts' copyright, not open data. sha256 is filled in on the first fetch and checked on every later run, so a republished map surfaces as an explicit change instead of silently regenerating every waypoint.",
+  "sources": [
+    {
+      "slug": "charing-cross",
+      "file": "map/Charing Cross.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "hammersmith",
+      "file": "map/Hammersmith Hospital location map.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "qcch",
+      "file": "map/Queen Charlottes and Chelsea Hospital location map.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "western-eye",
+      "file": "map/Western Eye Hospital location map.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "bwh",
+      "file": "map/Clinical-Genetics-BWH-site-map.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "qehb",
+      "file": "map/map-qehb.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "nmgh",
+      "file": "map/NMGHMap_Flat_UpdateDec2023_External-VB-Block-Naviagation-V2_.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "oxford-road",
+      "file": "map/ORC-map-with-directory-Feb-25.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "trafford",
+      "file": "map/Trafford-General-Hospital-map.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    },
+    {
+      "slug": "wythenshawe",
+      "file": "map/wythenshawe-hospital-sitemap-updated-logo.pdf",
+      "url": null,
+      "sha256": null,
+      "note": "Pre-pipeline manual collection — source URL not recorded."
+    }
+  ]
+}

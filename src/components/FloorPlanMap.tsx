@@ -50,6 +50,11 @@ interface Props {
   // Basemap tiles: light or dark street map — set by the map-style floating
   // control.
   mapStyle?: "light" | "dark"
+  // ODS code of the active venue, when it came from the NHS site directory.
+  // Fetches that site's OpenStreetMap building outlines so a hospital with no
+  // surveyed interior still shows which buildings on the street are the hospital
+  // — a single pin never conveys that.
+  siteOdsCode?: string
 }
 
 const LIGHT_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
@@ -73,9 +78,11 @@ export default function FloorPlanMap({
   onMapReady,
   leafletMapRef,
   mapStyle = "light",
+  siteOdsCode,
 }: Props) {
   const mapRef = useRef<L.Map | null>(null)
   const tileLayerRef = useRef<L.TileLayer | null>(null)
+  const footprintLayerRef = useRef<L.GeoJSON | null>(null)
   const positionMarkerRef = useRef<L.Marker | null>(null)
   const originMarkerRef = useRef<L.Marker | null>(null)
   const destMarkerRef = useRef<L.Marker | null>(null)
@@ -199,6 +206,87 @@ export default function FloorPlanMap({
       floorPlanLayerRef.current = overlay
     }
   }, [currentFloor, floorPlans])
+
+  // Building outlines for NHS directory sites (OpenStreetMap, via /api/footprints).
+  //
+  // Drawn under everything else — bringToBack keeps them beneath a floor-plan
+  // image on sites that have one, so this adds context without ever obscuring a
+  // surveyed interior. Sites without an ODS code (hand-built and user-created
+  // venues) skip the fetch entirely.
+  useEffect(() => {
+    if (!mapRef.current) return
+    const map = mapRef.current
+
+    const clear = () => {
+      if (footprintLayerRef.current) {
+        map.removeLayer(footprintLayerRef.current)
+        footprintLayerRef.current = null
+      }
+    }
+    clear()
+    if (!siteOdsCode) return
+
+    // Guards against a slow response for a venue the user has already navigated
+    // away from painting outlines over the wrong hospital.
+    let cancelled = false
+    const controller = new AbortController()
+
+    ;(async () => {
+      try {
+        const res = await fetch(`/api/footprints?ods=${encodeURIComponent(siteOdsCode)}`, {
+          signal: controller.signal,
+        })
+        if (!res.ok || cancelled) return
+        const data = (await res.json()) as {
+          features?: GeoJSON.Feature[]
+          attribution?: string
+        }
+        if (cancelled || !data.features?.length || !mapRef.current) return
+
+        const layer = L.geoJSON(data.features, {
+          style: {
+            color: mapStyle === "dark" ? "#7dd3fc" : "#0369a1",
+            weight: 1.5,
+            opacity: 0.9,
+            fillColor: mapStyle === "dark" ? "#0ea5e9" : "#38bdf8",
+            fillOpacity: 0.15,
+          },
+          onEachFeature: (feature, featureLayer) => {
+            // OSM names are user-contributed text, so they go through the same
+            // escaping as every other interpolated string here.
+            const name = feature.properties?.name
+            if (typeof name === "string" && name) {
+              featureLayer.bindPopup(`<b>${escapeHtml(name)}</b><br><small>Building outline · OpenStreetMap</small>`)
+            }
+          },
+        })
+        layer.addTo(map)
+        layer.bringToBack()
+        // Keep the basemap below the outlines.
+        tileLayerRef.current?.bringToBack()
+        footprintLayerRef.current = layer
+
+        // ODbL requires attribution wherever the data is shown. The map is built
+        // with attributionControl disabled (it has its own chrome), so the
+        // control is added only while OSM-derived geometry is actually on screen.
+        if (!map.attributionControl) {
+          L.control.attribution({ prefix: false, position: "bottomleft" }).addTo(map)
+        }
+        map.attributionControl?.addAttribution(
+          data.attribution ?? '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        )
+      } catch {
+        // No outlines is the pre-existing behaviour, not a failure worth
+        // surfacing — the pin and the basemap are still there.
+      }
+    })()
+
+    return () => {
+      cancelled = true
+      controller.abort()
+      clear()
+    }
+  }, [siteOdsCode, mapStyle])
 
   // Update waypoint markers
   useEffect(() => {

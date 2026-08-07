@@ -140,6 +140,15 @@ export interface Venue {
   trails?: SurveyTrail[]
   // Waypoint names to surface as shortcuts in search.
   quickAccess?: string[]
+  // Where this venue's location came from. Set for venues generated from open
+  // data (the NHS site directory); absent for hand-built and user-created ones,
+  // which have no external record to point at. Having the ODS code on the venue
+  // is what lets a directory pin be reconciled against a later data refresh
+  // instead of being matched on its name.
+  odsCode?: string
+  postcode?: string
+  address?: string[]
+  dataSource?: string
   createdAt?: string
   updatedAt?: string
 }
