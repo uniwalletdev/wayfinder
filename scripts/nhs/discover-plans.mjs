@@ -22,7 +22,7 @@
 import { fetchRetry, BROWSER_HEADERS } from "./lib/net.mjs"
 import { isAllowed, crawlDelayFor } from "./lib/robots.mjs"
 import { loadOdsRecords } from "./lib/sites.mjs"
-import { classifyPdf, rankPages, scorePage } from "./lib/discovery-match.mjs"
+import { classifyPdf, rankPages, scorePage, decodeEntities, canonicalUrl, CRAWLER_VERSION } from "./lib/discovery-match.mjs"
 import { fetchSitemapUrls } from "./lib/sitemap.mjs"
 import { dataPath, readJson, writeJson, updateManifest, log } from "./lib/paths.mjs"
 
@@ -61,9 +61,13 @@ const LINK_RE = /<a\b[^>]*?href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi
 function extractLinks(html, baseUrl) {
   const links = []
   for (const m of html.matchAll(LINK_RE)) {
-    const text = m[2].replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+    const text = decodeEntities(m[2].replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim())
     try {
-      const url = new URL(m[1], baseUrl)
+      // Decode entities before parsing. An href written as
+      // "…?ver=42880&amp;doc=…" is a corrupt query string once taken literally,
+      // and a real run produced four such URLs — every one of which would have
+      // 404'd at download time, long after the crawl looked successful.
+      const url = new URL(decodeEntities(m[1]), baseUrl)
       url.hash = ""
       links.push({ url: url.href, text, host: url.host })
     } catch {
@@ -124,7 +128,24 @@ const crawled = new Map()
 // to disk as we go, and a re-run picks up where it stopped.
 if (!RESTART) {
   const prior = readJson(dataPath("plan-candidates.json"))
-  if (prior?.candidates) {
+  if (prior?.candidates && (prior.crawlerVersion ?? 1) !== CRAWLER_VERSION) {
+    log(
+      STAGE,
+      `previous results came from crawler v${prior.crawlerVersion ?? 1}, this is v${CRAWLER_VERSION} — ` +
+        `re-crawling so the improvements actually apply (previous candidates are kept)`
+    )
+    // Keep what was found; discard the "already visited" marks so every trust is
+    // looked at again. Duplicates are collapsed on canonical URL below.
+    //
+    // Re-classify as they are loaded: a trust that fails on the re-crawl would
+    // otherwise keep its old label for good, and the labels are the whole point
+    // — the previous version called five indoor floor plans "site-map".
+    candidates = prior.candidates.map((c) => {
+      const url = decodeEntities(c.url)
+      const signal = classifyPdf(decodeEntities(c.linkText ?? ""), url)
+      return signal ? { ...c, url, kind: signal.kind, confidence: signal.confidence } : { ...c, url }
+    })
+  } else if (prior?.candidates) {
     candidates = prior.candidates
     for (const [code, outcome] of Object.entries(prior.crawled ?? {})) {
       // A failed trust is usually a site that was down or too slow. Keep it
@@ -147,10 +168,11 @@ if (remaining.length > 100) {
 // Outcomes are counted from `crawled` rather than incremented as we go, so the
 // totals stay correct across any number of resumed runs.
 function summarise() {
-  const stats = { noWebsite: 0, crawlFailed: 0, robotsBlocked: 0, withCandidates: 0, crawled: crawled.size }
+  const stats = { noWebsite: 0, crawlFailed: 0, botChallenged: 0, robotsBlocked: 0, withCandidates: 0, crawled: crawled.size }
   for (const outcome of crawled.values()) {
     if (outcome === "no-website") stats.noWebsite++
     else if (outcome === "robots-blocked") stats.robotsBlocked++
+    else if (outcome === "bot-challenge") stats.botChallenged++
     else if (outcome === "failed") stats.crawlFailed++
   }
   stats.withCandidates = new Set(candidates.map((c) => c.trustCode)).size
@@ -158,9 +180,25 @@ function summarise() {
 }
 
 function writeCheckpoint() {
+  // Collapse on the canonical URL. A re-crawl re-finds what the previous run
+  // already banked, and trust CMSs hand out the same document under different
+  // cache-busting parameters, so without this the list grows copies.
+  const unique = new Map()
+  for (const c of candidates) {
+    const key = canonicalUrl(c.url)
+    if (!unique.has(key)) unique.set(key, c)
+  }
+  candidates = [...unique.values()]
+
+  // Indoor plans first: they are what the app actually needs and the rarest
+  // thing the crawl finds, so they should be at the top of the queue to triage.
   const order = { high: 0, medium: 1, low: 2 }
+  const kindOrder = { "floor-plan": 0, "site-map": 1, directory: 2, unknown: 3 }
   const sorted = [...candidates].sort(
-    (a, b) => order[a.confidence] - order[b.confidence] || a.trustName.localeCompare(b.trustName)
+    (a, b) =>
+      (kindOrder[a.kind] ?? 9) - (kindOrder[b.kind] ?? 9) ||
+      order[a.confidence] - order[b.confidence] ||
+      a.trustName.localeCompare(b.trustName)
   )
   writeJson(WEBSITE_CACHE, Object.fromEntries(Object.keys(websites).sort().map((k) => [k, websites[k]])))
   writeJson(dataPath("plan-candidates.json"), {
@@ -169,6 +207,9 @@ function writeCheckpoint() {
       "Candidate site-map / floor-plan PDFs found on NHS trust websites. THIS IS A TRIAGE QUEUE, NOT AN IMPORT LIST. " +
       "These PDFs are the trusts' copyright. scripts/nhs/approve-plans.mjs promotes eligible entries into " +
       "data/plan-sources.json, which is the only list scripts/nhs/fetch-plans.mjs will download.",
+    // Which crawler produced this. A later version re-crawls rather than
+    // resuming, so improvements to matching actually reach the results.
+    crawlerVersion: CRAWLER_VERSION,
     stats: summarise(),
     count: candidates.length,
     // Which trusts have been visited, so an interrupted run can resume.
@@ -212,8 +253,11 @@ for (const [i, trust] of trusts.entries()) {
       if (!/\.pdf(\?|$)/i.test(link.url)) continue
       const signal = classifyPdf(link.text, link.url)
       if (!signal) continue
-      if (!found.has(link.url)) {
-        found.set(link.url, {
+      // Key on the canonical URL so a cache-busting parameter can't present the
+      // same document twice — a real run banked one map under two `?t=` values.
+      const key = canonicalUrl(link.url)
+      if (!found.has(key)) {
+        found.set(key, {
           trustCode: trust.odsCode,
           trustName: trust.name,
           url: link.url,
@@ -291,8 +335,18 @@ for (const [i, trust] of trusts.entries()) {
       }
     }
   } catch (err) {
-    outcome = "failed"
-    console.warn(`[${STAGE}] ${trust.odsCode} (${trust.name}): crawl failed — ${err.message}`)
+    // A Cloudflare interstitial ("Just a moment…") is a JavaScript challenge, not
+    // a refusal we can talk our way past with headers — it needs a real browser.
+    // Recording it separately keeps the failure count honest about what is a
+    // transient problem and what is a wall.
+    const challenged = /just a moment|cf-browser-verification|challenge-platform|attention required/i.test(err.message ?? "")
+    outcome = challenged ? "bot-challenge" : "failed"
+    console.warn(
+      `[${STAGE}] ${trust.odsCode} (${trust.name}): ` +
+        (challenged
+          ? "blocked by a bot challenge (needs a real browser) — skipping"
+          : `crawl failed — ${err.message}`)
+    )
   }
 
   if (found.size) candidates.push(...found.values())
@@ -328,7 +382,14 @@ const high = sorted.filter((c) => c.confidence === "high").length
 const floorPlans = sorted.filter((c) => c.kind === "floor-plan").length
 log(STAGE, `${sorted.length} candidates across ${stats.withCandidates} trusts`)
 log(STAGE, `high confidence: ${high} (of which ${floorPlans} look like indoor floor plans)`)
-log(STAGE, `no website: ${stats.noWebsite}, crawl failed: ${stats.crawlFailed}, robots-blocked: ${stats.robotsBlocked}`)
+log(
+  STAGE,
+  `no website: ${stats.noWebsite}, crawl failed: ${stats.crawlFailed}, ` +
+    `bot-challenged: ${stats.botChallenged}, robots-blocked: ${stats.robotsBlocked}`
+)
+if (stats.botChallenged) {
+  log(STAGE, `${stats.botChallenged} trust(s) sit behind a JavaScript bot challenge — those need a browser, not a fix here`)
+}
 if (stats.crawlFailed) {
   log(STAGE, `re-run with --retry-failed to have another go at the ${stats.crawlFailed} that failed`)
 }

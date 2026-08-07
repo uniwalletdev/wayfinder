@@ -9,6 +9,17 @@
 //   https://www.stsft.nhs.uk/application/files/6417/7382/2879/SRH_Map_update.pdf
 // linked from /our-locations/our-locations.
 
+// Bump whenever a change would make the crawl find different things.
+//
+// Results carry the version that produced them, and a newer crawler re-crawls
+// rather than resuming. Without that, improving the matching had no effect: a
+// run reported "0 still to crawl" and exited, because every trust was already
+// marked done by the version that had missed them.
+//
+// Lives here rather than in the script so tests can assert against it instead of
+// hardcoding a number that goes stale on the next bump.
+export const CRAWLER_VERSION = 2
+
 // Turn a URL or filename into something the word-based patterns can read.
 //
 // `\bmap\b` does NOT match "SRH_Map_update.pdf", because `_` is a word character
@@ -32,9 +43,31 @@ export function normaliseForMatching(value) {
 }
 
 // A PDF is a candidate if its link text or filename says so. Ordered by how
-// specific the signal is — that ordering becomes the confidence score.
+// specific the signal is — that ordering becomes the confidence score, and the
+// first match wins, so the indoor patterns must come first.
+//
+// Getting `floor-plan` vs `site-map` right is the whole point of the exercise:
+// indoor plans are what this app needs and what is genuinely rare. A first pass
+// over real results reported "0 indoor floor plans" while the list contained
+// "hospital-map-a-floor.pdf", "southend-hospital-ground-floor-map.pdf",
+// "basildon-hospital-map-level-by-level.pdf" and "DCH-Internal-Map" — all
+// unmistakably interiors, all called `site-map` because only the literal phrase
+// "floor plan" was recognised.
 export const PDF_SIGNALS = [
   { re: /floor\s?plans?\b/i, confidence: "high", kind: "floor-plan" },
+  // "ground floor map", "first floor", "B Floor"
+  { re: /\b(ground|lower|upper|basement|first|second|third|fourth|fifth|mezzanine)\s?floor\b/i, confidence: "high", kind: "floor-plan" },
+  { re: /\b[a-z]\s?floor\s?(map|plan)\b/i, confidence: "high", kind: "floor-plan" },
+  // Sheffield Children's names its storeys by letter: "hospital-map-a-floor.pdf",
+  // "Hospital map – B Floor". The storey word can sit on either side of "map".
+  { re: /\bmaps?\s+[a-z]\s+floor\b/i, confidence: "high", kind: "floor-plan" },
+  { re: /\bfloor\s?(map|guide)\b/i, confidence: "high", kind: "floor-plan" },
+  // A sheet covering every storey is an interior map by definition.
+  { re: /\blevel\s?by\s?level\b|\bby\s?floor\b/i, confidence: "high", kind: "floor-plan" },
+  // Trusts that publish an "external" and an "internal" map mean outdoors and
+  // indoors respectively.
+  { re: /\binternal\s?(map|plan)\b/i, confidence: "high", kind: "floor-plan" },
+  { re: /\b(ward|department)\s?(map|plan)\b/i, confidence: "high", kind: "floor-plan" },
   { re: /\b(site|campus|hospital|ward|department)\s?maps?\b/i, confidence: "high", kind: "site-map" },
   { re: /\bmaps?\b.*\b(hospital|site|campus|ward|department|entrance|parking)\b/i, confidence: "medium", kind: "site-map" },
   { re: /\b(hospital|site|campus)\b.*\bmaps?\b/i, confidence: "medium", kind: "site-map" },
@@ -48,6 +81,39 @@ export const PDF_SIGNALS = [
 // crawl returns a pile of strategy documents.
 const NOT_A_PLACE_MAP =
   /\b(road\s?map|roadmap|strategy|curriculum|competenc|career|journey\s?map|process\s?map|heat\s?map|mind\s?map|value\s?stream)\b/i
+
+// HTML entities survive into hrefs unless something decodes them. A real result
+// set contained four URLs holding a literal "&amp;" — every one of which would
+// 404 on download, because the query string was corrupt.
+const ENTITIES = {
+  "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&apos;": "'",
+  "&#39;": "'", "&#8211;": "-", "&#8212;": "-", "&nbsp;": " ",
+}
+
+export function decodeEntities(value) {
+  return String(value ?? "")
+    .replace(/&(?:amp|lt|gt|quot|apos|nbsp|#39|#8211|#8212);/g, (m) => ENTITIES[m] ?? m)
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+}
+
+// Two URLs for the same file. Trust CMSs append cache-busting parameters, so the
+// same map arrived twice as `RUH_directory_map.pdf?t=73036.95` and `?t=73040.52`
+// — one document, counted twice, and it would have been downloaded twice.
+const CACHE_BUSTERS = /^(t|v|ver|version|rev|cb|_|ts|timestamp|cache|r)$/i
+
+export function canonicalUrl(url) {
+  try {
+    const parsed = new URL(url)
+    parsed.hash = ""
+    for (const key of [...parsed.searchParams.keys()]) {
+      if (CACHE_BUSTERS.test(key)) parsed.searchParams.delete(key)
+    }
+    // Trailing "?" once the only parameter was a cache-buster.
+    return parsed.href.replace(/\?$/, "")
+  } catch {
+    return String(url ?? "")
+  }
+}
 
 export function classifyPdf(text, href) {
   const haystack = `${normaliseForMatching(text)} ${normaliseForMatching(href)}`

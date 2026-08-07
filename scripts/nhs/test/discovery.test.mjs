@@ -11,7 +11,7 @@
 //
 // Run: node scripts/nhs/test/discovery.test.mjs
 import { createServer } from "http"
-import { classifyPdf, normaliseForMatching, scorePage, rankPages } from "../lib/discovery-match.mjs"
+import { classifyPdf, normaliseForMatching, scorePage, rankPages, decodeEntities, canonicalUrl } from "../lib/discovery-match.mjs"
 import { group, check, report } from "./harness.mjs"
 
 group("filename matching")
@@ -129,5 +129,46 @@ try {
 } finally {
   await new Promise((resolve) => server.close(resolve))
 }
+
+
+group("bugs found in real crawl results")
+// Every case below is taken verbatim from a real 247-trust run. They are not
+// hypothetical: each one either lost a map or corrupted a URL.
+
+// Four candidate URLs carried a literal "&amp;". Downloading any of them would
+// have 404'd on a corrupt query string, long after the crawl looked successful.
+const entityUrl =
+  "http://www.basildonandthurrock.nhs.uk/download/basildon-hospital-map-level-by-level.pdf?ver=42880&amp;doc=docm93jijm4n4732.pdf"
+check("decodes entities in hrefs", !decodeEntities(entityUrl).includes("&amp;"), decodeEntities(entityUrl))
+check("keeps the query usable", new URL(decodeEntities(entityUrl)).searchParams.get("doc") === "docm93jijm4n4732.pdf")
+
+// The same map arrived twice under different cache-busting parameters.
+check(
+  "collapses cache-busted duplicates",
+  canonicalUrl("https://www.ruh.nhs.uk/finding/documents/RUH_directory_map.pdf?t=73036.95") ===
+    canonicalUrl("https://www.ruh.nhs.uk/finding/documents/RUH_directory_map.pdf?t=73040.52")
+)
+check(
+  "keeps meaningful query parameters",
+  canonicalUrl("https://x.nhs.uk/a.pdf?doc=abc123").includes("doc=abc123")
+)
+
+// The run reported "0 indoor floor plans" while holding these. Indoor plans are
+// the rare, valuable find — mislabelling them defeats the purpose of the crawl.
+const indoor = [
+  ["Basildon Hospital map", "/download/basildon-hospital-map-level-by-level.pdf"],
+  ["", "/download/316/general/5680/hospital-map-a-floor.pdf"],
+  ["Hospital map &#8211; B Floor", "/download/hospital-map-b-floor.pdf"],
+  ["Southend Hospital ground floor map,", "/download/southend-hospital-ground-floor-map-pdf.pdf"],
+  ["Internal map of the hospital", "/uploads/DCH-Internal-Map-for-website-JUNE-2023.pdf"],
+]
+for (const [text, href] of indoor) {
+  const signal = classifyPdf(decodeEntities(text), href)
+  check(`recognises an indoor plan: ${href.split("/").pop()}`, signal?.kind === "floor-plan", JSON.stringify(signal))
+}
+
+// Outdoor maps must stay outdoor, or the distinction is worthless.
+check("keeps an external map as a site map", classifyPdf("External map of the hospital", "/DCH-External-Map-2025.pdf")?.kind === "site-map")
+check("keeps a plain site map as a site map", classifyPdf("Site Map & Directory", "/RUH_directory_map.pdf")?.kind === "site-map")
 
 report()
