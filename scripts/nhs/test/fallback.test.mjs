@@ -17,7 +17,7 @@ import { join } from "path"
 import { REPO_ROOT } from "../lib/paths.mjs"
 import { parseCsv } from "../lib/csv.mjs"
 import { parseOdsRows, recordsToCsv, ODS_EXPECTED_FIELDS } from "../lib/ods.mjs"
-import { ORD_ROLES } from "../lib/ord.mjs"
+import { ORD_ROLES, buildPageUrl } from "../lib/ord.mjs"
 import { BROWSER_HEADERS } from "../lib/net.mjs"
 import { group, check, report } from "./harness.mjs"
 
@@ -26,6 +26,18 @@ process.chdir(REPO_ROOT)
 group("ORD role mapping")
 check("trusts map to the NHS TRUST role", ORD_ROLES.etr === "RO197")
 check("sites map to the NHS TRUST SITE role", ORD_ROLES.ets === "RO198")
+
+group("ORD paging")
+// The service rejects Offset=0 outright:
+//   {"errorCode":406,"errorText":"Suppied Offset must be greater than 1"}
+// so the first request must not send one at all. Getting this wrong doesn't
+// degrade the results — it returns nothing whatsoever.
+const firstPage = buildPageUrl("RO197", 0, true)
+check("omits Offset on the first page", !/Offset=/.test(firstPage), firstPage)
+check("still asks for the right role", /PrimaryRoleId=RO197/.test(firstPage), firstPage)
+check("sends Offset once past the first page", /Offset=1000/.test(buildPageUrl("RO197", 1000, true)))
+check("never sends the rejected Offset=0", !/Offset=0\b/.test(buildPageUrl("RO197", 0, false)))
+check("drops Status when that variant is chosen", !/Status=/.test(buildPageUrl("RO198", 0, false)))
 
 group("browser headers")
 // The download host refuses the honest agent string. The retry has to look like
