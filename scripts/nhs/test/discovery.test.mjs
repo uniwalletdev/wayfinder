@@ -11,7 +11,7 @@
 //
 // Run: node scripts/nhs/test/discovery.test.mjs
 import { createServer } from "http"
-import { classifyPdf, normaliseForMatching, scorePage, rankPages, decodeEntities, canonicalUrl } from "../lib/discovery-match.mjs"
+import { classifyPdf, normaliseForMatching, scorePage, rankPages, decodeEntities, canonicalUrl, sameHost } from "../lib/discovery-match.mjs"
 import { group, check, report } from "./harness.mjs"
 
 group("filename matching")
@@ -170,5 +170,47 @@ for (const [text, href] of indoor) {
 // Outdoor maps must stay outdoor, or the distinction is worthless.
 check("keeps an external map as a site map", classifyPdf("External map of the hospital", "/DCH-External-Map-2025.pdf")?.kind === "site-map")
 check("keeps a plain site map as a site map", classifyPdf("Site Map & Directory", "/RUH_directory_map.pdf")?.kind === "site-map")
+
+
+group("regressions the sitemap change introduced")
+// Adding sitemap reading made two trusts that had previously yielded maps return
+// nothing. Both causes are pinned here.
+
+// A trust recorded in ODS as www.x.nhs.uk lists x.nhs.uk in its own sitemap.
+// Requiring an exact host match discarded 424 URLs and silently fell back to
+// following links.
+check("treats www and the bare domain as one site", sameHost("solent.nhs.uk", "www.solent.nhs.uk"))
+check("still separates genuinely different hosts", !sameHost("x.nhs.uk", "y.nhs.uk"))
+check(
+  "keeps bare-domain sitemap URLs for a www site",
+  rankPages([{ text: "", url: "https://stsft.nhs.uk/our-locations", host: "stsft.nhs.uk" }], {
+    host: "www.stsft.nhs.uk",
+    limit: 5,
+  }).length === 1
+)
+
+// On a site with 1,483 pages dozens tie at the top score, so which ones get
+// fetched decides whether the map is found. A page naming "map" in its own URL
+// is the strongest lead there is and must outrank generic section pages.
+check(
+  "a URL naming map outranks a generic section",
+  scorePage("", "/our-hospitals/hospital-maps") > scorePage("", "/our-hospitals")
+)
+check(
+  "a specific page outranks its own landing page",
+  scorePage("", "/our-locations/our-locations") > scorePage("", "/our-locations")
+)
+
+// Pooling sitemap URLs with homepage links let hundreds of sitemap entries crowd
+// out the navigation, so trusts whose maps had been found via links stopped
+// returning anything. The budgets are separate for that reason.
+const navOnly = [{ text: "Our locations", url: "https://www.x.nhs.uk/our-locations", host: "www.x.nhs.uk" }]
+const flood = Array.from({ length: 400 }, (_, i) => ({ text: "", url: `https://x.nhs.uk/hospitals/w${i}`, host: "x.nhs.uk" }))
+check(
+  "navigation survives a large sitemap",
+  rankPages(navOnly, { host: "www.x.nhs.uk", limit: 12 }).length === 1,
+  "the homepage's own links were crowded out"
+)
+check("sitemap gets its own allowance", rankPages(flood, { host: "www.x.nhs.uk", limit: 14 }).length === 14)
 
 report()

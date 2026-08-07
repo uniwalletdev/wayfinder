@@ -22,7 +22,7 @@
 import { fetchRetry, BROWSER_HEADERS } from "./lib/net.mjs"
 import { isAllowed, crawlDelayFor } from "./lib/robots.mjs"
 import { loadOdsRecords } from "./lib/sites.mjs"
-import { classifyPdf, rankPages, scorePage, decodeEntities, canonicalUrl, CRAWLER_VERSION } from "./lib/discovery-match.mjs"
+import { classifyPdf, rankPages, decodeEntities, canonicalUrl, CRAWLER_VERSION } from "./lib/discovery-match.mjs"
 import { fetchSitemapUrls } from "./lib/sitemap.mjs"
 import { dataPath, readJson, writeJson, updateManifest, log } from "./lib/paths.mjs"
 
@@ -37,6 +37,9 @@ const MAX_PAGES_PER_TRUST = 12
 // /our-locations/our-locations, under a section landing page. One hop could
 // never reach it.
 const MAX_DEPTH = 2
+// A separate allowance for pages the sitemap pointed at, so they never compete
+// with the homepage's own navigation for slots.
+const MAX_SITEMAP_PAGES = 14
 // Every ten trusts is roughly every few minutes of crawling — often enough that
 // an interruption costs almost nothing, rare enough not to thrash the disk.
 const CHECKPOINT_EVERY = 10
@@ -298,17 +301,24 @@ for (const [i, trust] of trusts.entries()) {
     const homeLinks = home ? extractLinks(home, origin) : []
     collect(homeLinks)
 
-    // Seed the queue from the homepage's links and from any promising sitemap
-    // URLs, ranked by how likely they are to hold a map rather than by the order
-    // they happen to appear in the markup.
-    const seeds = [
-      ...homeLinks,
-      ...sitemapUrls.filter((url) => scorePage("", url) > 0).map((url) => ({ url, text: "", host })),
-    ]
-    const queue = rankPages(seeds, { host, limit: MAX_PAGES_PER_TRUST }).map((p) => ({ ...p, depth: 1 }))
+    // Two separate budgets, deliberately.
+    //
+    // Pooling them made things worse: a trust with 1,483 sitemap URLs has dozens
+    // tying at the top score, and they crowded out the homepage's own navigation
+    // — so trusts whose maps had previously been found via links started
+    // returning nothing. The sitemap should add reach, never take it away.
+    const fromLinks = rankPages(homeLinks, { host, limit: MAX_PAGES_PER_TRUST })
+    const fromSitemap = rankPages(
+      sitemapUrls.map((url) => ({ url, text: "", host })),
+      { host, limit: MAX_SITEMAP_PAGES }
+    )
+    const queue = [...fromLinks, ...fromSitemap]
+      .filter((p, idx, all) => all.findIndex((o) => o.url === p.url) === idx)
+      .map((p) => ({ ...p, depth: 1 }))
 
+    const budget = MAX_PAGES_PER_TRUST + (sitemapUrls.length ? MAX_SITEMAP_PAGES : 0)
     let fetched = 0
-    while (queue.length && fetched < MAX_PAGES_PER_TRUST) {
+    while (queue.length && fetched < budget) {
       const page = queue.shift()
       if (visited.has(page.url)) continue
       visited.add(page.url)
@@ -323,7 +333,7 @@ for (const [i, trust] of trusts.entries()) {
         // One more hop. Section landing pages ("Our locations") list the pages
         // that actually carry the maps, so stopping at depth 1 misses them.
         if (page.depth < MAX_DEPTH) {
-          const next = rankPages(links, { host, limit: MAX_PAGES_PER_TRUST - fetched })
+          const next = rankPages(links, { host, limit: budget - fetched })
             .filter((l) => !visited.has(l.url) && l.score >= 8)
             .map((l) => ({ ...l, depth: page.depth + 1 }))
           queue.push(...next)
