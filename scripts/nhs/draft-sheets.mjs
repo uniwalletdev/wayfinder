@@ -162,6 +162,29 @@ for (const site of sitesDoc.sites) {
   else sitesByName.set(key, [site])
 }
 
+// Two ODS records this close together are the same hospital written down twice.
+// A large teaching campus is a few hundred metres across, so this is well inside
+// "same site" and well outside "the hospital next door".
+const SAME_SITE_M = 250
+
+// Sites that were actually surveyed, so a record without a footprint can take
+// its scale from the copy of itself that has one.
+const footprintedSites = sitesDoc.sites.filter(
+  (s) => footprintsBySite.has(s.odsCode) && Number.isFinite(s.lat) && Number.isFinite(s.lng)
+)
+
+function metresBetween(a, b) {
+  if (![a?.lat, a?.lng, b?.lat, b?.lng].every(Number.isFinite)) return Infinity
+  const R = 6371000
+  const toRad = (d) => (d * Math.PI) / 180
+  const dLat = toRad(b.lat - a.lat)
+  const dLng = toRad(b.lng - a.lng)
+  const lat1 = toRad(a.lat)
+  const lat2 = toRad(b.lat)
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2
+  return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)))
+}
+
 const alreadyDrafted = new Set(sheetsDoc.sheets.map((s) => s.slug))
 const drafted = []
 // Sheets whose hospital the register files under a different trust. Worth
@@ -360,7 +383,28 @@ for (const source of sourcesDoc.sources) {
   // the labels account for. Only the "> 0" matters — any shared word will do.
   const echoesSite = siteTokens.size === 0 || contains(siteTokens, labelTokens) > 0
 
-  const footprints = footprintsBySite.get(site.odsCode) ?? []
+  // Scale from whichever record of this hospital actually has a footprint.
+  //
+  // ODS files a hospital more than once, and the copy with the best NAME is not
+  // always the copy with a footprint. Northampton General is the clear case: the
+  // exact-named record under RP1 has none, while the trust's own "Northampton
+  // General Hospital (Acute)" is measured at 1376m. Taking the better name cost
+  // the measurement and dropped the sheet to the 450m default — a threefold
+  // scale error, which on a preview looks like the map is simply wrong.
+  //
+  // Two records within 250m of each other are the same site, so the name comes
+  // from the match and the scale from whichever copy was surveyed.
+  let footprints = footprintsBySite.get(site.odsCode) ?? []
+  let scaleBorrowedFrom = null
+  if (!footprints.length) {
+    for (const neighbour of footprintedSites) {
+      if (neighbour.odsCode === site.odsCode) continue
+      if (metresBetween(site, neighbour) > SAME_SITE_M) continue
+      footprints = footprintsBySite.get(neighbour.odsCode) ?? []
+      scaleBorrowedFrom = neighbour.name
+      break
+    }
+  }
   const measured = footprints.length ? footprintSpanM(footprints) : null
   const spanM = measured ? Math.round(measured * FOOTPRINT_PADDING) : DEFAULT_SPAN_M
 
@@ -392,7 +436,7 @@ for (const source of sourcesDoc.sources) {
     // guesses, so a reviewer knows what to look at first.
     auto: {
       odsCode: site.odsCode,
-      spanSource: measured ? "osm-footprint" : "default",
+      spanSource: measured ? (scaleBorrowedFrom ? "osm-footprint-colocated" : "osm-footprint") : "default",
       labels: labels.length,
       aspect: Number(aspect.toFixed(2)),
       echoesSiteName: echoesSite,
@@ -400,7 +444,11 @@ for (const source of sourcesDoc.sources) {
       draftedAt: new Date().toISOString(),
     },
   })
-  log(STAGE, `  draft ${source.slug} -> ${site.name} (span ${spanM}m from ${measured ? "footprint" : "default"}, ${labels.length} labels)`)
+  log(
+    STAGE,
+    `  draft ${source.slug} -> ${site.name} (span ${spanM}m from ` +
+      `${measured ? (scaleBorrowedFrom ? `footprint of "${scaleBorrowedFrom}"` : "footprint") : "default"}, ${labels.length} labels)`
+  )
 }
 
 if (drafted.length) {

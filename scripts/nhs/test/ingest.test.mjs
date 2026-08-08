@@ -311,6 +311,27 @@ group("abbreviations a trust uses for its own hospitals")
   )
   check("while nationally the exact name is unique, and settles it", nationwide("John Radcliffe Hospital").length === 1)
 
+  // Scale has to survive picking the better-named record. ODS files a hospital
+  // more than once and the copy with the best NAME is not always the copy that
+  // was surveyed: Northampton General's exact-named record under RP1 has no
+  // footprint, while the trust's own "Northampton General Hospital (Acute)" is
+  // measured at 1376m. Taking the better name dropped the sheet to the 450m
+  // default — a threefold error that on a preview reads as a broken map.
+  const metresBetween = (a, b) => {
+    const R = 6371000
+    const toRad = (d) => (d * Math.PI) / 180
+    const dLat = toRad(b.lat - a.lat)
+    const dLng = toRad(b.lng - a.lng)
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2
+    return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)))
+  }
+  const bestNamed = { lat: 52.234, lng: -0.879 }
+  const surveyed = { lat: 52.2343, lng: -0.8792 }
+  check("two records of one hospital sit within the same-site radius", metresBetween(bestNamed, surveyed) < 250)
+  // And the boundary holds: a genuinely separate hospital is not close enough
+  // to lend its size to another.
+  check("a hospital 800m away is not the same site", metresBetween(bestNamed, { lat: 52.2412, lng: -0.879 }) > 250)
+
   check("looksLikeHospital would hide the Nuffield Orthopaedic Centre", !looksLikeHospital("Nuffield Orthopaedic Centre"))
   check(
     "an alias reaches it anyway",
