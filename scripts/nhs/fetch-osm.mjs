@@ -7,16 +7,24 @@
 //
 // Queries are `around` the known site coordinates rather than tiling the UK —
 // Overpass charges by area searched, and we only care about a few hundred metres
-// round each of ~2,500 known points. Sites are batched because `around` accepts a
+// round each known point. Sites are batched because `around` accepts a
 // coordinate list, so one request covers a whole batch.
+//
+// Only HOSPITAL sites are searched. The ODS trust-site register turned out to be
+// every location a trust operates — around 38,000 clinics, health centres and
+// community units — where this stage was written expecting a couple of thousand
+// hospitals. Running it over all of them is fifteen times the intended load on a
+// free, volunteer-run service, so the population is filtered and the query count
+// is capped rather than trusted.
+//
+// Run: node scripts/nhs/fetch-osm.mjs [--all-sites] [--max-queries N]
 //
 // Licence: OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0.
 // Attribution is REQUIRED wherever these footprints are displayed — the map
 // surfaces it in src/components/FloorPlanMap.tsx.
-//
-// Run: node scripts/nhs/fetch-osm.mjs
 import { fetchRetry } from "./lib/net.mjs"
 import { loadLocatedSites, metresBetween } from "./lib/sites.mjs"
+import { looksLikeHospital } from "./lib/ods.mjs"
 import { dataPath, writeJson, updateManifest, log } from "./lib/paths.mjs"
 
 const STAGE = "fetch-osm"
@@ -27,6 +35,16 @@ const SITES_PER_QUERY = 60
 // not politeness theatre — hammering it earns a temporary ban that would break
 // the scheduled workflow for everyone using this endpoint.
 const PAUSE_MS = 3000
+// Roughly what the stage was designed to cost: ~2,500 hospital sites at 60 per
+// query. Anything far beyond it means the population has changed shape, not that
+// more hospitals were built.
+const DEFAULT_MAX_QUERIES = 120
+
+const maxArg = process.argv.indexOf("--max-queries")
+const MAX_QUERIES = maxArg > -1 ? Number(process.argv[maxArg + 1]) : DEFAULT_MAX_QUERIES
+// Escape hatch for deliberately searching around every located site, not just
+// the hospitals — still subject to the query cap.
+const ALL_SITES = process.argv.includes("--all-sites")
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 const r6 = (n) => Number(n.toFixed(6))
@@ -106,8 +124,34 @@ function centroidOf(feature) {
   return n ? { lat: y / n, lng: x / n } : null
 }
 
-const { sites, dropped } = loadLocatedSites()
-log(STAGE, `${sites.length} located sites to search around (dropped ${JSON.stringify(dropped)})`)
+const { sites: located, dropped } = loadLocatedSites()
+
+// Only hospitals get an outline. The ODS trust-site register is every location a
+// trust operates — clinics, health centres, community units — and a national run
+// returns ~38,000 of them, against the "~2,500 known points" this stage was
+// written for. Asking Overpass for all of them is 15x the intended load on a
+// free volunteer service, and buys nothing: a footprint exists to anchor a floor
+// plan, and the plans this app carries are hospitals'.
+const sites = ALL_SITES ? located : located.filter((s) => looksLikeHospital(s.name))
+log(
+  STAGE,
+  `${sites.length} hospital site(s) to search around, of ${located.length} located ` +
+    `(dropped ${JSON.stringify(dropped)})`
+)
+
+// A stop, not a warning. The failure this prevents is silent and someone else
+// pays for it: an unnoticed change upstream turns a half-hour run into a day of
+// requests against a shared endpoint, and the first anyone knows is a ban.
+const plannedQueries = Math.ceil(sites.length / SITES_PER_QUERY)
+if (plannedQueries > MAX_QUERIES) {
+  console.error(
+    `[${STAGE}] ${sites.length} sites would need ${plannedQueries} Overpass queries, over the ${MAX_QUERIES} cap.\n` +
+      `        Overpass is free and volunteer-run, so this stage refuses rather than spending\n` +
+      `        hours of someone else's capacity on a population that has probably changed shape.\n` +
+      `        Check data/nhs-sites.json looks like hospitals, then re-run with --max-queries N.`
+  )
+  process.exit(1)
+}
 
 const features = new Map() // osmId -> feature, de-duplicated across overlapping batches
 let failedBatches = 0

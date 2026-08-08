@@ -10,7 +10,7 @@
 import { deflateRawSync } from "zlib"
 import { readZipEntries, readSingleCsv } from "../lib/zip.mjs"
 import { parseCsv } from "../lib/csv.mjs"
-import { parseOdsRows, normalisePostcode, looksPublicFacing } from "../lib/ods.mjs"
+import { parseOdsRows, normalisePostcode, looksPublicFacing, looksLikeHospital } from "../lib/ods.mjs"
 import { group, check, throws, report } from "./harness.mjs"
 
 // Build a real ZIP so the reader is tested against the actual byte format.
@@ -114,5 +114,19 @@ throws("fails loudly if the ODS layout changes", () => parseOdsRows([new Array(2
 check("normalisePostcode compacts then respaces", normalisePostcode("se1  7eh") === "SE1 7EH")
 check("filters out administrative registrations", !looksPublicFacing("TRUST HEAD OFFICE") && !looksPublicFacing("FINANCE DEPARTMENT"))
 check("keeps real hospitals", looksPublicFacing("St Thomas' Hospital") && looksPublicFacing("Royal Free Hospital"))
+
+// looksPublicFacing is a blocklist and only catches names that announce
+// themselves as back-office. Over the real national register it removed 220 of
+// 38,250 sites — the other 38,030 are clinics, health centres and community
+// units, which is what the trust-site register actually is. fetch-osm was
+// written for "~2,500 known points" and would have sent fifteen times that at a
+// free, volunteer-run Overpass, so footprints are limited to hospitals.
+check("a hospital gets a footprint", looksLikeHospital("Wythenshawe Hospital"))
+check("an infirmary counts too", looksLikeHospital("Royal Lancaster Infirmary"))
+check("a health centre does not", !looksLikeHospital("Brooklands Health Centre"))
+check("a clinic does not", !looksLikeHospital("Withington Community Clinic"))
+check("a dental surgery does not", !looksLikeHospital("Chorlton Dental Surgery"))
+check("nor does a bare trust registration", !looksLikeHospital("Manchester University NHS Foundation Trust"))
+check("survives a missing name", !looksLikeHospital(undefined) && !looksLikeHospital(null))
 
 report()

@@ -223,6 +223,33 @@ fix `spanM` and `plan` in `mapped-sites.json` and re-run `build-venues.mjs`.
 `scripts/maps/generate-all.mjs` and `scripts/maps/build-venues.mjs`, which
 previously each carried their own copy of the same list.
 
+## The trust-site register is not a list of hospitals
+
+ODS role RO198, "NHS TRUST SITE", returns about **38,000** rows nationally — and
+they check out: every parent is a real trust. It just isn't what the name
+suggests. A trust site is any location a trust operates: clinics, health
+centres, community units, dental surgeries. Hospitals are a small fraction.
+
+`looksPublicFacing` is a blocklist for names that announce themselves as
+back-office ("HQ", "mortuary", "mailroom"). Over the real register it removed 220
+of 38,250 — it was never going to cut this down.
+
+That matters for `fetch-osm`, which was written for "~2,500 known points" and
+would otherwise send **fifteen times** that at Overpass, a free service run by
+volunteers, in one run. So footprints are limited to sites whose name says
+hospital or infirmary, and the stage refuses outright above a query cap:
+
+```
+[fetch-osm] 634 queries needed, over the 120 cap — refusing.
+```
+
+That's a stop rather than a warning on purpose: the failure is silent and
+somebody else pays for it. `--all-sites` and `--max-queries N` override it when
+the larger run is what you actually meant.
+
+Sites without a footprint are unaffected otherwise — they still get a located
+pin, and `draft-sheets` falls back to a default span when placing a sheet.
+
 ## Site data automates. Floor plans do not.
 
 Sites, coordinates and building footprints reach full national coverage with no
