@@ -382,7 +382,12 @@ group("hospitals that are already mapped")
     ["RJ1", "Evelina London site map 2024-evelina-hospital-map.pdf", null],
     ["RK9", "North Devon north-devon-2d-map.pdf", null],
     ["RWA", "Hull Royal Infirmary Hull-Royal-Infirmary-Site-Map.pdf", null],
-    ["RQM", "Chelsea and Westminster Hospital Chelsea-and-Westminster-Hospital-Site-Map.pdf", null],
+    // Was in the "approve" list until Chelsea & Westminster became a venue in
+    // its own right. Refusing a second map for a hospital already mapped is the
+    // filter working, not failing — and this case will keep moving as the venue
+    // set grows, which is why the two lists are split by intent rather than by
+    // which hospitals happened to be mapped on the day.
+    ["RQM", "Chelsea and Westminster Hospital Chelsea-and-Westminster-Hospital-Site-Map.pdf", "chelsea-and-westminster-hospital-site-map"],
     ["RFR", "Wayfinder Rotherham Hospital Wayfinder-Rotherham-Hospital.pdf", null],
     ["RL4", "New Cross Hospital new-cross-hospital-map.pdf", null],
     // Birmingham Women's and Children's hosts maps for hospitals across the
@@ -715,6 +720,52 @@ group("floors of one hospital")
     { slug: "a-first-floor", name: "H2", odsCode: "Z2" },
   ])
   check("floors do not cross between hospitals", twoSites.venues.length === 0)
+}
+
+group("venues an earlier run drafted and this one refuses")
+// mapped-sites.json was append-only, so every hospital a looser matcher ever
+// guessed at stayed published. On a national run 24 of 55 venues had been placed
+// by logic since found wrong — including four the tests above assert must never
+// happen. The tests passed throughout: they check the matcher, and these were
+// data written before the matcher was fixed.
+{
+  const withdraw = (register, rejectedSlugs) => {
+    const rejected = new Set(rejectedSlugs)
+    const kept = [], dropped = []
+    for (const sheet of register) {
+      if (sheet.auto && rejected.has(sheet.slug)) dropped.push(sheet.slug)
+      else kept.push(sheet)
+    }
+    return { kept: kept.map((s) => s.slug), dropped }
+  }
+
+  const register = [
+    // Hand-tuned: no `auto` block. Must survive whatever happens.
+    { slug: "wythenshawe", name: "Wythenshawe Hospital" },
+    { slug: "gosh", name: "Great Ormond Street Hospital" },
+    // Auto-drafted, and refused by today's matcher.
+    { slug: "sgh-site-map", name: "St Georges at Woking Hospital", auto: { odsCode: "X" } },
+    { slug: "royal-berkshire-hospital-map-jan23", name: "P Rbh Virtual Hospital", auto: { odsCode: "Y" } },
+    // Auto-drafted and still good.
+    { slug: "jr-hospital-sitemap", name: "John Radcliffe Hospital", auto: { odsCode: "Z" } },
+  ]
+  const result = withdraw(register, ["sgh-site-map", "royal-berkshire-hospital-map-jan23"])
+
+  check("the Woking mis-match is withdrawn", result.dropped.includes("sgh-site-map"))
+  check("so is the venue placed on a service record", result.dropped.includes("royal-berkshire-hospital-map-jan23"))
+  check("a still-good auto venue stays", result.kept.includes("jr-hospital-sitemap"))
+  check("exactly the refused ones went", result.dropped.length === 2 && result.kept.length === 3)
+
+  // The ten hand-built sheets have tuned centres, spans and crops that no
+  // amount of re-running reproduces. Losing one to a matcher change would be
+  // the worst outcome here.
+  const handBuiltRefused = withdraw(register, ["wythenshawe", "gosh", "sgh-site-map"])
+  check("a hand-built sheet is never withdrawn", handBuiltRefused.kept.includes("wythenshawe") && handBuiltRefused.kept.includes("gosh"))
+  check("even when the run refuses its slug", handBuiltRefused.dropped.length === 1)
+
+  // Without --force a re-run skips sheets already drafted, so they are neither
+  // drafted nor rejected. Nothing must be withdrawn on the strength of silence.
+  check("a sheet the run never looked at is left alone", withdraw(register, []).dropped.length === 0)
 }
 
 report()

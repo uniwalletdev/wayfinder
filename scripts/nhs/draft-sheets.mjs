@@ -514,16 +514,52 @@ for (const members of byBuilding.values()) {
   floorGroups.push(`${members[0].name}: ${floors.length} floors (${floors.map((f) => f.label).join(", ")})`)
 }
 
-if (grouped.length) {
+// Drop venues this run refuses but an earlier one drafted.
+//
+// mapped-sites.json was append-only, so every hospital a looser version of the
+// matcher ever guessed at stayed published. Twenty-four of the fifty-five venues
+// on a national run were placed by logic since found to be wrong, including
+// several the regression tests now assert must never happen:
+//
+//   sgh-site-map           -> St Georges at Woking, not Tooting
+//   pinderfields-map       -> Dewsbury & District, a different hospital
+//   royal-berkshire-map    -> "P Rbh Virtual Hospital", a service record
+//   lincoln-map-level-1..3 -> "Lincoln Surgery", a GP practice
+//
+// The tests passed the whole time. They check the matcher; these were data
+// written before the matcher was fixed, and nothing went back for them.
+//
+// Only auto-drafted entries are removed — they carry an `auto` block, the ten
+// hand-tuned sheets do not, and those must survive untouched. And only sheets
+// this run actually looked at: without --force a re-run skips anything already
+// drafted, so it neither drafts nor rejects them and they are left alone.
+const rejectedNow = new Set(rejectedDoc.rejections.map((r) => r.slug))
+
+if (grouped.length || rejectedNow.size) {
   const bySlug = new Map(sheetsDoc.sheets.map((s) => [s.slug, s]))
+
+  const dropped = []
+  for (const [slug, sheet] of bySlug) {
+    if (!sheet.auto || !rejectedNow.has(slug)) continue
+    bySlug.delete(slug)
+    dropped.push(`${slug} (was ${sheet.name})`)
+  }
+
   // A sheet that becomes part of a multi-floor venue must not also survive as
   // the single-floor venue it drafted as on an earlier run.
   const absorbed = new Set(drafted.map((d) => d.slug))
   for (const g of grouped) absorbed.delete(g.slug)
   for (const slug of absorbed) bySlug.delete(slug)
+
   for (const g of grouped) bySlug.set(g.slug, g)
   sheetsDoc.sheets = [...bySlug.values()]
   writeJson(dataPath("mapped-sites.json"), sheetsDoc)
+
+  if (dropped.length) {
+    log(STAGE, `${dropped.length} venue(s) withdrawn — drafted by an earlier run, refused by this one:`)
+    for (const line of dropped) log(STAGE, `  ${line}`)
+    log(STAGE, "  their venue modules and floor plans are now unused; see docs for cleanup")
+  }
 }
 writeJson(dataPath("plan-rejected.json"), rejectedDoc)
 
