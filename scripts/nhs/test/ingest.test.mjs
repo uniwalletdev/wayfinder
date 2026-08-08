@@ -290,6 +290,27 @@ group("abbreviations a trust uses for its own hospitals")
   check("Pilgrim resolves to RJL, while RWD holds only departments", nationwide("Pilgrim Hospital")[0].trustCode === "RJL")
   check("the trust's own Pilgrim records are all hidden", register.filter((s) => s.trustCode === "RWD").every((s) => !looksLikeHospital(s.name)))
 
+  // Resolution order, pinned from two regressions caused by widening the search.
+  //
+  // Letting the token step see every site of the trust broke Cheltenham:
+  // {cheltenham} is all that survives tokenising "Cheltenham General Hospital",
+  // so a childrens centre and a leisure centre both fit, tie on length, and beat
+  // the hospital that had been resolving fine. looksLikeHospital is too crude to
+  // gate an exact name — it hides the Nuffield Orthopaedic Centre — and exactly
+  // right for keeping a leisure centre out of a fuzzy one.
+  check(
+    "a leisure centre cannot win a fuzzy alias match",
+    resolveStrict("Cheltenham General Hospital", ["Cheltenham Childrens Centre", "Cheltenham Leisure Centre"].filter(looksLikeHospital)) === null
+  )
+  check("tokenising Cheltenham General Hospital leaves one common word", tok("Cheltenham General Hospital").size === 1)
+  // And the ordering half: an ambiguous token match must not refuse the sheet
+  // before the exact answer one trust over is even looked at.
+  check(
+    "locally the John Radcliffe is ambiguous — a tie the token step would refuse on",
+    resolveStrict("John Radcliffe Hospital", ["John Radcliffe Wing", "John Radcliffe Annexe"]) === "AMBIGUOUS"
+  )
+  check("while nationally the exact name is unique, and settles it", nationwide("John Radcliffe Hospital").length === 1)
+
   check("looksLikeHospital would hide the Nuffield Orthopaedic Centre", !looksLikeHospital("Nuffield Orthopaedic Centre"))
   check(
     "an alias reaches it anyway",

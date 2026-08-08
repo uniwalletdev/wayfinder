@@ -204,33 +204,57 @@ for (const source of sourcesDoc.sources) {
   const sites = candidateSites.length ? candidateSites : trustSites
 
   let site = null
+  let crossTrustNote = null
   if (namedHospital) {
-    // Aliases search every site of the trust, not just the hospital-named ones.
-    // looksLikeHospital asks whether a name contains "hospital" or "infirmary",
-    // and plenty of real hospitals do not: the Nuffield Orthopaedic CENTRE is
-    // Oxford's orthopaedic hospital, and noc-site-map was refused as naming an
-    // unknown hospital while the site sat in the register the whole time.
+    // Resolution runs strongest-evidence-first, and the order is the whole
+    // design. Both exact-name steps come before any token work, because
+    // tokenising throws away exactly what distinguishes these names:
+    // "Cheltenham General Hospital" reduces to {cheltenham} once "general" and
+    // "hospital" drop as stopwords, and "St George's Hospital" to {georges}.
+    // One common word cannot carry the decision.
+    const plainWanted = plainName(namedHospital)
+
+    // 1. The trust's own register, matched on the written name.
+    site = trustSites.find((s) => plainName(s.name) === plainWanted) ?? null
+
+    // 2. The same written name anywhere in the country, when it is unique.
+    //    ODS often files a hospital under a predecessor trust — the John
+    //    Radcliffe under RBF, dissolved into RTH in 2011 — or holds only
+    //    departments where the hospital should be: United Lincolnshire has
+    //    "Pilgrim A&E" and "Pilgrim Surgery" but no Pilgrim Hospital.
     //
-    // That heuristic exists to keep fetch-osm's request volume down, which is a
-    // fine reason to skip a footprint and a bad reason to disbelieve a name
-    // somebody checked by hand.
-    const aliasSites = trustSites
-
-    // An exact name settles it outright, and has to come first: tokenising
-    // "St George's Hospital" leaves {georges}, because "st" is too short and
-    // "hospital" is a stopword, and one common word is not enough to tell
-    // St George's in Tooting from "St Georges at Woking Hospital". Matching the
-    // written name never has that problem.
-    site = aliasSites.find((s) => plainName(s.name) === plainName(namedHospital)) ?? null
-
+    //    This has to run BEFORE the token step, not after it. Ordered the other
+    //    way, an ambiguous token match refuses the sheet and never reaches the
+    //    exact answer waiting one trust over.
     if (!site) {
-      // Otherwise take sites carrying every distinctive word, preferring the one
-      // that says least beyond it — so "Cheltenham General Hospital" beats the
-      // same name with "Elective Surgical Hub" on the end.
+      const nationwide = sitesByName.get(plainWanted) ?? []
+      if (nationwide.length === 1) {
+        site = nationwide[0]
+        if (site.trustCode !== source.trustCode) {
+          crossTrustNote = `${source.slug}: ${namedHospital} filed under ${site.trustCode}, sheet from ${source.trustCode}`
+        }
+      } else if (nationwide.length > 1) {
+        reject(
+          "alias-names-a-hospital-several-trusts-claim",
+          `"${namedHospital}" is filed under ${nationwide.map((s) => s.trustCode).join(", ")} — none of them ${source.trustCode}`
+        )
+        continue
+      }
+    }
+
+    // 3. Failing an exact name, sites carrying every distinctive word — but
+    //    only the hospital-named ones. Widening this to every site of the trust
+    //    broke Cheltenham: {cheltenham} is all that survives tokenising, so
+    //    "Cheltenham Childrens Centre" and "Cheltenham Leisure Centre" both fit,
+    //    tie on length, and beat the hospital that had been resolving fine.
+    //    looksLikeHospital is too crude to gate an exact name — it hides the
+    //    Nuffield Orthopaedic CENTRE — but it is exactly right for keeping a
+    //    leisure centre out of a fuzzy match.
+    if (!site) {
       const wanted = tokens(namedHospital)
       let best = []
       let fewest = Infinity
-      for (const candidate of aliasSites) {
+      for (const candidate of candidateSites) {
         const candidateTokens = tokens(candidate.name)
         let carries = wanted.size > 0
         for (const token of wanted) if (!candidateTokens.has(token)) { carries = false; break }
@@ -248,46 +272,14 @@ for (const source of sourcesDoc.sources) {
     }
 
     if (!site) {
-      // Last resort: the register files the hospital under a different trust
-      // than the website it was crawled from. This is common and it is not an
-      // error in either place —
-      //
-      //   John Radcliffe Hospital  ODS: RBF   sheet: RTH
-      //   Princess Anne Hospital   ODS: R1C   sheet: RHM
-      //   Pilgrim Hospital         ODS: RJL   sheet: RWD
-      //
-      // RBF is Oxford Radcliffe Hospitals, the predecessor trust dissolved into
-      // RTH in 2011; ODS keeps the historic record and the site hangs off it.
-      // United Lincolnshire, meanwhile, holds only "Pilgrim A&E", "Pilgrim
-      // Surgery", "Pilgrim Medicine" — departments, not the hospital.
-      //
-      // So the trust the map was published by and the trust the register
-      // attributes the site to are two different questions. Only an EXACT name
-      // match is allowed to cross that boundary, and only when it is unique
-      // nationally: much stricter than the within-trust rule, because the trust
-      // is no longer there to bound the search.
-      const nationwide = sitesByName.get(plainName(namedHospital)) ?? []
-      if (nationwide.length === 1) {
-        site = nationwide[0]
-        crossTrust.push(`${source.slug}: ${namedHospital} filed under ${site.trustCode}, sheet from ${source.trustCode}`)
-      } else if (nationwide.length > 1) {
-        reject(
-          "alias-names-a-hospital-several-trusts-claim",
-          `"${namedHospital}" is filed under ${nationwide.map((s) => s.trustCode).join(", ")} — none of them ${source.trustCode}`
-        )
-        continue
-      }
-    }
-
-    if (!site) {
       // Nothing anywhere. The alias is wrong, or ODS writes the name
       // differently. Both need a person, and both are invisible if this
       // silently falls through to guessing — so name what the trust does have,
       // which is the thing needed to fix it.
-      const had = aliasSites.slice(0, 6).map((s) => s.name).join("; ")
+      const had = trustSites.slice(0, 6).map((s) => s.name).join("; ")
       reject(
         "alias-names-an-unknown-hospital",
-        `"${namedHospital}" is nowhere in the register — ${source.trustCode} has: ${had}${aliasSites.length > 6 ? ` (+${aliasSites.length - 6} more)` : ""}`
+        `"${namedHospital}" is nowhere in the register — ${source.trustCode} has: ${had}${trustSites.length > 6 ? ` (+${trustSites.length - 6} more)` : ""}`
       )
       continue
     }
@@ -373,6 +365,11 @@ for (const source of sourcesDoc.sources) {
   const spanM = measured ? Math.round(measured * FOOTPRINT_PADDING) : DEFAULT_SPAN_M
 
   const address = site.address?.length ? site.address.join(", ") : site.postcode
+  // Only report a crossing for a sheet that survived every other gate. Three
+  // Princess Anne levels were listed as cross-trust and then rejected for too
+  // few labels, which reads as ten sheets placed when six were.
+  if (crossTrustNote) crossTrust.push(crossTrustNote)
+
   drafted.push({
     slug: source.slug,
     id: `${source.slug}-venue`,
