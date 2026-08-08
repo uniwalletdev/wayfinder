@@ -582,9 +582,16 @@ const rejectedNow = new Set(rejectedDoc.rejections.map((r) => r.slug))
 if (grouped.length || rejectedNow.size) {
   const bySlug = new Map(sheetsDoc.sheets.map((s) => [s.slug, s]))
 
+  // `keep: true` is a person overruling this stage. A venue the matcher refuses
+  // can still be one somebody wants published — they may know the sheet is right
+  // where the matcher cannot tell, or they may simply prefer coverage to
+  // certainty. Either way the decision belongs to them, and it has to survive
+  // the next --force run or it is not a decision, just a delay.
   const dropped = []
+  const kept = []
   for (const [slug, sheet] of bySlug) {
     if (!sheet.auto || !rejectedNow.has(slug)) continue
+    if (sheet.keep) { kept.push(`${slug} (${sheet.name})`); continue }
     bySlug.delete(slug)
     dropped.push(`${slug} (was ${sheet.name})`)
   }
@@ -603,6 +610,13 @@ if (grouped.length || rejectedNow.size) {
     log(STAGE, `${dropped.length} venue(s) withdrawn — drafted by an earlier run, refused by this one:`)
     for (const line of dropped) log(STAGE, `  ${line}`)
     log(STAGE, "  their venue modules and floor plans are now unused; see docs for cleanup")
+  }
+  if (kept.length) {
+    // Said every run, not once. These are published against this stage's own
+    // judgement, and that is worth restating rather than letting it settle into
+    // the background.
+    log(STAGE, `${kept.length} venue(s) kept by request although this run refuses them (keep: true):`)
+    for (const line of kept) log(STAGE, `  ${line}`)
   }
 }
 writeJson(dataPath("plan-rejected.json"), rejectedDoc)

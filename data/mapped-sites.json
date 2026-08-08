@@ -1160,6 +1160,894 @@
           "page": 1
         }
       ]
+    },
+    {
+      "slug": "level-3-floorplan-cuh-map",
+      "id": "level-3-floorplan-cuh-map-venue",
+      "name": "Cuh at Doddington Hospital",
+      "subtitle": "Cambridge University Hospitals NHS Foundation Trust · PE15 0UG",
+      "file": "map/auto/level-3-floorplan-cuh-map.pdf",
+      "page": 1,
+      "center": [
+        52.499909,
+        0.055868
+      ],
+      "spanM": 330,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Wards /clinics",
+        "Wards / on",
+        "Lifts",
+        "Stairs",
+        "Toilets with disabled access"
+      ],
+      "notes": "Site map published by Cambridge University Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "B5D1I",
+        "spanSource": "osm-footprint",
+        "labels": 15,
+        "aspect": 0.71,
+        "echoesSiteName": false,
+        "sourceUrl": "https://www.cuh.nhs.uk/documents/2773/Level_3_Floorplan_-_CUH_Map.pdf",
+        "draftedAt": "2026-08-08T10:59:05.195Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "bishop-auckland-floor-plan-2023",
+      "id": "bishop-auckland-floor-plan-2023-venue",
+      "name": "Bishop Auckland Cdc",
+      "subtitle": "County Durham and Darlington NHS Foundation Trust · DL14 6AD",
+      "file": "map/auto/bishop-auckland-floor-plan-2023.pdf",
+      "page": 1,
+      "center": [
+        54.655857,
+        -1.678557
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "MAIN ENTRANCE",
+        "OUTPATIENTS ENTRANCE",
+        "URGENT CARE CENTRE / MINOR INJURIES UNIT",
+        "BISHOP AUCKLAND HOSPITAL",
+        "ORAL & MAXILLO FACIAL SURGERY ORTHODONTICS & DENTAL"
+      ],
+      "notes": "Site map published by County Durham and Darlington NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "H8C7C",
+        "spanSource": "default",
+        "labels": 66,
+        "aspect": 0.65,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.cddft.nhs.uk/application/files/4417/3444/2318/Bishop_Auckland_Floor_Plan_2023.pdf",
+        "draftedAt": "2026-08-08T10:28:41.363Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "pilgrim-ground-floor",
+      "id": "pilgrim-ground-floor-venue",
+      "name": "Pilgrim A&E",
+      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · PE21 9QS",
+      "file": "map/auto/pilgrim-ground-floor.pdf",
+      "page": 1,
+      "center": [
+        52.99115,
+        -0.00996
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Urgent Treatment Centre",
+        "Emergency Department and Urgent Treatment Centre",
+        "Main Entrance",
+        "PGME",
+        "Day Nursery"
+      ],
+      "notes": "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RWD2A",
+        "spanSource": "default",
+        "labels": 40,
+        "aspect": 0.71,
+        "echoesSiteName": false,
+        "sourceUrl": "https://www.ulh.nhs.uk/wp-content/uploads/2026/06/Pilgrim-ground-floor.pdf",
+        "draftedAt": "2026-08-08T10:28:41.871Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "lister-map-2026",
+      "id": "lister-map-2026-venue",
+      "name": "The Lister Hospital Surgicentre",
+      "subtitle": "East and North Hertfordshire Teaching NHS Trust · SG1 4AB",
+      "file": "map/auto/lister-map-2026.pdf",
+      "page": 1,
+      "center": [
+        51.924246,
+        -0.211889
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Urgent Treatment Centre",
+        "Emergency Department",
+        "Main entrance",
+        "Entrances",
+        "Acute Cardiology Unit (Acu)"
+      ],
+      "notes": "Site map published by East and North Hertfordshire Teaching NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RWHDD",
+        "spanSource": "default",
+        "labels": 141,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.enherts-tr.nhs.uk/wp-content/uploads/2026/07/Lister-Map-2026.pdf",
+        "draftedAt": "2026-08-08T10:59:05.723Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "hull-royal-infirmary-site-map",
+      "id": "hull-royal-infirmary-site-map-venue",
+      "name": "West Hull Health Hub",
+      "subtitle": "Hull University Teaching Hospitals NHS Trust · HU4 6BN",
+      "file": "map/auto/hull-royal-infirmary-site-map.pdf",
+      "page": 1,
+      "center": [
+        53.746397,
+        -0.394505
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Emergency Department - Childrens",
+        "Emergency Department",
+        "Entrances",
+        "Urgent Treatment Centre (UTC) - Building 7",
+        "Hospital Car Park"
+      ],
+      "notes": "Site map published by Hull University Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "A7G4P",
+        "spanSource": "default",
+        "labels": 27,
+        "aspect": 0.73,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.hey.nhs.uk/wp/wp-content/uploads/2024/04/Hull-Royal-Infirmary-Site-Map.pdf",
+        "draftedAt": "2026-08-08T10:28:42.384Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "maidstone-hospital-mappdf",
+      "id": "maidstone-hospital-mappdf-venue",
+      "name": "The Maidstone Hospital - General Surgery",
+      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · ME16 9QQ",
+      "file": "map/auto/maidstone-hospital-mappdf.pdf",
+      "page": 1,
+      "center": [
+        51.273661,
+        0.484004
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Main Entrance and Reception",
+        "Accident & Emergency",
+        "Welcome to Maidstone Hospital",
+        "Staff",
+        "Kent & Medway Orthopaedic Centre"
+      ],
+      "notes": "Site map published by Maidstone and Tunbridge Wells NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RWFXC",
+        "spanSource": "default",
+        "labels": 21,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.mtw.nhs.uk/download/maidstone-hospital-mappdf.pdf?ver=12829&doc=docm93jijm4n9742.pdf",
+        "draftedAt": "2026-08-08T10:59:05.981Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "fordcombe-hospital-mappdf",
+      "id": "fordcombe-hospital-mappdf-venue",
+      "name": "Fordcombe Hospital",
+      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · TN3 0RD",
+      "file": "map/auto/fordcombe-hospital-mappdf.pdf",
+      "page": 1,
+      "center": [
+        51.134511,
+        0.188172
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Main entrance and reception",
+        "Main entrance",
+        "Welcome to Fordcombe Hospital",
+        "Department",
+        "Area"
+      ],
+      "notes": "Site map published by Maidstone and Tunbridge Wells NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "O1Q2M",
+        "spanSource": "default",
+        "labels": 19,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.mtw.nhs.uk/download/fordcombe-hospital-mappdf.pdf?ver=12828&doc=docm93jijm4n9741.pdf",
+        "draftedAt": "2026-08-08T10:59:06.019Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "pinderfields-hospital-map",
+      "id": "pinderfields-hospital-map-venue",
+      "name": "Dewsbury & District Hospital-Combined Elective Surgical Hub",
+      "subtitle": "Mid Yorkshire Teaching NHS Trust · WF13 4HS",
+      "file": "map/auto/pinderfields-hospital-map.pdf",
+      "page": 1,
+      "center": [
+        53.702267,
+        -1.651881
+      ],
+      "spanM": 661,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Main Entrance",
+        "Accident and Emerency Entrance (A&E)",
+        "Pinderfields Hospital",
+        "Drop off route to A&E",
+        "Leeds Via M1"
+      ],
+      "notes": "Site map published by Mid Yorkshire Teaching NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "P6M3A",
+        "spanSource": "osm-footprint",
+        "labels": 24,
+        "aspect": 0.71,
+        "echoesSiteName": false,
+        "sourceUrl": "https://www.midyorks.nhs.uk/download/pinderfields-hospital-map.pdf?ver=6094&doc=docm93jijm4n3551.pdf",
+        "draftedAt": "2026-08-08T10:59:06.094Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "internal-site-map-north-tees-2019",
+      "id": "internal-site-map-north-tees-2019-venue",
+      "name": "Uh North Tees Dermatology",
+      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS19 8PE",
+      "file": "map/auto/internal-site-map-north-tees-2019.pdf",
+      "page": 1,
+      "center": [
+        54.582869,
+        -1.347594
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Emergency Assessment Unit",
+        "Emergency Department",
+        "ENTRANCES",
+        "Urgent Care Centre",
+        "Main Entrance and Reception"
+      ],
+      "notes": "Site map published by North Tees and Hartlepool NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RVWND",
+        "spanSource": "default",
+        "labels": 132,
+        "aspect": 0.63,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.nth.nhs.uk/wp-content/uploads/2022/07/Internal-site-map-north-tees-2019.pdf",
+        "draftedAt": "2026-08-08T10:28:42.781Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "external-site-map-north-tees-2019",
+      "id": "external-site-map-north-tees-2019-venue",
+      "name": "Uh North Tees Dermatology",
+      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS19 8PE",
+      "file": "map/auto/external-site-map-north-tees-2019.pdf",
+      "page": 1,
+      "center": [
+        54.582869,
+        -1.347594
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Emergency Assessment Unit",
+        "Main Entrance Reception",
+        "Emergency Entrance",
+        "Urgent Care Entrance",
+        "Outpatients Entrance"
+      ],
+      "notes": "Site map published by North Tees and Hartlepool NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RVWND",
+        "spanSource": "default",
+        "labels": 124,
+        "aspect": 0.63,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.nth.nhs.uk/wp-content/uploads/2022/07/External-site-map-north-tees-2019.pdf",
+        "draftedAt": "2026-08-08T10:28:42.837Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "internal-site-map-hartlepool-2018",
+      "id": "internal-site-map-hartlepool-2018-venue",
+      "name": "Uh Hartlepool Dermatology",
+      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS24 9AH",
+      "file": "map/auto/internal-site-map-hartlepool-2018.pdf",
+      "page": 1,
+      "center": [
+        54.702408,
+        -1.227851
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Outpatients Entrance",
+        "RECEPTION",
+        "MAIN ENTRANCE 15",
+        "MAIN ENTRANCE (RECEPTION) CAR PARK PAY MACHINE",
+        "HART BUILDING"
+      ],
+      "notes": "Site map published by North Tees and Hartlepool NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RVWHD",
+        "spanSource": "default",
+        "labels": 78,
+        "aspect": 0.63,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.nth.nhs.uk/wp-content/uploads/2022/07/internal-site-map-hartlepool-2018.pdf",
+        "draftedAt": "2026-08-08T10:28:42.915Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "sheffield-teaching-hospitals-nhs-foundation-trust-map",
+      "id": "sheffield-teaching-hospitals-nhs-foundation-trust-map-venue",
+      "name": "Sexual Health Sheffield",
+      "subtitle": "Sheffield Teaching Hospitals NHS Foundation Trust · S10 2JF",
+      "file": "map/auto/sheffield-teaching-hospitals-nhs-foundation-trust-map.pdf",
+      "page": 1,
+      "center": [
+        53.378373,
+        -1.493331
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Reaching us by car",
+        "Public transport",
+        "From the M1",
+        "Exit the motorway at",
+        "How to find us"
+      ],
+      "notes": "Site map published by Sheffield Teaching Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "P3O3P",
+        "spanSource": "default",
+        "labels": 22,
+        "aspect": 0.72,
+        "echoesSiteName": true,
+        "sourceUrl": "https://publicdocuments.sth.nhs.uk/PD6466.pdf",
+        "draftedAt": "2026-08-08T10:28:43.518Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "james-cook-campus-map-jul25",
+      "id": "james-cook-campus-map-jul25-venue",
+      "name": "The James Cook University Hospital",
+      "subtitle": "South Tees Hospitals NHS Foundation Trust · TS4 3BW",
+      "file": "map/auto/james-cook-campus-map-jul25.pdf",
+      "page": 1,
+      "center": [
+        54.551768,
+        -1.21482
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Emergency Department",
+        "Outpatients Pharmacy +",
+        "Outpatients Entrance",
+        "Emergency Department Entrance",
+        "THE JAMES COOK UNIVERSITY HOSPITAL"
+      ],
+      "notes": "Site map published by South Tees Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RTRAT",
+        "spanSource": "default",
+        "labels": 205,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.southtees.nhs.uk/wp-content/uploads/2025/07/James-Cook-campus-map-Jul25.pdf",
+        "draftedAt": "2026-08-08T10:59:06.492Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "friarage-site-map-july-2025",
+      "id": "friarage-site-map-july-2025-venue",
+      "name": "Friarage Hospital Site",
+      "subtitle": "South Tees Hospitals NHS Foundation Trust · DL6 1JG",
+      "file": "map/auto/friarage-site-map-july-2025.pdf",
+      "page": 1,
+      "center": [
+        54.342343,
+        -1.430544
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "A&E Urgent Treatment Centre",
+        "Main Entrance",
+        "Logistics Centre & Estates Workshops",
+        "Energy Centre",
+        "Dining"
+      ],
+      "notes": "Site map published by South Tees Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RTR45",
+        "spanSource": "default",
+        "labels": 35,
+        "aspect": 0.74,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.southtees.nhs.uk/wp-content/uploads/2025/07/Friarage-Site-Map-July-2025.pdf",
+        "draftedAt": "2026-08-08T10:59:06.517Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "a5-site-map-of-stratford-hospital-july-2025-update",
+      "id": "a5-site-map-of-stratford-hospital-july-2025-update-venue",
+      "name": "Stratford Hospital",
+      "subtitle": "South Warwickshire University NHS Foundation Trust · CV37 6NX",
+      "file": "map/auto/a5-site-map-of-stratford-hospital-july-2025-update.pdf",
+      "page": 1,
+      "center": [
+        52.195279,
+        -1.713391
+      ],
+      "spanM": 287,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Outpatients",
+        "Stratford Hospital",
+        "BUILDING TWO",
+        "MULTI-STOREY",
+        "Radiology"
+      ],
+      "notes": "Site map published by South Warwickshire University NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RJC03",
+        "spanSource": "osm-footprint",
+        "labels": 29,
+        "aspect": 0.7,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.swft.nhs.uk/application/files/6017/5213/2401/A5_Site_Map_of_Stratford_Hospital_-_July_2025_Update.pdf",
+        "draftedAt": "2026-08-08T10:59:06.559Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "southport-hospital-site-map-a3-sept-2024",
+      "id": "southport-hospital-site-map-a3-sept-2024-venue",
+      "name": "Southport General Infirmary",
+      "subtitle": "Southport and Ormskirk Hospital NHS Trust · PR8 6PH",
+      "file": "map/auto/southport-hospital-site-map-a3-sept-2024.pdf",
+      "page": 1,
+      "center": [
+        53.63853,
+        -2.986679
+      ],
+      "spanM": 192,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Main Entrance",
+        "Entrances",
+        "ACCIDENT & EMERGENCY ENTRANCE",
+        "Southport Hospital",
+        "Department"
+      ],
+      "notes": "Site map published by Southport and Ormskirk Hospital NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RVY03",
+        "spanSource": "osm-footprint",
+        "labels": 73,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.southportandormskirk.nhs.uk/media/Hospitals/Southport%20Hospital%20Site%20Map%20(A3)%20Sept%202024.pdf",
+        "draftedAt": "2026-08-08T10:59:06.670Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "lincoln-hospital-map-level-1",
+      "id": "lincoln-hospital-map-level-1-venue",
+      "name": "Lincoln Surgery",
+      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
+      "file": "map/auto/lincoln-hospital-map-level-1.pdf",
+      "page": 1,
+      "center": [
+        53.233597,
+        -0.519635
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Lincoln County Hospital",
+        "Burton Ward",
+        "Cardiac short stay",
+        "Carlton Coleby Ward",
+        "Digby Ward"
+      ],
+      "notes": "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "A3D1D",
+        "spanSource": "default",
+        "labels": 26,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.ulh.nhs.uk/wp-content/uploads/2024/10/Lincoln-hospital-map-level-1.pdf",
+        "draftedAt": "2026-08-08T10:28:43.956Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "lincoln-hospital-maps-level-2-blank",
+      "id": "lincoln-hospital-maps-level-2-blank-venue",
+      "name": "Lincoln Surgery",
+      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
+      "file": "map/auto/lincoln-hospital-maps-level-2-blank.pdf",
+      "page": 1,
+      "center": [
+        53.233597,
+        -0.519635
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Urgent Treatment Centre",
+        "Emergency Department (A&E)",
+        "Main Entrance",
+        "Reception",
+        "Lincoln County Hospital"
+      ],
+      "notes": "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "A3D1D",
+        "spanSource": "default",
+        "labels": 61,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.ulh.nhs.uk/wp-content/uploads/2026/06/Lincoln-hospital-maps-level-2-blank.pdf",
+        "draftedAt": "2026-08-08T10:28:43.975Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "lincoln-hospital-map-level-3",
+      "id": "lincoln-hospital-map-level-3-venue",
+      "name": "Lincoln Surgery",
+      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
+      "file": "map/auto/lincoln-hospital-map-level-3.pdf",
+      "page": 1,
+      "center": [
+        53.233597,
+        -0.519635
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Blood Tests",
+        "Toilet Stairs Lift",
+        "Macmilan",
+        "Shop Cafe",
+        "Dermatology"
+      ],
+      "notes": "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "A3D1D",
+        "spanSource": "default",
+        "labels": 13,
+        "aspect": 0.71,
+        "echoesSiteName": false,
+        "sourceUrl": "https://www.ulh.nhs.uk/wp-content/uploads/2026/01/Lincoln-hospital-map-level-3.pdf",
+        "draftedAt": "2026-08-08T10:28:43.987Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "site-map-2024pdf",
+      "id": "site-map-2024pdf-venue",
+      "name": "Immunology - Derriford Hospital",
+      "subtitle": "University Hospitals Plymouth NHS Trust · PL6 8DH",
+      "file": "map/auto/site-map-2024pdf.pdf",
+      "page": 1,
+      "center": [
+        50.416707,
+        -4.113712
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Main Entrance Level 6",
+        "Emergency Department",
+        "The George Park & Ride",
+        "Derriford Hospital",
+        "Site Map - September 2025"
+      ],
+      "notes": "Site map published by University Hospitals Plymouth NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RK9A9",
+        "spanSource": "default",
+        "labels": 68,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.plymouthhospitals.nhs.uk/download/site-map-2024pdf.pdf?ver=30786&%3Bdoc=docm93jijm4n17075",
+        "draftedAt": "2026-08-08T10:59:06.838Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "derriford-hospital-site-mappdf",
+      "id": "derriford-hospital-site-mappdf-venue",
+      "name": "Immunology - Derriford Hospital",
+      "subtitle": "University Hospitals Plymouth NHS Trust · PL6 8DH",
+      "file": "map/auto/derriford-hospital-site-mappdf.pdf",
+      "page": 1,
+      "center": [
+        50.416707,
+        -4.113712
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Main Entrance Level 6",
+        "Emergency Department",
+        "The George Park & Ride",
+        "Derriford Hospital",
+        "Site Map - September 2025"
+      ],
+      "notes": "Site map published by University Hospitals Plymouth NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "RK9A9",
+        "spanSource": "default",
+        "labels": 68,
+        "aspect": 0.71,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-site-mappdf.pdf?ver=32773&doc=docm93jijm4n17075",
+        "draftedAt": "2026-08-08T10:59:06.857Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "community-diagnostic-centre-site-map",
+      "id": "community-diagnostic-centre-site-map-venue",
+      "name": "Dewsbury & District Hospital-Combined Elective Surgical Hub",
+      "subtitle": "Mid Yorkshire Teaching NHS Trust · WF13 4HS",
+      "file": "map/auto/community-diagnostic-centre-site-map.pdf",
+      "page": 1,
+      "center": [
+        53.702267,
+        -1.651881
+      ],
+      "spanM": 661,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "MiCAD LINK",
+        "Wickes",
+        "KFC",
+        "Subway",
+        "Currys"
+      ],
+      "notes": "Site map published by Mid Yorkshire Teaching NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "P6M3A",
+        "spanSource": "osm-footprint",
+        "labels": 18,
+        "aspect": 0.71,
+        "echoesSiteName": false,
+        "sourceUrl": "https://www.midyorks.nhs.uk/download/community-diagnostic-centre-site-map-.pdf?ver=4688&doc=docm93jijm4n3417",
+        "draftedAt": "2026-08-08T10:59:06.173Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "royal-berkshire-hospital-map-jan23",
+      "id": "royal-berkshire-hospital-map-jan23-venue",
+      "name": "P Rbh Virtual Hospital",
+      "subtitle": "Royal Berkshire NHS Foundation Trust · RG1 5AN",
+      "file": "map/auto/royal-berkshire-hospital-map-jan23.pdf",
+      "page": 1,
+      "center": [
+        51.451023,
+        -0.95931
+      ],
+      "spanM": 805,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Emergency",
+        "Emergency Departments External buildings / access",
+        "Dept/Ward Accident",
+        "Dept/Ward ECG",
+        "Disorders"
+      ],
+      "notes": "Site map published by Royal Berkshire NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "H9H1Y",
+        "spanSource": "osm-footprint",
+        "labels": 11,
+        "aspect": 0.71,
+        "echoesSiteName": false,
+        "sourceUrl": "https://www.royalberkshire.nhs.uk/media/2uxbkm3j/royal-berkshire-hospital-map_jan23.pdf",
+        "draftedAt": "2026-08-08T10:59:06.433Z"
+      },
+      "keep": true
+    },
+    {
+      "slug": "sgh-site-map",
+      "id": "sgh-site-map-venue",
+      "name": "St Georges at Woking Hospital",
+      "subtitle": "St George's University Hospitals NHS Foundation Trust · GU22 7HS",
+      "file": "map/auto/sgh-site-map.pdf",
+      "page": 1,
+      "center": [
+        51.315131,
+        -0.556284
+      ],
+      "spanM": 256,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Outpatients",
+        "Urgent Treatment Centre (UTC)",
+        "Emergency Department",
+        "Emergency Ambulance Bay",
+        "Entrance to Car Park 1 and 3"
+      ],
+      "notes": "Site map published by St George's University Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "auto": {
+        "odsCode": "D3X3Z",
+        "spanSource": "osm-footprint",
+        "labels": 147,
+        "aspect": 0.76,
+        "echoesSiteName": true,
+        "sourceUrl": "https://www.stgeorges.nhs.uk/wp-content/uploads/2013/11/sgh-site-map.pdf",
+        "draftedAt": "2026-08-08T11:36:15.527Z"
+      },
+      "keep": true
     }
   ]
 }

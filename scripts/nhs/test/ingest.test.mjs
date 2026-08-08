@@ -733,7 +733,7 @@ group("venues an earlier run drafted and this one refuses")
     const rejected = new Set(rejectedSlugs)
     const kept = [], dropped = []
     for (const sheet of register) {
-      if (sheet.auto && rejected.has(sheet.slug)) dropped.push(sheet.slug)
+      if (sheet.auto && rejected.has(sheet.slug) && !sheet.keep) dropped.push(sheet.slug)
       else kept.push(sheet)
     }
     return { kept: kept.map((s) => s.slug), dropped }
@@ -766,6 +766,15 @@ group("venues an earlier run drafted and this one refuses")
   // Without --force a re-run skips sheets already drafted, so they are neither
   // drafted nor rejected. Nothing must be withdrawn on the strength of silence.
   check("a sheet the run never looked at is left alone", withdraw(register, []).dropped.length === 0)
+
+  // `keep: true` is a person overruling this stage. Somebody may know a sheet is
+  // right where the matcher cannot tell, or may simply prefer coverage to
+  // certainty. Either way it has to survive the next --force run, or it is not a
+  // decision — just a delay.
+  const withKeep = [...register, { slug: "lincoln-hospital-map-level-1", name: "Lincoln Surgery", auto: { odsCode: "L" }, keep: true }]
+  const overruled = withdraw(withKeep, ["sgh-site-map", "lincoln-hospital-map-level-1"])
+  check("a kept venue survives a run that refuses it", overruled.kept.includes("lincoln-hospital-map-level-1"))
+  check("while an unkept one beside it still goes", overruled.dropped.includes("sgh-site-map"))
 }
 
 group("a sheet naming a hospital its host trust does not own")
