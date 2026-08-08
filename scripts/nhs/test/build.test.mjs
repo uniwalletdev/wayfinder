@@ -176,6 +176,21 @@ group("floors of one building")
   check("a non-numeric storey is refused", throws({
     slug: "x", plan: [0, 0, 1, 1], floors: [{ id: "f0", floor: "ground", label: "A", file: "a.pdf", page: 1 }],
   }))
+
+  // Which floor a venue opens on. The app hardcoded 0, which was right while
+  // every generated venue had exactly one ground-floor plan and wrong the moment
+  // one did not: Princess Anne's levels are lettered A upward and only C to H
+  // have usable plans, so its storeys run 2 to 7 and floor 0 shows nothing.
+  // Mirrors openingFloor in src/lib/venues/index.ts, which TypeScript checks but
+  // no runner here can import.
+  const openingFloor = (floorPlans) => (floorPlans.length ? Math.min(...floorPlans.map((p) => p.floor)) : 0)
+  check("a single ground-floor site plan still opens at 0", openingFloor([{ floor: 0 }]) === 0)
+  check(
+    "a building whose plans start above ground opens on its lowest",
+    openingFloor([{ floor: 2 }, { floor: 3 }, { floor: 7 }]) === 2
+  )
+  check("a basement opens below ground", openingFloor([{ floor: -1 }, { floor: 0 }]) === -1)
+  check("a venue with no plans falls back to 0", openingFloor([]) === 0)
 }
 
 report()
