@@ -151,8 +151,22 @@ for (const site of sitesDoc.sites) {
   else sitesByTrust.set(site.trustCode, [site])
 }
 
+// Every site by its written name, for the cross-trust alias lookup below. ODS
+// often files a hospital under a predecessor trust, so the trust that publishes
+// a map and the trust the register attributes the site to need not agree.
+const sitesByName = new Map()
+for (const site of sitesDoc.sites) {
+  const key = plainName(site.name)
+  const list = sitesByName.get(key)
+  if (list) list.push(site)
+  else sitesByName.set(key, [site])
+}
+
 const alreadyDrafted = new Set(sheetsDoc.sheets.map((s) => s.slug))
 const drafted = []
+// Sheets whose hospital the register files under a different trust. Worth
+// stating plainly at the end rather than burying one line at a time.
+const crossTrust = []
 
 for (const source of sourcesDoc.sources) {
   // Only sheets this stage is responsible for: the hand-built ten keep their
@@ -234,14 +248,46 @@ for (const source of sourcesDoc.sources) {
     }
 
     if (!site) {
-      // The alias is wrong, or ODS writes the name differently, or files the
-      // hospital under another trust. All three need a person, and all three are
-      // invisible if this silently falls through to guessing — so name what the
-      // trust actually has, which is the thing needed to fix it.
+      // Last resort: the register files the hospital under a different trust
+      // than the website it was crawled from. This is common and it is not an
+      // error in either place —
+      //
+      //   John Radcliffe Hospital  ODS: RBF   sheet: RTH
+      //   Princess Anne Hospital   ODS: R1C   sheet: RHM
+      //   Pilgrim Hospital         ODS: RJL   sheet: RWD
+      //
+      // RBF is Oxford Radcliffe Hospitals, the predecessor trust dissolved into
+      // RTH in 2011; ODS keeps the historic record and the site hangs off it.
+      // United Lincolnshire, meanwhile, holds only "Pilgrim A&E", "Pilgrim
+      // Surgery", "Pilgrim Medicine" — departments, not the hospital.
+      //
+      // So the trust the map was published by and the trust the register
+      // attributes the site to are two different questions. Only an EXACT name
+      // match is allowed to cross that boundary, and only when it is unique
+      // nationally: much stricter than the within-trust rule, because the trust
+      // is no longer there to bound the search.
+      const nationwide = sitesByName.get(plainName(namedHospital)) ?? []
+      if (nationwide.length === 1) {
+        site = nationwide[0]
+        crossTrust.push(`${source.slug}: ${namedHospital} filed under ${site.trustCode}, sheet from ${source.trustCode}`)
+      } else if (nationwide.length > 1) {
+        reject(
+          "alias-names-a-hospital-several-trusts-claim",
+          `"${namedHospital}" is filed under ${nationwide.map((s) => s.trustCode).join(", ")} — none of them ${source.trustCode}`
+        )
+        continue
+      }
+    }
+
+    if (!site) {
+      // Nothing anywhere. The alias is wrong, or ODS writes the name
+      // differently. Both need a person, and both are invisible if this
+      // silently falls through to guessing — so name what the trust does have,
+      // which is the thing needed to fix it.
       const had = aliasSites.slice(0, 6).map((s) => s.name).join("; ")
       reject(
         "alias-names-an-unknown-hospital",
-        `"${namedHospital}" is not a site of ${source.trustCode} — that trust has: ${had}${aliasSites.length > 6 ? ` (+${aliasSites.length - 6} more)` : ""}`
+        `"${namedHospital}" is nowhere in the register — ${source.trustCode} has: ${had}${aliasSites.length > 6 ? ` (+${aliasSites.length - 6} more)` : ""}`
       )
       continue
     }
@@ -369,6 +415,13 @@ if (drafted.length) {
 writeJson(dataPath("plan-rejected.json"), rejectedDoc)
 
 log(STAGE, `${drafted.length} sheet(s) drafted, ${rejectedDoc.rejections.length} rejected`)
+if (crossTrust.length) {
+  // Not a warning — this is normal, and ODS is right about it as often as the
+  // website is. Said out loud because the coordinates come from the register's
+  // record, so it should be obvious which record was used.
+  log(STAGE, `${crossTrust.length} sheet(s) matched a hospital the register files under another trust:`)
+  for (const line of crossTrust) log(STAGE, `  ${line}`)
+}
 log(STAGE, `data/mapped-sites.json now has ${sheetsDoc.sheets.length} sheet(s)`)
 if (rejectedDoc.rejections.length) log(STAGE, "rejections recorded in data/plan-rejected.json")
 log(STAGE, "done — next: node scripts/maps/generate-all.mjs data/previews")
