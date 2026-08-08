@@ -205,6 +205,48 @@ group("abbreviations a trust uses for its own hospitals")
       "Cheltenham General Hospital"
   )
 
+  // The resolution order that matters, pinned from a real failure. Picking the
+  // fewest-extra-words site sent sgh-site-map to "St Georges at Woking Hospital"
+  // — the wrong hospital, stated confidently — because tokenising
+  // "St George's Hospital" leaves {georges}: "st" is too short and "hospital" is
+  // a stopword, so one common word had to carry the whole decision.
+  const plain = (s) => String(s).toLowerCase().replace(/['‘’]/g, "").replace(/[^a-z0-9]+/g, " ").trim()
+  const resolveStrict = (hospital, siteNames) => {
+    const exact = siteNames.find((n) => plain(n) === plain(hospital))
+    if (exact) return exact
+    const wanted = tok(hospital)
+    let best = [], fewest = Infinity
+    for (const candidate of siteNames) {
+      const ct = tok(candidate)
+      let carries = wanted.size > 0
+      for (const w of wanted) if (!ct.has(w)) { carries = false; break }
+      if (!carries) continue
+      if (ct.size < fewest) { fewest = ct.size; best = [candidate] }
+      else if (ct.size === fewest) best.push(candidate)
+    }
+    return best.length === 1 ? best[0] : best.length > 1 ? "AMBIGUOUS" : null
+  }
+
+  check(
+    "the written name wins before any token counting",
+    resolveStrict("St George's Hospital", ["St Georges at Woking Hospital", "St George's Hospital", "St George's Hospital (Tooting)"]) ===
+      "St George's Hospital"
+  )
+  // ODS is inconsistent about the apostrophe; both spellings are the same place.
+  check("an apostrophe does not change the hospital", plain("St George's Hospital") === plain("St Georges Hospital"))
+  // The real regression: without an exact name present, two sites fit equally
+  // well and neither is the answer.
+  check(
+    "a tie is refused rather than guessed",
+    resolveStrict("St George's Hospital", ["St Georges at Woking Hospital", "St George's Hospital (Tooting)"]) === "AMBIGUOUS"
+  )
+  check(
+    "still prefers the hospital over the same name plus a unit",
+    resolveStrict("Cheltenham General Hospital", ["Cheltenham General Hospital Elective Surgical Hub", "Cheltenham General Hospital"]) ===
+      "Cheltenham General Hospital"
+  )
+  check("a hospital the trust does not have resolves to nothing", resolveStrict("John Radcliffe Hospital", ["Churchill Hospital"]) === null)
+
   // Guards. An abbreviation is only meaningful inside one trust, and a wrong
   // expansion places a map on the wrong hospital rather than failing loudly.
   check("an abbreviation does not leak across trusts", named("pah-a-level-floor-plan", "RTH") === null)
