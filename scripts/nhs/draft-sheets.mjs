@@ -191,12 +191,23 @@ for (const source of sourcesDoc.sources) {
 
   let site = null
   if (namedHospital) {
-    // An exact name settles it outright. This has to come first: tokenising
+    // Aliases search every site of the trust, not just the hospital-named ones.
+    // looksLikeHospital asks whether a name contains "hospital" or "infirmary",
+    // and plenty of real hospitals do not: the Nuffield Orthopaedic CENTRE is
+    // Oxford's orthopaedic hospital, and noc-site-map was refused as naming an
+    // unknown hospital while the site sat in the register the whole time.
+    //
+    // That heuristic exists to keep fetch-osm's request volume down, which is a
+    // fine reason to skip a footprint and a bad reason to disbelieve a name
+    // somebody checked by hand.
+    const aliasSites = trustSites
+
+    // An exact name settles it outright, and has to come first: tokenising
     // "St George's Hospital" leaves {georges}, because "st" is too short and
     // "hospital" is a stopword, and one common word is not enough to tell
     // St George's in Tooting from "St Georges at Woking Hospital". Matching the
     // written name never has that problem.
-    site = sites.find((s) => plainName(s.name) === plainName(namedHospital)) ?? null
+    site = aliasSites.find((s) => plainName(s.name) === plainName(namedHospital)) ?? null
 
     if (!site) {
       // Otherwise take sites carrying every distinctive word, preferring the one
@@ -205,7 +216,7 @@ for (const source of sourcesDoc.sources) {
       const wanted = tokens(namedHospital)
       let best = []
       let fewest = Infinity
-      for (const candidate of sites) {
+      for (const candidate of aliasSites) {
         const candidateTokens = tokens(candidate.name)
         let carries = wanted.size > 0
         for (const token of wanted) if (!candidateTokens.has(token)) { carries = false; break }
@@ -227,10 +238,10 @@ for (const source of sourcesDoc.sources) {
       // hospital under another trust. All three need a person, and all three are
       // invisible if this silently falls through to guessing — so name what the
       // trust actually has, which is the thing needed to fix it.
-      const had = sites.slice(0, 6).map((s) => s.name).join("; ")
+      const had = aliasSites.slice(0, 6).map((s) => s.name).join("; ")
       reject(
         "alias-names-an-unknown-hospital",
-        `"${namedHospital}" is not a site of ${source.trustCode} — that trust has: ${had}${sites.length > 6 ? ` (+${sites.length - 6} more)` : ""}`
+        `"${namedHospital}" is not a site of ${source.trustCode} — that trust has: ${had}${aliasSites.length > 6 ? ` (+${aliasSites.length - 6} more)` : ""}`
       )
       continue
     }

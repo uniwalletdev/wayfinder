@@ -247,6 +247,19 @@ group("abbreviations a trust uses for its own hospitals")
   )
   check("a hospital the trust does not have resolves to nothing", resolveStrict("John Radcliffe Hospital", ["Churchill Hospital"]) === null)
 
+  // Aliases search every site of the trust, not only the hospital-named ones.
+  // looksLikeHospital is /\b(hospital|infirmary)\b/, and the Nuffield
+  // Orthopaedic CENTRE is Oxford's orthopaedic hospital whose name never says
+  // so — noc-site-map was refused as naming an unknown hospital while the site
+  // sat in the register the whole time. That test exists to keep fetch-osm's
+  // request volume down, which is a fine reason to skip a footprint and a bad
+  // reason to disbelieve a name somebody checked by hand.
+  check("looksLikeHospital would hide the Nuffield Orthopaedic Centre", !looksLikeHospital("Nuffield Orthopaedic Centre"))
+  check(
+    "an alias reaches it anyway",
+    resolveStrict("Nuffield Orthopaedic Centre", ["Churchill Hospital", "Nuffield Orthopaedic Centre"]) === "Nuffield Orthopaedic Centre"
+  )
+
   // Guards. An abbreviation is only meaningful inside one trust, and a wrong
   // expansion places a map on the wrong hospital rather than failing loudly.
   check("an abbreviation does not leak across trusts", named("pah-a-level-floor-plan", "RTH") === null)
