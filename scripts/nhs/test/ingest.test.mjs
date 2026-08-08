@@ -15,6 +15,7 @@ import { REPO_ROOT } from "../lib/paths.mjs"
 import { nameTokens, tokenOverlap, footprintSpanM, DOCUMENT_STOPWORDS } from "../lib/match.mjs"
 import { CRAWLER_VERSION } from "../lib/discovery-match.mjs"
 import { mappedVenueNames, mappedVenueFor } from "../lib/mapped.mjs"
+import { looksLikeHospital } from "../lib/ods.mjs"
 import { group, check, report } from "./harness.mjs"
 
 process.chdir(REPO_ROOT)
@@ -52,6 +53,50 @@ const square = [{
 const span = footprintSpanM(square)
 check("measures a site's extent in metres", span > 250 && span < 500, `${Math.round(span)}m`)
 check("returns null with no geometry", footprintSpanM([]) === null)
+
+group("which hospital is this a map of")
+// draft-sheets picks the hospital a sheet belongs to by matching its filename
+// against the trust's ODS sites. A national run put 258 sites in front of an
+// Oxford sheet and 133 in front of a Reading one, because the trust-site
+// register is every location a trust operates — and 63 of 63 sheets were
+// refused. The two failure shapes below are what that produced.
+{
+  const tok = (s) => nameTokens(s, DOCUMENT_STOPWORDS)
+
+  // Shape 1: the filename names the hospital by initials, so it reduces to
+  // nothing matchable. Reported as "ambiguous-site", which sent me looking for a
+  // threshold problem that wasn't there.
+  check("a JR sheet has no tokens to match on", tok("jr-hospital-sitemap").size === 0, [...tok("jr-hospital-sitemap")].join(","))
+  check("nor does an SGH sheet name a hospital", !tok("sgh-site-map").has("georges"), [...tok("sgh-site-map")].join(","))
+  check("an empty hint scores zero against anything", tokenOverlap(tok("jr-hospital-sitemap"), tok("John Radcliffe Hospital")) === 0)
+
+  // Shape 2: the register's noise. A trust running one hospital does not look
+  // like one while its clinics are in the list, so the single-site shortcut
+  // never fires and the sheet has to win a name match it cannot win.
+  const oxfordSites = [
+    { name: "Churchill Hospital" },
+    { name: "John Radcliffe Hospital" },
+    { name: "Derm Churchill" },
+    { name: "Pain Management (Churchill)" },
+    { name: "Oxford Breast Screening Unit (Churchill)" },
+    { name: "Transplant (Churchill)" },
+  ]
+  const hospitalsOnly = oxfordSites.filter((s) => looksLikeHospital(s.name))
+  check("keeps the two real hospitals", hospitalsOnly.length === 2, hospitalsOnly.map((s) => s.name).join(", "))
+  check("drops the departments", !hospitalsOnly.some((s) => /Transplant|Breast Screening/.test(s.name)))
+
+  const single = [{ name: "Royal Berkshire Hospital" }, { name: "Berkshire Renal Unit" }]
+  check(
+    "a one-hospital trust resolves without needing a name match",
+    single.filter((s) => looksLikeHospital(s.name)).length === 1,
+    "the shortcut still cannot fire"
+  )
+
+  // And the filter must not strand a trust whose sites are all named otherwise —
+  // draft-sheets falls back to the full list rather than refusing.
+  const noneNamedHospital = [{ name: "Springfield Site" }, { name: "Tolworth Site" }]
+  check("a trust with no hospital-named site falls back", noneNamedHospital.filter((s) => looksLikeHospital(s.name)).length === 0)
+}
 
 group("hospitals that are already mapped")
 // The crawl finds maps for hospitals mapped long before it ran: Wythenshawe
