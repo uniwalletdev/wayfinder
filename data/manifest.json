@@ -12,18 +12,52 @@
       "noPostcode": 0
     },
     "licence": "Open Government Licence v3.0",
-    "fetchedAt": "2026-08-07T21:02:36.971Z"
+    "fetchedAt": "2026-08-08T06:32:12.262Z"
   },
   "plans.candidates": {
     "description": "Floor-plan PDF discovery queue",
     "trustsInScope": 247,
-    "candidates": 280,
+    "candidates": 284,
     "noWebsite": 36,
-    "crawlFailed": 17,
+    "crawlFailed": 16,
     "botChallenged": 7,
     "robotsBlocked": 0,
-    "withCandidates": 76,
+    "withCandidates": 78,
     "crawled": 247,
-    "fetchedAt": "2026-08-08T00:14:51.931Z"
+    "fetchedAt": "2026-08-08T04:07:07.139Z"
+  },
+  "ods.ets": {
+    "via": "ORD API fallback",
+    "url": "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations",
+    "description": "NHS Trust Sites (England)",
+    "sha256": "9c8fbc42379c94aa58cd69174b8c0f91b61db2d9fed73f4313f52ef03ffa4054",
+    "rows": 38250,
+    "usableRecords": 38250,
+    "skipped": {
+      "short": 0,
+      "closed": 0,
+      "noPostcode": 0
+    },
+    "licence": "Open Government Licence v3.0",
+    "fetchedAt": "2026-08-08T06:43:07.696Z"
+  },
+  "osm.footprints": {
+    "url": "https://overpass-api.de/api/interpreter",
+    "description": "Hospital building footprints from OpenStreetMap via Overpass",
+    "searchRadiusM": 300,
+    "sitesSearched": 3727,
+    "footprints": 5069,
+    "matchedToSite": 4342,
+    "failedBatches": 2,
+    "licence": "ODbL 1.0 — © OpenStreetMap contributors",
+    "fetchedAt": "2026-08-08T09:56:40.000Z"
+  },
+  "nhs.sites": {
+    "description": "Canonical merged NHS site list",
+    "count": 33740,
+    "withFootprints": 897,
+    "coveredByMappedVenue": 624,
+    "trusts": 247,
+    "fetchedAt": "2026-08-08T11:10:27.639Z"
   }
 }

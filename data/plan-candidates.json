@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-08T00:14:51.925Z",
+  "generatedAt": "2026-08-08T04:07:07.132Z",
   "description": "Candidate site-map / floor-plan PDFs found on NHS trust websites. THIS IS A TRIAGE QUEUE, NOT AN IMPORT LIST. These PDFs are the trusts' copyright. scripts/nhs/approve-plans.mjs promotes eligible entries into data/plan-sources.json, which is the only list scripts/nhs/fetch-plans.mjs will download.",
   "crawlerVersion": 5,
   "stats": {
     "noWebsite": 36,
-    "crawlFailed": 17,
+    "crawlFailed": 16,
     "botChallenged": 7,
     "robotsBlocked": 0,
-    "withCandidates": 76,
+    "withCandidates": 78,
     "crawled": 247
   },
-  "count": 280,
+  "count": 284,
   "crawled": {
     "G6V2S": "no-website",
     "K0N6A": "no-website",
@@ -69,7 +69,7 @@
     "RDY": "ok",
     "RDZ": "failed",
     "RE9": "no-website",
-    "REF": "failed",
+    "REF": "ok",
     "REM": "bot-challenge",
     "REN": "bot-challenge",
     "REP": "bot-challenge",
@@ -1062,6 +1062,30 @@
       "confidence": "high"
     },
     {
+      "trustCode": "REF",
+      "trustName": "Royal Cornwall Hospitals NHS Trust",
+      "url": "https://doclibrary-rcht.cornwall.nhs.uk/DocumentsLibrary/RoyalCornwallHospitalsTrust/Websites/Internet/PatientsAndVisitors/GettingHere/RoyalCornwallHospitalTreliskeSiteMap.pdf",
+      "linkText": "View our Truro hospital site map (PDF)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "REF",
+      "trustName": "Royal Cornwall Hospitals NHS Trust",
+      "url": "https://doclibrary-rcht.cornwall.nhs.uk/DocumentsLibrary/RoyalCornwallHospitalsTrust/Websites/Internet/PatientsAndVisitors/GettingHere/StMichaelsHospitalSiteMap.pdf",
+      "linkText": "View our Hayle hospital site map (PDF)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "REF",
+      "trustName": "Royal Cornwall Hospitals NHS Trust",
+      "url": "https://doclibrary-rcht.cornwall.nhs.uk/DocumentsLibrary/RoyalCornwallHospitalsTrust/Websites/Internet/PatientsAndVisitors/GettingHere/WestCornwallHospitalSiteMap.pdf",
+      "linkText": "View our Penzance hospital site map (PDF)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
       "trustCode": "RH8",
       "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
       "url": "https://www.royaldevon.nhs.uk/media/bysd1vx2/rd-e-hospital-wonford-site-map-car-park-map.pdf",
@@ -1148,6 +1172,15 @@
       "linkText": "Friarage Hospital map (769.84kB, PDF)",
       "kind": "site-map",
       "confidence": "high"
+    },
+    {
+      "trustCode": "R0B",
+      "trustName": "South Tyneside and Sunderland NHS Foundation Trust",
+      "url": "https://www.stsft.nhs.uk/application/files/6417/7382/2879/SRH_Map_update.pdf",
+      "linkText": "Sunderland Royal Hospital site map",
+      "kind": "site-map",
+      "confidence": "high",
+      "addedByHand": true
     },
     {
       "trustCode": "RJC",
