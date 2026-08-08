@@ -186,6 +186,12 @@ function metresBetween(a, b) {
   return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)))
 }
 
+// Every hospital in the country, for the national fallback when a sheet names a
+// hospital its host trust does not own. Restricted to hospital-named sites: the
+// within-trust matcher can afford a wider net because the trust bounds it, and
+// this one cannot.
+const nationalHospitals = sitesDoc.sites.filter((s) => looksLikeHospital(s.name))
+
 const alreadyDrafted = new Set(sheetsDoc.sheets.map((s) => s.slug))
 const drafted = []
 // Sheets whose hospital the register files under a different trust. Worth
@@ -348,16 +354,54 @@ for (const source of sourcesDoc.sources) {
       }
     }
     if (!site || best < MIN_SITE_NAME_MATCH) {
-      // Name the closest sites. "best name match 0.00" says a match failed but
-      // not against what, which is the difference between "the threshold is too
-      // strict" and "this hospital belongs to another trust entirely".
-      const closest = scored
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 3)
-        .map((s) => `${s.name} ${s.score.toFixed(2)}`)
-        .join("; ")
-      reject("ambiguous-site", `${sites.length} hospital site(s), best ${best.toFixed(2)}, closest: ${closest}`)
-      continue
+      // Before refusing: the sheet may name its hospital perfectly well, just
+      // not one of THIS trust's. Birmingham Women's and Children's publishes
+      // site maps for Hereford, Royal Shrewsbury, Russells Hall, Walsall Manor
+      // and Worcester Royal; ODS files Lincoln County and Pilgrim under trusts
+      // that are not the one whose website the sheet came from. Eight sheets
+      // named "hereford-hospital-map", "royal-shrewsbury-hospital-map" and the
+      // like were refused for naming a hospital the host trust does not own.
+      //
+      // Looking nationally is only safe under a much stricter rule than the
+      // within-trust one, because the trust is no longer bounding anything:
+      // every distinctive word of the sheet must appear in the site's name, and
+      // exactly one hospital in the country may satisfy that.
+      //
+      // The uniqueness requirement is what makes this self-limiting rather than
+      // reckless. "new-cross-hospital-map" reduces to {cross}, which fits New
+      // Cross, Charing Cross and Whipps Cross — three hospitals, so it stays
+      // refused. "royal-shrewsbury-hospital-map" reduces to {shrewsbury}, which
+      // fits one.
+      // Uniqueness is absolute here, with no shortest-name tiebreak. Within a
+      // trust, preferring the site that says least beyond the sheet is what
+      // stops a department outranking its hospital. Nationally the same rule is
+      // just "shortest name wins", and that is not evidence: {cross} carried by
+      // New Cross, Charing Cross and Whipps Cross would resolve to New Cross for
+      // being the shortest, and would resolve "cross-hospital-map" there too.
+      const national = nationalHospitals.filter((candidate) => {
+        const candidateTokens = tokens(candidate.name)
+        for (const token of hint) if (!candidateTokens.has(token)) return false
+        return true
+      })
+
+      if (national.length === 1) {
+        site = national[0]
+        crossTrustNote = `${source.slug}: ${site.name} filed under ${site.trustCode}, sheet from ${source.trustCode}`
+      } else {
+        // Name the closest sites. "best name match 0.00" says a match failed but
+        // not against what, which is the difference between "the threshold is too
+        // strict" and "this hospital belongs to another trust entirely".
+        const closest = scored
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 3)
+          .map((s) => `${s.name} ${s.score.toFixed(2)}`)
+          .join("; ")
+        const nationally = national.length > 1
+          ? `; nationally ${national.length} hospitals fit: ${national.slice(0, 3).map((s) => s.name).join(", ")}`
+          : ""
+        reject("ambiguous-site", `${sites.length} hospital site(s), best ${best.toFixed(2)}, closest: ${closest}${nationally}`)
+        continue
+      }
     }
   }
 

@@ -768,4 +768,55 @@ group("venues an earlier run drafted and this one refuses")
   check("a sheet the run never looked at is left alone", withdraw(register, []).dropped.length === 0)
 }
 
+group("a sheet naming a hospital its host trust does not own")
+// Birmingham Women's and Children's publishes site maps for Hereford, Royal
+// Shrewsbury, Russells Hall, Walsall Manor and Worcester Royal. ODS files
+// Lincoln County and Pilgrim under trusts that are not the one whose website
+// the sheet came from. Eight sheets were refused for naming a hospital
+// perfectly clearly — just not one of the host trust's.
+//
+// Going national is only safe under a stricter rule than the within-trust one,
+// because the trust is no longer bounding anything: every distinctive word of
+// the sheet must appear in the site's name, and exactly one hospital in the
+// country may satisfy that.
+{
+  const tok = (x) => nameTokens(x, DOCUMENT_STOPWORDS)
+  const nationally = (sheet, hospitals) => {
+    const hint = tok(sheet)
+    if (!hint.size) return null
+    // No shortest-name tiebreak: nationally that is not evidence, it is just
+    // "shortest name wins". Uniqueness has to be absolute.
+    const carriers = hospitals.filter((name) => {
+      const ct = tok(name)
+      for (const t of hint) if (!ct.has(t)) return false
+      return true
+    })
+    return carriers.length === 1 ? carriers[0] : null
+  }
+
+  const register = [
+    "Hereford County Hospital", "Royal Shrewsbury Hospital", "Russells Hall Hospital",
+    "Walsall Manor Hospital", "Worcester Royal Hospital", "Lincoln County Hospital",
+    "Pilgrim Hospital", "Birmingham Children's Hospital",
+    // The three that make {cross} ambiguous.
+    "New Cross Hospital", "Charing Cross Hospital", "Whipps Cross Hospital",
+  ]
+
+  check("Shrewsbury resolves", nationally("royal-shrewsbury-hospital-map", register) === "Royal Shrewsbury Hospital")
+  check("Russells Hall resolves", nationally("russells-hall-hospital-map", register) === "Russells Hall Hospital")
+  check("Walsall Manor resolves", nationally("walsall-manor-hospital-map", register) === "Walsall Manor Hospital")
+  check("Worcester resolves", nationally("worcester-royal-hospital-map", register) === "Worcester Royal Hospital")
+  check("Hereford resolves", nationally("hereford-hospital-map", register) === "Hereford County Hospital")
+
+  // The uniqueness rule is what makes this self-limiting rather than reckless.
+  // "new-cross-hospital-map" reduces to {cross}, which fits three hospitals.
+  check("three Crosses keep new-cross refused", tok("new-cross-hospital-map").has("cross"))
+  check("and it does not resolve", nationally("new-cross-hospital-map", register) === null)
+
+  // A sheet naming nothing must never reach the national net — with no tokens
+  // every hospital in England trivially "carries" them.
+  check("a sheet with no tokens resolves to nothing", nationally("site-map-final-v2", register) === null)
+  check("nor does a bare sitemap", nationally("sitemap", register) === null)
+}
+
 report()
