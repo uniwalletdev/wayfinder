@@ -18,6 +18,7 @@
 //
 // Run: node scripts/nhs/approve-plans.mjs [--dry-run] [--limit N]
 import { dataPath, readJson, writeJson, log } from "./lib/paths.mjs"
+import { onTrustDomain } from "./lib/discovery-match.mjs"
 
 const STAGE = "approve-plans"
 const DRY_RUN = process.argv.includes("--dry-run")
@@ -98,13 +99,7 @@ for (const candidate of candidatesDoc.candidates ?? []) {
   const host = hostOf(candidate.url)
   if (!host) { rejected.badUrl++; continue }
 
-  // The trust's own host, as ODS recorded it. Subdomains count (many trusts put
-  // documents on a `www2.` or `documents.` host of the same registrable domain),
-  // but an unrelated domain does not.
-  const trustHost = hostOf(websites[candidate.trustCode] ?? "")
-  const sameSite =
-    trustHost && (host === trustHost || host.endsWith(`.${trustHost}`) || trustHost.endsWith(`.${host}`))
-  if (!sameSite) { rejected.offDomain++; continue }
+  if (!onTrustDomain(candidate.url, websites[candidate.trustCode])) { rejected.offDomain++; continue }
 
   let slug = slugFor(candidate)
   // Slugs address venues by URL and name the floor-plan asset directory, so a
