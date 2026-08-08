@@ -130,6 +130,12 @@ async function websiteForTrust(code) {
 const trusts = loadOdsRecords("etr").slice(0, LIMIT === Infinity ? undefined : LIMIT)
 
 const websites = readJson(WEBSITE_CACHE, {})
+// Hosts recorded by hand where the ODS one has gone stale. See
+// data/trust-website-overrides.json for what belongs in there and why.
+const overrideOrigins = Object.fromEntries(
+  Object.entries(readJson(dataPath("trust-website-overrides.json"), { overrides: {} }).overrides ?? {})
+    .map(([code, entry]) => [code, entry?.websites ?? []])
+)
 let candidates = []
 // ODS code -> how the crawl of that trust ended. Resuming skips anything already
 // recorded here, so an interrupted run continues rather than starting over.
@@ -247,7 +253,11 @@ async function crawlTrust(trust) {
     }
     await sleep(500)
   }
-  const origin = websites[trust.odsCode]
+  // A hand-recorded host wins over the one ODS holds. ODS keeps a trust's old
+  // address after it rebrands, and a dead address is worth nothing: Tameside's
+  // recorded site stopped answering while its live one carried the map all
+  // along. Where there is no override this is exactly the ODS value.
+  const origin = overrideOrigins[trust.odsCode]?.[0] ?? websites[trust.odsCode]
   if (!origin) return { outcome: "no-website", found: 0, via: "-", note: "no website recorded in ODS" }
 
   const pause = Math.max(MIN_PAUSE_MS, await crawlDelayFor(origin))
