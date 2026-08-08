@@ -19,7 +19,7 @@
 // Run: node scripts/nhs/draft-sheets.mjs [--force]
 import { existsSync } from "fs"
 import { extractLabels } from "../maps/extract.mjs"
-import { nameTokens, tokenOverlap, footprintSpanM, DOCUMENT_STOPWORDS } from "./lib/match.mjs"
+import { nameTokens, documentContainment, footprintSpanM, DOCUMENT_STOPWORDS } from "./lib/match.mjs"
 import { looksLikeHospital } from "./lib/ods.mjs"
 import { dataPath, repoPath, readJson, writeJson, log } from "./lib/paths.mjs"
 
@@ -45,7 +45,10 @@ const FOOTPRINT_PADDING = 1.4
 // organisation names, so it drops the document-y words ("map", "pdf", "plan")
 // alongside the ones every NHS name carries.
 const tokens = (s) => nameTokens(s, DOCUMENT_STOPWORDS)
-const overlap = tokenOverlap
+// How much of the sheet's own name a site accounts for. NOT tokenOverlap:
+// that divides by the smaller set, which lets a short site name win by being
+// short — see documentContainment in lib/match.mjs.
+const contains = documentContainment
 
 // Waypoint labels that make the best search shortcuts: the things people
 // actually ask for at a hospital.
@@ -133,7 +136,17 @@ for (const source of sourcesDoc.sources) {
 
   let site = null
   if (sites.length === 1) {
-    site = sites[0]
+    // One candidate is not the same as the right one. Royal Berkshire's only
+    // hospital-named site is "P Rbh Virtual Hospital" — not a building at all —
+    // and taking it blindly put the trust's site map on a service record. If the
+    // sheet names something, the one site has to account for part of it.
+    const only = tokens(sites[0].name)
+    if (!hint.size || contains(hint, only) > 0) {
+      site = sites[0]
+    } else {
+      reject("ambiguous-site", `only hospital site is "${sites[0].name}", which the sheet does not name`)
+      continue
+    }
   } else if (!hint.size) {
     // Not ambiguity — there is nothing to be ambiguous with. "jr-hospital-
     // sitemap" reduces to no tokens at all: "jr" is two characters and both
@@ -145,11 +158,22 @@ for (const source of sourcesDoc.sources) {
     continue
   } else {
     let best = 0
+    let bestExtra = Infinity
     const scored = []
     for (const candidate of sites) {
-      const score = overlap(hint, tokens(candidate.name))
+      const candidateTokens = tokens(candidate.name)
+      const score = contains(hint, candidateTokens)
       scored.push({ name: candidate.name, score })
-      if (score > best) { best = score; site = candidate }
+      // On a tie, the site that says least beyond the sheet's own name. ODS
+      // registers departments as sites — "Immunology - Derriford Hospital"
+      // scores exactly what "Derriford Hospital" does against a Derriford
+      // sheet, and without this the department wins on document order and the
+      // venue ends up named after a clinic.
+      if (score > best || (score === best && score > 0 && candidateTokens.size < bestExtra)) {
+        best = score
+        bestExtra = candidateTokens.size
+        site = candidate
+      }
     }
     if (!site || best < MIN_SITE_NAME_MATCH) {
       // Name the closest sites. "best name match 0.00" says a match failed but

@@ -12,7 +12,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync, cpSync } f
 import { tmpdir } from "os"
 import { join } from "path"
 import { REPO_ROOT } from "../lib/paths.mjs"
-import { nameTokens, tokenOverlap, footprintSpanM, DOCUMENT_STOPWORDS } from "../lib/match.mjs"
+import { nameTokens, tokenOverlap, documentContainment, footprintSpanM, DOCUMENT_STOPWORDS } from "../lib/match.mjs"
 import { CRAWLER_VERSION } from "../lib/discovery-match.mjs"
 import { mappedVenueNames, mappedVenueFor } from "../lib/mapped.mjs"
 import { looksLikeHospital } from "../lib/ods.mjs"
@@ -96,6 +96,56 @@ group("which hospital is this a map of")
   // draft-sheets falls back to the full list rather than refusing.
   const noneNamedHospital = [{ name: "Springfield Site" }, { name: "Tolworth Site" }]
   check("a trust with no hospital-named site falls back", noneNamedHospital.filter((s) => looksLikeHospital(s.name)).length === 0)
+
+  // Which site wins. Every row is a sheet a previous version placed on the wrong
+  // hospital: Hull's Castle Hill map landed on York, Derriford's on an
+  // immunology clinic, Wakefield's Pinderfields map on Dewsbury, and Royal
+  // Berkshire's on "P Rbh Virtual Hospital" — a service record, not a building.
+  //
+  // The cause was tokenOverlap dividing by the smaller set, which lets a short
+  // site name win by being short. documentContainment asks how much of the
+  // SHEET's name a site explains instead, and ties go to the site that says
+  // least beyond it, so a department never outranks the hospital it sits in.
+  const pick = (sheet, names) => {
+    const hint = tok(sheet)
+    let best = 0, bestExtra = Infinity, site = null
+    for (const name of names) {
+      const ct = tok(name)
+      const score = documentContainment(hint, ct)
+      if (score > best || (score === best && score > 0 && ct.size < bestExtra)) {
+        best = score; bestExtra = ct.size; site = name
+      }
+    }
+    return best >= 0.34 ? site : null
+  }
+
+  check(
+    "Hull's Castle Hill map does not land on York",
+    pick("site-1253769-hull-teaching-castle-hill-map", ["Castle Hill Hospital Elective Surgical Hub", "York Teaching Hospital"]) ===
+      "Castle Hill Hospital Elective Surgical Hub"
+  )
+  check(
+    "a hospital outranks a department inside it",
+    pick("derriford-hospital-site-mappdf", ["Immunology - Derriford Hospital", "Derriford Hospital"]) === "Derriford Hospital"
+  )
+  check(
+    "Pinderfields does not land on Dewsbury",
+    pick("pinderfields-hospital-map", ["Dewsbury & District Hospital-Combined Elective Surgical Hub", "Pinderfields General Hospital"]) ===
+      "Pinderfields General Hospital"
+  )
+  check(
+    "a treatment centre does not outrank its hospital",
+    pick("wythenshawe-hospital-sitemap", ["Wythenshawe Hospital Urgent Treatment Centre", "Wythenshawe Hospital"]) === "Wythenshawe Hospital"
+  )
+  check(
+    "a sole candidate the sheet does not name is refused",
+    pick("royal-berkshire-hospital-map-jan23", ["P Rbh Virtual Hospital"]) === null,
+    "placed a site map on a service record"
+  )
+  check(
+    "a satellite service does not stand in for the main hospital",
+    pick("level-3-floorplan-cuh-map", ["Cuh at Doddington Hospital", "Addenbrooke's Hospital"]) === null
+  )
 }
 
 group("hospitals that are already mapped")

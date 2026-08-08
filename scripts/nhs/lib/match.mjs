@@ -43,6 +43,24 @@ export function tokenOverlap(a, b) {
   return shared / Math.min(a.size, b.size)
 }
 
+// How much of a DOCUMENT's name a site accounts for.
+//
+// tokenOverlap divides by the smaller set, which is right for "is this venue the
+// same hospital as this site" but wrong for "which of these sites is this sheet
+// a map of": it lets a short name win by being short. Asked which hospital
+// "site-1253769-hull-teaching-castle-hill-map" belongs to, it scored "York
+// Teaching Hospital" (2 tokens, 1 shared → 0.50) above "Castle Hill Hospital
+// Elective Surgical Hub" (5 tokens, 2 shared → 0.40) and put Hull's map on York.
+//
+// Dividing by the document's tokens instead asks how much of what the sheet
+// names this site actually explains — 2/5 against 1/5, and Castle Hill wins.
+export function documentContainment(documentTokens, siteTokens) {
+  if (!documentTokens.size || !siteTokens.size) return 0
+  let shared = 0
+  for (const token of documentTokens) if (siteTokens.has(token)) shared++
+  return shared / documentTokens.size
+}
+
 // The bounding box of a set of GeoJSON polygon features.
 export function bboxOf(features) {
   let minLat = Infinity, maxLat = -Infinity, minLng = Infinity, maxLng = -Infinity
