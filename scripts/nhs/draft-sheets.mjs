@@ -90,6 +90,52 @@ for (const f of readJson(dataPath("footprints.geojson"), { features: [] }).featu
   else footprintsBySite.set(code, [f])
 }
 
+// Trust-scoped abbreviations, so "jr-hospital-sitemap" can be read as the John
+// Radcliffe. See data/hospital-aliases.json.
+const abbreviations = new Map()
+for (const [code, entry] of Object.entries(readJson(dataPath("hospital-aliases.json"), { trusts: {} }).trusts ?? {})) {
+  abbreviations.set(code, new Map(Object.entries(entry?.expands ?? {}).map(([k, v]) => [k.toLowerCase(), v])))
+}
+
+// Words an abbreviation gets glued to when a filename skips the separator.
+// "chhsitemap" is Castle Hill's site map with nothing between the two.
+const GLUED_SUFFIX = /^(site)?maps?|plans?|floors?|sitemap|internal|external$/
+
+// Which hospital a sheet's abbreviation names, if any.
+//
+// This has to work on the RAW text, not on tokens: abbreviations are exactly
+// what tokenising throws away. "jr" is two characters and nameTokens keeps only
+// what is longer, so by the time there are tokens to inspect the evidence is
+// gone — which is why these sheets scored 0.00 against every site.
+//
+// The answer is used as a FACT, not folded into the fuzzy score. Someone checked
+// that CGH is Cheltenham General and wrote it down; treating that as one more
+// weak signal buries it, because the rest of the filename is noise that dilutes
+// it. "cgh-colour-map-0325-v1" scores 0.25 against Cheltenham General even with
+// the expansion added, purely because "colour" and "0325" are in the denominator.
+function hospitalNamedBy(text, trustCode) {
+  const expansions = abbreviations.get(trustCode)
+  if (!expansions) return null
+  const found = []
+  for (const part of String(text).toLowerCase().split(/[^a-z0-9]+/)) {
+    let expanded = expansions.get(part)
+    if (!expanded) {
+      // Glued: "chhsitemap". Only accept when what follows the abbreviation is
+      // a document word, so "chester" can't be read as "ch" plus "ester".
+      for (const [abbr, name] of expansions) {
+        if (part.length > abbr.length && part.startsWith(abbr) && GLUED_SUFFIX.test(part.slice(abbr.length))) {
+          expanded = name
+          break
+        }
+      }
+    }
+    if (expanded && !found.includes(expanded)) found.push(expanded)
+  }
+  // Two different hospitals named in one filename is not a fact, it's a
+  // question — leave it to the ordinary matcher rather than picking one.
+  return found.length === 1 ? found[0] : null
+}
+
 const sitesByTrust = new Map()
 for (const site of sitesDoc.sites) {
   if (!site.trustCode) continue
@@ -119,7 +165,9 @@ for (const source of sourcesDoc.sources) {
   const trustSites = sitesByTrust.get(source.trustCode) ?? []
   if (!trustSites.length) { reject("no-site-for-trust", source.trustCode); continue }
 
-  const hint = tokens(`${source.linkText ?? ""} ${source.slug}`)
+  const sheetText = `${source.linkText ?? ""} ${source.slug}`
+  const hint = tokens(sheetText)
+  const namedHospital = hospitalNamedBy(sheetText, source.trustCode)
 
   // A sheet is a map of a hospital, so only hospitals are candidates. The ODS
   // trust-site register is every location a trust operates, which put 258 sites
@@ -135,7 +183,27 @@ for (const source of sourcesDoc.sources) {
   const sites = candidateSites.length ? candidateSites : trustSites
 
   let site = null
-  if (sites.length === 1) {
+  if (namedHospital) {
+    // A hand-verified alias settles it. Take the site that carries every
+    // distinctive word of the named hospital, preferring the one that says least
+    // beyond it so "Cheltenham General Hospital" wins over the same name with
+    // "Elective Surgical Hub" on the end.
+    const wanted = tokens(namedHospital)
+    let fewest = Infinity
+    for (const candidate of sites) {
+      const candidateTokens = tokens(candidate.name)
+      let carries = wanted.size > 0
+      for (const token of wanted) if (!candidateTokens.has(token)) { carries = false; break }
+      if (carries && candidateTokens.size < fewest) { fewest = candidateTokens.size; site = candidate }
+    }
+    if (!site) {
+      // The alias is wrong, or ODS files that hospital under another trust. Both
+      // need a person, and both are invisible if this silently falls through to
+      // guessing.
+      reject("alias-names-an-unknown-hospital", `"${namedHospital}" is not a site of ${source.trustCode}`)
+      continue
+    }
+  } else if (sites.length === 1) {
     // One candidate is not the same as the right one. Royal Berkshire's only
     // hospital-named site is "P Rbh Virtual Hospital" — not a building at all —
     // and taking it blindly put the trust's site map on a service record. If the

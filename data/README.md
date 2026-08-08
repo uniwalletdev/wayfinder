@@ -216,6 +216,29 @@ sheets by initials: JR, SGH, PAH, CGH, GRH, NOC, CHH.
 `ambiguous-site` now names the closest sites and their scores, so it's clear
 whether the threshold is too strict or the hospital belongs to another trust.
 
+### Abbreviations
+
+`hospital-aliases.json` says what a trust's own initials mean — `jr` is the John
+Radcliffe, `pah` is Princess Anne, `cgh` and `grh` are Cheltenham General and
+Gloucestershire Royal. Keyed by ODS code, because an abbreviation only means
+anything inside one trust: **NGH** is Northampton General at RNS and Northern
+General at Sheffield Teaching; **PAH** is Princess Anne in Southampton and
+Princess Alexandra in Harlow.
+
+The expansion is treated as a **fact, not a hint**. Folding it into the fuzzy
+score doesn't work — `cgh-colour-map-0325-v1` still only reaches 0.25 against
+Cheltenham General, because "colour" and "0325" sit in the denominator and dilute
+the one word that matters. So an alias picks the hospital outright, and if the
+named hospital isn't one of that trust's sites the sheet is refused as
+`alias-names-an-unknown-hospital` rather than quietly falling back to guessing.
+
+| File | Resolves to |
+|---|---|
+| `jr-hospital-sitemap.pdf` | John Radcliffe Hospital |
+| `chhsitemap.pdf` | Castle Hill Hospital (no separator — handled) |
+| `cgh-colour-map-0325-v1.pdf` | Cheltenham General Hospital |
+| `PAH-A-level-floor-plan.pdf` | Princess Anne Hospital |
+
 Step 3 gets sheets close, not correct. Scale is measured where a footprint
 exists and guessed otherwise, and the crop is the full sheet. **Check the
 previews** — `previews/index.json` lists which sheets used a guessed scale — then
