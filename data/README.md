@@ -250,6 +250,13 @@ the larger run is what you actually meant.
 Sites without a footprint are unaffected otherwise — they still get a located
 pin, and `draft-sheets` falls back to a default span when placing a sheet.
 
+The same filter applies to the directory the app ships. `generate-venues` writes
+one row per site into `src/lib/venues/nhs-hospitals-data.ts`, and each becomes a
+`Venue` object at module load — 38,000 of them would be a ~2.7 MB source file and
+38,000 pins, replacing a directory that held 721 hospitals. Filtering to
+hospitals still roughly quintuples the old coverage. `nhs-sites.json` keeps the
+complete register either way, so nothing is lost from the audit trail.
+
 ## Site data automates. Floor plans do not.
 
 Sites, coordinates and building footprints reach full national coverage with no

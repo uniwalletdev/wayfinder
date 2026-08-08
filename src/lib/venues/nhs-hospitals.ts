@@ -1,11 +1,16 @@
 import { Venue } from "../types"
 import { NHS_HOSPITAL_SITES, NHS_DATA_GENERATED_AT } from "./nhs-hospitals-data"
 
-// The NHS hospital directory: every open NHS trust site from the Organisation
-// Data Service, added as a located, public "hospital" venue. These carry a real
-// map position but no interior floor plan or waypoints — selecting one drops you
-// on the hospital so its inside can then be surveyed/mapped in-app (the same
+// The NHS hospital directory: every open NHS hospital from the Organisation Data
+// Service, added as a located, public "hospital" venue. These carry a real map
+// position but no interior floor plan or waypoints — selecting one drops you on
+// the hospital so its inside can then be surveyed/mapped in-app (the same
 // starting point a user-created venue has).
+//
+// Hospitals, not every trust site. ODS's site register turned out to be every
+// location a trust operates — around 38,000 clinics, health centres, dental
+// surgeries and community units — and each row here becomes a Venue object at
+// module load. The pipeline filters to hospitals before writing the data file.
 //
 // Sites that already ship as fully-mapped venues are excluded upstream, in the
 // pipeline that generates nhs-hospitals-data.ts, by reconciling against the

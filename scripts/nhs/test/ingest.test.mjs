@@ -209,6 +209,38 @@ try {
   const second = JSON.parse(readFileSync("data/plan-sources.json", "utf8")).sources
   check("is idempotent across runs", second.length === 5, `grew to ${second.length}`)
 
+  group("generate-venues")
+  // The directory this writes is imported by the app, and every row becomes a
+  // Venue object at module load. A national ODS run yields ~38,000 trust sites —
+  // clinics, health centres, dental surgeries — so shipping the register whole
+  // would be megabytes of pins for a hospital wayfinder. Hospitals only.
+  const venuesBackup = readFileSync("src/lib/venues/nhs-hospitals-data.ts", "utf8")
+  try {
+    writeFileSync("data/nhs-sites.json", JSON.stringify({
+      generatedAt: "2026-01-01T00:00:00.000Z",
+      sites: [
+        { odsCode: "A1", name: "Airedale General Hospital", lat: 53.9, lng: -1.96, postcode: "BD20 6TD" },
+        { odsCode: "A2", name: "Victoria Infirmary", lat: 53.2, lng: -2.5, postcode: "CW9 8AB" },
+        { odsCode: "A3", name: "Brooklands Health Centre", lat: 53.4, lng: -2.3, postcode: "M23 9AA" },
+        { odsCode: "A4", name: "Chorlton Dental Surgery", lat: 53.44, lng: -2.27, postcode: "M21 9AA" },
+        // Already a full venue: excluded for a different reason, and the count
+        // must not confuse the two.
+        { odsCode: "A5", name: "Wythenshawe Hospital", lat: 53.38, lng: -2.29, postcode: "M23 9LT", mappedVenueSlug: "wythenshawe" },
+      ],
+    }))
+    const venuesOut = execFileSync("node", ["scripts/nhs/generate-venues.mjs"], { encoding: "utf8" })
+    const directory = readFileSync("src/lib/venues/nhs-hospitals-data.ts", "utf8")
+    check("ships a hospital", directory.includes("Airedale General Hospital"), "hospital missing")
+    check("ships an infirmary", directory.includes("Victoria Infirmary"))
+    check("does not ship a health centre", !directory.includes("Brooklands Health Centre"), "shipped a health centre")
+    check("does not ship a dental surgery", !directory.includes("Chorlton Dental Surgery"), "shipped a dental surgery")
+    check("still excludes an already-mapped hospital", !directory.includes("Wythenshawe Hospital"), "duplicated a mapped venue")
+    check("counts the two exclusions separately", /2 non-hospital trust sites/.test(venuesOut), venuesOut)
+    check("the file it wrote still compiles as a list", /export const NHS_HOSPITAL_SITES: NhsHospitalSite\[\] = \[/.test(directory))
+  } finally {
+    writeFileSync("src/lib/venues/nhs-hospitals-data.ts", venuesBackup)
+  }
+
   group("generate-registry")
   // A drafted sheet whose venue module doesn't exist yet must be skipped, not
   // imported — a dangling import breaks the entire app build.

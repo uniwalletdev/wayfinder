@@ -11,6 +11,7 @@
 //
 // Run: node scripts/nhs/generate-venues.mjs
 import { dataPath, repoPath, readJson, log } from "./lib/paths.mjs"
+import { looksLikeHospital } from "./lib/ods.mjs"
 import { writeFileSync } from "fs"
 
 const STAGE = "generate-venues"
@@ -24,8 +25,21 @@ if (!data) {
 
 const esc = (s) => String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"')
 
-const included = data.sites.filter((s) => !s.mappedVenueSlug)
-const excluded = data.sites.length - included.length
+// Hospitals only, for the same reason fetch-osm searches around hospitals only:
+// the ODS trust-site register is every location a trust operates, and nationally
+// that is ~38,000 clinics, health centres, dental surgeries and community units.
+//
+// This file is imported by the app and every row becomes a Venue object at
+// module load, so shipping all of them would mean a ~2.7MB source file, 38,000
+// map pins and a startup cost to match — for a hospital wayfinder whose previous
+// directory was 721 hospitals. Filtering to hospitals still roughly quintuples
+// the old coverage.
+//
+// nhs-sites.json keeps the complete register; this is only what the app ships.
+const hospitals = data.sites.filter((s) => looksLikeHospital(s.name))
+const notHospitals = data.sites.length - hospitals.length
+const included = hospitals.filter((s) => !s.mappedVenueSlug)
+const excluded = hospitals.length - included.length
 
 // ODS code order is stable across runs but meaningless to a reader; name order
 // makes the committed file browsable and keeps diffs local to the sites that
@@ -40,6 +54,11 @@ lines.push("// built from the NHS Organisation Data Service bulk extracts (ets.z
 lines.push("// register of NHS trust SITES) geocoded via postcodes.io. To refresh it, run the")
 lines.push("// pipeline — `npm run nhs:refresh` locally, or the nhs-data workflow in CI, which")
 lines.push("// opens a PR with the updated data.")
+lines.push("//")
+lines.push("// HOSPITALS only. The ODS trust-site register is every location a trust operates")
+lines.push("// — nationally ~38,000 clinics, health centres, dental surgeries and community")
+lines.push("// units — and shipping all of them would be megabytes of pins this app has no")
+lines.push("// use for. data/nhs-sites.json keeps the full register.")
 lines.push("//")
 lines.push("// These are LOCATION pins only: a real map position, no interior floor plan or")
 lines.push("// waypoints. Selecting one drops you on the hospital so its inside can then be")
@@ -58,7 +77,8 @@ lines.push("  odsCode: string,")
 lines.push("  postcode: string,")
 lines.push("]")
 lines.push("")
-lines.push(`// ${included.length} sites (${excluded} omitted as already fully mapped).`)
+lines.push(`// ${included.length} hospitals (${excluded} omitted as already fully mapped,`)
+lines.push(`// ${notHospitals} non-hospital trust sites omitted — clinics, health centres, community units).`)
 lines.push("export const NHS_HOSPITAL_SITES: NhsHospitalSite[] = [")
 for (const s of included) {
   lines.push(`  ["${esc(s.name)}", ${s.lat}, ${s.lng}, "${esc(s.odsCode)}", "${esc(s.postcode)}"],`)
@@ -71,4 +91,4 @@ lines.push(`export const NHS_DATA_GENERATED_AT = "${esc(data.generatedAt)}"`)
 lines.push("")
 
 writeFileSync(OUT, lines.join("\n"))
-log(STAGE, `wrote ${included.length} sites to src/lib/venues/nhs-hospitals-data.ts (${excluded} excluded as fully mapped)`)
+log(STAGE, `wrote ${included.length} hospitals to src/lib/venues/nhs-hospitals-data.ts (${excluded} excluded as fully mapped, ${notHospitals} non-hospital trust sites not shipped)`)
