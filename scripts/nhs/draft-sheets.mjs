@@ -45,6 +45,13 @@ const FOOTPRINT_PADDING = 1.4
 // organisation names, so it drops the document-y words ("map", "pdf", "plan")
 // alongside the ones every NHS name carries.
 const tokens = (s) => nameTokens(s, DOCUMENT_STOPWORDS)
+
+// A name with the punctuation taken out, for comparing two written names rather
+// than two bags of words. "St George's Hospital" and "St Georges Hospital" are
+// the same place; ODS is inconsistent about the apostrophe.
+// Apostrophes are removed rather than spaced, or "George's" becomes "george s"
+// and stops matching "Georges".
+const plainName = (s) => String(s).toLowerCase().replace(/['‘’]/g, "").replace(/[^a-z0-9]+/g, " ").trim()
 // How much of the sheet's own name a site accounts for. NOT tokenOverlap:
 // that divides by the smaller set, which lets a short site name win by being
 // short — see documentContainment in lib/match.mjs.
@@ -184,23 +191,47 @@ for (const source of sourcesDoc.sources) {
 
   let site = null
   if (namedHospital) {
-    // A hand-verified alias settles it. Take the site that carries every
-    // distinctive word of the named hospital, preferring the one that says least
-    // beyond it so "Cheltenham General Hospital" wins over the same name with
-    // "Elective Surgical Hub" on the end.
-    const wanted = tokens(namedHospital)
-    let fewest = Infinity
-    for (const candidate of sites) {
-      const candidateTokens = tokens(candidate.name)
-      let carries = wanted.size > 0
-      for (const token of wanted) if (!candidateTokens.has(token)) { carries = false; break }
-      if (carries && candidateTokens.size < fewest) { fewest = candidateTokens.size; site = candidate }
-    }
+    // An exact name settles it outright. This has to come first: tokenising
+    // "St George's Hospital" leaves {georges}, because "st" is too short and
+    // "hospital" is a stopword, and one common word is not enough to tell
+    // St George's in Tooting from "St Georges at Woking Hospital". Matching the
+    // written name never has that problem.
+    site = sites.find((s) => plainName(s.name) === plainName(namedHospital)) ?? null
+
     if (!site) {
-      // The alias is wrong, or ODS files that hospital under another trust. Both
-      // need a person, and both are invisible if this silently falls through to
-      // guessing.
-      reject("alias-names-an-unknown-hospital", `"${namedHospital}" is not a site of ${source.trustCode}`)
+      // Otherwise take sites carrying every distinctive word, preferring the one
+      // that says least beyond it — so "Cheltenham General Hospital" beats the
+      // same name with "Elective Surgical Hub" on the end.
+      const wanted = tokens(namedHospital)
+      let best = []
+      let fewest = Infinity
+      for (const candidate of sites) {
+        const candidateTokens = tokens(candidate.name)
+        let carries = wanted.size > 0
+        for (const token of wanted) if (!candidateTokens.has(token)) { carries = false; break }
+        if (!carries) continue
+        if (candidateTokens.size < fewest) { fewest = candidateTokens.size; best = [candidate] }
+        else if (candidateTokens.size === fewest) best.push(candidate)
+      }
+      // A tie is not a winner. Picking one arbitrarily is how "sgh-site-map"
+      // landed on St Georges at Woking — the wrong hospital, stated confidently.
+      if (best.length > 1) {
+        reject("alias-matches-several-sites", `"${namedHospital}" fits ${best.length}: ${best.slice(0, 3).map((s) => s.name).join("; ")}`)
+        continue
+      }
+      site = best[0] ?? null
+    }
+
+    if (!site) {
+      // The alias is wrong, or ODS writes the name differently, or files the
+      // hospital under another trust. All three need a person, and all three are
+      // invisible if this silently falls through to guessing — so name what the
+      // trust actually has, which is the thing needed to fix it.
+      const had = sites.slice(0, 6).map((s) => s.name).join("; ")
+      reject(
+        "alias-names-an-unknown-hospital",
+        `"${namedHospital}" is not a site of ${source.trustCode} — that trust has: ${had}${sites.length > 6 ? ` (+${sites.length - 6} more)` : ""}`
+      )
       continue
     }
   } else if (sites.length === 1) {
