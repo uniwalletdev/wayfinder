@@ -28,7 +28,33 @@
 # These are the trusts' copyright, so the repo records where each one came from
 # (data/plan-sources.json) and ships only the derived SVGs the app needs, rather
 # than mirroring the originals.
-/map/
+#
+# The pattern is anchored and wildcarded because a real commit nearly shipped a
+# folder called "map- GOSH" holding 40-odd HEIC photos and a video — /map/ alone
+# does not match it, and photographs taken inside a children's hospital are the
+# last thing that should land in a public repo by accident.
+/map*/
+
+# Scratch output of the ingestion pipeline. Every one of these is rebuilt by
+# `npm run nhs:all` from data the scripts fetch themselves, so committing them
+# adds hundreds of megabytes that go stale immediately.
+#
+# NOT ignored, because the app or the pipeline reads them as INPUT:
+#   mapped-sites.json     the sheet register the venues are built from
+#   plan-sources.json     where each PDF came from, for attribution
+#   known-maps.json, hospital-aliases.json, venue-aliases.json — hand-written
+#   raw/ods/etr.csv       the trust list, small and stable
+/data/nhs-sites.json
+/data/footprints.geojson
+/data/geocode-cache.json
+/data/mapped-coverage.json
+/data/plan-rejected.json
+/data/raw/ods/ets.csv
+
+# Preview thumbnails: a review aid, regenerated on every run, never read by the
+# app. "prevnode" is the same thing under a mistyped path.
+/data/previews/
+/data/prev*/
 
 # debug
 npm-debug.log*
