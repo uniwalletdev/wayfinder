@@ -102,6 +102,36 @@ node scripts/nhs/approve-plans.mjs --dry-run
    `index.ts` doesn't need an import per hospital.
 6. **preview-sheets** — renders each sheet to `previews/<slug>.jpg` for review.
 
+### When ODS has the wrong website
+
+ODS is the source of truth for which trusts exist, but its recorded website goes
+stale — a trust rebrands, moves its documents, and the old URL dies. That costs
+twice: the crawl can't reach the site, and `approve-plans` refuses maps that
+*are* the trust's own as off-domain, because it's comparing against the old host.
+
+`trust-website-overrides.json` corrects it by hand. Both hosts count as the
+trust's, so a map found on either is attributable. Two entries so far — Mersey
+and West Lancashire (ODS still says `sthk.nhs.uk`; the maps are on
+`sthk.merseywestlancs.nhs.uk`) and Tameside and Glossop (recorded host stopped
+answering entirely).
+
+Only add a host you've confirmed in a browser belongs to that trust. This file
+widens what counts as the trust's own domain, and that check is the whole basis
+on which the material is attributed.
+
+### One document, one venue
+
+A trust reaches its own files by several routes — `www` and the bare domain,
+`http` and `https`, a media subdomain, the same PDF with a different cache-busting
+query. Whiston's floor map came back twice and Derriford's three times; each copy
+would have become its own venue on the same hospital.
+
+`approve-plans` keeps one. A trust doesn't publish two different maps under one
+filename, so trust plus filename identifies the document; across trusts, an
+identical path *and* query does (Basildon and Thurrock and Mid Essex merged and
+share a CMS, so they serve byte-identical URLs under two codes). Of the copies it
+prefers https, then the fewest query parameters, then the shortest.
+
 ### Hospitals that are already mapped stay as they are
 
 A trust publishes maps of its own hospitals, including the ones this app already
@@ -153,6 +183,7 @@ fix `spanM` and `plan` in `mapped-sites.json` and re-run `build-venues.mjs`.
 | `mapped-coverage.json` | `build-sites` | sites skipped because a fully-mapped venue covers them |
 | `mapped-sites.json` | hand-maintained | build config for sheet-derived venues (see below) |
 | `trust-websites.json` | `discover-plans` | trust ODS code → website, from the ODS ORD API |
+| `trust-website-overrides.json` | hand-maintained | corrections where the ODS website has gone stale |
 | `plan-candidates.json` | `discover-plans` | everything the crawl found |
 | `plan-sources.json` | `approve-plans` | the **approved** PDFs `fetch-plans` may download |
 | `plan-rejected.json` | `draft-sheets` | sheets refused, with the reason |

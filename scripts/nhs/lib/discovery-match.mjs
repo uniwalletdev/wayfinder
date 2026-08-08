@@ -163,6 +163,9 @@ export function sameHost(a, b) {
 // whether a hand-added map is even considered can be tested. The first entry in
 // known-maps.json carried the wrong trust code, which this rule quietly turns
 // into "off-domain, dropped".
+// Takes one website or several: a trust that has rebranded keeps serving from
+// both the host ODS recorded and the one it moved to, and both are its own.
+// data/trust-website-overrides.json is where the extra ones come from.
 export function onTrustDomain(url, trustWebsite) {
   const hostOf = (value) => {
     try {
@@ -172,9 +175,13 @@ export function onTrustDomain(url, trustWebsite) {
     }
   }
   const host = hostOf(url)
-  const trustHost = hostOf(trustWebsite ?? "")
-  if (!host || !trustHost) return false
-  return host === trustHost || host.endsWith(`.${trustHost}`) || trustHost.endsWith(`.${host}`)
+  if (!host) return false
+  const websites = Array.isArray(trustWebsite) ? trustWebsite : [trustWebsite]
+  return websites.some((website) => {
+    const trustHost = hostOf(website ?? "")
+    if (!trustHost) return false
+    return host === trustHost || host.endsWith(`.${trustHost}`) || trustHost.endsWith(`.${host}`)
+  })
 }
 
 export function scorePage(text, href) {

@@ -121,6 +121,15 @@ try {
   writeFileSync("data/trust-websites.json", JSON.stringify({
     R0A: "https://mft.nhs.uk",
     RJ1: "https://www.guysandstthomas.nhs.uk",
+    RDD: "https://www.basildonandthurrock.nhs.uk",
+    RQ8: "https://www.meht.nhs.uk",
+    // Recorded before the trust rebranded; the override below is where it lives
+    // now, and a map on either host is still the trust's own.
+    RBN: "https://www.sthk.nhs.uk",
+  }))
+
+  writeFileSync("data/trust-website-overrides.json", JSON.stringify({
+    overrides: { RBN: { websites: ["https://sthk.merseywestlancs.nhs.uk"] } },
   }))
 
   writeFileSync("data/plan-candidates.json", JSON.stringify({
@@ -132,15 +141,26 @@ try {
       // Reject: Wythenshawe already ships as a full venue, so republishing the
       // trust's own sheet would put a second pin on the same hospital.
       { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://mft.nhs.uk/files/wythenshawe-hospital-sitemap-3D.pdf", linkText: "Wythenshawe Hospital site map", kind: "site-map", confidence: "high" },
+      // Approve: on the host the trust moved to after rebranding, which ODS
+      // still doesn't know about. Without the override this reads as a
+      // third-party mirror and the trust's own map is thrown away.
+      { trustCode: "RBN", trustName: "Mersey and West Lancashire Teaching Hospitals NHS Trust", url: "https://sthk.merseywestlancs.nhs.uk/media/whiston-floor-map.pdf", linkText: "Whiston Hospital floor map", kind: "floor-plan", confidence: "high" },
       // Reject: right trust, but hosted somewhere we can't attribute.
       { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://cdn.somewhere-else.com/a-hospital-map.pdf", linkText: "Hospital map", kind: "site-map", confidence: "high" },
       // Reject: only matched the loose "contains the word map" signal.
       { trustCode: "RJ1", trustName: "Guy's and St Thomas' NHS Foundation Trust", url: "https://www.guysandstthomas.nhs.uk/roadmap.pdf", linkText: "Our roadmap", kind: "unknown", confidence: "low" },
+      // Reject: the same document the trust already publishes, reached by the
+      // bare domain instead of www. One PDF, one venue.
+      { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "http://mft.nhs.uk/files/royal-oldham-hospital-sitemap.pdf", linkText: "Royal Oldham Hospital site map", kind: "site-map", confidence: "high" },
       // Reject: high confidence but not a map kind we auto-approve.
       { trustCode: "RJ1", trustName: "Guy's and St Thomas' NHS Foundation Trust", url: "https://www.guysandstthomas.nhs.uk/ward-directory.pdf", linkText: "Ward directory", kind: "directory", confidence: "medium" },
       // Approve, and exercise the identifier guard: a filename starting with a
       // digit would generate `2024_SITE_MAP_VENUE`, which does not parse.
       { trustCode: "RJ1", trustName: "Guy's and St Thomas' NHS Foundation Trust", url: "https://www.guysandstthomas.nhs.uk/2024-evelina-hospital-map.pdf", linkText: "Evelina London site map", kind: "site-map", confidence: "high" },
+      // Reject: two trusts that merged serve one CMS, so the identical path and
+      // query is the identical document however many trust codes point at it.
+      { trustCode: "RDD", trustName: "Basildon and Thurrock University Hospitals NHS Foundation Trust", url: "https://www.basildonandthurrock.nhs.uk/download/southend-ground-floor-map.pdf?ver=31231", linkText: "Southend Hospital ground floor map", kind: "floor-plan", confidence: "high" },
+      { trustCode: "RQ8", trustName: "Mid Essex Hospital Services NHS Trust", url: "https://www.meht.nhs.uk/download/southend-ground-floor-map.pdf?ver=31231", linkText: "Southend Hospital ground floor map", kind: "floor-plan", confidence: "high" },
     ],
   }))
 
@@ -150,7 +170,20 @@ try {
   const approved = JSON.parse(readFileSync("data/plan-sources.json", "utf8")).sources
   const slugs = approved.map((s) => s.slug)
 
-  check("approves exactly the eligible candidates", approved.length === 3, `${approved.length}: ${slugs.join(", ")}`)
+  check("approves exactly the eligible candidates", approved.length === 5, `${approved.length}: ${slugs.join(", ")}`)
+  check("accepts a host the trust moved to after rebranding", slugs.includes("whiston-floor-map"), slugs.join(", "))
+  check(
+    "takes one copy of a document served from two of its own hosts",
+    approved.filter((s) => /royal-oldham-hospital-sitemap/.test(s.url)).length === 1,
+    approved.filter((s) => /royal-oldham/.test(s.url)).map((s) => s.url).join(", ")
+  )
+  check("prefers https for the copy it keeps", !approved.some((s) => s.url.startsWith("http://")), "kept an http URL")
+  check(
+    "takes one copy of a document two merged trusts both publish",
+    approved.filter((s) => /southend-ground-floor-map/.test(s.url)).length === 1,
+    approved.filter((s) => /southend/.test(s.url)).map((s) => s.url).join(", ")
+  )
+  check("counts the copies it dropped", /"duplicateDocument":2/.test(out), out.match(/rejected: .*/)?.[0])
   check("approves a same-host site map", slugs.includes("royal-oldham-hospital-sitemap"), slugs.join(", "))
   check("accepts a subdomain of the trust's host", slugs.includes("altrincham-hospital-floor-plan"), slugs.join(", "))
   check("refuses a hospital that already ships as a venue", !approved.some((s) => /wythenshawe/.test(s.url)), "duplicated a mapped venue")
@@ -167,7 +200,7 @@ try {
   // Re-running must not duplicate: the crawl re-finds the same PDFs every time.
   execFileSync("node", ["scripts/nhs/approve-plans.mjs"], { encoding: "utf8" })
   const second = JSON.parse(readFileSync("data/plan-sources.json", "utf8")).sources
-  check("is idempotent across runs", second.length === 3, `grew to ${second.length}`)
+  check("is idempotent across runs", second.length === 5, `grew to ${second.length}`)
 
   group("generate-registry")
   // A drafted sheet whose venue module doesn't exist yet must be skipped, not

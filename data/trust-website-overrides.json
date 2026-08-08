@@ -1,0 +1,20 @@
+{
+  "description": "Corrections to the trust website ODS records, for trusts that have moved or rebranded since. ODS is the source of truth for which trust exists and what it is called, but its recorded website goes stale: a trust rebrands, moves its documents to a new domain, and the old URL either dies or stops carrying the maps. That costs twice over — the crawl fails to reach the site at all, and approve-plans refuses maps that ARE the trust's own as 'off-domain', because it is comparing against the old host.",
+  "howToAdd": "Only add a host you have confirmed in a browser belongs to that trust. This file widens what counts as the trust's own domain, and that domain check is the whole basis on which the material is attributed and republished — a wrong entry here republishes someone else's map under a trust's name. Record where the site is and how you know, and keep the ODS host in the list where it still works.",
+  "overrides": {
+    "RBN": {
+      "trustName": "Mersey and West Lancashire Teaching Hospitals NHS Trust",
+      "websites": [
+        "https://sthk.merseywestlancs.nhs.uk"
+      ],
+      "note": "ODS records www.sthk.nhs.uk, from before St Helens and Knowsley became Mersey and West Lancashire. The trust serves its maps from sthk.merseywestlancs.nhs.uk — the same site under the new name — so the Whiston floor map and site map were both refused as off-domain despite being the trust's own."
+    },
+    "RMP": {
+      "trustName": "Tameside and Glossop Integrated Care NHS Foundation Trust",
+      "websites": [
+        "https://tamesideandglossopicft.nhs.uk"
+      ],
+      "note": "ODS records www.tamesidehospital.nhs.uk, which no longer answers — the crawl failed on it twice. The trust's live site is tamesideandglossopicft.nhs.uk, reached during the crawl only because another trust linked to its site map."
+    }
+  }
+}
