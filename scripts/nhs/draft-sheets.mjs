@@ -20,6 +20,7 @@
 import { existsSync } from "fs"
 import { extractLabels } from "../maps/extract.mjs"
 import { nameTokens, documentContainment, footprintSpanM, DOCUMENT_STOPWORDS } from "./lib/match.mjs"
+import { identifyingTokens, looksSpecialtyQualified } from "./lib/site-name.mjs"
 import { looksLikeHospital } from "./lib/ods.mjs"
 import { floorFromSlug, stemWithoutFloor } from "./lib/floors.mjs"
 import { dataPath, repoPath, readJson, writeJson, log } from "./lib/paths.mjs"
@@ -428,6 +429,23 @@ for (const source of sourcesDoc.sources) {
   // the labels account for. Only the "> 0" matters — any shared word will do.
   const echoesSite = siteTokens.size === 0 || contains(siteTokens, labelTokens) > 0
 
+  // …but "any shared word" is not a test when every candidate shares the same
+  // words. The Pinderfields sheet was matched to "Dewsbury & District Hospital-
+  // Combined Elective Surgical Hub" — a different hospital ten miles away — and
+  // passed this check on the word "hospital" alone, then shipped under the
+  // Dewsbury name at Dewsbury's coordinates. So the echo has to be carried by a
+  // token that actually identifies a place: the hospital's own name, not the
+  // vocabulary every NHS site shares.
+  const siteIdentity = identifyingTokens(site.name)
+  const echoesIdentity = siteIdentity.size === 0 || contains(siteIdentity, labelTokens) > 0
+  if (!echoesIdentity) {
+    reject(
+      "site-name-not-on-sheet",
+      `no label mentions ${[...siteIdentity].join("/")} — "${site.name}" is probably the wrong site for this sheet`
+    )
+    continue
+  }
+
   // Scale from whichever record of this hospital actually has a footprint.
   //
   // ODS files a hospital more than once, and the copy with the best NAME is not
@@ -490,6 +508,11 @@ for (const source of sourcesDoc.sources) {
       labels: labels.length,
       aspect: Number(aspect.toFixed(2)),
       echoesSiteName: echoesSite,
+      // ODS files departments as sites, so a sheet can match a record named for
+      // a specialty rather than the hospital ("Immunology - Derriford
+      // Hospital"). Flagged rather than rejected: a specialist hospital's real
+      // name reads the same way, and only a person can tell them apart.
+      specialtyQualifiedName: looksSpecialtyQualified(site.name),
       sourceUrl: source.url,
       draftedAt: new Date().toISOString(),
     },

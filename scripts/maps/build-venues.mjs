@@ -63,7 +63,18 @@ async function placeFloor(v, floor, usedIds) {
     usedIds[base] = n + 1
     const id = n === 0 ? base : `${base}-${n + 1}`
     const [lat, lng] = toLatLng(l.nx, l.ny)
-    return { id, name: l.text, type: l.type, lat, lng, floor: floor.floor }
+    // A storey read out of the label goes in the description, not the floor.
+    // The pin has to stay on the sheet it was extracted from: a hospital that
+    // publishes one site map listing "Allebone (Second Floor)" has no floor-2
+    // plan to draw, so moving the waypoint there would hide it behind a floor
+    // selector with nothing under it. In the description it still reaches the
+    // destination card and search, and it is the record a later per-floor
+    // ingest needs. Waypoints whose floor comes from the FILENAME are a
+    // different case and are placed on their real storey, above.
+    return {
+      id, name: l.text, type: l.type, lat, lng, floor: floor.floor,
+      description: l.storeyLabel ?? undefined,
+    }
   })
 
   const [bS, bW] = toLatLng(0, 1) // sheet bottom-left  -> [latS, lngW]
@@ -107,7 +118,8 @@ async function build(v) {
   L.push("  ],")
   L.push("  waypoints: [")
   for (const w of wps) {
-    L.push(`    { id: "${w.id}", name: "${esc(w.name)}", type: "${w.type}", coordinates: { lat: ${w.lat}, lng: ${w.lng} }, floor: ${w.floor} },`)
+    const desc = w.description ? `, description: "${esc(w.description)}"` : ""
+    L.push(`    { id: "${w.id}", name: "${esc(w.name)}", type: "${w.type}", coordinates: { lat: ${w.lat}, lng: ${w.lng} }, floor: ${w.floor}${desc} },`)
   }
   L.push("  ],")
   L.push("}")

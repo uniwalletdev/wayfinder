@@ -360,7 +360,7 @@
       "floorOf": null,
       "stem": "west middlesex university hospital site map",
       "odsCode": "RQMD3",
-      "name": "West Middlesex Hospital - General",
+      "name": "West Middlesex University Hospital",
       "subtitle": "Chelsea and Westminster Hospital NHS Foundation Trust · TW7 6AF",
       "file": "map/auto/west-middlesex-university-hospital-site-map.pdf",
       "page": 1,
@@ -438,7 +438,7 @@
       "floorOf": null,
       "stem": "site 1253769 hull teaching castle hill map",
       "odsCode": "G4V1I",
-      "name": "Castle Hill Hospital Elective Surgical Hub",
+      "name": "Castle Hill Hospital",
       "subtitle": "Hull University Teaching Hospitals NHS Trust · HU16 5JQ",
       "file": "map/auto/site-1253769-hull-teaching-castle-hill-map.pdf",
       "page": 1,
@@ -594,7 +594,7 @@
       "floorOf": null,
       "stem": "hospital map external 2025",
       "odsCode": "RPAP1",
-      "name": "Medway Maritime Hospital - Anaesthetics (Pain)",
+      "name": "Medway Maritime Hospital",
       "subtitle": "Medway NHS Foundation Trust · ME7 5NY",
       "file": "map/auto/hospital-map-external-2025.pdf",
       "page": 1,
@@ -633,7 +633,7 @@
       "floorOf": null,
       "stem": "whiston site map full site",
       "odsCode": "M8D6F",
-      "name": "Whiston Hospital Elective Surgical Hub",
+      "name": "Whiston Hospital",
       "subtitle": "Mersey and West Lancashire Teaching Hospitals NHS Trust · L35 5DR",
       "file": "map/auto/whiston-site-map-full-site.pdf",
       "page": 1,
@@ -945,7 +945,7 @@
       "floorOf": null,
       "stem": "alex map a4",
       "odsCode": "C2P9J",
-      "name": "Alexandra Hospital Elective Surgical Hub",
+      "name": "Alexandra Hospital",
       "subtitle": "Worcestershire Acute Hospitals NHS Trust · B98 7UB",
       "file": "map/auto/alex-map-a4.pdf",
       "page": 1,
@@ -1312,7 +1312,7 @@
     {
       "slug": "hull-royal-infirmary-site-map",
       "id": "hull-royal-infirmary-site-map-venue",
-      "name": "West Hull Health Hub",
+      "name": "Hull Royal Infirmary",
       "subtitle": "Hull University Teaching Hospitals NHS Trust · HU4 6BN",
       "file": "map/auto/hull-royal-infirmary-site-map.pdf",
       "page": 1,
@@ -1349,7 +1349,7 @@
     {
       "slug": "maidstone-hospital-mappdf",
       "id": "maidstone-hospital-mappdf-venue",
-      "name": "The Maidstone Hospital - General Surgery",
+      "name": "Maidstone Hospital",
       "subtitle": "Maidstone and Tunbridge Wells NHS Trust · ME16 9QQ",
       "file": "map/auto/maidstone-hospital-mappdf.pdf",
       "page": 1,
@@ -1423,8 +1423,8 @@
     {
       "slug": "pinderfields-hospital-map",
       "id": "pinderfields-hospital-map-venue",
-      "name": "Dewsbury & District Hospital-Combined Elective Surgical Hub",
-      "subtitle": "Mid Yorkshire Teaching NHS Trust · WF13 4HS",
+      "name": "Pinderfields Hospital",
+      "subtitle": "Mid Yorkshire Teaching NHS Trust",
       "file": "map/auto/pinderfields-hospital-map.pdf",
       "page": 1,
       "center": [
@@ -1445,7 +1445,7 @@
         "Drop off route to A&E",
         "Leeds Via M1"
       ],
-      "notes": "Site map published by Mid Yorkshire Teaching NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Site map published by Mid Yorkshire Teaching NHS Trust. WARNING: this sheet was matched to the wrong ODS record (Dewsbury & District, about ten miles away), so its map position and postcode are not this hospital's and have not been re-derived. The plan and its labels are Pinderfields'.",
       "auto": {
         "odsCode": "P6M3A",
         "spanSource": "osm-footprint",
@@ -1460,7 +1460,7 @@
     {
       "slug": "internal-site-map-north-tees-2019",
       "id": "internal-site-map-north-tees-2019-venue",
-      "name": "Uh North Tees Dermatology",
+      "name": "University Hospital of North Tees",
       "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS19 8PE",
       "file": "map/auto/internal-site-map-north-tees-2019.pdf",
       "page": 1,
@@ -1497,7 +1497,7 @@
     {
       "slug": "external-site-map-north-tees-2019",
       "id": "external-site-map-north-tees-2019-venue",
-      "name": "Uh North Tees Dermatology",
+      "name": "University Hospital of North Tees",
       "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS19 8PE",
       "file": "map/auto/external-site-map-north-tees-2019.pdf",
       "page": 1,
@@ -1534,7 +1534,7 @@
     {
       "slug": "internal-site-map-hartlepool-2018",
       "id": "internal-site-map-hartlepool-2018-venue",
-      "name": "Uh Hartlepool Dermatology",
+      "name": "University Hospital of Hartlepool",
       "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS24 9AH",
       "file": "map/auto/internal-site-map-hartlepool-2018.pdf",
       "page": 1,
@@ -1756,7 +1756,7 @@
     {
       "slug": "lincoln-hospital-map-level-1",
       "id": "lincoln-hospital-map-level-1-venue",
-      "name": "Lincoln Surgery",
+      "name": "Lincoln County Hospital",
       "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
       "file": "map/auto/lincoln-hospital-map-level-1.pdf",
       "page": 1,
@@ -1793,7 +1793,7 @@
     {
       "slug": "lincoln-hospital-maps-level-2-blank",
       "id": "lincoln-hospital-maps-level-2-blank-venue",
-      "name": "Lincoln Surgery",
+      "name": "Lincoln County Hospital",
       "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
       "file": "map/auto/lincoln-hospital-maps-level-2-blank.pdf",
       "page": 1,
@@ -1830,7 +1830,7 @@
     {
       "slug": "lincoln-hospital-map-level-3",
       "id": "lincoln-hospital-map-level-3-venue",
-      "name": "Lincoln Surgery",
+      "name": "Lincoln County Hospital",
       "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
       "file": "map/auto/lincoln-hospital-map-level-3.pdf",
       "page": 1,
@@ -1867,7 +1867,7 @@
     {
       "slug": "site-map-2024pdf",
       "id": "site-map-2024pdf-venue",
-      "name": "Immunology - Derriford Hospital",
+      "name": "Derriford Hospital",
       "subtitle": "University Hospitals Plymouth NHS Trust · PL6 8DH",
       "file": "map/auto/site-map-2024pdf.pdf",
       "page": 1,
@@ -1904,7 +1904,7 @@
     {
       "slug": "derriford-hospital-site-mappdf",
       "id": "derriford-hospital-site-mappdf-venue",
-      "name": "Immunology - Derriford Hospital",
+      "name": "Derriford Hospital",
       "subtitle": "University Hospitals Plymouth NHS Trust · PL6 8DH",
       "file": "map/auto/derriford-hospital-site-mappdf.pdf",
       "page": 1,
@@ -1978,7 +1978,7 @@
     {
       "slug": "royal-berkshire-hospital-map-jan23",
       "id": "royal-berkshire-hospital-map-jan23-venue",
-      "name": "P Rbh Virtual Hospital",
+      "name": "Royal Berkshire Hospital",
       "subtitle": "Royal Berkshire NHS Foundation Trust · RG1 5AN",
       "file": "map/auto/royal-berkshire-hospital-map-jan23.pdf",
       "page": 1,

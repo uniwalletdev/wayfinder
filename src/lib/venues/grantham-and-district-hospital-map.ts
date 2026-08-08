@@ -61,7 +61,7 @@ export const GRANTHAM_AND_DISTRICT_HOSPITAL_MAP_VENUE: Venue = {
     { id: "diabetes-centre-f0", name: "Diabetes Centre", type: "department", coordinates: { lat: 52.920209, lng: -0.641254 }, floor: 0 },
     { id: "sexual-health-f0", name: "Sexual Health", type: "other", coordinates: { lat: 52.92018, lng: -0.638536 }, floor: 0 },
     { id: "corridors-f0", name: "Corridors", type: "other", coordinates: { lat: 52.920072, lng: -0.644211 }, floor: 0 },
-    { id: "badcef-f0", name: "BADCEF", type: "other", coordinates: { lat: 52.91987, lng: -0.644211 }, floor: 0 },
+    { id: "badcef-f0", name: "Badcef", type: "other", coordinates: { lat: 52.91987, lng: -0.644211 }, floor: 0 },
     { id: "ophthalmology-f0", name: "Ophthalmology", type: "department", coordinates: { lat: 52.920007, lng: -0.641121 }, floor: 0 },
   ],
 }

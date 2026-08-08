@@ -15,7 +15,7 @@ export const CHARING_CROSS_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map with building entrances, step-free routes and the nearest Underground stations (Hammersmith, Barons Court, West Kensington)." },
-  quickAccess: ["Main entrance", "A&E", "A&E and Urgent Treatment Centre entrance", "Main outpatients (First floor)", "Tower block"],
+  quickAccess: ["Main entrance", "A&E", "A&E and Urgent Treatment Centre entrance", "Main outpatients", "Tower block"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/charing-cross/sitemap.svg", bounds: [[51.485746, -0.223311], [51.488732, -0.216531]] },
   ],
@@ -49,7 +49,7 @@ export const CHARING_CROSS_VENUE: Venue = {
     { id: "car-park-f0", name: "Car park", type: "other", coordinates: { lat: 51.486267, lng: -0.21887 }, floor: 0 },
     { id: "sports-social-club-f0", name: "Sports & social club", type: "other", coordinates: { lat: 51.4862, lng: -0.217593 }, floor: 0 },
     { id: "hammersmith-f0", name: "Hammersmith", type: "other", coordinates: { lat: 51.486225, lng: -0.222937 }, floor: 0 },
-    { id: "main-outpatients-first-floor-f0", name: "Main outpatients (First floor)", type: "department", coordinates: { lat: 51.486027, lng: -0.219742 }, floor: 0 },
+    { id: "main-outpatients-first-floor-f0", name: "Main outpatients", type: "department", coordinates: { lat: 51.486027, lng: -0.219742 }, floor: 0, description: "First Floor" },
     { id: "fracture-clinic-f0", name: "Fracture Clinic", type: "department", coordinates: { lat: 51.485982, lng: -0.221898 }, floor: 0 },
     { id: "main-entrance-f0", name: "Main entrance", type: "exit", coordinates: { lat: 51.485998, lng: -0.220578 }, floor: 0 },
   ],

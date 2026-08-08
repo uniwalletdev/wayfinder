@@ -15,7 +15,7 @@ export const QCCH_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Maternity and neonatal hospital sharing the Hammersmith Hospital site; floor legend runs GF (main reception) up to level 4 (neonatal intensive care)." },
-  quickAccess: ["Main entrance", "Delivery suite", "Birth centre", "Centre for fetal care", "Neonatal intensive Care - Unit"],
+  quickAccess: ["Main entrance", "Delivery suite", "Birth centre Edith Dare ward", "Centre for fetal care Early pregnancy unit (EPU)", "Neonatal intensive Care"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/qcch/sitemap.svg", bounds: [[51.515818, -0.238648], [51.518548, -0.23244]] },
   ],

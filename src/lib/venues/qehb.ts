@@ -15,7 +15,7 @@ export const QEHB_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Large acute site with numbered entrances 1–6; free shuttle bus between car parks and entrances. Nearest station University." },
-  quickAccess: ["Main Entrance", "A&E", "Acute Medical Unit (AMU)", "Heritage Building", "Cancer Centre"],
+  quickAccess: ["A&E", "Acute Medical Unit (AMU) entrance", "Cancer Centre"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/qehb/sitemap.svg", bounds: [[52.445119, -1.945529], [52.454266, -1.934917]] },
   ],

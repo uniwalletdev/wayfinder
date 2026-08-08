@@ -15,7 +15,7 @@ export const TRAFFORD_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Colour-zoned map (Blue / Green / Red) with a ground and first-floor plan and a full department directory. AccessAble accessibility guide available." },
-  quickAccess: ["Main Entrance", "Blue Zone", "Green Zone", "Red Zone", "Urgent Care Centre"],
+  quickAccess: ["Main Entrance", "Urgent Care Centre"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/trafford/sitemap.svg", bounds: [[53.455216, -2.356791], [53.457203, -2.352266]] },
   ],

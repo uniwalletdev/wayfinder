@@ -15,14 +15,14 @@ export const OXFORD_ROAD_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Shared campus of Manchester Royal Infirmary, Saint Mary's, the Royal Eye Hospital and Royal Manchester Children's Hospital; zones A–N map to building entrances." },
-  quickAccess: ["Manchester Royal Infirmary", "Manchester Royal Eye Hospital", "Saint Mary's Hospital", "Royal Manchester Children's Hospital", "Adult Emergency Department (A&E)"],
+  quickAccess: ["Manchester Royal Infirmary", "Manchester Royal Eye Hospital", "Saint Mary’s Hospital", "Royal Manchester Children’s Hospital", "Adult Emergency Department (A&E)"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/oxford-road/sitemap.svg", bounds: [[53.460252, -2.229371], [53.464825, -2.218507]] },
   ],
   waypoints: [
     { id: "service-building-f0", name: "Service Building", type: "department", coordinates: { lat: 53.463904, lng: -2.221691 }, floor: 0 },
     { id: "childrens-emergency-department-a-e-f0", name: "Children’s Emergency Department (A&E)", type: "department", coordinates: { lat: 53.463389, lng: -2.223131 }, floor: 0 },
-    { id: "radu-f0", name: "RADU", type: "other", coordinates: { lat: 53.463383, lng: -2.225951 }, floor: 0 },
+    { id: "radu-f0", name: "Radu", type: "other", coordinates: { lat: 53.463383, lng: -2.225951 }, floor: 0 },
     { id: "manchester-royal-eye-hospital-f0", name: "Manchester Royal Eye Hospital", type: "department", coordinates: { lat: 53.463295, lng: -2.224336 }, floor: 0 },
     { id: "saint-marys-hospital-f0", name: "Saint Mary’s Hospital", type: "department", coordinates: { lat: 53.463295, lng: -2.223733 }, floor: 0 },
     { id: "harrington-building-f0", name: "Harrington Building", type: "department", coordinates: { lat: 53.463283, lng: -2.222022 }, floor: 0 },

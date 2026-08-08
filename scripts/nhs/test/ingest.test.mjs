@@ -381,7 +381,12 @@ group("hospitals that are already mapped")
     // Different hospitals that merely read alike — approve.
     ["RJ1", "Evelina London site map 2024-evelina-hospital-map.pdf", null],
     ["RK9", "North Devon north-devon-2d-map.pdf", null],
-    ["RWA", "Hull Royal Infirmary Hull-Royal-Infirmary-Site-Map.pdf", null],
+    // Hull Royal Infirmary was on the approve list while its venue carried the
+    // ODS name "West Hull Health Hub" — the matcher could not see that the
+    // hospital was already mapped, because nothing it compared said so. With
+    // the venue named after the hospital the sheet draws, refusing a second map
+    // of it is the filter working. Same movement as Chelsea & Westminster below.
+    ["RWA", "Hull Royal Infirmary Hull-Royal-Infirmary-Site-Map.pdf", "hull-royal-infirmary-site-map"],
     // Was in the "approve" list until Chelsea & Westminster became a venue in
     // its own right. Refusing a second map for a hospital already mapped is the
     // filter working, not failing — and this case will keep moving as the venue

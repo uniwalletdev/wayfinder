@@ -15,12 +15,12 @@ export const PILGRIM_GROUND_FLOOR_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
-  quickAccess: ["Urgent Treatment Centre", "Emergency Department and Urgent Treatment Centre", "Main Entrance", "PGME", "Day Nursery"],
+  quickAccess: ["Urgent Treatment Centre", "Emergency Department and Urgent Treatment Centre", "Main Entrance", "Pgme", "Day Nursery"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/pilgrim-ground-floor/sitemap.svg", bounds: [[52.989722, -0.013318], [52.992578, -0.006602]] },
   ],
   waypoints: [
-    { id: "pgme-f0", name: "PGME", type: "other", coordinates: { lat: 52.992302, lng: -0.01227 }, floor: 0 },
+    { id: "pgme-f0", name: "Pgme", type: "other", coordinates: { lat: 52.992302, lng: -0.01227 }, floor: 0 },
     { id: "day-nursery-f0", name: "Day Nursery", type: "other", coordinates: { lat: 52.991967, lng: -0.008429 }, floor: 0 },
     { id: "education-centre-f0", name: "Education Centre", type: "department", coordinates: { lat: 52.991951, lng: -0.01227 }, floor: 0 },
     { id: "physiotherapy-f0", name: "Physiotherapy", type: "department", coordinates: { lat: 52.991645, lng: -0.009206 }, floor: 0 },
@@ -54,7 +54,7 @@ export const PILGRIM_GROUND_FLOOR_VENUE: Venue = {
     { id: "gynaecology-f0", name: "Gynaecology", type: "other", coordinates: { lat: 52.99044, lng: -0.009552 }, floor: 0 },
     { id: "chemotherapy-f0", name: "Chemotherapy", type: "department", coordinates: { lat: 52.990435, lng: -0.010865 }, floor: 0 },
     { id: "discharge-lounge-f0", name: "Discharge Lounge", type: "department", coordinates: { lat: 52.990374, lng: -0.012489 }, floor: 0 },
-    { id: "stairs-f0", name: "Stairs", type: "other", coordinates: { lat: 52.990383, lng: -0.009906 }, floor: 0 },
+    { id: "stairs-f0", name: "Stairs", type: "stairs", coordinates: { lat: 52.990383, lng: -0.009906 }, floor: 0 },
     { id: "lift-f0", name: "Lift", type: "lift", coordinates: { lat: 52.990338, lng: -0.009899 }, floor: 0 },
     { id: "bostonian-f0", name: "Bostonian", type: "other", coordinates: { lat: 52.990299, lng: -0.011936 }, floor: 0 },
     { id: "lift-stairs-f0", name: "Lift Stairs", type: "lift", coordinates: { lat: 52.990224, lng: -0.009461 }, floor: 0 },

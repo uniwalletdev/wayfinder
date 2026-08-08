@@ -15,7 +15,7 @@ export const SHEFFIELD_TEACHING_HOSPITALS_NHS_FOUNDATION_TRUST_MAP_VENUE: Venue 
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Sheffield Teaching Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
-  quickAccess: ["Reaching us by car", "Public transport", "From the M1", "Exit the motorway at", "How to find us"],
+  quickAccess: ["Reaching us by car", "Public transport", "From the M1", "Exit the motorway at"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/sheffield-teaching-hospitals-nhs-foundation-trust-map/sitemap.svg", bounds: [[53.376913, -1.496719], [53.379833, -1.489943]] },
   ],
@@ -24,7 +24,6 @@ export const SHEFFIELD_TEACHING_HOSPITALS_NHS_FOUNDATION_TRUST_MAP_VENUE: Venue 
     { id: "public-transport-f0", name: "Public transport", type: "other", coordinates: { lat: 53.379566, lng: -1.494297 }, floor: 0 },
     { id: "from-the-m1-f0", name: "From the M1", type: "other", coordinates: { lat: 53.379443, lng: -1.496181 }, floor: 0 },
     { id: "exit-the-motorway-at-f0", name: "Exit the motorway at", type: "other", coordinates: { lat: 53.379443, lng: -1.495516 }, floor: 0 },
-    { id: "how-to-find-us-f0", name: "How to find us", type: "other", coordinates: { lat: 53.379334, lng: -1.492634 }, floor: 0 },
     { id: "j33-and-follow-the-a630-and-a57-into-f0", name: "J33 and follow the A630 and A57 into", type: "other", coordinates: { lat: 53.379383, lng: -1.495762 }, floor: 0 },
     { id: "sheffield-f0", name: "Sheffield.", type: "other", coordinates: { lat: 53.379323, lng: -1.496267 }, floor: 0 },
     { id: "central-campus-f0", name: "Central Campus", type: "other", coordinates: { lat: 53.378932, lng: -1.49257 }, floor: 0 },
@@ -40,7 +39,7 @@ export const SHEFFIELD_TEACHING_HOSPITALS_NHS_FOUNDATION_TRUST_MAP_VENUE: Venue 
     { id: "help-with-your-travel-expenses-f0", name: "Help with your travel expenses", type: "other", coordinates: { lat: 53.377953, lng: -1.491 }, floor: 0 },
     { id: "the-northern-general-hospital-f0", name: "The Northern General Hospital", type: "department", coordinates: { lat: 53.377893, lng: -1.492595 }, floor: 0 },
     { id: "10-30am-and-3pm-f0", name: "10.30am and 3pm", type: "other", coordinates: { lat: 53.377768, lng: -1.494073 }, floor: 0 },
-    { id: "pil627-f0", name: "PIL627", type: "other", coordinates: { lat: 53.37714, lng: -1.494707 }, floor: 0 },
-    { id: "pd6466-sku-32s02sthrhhmap-f0", name: "PD6466. SKU 32S02STHRHHMAP", type: "other", coordinates: { lat: 53.377094, lng: -1.493839 }, floor: 0 },
+    { id: "pil627-f0", name: "Pil627", type: "other", coordinates: { lat: 53.37714, lng: -1.494707 }, floor: 0 },
+    { id: "pd6466-sku-32s02sthrhhmap-f0", name: "Pd6466. Sku 32s02sthrhhmap", type: "other", coordinates: { lat: 53.377094, lng: -1.493839 }, floor: 0 },
   ],
 }

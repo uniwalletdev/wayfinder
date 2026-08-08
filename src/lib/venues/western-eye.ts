@@ -15,7 +15,7 @@ export const WESTERN_EYE_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "24-hour eye A&E. Nearest stations Marylebone, Baker Street and Edgware Road; floor legend GF–4." },
-  quickAccess: ["Main entrance", "Eye A&E department", "Macular clinic", "Day care unit", "Alex Cross ward"],
+  quickAccess: ["Eye A&E department", "Macular clinic Optician Toilets", "Day care unit Theatres"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/western-eye/sitemap.svg", bounds: [[51.519835, -0.165482], [51.521741, -0.16115]] },
   ],
@@ -26,11 +26,10 @@ export const WESTERN_EYE_VENUE: Venue = {
     { id: "west-london-day-centre-f0", name: "West London Day Centre", type: "department", coordinates: { lat: 51.52073, lng: -0.162932 }, floor: 0 },
     { id: "cafeteria-toilets-f0", name: "Cafeteria Toilets", type: "canteen", coordinates: { lat: 51.520637, lng: -0.16171 }, floor: 0 },
     { id: "orthoptics-and-visual-fields-outpatients-f0", name: "Orthoptics and visual fields (outpatients)", type: "department", coordinates: { lat: 51.520565, lng: -0.161561 }, floor: 0 },
-    { id: "gf-a-e-f0", name: "GF A&E", type: "department", coordinates: { lat: 51.520433, lng: -0.162207 }, floor: 0 },
+    { id: "gf-a-e-f0", name: "GF a&E", type: "department", coordinates: { lat: 51.520433, lng: -0.162207 }, floor: 0 },
     { id: "stop-n-main-entrance-ground-floor-f0", name: "Stop N Main entrance Ground floor", type: "exit", coordinates: { lat: 51.520422, lng: -0.165015 }, floor: 0 },
     { id: "eye-a-e-department-f0", name: "Eye A&E department", type: "department", coordinates: { lat: 51.520374, lng: -0.164239 }, floor: 0 },
     { id: "macular-clinic-optician-toilets-f0", name: "Macular clinic Optician Toilets", type: "toilet", coordinates: { lat: 51.520177, lng: -0.161689 }, floor: 0 },
-    { id: "marylebone-station-f0", name: "Marylebone Station", type: "other", coordinates: { lat: 51.519992, lng: -0.165109 }, floor: 0 },
     { id: "marylebone-f0", name: "Marylebone", type: "other", coordinates: { lat: 51.519973, lng: -0.1648 }, floor: 0 },
   ],
 }

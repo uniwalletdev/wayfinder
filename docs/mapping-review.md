@@ -8,6 +8,68 @@ Measurements in this document come from `scripts/maps/audit-venues.mjs`, added
 alongside it. Run `node scripts/maps/audit-venues.mjs` for the scoreboard,
 `--full` for every finding, `--json` to diff two runs.
 
+**The findings below describe the state at review time.** Everything measured
+here was true of `main` at `eb2a15f`. What has since been fixed on this branch
+is recorded in the next section; the diagnosis is left as written so the
+before/after is legible.
+
+---
+
+## Fixed on this branch
+
+| | before | after |
+| --- | ---: | ---: |
+| Grades | A:2 B:0 C:5 D:33 E:22 **F:10** | A:2 B:1 C:6 D:35 E:27 **F:1** |
+| Label problems | 417 | 102 |
+| `quickAccess` chips that render nothing | 25 (9 venues) | 0 |
+| Venues named after the wrong ODS record | 21 | 4 |
+
+- **Label rules moved to `scripts/maps/lib/labels.mjs` and unit tested.** They
+  previously lived inside `extract.mjs`, which cannot be imported without pdfjs
+  and a real PDF — which is why they went untested long enough to ship a
+  font-decoding failure as a waypoint name. 55 tests, every case a string that
+  actually shipped.
+- **Sheet furniture no longer becomes a destination**: the title block, the key,
+  the alphabetical directory table, staff-only parking, transport interchanges,
+  and three undecodable font-subset strings. 38 waypoints dropped.
+- **414 labels title-cased**, with hospital acronyms (A&E, WC, CCU, NICU…)
+  preserved.
+- **29 waypoints retyped**, including every `STAIRWELL` on the estate, which was
+  typed `other` — so `buildRoute()` with `preference: "fastest"` could never
+  offer stairs even where the sheet had drawn twelve of them.
+- **52 waypoints carry their storey** in `description` instead of buried in the
+  name (`"Allebone (Second Floor)"` → `"Allebone"` + `"Second Floor"`). The pin
+  stays on the sheet's floor deliberately — see defect 4 for why moving it would
+  make things worse until per-floor plans exist.
+- **17 venues renamed** from the specialty-level ODS record to the hospital the
+  sheet actually draws, each provable from the sheet's own title label:
+  `"Immunology - Derriford Hospital"` → `"Derriford Hospital"`,
+  `"Lincoln Surgery"` → `"Lincoln County Hospital"`,
+  `"Uh North Tees Dermatology"` → `"University Hospital of North Tees"`, and
+  **`"Dewsbury & District Hospital-Combined Elective Surgical Hub"` →
+  `"Pinderfields Hospital"`**.
+- **A gate so it stops recurring** (`draft-sheets.mjs`, `lib/site-name.mjs`):
+  a sheet is now rejected unless a label echoes a token that *identifies* the
+  site. The old check passed Pinderfields-as-Dewsbury on the shared word
+  "hospital". Specialty-qualified ODS names are flagged in the draft's
+  provenance for a human to judge, not renamed automatically — a genuinely
+  specialist hospital reads the same way.
+- **Eight unreferenced venue modules and their orphaned floor-plan assets
+  deleted** — left behind when their sheets were regrouped into multi-floor
+  venues.
+
+Still unfixed, and unfixable without the source PDFs (`/map/` is gitignored) or
+a human eye: everything in defects 1–3, the four venues whose correct name
+cannot be derived from the repo (`sgh-site-map`,
+`sheffield-teaching-hospitals-…`, `level-3-floorplan-cuh-map`,
+`community-diagnostic-centre-site-map`), and **Pinderfields' coordinates**,
+which came from the Dewsbury record along with its name. The name is corrected
+from the sheet; the position cannot be, so the venue now says so in its own
+notes rather than quietly asserting a wrong location.
+
+Grades barely moved, and that is the honest result: this pass fixed what the
+venues *say*, not what they *are*. 71 of 72 still have no corridor network.
+
 ---
 
 ## Verdict

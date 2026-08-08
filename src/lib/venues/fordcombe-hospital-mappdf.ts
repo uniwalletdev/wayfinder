@@ -15,12 +15,11 @@ export const FORDCOMBE_HOSPITAL_MAPPDF_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Maidstone and Tunbridge Wells NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
-  quickAccess: ["Main entrance and reception", "Main entrance", "Welcome to Fordcombe Hospital", "Department", "Area"],
+  quickAccess: ["Main entrance and reception", "Main entrance", "Department", "Area"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/fordcombe-hospital-mappdf/sitemap.svg", bounds: [[51.133082, 0.184951], [51.13594, 0.191393]] },
   ],
   waypoints: [
-    { id: "welcome-to-fordcombe-hospital-f0", name: "Welcome to Fordcombe Hospital", type: "department", coordinates: { lat: 51.135449, lng: 0.185878 }, floor: 0 },
     { id: "department-f0", name: "Department", type: "department", coordinates: { lat: 51.134844, lng: 0.185385 }, floor: 0 },
     { id: "area-f0", name: "Area", type: "other", coordinates: { lat: 51.134844, lng: 0.186567 }, floor: 0 },
     { id: "cardiology-f0", name: "Cardiology", type: "department", coordinates: { lat: 51.134772, lng: 0.185364 }, floor: 0 },

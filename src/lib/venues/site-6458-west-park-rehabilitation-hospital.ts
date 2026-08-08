@@ -23,7 +23,6 @@ export const SITE_6458_WEST_PARK_REHABILITATION_HOSPITAL_VENUE: Venue = {
     { id: "lifts-to-ward-2-f0", name: "Lifts to Ward 2", type: "ward", coordinates: { lat: 52.589503, lng: -2.141724 }, floor: 0 },
     { id: "staff-f0", name: "Staff", type: "other", coordinates: { lat: 52.589211, lng: -2.142683 }, floor: 0 },
     { id: "stroke-rehabilitation-unit-ward-2-f0", name: "Stroke Rehabilitation Unit Ward 2", type: "ward", coordinates: { lat: 52.589048, lng: -2.14207 }, floor: 0 },
-    { id: "ground-floor-f0", name: "(ground floor)", type: "other", coordinates: { lat: 52.589065, lng: -2.141671 }, floor: 0 },
     { id: "main-entrance-reception-f0", name: "Main Entrance & Reception", type: "exit", coordinates: { lat: 52.589009, lng: -2.141185 }, floor: 0 },
     { id: "1st-floor-f0", name: "(1st floor)", type: "other", coordinates: { lat: 52.589027, lng: -2.141875 }, floor: 0 },
     { id: "care-of-the-elderly-ot-f0", name: "Care of the Elderly / OT", type: "other", coordinates: { lat: 52.588945, lng: -2.139948 }, floor: 0 },
@@ -47,6 +46,6 @@ export const SITE_6458_WEST_PARK_REHABILITATION_HOSPITAL_VENUE: Venue = {
     { id: "leasowes-house-f0", name: "Leasowes House", type: "department", coordinates: { lat: 52.586842, lng: -2.140324 }, floor: 0 },
     { id: "district-nurse-clinic-f0", name: "District Nurse Clinic", type: "department", coordinates: { lat: 52.586622, lng: -2.142233 }, floor: 0 },
     { id: "speech-language-therapy-f0", name: "Speech & Language Therapy", type: "department", coordinates: { lat: 52.586466, lng: -2.141959 }, floor: 0 },
-    { id: "mi-625614-10-04-17-v2-f0", name: "MI_625614_10.04.17_V2", type: "other", coordinates: { lat: 52.586048, lng: -2.139456 }, floor: 0 },
+    { id: "mi-625614-10-04-17-v2-f0", name: "Mi_625614_10.04.17_v2", type: "other", coordinates: { lat: 52.586048, lng: -2.139456 }, floor: 0 },
   ],
 }
