@@ -152,6 +152,10 @@ try {
       // Reject: the same document the trust already publishes, reached by the
       // bare domain instead of www. One PDF, one venue.
       { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "http://mft.nhs.uk/files/royal-oldham-hospital-sitemap.pdf", linkText: "Royal Oldham Hospital site map", kind: "site-map", confidence: "high" },
+      // Reject, but recorded: a real map published as a PNG. draft-sheets places
+      // waypoints from a PDF's text layer, which an image has none of, so this
+      // must be visible as a gap rather than approved and failed later.
+      { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://mft.nhs.uk/files/withington-hospital-site-map.png", linkText: "Withington Hospital site map", kind: "site-map", confidence: "high", format: "image" },
       // Reject: high confidence but not a map kind we auto-approve.
       { trustCode: "RJ1", trustName: "Guy's and St Thomas' NHS Foundation Trust", url: "https://www.guysandstthomas.nhs.uk/ward-directory.pdf", linkText: "Ward directory", kind: "directory", confidence: "medium" },
       // Approve, and exercise the identifier guard: a filename starting with a
@@ -170,6 +174,9 @@ try {
   const approved = JSON.parse(readFileSync("data/plan-sources.json", "utf8")).sources
   const slugs = approved.map((s) => s.slug)
 
+  check("holds back a map in a format it cannot place", !approved.some((s) => /\.png$/.test(s.url)), "approved an image")
+  check("says which hospital's map it could not use", /withington-hospital-site-map\.png\s+\(image/.test(out), out.slice(-600))
+  check("treats a candidate with no format as the PDF it is", approved.some((s) => /royal-oldham/.test(s.url)), "dropped a pre-format candidate")
   check("approves exactly the eligible candidates", approved.length === 5, `${approved.length}: ${slugs.join(", ")}`)
   check("accepts a host the trust moved to after rebranding", slugs.includes("whiston-floor-map"), slugs.join(", "))
   check(
