@@ -15,6 +15,7 @@ import { tmpdir } from "os"
 import { join } from "path"
 import { REPO_ROOT } from "../lib/paths.mjs"
 import { group, check, report } from "./harness.mjs"
+import { normaliseFloors } from "../../maps/sheets.mjs"
 
 process.chdir(REPO_ROOT)
 
@@ -122,6 +123,59 @@ try {
   cpSync(backup, "data", { recursive: true })
   rmSync(join(backup, ".."), { recursive: true, force: true })
   writeFileSync("src/lib/venues/nhs-hospitals-data.ts", originalVenueData)
+}
+
+group("floors of one building")
+// Trusts publish a hospital's levels as separate PDFs — Southampton's Princess
+// Anne is nine, Lincoln three, Southend three. Left as one venue each they
+// become nine pins on one address instead of one building you can move through.
+//
+// Both consumers see one shape: every sheet comes back with a `floors` array,
+// synthesised when the sheet does not declare one. Making the single-floor case
+// special inside each script is how generate-all and build-venues drifted apart
+// before.
+{
+  const legacy = normaliseFloors({ slug: "wythenshawe", file: "map/w.pdf", page: 1, plan: [0, 0.02, 1, 0.72] })
+  check("a sheet with no floors still has one", legacy.length === 1)
+  check("and it is the ground floor", legacy[0].floor === 0 && legacy[0].label === "Ground Floor")
+  check("it carries the sheet's own file and crop", legacy[0].file === "map/w.pdf" && legacy[0].plan[3] === 0.72)
+  // public/floorplans is full of sitemap.svg and the venues point at it.
+  // Renaming would be one silent 404 per venue.
+  check("the existing image name is preserved", legacy[0].image === "sitemap")
+
+  const multi = normaliseFloors({
+    slug: "princess-anne",
+    plan: [0, 0, 1, 1],
+    floors: [
+      { id: "fc", floor: 0, label: "Level C", file: "map/pah-c.pdf", page: 1 },
+      { id: "fd", floor: 1, label: "Level D", file: "map/pah-d.pdf", page: 1, plan: [0, 0.1, 1, 0.9] },
+    ],
+  })
+  check("declared floors come through", multi.length === 2)
+  check("each floor images to its own file", multi[0].image === "fc" && multi[1].image === "fd")
+  check("a floor with no crop inherits the sheet's", multi[0].plan[3] === 1)
+  check("and a floor with its own keeps it", multi[1].plan[1] === 0.1)
+
+  const throws = (sheet) => { try { normaliseFloors(sheet); return false } catch { return true } }
+  // Two floors sharing an id overwrite each other's SVG; two sharing a storey
+  // stack their waypoints on one level. Both build cleanly and navigate wrongly.
+  check("a repeated floor id is refused", throws({
+    slug: "x", plan: [0, 0, 1, 1],
+    floors: [{ id: "f0", floor: 0, label: "A", file: "a.pdf", page: 1 }, { id: "f0", floor: 1, label: "B", file: "b.pdf", page: 1 }],
+  }))
+  check("a repeated storey is refused", throws({
+    slug: "x", plan: [0, 0, 1, 1],
+    floors: [{ id: "f0", floor: 2, label: "A", file: "a.pdf", page: 1 }, { id: "f1", floor: 2, label: "B", file: "b.pdf", page: 1 }],
+  }))
+  check("an empty floors array is refused", throws({ slug: "x", plan: [0, 0, 1, 1], floors: [] }))
+  check("a floor missing its file is refused", throws({
+    slug: "x", plan: [0, 0, 1, 1], floors: [{ id: "f0", floor: 0, label: "A", page: 1 }],
+  }))
+  // A non-numeric storey would reach the venue as `floor: undefined` and put the
+  // waypoints on no level at all.
+  check("a non-numeric storey is refused", throws({
+    slug: "x", plan: [0, 0, 1, 1], floors: [{ id: "f0", floor: "ground", label: "A", file: "a.pdf", page: 1 }],
+  }))
 }
 
 report()
