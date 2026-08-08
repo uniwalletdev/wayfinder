@@ -276,7 +276,9 @@ for (const source of sourcesDoc.sources) {
   // one the trust also publishes: some of the labels should echo the site name.
   const siteTokens = tokens(site.name)
   const labelTokens = tokens(labels.map((l) => l.text).join(" "))
-  const echoesSite = siteTokens.size === 0 || overlap(siteTokens, labelTokens) > 0
+  // Asked the other way round to everything above: how much of the SITE's name
+  // the labels account for. Only the "> 0" matters — any shared word will do.
+  const echoesSite = siteTokens.size === 0 || contains(siteTokens, labelTokens) > 0
 
   const footprints = footprintsBySite.get(site.odsCode) ?? []
   const measured = footprints.length ? footprintSpanM(footprints) : null
