@@ -3,11 +3,11 @@
   "howToAdd": "Find the PDF in a browser, check it is genuinely a hospital map, then add an entry with the trust's ODS code (the crawl prints it on failure), the trust name, the URL, and a note saying why the crawl missed it.",
   "maps": [
     {
-      "trustCode": "RNZ",
-      "trustName": "Salisbury NHS Foundation Trust",
+      "trustCode": "R0B",
+      "trustName": "South Tyneside and Sunderland NHS Foundation Trust",
       "url": "https://www.stsft.nhs.uk/application/files/6417/7382/2879/SRH_Map_update.pdf",
-      "linkText": "Salisbury District Hospital site map",
-      "note": "Found by hand at /our-locations/our-locations. Six crawler revisions failed to reach it: the site publishes 1,483 sitemap URLs and this page never survives ranking against them. Rather than keep tuning heuristics against one example, it is recorded here."
+      "linkText": "Sunderland Royal Hospital site map",
+      "note": "Found by hand at /our-locations/our-locations. Several crawler revisions failed to reach it: the site publishes 1,483 sitemap URLs and this page never survives ranking against them. SRH is Sunderland Royal Hospital — stsft.nhs.uk is South Tyneside and Sunderland, not Salisbury, which is a different trust (RNZ) that the crawl does find maps for."
     }
   ]
 }

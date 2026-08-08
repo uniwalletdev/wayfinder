@@ -11,24 +11,24 @@
 //
 // Run: node scripts/nhs/test/discovery.test.mjs
 import { createServer } from "http"
-import { readFileSync } from "fs"
-import { classifyPdf, normaliseForMatching, scorePage, rankPages, decodeEntities, canonicalUrl, sameHost } from "../lib/discovery-match.mjs"
+import { readFileSync, existsSync } from "fs"
+import { classifyPdf, normaliseForMatching, scorePage, rankPages, decodeEntities, canonicalUrl, sameHost, onTrustDomain } from "../lib/discovery-match.mjs"
 import { group, check, report } from "./harness.mjs"
 
 group("filename matching")
 // `\bmap\b` never matched "SRH_Map_update.pdf": `_` is a word character, so
 // there is no boundary either side of "Map". Maps whose link text is unhelpful —
 // and plenty are just an icon or "Download" — were therefore invisible.
-const salisburyPdf = "https://www.stsft.nhs.uk/application/files/6417/7382/2879/SRH_Map_update.pdf"
+const sunderlandPdf = "https://www.stsft.nhs.uk/application/files/6417/7382/2879/SRH_Map_update.pdf"
 check(
   "flattens separators so words are visible",
-  normaliseForMatching(salisburyPdf) === "application files 6417 7382 2879 SRH Map update pdf",
-  normaliseForMatching(salisburyPdf)
+  normaliseForMatching(sunderlandPdf) === "application files 6417 7382 2879 SRH Map update pdf",
+  normaliseForMatching(sunderlandPdf)
 )
-check("finds a map from the filename alone", classifyPdf("", salisburyPdf)?.kind === "unknown", JSON.stringify(classifyPdf("", salisburyPdf)))
+check("finds a map from the filename alone", classifyPdf("", sunderlandPdf)?.kind === "unknown", JSON.stringify(classifyPdf("", sunderlandPdf)))
 check(
   "rates it highly when the link text agrees",
-  classifyPdf("Salisbury District Hospital site map", salisburyPdf)?.confidence === "high"
+  classifyPdf("Sunderland Royal Hospital site map", sunderlandPdf)?.confidence === "high"
 )
 check("reads camelCase filenames", !!classifyPdf("", "/docs/siteMap.pdf"))
 check("reads percent-encoded names", !!classifyPdf("", "/docs/Hospital%20Map%202024.pdf"))
@@ -219,7 +219,7 @@ group("the second hop must be reachable")
 // The bug this pins: depth-1 seeds exactly filled the fetch budget, so a section
 // page was fetched, its child queued — and the run ended with the child never
 // visited. On every trust with a sitemap the second hop simply never happened,
-// which is where Salisbury keeps its map.
+// which is where South Tyneside and Sunderland keeps its map.
 function simulateQueue({ seeds, reserved, budget, childBonus }) {
   const queue = seeds.map((s) => ({ ...s, depth: 1 }))
   const depthOneCap = Math.max(6, budget - reserved)
@@ -375,5 +375,37 @@ for (const entry of known.maps) {
   )
   check(`hand-added entry records why the crawl missed it: ${entry.trustName}`, !!entry.note)
 }
+
+// The trust code is the entry's least visible field and its most consequential:
+// approve-plans matches the URL's host against the website ODS records for that
+// code, so a wrong code makes the entry off-domain and it is dropped without
+// ever being looked at. The first hand-added entry shipped with exactly that
+// mistake — stsft.nhs.uk labelled RNZ (Salisbury) when it is R0B (South Tyneside
+// and Sunderland) — so the file is now checked against the register rather than
+// trusted.
+const registerPath = new URL("../../../data/trust-websites.json", import.meta.url)
+const register = existsSync(registerPath) ? JSON.parse(readFileSync(registerPath, "utf8")) : null
+// trust-websites.json is written by the crawl, so a checkout that has never run
+// one legitimately lacks it. Skipping the check is right; passing silently is
+// not, so the absence is asserted rather than assumed.
+check(
+  "trust register is available to validate hand-added codes against",
+  !!register || known.maps.length === 0,
+  "no data/trust-websites.json — run the crawl before adding to known-maps.json"
+)
+for (const entry of known.maps) {
+  if (!register) break
+  check(
+    `hand-added entry sits on its own trust's domain: ${entry.trustCode}`,
+    onTrustDomain(entry.url, register[entry.trustCode]),
+    `${entry.trustCode} is recorded as ${register[entry.trustCode] ?? "unknown"}, URL is on ${entry.url}`
+  )
+}
+
+// And the rule itself, so the check above means what it says.
+check("subdomains of the trust count", onTrustDomain("https://documents.stsft.nhs.uk/a.pdf", "https://www.stsft.nhs.uk"))
+check("www is not a difference", onTrustDomain("https://stsft.nhs.uk/a.pdf", "https://www.stsft.nhs.uk"))
+check("another trust's domain does not", onTrustDomain("https://www.salisbury.nhs.uk/a.pdf", "https://www.stsft.nhs.uk") === false)
+check("an unknown trust code refuses rather than waves through", onTrustDomain("https://www.stsft.nhs.uk/a.pdf", undefined) === false)
 
 report()

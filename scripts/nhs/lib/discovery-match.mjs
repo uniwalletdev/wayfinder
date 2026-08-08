@@ -5,9 +5,9 @@
 // by hand in seconds, and every one of those misses was a matching bug rather
 // than a fetching one.
 //
-// The example that drove this: Salisbury publishes
+// The example that drove this: South Tyneside and Sunderland (ODS R0B) publishes
 //   https://www.stsft.nhs.uk/application/files/6417/7382/2879/SRH_Map_update.pdf
-// linked from /our-locations/our-locations.
+// — Sunderland Royal Hospital — linked from /our-locations/our-locations.
 
 // Bump whenever a change would make the crawl find different things.
 //
@@ -150,6 +150,31 @@ const PAGE_SIGNALS = [
 export function sameHost(a, b) {
   const strip = (h) => String(h ?? "").toLowerCase().replace(/^www\./, "")
   return strip(a) === strip(b)
+}
+
+// Is this URL on the trust's own website?
+//
+// approve-plans republishes nothing that isn't, because attribution to the trust
+// is the whole basis on which the material is used. Subdomains count — plenty of
+// trusts serve documents from a `www2.` or `documents.` host of the same
+// domain — but an unrelated one does not.
+//
+// Lives here, rather than inline in approve-plans, so the rule that decides
+// whether a hand-added map is even considered can be tested. The first entry in
+// known-maps.json carried the wrong trust code, which this rule quietly turns
+// into "off-domain, dropped".
+export function onTrustDomain(url, trustWebsite) {
+  const hostOf = (value) => {
+    try {
+      return new URL(value).host.replace(/^www\./i, "").toLowerCase()
+    } catch {
+      return null
+    }
+  }
+  const host = hostOf(url)
+  const trustHost = hostOf(trustWebsite ?? "")
+  if (!host || !trustHost) return false
+  return host === trustHost || host.endsWith(`.${trustHost}`) || trustHost.endsWith(`.${host}`)
 }
 
 export function scorePage(text, href) {

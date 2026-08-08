@@ -2,8 +2,8 @@
 //
 // Guessing at navigation was the crawler's biggest weakness: it fetched a
 // homepage, picked links that looked promising, and hoped the map was one hop
-// away. Salisbury publishes its hospital map two hops down, so it was never
-// reachable that way.
+// away. South Tyneside and Sunderland publishes its hospital map two hops down,
+// so it was never reachable that way.
 //
 // Nearly every NHS trust site — Umbraco, WordPress, Drupal — publishes
 // /sitemap.xml, often as an index pointing at further sitemaps. That is the

@@ -33,9 +33,9 @@ const MIN_PAUSE_MS = 1500
 // Pages fetched per trust, across both hops. Six was too few and, worse, was
 // spent on whichever nav links happened to come first in the markup.
 const MAX_PAGES_PER_TRUST = 20
-// Hospital maps are routinely two hops from the homepage — Salisbury's sits at
-// /our-locations/our-locations, under a section landing page. One hop could
-// never reach it.
+// Hospital maps are routinely two hops from the homepage — Sunderland Royal's
+// sits at /our-locations/our-locations, under a section landing page. One hop
+// could never reach it.
 const MAX_DEPTH = 2
 // A separate allowance for pages the sitemap pointed at, so they never compete
 // with the homepage's own navigation for slots.
@@ -390,9 +390,9 @@ async function crawlTrust(trust) {
 // Some trusts sit behind a JavaScript bot challenge; some build their navigation
 // in script; and on a site with thousands of pages a single map page can lose
 // the ranking no matter how it is tuned. Six revisions failed to reach
-// Salisbury's, so rather than keep adjusting heuristics against one example it
-// is recorded in data/known-maps.json and merged here. approve-plans still
-// applies its own rules to these, so this gets a URL reviewed rather than
+// Sunderland Royal's, so rather than keep adjusting heuristics against one
+// example it is recorded in data/known-maps.json and merged here. approve-plans
+// still applies its own rules to these, so this gets a URL reviewed rather than
 // around review.
 const knownMaps = readJson(dataPath("known-maps.json"), { maps: [] }).maps ?? []
 let knownAdded = 0
