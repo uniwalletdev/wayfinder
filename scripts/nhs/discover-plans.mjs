@@ -22,7 +22,7 @@
 import { fetchRetry, BROWSER_HEADERS } from "./lib/net.mjs"
 import { isAllowed, crawlDelayFor } from "./lib/robots.mjs"
 import { loadOdsRecords } from "./lib/sites.mjs"
-import { classifyPdf, rankPages, decodeEntities, canonicalUrl, CRAWLER_VERSION } from "./lib/discovery-match.mjs"
+import { classifyDocument, rankPages, decodeEntities, canonicalUrl, CRAWLER_VERSION } from "./lib/discovery-match.mjs"
 import { fetchSitemapUrls } from "./lib/sitemap.mjs"
 import { dataPath, readJson, writeJson, updateManifest, log } from "./lib/paths.mjs"
 
@@ -161,8 +161,8 @@ if (!RESTART) {
     // — the previous version called five indoor floor plans "site-map".
     candidates = prior.candidates.map((c) => {
       const url = decodeEntities(c.url)
-      const signal = classifyPdf(decodeEntities(c.linkText ?? ""), url)
-      return signal ? { ...c, url, kind: signal.kind, confidence: signal.confidence } : { ...c, url }
+      const signal = classifyDocument(decodeEntities(c.linkText ?? ""), url)
+      return signal ? { ...c, url, kind: signal.kind, confidence: signal.confidence, format: signal.format } : { ...c, url }
     })
   } else if (prior?.candidates) {
     candidates = prior.candidates
@@ -268,8 +268,10 @@ async function crawlTrust(trust) {
 
   const collect = (links) => {
     for (const link of links) {
-      if (!/\.pdf(\?|$)/i.test(link.url)) continue
-      const signal = classifyPdf(link.text, link.url)
+      // classifyDocument decides what counts as a downloadable map, formats
+      // included — the filter here used to be a bare /\.pdf$/ test, which threw
+      // away every trust that publishes a PNG or a JPEG before it was looked at.
+      const signal = classifyDocument(link.text, link.url)
       if (!signal) continue
       // Key on the canonical URL so a cache-busting parameter can't present the
       // same document twice.
@@ -282,6 +284,7 @@ async function crawlTrust(trust) {
           linkText: link.text.slice(0, 200),
           kind: signal.kind,
           confidence: signal.confidence,
+          format: signal.format,
         })
       }
     }
@@ -409,7 +412,7 @@ let knownAdded = 0
 for (const entry of knownMaps) {
   if (!entry?.url) continue
   const url = decodeEntities(entry.url)
-  const signal = classifyPdf(decodeEntities(entry.linkText ?? ""), url)
+  const signal = classifyDocument(decodeEntities(entry.linkText ?? ""), url)
   if (!signal) {
     console.warn(`[${STAGE}] known map does not look like a map, skipping: ${url}`)
     continue
@@ -423,6 +426,7 @@ for (const entry of knownMaps) {
     linkText: entry.linkText ?? "",
     kind: signal.kind,
     confidence: signal.confidence,
+    format: signal.format,
     addedByHand: true,
   })
   knownAdded++

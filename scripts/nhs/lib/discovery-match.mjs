@@ -18,7 +18,7 @@
 //
 // Lives here rather than in the script so tests can assert against it instead of
 // hardcoding a number that goes stale on the next bump.
-export const CRAWLER_VERSION = 5
+export const CRAWLER_VERSION = 6
 
 // Turn a URL or filename into something the word-based patterns can read.
 //
@@ -115,11 +115,53 @@ export function canonicalUrl(url) {
   }
 }
 
-export function classifyPdf(text, href) {
+// Not every trust publishes its map as a PDF. Plenty use a PNG or a JPEG, a few
+// an SVG, and the crawl used to drop all of them on the floor before they were
+// ever classified — the filter was a bare /\.pdf$/ test.
+//
+// Recording the format is not the same as being able to use it. Only the PDF
+// path produces a venue today, because draft-sheets reads the sheet's text layer
+// to place waypoints and a raster image has no text to read. What this buys is
+// visibility: a hospital whose only map is a PNG now shows up as a candidate
+// with its format recorded, instead of looking like a hospital with no map.
+//
+// The `doc=` and `file=` parameters matter because several NHS CMSs put the real
+// filename there and leave the path generic (/download/index.pdf?doc=…1240.pdf).
+const FORMAT_EXTENSIONS = {
+  pdf: "pdf",
+  png: "image", jpg: "image", jpeg: "image", gif: "image", webp: "image", bmp: "image", tif: "image", tiff: "image",
+  svg: "vector",
+}
+
+export function formatOf(href) {
+  let candidates = []
+  try {
+    const parsed = new URL(href, "https://example.invalid")
+    candidates = [parsed.pathname]
+    for (const key of ["doc", "file", "filename", "download"]) {
+      const value = parsed.searchParams.get(key)
+      if (value) candidates.push(value)
+    }
+  } catch {
+    candidates = [String(href ?? "")]
+  }
+  // Later candidates win: a `doc=` filename is more specific than the path it
+  // hangs off, which is often a generic CMS endpoint.
+  let format = null
+  for (const candidate of candidates) {
+    const extension = /\.([a-z0-9]+)$/i.exec(decodeURIComponent(candidate).trim())?.[1]?.toLowerCase()
+    if (extension && FORMAT_EXTENSIONS[extension]) format = FORMAT_EXTENSIONS[extension]
+  }
+  return format
+}
+
+export function classifyDocument(text, href) {
+  const format = formatOf(href)
+  if (!format) return null
   const haystack = `${normaliseForMatching(text)} ${normaliseForMatching(href)}`
   if (NOT_A_PLACE_MAP.test(haystack)) return null
   for (const signal of PDF_SIGNALS) {
-    if (signal.re.test(haystack)) return signal
+    if (signal.re.test(haystack)) return { ...signal, format }
   }
   return null
 }

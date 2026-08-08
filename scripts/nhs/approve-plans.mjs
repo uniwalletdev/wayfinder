@@ -29,6 +29,19 @@ const LIMIT = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity
 // Auto-approval is restricted to the signals that named a map explicitly.
 const APPROVED_KINDS = new Set(["floor-plan", "site-map"])
 
+// Formats the rest of the pipeline can actually turn into a venue.
+//
+// draft-sheets places waypoints by reading the sheet's TEXT LAYER — the labels
+// printed on the map are what become "Main entrance" and "A&E". A PNG or a JPEG
+// of the same map carries no text, so it can be shown but not navigated, and
+// nothing downstream would know the difference. Recording those candidates is
+// still worth it: a hospital whose only published map is an image should look
+// like an unsolved problem, not like a hospital with no map at all.
+//
+// SVG is excluded for a duller reason — its text is extractable in principle,
+// but extractLabels only speaks PDF, so approving one would just fail at draft.
+const USABLE_FORMATS = new Set(["pdf"])
+
 function fileNameOf(url) {
   try {
     return decodeURIComponent(new URL(url).pathname.split("/").pop() ?? "")
@@ -162,16 +175,27 @@ function betterUrl(a, b) {
 }
 
 const approved = []
-const rejected = { lowConfidence: 0, wrongKind: 0, offDomain: 0, alreadyApproved: 0, badUrl: 0, alreadyMapped: 0, duplicateDocument: 0 }
+const rejected = { lowConfidence: 0, wrongKind: 0, offDomain: 0, alreadyApproved: 0, badUrl: 0, alreadyMapped: 0, duplicateDocument: 0, unusableFormat: 0 }
 // Which venue each refusal was taken for, so an over-eager match is visible and
 // arguable rather than a silently missing hospital.
 const coveredBy = []
+// Maps that exist but are published in a format the ingest can't georeference.
+// Counted and named so the gap is visible rather than looking like no map.
+const unusable = []
 
 for (const candidate of candidatesDoc.candidates ?? []) {
   if (approved.length >= LIMIT) break
 
   if (candidate.confidence !== "high") { rejected.lowConfidence++; continue }
   if (!APPROVED_KINDS.has(candidate.kind)) { rejected.wrongKind++; continue }
+  // Candidates crawled before formats were recorded have no `format` field at
+  // all; those are PDFs, because a PDF was all the crawl would collect.
+  const format = candidate.format ?? "pdf"
+  if (!USABLE_FORMATS.has(format)) {
+    rejected.unusableFormat++
+    unusable.push({ url: candidate.url, trustName: candidate.trustName, format })
+    continue
+  }
   if (existingUrls.has(candidate.url)) { rejected.alreadyApproved++; continue }
 
   const host = hostOf(candidate.url)
@@ -233,6 +257,14 @@ if (approved.length > 30) log(STAGE, `  … and ${approved.length - 30} more`)
 // — so it has to be readable in the log without opening a file.
 for (const c of coveredBy) {
   log(STAGE, `  – ${fileNameOf(c.url)}  (already mapped as ${c.venue}, matched "${c.matchedName}")`)
+}
+
+// These are real maps the pipeline simply cannot use yet. Saying so beats
+// letting the hospital look like one nobody publishes a map for.
+if (unusable.length) {
+  log(STAGE, `${unusable.length} map(s) found in a format the ingest can't place — waypoints come from a PDF's text layer:`)
+  for (const u of unusable.slice(0, 20)) log(STAGE, `  ? ${fileNameOf(u.url)}  (${u.format}, ${u.trustName})`)
+  if (unusable.length > 20) log(STAGE, `  … and ${unusable.length - 20} more, all listed in data/plan-candidates.json`)
 }
 
 if (DRY_RUN) {

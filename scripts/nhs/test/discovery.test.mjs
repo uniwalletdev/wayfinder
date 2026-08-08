@@ -12,7 +12,7 @@
 // Run: node scripts/nhs/test/discovery.test.mjs
 import { createServer } from "http"
 import { readFileSync, existsSync } from "fs"
-import { classifyPdf, normaliseForMatching, scorePage, rankPages, decodeEntities, canonicalUrl, sameHost, onTrustDomain } from "../lib/discovery-match.mjs"
+import { classifyDocument, normaliseForMatching, scorePage, rankPages, decodeEntities, canonicalUrl, sameHost, onTrustDomain, formatOf } from "../lib/discovery-match.mjs"
 import { group, check, report } from "./harness.mjs"
 
 group("filename matching")
@@ -25,22 +25,48 @@ check(
   normaliseForMatching(sunderlandPdf) === "application files 6417 7382 2879 SRH Map update pdf",
   normaliseForMatching(sunderlandPdf)
 )
-check("finds a map from the filename alone", classifyPdf("", sunderlandPdf)?.kind === "unknown", JSON.stringify(classifyPdf("", sunderlandPdf)))
+check("finds a map from the filename alone", classifyDocument("", sunderlandPdf)?.kind === "unknown", JSON.stringify(classifyDocument("", sunderlandPdf)))
 check(
   "rates it highly when the link text agrees",
-  classifyPdf("Sunderland Royal Hospital site map", sunderlandPdf)?.confidence === "high"
+  classifyDocument("Sunderland Royal Hospital site map", sunderlandPdf)?.confidence === "high"
 )
-check("reads camelCase filenames", !!classifyPdf("", "/docs/siteMap.pdf"))
-check("reads percent-encoded names", !!classifyPdf("", "/docs/Hospital%20Map%202024.pdf"))
-check("still finds floor plans", classifyPdf("", "/x/ward-floor-plan.pdf")?.kind === "floor-plan")
+check("reads camelCase filenames", !!classifyDocument("", "/docs/siteMap.pdf"))
+check("reads percent-encoded names", !!classifyDocument("", "/docs/Hospital%20Map%202024.pdf"))
+check("still finds floor plans", classifyDocument("", "/x/ward-floor-plan.pdf")?.kind === "floor-plan")
+
+group("formats other than PDF")
+// Not every trust publishes a PDF. The crawl used to filter on /\.pdf$/ before
+// classifying anything, so a hospital whose only map is a PNG looked exactly
+// like a hospital with no map — the link was dropped before it was ever read.
+check("still reads a PDF", classifyDocument("Site map", "/visiting/site-map.pdf")?.format === "pdf")
+check("finds a PNG map", classifyDocument("Hospital map", "/media/hospital-map.png")?.format === "image")
+check("finds a JPEG map", classifyDocument("", "/media/site-map.jpg")?.format === "image")
+check("finds an SVG map", classifyDocument("", "/media/ward-floor-plan.svg")?.format === "vector")
+check("classifies format-independently", classifyDocument("", "/x/ground-floor-map.png")?.kind === "floor-plan")
+// The page a map is linked from is not itself a map, and treating every HTML
+// link that says "map" as a candidate would bury the queue in navigation.
+check("ignores a web page", classifyDocument("Maps and directions", "/visiting/maps-and-directions") === null)
+check("ignores an HTML page that says map", classifyDocument("Site map", "/about/site-map.html") === null)
+// Several NHS CMSs leave the path generic and put the real filename in a query
+// parameter, so the extension has to be read from there too.
+check(
+  "reads the format out of a doc= parameter",
+  formatOf("https://x.nhs.uk/download/index.aspx?doc=hospital-map.png") === "image",
+  String(formatOf("https://x.nhs.uk/download/index.aspx?doc=hospital-map.png"))
+)
+check(
+  "prefers the doc= filename over the path",
+  formatOf("https://x.nhs.uk/download/a.pdf?doc=docm93jijm4n1240.pdf") === "pdf"
+)
+check("no extension is not a document", formatOf("https://x.nhs.uk/our-locations") === null)
 
 group("false positives")
 // A national crawl over 247 trusts turns any loose pattern into a pile of
 // strategy documents to wade through.
-check("rejects a strategy roadmap", classifyPdf("Our five year roadmap", "/about/roadmap.pdf") === null)
-check("rejects a career map", classifyPdf("Career map", "/jobs/career_map.pdf") === null)
-check("rejects a process map", classifyPdf("Process map", "/quality/process-map.pdf") === null)
-check("keeps a real site map", classifyPdf("Site map", "/visiting/site_map.pdf")?.confidence === "high")
+check("rejects a strategy roadmap", classifyDocument("Our five year roadmap", "/about/roadmap.pdf") === null)
+check("rejects a career map", classifyDocument("Career map", "/jobs/career_map.pdf") === null)
+check("rejects a process map", classifyDocument("Process map", "/quality/process-map.pdf") === null)
+check("keeps a real site map", classifyDocument("Site map", "/visiting/site_map.pdf")?.confidence === "high")
 
 group("page ranking")
 // Six slots used to be filled in document order, so large nav and footer menus
@@ -122,7 +148,7 @@ try {
   check("follows the section page one hop further", secondHop.some((p) => p.url.endsWith("/our-locations/our-locations")), JSON.stringify(secondHop.map((p) => p.url)))
 
   const mapPageLinks = await fetchLinks(`${origin}/our-locations/our-locations`)
-  const pdfs = mapPageLinks.filter((l) => /\.pdf$/i.test(l.url)).map((l) => ({ link: l, signal: classifyPdf(l.text, l.url) }))
+  const pdfs = mapPageLinks.filter((l) => /\.pdf$/i.test(l.url)).map((l) => ({ link: l, signal: classifyDocument(l.text, l.url) }))
   check("finds the PDF on the final page", pdfs.length === 1, String(pdfs.length))
   // The link text is "Download" — everything rests on reading the filename.
   check("classifies it despite useless link text", !!pdfs[0]?.signal, JSON.stringify(pdfs[0]))
@@ -164,13 +190,13 @@ const indoor = [
   ["Internal map of the hospital", "/uploads/DCH-Internal-Map-for-website-JUNE-2023.pdf"],
 ]
 for (const [text, href] of indoor) {
-  const signal = classifyPdf(decodeEntities(text), href)
+  const signal = classifyDocument(decodeEntities(text), href)
   check(`recognises an indoor plan: ${href.split("/").pop()}`, signal?.kind === "floor-plan", JSON.stringify(signal))
 }
 
 // Outdoor maps must stay outdoor, or the distinction is worthless.
-check("keeps an external map as a site map", classifyPdf("External map of the hospital", "/DCH-External-Map-2025.pdf")?.kind === "site-map")
-check("keeps a plain site map as a site map", classifyPdf("Site Map & Directory", "/RUH_directory_map.pdf")?.kind === "site-map")
+check("keeps an external map as a site map", classifyDocument("External map of the hospital", "/DCH-External-Map-2025.pdf")?.kind === "site-map")
+check("keeps a plain site map as a site map", classifyDocument("Site Map & Directory", "/RUH_directory_map.pdf")?.kind === "site-map")
 
 
 group("regressions the sitemap change introduced")
@@ -370,7 +396,7 @@ check("known-maps file is present and shaped right", Array.isArray(known.maps), 
 for (const entry of known.maps) {
   check(
     `hand-added entry still classifies as a map: ${entry.url.split("/").pop()}`,
-    !!classifyPdf(entry.linkText ?? "", entry.url),
+    !!classifyDocument(entry.linkText ?? "", entry.url),
     entry.url
   )
   check(`hand-added entry records why the crawl missed it: ${entry.trustName}`, !!entry.note)

@@ -102,6 +102,35 @@ node scripts/nhs/approve-plans.mjs --dry-run
    `index.ts` doesn't need an import per hospital.
 6. **preview-sheets** — renders each sheet to `previews/<slug>.jpg` for review.
 
+### Not every trust publishes a PDF
+
+Some publish a PNG or a JPEG, a few an SVG, and some only have an interactive
+web page. The crawl used to filter links on `/\.pdf$/` *before* classifying
+anything, so a hospital whose only map was an image looked exactly like a
+hospital with no map.
+
+It now records `format` on every candidate — `pdf`, `image` or `vector` — and
+`approve-plans` auto-approves only `pdf`. That isn't arbitrary: `draft-sheets`
+places waypoints by reading the sheet's **text layer**, and the labels printed
+on the map are what become "Main entrance" and "A&E". A PNG carries no text, so
+it could be shown but not navigated. SVG is excluded for a duller reason —
+its text is extractable in principle, but `extractLabels` only speaks PDF.
+
+The point of recording them is that the gap is now visible:
+
+```
+2 map(s) found in a format the ingest can't place — waypoints come from a PDF's text layer:
+  ? withington-hospital-site-map.png  (image, Manchester University NHS FT)
+```
+
+Making those usable needs OCR (for images) or an SVG text extractor. Until then
+they're listed in `plan-candidates.json` and can be mapped by hand.
+
+**Web pages are deliberately not collected.** A page that says "maps and
+directions" is where a map is linked *from*, not a map — treating every such
+link as a candidate would bury the queue in navigation. Where a trust's map only
+exists as an interactive page, `known-maps.json` is the way in.
+
 ### When ODS has the wrong website
 
 ODS is the source of truth for which trusts exist, but its recorded website goes
