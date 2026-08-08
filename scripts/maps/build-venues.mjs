@@ -41,8 +41,10 @@ async function build(v) {
   const dLng = v.spanM / (R * Math.cos((lat0 * Math.PI) / 180))
   const dLat = (v.spanM * (H / W)) / R
   const pcx = (px0 + px1) / 2, pcy = (py0 + py1) / 2
-  const lngW = lng0 - pcx * dLng, lngE = lngW + dLng
-  const latN = lat0 + pcy * dLat, latS = latN - dLat
+  // Only the north-west corner is used — toLatLng walks south and east from it.
+  // The other two edges were computed and never read.
+  const lngW = lng0 - pcx * dLng
+  const latN = lat0 + pcy * dLat
 
   const toLatLng = (nx, ny) => [r6(latN - ny * dLat), r6(lngW + nx * dLng)]
 
