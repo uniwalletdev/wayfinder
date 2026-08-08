@@ -21,6 +21,7 @@ import { existsSync } from "fs"
 import { extractLabels } from "../maps/extract.mjs"
 import { nameTokens, documentContainment, footprintSpanM, DOCUMENT_STOPWORDS } from "./lib/match.mjs"
 import { looksLikeHospital } from "./lib/ods.mjs"
+import { floorFromSlug, stemWithoutFloor } from "./lib/floors.mjs"
 import { dataPath, repoPath, readJson, writeJson, log } from "./lib/paths.mjs"
 
 const STAGE = "draft-sheets"
@@ -417,6 +418,11 @@ for (const source of sourcesDoc.sources) {
   drafted.push({
     slug: source.slug,
     id: `${source.slug}-venue`,
+    // Which storey this sheet is, when its filename says. Used by the grouping
+    // pass below; harmless on a sheet that stands alone.
+    floorOf: floorFromSlug(source.slug),
+    stem: stemWithoutFloor(source.slug),
+    odsCode: site.odsCode,
     name: site.name,
     subtitle: `${site.trustName ?? source.trustName} · ${address}`,
     file: source.file,
@@ -451,15 +457,81 @@ for (const source of sourcesDoc.sources) {
   )
 }
 
-if (drafted.length) {
+// Fold several sheets of one building into a single multi-floor venue.
+//
+// Southampton publishes the Princess Anne as nine PDFs, one per level. Drafted
+// one at a time they are nine venues at one address — nine pins where there
+// should be one building you can move through.
+//
+// Two sheets are floors of one building when all three hold: they resolved to
+// the SAME ODS site, each filename names a storey, and what remains of each
+// filename once the storey words come out is identical. That last test is what
+// keeps "internal-site-map-north-tees" and "external-site-map-north-tees" apart
+// — same hospital, both name no storey, and two views of one site are not two
+// floors of it.
+const grouped = []
+const byBuilding = new Map()
+for (const d of drafted) {
+  // No storey in the name, or no site to group on: stands alone.
+  if (!d.floorOf || !d.odsCode) { grouped.push(d); continue }
+  const key = `${d.odsCode}::${d.stem}`
+  const list = byBuilding.get(key)
+  if (list) list.push(d)
+  else byBuilding.set(key, [d])
+}
+
+const floorGroups = []
+for (const members of byBuilding.values()) {
+  if (members.length < 2) { grouped.push(...members); continue }
+
+  // Two sheets claiming one storey means the filenames were read wrongly, and
+  // the venue would silently drop a floor. Leave them separate for a person.
+  const storeys = new Set(members.map((m) => m.floorOf.floor))
+  if (storeys.size !== members.length) {
+    log(STAGE, `  not grouping ${members.length} sheets of ${members[0].name}: two claim the same storey`)
+    grouped.push(...members)
+    continue
+  }
+
+  const floors = members
+    .map((m) => ({ id: `f${m.floorOf.floor}`, floor: m.floorOf.floor, label: m.floorOf.label, file: m.file, page: m.page }))
+    .sort((a, b) => a.floor - b.floor)
+
+  // The venue is named after the hospital, not after whichever PDF happened to
+  // sort first, and its slug comes from the same place — nine sheets called
+  // pah-c-level-floor-plan through pah-j make a poor venue address.
+  const slug = plainName(members[0].name).replace(/\s+/g, "-")
+  const ground = members.find((m) => m.floorOf.floor === 0) ?? members[0]
+  grouped.push({
+    ...ground,
+    slug,
+    id: `${slug}-venue`,
+    floors,
+    notes:
+      `${members.length} floor plans published by ${ground.subtitle.split(" · ")[0]}. Placement is derived ` +
+      `automatically (centre from the NHS ODS register) and has not been checked by eye.`,
+  })
+  floorGroups.push(`${members[0].name}: ${floors.length} floors (${floors.map((f) => f.label).join(", ")})`)
+}
+
+if (grouped.length) {
   const bySlug = new Map(sheetsDoc.sheets.map((s) => [s.slug, s]))
-  for (const d of drafted) bySlug.set(d.slug, d)
+  // A sheet that becomes part of a multi-floor venue must not also survive as
+  // the single-floor venue it drafted as on an earlier run.
+  const absorbed = new Set(drafted.map((d) => d.slug))
+  for (const g of grouped) absorbed.delete(g.slug)
+  for (const slug of absorbed) bySlug.delete(slug)
+  for (const g of grouped) bySlug.set(g.slug, g)
   sheetsDoc.sheets = [...bySlug.values()]
   writeJson(dataPath("mapped-sites.json"), sheetsDoc)
 }
 writeJson(dataPath("plan-rejected.json"), rejectedDoc)
 
 log(STAGE, `${drafted.length} sheet(s) drafted, ${rejectedDoc.rejections.length} rejected`)
+if (floorGroups.length) {
+  log(STAGE, `${floorGroups.length} building(s) assembled from several floor sheets:`)
+  for (const line of floorGroups) log(STAGE, `  ${line}`)
+}
 if (crossTrust.length) {
   // Not a warning — this is normal, and ODS is right about it as often as the
   // website is. Said out loud because the coordinates come from the register's

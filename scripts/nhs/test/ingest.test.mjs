@@ -16,6 +16,7 @@ import { nameTokens, tokenOverlap, documentContainment, footprintSpanM, DOCUMENT
 import { CRAWLER_VERSION } from "../lib/discovery-match.mjs"
 import { mappedVenueNames, mappedVenueFor } from "../lib/mapped.mjs"
 import { looksLikeHospital } from "../lib/ods.mjs"
+import { floorFromSlug, stemWithoutFloor } from "../lib/floors.mjs"
 import { group, check, report } from "./harness.mjs"
 
 process.chdir(REPO_ROOT)
@@ -634,6 +635,86 @@ try {
   cpSync(backup, "data", { recursive: true })
   rmSync(join(backup, ".."), { recursive: true, force: true })
   execFileSync("node", ["scripts/nhs/generate-registry.mjs"], { encoding: "utf8" })
+}
+
+group("floors of one hospital")
+// Trusts publish a building's levels as separate PDFs. Drafted one at a time,
+// Southampton's Princess Anne becomes six venues at one address — six pins where
+// there should be one building you can move through.
+{
+  const plain = (x) => String(x).toLowerCase().replace(/['\u2018\u2019]/g, "").replace(/[^a-z0-9]+/g, " ").trim()
+
+  // Four naming conventions cover everything the crawl has found.
+  check("a lettered level", floorFromSlug("pah-c-level-floor-plan")?.label === "Level C")
+  check("lettered levels skip I, as lift panels do", floorFromSlug("pah-j-level-floor-plan")?.floor === 8)
+  check("a numbered level", floorFromSlug("lincoln-hospital-map-level-1")?.floor === 1)
+  check("a named storey", floorFromSlug("southend-hospital-ground-floor-map-pdf")?.floor === 0)
+  check("a letter next to 'floor' rather than 'level'", floorFromSlug("hospital-map-a-floor")?.label === "Level A")
+  // "ground floor" must not be read as the letter G — named storeys match first.
+  check("ground is a storey, not the letter G", floorFromSlug("nhs-ground-floor")?.label === "Ground Floor")
+  check("a basement sits below the ground floor", floorFromSlug("x-basement-floor-plan")?.floor === -1)
+  check("a sheet naming no storey yields nothing", floorFromSlug("jr-hospital-sitemap") === null)
+  check("nor does a plain site map", floorFromSlug("whiston-site-map-full-site") === null)
+
+  // The stem is what decides whether two sheets are floors of ONE building.
+  check("levels of one building share a stem", stemWithoutFloor("pah-c-level-floor-plan") === stemWithoutFloor("pah-h-level-floor-plan"))
+  check("so do named storeys", stemWithoutFloor("southend-hospital-ground-floor-map-pdf") === stemWithoutFloor("southend-hospital-first-floor-map-pdf"))
+  // The case this exists for: same hospital, but two VIEWS of the site rather
+  // than two floors of it. Grouping them would stack one map on the other.
+  check(
+    "internal and external site maps are not floors of each other",
+    stemWithoutFloor("internal-site-map-north-tees-2019") !== stemWithoutFloor("external-site-map-north-tees-2019")
+  )
+
+  // The grouping decision itself, run over the sheets exactly as they drafted.
+  const groupOf = (drafted) => {
+    const alone = [], by = new Map()
+    for (const d of drafted) {
+      const f = floorFromSlug(d.slug)
+      if (!f || !d.odsCode) { alone.push(d); continue }
+      const k = `${d.odsCode}::${stemWithoutFloor(d.slug)}`
+      by.set(k, [...(by.get(k) ?? []), { ...d, floorOf: f }])
+    }
+    const venues = []
+    for (const m of by.values()) {
+      if (m.length < 2) { alone.push(...m); continue }
+      // Two sheets claiming one storey means the names were read wrongly, and
+      // the venue would silently drop a floor.
+      if (new Set(m.map((x) => x.floorOf.floor)).size !== m.length) { alone.push(...m); continue }
+      venues.push({ slug: plain(m[0].name).replace(/\s+/g, "-"), floors: m.length })
+    }
+    return { venues, alone: alone.map((a) => a.slug) }
+  }
+
+  const pah = (l) => ({ slug: `pah-${l}-level-floor-plan`, name: "Princess Anne Hospital", odsCode: "R1C1" })
+  const result = groupOf([
+    ...["c", "d", "e", "f", "g", "h"].map(pah),
+    { slug: "site-2025-05-05-mdgh-ground-floor-patients", name: "Macclesfield District General Hospital", odsCode: "R0A2" },
+    { slug: "site-2025-05-05-mdgh-first-floor-patients", name: "Macclesfield District General Hospital", odsCode: "R0A2" },
+    { slug: "internal-site-map-north-tees-2019", name: "University Hospital of North Tees", odsCode: "RVW1" },
+    { slug: "external-site-map-north-tees-2019", name: "University Hospital of North Tees", odsCode: "RVW1" },
+    { slug: "jr-hospital-sitemap", name: "John Radcliffe Hospital", odsCode: "RBF1" },
+  ])
+  check("six Princess Anne sheets make one building", result.venues.find((v) => v.slug === "princess-anne-hospital")?.floors === 6)
+  check("and it is named after the hospital, not the PDF", result.venues.some((v) => v.slug === "princess-anne-hospital"))
+  check("Macclesfield's two sheets make one building", result.venues.find((v) => v.slug.startsWith("macclesfield"))?.floors === 2)
+  check("exactly two buildings were assembled", result.venues.length === 2)
+  check("North Tees stays two venues", result.alone.filter((s) => s.includes("north-tees")).length === 2)
+  check("a lone sheet is untouched", result.alone.includes("jr-hospital-sitemap"))
+
+  // Same hospital, same stem, but both claim the ground floor — a filename read
+  // wrongly. Grouping would drop one silently.
+  const clash = groupOf([
+    { slug: "x-ground-floor-map", name: "H", odsCode: "Z1" },
+    { slug: "x-ground-floor-map-v2", name: "H", odsCode: "Z1" },
+  ])
+  check("two sheets claiming one storey are left separate", clash.venues.length === 0 && clash.alone.length === 2)
+  // And a hospital's floors must not merge with another hospital's.
+  const twoSites = groupOf([
+    { slug: "a-ground-floor", name: "H1", odsCode: "Z1" },
+    { slug: "a-first-floor", name: "H2", odsCode: "Z2" },
+  ])
+  check("floors do not cross between hospitals", twoSites.venues.length === 0)
 }
 
 report()
