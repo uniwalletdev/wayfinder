@@ -254,6 +254,42 @@ group("abbreviations a trust uses for its own hospitals")
   // sat in the register the whole time. That test exists to keep fetch-osm's
   // request volume down, which is a fine reason to skip a footprint and a bad
   // reason to disbelieve a name somebody checked by hand.
+  // The register files a hospital under a different trust than the website the
+  // sheet came from. Real cases, from a national run:
+  //
+  //   John Radcliffe Hospital  ODS: RBF   sheet: RTH
+  //   Princess Anne Hospital   ODS: R1C   sheet: RHM
+  //   Pilgrim Hospital         ODS: RJL   sheet: RWD
+  //
+  // RBF is Oxford Radcliffe Hospitals, dissolved into RTH in 2011 — ODS keeps
+  // the historic org and the site hangs off it. United Lincolnshire holds only
+  // "Pilgrim A&E", "Pilgrim Surgery", "Pilgrim Medicine": departments, every one
+  // hidden by looksLikeHospital, so its visible list has no Pilgrim at all.
+  //
+  // Crossing that boundary needs an EXACT name, unique nationally — the trust is
+  // no longer bounding the search, so nothing weaker is safe.
+  const register = [
+    { trustCode: "RBF", name: "John Radcliffe Hospital" },
+    { trustCode: "R1C", name: "Princess Anne Hospital" },
+    { trustCode: "RN3", name: "Princess Anne Wing Ruh" },
+    { trustCode: "RJL", name: "Pilgrim Hospital" },
+    { trustCode: "RX1", name: "Pilgrim Hospital (Nuh)" },
+    { trustCode: "RP7", name: "Emsi Unit - Pilgrim Hospital Site" },
+    { trustCode: "RWD", name: "Pilgrim A&E" },
+    { trustCode: "RWD", name: "Pilgrim Surgery" },
+  ]
+  const nationwide = (hospital) => register.filter((s) => plain(s.name) === plain(hospital))
+
+  check("the John Radcliffe is unique nationally, under a predecessor trust", nationwide("John Radcliffe Hospital").length === 1)
+  check("and resolves to RBF, not the RTH the sheet came from", nationwide("John Radcliffe Hospital")[0].trustCode === "RBF")
+  // "Princess Anne Wing Ruh" is a different place and must not be swept in.
+  check("Princess Anne matches the hospital, not the wing at the RUH", nationwide("Princess Anne Hospital").length === 1)
+  check("Princess Anne resolves to R1C", nationwide("Princess Anne Hospital")[0].trustCode === "R1C")
+  // Thirteen sites contain "Pilgrim"; exactly one is called Pilgrim Hospital.
+  check("Pilgrim Hospital is exact-unique despite twelve near names", nationwide("Pilgrim Hospital").length === 1)
+  check("Pilgrim resolves to RJL, while RWD holds only departments", nationwide("Pilgrim Hospital")[0].trustCode === "RJL")
+  check("the trust's own Pilgrim records are all hidden", register.filter((s) => s.trustCode === "RWD").every((s) => !looksLikeHospital(s.name)))
+
   check("looksLikeHospital would hide the Nuffield Orthopaedic Centre", !looksLikeHospital("Nuffield Orthopaedic Centre"))
   check(
     "an alias reaches it anyway",

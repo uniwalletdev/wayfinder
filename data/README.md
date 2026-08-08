@@ -239,6 +239,35 @@ named hospital isn't one of that trust's sites the sheet is refused as
 | `cgh-colour-map-0325-v1.pdf` | Cheltenham General Hospital |
 | `PAH-A-level-floor-plan.pdf` | Princess Anne Hospital |
 
+### The register and the website disagree about who owns a hospital
+
+Often, and neither is wrong:
+
+| Hospital | ODS files it under | Sheet crawled from |
+|---|---|---|
+| John Radcliffe Hospital | `RBF` | `RTH` |
+| Princess Anne Hospital | `R1C` | `RHM` |
+| Pilgrim Hospital | `RJL` | `RWD` |
+
+`RBF` is Oxford Radcliffe Hospitals, the predecessor trust dissolved into `RTH`
+in 2011 — ODS keeps the historic organisation and the site record hangs off it.
+United Lincolnshire (`RWD`) holds only `Pilgrim A&E`, `Pilgrim Surgery`,
+`Pilgrim Medicine`: departments, every one hidden by `looksLikeHospital`, so its
+visible list contains no Pilgrim at all.
+
+So an alias may resolve to a site outside the sheet's own trust — but only on an
+**exact** name that is **unique nationally**, which is much stricter than the
+within-trust rule, because the trust is no longer bounding the search. Thirteen
+sites contain "Pilgrim"; exactly one is called `Pilgrim Hospital`. Where several
+trusts hold the same exact name the sheet is refused as
+`alias-names-a-hospital-several-trusts-claim`.
+
+Every crossing is listed at the end of a run, because the coordinates come from
+the register's record and it should be obvious which one was used.
+
+Use `npm run nhs:why -- --name "Pilgrim"` to see where the register puts
+something.
+
 Step 3 gets sheets close, not correct. Scale is measured where a footprint
 exists and guessed otherwise, and the crop is the full sheet. **Check the
 previews** — `previews/index.json` lists which sheets used a guessed scale — then
