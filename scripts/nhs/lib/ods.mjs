@@ -219,3 +219,24 @@ const NON_PUBLIC_SITE = new RegExp(
 export function looksPublicFacing(name) {
   return !NON_PUBLIC_SITE.test(name)
 }
+
+// Sites worth asking OpenStreetMap for a building outline.
+//
+// The ODS trust-site register is not a list of hospitals. It is every location a
+// trust operates: clinics, health centres, community units, dental surgeries,
+// individual GP-style premises. A national run returns ~38,000 of them, and
+// looksPublicFacing removes barely 200 — it only catches names that announce
+// themselves as back-office ("HQ", "mortuary", "mailroom").
+//
+// That matters because fetch-osm was written for "~2,500 known points" and would
+// otherwise send 15 times that at Overpass, which is a free service run by
+// volunteers. It also buys nothing: a footprint exists to anchor a floor plan
+// and show a building outline, and the plans this app carries are hospitals'.
+//
+// So the test is deliberately plain — the name says hospital or infirmary.
+// Anything else can still be a located pin; it just doesn't get an outline.
+const HOSPITAL_SITE = /\b(hospital|infirmary)\b/i
+
+export function looksLikeHospital(name) {
+  return HOSPITAL_SITE.test(String(name ?? ""))
+}
