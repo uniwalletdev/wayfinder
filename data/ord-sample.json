@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T19:55:12.799Z",
+  "generatedAt": "2026-08-07T21:02:36.937Z",
   "description": "A sample of what the ORD API returns for each role, recorded so the population can be checked against what the pipeline actually wants. Diagnostic only — nothing reads this at build time.",
   "role": "RO197",
   "source": "etr",

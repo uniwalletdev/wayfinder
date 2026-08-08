@@ -12,17 +12,18 @@
       "noPostcode": 0
     },
     "licence": "Open Government Licence v3.0",
-    "fetchedAt": "2026-08-07T19:55:12.827Z"
+    "fetchedAt": "2026-08-07T21:02:36.971Z"
   },
   "plans.candidates": {
     "description": "Floor-plan PDF discovery queue",
-    "trustsInScope": 20,
-    "candidates": 21,
-    "noWebsite": 18,
-    "crawlFailed": 14,
+    "trustsInScope": 247,
+    "candidates": 280,
+    "noWebsite": 36,
+    "crawlFailed": 17,
+    "botChallenged": 7,
     "robotsBlocked": 0,
-    "withCandidates": 13,
-    "crawled": 108,
-    "fetchedAt": "2026-08-07T19:55:12.975Z"
+    "withCandidates": 76,
+    "crawled": 247,
+    "fetchedAt": "2026-08-08T00:14:51.931Z"
   }
 }

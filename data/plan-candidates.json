@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-08-07T19:55:12.972Z",
+  "generatedAt": "2026-08-08T00:14:51.925Z",
   "description": "Candidate site-map / floor-plan PDFs found on NHS trust websites. THIS IS A TRIAGE QUEUE, NOT AN IMPORT LIST. These PDFs are the trusts' copyright. scripts/nhs/approve-plans.mjs promotes eligible entries into data/plan-sources.json, which is the only list scripts/nhs/fetch-plans.mjs will download.",
+  "crawlerVersion": 5,
   "stats": {
-    "noWebsite": 18,
-    "crawlFailed": 14,
+    "noWebsite": 36,
+    "crawlFailed": 17,
+    "botChallenged": 7,
     "robotsBlocked": 0,
-    "withCandidates": 13,
-    "crawled": 108
+    "withCandidates": 76,
+    "crawled": 247
   },
-  "count": 21,
+  "count": 280,
   "crawled": {
     "G6V2S": "no-website",
     "K0N6A": "no-website",
@@ -22,7 +24,7 @@
     "R1F": "ok",
     "R1H": "ok",
     "R1J": "failed",
-    "R1K": "failed",
+    "R1K": "ok",
     "R1L": "ok",
     "RA2": "ok",
     "RA3": "ok",
@@ -31,9 +33,9 @@
     "RA9": "ok",
     "RAE": "ok",
     "RAJ": "no-website",
-    "RAL": "failed",
+    "RAL": "bot-challenge",
     "RAN": "ok",
-    "RAP": "failed",
+    "RAP": "bot-challenge",
     "RAS": "ok",
     "RAT": "ok",
     "RAX": "ok",
@@ -62,15 +64,15 @@
     "RD8": "ok",
     "RDD": "ok",
     "RDE": "ok",
-    "RDR": "failed",
+    "RDR": "ok",
     "RDU": "ok",
     "RDY": "ok",
     "RDZ": "failed",
     "RE9": "no-website",
-    "REF": "ok",
-    "REM": "failed",
-    "REN": "failed",
-    "REP": "failed",
+    "REF": "failed",
+    "REM": "bot-challenge",
+    "REN": "bot-challenge",
+    "REP": "bot-challenge",
     "RET": "ok",
     "RF4": "ok",
     "RFF": "ok",
@@ -117,14 +119,977 @@
     "RM1": "ok",
     "RM2": "no-website",
     "RM3": "failed",
-    "RMC": "failed"
+    "RMC": "failed",
+    "RMP": "failed",
+    "RMY": "ok",
+    "RN1": "no-website",
+    "RN3": "ok",
+    "RN5": "ok",
+    "RN7": "ok",
+    "RNA": "ok",
+    "RNK": "ok",
+    "RNL": "no-website",
+    "RNN": "ok",
+    "RNQ": "ok",
+    "RNS": "ok",
+    "RNU": "ok",
+    "RNZ": "ok",
+    "RP1": "ok",
+    "RP4": "ok",
+    "RP5": "ok",
+    "RP6": "ok",
+    "RP7": "failed",
+    "RPA": "ok",
+    "RPC": "ok",
+    "RPG": "ok",
+    "RPR": "no-website",
+    "RPY": "no-website",
+    "RQ3": "ok",
+    "RQ6": "no-website",
+    "RQ8": "ok",
+    "RQF": "failed",
+    "RQM": "ok",
+    "RQN": "no-website",
+    "RQW": "ok",
+    "RQX": "ok",
+    "RQY": "ok",
+    "RR1": "no-website",
+    "RR7": "ok",
+    "RR8": "ok",
+    "RRD": "no-website",
+    "RRE": "ok",
+    "RRF": "ok",
+    "RRJ": "ok",
+    "RRK": "ok",
+    "RRP": "failed",
+    "RRU": "ok",
+    "RRV": "ok",
+    "RT1": "ok",
+    "RT2": "ok",
+    "RT4": "failed",
+    "RT5": "ok",
+    "RTD": "ok",
+    "RTE": "ok",
+    "RTF": "ok",
+    "RTG": "ok",
+    "RTH": "ok",
+    "RTK": "ok",
+    "RTP": "ok",
+    "RTQ": "ok",
+    "RTR": "ok",
+    "RTX": "ok",
+    "RV3": "ok",
+    "RV5": "ok",
+    "RV8": "no-website",
+    "RV9": "ok",
+    "RVJ": "ok",
+    "RVN": "ok",
+    "RVR": "ok",
+    "RVV": "failed",
+    "RVW": "ok",
+    "RVY": "ok",
+    "RW1": "no-website",
+    "RW3": "no-website",
+    "RW4": "bot-challenge",
+    "RW5": "ok",
+    "RW6": "failed",
+    "RWA": "ok",
+    "RWD": "ok",
+    "RWE": "ok",
+    "RWF": "ok",
+    "RWG": "ok",
+    "RWH": "ok",
+    "RWJ": "ok",
+    "RWK": "ok",
+    "RWN": "no-website",
+    "RWP": "ok",
+    "RWR": "ok",
+    "RWV": "ok",
+    "RWW": "ok",
+    "RWX": "ok",
+    "RWY": "ok",
+    "RX1": "ok",
+    "RX2": "ok",
+    "RX3": "ok",
+    "RX4": "ok",
+    "RX6": "ok",
+    "RX7": "ok",
+    "RX8": "ok",
+    "RX9": "ok",
+    "RXA": "bot-challenge",
+    "RXC": "ok",
+    "RXE": "ok",
+    "RXF": "ok",
+    "RXG": "ok",
+    "RXH": "ok",
+    "RXK": "ok",
+    "RXL": "failed",
+    "RXM": "ok",
+    "RXN": "ok",
+    "RXP": "ok",
+    "RXQ": "ok",
+    "RXR": "ok",
+    "RXT": "ok",
+    "RXV": "ok",
+    "RXW": "ok",
+    "RXX": "ok",
+    "RXY": "ok",
+    "RY1": "no-website",
+    "RY2": "ok",
+    "RY3": "no-website",
+    "RY4": "ok",
+    "RY5": "ok",
+    "RY6": "ok",
+    "RY7": "ok",
+    "RY8": "ok",
+    "RY9": "ok",
+    "RYA": "ok",
+    "RYC": "ok",
+    "RYD": "ok",
+    "RYE": "ok",
+    "RYF": "ok",
+    "RYG": "ok",
+    "RYH": "no-website",
+    "RYJ": "ok",
+    "RYK": "no-website",
+    "RYQ": "no-website",
+    "RYR": "no-website",
+    "RYT": "ok",
+    "RYV": "failed",
+    "RYW": "ok",
+    "RYX": "ok",
+    "RYY": "ok"
   },
   "candidates": [
     {
       "trustCode": "RDD",
       "trustName": "Basildon and Thurrock University Hospitals NHS Foundation Trust",
-      "url": "http://www.basildonandthurrock.nhs.uk/download/basildon-hospital-map-level-by-level.pdf?ver=42880&amp;doc=docm93jijm4n4732.pdf",
+      "url": "http://www.basildonandthurrock.nhs.uk/download/basildon-hospital-map-level-by-level.pdf?ver=42880&doc=docm93jijm4n4732.pdf",
       "linkText": "Basildon Hospital map",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RDD",
+      "trustName": "Basildon and Thurrock University Hospitals NHS Foundation Trust",
+      "url": "http://www.basildonandthurrock.nhs.uk/download/southend-hospital-ground-floor-map-pdf.pdf?ver=31231&doc=docm93jijm4n1240.pdf",
+      "linkText": "Southend Hospital ground floor map,",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RDD",
+      "trustName": "Basildon and Thurrock University Hospitals NHS Foundation Trust",
+      "url": "http://www.basildonandthurrock.nhs.uk/download/southend-hospital-first-floor-map-pdf.pdf?ver=41105&doc=docm93jijm4n1241.pdf",
+      "linkText": "first floor map",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RDD",
+      "trustName": "Basildon and Thurrock University Hospitals NHS Foundation Trust",
+      "url": "http://www.basildonandthurrock.nhs.uk/download/southend-hospital-second-floor-map-pdf.pdf?ver=31232&doc=docm93jijm4n1239.pdf",
+      "linkText": "second floor map",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RGT",
+      "trustName": "Cambridge University Hospitals NHS Foundation Trust",
+      "url": "https://www.cuh.nhs.uk/documents/3229/152488_FindingYourWay_L2_MAP_8pp_DL_Update_Update_0726_Final.pdf",
+      "linkText": "Level 2-floor plan pdf 488.2 KB",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RGT",
+      "trustName": "Cambridge University Hospitals NHS Foundation Trust",
+      "url": "https://www.cuh.nhs.uk/documents/2773/Level_3_Floorplan_-_CUH_Map.pdf",
+      "linkText": "Level 3-floor plan pdf 168.5 KB",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RXP",
+      "trustName": "County Durham and Darlington NHS Foundation Trust",
+      "url": "https://www.cddft.nhs.uk/application/files/4417/3444/2318/Bishop_Auckland_Floor_Plan_2023.pdf",
+      "linkText": "",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RBD",
+      "trustName": "Dorset County Hospital NHS Foundation Trust",
+      "url": "https://www.dchft.nhs.uk/wp-content/uploads/2023/06/DCH-Internal-Map-for-website-JUNE-2023.pdf",
+      "linkText": "Internal map of the hospital",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RBD",
+      "trustName": "Dorset County Hospital NHS Foundation Trust",
+      "url": "https://dchft.nhs.uk/wp-content/uploads/2023/06/DCH-Internal-Map-for-website-JUNE-2023.pdf",
+      "linkText": "Internal map of the hospital",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RJN",
+      "trustName": "East Cheshire NHS Trust",
+      "url": "https://www.eastcheshire.nhs.uk/application/files/1017/5344/1251/2025-05-05_MDGH_Ground_Floor_Patients.pdf",
+      "linkText": "here",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RJN",
+      "trustName": "East Cheshire NHS Trust",
+      "url": "https://www.eastcheshire.nhs.uk/application/files/8617/5344/1251/2025-05-05_MDGH_First_Floor_Patients.pdf",
+      "linkText": "here",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RJN",
+      "trustName": "East Cheshire NHS Trust",
+      "url": "https://www.eastcheshire.nhs.uk/application/files/2616/8546/1909/NHS-ground-floor.pdf",
+      "linkText": "",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RJN",
+      "trustName": "East Cheshire NHS Trust",
+      "url": "https://www.eastcheshire.nhs.uk/application/files/6316/8546/1938/NHS-first-floor-1.pdf",
+      "linkText": "",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RTE",
+      "trustName": "Gloucestershire Hospitals NHS Foundation Trust",
+      "url": "https://www.gloshospitals.nhs.uk/documents/22962/CGH_Colour_map_0325_v1.pdf",
+      "linkText": "Internal map of Cheltenham General Hospital (1.43MB pdf)",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RTE",
+      "trustName": "Gloucestershire Hospitals NHS Foundation Trust",
+      "url": "https://www.gloshospitals.nhs.uk/documents/22963/GRH_colour_map_0325_v1.pdf",
+      "linkText": "Internal map of Gloucestershire Royal Hospital (1.50MB pdf)",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RBN",
+      "trustName": "Mersey and West Lancashire Teaching Hospitals NHS Trust",
+      "url": "http://www.sthk.nhs.uk/media/PDFs/Maps/Whiston-Floor-Map.pdf",
+      "linkText": "Whiston Floor Map",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RBN",
+      "trustName": "Mersey and West Lancashire Teaching Hospitals NHS Trust",
+      "url": "https://sthk.merseywestlancs.nhs.uk/media/PDFs/Maps/Whiston-Floor-Map.pdf",
+      "linkText": "Level 1 (Yellow) near Reception/Main entrance lifts",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ8",
+      "trustName": "Mid Essex Hospital Services NHS Trust",
+      "url": "https://www.meht.nhs.uk/download/basildon-hospital-map-level-by-level.pdf?ver=42880&doc=docm93jijm4n4732.pdf",
+      "linkText": "Basildon Hospital map",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ8",
+      "trustName": "Mid Essex Hospital Services NHS Trust",
+      "url": "https://www.meht.nhs.uk/download/southend-hospital-ground-floor-map-pdf.pdf?ver=31231&doc=docm93jijm4n1240.pdf",
+      "linkText": "Southend Hospital ground floor map,",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ8",
+      "trustName": "Mid Essex Hospital Services NHS Trust",
+      "url": "https://www.meht.nhs.uk/download/southend-hospital-first-floor-map-pdf.pdf?ver=41105&doc=docm93jijm4n1241.pdf",
+      "linkText": "first floor map",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ8",
+      "trustName": "Mid Essex Hospital Services NHS Trust",
+      "url": "https://www.meht.nhs.uk/download/southend-hospital-second-floor-map-pdf.pdf?ver=31232&doc=docm93jijm4n1239.pdf",
+      "linkText": "second floor map",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.sthk.nhs.uk/media/PDFs/Maps/St-Helens-Hospital-floor-map.pdf",
+      "linkText": "St Helens Teaching Hospital",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RJL",
+      "trustName": "Northern Lincolnshire and Goole NHS Foundation Trust",
+      "url": "https://www.nlg.nhs.uk/wp-content/uploads/2023/03/Diana-Princess-of-Wales-Hospital-internal-2D-2025.pdf",
+      "linkText": "PDF - Internal map of Diana, Princess of Wales Hospital, Grimsby (850.33kB)",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RTH",
+      "trustName": "Oxford University Hospitals NHS Foundation Trust",
+      "url": "https://www.ouh.nhs.uk/media/yislxup4/cancer-centre-plan.pdf",
+      "linkText": "Cancer and Haematology Centre Ground and First Floor Plan in pdf format",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://www.royaldevon.nhs.uk/media/u4bdron2/rd-e-hospital-wonford-ward-map.pdf",
+      "linkText": "hospital wards",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://royaldevon.nhs.uk/media/u4bdron2/rd-e-hospital-wonford-ward-map.pdf",
+      "linkText": "main hospital wards",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://royaldevon.nhs.uk/media/ih2hsnhi/north-devon-2d-map.pdf",
+      "linkText": "Floor plan of North Devon District Hospital",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RCU",
+      "trustName": "Sheffield Children's NHS Foundation Trust",
+      "url": "https://www.sheffieldchildrens.nhs.uk/download/316/general/5680/hospital-map-a-floor.pdf",
+      "linkText": "",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RCU",
+      "trustName": "Sheffield Children's NHS Foundation Trust",
+      "url": "https://www.sheffieldchildrens.nhs.uk/download/316/general/5679/hospital-map-b-floor.pdf",
+      "linkText": "Hospital map &#8211; B Floor",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RFR",
+      "trustName": "The Rotherham NHS Foundation Trust",
+      "url": "http://www.therotherhamft.nhs.uk/sites/default/files/2024-05/Wayfinder%20-%20Rotherham%20Hospital%20-%20May%202024.pdf",
+      "linkText": "Download a floor plan of the hospital",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWD",
+      "trustName": "United Lincolnshire Teaching Hospitals NHS Trust",
+      "url": "https://www.ulh.nhs.uk/wp-content/uploads/2026/06/Pilgrim-ground-floor.pdf",
+      "linkText": "Pilgrim ground floor",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-A-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - A level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-B-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - B level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-C-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - C level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-D-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - D level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-E-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - E level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-F-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - F level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-G-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - G level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-H-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - H level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/PAH-J-level-floor-plan.pdf",
+      "linkText": "Princess Anne Hospital - J level floor plan",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RLQ",
+      "trustName": "Wye Valley NHS Trust",
+      "url": "https://www.wyevalley.nhs.uk/media/807034/wvt-plan-detailed-site-plan-april-2022.pdf",
+      "linkText": "Ward/Department map",
+      "kind": "floor-plan",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RF4",
+      "trustName": "Barking, Havering and Redbridge University Hospitals NHS Trust",
+      "url": "https://www.bhrhospitals.nhs.uk/download/queens-hospital-map.html?ver=16286&doc=docm93jijm4n6631.pdf",
+      "linkText": "Queen's Hospital Map [pdf] 193KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RF4",
+      "trustName": "Barking, Havering and Redbridge University Hospitals NHS Trust",
+      "url": "https://www.bhrhospitals.nhs.uk/download/king-george-hospital-map.pdf?ver=16595&doc=docm93jijm4n6775.pdf",
+      "linkText": "King George Hospital Map [pdf] 1MB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "R1H",
+      "trustName": "Barts Health NHS Trust",
+      "url": "https://www.bartshealth.nhs.uk/download/mile-end-hospital-site-map.pdf?ver=61115&doc=docm93jijm4n734.pdf",
+      "linkText": "Mile End Hospital site map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "R1H",
+      "trustName": "Barts Health NHS Trust",
+      "url": "http://www.bartshealth.nhs.uk/download/mile-end-hospital-site-map.pdf?ver=61115&doc=docm93jijm4n734.pdf",
+      "linkText": "Mile End Hospital site map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/birmingham-womens-hospital-map.pdf?ver=25069",
+      "linkText": "Birmingham Women's Hospital map [pdf] 610KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/hereford-hospital-map.pdf?ver=4015",
+      "linkText": "Hereford Hospital map [pdf] 142KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/new-cross-hospital-map.pdf?ver=4020",
+      "linkText": "New Cross Hospital map [pdf] 126KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/robert-jones-and-agnes-hunt-hospital-map.pdf?ver=4022",
+      "linkText": "Robert Jones and Agnes Hunt Hospital map [pdf] 106KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/royal-shrewsbury-hospital-map.pdf?ver=4024",
+      "linkText": "Royal Shrewsbury Hospital map [pdf] 961KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/russells-hall-hospital-map.pdf?ver=4025",
+      "linkText": "Russells Hall Hospital map [pdf] 140KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/stoke-city-hospital-map.pdf?ver=4032",
+      "linkText": "Stoke City Hospital map [pdf] 463KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/walsall-manor-hospital-map.pdf?ver=4042",
+      "linkText": "Walsall Manor Hospital map [pdf] 6MB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/worcester-royal-hospital-map.pdf?ver=4041",
+      "linkText": "Worcester Royal Hospital map [pdf] 199KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RXQ",
+      "trustName": "Buckinghamshire Healthcare NHS Trust",
+      "url": "https://www.buckshealthcare.nhs.uk/wp-content/uploads/2023/04/Stoke-Mandeville-Hospital-map-of-site_December-2023.pdf",
+      "linkText": "Download Document",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RXQ",
+      "trustName": "Buckinghamshire Healthcare NHS Trust",
+      "url": "https://www.buckshealthcare.nhs.uk/wp-content/uploads/2021/06/Wycombe-Hospital-site-map.pdf",
+      "linkText": "Download Document",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RXQ",
+      "trustName": "Buckinghamshire Healthcare NHS Trust",
+      "url": "https://www.buckshealthcare.nhs.uk/wp-content/uploads/2021/06/Amersham-Hospital-map_09_2024.pdf",
+      "linkText": "Download Document",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RGT",
+      "trustName": "Cambridge University Hospitals NHS Foundation Trust",
+      "url": "https://www.cuh.nhs.uk/documents/1376/151750_MS_Biomedical_Campus_map_update_May25_FINAL_with_CBC_logo.pdf",
+      "linkText": "Finding your way around the Cambridge Biomedical Campus pdf 743.3 KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RGT",
+      "trustName": "Cambridge University Hospitals NHS Foundation Trust",
+      "url": "https://media.cuh.nhs.uk/documents/151750_MS_Biomedical_Campus_map_update_May25_FINAL_with_CBC_logo.pdf",
+      "linkText": "see our campus map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQM",
+      "trustName": "Chelsea and Westminster Hospital NHS Foundation Trust",
+      "url": "https://www.chelwest.nhs.uk/your-visit/getting-here/links/Chelsea-and-Westminster-Hospital-Site-Map.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQM",
+      "trustName": "Chelsea and Westminster Hospital NHS Foundation Trust",
+      "url": "https://www.chelwest.nhs.uk/your-visit/getting-here/links/west-middlesex-university-hospital-site-map.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWH",
+      "trustName": "East and North Hertfordshire Teaching NHS Trust",
+      "url": "https://www.enherts-tr.nhs.uk/wp-content/uploads/2026/07/Lister-Map-2026.pdf",
+      "linkText": "Click here to view the Lister hospital site map for navigating your way inside our hospital.",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWH",
+      "trustName": "East and North Hertfordshire Teaching NHS Trust",
+      "url": "https://www.enherts-tr.nhs.uk/wp-content/uploads/2019/12/Hertford-county-Hospital.pdf",
+      "linkText": "Hertford County Hospital map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "R1A",
+      "trustName": "Herefordshire and Worcestershire Health and Care NHS Trust",
+      "url": "https://www.hacw.nhs.uk/download/princess-of-wales-community-hospital-site-map.pdf?ver=39099&doc=docm93jijm4n21462.pdf",
+      "linkText": "print this site map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWA",
+      "trustName": "Hull University Teaching Hospitals NHS Trust",
+      "url": "https://www.hey.nhs.uk/wp/wp-content/uploads/2024/04/Hull-Royal-Infirmary-Site-Map.pdf",
+      "linkText": "Plan of Hull Royal Infirmary",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWA",
+      "trustName": "Hull University Teaching Hospitals NHS Trust",
+      "url": "https://www.hey.nhs.uk/wp/wp-content/uploads/2026/06/1253769-Hull-Teaching-Castle-Hill-Map.pdf",
+      "linkText": "Castle Hill Hospital Map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RJ2",
+      "trustName": "Lewisham and Greenwich NHS Trust",
+      "url": "https://www.lewishamandgreenwich.nhs.uk/download/uhl-site-map-with-wards-portraitpdf.pdf?ver=9912&doc=docm93jijm4n7509.pdf",
+      "linkText": "Map of University Hospital Lewisham",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "R1K",
+      "trustName": "London North West University Healthcare NHS Trust",
+      "url": "https://www.lnwh.nhs.uk/download/ealing-hospital-site-map.pdf?ver=39311",
+      "linkText": "Ealing Hospital site map [pdf] 351KB ",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "R1K",
+      "trustName": "London North West University Healthcare NHS Trust",
+      "url": "https://www.lnwh.nhs.uk/download/northwick-park-hospital-site-map.pdf?ver=28074&doc=docm93jijm4n901",
+      "linkText": "Northwick Park Hospital site map [pdf] 542KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWF",
+      "trustName": "Maidstone and Tunbridge Wells NHS Trust",
+      "url": "https://www.mtw.nhs.uk/download/maidstone-hospital-mappdf.pdf?ver=12829&doc=docm93jijm4n9742.pdf",
+      "linkText": "Maidstone Hospital map [pdf] 296KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWF",
+      "trustName": "Maidstone and Tunbridge Wells NHS Trust",
+      "url": "https://www.mtw.nhs.uk/download/tunbridge-wells-hospital-mappdf.pdf?ver=12830&doc=docm93jijm4n9743.pdf",
+      "linkText": "Tunbridge Wells Hospital map [pdf] 196KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWF",
+      "trustName": "Maidstone and Tunbridge Wells NHS Trust",
+      "url": "https://www.mtw.nhs.uk/download/fordcombe-hospital-mappdf.pdf?ver=12828&doc=docm93jijm4n9741.pdf",
+      "linkText": "Fordcombe Hospital map [pdf] 104KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "R0A",
+      "trustName": "Manchester University NHS Foundation Trust",
+      "url": "https://mft.nhs.uk/app/uploads/sites/10/2018/05/wythenshawe-hospital-sitemap-3D.pdf",
+      "linkText": "Hospital Map Read more",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RPA",
+      "trustName": "Medway NHS Foundation Trust",
+      "url": "https://www.medway.nhs.uk/wp-content/uploads/2025/03/Internal-Hospital-Map-updated-March-2025.pdf",
+      "linkText": "View the locations of wards and departments",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RPA",
+      "trustName": "Medway NHS Foundation Trust",
+      "url": "https://www.medway.nhs.uk/wp-content/uploads/2025/03/Hospital-Map-External-2025.pdf",
+      "linkText": "View a map of the Medway Maritime Hospital site",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RBN",
+      "trustName": "Mersey and West Lancashire Teaching Hospitals NHS Trust",
+      "url": "https://sthk.merseywestlancs.nhs.uk/media/PDFs/Maps/Whiston%20Site%20Map%20(Full%20Site).pdf",
+      "linkText": "Whiston Site Map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RXF",
+      "trustName": "Mid Yorkshire Teaching NHS Trust",
+      "url": "https://www.midyorks.nhs.uk/download/pinderfields-hospital-map.pdf?ver=6094&doc=docm93jijm4n3551.pdf",
+      "linkText": "Pinderfields Hospital Map [pdf] 135KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RXF",
+      "trustName": "Mid Yorkshire Teaching NHS Trust",
+      "url": "https://www.midyorks.nhs.uk/download/community-diagnostic-centre-site-map-.pdf?ver=4688&doc=docm93jijm4n3417",
+      "linkText": "Community Diagnostic Centre Site Map [pdf] 533KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RVW",
+      "trustName": "North Tees and Hartlepool NHS Foundation Trust",
+      "url": "https://www.nth.nhs.uk/wp-content/uploads/2022/07/Internal-site-map-north-tees-2019.pdf",
+      "linkText": "Internal site map of North Tees (627kB pdf)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RVW",
+      "trustName": "North Tees and Hartlepool NHS Foundation Trust",
+      "url": "https://www.nth.nhs.uk/wp-content/uploads/2022/07/External-site-map-north-tees-2019.pdf",
+      "linkText": "External site map of North Tees (294kB pdf)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RVW",
+      "trustName": "North Tees and Hartlepool NHS Foundation Trust",
+      "url": "https://www.nth.nhs.uk/wp-content/uploads/2022/07/external-site-map-hartlepool-2024.pdf",
+      "linkText": "University Hospital of Hartlepool external site map (2MB pdf)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RVW",
+      "trustName": "North Tees and Hartlepool NHS Foundation Trust",
+      "url": "https://www.nth.nhs.uk/wp-content/uploads/2022/07/internal-site-map-hartlepool-2018.pdf",
+      "linkText": "University Hospital of Hartlepool internal site map (329kB pdf)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.uhmb.nhs.uk/application/files/2815/8437/5033/Site_map_of_Furness_General_Hospital.pdf",
+      "linkText": "Furness General Hospital",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.ncic.nhs.uk/application/files/5215/7234/4293/West_Cumberland_Hospital_Map.pdf",
+      "linkText": "West Cumberland Hospital",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.uhmb.nhs.uk/application/files/7915/8411/5926/Westmorland_General_Hospital_site_map.pdf",
+      "linkText": "Westmorland General Hospital",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.rcr.ac.uk/sites/default/files/site_map.pdf",
+      "linkText": "Manchester Royal",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://tamesideandglossopicft.nhs.uk/application/files/1916/2878/1779/Tameside_Hospital_Site_Map.pdf",
+      "linkText": "Tameside Hospital",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://elht.nhs.uk/application/files/7116/3577/2789/PDF_-_BGTH_Departmental_Wayfinding_Site_Map_V1_26.02.2020_1.pdf",
+      "linkText": "Burnley General Teaching Hospital",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.uhmb.nhs.uk/application/files/8915/8411/5764/Site_map_of_Royal_Lancaster_Infirmary.pdf",
+      "linkText": "Royal Lancaster Infirmary",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.sthk.nhs.uk/media/PDFs/Maps/Whiston-Site-Map-For-Website.pdf",
+      "linkText": "Whiston Teaching Hospital",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RNS",
+      "trustName": "Northampton General Hospital NHS Trust",
+      "url": "https://www.northamptongeneral.nhs.uk/Downloads/NGH-Hospital-Map.pdf",
+      "linkText": "Hospital Map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RJL",
+      "trustName": "Northern Lincolnshire and Goole NHS Foundation Trust",
+      "url": "https://www.nlg.nhs.uk/wp-content/uploads/2023/03/chhSiteMap.pdf",
+      "linkText": "PDF version - Castle Hill site map (2.29MB)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RTH",
+      "trustName": "Oxford University Hospitals NHS Foundation Trust",
+      "url": "https://www.ouh.nhs.uk/media/1xbo2yli/jr-hospital-sitemap.pdf",
+      "linkText": "JR site map in pdf format",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RTH",
+      "trustName": "Oxford University Hospitals NHS Foundation Trust",
+      "url": "https://www.ouh.nhs.uk/media/dmuokv04/ch-hospital-sitemap.pdf",
+      "linkText": "Churchill site map in pdf format",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RTH",
+      "trustName": "Oxford University Hospitals NHS Foundation Trust",
+      "url": "https://www.ouh.nhs.uk/media/j11mwraw/noc-site-map.pdf",
+      "linkText": "NOC site map in pdf format",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RPG",
+      "trustName": "Oxleas NHS Foundation Trust",
+      "url": "https://oxleas.nhs.uk/download/queen-marys-hospital-site-map.pdf?ver=3446&doc=docm93jijm4n2138.pdf",
+      "linkText": "Queen Mary's Hospital site map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RPC",
+      "trustName": "Queen Victoria Hospital NHS Foundation Trust",
+      "url": "https://www.qvh.nhs.uk/wp-content/uploads/2015/09/Site-map-updated-October-2021.pdf",
+      "linkText": "QVH Site map updated October 2021",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RPC",
+      "trustName": "Queen Victoria Hospital NHS Foundation Trust",
+      "url": "https://www.qvh.nhs.uk/wp-content/uploads/2015/09/New-map_COVID-19-amendments-v3.pdf",
+      "linkText": "QVH hospital map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "https://www.royalberkshire.nhs.uk/media/2uxbkm3j/royal-berkshire-hospital-map_jan23.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "http://www.royalberkshire.nhs.uk/media/2uxbkm3j/royal-berkshire-hospital-map_jan23.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://www.royaldevon.nhs.uk/media/bysd1vx2/rd-e-hospital-wonford-site-map-car-park-map.pdf",
+      "linkText": "Royal Devon and Exeter Hospital (Wonford)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://royaldevon.nhs.uk/media/n2selvjd/wonford-site-map.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://royaldevon.nhs.uk/media/bysd1vx2/rd-e-hospital-wonford-site-map-car-park-map.pdf",
+      "linkText": "main Wonford site",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://www.royaldevon.nhs.uk/media/n2selvjd/wonford-site-map.pdf",
+      "linkText": "",
       "kind": "site-map",
       "confidence": "high"
     },
@@ -137,26 +1102,18 @@
       "confidence": "high"
     },
     {
-      "trustCode": "RD1",
-      "trustName": "Royal United Hospitals Bath NHS Foundation Trust",
-      "url": "https://www.ruh.nhs.uk/finding/documents/RUH_directory_map.pdf?t=73040.52",
-      "linkText": "Site Map &amp; Directory",
+      "trustCode": "RNZ",
+      "trustName": "Salisbury NHS Foundation Trust",
+      "url": "https://www.salisbury.nhs.uk/media/jpmnpe13/aerialview-2023.pdf",
+      "linkText": "Hospital Map - Aerial view",
       "kind": "site-map",
       "confidence": "high"
     },
     {
-      "trustCode": "RCU",
-      "trustName": "Sheffield Children's NHS Foundation Trust",
-      "url": "https://www.sheffieldchildrens.nhs.uk/download/316/general/5680/hospital-map-a-floor.pdf",
-      "linkText": "",
-      "kind": "site-map",
-      "confidence": "high"
-    },
-    {
-      "trustCode": "RCU",
-      "trustName": "Sheffield Children's NHS Foundation Trust",
-      "url": "https://www.sheffieldchildrens.nhs.uk/download/316/general/5679/hospital-map-b-floor.pdf",
-      "linkText": "Hospital map &#8211; B Floor",
+      "trustCode": "RNZ",
+      "trustName": "Salisbury NHS Foundation Trust",
+      "url": "https://www.salisbury.nhs.uk/media/c02d52fq/mapcolour.pdf",
+      "linkText": "Hospital Site Map",
       "kind": "site-map",
       "confidence": "high"
     },
@@ -177,6 +1134,62 @@
       "confidence": "high"
     },
     {
+      "trustCode": "RTR",
+      "trustName": "South Tees Hospitals NHS Foundation Trust",
+      "url": "https://www.southtees.nhs.uk/wp-content/uploads/2025/07/James-Cook-campus-map-Jul25.pdf",
+      "linkText": "James Cook Hospital map (129.51kB, PDF)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RTR",
+      "trustName": "South Tees Hospitals NHS Foundation Trust",
+      "url": "https://www.southtees.nhs.uk/wp-content/uploads/2025/07/Friarage-Site-Map-July-2025.pdf",
+      "linkText": "Friarage Hospital map (769.84kB, PDF)",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RJC",
+      "trustName": "South Warwickshire University NHS Foundation Trust",
+      "url": "https://www.swft.nhs.uk/application/files/6017/5213/2401/A5_Site_Map_of_Stratford_Hospital_-_July_2025_Update.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQY",
+      "trustName": "South West London and St George's Mental Health NHS Trust",
+      "url": "https://www.swlstg.nhs.uk/download/tolworth-site-map.pdf?ver=6056&doc=docm93jijm4n3479.pdf",
+      "linkText": "Tolworth site map [pdf] 393KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RQY",
+      "trustName": "South West London and St George's Mental Health NHS Trust",
+      "url": "https://www.swlstg.nhs.uk/download/springfield-site-map-.pdf?ver=1600&doc=docm93jijm4n982",
+      "linkText": "Springfield site map [pdf] 869KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RVY",
+      "trustName": "Southport and Ormskirk Hospital NHS Trust",
+      "url": "https://www.southportandormskirk.nhs.uk/media/Hospitals/Ormskirk%20Site%20Map%20(A3).pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RVY",
+      "trustName": "Southport and Ormskirk Hospital NHS Trust",
+      "url": "https://www.southportandormskirk.nhs.uk/media/Hospitals/Southport%20Hospital%20Site%20Map%20(A3)%20Sept%202024.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
       "trustCode": "RJ7",
       "trustName": "St George's University Hospitals NHS Foundation Trust",
       "url": "https://www.stgeorges.nhs.uk/wp-content/uploads/2013/11/sgh-site-map.pdf",
@@ -193,6 +1206,14 @@
       "confidence": "high"
     },
     {
+      "trustCode": "RJ7",
+      "trustName": "St George's University Hospitals NHS Foundation Trust",
+      "url": "https://www.stgeorges.nhs.uk/wp-content/uploads/2021/07/St-Georges-Map-and-Key-July-2021.pdf",
+      "linkText": "St George’s site map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
       "trustCode": "RCX",
       "trustName": "The Queen Elizabeth Hospital, King's Lynn, NHS Foundation Trust",
       "url": "https://www.qehkl.nhs.uk/wp-content/uploads/2026/06/Trust-Map-June-2026.pdf",
@@ -201,26 +1222,154 @@
       "confidence": "high"
     },
     {
-      "trustCode": "RDD",
-      "trustName": "Basildon and Thurrock University Hospitals NHS Foundation Trust",
-      "url": "http://www.basildonandthurrock.nhs.uk/download/southend-hospital-ground-floor-map-pdf.pdf?ver=31231&amp;doc=docm93jijm4n1240.pdf",
-      "linkText": "Southend Hospital ground floor map,",
+      "trustCode": "RL4",
+      "trustName": "The Royal Wolverhampton NHS Trust",
+      "url": "https://royalwolverhampton.nhs.uk/wp-content/uploads/2024/11/RWT_Wayfinder_Directory.pdf",
+      "linkText": "New Cross Hospital Site Map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RL4",
+      "trustName": "The Royal Wolverhampton NHS Trust",
+      "url": "https://royalwolverhampton.nhs.uk/wp-content/uploads/2024/11/6459_Cannock_Chase_Hospital_internal.pdf",
+      "linkText": "Cannock Chase Hospital Site Map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RL4",
+      "trustName": "The Royal Wolverhampton NHS Trust",
+      "url": "https://royalwolverhampton.nhs.uk/wp-content/uploads/2024/11/6458_West_Park_Rehabilitation_Hospital.pdf",
+      "linkText": "West Park Hospital Site Map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWD",
+      "trustName": "United Lincolnshire Teaching Hospitals NHS Trust",
+      "url": "https://www.ulh.nhs.uk/wp-content/uploads/2024/10/Lincoln-hospital-map-level-1.pdf",
+      "linkText": "Lincoln hospital map level 1",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWD",
+      "trustName": "United Lincolnshire Teaching Hospitals NHS Trust",
+      "url": "https://www.ulh.nhs.uk/wp-content/uploads/2026/06/Lincoln-hospital-maps-level-2-blank.pdf",
+      "linkText": "Lincoln hospital maps level 2",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWD",
+      "trustName": "United Lincolnshire Teaching Hospitals NHS Trust",
+      "url": "https://www.ulh.nhs.uk/wp-content/uploads/2026/01/Lincoln-hospital-map-level-3.pdf",
+      "linkText": "Lincoln hospital map level 3",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWD",
+      "trustName": "United Lincolnshire Teaching Hospitals NHS Trust",
+      "url": "https://www.ulh.nhs.uk/wp-content/uploads/2026/03/Grantham-and-District-Hospital-map.pdf",
+      "linkText": "Grantham and District Hospital map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/site-map-2024pdf.pdf?ver=30786&%3Bdoc=docm93jijm4n17075",
+      "linkText": "View our Derriford Hospital site map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-site-mappdf.pdf?ver=32773&%3Bdoc=docm93jijm4n17075",
+      "linkText": "View our Derriford Hospital site map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-site-mappdf.pdf?ver=32773&doc=docm93jijm4n17075",
+      "linkText": "See our Derriford Hospital site map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-site-mappdf.pdf?ver=25429&doc=docm93jijm4n17075.pdf&ver=32773",
+      "linkText": "Derriford hospital site map.pdf[pdf] 90KB",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RBL",
+      "trustName": "Wirral University Teaching Hospital NHS Foundation Trust",
+      "url": "https://www.wuth.nhs.uk/media/5128/st-catherine-site-map.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RWP",
+      "trustName": "Worcestershire Acute Hospitals NHS Trust",
+      "url": "https://www.worcsacute.nhs.uk/devuret/2016/07/Alex_Map_A4.pdf",
+      "linkText": "Alexandra Hospital Map",
+      "kind": "site-map",
+      "confidence": "high"
+    },
+    {
+      "trustCode": "RCF",
+      "trustName": "Airedale NHS Foundation Trust",
+      "url": "https://www.airedale-trust.nhs.uk/wp-content/uploads/2021/10/Directions-to-Skipton-Hospital.pdf",
+      "linkText": "map which shows you driving instructions",
       "kind": "site-map",
       "confidence": "medium"
     },
     {
-      "trustCode": "RDD",
-      "trustName": "Basildon and Thurrock University Hospitals NHS Foundation Trust",
-      "url": "http://www.basildonandthurrock.nhs.uk/download/southend-hospital-first-floor-map-pdf.pdf?ver=41105&amp;doc=docm93jijm4n1241.pdf",
-      "linkText": "first floor map",
+      "trustCode": "R1H",
+      "trustName": "Barts Health NHS Trust",
+      "url": "https://www.bartshealth.nhs.uk/download/finding-your-way-around-whipps-cross.pdf?ver=55132&doc=docm93jijm4n21777.pdf",
+      "linkText": "Download a map of the hospital",
       "kind": "site-map",
       "confidence": "medium"
     },
     {
-      "trustCode": "RDD",
-      "trustName": "Basildon and Thurrock University Hospitals NHS Foundation Trust",
-      "url": "http://www.basildonandthurrock.nhs.uk/download/southend-hospital-second-floor-map-pdf.pdf?ver=31232&amp;doc=docm93jijm4n1239.pdf",
-      "linkText": "second floor map",
+      "trustCode": "R1H",
+      "trustName": "Barts Health NHS Trust",
+      "url": "http://www.bartshealth.nhs.uk/download/finding-your-way-around-whipps-cross.pdf?ver=55132&doc=docm93jijm4n21777.pdf",
+      "linkText": "Download a map of the hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/alexandra-hospital-redditch-map.pdf?ver=4004",
+      "linkText": "Alexandra Hospital, Redditch map [pdf] 301KB ",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/birmingham-childrens-hospital-location-map.pdf?ver=4006",
+      "linkText": "Birmingham Children's Hospital location map [pdf] 3MB ",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RQ3",
+      "trustName": "Birmingham Women's and Children's NHS Foundation Trust",
+      "url": "https://bwc.nhs.uk/download/university-hospital-coventry-map.pdf?ver=25070",
+      "linkText": "University Hospital Coventry map [pdf] 1MB ",
       "kind": "site-map",
       "confidence": "medium"
     },
@@ -233,10 +1382,90 @@
       "confidence": "medium"
     },
     {
-      "trustCode": "RBD",
-      "trustName": "Dorset County Hospital NHS Foundation Trust",
-      "url": "https://www.dchft.nhs.uk/wp-content/uploads/2023/06/DCH-Internal-Map-for-website-JUNE-2023.pdf",
-      "linkText": "Internal map of the hospital",
+      "trustCode": "RWH",
+      "trustName": "East and North Hertfordshire Teaching NHS Trust",
+      "url": "https://www.enherts-tr.nhs.uk/wp-content/uploads/2019/09/Outpatient_Clinics_A4.pdf",
+      "linkText": "map of the department",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RVR",
+      "trustName": "Epsom and St Helier University Hospitals NHS Trust",
+      "url": "https://www.epsom-sthelier.nhs.uk/download/st-helier-map-v34-pdf.pdf?ver=58029&doc=docm93jijm4n24778.pdf",
+      "linkText": "St Helier Hospital and Queen Mary's Hospital for Children map",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTE",
+      "trustName": "Gloucestershire Hospitals NHS Foundation Trust",
+      "url": "https://www.gloshospitals.nhs.uk/documents/14962/2274_Construction_Parking_Map_Leaflet_A4_OB_V.2_JCeJfyi.pdf",
+      "linkText": "parking map",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTE",
+      "trustName": "Gloucestershire Hospitals NHS Foundation Trust",
+      "url": "https://www.gloshospitals.nhs.uk/documents/14901/2274_Construction_Parking_Map_Leaflet_A4_OB_V.2.pdf",
+      "linkText": "Hospital parking map",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RWA",
+      "trustName": "Hull University Teaching Hospitals NHS Trust",
+      "url": "https://www.hey.nhs.uk/wp/wp-content/uploads/2025/09/HRI-Patient-Visitor-Parking-Map-A3.pdf",
+      "linkText": "Map of Hull Royal Infirmary car parks",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RWA",
+      "trustName": "Hull University Teaching Hospitals NHS Trust",
+      "url": "https://www.hey.nhs.uk/wp/wp-content/uploads/2025/09/chhPatientVisitorParkingMap.pdf",
+      "linkText": "Map of Castle Hill Hospital car parks",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RJZ",
+      "trustName": "King's College Hospital NHS Foundation Trust",
+      "url": "https://content.tfl.gov.uk/bus-route-maps/kings-college-hospital-a4.pdf",
+      "linkText": "Map of buses from King’s College Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RJ2",
+      "trustName": "Lewisham and Greenwich NHS Trust",
+      "url": "https://www.lewishamandgreenwich.nhs.uk/download/uhlsitemapnovember2024pdf.pdf?ver=9447&doc=docm93jijm4n7045.pdf",
+      "linkText": "Map of the hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "R1K",
+      "trustName": "London North West University Healthcare NHS Trust",
+      "url": "https://www.lnwh.nhs.uk/download/ealing-hospital-car-parking-spaces-map.pdf?ver=39728",
+      "linkText": "Ealing Hospital car parking spaces map [pdf] 202KB ",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RWF",
+      "trustName": "Maidstone and Tunbridge Wells NHS Trust",
+      "url": "https://www.mtw.nhs.uk/download/maidstone-hospital-car-park-mappdf.pdf?ver=16166&doc=docm93jijm4n12104.pdf",
+      "linkText": "Maidstone Hospital car park map [pdf] 1MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RWF",
+      "trustName": "Maidstone and Tunbridge Wells NHS Trust",
+      "url": "https://www.mtw.nhs.uk/download/tunbridge-wells-hospital-car-park-mappdf.pdf?ver=16165&doc=docm93jijm4n12103.pdf",
+      "linkText": "Tunbridge Wells Hospital car park map [pdf] 772KB",
       "kind": "site-map",
       "confidence": "medium"
     },
@@ -249,6 +1478,526 @@
       "confidence": "medium"
     },
     {
+      "trustCode": "RD8",
+      "trustName": "Milton Keynes University Hospital NHS Foundation Trust",
+      "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2025/02/240204-MKUH-MAP-Feb2025v2.pdf",
+      "linkText": "Download a map of the hospital.",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RD8",
+      "trustName": "Milton Keynes University Hospital NHS Foundation Trust",
+      "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2020/07/Site-Cycle-Motorcycle-Map-July-2020.pdf",
+      "linkText": "here",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RD8",
+      "trustName": "Milton Keynes University Hospital NHS Foundation Trust",
+      "url": "https://www.mkuh.nhs.uk/wp-content/uploads/2019/10/200117-Milton-Keynes-Map-v3.pdf",
+      "linkText": "To download a map of the hospital, please click here.",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RVW",
+      "trustName": "North Tees and Hartlepool NHS Foundation Trust",
+      "url": "https://www.nth.nhs.uk/wp-content/uploads/2023/01/north-tees-map-get-here.pdf",
+      "linkText": "University hospital of North Tees directions (253kB pdf)",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RVW",
+      "trustName": "North Tees and Hartlepool NHS Foundation Trust",
+      "url": "https://www.nth.nhs.uk/wp-content/uploads/2026/01/gethere-hartlepool-hospital-updated.pdf",
+      "linkText": "University Hospital of Hartlepool Map (1MB pdf)",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://s3.amazonaws.com/COCH/PDF/AtoZ/CHESTER09+MAP+NORTH+27_07.pdf",
+      "linkText": "Countess of Chester Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://whh.nhs.uk/application/files/5415/3596/8071/HaltonMap.pdf",
+      "linkText": "Halton General Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.wwl.nhs.uk/media/PDFs/RAEI_Map.pdf",
+      "linkText": "Royal Albert Edward Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://mft.nhs.uk/app/uploads/sites/15/2021/03/NMGH-hosptial-map.pdf",
+      "linkText": "North Manchester General Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.wrightingtonhospital.org.uk/media/downloads/Wrightington_Map.pdf",
+      "linkText": "Wrightington Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://elht.nhs.uk/application/files/6215/2095/7130/Map_of_Wards_and_Departments_-_RBTH.pdf",
+      "linkText": "Royal Blackburn Teaching Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.wuth.nhs.uk/media/4958/aph-map-car-parks.pdf",
+      "linkText": "Arrowe Park Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.lhch.nhs.uk/media/5602/lhch-map.pdf",
+      "linkText": "Broadgreen Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.clatterbridgecc.nhs.uk/application/files/2814/7402/0355/CCC_Aintree_Map_Colour_FreeParking.pdf",
+      "linkText": "Clatterbridge Cancer Centre &ndash; Aintree",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.wuth.nhs.uk/media/4961/clatterbridge-map-v72017.pdf",
+      "linkText": "Clatterbridge Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RJL",
+      "trustName": "Northern Lincolnshire and Goole NHS Foundation Trust",
+      "url": "https://www.nlg.nhs.uk/wp-content/uploads/2023/03/Scunthorpe-3D-NOVEMBER-2022.pdf",
+      "linkText": "PDF version - 3D map of Scunthorpe General Hospital (1.16MB)",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RJL",
+      "trustName": "Northern Lincolnshire and Goole NHS Foundation Trust",
+      "url": "https://www.nlg.nhs.uk/wp-content/uploads/2023/03/SCUNTHORPE-2d-NOVEMBER-2022.pdf",
+      "linkText": "PDF version - 2D map of Scunthorpe General Hospital (2.09MB)",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RJL",
+      "trustName": "Northern Lincolnshire and Goole NHS Foundation Trust",
+      "url": "https://www.nlg.nhs.uk/wp-content/uploads/2023/03/Diana-Princess-of-Wales-Hospital-3D-2025.pdf",
+      "linkText": "PDF version - 3D map of Diana, Princess of Wales Hospital, Grimsby (804.77kB)",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RJL",
+      "trustName": "Northern Lincolnshire and Goole NHS Foundation Trust",
+      "url": "https://www.nlg.nhs.uk/wp-content/uploads/2023/03/GOOLE-3D-NOVEMBER-2022.pdf",
+      "linkText": "PDF version - 3D map of Goole and District Hospital (862.74kB)",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RJL",
+      "trustName": "Northern Lincolnshire and Goole NHS Foundation Trust",
+      "url": "https://www.nlg.nhs.uk/wp-content/uploads/2023/03/Goole-2d-NOVEMBER-2022.pdf",
+      "linkText": "PDF version - 2D map of Goole and District Hospital (1.01MB)",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RJL",
+      "trustName": "Northern Lincolnshire and Goole NHS Foundation Trust",
+      "url": "https://www.nlg.nhs.uk/wp-content/uploads/2025/11/chhPatientVisitorParkingMap.pdf",
+      "linkText": "Car parking map of Castle Hill Hospital (1.51MB)",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RX1",
+      "trustName": "Nottingham University Hospitals NHS Trust",
+      "url": "https://www.nuh.nhs.uk/download/qmc-site-3dpdf-.pdf?ver=33328&doc=docm93jijm4n14503",
+      "linkText": "Overview map of QMC",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RPC",
+      "trustName": "Queen Victoria Hospital NHS Foundation Trust",
+      "url": "https://www.qvh.nhs.uk/wp-content/uploads/2015/09/Map-of-Queen-Victoria-Hospital_Oct-22-1.pdf",
+      "linkText": "Map of Queen Victoria Hospital_Oct 22",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "https://www.royalberkshire.nhs.uk/media/1ivp2iej/getting-to-townlands-memorial-hospital.pdf",
+      "linkText": "View map of Townlands Memorial Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "https://www.royalberkshire.nhs.uk/media/3cfm23cd/getting-to-west-berkshire-community-hospital.pdf",
+      "linkText": "View map of West Berkshire Community Hospital. ",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "http://www.royalberkshire.nhs.uk/media/1ivp2iej/getting-to-townlands-memorial-hospital.pdf",
+      "linkText": "View map of Townlands Memorial Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "http://www.royalberkshire.nhs.uk/media/3cfm23cd/getting-to-west-berkshire-community-hospital.pdf",
+      "linkText": "View map of West Berkshire Community Hospital. ",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://www.royaldevon.nhs.uk/media/ih2hsnhi/north-devon-2d-map.pdf",
+      "linkText": "North Devon District Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://royaldevon.nhs.uk/media/ycehima2/gr-ot-cp02-01-map-of-nddh-site-2026.pdf",
+      "linkText": "Map of North Devon District Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RH8",
+      "trustName": "Royal Devon University Healthcare NHS Foundation Trust",
+      "url": "https://www.royaldevon.nhs.uk/media/ycehima2/gr-ot-cp02-01-map-of-nddh-site-2026.pdf",
+      "linkText": "Map of North Devon District Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RQY",
+      "trustName": "South West London and St George's Mental Health NHS Trust",
+      "url": "https://kingstonhospital.nhs.uk/wp-content/uploads/2019/09/KH-Kingston-Hospital-Bus-Map-1.pdf",
+      "linkText": "clicking on this link.",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RXG",
+      "trustName": "South West Yorkshire Partnership Teaching NHS Foundation Trust",
+      "url": "https://www.southwestyorkshire.nhs.uk/wp-content/uploads/2018/04/Kendray-Map-May-2022.pdf",
+      "linkText": "site plan",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RNA",
+      "trustName": "The Dudley Group NHS Foundation Trust",
+      "url": "http://www.dgft.nhs.uk/wp-content/uploads/2022/07/DS-3004-Russells-Hall-Map-Final-with-Other-Hosps-003.pdf",
+      "linkText": "Click here for National Express services serving Russells Hall Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RL1",
+      "trustName": "The Robert Jones and Agnes Hunt Orthopaedic Hospital NHS Foundation Trust",
+      "url": "https://www.rjah.nhs.uk/media/sxgeeosw/hospital-plan-november-2022.pdf",
+      "linkText": "You can download a pdf copy of the map, here",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RXW",
+      "trustName": "The Shrewsbury and Telford Hospital NHS Trust",
+      "url": "https://www.sath.nhs.uk/wp-content/uploads/2025/04/RSH-Map-0325.pdf",
+      "linkText": "map of the hospital site",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RWD",
+      "trustName": "United Lincolnshire Teaching Hospitals NHS Trust",
+      "url": "https://www.ulh.nhs.uk/wp-content/uploads/2024/10/Louth-Hospital-Site-you-are-here-V2.pdf",
+      "linkText": "County Hospital Louth map",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RHM",
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/Patient-and-visitor-parking-map-UHS.pdf",
+      "linkText": "Parking map",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RRK",
+      "trustName": "University Hospitals Birmingham NHS Foundation Trust",
+      "url": "https://www.uhb.nhs.uk/media/gykbiy1p/hgs-solihull-map.pdf",
+      "linkText": "Map of Solihull Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RRK",
+      "trustName": "University Hospitals Birmingham NHS Foundation Trust",
+      "url": "https://www.uhb.nhs.uk/media/oponsdtb/map-hgs-good-hope.pdf",
+      "linkText": "Map of Good Hope Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RRK",
+      "trustName": "University Hospitals Birmingham NHS Foundation Trust",
+      "url": "https://www.uhb.nhs.uk/media/osbk0v4p/map-hgs-heartlands.pdf",
+      "linkText": "Map of Heartlands Hospital",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RRK",
+      "trustName": "University Hospitals Birmingham NHS Foundation Trust",
+      "url": "https://www.uhb.nhs.uk/media/b2uddkhi/map-qehb.pdf",
+      "linkText": "Map of Queen Elizabeth Hospital Birmingham",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RKB",
+      "trustName": "University Hospitals Coventry and Warwickshire NHS Trust",
+      "url": "https://www.uhcw.nhs.uk/download/clientfiles/files/UHCW%20-%20Hospital%20of%20St%20Cross%20Map%20(2024).pdf",
+      "linkText": "this map",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RKB",
+      "trustName": "University Hospitals Coventry and Warwickshire NHS Trust",
+      "url": "https://www.uhcw.nhs.uk/download/clientfiles/files/UHCW%20Wayfinding%20Map%20Portrait%20August%202023(1).pdf",
+      "linkText": "Click here to download our new University Hospital Coventry Visitor Map.",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/royal-derby-hospitals-flat-map-levelspdf.pdf?ver=93910&doc=docm93jijm4n33093.pdf",
+      "linkText": "Download map of all floor levels at Royal Derby Hospital {pdf} 3MB (opens in new window) >",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/royal-derby-hospital-car-parking-map-2026pdf.pdf?ver=95455&doc=docm93jijm4n33592.pdf",
+      "linkText": "Download map of car parking available at Royal Derby Hospital  [pdf] 1MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/queens-hospital-flat-map-levelspdf.pdf?ver=93911&doc=docm93jijm4n33094.pdf",
+      "linkText": "Download a map of all floors at Queen's Hospital Burton [pdf] 2MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/download-a-map-of-queen39s-hospital-burton-education-centre-.pdf?ver=53799&doc=docm93jijm4n21056",
+      "linkText": "Download a map of Queen's Hospital Burton Education Centre [pdf] 289KB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/queens-hospital-burton-site-car-parking-map-may-2026pdf.pdf?ver=94672&doc=docm93jijm4n33354.pdf",
+      "linkText": "Download Queen's Hospital Burton site car parking map [pdf] 2MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/download-map-of-all-floors-at-queens-hospital-burton.pdf?ver=68905&doc=docm93jijm4n21057",
+      "linkText": "Download map of all floors at Queen's Hospital Burton[pdf] 2MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/download-queen39s-hospital-burtonnbspparking-map-2022-.pdf?ver=53278&doc=docm93jijm4n20927",
+      "linkText": "Download Queen's Hospital Burton parking map 2022 [pdf] 593KB (opens in new window) >",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/download-map-of-all-floors-at-samuel-johnson-community-hospital-opens-in-new-window-.pdf?ver=58617&doc=docm93jijm4n2704",
+      "linkText": "Download map of all floors at Samuel Johnson Community Hospital (opens in new window) [pdf] 2MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/download-map-of-all-floor-levels-at-florence-nightingale-community-hospital-opens-in-new-window-.pdf?ver=70163&doc=docm93jijm4n11922",
+      "linkText": "Download map of all floor levels at Florence Nightingale Community Hospital (opens in new window) [pdf] 2MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/download-map-of-all-floors-at-sir-robert-peel-community-hospital-opens-in-new-window-.pdf?ver=58613&doc=docm93jijm4n3004",
+      "linkText": "Download map of all floors at Sir Robert Peel Community Hospital (opens in new window) [pdf] 1MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RTG",
+      "trustName": "University Hospitals of Derby and Burton NHS Foundation Trust",
+      "url": "https://www.uhdb.nhs.uk/download/queens-hospital-burton-qhb-site-car-parking-map-may-2026pdf.pdf?ver=95250&doc=docm93jijm4n33538.pdf",
+      "linkText": " Queen's Hospital Burton site car parking map May 2026.pdf [pdf] 2MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-2pdf.pdf?ver=30999&doc=docm93jijm4n19756.pdf&ver=36092",
+      "linkText": "Derriford Hospital floor maps level 2.pdf[pdf] 537KB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-3pdf.pdf?ver=31000&doc=docm93jijm4n19757.pdf&ver=35636",
+      "linkText": "Derriford Hospital floor maps level 3.pdf[pdf] 683KB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-4pdf.pdf?ver=31001&doc=docm93jijm4n19758.pdf&ver=36020",
+      "linkText": "Derriford Hospital floor maps level 4.pdf[pdf] 565KB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-5pdf.pdf?ver=31002&doc=docm93jijm4n19759.pdf&ver=36021",
+      "linkText": "Derriford Hospital floor maps level 5.pdf[pdf] 567KB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-6pdf.pdf?ver=31003&doc=docm93jijm4n19760.pdf&ver=36087",
+      "linkText": "Derriford Hospital floor maps level 6.pdf[pdf] 808KB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-7pdf.pdf?ver=31004&doc=docm93jijm4n19761.pdf",
+      "linkText": "Derriford Hospital floor maps level 7.pdf [pdf] 4MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-8pdf.pdf?ver=31005&doc=docm93jijm4n19762.pdf&ver=31125",
+      "linkText": "Derriford Hospital floor maps level 8.pdf[pdf] 4MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-9pdf.pdf?ver=31006&doc=docm93jijm4n19763.pdf",
+      "linkText": "Derriford Hospital floor maps level 9.pdf [pdf] 4MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-10pdf.pdf?ver=31007&doc=docm93jijm4n19764.pdf&ver=36088",
+      "linkText": "Derriford Hospital floor maps level 10.pdf[pdf] 744KB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-11pdf.pdf?ver=31008&doc=docm93jijm4n19765.pdf",
+      "linkText": "Derriford Hospital floor maps level 11.pdf [pdf] 4MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-hospital-floor-maps-level-12pdf.pdf?ver=31009&doc=docm93jijm4n19766.pdf",
+      "linkText": "Derriford Hospital floor maps level 12.pdf [pdf] 4MB",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
       "trustCode": "RGR",
       "trustName": "West Suffolk NHS Foundation Trust",
       "url": "https://www.wsh.nhs.uk/CMS-Documents/Patient-leaflets/General/5918-2Mapguidetoyourhospital.pdf",
@@ -257,10 +2006,410 @@
       "confidence": "medium"
     },
     {
+      "trustCode": "RLQ",
+      "trustName": "Wye Valley NHS Trust",
+      "url": "https://www.wyevalley.nhs.uk/media/807040/wvt-plan-main-site-plan-april-2022.pdf",
+      "linkText": "Map of hospital site",
+      "kind": "site-map",
+      "confidence": "medium"
+    },
+    {
+      "trustCode": "RXQ",
+      "trustName": "Buckinghamshire Healthcare NHS Trust",
+      "url": "https://www.buckshealthcare.nhs.uk/wp-content/uploads/2023/09/Map-showing-location-of-blood-test-clinic-at-AH.pdf",
+      "linkText": "Download Document",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RGT",
+      "trustName": "Cambridge University Hospitals NHS Foundation Trust",
+      "url": "https://www.cuh.nhs.uk/documents/3009/151547_Welcome_to_Outpatients_A0_Framed_indoor_Map.pdf",
+      "linkText": "Outpatients map pdf 867.2 KB",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RP5",
+      "trustName": "Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust",
+      "url": "https://www.dbth.nhs.uk/wp-content/uploads/2026/06/Simplified-DRI-map-for-May-to-Nov-2026.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RP5",
+      "trustName": "Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust",
+      "url": "https://www.dbth.nhs.uk/wp-content/uploads/2025/11/Simplified-Bassetlaw-map.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RP5",
+      "trustName": "Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust",
+      "url": "https://www.dbth.nhs.uk/wp-content/uploads/2025/07/Simplified-Montagu-map.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RP5",
+      "trustName": "Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust",
+      "url": "https://www.dbth.nhs.uk/wp-content/uploads/2026/07/Womens-Gynae-ward-and-theatre-map.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RWH",
+      "trustName": "East and North Hertfordshire Teaching NHS Trust",
+      "url": "https://www.enherts-tr.nhs.uk/wp-content/uploads/2022/09/MountVernon-September-2022.pdf",
+      "linkText": "View the map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RXC",
+      "trustName": "East Sussex Healthcare NHS Trust",
+      "url": "https://www.esht.nhs.uk/wp-content/uploads/2026/06/1191.pdf",
+      "linkText": "Sussex Surgical Centre Map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RVR",
+      "trustName": "Epsom and St Helier University Hospitals NHS Trust",
+      "url": "https://www.epsom-sthelier.nhs.uk/download/epsom-mappdf.pdf?ver=60407&doc=docm93jijm4n24777.pdf",
+      "linkText": "Epsom Map.pdf ",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RVR",
+      "trustName": "Epsom and St Helier University Hospitals NHS Trust",
+      "url": "https://admin.epsom-sthelier.nhs.uk/download/stheliermapv34pdf.pdf?ver=63602&doc=docm93jijm4n26853.pdf",
+      "linkText": "this map.",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RTE",
+      "trustName": "Gloucestershire Hospitals NHS Foundation Trust",
+      "url": "https://www.gloshospitals.nhs.uk/documents/25432/4392_Accessibility_Map_Leaflet_DRAFT_V.6.pdf",
+      "linkText": "map.",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RCD",
+      "trustName": "Harrogate and District NHS Foundation Trust",
+      "url": "https://www.hdft.nhs.uk/wp-content/uploads/2024/08/HDH-Floor-Maps-202407.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RCD",
+      "trustName": "Harrogate and District NHS Foundation Trust",
+      "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/730868/Map_of_EEA_countries.pdf",
+      "linkText": "European Economic Area (EEA)",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RWA",
+      "trustName": "Hull University Teaching Hospitals NHS Trust",
+      "url": "https://www.hey.nhs.uk/downloads/pathology-location-map/?wpdmdl=16101&ind=1668521495572&refresh=414603b3&filename=HRIsitePlan2022.pdf",
+      "linkText": "Download",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RJZ",
+      "trustName": "King's College Hospital NHS Foundation Trust",
+      "url": "https://www.kch.nhs.uk/wp-content/uploads/2023/01/Kings-Digital-Map-Comms-no.-2834-2026.1.pdf",
+      "linkText": "Download",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RR8",
+      "trustName": "Leeds Teaching Hospitals NHS Trust",
+      "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2023/04/LGI-Map.pdf",
+      "linkText": "Directions and Parking (1MB pdf)",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RM1",
+      "trustName": "Norfolk and Norwich University Hospitals NHS Foundation Trust",
+      "url": "https://www.nnuh.nhs.uk/wp-content/uploads/2024/09/Wayfindermap_SEPT-2024_update-1.pdf",
+      "linkText": "Download the Wayfinder map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RM1",
+      "trustName": "Norfolk and Norwich University Hospitals NHS Foundation Trust",
+      "url": "https://www.nnuh.nhs.uk/wp-content/uploads/2025/07/TRAIL-MAP_Digital.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RMY",
+      "trustName": "Norfolk and Suffolk NHS Foundation Trust",
+      "url": "http://www.nsft.nhs.uk/download/nsft-inpatient-wards-mappdf.pdf?ver=6140&doc=docm93jijm4n3492.pdf",
+      "linkText": " NSFT Inpatient wards map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RMY",
+      "trustName": "Norfolk and Suffolk NHS Foundation Trust",
+      "url": "https://www.nsft.nhs.uk/download/nsft-inpatient-wards-mappdf.pdf?ver=6140&doc=docm93jijm4n3492.pdf",
+      "linkText": " NSFT Inpatient wards map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.ncic.nhs.uk/application/files/1315/7234/4308/Cumberland_Infirmary_Map.pdf",
+      "linkText": "Cumberland Infirmary",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.wwl.nhs.uk/media/PDFs/Leigh_Infirmary_Map.pdf",
+      "linkText": "Leigh Infirmary",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.clatterbridgecc.nhs.uk/application/files/8616/0467/4473/CCCL_patient_map_close_up_full_text_v2.pdf",
+      "linkText": "Clatterbridge Cancer Centre &ndash; Liverpool",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RX7",
+      "trustName": "North West Ambulance Service NHS Trust",
+      "url": "https://www.clatterbridgecc.nhs.uk/application/files/3214/8768/0173/Wirral_floor_maps.pdf",
+      "linkText": "Clatterbridge Cancer Centre &ndash; Wirral",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RTF",
+      "trustName": "Northumbria Healthcare NHS Foundation Trust",
+      "url": "https://gosmartergoactive.co.uk/wp-content/uploads/2021/07/north-tyneside-20k-map.pdf",
+      "linkText": "North Tyneside",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RTF",
+      "trustName": "Northumbria Healthcare NHS Foundation Trust",
+      "url": "https://gosmartergoactive.co.uk/wp-content/uploads/2021/07/northumberland-20k-map.pdf",
+      "linkText": "Northumberland",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RTF",
+      "trustName": "Northumbria Healthcare NHS Foundation Trust",
+      "url": "https://gosmartergoactive.co.uk/wp-content/uploads/2021/08/tne_70k_map.pdf",
+      "linkText": "Wider North East area",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RX1",
+      "trustName": "Nottingham University Hospitals NHS Trust",
+      "url": "https://www.nuh.nhs.uk/download/qmc-corridor-planspdf-.pdf?ver=33329&doc=docm93jijm4n14504",
+      "linkText": "Corridor maps of QMC",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RX1",
+      "trustName": "Nottingham University Hospitals NHS Trust",
+      "url": "https://www.nuh.nhs.uk/download/sunshine-maps-all-routes.pdf?ver=33731&doc=docm93jijm4n11803",
+      "linkText": "Sunshine Maps - all routes[pdf] 693KB",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RT2",
+      "trustName": "Pennine Care NHS Foundation Trust",
+      "url": "https://www.researchgate.net/profile/Christopher_Taylor2/publication/329022676_iMAgery-Focused_Psychological_Therapy_for_Persecutory_Delusions_in_PSychosis_iMAPS_A_Novel_Treatment_Approach/links/5d386ab8a6fdcc370a5bf4b3/iMAgery-Focused-Psychological-Therapy-for-Persecutory-Delusions-in-PSychosis-iMAPS-A-Novel-Treatment-Approach.pdf",
+      "linkText": "Click here to read it.",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
       "trustCode": "RHU",
       "trustName": "Portsmouth Hospitals University NHS Trust",
       "url": "https://www.portsmouth.gov.uk/wp-content/uploads/2020/05/trv-quieter-routes-cycle-map.pdf",
       "linkText": "here",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RPC",
+      "trustName": "Queen Victoria Hospital NHS Foundation Trust",
+      "url": "https://www.qvh.nhs.uk/wp-content/uploads/2015/09/QVH-map_November-2019.pdf",
+      "linkText": "QVH map_November 2019",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RPC",
+      "trustName": "Queen Victoria Hospital NHS Foundation Trust",
+      "url": "https://www.qvh.nhs.uk/wp-content/uploads/2016/06/Map-to-discharge-lounge-collection-area.pdf",
+      "linkText": "Map to discharge lounge collection area",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "https://www.royalberkshire.nhs.uk/media/rzejp4ts/56649-rbh-getting-there-map_main_nov25_bplusw_print_art.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "http://www.royalberkshire.nhs.uk/media/rzejp4ts/56649-rbh-getting-there-map_main_nov25_bplusw_print_art.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "https://www.royalberkshire.nhs.uk/media/ataoerik/getting-to-bracknell-healthspace.pdf",
+      "linkText": "View map of Bracknell Healthspace",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RHW",
+      "trustName": "Royal Berkshire NHS Foundation Trust",
+      "url": "http://www.royalberkshire.nhs.uk/media/ataoerik/getting-to-bracknell-healthspace.pdf",
+      "linkText": "View map of Bracknell Healthspace",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RAN",
+      "trustName": "Royal National Orthopaedic Hospital NHS Trust",
+      "url": "https://www.tfl.gov.uk/assets/downloads/standard-tube-map.pdf",
+      "linkText": "London Tube map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RAN",
+      "trustName": "Royal National Orthopaedic Hospital NHS Trust",
+      "url": "https://www.tfl.gov.uk/tfl/gettingaround/maps/buses/pdf/stanmore-10311.pdf",
+      "linkText": "local Stanmore area bus map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RA2",
+      "trustName": "Royal Surrey NHS Foundation Trust",
+      "url": "https://www.royalsurrey.nhs.uk/download/royal-surrey-map.pdf?ver=67802&doc=docm93jijm4n27349.pdf",
+      "linkText": "Download map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RD1",
+      "trustName": "Royal United Hospitals Bath NHS Foundation Trust",
+      "url": "https://www.ruh.nhs.uk/membership/documents/Constituency_map.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RD1",
+      "trustName": "Royal United Hospitals Bath NHS Foundation Trust",
+      "url": "https://www.ruh.nhs.uk/documents/Sustainability_RUH_green_spaces_map.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RD1",
+      "trustName": "Royal United Hospitals Bath NHS Foundation Trust",
+      "url": "https://www.ruh.nhs.uk/patients/services/clinical_depts/stomatherapy/documents/RUH_Catchment_Map.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RNZ",
+      "trustName": "Salisbury NHS Foundation Trust",
+      "url": "https://www.salisbury.nhs.uk/media/1ypev0p1/maternity-map.pdf",
+      "linkText": "Maternity Map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RYD",
+      "trustName": "South East Coast Ambulance Service NHS Foundation Trust",
+      "url": "https://www.secamb.nhs.uk/wp-content/uploads/foi_disclosure_log/2019/01%20-%20January/Fleet,%20Estates%20and%20Logistics/190106%20-%20Map%20Books.pdf",
+      "linkText": "Download",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RYD",
+      "trustName": "South East Coast Ambulance Service NHS Foundation Trust",
+      "url": "https://www.secamb.nhs.uk/wp-content/uploads/2023/01/220209-Map-of-the-deliberators-in-the-borough-of-Ashford.pdf",
+      "linkText": "Download",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RVY",
+      "trustName": "Southport and Ormskirk Hospital NHS Trust",
+      "url": "https://www.southportandormskirk.nhs.uk/media/Hospitals/SDGH-external-map.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RJ7",
+      "trustName": "St George's University Hospitals NHS Foundation Trust",
+      "url": "https://www.stgeorges.nhs.uk/wp-content/uploads/2019/03/Trevelyan-House-Map.pdf",
+      "linkText": "Audiology at Trevelyan House Surgery",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RJ7",
+      "trustName": "St George's University Hospitals NHS Foundation Trust",
+      "url": "https://www.stgeorges.nhs.uk/wp-content/uploads/2019/03/Amen-Corner-Map.pdf",
+      "linkText": "Audiology at Tooting Health Centre",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RJ7",
+      "trustName": "St George's University Hospitals NHS Foundation Trust",
+      "url": "https://www.stgeorges.nhs.uk/wp-content/uploads/2013/11/QMH_public_transport.pdf",
+      "linkText": "Bus map for Queen Mary’s (PDF)",
       "kind": "unknown",
       "confidence": "low"
     },
@@ -281,10 +2430,74 @@
       "confidence": "low"
     },
     {
-      "trustCode": "RHM",
-      "trustName": "University Hospital Southampton NHS Foundation Trust",
-      "url": "https://www.uhs.nhs.uk/Media/UHS-website-2019/Docs/For-visitors/Patient-and-visitor-parking-map-UHS.pdf",
-      "linkText": "Parking map",
+      "trustCode": "RL4",
+      "trustName": "The Royal Wolverhampton NHS Trust",
+      "url": "https://www.wolverhampton.gov.uk/sites/default/files/2019-09/Bike%20Map.pdf",
+      "linkText": "Cycle Route Map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RET",
+      "trustName": "The Walton Centre NHS Foundation Trust",
+      "url": "https://www.thewaltoncentre.nhs.uk/download/pain-body-map-1pdf.pdf?ver=6027&doc=docm93jijm4n3025.pdf",
+      "linkText": "Pain body map 1",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RET",
+      "trustName": "The Walton Centre NHS Foundation Trust",
+      "url": "https://www.thewaltoncentre.nhs.uk/download/pain-body-map-2pdf.pdf?ver=6028&doc=docm93jijm4n3026.pdf",
+      "linkText": "Pain body map 2",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RET",
+      "trustName": "The Walton Centre NHS Foundation Trust",
+      "url": "https://www.thewaltoncentre.nhs.uk/download/pain-body-map-3pdf.pdf?ver=6029&doc=docm93jijm4n3027.pdf",
+      "linkText": "Pain body map 3",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RET",
+      "trustName": "The Walton Centre NHS Foundation Trust",
+      "url": "https://www.thewaltoncentre.nhs.uk/download/pain-body-map-4pdf.pdf?ver=6030&doc=docm93jijm4n3028.pdf",
+      "linkText": "Pain body map 4",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RKB",
+      "trustName": "University Hospitals Coventry and Warwickshire NHS Trust",
+      "url": "https://www.uhcw.nhs.uk/download/clientfiles/files/UHCW%20Wayfinding%20Map%20Portrait%20June%202025%20(003).pdf",
+      "linkText": "visitor map",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/derriford-green-spaces-mappdf.pdf?ver=32771&doc=docm93jijm4n19545.pdf",
+      "linkText": "Derriford Green Spaces Map.pdf [pdf] 5MB",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RK9",
+      "trustName": "University Hospitals Plymouth NHS Trust",
+      "url": "https://www.plymouth.gov.uk/sites/default/files/2025-03/Plymouth-Network-Map-March-2025.pdf",
+      "linkText": "Bus network map ",
+      "kind": "unknown",
+      "confidence": "low"
+    },
+    {
+      "trustCode": "RWP",
+      "trustName": "Worcestershire Acute Hospitals NHS Trust",
+      "url": "https://www.worcsacute.nhs.uk/devuret/2024/05/Kidderminster-map-for-website_May_2024.pdf",
+      "linkText": "Kidderminster-map-for-website_May_2024",
       "kind": "unknown",
       "confidence": "low"
     }
