@@ -87,8 +87,9 @@ node scripts/nhs/approve-plans.mjs --dry-run
 `nhs:ingest` chains these. The interesting part is that nothing is placed by hand:
 
 1. **approve-plans** — promotes candidates into `plan-sources.json`. Only `high`
-   confidence `floor-plan`/`site-map` finds, and only on the trust's own web host
-   (an unattributable third-party mirror is refused).
+   confidence `floor-plan`/`site-map` finds, only on the trust's own web host
+   (an unattributable third-party mirror is refused), and **only for hospitals
+   that aren't already mapped** — see below.
 2. **fetch-plans** — downloads exactly what's approved, into `map/auto/`.
 3. **draft-sheets** — works out where each sheet belongs: `center` from the
    hospital's ODS coordinates, `spanM` from the width of its OpenStreetMap
@@ -100,6 +101,40 @@ node scripts/nhs/approve-plans.mjs --dry-run
 5. **generate-registry** — writes `src/lib/venues/generated-sheets.ts`, so
    `index.ts` doesn't need an import per hospital.
 6. **preview-sheets** — renders each sheet to `previews/<slug>.jpg` for review.
+
+### Hospitals that are already mapped stay as they are
+
+A trust publishes maps of its own hospitals, including the ones this app already
+covers properly. Wythenshawe publishes a 3D version of the sheet already built;
+Birmingham Women's publishes its own alongside the Clinical Genetics one. Taken
+at face value those become a *second* venue for the same hospital — two pins, two
+sets of waypoints, and nothing to tell a visitor which is real.
+
+So `approve-plans` refuses any candidate whose link text or filename names a
+hospital that already ships as a venue, and says which one in its log:
+
+```
+– wythenshawe-hospital-sitemap-3D.pdf  (already mapped as wythenshawe, matched "Wythenshawe Hospital")
+```
+
+The venue list is read from `src/lib/venues/*.ts` directly, so a newly built
+venue starts protecting itself with no bookkeeping. Slugs already in use are
+reserved the same way — a candidate can't take the slug of a venue that exists.
+
+The match is **containment of the venue's name**: every distinctive word of the
+venue has to appear in the document. Similarity scored the other way round is too
+loose at national scale — it refused North Devon for resembling North Manchester,
+and Hull Royal Infirmary for resembling Manchester Royal Infirmary. A name that
+comes down to a single word after the common ones are dropped is only used when
+`venue-aliases.json` scopes it to a trust: unscoped, "The Royal London Hospital"
+becomes "london" and refuses Evelina London.
+
+Some hospitals need the trust to tell them apart at all. St George's runs Queen
+Mary's in Roehampton, which is mapped; Oxleas runs Queen Mary's in Sidcup, which
+isn't. Nothing in either name separates them, so that alias carries a `trustCode`.
+
+If a hospital you expect is missing from the approvals, look for it in the `–`
+lines first — a wrong match keeps a hospital out, and the log is where that shows.
 
 Step 3 gets sheets close, not correct. Scale is measured where a footprint
 exists and guessed otherwise, and the crop is the full sheet. **Check the
@@ -122,7 +157,7 @@ fix `spanM` and `plan` in `mapped-sites.json` and re-run `build-venues.mjs`.
 | `plan-sources.json` | `approve-plans` | the **approved** PDFs `fetch-plans` may download |
 | `plan-rejected.json` | `draft-sheets` | sheets refused, with the reason |
 | `previews/*.jpg` | `preview-sheets` | rendered sheets for visual review |
-| `venue-aliases.json` | hand-maintained | other names a mapped venue is known by in ODS |
+| `venue-aliases.json` | hand-maintained | other names a mapped venue is known by, optionally scoped to a trust |
 
 `mapped-sites.json` is the single source of truth for both
 `scripts/maps/generate-all.mjs` and `scripts/maps/build-venues.mjs`, which

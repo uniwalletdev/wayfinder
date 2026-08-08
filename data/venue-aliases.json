@@ -1,12 +1,14 @@
 {
-  "description": "Extra names a fully-mapped venue is known by in the NHS ODS register, used by scripts/nhs/build-sites.mjs to recognise that a directory site is already covered. Most venues need no entry — their own name matches the ODS one closely enough. These are the ones where it doesn't: a venue called 'GOSH Wayfinder' shares no words with ODS's 'Great Ormond Street Hospital For Children', so without an alias it would get a duplicate, unnavigable pin sitting on top of the mapped venue. Add an entry whenever a mapped venue's display name diverges from its official name, or when one venue covers several ODS sites.",
+  "description": "Extra names a fully-mapped venue is known by in the NHS ODS register, used by scripts/nhs/build-sites.mjs to recognise that a directory site is already covered, and by scripts/nhs/approve-plans.mjs to refuse a discovered map of a hospital that already ships as a venue. Most venues need no entry — their own name matches the ODS one closely enough. These are the ones where it doesn't: a venue called 'GOSH Wayfinder' shares no words with ODS's 'Great Ormond Street Hospital For Children', so without an alias it would get a duplicate, unnavigable pin sitting on top of the mapped venue. Add an entry whenever a mapped venue's display name diverges from its official name, or when one venue covers several ODS sites.",
+  "scoping": "An alias is either a plain string, or {name, trustCode} when the name alone identifies more than one hospital. 'Queen Mary's Hospital' is St George's in Roehampton (mapped) and Oxleas' in Sidcup (not); a bare alias would hide Sidcup's map, so that one is scoped to RJ7. Use a plain string when the name is nationally unambiguous, and scope it when it isn't. A name that comes down to a single distinctive word after the common ones are dropped ('Wythenshawe', 'Lewisham', and 'London' from 'The Royal London Hospital') is ONLY used when scoped — one word matches far too much on its own, and unscoped it refused Evelina London's map for looking like the Royal London's.",
   "aliases": {
     "gosh": [
       "Great Ormond Street Hospital for Children"
     ],
     "cuh": [
       "Addenbrooke's Hospital",
-      "Cambridge University Hospitals"
+      { "name": "Cambridge University Hospitals", "trustCode": "RGT" },
+      { "name": "Cambridge Biomedical Campus", "trustCode": "RGT" }
     ],
     "oxford-road": [
       "Manchester Royal Infirmary",
@@ -16,7 +18,8 @@
       "University Dental Hospital of Manchester"
     ],
     "st-georges": [
-      "St George's Hospital Tooting"
+      "St George's Hospital Tooting",
+      { "name": "St George's Hospital", "trustCode": "RJ7" }
     ],
     "qehb": [
       "Queen Elizabeth Hospital Birmingham"
@@ -26,6 +29,29 @@
     ],
     "qcch": [
       "Queen Charlotte's and Chelsea Hospital"
+    ],
+    "basildon-hospital": [
+      { "name": "Basildon Hospital", "trustCode": "RDD" },
+      { "name": "Basildon Hospital", "trustCode": "RQ8" }
+    ],
+    "wythenshawe": [
+      { "name": "Wythenshawe Hospital", "trustCode": "R0A" }
+    ],
+    "trafford": [
+      { "name": "Trafford General Hospital", "trustCode": "R0A" }
+    ],
+    "university-hospital-lewisham": [
+      { "name": "University Hospital Lewisham", "trustCode": "RJ2" },
+      { "name": "UHL", "trustCode": "RJ2" }
+    ],
+    "mile-end-hospital": [
+      { "name": "Mile End Hospital", "trustCode": "R1H" }
+    ],
+    "queens-hospital-romford": [
+      { "name": "Queen's Hospital", "trustCode": "RF4" }
+    ],
+    "queen-marys-roehampton": [
+      { "name": "Queen Mary's Hospital", "trustCode": "RJ7" }
     ]
   }
 }
