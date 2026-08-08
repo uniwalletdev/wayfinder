@@ -148,6 +148,76 @@ group("which hospital is this a map of")
   )
 }
 
+group("abbreviations a trust uses for its own hospitals")
+// Trusts name sheets by initials, and those are exactly what tokenising throws
+// away: "jr" is two characters, "hospital" and "sitemap" are stopwords, so
+// "jr-hospital-sitemap" reduces to nothing and scored 0.00 against every site.
+//
+// The expansion is used as a FACT rather than another weak signal. Folding it
+// into the score does not work — "cgh-colour-map-0325-v1" still only reaches
+// 0.25 against Cheltenham General, because "colour" and "0325" sit in the
+// denominator and dilute the one word that matters.
+{
+  const aliases = JSON.parse(readFileSync("data/hospital-aliases.json", "utf8"))
+  const tok = (s) => nameTokens(s, DOCUMENT_STOPWORDS)
+  const GLUED = /^(site)?maps?|plans?|floors?|sitemap|internal|external$/
+
+  const named = (text, code) => {
+    const expands = aliases.trusts[code]?.expands
+    if (!expands) return null
+    const map = new Map(Object.entries(expands).map(([k, v]) => [k.toLowerCase(), v]))
+    const found = []
+    for (const part of String(text).toLowerCase().split(/[^a-z0-9]+/)) {
+      let hit = map.get(part)
+      if (!hit) {
+        for (const [abbr, name] of map) {
+          if (part.length > abbr.length && part.startsWith(abbr) && GLUED.test(part.slice(abbr.length))) { hit = name; break }
+        }
+      }
+      if (hit && !found.includes(hit)) found.push(hit)
+    }
+    return found.length === 1 ? found[0] : null
+  }
+  const resolve = (code, sheet, siteNames) => {
+    const hospital = named(sheet, code)
+    if (!hospital) return null
+    const wanted = tok(hospital)
+    let fewest = Infinity, site = null
+    for (const candidate of siteNames) {
+      const ct = tok(candidate)
+      let carries = wanted.size > 0
+      for (const w of wanted) if (!ct.has(w)) { carries = false; break }
+      if (carries && ct.size < fewest) { fewest = ct.size; site = candidate }
+    }
+    return site
+  }
+
+  check("JR is the John Radcliffe", resolve("RTH", "jr-hospital-sitemap", ["John Radcliffe Hospital", "Churchill Hospital"]) === "John Radcliffe Hospital")
+  check("PAH is Princess Anne, in Southampton", resolve("RHM", "pah-a-level-floor-plan", ["Princess Anne Hospital", "Royal South Hants Hospital"]) === "Princess Anne Hospital")
+  check("CGH and GRH are different hospitals of one trust", resolve("RTE", "cgh-colour-map-0325-v1", ["Cheltenham General Hospital", "Gloucestershire Royal Hospital"]) === "Cheltenham General Hospital")
+  check("GRH resolves the other way", resolve("RTE", "grh-colour-map-0325-v1", ["Cheltenham General Hospital", "Gloucestershire Royal Hospital"]) === "Gloucestershire Royal Hospital")
+  // No separator between the abbreviation and the document word.
+  check("reads chhsitemap as Castle Hill", resolve("RWA", "chhsitemap", ["Castle Hill Hospital", "Hull Royal Infirmary"]) === "Castle Hill Hospital")
+  // The register carries the hospital several times over; take the plainest.
+  check(
+    "prefers the hospital over the same name plus a unit",
+    resolve("RTE", "cgh-colour-map.pdf", ["Cheltenham General Hospital Elective Surgical Hub", "Cheltenham General Hospital"]) ===
+      "Cheltenham General Hospital"
+  )
+
+  // Guards. An abbreviation is only meaningful inside one trust, and a wrong
+  // expansion places a map on the wrong hospital rather than failing loudly.
+  check("an abbreviation does not leak across trusts", named("pah-a-level-floor-plan", "RTH") === null)
+  check("two hospitals named at once is not a fact", named("cgh-and-grh-map", "RTE") === null)
+  check("does not read 'chester' as CH plus ester", named("chester-hospital-map", "RTH") === null)
+  for (const [code, entry] of Object.entries(aliases.trusts)) {
+    check(`${code} records what trust it is`, !!entry.trustName, "no trustName")
+    for (const [abbr, name] of Object.entries(entry.expands ?? {})) {
+      check(`${code}/${abbr} expands to something matchable`, tok(name).size > 0, `"${name}" is all stopwords`)
+    }
+  }
+}
+
 group("hospitals that are already mapped")
 // The crawl finds maps for hospitals mapped long before it ran: Wythenshawe
 // publishes a 3D version of the sheet already built, Birmingham Women's its own

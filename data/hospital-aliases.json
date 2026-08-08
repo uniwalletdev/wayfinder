@@ -1,0 +1,63 @@
+{
+  "description": "What a trust's own abbreviations stand for. Trusts name their map sheets by initials — jr-hospital-sitemap.pdf, PAH-A-level-floor-plan.pdf, cgh-colour-map.pdf — and those reduce to nothing a name matcher can use: 'jr' is two characters, and 'hospital' and 'sitemap' are words every NHS name carries. draft-sheets scored 0.00 against every site and refused the sheet, not because the match was close but because there was nothing to match. Expanding the abbreviation first gives it a real hospital name to work with.",
+  "howToAdd": "Keyed by the trust's ODS code, because an abbreviation only means anything inside one trust: NGH is Northampton General at RNS and Northern General at Sheffield Teaching, PAH is Princess Anne in Southampton and Princess Alexandra in Harlow. Add the trust code, the abbreviation as it appears in the filename (lower case), and the hospital's name as ODS records it. Check the expansion names a real site in data/nhs-sites.json — the test does too, when that file is present.",
+  "trusts": {
+    "RTH": {
+      "trustName": "Oxford University Hospitals NHS Foundation Trust",
+      "note": "'ch' already resolves on its own; recorded so the set reads as complete rather than looking like an omission.",
+      "expands": {
+        "jr": "John Radcliffe Hospital",
+        "noc": "Nuffield Orthopaedic Centre",
+        "ch": "Churchill Hospital"
+      }
+    },
+    "RHM": {
+      "trustName": "University Hospital Southampton NHS Foundation Trust",
+      "note": "Nine sheets, one per level A-J. Princess Alexandra Hospital in Harlow shares the initials, which is why this is scoped to the trust.",
+      "expands": { "pah": "Princess Anne Hospital" }
+    },
+    "RTE": {
+      "trustName": "Gloucestershire Hospitals NHS Foundation Trust",
+      "note": "The trust runs both; the sheets are cgh-colour-map and grh-colour-map.",
+      "expands": {
+        "cgh": "Cheltenham General Hospital",
+        "grh": "Gloucestershire Royal Hospital"
+      }
+    },
+    "RWA": {
+      "trustName": "Hull University Teaching Hospitals NHS Trust",
+      "note": "Castle Hill is in Cottingham, not Hull, and an earlier matcher put its map on York Teaching Hospital.",
+      "expands": {
+        "chh": "Castle Hill Hospital",
+        "hri": "Hull Royal Infirmary"
+      }
+    },
+    "RJ7": {
+      "trustName": "St George's University Hospitals NHS Foundation Trust",
+      "expands": { "sgh": "St George's Hospital" }
+    },
+    "RNS": {
+      "trustName": "Northampton General Hospital NHS Trust",
+      "note": "NGH is Northern General at Sheffield Teaching, which is why this is scoped.",
+      "expands": { "ngh": "Northampton General Hospital" }
+    },
+    "RD1": {
+      "trustName": "Royal United Hospitals Bath NHS Foundation Trust",
+      "expands": { "ruh": "Royal United Hospital" }
+    },
+    "RJN": {
+      "trustName": "East Cheshire NHS Trust",
+      "note": "Two sheets, ground and first floor.",
+      "expands": { "mdgh": "Macclesfield District General Hospital" }
+    },
+    "RBD": {
+      "trustName": "Dorset County Hospital NHS Foundation Trust",
+      "expands": { "dch": "Dorset County Hospital" }
+    },
+    "R0B": {
+      "trustName": "South Tyneside and Sunderland NHS Foundation Trust",
+      "note": "The hand-added map in known-maps.json is SRH_Map_update.pdf.",
+      "expands": { "srh": "Sunderland Royal Hospital" }
+    }
+  }
+}
