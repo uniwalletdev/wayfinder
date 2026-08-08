@@ -28,12 +28,17 @@
 # These are the trusts' copyright, so the repo records where each one came from
 # (data/plan-sources.json) and ships only the derived SVGs the app needs, rather
 # than mirroring the originals.
+/map/
+
+# NOT /map*/. That wildcard was added here in a panic and was wrong twice over:
+# "map- GOSH" is deliberately committed source material — the photographs and
+# TRANSCRIPTION.md the GOSH venue was hand-built from — and ignoring a tracked
+# folder does nothing to protect it while making its deletion easy to miss in a
+# `git add -A`. Forty-nine of those files were removed from main that way and
+# had to be restored from the previous commit.
 #
-# The pattern is anchored and wildcarded because a real commit nearly shipped a
-# folder called "map- GOSH" holding 40-odd HEIC photos and a video — /map/ alone
-# does not match it, and photographs taken inside a children's hospital are the
-# last thing that should land in a public repo by accident.
-/map*/
+# The rule this file needs is the narrow one: the download directory
+# fetch-plans.mjs writes to. Anything else under map* is somebody's work.
 
 # Scratch output of the ingestion pipeline. Every one of these is rebuilt by
 # `npm run nhs:all` from data the scripts fetch themselves, so committing them
