@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan, RoutePreference, Asset } from "@/lib/types"
 import { getAvailableFloors, floorLabel } from "@/lib/waypoint-meta"
-import { DEFAULT_VENUE, SEED_VENUES, getVenueById, createVenue, type NewVenueInput } from "@/lib/venues"
+import { DEFAULT_VENUE, SEED_VENUES, getVenueById, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
   loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
@@ -151,7 +151,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
 
   const [navState, setNavState] = useState<NavigationState>({
     currentPosition: null,
-    currentFloor: 0,
+    // Not 0 — a venue whose plans start above ground opens on its lowest floor.
+    currentFloor: openingFloor(DEFAULT_VENUE),
     origin: null,
     destination: null,
     route: null,
@@ -212,6 +213,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setSurveyTrails(loadVenueTrails(startId))
     setCustomFloorPlans(loadVenueFloorPlans(startId))
     setCustomAssets(loadVenueAssets(startId))
+    // The restored venue is not necessarily the default one, and its plans may
+    // start above ground.
+    const restoredVenue = getVenueById(startId, restored)
+    if (restoredVenue) setNavState((s) => ({ ...s, currentFloor: openingFloor(restoredVenue) }))
   }, [])
 
   // If a shared-venue backend is configured, fold the server's venues into the
@@ -688,7 +693,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setCustomAssets(loadVenueAssets(v.id))
     setOverlay("none")
     setFarRouteOverride(false)
-    setNavState((s) => ({ ...s, currentFloor: 0, origin: null, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+    setNavState((s) => ({ ...s, currentFloor: openingFloor(v), origin: null, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
     mapHandleRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
   }, [])
 
