@@ -20,6 +20,7 @@
 import { existsSync } from "fs"
 import { extractLabels } from "../maps/extract.mjs"
 import { nameTokens, tokenOverlap, footprintSpanM, DOCUMENT_STOPWORDS } from "./lib/match.mjs"
+import { looksLikeHospital } from "./lib/ods.mjs"
 import { dataPath, repoPath, readJson, writeJson, log } from "./lib/paths.mjs"
 
 const STAGE = "draft-sheets"
@@ -116,17 +117,50 @@ for (const source of sourcesDoc.sources) {
   if (!trustSites.length) { reject("no-site-for-trust", source.trustCode); continue }
 
   const hint = tokens(`${source.linkText ?? ""} ${source.slug}`)
+
+  // A sheet is a map of a hospital, so only hospitals are candidates. The ODS
+  // trust-site register is every location a trust operates, which put 258 sites
+  // in front of an Oxford sheet and 133 in front of a Reading one — clinics,
+  // departments and outpatient services, none of which publish a site plan.
+  //
+  // The count is the point, not just the noise: with the clinics in, a trust
+  // that runs ONE hospital never looks like it, so the single-site shortcut
+  // below could never fire and every such sheet needed a name match it had no
+  // way to win. Where a trust has no hospital-named site at all, fall back to
+  // the full list rather than refusing outright.
+  const candidateSites = trustSites.filter((s) => looksLikeHospital(s.name))
+  const sites = candidateSites.length ? candidateSites : trustSites
+
   let site = null
-  if (trustSites.length === 1) {
-    site = trustSites[0]
+  if (sites.length === 1) {
+    site = sites[0]
+  } else if (!hint.size) {
+    // Not ambiguity — there is nothing to be ambiguous with. "jr-hospital-
+    // sitemap" reduces to no tokens at all: "jr" is two characters and both
+    // "hospital" and "sitemap" are stopwords. Trusts name these sheets by
+    // initials (JR, SGH, PAH, CGH, NOC), and reporting that as a failed match
+    // sends anyone reading it looking for the wrong problem. The fix is an
+    // alias, not a lower threshold.
+    reject("no-hospital-name-in-filename", `${sites.length} hospital site(s), nothing to match "${source.slug}" on`)
+    continue
   } else {
     let best = 0
-    for (const candidate of trustSites) {
+    const scored = []
+    for (const candidate of sites) {
       const score = overlap(hint, tokens(candidate.name))
+      scored.push({ name: candidate.name, score })
       if (score > best) { best = score; site = candidate }
     }
     if (!site || best < MIN_SITE_NAME_MATCH) {
-      reject("ambiguous-site", `${trustSites.length} sites, best name match ${best.toFixed(2)}`)
+      // Name the closest sites. "best name match 0.00" says a match failed but
+      // not against what, which is the difference between "the threshold is too
+      // strict" and "this hospital belongs to another trust entirely".
+      const closest = scored
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3)
+        .map((s) => `${s.name} ${s.score.toFixed(2)}`)
+        .join("; ")
+      reject("ambiguous-site", `${sites.length} hospital site(s), best ${best.toFixed(2)}, closest: ${closest}`)
       continue
     }
   }

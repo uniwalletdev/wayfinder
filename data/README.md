@@ -195,6 +195,27 @@ isn't. Nothing in either name separates them, so that alias carries a `trustCode
 If a hospital you expect is missing from the approvals, look for it in the `–`
 lines first — a wrong match keeps a hospital out, and the log is where that shows.
 
+### Why a sheet gets refused
+
+The first national ingest refused **63 of 63** new sheets. `plan-rejected.json`
+records why, and the reasons fall into three groups:
+
+| Reason | What it means | Fixable? |
+|---|---|---|
+| `too-few-labels (0 < 8)` | the PDF has no text layer — it's a scan | only with OCR |
+| `no-hospital-name-in-filename` | the filename names the hospital by initials | yes, with an alias |
+| `ambiguous-site` | couldn't tie the sheet to one of the trust's hospitals | sometimes |
+
+`no-hospital-name-in-filename` used to be reported as `ambiguous-site`, which
+sent me hunting a threshold problem that wasn't there. `jr-hospital-sitemap`
+reduces to **no tokens at all** — "jr" is two characters and both "hospital" and
+"sitemap" are stopwords — so it scores 0.00 against everything, not because the
+match is close but because there is nothing to match. Trusts routinely name
+sheets by initials: JR, SGH, PAH, CGH, GRH, NOC, CHH.
+
+`ambiguous-site` now names the closest sites and their scores, so it's clear
+whether the threshold is too strict or the hospital belongs to another trust.
+
 Step 3 gets sheets close, not correct. Scale is measured where a footprint
 exists and guessed otherwise, and the crop is the full sheet. **Check the
 previews** — `previews/index.json` lists which sheets used a guessed scale — then
