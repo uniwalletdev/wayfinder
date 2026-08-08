@@ -14,6 +14,7 @@ import { join } from "path"
 import { REPO_ROOT } from "../lib/paths.mjs"
 import { nameTokens, tokenOverlap, footprintSpanM, DOCUMENT_STOPWORDS } from "../lib/match.mjs"
 import { CRAWLER_VERSION } from "../lib/discovery-match.mjs"
+import { mappedVenueNames, mappedVenueFor } from "../lib/mapped.mjs"
 import { group, check, report } from "./harness.mjs"
 
 process.chdir(REPO_ROOT)
@@ -52,6 +53,66 @@ const span = footprintSpanM(square)
 check("measures a site's extent in metres", span > 250 && span < 500, `${Math.round(span)}m`)
 check("returns null with no geometry", footprintSpanM([]) === null)
 
+group("hospitals that are already mapped")
+// The crawl finds maps for hospitals mapped long before it ran: Wythenshawe
+// publishes a 3D version of the sheet already built, Birmingham Women's its own
+// alongside the Clinical Genetics one. Approving those puts two venues on one
+// hospital — two pins, two sets of waypoints, no way to tell which is real.
+//
+// The danger in the other direction is worse, because it is silent: a rule loose
+// enough to catch those also refused Evelina London for resembling the Royal
+// London, and North Devon for resembling North Manchester. Every row below is a
+// pair that a previous version of this matcher got wrong.
+{
+  const venues = mappedVenueNames()
+  const cases = [
+    // Genuinely the same hospital — refuse.
+    ["R0A", "Wythenshawe Hospital site map wythenshawe-hospital-sitemap-3D.pdf", "wythenshawe"],
+    ["RQ3", "Birmingham Women's Hospital map birmingham-womens-hospital-map.pdf", "bwh"],
+    ["R1H", "Mile End Hospital site map mile-end-hospital-site-map.pdf", "mile-end-hospital"],
+    ["RF4", "King George Hospital map king-george-hospital-map.pdf", "king-george-hospital"],
+    ["RF4", "Queen's Hospital map queens-hospital-map.pdf", "queens-hospital-romford"],
+    ["RGT", "Cambridge Biomedical Campus map 151750_MS_Biomedical_Campus_map.pdf", "cuh"],
+    ["RJ2", "UHL site map with wards uhl-site-map-with-wards.pdf", "university-hospital-lewisham"],
+    ["RJ7", "St George's map and key St-Georges-Map-and-Key-July-2021.pdf", "st-georges"],
+    // The same PDF is published by both trusts that ran the Basildon site.
+    ["RDD", "Basildon Hospital map basildon-hospital-map-level-by-level.pdf", "basildon-hospital"],
+    ["RQ8", "Basildon Hospital map basildon-hospital-map-level-by-level.pdf", "basildon-hospital"],
+
+    // Different hospitals that merely read alike — approve.
+    ["RJ1", "Evelina London site map 2024-evelina-hospital-map.pdf", null],
+    ["RK9", "North Devon north-devon-2d-map.pdf", null],
+    ["RWA", "Hull Royal Infirmary Hull-Royal-Infirmary-Site-Map.pdf", null],
+    ["RQM", "Chelsea and Westminster Hospital Chelsea-and-Westminster-Hospital-Site-Map.pdf", null],
+    ["RFR", "Wayfinder Rotherham Hospital Wayfinder-Rotherham-Hospital.pdf", null],
+    ["RL4", "New Cross Hospital new-cross-hospital-map.pdf", null],
+    // Birmingham Women's and Children's hosts maps for hospitals across the
+    // region; only its own is already mapped.
+    ["RQ3", "Hereford Hospital map hereford-hospital-map.pdf", null],
+    // Same name, different hospital, different trust: St George's runs Queen
+    // Mary's in Roehampton (mapped), Oxleas runs Queen Mary's in Sidcup (not).
+    // Nothing but the trust code separates these two.
+    ["RJ7", "Queen Mary's Hospital Queen-Marys-Hospital-map.pdf", "queen-marys-roehampton"],
+    ["RPG", "Queen Mary's Hospital queen-marys-hospital-site-map.pdf", null],
+  ]
+  for (const [trustCode, text, expected] of cases) {
+    const got = mappedVenueFor(text, venues, trustCode)?.slug ?? null
+    check(
+      `${expected ? "refuses" : "allows"} ${trustCode} ${text.split(" ").pop()}`,
+      got === expected,
+      `matched ${got}, expected ${expected}`
+    )
+  }
+
+  // Aliases are hand-written, and a typo'd venue slug would sit there doing
+  // nothing while the hospital it was meant to protect got a duplicate.
+  const slugs = new Set(venues.map((v) => v.slug))
+  const aliases = JSON.parse(readFileSync("data/venue-aliases.json", "utf8")).aliases
+  for (const slug of Object.keys(aliases)) {
+    check(`alias names a venue that exists: ${slug}`, slugs.has(slug), "no such venue module")
+  }
+}
+
 group("approve-plans")
 const backup = join(mkdtempSync(join(tmpdir(), "wayfinder-ingest-test-")), "data")
 cpSync("data", backup, { recursive: true })
@@ -65,9 +126,12 @@ try {
   writeFileSync("data/plan-candidates.json", JSON.stringify({
     candidates: [
       // Approve: high confidence, site-map, on the trust's own host.
-      { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://mft.nhs.uk/files/wythenshawe-hospital-sitemap.pdf", linkText: "Wythenshawe Hospital site map", kind: "site-map", confidence: "high" },
+      { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://mft.nhs.uk/files/royal-oldham-hospital-sitemap.pdf", linkText: "Royal Oldham Hospital site map", kind: "site-map", confidence: "high" },
       // Approve: a documents subdomain of the same trust host still counts.
-      { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://documents.mft.nhs.uk/trafford-general-floor-plan.pdf", linkText: "Trafford General floor plan", kind: "floor-plan", confidence: "high" },
+      { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://documents.mft.nhs.uk/altrincham-hospital-floor-plan.pdf", linkText: "Altrincham Hospital floor plan", kind: "floor-plan", confidence: "high" },
+      // Reject: Wythenshawe already ships as a full venue, so republishing the
+      // trust's own sheet would put a second pin on the same hospital.
+      { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://mft.nhs.uk/files/wythenshawe-hospital-sitemap-3D.pdf", linkText: "Wythenshawe Hospital site map", kind: "site-map", confidence: "high" },
       // Reject: right trust, but hosted somewhere we can't attribute.
       { trustCode: "R0A", trustName: "Manchester University NHS Foundation Trust", url: "https://cdn.somewhere-else.com/a-hospital-map.pdf", linkText: "Hospital map", kind: "site-map", confidence: "high" },
       // Reject: only matched the loose "contains the word map" signal.
@@ -87,8 +151,10 @@ try {
   const slugs = approved.map((s) => s.slug)
 
   check("approves exactly the eligible candidates", approved.length === 3, `${approved.length}: ${slugs.join(", ")}`)
-  check("approves a same-host site map", slugs.includes("wythenshawe-hospital-sitemap"), slugs.join(", "))
-  check("accepts a subdomain of the trust's host", slugs.includes("trafford-general-floor-plan"), slugs.join(", "))
+  check("approves a same-host site map", slugs.includes("royal-oldham-hospital-sitemap"), slugs.join(", "))
+  check("accepts a subdomain of the trust's host", slugs.includes("altrincham-hospital-floor-plan"), slugs.join(", "))
+  check("refuses a hospital that already ships as a venue", !approved.some((s) => /wythenshawe/.test(s.url)), "duplicated a mapped venue")
+  check("says which venue already covers it", /already mapped as wythenshawe/.test(out), out.slice(-400))
   check("rejects an off-domain PDF", !approved.some((s) => s.url.includes("somewhere-else")), "third-party host approved")
   check("rejects low confidence", !approved.some((s) => s.url.includes("roadmap")))
   check("rejects a non-map kind", !approved.some((s) => s.url.includes("ward-directory")))

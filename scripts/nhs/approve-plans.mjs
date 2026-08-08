@@ -19,6 +19,7 @@
 // Run: node scripts/nhs/approve-plans.mjs [--dry-run] [--limit N]
 import { dataPath, readJson, writeJson, log } from "./lib/paths.mjs"
 import { onTrustDomain } from "./lib/discovery-match.mjs"
+import { mappedVenueNames, mappedVenueFor } from "./lib/mapped.mjs"
 
 const STAGE = "approve-plans"
 const DRY_RUN = process.argv.includes("--dry-run")
@@ -27,6 +28,14 @@ const LIMIT = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity
 
 // Auto-approval is restricted to the signals that named a map explicitly.
 const APPROVED_KINDS = new Set(["floor-plan", "site-map"])
+
+function fileNameOf(url) {
+  try {
+    return decodeURIComponent(new URL(url).pathname.split("/").pop() ?? "")
+  } catch {
+    return ""
+  }
+}
 
 function slugify(s) {
   return s
@@ -41,13 +50,7 @@ function slugify(s) {
 // own filename usually does ("wythenshawe-hospital-sitemap.pdf"), and it becomes
 // the venue's URL. Falls back to the trust when the filename is uninformative.
 function slugFor(candidate) {
-  let filename = ""
-  try {
-    filename = decodeURIComponent(new URL(candidate.url).pathname.split("/").pop() ?? "")
-  } catch {
-    filename = ""
-  }
-  const fromFile = slugify(filename)
+  const fromFile = slugify(fileNameOf(candidate.url))
   // Reject filenames that are hashes, dates or bare numbers — common on CMS
   // upload paths and useless as a venue URL.
   const informative =
@@ -84,10 +87,21 @@ if (!candidatesDoc) {
 const websites = readJson(dataPath("trust-websites.json"), {})
 const sourcesDoc = readJson(dataPath("plan-sources.json"), { sources: [] })
 const existingUrls = new Set(sourcesDoc.sources.filter((s) => s.url).map((s) => s.url))
+// Slugs already spoken for. plan-sources.json is not enough on its own: a venue
+// built by hand has a slug and a module but no entry here, so a candidate whose
+// filename slugified to the same thing would have build-venues overwrite it.
 const usedSlugs = new Set(sourcesDoc.sources.map((s) => s.slug))
 
+// Hospitals that already ship as full venues, read from the venue modules
+// themselves so a newly built one starts protecting itself with no bookkeeping.
+const mappedVenues = mappedVenueNames()
+for (const venue of mappedVenues) usedSlugs.add(venue.slug)
+
 const approved = []
-const rejected = { lowConfidence: 0, wrongKind: 0, offDomain: 0, alreadyApproved: 0, badUrl: 0 }
+const rejected = { lowConfidence: 0, wrongKind: 0, offDomain: 0, alreadyApproved: 0, badUrl: 0, alreadyMapped: 0 }
+// Which venue each refusal was taken for, so an over-eager match is visible and
+// arguable rather than a silently missing hospital.
+const coveredBy = []
 
 for (const candidate of candidatesDoc.candidates ?? []) {
   if (approved.length >= LIMIT) break
@@ -100,6 +114,19 @@ for (const candidate of candidatesDoc.candidates ?? []) {
   if (!host) { rejected.badUrl++; continue }
 
   if (!onTrustDomain(candidate.url, websites[candidate.trustCode])) { rejected.offDomain++; continue }
+
+  // Both the link text and the filename, because either one alone names the
+  // hospital on plenty of sites and neither does on all of them.
+  const covered = mappedVenueFor(
+    `${candidate.linkText ?? ""} ${fileNameOf(candidate.url)}`,
+    mappedVenues,
+    candidate.trustCode
+  )
+  if (covered) {
+    rejected.alreadyMapped++
+    coveredBy.push({ url: candidate.url, trustName: candidate.trustName, venue: covered.slug, matchedName: covered.matchedName })
+    continue
+  }
 
   let slug = slugFor(candidate)
   // Slugs address venues by URL and name the floor-plan asset directory, so a
@@ -131,6 +158,13 @@ log(STAGE, `${candidatesDoc.candidates?.length ?? 0} candidates -> ${approved.le
 log(STAGE, `rejected: ${JSON.stringify(rejected)}`)
 for (const a of approved.slice(0, 30)) log(STAGE, `  + ${a.slug}  (${a.kind}, ${a.trustName})`)
 if (approved.length > 30) log(STAGE, `  … and ${approved.length - 30} more`)
+
+// Named individually rather than counted. Every one of these is a hospital the
+// app already covers, and if the match is wrong it is a hospital being kept out
+// — so it has to be readable in the log without opening a file.
+for (const c of coveredBy) {
+  log(STAGE, `  – ${fileNameOf(c.url)}  (already mapped as ${c.venue}, matched "${c.matchedName}")`)
+}
 
 if (DRY_RUN) {
   log(STAGE, "dry run — data/plan-sources.json not written")
