@@ -19,6 +19,13 @@ export const COMMUNITY_DIAGNOSTIC_CENTRE_SITE_MAP_VENUE: Venue = {
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/community-diagnostic-centre-site-map/sitemap.svg", bounds: [[53.700168, -1.656896], [53.704366, -1.646866]] },
   ],
+  trails: [
+    { id: "c0-1", floor: 0, points: [{ lat: 53.702167, lng: -1.650807 }, { lat: 53.702109, lng: -1.650542 }] },
+    { id: "c0-2", floor: 0, points: [{ lat: 53.702091, lng: -1.650549 }, { lat: 53.702041, lng: -1.650822 }, { lat: 53.702041, lng: -1.651513 }] },
+    { id: "c0-3", floor: 0, points: [{ lat: 53.702041, lng: -1.651983 }, { lat: 53.702041, lng: -1.651649 }, { lat: 53.702032, lng: -1.651634 }] },
+    { id: "c0-4", floor: 0, points: [{ lat: 53.701979, lng: -1.650959 }, { lat: 53.70192, lng: -1.651316 }] },
+    { id: "c0-5", floor: 0, points: [{ lat: 53.701552, lng: -1.652234 }, { lat: 53.701498, lng: -1.651976 }] },
+  ],
   waypoints: [
     { id: "micad-link-f0", name: "MiCAD LINK", type: "other", coordinates: { lat: 53.703701, lng: -1.648134 }, floor: 0 },
     { id: "wickes-f0", name: "Wickes", type: "other", coordinates: { lat: 53.702762, lng: -1.654589 }, floor: 0 },

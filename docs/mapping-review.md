@@ -67,8 +67,40 @@ which came from the Dewsbury record along with its name. The name is corrected
 from the sheet; the position cannot be, so the venue now says so in its own
 notes rather than quietly asserting a wrong location.
 
-Grades barely moved, and that is the honest result: this pass fixed what the
-venues *say*, not what they *are*. 71 of 72 still have no corridor network.
+Grades barely moved on that first pass, and that was the honest result: it
+fixed what the venues *say*, not what they *are*.
+
+### Corridor networks
+
+Then the networks themselves (`scripts/maps/corridors.mjs`, §2 of the
+recommendations below):
+
+| | before | after |
+| --- | ---: | ---: |
+| Venues with a corridor network | 1 / 72 | 36 / 72 |
+| Grades | A:2 B:1 C:6 D:35 E:27 F:1 | **A:20 B:15** C:6 D:18 E:12 F:1 |
+
+8,947 corridor points across 36 venues, largest 685 — comfortably inside
+`TRAIL_MAX_NODES` (4000), above which `buildTrailPath` silently returns null and
+the trails would have been dead weight. GOSH's hand-built network is untouched.
+
+Two things to know before trusting these:
+
+- **They have not been looked at.** The extraction is verified by construction —
+  35 tests on synthetic geometry — and by statistics: median corridor width
+  2.8–4.0 m, floor area served per metre of corridor inside a sane band. That
+  says the algorithm is right and the output is plausible. It does not say a
+  given hospital's corridors are where its corridors actually are. Run with
+  `--debug <dir>` to get the network drawn in red over each plan, and look.
+- **They inherit the placement error.** A corridor network is derived in the
+  drawing's own coordinates and converted through the floor plan's bounds, so it
+  is exactly as rotated as the plan is (defect 1). Correct corridors on a
+  mis-rotated plan still put the live position in the wrong one.
+
+The run was stopped part-way — 36 of 72 venues — on a sheet whose grid made
+thinning pathologically slow. `npm run maps:corridors` picks up the rest; each
+venue's trails are independent, so a partial estate is fewer venues covered
+rather than a broken one.
 
 ---
 

@@ -19,6 +19,12 @@ export const LISTER_MAP_2026_VENUE: Venue = {
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/lister-map-2026/sitemap.svg", bounds: [[51.922817, -0.215166], [51.925675, -0.208612]] },
   ],
+  trails: [
+    { id: "c0-1", floor: 0, points: [{ lat: 51.925632, lng: -0.21509 }, { lat: 51.925632, lng: -0.208688 }] },
+    { id: "c0-2", floor: 0, points: [{ lat: 51.925003, lng: -0.21356 }, { lat: 51.92499, lng: -0.21348 }, { lat: 51.924945, lng: -0.213407 }] },
+    { id: "c0-3", floor: 0, points: [{ lat: 51.924334, lng: -0.212256 }, { lat: 51.924316, lng: -0.212227 }, { lat: 51.924253, lng: -0.212227 }, { lat: 51.924231, lng: -0.212191 }] },
+    { id: "c0-4", floor: 0, points: [{ lat: 51.924029, lng: -0.211543 }, { lat: 51.92397, lng: -0.21155 }, { lat: 51.923934, lng: -0.211492 }] },
+  ],
   waypoints: [
     { id: "acute-cardiology-unit-acu-f0", name: "Acute Cardiology Unit (Acu)", type: "department", coordinates: { lat: 51.925603, lng: -0.214829 }, floor: 0 },
     { id: "mri-magnetic-resonance-imaging-f0", name: "MRI (Magnetic Resonance Imaging)", type: "department", coordinates: { lat: 51.925603, lng: -0.214008 }, floor: 0 },

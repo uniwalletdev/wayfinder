@@ -19,6 +19,21 @@ export const BWH_VENUE: Venue = {
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/bwh/sitemap.svg", bounds: [[52.449445, -1.94718], [52.457327, -1.93804]] },
   ],
+  trails: [
+    { id: "c0-1", floor: 0, points: [{ lat: 52.456663, lng: -1.942476 }, { lat: 52.456663, lng: -1.942133 }] },
+    { id: "c0-2", floor: 0, points: [{ lat: 52.45574, lng: -1.945262 }, { lat: 52.455734, lng: -1.945472 }] },
+    { id: "c0-3", floor: 0, points: [{ lat: 52.455262, lng: -1.945748 }, { lat: 52.455235, lng: -1.945737 }, { lat: 52.455208, lng: -1.945693 }, { lat: 52.455188, lng: -1.945693 }, { lat: 52.455161, lng: -1.945649 }] },
+    { id: "c0-4", floor: 0, points: [{ lat: 52.454689, lng: -1.943183 }, { lat: 52.454689, lng: -1.943095 }, { lat: 52.454656, lng: -1.943007 }] },
+    { id: "c0-5", floor: 0, points: [{ lat: 52.454171, lng: -1.944798 }, { lat: 52.454117, lng: -1.944798 }, { lat: 52.454049, lng: -1.944654 }] },
+    { id: "c0-6", floor: 0, points: [{ lat: 52.453901, lng: -1.943194 }, { lat: 52.453888, lng: -1.943559 }] },
+    { id: "c0-7", floor: 0, points: [{ lat: 52.4538, lng: -1.942089 }, { lat: 52.453746, lng: -1.94189 }] },
+    { id: "c0-8", floor: 0, points: [{ lat: 52.45378, lng: -1.943183 }, { lat: 52.45376, lng: -1.943526 }] },
+    { id: "c0-9", floor: 0, points: [{ lat: 52.453726, lng: -1.943891 }, { lat: 52.453706, lng: -1.944223 }] },
+    { id: "c0-10", floor: 0, points: [{ lat: 52.453672, lng: -1.942796 }, { lat: 52.453686, lng: -1.942609 }, { lat: 52.453665, lng: -1.942575 }] },
+    { id: "c0-11", floor: 0, points: [{ lat: 52.453632, lng: -1.942233 }, { lat: 52.453436, lng: -1.942177 }] },
+    { id: "c0-12", floor: 0, points: [{ lat: 52.453423, lng: -1.943183 }, { lat: 52.453403, lng: -1.943449 }] },
+    { id: "c0-13", floor: 0, points: [{ lat: 52.453409, lng: -1.942144 }, { lat: 52.453355, lng: -1.941989 }] },
+  ],
   waypoints: [
     { id: "clinical-genetics-f0", name: "Clinical Genetics", type: "department", coordinates: { lat: 52.456842, lng: -1.945235 }, floor: 0 },
     { id: "a-e-drop-off-area-f0", name: "A&E drop-off area", type: "department", coordinates: { lat: 52.456655, lng: -1.941414 }, floor: 0 },

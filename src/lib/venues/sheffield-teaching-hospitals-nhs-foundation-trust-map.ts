@@ -19,6 +19,20 @@ export const SHEFFIELD_TEACHING_HOSPITALS_NHS_FOUNDATION_TRUST_MAP_VENUE: Venue 
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/sheffield-teaching-hospitals-nhs-foundation-trust-map/sitemap.svg", bounds: [[53.376913, -1.496719], [53.379833, -1.489943]] },
   ],
+  trails: [
+    { id: "c0-1", floor: 0, points: [{ lat: 53.378349, lng: -1.494697 }, { lat: 53.378349, lng: -1.494795 }, { lat: 53.37834, lng: -1.494825 }, { lat: 53.378237, lng: -1.494833 }, { lat: 53.378169, lng: -1.494818 }, { lat: 53.378169, lng: -1.494705 }] },
+    { id: "c0-2", floor: 0, points: [{ lat: 53.378349, lng: -1.494682 }, { lat: 53.378349, lng: -1.494456 }] },
+    { id: "c0-3", floor: 0, points: [{ lat: 53.378349, lng: -1.494441 }, { lat: 53.378349, lng: -1.494223 }] },
+    { id: "c0-4", floor: 0, points: [{ lat: 53.378349, lng: -1.494208 }, { lat: 53.378349, lng: -1.49399 }] },
+    { id: "c0-5", floor: 0, points: [{ lat: 53.378349, lng: -1.493974 }, { lat: 53.37834, lng: -1.493764 }] },
+    { id: "c0-6", floor: 0, points: [{ lat: 53.378344, lng: -1.49469 }, { lat: 53.378259, lng: -1.494697 }, { lat: 53.378241, lng: -1.494675 }] },
+    { id: "c0-7", floor: 0, points: [{ lat: 53.378344, lng: -1.494449 }, { lat: 53.378223, lng: -1.494449 }] },
+    { id: "c0-8", floor: 0, points: [{ lat: 53.378344, lng: -1.494215 }, { lat: 53.378219, lng: -1.494215 }] },
+    { id: "c0-9", floor: 0, points: [{ lat: 53.378237, lng: -1.494667 }, { lat: 53.378237, lng: -1.494517 }, { lat: 53.378219, lng: -1.494456 }] },
+    { id: "c0-10", floor: 0, points: [{ lat: 53.378237, lng: -1.493982 }, { lat: 53.378237, lng: -1.494125 }, { lat: 53.378223, lng: -1.49417 }] },
+    { id: "c0-11", floor: 0, points: [{ lat: 53.378237, lng: -1.493967 }, { lat: 53.378223, lng: -1.493899 }, { lat: 53.378228, lng: -1.493786 }] },
+    { id: "c0-12", floor: 0, points: [{ lat: 53.378214, lng: -1.494441 }, { lat: 53.378214, lng: -1.494223 }] },
+  ],
   waypoints: [
     { id: "reaching-us-by-car-f0", name: "Reaching us by car", type: "other", coordinates: { lat: 53.379566, lng: -1.495727 }, floor: 0 },
     { id: "public-transport-f0", name: "Public transport", type: "other", coordinates: { lat: 53.379566, lng: -1.494297 }, floor: 0 },

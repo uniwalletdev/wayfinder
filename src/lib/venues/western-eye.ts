@@ -19,6 +19,18 @@ export const WESTERN_EYE_VENUE: Venue = {
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/western-eye/sitemap.svg", bounds: [[51.519835, -0.165482], [51.521741, -0.16115]] },
   ],
+  trails: [
+    { id: "c0-1", floor: 0, points: [{ lat: 51.521451, lng: -0.162873 }, { lat: 51.521424, lng: -0.162649 }] },
+    { id: "c0-2", floor: 0, points: [{ lat: 51.521415, lng: -0.165219 }, { lat: 51.52137, lng: -0.165471 }] },
+    { id: "c0-3", floor: 0, points: [{ lat: 51.520885, lng: -0.165038 }, { lat: 51.520773, lng: -0.165096 }] },
+    { id: "c0-4", floor: 0, points: [{ lat: 51.520697, lng: -0.164583 }, { lat: 51.520585, lng: -0.164583 }] },
+    { id: "c0-5", floor: 0, points: [{ lat: 51.520234, lng: -0.16498 }, { lat: 51.520225, lng: -0.16485 }, { lat: 51.520189, lng: -0.164822 }] },
+    { id: "c0-6", floor: 0, points: [{ lat: 51.519987, lng: -0.164843 }, { lat: 51.519969, lng: -0.164655 }, { lat: 51.519974, lng: -0.164605 }] },
+    { id: "c0-7", floor: 0, points: [{ lat: 51.519956, lng: -0.164468 }, { lat: 51.519938, lng: -0.164258 }] },
+    { id: "c0-8", floor: 0, points: [{ lat: 51.51992, lng: -0.162374 }, { lat: 51.519884, lng: -0.162057 }, { lat: 51.519861, lng: -0.162021 }] },
+    { id: "c0-9", floor: 0, points: [{ lat: 51.519884, lng: -0.165132 }, { lat: 51.519884, lng: -0.164966 }, { lat: 51.519861, lng: -0.16493 }] },
+    { id: "c0-10", floor: 0, points: [{ lat: 51.519839, lng: -0.164078 }, { lat: 51.519839, lng: -0.16389 }] },
+  ],
   waypoints: [
     { id: "day-care-unit-theatres-f0", name: "Day care unit Theatres", type: "department", coordinates: { lat: 51.521028, lng: -0.161672 }, floor: 0 },
     { id: "staff-access-only-f0", name: "Staff access only", type: "other", coordinates: { lat: 51.520911, lng: -0.161606 }, floor: 0 },
