@@ -66,6 +66,19 @@ export interface FloorPlan {
   label: string
   imageUrl: string
   bounds: [[number, number], [number, number]]
+  // Clockwise degrees to turn the image about the centre of `bounds` so it
+  // matches the world. Absent or 0 for a plan drawn north-up.
+  //
+  // Trusts draw site maps to suit the page, not to suit north, and `bounds`
+  // alone can only describe an axis-aligned rectangle — so without this a sheet
+  // is pinned at whatever angle it happened to be drawn at, and the live
+  // position, every route bearing and the AR overlay all disagree with the
+  // picture. scripts/signals/ derives the angle from the paths people walked.
+  //
+  // This turns the IMAGE only. A placement correction also rotates the venue's
+  // waypoints and trails, which are ordinary world coordinates; the two are
+  // applied together or the pins slide off the drawing.
+  rotation?: number
 }
 
 // A mappable place. Replaces the single hard-coded hospital: anywhere — public

@@ -57,6 +57,10 @@ interface Props {
   siteOdsCode?: string
 }
 
+// Dedicated pane for a floor plan that is not drawn north-up. See the floor
+// plan effect below for why the rotation cannot live on the image itself.
+const ROTATED_PLAN_PANE = "rotated-floor-plan"
+
 const LIGHT_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
 const DARK_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png"
 
@@ -88,6 +92,8 @@ export default function FloorPlanMap({
   const destMarkerRef = useRef<L.Marker | null>(null)
   const routeLayerRef = useRef<L.FeatureGroup | null>(null)
   const floorPlanLayerRef = useRef<L.ImageOverlay | null>(null)
+  // Removes the zoom listener that keeps a rotated plan's pivot in step.
+  const rotationCleanupRef = useRef<(() => void) | null>(null)
   const waypointLayersRef = useRef<L.Marker[]>([])
   const assetLayersRef = useRef<L.Marker[]>([])
   const trailLayersRef = useRef<L.Polyline[]>([])
@@ -190,6 +196,12 @@ export default function FloorPlanMap({
     if (!mapRef.current) return
     const map = mapRef.current
 
+    // Drop any rotation listener the previous floor installed before its layer
+    // goes, or a floor change leaves a handler updating a pane that no longer
+    // holds anything.
+    rotationCleanupRef.current?.()
+    rotationCleanupRef.current = null
+
     if (floorPlanLayerRef.current) {
       map.removeLayer(floorPlanLayerRef.current)
       floorPlanLayerRef.current = null
@@ -197,13 +209,61 @@ export default function FloorPlanMap({
 
     const plan = floorPlans.find((fp) => fp.floor === currentFloor)
     if (plan) {
+      const rotation = plan.rotation ?? 0
+
+      // A rotated plan goes in its own pane so the rotation can live on the
+      // pane rather than the image. L.imageOverlay owns the image's own
+      // `transform` — it rewrites it on every reset to position and size the
+      // element — so anything set there is lost on the next zoom. Leaflet does
+      // not touch the transform of a pane it did not create a layer in, which
+      // makes the pane the one stable place to hang it.
+      //
+      // Only the picture turns. Waypoints, routes and trails stay on the
+      // default panes because they are already in world coordinates.
+      if (rotation) {
+        if (!map.getPane(ROTATED_PLAN_PANE)) {
+          const pane = map.createPane(ROTATED_PLAN_PANE)
+          // Under the overlay pane (400), so markers and the drawn route stay
+          // on top of the plan exactly as they do for an unrotated one.
+          pane.style.zIndex = "350"
+          pane.style.pointerEvents = "none"
+        }
+      }
+
       const overlay = L.imageOverlay(plan.imageUrl, plan.bounds as L.LatLngBoundsExpression, {
         // Keep the floor plan solid over the flat street maps.
         opacity: 0.85,
         interactive: false,
+        ...(rotation ? { pane: ROTATED_PLAN_PANE } : {}),
       })
       overlay.addTo(map)
       floorPlanLayerRef.current = overlay
+
+      const pane = map.getPane(ROTATED_PLAN_PANE)
+      if (pane) {
+        if (rotation) {
+          // The origin has to be the plan's centre in LAYER coordinates, and
+          // those are re-based whenever the map zooms — a fixed origin would
+          // leave the plan drifting away from its pins as you zoom.
+          const applyRotation = () => {
+            const [[south, west], [north, east]] = plan.bounds
+            const centre = L.latLngBounds([south, west], [north, east]).getCenter()
+            const point = map.latLngToLayerPoint(centre)
+            pane.style.transformOrigin = `${point.x}px ${point.y}px`
+            pane.style.transform = `rotate(${rotation}deg)`
+          }
+          applyRotation()
+          map.on("zoomend viewreset", applyRotation)
+          rotationCleanupRef.current = () => {
+            map.off("zoomend viewreset", applyRotation)
+            pane.style.transform = ""
+          }
+        } else {
+          // Switching from a rotated floor to a north-up one must not leave the
+          // previous floor's angle on the pane.
+          pane.style.transform = ""
+        }
+      }
     }
   }, [currentFloor, floorPlans])
 
