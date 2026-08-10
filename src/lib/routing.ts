@@ -301,13 +301,31 @@ export function buildRoute(
         floorChange: { from: fromFloor, to: destination.floor, via },
       })
 
-      // Same bank/stairwell on the destination floor — e.g. "Lift A" mirrors
-      // "Lift A — Floor 1". Falls back to any waypoint of the same type on
-      // that floor if nothing matches by name.
+      // Where the walker steps out: the SAME physical core on the destination
+      // floor. Two naming conventions are in the wild and they pull opposite
+      // ways, so neither name rule can be trusted alone:
+      //
+      //   * "Lift A — Floor 1" puts the floor after the dash, so the dash must
+      //     be stripped to recognise "Lift A" upstairs.
+      //   * "Lifts — Octav Botnar Wing" (GOSH) puts the BUILDING after the
+      //     dash, and repeats the name verbatim on every floor. Stripping it
+      //     collapses five separate cores — Nurses Home, Southwood, Variety
+      //     Club, Octav Botnar, Camelia Botnar — into one "Lifts", so a walker
+      //     who enters the Octav Botnar lift is told to exit at the Nurses
+      //     Home, 125 m away across the site.
+      //
+      // A shaft keeps its plan position on every floor, so geometry settles
+      // what names cannot: take the best name tier available, then the nearest
+      // candidate within it. Exact name wins outright, base name is the
+      // fallback for the "— Floor N" convention, and distance breaks every tie.
+      const sameType = allWaypoints.filter((w) => w.type === nearest.type && w.floor === destination.floor)
       const baseName = nearest.name.replace(/\s*—.*$/, "").trim()
-      const matchOnDestFloor =
-        allWaypoints.find((w) => w.type === nearest.type && w.floor === destination.floor && w.name.replace(/\s*—.*$/, "").trim() === baseName) ||
-        allWaypoints.find((w) => w.type === nearest.type && w.floor === destination.floor)
+      const exact = sameType.filter((w) => w.name === nearest.name)
+      const byBase = sameType.filter((w) => w.name.replace(/\s*—.*$/, "").trim() === baseName)
+      const tier = exact.length > 0 ? exact : byBase.length > 0 ? byBase : sameType
+      const matchOnDestFloor = tier
+        .slice()
+        .sort((a, b) => distanceMeters(nearest.coordinates, a.coordinates) - distanceMeters(nearest.coordinates, b.coordinates))[0]
 
       if (matchOnDestFloor) {
         // The walker re-enters at the lift/stairs on the destination floor, so
