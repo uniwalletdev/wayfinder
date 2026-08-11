@@ -89,10 +89,17 @@ const M_PER_DEG_LAT = 111320
 // minimum (4 degrees of freedom); four or five let the fit report and drive down
 // its own error. Spread and sharpness matter far more than count.
 const GCPS = [
+  // NW is dropped on purpose: Powis Place runs north from Great Ormond Street
+  // and stops inside the site, so there is no Guilford Street junction to
+  // survey. The drawing agrees — its western street stops at y=176.
   { name: "Guilford St × Powis Pl (NW)",           x: 114, y: 82,  lat: null, lng: null },
-  { name: "Guilford St × Lamb's Conduit St (NE)",  x: 866, y: 82,  lat: null, lng: null },
-  { name: "Great Ormond St × Lamb's Conduit (SE)", x: 866, y: 614, lat: null, lng: null },
-  { name: "Great Ormond St × Powis Pl (SW)",       x: 114, y: 614, lat: null, lng: null },
+  // y=67 is Guilford Street's CENTRELINE (its band spans y 56-78). The site
+  // boundary line at y=82 is the southern kerb, 15 px ≈ 3 m further south, and
+  // these coordinates were read off the road itself. The other three sit on
+  // their street centres already.
+  { name: "Guilford St × Lamb's Conduit St (NE)",  x: 866, y: 67,  lat: 51.523471, lng: -0.119642 },
+  { name: "Great Ormond St × Lamb's Conduit (SE)", x: 866, y: 614, lat: 51.522334, lng: -0.118784 },
+  { name: "Great Ormond St × Powis Pl (SW)",       x: 114, y: 614, lat: 51.521675, lng: -0.120871 },
   { name: "Main Entrance (Guilford St doors)",     x: 524, y: 84,  lat: null, lng: null },
 ].filter((g) => Number.isFinite(g.lat) && Number.isFinite(g.lng))
 
@@ -969,7 +976,12 @@ export const GOSH_VENUE: Venue = {
   name: "GOSH Wayfinder",
   subtitle: "Great Ormond Street Hospital for Children",
   category: "hospital",
-  center: { lat: 51.52267, lng: -0.11990 },
+  // Where the map opens: the centre of the canvas, put through the same
+  // projection as everything else. It was written out as a literal before, which
+  // matched only because the DEFAULT box happens to put the canvas centre there
+  // — under a fitted transform the literal stayed behind while the site moved,
+  // opening the map some 24 m off the buildings.
+  center: { lat: ${num(ll(W / 2, H / 2).lat)}, lng: ${num(ll(W / 2, H / 2).lng)} },
   defaultZoom: 18,
   visibility: "public",
   verified: true,
@@ -1064,8 +1076,13 @@ if (TF) {
     sum2 += m * m; maxM = Math.max(maxM, m)
     console.log(`  ${g.name}: ${m.toFixed(2)} m off`)
   }
+  // `theta` turns the canvas's +x axis, so 90 - theta is the compass bearing of
+  // drawing-EAST — not of the up-axis the old wording claimed. Report the turn
+  // itself instead, which is the number anyone actually wants: how far the sheet
+  // is rotated from north-up, anticlockwise positive.
   const bearing = ((90 - (TF.theta * 180) / Math.PI) % 360 + 360) % 360
-  console.log(`  scale ${TF.scale.toFixed(3)} m/px · site up-axis bearing ${bearing.toFixed(1)}° from true north`)
+  const turn = (((TF.theta * 180) / Math.PI + 540) % 360) - 180
+  console.log(`  scale ${TF.scale.toFixed(3)} m/px · sheet turned ${turn.toFixed(1)}° anticlockwise from north-up (drawing-east bears ${bearing.toFixed(1)}°)`)
   console.log(`  max residual ${maxM.toFixed(2)} m · RMS ${Math.sqrt(sum2 / GCPS.length).toFixed(2)} m (aim < ~5 m)`)
 } else {
   console.log("\ngeoreference: no ground-control points — using the original north-up box.")
