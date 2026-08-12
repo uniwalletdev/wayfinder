@@ -1,6 +1,6 @@
 # The back office
 
-`/admin` — where the people who run Wayfinder manage everything the app pools
+`/backoffice` — where the people who run Wayfinder manage everything the app pools
 from the people who use it.
 
 The app itself is deliberately anonymous: you never sign in to find a ward, and
@@ -21,14 +21,14 @@ The portal is **closed until it is configured**. Every other integration in this
 app follows “no key → feature quietly off” (see `.env.example`); this one
 inverts it, because an unconfigured back office that fell open would be an open
 door onto every venue, trail and delete button in the database. With nothing set,
-`/admin` renders setup instructions and authorises nobody.
+`/backoffice` renders setup instructions and authorises nobody.
 
 Set either — or both:
 
 | Variable | What it does |
 | --- | --- |
 | `ADMIN_EMAILS` | Comma-separated allowlist checked against the signed-in Clerk account. Preferred: the audit log names a person, and sign-in inherits whatever the organisation enforces. Needs Clerk configured. |
-| `ADMIN_PASSWORD` | A shared secret exchanged for a signed, httpOnly, 12-hour session cookie scoped to `/admin`. For deployments with no Clerk, and for getting the first operator in today. |
+| `ADMIN_PASSWORD` | A shared secret exchanged for a signed, httpOnly, 12-hour session cookie scoped to `/backoffice`. For deployments with no Clerk, and for getting the first operator in today. |
 | `ADMIN_SESSION_SECRET` | Optional. Signs the cookie. Without it the key is derived from `ADMIN_PASSWORD`, so changing the password ends every open session. |
 
 Sign-in is rate limited (8 attempts per 15 minutes per caller), compared in
@@ -87,7 +87,7 @@ from here.
 **Ownership.** A venue is owned by whichever device created it, through an
 `edit_token` held in that browser's storage. The portal can *rotate* that token —
 revoking the old device and handing you a replacement, shown once — but it can
-never display the current one. No query in `src/lib/admin/` selects the column.
+never display the current one. No query in `src/lib/backoffice/` selects the column.
 
 ---
 
@@ -111,7 +111,7 @@ an erasure evidenceable after the rows are gone.
 ## How it is built
 
 ```
-src/lib/admin/
+src/lib/backoffice/
   auth.ts        who is allowed in, and how it is proved
   data.ts        every read, as one Data Access Layer — no SQL lives in a page
   actions.ts     every write, each re-authorising and each audited
@@ -120,11 +120,11 @@ src/lib/admin/
   moderation.ts  whether new venues are listed immediately or held
   types.ts       the shapes the portal renders
 
-src/app/admin/
+src/app/backoffice/
   login/         sign-in — OUTSIDE the gated group, or it would redirect to itself
   (portal)/      every gated screen, behind one layout that checks first
 
-src/components/admin/   the shell, the primitives, the charts, the forms
+src/components/backoffice/   the shell, the primitives, the charts, the forms
 db/migrations/0004_admin.sql   moderation columns, resolution columns, audit table
 ```
 
@@ -137,6 +137,6 @@ Notes worth knowing before changing it:
 - **The schema is applied automatically** by `src/lib/db.ts` on first use, and
   mirrored in `db/migrations/` for ops. The two must stay in step.
 - **No chart library.** The four chart forms are a handful of divs and one small
-  SVG (`src/components/admin/charts.tsx`).
+  SVG (`src/components/backoffice/charts.tsx`).
 - **Filters live in the URL.** A queue someone is working through can be
   bookmarked, shared and reloaded without losing their place.

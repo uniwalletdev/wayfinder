@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto"
 import { query } from "./db"
-import { initialVenueStatus } from "./admin/moderation"
+import { initialVenueStatus } from "./backoffice/moderation"
 import { Venue, Waypoint } from "./types"
 import { NewVenueInput } from "./venues"
 
@@ -70,7 +70,7 @@ function rowToVenue(r: VenueRow, waypoints: Waypoint[]): Venue {
     visibility: r.visibility,
     // Set from the back office once someone has confirmed with the organisation
     // that owns the building that this map is theirs and is right (see
-    // src/app/admin/(portal)/venues/[id]). Never self-assertable: no request to
+    // src/app/backoffice/(portal)/venues/[id]). Never self-assertable: no request to
     // this API can set it.
     verified: r.verified,
     quickAccess: [],
