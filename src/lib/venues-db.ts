@@ -1,5 +1,6 @@
 import { randomUUID } from "crypto"
 import { query } from "./db"
+import { initialVenueStatus } from "./admin/moderation"
 import { Venue, Waypoint } from "./types"
 import { NewVenueInput } from "./venues"
 
@@ -18,6 +19,7 @@ interface VenueRow {
   center_lng: number
   default_zoom: number
   visibility: "public" | "unlisted" | "private"
+  verified: boolean
   created_at: string
   updated_at: string
 }
@@ -35,7 +37,8 @@ interface WaypointRow {
 
 // Columns returned to clients — never selects edit_token, so the owner secret
 // can't leak through a read.
-const VENUE_COLS = "id, slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, created_at, updated_at"
+const VENUE_COLS =
+  "id, slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, verified, created_at, updated_at"
 
 function slugify(name: string): string {
   const base = name.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
@@ -65,7 +68,11 @@ function rowToVenue(r: VenueRow, waypoints: Waypoint[]): Venue {
     floorPlans: [],
     waypoints,
     visibility: r.visibility,
-    verified: false,
+    // Set from the back office once someone has confirmed with the organisation
+    // that owns the building that this map is theirs and is right (see
+    // src/app/admin/(portal)/venues/[id]). Never self-assertable: no request to
+    // this API can set it.
+    verified: r.verified,
     quickAccess: [],
     createdAt: r.created_at,
     updatedAt: r.updated_at,
@@ -91,15 +98,30 @@ async function withWaypoints(rows: VenueRow[]): Promise<Venue[]> {
 }
 
 // Public venues, listed for discovery. Unlisted/private are reachable by id only.
+//
+// `status` is the back office's decision and is ANDed with the creator's
+// visibility: a venue is listed only when its creator asked for public *and* an
+// operator has not held or hidden it. The two are kept separate so un-hiding a
+// venue later restores what its creator actually asked for rather than assuming
+// public (see db/migrations/0004_admin.sql).
 export async function listPublicVenues(): Promise<Venue[]> {
   const { rows } = await query<VenueRow>(
-    `select ${VENUE_COLS} from public.wf_venues where visibility = 'public' order by created_at asc`
+    `select ${VENUE_COLS} from public.wf_venues
+      where visibility = 'public' and status = 'published'
+      order by created_at asc`
   )
   return withWaypoints(rows)
 }
 
+// Reachable by id regardless of listing — that is what makes an unlisted venue
+// shareable by link — except when it has been suppressed, which is the one
+// decision that means "this should not be reachable at all". A venue held for
+// review is still openable by whoever created it and holds its link.
 export async function getVenue(id: string): Promise<Venue | null> {
-  const { rows } = await query<VenueRow>(`select ${VENUE_COLS} from public.wf_venues where id = $1`, [id])
+  const { rows } = await query<VenueRow>(
+    `select ${VENUE_COLS} from public.wf_venues where id = $1 and status <> 'suppressed'`,
+    [id]
+  )
   if (rows.length === 0) return null
   return (await withWaypoints(rows))[0]
 }
@@ -109,8 +131,8 @@ export async function getVenue(id: string): Promise<Venue | null> {
 export async function createVenue(input: NewVenueInput): Promise<{ venue: Venue; editToken: string }> {
   const editToken = randomUUID()
   const { rows } = await query<VenueRow>(
-    `insert into public.wf_venues (slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, edit_token)
-     values ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+    `insert into public.wf_venues (slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, edit_token, status)
+     values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
      returning ${VENUE_COLS}`,
     [
       slugify(input.name),
@@ -122,6 +144,8 @@ export async function createVenue(input: NewVenueInput): Promise<{ venue: Venue;
       input.defaultZoom ?? 18,
       input.visibility,
       editToken,
+      // 'published' unless this deployment asked for review-before-listing.
+      initialVenueStatus(),
     ]
   )
   return { venue: rowToVenue(rows[0], []), editToken }

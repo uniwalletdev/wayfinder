@@ -56,29 +56,45 @@ export function rateLimit(
   limit: number,
   windowMs: number
 ): Response | null {
+  const taken = consume(`${scope}:${callerKey(request)}`, limit, windowMs)
+  if (taken.ok) return null
+  return Response.json(
+    { error: "rate_limited", message: "Too many requests. Please try again shortly." },
+    { status: 429, headers: { "Retry-After": String(taken.retryAfter) } }
+  )
+}
+
+/**
+ * The counter behind rateLimit(), usable where there is no Request to key on —
+ * Server Actions get their caller from `headers()` rather than a Request object,
+ * and admin sign-in needs the same fixed window to blunt password guessing.
+ *
+ * `key` must already include its own namespace, the way rateLimit() prefixes a
+ * scope, so two callers can't share a bucket by accident.
+ *
+ * Fails OPEN, for the reason in the header comment.
+ */
+export function consume(
+  key: string,
+  limit: number,
+  windowMs: number
+): { ok: true } | { ok: false; retryAfter: number } {
   try {
     const now = Date.now()
     prune(now)
-    const key = `${scope}:${callerKey(request)}`
     const w = buckets.get(key)
 
     if (!w || w.resetAt <= now) {
       buckets.set(key, { count: 1, resetAt: now + windowMs })
-      return null
+      return { ok: true }
     }
     if (w.count < limit) {
       w.count++
-      return null
+      return { ok: true }
     }
-
-    const retryAfter = Math.max(1, Math.ceil((w.resetAt - now) / 1000))
-    return Response.json(
-      { error: "rate_limited", message: "Too many requests. Please try again shortly." },
-      { status: 429, headers: { "Retry-After": String(retryAfter) } }
-    )
+    return { ok: false, retryAfter: Math.max(1, Math.ceil((w.resetAt - now) / 1000)) }
   } catch {
-    // Fail open — see the header comment.
-    return null
+    return { ok: true }
   }
 }
 
@@ -106,6 +122,10 @@ export const LIMITS = {
   // served from an in-process index, so a ceiling keeps a loop from pinning a
   // server instance. Generous: the map asks once per venue switch.
   footprints: { limit: 120, windowMs: 60 * 1000 }, // 120/min
+  // Back-office sign-in. The only endpoint in the app where guessing the input
+  // is worth anything, so it is the tightest: enough for someone mistyping a
+  // long password, nowhere near enough to search a keyspace.
+  adminLogin: { limit: 8, windowMs: 15 * 60 * 1000 }, // 8 per 15 min
 } as const
 
 // ── Request body caps ───────────────────────────────────────────────────────

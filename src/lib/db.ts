@@ -165,6 +165,54 @@ create table if not exists public.wf_waypoints (
   constraint wf_waypoints_name_len check (char_length(name) between 1 and 200)
 );
 create index if not exists wf_waypoints_venue_idx on public.wf_waypoints (venue_id);
+
+-- Back-office state: the listing decision for a shared venue, the resolution of
+-- a search miss, and the record of what an administrator did (see
+-- db/migrations/0004_admin.sql). status defaults to 'published' so adding the
+-- back office changes nothing about which venues an existing deployment lists —
+-- review-before-listing is opt-in via WAYFINDER_VENUE_MODERATION=queue.
+alter table public.wf_venues add column if not exists status      text not null default 'published';
+alter table public.wf_venues add column if not exists verified    boolean not null default false;
+alter table public.wf_venues add column if not exists review_note  text;
+alter table public.wf_venues add column if not exists reviewed_at  timestamptz;
+alter table public.wf_venues add column if not exists reviewed_by  text;
+do $$ begin
+  alter table public.wf_venues
+    add constraint wf_venues_status_chk check (status in ('published', 'pending', 'suppressed'));
+exception when duplicate_object then null;
+end $$;
+create index if not exists wf_venues_status_idx
+  on public.wf_venues (status, visibility, created_at desc);
+
+alter table public.search_misses add column if not exists resolution  text;
+alter table public.search_misses add column if not exists resolved_at timestamptz;
+alter table public.search_misses add column if not exists resolved_by text;
+do $$ begin
+  alter table public.search_misses
+    add constraint search_misses_resolution_chk
+    check (resolution is null or resolution in ('mapped', 'not_a_place', 'duplicate', 'wont_fix'));
+exception when duplicate_object then null;
+end $$;
+create index if not exists search_misses_open_idx
+  on public.search_misses (venue_key, resolved_at, created_at desc);
+
+create index if not exists nav_signals_created_idx on public.nav_signals (created_at desc);
+create index if not exists nav_signals_device_idx  on public.nav_signals (device_id);
+
+create table if not exists public.wf_admin_audit (
+  id          uuid primary key default gen_random_uuid(),
+  actor       text not null,
+  action      text not null,
+  target_type text,
+  target_id   text,
+  summary     text not null,
+  detail      jsonb not null default '{}'::jsonb,
+  created_at  timestamptz not null default now(),
+  constraint wf_admin_audit_actor_len  check (char_length(actor) between 1 and 200),
+  constraint wf_admin_audit_action_len check (char_length(action) between 1 and 60)
+);
+create index if not exists wf_admin_audit_created_idx on public.wf_admin_audit (created_at desc);
+create index if not exists wf_admin_audit_target_idx  on public.wf_admin_audit (target_type, target_id, created_at desc);
 `
 
 // Run the schema once per process. Cheap, and keeps setup zero-touch: a fresh
