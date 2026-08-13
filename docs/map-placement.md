@@ -333,6 +333,41 @@ them in step.
 
 ### 2. Get the control points — cheapest first
 
+**a0. Read what the sheet already prints.** Before any image registration, the
+cheapest source of correspondences is the sheet's own labels — and they are
+sitting in the traced SVG, discarded. `npm run maps:anchors`
+(`scripts/maps/anchors.mjs`) counts them:
+
+| | plans |
+| --- | ---: |
+| **two or more named streets — solvable from the sheet alone** | **38** |
+| three or more (over-determined, so the fit gets a residual) | 27 |
+| a north arrow printed as a lone `N` | 27 |
+| a readable scale bar | 10 |
+| nothing printed that names a place | 26 |
+| distinct street names across the estate | 115 |
+
+A street name is half a control point: `"GUILFORD STREET"` at (0.31, 0.08) on the
+page needs only the coordinate of Guilford Street to become a correspondence, and
+two correspondences solve the placement. Two named streets that *cross* give a
+junction — a point rather than a line, which is better still.
+
+The sheets that need this most are the ones that print the most. **St George's
+Tooting names fourteen streets** — Blackshaw Road, Cranmer Terrace, Aldis
+Street, Fountain Road — and it is the sheet sitting 18° off with its anchor
+152 m from its own waypoints. Derriford names Brest Road, Derriford Road and
+Morlaix Drive. Every one of those is a fact the trust asserted about its own
+site, and the pipeline replaced all of them with a 450 m constant.
+
+The missing half is the coordinate for each name, which needs OpenStreetMap or a
+gazetteer. That is one Overpass query per site against `highway` ways whose
+`name` matches, or one geocoder lookup per name — and 115 names is a small
+amount of either.
+
+The north arrow matters more than its size suggests: `dominantAngle()` recovers a
+grid only to within a quarter turn, so a plan 20° off and one 110° off are the
+same measurement. A printed `N` settles which, and 27 plans have one.
+
 **a. Automatic, against the OSM footprints.** This is image registration, and it
 is a solved problem. Render the sheet's `planRegion()` masses to a binary mask
 and the ODS code's footprints to another at the same resolution, then recover the
@@ -441,6 +476,9 @@ review recommends. They answer different questions — *can it route you* versus
    image and the waypoints by `build-venues.mjs`.
 1. **Commit the footprint subset** for sheets in `mapped-sites.json`, so
    placement is measurable in CI and in every checkout. Hours.
+1b. **Resolve the 115 street names to coordinates** and turn them into `gcps`.
+   38 plans become solvable with no human judgement and no image registration —
+   the sheets already did the work.
 2. **Fix the scale bugs** — per-axis footprint extent, and measure and apply on
    the same rectangle. No new data, immediate improvement on all 55.
 3. **Derive the crop** per sheet from `trimToCore()`. Fixes the anchor's
