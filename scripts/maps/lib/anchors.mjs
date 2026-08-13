@@ -42,16 +42,15 @@ const WAY_PROSE = /\b(this|that|two|one|your|our|the|either|both|no|give)\s+way\
 //
 // A bare "N" is not proof of a compass, though. Royal Berkshire prints fifteen
 // of them, all at body-text size, in four neat columns — a directory table with
-// an "N" column, not fifteen compass roses. QEHB prints nine the same way. What
-// separates the real ones is size: a compass rose is drawn to be seen from
-// across a corridor, so its letter runs well above the sheet's ordinary text,
-// while a table's runs exactly at it.
+// an "N" column, not fifteen compass roses. QEHB prints nine the same way.
+//
+// What separates them is alignment: a rose is a one-off and nothing else on the
+// sheet lines up with it, while a table is a line. Size decides only where a
+// sheet carries both. Size ALONE was tried first and does not work — a sheet
+// drawn with large labels has a large median text size, so a ratio against it
+// throws away the genuine roses on Charing Cross, Addenbrooke's level 3, Castle
+// Hill and Western Eye.
 const NORTH_LABEL = /^(n|north)$/i
-// What actually separates them is alignment, not size. Royal Berkshire's fifteen
-// sit at four x positions — tidy columns, because they are a table. QEHB's nine
-// do the same. A compass rose is a one-off: nothing else on the sheet lines up
-// with it. Size alone was tried first and is not enough, because a sheet drawn
-// with large labels has a large median and its genuine rose fails the ratio.
 const ALIGNED_TOLERANCE = 0.004 // of the page, either axis
 const ALIGNED_GROUP = 3 // this many in a line is furniture
 // A sheet has one compass, or two on a double drawing.
@@ -106,11 +105,6 @@ export function normaliseStreetName(text) {
 export function readAnchors(svg) {
   const doc = readTextItems(svg)
   if (!doc) return null
-
-  // The size ordinary text is set at, used to tell a compass rose from a letter
-  // in a table.
-  const sizes = doc.items.map((i) => i.size).filter((n) => n > 0).sort((a, b) => a - b)
-  const medianSize = sizes.length ? sizes[Math.floor(sizes.length / 2)] : 0
 
   const streets = []
   const northCandidates = []
