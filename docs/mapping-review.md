@@ -165,6 +165,11 @@ Princess Anne Hospitals when it ships one.
 
 ### 1. Sheets are pinned north-up, and hospital site maps are not drawn north-up
 
+*Followed up in [`map-placement.md`](./map-placement.md), which measures the
+three placement errors separately and proposes storing ground control points
+instead of a centre and a width. Numbers there come from
+`scripts/maps/audit-placement.mjs`.*
+
 `placeFloor()` (`scripts/maps/build-venues.mjs:46-56`) computes a floor plan's
 bounds as an axis-aligned rectangle:
 

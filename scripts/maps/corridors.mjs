@@ -22,7 +22,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from "node:fs"
 import { join, dirname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
-import { readSvgGeometry, isWhite, classifyFill, fillBounds } from "./lib/svg-geom.mjs"
+import { readSvgGeometry, isWhite, fillBounds, planRegion } from "./lib/svg-geom.mjs"
 import {
   makeGrid, fillPolygon, strokeLine, distanceTransform, thin, traceSkeleton,
   simplify, pruneSpurs, BLOCKED,
@@ -74,37 +74,6 @@ function loadVenue(src) {
 }
 
 // --- Extraction ------------------------------------------------------------
-
-// The drawing's own extent, and the region inside it that is floor rather than
-// margin. A traced sheet paints the building as one or more large filled shapes;
-// the page background and any branding band are excluded so the medial axis
-// cannot wander across white paper.
-function planRegion(geom, unitsPerMetre) {
-  const page = geom.viewBox.w * geom.viewBox.h
-  const limits = {
-    // A wall segment worth drawing is at least a couple of metres long and no
-    // more than about half a metre thick.
-    wallMinLength: 2 * unitsPerMetre,
-    wallMaxThickness: 0.6 * unitsPerMetre,
-    massMinArea: page * 0.0005,
-  }
-  const mass = []
-  const walls = []
-  for (const f of geom.fills) {
-    if (isWhite(f.rgb)) continue
-    const kind = classifyFill(f, limits)
-    if (kind === "detail") continue // room labels, symbols, logo marks
-    if (kind === "wall") {
-      walls.push(f)
-      continue
-    }
-    // A full-width band no taller than a title bar is branding, not floor.
-    const b = fillBounds(f)
-    if (b.w > geom.viewBox.w * 0.9 && b.h < geom.viewBox.h * 0.08) continue
-    mass.push(f)
-  }
-  return { mass, walls }
-}
 
 function extractFloor(svgPath, spanM) {
   const svg = readFileSync(svgPath, "utf8")

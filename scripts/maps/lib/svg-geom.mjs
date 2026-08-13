@@ -285,3 +285,39 @@ export function ringArea(ring) {
   }
   return a / 2
 }
+
+// The drawing's own extent, and the region inside it that is floor rather than
+// margin. A traced sheet paints the building as one or more large filled shapes;
+// the page background and any branding band are excluded so the medial axis
+// cannot wander across white paper.
+//
+// Shared by corridors.mjs, which walks the free space between the masses, and
+// audit-placement.mjs, which measures where on the page the masses sit — the
+// two have to agree about what counts as the plan or they are describing
+// different drawings.
+export function planRegion(geom, unitsPerMetre) {
+  const page = geom.viewBox.w * geom.viewBox.h
+  const limits = {
+    // A wall segment worth drawing is at least a couple of metres long and no
+    // more than about half a metre thick.
+    wallMinLength: 2 * unitsPerMetre,
+    wallMaxThickness: 0.6 * unitsPerMetre,
+    massMinArea: page * 0.0005,
+  }
+  const mass = []
+  const walls = []
+  for (const f of geom.fills) {
+    if (isWhite(f.rgb)) continue
+    const kind = classifyFill(f, limits)
+    if (kind === "detail") continue // room labels, symbols, logo marks
+    if (kind === "wall") {
+      walls.push(f)
+      continue
+    }
+    // A full-width band no taller than a title bar is branding, not floor.
+    const b = fillBounds(f)
+    if (b.w > geom.viewBox.w * 0.9 && b.h < geom.viewBox.h * 0.08) continue
+    mass.push(f)
+  }
+  return { mass, walls }
+}
