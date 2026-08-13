@@ -4,6 +4,7 @@
     "center": "[lat, lng] the plan centre is anchored to",
     "spanM": "full-sheet width in metres",
     "plan": "[x0, y0, x1, y1] normalised crop limiting waypoint extraction to the site-plan area; the floor-plan image is always the whole sheet",
+    "gcps": "optional ground control points: [{ sheet: [x, y], world: [lat, lng], note }] pairing a normalised position on the drawing with the real place it is. Two or more replace center/spanM entirely and solve the ANGLE as well, which those two cannot express — a trust draws its site map to fit the page, not to face north. On a multi-floor sheet, put them on each floor instead. See docs/map-placement.md.",
     "quick": "waypoint names surfaced as search shortcuts"
   },
   "sheets": [

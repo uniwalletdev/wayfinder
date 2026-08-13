@@ -16,6 +16,10 @@
 import { extractLabels } from "./extract.mjs"
 import { readSheets } from "./sheets.mjs"
 import { writeFileSync } from "fs"
+// The app's own placement solver, imported directly rather than reimplemented:
+// the pins the pipeline writes and the picture the renderer turns have to come
+// out of one transform. Node strips the types (22.18+).
+import { solvePlanPlacement, placedPlanPoint, placementBounds } from "../../src/lib/plan-georeference.ts"
 
 const R = 111320 // metres per degree latitude
 
@@ -42,6 +46,25 @@ async function placeFloor(v, floor, usedIds) {
   const [px0, py0, px1, py1] = floor.plan
   const inPlan = labels.filter((l) => l.nx >= px0 && l.nx <= px1 && l.ny >= py0 && l.ny <= py1)
 
+  // A georeferenced sheet is placed by its control points; everything else falls
+  // back to the centre-and-width anchoring below. The two are not variations on
+  // one method: control points solve an angle as well as a position and a size,
+  // and the angle is the difference between a plan that sits on its hospital and
+  // one that lies across the road at 20° to it.
+  const placement = solveFloorPlacement(v, floor, W / H)
+  if (placement) {
+    const toLatLng = (nx, ny) => {
+      const c = placedPlanPoint(placement, W / H, nx, ny)
+      return [r6(c.lat), r6(c.lng)]
+    }
+    const [[bS, bW], [bN, bE]] = placementBounds(placement, W / H)
+    return {
+      wps: waypointsFrom(inPlan, floor, usedIds, toLatLng),
+      bounds: [r6(bS), r6(bW), r6(bN), r6(bE)],
+      placement,
+    }
+  }
+
   // Bounds: full sheet spans dLng × dLat, anchored so the plan centre == center.
   const [lat0, lng0] = v.center
   const dLng = v.spanM / (R * Math.cos((lat0 * Math.PI) / 180))
@@ -54,10 +77,43 @@ async function placeFloor(v, floor, usedIds) {
 
   const toLatLng = (nx, ny) => [r6(latN - ny * dLat), r6(lngW + nx * dLng)]
 
-  // Waypoint ids are de-duplicated across the WHOLE venue, not per floor: a
-  // hospital has a "Reception" on several levels, and two waypoints sharing an
-  // id would collide in routing.
-  const wps = inPlan.map((l) => {
+  const [bS, bW] = toLatLng(0, 1) // sheet bottom-left  -> [latS, lngW]
+  const [bN, bE] = toLatLng(1, 0) // sheet top-right    -> [latN, lngE]
+  return { wps: waypointsFrom(inPlan, floor, usedIds, toLatLng), bounds: [bS, bW, bN, bE], placement: null }
+}
+
+// Control points for one floor, if it has any. A sheet's own `gcps` apply to a
+// single-floor venue; a multi-floor venue needs them per floor, because each
+// level is a different drawing on a differently sized page.
+//
+// Each is [x, y] normalised on the sheet against [lat, lng] in the world — a
+// mapper saying "this corner of the drawing is that corner of the building".
+// Two are enough to fix the angle, the scale and the position together.
+export function solveFloorPlacement(v, floor, aspectRatio) {
+  const gcps = floor.gcps ?? v.gcps
+  if (!Array.isArray(gcps) || gcps.length < 2) return null
+  const placement = solvePlanPlacement(
+    gcps.map((g) => ({
+      plan: { x: g.sheet[0], y: g.sheet[1] },
+      world: { lat: g.world[0], lng: g.world[1] },
+      note: g.note,
+    })),
+    aspectRatio
+  )
+  if (!placement) {
+    throw new Error(
+      `data/mapped-sites.json: sheet "${v.slug}" floor "${floor.id}" has control points that cannot be solved ` +
+        `— two points at the same spot on the drawing fix no scale or angle`
+    )
+  }
+  return placement
+}
+
+// Waypoint ids are de-duplicated across the WHOLE venue, not per floor: a
+// hospital has a "Reception" on several levels, and two waypoints sharing an
+// id would collide in routing.
+export function waypointsFrom(inPlan, floor, usedIds, toLatLng) {
+  return inPlan.map((l) => {
     const base = `${slugify(l.text)}-f${floor.floor}`
     const n = usedIds[base] || 0
     usedIds[base] = n + 1
@@ -76,18 +132,20 @@ async function placeFloor(v, floor, usedIds) {
       description: l.storeyLabel ?? undefined,
     }
   })
-
-  const [bS, bW] = toLatLng(0, 1) // sheet bottom-left  -> [latS, lngW]
-  const [bN, bE] = toLatLng(1, 0) // sheet top-right    -> [latN, lngE]
-  return { wps, bounds: [bS, bW, bN, bE] }
 }
 
 async function build(v) {
-  const [lat0, lng0] = v.center
   const usedIds = {}
   const placed = []
   for (const floor of v.floors) placed.push({ floor, ...(await placeFloor(v, floor, usedIds)) })
   const wps = placed.flatMap((p) => p.wps)
+
+  // A solved placement supersedes the sheet's declared centre — that centre is
+  // an ODS registry address, which is a postal point and not a promise about
+  // where the middle of the estate is. Control points put the drawing on the
+  // buildings, so its centre is measured rather than assumed.
+  const solved = placed.find((p) => p.placement)?.placement
+  const [lat0, lng0] = solved ? [solved.center.lat, solved.center.lng] : v.center
 
   const L = []
   L.push('import { Venue } from "../types"')
@@ -109,10 +167,17 @@ async function build(v) {
   L.push(`  accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "${esc(v.notes)}" },`)
   L.push(`  quickAccess: [${v.quick.map((q) => `"${esc(q)}"`).join(", ")}],`)
   L.push("  floorPlans: [")
-  for (const { floor, bounds: [bS, bW, bN, bE] } of placed) {
+  for (const { floor, bounds: [bS, bW, bN, bE], placement } of placed) {
+    // Only the image turns; the waypoints above are already in world
+    // coordinates, placed through the same solution. A rotation written here
+    // without those coordinates having gone through it would slide every pin
+    // off the drawing.
+    const turn = placement && Math.abs(placement.rotation) > 0.05
+      ? `, rotation: ${Number(placement.rotation.toFixed(2))}`
+      : ""
     L.push(
       `    { id: "${floor.id}", floor: ${floor.floor}, label: "${esc(floor.label)}", ` +
-        `imageUrl: "/floorplans/${v.slug}/${floor.image}.svg", bounds: [[${r6(bS)}, ${r6(bW)}], [${r6(bN)}, ${r6(bE)}]] },`
+        `imageUrl: "/floorplans/${v.slug}/${floor.image}.svg", bounds: [[${r6(bS)}, ${r6(bW)}], [${r6(bN)}, ${r6(bE)}]]${turn} },`
     )
   }
   L.push("  ],")
@@ -125,10 +190,24 @@ async function build(v) {
   L.push("}")
   L.push("")
   writeFileSync(`src/lib/venues/${v.slug}.ts`, L.join("\n"))
-  return { slug: v.slug, count: wps.length }
+  return { slug: v.slug, count: wps.length, placement: solved ?? null }
 }
 
-for (const v of VENUES) {
-  const r = await build(v)
-  console.log(`${r.slug}: ${r.count} waypoints`)
+// Only when run as a script. The placement helpers above are pure and are
+// checked by scripts/maps/test/georeference.test.mjs, which cannot import them
+// if importing this file rebuilds all 55 venues — and cannot exercise them
+// through build() either, since that needs the trusts' PDFs and map/ is
+// gitignored.
+if (process.argv[1]?.endsWith("build-venues.mjs")) {
+  for (const v of VENUES) {
+    const r = await build(v)
+    // The residual is the whole point of reporting anything here: it is how far
+    // the fit misses the mapper's own control points, and the only number that
+    // says whether a plan is placed or merely put somewhere.
+    const placement = r.placement
+      ? ` — placed from ${r.placement.points} control points, ` +
+        `${r.placement.rotation.toFixed(1)}° turn, ±${r.placement.residualM.toFixed(1)} m`
+      : ""
+    console.log(`${r.slug}: ${r.count} waypoints${placement}`)
+  }
 }

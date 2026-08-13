@@ -60,7 +60,11 @@ export function normaliseFloors(sheet) {
     if (seenFloor.has(floor.floor)) throw new Error(`data/mapped-sites.json: sheet "${sheet.slug}" repeats storey ${floor.floor}`)
     seenId.add(floor.id)
     seenFloor.add(floor.floor)
-    return { ...floor, plan: floor.plan ?? sheet.plan, image: floor.id }
+    // `gcps` falls back to the sheet's the same way `plan` does — a single-floor
+    // venue declares its control points once, at the top. A multi-floor venue
+    // must give them per floor: each level is a separate drawing on a page of
+    // its own size, so one set of sheet coordinates cannot describe them all.
+    return { ...floor, plan: floor.plan ?? sheet.plan, gcps: floor.gcps ?? sheet.gcps, image: floor.id }
   })
 }
 

@@ -88,7 +88,7 @@ export async function extractLabels(file, pageNum) {
   return { labels: keep, W, H }
 }
 
-if (process.argv[1].endsWith("extract.mjs")) {
+if (process.argv[1]?.endsWith("extract.mjs")) {
   const { labels } = await extractLabels(process.argv[2], parseInt(process.argv[3] || "1", 10))
   console.log(`${labels.length} candidate waypoints:`)
   for (const l of labels.sort((a, b) => a.ny - b.ny)) {

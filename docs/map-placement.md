@@ -33,6 +33,63 @@ separating before any code is written.
 
 ---
 
+## What the samples show
+
+Three placed venues, and each fails differently — which is the argument for
+treating the three errors separately rather than as one "it's in the wrong
+place".
+
+**St George's, Tooting.** The plan is a pale square laid over Tooting, its own
+roads running square to the page while Blackshaw Road on the basemap runs
+diagonally beneath it. The audit measures this sheet's own grid at **-18°**, and
+it is placed north-up, so the drawing and the ground are about eighteen degrees
+apart. Two other things are visible in the same picture: the square reaches from
+Bertal Road to Kenlor Road, far past the hospital's actual boundary, and the
+waypoints are a tight clutch of lift icons in one corner rather than spread over
+the site — the audit puts the anchor **152 m** from the middle of the venue's own
+waypoints, the worst on the estate after Northwick Park.
+
+**Derriford.** The whole *page* is on the map: the title block "Site Map -
+September 2025", the legend, and the "Mobility bus, Monday–Friday" note box are
+all placed as if they were part of the hospital, and **waypoint pins sit on the
+legend entries**. That is the `[0, 0, 1, 1]` crop rendered literally. Its scale
+is the 450 m default — no footprint was ever measured for this site — on a
+campus considerably larger than 450 m, so the drawing is also too small for the
+ground beneath it. The white page paints over the basemap completely, so nothing
+underneath is available to compare against.
+
+**GOSH.** The counter-example, and worth being precise about *why* it works. It
+is not a trick of the view: GOSH is the one venue that was hand-built in real
+world coordinates rather than converted, so its buildings genuinely sit inside
+the real blocks between Guilford Street and Great Ormond Street. It is also the
+only one you can see through — the plan reads as an overlay on the map rather
+than a lid over it.
+
+That last point is a finding in its own right. The overlay is drawn at
+`opacity: 0.85` (`FloorPlanMap.tsx:235`), which on a sheet with a white page
+background is effectively opaque. **A misplaced plan hides the very evidence
+that would show it is misplaced.** Whatever else changes, a plan being
+georeferenced has to be translucent, or the person doing the aligning is working
+blind — which is the same reason the QA overlay cannot catch placement errors.
+
+### The parts of the fix that already exist, unconnected
+
+Looking for where to add a rotation turned up three pieces of the same repair,
+none of them wired to the others:
+
+| | state |
+| --- | --- |
+| `FloorPlan.rotation` + the rotated pane in `FloorPlanMap.tsx` | renders correctly, **set by no venue** |
+| `fitSimilarity()` / `icp()` / `registerWithRestarts()` in `scripts/signals/lib/registration.mjs` | correct maths, **no callers but its own test** |
+| `UploadPlanMode` — the one human placement tool in the app | **cannot rotate**: two corner handles, axis-aligned, and `plan-georeference.ts` says so outright — *"a tilted building needs the source image rotated before upload"* |
+
+So the app can display a turned plan, and can solve for a turn from walked
+trails, but offers no way for a person to say what the turn is, and no venue has
+ever carried one. The gap is not the maths. It is that nothing joins the maths
+to the data.
+
+---
+
 ## What placement is today
 
 `data/mapped-sites.json` gives each sheet a `center` and a `spanM`, and
@@ -219,7 +276,15 @@ the footprint pipeline can stay as it is.
 
 ### 1. Store ground control points, not a centre and a width
 
-The unit of placement should be correspondences: *this point on the sheet is that
+**Implemented.** `data/mapped-sites.json` now takes an optional `gcps` array on a
+sheet (or on each floor of a multi-floor sheet), and `build-venues.mjs` places
+from it when present, falling back to centre-and-width when it is absent. The
+solver is `solvePlanPlacement()` in `src/lib/plan-georeference.ts` — the app's
+own module, imported by the build script rather than reimplemented, so the pins
+the pipeline writes and the picture the renderer turns come out of one
+transform. What is still missing is a way to *produce* the points; see §2.
+
+The unit of placement is correspondences: *this point on the sheet is that
 point on the Earth*.
 
 ```jsonc
@@ -247,8 +312,11 @@ Why this and not four scalars:
   keeps the door open to `gdalwarp`, to a `.wld` sidecar, and to anyone else's
   tooling.
 
-Keep `center` and `spanM` as derived outputs so nothing downstream breaks; add
-the `rotation` the renderer already reads. Use a **similarity** transform, not a
+`center` and `spanM` stay as derived outputs so nothing downstream breaks, and
+the venue's centre becomes the *solved* centre rather than the ODS address. Each
+floor plan gets the `rotation` the renderer already reads, and every waypoint is
+run through the same solution — `placedPlanPoint()` — because a rotation applied
+to the image alone would slide every pin off the drawing. Use a **similarity** transform, not a
 full affine — six-parameter affine allows shear and unequal axis scales, which a
 scale drawing does not have, and letting the solver use them hides real errors as
 distortion. The exception is the 5 venues whose plans are raster
@@ -286,14 +354,20 @@ This works because a hospital site map and an OSM footprint set are two drawings
 of the same buildings — which is also why it will fail on schematic sheets that
 draw blocks as rounded lozenges. Expect it to carry the majority, not all.
 
-**b. A two-click georeferencer, for the rest and for the ground truth.** A small
-internal page: the sheet at 50% opacity over the satellite basemap, click a
-recognisable point on the sheet, click the same point on the imagery, twice.
-Solve, show the residual, write the GCPs back to `mapped-sites.json`. Roughly two
-minutes a hospital, so the entire 55-sheet estate is an afternoon — and it
-produces the labelled set the automatic method has to be graded against. Build
-this even if (a) works, because without it there is no way to know whether (a)
-works.
+**b. A two-click georeferencer, for the rest and for the ground truth.** This is
+now the missing piece, and the shortest path to it is upgrading the tool that
+already exists rather than building a new one: `UploadPlanMode` drags two
+opposite *corners* of a plan onto the map, which can express a position and a
+size but not an angle. Two draggable *control points* instead of two corners —
+"put this pin on the drawing's feature, now on the real one" — feed
+`solvePlanPlacement()` directly and yield rotation as well, with `residualM`
+shown as the honest measure of the placement. The sheet must be translucent
+while this is done, for the reason the samples make plain.
+
+Roughly two minutes a hospital, so the entire 55-sheet estate is an afternoon —
+and it produces the labelled set the automatic method has to be graded against.
+Build this even if (a) works, because without it there is no way to know whether
+(a) works.
 
 **c. Roads, where buildings fail.** Schematic sheets draw the road network
 faithfully even when the buildings are cartoons. Matching the sheet's stroked
@@ -362,6 +436,9 @@ review recommends. They answer different questions — *can it route you* versus
 
 ## Suggested order
 
+0. ~~**Give placement somewhere to put an angle.**~~ Done: `gcps` in
+   `mapped-sites.json`, solved by `plan-georeference.ts`, applied to both the
+   image and the waypoints by `build-venues.mjs`.
 1. **Commit the footprint subset** for sheets in `mapped-sites.json`, so
    placement is measurable in CI and in every checkout. Hours.
 2. **Fix the scale bugs** — per-axis footprint extent, and measure and apply on
