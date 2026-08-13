@@ -16,13 +16,18 @@ if (process.argv[1].endsWith("generate-all.mjs")) {
   const thumbOut = process.argv[2];
   if (thumbOut) mkdirSync(thumbOut, { recursive: true });
   for (const [file, page, slug, image] of MAPS) {
+    // No paper: the plan is a layer over the basemap, not a sheet laid on top
+    // of it. See pdfPageToSvg's note on pageBackground.
     const { svg, width, height } = await pdfPageToSvg(file, page);
     mkdirSync(`public/floorplans/${slug}`, { recursive: true });
     writeFileSync(`public/floorplans/${slug}/${image}.svg`, svg);
     // One thumbnail per venue, from whichever floor comes first — the preview
-    // exists to check placement, and every floor shares one anchor.
-    if (thumbOut && image === "sitemap") await sharp(Buffer.from(svg)).resize({ width: 900 }).png().toFile(`${thumbOut}/${slug}.png`);
-    else if (thumbOut) await sharp(Buffer.from(svg)).resize({ width: 900 }).png().toFile(`${thumbOut}/${slug}-${image}.png`);
+    // exists to check placement, and every floor shares one anchor. Flattened
+    // onto white, because a review thumbnail on a transparent background is
+    // a page of floating labels.
+    const thumb = () => sharp(Buffer.from(svg)).flatten({ background: "#ffffff" }).resize({ width: 900 }).png();
+    if (thumbOut && image === "sitemap") await thumb().toFile(`${thumbOut}/${slug}.png`);
+    else if (thumbOut) await thumb().toFile(`${thumbOut}/${slug}-${image}.png`);
     console.log(`${slug}/${image}: ${Math.round(width)}x${Math.round(height)}  ${(svg.length/1024).toFixed(0)}KB`);
   }
 }

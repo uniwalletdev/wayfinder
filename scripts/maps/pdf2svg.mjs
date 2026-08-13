@@ -57,7 +57,22 @@ function scaleOf(m) {
   return Math.sqrt(Math.abs(m[0] * m[3] - m[1] * m[2])) || 1
 }
 
-export async function pdfPageToSvg(file, pageNum) {
+// `pageBackground` paints the sheet's paper — an opaque white rectangle over the
+// whole viewBox, exactly as the PDF has it.
+//
+// Faithful to the document, and wrong for a map layer. A floor plan is drawn on
+// top of the basemap, and a plan with its paper still attached is a lid: it
+// hides the streets and buildings it is supposed to be sitting on, so nobody can
+// see whether it is aligned to them — including the person trying to align it,
+// and including the reviewer trying to judge whether the last attempt worked.
+// GOSH's hand-built plans have no paper, which is the whole reason they read as
+// part of the map rather than a sheet dropped on it.
+//
+// So the app's plans are drawn without it and the basemap shows through the
+// margins. The PNG previews still want paper, because a review thumbnail on a
+// transparent background is unreadable; generate-all.mjs flattens those onto
+// white instead.
+export async function pdfPageToSvg(file, pageNum, { pageBackground = false } = {}) {
   const data = new Uint8Array(readFileSync(file))
   const doc = await getDocument({ data, useSystemFonts: true }).promise
   const page = await doc.getPage(pageNum)
@@ -170,7 +185,7 @@ export async function pdfPageToSvg(file, pageNum) {
 
   const svg = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${fmt(W)} ${fmt(H)}" font-family="Arial, Helvetica, sans-serif">`,
-    `<rect x="0" y="0" width="${fmt(W)}" height="${fmt(H)}" fill="#ffffff"/>`,
+    ...(pageBackground ? [`<rect x="0" y="0" width="${fmt(W)}" height="${fmt(H)}" fill="#ffffff"/>`] : []),
     `<g stroke-linejoin="round" stroke-linecap="round">`,
     ...out,
     `</g>`,

@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841 595" font-family="Arial, Helvetica, sans-serif">
-<rect x="0" y="0" width="841" height="595" fill="#ffffff"/>
 <g stroke-linejoin="round" stroke-linecap="round">
 <path d="M0 -0.3L841.9 -0.3L841.9 595L0 595Z" fill="#d5e2f3" fill-rule="evenodd"/>
 <path d="M18.1 17.4L823.8 17.4L823.8 577.4L18.1 577.4ZZ" fill="#ffffff" fill-rule="evenodd" stroke="#0065c1" stroke-width="2.1"/>
