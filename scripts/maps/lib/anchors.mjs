@@ -39,7 +39,23 @@ const WAY_PROSE = /\b(this|that|two|one|your|our|the|either|both|no|give)\s+way\
 // geometry and the letter as text, so the letter is what is readable here — its
 // position gives the arrow's, and that is enough to tell a plan turned 20° from
 // one turned 110°, which edge orientation alone cannot.
+//
+// A bare "N" is not proof of a compass, though. Royal Berkshire prints fifteen
+// of them, all at body-text size, in four neat columns — a directory table with
+// an "N" column, not fifteen compass roses. QEHB prints nine the same way. What
+// separates the real ones is size: a compass rose is drawn to be seen from
+// across a corridor, so its letter runs well above the sheet's ordinary text,
+// while a table's runs exactly at it.
 const NORTH_LABEL = /^(n|north)$/i
+// What actually separates them is alignment, not size. Royal Berkshire's fifteen
+// sit at four x positions — tidy columns, because they are a table. QEHB's nine
+// do the same. A compass rose is a one-off: nothing else on the sheet lines up
+// with it. Size alone was tried first and is not enough, because a sheet drawn
+// with large labels has a large median and its genuine rose fails the ratio.
+const ALIGNED_TOLERANCE = 0.004 // of the page, either axis
+const ALIGNED_GROUP = 3 // this many in a line is furniture
+// A sheet has one compass, or two on a double drawing.
+const MAX_COMPASSES = 2
 
 // The number on a scale bar: "20 m", "100m", "50 metres". Bare numbers are
 // excluded — a sheet is full of them.
@@ -91,12 +107,17 @@ export function readAnchors(svg) {
   const doc = readTextItems(svg)
   if (!doc) return null
 
+  // The size ordinary text is set at, used to tell a compass rose from a letter
+  // in a table.
+  const sizes = doc.items.map((i) => i.size).filter((n) => n > 0).sort((a, b) => a - b)
+  const medianSize = sizes.length ? sizes[Math.floor(sizes.length / 2)] : 0
+
   const streets = []
-  const north = []
+  const northCandidates = []
   const scaleBars = []
   for (const item of doc.items) {
     if (NORTH_LABEL.test(item.text)) {
-      north.push(item)
+      northCandidates.push(item)
       continue
     }
     const scale = item.text.match(SCALE_LABEL)
@@ -123,6 +144,24 @@ export function readAnchors(svg) {
     streets.push({ ...item, name })
   }
 
+  // Drop any letter that lines up with two or more others — a column or a row of
+  // them is a table. What survives is ranked by size, because where a sheet does
+  // carry both a rose and a stray letter, the rose is the one drawn to be seen.
+  const aligned = (item, axis) =>
+    northCandidates.filter((o) => Math.abs(o[axis] - item[axis]) <= ALIGNED_TOLERANCE).length >= ALIGNED_GROUP
+  const rejected = northCandidates.filter((n) => aligned(n, "nx") || aligned(n, "ny"))
+  const biggestRejected = Math.max(0, ...rejected.map((n) => n.size))
+  const north = northCandidates
+    .filter((n) => !rejected.includes(n))
+    // A sheet that used "N" as a table entry several times over was using it as
+    // a table entry, and the one or two that happened not to line up are the
+    // same thing. Only a letter drawn larger than every rejected one stands out
+    // enough to be a rose — which is how Northampton keeps its 47pt compass out
+    // of a table of 11pt Ns, and how Royal Berkshire keeps none of fifteen.
+    .filter((n) => rejected.length < ALIGNED_GROUP || n.size > biggestRejected)
+    .sort((a, b) => b.size - a.size || a.ny - b.ny)
+    .slice(0, MAX_COMPASSES)
+
   // One street named twice at two ends of the same road is two anchors for one
   // line, which is worth keeping — a line's direction constrains the angle even
   // when neither point is a junction.
@@ -140,6 +179,8 @@ export function readAnchors(svg) {
     streetNames: [...byName.keys()].sort(),
     repeated: [...byName.entries()].filter(([, v]) => v.length > 1).map(([k, v]) => ({ name: k, times: v.length })),
     north,
+    // Kept so a reviewer can see what was rejected rather than wonder.
+    northRejected: northCandidates.length - north.length,
     scaleBars,
   }
 }

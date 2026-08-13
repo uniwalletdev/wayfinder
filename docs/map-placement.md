@@ -342,7 +342,7 @@ sitting in the traced SVG, discarded. `npm run maps:anchors`
 | --- | ---: |
 | **two or more named streets — solvable from the sheet alone** | **38** |
 | three or more (over-determined, so the fit gets a residual) | 27 |
-| a north arrow printed as a lone `N` | 27 |
+| a north arrow printed as a lone `N` | 26 |
 | a readable scale bar | 10 |
 | nothing printed that names a place | 26 |
 | distinct street names across the estate | 115 |
@@ -366,7 +366,15 @@ amount of either.
 
 The north arrow matters more than its size suggests: `dominantAngle()` recovers a
 grid only to within a quarter turn, so a plan 20° off and one 110° off are the
-same measurement. A printed `N` settles which, and 27 plans have one.
+same measurement. A printed `N` settles which, and 26 plans have one.
+
+Reading that `N` is less obvious than it sounds. Royal Berkshire prints
+**fifteen** of them, all at body-text size, in four tidy columns — a directory
+table with an `N` column, not fifteen compass roses; QEHB prints nine the same
+way. Alignment is what separates them (a rose is a one-off, a table is a line),
+with size as a tie-break where a sheet carries both. Font size alone was tried
+first and fails: a sheet drawn with large labels has a large median, and its
+genuine rose falls below any sensible ratio.
 
 **a. Automatic, against the OSM footprints.** This is image registration, and it
 is a solved problem. Render the sheet's `planRegion()` masses to a binary mask

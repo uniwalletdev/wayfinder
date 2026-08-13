@@ -97,6 +97,42 @@ group("north and scale")
   })())
 }
 
+group("a compass rose, not a column of letters")
+{
+  // Royal Berkshire prints fifteen bare "N"s in four tidy columns — a directory
+  // table with an N column, not fifteen compass roses. Nine of QEHB's do the
+  // same. Counting those as compasses would hand a georeferencer fifteen
+  // north arrows pointing nowhere.
+  const column = []
+  for (let i = 0; i < 6; i++) column.push(["N", 200, 100 + i * 40])
+  const table = readAnchors(sheet(column))
+  check("a column of Ns is a table, not compasses", table.north.length === 0)
+  check("and the rejection is reported", table.northRejected === 6)
+
+  const row = readAnchors(sheet([["N", 100, 300], ["N", 300, 300], ["N", 500, 300], ["N", 700, 300]]))
+  check("a row of them is too", row.north.length === 0)
+
+  // One on its own is the ordinary case, and the one worth having.
+  const single = readAnchors(sheet([["N", 880, 90], ["Craven Road", 300, 400]]))
+  check("a lone N is kept", single.north.length === 1)
+  check("at its place on the page", single.north[0].nx === 0.88)
+
+  // Northampton's real rose is 47pt beside a table of 11pt Ns. Size is what
+  // separates them once alignment has done its work.
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">` +
+    [0, 1, 2, 3].map((i) => `<text x="200" y="${100 + i * 40}" font-size="11">N</text>`).join("") +
+    `<text x="900" y="120" font-size="47">N</text></svg>`
+  const mixed = readAnchors(svg)
+  check("a rose among a table survives on size", mixed.north.length === 1 && mixed.north[0].size === 47)
+
+  // Two loose ones at body size, on a sheet that clearly uses N as a table
+  // entry, are the same table entry.
+  const stragglers = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">` +
+    [0, 1, 2, 3].map((i) => `<text x="200" y="${100 + i * 40}" font-size="11">N</text>`).join("") +
+    `<text x="640" y="330" font-size="11">N</text></svg>`
+  check("a straggler the same size as the table is not a rose", readAnchors(stragglers).north.length === 0)
+}
+
 group("one street named twice")
 {
   // A long road labelled at both ends of the sheet. Two anchors on one line do
