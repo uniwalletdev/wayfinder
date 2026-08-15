@@ -120,6 +120,23 @@ const SVG_DIR = path.join(REPO, "public", "floorplans", "gosh")
 // matters here — a full 6-parameter affine would land all three points exactly,
 // report 0.00 m, and be unable to tell a good survey from a typo. Five parameters
 // against three points leaves a residual that still means something.
+//
+// CONFIRMED AGAINST DATA THAT HAD NO PART IN THE FIT. Two Google place records
+// on Lamb's Conduit Street — the former public convenience on the Guilford Place
+// island (51.523473, -0.119482) and The Lamb at no. 92 (51.522882, -0.119070) —
+// give the street a bearing of 156.6°, against the 153.8° this fit implies. The
+// sharper test is the length of that side. From the Guilford Place record to the
+// Great Ormond Street corner is 135.7 m on imagery:
+//
+//     one uniform scale   predicts 121.6 m   —  14.1 m out  (10.4%)
+//     per-axis scale      predicts 136.4 m   —   0.7 m out  ( 0.5%)
+//
+// Neither of those coordinates was used to fit anything. The 18.6% proportion
+// error was real, and correcting it is what closed a ten-percent gap on this
+// axis. What is still untested is the OTHER axis: every check so far runs along
+// Lamb's Conduit Street, and a control point out at the western end — the Great
+// Ormond Street × Powis Place corner, or anything near Queen Square — is what
+// would put the same evidence under drawing-x.
 const W = 1000, H = 706
 const LAT_N = 51.52325, LAT_S = 51.5221, LNG_W = -0.1212, LNG_E = -0.1186
 // Fallback scale for the unfitted DEFAULT path only. A fit supplies its own
