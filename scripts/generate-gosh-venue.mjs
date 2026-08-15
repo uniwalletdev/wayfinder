@@ -675,6 +675,13 @@ const SITE_FEATURES = [
     desc: "Variety Club Building car park and main undercover cycle park" },
   { id: "cycle-parking-lullaby", name: "Lullaby Factory Cycle Parking", type: "other", x: 424, y: 300,
     desc: "88 spaces - access at the bottom of the stairwell, from Guilford Street via the loading dock" },
+  // The trust's published map marks seven entrances with a red arrow. Six had
+  // something in this file to walk to; this one had nothing at all. Its arrow
+  // sits on the Octav Botnar Wing's Lamb's Conduit Street edge, alongside the
+  // Private Patients Reception the wing's own Level 2 programme already lists,
+  // so the reception was reachable but the door you use to get to it was not.
+  { id: "octav-botnar-entrance", name: "Octav Botnar Wing Entrance", type: "exit", x: 852, y: 500,
+    desc: "Lamb's Conduit Street - entrance to the Octav Botnar Wing and the Private Patients Reception" },
   { id: "ambulances-only", name: "Ambulance Entrance", type: "exit", x: 316, y: 470,
     desc: "Ambulances only - west side of the site" },
   { id: "southwood-ramp", name: "Ramp to Southwood", type: "other", x: 420, y: 340,
@@ -855,6 +862,8 @@ const OUTDOOR_PATHS = [
   { id: "spur-school", pts: [[114, 257], [100, 257]] },
   { id: "spur-ambulances", pts: [[114, 470], [316, 470]] },
   { id: "spur-vcb-car-park", pts: [[114, 566], [340, 566]] },
+  // Off the Lamb's Conduit Street pavement into the Octav Botnar Wing.
+  { id: "spur-octav-botnar", pts: [[866, 500], [852, 500]] },
   { id: "spur-main-entrance", pts: [[524, 82], [524, 84]] },
 ]
 
