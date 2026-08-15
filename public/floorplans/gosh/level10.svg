@@ -27,9 +27,6 @@
   <rect x='398' y='628' width='72' height='72' rx='3' fill='#F1F5F9' stroke='#CBD5E1' stroke-width='1.5' stroke-dasharray='5,4'/>
   <text x='434' y='662' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='9' fill='#94A3B8'>Barclay</text>
   <text x='434' y='673' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='9' fill='#94A3B8'>House</text>
-  <rect x='60' y='632' width='102' height='68' rx='3' fill='#F1F5F9' stroke='#CBD5E1' stroke-width='1.5' stroke-dasharray='5,4'/>
-  <text x='111' y='664' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='9' fill='#94A3B8'>Sight and Sound</text>
-  <text x='111' y='675' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='9' fill='#94A3B8'>Centre</text>
   <rect x='300' y='590' width='436' height='30' rx='3' fill='#FEE2E2' stroke='#FCA5A5' stroke-width='1.5'/>
   <text x='518' y='609' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='10' font-weight='bold' fill='#B91C1C' letter-spacing='1'>CHILDREN'S CANCER CENTRE - UNDER CONSTRUCTION</text>
   <rect x='150' y='88' width='280' height='84' fill='white'/>

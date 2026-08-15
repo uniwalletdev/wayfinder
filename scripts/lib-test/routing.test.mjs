@@ -86,4 +86,48 @@ group("the '— Floor N' naming convention still matches")
   check("the exit step names the destination", route.steps.some((s) => s.instruction === "Exit and head to Clinic"))
 }
 
+group("the lift chosen is one that goes where you are going")
+{
+  // Entering a core was decided by proximity to the WALKER alone, which says
+  // nothing about where that core comes up. Both failures below were live.
+  const main = byId("main-entrance")
+
+  // The Sight and Sound Centre is a separate building across Boswell Street.
+  // The Morgan Stanley lift is a few steps from the Main Entrance and scores
+  // 175 m to ENT against the Sight and Sound lift's 183 m, so on distance alone
+  // the impossible route wins — there is no way between the two buildings on
+  // Level 3 to make that 164 m second leg.
+  const ent = wps.find((w) => w.name === "Ear, Nose and Throat (ENT) Outpatients")
+  const entLift = routeFrom(main, ent).steps.find((s) => /^Head to/.test(s.instruction))
+  check("a detached building is entered by its own lift", /Sight and Sound/.test(entLift.instruction))
+
+  // Camelia Botnar's lift stops at Level 4. Every GOSH lift is "Lifts — <the
+  // building>", so they share the base name "Lifts" and a base-name match makes
+  // all of them look like they serve every floor.
+  const sky = wps.find((w) => w.name === "Sky Ward")
+  const skyLift = routeFrom(main, sky).steps.find((s) => /^Head to/.test(s.instruction))
+  check("a lift that stops short is not offered", !/Camelia Botnar/.test(skyLift.instruction))
+  check("the one that reaches the floor is", /Octav Botnar/.test(skyLift.instruction))
+
+  // Southwood is the only core reaching Levels 8-9 besides the Nurses Home.
+  const safari = wps.find((w) => w.name === "Safari Daycare")
+  const safariLift = routeFrom(main, safari).steps.find((s) => /^Head to/.test(s.instruction))
+  check("Level 9 is reached by a lift that serves Level 9", /Southwood/.test(safariLift.instruction))
+}
+
+group("every ward is entered by a lift in its own building")
+{
+  const main = byId("main-entrance")
+  const expected = [
+    ["Bear Ward", /Morgan Stanley/], ["Giraffe Ward", /Variety Club/],
+    ["Butterfly Ward", /Octav Botnar/], ["Pelican Ward", /Premier Inn/],
+    ["Magpie Ward", /Southwood/], ["Squirrel Ward", /Variety Club/],
+  ]
+  for (const [name, want] of expected) {
+    const w = wps.find((x) => x.name === name)
+    const step = routeFrom(main, w).steps.find((s) => /^Head to/.test(s.instruction))
+    check(`${name} goes via ${want.source.replace(/\\/g, "")}`, want.test(step.instruction))
+  }
+}
+
 report()

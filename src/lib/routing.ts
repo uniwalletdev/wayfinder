@@ -246,6 +246,36 @@ function indoorLeg(
   return { points: [a, b], distance: distanceMeters(a, b), mapped: false }
 }
 
+// The SAME physical core as `core`, on `floor`. Two naming conventions are in
+// the wild and they pull opposite ways, so neither name rule can be trusted
+// alone:
+//
+//   * "Lift A — Floor 1" puts the floor after the dash, so the dash must be
+//     stripped to recognise "Lift A" upstairs.
+//   * "Lifts — Octav Botnar Wing" (GOSH) puts the BUILDING after the dash, and
+//     repeats the name verbatim on every floor. Stripping it collapses five
+//     separate cores — Nurses Home, Southwood, Variety Club, Octav Botnar,
+//     Camelia Botnar — into one "Lifts", so a walker who enters the Octav
+//     Botnar lift is told to exit at the Nurses Home, 125 m away across the
+//     site.
+//
+// A shaft keeps its plan position on every floor, so geometry settles what
+// names cannot: take the best name tier available, then the nearest candidate
+// within it. Exact name wins outright, base name is the fallback for the
+// "— Floor N" convention, and distance breaks every tie.
+const baseCoreName = (n: string) => n.replace(/\s*—.*$/, "").trim()
+
+function coreOnFloor(core: Waypoint, floor: number, allWaypoints: Waypoint[]): Waypoint | undefined {
+  const base = baseCoreName
+  const sameType = allWaypoints.filter((w) => w.type === core.type && w.floor === floor)
+  const exact = sameType.filter((w) => w.name === core.name)
+  const byBase = sameType.filter((w) => base(w.name) === base(core.name))
+  const tier = exact.length > 0 ? exact : byBase.length > 0 ? byBase : sameType
+  return tier
+    .slice()
+    .sort((a, b) => distanceMeters(core.coordinates, a.coordinates) - distanceMeters(core.coordinates, b.coordinates))[0]
+}
+
 export function buildRoute(
   from: Coordinates,
   fromFloor: number,
@@ -278,9 +308,77 @@ export function buildRoute(
     const candidatesOnFloor = allWaypoints.filter(
       (w) => (candidateTypes as readonly string[]).includes(w.type) && w.floor === fromFloor
     )
-    const nearest = candidatesOnFloor.sort(
-      (a, b) => distanceMeters(from, a.coordinates) - distanceMeters(from, b.coordinates)
-    )[0]
+
+    // Which core to ENTER is not simply the nearest one. The nearest core is
+    // measured from the walker, and says nothing about whether it comes up
+    // anywhere near the destination — so at GOSH someone leaving the Main
+    // Entrance for ENT Outpatients was sent to the Morgan Stanley lift, five
+    // steps away, and told to walk to it from there on Level 3. The Sight and
+    // Sound Centre is a separate building across Boswell Street: on Level 3
+    // there is no way between them at all, and the walk it was proposing does
+    // not exist.
+    //
+    // Score the whole journey instead — walk to the core, ride it, walk from
+    // where it lets you out to the destination. Straight-line distance is not
+    // enough on its own to see the problem: the Morgan Stanley lift scores 175 m
+    // to ENT and the Sight and Sound lift 183 m, so the impossible route wins by
+    // eight metres. What separates them is that the second leg out of Morgan
+    // Stanley has no corridor to follow, because on Level 3 there is none to
+    // find. indoorLeg already reports that as `mapped`, so a real second leg
+    // beats a shorter imaginary one, and total distance settles the rest.
+    //
+    // One thing outranks even that: whether the core goes to the destination
+    // floor at all. coreOnFloor falls back to ANY core of the same type when no
+    // name matches, which is right for venues that name their lifts loosely,
+    // but it means a core that stops short still produces an exit. The Morgan
+    // Stanley lift runs to Level 7, and asking it for Safari Daycare on Level 9
+    // returned the Southwood lift — an instruction to ride to a floor the lift
+    // you are standing in front of does not serve. A core that cannot get there
+    // is not a slower option, it is a wrong one, so it sorts last regardless of
+    // distance.
+    // Deciding whether a core reaches a floor cannot use the base name blindly,
+    // for the reason coreOnFloor documents: at GOSH every lift is "Lifts — <the
+    // building>", so the base name is "Lifts" for all of them and every lift
+    // would appear to serve every floor. Camelia Botnar's lift stops at Level 4
+    // and was still winning Sky Ward on Level 6 that way.
+    //
+    // The two conventions are told apart by what they do ACROSS floors. A core
+    // named for its building repeats its name verbatim on every floor it
+    // serves, so absence on the destination floor is decisive. A core named
+    // "Lift A — Floor 1" changes name per floor, never repeats, and only the
+    // base name can match it. So: if this core's exact name appears on any
+    // other floor, trust exact matching; otherwise fall back to the base.
+    const sameCoreOn = (core: Waypoint, floor: number) => {
+      const repeats = allWaypoints.some(
+        (w) => w.type === core.type && w.floor !== core.floor && w.name === core.name
+      )
+      return allWaypoints.some(
+        (w) =>
+          w.type === core.type &&
+          w.floor === floor &&
+          (repeats ? w.name === core.name : baseCoreName(w.name) === baseCoreName(core.name))
+      )
+    }
+    const scored = candidatesOnFloor.map((core) => {
+      const exit = coreOnFloor(core, destination.floor, allWaypoints) ?? core
+      const leg = indoorLeg(exit.coordinates, destination.coordinates, destination.floor, trails)
+      return {
+        core,
+        exit,
+        leg,
+        serves: sameCoreOn(core, destination.floor),
+        walkTo: distanceMeters(from, core.coordinates),
+      }
+    })
+    scored.sort((a, b) =>
+      a.serves !== b.serves
+        ? a.serves ? -1 : 1
+        : a.leg.mapped !== b.leg.mapped
+          ? a.leg.mapped ? -1 : 1
+          : a.walkTo + a.leg.distance - (b.walkTo + b.leg.distance)
+    )
+    const best = scored[0]
+    const nearest = best?.core
 
     if (nearest) {
       const via: "lift" | "stairs" = nearest.type === "stairs" ? "stairs" : "lift"
@@ -302,35 +400,14 @@ export function buildRoute(
       })
 
       // Where the walker steps out: the SAME physical core on the destination
-      // floor. Two naming conventions are in the wild and they pull opposite
-      // ways, so neither name rule can be trusted alone:
-      //
-      //   * "Lift A — Floor 1" puts the floor after the dash, so the dash must
-      //     be stripped to recognise "Lift A" upstairs.
-      //   * "Lifts — Octav Botnar Wing" (GOSH) puts the BUILDING after the
-      //     dash, and repeats the name verbatim on every floor. Stripping it
-      //     collapses five separate cores — Nurses Home, Southwood, Variety
-      //     Club, Octav Botnar, Camelia Botnar — into one "Lifts", so a walker
-      //     who enters the Octav Botnar lift is told to exit at the Nurses
-      //     Home, 125 m away across the site.
-      //
-      // A shaft keeps its plan position on every floor, so geometry settles
-      // what names cannot: take the best name tier available, then the nearest
-      // candidate within it. Exact name wins outright, base name is the
-      // fallback for the "— Floor N" convention, and distance breaks every tie.
-      const sameType = allWaypoints.filter((w) => w.type === nearest.type && w.floor === destination.floor)
-      const baseName = nearest.name.replace(/\s*—.*$/, "").trim()
-      const exact = sameType.filter((w) => w.name === nearest.name)
-      const byBase = sameType.filter((w) => w.name.replace(/\s*—.*$/, "").trim() === baseName)
-      const tier = exact.length > 0 ? exact : byBase.length > 0 ? byBase : sameType
-      const matchOnDestFloor = tier
-        .slice()
-        .sort((a, b) => distanceMeters(nearest.coordinates, a.coordinates) - distanceMeters(nearest.coordinates, b.coordinates))[0]
+      // floor, already resolved by coreOnFloor while scoring, along with the
+      // walk from it.
+      const matchOnDestFloor = best.exit === nearest ? undefined : best.exit
 
       if (matchOnDestFloor) {
         // The walker re-enters at the lift/stairs on the destination floor, so
         // the drawn path continues from there to the destination.
-        const leg2 = indoorLeg(matchOnDestFloor.coordinates, destination.coordinates, destination.floor, trails)
+        const leg2 = best.leg
         approximate = approximate || !leg2.mapped
         totalDistance += leg2.distance
         geometry = geometry.concat(leg2.points)

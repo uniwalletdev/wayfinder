@@ -398,6 +398,24 @@ const BUILDINGS = {
     rect: { x0: 150, y0: 176, x1: 208, y1: 196 },
     cores: [{ kind: "stairs", name: "Stairs", at: 0.5 }],
   },
+  // Detached, across Boswell Street, and it does NOT number its own storeys.
+  // The published directory writes them "LG", "G" and "3", which reads like a
+  // scheme of its own until you line the three up: the ground floor here is the
+  // hospital's Level 2, the lower ground is Level 1, and "3" is simply Level 3
+  // carried on unchanged. So there is one numbering across the site after all,
+  // with letters on the bottom two floors of this building — LG = 1, G = 2 —
+  // and that is why it can be modelled here rather than needing its own scheme.
+  //
+  // No fire-drawing letter code exists for it: the Sight and Sound Centre
+  // postdates the boards the rest of this file's geometry comes from.
+  sightAndSound: {
+    name: "Sight and Sound Centre", axis: "ew", levels: [1, 3],
+    rect: { x0: 60, y0: 632, x1: 162, y1: 700 },
+    cores: [
+      { kind: "stairs", name: "Stairs", at: 0.14 },
+      { kind: "lift", name: "Lifts", at: 0.34 },
+    ],
+  },
   eastLink: {
     name: "East Link", code: "F", axis: "ns", levels: [1, 4],
     rect: { x0: 396, y0: 176, x1: 434, y1: 200 },
@@ -468,7 +486,6 @@ const CONTEXT_BUILDINGS = [
   { id: "zayed-centre", name: "The Zayed Centre for Research", rect: { x0: 884, y0: 96, x1: 988, y1: 184 } },
   { id: "rlhim", name: "Royal London Hospital for Integrated Medicine", rect: { x0: 186, y0: 548, x1: 288, y1: 616 } },
   { id: "barclay-house", name: "Barclay House", rect: { x0: 398, y0: 628, x1: 470, y1: 700 } },
-  { id: "sight-and-sound", name: "Sight and Sound Centre", rect: { x0: 60, y0: 632, x1: 162, y1: 700 } },
 ]
 
 // The Children's Cancer Centre construction site along the Great Ormond Street
@@ -697,6 +714,18 @@ const PROGRAMME = {
   cameliaBotnar: {
     2: [["Camelia Botnar Labs", "clinical", "Laboratories"]],
   },
+  // From the published directory, with its LG/G read as Levels 1 and 2. These
+  // four are the reason the building is worth modelling: ENT, Ophthalmology and
+  // Audiology are ordinary outpatient appointments, and until now the whole
+  // centre was a single unlabelled block you could not route inside.
+  sightAndSound: {
+    1: [["Audiology & Cochlear Implant", "clinical", "Sight and Sound Centre, Level 1 (signed LG)"]],
+    2: [["Ophthalmology Outpatients", "clinical", "Sight and Sound Centre, Level 2 (signed G - ground floor, entrance on Boswell Street)"]],
+    3: [
+      ["Ear, Nose and Throat (ENT) Outpatients", "clinical", "Sight and Sound Centre, Level 3"],
+      ["Speech & Language Therapy", "clinical", "Sight and Sound Centre, Level 3"],
+    ],
+  },
   westonHouse: {
     2: [["Weston House", "office", "Offices - south of Great Ormond Street"]],
     3: [["Patient Hotel", "other", "Weston House, Level 3 - patient and family accommodation"]],
@@ -724,6 +753,13 @@ const SITE_FEATURES = [
   // so the reception was reachable but the door you use to get to it was not.
   { id: "octav-botnar-entrance", name: "Octav Botnar Wing Entrance", type: "exit", x: 852, y: 500,
     desc: "Lamb's Conduit Street - entrance to the Octav Botnar Wing and the Private Patients Reception" },
+  // Also a red arrow on the published map. This one carries a second job: once
+  // the Sight and Sound Centre became a modelled building its rooms replaced the
+  // single block-sized waypoint that used to carry its name, so without this
+  // nothing in the venue is called "Sight and Sound Centre" and the search a
+  // family actually types finds nothing.
+  { id: "sight-and-sound-entrance", name: "Sight and Sound Centre", type: "exit", x: 162, y: 666,
+    desc: "Boswell Street - entrance to the Sight and Sound Centre, on Level 2 (signed G). Audiology, Ophthalmology, ENT and Speech & Language Therapy are inside" },
   { id: "ambulances-only", name: "Ambulance Entrance", type: "exit", x: 316, y: 470,
     desc: "Ambulances only - west side of the site" },
   { id: "southwood-ramp", name: "Ramp to Southwood", type: "other", x: 420, y: 340,
