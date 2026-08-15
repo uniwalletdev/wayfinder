@@ -121,22 +121,36 @@ const SVG_DIR = path.join(REPO, "public", "floorplans", "gosh")
 // report 0.00 m, and be unable to tell a good survey from a typo. Five parameters
 // against three points leaves a residual that still means something.
 //
-// CONFIRMED AGAINST DATA THAT HAD NO PART IN THE FIT. Two Google place records
-// on Lamb's Conduit Street — the former public convenience on the Guilford Place
-// island (51.523473, -0.119482) and The Lamb at no. 92 (51.522882, -0.119070) —
-// give the street a bearing of 156.6°, against the 153.8° this fit implies. The
-// sharper test is the length of that side. From the Guilford Place record to the
-// Great Ormond Street corner is 135.7 m on imagery:
+// CONFIRMED ON BOTH AXES, AGAINST DATA THAT HAD NO PART IN THE FIT. Five Google
+// place records were read off imagery afterwards. None is used below; they exist
+// to check the answer, and they check both sides of the site independently:
 //
-//     one uniform scale   predicts 121.6 m   —  14.1 m out  (10.4%)
-//     per-axis scale      predicts 136.4 m   —   0.7 m out  ( 0.5%)
+//   drawing-y, along Lamb's Conduit Street. From the former public convenience
+//   on the Guilford Place island (51.523473, -0.119482) to the Great Ormond
+//   Street corner is 135.7 m; The Lamb at no. 92 (51.522882, -0.119070) puts the
+//   street's bearing at 156.6° against this fit's 153.8°.
 //
-// Neither of those coordinates was used to fit anything. The 18.6% proportion
-// error was real, and correcting it is what closed a ten-percent gap on this
-// axis. What is still untested is the OTHER axis: every check so far runs along
-// Lamb's Conduit Street, and a control point out at the western end — the Great
-// Ormond Street × Powis Place corner, or anything near Queen Square — is what
-// would put the same evidence under drawing-x.
+//       one uniform scale   predicts 121.6 m   —  14.1 m out  (10.4% SHORT)
+//       per-axis scale      predicts 136.4 m   —   0.7 m out  ( 0.5%)
+//
+//   drawing-x, along Great Ormond Street. From 36-24 Great Ormond St
+//   (51.522372, -0.118765) to the Powis Place corner (51.521690, -0.120838) is
+//   162.4 m at 62.1°, against this fit's 63.8°.
+//
+//       one uniform scale   predicts 173.9 m   —  11.5 m out  ( 7.1% LONG)
+//       per-axis scale      predicts 163.3 m   —   0.9 m out  ( 0.6%)
+//
+// Note which way the old errors ran: 7% too LONG across and 10% too SHORT down.
+// That is exactly what one scale does to a drawing 18.6% out of proportion — it
+// lands between the two right answers and is wrong in opposite directions on the
+// two axes. Correcting the proportion is what collapsed both to under 1 m.
+//
+// Those same records sit 11.1 m, 4.4 m and 2.8 m from the three control points
+// below, which is the right order for imagery against a hand-read junction.
+// Substituting them in was tried: RMS moves 1.32 m to 1.09 m and the Lamb's
+// Conduit check moves the wrong way, 0.7 m to 3.1 m. That is trading one check
+// for another at the noise floor, so the control points are left alone and these
+// stay what they are worth more as — an independent answer key.
 const W = 1000, H = 706
 const LAT_N = 51.52325, LAT_S = 51.5221, LNG_W = -0.1212, LNG_E = -0.1186
 // Fallback scale for the unfitted DEFAULT path only. A fit supplies its own
