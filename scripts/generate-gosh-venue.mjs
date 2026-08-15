@@ -1106,7 +1106,10 @@ const COMMON_NAMES = new Set(["Speech & Language Therapy"])
 const CONTEXT_DESC = {
   "school": "The hospital school - west of the Southwood Building",
   "boiler-house": "GOSH Estates boiler house",
-  "zayed-centre": "Zayed Centre for Research into Rare Disease in Children - entrance on Guilford Street",
+  // The trust and Google both label this door "Entrance F". Someone told to go
+  // to Entrance F has nothing else to search for, so the letter belongs in the
+  // text the search index sees.
+  "zayed-centre": "Zayed Centre for Research into Rare Disease in Children (Entrance F) - on Guilford Street, east of Guilford Place",
   "rlhim": "Hippo, Rabbit & Zebra Outpatients - entrance on Great Ormond Street",
   "barclay-house": "Offices - south of Great Ormond Street",
   "sight-and-sound": "GOSH Sight and Sound Centre - entrance on Boswell Street",

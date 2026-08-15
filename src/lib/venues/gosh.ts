@@ -169,7 +169,7 @@ export const GOSH_VENUE: Venue = {
     { id: "southwood-ramp", name: "Ramp to Southwood", type: "other", coordinates: { lat: 51.522516, lng: -0.120466 }, floor: 0, description: "Step-free ramp between the Mittal Children's Medical Centre and the Southwood Building" },
     { id: "school", name: "School", type: "other", coordinates: { lat: 51.522413, lng: -0.121502 }, floor: 0, description: "The hospital school - west of the Southwood Building" },
     { id: "boiler-house", name: "Boiler House", type: "other", coordinates: { lat: 51.522709, lng: -0.121132 }, floor: 0, description: "GOSH Estates boiler house" },
-    { id: "zayed-centre", name: "The Zayed Centre for Research", type: "other", coordinates: { lat: 51.523375, lng: -0.119341 }, floor: 0, description: "Zayed Centre for Research into Rare Disease in Children - entrance on Guilford Street" },
+    { id: "zayed-centre", name: "The Zayed Centre for Research", type: "other", coordinates: { lat: 51.523375, lng: -0.119341 }, floor: 0, description: "Zayed Centre for Research into Rare Disease in Children (Entrance F) - on Guilford Street, east of Guilford Place" },
     { id: "rlhim", name: "Royal London Hospital for Integrated Medicine", type: "other", coordinates: { lat: 51.521856, lng: -0.120584 }, floor: 0, description: "Hippo, Rabbit & Zebra Outpatients - entrance on Great Ormond Street" },
     { id: "barclay-house", name: "Barclay House", type: "other", coordinates: { lat: 51.521855, lng: -0.119895 }, floor: 0, description: "Offices - south of Great Ormond Street" },
     { id: "sight-and-sound", name: "Sight and Sound Centre", type: "other", coordinates: { lat: 51.521573, lng: -0.120801 }, floor: 0, description: "GOSH Sight and Sound Centre - entrance on Boswell Street" },
