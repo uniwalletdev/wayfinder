@@ -65,16 +65,44 @@ const SVG_DIR = path.join(REPO, "public", "floorplans", "gosh")
 //   * DEFAULT (GCPS empty): the original north-up box below — four hand-estimated
 //     corners, no rotation. Quick to set up, but the real GOSH site is tilted a
 //     few degrees off north, so this drifts against GPS, worst at the corners.
-//   * FITTED (>= 2 ground-control points in GCPS): a 2-D similarity transform —
-//     position + one uniform scale + one rotation — least-squares-fitted to real
-//     landmark coordinates. Waypoints, trails, the floor-plan bounds AND the plan
-//     artwork are all re-projected through it, so nothing drifts apart.
+//   * FITTED (>= 2 ground-control points in GCPS): position + rotation + scale,
+//     least-squares-fitted to real landmark coordinates. Waypoints, trails, the
+//     floor-plan bounds AND the plan artwork are all re-projected through it, so
+//     nothing drifts apart.
 //
 // Fill in GCPS to switch from DEFAULT to FITTED; empty it again to fall back. The
 // DEFAULT path is byte-for-byte the historical output, so committing this engine
 // changes nothing on the map until real coordinates are supplied.
+//
+// ── WHY THE SCALE IS PER-AXIS ────────────────────────────────────────────────
+// The fit gives drawing-x and drawing-y their own metres-per-pixel, because this
+// canvas is a hand-built schematic and its proportions are not the site's.
+//
+// The three surveyed junctions box a site 162.1 m across by 139.8 m up — a ratio
+// of 1.159. The same three corners are drawn 752 px by 547 px, a ratio of 1.375.
+// The drawing is 18.6% too flat, and the reason is visible in the canvas itself:
+// 1000 x 706 is 1:1.414, A-series paper. The site was laid out to fill a page,
+// not to its own shape — the same "drawn to suit the paper" error that
+// docs/map-placement.md measures across the rest of the estate.
+//
+// One uniform scale cannot absorb that. Forced to reconcile a drawing 18.6% out
+// of proportion, it splits the difference and every control point pays: the
+// uniform fit placed all three 5.3-9.0 m out (RMS 7.35 m), which is what "the map
+// is a bit off" looks like on the ground — buildings sitting across the pavement
+// from where they stand. Giving the two drawing axes their own scale drops that
+// to RMS 1.32 m, max 1.62 m.
+//
+// The fit stretches, but deliberately never shears: drawing-x and drawing-y stay
+// perpendicular. That is the difference between correcting a known defect of the
+// schematic and letting the solver hide a bad control point as distortion. It
+// matters here — a full 6-parameter affine would land all three points exactly,
+// report 0.00 m, and be unable to tell a good survey from a typo. Five parameters
+// against three points leaves a residual that still means something.
 const W = 1000, H = 706
 const LAT_N = 51.52325, LAT_S = 51.5221, LNG_W = -0.1212, LNG_E = -0.1186
+// Fallback scale for the unfitted DEFAULT path only. A fit supplies its own
+// measured metres-per-pixel per axis (MX/MY below), which is what any distance
+// in this script should be measured with.
 const M_PER_PX = 0.18
 const M_PER_DEG_LAT = 111320
 
@@ -85,9 +113,29 @@ const M_PER_DEG_LAT = 111320
 //
 // The five below are the road-CENTRE junctions that box in the site plus the Main
 // Entrance: they are unambiguous on satellite imagery and span the whole canvas,
-// which is exactly what makes the rotation + scale fit stable. Two points are the
-// minimum (4 degrees of freedom); four or five let the fit report and drive down
-// its own error. Spread and sharpness matter far more than count.
+// which is exactly what makes the rotation + scale fit stable.
+//
+// How many you need, and what each one buys:
+//
+//   2 points — position, rotation and ONE scale (4 unknowns, 4 equations). The
+//     sheet's proportions cannot be recovered from two points, so the fit holds
+//     both drawing axes to the same scale and reports no residual: an exact
+//     solution, with nothing left over to check it against.
+//   3 points — adds the per-axis scale (5 unknowns, 6 equations). This is what
+//     the site runs on today, and where the 18.6% proportion error was found.
+//     One spare equation means the residual is real but thin: it can catch a
+//     coordinate that is badly wrong, not one that is slightly wrong.
+//   4-5 points — the first genuinely comfortable margin. Each extra point adds
+//     two equations against the same five unknowns, so a single mistyped
+//     coordinate stands out as one large residual instead of quietly tilting the
+//     whole fit. THIS IS THE NEXT THING WORTH DOING for GOSH: the two entries
+//     below still carrying `lat: null` are the slots, and filling either one
+//     would independently test the proportion correction rather than just
+//     assume it.
+//
+// Spread and sharpness matter far more than count. Pick features that are sharp
+// on imagery (a road-centre crossing, a building corner) and as far apart as the
+// canvas allows — two points at opposite corners beat five clustered in one.
 const GCPS = [
   // NW is dropped on purpose: Powis Place runs north from Great Ormond Street
   // and stops inside the site, so there is no Guilford Street junction to
@@ -103,14 +151,25 @@ const GCPS = [
   { name: "Main Entrance (Guilford St doors)",     x: 524, y: 84,  lat: null, lng: null },
 ].filter((g) => Number.isFinite(g.lat) && Number.isFinite(g.lng))
 
-// Complex-number least squares for the similarity w = a·z + b (a = scale·e^{iθ}),
-// no external dependencies. Fits pixel space to a local East/North metre plane
-// about the GCP centroid, then converts back to lat/lng. Returns null with < 2
-// points so the caller falls back to the DEFAULT box.
+// Complex-number least squares for w = a·z + b (a = scale·e^{iθ}), no external
+// dependencies. Fits pixel space to a local East/North metre plane about the GCP
+// centroid, then converts back to lat/lng. Returns null with < 2 points so the
+// caller falls back to the DEFAULT box.
+//
+// The one addition to a textbook similarity is `q`, the drawing's vertical
+// exaggeration: z = x + i·(H − y)·q, so drawing-y gets its own metres-per-pixel
+// while the two axes stay perpendicular. See "WHY THE SCALE IS PER-AXIS" above
+// for what q is correcting and why it stops short of a full affine.
 const cAdd = (p, q) => ({ re: p.re + q.re, im: p.im + q.im })
 const cSub = (p, q) => ({ re: p.re - q.re, im: p.im - q.im })
 const cMul = (p, q) => ({ re: p.re * q.re - p.im * q.im, im: p.re * q.im + p.im * q.re })
 const cConj = (p) => ({ re: p.re, im: -p.im })
+
+// Bracket for the search over q. A schematic can be a long way out of proportion
+// — GOSH is 18.6% — but a q outside this range means a control point is wrong,
+// not that the drawing is unusual, and clamping keeps that as a visible bad
+// residual rather than a silently contorted map.
+const Q_LO = 0.5, Q_HI = 2.0
 
 function fitTransform() {
   if (GCPS.length < 2) return null
@@ -119,29 +178,79 @@ function fitTransform() {
     lng: GCPS.reduce((s, g) => s + g.lng, 0) / GCPS.length,
   }
   const kLng = M_PER_DEG_LAT * Math.cos((O.lat * Math.PI) / 180)
-  // z: pixel with y flipped so +im points north; w: metres east/north of O.
-  const zs = GCPS.map((g) => ({ re: g.x, im: H - g.y }))
+  // w: metres east/north of O. z (built per-q below): pixel with y flipped so
+  // +im points north.
   const ws = GCPS.map((g) => ({ re: (g.lng - O.lng) * kLng, im: (g.lat - O.lat) * M_PER_DEG_LAT }))
   const mean = (arr) => ({
     re: arr.reduce((s, p) => s + p.re, 0) / arr.length,
     im: arr.reduce((s, p) => s + p.im, 0) / arr.length,
   })
-  const zbar = mean(zs), wbar = mean(ws)
-  let num = { re: 0, im: 0 }, den = 0
-  for (let i = 0; i < zs.length; i++) {
-    const zc = cSub(zs[i], zbar), wc = cSub(ws[i], wbar)
-    num = cAdd(num, cMul(wc, cConj(zc)))
-    den += zc.re * zc.re + zc.im * zc.im
+  const wbar = mean(ws)
+
+  // For a FIXED q the remaining fit is the ordinary closed-form similarity, so
+  // only q itself needs searching. Also returns the sum of squared residuals,
+  // which is the objective that search minimises.
+  const solveAt = (q) => {
+    const zs = GCPS.map((g) => ({ re: g.x, im: (H - g.y) * q }))
+    const zbar = mean(zs)
+    let num = { re: 0, im: 0 }, den = 0
+    for (let i = 0; i < zs.length; i++) {
+      const zc = cSub(zs[i], zbar), wc = cSub(ws[i], wbar)
+      num = cAdd(num, cMul(wc, cConj(zc)))
+      den += zc.re * zc.re + zc.im * zc.im
+    }
+    const a = { re: num.re / den, im: num.im / den }
+    const b = cSub(wbar, cMul(a, zbar))
+    let ss = 0
+    for (let i = 0; i < zs.length; i++) {
+      const r = cSub(cAdd(cMul(a, zs[i]), b), ws[i])
+      ss += r.re * r.re + r.im * r.im
+    }
+    return { a, b, ss }
   }
-  const a = { re: num.re / den, im: num.im / den }
-  const b = cSub(wbar, cMul(a, zbar))
+
+  // Two points determine a similarity exactly, leaving nothing to measure the
+  // proportions with, so q is held at 1 and the fit is the plain similarity it
+  // has always been. Three or more can see the drawing's shape.
+  let q = 1
+  if (GCPS.length >= 3) {
+    // Coarse scan to bracket the minimum (the objective is smooth in q but not
+    // guaranteed unimodal across the whole range), then golden-section to refine.
+    const STEPS = 300
+    const step = (Q_HI - Q_LO) / STEPS
+    let bi = 0, bs = Infinity
+    for (let i = 0; i <= STEPS; i++) {
+      const ss = solveAt(Q_LO + step * i).ss
+      if (ss < bs) { bs = ss; bi = i }
+    }
+    let lo = Q_LO + step * Math.max(0, bi - 1)
+    let hi = Q_LO + step * Math.min(STEPS, bi + 1)
+    const R = (Math.sqrt(5) - 1) / 2
+    let c = hi - R * (hi - lo), d = lo + R * (hi - lo)
+    let fc = solveAt(c).ss, fd = solveAt(d).ss
+    for (let i = 0; i < 100; i++) {
+      if (fc < fd) { hi = d; d = c; fd = fc; c = hi - R * (hi - lo); fc = solveAt(c).ss }
+      else { lo = c; c = d; fc = fd; d = lo + R * (hi - lo); fd = solveAt(d).ss }
+    }
+    q = (lo + hi) / 2
+  }
+
+  const { a, b } = solveAt(q)
   const toLL = (x, y) => {
-    const w = cAdd(cMul(a, { re: x, im: H - y }), b)
+    const w = cAdd(cMul(a, { re: x, im: (H - y) * q }), b)
     return { lat: O.lat + w.im / M_PER_DEG_LAT, lng: O.lng + w.re / kLng }
   }
-  return { toLL, kLng, scale: Math.hypot(a.re, a.im), theta: Math.atan2(a.im, a.re) }
+  const scaleX = Math.hypot(a.re, a.im)
+  return { toLL, kLng, aspect: q, scaleX, scaleY: scaleX * q, theta: Math.atan2(a.im, a.re) }
 }
 const TF = fitTransform()
+
+// Metres per pixel along each drawing axis — what every distance measured in
+// this script has to be scaled by. A fit supplies both from the survey; without
+// one there is nothing to measure with, so the DEFAULT constant stands in on
+// both axes. Using a single hand-set 0.18 here under a fit that measures 0.217
+// and 0.257 understated every distance by 20-43%.
+const [MX, MY] = TF ? [TF.scaleX, TF.scaleY] : [M_PER_PX, M_PER_PX]
 
 const round6 = (n) => +n.toFixed(6)
 const px2lat = (y) => round6(LAT_N - (y / H) * (LAT_N - LAT_S))
@@ -1045,10 +1154,12 @@ let worst = 0, worstId = ""
 for (const level of LEVELS) {
   const nodes = trailsFor(level).flatMap((t) => t.pts)
   for (const w of waypointsFor(level)) {
+    // Measure in metres on each axis, because the two drawing axes no longer
+    // share a scale. Doing this in pixels and multiplying by one constant
+    // afterwards understates every vertical gap.
     let best = Infinity
-    for (const [x, y] of nodes) best = Math.min(best, Math.hypot(x - w.x, y - w.y))
-    const m = best * M_PER_PX
-    if (m > worst) { worst = m; worstId = `${w.id} (Level ${level})` }
+    for (const [x, y] of nodes) best = Math.min(best, Math.hypot((x - w.x) * MX, (y - w.y) * MY))
+    if (best > worst) { worst = best; worstId = `${w.id} (Level ${level})` }
   }
 }
 console.log(`max waypoint→corridor distance: ${worst.toFixed(1)} m (${worstId}) — must be < 30`)
@@ -1082,8 +1193,22 @@ if (TF) {
   // is rotated from north-up, anticlockwise positive.
   const bearing = ((90 - (TF.theta * 180) / Math.PI) % 360 + 360) % 360
   const turn = (((TF.theta * 180) / Math.PI + 540) % 360) - 180
-  console.log(`  scale ${TF.scale.toFixed(3)} m/px · sheet turned ${turn.toFixed(1)}° anticlockwise from north-up (drawing-east bears ${bearing.toFixed(1)}°)`)
-  console.log(`  max residual ${maxM.toFixed(2)} m · RMS ${Math.sqrt(sum2 / GCPS.length).toFixed(2)} m (aim < ~5 m)`)
+  console.log(`  scale ${TF.scaleX.toFixed(3)} m/px across · ${TF.scaleY.toFixed(3)} m/px down`)
+  console.log(`  sheet turned ${turn.toFixed(1)}° anticlockwise from north-up (drawing-east bears ${bearing.toFixed(1)}°)`)
+  const pc = (TF.aspect - 1) * 100
+  if (GCPS.length < 3) {
+    console.log(`  proportions: not measurable from ${GCPS.length} points — both axes held to one scale`)
+  } else {
+    console.log(`  proportions: drawing is ${Math.abs(pc).toFixed(1)}% too ${pc > 0 ? "flat" : "tall"} for the ground (q=${TF.aspect.toFixed(4)}), corrected`)
+  }
+  const rms = Math.sqrt(sum2 / GCPS.length)
+  console.log(`  max residual ${maxM.toFixed(2)} m · RMS ${rms.toFixed(2)} m (aim < ~5 m)`)
+  // 5 parameters against 2 equations per point. Say how much slack the fit
+  // actually had, so a small residual from a nearly-determined system is not
+  // mistaken for a well-measured one.
+  const spare = 2 * GCPS.length - (GCPS.length >= 3 ? 5 : 4)
+  console.log(`  ${spare} spare equation(s) beyond the ${GCPS.length >= 3 ? 5 : 4} fitted unknowns` +
+    (spare <= 1 ? " — thin. A 4th control point is the cheapest way to make this residual mean something." : ""))
 } else {
   console.log("\ngeoreference: no ground-control points — using the original north-up box.")
   console.log("Fill GCPS in this script with real lat/lng to fit position + scale + rotation.")
