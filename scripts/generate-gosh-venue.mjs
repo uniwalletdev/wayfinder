@@ -16,6 +16,28 @@
 //     Levels 1-7), the Octav Botnar Wing board (Levels 0-7) and the Nurses Home
 //     board (Levels 1-10).
 //
+//   * THE TRUST'S PUBLISHED SITE MAP (`map- GOSH/mapmain.pdf`) carries a
+//     site-wide "Wards" and "Department" directory on its second page, and it
+//     covers the buildings no lift board was photographed in. It is the reason
+//     the Variety Club Building and the Southwood Building have destinations at
+//     all: between them they had five, against the eighty-seven the trust
+//     publishes site-wide, so both were little more than a lift and a staircase
+//     per storey.
+//
+//     Its own site plan is drawn rotated roughly 90 degrees from north-up -
+//     Guilford Street runs down the right-hand edge of the page - which is worth
+//     knowing before anyone tries to read a bearing off it. It confirms the
+//     orientation used here rather than contradicting it: Great Ormond Street
+//     opposite Guilford Street, Lamb's Conduit Street across the foot of the
+//     page, Boswell Street and Queen Square across the head.
+//
+//   * THE ESTATES SCHEDULE (`Sitewide_location_of_wards_and_departments.xlsx`)
+//     is a useful cross-check and nothing more. It still lists the Frontage
+//     Building, the Paul O'Gorman Building, the Cardiac Wing and the Italian
+//     Building as occupied, and those stood where the Children's Cancer Centre
+//     is being built - so it predates the demolition, and where it and the map
+//     disagree the map wins. Nothing from those four buildings is imported.
+//
 //   * FIRE / ZONE DRAWINGS are authoritative for GEOMETRY only - footprints,
 //     cores, corridors. Their room labels are NOT reliable: the Nurses Home
 //     E-series sheets are dated 2013-2016 and their room uses have since
@@ -317,7 +339,12 @@ const BUILDINGS = {
     ],
   },
   southwood: {
-    name: "Southwood Building", code: "C", axis: "ew", levels: [1, 7],
+    // Levels 1-10, not 1-7. The estates schedule lists Southwood rooms up to
+    // Level 10 and the published map puts the NIHR CRF on 8 and Safari Daycare
+    // on 9, so stopping at 7 dropped three storeys of real destinations — and,
+    // because the level range also drives which floors get drawn, left the
+    // building missing from the Level 8-10 plans entirely.
+    name: "Southwood Building", code: "C", axis: "ew", levels: [1, 10],
     rect: { x0: 150, y0: 196, x1: 410, y1: 330 },
     cores: [
       { kind: "stairs", name: "Stairs", at: 0.08 },
@@ -434,6 +461,7 @@ const PROGRAMME = {
       ["Main Reception", "public", "Morgan Stanley Clinical Building, Level 2"],
       ["The Disney Reef", "public", "Play and entertainment space"],
       ["GOSH Charity Hub", "public", "Morgan Stanley Clinical Building, Level 2"],
+      ["GOSH Shop", "public", "Morgan Stanley Clinical Building, Level 2"],
       ["The Lagoon", "public", "Restaurant - hot food, grab & go, coffee bar and shop"],
       ["WCs and Baby Change", "wc", "Includes accessible WCs"],
     ],
@@ -456,7 +484,15 @@ const PROGRAMME = {
       ["Nightingale Day Unit / Recovery", "clinical", "Premier Inn Clinical Building, Level 3"],
       ["Theatres 11 & 12", "clinical", "Premier Inn Clinical Building, Level 3"],
     ],
-    4: [["Alligator Ward", "ward", "Premier Inn Clinical Building, Level 4"]],
+    4: [
+      ["Alligator Ward", "ward", "Premier Inn Clinical Building, Level 4"],
+      ["Respiratory Sleep Unit", "clinical", "Premier Inn Clinical Building, Level 4"],
+      // The published map puts RANU here. The estates schedule still has it as
+      // "Starfish Ward (RANU)" in Southwood Level 4; the map is the newer of
+      // the two, so it wins, and the old name is kept in the description for
+      // anyone searching for the ward they were told to go to.
+      ["RANU", "ward", "Renal and Nephrology Unit, formerly Starfish Ward - Premier Inn Clinical Building, Level 4"],
+    ],
     5: [
       ["Chameleon Ward", "ward", "Premier Inn Clinical Building, Level 5 - cardiorespiratory / telemetry"],
       ["Possum Ward", "ward", "Premier Inn Clinical Building, Level 5"],
@@ -527,20 +563,86 @@ const PROGRAMME = {
     9: [["On Call Accommodation", "office", "Nurses Home, Level 9"]],
     10: [["Neurosciences Offices", "office", "Nurses Home, Level 10"]],
   },
+  // Variety Club and Southwood are the two buildings NO lift directory was
+  // photographed for, so until now they had footprints, lifts and stairs and
+  // almost nothing to walk to: 14 of the Variety Club's 19 waypoints were the
+  // cores themselves. Both are filled in from the trust's published site map
+  // (`map- GOSH/mapmain.pdf`, the "Wards" and "Department" directory on its
+  // second page), cross-checked against the estates spreadsheet
+  // `Sitewide_location_of_wards_and_departments.xlsx`.
+  //
+  // The map wins where the two disagree, and the spreadsheet shows why: it
+  // still lists the Frontage Building, Paul O'Gorman Building, Cardiac Wing and
+  // Italian Building as occupied, and those stood where the Children's Cancer
+  // Centre is now being built. Nothing from those four is imported.
   varietyClub: {
+    1: [
+      ["Otter Imaging Suite", "clinical", "Variety Club Building, Level 1"],
+      ["CMR / XMR Hybrid Angio Suite", "clinical", "Cardiac MR and X-ray hybrid angiography - Variety Club Building, Level 1"],
+      ["Shabbat Room", "public", "Variety Club Building, Level 1"],
+    ],
     2: [
       ["Pharmacy", "public", "Variety Club Building, Level 2"],
       ["X-Ray", "clinical", "Variety Club Building, Level 2"],
+      ["General Radiology and Ultrasound", "clinical", "Variety Club Building, Level 2"],
       ["PALS", "public", "Patient Advice & Liaison Service"],
-      ["Chapel", "public", "Variety Club Building, Level 2"],
+      ["Chapel", "public", "St Christopher's Chapel - Variety Club Building, Level 2"],
       ["Multifaith Room", "public", "Variety Club Building, Level 2"],
+      ["Cheetah Outpatients", "clinical", "Variety Club Building, Level 2"],
+      ["Maxillofacial & Dental", "clinical", "Variety Club Building, Level 2"],
+      ["Physiotherapy Gym", "clinical", "Variety Club Building, Level 2"],
+      ["Family Accommodation", "public", "Variety Club Building, Level 2"],
+      ["Accommodation Office", "office", "Variety Club Building, Level 2"],
+      ["Travel Reimbursement", "public", "Variety Club Building, Level 2"],
+    ],
+    3: [
+      ["Woodpecker Ward", "ward", "Same Day Admissions Unit - Variety Club Building, Level 3"],
+      ["Hedgehog Ward", "ward", "Variety Club Building, Level 3"],
+      ["Interventional Radiology", "clinical", "Angiography Suites 1-3 - Variety Club Building, Level 3"],
+      ["Theatres 1-6", "clinical", "Variety Club Building, Level 3"],
+    ],
+    4: [
+      ["Neonatal Intensive Care Unit (NICU)", "ward", "Variety Club Building, Level 4"],
+      ["Paediatric Intensive Care Unit (PICU)", "ward", "Variety Club Building, Level 4"],
+    ],
+    5: [
+      ["Squirrel Ward", "ward", "Variety Club Building, Level 5 - includes General Surgery and Urology pre-admissions"],
+      ["Fox Ward", "ward", "Variety Club Building, Level 5"],
+      ["Robin Ward", "ward", "Variety Club Building, Level 5"],
+    ],
+    6: [
+      ["Giraffe Ward", "ward", "Variety Club Building, Level 6"],
+      ["Lion Ward", "ward", "Variety Club Building, Level 6"],
+      ["Elephant Ward", "ward", "Variety Club Building, Level 6"],
+      ["Owl Outpatients & Mildred Creak Unit", "clinical", "Variety Club Building, Level 6"],
     ],
   },
   southwood: {
-    2: [["Southwood Outpatients & Therapies", "clinical", "Southwood Building, Level 2"]],
+    1: [["Turtle Imaging Suite", "clinical", "Southwood Building, Level 1"]],
+    2: [
+      ["Southwood Outpatients & Therapies", "clinical", "Southwood Building, Level 2"],
+      ["Social Work Services", "clinical", "Southwood Building, Level 2"],
+      ["Medical Illustration", "support", "Southwood Building, Level 2"],
+      ["Security", "support", "Southwood Building, Level 2"],
+    ],
+    3: [["Muslim Prayer Rooms & Quiet Room", "public", "Southwood Building, Level 3"]],
+    4: [
+      ["Magpie Ward", "ward", "Southwood Building, Level 4"],
+      ["Clinical Neurophysiology (EEG)", "clinical", "Southwood Building, Level 4"],
+    ],
     5: [
+      ["Psychological and Mental Health Services", "clinical", "Southwood Building, Level 5"],
       ["Speech & Language Therapy Offices", "office", "Southwood Building, Level 5"],
       ["PAMHS Meeting Room", "office", "Southwood Building, Level 5"],
+    ],
+    7: [
+      ["Renal Support Unit", "clinical", "Southwood Building, Level 7"],
+      ["Hummingbird - Group Fateh Centre", "clinical", "Southwood Building, Level 7"],
+    ],
+    8: [["NIHR Clinical Research Facility (CRF)", "clinical", "Southwood Building, Level 8"]],
+    9: [
+      ["Safari Daycare", "ward", "Southwood Building, Level 9"],
+      ["Anaesthetic Pre-Assessment Clinic", "clinical", "Southwood Building, Level 9"],
     ],
   },
   westLink: {
@@ -555,6 +657,7 @@ const PROGRAMME = {
   },
   westonHouse: {
     2: [["Weston House", "office", "Offices - south of Great Ormond Street"]],
+    3: [["Patient Hotel", "other", "Weston House, Level 3 - patient and family accommodation"]],
   },
 }
 
@@ -1061,10 +1164,12 @@ let ts = `import { Venue } from "../types"
 // Rebuilt from the hospital's own on-site signage photographed in July 2026 (the
 // \`map- GOSH\` folder). Ward-per-level comes from three lift directories - the
 // Mittal Children's Medical Centre board (Morgan Stanley + Premier Inn), the
-// Octav Botnar Wing board and the Nurses Home board. Building footprints, cores
-// and corridors come from the GOSH Estates / Fisk fire and dry-riser drawings.
-// Where the two disagree the directories win: the fire drawings are dated
-// 2013-2016 and several of their room uses are now stale.
+// Octav Botnar Wing board and the Nurses Home board - and, for the Variety Club
+// and Southwood Buildings, which no board covered, from the wards-and-departments
+// directory printed on the trust's own published site map. Building footprints,
+// cores and corridors come from the GOSH Estates / Fisk fire and dry-riser
+// drawings. Where the two disagree the directories win: the fire drawings are
+// dated 2013-2016 and several of their room uses are now stale.
 //
 // Orientation is taken from the true-north arrows on the dry-riser plans:
 // Guilford Street NORTH, Great Ormond Street SOUTH, Lamb's Conduit Street EAST,
