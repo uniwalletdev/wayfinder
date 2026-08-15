@@ -167,6 +167,17 @@ const GCPS = [
   // boundary line at y=82 is the southern kerb, 15 px ≈ 3 m further south, and
   // these coordinates were read off the road itself. The other three sit on
   // their street centres already.
+  //
+  // Corroborated, and worth recording because the check cost nothing: the
+  // former public convenience on the Guilford Place island (now WC Wine &
+  // Charcuterie) is a Google place record at 51.523473, -0.119482 — 11 m due
+  // east of this point, which is the right order for two features at the same
+  // spread-out junction. Substituting it here moves the solution by 1.7° of
+  // rotation and 3 m of site width, so the placement is not balanced on a knife
+  // edge. It is NOT added as a fourth point: Guilford Place, its island and that
+  // building are not drawn on this canvas, so there is no pixel that honestly
+  // IS the former public convenience, and inventing one by running the current
+  // transform backwards would only feed the fit its own answer.
   { name: "Guilford St × Lamb's Conduit St (NE)",  x: 866, y: 67,  lat: 51.523471, lng: -0.119642 },
   { name: "Great Ormond St × Lamb's Conduit (SE)", x: 866, y: 614, lat: 51.522334, lng: -0.118784 },
   { name: "Great Ormond St × Powis Pl (SW)",       x: 114, y: 614, lat: 51.521675, lng: -0.120871 },
