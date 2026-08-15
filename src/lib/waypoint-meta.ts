@@ -38,11 +38,30 @@ export const WAYPOINT_TYPE_LABELS: Record<string, string> = {
 // Full label for a floor. A venue can override the generic scheme with its own
 // storey numbering (e.g. GOSH's "Level 2" ground floor); without one, floor 0
 // is the Ground Floor, positives are Floor N and negatives are Basement N.
+//
+// A venue scheme that renumbers the ground floor has to SAY which one it is.
+// Without that, "Level 2" is unreadable to anyone who does not already know the
+// building: it gives no clue whether you are standing on it or two storeys below
+// it, and at GOSH the honest answer is that you walk in off the street onto
+// Level 2 at both the Main Entrance and the ambulance entrance. The generic
+// scheme never had this problem, because "Ground Floor" says so in the name —
+// the offset scheme silently dropped the one word that was doing the work.
 export function floorLabel(floor: number, naming?: FloorNaming): string {
-  if (naming) return `${naming.word ?? "Level"} ${floor + naming.groundLevel}`
+  if (naming) {
+    const label = `${naming.word ?? "Level"} ${floor + naming.groundLevel}`
+    return floor === 0 ? `${label} (ground floor)` : label
+  }
   if (floor === 0) return "Ground Floor"
   if (floor < 0) return `Basement ${Math.abs(floor)}`
   return `Floor ${floor}`
+}
+
+// The same fact for places too tight for the full label — the floor rail's 38px
+// pills, a tooltip, an aria-label. Says nothing about any particular venue: the
+// only claim it makes is the one the naming scheme already encodes.
+export function floorGroundHint(floor: number, naming?: FloorNaming): string | null {
+  if (!naming || floor !== 0) return null
+  return `${naming.word ?? "Level"} ${naming.groundLevel} — the ground floor`
 }
 
 // Compact label for the floor rail. Mirrors floorLabel: with a venue scheme it

@@ -283,7 +283,7 @@
   <g>
     <rect x='20' y='16' width='268' height='44' rx='10' fill='#005EB8'/>
     <text x='34' y='36' font-family='Arial,Helvetica,sans-serif' font-size='15' font-weight='bold' fill='white'>Level 2 · Ground Floor</text>
-    <text x='34' y='51' font-family='Arial,Helvetica,sans-serif' font-size='8.5' fill='#BFDBFE'>Street level · Main Entrance on Guilford Street</text>
+    <text x='34' y='51' font-family='Arial,Helvetica,sans-serif' font-size='8.5' fill='#BFDBFE'>Street level · Main Entrance &amp; ambulance entrance</text>
   </g>
   <g>
     <circle cx='956' cy='660' r='17' fill='white' stroke='#CBD5E1' stroke-width='1.5'/>

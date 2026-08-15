@@ -1089,7 +1089,9 @@ function buildSvg(level) {
 
 const LEVEL_SUB = {
   1: "Below street level · Walrus CIC, Bod Pod, Nuclear Medicine",
-  2: "Street level · Main Entrance on Guilford Street",
+  // Both public ways in off the street land on this level, and saying so is
+  // what makes "Level 2" mean something to someone standing outside.
+  2: "Street level · Main Entrance & ambulance entrance",
   3: "Theatres, Nightingale Day Unit, Kingfisher Ward",
   4: "Flamingo, Alligator and Butterfly Wards",
   5: "Koala, Chameleon, Possum and Bumblebee Wards",

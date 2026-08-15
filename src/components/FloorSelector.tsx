@@ -1,6 +1,6 @@
 "use client"
 
-import { floorShortLabel } from "@/lib/waypoint-meta"
+import { floorLabel, floorGroundHint, floorShortLabel } from "@/lib/waypoint-meta"
 import type { FloorNaming } from "@/lib/types"
 
 interface Props {
@@ -19,19 +19,28 @@ export default function FloorSelector({ floors, currentFloor, naming, onChange }
 
   return (
     <div className="pointer-events-auto flex min-h-0 flex-col gap-1 overflow-y-auto rounded-full bg-white/96 p-1.5 shadow-[0_8px_24px_rgba(11,27,46,0.16)]">
-      {[...floors].sort((a, b) => b - a).map((floor) => (
-        <button
-          key={floor}
-          onClick={() => onChange(floor)}
-          className={`flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-full font-display text-[13px] font-bold transition-colors ${
-            currentFloor === floor
-              ? "bg-wf-primary text-white shadow-[0_4px_12px_rgba(10,93,194,0.4)]"
-              : "text-wf-muted hover:bg-wf-surface"
-          }`}
-        >
-          {floorShortLabel(floor, naming)}
-        </button>
-      ))}
+      {[...floors].sort((a, b) => b - a).map((floor) => {
+        // Under a venue scheme every pill reads "L<n>", so the one you walk in
+        // on looks like all the others. A ring marks it, and the title/aria
+        // label spell it out for anyone who cannot see the ring.
+        const isGround = Boolean(naming) && floor === 0
+        return (
+          <button
+            key={floor}
+            onClick={() => onChange(floor)}
+            title={floorGroundHint(floor, naming) ?? floorLabel(floor, naming)}
+            aria-label={floorLabel(floor, naming)}
+            aria-current={currentFloor === floor ? "true" : undefined}
+            className={`flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-full font-display text-[13px] font-bold transition-colors ${
+              currentFloor === floor
+                ? "bg-wf-primary text-white shadow-[0_4px_12px_rgba(10,93,194,0.4)]"
+                : "text-wf-muted hover:bg-wf-surface"
+            } ${isGround && currentFloor !== floor ? "ring-1 ring-inset ring-wf-primary/40" : ""}`}
+          >
+            {floorShortLabel(floor, naming)}
+          </button>
+        )
+      })}
     </div>
   )
 }
