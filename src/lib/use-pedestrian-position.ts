@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import { Coordinates } from "./types"
+import { enableDeviceMotion, onDeviceMotion } from "./device-motion"
+import { StepCounter } from "./step-counter"
 
 // Pedestrian dead-reckoning (PDR) for indoor positioning, where GPS is useless.
 //
@@ -34,18 +36,8 @@ const STEP_LENGTH_M = 0.72
 // Re-anchor to GPS only when it's at least this accurate. Indoor GPS is far
 // worse, so it's ignored and dead-reckoning carries the position instead.
 const GPS_ANCHOR_MAX_ACCURACY_M = 18
-// Step detection: a stride shows up as an acceleration-magnitude peak above
-// the ~9.8 m/s² gravity baseline. Fire on the upward crossing with hysteresis
-// and a refractory gap so one footfall counts once.
-const STEP_PEAK = 12.5
-const STEP_RESET = 10.2
-const STEP_MIN_INTERVAL_MS = 280
 
 const M_PER_LAT = 111320
-
-type PermissionCapableCtor = typeof DeviceMotionEvent & {
-  requestPermission?: () => Promise<"granted" | "denied" | "default">
-}
 
 export function usePedestrianPosition(heading: number | null) {
   const [position, setPosition] = useState<Coordinates | null>(null)
@@ -58,11 +50,10 @@ export function usePedestrianPosition(heading: number | null) {
   const offsetRef = useRef({ x: 0, y: 0 })
   const headingRef = useRef<number | null>(heading)
   headingRef.current = heading
-  const motionEnabledRef = useRef(false)
 
-  // Step-detection state.
-  const armedRef = useRef(true)
-  const lastStepRef = useRef(0)
+  // Step detection is shared with floor detection so both features agree on
+  // what a stride is — see step-counter.ts.
+  const stepsRef = useRef(new StepCounter())
 
   const recompute = useCallback(() => {
     const a = anchorRef.current
@@ -101,17 +92,7 @@ export function usePedestrianPosition(heading: number | null) {
       const acc = e.accelerationIncludingGravity
       if (!acc) return
       const mag = Math.hypot(acc.x ?? 0, acc.y ?? 0, acc.z ?? 0)
-
-      if (mag < STEP_RESET) {
-        armedRef.current = true
-        return
-      }
-      const now = Date.now()
-      if (!armedRef.current || mag < STEP_PEAK || now - lastStepRef.current < STEP_MIN_INTERVAL_MS) {
-        return
-      }
-      armedRef.current = false
-      lastStepRef.current = now
+      if (!stepsRef.current.push(mag, Date.now())) return
 
       // A step only moves the estimate when we know which way it's pointing and
       // have something to move from.
@@ -126,29 +107,11 @@ export function usePedestrianPosition(heading: number | null) {
   )
 
   // Permission-gated on iOS and must be triggered from a user gesture, like the
-  // compass — the caller unlocks both together from a tap.
-  const enableMotion = useCallback(async () => {
-    if (motionEnabledRef.current || typeof window === "undefined") return
-    const Ctor = window.DeviceMotionEvent as PermissionCapableCtor | undefined
-    if (!Ctor) return
-    try {
-      if (typeof Ctor.requestPermission === "function") {
-        const result = await Ctor.requestPermission()
-        if (result !== "granted") return
-      }
-    } catch {
-      return
-    }
-    motionEnabledRef.current = true
-    window.addEventListener("devicemotion", onMotion)
-  }, [onMotion])
+  // compass — the caller unlocks both together from a tap. The prompt itself is
+  // owned by device-motion.ts, so asking twice costs nothing.
+  const enableMotion = useCallback(() => enableDeviceMotion(), [])
 
-  useEffect(() => {
-    return () => {
-      if (typeof window === "undefined") return
-      window.removeEventListener("devicemotion", onMotion)
-    }
-  }, [onMotion])
+  useEffect(() => onDeviceMotion(onMotion), [onMotion])
 
   return { position, accuracy, source, setAnchor, enableMotion }
 }

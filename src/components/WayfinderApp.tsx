@@ -23,8 +23,11 @@ import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
 import VenuePicker from "@/components/VenuePicker"
+import FloorChangePrompt, { type FloorChangePromptState } from "@/components/FloorChangePrompt"
 import { useDeviceHeading } from "@/lib/use-heading"
 import { usePedestrianPosition } from "@/lib/use-pedestrian-position"
+import { useVerticalMotion } from "@/lib/use-vertical-motion"
+import { resolveFloorChange, CONFIDENT_ENOUGH } from "@/lib/vertical-motion"
 import { useTrailRecorder } from "@/lib/use-trail-recorder"
 import { useArSupport } from "@/lib/use-ar-support"
 import { fetchServerVenues, createServerVenue, addServerWaypoints, deleteServerVenue, ownsVenue } from "@/lib/venues-server"
@@ -491,6 +494,87 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     })
   }, [navState.currentPosition, navState.currentFloor])
 
+  // The floor change the route is still expecting, if any. This is the single
+  // most valuable input to floor detection: once guidance has said "take the
+  // lift to Level 3", the accelerometer only has to establish THAT a lift ride
+  // happened, not how far it went — which is the difference between a hard
+  // estimate and an easy one. Looked up from the current step forward, so a
+  // change already walked through is not offered a second time.
+  const pendingFloorChange = useMemo(() => {
+    const steps = navState.route?.steps
+    if (!steps) return null
+    for (let i = navState.currentStepIndex; i < steps.length; i++) {
+      if (steps[i].floorChange) return steps[i].floorChange ?? null
+    }
+    return null
+  }, [navState.route, navState.currentStepIndex])
+
+  const [floorPrompt, setFloorPrompt] = useState<FloorChangePromptState | null>(null)
+
+  // Floor detection. The same accelerometer feed dead-reckoning already reads
+  // for footsteps, read again for vertical movement: a lift ride or a stair
+  // climb arrives here as a transit, and resolveFloorChange turns it into a
+  // floor. This is what spares the walker having to remember to tap the floor
+  // pills every time they change level — the one part of their position the app
+  // could never work out for itself. No separate unlock, because
+  // device-motion.ts owns the permission and enableSensors() already asks.
+  //
+  // Confident readings — and any the route agrees with — change the floor there
+  // and then, with an undo; the rest ask first. Silence is the failure that
+  // matters: the floor decides which plan is drawn and where the route goes, so
+  // a walker told nothing has no way to tell a wrong guess from a wrong map.
+  const { reset: resetVerticalMotion } = useVerticalMotion({
+    onTransit: (transit) => {
+      const resolved = resolveFloorChange(
+        transit,
+        navState.currentFloor,
+        availableFloors,
+        pendingFloorChange
+      )
+      // Nothing the sensors can honestly conclude — most often a stair climb
+      // with no route to say which way it went. Say nothing rather than guess:
+      // an unprompted "which floor are you on?" is a worse interruption than
+      // the floor pills the walker can already reach.
+      if (!resolved) return
+
+      if (resolved.fromRoute || resolved.confidence >= CONFIDENT_ENOUGH) {
+        setFloorPrompt({
+          kind: "applied",
+          floor: resolved.floor,
+          previousFloor: navState.currentFloor,
+          via: resolved.via,
+          direction: resolved.direction,
+        })
+        setNavState((st) => ({ ...st, currentFloor: resolved.floor }))
+      } else {
+        setFloorPrompt({ kind: "ask", floor: resolved.floor, via: resolved.via, direction: resolved.direction })
+      }
+    },
+  })
+
+  const handleConfirmFloorPrompt = useCallback(() => {
+    if (!floorPrompt) return
+    setNavState((s) => ({ ...s, currentFloor: floorPrompt.floor }))
+    setFloorPrompt(null)
+  }, [floorPrompt])
+
+  const handleUndoFloorPrompt = useCallback(() => {
+    // Only an applied prompt has somewhere to go back to; an unanswered question
+    // changed nothing in the first place.
+    if (floorPrompt?.kind === "applied") {
+      setNavState((s) => ({ ...s, currentFloor: floorPrompt.previousFloor }))
+    }
+    setFloorPrompt(null)
+    // The detector was wrong about this ride, and whatever it has half-measured
+    // since is built on the same reading. Start it clean.
+    resetVerticalMotion()
+  }, [floorPrompt, resetVerticalMotion])
+
+  // Stable, because the prompt's auto-dismiss timer is keyed on it: a fresh
+  // function every render would restart the countdown on every GPS tick and the
+  // banner would never go away on its own.
+  const handleDismissFloorPrompt = useCallback(() => setFloorPrompt(null), [])
+
   // Live re-routing: while navigating, if the walker drifts too far from the
   // drawn path, rebuild the route from where they actually are instead of
   // leaving them on a stale line. Indoor journeys recompute instantly via
@@ -557,6 +641,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
         setGpsStatus("active")
         setNavState((s) => ({ ...s, currentFloor: parseInt(parts[floorIdx + 1]) }))
+        // The poster states the floor outright, which beats anything the
+        // accelerometer inferred to get here. Drop the half-integrated transit
+        // it may be carrying, and any claim it was still making about the floor.
+        setFloorPrompt(null)
+        resetVerticalMotion()
         // An exact known fix — re-anchor dead-reckoning here and clear drift.
         setAnchor({
           position: { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) },
@@ -569,7 +658,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         if (wp) handleDestinationSelect(wp)
       }
     } catch {}
-  }, [setAnchor, allWaypoints, handleDestinationSelect])
+  }, [setAnchor, allWaypoints, handleDestinationSelect, resetVerticalMotion])
 
   // Persist points added by surveying / AI sign-reading. For a server venue this
   // device owns, they go to the shared backend (and are shown from the returned
@@ -694,8 +783,12 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setOverlay("none")
     setFarRouteOverride(false)
     setNavState((s) => ({ ...s, currentFloor: openingFloor(v), origin: null, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+    // Another building entirely — whatever the detector had half-measured was
+    // about the last one.
+    setFloorPrompt(null)
+    resetVerticalMotion()
     mapHandleRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
-  }, [])
+  }, [resetVerticalMotion])
 
   const handleSelectVenue = useCallback((id: string) => {
     const v = getVenueById(id, userVenues)
@@ -904,8 +997,24 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           floors={availableFloors}
           currentFloor={navState.currentFloor}
           floorNaming={venue.floorNaming}
-          onChangeFloor={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
+          onChangeFloor={(floor) => {
+            setNavState((s) => ({ ...s, currentFloor: floor }))
+            // Picking a floor by hand is the walker overruling the detector, so
+            // retract whatever it was claiming and let it start again from here.
+            setFloorPrompt(null)
+            resetVerticalMotion()
+          }}
         />
+
+        {floorPrompt && (
+          <FloorChangePrompt
+            state={floorPrompt}
+            floorNaming={venue.floorNaming}
+            onConfirm={handleConfirmFloorPrompt}
+            onUndo={handleUndoFloorPrompt}
+            onDismiss={handleDismissFloorPrompt}
+          />
+        )}
       </div>
 
       {(overlay === "search" || overlay === "search-origin") && (

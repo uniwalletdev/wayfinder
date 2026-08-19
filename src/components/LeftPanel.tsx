@@ -6,7 +6,7 @@ import {
   Building, ChevronsUpDown, Search, BadgeCheck, X, Navigation, Share2, ChevronRight,
   Loader2, PersonStanding, Bike, Car, ClipboardList, UploadCloud, QrCode, Camera,
   ArrowUp, ArrowUpLeft, ArrowUpRight, ArrowLeft, ArrowRight, ArrowUpDown, Footprints, CheckCircle2,
-  Info, MapPin, Pencil,
+  Info, MapPin, Pencil, Check, CornerDownRight,
 } from "lucide-react"
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
@@ -761,6 +761,70 @@ function StepIcon({ step }: { step: RouteStep }) {
   return <Navigation size={24} className="text-white" />
 }
 
+// The whole journey, not just the instruction for right now.
+//
+// Guidance used to show "Step 2 of 5" and the current instruction alone, which
+// tells a walker how much is left but nothing about what it consists of — and
+// the count is the part they can already feel. What they actually want at a lift
+// lobby is to see that after the lift there is one more turn, so they can decide
+// whether to ask someone. Done steps stay on the list rather than disappearing:
+// they are how you check you have not missed a turn.
+function Itinerary({
+  steps,
+  currentStepIndex,
+}: {
+  steps: RouteStep[]
+  currentStepIndex: number
+}) {
+  return (
+    <div className="mb-4 rounded-[14px] border border-wf-border-faint bg-[#F7FAFD] px-4 py-3.5">
+      <p className="mb-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-wf-faint">
+        All steps
+      </p>
+      <ol className="flex flex-col">
+        {steps.map((s, i) => {
+          const done = i < currentStepIndex
+          const current = i === currentStepIndex
+          return (
+            <li key={i} className="flex gap-2.5">
+              {/* The badge column doubles as the connector line between steps,
+                  so the list reads as one journey rather than five notices. */}
+              <div className="flex flex-shrink-0 flex-col items-center">
+                <span
+                  className={`flex h-[22px] w-[22px] items-center justify-center rounded-full font-display text-[11px] font-bold ${
+                    current
+                      ? "bg-wf-primary text-white"
+                      : done
+                        ? "bg-wf-green-tint text-wf-green-text"
+                        : "bg-[#E7F2FF] text-wf-primary"
+                  }`}
+                >
+                  {done ? <Check size={12} strokeWidth={3} /> : i + 1}
+                </span>
+                {i < steps.length - 1 && (
+                  <span className={`w-[2px] flex-1 ${done ? "bg-wf-green/40" : "bg-wf-border"}`} />
+                )}
+              </div>
+              <div className={`min-w-0 flex-1 ${i < steps.length - 1 ? "pb-3" : ""}`}>
+                <p
+                  className={`text-[13.5px] leading-snug ${
+                    current ? "font-semibold text-wf-ink" : done ? "text-wf-faint" : "text-wf-body"
+                  }`}
+                >
+                  {s.instruction}
+                </p>
+                {s.distance > 0 && (
+                  <p className="mt-0.5 text-[11.5px] text-wf-muted">{fmtDistance(s.distance)}</p>
+                )}
+              </div>
+            </li>
+          )
+        })}
+      </ol>
+    </div>
+  )
+}
+
 function NavigatingSummary({
   destination,
   route,
@@ -782,6 +846,10 @@ function NavigatingSummary({
 }) {
   const step = route.steps[currentStepIndex] ?? route.steps[route.steps.length - 1]
   const isArrived = step.instruction.includes("arrived")
+  // Surfaced even in the collapsed phone peek, where the full itinerary below is
+  // hidden to keep the map visible. One step of look-ahead is the difference
+  // between following an instruction and understanding a route.
+  const nextStep = route.steps[currentStepIndex + 1] ?? null
   // On phones the sheet collapses to a peek so the map is visible while walking:
   // the destination header and the current-step banner stay, the details drop
   // away. The grab handle brings them back. lg+ always shows everything.
@@ -814,7 +882,18 @@ function NavigatingSummary({
         </div>
       </div>
 
+      {nextStep && (
+        <div className="mb-4 flex items-center gap-2 px-1">
+          <CornerDownRight size={14} className="flex-shrink-0 text-wf-faint" />
+          <p className="truncate text-[13px] text-wf-muted">
+            <span className="font-semibold text-wf-body">Then</span> {nextStep.instruction}
+          </p>
+        </div>
+      )}
+
       <div className={detail}>
+        <Itinerary steps={route.steps} currentStepIndex={currentStepIndex} />
+
         <div className="mb-4 grid grid-cols-3 gap-2">
           <StatTile label="time" value={`${route.estimatedMinutes} min`} />
           <StatTile label="distance" value={fmtDistance(route.totalDistance)} />
