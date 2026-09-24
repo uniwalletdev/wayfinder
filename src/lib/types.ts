@@ -10,6 +10,10 @@ export interface Waypoint {
   coordinates: Coordinates
   floor: number
   description?: string
+  // The building on a multi-building site ("Nurses Home"), when known. Absent
+  // for most waypoints: src/lib/buildings.ts falls back to reading it off a
+  // description written "<Building>, Level N", which is how GOSH records it.
+  building?: string
   qrCode?: string
   // Which side of the walking direction the place sits on, as read from the
   // survey footage. Drives which side of the corridor its room is drawn on in

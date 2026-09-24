@@ -3,6 +3,7 @@
 import { Moon, Sun, Navigation, Plus, Minus, Layers, Plug } from "lucide-react"
 import FloorSelector from "@/components/FloorSelector"
 import type { FloorNaming } from "@/lib/types"
+import type { Building } from "@/lib/buildings"
 
 interface Props {
   mapView: "2d" | "3d"
@@ -25,6 +26,12 @@ interface Props {
   currentFloor: number
   floorNaming?: FloorNaming
   onChangeFloor: (floor: number) => void
+  // Keys the floor rail so a building picked at one hospital is not carried
+  // to the next.
+  venueId: string
+  buildings: Building[]
+  currentBuilding: string | null
+  destinationFloor: number | null
 }
 
 // All floating map furniture lives in ONE flex column pinned to the right edge
@@ -54,6 +61,10 @@ export default function MapControls({
   currentFloor,
   floorNaming,
   onChangeFloor,
+  venueId,
+  buildings,
+  currentBuilding,
+  destinationFloor,
 }: Props) {
   return (
     <>
@@ -104,7 +115,16 @@ export default function MapControls({
             min-h-0 lets it shrink and scroll instead of colliding. */}
         <div className="hidden min-h-0 lg:block lg:flex-1" />
         <div className="mt-3 flex min-h-0 flex-col lg:mt-0">
-          <FloorSelector floors={floors} currentFloor={currentFloor} naming={floorNaming} onChange={onChangeFloor} />
+          <FloorSelector
+            key={venueId}
+            floors={floors}
+            currentFloor={currentFloor}
+            naming={floorNaming}
+            onChange={onChangeFloor}
+            buildings={buildings}
+            autoBuilding={currentBuilding}
+            destinationFloor={destinationFloor}
+          />
         </div>
         <div className="hidden min-h-0 lg:block lg:flex-1" />
 

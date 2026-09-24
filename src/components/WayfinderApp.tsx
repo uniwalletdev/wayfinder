@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan, RoutePreference, Asset } from "@/lib/types"
 import { getAvailableFloors, floorLabel } from "@/lib/waypoint-meta"
+import { venueBuildings, buildingAt } from "@/lib/buildings"
 import { DEFAULT_VENUE, SEED_VENUES, getVenueById, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
@@ -264,6 +265,12 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // venue's corridors), so this merged list goes to buildRoute — not the views.
   const allTrails = useMemo(() => [...(venue.trails ?? []), ...surveyTrails], [venue, surveyTrails])
   const availableFloors = useMemo(() => getAvailableFloors(allFloorPlans, allWaypoints), [allFloorPlans, allWaypoints])
+  // Which building you are in decides which floors the rail offers first.
+  const buildings = useMemo(() => venueBuildings(allWaypoints), [allWaypoints])
+  const currentBuilding = useMemo(
+    () => buildingAt(navState.currentPosition, navState.currentFloor, allWaypoints, buildings),
+    [navState.currentPosition, navState.currentFloor, allWaypoints, buildings]
+  )
   const assetsOnCurrentFloor = useMemo(
     () => allAssets.some((a) => a.floor === navState.currentFloor),
     [allAssets, navState.currentFloor]
@@ -918,6 +925,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           currentFloor={navState.currentFloor}
           floorNaming={venue.floorNaming}
           onChangeFloor={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
+          venueId={venue.id}
+          buildings={buildings}
+          currentBuilding={currentBuilding}
+          destinationFloor={navState.destination?.floor ?? null}
         />
       </div>
 
