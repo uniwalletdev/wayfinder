@@ -199,7 +199,9 @@ export default function LeftPanel({
           </span>
           <div className="min-w-0 flex-1">
             <p className="truncate text-[14.5px] font-semibold text-wf-ink">{venue.name}</p>
-            {venue.visibility === "public" && venue.verified && (
+            {venue.illustrative ? (
+              <p className="truncate text-xs font-medium text-amber-700">Illustrative layout · not the real building</p>
+            ) : venue.visibility === "public" && venue.verified && (
               <p className="flex items-center gap-1 truncate text-xs text-wf-muted">
                 Public <BadgeCheck size={12} className="text-wf-primary" /> Verified
               </p>

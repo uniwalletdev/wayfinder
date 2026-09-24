@@ -388,11 +388,15 @@ function VenueRow({ venue, active, mapped = false, onSelect, onDelete }: { venue
             {venue.verified && <BadgeCheck size={14} className="text-[#005EB8] flex-shrink-0" />}
           </p>
           <p className="text-xs text-gray-500 truncate flex items-center gap-1.5">
-            {mapped && (
+            {mapped && (venue.illustrative ? (
+              <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-1.5 py-0.5 text-[10px] font-semibold leading-none flex-shrink-0">
+                Illustrative
+              </span>
+            ) : (
               <span className="inline-flex items-center gap-0.5 rounded-full bg-[#005EB8] text-white px-1.5 py-0.5 text-[10px] font-semibold leading-none flex-shrink-0">
                 <Footprints size={9} /> Mapped
               </span>
-            )}
+            ))}
             <span className="truncate">
               {venue.subtitle ? `${venue.subtitle} · ` : ""}
               {venue.visibility[0].toUpperCase() + venue.visibility.slice(1)}

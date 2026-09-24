@@ -466,6 +466,9 @@ export default function Map3DView({
 
     if (!route || !destination || route.geometry.length < 2) {
       framedDestRef.current = null
+      // three.js owns the route meshes cleared above; resuming follow belongs
+      // to that teardown.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFollow(true)
       return
     }

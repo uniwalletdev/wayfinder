@@ -19,7 +19,7 @@ import { Venue } from "../types"
 export const CUH_VENUE: Venue = {
   id: "cuh",
   slug: "cuh",
-  name: "Addenbrooke's Wayfinder",
+  name: "Addenbrooke's Hospital",
   subtitle: "Cambridge University Hospitals, Cambridge",
   category: "hospital",
   // The NHS directory's pin for Addenbrooke's — centre of the main hospital
@@ -27,7 +27,11 @@ export const CUH_VENUE: Venue = {
   center: { lat: 52.175133, lng: 0.140753 },
   defaultZoom: 18,
   visibility: "public",
-  verified: true,
+  // The comment above says it: these plans are a schematic placeholder, not
+  // Addenbrooke's. A placeholder was wearing the Verified badge, which told
+  // people the rooms were where the drawing put them.
+  verified: false,
+  illustrative: true,
   accessibility: {
     stepFreeRoute: true,
     accessibleToilets: true,

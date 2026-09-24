@@ -1,0 +1,23 @@
+{
+  "description": "Downloaded 'site map' documents that turned out not to be maps. Each was looked at by eye (docs/not-maps.md). draft-sheets.mjs refuses these slugs with reason 'not-a-map', and keep:true does not override it: a person can prefer coverage to certainty, but a page with no map on it gives nothing to cover.",
+  "entries": [
+    {
+      "slug": "royal-berkshire-hospital-map-jan23",
+      "url": "https://www.royalberkshire.nhs.uk/media/2uxbkm3j/royal-berkshire-hospital-map_jan23.pdf",
+      "reason": "Department directory table (Dept/Ward -> Block -> Level). No drawing of the site; the 11 'waypoints' were table cells.",
+      "reviewedAt": "2026-09-24"
+    },
+    {
+      "slug": "sheffield-teaching-hospitals-nhs-foundation-trust-map",
+      "url": "https://publicdocuments.sth.nhs.uk/PD6466.pdf",
+      "reason": "'How to find us' travel leaflet: paragraphs of driving and bus directions. No map; waypoints and corridor trails were extracted from body text.",
+      "reviewedAt": "2026-09-24"
+    },
+    {
+      "slug": "site-map-2024pdf",
+      "url": "https://www.plymouthhospitals.nhs.uk/download/site-map-2024pdf.pdf?ver=30786&%3Bdoc=docm93jijm4n17075",
+      "reason": "Same Derriford Hospital sheet as derriford-hospital-site-mappdf (both titled 'Site Map - September 2025'). Shipped as a second, identical Derriford venue.",
+      "reviewedAt": "2026-09-24"
+    }
+  ]
+}

@@ -17,7 +17,13 @@ import { CRAWLER_VERSION } from "../lib/discovery-match.mjs"
 import { mappedVenueNames, mappedVenueFor } from "../lib/mapped.mjs"
 import { looksLikeHospital } from "../lib/ods.mjs"
 import { floorFromSlug, stemWithoutFloor } from "../lib/floors.mjs"
+import { readNotMaps, shouldWithdraw } from "../lib/not-maps.mjs"
 import { group, check, report } from "./harness.mjs"
+
+// Child stages that reach the network see one that refuses every host
+// (offline-fetch.mjs), so the crawl and doctor checks give the same answer on a
+// runner with open egress as in a sandbox, and never crawl real trust sites.
+const OFFLINE = ["--import", "./scripts/nhs/test/offline-fetch.mjs"]
 
 process.chdir(REPO_ROOT)
 
@@ -596,7 +602,7 @@ try {
     }],
   }))
 
-  const resumeOut = execFileSync("node", ["scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
+  const resumeOut = execFileSync("node", [...OFFLINE, "scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
   const resumed = JSON.parse(readFileSync("data/plan-candidates.json", "utf8"))
 
   check("announces that it is resuming", /resuming — 1 candidate\(s\) and 1 trust\(s\) already done/.test(resumeOut), resumeOut.slice(0, 300))
@@ -608,7 +614,7 @@ try {
   check("counts outcomes across the whole run, not just this one", resumed.stats.crawled === 3, JSON.stringify(resumed.stats))
 
   // A second run with everything already recorded should do no work at all.
-  const secondOut = execFileSync("node", ["scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
+  const secondOut = execFileSync("node", [...OFFLINE, "scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
   check("a finished crawl re-runs as a no-op", /3 trusts in scope, 0 still to crawl/.test(secondOut), secondOut.slice(0, 300))
 
   group("doctor")
@@ -618,7 +624,7 @@ try {
   let doctorOut = ""
   let doctorFailed = false
   try {
-    doctorOut = execFileSync("node", ["scripts/nhs/doctor.mjs"], { encoding: "utf8" })
+    doctorOut = execFileSync("node", [...OFFLINE, "scripts/nhs/doctor.mjs"], { encoding: "utf8" })
   } catch (err) {
     doctorFailed = true
     doctorOut = String(err.stdout ?? "")
@@ -831,6 +837,31 @@ group("a sheet naming a hospital its host trust does not own")
   // every hospital in England trivially "carries" them.
   check("a sheet with no tokens resolves to nothing", nationally("site-map-final-v2", register) === null)
   check("nor does a bare sitemap", nationally("sitemap", register) === null)
+}
+
+
+group("a sheet a person has ruled is not a map")
+// A department directory table and a "how to find us" travel leaflet both passed
+// the automatic gates — plenty of labels, a sensible page shape — and shipped as
+// hospitals. keep:true had been set on both to overrule the matcher. That
+// overrules WHICH hospital a sheet shows; it cannot make a page with no map on it
+// into one.
+{
+  const notMaps = readNotMaps()
+  check("the directory table is on the list", notMaps.has("royal-berkshire-hospital-map-jan23"))
+  check("so is the travel leaflet", notMaps.has("sheffield-teaching-hospitals-nhs-foundation-trust-map"))
+  check("every entry says why", [...notMaps.values()].every((e) => typeof e.reason === "string" && e.reason.length > 20))
+
+  const table = { slug: "royal-berkshire-hospital-map-jan23", auto: { odsCode: "Y" }, keep: true }
+  check("keep:true does not save a sheet that is not a map", shouldWithdraw(table, new Set(), notMaps))
+  const kept = { slug: "lincoln-county-hospital", auto: { odsCode: "L" }, keep: true }
+  check("keep:true still saves a refused sheet that is a map", !shouldWithdraw(kept, new Set(["lincoln-county-hospital"]), notMaps))
+  const refused = { slug: "sgh-site-map", auto: { odsCode: "X" } }
+  check("an unkept refused sheet still goes", shouldWithdraw(refused, new Set(["sgh-site-map"]), notMaps))
+  check("a hand-built sheet is never withdrawn", !shouldWithdraw({ slug: "royal-berkshire-hospital-map-jan23" }, new Set(), notMaps))
+
+  const register = JSON.parse(readFileSync(join(REPO_ROOT, "data", "mapped-sites.json"), "utf8")).sheets
+  check("nothing on the list is still in the register", register.every((s) => !notMaps.has(s.slug)))
 }
 
 report()

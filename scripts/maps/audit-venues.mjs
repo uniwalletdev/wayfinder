@@ -19,7 +19,7 @@
 // Exit code is always 0: this reports, it does not gate. Wire it into CI as a
 // report step, or add thresholds once the backlog it surfaces is worked down.
 
-import { readFileSync, readdirSync, existsSync, statSync } from "node:fs"
+import { readFileSync, readdirSync, existsSync } from "node:fs"
 import { join, dirname } from "node:path"
 import { fileURLToPath } from "node:url"
 import { loadVenues } from "./lib/venue-source.mjs"
@@ -272,7 +272,18 @@ function auditVenue(venue) {
   if (wps.length === 0) add("critical", "no-waypoints", "no waypoints: nothing to search for and nowhere to route to")
   else if (wps.length < 10) add("major", "thin-coverage", `only ${wps.length} waypoints for the whole site`)
 
-  // 11. Metadata people rely on.
+  // 11. Is the picture actually a plan of each storey? One image hung under
+  //     several floors is a site map, not a floor plan: every level shows the
+  //     same drawing, so choosing "Floor 3" changes the pins and nothing else.
+  const byImage = new Map()
+  for (const p of plans) byImage.set(p.imageUrl, [...(byImage.get(p.imageUrl) ?? []), p.floor])
+  for (const [url, floors] of byImage) {
+    if (floors.length > 1) add("major", "one-image-many-floors", `${url.split("/").pop()} is reused as the plan for ${floors.length} floors (${floors.join(", ")})`)
+  }
+  if (venue.illustrative) add("critical", "illustrative-plan", "floor plans are a placeholder, not a map of the real building")
+
+  // 12. Metadata people rely on.
+  if (venue.illustrative && venue.verified) add("critical", "verified-placeholder", "marked verified while its plans are illustrative")
   if (!venue.verified) add("minor", "unverified", "not verified: placement and content have not been checked against the real site")
   if (!venue.accessibility) add("minor", "no-accessibility", "no accessibility information")
 
@@ -282,6 +293,8 @@ function auditVenue(venue) {
     id: venue.id,
     slug: venue.slug,
     name: venue.name,
+    center: venue.center,
+    gradeInputs: { wps, trails, allFloors },
     grade: score.grade,
     points: score.points,
     stats: {
@@ -384,10 +397,26 @@ function main() {
     }
   }
 
+  // The same hospital shipped twice lists twice in the picker, and a person
+  // picks one at random. Same name and centres within 300 m is the same place.
+  for (const a of results) {
+    for (const b of results) {
+      if (a === b || a.name.toLowerCase() !== b.name.toLowerCase()) continue
+      if (distanceMeters(a.center, b.center) > 300) continue
+      a.findings.push({ severity: "critical", code: "duplicate-venue", detail: `same hospital as ${b.slug}: the picker lists it twice` })
+    }
+  }
+  for (const r of results) Object.assign(r, gradeOf(r.findings, r.gradeInputs))
+
   results.sort((a, b) => a.points - b.points || a.name.localeCompare(b.name))
 
   if (asJson) {
-    process.stdout.write(JSON.stringify({ generatedAt: new Date().toISOString(), dead, unreadable, results }, null, 2) + "\n")
+    const out = results.map((r) => {
+      const copy = { ...r }
+      delete copy.gradeInputs
+      return copy
+    })
+    process.stdout.write(JSON.stringify({ generatedAt: new Date().toISOString(), dead, unreadable, results: out }, null, 2) + "\n")
     return
   }
 

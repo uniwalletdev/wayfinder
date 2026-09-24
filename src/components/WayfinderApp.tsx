@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan, RoutePreference, Asset } from "@/lib/types"
 import { getAvailableFloors, floorLabel } from "@/lib/waypoint-meta"
+import { venueBuildings, buildingAt } from "@/lib/buildings"
 import { DEFAULT_VENUE, SEED_VENUES, getVenueById, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
@@ -198,6 +199,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   useEffect(() => {
     migrateLegacyData(DEFAULT_VENUE.id)
     try {
+      // localStorage only exists in the browser, so this cannot be a lazy
+      // initial state without a server/client hydration mismatch.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (window.localStorage.getItem(MAP_VIEW_KEY) === "3d") setMapView("3d")
       const savedStyle = window.localStorage.getItem(MAP_STYLE_KEY)
       // "satellite" is a legacy value from before it was removed — fall back to dark.
@@ -261,6 +265,12 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // venue's corridors), so this merged list goes to buildRoute — not the views.
   const allTrails = useMemo(() => [...(venue.trails ?? []), ...surveyTrails], [venue, surveyTrails])
   const availableFloors = useMemo(() => getAvailableFloors(allFloorPlans, allWaypoints), [allFloorPlans, allWaypoints])
+  // Which building you are in decides which floors the rail offers first.
+  const buildings = useMemo(() => venueBuildings(allWaypoints), [allWaypoints])
+  const currentBuilding = useMemo(
+    () => buildingAt(navState.currentPosition, navState.currentFloor, allWaypoints, buildings),
+    [navState.currentPosition, navState.currentFloor, allWaypoints, buildings]
+  )
   const assetsOnCurrentFloor = useMemo(
     () => allAssets.some((a) => a.floor === navState.currentFloor),
     [allAssets, navState.currentFloor]
@@ -268,6 +278,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
 
   useEffect(() => {
     if (!navigator.geolocation) {
+      // Browser capability, unknown during server render.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setGpsStatus("denied")
       return
     }
@@ -301,6 +313,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // of the app — the map dot, off-route checks, step advance — reads one position.
   useEffect(() => {
     if (!fusedPosition) return
+    // The fused estimate comes from sensor callbacks in usePedestrianPosition;
+    // navState is the single position the rest of the app reads.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setNavState((s) =>
       s.currentPosition?.lat === fusedPosition.lat &&
       s.currentPosition?.lng === fusedPosition.lng &&
@@ -471,6 +486,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const ARRIVE_RADIUS_M = 12
   useEffect(() => {
     if (!navState.currentPosition) return
+    // Step progress is a reaction to the walker moving (a sensor event), and
+    // the updater bails out with the same object when nothing advanced.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setNavState((s) => {
       if (!s.isNavigating || !s.route || !s.currentPosition) return s
       const steps = s.route.steps
@@ -507,6 +525,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     if (offBy <= OFF_ROUTE_TRIGGER_M + (navState.positionAccuracy || 0)) return
 
     if (shouldRouteOutdoors(here, navState.currentFloor, dest, allTrails)) {
+      // Off-route recovery reacts to position updates from the sensors.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setNavState((s) => (s.isNavigating && s.destination?.id === dest.id ? { ...s, currentStepIndex: 0 } : s))
       void refreshOutdoorRoute(here, dest, navState.travelMode)
     } else {
@@ -516,7 +536,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   }, [
     navState.currentPosition, navState.isNavigating, navState.route, navState.destination,
     navState.currentFloor, navState.travelMode, navState.positionAccuracy,
-    routeLoading, allWaypoints, allTrails, refreshOutdoorRoute, routePreference,
+    routeLoading, allWaypoints, allTrails, refreshOutdoorRoute, routePreference, venue.floorNaming,
   ])
 
   const handleStopNavigation = useCallback(() => {
@@ -780,7 +800,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const stepfree = buildRoute(position, fromFloor, dest, allWaypoints, navState.travelMode, allTrails, "stepfree", venue.floorNaming)
     if (fastest.estimatedMinutes === stepfree.estimatedMinutes && fastest.totalDistance === stepfree.totalDistance) return null
     return { fastest, stepfree }
-  }, [navState.destination, navState.origin, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, allTrails, venue.center])
+  }, [navState.destination, navState.origin, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, allTrails, venue.center, venue.floorNaming])
 
   const gpsLabel =
     gpsStatus === "requesting" ? "Locating…" :
@@ -905,6 +925,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           currentFloor={navState.currentFloor}
           floorNaming={venue.floorNaming}
           onChangeFloor={(floor) => setNavState((s) => ({ ...s, currentFloor: floor }))}
+          venueId={venue.id}
+          buildings={buildings}
+          currentBuilding={currentBuilding}
+          destinationFloor={navState.destination?.floor ?? null}
         />
       </div>
 

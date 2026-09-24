@@ -33,9 +33,7 @@ import { INTERNAL_SITE_MAP_NORTH_TEES_2019_VENUE } from "./internal-site-map-nor
 import { JAMES_COOK_CAMPUS_MAP_JUL25_VENUE } from "./james-cook-campus-map-jul25"
 import { JR_HOSPITAL_SITEMAP_VENUE } from "./jr-hospital-sitemap"
 import { LEVEL_3_FLOORPLAN_CUH_MAP_VENUE } from "./level-3-floorplan-cuh-map"
-import { LINCOLN_HOSPITAL_MAP_LEVEL_1_VENUE } from "./lincoln-hospital-map-level-1"
-import { LINCOLN_HOSPITAL_MAP_LEVEL_3_VENUE } from "./lincoln-hospital-map-level-3"
-import { LINCOLN_HOSPITAL_MAPS_LEVEL_2_BLANK_VENUE } from "./lincoln-hospital-maps-level-2-blank"
+import { LINCOLN_COUNTY_HOSPITAL_VENUE } from "./lincoln-county-hospital"
 import { LISTER_MAP_2026_VENUE } from "./lister-map-2026"
 import { MACCLESFIELD_DISTRICT_GENERAL_HOSPITAL_VENUE } from "./macclesfield-district-general-hospital"
 import { MAIDSTONE_HOSPITAL_MAPPDF_VENUE } from "./maidstone-hospital-mappdf"
@@ -47,19 +45,16 @@ import { PILGRIM_GROUND_FLOOR_VENUE } from "./pilgrim-ground-floor"
 import { PINDERFIELDS_HOSPITAL_MAP_VENUE } from "./pinderfields-hospital-map"
 import { PRINCESS_ANNE_HOSPITAL_VENUE } from "./princess-anne-hospital"
 import { PRINCESS_OF_WALES_COMMUNITY_HOSPITAL_SITE_MAP_VENUE } from "./princess-of-wales-community-hospital-site-map"
-import { ROYAL_BERKSHIRE_HOSPITAL_MAP_JAN23_VENUE } from "./royal-berkshire-hospital-map-jan23"
 import { SGH_SITE_MAP_VENUE } from "./sgh-site-map"
-import { SHEFFIELD_TEACHING_HOSPITALS_NHS_FOUNDATION_TRUST_MAP_VENUE } from "./sheffield-teaching-hospitals-nhs-foundation-trust-map"
 import { SITE_1253769_HULL_TEACHING_CASTLE_HILL_MAP_VENUE } from "./site-1253769-hull-teaching-castle-hill-map"
 import { SITE_6458_WEST_PARK_REHABILITATION_HOSPITAL_VENUE } from "./site-6458-west-park-rehabilitation-hospital"
-import { SITE_MAP_2024PDF_VENUE } from "./site-map-2024pdf"
 import { SOUTHPORT_HOSPITAL_SITE_MAP_A3_SEPT_2024_VENUE } from "./southport-hospital-site-map-a3-sept-2024"
 import { TRUST_MAP_JUNE_2026_VENUE } from "./trust-map-june-2026"
 import { TUNBRIDGE_WELLS_HOSPITAL_MAPPDF_VENUE } from "./tunbridge-wells-hospital-mappdf"
 import { WEST_MIDDLESEX_UNIVERSITY_HOSPITAL_SITE_MAP_VENUE } from "./west-middlesex-university-hospital-site-map"
 import { WHISTON_SITE_MAP_FULL_SITE_VENUE } from "./whiston-site-map-full-site"
 
-// 45 venue(s) built from published trust site maps.
+// 40 venue(s) built from published trust site maps.
 export const GENERATED_SHEET_VENUES: Venue[] = [
   A5_SITE_MAP_OF_STRATFORD_HOSPITAL_JULY_2025_UPDATE_VENUE,
   ALEX_MAP_A4_VENUE,
@@ -81,9 +76,7 @@ export const GENERATED_SHEET_VENUES: Venue[] = [
   JAMES_COOK_CAMPUS_MAP_JUL25_VENUE,
   JR_HOSPITAL_SITEMAP_VENUE,
   LEVEL_3_FLOORPLAN_CUH_MAP_VENUE,
-  LINCOLN_HOSPITAL_MAP_LEVEL_1_VENUE,
-  LINCOLN_HOSPITAL_MAP_LEVEL_3_VENUE,
-  LINCOLN_HOSPITAL_MAPS_LEVEL_2_BLANK_VENUE,
+  LINCOLN_COUNTY_HOSPITAL_VENUE,
   LISTER_MAP_2026_VENUE,
   MACCLESFIELD_DISTRICT_GENERAL_HOSPITAL_VENUE,
   MAIDSTONE_HOSPITAL_MAPPDF_VENUE,
@@ -95,12 +88,9 @@ export const GENERATED_SHEET_VENUES: Venue[] = [
   PINDERFIELDS_HOSPITAL_MAP_VENUE,
   PRINCESS_ANNE_HOSPITAL_VENUE,
   PRINCESS_OF_WALES_COMMUNITY_HOSPITAL_SITE_MAP_VENUE,
-  ROYAL_BERKSHIRE_HOSPITAL_MAP_JAN23_VENUE,
   SGH_SITE_MAP_VENUE,
-  SHEFFIELD_TEACHING_HOSPITALS_NHS_FOUNDATION_TRUST_MAP_VENUE,
   SITE_1253769_HULL_TEACHING_CASTLE_HILL_MAP_VENUE,
   SITE_6458_WEST_PARK_REHABILITATION_HOSPITAL_VENUE,
-  SITE_MAP_2024PDF_VENUE,
   SOUTHPORT_HOSPITAL_SITE_MAP_A3_SEPT_2024_VENUE,
   TRUST_MAP_JUNE_2026_VENUE,
   TUNBRIDGE_WELLS_HOSPITAL_MAPPDF_VENUE,

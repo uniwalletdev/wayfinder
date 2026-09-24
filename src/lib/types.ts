@@ -10,6 +10,10 @@ export interface Waypoint {
   coordinates: Coordinates
   floor: number
   description?: string
+  // The building on a multi-building site ("Nurses Home"), when known. Absent
+  // for most waypoints: src/lib/buildings.ts falls back to reading it off a
+  // description written "<Building>, Level N", which is how GOSH records it.
+  building?: string
   qrCode?: string
   // Which side of the walking direction the place sits on, as read from the
   // survey footage. Drives which side of the corridor its room is drawn on in
@@ -136,6 +140,11 @@ export interface Venue {
   visibility: VenueVisibility
   // Ownership/authority confirmed — public venues earn a "verified" badge.
   verified: boolean
+  // The floor plans are a stand-in drawn to exercise the app, not a map of the
+  // real building: rooms are where the drawing put them, not where they are.
+  // Shown to the user on the venue header and in the picker, and never
+  // combined with `verified` — a placeholder cannot be a checked map.
+  illustrative?: boolean
   // Set once accounts exist; until then venues are anonymous/local.
   ownerId?: string
   accessibility?: AccessibilityInfo

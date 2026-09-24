@@ -120,7 +120,9 @@ export default function FloorPlanMap({
   const followingRef = useRef(true)
   const programmaticRef = useRef(false)
   const positionRef = useRef<Coordinates | null>(currentPosition)
-  positionRef.current = currentPosition
+  useEffect(() => {
+    positionRef.current = currentPosition
+  }, [currentPosition])
 
   const setFollow = (v: boolean) => {
     followingRef.current = v
@@ -155,6 +157,9 @@ export default function FloorPlanMap({
       mapRef.current = null
       if (leafletMapRef) leafletMapRef.current = null
     }
+    // Created once: later centre/zoom/style changes are applied by their own
+    // effects, and re-running this one would destroy and rebuild the map.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Swap basemap tiles when the map-style control toggles light/dark.
@@ -580,6 +585,9 @@ export default function FloorPlanMap({
 
     if (!route || !destination || route.geometry.length < 2) {
       framedDestRef.current = null
+      // Leaflet owns the layers this effect just removed; resuming follow is
+      // part of tearing the route down, not state derivable during render.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFollow(true)
       return
     }
