@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wayfinder</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         background: #0A1626; color: #fff; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+         padding: env(safe-area-inset-top) 24px env(safe-area-inset-bottom); box-sizing: border-box; }
+  main { max-width: 360px; text-align: center; }
+  .mark { width: 72px; height: 72px; border-radius: 20px; margin: 0 auto 24px;
+          background: linear-gradient(135deg, #0A5DC2, #0FB5AE); display: grid; place-items: center; }
+  h1 { font-size: 24px; margin: 0 0 8px; }
+  p { color: rgba(255,255,255,.72); margin: 0 0 12px; }
+  code { color: #8FDFFF; }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark"><svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+  <h1>Wayfinder</h1>
+  <p>This build isn't connected to a Wayfinder server yet.</p>
+  <p>Rebuild with <code>WAYFINDER_URL=https://your-deployment</code> set before <code>npx cap sync</code>.</p>
+</main>
+</body>
+</html>

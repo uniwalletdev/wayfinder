@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Android adaptive-icon foreground: the mark inside the 66% safe zone -->
+  <g transform="translate(512 512) scale(14) translate(-12.5 -11.5)">
+    <polygon points="3 11 22 2 13 21 11 13 3 11" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+</svg>

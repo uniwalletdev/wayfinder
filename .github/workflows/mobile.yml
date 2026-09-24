@@ -1,0 +1,133 @@
+# Build the Android and iOS apps.
+#
+# The native projects are thin Capacitor shells around the deployed site (see
+# capacitor.config.ts), so what they load is decided here by WAYFINDER_URL.
+# Set it once as a repository variable (Settings -> Secrets and variables ->
+# Actions -> Variables) to the production URL; a manual run can override it.
+#
+# Every run produces installable test builds:
+#   - wayfinder-android-debug.apk   sideload on any Android phone
+#   - Wayfinder-simulator.app.zip   drag onto an iOS Simulator
+#
+# Store builds are produced only when signing material is configured, because
+# an unsigned release is of no use to either store:
+#   Android: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD,
+#            ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD      -> signed .aab
+#   iOS:     signing needs an Apple Developer account; see docs/mobile.md.
+name: Mobile apps
+
+on:
+  workflow_dispatch:
+    inputs:
+      wayfinder_url:
+        description: "Site the apps load (defaults to the WAYFINDER_URL repository variable)"
+        required: false
+  push:
+    paths:
+      - "android/**"
+      - "ios/**"
+      - "mobile/**"
+      - "capacitor.config.ts"
+      - "scripts/mobile-icons.mjs"
+      - ".github/workflows/mobile.yml"
+  pull_request:
+    paths:
+      - "android/**"
+      - "ios/**"
+      - "mobile/**"
+      - "capacitor.config.ts"
+      - ".github/workflows/mobile.yml"
+
+concurrency:
+  group: mobile-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  WAYFINDER_URL: ${{ inputs.wayfinder_url || vars.WAYFINDER_URL }}
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      # Secrets cannot appear in a step's `if`; a job-level flag can.
+      HAS_SIGNING: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: gradle
+      - uses: android-actions/setup-android@v3
+
+      - run: npm ci
+      - name: Sync web config into the Android project
+        run: npx cap sync android
+
+      - name: Build debug APK
+        working-directory: android
+        run: ./gradlew --no-daemon assembleDebug
+
+      - name: Build signed release bundle
+        if: env.HAS_SIGNING == 'true'
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        working-directory: android
+        run: |
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          ./gradlew --no-daemon bundleRelease \
+            -Pandroid.injected.signing.store.file="$RUNNER_TEMP/release.jks" \
+            -Pandroid.injected.signing.store.password="$ANDROID_KEYSTORE_PASSWORD" \
+            -Pandroid.injected.signing.key.alias="$ANDROID_KEY_ALIAS" \
+            -Pandroid.injected.signing.key.password="$ANDROID_KEY_PASSWORD"
+
+      - run: cp android/app/build/outputs/apk/debug/app-debug.apk wayfinder-android-debug.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wayfinder-android
+          path: |
+            wayfinder-android-debug.apk
+            android/app/build/outputs/bundle/release/*.aab
+          if-no-files-found: warn
+
+  ios:
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Sync web config into the iOS project
+        run: npx cap sync ios
+
+      # A simulator build needs no signing, so it proves the project compiles
+      # on every change and gives reviewers something to run.
+      - name: Build for the iOS Simulator
+        run: |
+          xcodebuild \
+            -project ios/App/App.xcodeproj \
+            -scheme App \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination "generic/platform=iOS Simulator" \
+            -derivedDataPath "$RUNNER_TEMP/dd" \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+          cd "$RUNNER_TEMP/dd/Build/Products/Debug-iphonesimulator"
+          zip -qry "$GITHUB_WORKSPACE/Wayfinder-simulator.app.zip" App.app
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wayfinder-ios-simulator
+          path: Wayfinder-simulator.app.zip

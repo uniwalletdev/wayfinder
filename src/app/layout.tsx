@@ -23,13 +23,22 @@ export const metadata: Metadata = {
   description:
     "Wayfinder maps NHS hospitals floor by floor and guides patients, visitors and staff from the front door to the right ward, clinic or bedside — one clear step at a time.",
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  appleWebApp: { capable: true, title: "Wayfinder", statusBarStyle: "black-translucent" },
 }
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  // Page zoom stays on (WCAG 1.4.4). The map does not need it switched off:
+  // Leaflet sets touch-action: none on its container, so a pinch there zooms
+  // the map rather than the page.
   themeColor: "#0A1626",
   viewportFit: "cover",
 }

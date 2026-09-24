@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wayfinder
 
-## Getting Started
+Indoor navigation for NHS hospitals. Search for a ward, clinic or department
+and follow the route from the front door, floor by floor, with step-free
+options, live re-routing, QR re-positioning and an AR view.
 
-First, run the development server:
+- **Web / PWA:** Next.js 16 App Router, Leaflet (2D) and three.js (3D).
+- **Android and iOS:** Capacitor shells around the deployed site. See
+  [`docs/mobile.md`](docs/mobile.md).
+- **Maps:** 67 mapped hospital venues built from trusts' published site maps,
+  plus every NHS hospital from the ODS register as a located directory entry.
+  See [`data/README.md`](data/README.md) for the pipeline and
+  [`docs/mapping-review.md`](docs/mapping-review.md) for how good they are.
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Every environment variable is optional. With none set the app runs
+device-only. `.env.example` lists what each one turns on: Postgres for shared
+venues and signals, Anthropic for sign-reading in Survey Mode, Mapbox for
+outdoor routing, and Clerk for optional accounts.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm run nhs:test     # pipeline, placement, routing and floor-naming tests
+npm run maps:audit   # grades every shipped venue; --full for every finding
+npm run build
+```
 
-## Learn More
+CI (`.github/workflows/ci.yml`) runs all of these on every pull request.
 
-To learn more about Next.js, take a look at the following resources:
+## Map quality
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Maps come from PDFs that trusts publish, and not every PDF titled "site map"
+is a map. A page judged by eye not to be one (a directory table, a travel
+leaflet, a duplicate) goes in [`data/not-maps.json`](data/not-maps.json) with
+the reason, and the pipeline refuses it from then on. A venue whose plan is a
+stand-in rather than the real building is marked `illustrative`, and the app
+says so.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Railway (`railway.json`) or Vercel (`vercel.json`), both running
+`npm run build && npm run start`.
