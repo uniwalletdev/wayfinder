@@ -214,7 +214,7 @@ function extractFloor(svgPath, spanM) {
 // a separate defect (see docs/mapping-review.md).
 function toCoords(lines, grid, bounds) {
   const [[latS, lngW], [latN, lngE]] = bounds
-  const { w, h, unitsPerCell, viewBox } = grid
+  const { unitsPerCell, viewBox } = grid
   return lines.map((l) =>
     l.map(([cx, cy]) => {
       const ux = (cx + 0.5) * unitsPerCell + viewBox.x

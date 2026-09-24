@@ -32,6 +32,12 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The design handoff's prototype runtime: vendored, never built or shipped.
+    "design_handoff_wayfinder_redesign/**",
+    // Capacitor's generated native projects and their copied web assets.
+    "android/**",
+    "ios/**",
+    "mobile/www/**",
   ]),
 ]);
 

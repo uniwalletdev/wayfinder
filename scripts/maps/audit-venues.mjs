@@ -19,7 +19,7 @@
 // Exit code is always 0: this reports, it does not gate. Wire it into CI as a
 // report step, or add thresholds once the backlog it surfaces is worked down.
 
-import { readFileSync, readdirSync, existsSync, statSync } from "node:fs"
+import { readFileSync, readdirSync, existsSync } from "node:fs"
 import { join, dirname } from "node:path"
 import { fileURLToPath } from "node:url"
 import { loadVenues } from "./lib/venue-source.mjs"
@@ -411,7 +411,11 @@ function main() {
   results.sort((a, b) => a.points - b.points || a.name.localeCompare(b.name))
 
   if (asJson) {
-    const out = results.map(({ gradeInputs, ...r }) => r)
+    const out = results.map((r) => {
+      const copy = { ...r }
+      delete copy.gradeInputs
+      return copy
+    })
     process.stdout.write(JSON.stringify({ generatedAt: new Date().toISOString(), dead, unreadable, results: out }, null, 2) + "\n")
     return
   }

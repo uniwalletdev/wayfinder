@@ -115,6 +115,8 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
               <p className="truncate text-xs text-wf-muted">{venue.name} · {floorLabel(waypoint.floor, venue.floorNaming)}</p>
             </div>
             {qrThumb && (
+              // A generated data: URL — next/image has nothing to optimise.
+              // eslint-disable-next-line @next/next/no-img-element
               <img src={qrThumb} alt="" className="h-16 w-16 flex-shrink-0 rounded-md border border-wf-border" />
             )}
           </div>
@@ -232,6 +234,8 @@ function Poster({
           <p className="text-xs font-semibold uppercase tracking-[0.1em] text-wf-primary">Scan to navigate to</p>
           <h2 className="mt-2 font-display text-[34px] font-bold -tracking-[0.8px] text-wf-ink">{waypoint.name}</h2>
           <div className="my-7 rounded-[20px] border-2 border-wf-border p-[18px]">
+            {/* A generated data: URL — next/image has nothing to optimise. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             {qrLarge ? <img src={qrLarge} alt={`QR code to ${waypoint.name}`} width={220} height={220} /> : <div className="h-[220px] w-[220px]" />}
           </div>
           <p className="max-w-[320px] text-[14.5px] text-wf-muted">

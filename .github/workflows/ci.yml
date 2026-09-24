@@ -1,0 +1,32 @@
+# The gate every pull request goes through. Until this existed the repo merged
+# by PR with nothing checking the PR: lint had been failing for weeks, and a
+# venue pipeline change could ship a broken import straight to the app build.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run nhs:test
+      # The venue scoreboard, for the log. It grades, it does not gate: most
+      # venues are still traced site maps and would fail any honest bar.
+      - run: npm run maps:audit
+      - run: npm run build

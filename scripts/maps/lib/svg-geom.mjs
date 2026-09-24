@@ -13,7 +13,6 @@
 // flattened, because the consumer is a raster grid where a chord shorter than a
 // pixel is indistinguishable from the curve it replaces.
 
-const NUM = /-?\d*\.?\d+(?:e[-+]?\d+)?/gi
 
 // Attributes off one element's tag text. Cheap and sufficient: pdf2svg writes
 // plain double-quoted attributes and no namespaces or entities.

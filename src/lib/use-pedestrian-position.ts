@@ -57,7 +57,9 @@ export function usePedestrianPosition(heading: number | null) {
   // (x = east, y = north).
   const offsetRef = useRef({ x: 0, y: 0 })
   const headingRef = useRef<number | null>(heading)
-  headingRef.current = heading
+  useEffect(() => {
+    headingRef.current = heading
+  }, [heading])
   const motionEnabledRef = useRef(false)
 
   // Step-detection state.
