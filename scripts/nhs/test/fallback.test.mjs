@@ -4,7 +4,8 @@
 // that host answers 403 while the ORD API — the same register, same publisher —
 // answers 200. Depending on one mirror was the bug; this covers the fix.
 //
-// The live ORD call cannot be exercised here (this sandbox reaches nothing), so
+// The live ORD call is not exercised here (fetch-ods runs against a stub
+// network that refuses every host, see offline-fetch.mjs), so
 // these tests drive the mapping and the CSV synthesis directly against a
 // recorded payload shape. What they prove is that a correct payload maps to the
 // right fields and a wrong one fails loudly — not that the endpoint is up.
@@ -22,6 +23,10 @@ import { BROWSER_HEADERS } from "../lib/net.mjs"
 import { group, check, report } from "./harness.mjs"
 
 process.chdir(REPO_ROOT)
+
+// Every fetch-ods run below sees a network that refuses every host
+// (see offline-fetch.mjs), whether or not the machine running it has egress.
+const OFFLINE = ["--import", "./scripts/nhs/test/offline-fetch.mjs"]
 
 group("ORD role mapping")
 check("trusts map to the NHS TRUST role", ORD_ROLES.etr === "RO197")
@@ -84,7 +89,7 @@ try {
   let out = ""
   let failed = false
   try {
-    out = execFileSync("node", ["scripts/nhs/fetch-ods.mjs", "--use-local"], { encoding: "utf8" })
+    out = execFileSync("node", [...OFFLINE, "scripts/nhs/fetch-ods.mjs", "--use-local"], { encoding: "utf8" })
   } catch (err) {
     failed = true
     out = String(err.stdout ?? "") + String(err.stderr ?? "")
@@ -102,7 +107,7 @@ try {
   // resolution, hours of requests before a crawl that was only ever waiting on
   // the trust list. --only is what stops that happening again.
   rmSync("data/manifest.json", { force: true })
-  const onlyOut = execFileSync("node", ["scripts/nhs/fetch-ods.mjs", "--only", "etr", "--use-local"], { encoding: "utf8" })
+  const onlyOut = execFileSync("node", [...OFFLINE, "scripts/nhs/fetch-ods.mjs", "--only", "etr", "--use-local"], { encoding: "utf8" })
   const onlyManifest = JSON.parse(readFileSync("data/manifest.json", "utf8"))
   check("--only fetches the named source", !!onlyManifest["ods.etr"], Object.keys(onlyManifest).join(", "))
   check("--only skips everything else", !onlyManifest["ods.ets"] && !onlyManifest["ods.epraccur"], Object.keys(onlyManifest).join(", "))
@@ -111,7 +116,7 @@ try {
   let unknownFailed = false
   let unknownOut = ""
   try {
-    execFileSync("node", ["scripts/nhs/fetch-ods.mjs", "--only", "nonsense"], { encoding: "utf8", stdio: "pipe" })
+    execFileSync("node", [...OFFLINE, "scripts/nhs/fetch-ods.mjs", "--only", "nonsense"], { encoding: "utf8", stdio: "pipe" })
   } catch (err) {
     unknownFailed = true
     unknownOut = String(err.stdout ?? "") + String(err.stderr ?? "")
@@ -128,7 +133,7 @@ try {
   let offlineOut = ""
   let offlineFailed = false
   try {
-    offlineOut = execFileSync("node", ["scripts/nhs/fetch-ods.mjs"], { encoding: "utf8", stdio: "pipe" })
+    offlineOut = execFileSync("node", [...OFFLINE, "scripts/nhs/fetch-ods.mjs"], { encoding: "utf8", stdio: "pipe" })
   } catch (err) {
     offlineFailed = true
     offlineOut = String(err.stdout ?? "") + String(err.stderr ?? "")
@@ -154,7 +159,7 @@ try {
   let bareOut = ""
   let bareFailed = false
   try {
-    execFileSync("node", ["scripts/nhs/fetch-ods.mjs"], { encoding: "utf8", stdio: "pipe" })
+    execFileSync("node", [...OFFLINE, "scripts/nhs/fetch-ods.mjs"], { encoding: "utf8", stdio: "pipe" })
   } catch (err) {
     bareFailed = true
     bareOut = String(err.stdout ?? "") + String(err.stderr ?? "")

@@ -20,6 +20,11 @@ import { floorFromSlug, stemWithoutFloor } from "../lib/floors.mjs"
 import { readNotMaps, shouldWithdraw } from "../lib/not-maps.mjs"
 import { group, check, report } from "./harness.mjs"
 
+// Child stages that reach the network see one that refuses every host
+// (offline-fetch.mjs), so the crawl and doctor checks give the same answer on a
+// runner with open egress as in a sandbox, and never crawl real trust sites.
+const OFFLINE = ["--import", "./scripts/nhs/test/offline-fetch.mjs"]
+
 process.chdir(REPO_ROOT)
 
 group("name matching")
@@ -597,7 +602,7 @@ try {
     }],
   }))
 
-  const resumeOut = execFileSync("node", ["scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
+  const resumeOut = execFileSync("node", [...OFFLINE, "scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
   const resumed = JSON.parse(readFileSync("data/plan-candidates.json", "utf8"))
 
   check("announces that it is resuming", /resuming — 1 candidate\(s\) and 1 trust\(s\) already done/.test(resumeOut), resumeOut.slice(0, 300))
@@ -609,7 +614,7 @@ try {
   check("counts outcomes across the whole run, not just this one", resumed.stats.crawled === 3, JSON.stringify(resumed.stats))
 
   // A second run with everything already recorded should do no work at all.
-  const secondOut = execFileSync("node", ["scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
+  const secondOut = execFileSync("node", [...OFFLINE, "scripts/nhs/discover-plans.mjs"], { encoding: "utf8" })
   check("a finished crawl re-runs as a no-op", /3 trusts in scope, 0 still to crawl/.test(secondOut), secondOut.slice(0, 300))
 
   group("doctor")
@@ -619,7 +624,7 @@ try {
   let doctorOut = ""
   let doctorFailed = false
   try {
-    doctorOut = execFileSync("node", ["scripts/nhs/doctor.mjs"], { encoding: "utf8" })
+    doctorOut = execFileSync("node", [...OFFLINE, "scripts/nhs/doctor.mjs"], { encoding: "utf8" })
   } catch (err) {
     doctorFailed = true
     doctorOut = String(err.stdout ?? "")
