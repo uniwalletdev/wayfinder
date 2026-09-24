@@ -1498,7 +1498,7 @@
     {
       "slug": "external-site-map-north-tees-2019",
       "id": "external-site-map-north-tees-2019-venue",
-      "name": "University Hospital of North Tees",
+      "name": "University Hospital of North Tees — Grounds & Car Parks",
       "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS19 8PE",
       "file": "map/auto/external-site-map-north-tees-2019.pdf",
       "page": 1,
@@ -1566,43 +1566,6 @@
         "echoesSiteName": true,
         "sourceUrl": "https://www.nth.nhs.uk/wp-content/uploads/2022/07/internal-site-map-hartlepool-2018.pdf",
         "draftedAt": "2026-08-08T10:28:42.915Z"
-      },
-      "keep": true
-    },
-    {
-      "slug": "sheffield-teaching-hospitals-nhs-foundation-trust-map",
-      "id": "sheffield-teaching-hospitals-nhs-foundation-trust-map-venue",
-      "name": "Sexual Health Sheffield",
-      "subtitle": "Sheffield Teaching Hospitals NHS Foundation Trust · S10 2JF",
-      "file": "map/auto/sheffield-teaching-hospitals-nhs-foundation-trust-map.pdf",
-      "page": 1,
-      "center": [
-        53.378373,
-        -1.493331
-      ],
-      "spanM": 450,
-      "plan": [
-        0,
-        0,
-        1,
-        1
-      ],
-      "quick": [
-        "Reaching us by car",
-        "Public transport",
-        "From the M1",
-        "Exit the motorway at",
-        "How to find us"
-      ],
-      "notes": "Site map published by Sheffield Teaching Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
-      "auto": {
-        "odsCode": "P3O3P",
-        "spanSource": "default",
-        "labels": 22,
-        "aspect": 0.72,
-        "echoesSiteName": true,
-        "sourceUrl": "https://publicdocuments.sth.nhs.uk/PD6466.pdf",
-        "draftedAt": "2026-08-08T10:28:43.518Z"
       },
       "keep": true
     },
@@ -1755,45 +1718,14 @@
       "keep": true
     },
     {
-      "slug": "lincoln-hospital-map-level-1",
-      "id": "lincoln-hospital-map-level-1-venue",
-      "name": "Lincoln County Hospital",
-      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
-      "file": "map/auto/lincoln-hospital-map-level-1.pdf",
-      "page": 1,
-      "center": [
-        53.233597,
-        -0.519635
-      ],
-      "spanM": 450,
-      "plan": [
-        0,
-        0,
-        1,
-        1
-      ],
-      "quick": [
-        "Lincoln County Hospital",
-        "Burton Ward",
-        "Cardiac short stay",
-        "Carlton Coleby Ward",
-        "Digby Ward"
-      ],
-      "notes": "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
-      "auto": {
-        "odsCode": "A3D1D",
-        "spanSource": "default",
-        "labels": 26,
-        "aspect": 0.71,
-        "echoesSiteName": true,
-        "sourceUrl": "https://www.ulh.nhs.uk/wp-content/uploads/2024/10/Lincoln-hospital-map-level-1.pdf",
-        "draftedAt": "2026-08-08T10:28:43.956Z"
+      "slug": "lincoln-county-hospital",
+      "id": "lincoln-county-hospital-venue",
+      "floorOf": {
+        "floor": 0,
+        "label": "Level 2"
       },
-      "keep": true
-    },
-    {
-      "slug": "lincoln-hospital-maps-level-2-blank",
-      "id": "lincoln-hospital-maps-level-2-blank-venue",
+      "stem": "lincoln hospital map",
+      "odsCode": "A3D1D",
       "name": "Lincoln County Hospital",
       "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
       "file": "map/auto/lincoln-hospital-maps-level-2-blank.pdf",
@@ -1810,13 +1742,17 @@
         1
       ],
       "quick": [
-        "Urgent Treatment Centre",
-        "Emergency Department (A&E)",
         "Main Entrance",
+        "Emergency Department (A&E)",
+        "Urgent Treatment Centre",
         "Reception",
-        "Lincoln County Hospital"
+        "Blood Tests"
       ],
-      "notes": "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "floorNaming": {
+        "word": "Level",
+        "groundLevel": 2
+      },
+      "notes": "3 floor plans published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. Merged by hand from three single-sheet venues (lincoln-hospital-map-level-1, lincoln-hospital-maps-level-2-blank, lincoln-hospital-map-level-3) that each shipped as a separate 'Lincoln County Hospital'.",
       "auto": {
         "odsCode": "A3D1D",
         "spanSource": "default",
@@ -1824,83 +1760,37 @@
         "aspect": 0.71,
         "echoesSiteName": true,
         "sourceUrl": "https://www.ulh.nhs.uk/wp-content/uploads/2026/06/Lincoln-hospital-maps-level-2-blank.pdf",
-        "draftedAt": "2026-08-08T10:28:43.975Z"
+        "draftedAt": "2026-08-08T10:28:43.975Z",
+        "sourceUrls": [
+          "https://www.ulh.nhs.uk/wp-content/uploads/2024/10/Lincoln-hospital-map-level-1.pdf",
+          "https://www.ulh.nhs.uk/wp-content/uploads/2026/06/Lincoln-hospital-maps-level-2-blank.pdf",
+          "https://www.ulh.nhs.uk/wp-content/uploads/2026/01/Lincoln-hospital-map-level-3.pdf"
+        ]
       },
-      "keep": true
-    },
-    {
-      "slug": "lincoln-hospital-map-level-3",
-      "id": "lincoln-hospital-map-level-3-venue",
-      "name": "Lincoln County Hospital",
-      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · LN2 5QY",
-      "file": "map/auto/lincoln-hospital-map-level-3.pdf",
-      "page": 1,
-      "center": [
-        53.233597,
-        -0.519635
-      ],
-      "spanM": 450,
-      "plan": [
-        0,
-        0,
-        1,
-        1
-      ],
-      "quick": [
-        "Blood Tests",
-        "Toilet Stairs Lift",
-        "Macmilan",
-        "Shop Cafe",
-        "Dermatology"
-      ],
-      "notes": "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
-      "auto": {
-        "odsCode": "A3D1D",
-        "spanSource": "default",
-        "labels": 13,
-        "aspect": 0.71,
-        "echoesSiteName": false,
-        "sourceUrl": "https://www.ulh.nhs.uk/wp-content/uploads/2026/01/Lincoln-hospital-map-level-3.pdf",
-        "draftedAt": "2026-08-08T10:28:43.987Z"
-      },
-      "keep": true
-    },
-    {
-      "slug": "site-map-2024pdf",
-      "id": "site-map-2024pdf-venue",
-      "name": "Derriford Hospital",
-      "subtitle": "University Hospitals Plymouth NHS Trust · PL6 8DH",
-      "file": "map/auto/site-map-2024pdf.pdf",
-      "page": 1,
-      "center": [
-        50.416707,
-        -4.113712
-      ],
-      "spanM": 450,
-      "plan": [
-        0,
-        0,
-        1,
-        1
-      ],
-      "quick": [
-        "Main Entrance Level 6",
-        "Emergency Department",
-        "The George Park & Ride",
-        "Derriford Hospital",
-        "Site Map - September 2025"
-      ],
-      "notes": "Site map published by University Hospitals Plymouth NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
-      "auto": {
-        "odsCode": "RK9A9",
-        "spanSource": "default",
-        "labels": 68,
-        "aspect": 0.71,
-        "echoesSiteName": true,
-        "sourceUrl": "https://www.plymouthhospitals.nhs.uk/download/site-map-2024pdf.pdf?ver=30786&%3Bdoc=docm93jijm4n17075",
-        "draftedAt": "2026-08-08T10:59:06.838Z"
-      },
-      "keep": true
+      "keep": true,
+      "floors": [
+        {
+          "id": "l1",
+          "floor": -1,
+          "label": "Level 1",
+          "file": "map/auto/lincoln-hospital-map-level-1.pdf",
+          "page": 1
+        },
+        {
+          "id": "l2",
+          "floor": 0,
+          "label": "Level 2",
+          "file": "map/auto/lincoln-hospital-maps-level-2-blank.pdf",
+          "page": 1
+        },
+        {
+          "id": "l3",
+          "floor": 1,
+          "label": "Level 3",
+          "file": "map/auto/lincoln-hospital-map-level-3.pdf",
+          "page": 1
+        }
+      ]
     },
     {
       "slug": "derriford-hospital-site-mappdf",
@@ -1973,43 +1863,6 @@
         "echoesSiteName": false,
         "sourceUrl": "https://www.midyorks.nhs.uk/download/community-diagnostic-centre-site-map-.pdf?ver=4688&doc=docm93jijm4n3417",
         "draftedAt": "2026-08-08T10:59:06.173Z"
-      },
-      "keep": true
-    },
-    {
-      "slug": "royal-berkshire-hospital-map-jan23",
-      "id": "royal-berkshire-hospital-map-jan23-venue",
-      "name": "Royal Berkshire Hospital",
-      "subtitle": "Royal Berkshire NHS Foundation Trust · RG1 5AN",
-      "file": "map/auto/royal-berkshire-hospital-map-jan23.pdf",
-      "page": 1,
-      "center": [
-        51.451023,
-        -0.95931
-      ],
-      "spanM": 805,
-      "plan": [
-        0,
-        0,
-        1,
-        1
-      ],
-      "quick": [
-        "Emergency",
-        "Emergency Departments External buildings / access",
-        "Dept/Ward Accident",
-        "Dept/Ward ECG",
-        "Disorders"
-      ],
-      "notes": "Site map published by Royal Berkshire NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
-      "auto": {
-        "odsCode": "H9H1Y",
-        "spanSource": "osm-footprint",
-        "labels": 11,
-        "aspect": 0.71,
-        "echoesSiteName": false,
-        "sourceUrl": "https://www.royalberkshire.nhs.uk/media/2uxbkm3j/royal-berkshire-hospital-map_jan23.pdf",
-        "draftedAt": "2026-08-08T10:59:06.433Z"
       },
       "keep": true
     },

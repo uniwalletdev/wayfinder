@@ -136,6 +136,11 @@ export interface Venue {
   visibility: VenueVisibility
   // Ownership/authority confirmed — public venues earn a "verified" badge.
   verified: boolean
+  // The floor plans are a stand-in drawn to exercise the app, not a map of the
+  // real building: rooms are where the drawing put them, not where they are.
+  // Shown to the user on the venue header and in the picker, and never
+  // combined with `verified` — a placeholder cannot be a checked map.
+  illustrative?: boolean
   // Set once accounts exist; until then venues are anonymous/local.
   ownerId?: string
   accessibility?: AccessibilityInfo

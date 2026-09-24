@@ -17,6 +17,7 @@ import { CRAWLER_VERSION } from "../lib/discovery-match.mjs"
 import { mappedVenueNames, mappedVenueFor } from "../lib/mapped.mjs"
 import { looksLikeHospital } from "../lib/ods.mjs"
 import { floorFromSlug, stemWithoutFloor } from "../lib/floors.mjs"
+import { readNotMaps, shouldWithdraw } from "../lib/not-maps.mjs"
 import { group, check, report } from "./harness.mjs"
 
 process.chdir(REPO_ROOT)
@@ -831,6 +832,31 @@ group("a sheet naming a hospital its host trust does not own")
   // every hospital in England trivially "carries" them.
   check("a sheet with no tokens resolves to nothing", nationally("site-map-final-v2", register) === null)
   check("nor does a bare sitemap", nationally("sitemap", register) === null)
+}
+
+
+group("a sheet a person has ruled is not a map")
+// A department directory table and a "how to find us" travel leaflet both passed
+// the automatic gates — plenty of labels, a sensible page shape — and shipped as
+// hospitals. keep:true had been set on both to overrule the matcher. That
+// overrules WHICH hospital a sheet shows; it cannot make a page with no map on it
+// into one.
+{
+  const notMaps = readNotMaps()
+  check("the directory table is on the list", notMaps.has("royal-berkshire-hospital-map-jan23"))
+  check("so is the travel leaflet", notMaps.has("sheffield-teaching-hospitals-nhs-foundation-trust-map"))
+  check("every entry says why", [...notMaps.values()].every((e) => typeof e.reason === "string" && e.reason.length > 20))
+
+  const table = { slug: "royal-berkshire-hospital-map-jan23", auto: { odsCode: "Y" }, keep: true }
+  check("keep:true does not save a sheet that is not a map", shouldWithdraw(table, new Set(), notMaps))
+  const kept = { slug: "lincoln-county-hospital", auto: { odsCode: "L" }, keep: true }
+  check("keep:true still saves a refused sheet that is a map", !shouldWithdraw(kept, new Set(["lincoln-county-hospital"]), notMaps))
+  const refused = { slug: "sgh-site-map", auto: { odsCode: "X" } }
+  check("an unkept refused sheet still goes", shouldWithdraw(refused, new Set(["sgh-site-map"]), notMaps))
+  check("a hand-built sheet is never withdrawn", !shouldWithdraw({ slug: "royal-berkshire-hospital-map-jan23" }, new Set(), notMaps))
+
+  const register = JSON.parse(readFileSync(join(REPO_ROOT, "data", "mapped-sites.json"), "utf8")).sheets
+  check("nothing on the list is still in the register", register.every((s) => !notMaps.has(s.slug)))
 }
 
 report()

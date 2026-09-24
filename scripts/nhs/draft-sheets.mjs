@@ -24,9 +24,12 @@ import { identifyingTokens, looksSpecialtyQualified } from "./lib/site-name.mjs"
 import { looksLikeHospital } from "./lib/ods.mjs"
 import { floorFromSlug, stemWithoutFloor } from "./lib/floors.mjs"
 import { dataPath, repoPath, readJson, writeJson, log } from "./lib/paths.mjs"
+import { readNotMaps, shouldWithdraw } from "./lib/not-maps.mjs"
 
 const STAGE = "draft-sheets"
 const FORCE = process.argv.includes("--force")
+// Sheets a person has ruled are not maps. Refused every run, keep:true or not.
+const NOT_MAPS = readNotMaps()
 
 // Quality thresholds. Each one exists because auto-approval will hand us
 // something that isn't a hospital site map.
@@ -209,6 +212,9 @@ for (const source of sourcesDoc.sources) {
     rejectedDoc.rejections.push({ slug: source.slug, url: source.url, trustName: source.trustName, reason, detail })
     log(STAGE, `  reject ${source.slug}: ${reason}${detail ? ` (${detail})` : ""}`)
   }
+
+  const notMap = NOT_MAPS.get(source.slug)
+  if (notMap) { reject("not-a-map", notMap.reason); continue }
 
   const file = repoPath(source.file)
   if (!existsSync(file)) { reject("not-downloaded", "run npm run nhs:plans first"); continue }
@@ -601,8 +607,9 @@ for (const members of byBuilding.values()) {
 // this run actually looked at: without --force a re-run skips anything already
 // drafted, so it neither drafts nor rejects them and they are left alone.
 const rejectedNow = new Set(rejectedDoc.rejections.map((r) => r.slug))
+const notMapsInRegister = sheetsDoc.sheets.some((s) => s.auto && NOT_MAPS.has(s.slug))
 
-if (grouped.length || rejectedNow.size) {
+if (grouped.length || rejectedNow.size || notMapsInRegister) {
   const bySlug = new Map(sheetsDoc.sheets.map((s) => [s.slug, s]))
 
   // `keep: true` is a person overruling this stage. A venue the matcher refuses
@@ -613,8 +620,11 @@ if (grouped.length || rejectedNow.size) {
   const dropped = []
   const kept = []
   for (const [slug, sheet] of bySlug) {
-    if (!sheet.auto || !rejectedNow.has(slug)) continue
-    if (sheet.keep) { kept.push(`${slug} (${sheet.name})`); continue }
+    if (!sheet.auto) continue
+    if (!shouldWithdraw(sheet, rejectedNow, NOT_MAPS)) {
+      if (rejectedNow.has(slug)) kept.push(`${slug} (${sheet.name})`)
+      continue
+    }
     bySlug.delete(slug)
     dropped.push(`${slug} (was ${sheet.name})`)
   }
