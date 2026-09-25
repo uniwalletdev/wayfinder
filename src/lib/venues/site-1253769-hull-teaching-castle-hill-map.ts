@@ -15,12 +15,11 @@ export const SITE_1253769_HULL_TEACHING_CASTLE_HILL_MAP_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Hull University Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
-  quickAccess: ["Outpatients (Queens)", "Reception (Main Hospital Reception Desk)", "Department", "Respiratory Diagnostic Centre", "Main Hospital"],
+  quickAccess: ["Outpatients (Queens)", "Reception (Main Hospital Reception Desk)", "Respiratory Diagnostic Centre", "Main Hospital"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/site-1253769-hull-teaching-castle-hill-map/sitemap.svg", bounds: [[53.771868, -0.45668], [53.78164, -0.4333]] },
   ],
   waypoints: [
-    { id: "department-f0", name: "Department", type: "department", coordinates: { lat: 53.780463, lng: -0.443265 }, floor: 0 },
     { id: "respiratory-diagnostic-centre-f0", name: "Respiratory Diagnostic Centre", type: "department", coordinates: { lat: 53.780283, lng: -0.437546 }, floor: 0 },
     { id: "main-hospital-f0", name: "Main Hospital", type: "department", coordinates: { lat: 53.780283, lng: -0.434349 }, floor: 0 },
     { id: "administration-building-f0", name: "Administration Building", type: "department", coordinates: { lat: 53.780281, lng: -0.442971 }, floor: 0 },
@@ -77,7 +76,6 @@ export const SITE_1253769_HULL_TEACHING_CASTLE_HILL_MAP_VENUE: Venue = {
     { id: "x-ray-reception-f0", name: "X-Ray (Reception)", type: "reception", coordinates: { lat: 53.777302, lng: -0.437948 }, floor: 0 },
     { id: "gi-physiology-ward-14-f0", name: "GI physiology (Ward 14)", type: "ward", coordinates: { lat: 53.77714, lng: -0.442973 }, floor: 0 },
     { id: "hull-adult-cystic-fibrosis-centre-f0", name: "Hull Adult Cystic Fibrosis Centre", type: "department", coordinates: { lat: 53.776975, lng: -0.44271 }, floor: 0 },
-    { id: "ward-f0", name: "Ward", type: "ward", coordinates: { lat: 53.77698, lng: -0.438316 }, floor: 0 },
     { id: "icu-1-gicu-1-f0", name: "ICU 1 (Gicu 1)", type: "other", coordinates: { lat: 53.77681, lng: -0.443305 }, floor: 0 },
     { id: "ward-1-complex-rehabilitation-f0", name: "Ward 1 - Complex Rehabilitation", type: "ward", coordinates: { lat: 53.776807, lng: -0.437447 }, floor: 0 },
     { id: "icu-2-gicu-2-f0", name: "ICU 2 (Gicu 2)", type: "other", coordinates: { lat: 53.776644, lng: -0.443305 }, floor: 0 },

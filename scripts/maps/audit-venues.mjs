@@ -107,7 +107,8 @@ function nameFindings(w, venue) {
   }
 
   if (/\b[a-z]\s+s\b/i.test(name) && !/\b(a|i)\s+s\b/i.test(name)) out.push(`apostrophe lost in extraction: "${name}"`)
-  if (name.length > 4 && name === name.toUpperCase() && /[A-Z]{4}/.test(name)) out.push(`shouting label kept verbatim from the sheet: "${name}"`)
+  // "AEC / SDEC" is two acronyms, not shouting: only a word too long to be one counts.
+  if (name.length > 4 && name === name.toUpperCase() && /[A-Z]{6}/.test(name)) out.push(`shouting label kept verbatim from the sheet: "${name}"`)
   if (name.split(/\s+/).length > 8) out.push(`caption, not a name (${name.split(/\s+/).length} words): "${name}"`)
 
   return out
@@ -374,7 +375,13 @@ function main() {
   const shipped = new Set([...registry.matchAll(/from "\.\/([a-z0-9-]+)"/g)].map((m) => m[1]))
 
   const onDisk = readdirSync(VENUE_DIR)
-    .filter((f) => f.endsWith(".ts") && !["index.ts", "generated-sheets.ts", "nhs-hospitals.ts", "nhs-hospitals-data.ts"].includes(f))
+    .filter(
+      (f) =>
+        f.endsWith(".ts") &&
+        // The registry, the helpers split out of it, the client's catalog of
+        // summaries, and the directory data — none of them is a venue module.
+        !["index.ts", "core.ts", "catalog.ts", "catalog-data.ts", "generated-sheets.ts", "nhs-hospitals.ts", "nhs-hospitals-data.ts"].includes(f)
+    )
     .map((f) => f.replace(/\.ts$/, ""))
   const files = onDisk.filter((s) => shipped.has(s)).map((s) => `${s}.ts`)
   const dead = onDisk.filter((s) => !shipped.has(s))

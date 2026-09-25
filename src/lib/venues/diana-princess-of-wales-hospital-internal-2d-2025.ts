@@ -36,7 +36,7 @@ export const DIANA_PRINCESS_OF_WALES_HOSPITAL_INTERNAL_2D_2025_VENUE: Venue = {
     { id: "intensive-therapy-unit-f0", name: "Intensive Therapy Unit", type: "department", coordinates: { lat: 53.544983, lng: -0.098182 }, floor: 0 },
     { id: "multi-faith-room-f0", name: "Multi Faith Room", type: "other", coordinates: { lat: 53.544887, lng: -0.100507 }, floor: 0 },
     { id: "fracture-clinic-f0", name: "Fracture Clinic", type: "department", coordinates: { lat: 53.544853, lng: -0.099748 }, floor: 0 },
-    { id: "changing-places-f0", name: "Changing Places", type: "other", coordinates: { lat: 53.544855, lng: -0.0993 }, floor: 0 },
+    { id: "changing-places-f0", name: "Changing Places", type: "toilet", coordinates: { lat: 53.544855, lng: -0.0993 }, floor: 0 },
     { id: "sdec-f0", name: "SDEC", type: "other", coordinates: { lat: 53.544799, lng: -0.098689 }, floor: 0 },
     { id: "hospital-dispensary-f0", name: "Hospital Dispensary", type: "department", coordinates: { lat: 53.544737, lng: -0.099922 }, floor: 0 },
     { id: "emergency-department-f0", name: "Emergency Department", type: "department", coordinates: { lat: 53.544666, lng: -0.097499 }, floor: 0 },

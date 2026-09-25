@@ -674,7 +674,7 @@
       "stem": "ngh hospital map",
       "odsCode": "RP1M4",
       "name": "Northampton General Hospital",
-      "subtitle": "Northamptonshire Healthcare NHS Foundation Trust · NN1 5BD",
+      "subtitle": "Northampton General Hospital NHS Trust · Cliftonville, Northampton NN1 5BD",
       "file": "map/auto/ngh-hospital-map.pdf",
       "page": 1,
       "center": [
@@ -695,7 +695,7 @@
         "Emergency Department Entrance",
         "Departments"
       ],
-      "notes": "Site map published by Northamptonshire Healthcare NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
+      "notes": "Site map published by Northampton General Hospital NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
       "auto": {
         "odsCode": "RP1M4",
         "spanSource": "osm-footprint-colocated",
@@ -791,7 +791,7 @@
       "stem": "ormskirk site map a3",
       "odsCode": "RVY38",
       "name": "Ormskirk & District General Hospital",
-      "subtitle": "Southport and Ormskirk Hospital NHS Trust · L39 2JW",
+      "subtitle": "Mersey and West Lancashire Teaching Hospitals NHS Trust · Wigan Road, Ormskirk L39 2JW",
       "file": "map/auto/ormskirk-site-map-a3.pdf",
       "page": 1,
       "center": [
@@ -812,7 +812,7 @@
         "Department / Ward",
         "5 MH MH MH MH MH"
       ],
-      "notes": "Site map published by Southport and Ormskirk Hospital NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
+      "notes": "Site map published by Mersey and West Lancashire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
       "auto": {
         "odsCode": "RVY38",
         "spanSource": "osm-footprint-colocated",
@@ -829,8 +829,8 @@
       "floorOf": null,
       "stem": "trust map june 2026",
       "odsCode": "RCX70",
-      "name": "The Queen Elizabeth Hospital",
-      "subtitle": "The Queen Elizabeth Hospital, King's Lynn, NHS Foundation Trust · PE30 4ET",
+      "name": "The Queen Elizabeth Hospital, King's Lynn",
+      "subtitle": "The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust · Gayton Road, King's Lynn PE30 4ET",
       "file": "map/auto/trust-map-june-2026.pdf",
       "page": 1,
       "center": [
@@ -851,7 +851,7 @@
         "Main Entrance",
         "Facilities"
       ],
-      "notes": "Site map published by The Queen Elizabeth Hospital, King's Lynn, NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
+      "notes": "Site map published by The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust (June 2026). Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
       "auto": {
         "odsCode": "RCX70",
         "spanSource": "osm-footprint-colocated",
@@ -986,7 +986,7 @@
       "stem": "jr hospital sitemap",
       "odsCode": "RBF34",
       "name": "John Radcliffe Hospital",
-      "subtitle": "Nuffield Orthopaedic Centre NHS Trust · OX3 9DU",
+      "subtitle": "Oxford University Hospitals NHS Foundation Trust · Headley Way, Headington, Oxford OX3 9DU",
       "file": "map/auto/jr-hospital-sitemap.pdf",
       "page": 1,
       "center": [
@@ -1007,7 +1007,7 @@
         "Entrances",
         "John Radcliffe Hospital site map"
       ],
-      "notes": "Site map published by Nuffield Orthopaedic Centre NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
+      "notes": "Site map published by Oxford University Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
       "auto": {
         "odsCode": "RBF34",
         "spanSource": "osm-footprint",
@@ -1028,7 +1028,7 @@
       "stem": "site 2025 mdgh patients",
       "odsCode": "R0A73",
       "name": "Macclesfield District General Hospital",
-      "subtitle": "Manchester University NHS Foundation Trust · SK10 3BL",
+      "subtitle": "East Cheshire NHS Trust · Victoria Road, Macclesfield SK10 3BL",
       "file": "map/auto/site-2025-05-05-mdgh-ground-floor-patients.pdf",
       "page": 1,
       "center": [
@@ -1049,7 +1049,7 @@
         "East Cheshire",
         "Welcome to Macclesfield District General Hospital"
       ],
-      "notes": "2 floor plans published by Manchester University NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register) and has not been checked by eye.",
+      "notes": "2 floor plans published by East Cheshire NHS Trust (May 2025). Placement is derived automatically (centre from the NHS ODS register) and has not been checked by eye.",
       "auto": {
         "odsCode": "R0A73",
         "spanSource": "osm-footprint-colocated",
@@ -1086,7 +1086,7 @@
       "stem": "pah plan",
       "odsCode": "R1C36",
       "name": "Princess Anne Hospital",
-      "subtitle": "Solent NHS Trust · SO16 5YA",
+      "subtitle": "University Hospital Southampton NHS Foundation Trust · Coxford Road, Southampton SO16 5YA",
       "file": "map/auto/pah-c-level-floor-plan.pdf",
       "page": 1,
       "center": [
@@ -1107,7 +1107,7 @@
         "MALE WC",
         "FEMALE WC"
       ],
-      "notes": "6 floor plans published by Solent NHS Trust. Placement is derived automatically (centre from the NHS ODS register) and has not been checked by eye.",
+      "notes": "6 floor plans published by University Hospital Southampton NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register) and has not been checked by eye.",
       "auto": {
         "odsCode": "R1C36",
         "spanSource": "osm-footprint",
@@ -1165,13 +1165,13 @@
     {
       "slug": "level-3-floorplan-cuh-map",
       "id": "level-3-floorplan-cuh-map-venue",
-      "name": "Cuh at Doddington Hospital",
-      "subtitle": "Cambridge University Hospitals NHS Foundation Trust · PE15 0UG",
+      "name": "Addenbrooke's Hospital — Level 3",
+      "subtitle": "Cambridge University Hospitals NHS Foundation Trust · Hills Road, Cambridge CB2 0QQ",
       "file": "map/auto/level-3-floorplan-cuh-map.pdf",
       "page": 1,
       "center": [
-        52.499909,
-        0.055868
+        52.175133,
+        0.140753
       ],
       "spanM": 330,
       "plan": [
@@ -1187,7 +1187,7 @@
         "Stairs",
         "Toilets with disabled access"
       ],
-      "notes": "Site map published by Cambridge University Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Level 3 floor plan published by Cambridge University Hospitals NHS Foundation Trust. Identity corrected September 2026: this is a level of Addenbrooke's, not Doddington Hospital. Placed on the Addenbrooke's venue centre; scale is the drafted estimate and has not been checked by eye.",
       "auto": {
         "odsCode": "B5D1I",
         "spanSource": "osm-footprint",
@@ -1197,7 +1197,20 @@
         "sourceUrl": "https://www.cuh.nhs.uk/documents/2773/Level_3_Floorplan_-_CUH_Map.pdf",
         "draftedAt": "2026-08-08T10:59:05.195Z"
       },
-      "keep": true
+      "keep": true,
+      "floorNaming": {
+        "word": "Level",
+        "groundLevel": 1
+      },
+      "floors": [
+        {
+          "id": "f2",
+          "floor": 2,
+          "label": "Level 3",
+          "file": "map/auto/level-3-floorplan-cuh-map.pdf",
+          "page": 1
+        }
+      ]
     },
     {
       "slug": "bishop-auckland-floor-plan-2023",
@@ -1239,8 +1252,8 @@
     {
       "slug": "pilgrim-ground-floor",
       "id": "pilgrim-ground-floor-venue",
-      "name": "Pilgrim A&E",
-      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · PE21 9QS",
+      "name": "Pilgrim Hospital, Boston",
+      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · Sibsey Road, Boston PE21 9QS",
       "file": "map/auto/pilgrim-ground-floor.pdf",
       "page": 1,
       "center": [
@@ -1261,7 +1274,7 @@
         "PGME",
         "Day Nursery"
       ],
-      "notes": "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Ground floor plan published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
       "auto": {
         "odsCode": "RWD2A",
         "spanSource": "default",
@@ -1276,8 +1289,8 @@
     {
       "slug": "lister-map-2026",
       "id": "lister-map-2026-venue",
-      "name": "The Lister Hospital Surgicentre",
-      "subtitle": "East and North Hertfordshire Teaching NHS Trust · SG1 4AB",
+      "name": "Lister Hospital",
+      "subtitle": "East and North Hertfordshire Teaching NHS Trust · Coreys Mill Lane, Stevenage SG1 4AB",
       "file": "map/auto/lister-map-2026.pdf",
       "page": 1,
       "center": [
@@ -1298,7 +1311,7 @@
         "Entrances",
         "Acute Cardiology Unit (Acu)"
       ],
-      "notes": "Site map published by East and North Hertfordshire Teaching NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Site map published by East and North Hertfordshire Teaching NHS Trust (2026). Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
       "auto": {
         "odsCode": "RWHDD",
         "spanSource": "default",
@@ -1425,12 +1438,12 @@
       "slug": "pinderfields-hospital-map",
       "id": "pinderfields-hospital-map-venue",
       "name": "Pinderfields Hospital",
-      "subtitle": "Mid Yorkshire Teaching NHS Trust",
+      "subtitle": "Mid Yorkshire Teaching NHS Trust · Aberford Road, Wakefield WF1 4DG",
       "file": "map/auto/pinderfields-hospital-map.pdf",
       "page": 1,
       "center": [
-        53.702267,
-        -1.651881
+        53.69349,
+        -1.48998
       ],
       "spanM": 661,
       "plan": [
@@ -1446,7 +1459,7 @@
         "Drop off route to A&E",
         "Leeds Via M1"
       ],
-      "notes": "Site map published by Mid Yorkshire Teaching NHS Trust. WARNING: this sheet was matched to the wrong ODS record (Dewsbury & District, about ten miles away), so its map position and postcode are not this hospital's and have not been re-derived. The plan and its labels are Pinderfields'.",
+      "notes": "Site map published by Mid Yorkshire Teaching NHS Trust. Position corrected September 2026: the sheet was matched to the Dewsbury record and sat ten miles west of the hospital it draws; now centred on Pinderfields, Aberford Road. Scale is the drafted estimate and has not been checked by eye.",
       "auto": {
         "odsCode": "P6M3A",
         "spanSource": "osm-footprint",
@@ -1609,8 +1622,8 @@
     {
       "slug": "friarage-site-map-july-2025",
       "id": "friarage-site-map-july-2025-venue",
-      "name": "Friarage Hospital Site",
-      "subtitle": "South Tees Hospitals NHS Foundation Trust · DL6 1JG",
+      "name": "Friarage Hospital",
+      "subtitle": "South Tees Hospitals NHS Foundation Trust · Bullamoor Road, Northallerton DL6 1JG",
       "file": "map/auto/friarage-site-map-july-2025.pdf",
       "page": 1,
       "center": [
@@ -1631,7 +1644,7 @@
         "Energy Centre",
         "Dining"
       ],
-      "notes": "Site map published by South Tees Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Site map published by South Tees Hospitals NHS Foundation Trust (July 2025). Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
       "auto": {
         "odsCode": "RTR45",
         "spanSource": "default",
@@ -1683,15 +1696,15 @@
     {
       "slug": "southport-hospital-site-map-a3-sept-2024",
       "id": "southport-hospital-site-map-a3-sept-2024-venue",
-      "name": "Southport General Infirmary",
-      "subtitle": "Southport and Ormskirk Hospital NHS Trust · PR8 6PH",
+      "name": "Southport and Formby District General Hospital",
+      "subtitle": "Mersey and West Lancashire Teaching Hospitals NHS Trust · Town Lane, Southport PR8 6PN",
       "file": "map/auto/southport-hospital-site-map-a3-sept-2024.pdf",
       "page": 1,
       "center": [
-        53.63853,
-        -2.986679
+        53.63357,
+        -2.978821
       ],
-      "spanM": 192,
+      "spanM": 520,
       "plan": [
         0,
         0,
@@ -1705,7 +1718,7 @@
         "Southport Hospital",
         "Department"
       ],
-      "notes": "Site map published by Southport and Ormskirk Hospital NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Site map published by Mersey and West Lancashire Teaching Hospitals NHS Trust (September 2024). Position corrected September 2026: the sheet was matched to the closed Southport General Infirmary in the town centre; now centred on the District General Hospital at Town Lane (NHS ODS register). Scale is estimated and has not been checked by eye.",
       "auto": {
         "odsCode": "RVY03",
         "spanSource": "osm-footprint",
@@ -1832,29 +1845,23 @@
     {
       "slug": "community-diagnostic-centre-site-map",
       "id": "community-diagnostic-centre-site-map-venue",
-      "name": "Dewsbury & District Hospital-Combined Elective Surgical Hub",
-      "subtitle": "Mid Yorkshire Teaching NHS Trust · WF13 4HS",
+      "name": "Wakefield Community Diagnostic Centre",
+      "subtitle": "Mid Yorkshire Teaching NHS Trust · Westgate Retail Park, Ings Road, Wakefield WF2 9SD",
       "file": "map/auto/community-diagnostic-centre-site-map.pdf",
       "page": 1,
       "center": [
-        53.702267,
-        -1.651881
+        53.678766,
+        -1.506421
       ],
-      "spanM": 661,
+      "spanM": 420,
       "plan": [
         0,
         0,
         1,
         1
       ],
-      "quick": [
-        "MiCAD LINK",
-        "Wickes",
-        "KFC",
-        "Subway",
-        "Currys"
-      ],
-      "notes": "Site map published by Mid Yorkshire Teaching NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "quick": [],
+      "notes": "Plan of Westgate Retail Park published by Mid Yorkshire Teaching NHS Trust, showing where the Community Diagnostic Centre (Unit 9B) sits among the retail units. Position corrected September 2026 to the WF2 9SD postcode; the drawing has not been checked by eye, and the centre's own unit is not labelled on it.",
       "auto": {
         "odsCode": "P6M3A",
         "spanSource": "osm-footprint",
@@ -1869,15 +1876,15 @@
     {
       "slug": "sgh-site-map",
       "id": "sgh-site-map-venue",
-      "name": "St Georges at Woking Hospital",
-      "subtitle": "St George's University Hospitals NHS Foundation Trust · GU22 7HS",
+      "name": "St George's Hospital, Tooting — Grounds & Car Parks",
+      "subtitle": "St George's University Hospitals NHS Foundation Trust · Blackshaw Road, London SW17 0QT",
       "file": "map/auto/sgh-site-map.pdf",
       "page": 1,
       "center": [
-        51.315131,
-        -0.556284
+        51.4266,
+        -0.1749
       ],
-      "spanM": 256,
+      "spanM": 520,
       "plan": [
         0,
         0,
@@ -1891,7 +1898,7 @@
         "Emergency Ambulance Bay",
         "Entrance to Car Park 1 and 3"
       ],
-      "notes": "Site map published by St George's University Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Site map published by St George's University Hospitals NHS Foundation Trust (2013). Identity and position corrected September 2026: the sheet draws the Tooting site, not Woking. Placed on the centre and scale of the hand-built St George's venue; the drawing itself has not been checked by eye.",
       "auto": {
         "odsCode": "D3X3Z",
         "spanSource": "osm-footprint",

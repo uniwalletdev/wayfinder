@@ -288,6 +288,7 @@ fix `spanM` and `plan` in `mapped-sites.json` and re-run `build-venues.mjs`.
 | `nhs-sites.json` | `build-sites` | **the canonical merged site list** |
 | `mapped-coverage.json` | `build-sites` | sites skipped because a fully-mapped venue covers them |
 | `mapped-sites.json` | hand-maintained | build config for sheet-derived venues (see below) |
+| `venue-identity.json` | hand-maintained | corrections to a drafted sheet's name, trust, position or storey, laid over `mapped-sites.json` on every read (see below) |
 | `trust-websites.json` | `discover-plans` | trust ODS code → website, from the ODS ORD API |
 | `trust-website-overrides.json` | hand-maintained | corrections where the ODS website has gone stale |
 | `plan-candidates.json` | `discover-plans` | everything the crawl found |

@@ -11,6 +11,7 @@ import { dirname, join } from "path"
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..")
 const CONFIG = join(REPO_ROOT, "data", "mapped-sites.json")
+const IDENTITY = join(REPO_ROOT, "data", "venue-identity.json")
 
 const REQUIRED = ["slug", "id", "name", "subtitle", "file", "page", "center", "spanM", "plan", "quick", "notes"]
 
@@ -68,6 +69,46 @@ export function normaliseFloors(sheet) {
   })
 }
 
+// A person's correction to a drafted sheet's identity, laid over the entry.
+// The drafter names a sheet after the ODS record it matched, and ODS files
+// departments, closed sites and legacy trusts as sites: the John Radcliffe
+// arrived under the Nuffield Orthopaedic Centre trust and St George's on
+// Woking. data/venue-identity.json holds what a person has checked; applying it
+// here, every time the sheets are read, is what makes a --force re-draft unable
+// to put the wrong name back.
+const IDENTITY_FIELDS = ["name", "subtitle", "center", "spanM", "notes", "quick", "floorNaming"]
+export function applyIdentity(sheet, fix) {
+  if (!fix) return sheet
+  const out = { ...sheet }
+  for (const k of IDENTITY_FIELDS) if (fix[k] !== undefined) out[k] = fix[k]
+  // Re-storeying a single-sheet venue: the sheet becomes that one floor, drawn
+  // from the same file, under an image named for the floor.
+  if (fix.floor) {
+    const base = sheet.floors?.[0] ?? { file: sheet.file, page: sheet.page, plan: sheet.plan, gcps: sheet.gcps }
+    out.floors = [{ ...base, id: fix.floor.id, floor: fix.floor.floor, label: fix.floor.label }]
+  }
+  return out
+}
+
+export function readIdentity() {
+  let doc
+  try {
+    doc = JSON.parse(readFileSync(IDENTITY, "utf8"))
+  } catch (err) {
+    throw new Error(`cannot read data/venue-identity.json: ${err.message}`)
+  }
+  const venues = doc?.venues ?? {}
+  for (const [slug, fix] of Object.entries(venues)) {
+    if (fix.center && (!Array.isArray(fix.center) || fix.center.length !== 2 || !fix.center.every(Number.isFinite))) {
+      throw new Error(`data/venue-identity.json: "${slug}" has an invalid center`)
+    }
+    if (fix.floor && (typeof fix.floor.id !== "string" || !Number.isFinite(fix.floor.floor) || typeof fix.floor.label !== "string")) {
+      throw new Error(`data/venue-identity.json: "${slug}" has an invalid floor (needs id, floor, label)`)
+    }
+  }
+  return venues
+}
+
 export function readSheets() {
   let doc
   try {
@@ -93,7 +134,17 @@ export function readSheets() {
       throw new Error(`data/mapped-sites.json: sheet "${sheet.slug}" has an invalid plan crop`)
     }
   }
-  return sheets.map((sheet) => ({ ...sheet, floors: normaliseFloors(sheet) }))
+  const identity = readIdentity()
+  // A correction for a sheet that no longer exists is a mistake worth hearing
+  // about, not a silent leftover.
+  const slugs = new Set(sheets.map((s) => s.slug))
+  for (const slug of Object.keys(identity)) {
+    if (!slugs.has(slug)) throw new Error(`data/venue-identity.json corrects "${slug}", which is not in data/mapped-sites.json`)
+  }
+  return sheets.map((sheet) => {
+    const fixed = applyIdentity(sheet, identity[sheet.slug])
+    return { ...fixed, floors: normaliseFloors(fixed) }
+  })
 }
 
 export { REPO_ROOT }

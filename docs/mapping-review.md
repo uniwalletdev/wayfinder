@@ -4,6 +4,14 @@
 `SEED_VENUES`, the sheet-ingestion pipeline that builds most of them, and the
 navigation code that consumes them.*
 
+> **September 2026:** the venues were then reviewed one by one — identity,
+> position and labels of every sheet — in [venue-review-2026-09.md](venue-review-2026-09.md).
+> That pass corrected the four venues named below as unfixable from the repo
+> (`sgh-site-map`, `level-3-floorplan-cuh-map`,
+> `community-diagnostic-centre-site-map`, and Pinderfields' position), using
+> the trusts' own websites and the ODS register; the corrections live in
+> `data/venue-identity.json` so a re-draft cannot undo them.
+
 Measurements in this document come from `scripts/maps/audit-venues.mjs`, added
 alongside it. Run `node scripts/maps/audit-venues.mjs` for the scoreboard,
 `--full` for every finding, `--json` to diff two runs.

@@ -135,6 +135,12 @@ backstop. Still true.
 
 ## Still open
 
+The hospital map data itself was reviewed venue by venue on 25 September 2026
+— identity, position and every label of all 67 venues — in
+[docs/venue-review-2026-09.md](docs/venue-review-2026-09.md): four venues sat
+at the wrong hospital and ten under the wrong trust or a department's name, all
+corrected; label problems 89 → 42. What that pass could not do is listed there.
+
 Ordered by value. None blocks a deployment.
 
 1. **Enforce the CSP.** It is report-only (F16). Run a deployment through
@@ -152,6 +158,13 @@ Ordered by value. None blocks a deployment.
    to the site's address. OpenStreetMap footprints carry entrance nodes for
    many sites; the pipeline's footprint file is not checked in and was not
    available here.
+5. **Let the map pipeline reach the internet.** The environment's network
+   policy refused the ODS register, postcodes.io, OpenStreetMap and every
+   trust website, so no records or republished maps could be fetched and the
+   relocated sheets could not be rebuilt from their PDFs. Allow those hosts
+   in the cloud environment's Network access settings and run
+   `npm run nhs:refresh`, `nhs:discover`, `nhs:plans` and
+   `node scripts/maps/build-venues.mjs`.
 
 ## The July 2026 review
 

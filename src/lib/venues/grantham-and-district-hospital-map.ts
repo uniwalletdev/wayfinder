@@ -287,7 +287,7 @@ export const GRANTHAM_AND_DISTRICT_HOSPITAL_MAP_VENUE: Venue = {
     { id: "theatres-f0", name: "Theatres", type: "department", coordinates: { lat: 52.921506, lng: -0.641746 }, floor: 0 },
     { id: "gynaecology-f0", name: "Gynaecology", type: "other", coordinates: { lat: 52.921505, lng: -0.639693 }, floor: 0 },
     { id: "pharmacy-f0", name: "Pharmacy", type: "pharmacy", coordinates: { lat: 52.921497, lng: -0.643936 }, floor: 0 },
-    { id: "shop-f0", name: "Shop", type: "other", coordinates: { lat: 52.921464, lng: -0.642823 }, floor: 0 },
+    { id: "shop-f0", name: "Shop", type: "canteen", coordinates: { lat: 52.921464, lng: -0.642823 }, floor: 0 },
     { id: "chapel-f0", name: "Chapel", type: "other", coordinates: { lat: 52.921457, lng: -0.640227 }, floor: 0 },
     { id: "x-ray-radiology-f0", name: "X-ray Radiology", type: "department", coordinates: { lat: 52.921381, lng: -0.642423 }, floor: 0 },
     { id: "tower-block-entrance-f0", name: "Tower Block Entrance", type: "exit", coordinates: { lat: 52.921357, lng: -0.639986 }, floor: 0 },

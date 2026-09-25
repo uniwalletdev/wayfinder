@@ -15,7 +15,7 @@ export const CH_HOSPITAL_SITEMAP_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Oxford University Hospitals NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
-  quickAccess: ["Main Entrance Surgery and Diagnostics", "Entrances", "Churchill Hospital site map", "Oxford Ambulance Station", "Radiotherapy"],
+  quickAccess: ["Main Entrance Surgery and Diagnostics", "Oxford Ambulance Station", "Radiotherapy"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/ch-hospital-sitemap/sitemap.svg", bounds: [[51.746862, -1.218659], [51.753812, -1.210721]] },
   ],
@@ -200,7 +200,6 @@ export const CH_HOSPITAL_SITEMAP_VENUE: Venue = {
     { id: "c0-178", floor: 0, points: [{ lat: 51.74819, lng: -1.214758 }, { lat: 51.748156, lng: -1.21466 }, { lat: 51.748156, lng: -1.214562 }] },
   ],
   waypoints: [
-    { id: "churchill-hospital-site-map-f0", name: "Churchill Hospital site map", type: "department", coordinates: { lat: 51.753381, lng: -1.214691 }, floor: 0 },
     { id: "oxford-ambulance-station-f0", name: "Oxford Ambulance Station", type: "other", coordinates: { lat: 51.752143, lng: -1.212948 }, floor: 0 },
     { id: "radiotherapy-f0", name: "Radiotherapy", type: "department", coordinates: { lat: 51.752144, lng: -1.216258 }, floor: 0 },
     { id: "car-park-5-f0", name: "Car Park 5", type: "other", coordinates: { lat: 51.75207, lng: -1.214878 }, floor: 0 },
@@ -263,10 +262,9 @@ export const CH_HOSPITAL_SITEMAP_VENUE: Venue = {
     { id: "restaurant-caf-f0", name: "Restaurant / café", type: "canteen", coordinates: { lat: 51.74802, lng: -1.211782 }, floor: 0 },
     { id: "tda-f0", name: "Tda", type: "other", coordinates: { lat: 51.747966, lng: -1.217989 }, floor: 0 },
     { id: "theatre-direct-admissions-f0", name: "Theatre Direct Admissions", type: "department", coordinates: { lat: 51.747968, lng: -1.217 }, floor: 0 },
-    { id: "league-of-friends-f0", name: "League of Friends", type: "other", coordinates: { lat: 51.747848, lng: -1.211758 }, floor: 0 },
+    { id: "league-of-friends-f0", name: "League of Friends", type: "canteen", coordinates: { lat: 51.747848, lng: -1.211758 }, floor: 0 },
     { id: "footpath-corridor-f0", name: "Footpath / corridor", type: "other", coordinates: { lat: 51.747847, lng: -1.213171 }, floor: 0 },
     { id: "gum-f0", name: "GUM", type: "other", coordinates: { lat: 51.747776, lng: -1.217998 }, floor: 0 },
-    { id: "entrances-f0", name: "Entrances", type: "exit", coordinates: { lat: 51.747665, lng: -1.213415 }, floor: 0 },
     { id: "drop-off-area-f0", name: "Drop-off area", type: "exit", coordinates: { lat: 51.747654, lng: -1.214868 }, floor: 0 },
     { id: "hifu-f0", name: "Hifu", type: "other", coordinates: { lat: 51.747576, lng: -1.217984 }, floor: 0 },
     { id: "high-intensity-focused-ultrasound-f0", name: "High Intensity Focused Ultrasound", type: "other", coordinates: { lat: 51.747572, lng: -1.21679 }, floor: 0 },

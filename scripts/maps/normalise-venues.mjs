@@ -17,6 +17,13 @@
 //   - retypes labels the old rules mistyped (every STAIRWELL was "other")
 //   - lifts a storey out of the name into the description
 //   - repairs quickAccess entries so the shortcut chips resolve again
+//   - drops the sheet's own title ("Ormskirk Hospital", "John Radcliffe Hospital
+//     site map") where it was read as a destination: the title block is a
+//     corner of the page, and the hospital itself is reachable as the venue's
+//     site destination
+//   - splits neighbouring ward captions the extractor read as one label
+//     ("Cavell Ward Gunning Ward Keate Ward Major Trauma Ward") into one
+//     waypoint per ward, a few metres apart so the pins can be tapped
 //
 // Waypoint ids are deliberately left alone. They are slug-derived from the old
 // name, so renaming would change them — and ids are what a shared link and a
@@ -28,7 +35,7 @@
 import { readFileSync, writeFileSync, readdirSync } from "node:fs"
 import { join, dirname } from "node:path"
 import { fileURLToPath } from "node:url"
-import { cleanLabel } from "./lib/labels.mjs"
+import { cleanLabel, splitWards } from "./lib/labels.mjs"
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..")
 const VENUE_DIR = join(ROOT, "src", "lib", "venues")
@@ -40,6 +47,32 @@ const WAYPOINT =
 
 const esc = (s) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
 const unesc = (s) => s.replace(/\\"/g, '"').replace(/\\\\/g, "\\")
+const VENUE_NAME = /^  name: "((?:[^"\\]|\\.)*)",$/m
+const slugify = (s) => s.toLowerCase().replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "wp"
+
+// The sheet's own title, read as a place. Every distinctive word of the label
+// is in the venue's name and the label says it is a hospital or a site map:
+// "Pinderfields Hospital" on the Pinderfields sheet, "Hospital Site Map",
+// "Nuffield Orthopaedic Centre site map". "Main Hospital", "Eye Hospital" and
+// "Old Queen Elizabeth Hospital" are buildings on a campus and keep their word.
+const TITLE_STOP = new Set([
+  "hospital", "hospitals", "the", "site", "map", "general", "district", "university", "teaching",
+  "nhs", "trust", "and", "of", "community", "campus", "infirmary", "at",
+])
+function isTitleLabel(name, venueName) {
+  if (!/\b(hospital|site map|infirmary)\b/i.test(name)) return false
+  // A campus venue stands for several hospitals; each of their names is a
+  // building on it, not the sheet's title.
+  if (/\bcampus\b/i.test(venueName)) return false
+  const tokens = (s) =>
+    new Set(s.toLowerCase().replace(/[’']/g, "").split(/[^a-z0-9]+/).filter((t) => t && !TITLE_STOP.has(t)))
+  const venue = tokens(venueName)
+  for (const t of tokens(name)) if (!venue.has(t)) return false
+  return true
+}
+
+// Metres to degrees of longitude at this latitude, for spacing split pins.
+const lngStep = (lat, metres) => metres / (111320 * Math.cos((lat * Math.PI) / 180))
 
 // Same measure search.ts uses for "did you mean", so a quickAccess entry is
 // repaired the way the app would have judged it.
@@ -65,7 +98,7 @@ function similarity(a, b) {
   return (2 * common) / (x.length - 1 + (y.length - 1))
 }
 
-const totals = { files: 0, dropped: 0, renamed: 0, retyped: 0, described: 0, quickFixed: 0, quickDropped: 0 }
+const totals = { files: 0, dropped: 0, renamed: 0, retyped: 0, described: 0, split: 0, quickFixed: 0, quickDropped: 0 }
 const detail = []
 
 for (const file of readdirSync(VENUE_DIR).filter((f) => f.endsWith(".ts"))) {
@@ -75,10 +108,13 @@ for (const file of readdirSync(VENUE_DIR).filter((f) => f.endsWith(".ts"))) {
 
   const out = []
   const names = []
+  const venueName = unesc(VENUE_NAME.exec(src)?.[1] ?? "")
+  const usedIds = new Set([...src.matchAll(/^\s*\{ id: "([^"]+)"/gm)].map((x) => x[1]))
   let dropped = 0
   let renamed = 0
   let retyped = 0
   let described = 0
+  let split = 0
 
   for (const line of src.split("\n")) {
     const m = line.match(WAYPOINT)
@@ -88,6 +124,38 @@ for (const file of readdirSync(VENUE_DIR).filter((f) => f.endsWith(".ts"))) {
     }
     const [, indent, id, rawName, type, lat, lng, floor, existingDesc] = m
     const oldName = unesc(rawName)
+
+    if (isTitleLabel(oldName, venueName)) {
+      dropped++
+      detail.push(`  ${file}: dropped title "${oldName}"`)
+      continue
+    }
+
+    // One label, several wards: one waypoint each, stepped 4 m east so the
+    // pins are distinguishable, under ids of their own.
+    const wards = splitWards(oldName)
+    if (wards) {
+      const pieces = wards.map((w) => cleanLabel(w)).filter(Boolean)
+      if (pieces.length >= 2) {
+        split++
+        detail.push(`  ${file}: "${oldName}" -> ${pieces.map((p) => `"${p.text}"`).join(" + ")}`)
+        pieces.forEach((p, i) => {
+          const base = `${slugify(p.text)}-f${floor}`
+          let pid = base
+          for (let n = 2; usedIds.has(pid); n++) pid = `${base}-${n}`
+          usedIds.add(pid)
+          const plng = Number((Number(lng) + i * lngStep(Number(lat), 4)).toFixed(6))
+          const desc = p.storeyLabel ? `, description: "${esc(p.storeyLabel)}"` : ""
+          names.push(p.text)
+          out.push(
+            `${indent}{ id: "${pid}", name: "${esc(p.text)}", type: "${p.type}", ` +
+              `coordinates: { lat: ${lat}, lng: ${plng} }, floor: ${floor}${desc} },`
+          )
+        })
+        continue
+      }
+    }
+
     const clean = cleanLabel(oldName)
 
     if (!clean) {
@@ -140,6 +208,14 @@ for (const file of readdirSync(VENUE_DIR).filter((f) => f.endsWith(".ts"))) {
         quickFixed++
         continue
       }
+      // An entry the rules reject outright — the sheet's title, a directory
+      // heading — has no waypoint to find. Guessing one by similarity sent
+      // "Birmingham Women's Hospital" to the Queen Elizabeth next door.
+      if (!cleaned || isTitleLabel(q, venueName)) {
+        quickDropped++
+        detail.push(`  ${file}: quickAccess "${q}" dropped (not a destination)`)
+        continue
+      }
       const best = names
         .map((n) => ({ n, s: similarity(q, n) }))
         .sort((a, b) => b.s - a.s)[0]
@@ -155,13 +231,14 @@ for (const file of readdirSync(VENUE_DIR).filter((f) => f.endsWith(".ts"))) {
     return `${head}[${[...new Set(kept)].map((q) => `"${esc(q)}"`).join(", ")}],`
   })
 
-  if (dropped + renamed + retyped + described + quickFixed + quickDropped === 0) continue
+  if (dropped + renamed + retyped + described + split + quickFixed + quickDropped === 0) continue
 
   totals.files++
   totals.dropped += dropped
   totals.renamed += renamed
   totals.retyped += retyped
   totals.described += described
+  totals.split += split
   totals.quickFixed += quickFixed
   totals.quickDropped += quickDropped
   if (!DRY) writeFileSync(path, text)
@@ -171,6 +248,6 @@ if (process.argv.includes("--verbose")) for (const d of detail) console.log(d)
 console.log(
   `${DRY ? "[dry run] " : ""}${totals.files} venue modules updated: ` +
     `${totals.dropped} waypoints dropped, ${totals.renamed} renamed, ${totals.retyped} retyped, ` +
-    `${totals.described} given a storey description, ` +
+    `${totals.described} given a storey description, ${totals.split} split into several, ` +
     `${totals.quickFixed} quickAccess entries repaired, ${totals.quickDropped} dropped`
 )

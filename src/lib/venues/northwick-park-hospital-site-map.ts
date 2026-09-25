@@ -15,12 +15,11 @@ export const NORTHWICK_PARK_HOSPITAL_SITE_MAP_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by London North West University Healthcare NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
-  quickAccess: ["Departments", "Blood Test Clinic - Phlebotomy", "Endoscopy Florence Ward", "Haematology Day Care & Assessment Chemotherapy", "Hydrotherapy Levi Lecture Theatre Lung Function Lab"],
+  quickAccess: ["Blood Test Clinic - Phlebotomy", "Endoscopy Florence Ward", "Haematology Day Care & Assessment Chemotherapy", "Hydrotherapy Levi Lecture Theatre Lung Function Lab"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/northwick-park-hospital-site-map/sitemap.svg", bounds: [[51.573337, -0.326402], [51.577481, -0.317628]] },
   ],
   waypoints: [
-    { id: "departments-f0", name: "Departments", type: "department", coordinates: { lat: 51.577355, lng: -0.326087 }, floor: 0 },
     { id: "blood-test-clinic-phlebotomy-f0", name: "Blood Test Clinic - Phlebotomy", type: "department", coordinates: { lat: 51.57701, lng: -0.325943 }, floor: 0 },
     { id: "endoscopy-florence-ward-f0", name: "Endoscopy Florence Ward", type: "ward", coordinates: { lat: 51.576365, lng: -0.326153 }, floor: 0 },
     { id: "haematology-day-care-assessment-chemotherapy-f0", name: "Haematology Day Care & Assessment Chemotherapy", type: "department", coordinates: { lat: 51.576198, lng: -0.325672 }, floor: 0 },
@@ -29,8 +28,6 @@ export const NORTHWICK_PARK_HOSPITAL_SITE_MAP_VENUE: Venue = {
     { id: "patient-advice-liaison-service-pals-f0", name: "Patient Advice & Liaison Service (PALS)", type: "other", coordinates: { lat: 51.575577, lng: -0.325849 }, floor: 0 },
     { id: "surgical-intensive-recovery-unit-siru-f0", name: "Surgical Intensive Recovery Unit (SIRU)", type: "department", coordinates: { lat: 51.575147, lng: -0.32585 }, floor: 0 },
     { id: "x-ray-f0", name: "X-ray", type: "department", coordinates: { lat: 51.57486, lng: -0.32624 }, floor: 0 },
-    { id: "wards-f0", name: "Wards", type: "ward", coordinates: { lat: 51.574769, lng: -0.326205 }, floor: 0 },
-    { id: "ward-f0", name: "Ward", type: "ward", coordinates: { lat: 51.574711, lng: -0.326232 }, floor: 0 },
     { id: "carroll-assessment-unit-ed-observation-unit-f0", name: "Carroll Assessment Unit & ED Observation Unit", type: "department", coordinates: { lat: 51.574663, lng: -0.325747 }, floor: 0 },
     { id: "ccu-coronary-care-unit-jenner-f0", name: "CCU - Coronary Care Unit - Jenner", type: "department", coordinates: { lat: 51.574615, lng: -0.325889 }, floor: 0 },
     { id: "chaucer-f0", name: "Chaucer", type: "other", coordinates: { lat: 51.574567, lng: -0.326203 }, floor: 0 },

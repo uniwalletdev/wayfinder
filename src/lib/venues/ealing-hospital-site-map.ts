@@ -15,13 +15,11 @@ export const EALING_HOSPITAL_SITE_MAP_VENUE: Venue = {
   visibility: "public",
   verified: false,
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by London North West University Healthcare NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
-  quickAccess: ["Entrances", "A&E (no children’sA&E)", "Urgent care centre", "Outpatients", "Main entrance"],
+  quickAccess: ["A&E (no children’sA&E)", "Urgent care centre", "Outpatients", "Main entrance"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/ealing-hospital-site-map/sitemap.svg", bounds: [[51.503515, -0.350121], [51.511697, -0.340827]] },
   ],
   waypoints: [
-    { id: "ealing-hospital-f0", name: "Ealing Hospital", type: "department", coordinates: { lat: 51.510344, lng: -0.347034 }, floor: 0 },
-    { id: "entrances-f0", name: "Entrances", type: "exit", coordinates: { lat: 51.505899, lng: -0.349252 }, floor: 0 },
     { id: "other-options-f0", name: "Other options", type: "other", coordinates: { lat: 51.505899, lng: -0.343333 }, floor: 0 },
     { id: "a-e-no-childrensa-e-f0", name: "A&E (no children’sA&E)", type: "department", coordinates: { lat: 51.505746, lng: -0.34859 }, floor: 0 },
     { id: "195-207-483-n83-n207-sl8-f0", name: "195, 207, 483, N83, N207, Sl8", type: "other", coordinates: { lat: 51.505746, lng: -0.345533 }, floor: 0 },
