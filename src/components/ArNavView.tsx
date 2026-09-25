@@ -37,8 +37,10 @@ interface Props {
 }
 
 const UP = new THREE.Vector3(0, 1, 0)
-const NHS_BLUE = 0x005eb8
-const NHS_GREEN = 0x009639
+// Design tokens (globals.css): the path is route-blue, the destination teal —
+// what the 2D and 3D maps use for the same things.
+const NHS_BLUE = 0x0a8cff
+const NHS_GREEN = 0x0fb5ae
 const CHEVRON_SPACING_M = 1.6
 
 type OrientationEvent = DeviceOrientationEvent & { webkitCompassHeading?: number }

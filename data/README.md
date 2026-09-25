@@ -100,7 +100,11 @@ node scripts/nhs/approve-plans.mjs --dry-run
    waypoints, the same generators the ten hand-built venues use.
 5. **generate-registry** — writes `src/lib/venues/generated-sheets.ts`, so
    `index.ts` doesn't need an import per hospital.
-6. **preview-sheets** — renders each sheet to `previews/<slug>.jpg` for review.
+6. **generate-venue-catalog** — writes `src/lib/venues/catalog-data.ts`: a
+   summary of every mapped venue plus a lazy import of its module, which is
+   what the app lists and searches so it never downloads every hospital's
+   interior. `scripts/lib-test/venue-catalog.test.mjs` fails CI if it is stale.
+7. **preview-sheets** — renders each sheet to `previews/<slug>.jpg` for review.
 
 ### Not every trust publishes a PDF
 

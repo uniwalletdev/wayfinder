@@ -16,11 +16,16 @@ import { nameTokens, DOCUMENT_STOPWORDS } from "./match.mjs"
 
 const VENUE_DIR = repoPath("src", "lib", "venues")
 
-// Not venue modules: the registry, the directory data this pipeline writes, and
-// the generated barrel that re-exports auto-built sheet venues (the venues
-// themselves are separate modules in this directory and are scanned normally).
+// Not venue modules: the registry and the helpers split out of it, the
+// directory data this pipeline writes, the generated barrel that re-exports
+// auto-built sheet venues, and the client's catalog of venue summaries (the
+// venues themselves are separate modules in this directory and are scanned
+// normally).
 const NOT_A_VENUE = new Set([
   "index.ts",
+  "core.ts",
+  "catalog.ts",
+  "catalog-data.ts",
   "nhs-hospitals.ts",
   "nhs-hospitals-data.ts",
   "generated-sheets.ts",

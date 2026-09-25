@@ -1,13 +1,13 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { Venue, VenueCategory, VenueVisibility, Coordinates } from "@/lib/types"
-import { NewVenueInput } from "@/lib/venues"
+import { VenueSummary, VenueCategory, VenueVisibility, Coordinates } from "@/lib/types"
+import { NewVenueInput } from "@/lib/venues/core"
 import Overlay from "@/components/Overlay"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
-  Search, Footprints,
+  Search, Footprints, Loader2,
 } from "lucide-react"
 
 // Cap how many directory venues render at once. The NHS hospital directory adds
@@ -17,13 +17,15 @@ import {
 const PUBLIC_LIST_LIMIT = 60
 
 // A venue you can actually walk inside: it ships a real floor plan or mapped
-// points, as opposed to a location-only directory pin (empty plans + points).
-function isMapped(v: Venue): boolean {
-  return v.floorPlans.length > 0 || v.waypoints.length > 0
-}
+// points, as opposed to a location-only directory pin.
+const isMapped = (v: VenueSummary) => v.mapped
 
 interface Props {
-  venues: Venue[]
+  // Summaries, not full venues: the list must not cost every hospital's
+  // interior. The venue is loaded when it is chosen.
+  venues: VenueSummary[]
+  // True until the NHS directory half of the list has arrived.
+  directoryLoading?: boolean
   activeVenueId: string
   // Centre used for a newly-created venue — the live GPS fix when available,
   // otherwise the current map centre.
@@ -80,7 +82,7 @@ const inputClass =
   "w-full rounded-xl border border-wf-border bg-white px-4 py-3 text-sm text-wf-ink outline-none placeholder:text-wf-muted focus:border-wf-primary"
 
 export default function VenuePicker({
-  venues, activeVenueId, currentCenter, hasGps,
+  venues, directoryLoading = false, activeVenueId, currentCenter, hasGps,
   onSelect, onCreate, onDelete, onClose,
 }: Props) {
   const [view, setView] = useState<"list" | "create">("list")
@@ -111,7 +113,7 @@ export default function VenuePicker({
           (v) => v.name.toLowerCase().includes(q) || (v.subtitle?.toLowerCase().includes(q) ?? false)
         )
       : publicVenues
-    const byName = (a: Venue, b: Venue) => a.name.localeCompare(b.name)
+    const byName = (a: VenueSummary, b: VenueSummary) => a.name.localeCompare(b.name)
     return {
       mappedVenues: matches.filter(isMapped).sort(byName),
       directoryVenues: matches.filter((v) => !isMapped(v)).sort(byName),
@@ -120,6 +122,10 @@ export default function VenuePicker({
 
   const shownDirectory = directoryVenues.slice(0, PUBLIC_LIST_LIMIT)
   const hiddenDirectoryCount = directoryVenues.length - shownDirectory.length
+  // The mapped list is mostly hospitals, but a demonstration venue (a
+  // residential building mapped from its CAD files) sits among them; the
+  // heading must not call it one.
+  const allHospitals = mappedVenues.every((v) => v.category === "hospital")
 
   // A public venue can only be published once the user attests they're allowed to.
   const canCreate = name.trim().length > 0 && (visibility !== "public" || authorised)
@@ -307,7 +313,7 @@ export default function VenuePicker({
           <div className="flex items-center gap-1.5 px-4 pb-1.5 pt-3 lg:px-6">
             <Footprints size={13} className="text-wf-primary" aria-hidden="true" />
             <p className="text-[11.5px] font-semibold uppercase tracking-[0.08em] text-wf-primary">
-              Mapped hospitals · walk inside
+              {allHospitals ? "Mapped hospitals" : "Mapped places"} · walk inside
             </p>
           </div>
         )}
@@ -325,7 +331,13 @@ export default function VenuePicker({
           <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
         ))}
 
-        {mappedVenues.length === 0 && shownDirectory.length === 0 && (
+        {directoryLoading && (
+          <p className="flex items-center gap-2 px-4 py-3 text-xs text-wf-muted lg:px-6" role="status">
+            <Loader2 size={13} className="animate-spin" aria-hidden="true" /> Loading the NHS hospital directory…
+          </p>
+        )}
+
+        {!directoryLoading && mappedVenues.length === 0 && shownDirectory.length === 0 && (
           <p className="px-4 py-6 text-center text-sm text-wf-muted">No places match “{query}”.</p>
         )}
         {hiddenDirectoryCount > 0 && (
@@ -386,7 +398,7 @@ function OptionRow({ label, Icon, on, onChange }: { label: string; Icon: typeof 
   )
 }
 
-function VenueRow({ venue, active, mapped = false, onSelect, onDelete }: { venue: Venue; active: boolean; mapped?: boolean; onSelect: (id: string) => void; onDelete: (id: string) => void }) {
+function VenueRow({ venue, active, mapped = false, onSelect, onDelete }: { venue: VenueSummary; active: boolean; mapped?: boolean; onSelect: (id: string) => void; onDelete: (id: string) => void }) {
   const isUserVenue = venue.id.startsWith("venue-")
   return (
     <div className={`flex w-full items-center gap-3 border-b border-wf-border-faint px-4 py-3 lg:px-6 ${active ? "bg-[#EEF5FD]" : mapped ? "bg-[#F7FAFD]" : ""}`}>

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
-import { Asset, AssetCategory, Coordinates, FloorPlan, SurveyTrail, Waypoint, WaypointType } from "@/lib/types"
+import { Asset, AssetCategory, Coordinates, FloorNaming, FloorPlan, SurveyTrail, Waypoint, WaypointType } from "@/lib/types"
 import { ALL_WAYPOINT_TYPES, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel } from "@/lib/waypoint-meta"
 import { ALL_ASSET_CATEGORIES, ASSET_CATEGORY_ICONS, ASSET_CATEGORY_LABELS } from "@/lib/asset-meta"
 import { loadPlanFile, VectorPlanFeature, NormalisedAsset } from "@/lib/plan-import"
@@ -23,6 +23,8 @@ interface Props {
   currentFloor: number
   venueCenter: Coordinates
   venueName: string
+  // The venue's own storey numbering, for every floor shown here.
+  floorNaming?: FloorNaming
   onClose: () => void
   onUploadComplete: (result: UploadPlanResult) => void
 }
@@ -47,7 +49,7 @@ interface ReviewAsset {
 
 type Step = "pick" | "analyzing" | "georeference" | "review"
 
-export default function UploadPlanMode({ currentFloor, venueCenter, venueName, onClose, onUploadComplete }: Props) {
+export default function UploadPlanMode({ currentFloor, venueCenter, venueName, floorNaming, onClose, onUploadComplete }: Props) {
   const [step, setStep] = useState<Step>("pick")
   const [error, setError] = useState<string | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
@@ -324,7 +326,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         floorPlans = floors.map((f) => ({
           id: `plan-${Date.now()}-f${f}`,
           floor: f,
-          label: floorLabel(f),
+          label: floorLabel(f, floorNaming),
           imageUrl: rasterImage.dataUrl,
           bounds,
         }))
@@ -333,7 +335,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
           {
             id: `plan-${Date.now()}`,
             floor: planFloor,
-            label: floorLabel(planFloor),
+            label: floorLabel(planFloor, floorNaming),
             imageUrl: rasterImage.dataUrl,
             bounds,
           },
@@ -388,7 +390,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
             {reviewRooms.length} place{reviewRooms.length === 1 ? "" : "s"} detected{" "}
             {rawSheet
               ? `across ${new Set(reviewRooms.map((r) => r.floor)).size} floor${new Set(reviewRooms.map((r) => r.floor)).size === 1 ? "" : "s"}`
-              : `on ${floorLabel(planFloor)}`}
+              : `on ${floorLabel(planFloor, floorNaming)}`}
             {reviewTrails.length > 0
               ? ` · ${reviewTrails.length} corridor${reviewTrails.length === 1 ? "" : "s"} traced`
               : ""}
@@ -426,7 +428,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
                   />
                   {rawSheet && (
                     <span className="text-[10px] font-semibold text-wf-faint bg-wf-surface rounded-md px-1.5 py-0.5 flex-shrink-0 whitespace-nowrap">
-                      {floorLabel(r.floor)}
+                      {floorLabel(r.floor, floorNaming)}
                       {r.zone ? ` · ${r.zone}` : ""}
                     </span>
                   )}
@@ -541,7 +543,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
         <div className="flex items-center justify-between rounded-xl border border-wf-border px-4 py-3 mb-4">
           <div>
             <p className="text-xs font-semibold text-wf-muted">Floor being uploaded</p>
-            <p className="text-sm font-bold text-wf-ink">{floorLabel(planFloor)}</p>
+            <p className="text-sm font-bold text-wf-ink">{floorLabel(planFloor, floorNaming)}</p>
           </div>
           <div className="flex items-center gap-1">
             <button

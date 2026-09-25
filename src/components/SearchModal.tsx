@@ -1,11 +1,11 @@
 "use client"
 
 import { useEffect, useId, useMemo, useRef, useState } from "react"
-import { Waypoint, Coordinates, FloorNaming } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel } from "@/lib/waypoint-meta"
-import { rankWaypoints, rankNearMisses } from "@/lib/search"
+import { Waypoint, Coordinates, FloorNaming, VenueSummary } from "@/lib/types"
+import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel, waypointDetail } from "@/lib/waypoint-meta"
+import { rankWaypoints, rankNearMisses, scoreWaypoint } from "@/lib/search"
 import Overlay from "@/components/Overlay"
-import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
+import { Search, X, ChevronRight, MapPin, Loader2, Building2, ArrowRightLeft } from "lucide-react"
 
 interface Props {
   // Which venue the search ran against — recorded with unmatched queries so
@@ -23,9 +23,16 @@ interface Props {
   // "where to?" search; "origin" is picking a custom starting point, which only
   // changes the wording so it's clear which end of the journey is being set.
   purpose?: "origin" | "destination"
+  // Every other place the app knows, so a search for a hospital that is not
+  // the open one offers to switch to it instead of "no results".
+  otherVenues?: VenueSummary[]
+  onSwitchVenue?: (id: string) => void
   onSelect: (waypoint: Waypoint) => void
   onClose: () => void
 }
+
+// How many other hospitals to offer for a query.
+const MAX_VENUE_HITS = 5
 
 // Fire-and-forget: a missed search is telemetry for the venue's mappers, never
 // something the visitor should wait on or see fail.
@@ -66,7 +73,7 @@ interface Item {
   render: (active: boolean, id: string) => React.ReactNode
 }
 
-export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", onSelect, onClose }: Props) {
+export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", otherVenues = [], onSwitchVenue, onSelect, onClose }: Props) {
   const isOrigin = purpose === "origin"
   const searchPlaceholder = isOrigin ? "Choose a starting point…" : "Search a room, place or address…"
   const [query, setQuery] = useState("")
@@ -99,6 +106,20 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
   )
 
   const quickWaypoints = useMemo(() => waypoints.filter((w) => quickAccess.includes(w.name)), [waypoints, quickAccess])
+
+  // Other hospitals whose name matches: someone at the wrong hospital, or
+  // planning from home, types the hospital's name and used to get nothing.
+  const venueHits = useMemo(() => {
+    if (trimmed.length < 2 || !onSwitchVenue) return []
+    return otherVenues
+      .filter((v) => v.id !== venueId && v.visibility === "public")
+      .map((v) => ({ v, score: scoreWaypoint(trimmed, v.name, v.subtitle, "") }))
+      .filter((x) => x.score > 0)
+      // Mapped hospitals before location-only pins, then by match.
+      .sort((a, b) => Number(b.v.mapped) - Number(a.v.mapped) || b.score - a.score || a.v.name.localeCompare(b.v.name))
+      .slice(0, MAX_VENUE_HITS)
+      .map((x) => x.v)
+  }, [trimmed, otherVenues, venueId, onSwitchVenue])
 
   // The full directory, grouped by floor and alphabetical within each: a
   // visitor who cannot spell the ward can still find it by browsing the floor
@@ -158,7 +179,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
   const extraResults = geoActive ? geoResults.filter((r) => !indoorNames.has(r.name.toLowerCase())) : []
   const showLoading = geoActive && geoLoading
 
-  const showEmpty = trimmed !== "" && filtered.length === 0 && extraResults.length === 0 && !showLoading
+  const showEmpty = trimmed !== "" && filtered.length === 0 && extraResults.length === 0 && venueHits.length === 0 && !showLoading
 
   // Close near-misses to offer as "Did you mean …?" when nothing matched.
   const nearMisses = showEmpty ? rankNearMisses(trimmed, waypoints) : []
@@ -208,6 +229,16 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
           id: `geo-${r.id}`,
           select: () => onSelect(geoToWaypoint(r)),
           render: (active, id) => <GeoRow id={id} active={active} result={r} onSelect={() => onSelect(geoToWaypoint(r))} />,
+        })),
+      })
+    }
+    if (venueHits.length > 0 && onSwitchVenue) {
+      sections.push({
+        label: "Other hospitals",
+        items: venueHits.map((v) => ({
+          id: `venue-${v.id}`,
+          select: () => onSwitchVenue(v.id),
+          render: (active, id) => <VenueHitRow id={id} active={active} venue={v} onSelect={() => onSwitchVenue(v.id)} />,
         })),
       })
     }
@@ -394,7 +425,7 @@ function WaypointRow({ id, active, waypoint, floorNaming, onSelect }: { id: stri
         <span className="block truncate text-[14.5px] font-semibold text-wf-ink">{waypoint.name}</span>
         <span className="block truncate text-xs text-wf-muted">
           {WAYPOINT_TYPE_LABELS[waypoint.type]} · {floorLabel(waypoint.floor, floorNaming)}
-          {waypoint.description ? ` · ${waypoint.description}` : ""}
+          {waypointDetail(waypoint) ? ` · ${waypointDetail(waypoint)}` : ""}
         </span>
       </span>
       <ChevronRight size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
@@ -413,6 +444,24 @@ function GeoRow({ id, active, result, onSelect }: { id: string; active: boolean;
         <span className="block truncate text-xs text-wf-muted">{result.description}</span>
       </span>
       <ChevronRight size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
+    </button>
+  )
+}
+
+function VenueHitRow({ id, active, venue, onSelect }: { id: string; active: boolean; venue: VenueSummary; onSelect: () => void }) {
+  return (
+    <button id={id} role="option" aria-selected={active} tabIndex={-1} onClick={onSelect} className={rowClass(active)}>
+      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] bg-[#E7F2FF]" aria-hidden="true">
+        <Building2 size={18} className="text-wf-primary" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate text-[14.5px] font-semibold text-wf-ink">{venue.name}</span>
+        <span className="block truncate text-xs text-wf-muted">
+          {venue.mapped ? "Mapped · switch to this hospital" : "Location only · switch to this hospital"}
+          {venue.subtitle ? ` · ${venue.subtitle}` : ""}
+        </span>
+      </span>
+      <ArrowRightLeft size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
     </button>
   )
 }

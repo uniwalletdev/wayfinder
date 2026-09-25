@@ -100,7 +100,7 @@ export function isUndecodable(s) {
 // sheet is dense with them, and "A&e Reception" or "Male Wc" reads as a bug to
 // anyone standing in the building.
 const KEEP_UPPER = new Set([
-  "A&E", "AAU", "AMU", "CCU", "CDU", "CT", "DVT", "EAU", "ECG", "ED", "EEG", "ENT",
+  "A&E", "AAU", "AMU", "CCU", "CDC", "CDU", "CT", "DVT", "EAU", "ECG", "ED", "EEG", "ENT",
   "EPU", "GF", "GP", "GUM", "HDU", "HIV", "ICU", "ITU", "IT", "LG", "MAU", "MIU",
   "MRI", "NHS", "NICU", "OPD", "PALS", "PICU", "SAU", "SCBU", "SDEC", "TIA", "TV",
   "UK", "US", "UTC", "WC", "X-RAY", "XR",

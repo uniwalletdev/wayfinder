@@ -8,15 +8,18 @@
 // storage loses it permanently; see db/migrations/0003_venues.sql).
 //
 // Three states, in order of how most people will see it:
-//   1. Clerk not configured  → the plain initials circle, exactly as before.
-//   2. Configured, signed out → the same circle, now a sign-in affordance.
+//   1. Clerk not configured  → a Help button (the accessibility and how-to
+//                               page). A "?" circle that did nothing used to sit
+//                               here, which on a hospital kiosk reads as broken.
+//   2. Configured, signed out → the circle as a sign-in affordance.
 //   3. Configured, signed in  → Clerk's <UserButton>.
 //
 // <Show> from @clerk/nextjs is an async *server* component and cannot be used
 // here, so this reads session state through the client hook instead.
 
+import Link from "next/link"
 import { SignInButton, UserButton, useUser } from "@clerk/nextjs"
-import { User } from "lucide-react"
+import { User, HelpCircle } from "lucide-react"
 
 // NEXT_PUBLIC_* is inlined at build time, so the client can tell whether a
 // ClerkProvider is mounted above it. Calling useUser() without one throws.
@@ -25,8 +28,12 @@ const clerkEnabled = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 const circle =
   "flex h-[34px] w-[34px] items-center justify-center rounded-full bg-wf-surface text-[13px] font-semibold text-wf-muted"
 
-function InitialsCircle({ initials }: { initials?: string | null }) {
-  return <div className={circle}>{initials ?? "?"}</div>
+function HelpLink() {
+  return (
+    <Link href="/accessibility" className={`${circle} transition-colors hover:bg-wf-border`} title="Help and accessibility" aria-label="Help and accessibility">
+      <HelpCircle size={16} aria-hidden="true" />
+    </Link>
+  )
 }
 
 function ClerkAuthButton({ initials }: { initials?: string | null }) {
@@ -40,10 +47,10 @@ function ClerkAuthButton({ initials }: { initials?: string | null }) {
         <button
           type="button"
           className={`${circle} transition-colors hover:bg-wf-border`}
-          title="Sign in to save places and keep the venues you map"
+          title="Sign in (optional — the map works without an account)"
           aria-label="Sign in"
         >
-          {isLoaded ? <User size={15} /> : (initials ?? "?")}
+          {isLoaded ? <User size={15} aria-hidden="true" /> : (initials ?? "?")}
         </button>
       </SignInButton>
     )
@@ -53,6 +60,6 @@ function ClerkAuthButton({ initials }: { initials?: string | null }) {
 }
 
 export default function AuthButton({ initials }: { initials?: string | null }) {
-  if (!clerkEnabled) return <InitialsCircle initials={initials} />
+  if (!clerkEnabled) return <HelpLink />
   return <ClerkAuthButton initials={initials} />
 }

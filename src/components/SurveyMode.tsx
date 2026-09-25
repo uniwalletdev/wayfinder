@@ -1,9 +1,9 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { SurveyFrame, Coordinates, Waypoint, SurveyTrail } from "@/lib/types"
+import { SurveyFrame, Coordinates, Waypoint, SurveyTrail, FloorNaming } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
-import { ALL_WAYPOINT_TYPES, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorShortLabel } from "@/lib/waypoint-meta"
+import { ALL_WAYPOINT_TYPES, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel, floorShortLabel } from "@/lib/waypoint-meta"
 import { useDialog } from "@/lib/use-dialog"
 import { X, Square, MapPin, Check, ChevronUp, ChevronDown } from "lucide-react"
 
@@ -22,11 +22,13 @@ interface Props {
   // venue name used to ground the AI sign-reading prompt.
   venueCenter: Coordinates
   venueName: string
+  // The venue's own storey numbering, so the stepper reads "L2" at GOSH.
+  floorNaming?: FloorNaming
   onClose: () => void
   onSurveyComplete: (result: SurveyResult) => void
 }
 
-export default function SurveyMode({ currentFloor, currentPosition, venueCenter, venueName, onClose, onSurveyComplete }: Props) {
+export default function SurveyMode({ currentFloor, currentPosition, venueCenter, venueName, floorNaming, onClose, onSurveyComplete }: Props) {
   const dialogRef = useDialog<HTMLDivElement>(onClose)
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -255,7 +257,7 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
           </button>
           <div className="text-white text-center leading-tight py-1">
             <div className="text-[10px] text-white/70">Floor</div>
-            <div className="text-lg font-bold">{floorShortLabel(surveyFloor)}</div>
+            <div className="text-lg font-bold">{floorShortLabel(surveyFloor, floorNaming)}</div>
           </div>
           <button
             onClick={() => setSurveyFloor((f) => Math.max(f - 1, -5))}
@@ -288,7 +290,7 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
               <p className="text-white text-xs">📸 {frameCount} frames</p>
             </div>
             <div className="bg-black/50 rounded-full px-3 py-1">
-              <p className="text-white text-xs">🏢 {surveyFloor === 0 ? "Ground" : `Floor ${surveyFloor}`}</p>
+              <p className="text-white text-xs">🏢 {floorLabel(surveyFloor, floorNaming)}</p>
             </div>
             <div className="bg-black/50 rounded-full px-3 py-1">
               <p className="text-white text-xs">📍 {markedCount} marked</p>

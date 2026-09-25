@@ -73,6 +73,22 @@ export function floorShortLabel(floor: number, naming?: FloorNaming): string {
   return String(floor)
 }
 
+// A waypoint's description for display beside its floor label. Many venues
+// write the storey into the description ("Variety Club Building, Level 2"),
+// which is right for the data — src/lib/buildings.ts reads the building off
+// it — but under a "Level 2 (ground floor)" label it says the floor twice.
+// The trailing ", Level N" / ", Floor N" is dropped; anything that carries
+// more than the floor ("Levels 0-1", "(4 lifts)") is kept.
+export function waypointDetail(w: Pick<Waypoint, "description">): string | undefined {
+  const d = w.description?.trim()
+  if (!d) return undefined
+  const out = d
+    .replace(/,\s*(?:Level|Floor)\s*-?\d+(?=\s*(?:\(|$))/i, "")
+    .replace(/\s{2,}/g, " ")
+    .trim()
+  return out || undefined
+}
+
 // Build the list of floors that actually have data, rather than a fixed list.
 // Combines floors that have a plan with any floor referenced by a waypoint, so
 // that surveyed/custom locations on new floors automatically become selectable.

@@ -3,8 +3,8 @@
 *Reviewed at commit `f20ae94` (September 2026), on the `main` branch as
 shipped. Scope: every screen, every API route, the routing and positioning
 code, the PWA and native shells, the landing page and the written content.
-Most findings below were implemented on the same branch as this review; the
-"Status" column says which, and the last section lists what is still open.*
+The findings were implemented in two passes on the same branch; the "Status"
+column says which, and the last section lists what is still open.*
 
 The July 2026 review that this file replaced is summarised at the end: of its
 21 findings, 15 had been fixed on `main` before this review began.
@@ -59,6 +59,12 @@ rescuing it.
 | C10 | **Search returned noise for fuzzy queries**: "pharm" listed "Ramp to Southwood" and "Lullaby Factory Cycle Parking" because the letters appeared in order somewhere in a long description. | ✅ Subsequence matching is now for names only. `search.test.mjs` added (the ranking had no tests). |
 | C11 | Camera screens said "QR Code detected! Locating you..." and "Point camera at a QR code on the wall"; a visitor does not know what a Wayfinder poster looks like. | ✅ Copy now says what to look for. |
 | C12 | `.env.example` said the device-only mode "never makes network calls"; it fetches map tiles from a CDN. | ✅ Corrected. |
+| C13 | **Searching for a hospital you are not in gave "no results."** Search is scoped to the open venue, so someone at the wrong hospital, or planning from home, typed "Addenbrooke" and got nothing. | ✅ Search now also matches other hospitals by name and offers to switch to them ("Other hospitals"), mapped ones first. |
+| C14 | Descriptions repeated the floor already shown beside them: "Level 2 (ground floor) · Variety Club Building, Level 2". | ✅ `waypointDetail` drops a trailing ", Level N" that only repeats the label; anything carrying more ("Levels 0-1", "(4 lifts)") stays. |
+| C15 | Survey Mode, plan upload and the camera guide used generic floor names ("Floor 3") at venues with their own numbering ("Level 5"). | ✅ All three take the venue's floor naming. |
+| C16 | The places list's "Mapped hospitals" heading covered a residential building (the CAD-import demonstration venue). | ✅ Heading reads "Mapped places" when a non-hospital is among them. |
+| C17 | "Bishop Auckland Cdc" — an acronym title-cased by the pipeline. | ✅ Renamed to CDC; "CDC" added to the pipeline's kept-acronym list so it stays that way. |
+| C18 | A "?" circle in the panel that did nothing when sign-in was not configured; a sign-in tooltip promising things sign-in does not yet do. | ✅ Without sign-in it is a Help button (the accessibility and how-to page); with it, the tooltip says sign-in is optional and nothing more. |
 
 ### Function
 
@@ -78,6 +84,8 @@ rescuing it.
 | F12 | `DELETE /api/venues/[id]` was the one write route with no rate limit and an unbounded `request.json()`. | ✅ Same limiter and body cap as the other writes. |
 | F13 | PWA manifest: `start_url` was the marketing page, no `id`, no shortcuts. Metadata had no `metadataBase`, Open Graph or Twitter card, so a shared ward link unfurled as a bare URL. No robots or sitemap. | ✅ Manifest starts in the app with "Find a ward" and "Map a place" shortcuts; Open Graph/Twitter metadata; `robots.ts`, `sitemap.ts`; `NEXT_PUBLIC_SITE_URL` documented; `X-Powered-By` removed. |
 | F14 | Dead code: `LeafletFix.tsx` (unused, and it pulled marker images from cdnjs), five stock create-next-app SVGs, a duplicated `slugify`, a hand-copied `ANNOTATION_TYPES` list. | ✅ Removed or deduplicated. |
+| F15 | **Every hospital shipped to every visitor.** The map imported the venue registry, and with it all 67 mapped hospitals' floor plans, waypoints and corridors plus the 2,278-row directory: 13,354 coordinate literals, about 60% of the largest client chunk. | ✅ The client now imports a generated catalog of venue summaries (`venues/catalog-data.ts`, a few KB) and the default venue; a hospital's module is fetched the first time it is opened, the directory the first time the places list or search needs it. `venue-catalog.test.mjs` fails CI if the catalog drifts from the modules; `npm run nhs:catalog` regenerates it and the ingest pipeline runs it. |
+| F16 | No Content-Security-Policy beyond frame protection. | ✅ A full policy ships in **report-only** mode with `/api/csp-report` logging what browsers would have blocked, so it can be tightened against a real deployment and then enforced. `next.config.ts` says what to add first (a deployment's own Clerk domain). |
 
 ### Design and accessibility
 
@@ -90,18 +98,21 @@ rescuing it.
 | D5 | **Search had no keyboard operation** beyond typing; "/" opens it on desktop, then the mouse was needed. | ✅ Combobox semantics: Up/Down/Home/End move, Enter selects, the active row scrolls into view and is announced. |
 | D6 | Icon-only buttons without names (clear search, close camera, close survey, delete place); decorative emoji read aloud; no `<h1>` on the app screen. | ✅ Labelled, hidden, added. |
 | D7 | The bottom sheet's collapsed state showed the destination header and Start with nothing to tell a phone user the route options existed. | Kept: the grab handle and the collapse-on-select behaviour are a deliberate choice; the route card now reads better with the honest accuracy tile. |
+| D8 | The AR view's floor chevrons and beacon kept the old NHS blue and green. | ✅ Route-blue and teal, matching the maps. |
 
 ### Performance
 
-| Measure | Before | After |
-| --- | --- | --- |
-| `/navigate` client JS, all chunks, gzipped | ≈ 497 KB (top six chunks) | ≈ 567 KB (all chunks, incl. share/QR/toast code now on the route) |
-| Largest chunk (venue data + app), gzipped | 308 KB | 313 KB |
-| 4,000-breadcrumb corridor network, 10 route builds | seconds (O(n²)) | ~100 ms |
-| 200 route rebuilds on a cached graph | rebuilt each time | ~260 ms |
-| Landing page client JS, gzipped | — | ≈ 245 KB |
+| Measure | Before | After pass 1 | After pass 2 |
+| --- | --- | --- | --- |
+| `/navigate` client JS, all chunks, gzipped | ≈ 497 KB (top six chunks) | ≈ 567 KB | **≈ 361 KB** |
+| Largest chunk, gzipped | 308 KB (all venue data + app) | 313 KB | **96 KB** (app + the default venue) |
+| Opening another hospital | already downloaded | already downloaded | two chunks, a few KB to ~30 KB |
+| 4,000-breadcrumb corridor network, 10 route builds | seconds (O(n²)) | ~100 ms | ~100 ms |
+| 200 route rebuilds on a cached graph | rebuilt each time | ~260 ms | ~260 ms |
+| Landing page client JS, gzipped | — | ≈ 245 KB | ≈ 245 KB |
 
-The largest chunk is where the remaining work is: see "Still open".
+The first pass added code to the route (share links, QR, toasts, the
+announcer); the second removed the venue data that dwarfed it.
 
 ### Security
 
@@ -109,14 +120,11 @@ Already in good shape: HTML escaping on every interpolated string, per-route
 rate limits and body caps, frame-ancestors/X-Frame-Options, a strict
 Permissions-Policy, owner tokens on venue writes, no secrets on the client.
 This review added the DELETE route's cap and limiter, removed the runtime CDN
-dependency for pdf.js, and removed `X-Powered-By`. The two things it did not
-change, deliberately:
-
-- The in-memory rate limiter resets per instance; the file says so and points
-  at provider spend caps as the real backstop. Still true.
-- No full Content-Security-Policy. The reasoning in `next.config.ts` (it would
-  fail silently in production on a healthcare app) still holds; a report-only
-  policy is the way in.
+dependency for pdf.js, removed `X-Powered-By`, and shipped a full
+Content-Security-Policy in report-only mode with a logging endpoint (F16).
+One thing it did not change, deliberately: the in-memory rate limiter resets
+per instance; the file says so and points at provider spend caps as the real
+backstop. Still true.
 
 ---
 
@@ -124,33 +132,31 @@ change, deliberately:
 
 Ordered by value. None blocks a deployment.
 
-1. **Ship venue data on demand.** All 67 mapped venues plus the 2,278-row
-   directory are statically imported into the `/navigate` bundle: 13,354
-   coordinate literals in the largest chunk, roughly 60% of its 313 KB
-   gzipped. Generate a lightweight index (id, slug, name, subtitle, centre,
-   category, flags) for the picker and deep-link resolution, and `import()`
-   a venue's module when it is opened. Expect the first load to drop by
-   150–200 KB gzipped. It needs a generated index kept in step by CI, which
-   is why it was not done here.
+1. **Enforce the CSP.** It is report-only (F16). Run a deployment through
+   sign-in, the map, plan upload and the camera tools, read the log from
+   `/api/csp-report`, add the deployment's own Clerk domain, then move the
+   value to the enforced header.
 2. **Hospital directory venues are only pins.** Selecting one shows a
-   building outline and nothing to route to. A "Main entrance" pin from the
-   OSM footprint's entrance node, where OSM has one, would give every
-   directory hospital a destination.
-3. **Content-Security-Policy, report-only first**, once a deployment exists
-   to observe.
-4. **Location traces are personal data** (`docs/location-data-and-gdpr.md`):
+   building outline and nothing to route to. The pipeline's OpenStreetMap
+   footprints (`data/footprints.geojson`, not checked in) carry entrance
+   nodes for many sites; a "Main entrance" waypoint from those would give
+   every directory hospital a destination. Not done here because the
+   footprint file is a pipeline output that was not available in this
+   environment.
+3. **Location traces are personal data** (`docs/location-data-and-gdpr.md`):
    the corridor trails posted while navigating carry a stable device id. The
    privacy page now states it plainly; the product decision — retention,
    aggregation, or an opt-in — is still to make with the deploying trust.
-5. **Search across venues.** Search is scoped to the open venue; someone at
-   the wrong hospital gets "no results". A "Did you mean at another
-   hospital?" tier over the venue index from item 1 would fix it.
-6. **Sign-in does nothing yet.** Clerk is wired but venues are still owned by
-   a per-device token. Either attach ownership to the account or say in the
-   sign-in tooltip what signing in currently does (nothing).
-7. **The 3D view's markers are emoji sprites** and the AR view keeps the old
-   NHS colours for its chevrons — the last two places the design system does
-   not reach.
+4. **Sign-in does nothing yet.** Clerk is wired but venues are still owned by
+   a per-device token. The affordance is now honest about that; attaching
+   ownership to the account is the work.
+5. **Search inside other hospitals.** Search now finds other hospitals by
+   name and switches to them; finding a *ward* at a hospital that is not open
+   would need a searchable index of every venue's waypoints, which is the
+   data the client deliberately no longer downloads. A server-side search
+   endpoint over the same modules is the natural next step.
+6. **The 3D view's markers are emoji sprites** — the last place the design
+   system does not reach.
 
 ## The July 2026 review
 

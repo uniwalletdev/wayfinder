@@ -1,7 +1,7 @@
 import { randomUUID } from "crypto"
 import { query } from "./db"
 import { Venue, Waypoint } from "./types"
-import { NewVenueInput, slugify as slugifyName } from "./venues"
+import { NewVenueInput, slugify as slugifyName } from "./venues/core"
 
 // Server-side data access for shared venue maps (see db/migrations/0003_venues.sql).
 // Reads are open; writes are gated by a per-venue edit_token minted at creation —

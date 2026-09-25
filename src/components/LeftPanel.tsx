@@ -9,7 +9,7 @@ import {
   Info, MapPin, Pencil, Volume2,
 } from "lucide-react"
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
+import { WAYPOINT_TYPE_ICONS, floorLabel, waypointDetail } from "@/lib/waypoint-meta"
 import Toggle from "@/components/Toggle"
 import AuthButton from "@/components/AuthButton"
 
@@ -380,7 +380,7 @@ function NearbyList({
             </span>
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold text-wf-ink">{w.name}</p>
-              <p className="truncate text-xs text-wf-muted">{floorLabel(currentFloor, floorNaming)}{w.description ? ` · ${w.description}` : ""}</p>
+              <p className="truncate text-xs text-wf-muted">{floorLabel(currentFloor, floorNaming)}{waypointDetail(w) ? ` · ${waypointDetail(w)}` : ""}</p>
             </div>
             <span className="flex-shrink-0 font-display text-[12.5px] font-semibold text-wf-primary">
               {fmtDistance(w.distanceM)}
@@ -522,7 +522,7 @@ function RoutePreviewCard({
           </span>
           <div className="min-w-0">
             <p className="truncate text-[15.5px] font-semibold text-wf-ink">{destination.name}</p>
-            <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor, floorNaming)}{destination.description ? ` · ${destination.description}` : ""}</p>
+            <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor, floorNaming)}{waypointDetail(destination) ? ` · ${waypointDetail(destination)}` : ""}</p>
           </div>
         </div>
         <button onClick={onStop} aria-label="Clear destination" className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">

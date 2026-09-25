@@ -106,6 +106,10 @@ export const LIMITS = {
   // served from an in-process index, so a ceiling keeps a loop from pinning a
   // server instance. Generous: the map asks once per venue switch.
   footprints: { limit: 120, windowMs: 60 * 1000 }, // 120/min
+  // CSP violation reports are written to the log and nothing else. A browser
+  // on a page that trips the policy can send several per load, so allow a
+  // burst; anything beyond that is a script, not a browser.
+  cspReport: { limit: 30, windowMs: 60 * 1000 }, // 30/min
 } as const
 
 // ── Request body caps ───────────────────────────────────────────────────────
@@ -134,6 +138,8 @@ export const BODY_LIMITS = {
   venue: 16 * 1024,
   // A venue key plus a search string.
   searchMiss: 8 * 1024,
+  // One or a handful of CSP violation reports.
+  cspReport: 16 * 1024,
 } as const
 
 export type CappedBody<T> =

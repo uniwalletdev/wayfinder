@@ -3,10 +3,11 @@
 import dynamic from "next/dynamic"
 import { useRouter } from "next/navigation"
 import { useState, useEffect, useCallback, useRef, useMemo } from "react"
-import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, FloorPlan, RoutePreference, Asset } from "@/lib/types"
+import { Waypoint, NavigationState, SurveyTrail, Coordinates, Venue, VenueSummary, FloorPlan, RoutePreference, Asset } from "@/lib/types"
 import { getAvailableFloors, floorLabel } from "@/lib/waypoint-meta"
 import { venueBuildings, buildingAt } from "@/lib/buildings"
-import { DEFAULT_VENUE, SEED_VENUES, getVenueById, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues"
+import { DEFAULT_VENUE, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues/core"
+import { loadVenue, loadCatalog, catalogSnapshot, summaryOf } from "@/lib/venues/catalog"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
   loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
@@ -154,8 +155,27 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // venues and ones they create, or map a brand-new place. Everything below
   // reads the active venue rather than hard-coded constants, so any mapped
   // place — public or private — renders and routes the same way.
-  const [activeVenueId, setActiveVenueId] = useState<string>(DEFAULT_VENUE.id)
+  // The venue on screen, as a full object. The default ships with the app; any
+  // other seed venue's module is fetched the first time it is opened (see
+  // venues/catalog.ts), so the map no longer downloads every hospital.
+  const [venue, setVenue] = useState<Venue>(DEFAULT_VENUE)
+  const activeVenueId = venue.id
   const [userVenues, setUserVenues] = useState<Venue[]>([])
+  // The latest user venues, for async work that must not read a stale list.
+  const userVenuesRef = useRef<Venue[]>([])
+  useEffect(() => {
+    userVenuesRef.current = userVenues
+  }, [userVenues])
+  // The seed venue whose module is being fetched right now, so the link
+  // handling below can tell "still loading" from "not here".
+  const venueLoadingRef = useRef<string | null>(null)
+  // Ignore a slow switch that resolves after a later one.
+  const switchSeqRef = useRef(0)
+  // Summaries of every seed venue for the places list and hospital search. The
+  // mapped venues are known at once; the directory half loads the first time
+  // either list opens.
+  const [catalog, setCatalog] = useState<VenueSummary[]>(() => catalogSnapshot())
+  const [catalogReady, setCatalogReady] = useState(false)
   // Whether a shared-venue backend is reachable. When true, user-created venues
   // and their surveyed/AI-read points live on the server (reusable across
   // devices) instead of only in this browser's localStorage.
@@ -170,8 +190,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // Set once the saved state and any link have been read, so the URL sync does
   // not overwrite a shared link before it has been acted on.
   const hydratedRef = useRef(false)
-  const venue = useMemo(() => getVenueById(activeVenueId, userVenues) ?? DEFAULT_VENUE, [activeVenueId, userVenues])
-  const allVenues = useMemo(() => [...SEED_VENUES, ...userVenues], [userVenues])
+  const allVenues = useMemo<VenueSummary[]>(() => {
+    const seen = new Set(catalog.map((v) => v.id))
+    return [...catalog, ...userVenues.filter((v) => !seen.has(v.id)).map(summaryOf)]
+  }, [catalog, userVenues])
 
   // Whether this phone can run immersive WebXR AR (native SLAM). Decides whether
   // "Live camera" opens the floor-anchored AR view or the compass overlay.
@@ -219,60 +241,26 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [])
 
-  // On first load, fold any pre-multi-venue data into the default venue, restore
-  // the user's saved venues and which one they last had open, and load the
-  // points/trails/plans mapped inside it. Switching venues afterwards reloads
-  // data in the handler (goToVenue), so this stays a one-time hydration on mount.
+
+  // The places list and hospital search show every seed venue, so the first
+  // time either opens the directory half of the catalog is fetched.
   useEffect(() => {
-    migrateLegacyData(DEFAULT_VENUE.id)
-    try {
-      // localStorage only exists in the browser, so this cannot be a lazy
-      // initial state without a server/client hydration mismatch.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      if (window.localStorage.getItem(MAP_VIEW_KEY) === "3d") setMapView("3d")
-      const savedStyle = window.localStorage.getItem(MAP_STYLE_KEY)
-      // "satellite" is a legacy value from before it was removed — fall back to dark.
-      if (savedStyle === "dark" || savedStyle === "satellite") setMapStyle("dark")
-      if (window.localStorage.getItem(ALWAYS_STEPFREE_KEY) === "false") setAlwaysStepFree(false)
-    } catch {}
-    const restored = loadUserVenues()
-    const savedActive = loadActiveVenueId()
-    let startId = savedActive && getVenueById(savedActive, restored) ? savedActive : DEFAULT_VENUE.id
-
-    // A shared link or a scanned poster opens the app at a place: ?venue=&to=
-    // plus, for a poster, the position it is posted at. The venue in the link
-    // wins over the one last open; anything the link names that this device
-    // does not know yet is left pending for the server's venue list.
-    let link: WayfinderLink | null = null
-    try {
-      link = linkFromSearchParams(new URLSearchParams(window.location.search))
-    } catch {}
-    if (link?.venueId && getVenueById(link.venueId, restored)) startId = link.venueId
-    if (link && (link.destinationId || (link.venueId && link.venueId !== startId))) pendingLinkRef.current = link
-
-    setUserVenues(restored)
-    setActiveVenueId(startId)
-    saveActiveVenueId(startId)
-    setCustomWaypoints(loadVenueWaypoints(startId))
-    setSurveyTrails(loadVenueTrails(startId))
-    setCustomFloorPlans(loadVenueFloorPlans(startId))
-    setCustomAssets(loadVenueAssets(startId))
-    // The restored venue is not necessarily the default one, and its plans may
-    // start above ground.
-    const restoredVenue = getVenueById(startId, restored)
-    if (restoredVenue) setNavState((s) => ({ ...s, currentFloor: openingFloor(restoredVenue) }))
-
-    // A poster's position fix: the walker is standing where the code is.
-    if (link?.anchor) {
-      const { floor, lat, lng } = link.anchor
-      setGpsStatus("active")
-      setNavState((s) => ({ ...s, currentFloor: floor }))
-      setAnchor({ position: { lat, lng }, accuracy: 1, source: "qr" })
+    if (overlay !== "venues" && overlay !== "search" && overlay !== "search-origin") return
+    let active = true
+    loadCatalog()
+      .then((list) => {
+        if (!active) return
+        setCatalog(list)
+        setCatalogReady(true)
+      })
+      .catch(() => {
+        // Offline on a first visit: the mapped venues still list; the directory
+        // appears next time the list opens with a connection.
+      })
+    return () => {
+      active = false
     }
-    hydratedRef.current = true
-    // setAnchor is stable; this is a one-time read of storage and the URL.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [overlay])
 
   // If a shared-venue backend is configured, fold the server's venues into the
   // list (each already carries its waypoints). Merged by id with the server
@@ -426,6 +414,107 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const d = distanceMeters(navState.currentPosition, venue.center)
     return d > FAR_FROM_VENUE_M ? { distanceM: d } : null
   }, [navState.destination, navState.origin, navState.currentPosition, navState.positionAccuracy, venue.center, farRouteOverride])
+
+  // Put a venue on screen: its own data plus whatever this device has mapped
+  // inside it. `floor` overrides the opening floor (a poster's anchor).
+  const applyVenue = useCallback((v: Venue, opts?: { floor?: number }) => {
+    setVenue(v)
+    saveActiveVenueId(v.id)
+    setCustomWaypoints(loadVenueWaypoints(v.id))
+    setSurveyTrails(loadVenueTrails(v.id))
+    setCustomFloorPlans(loadVenueFloorPlans(v.id))
+    setCustomAssets(loadVenueAssets(v.id))
+    setNavState((s) => ({ ...s, currentFloor: opts?.floor ?? openingFloor(v) }))
+  }, [])
+
+  // Switching place clears the current route and re-centres on the new venue, so
+  // navigation state never leaks across venues.
+  const goToVenue = useCallback((v: Venue, opts?: { floor?: number }) => {
+    applyVenue(v, opts)
+    setOverlay("none")
+    setFarRouteOverride(false)
+    setNavState((s) => ({ ...s, origin: null, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
+    mapHandleRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
+  }, [applyVenue])
+
+  // Open a venue by id: one from this device's list (created here, or from the
+  // server), or a seed venue whose module is fetched on first use. `silent`
+  // (start-up) leaves the overlay and navigation state alone. Resolves to the
+  // venue, or null when nothing by that id exists here yet.
+  const switchToVenueId = useCallback(
+    async (id: string, opts?: { silent?: boolean; floor?: number }): Promise<Venue | null> => {
+      const seq = ++switchSeqRef.current
+      let target: Venue | null = userVenuesRef.current.find((v) => v.id === id) ?? null
+      if (!target) {
+        venueLoadingRef.current = id
+        try {
+          target = await loadVenue(id)
+        } catch {
+          target = null
+          toast.error("Couldn’t load that hospital’s map", "Check your connection and try again.")
+        } finally {
+          if (venueLoadingRef.current === id) venueLoadingRef.current = null
+        }
+      }
+      if (seq !== switchSeqRef.current) return null
+      if (target) {
+        if (opts?.silent) applyVenue(target, opts)
+        else goToVenue(target, opts)
+      }
+      return target
+    },
+    [applyVenue, goToVenue]
+  )
+
+  // On first load, fold any pre-multi-venue data into the default venue, restore
+  // the user's saved venues and which one they last had open, and load the
+  // points/trails/plans mapped inside it. Switching venues afterwards goes
+  // through switchToVenueId, so this stays a one-time hydration on mount.
+  useEffect(() => {
+    migrateLegacyData(DEFAULT_VENUE.id)
+    try {
+      // localStorage only exists in the browser, so this cannot be a lazy
+      // initial state without a server/client hydration mismatch.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (window.localStorage.getItem(MAP_VIEW_KEY) === "3d") setMapView("3d")
+      const savedStyle = window.localStorage.getItem(MAP_STYLE_KEY)
+      // "satellite" is a legacy value from before it was removed — fall back to dark.
+      if (savedStyle === "dark" || savedStyle === "satellite") setMapStyle("dark")
+      if (window.localStorage.getItem(ALWAYS_STEPFREE_KEY) === "false") setAlwaysStepFree(false)
+    } catch {}
+    const restored = loadUserVenues()
+    userVenuesRef.current = restored
+    setUserVenues(restored)
+
+    // A shared link or a scanned poster opens the app at a place: ?venue=&to=
+    // plus, for a poster, the position it is posted at. The venue in the link
+    // wins over the one last open; anything the link names that this device
+    // does not know yet is left pending for the server's venue list.
+    let link: WayfinderLink | null = null
+    try {
+      link = linkFromSearchParams(new URLSearchParams(window.location.search))
+    } catch {}
+    if (link && (link.destinationId || link.venueId)) pendingLinkRef.current = link
+    const floor = link?.anchor?.floor
+
+    // The default venue's own data goes on screen synchronously so the map is
+    // right on first paint; any other venue is fetched, and the default stays
+    // up until it lands.
+    applyVenue(DEFAULT_VENUE, { floor })
+    const wanted = link?.venueId ?? loadActiveVenueId() ?? DEFAULT_VENUE.id
+    if (wanted !== DEFAULT_VENUE.id) void switchToVenueId(wanted, { silent: true, floor })
+
+    // A poster's position fix: the walker is standing where the code is.
+    if (link?.anchor) {
+      const { lat, lng } = link.anchor
+      setGpsStatus("active")
+      setAnchor({ position: { lat, lng }, accuracy: 1, source: "qr" })
+    }
+    hydratedRef.current = true
+    // setAnchor and the venue functions are stable; this is a one-time read of
+    // storage and the URL.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Selecting a destination shows a route *preview* (overview + travel mode +
   // ETA) — the user taps Start to begin turn-by-turn, rather than jumping
@@ -640,6 +729,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       // A poster from another mapped place: switch to it, then pick the
       // destination once its points are loaded.
       pendingLinkRef.current = link
+      void switchToVenueId(link.venueId, { floor: link.anchor?.floor })
       return
     }
     if (link.destinationId) {
@@ -649,7 +739,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     } else if (link.anchor) {
       toast.success("Position updated", "You’re now placed where this code is posted.")
     }
-  }, [setAnchor, allWaypoints, activeVenueId, handleDestinationSelect])
+  }, [setAnchor, allWaypoints, activeVenueId, handleDestinationSelect, switchToVenueId])
 
   // Persist points added by surveying / AI sign-reading. For a server venue this
   // device owns, they go to the shared backend (and are shown from the returned
@@ -765,25 +855,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     }
   }, [activeVenueId, customFloorPlans, persistNewWaypoints])
 
-  // Switching place clears the current route and re-centres on the new venue, so
-  // navigation state never leaks across venues.
-  const goToVenue = useCallback((v: Venue) => {
-    setActiveVenueId(v.id)
-    saveActiveVenueId(v.id)
-    setCustomWaypoints(loadVenueWaypoints(v.id))
-    setSurveyTrails(loadVenueTrails(v.id))
-    setCustomFloorPlans(loadVenueFloorPlans(v.id))
-    setCustomAssets(loadVenueAssets(v.id))
-    setOverlay("none")
-    setFarRouteOverride(false)
-    setNavState((s) => ({ ...s, currentFloor: openingFloor(v), origin: null, destination: null, route: null, currentStepIndex: 0, isNavigating: false }))
-    mapHandleRef.current?.flyTo([v.center.lat, v.center.lng], v.defaultZoom)
-  }, [])
-
   const handleSelectVenue = useCallback((id: string) => {
-    const v = getVenueById(id, userVenues)
-    if (v) goToVenue(v)
-  }, [userVenues, goToVenue])
+    void switchToVenueId(id)
+  }, [switchToVenueId])
 
   // Finish acting on a link (shared URL, scanned poster): switch to its venue
   // once that venue is known — it may only arrive with the server's list — and
@@ -794,7 +868,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const link = pendingLinkRef.current
     if (!link) return
     if (link.venueId && link.venueId !== activeVenueId) {
-      const target = getVenueById(link.venueId, userVenues)
+      // Its module is on the way: this effect re-runs when it lands.
+      if (venueLoadingRef.current === link.venueId) return
+      const target = userVenues.find((v) => v.id === link.venueId)
       if (target) {
         goToVenue(target)
         return
@@ -1078,6 +1154,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           floorNaming={venue.floorNaming}
           proximity={navState.currentPosition ?? venue.center}
           purpose={overlay === "search-origin" ? "origin" : "destination"}
+          otherVenues={allVenues}
+          onSwitchVenue={handleSelectVenue}
           onSelect={overlay === "search-origin" ? handleOriginSelect : handleDestinationSelect}
           onClose={() => setOverlay("none")}
         />
@@ -1086,6 +1164,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       {overlay === "venues" && (
         <VenuePicker
           venues={allVenues}
+          directoryLoading={!catalogReady}
           activeVenueId={activeVenueId}
           currentCenter={navState.currentPosition ?? venue.center}
           hasGps={gpsStatus === "active" && navState.currentPosition !== null && navState.positionAccuracy > 0}
@@ -1110,6 +1189,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
                   currentStep,
                   stepIndex: navState.currentStepIndex,
                   destination: navState.destination,
+                  floorNaming: venue.floorNaming,
                   onPickDestination: () => setOverlay("search"),
                   onScanQR: () => { enableSensors(); setOverlay("qr") },
                   // Offer the floor-anchored view only when the device can run it
@@ -1145,6 +1225,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           currentPosition={navState.currentPosition}
           venueCenter={venue.center}
           venueName={venue.subtitle ?? venue.name}
+          floorNaming={venue.floorNaming}
           onClose={() => setOverlay("none")}
           onSurveyComplete={handleSurveyComplete}
         />
@@ -1155,6 +1236,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           currentFloor={navState.currentFloor}
           venueCenter={venue.center}
           venueName={venue.subtitle ?? venue.name}
+          floorNaming={venue.floorNaming}
           onClose={() => setOverlay("none")}
           onUploadComplete={handleUploadComplete}
         />

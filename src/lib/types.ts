@@ -175,6 +175,27 @@ export interface Venue {
   updatedAt?: string
 }
 
+// What the app needs to know about a venue before opening it: enough to list
+// it, search it by name, put it on the map and resolve a link to it. Full
+// venues — floor plans, waypoints, corridors — load on demand (see
+// venues/catalog.ts), because shipping every hospital's interior to someone
+// looking for one ward was most of the map's download.
+export interface VenueSummary {
+  id: string
+  slug: string
+  name: string
+  subtitle?: string
+  category: VenueCategory
+  center: Coordinates
+  defaultZoom: number
+  visibility: VenueVisibility
+  verified: boolean
+  illustrative?: boolean
+  odsCode?: string
+  // True when it can be walked inside: it ships a floor plan or mapped points.
+  mapped: boolean
+}
+
 export interface Route {
   steps: RouteStep[]
   totalDistance: number

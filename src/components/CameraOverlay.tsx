@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import jsQR from "jsqr"
 import { X, QrCode, Search, Compass, ArrowUp, RotateCw, CheckCircle2, MapPin, Sparkles } from "lucide-react"
-import type { Coordinates, Route, RouteStep, Waypoint } from "@/lib/types"
+import type { Coordinates, FloorNaming, Route, RouteStep, Waypoint } from "@/lib/types"
 import { distanceMeters, bearingBetween } from "@/lib/routing"
-import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
+import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
 import { useDialog } from "@/lib/use-dialog"
 
 // Live-mode AR navigation context. The camera view reads the same fused
@@ -19,6 +19,8 @@ interface LiveNav {
   currentStep: RouteStep | null
   stepIndex: number
   destination: Waypoint | null
+  // The venue's own storey numbering, so a floor change says "Level 5".
+  floorNaming?: FloorNaming
   // Open search to choose a destination (when live camera is opened before one
   // is picked), and hop to the QR scanner to re-fix an exact position.
   onPickDestination: () => void
@@ -297,7 +299,7 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
               <span className="text-6xl">{guide.floorChange?.via === "stairs" ? "🪜" : "🛗"}</span>
             </div>
             <p className="text-white font-bold text-base mt-3 drop-shadow text-center px-6">
-              Take the {guide.floorChange?.via} to Floor {guide.floorChange?.to}
+              Take the {guide.floorChange?.via} to {guide.floorChange ? floorLabel(guide.floorChange.to, nav.floorNaming) : ""}
             </p>
           </div>
         ) : guide.rel == null ? (
