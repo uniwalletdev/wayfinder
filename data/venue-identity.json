@@ -5,7 +5,10 @@
     "sgh-site-map": {
       "name": "St George's Hospital, Tooting — Grounds & Car Parks",
       "subtitle": "St George's University Hospitals NHS Foundation Trust · Blackshaw Road, London SW17 0QT",
-      "center": [51.4266, -0.1749],
+      "center": [
+        51.4266,
+        -0.1749
+      ],
       "spanM": 520,
       "notes": "Site map published by St George's University Hospitals NHS Foundation Trust (2013). Identity and position corrected September 2026: the sheet draws the Tooting site, not Woking. Placed on the centre and scale of the hand-built St George's venue; the drawing itself has not been checked by eye.",
       "checked": "2026-09-25",
@@ -14,7 +17,10 @@
     "pinderfields-hospital-map": {
       "name": "Pinderfields Hospital",
       "subtitle": "Mid Yorkshire Teaching NHS Trust · Aberford Road, Wakefield WF1 4DG",
-      "center": [53.69349, -1.48998],
+      "center": [
+        53.69349,
+        -1.48998
+      ],
       "notes": "Site map published by Mid Yorkshire Teaching NHS Trust. Position corrected September 2026: the sheet was matched to the Dewsbury record and sat ten miles west of the hospital it draws; now centred on Pinderfields, Aberford Road. Scale is the drafted estimate and has not been checked by eye.",
       "checked": "2026-09-25",
       "evidence": "Sheet titled 'Pinderfields Hospital'; drafted against ODS P6M3A (Dewsbury & District). The trust gives Aberford Road, Wakefield WF1 4DG; ODS site RR864 'Pinderfields General Hospital' geocodes to 53.692434, -1.488558, 140 m from the centre used and inside the site."
@@ -22,7 +28,10 @@
     "community-diagnostic-centre-site-map": {
       "name": "Wakefield Community Diagnostic Centre",
       "subtitle": "Mid Yorkshire Teaching NHS Trust · Westgate Retail Park, Ings Road, Wakefield WF2 9SD",
-      "center": [53.678766, -1.506421],
+      "center": [
+        53.678766,
+        -1.506421
+      ],
       "spanM": 420,
       "quick": [],
       "notes": "Plan of Westgate Retail Park published by Mid Yorkshire Teaching NHS Trust, showing where the Community Diagnostic Centre (Unit 9B) sits among the retail units. Position corrected September 2026 to the WF2 9SD postcode; the drawing has not been checked by eye, and the centre's own unit is not labelled on it.",
@@ -32,9 +41,19 @@
     "level-3-floorplan-cuh-map": {
       "name": "Addenbrooke's Hospital — Level 3",
       "subtitle": "Cambridge University Hospitals NHS Foundation Trust · Hills Road, Cambridge CB2 0QQ",
-      "center": [52.175133, 0.140753],
-      "floor": { "id": "f2", "floor": 2, "label": "Level 3" },
-      "floorNaming": { "word": "Level", "groundLevel": 1 },
+      "center": [
+        52.175133,
+        0.140753
+      ],
+      "floor": {
+        "id": "f2",
+        "floor": 2,
+        "label": "Level 3"
+      },
+      "floorNaming": {
+        "word": "Level",
+        "groundLevel": 1
+      },
       "notes": "Level 3 floor plan published by Cambridge University Hospitals NHS Foundation Trust. Identity corrected September 2026: this is a level of Addenbrooke's, not Doddington Hospital. Placed on the Addenbrooke's venue centre; scale is the drafted estimate and has not been checked by eye.",
       "checked": "2026-09-25",
       "evidence": "The trust publishes Level_3_Floorplan_-_CUH_Map.pdf as a floor of Addenbrooke's, and its labels (Clinic 4a, Clinic 12, ward A3, fluoroscopy, DXA) are Addenbrooke's Level 3. Drafted against ODS B5D1I 'Cuh at Doddington Hospital', a community hospital thirty miles away. Centre and level numbering from src/lib/venues/cuh.ts."
@@ -56,7 +75,10 @@
     "southport-hospital-site-map-a3-sept-2024": {
       "name": "Southport and Formby District General Hospital",
       "subtitle": "Mersey and West Lancashire Teaching Hospitals NHS Trust · Town Lane, Southport PR8 6PN",
-      "center": [53.63357, -2.978821],
+      "center": [
+        53.63357,
+        -2.978821
+      ],
       "spanM": 520,
       "notes": "Site map published by Mersey and West Lancashire Teaching Hospitals NHS Trust (September 2024). Position corrected September 2026: the sheet was matched to the closed Southport General Infirmary in the town centre; now centred on the District General Hospital at Town Lane (NHS ODS register). Scale is estimated and has not been checked by eye.",
       "checked": "2026-09-25",
@@ -105,6 +127,16 @@
       "notes": "Site map published by The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust (June 2026). Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
       "checked": "2026-09-25",
       "evidence": "Three venues carry a Queen Elizabeth name (Birmingham, Woolwich, King's Lynn); the town in the name is what tells them apart in search."
+    },
+    "hull-royal-infirmary-site-map": {
+      "subtitle": "Hull University Teaching Hospitals NHS Trust · Anlaby Road, Hull HU3 2JZ",
+      "center": [
+        53.744134,
+        -0.358153
+      ],
+      "notes": "Site map published by Hull University Teaching Hospitals NHS Trust (April 2024). Position corrected September 2026: the sheet was matched to an ODS record in HU4 and sat 2.4 km west of the infirmary; now centred on the Anlaby Road site (NHS ODS register). Scale is the drafted default and has not been checked by eye.",
+      "checked": "2026-09-25",
+      "evidence": "Drafted against ODS A7G4P (postcode HU4 6BN), which is not the infirmary. Hull Royal Infirmary is Anlaby Road, Hull HU3 2JZ (CQC location RWA01, nhs.uk, Wikipedia); ODS site RR860 'Hull Royal Infirmary' geocodes to 53.744134, -0.358153, within 25 m of the Google Maps place pin (53.7441816, -0.3584076). The trust's site map at /wp-content/uploads/2024/04/Hull-Royal-Infirmary-Site-Map.pdf is still the one it links."
     }
   }
 }

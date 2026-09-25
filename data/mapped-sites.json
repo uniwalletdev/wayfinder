@@ -1327,12 +1327,12 @@
       "slug": "hull-royal-infirmary-site-map",
       "id": "hull-royal-infirmary-site-map-venue",
       "name": "Hull Royal Infirmary",
-      "subtitle": "Hull University Teaching Hospitals NHS Trust · HU4 6BN",
+      "subtitle": "Hull University Teaching Hospitals NHS Trust · Anlaby Road, Hull HU3 2JZ",
       "file": "map/auto/hull-royal-infirmary-site-map.pdf",
       "page": 1,
       "center": [
-        53.746397,
-        -0.394505
+        53.744134,
+        -0.358153
       ],
       "spanM": 450,
       "plan": [
@@ -1348,7 +1348,7 @@
         "Urgent Treatment Centre (UTC) - Building 7",
         "Hospital Car Park"
       ],
-      "notes": "Site map published by Hull University Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Site map published by Hull University Teaching Hospitals NHS Trust (April 2024). Position corrected September 2026: the sheet was matched to an ODS record in HU4 and sat 2.4 km west of the infirmary; now centred on the Anlaby Road site (NHS ODS register). Scale is the drafted default and has not been checked by eye.",
       "auto": {
         "odsCode": "A7G4P",
         "spanSource": "default",
