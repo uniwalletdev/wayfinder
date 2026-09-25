@@ -6,6 +6,7 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 import { isDatabaseConfigured } from "@/lib/db"
+import { currentUserId } from "@/lib/auth"
 import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
 import { addWaypoints } from "@/lib/venues-db"
 import type { Waypoint, WaypointType } from "@/lib/types"
@@ -66,7 +67,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   }
 
   try {
-    const { ok, saved } = await addWaypoints(id, editToken, waypoints)
+    const { ok, saved } = await addWaypoints(id, editToken, waypoints, await currentUserId())
     if (!ok) return Response.json({ configured: true, ok: false }, { status: 403 })
     return Response.json({ configured: true, ok: true, waypoints: saved })
   } catch (err) {

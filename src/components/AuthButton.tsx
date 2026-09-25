@@ -2,10 +2,11 @@
 
 // The account affordance in the brand row. Deliberately small and optional:
 // Wayfinder works fully anonymously — like Google Maps or Apple Maps, you never
-// have to sign in to find a ward — and signing in only adds things that must
-// follow a *person* rather than a device: saved places, and ownership of a venue
-// you mapped (today that ownership is a per-device edit_token, so clearing
-// storage loses it permanently; see db/migrations/0003_venues.sql).
+// have to sign in to find a ward — and signing in only adds the one thing that
+// must follow a *person* rather than a device: ownership of the venues you map.
+// A venue created anonymously is owned by a per-device edit_token; on sign-in
+// this device's venues are claimed for the account (see
+// db/migrations/0004_venue_owner.sql), so they can be edited from any device.
 //
 // Three states, in order of how most people will see it:
 //   1. Clerk not configured  → a Help button (the accessibility and how-to
@@ -18,8 +19,11 @@
 // here, so this reads session state through the client hook instead.
 
 import Link from "next/link"
+import { useEffect, useRef } from "react"
 import { SignInButton, UserButton, useUser } from "@clerk/nextjs"
 import { User, HelpCircle } from "lucide-react"
+import { claimServerVenues } from "@/lib/venues-server"
+import { toast } from "@/components/Toast"
 
 // NEXT_PUBLIC_* is inlined at build time, so the client can tell whether a
 // ClerkProvider is mounted above it. Calling useUser() without one throws.
@@ -39,6 +43,17 @@ function HelpLink() {
 function ClerkAuthButton({ initials }: { initials?: string | null }) {
   const { isLoaded, isSignedIn } = useUser()
 
+  // Once per page life, when signed in: attach the venues this device created
+  // to the account. Quiet unless something was actually claimed.
+  const claimedRef = useRef(false)
+  useEffect(() => {
+    if (!isSignedIn || claimedRef.current) return
+    claimedRef.current = true
+    void claimServerVenues().then((n) => {
+      if (n > 0) toast.success(`${n} place${n === 1 ? "" : "s"} you mapped now follow your account`, "Edit them from any device you sign in on.")
+    })
+  }, [isSignedIn])
+
   // Until Clerk has loaded — and that includes "offline, so it never will" —
   // show the anonymous circle rather than a spinner. Nothing here gates the map.
   if (!isLoaded || !isSignedIn) {
@@ -47,7 +62,7 @@ function ClerkAuthButton({ initials }: { initials?: string | null }) {
         <button
           type="button"
           className={`${circle} transition-colors hover:bg-wf-border`}
-          title="Sign in (optional — the map works without an account)"
+          title="Sign in (optional) to keep the venues you map on every device"
           aria-label="Sign in"
         >
           {isLoaded ? <User size={15} aria-hidden="true" /> : (initials ?? "?")}

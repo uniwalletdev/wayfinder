@@ -3,11 +3,14 @@ import { NewVenueInput } from "./venues"
 
 // Client-side access to shared venue maps on the server (see /api/venues). Reads
 // are open; the owner secret for each venue this device created is kept in
-// localStorage and presented when adding points or deleting. Every call reports
-// `configured` so the app falls back to device-local mode when there's no
-// database, exactly as it behaves today.
+// localStorage and presented when adding points or deleting. A signed-in
+// account can own a venue too: the server then authorises by the session
+// cookie the browser sends anyway, which is why writes are attempted even with
+// no token here. Every call reports `configured` so the app falls back to
+// device-local mode when there's no database, exactly as it behaves today.
 
-const tokenKey = (id: string) => `wayfinder.venueToken.${id}`
+const TOKEN_PREFIX = "wayfinder.venueToken."
+const tokenKey = (id: string) => `${TOKEN_PREFIX}${id}`
 
 export function getEditToken(id: string): string | null {
   if (typeof window === "undefined") return null
@@ -34,8 +37,41 @@ function clearEditToken(id: string) {
 }
 
 // True for venues this device created and therefore holds the edit token for.
+// A venue owned by the signed-in account is recognised by the `ownerId` the
+// server reveals on it; callers check that alongside this.
 export function ownsVenue(id: string): boolean {
   return getEditToken(id) !== null
+}
+
+// Attach every venue this device created to the signed-in account (see
+// /api/venues/<id>/claim). Returns how many were claimed. Tokens stay in
+// storage: they remain valid, and this device keeps working signed out.
+export async function claimServerVenues(): Promise<number> {
+  let ids: string[] = []
+  try {
+    ids = Object.keys(window.localStorage)
+      .filter((k) => k.startsWith(TOKEN_PREFIX))
+      .map((k) => k.slice(TOKEN_PREFIX.length))
+  } catch {
+    return 0
+  }
+  let claimed = 0
+  for (const id of ids) {
+    const editToken = getEditToken(id)
+    if (!editToken) continue
+    try {
+      const res = await fetch(`/api/venues/${id}/claim`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ editToken }),
+      })
+      const data = await res.json()
+      if (data.ok) claimed++
+    } catch {
+      // A venue that could not be claimed now can be next time.
+    }
+  }
+  return claimed
 }
 
 export async function fetchServerVenues(): Promise<{ configured: boolean; venues: Venue[] }> {
@@ -71,8 +107,9 @@ export async function addServerWaypoints(
   venueId: string,
   waypoints: Waypoint[]
 ): Promise<{ configured: boolean; ok: boolean; saved: Waypoint[] }> {
-  const editToken = getEditToken(venueId)
-  if (!editToken) return { configured: true, ok: false, saved: [] }
+  // No token is not a refusal: the signed-in owner of the venue has none on a
+  // second device, and the server authorises them by session.
+  const editToken = getEditToken(venueId) ?? ""
   try {
     const res = await fetch(`/api/venues/${venueId}/waypoints`, {
       method: "POST",
@@ -88,8 +125,7 @@ export async function addServerWaypoints(
 }
 
 export async function deleteServerVenue(venueId: string): Promise<{ configured: boolean; ok: boolean }> {
-  const editToken = getEditToken(venueId)
-  if (!editToken) return { configured: true, ok: false }
+  const editToken = getEditToken(venueId) ?? ""
   try {
     const res = await fetch(`/api/venues/${venueId}`, {
       method: "DELETE",

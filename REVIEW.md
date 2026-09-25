@@ -3,7 +3,7 @@
 *Reviewed at commit `f20ae94` (September 2026), on the `main` branch as
 shipped. Scope: every screen, every API route, the routing and positioning
 code, the PWA and native shells, the landing page and the written content.
-The findings were implemented in two passes on the same branch; the "Status"
+The findings were implemented in three passes on the same branch; the "Status"
 column says which, and the last section lists what is still open.*
 
 The July 2026 review that this file replaced is summarised at the end: of its
@@ -64,7 +64,9 @@ rescuing it.
 | C15 | Survey Mode, plan upload and the camera guide used generic floor names ("Floor 3") at venues with their own numbering ("Level 5"). | ✅ All three take the venue's floor naming. |
 | C16 | The places list's "Mapped hospitals" heading covered a residential building (the CAD-import demonstration venue). | ✅ Heading reads "Mapped places" when a non-hospital is among them. |
 | C17 | "Bishop Auckland Cdc" — an acronym title-cased by the pipeline. | ✅ Renamed to CDC; "CDC" added to the pipeline's kept-acronym list so it stays that way. |
-| C18 | A "?" circle in the panel that did nothing when sign-in was not configured; a sign-in tooltip promising things sign-in does not yet do. | ✅ Without sign-in it is a Help button (the accessibility and how-to page); with it, the tooltip says sign-in is optional and nothing more. |
+| C18 | A "?" circle in the panel that did nothing when sign-in was not configured; a sign-in tooltip promising things sign-in does not yet do. | ✅ Without sign-in it is a Help button (the accessibility and how-to page); with it, the tooltip says what sign-in now does (F18). |
+| C19 | **A directory hospital had nothing to route to.** 2,278 of the venues are located pins; opening one showed an outline and a search that found nothing. | ✅ Every such hospital offers "Directions to the hospital": a destination at the site's address, honestly described as the address rather than a door, routed along real streets where Mapbox is configured. |
+| C20 | **A ward at a hospital that is not open could not be found.** | ✅ `/api/search` ranks every seed venue's waypoints on the server (the data the client deliberately no longer downloads) and the search offers hits "At other hospitals"; choosing one opens that hospital and routes to the ward. `cross-venue-search.test.mjs`. |
 
 ### Function
 
@@ -86,6 +88,8 @@ rescuing it.
 | F14 | Dead code: `LeafletFix.tsx` (unused, and it pulled marker images from cdnjs), five stock create-next-app SVGs, a duplicated `slugify`, a hand-copied `ANNOTATION_TYPES` list. | ✅ Removed or deduplicated. |
 | F15 | **Every hospital shipped to every visitor.** The map imported the venue registry, and with it all 67 mapped hospitals' floor plans, waypoints and corridors plus the 2,278-row directory: 13,354 coordinate literals, about 60% of the largest client chunk. | ✅ The client now imports a generated catalog of venue summaries (`venues/catalog-data.ts`, a few KB) and the default venue; a hospital's module is fetched the first time it is opened, the directory the first time the places list or search needs it. `venue-catalog.test.mjs` fails CI if the catalog drifts from the modules; `npm run nhs:catalog` regenerates it and the ingest pipeline runs it. |
 | F16 | No Content-Security-Policy beyond frame protection. | ✅ A full policy ships in **report-only** mode with `/api/csp-report` logging what browsers would have blocked, so it can be tightened against a real deployment and then enforced. `next.config.ts` says what to add first (a deployment's own Clerk domain). |
+| F17 | **Location traces were kept for ever, at full precision, to the door, with no way to delete them** (`docs/location-data-and-gdpr.md`, gaps 2, 3 and 6). | ✅ The analysis's options A, B, C and F: the last 25 m of every trail is cut before storage and positions rounded to ~1 m, rows expire after 30 days (search misses after 90) via a sweep the ingest routes run hourly, `DELETE /api/signals` erases a device's rows and the privacy page has the button, and both ingest routes are rate-limited. The consent gate (option D) remains a decision for the deploying trust, as the analysis says. |
+| F18 | **Sign-in did nothing.** Venues were owned only by a per-device token; clear the browser and the venue was orphaned. | ✅ A venue created while signed in is owned by the account; on sign-in, venues this device created are claimed for the account (`POST /api/venues/<id>/claim`); either the token or the account authorises writes, and the owner sees their own unlisted venues on every device. Schema: `owner_id` (migration 0004, applied automatically). **Not exercised against a live Postgres or Clerk in this environment** — typechecked and reasoned through; test on a staging deployment before relying on it. |
 
 ### Design and accessibility
 
@@ -99,6 +103,7 @@ rescuing it.
 | D6 | Icon-only buttons without names (clear search, close camera, close survey, delete place); decorative emoji read aloud; no `<h1>` on the app screen. | ✅ Labelled, hidden, added. |
 | D7 | The bottom sheet's collapsed state showed the destination header and Start with nothing to tell a phone user the route options existed. | Kept: the grab handle and the collapse-on-select behaviour are a deliberate choice; the route card now reads better with the honest accuracy tile. |
 | D8 | The AR view's floor chevrons and beacon kept the old NHS blue and green. | ✅ Route-blue and teal, matching the maps. |
+| D9 | The 3D view's labels were grey Arial pills with a red highlight. | ✅ The same pill as the 2D markers: white with a route-blue edge, teal for the destination, the app's typeface. |
 
 ### Performance
 
@@ -136,27 +141,17 @@ Ordered by value. None blocks a deployment.
    sign-in, the map, plan upload and the camera tools, read the log from
    `/api/csp-report`, add the deployment's own Clerk domain, then move the
    value to the enforced header.
-2. **Hospital directory venues are only pins.** Selecting one shows a
-   building outline and nothing to route to. The pipeline's OpenStreetMap
-   footprints (`data/footprints.geojson`, not checked in) carry entrance
-   nodes for many sites; a "Main entrance" waypoint from those would give
-   every directory hospital a destination. Not done here because the
-   footprint file is a pipeline output that was not available in this
-   environment.
-3. **Location traces are personal data** (`docs/location-data-and-gdpr.md`):
-   the corridor trails posted while navigating carry a stable device id. The
-   privacy page now states it plainly; the product decision — retention,
-   aggregation, or an opt-in — is still to make with the deploying trust.
-4. **Sign-in does nothing yet.** Clerk is wired but venues are still owned by
-   a per-device token. The affordance is now honest about that; attaching
-   ownership to the account is the work.
-5. **Search inside other hospitals.** Search now finds other hospitals by
-   name and switches to them; finding a *ward* at a hospital that is not open
-   would need a searchable index of every venue's waypoints, which is the
-   data the client deliberately no longer downloads. A server-side search
-   endpoint over the same modules is the natural next step.
-6. **The 3D view's markers are emoji sprites** — the last place the design
-   system does not reach.
+2. **Exercise account ownership on a staging deployment** (F18): create a
+   venue signed in, claim one created anonymously, edit from a second device,
+   delete. It could not be run against Postgres or Clerk here.
+3. **Consent for location traces** (`docs/location-data-and-gdpr.md`, option
+   D). The traces are now bounded, blurred, deletable and rate-limited; whether
+   they should be opt-in is the deploying trust's call, and a DPIA is a
+   precondition of any NHS deployment.
+4. **Entrances for directory hospitals.** "Directions to the hospital" goes
+   to the site's address. OpenStreetMap footprints carry entrance nodes for
+   many sites; the pipeline's footprint file is not checked in and was not
+   available here.
 
 ## The July 2026 review
 

@@ -10,6 +10,7 @@ import {
 } from "lucide-react"
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel, waypointDetail } from "@/lib/waypoint-meta"
+import { isOutdoorDestination } from "@/lib/routing"
 import Toggle from "@/components/Toggle"
 import AuthButton from "@/components/AuthButton"
 
@@ -609,13 +610,17 @@ function RoutePreviewCard({
               value={gpsStatus !== "active" ? "no fix" : positionAccuracy === 0 ? "virtual" : `±${Math.round(positionAccuracy)} m`}
             />
           </div>
-          {/* This venue has no mapped corridors on this leg, so the drawn line is
-              a direction guide, not a precise path. Be honest about that. */}
+          {/* The drawn line is a direction guide, not a precise path: indoors
+              because this venue has no mapped corridors on this leg; outdoors
+              (an address, or directions to a hospital's site) because street
+              routing is not configured on this deployment. Say which. */}
           {route.approximate && !routeLoading && (
             <div className="mb-4 flex items-start gap-2 rounded-xl bg-amber-50 border border-amber-200 px-3 py-2.5">
-              <MapPin size={14} className="mt-0.5 flex-shrink-0 text-amber-600" />
+              <MapPin size={14} className="mt-0.5 flex-shrink-0 text-amber-600" aria-hidden="true" />
               <p className="text-[12px] leading-snug text-amber-700">
-                Approximate direction — corridors aren&apos;t mapped inside this building yet, so follow the on-site signs for the exact route.
+                {isOutdoorDestination(destination)
+                  ? "Straight-line direction — street routing isn’t available on this deployment, so use the pin as a bearing and follow road signs."
+                  : "Approximate direction — corridors aren’t mapped inside this building yet, so follow the on-site signs for the exact route."}
               </p>
             </div>
           )}

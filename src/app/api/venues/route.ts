@@ -7,6 +7,7 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 import { isDatabaseConfigured } from "@/lib/db"
+import { currentUserId } from "@/lib/auth"
 import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
 import { listPublicVenues, createVenue } from "@/lib/venues-db"
 import type { NewVenueInput } from "@/lib/venues"
@@ -18,7 +19,9 @@ const VISIBILITIES: VenueVisibility[] = ["public", "unlisted", "private"]
 export async function GET() {
   if (!isDatabaseConfigured()) return Response.json({ configured: false, venues: [] })
   try {
-    const venues = await listPublicVenues()
+    // A signed-in viewer also gets their own unlisted/private venues, marked
+    // as theirs.
+    const venues = await listPublicVenues(await currentUserId())
     return Response.json({ configured: true, venues })
   } catch (err) {
     console.warn("Could not list venues:", err instanceof Error ? err.message : err)
@@ -67,7 +70,7 @@ export async function POST(request: Request) {
     defaultZoom: isFiniteNumber(body.defaultZoom) ? body.defaultZoom : undefined,
   }
   try {
-    const { venue, editToken } = await createVenue(input)
+    const { venue, editToken } = await createVenue(input, await currentUserId())
     // editToken is returned exactly once — the client stores it as the venue's
     // owner key and it's never readable again.
     return Response.json({ configured: true, venue, editToken })

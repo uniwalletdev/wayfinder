@@ -8,6 +8,7 @@ import { getAvailableFloors, floorLabel } from "@/lib/waypoint-meta"
 import { venueBuildings, buildingAt } from "@/lib/buildings"
 import { DEFAULT_VENUE, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues/core"
 import { loadVenue, loadCatalog, catalogSnapshot, summaryOf } from "@/lib/venues/catalog"
+import { isSiteOnly, siteDestination } from "@/lib/site-destination"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
   loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
@@ -283,7 +284,13 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     return () => { active = false }
   }, [])
 
-  const allWaypoints = useMemo(() => [...venue.waypoints, ...customWaypoints], [venue, customWaypoints])
+  // A hospital with no interior yet still gets one destination: directions to
+  // the site itself (see venues/site-destination.ts).
+  const site = useMemo(() => (isSiteOnly(venue) ? siteDestination(venue) : null), [venue])
+  const allWaypoints = useMemo(
+    () => [...venue.waypoints, ...customWaypoints, ...(site ? [site] : [])],
+    [venue, customWaypoints, site]
+  )
   // Plans uploaded via "Upload plan" *override* whatever the venue already
   // ships with for that floor — a newer, more detailed plan replaces the seed
   // plan rather than being hidden behind it. Both map views pick a floor's plan
@@ -748,7 +755,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // local mode — they stay on this device.
   const persistNewWaypoints = useCallback(
     async (newWaypoints: Waypoint[]) => {
-      if (serverConfigured && ownsVenue(activeVenueId)) {
+      // Owned by this device's token, or by the signed-in account (the server
+      // reveals ownerId only to its owner).
+      if (serverConfigured && (ownsVenue(activeVenueId) || !!venue.ownerId)) {
         const { ok, saved } = await addServerWaypoints(activeVenueId, newWaypoints)
         setCustomWaypoints((prev) => [...prev, ...(ok && saved.length ? saved : newWaypoints)])
         return
@@ -759,7 +768,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         return next
       })
     },
-    [activeVenueId, serverConfigured]
+    [activeVenueId, serverConfigured, venue.ownerId]
   )
 
   const handleSurveyComplete = useCallback(async (result: SurveyResult) => {
@@ -857,6 +866,15 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
 
   const handleSelectVenue = useCallback((id: string) => {
     void switchToVenueId(id)
+  }, [switchToVenueId])
+
+  // A ward found at another hospital (see /api/search): open that hospital and
+  // route to the ward once its points are in — the same path a shared link
+  // takes.
+  const handleSelectRemote = useCallback((venueId: string, waypointId: string) => {
+    pendingLinkRef.current = { venueId, destinationId: waypointId }
+    setOverlay("none")
+    void switchToVenueId(venueId)
   }, [switchToVenueId])
 
   // Finish acting on a link (shared URL, scanned poster): switch to its venue
@@ -957,7 +975,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const handleDeleteVenue = useCallback(async (id: string) => {
     // A server venue this device owns is deleted on the backend; a device-local
     // one is removed from storage. (A shared venue we don't own can't be deleted.)
-    if (serverConfigured && ownsVenue(id)) {
+    const ownedByAccount = !!userVenuesRef.current.find((v) => v.id === id)?.ownerId
+    if (serverConfigured && (ownsVenue(id) || ownedByAccount)) {
       const { ok } = await deleteServerVenue(id)
       if (!ok) {
         toast.error("Couldn’t delete this place", "Check your connection and try again.")
@@ -975,8 +994,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
   const quickAccessWaypoints = useMemo(
-    () => (venue.quickAccess ?? []).map((name) => allWaypoints.find((w) => w.name === name)).filter((w): w is Waypoint => !!w),
-    [venue.quickAccess, allWaypoints]
+    () =>
+      site
+        ? [site]
+        : (venue.quickAccess ?? []).map((name) => allWaypoints.find((w) => w.name === name)).filter((w): w is Waypoint => !!w),
+    [venue.quickAccess, allWaypoints, site]
   )
 
   const nearby = useMemo(() => {
@@ -1156,6 +1178,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           purpose={overlay === "search-origin" ? "origin" : "destination"}
           otherVenues={allVenues}
           onSwitchVenue={handleSelectVenue}
+          onSelectRemote={overlay === "search" ? handleSelectRemote : undefined}
           onSelect={overlay === "search-origin" ? handleOriginSelect : handleDestinationSelect}
           onClose={() => setOverlay("none")}
         />

@@ -4,6 +4,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react"
 import { Waypoint, Coordinates, FloorNaming, VenueSummary } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel, waypointDetail } from "@/lib/waypoint-meta"
 import { rankWaypoints, rankNearMisses, scoreWaypoint } from "@/lib/search"
+import type { CrossVenueHit } from "@/lib/cross-venue-search"
 import Overlay from "@/components/Overlay"
 import { Search, X, ChevronRight, MapPin, Loader2, Building2, ArrowRightLeft } from "lucide-react"
 
@@ -27,6 +28,9 @@ interface Props {
   // the open one offers to switch to it instead of "no results".
   otherVenues?: VenueSummary[]
   onSwitchVenue?: (id: string) => void
+  // Picking a place found at ANOTHER hospital (served by /api/search): the app
+  // switches venue and routes to it. Only offered when choosing a destination.
+  onSelectRemote?: (venueId: string, waypointId: string) => void
   onSelect: (waypoint: Waypoint) => void
   onClose: () => void
 }
@@ -73,13 +77,16 @@ interface Item {
   render: (active: boolean, id: string) => React.ReactNode
 }
 
-export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", otherVenues = [], onSwitchVenue, onSelect, onClose }: Props) {
+export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", otherVenues = [], onSwitchVenue, onSelectRemote, onSelect, onClose }: Props) {
   const isOrigin = purpose === "origin"
   const searchPlaceholder = isOrigin ? "Choose a starting point…" : "Search a room, place or address…"
   const [query, setQuery] = useState("")
   const [geoResults, setGeoResults] = useState<GeoResult[]>([])
   const [geoLoading, setGeoLoading] = useState(false)
   const [geoError, setGeoError] = useState<string | null>(null)
+  // Places found at other hospitals, from the server's full registry.
+  const [remoteResults, setRemoteResults] = useState<CrossVenueHit[]>([])
+  const [remoteLoading, setRemoteLoading] = useState(false)
   // Which query "Suggest this place" was pressed for — deriving the sent state
   // from the live query means it resets naturally as the visitor types.
   const [suggestedQuery, setSuggestedQuery] = useState<string | null>(null)
@@ -171,15 +178,42 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
     }
   }, [trimmed])
 
+  // Ask the server what other hospitals have under this name. Debounced like
+  // the geocoder, abandoned when the query moves on, and never shown as an
+  // error: with no server the section simply does not appear.
+  useEffect(() => {
+    if (!onSelectRemote || trimmed.length < 3) return
+    const controller = new AbortController()
+    const handle = setTimeout(async () => {
+      setRemoteLoading(true)
+      try {
+        const params = new URLSearchParams({ q: trimmed, exclude: venueId })
+        const res = await fetch(`/api/search?${params}`, { signal: controller.signal })
+        const data = (await res.json()) as { results?: CrossVenueHit[] }
+        setRemoteResults(Array.isArray(data.results) ? data.results : [])
+      } catch (err) {
+        if (!(err instanceof Error && err.name === "AbortError")) setRemoteResults([])
+      } finally {
+        setRemoteLoading(false)
+      }
+    }, 400)
+    return () => {
+      controller.abort()
+      clearTimeout(handle)
+    }
+  }, [trimmed, venueId, onSelectRemote])
+
   // Only surface geocoding state once the query is long enough to have been
   // searched; below that the stored results belong to an earlier, longer query.
   const geoActive = trimmed.length >= 3
   // Hide geocoded hits that just duplicate an indoor result by name.
   const indoorNames = new Set(filtered.map((w) => w.name.toLowerCase()))
   const extraResults = geoActive ? geoResults.filter((r) => !indoorNames.has(r.name.toLowerCase())) : []
-  const showLoading = geoActive && geoLoading
+  const remoteActive = !!onSelectRemote && trimmed.length >= 3
+  const remoteHits = remoteActive ? remoteResults : []
+  const showLoading = (geoActive && geoLoading) || (remoteActive && remoteLoading)
 
-  const showEmpty = trimmed !== "" && filtered.length === 0 && extraResults.length === 0 && venueHits.length === 0 && !showLoading
+  const showEmpty = trimmed !== "" && filtered.length === 0 && extraResults.length === 0 && venueHits.length === 0 && remoteHits.length === 0 && !showLoading
 
   // Close near-misses to offer as "Did you mean …?" when nothing matched.
   const nearMisses = showEmpty ? rankNearMisses(trimmed, waypoints) : []
@@ -220,6 +254,16 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
         label: `In this place · ${filtered.length} result${filtered.length !== 1 ? "s" : ""}`,
         items: filtered.map((w) => wpItem(w, "hit")),
         tone: "primary",
+      })
+    }
+    if (remoteHits.length > 0 && onSelectRemote) {
+      sections.push({
+        label: "At other hospitals",
+        items: remoteHits.map((h) => ({
+          id: `remote-${h.venueId}-${h.waypoint.id}`,
+          select: () => onSelectRemote(h.venueId, h.waypoint.id),
+          render: (active, id) => <RemoteRow id={id} active={active} hit={h} onSelect={() => onSelectRemote(h.venueId, h.waypoint.id)} />,
+        })),
       })
     }
     if (extraResults.length > 0) {
@@ -459,6 +503,23 @@ function VenueHitRow({ id, active, venue, onSelect }: { id: string; active: bool
         <span className="block truncate text-xs text-wf-muted">
           {venue.mapped ? "Mapped · switch to this hospital" : "Location only · switch to this hospital"}
           {venue.subtitle ? ` · ${venue.subtitle}` : ""}
+        </span>
+      </span>
+      <ArrowRightLeft size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
+    </button>
+  )
+}
+
+function RemoteRow({ id, active, hit, onSelect }: { id: string; active: boolean; hit: CrossVenueHit; onSelect: () => void }) {
+  return (
+    <button id={id} role="option" aria-selected={active} tabIndex={-1} onClick={onSelect} className={rowClass(active)}>
+      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] bg-wf-surface text-xl" aria-hidden="true">
+        {WAYPOINT_TYPE_ICONS[hit.waypoint.type]}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate text-[14.5px] font-semibold text-wf-ink">{hit.waypoint.name}</span>
+        <span className="block truncate text-xs text-wf-muted">
+          <span className="font-medium text-wf-primary">{hit.venueName}</span> · {hit.typeLabel} · {hit.floorLabel}
         </span>
       </span>
       <ArrowRightLeft size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />

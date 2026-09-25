@@ -7,12 +7,16 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 import { isDatabaseConfigured, query } from "@/lib/db"
-import { readCappedJson, BODY_LIMITS } from "@/lib/rate-limit"
+import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
+import { sweepExpiredData } from "@/lib/retention"
 
 const MAX_QUERY_CHARS = 160
 const MAX_VENUE_KEY_CHARS = 80
 
 export async function POST(request: Request) {
+  const limited = rateLimit(request, "search-miss", LIMITS.searchMiss.limit, LIMITS.searchMiss.windowMs)
+  if (limited) return limited
+
   const read = await readCappedJson<{ venueId?: unknown; query?: unknown; suggested?: unknown }>(
     request,
     BODY_LIMITS.searchMiss
@@ -35,6 +39,7 @@ export async function POST(request: Request) {
 
   // venue_key is free text, not a FK: seed venues ("gosh") and device-local
   // venues ("venue-…") are just as useful to whoever curates them.
+  sweepExpiredData()
   try {
     await query(
       `insert into public.search_misses (venue_key, query, suggested) values ($1, $2, $3)`,

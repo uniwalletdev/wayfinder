@@ -730,30 +730,40 @@ function buildUserMarker(group: THREE.Group) {
 // A text label rendered to canvas and shown as a sprite; distance-scaled each
 // frame in the render loop so it stays readable from any range.
 function makeLabelSprite(text: string, highlight: boolean): THREE.Sprite {
-  const pad = 14
+  const pad = 16
   const fontPx = 30
+  const border = 3
   const canvas = document.createElement("canvas")
   const ctx = canvas.getContext("2d")!
-  ctx.font = `600 ${fontPx}px Arial, sans-serif`
+  const font = `600 ${fontPx}px "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif`
+  ctx.font = font
   const textW = ctx.measureText(text).width
-  canvas.width = Math.ceil(textW + pad * 2)
+  canvas.width = Math.ceil(textW + pad * 2 + border * 2)
   canvas.height = fontPx + pad * 1.6
   const r = canvas.height / 2
 
-  // Rounded pill background.
-  ctx.fillStyle = highlight ? "rgba(218,41,28,0.92)" : "rgba(255,255,255,0.92)"
-  ctx.beginPath()
-  ctx.moveTo(r, 0)
-  ctx.lineTo(canvas.width - r, 0)
-  ctx.arc(canvas.width - r, r, r, -Math.PI / 2, Math.PI / 2)
-  ctx.lineTo(r, canvas.height)
-  ctx.arc(r, r, r, Math.PI / 2, -Math.PI / 2)
+  // The same pill the 2D map's markers and the panel use: white with a
+  // route-blue edge, teal when it is the destination (globals.css tokens).
+  const pill = () => {
+    ctx.beginPath()
+    ctx.moveTo(r, 0)
+    ctx.lineTo(canvas.width - r, 0)
+    ctx.arc(canvas.width - r, r, r, -Math.PI / 2, Math.PI / 2)
+    ctx.lineTo(r, canvas.height)
+    ctx.arc(r, r, r, Math.PI / 2, -Math.PI / 2)
+    ctx.closePath()
+  }
+  pill()
+  ctx.fillStyle = highlight ? "#0FB5AE" : "rgba(255,255,255,0.96)"
   ctx.fill()
+  ctx.lineWidth = border
+  ctx.strokeStyle = highlight ? "#0B7A75" : "#0A5DC2"
+  ctx.stroke()
 
-  ctx.font = `600 ${fontPx}px Arial, sans-serif`
-  ctx.fillStyle = highlight ? "#ffffff" : "#1f2937"
+  ctx.font = font
+  ctx.fillStyle = highlight ? "#ffffff" : "#0B1B2E"
   ctx.textBaseline = "middle"
-  ctx.fillText(text, pad, canvas.height / 2 + 1)
+  ctx.fillText(text, pad + border, canvas.height / 2 + 1)
 
   const texture = new THREE.CanvasTexture(canvas)
   texture.colorSpace = THREE.SRGBColorSpace

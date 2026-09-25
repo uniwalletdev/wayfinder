@@ -5,6 +5,7 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 import { isDatabaseConfigured } from "@/lib/db"
+import { currentUserId } from "@/lib/auth"
 import { getVenue, deleteVenue } from "@/lib/venues-db"
 import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
 
@@ -12,7 +13,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
   if (!isDatabaseConfigured()) return Response.json({ configured: false, venue: null })
   const { id } = await params
   try {
-    const venue = await getVenue(id)
+    const venue = await getVenue(id, await currentUserId())
     if (!venue) return Response.json({ configured: true, venue: null }, { status: 404 })
     return Response.json({ configured: true, venue })
   } catch (err) {
@@ -34,7 +35,7 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
   const body = read.ok ? read.body : {}
   const editToken = typeof body.editToken === "string" ? body.editToken : ""
   try {
-    const ok = await deleteVenue(id, editToken)
+    const ok = await deleteVenue(id, editToken, await currentUserId())
     // Wrong/absent token, or unknown venue — don't reveal which.
     if (!ok) return Response.json({ configured: true, ok: false }, { status: 403 })
     return Response.json({ configured: true, ok: true })

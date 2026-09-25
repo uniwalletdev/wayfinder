@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import InfoPage from "@/components/InfoPage"
+import DataControls from "@/components/DataControls"
 
 export const metadata: Metadata = {
   title: "Privacy",
@@ -42,6 +43,14 @@ export default function PrivacyPage() {
         browser identifier above, so the map of that hospital can improve. On a deployment with no database it is discarded. This is the one
         place location leaves the device, and it starts when you press Start and stops when you stop navigating or arrive.
       </p>
+      <p>
+        What is stored is the corridor, not the visit: the last 25 metres of every walk are cut off before it is saved, so the door you
+        arrived at is not recorded; positions are rounded to about a metre; and every trace is deleted after 30 days. Searches that found
+        nothing are deleted after 90 days.
+      </p>
+
+      <h2>Your data on this device</h2>
+      <DataControls />
 
       <h2>Sent to the server when you use a feature</h2>
       <ul>

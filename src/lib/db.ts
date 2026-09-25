@@ -127,9 +127,10 @@ create index if not exists search_misses_venue_idx
 
 -- Shared venue maps: the authored map (Claude-read or surveyed points, and the
 -- places themselves) lifted off a single device so it persists and can be reused
--- across devices/users. There are no accounts, so a venue carries an edit_token
--- minted to its creator: reads are open, writes require the token. visibility is
--- metadata (public venues are listed; unlisted/private are reachable by id only).
+-- across devices/users. A venue carries an edit_token minted to its creator, and
+-- optionally the account that owns it (owner_id, below): reads are open, writes
+-- need either. visibility is metadata (public venues are listed; unlisted/private
+-- are reachable by id, and listed for their owner).
 --
 -- Named wf_venues / wf_waypoints, not the generic venues / waypoints: the target
 -- database may already hold unrelated tables by those names (from an earlier
@@ -165,6 +166,12 @@ create table if not exists public.wf_waypoints (
   constraint wf_waypoints_name_len check (char_length(name) between 1 and 200)
 );
 create index if not exists wf_waypoints_venue_idx on public.wf_waypoints (venue_id);
+
+-- Accounts (optional): a venue may also belong to a signed-in user, so it
+-- follows them between devices. Added after the table shipped, hence ALTER;
+-- mirrored in db/migrations/0004_venue_owner.sql.
+alter table public.wf_venues add column if not exists owner_id text;
+create index if not exists wf_venues_owner_idx on public.wf_venues (owner_id) where owner_id is not null;
 `
 
 // Run the schema once per process. Cheap, and keeps setup zero-touch: a fresh
