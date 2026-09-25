@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react"
 import { Venue, VenueCategory, VenueVisibility, Coordinates } from "@/lib/types"
 import { NewVenueInput } from "@/lib/venues"
-import { useEscapeClose } from "@/lib/use-escape"
+import Overlay from "@/components/Overlay"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
@@ -76,14 +76,14 @@ const VISIBILITY_META: {
   },
 ]
 
+const inputClass =
+  "w-full rounded-xl border border-wf-border bg-white px-4 py-3 text-sm text-wf-ink outline-none placeholder:text-wf-muted focus:border-wf-primary"
+
 export default function VenuePicker({
   venues, activeVenueId, currentCenter, hasGps,
   onSelect, onCreate, onDelete, onClose,
 }: Props) {
   const [view, setView] = useState<"list" | "create">("list")
-
-  // Escape mirrors the header X: back out of the create form first, then close.
-  useEscapeClose(() => (view === "create" ? setView("list") : onClose()))
 
   // Create-form state
   const [name, setName] = useState("")
@@ -141,97 +141,13 @@ export default function VenuePicker({
     })
   }
 
-  return (
-    <div className="fixed inset-0 z-[200] bg-white flex flex-col">
-      {/* Header */}
-      <div className="bg-[#005EB8] px-4 pt-safe-bar pb-4 flex items-center gap-3">
-        <button onClick={view === "create" ? () => setView("list") : onClose} className="text-white" aria-label="Back">
-          <X size={22} />
-        </button>
-        <h2 className="text-white font-bold text-lg flex-1">
-          {view === "list" ? "Places" : "Map a new place"}
-        </h2>
-      </div>
-
-      {view === "list" ? (
-        <div className="flex-1 overflow-y-auto pb-safe-bar">
-          <button
-            onClick={() => setView("create")}
-            className="w-full flex items-center gap-3 px-4 py-4 border-b border-gray-100 active:bg-gray-50 text-left"
-          >
-            <div className="w-10 h-10 bg-[#005EB8] rounded-full flex items-center justify-center flex-shrink-0">
-              <Plus size={20} className="text-white" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-gray-900">Map a new place</p>
-              <p className="text-xs text-gray-500">Public or private — you choose who can see it</p>
-            </div>
-            <ChevronRight size={16} className="text-gray-300" />
-          </button>
-
-          <SectionLabel>Public places</SectionLabel>
-          <div className="px-4 py-2.5">
-            <div className="flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5">
-              <Search size={16} className="text-gray-400 flex-shrink-0" />
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search hospitals & places"
-                className="flex-1 bg-transparent text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none"
-              />
-              {query && (
-                <button onClick={() => setQuery("")} aria-label="Clear search" className="text-gray-400">
-                  <X size={16} />
-                </button>
-              )}
-            </div>
-          </div>
-          {/* Fully-mapped hospitals first — you can walk inside these. */}
-          {mappedVenues.length > 0 && (
-            <div className="flex items-center gap-1.5 px-4 pt-3 pb-1.5">
-              <Footprints size={13} className="text-[#005EB8]" />
-              <p className="text-xs font-semibold text-[#005EB8] uppercase tracking-wider">
-                Mapped hospitals · walk inside
-              </p>
-            </div>
-          )}
-          {mappedVenues.map((v) => (
-            <VenueRow key={v.id} venue={v} mapped active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
-          ))}
-
-          {/* Then the location-only directory pins. */}
-          {shownDirectory.length > 0 && (
-            <p className="px-4 pt-4 pb-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-              Hospital directory · location only
-            </p>
-          )}
-          {shownDirectory.map((v) => (
-            <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
-          ))}
-
-          {mappedVenues.length === 0 && shownDirectory.length === 0 && (
-            <p className="px-4 py-6 text-sm text-gray-500 text-center">No places match “{query}”.</p>
-          )}
-          {hiddenDirectoryCount > 0 && (
-            <p className="px-4 py-3 text-xs text-gray-400 text-center">
-              Showing {shownDirectory.length} of {directoryVenues.length} directory hospitals. Keep typing to narrow it down.
-            </p>
-          )}
-
-          {otherVenues.length > 0 && (
-            <>
-              <SectionLabel>Your places</SectionLabel>
-              {otherVenues.map((v) => (
-                <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
-              ))}
-            </>
-          )}
-        </div>
-      ) : (
-        <div className="flex-1 overflow-y-auto px-4 py-4 pb-safe-bar">
+  if (view === "create") {
+    return (
+      <Overlay title="Map a new place" dismiss="back" dismissLabel="Back to places" onClose={() => setView("list")}>
+        <div className="flex-1 overflow-y-auto px-4 py-4 pb-safe-bar lg:px-6">
           {/* Where */}
-          <div className={`flex items-start gap-2 rounded-xl px-3 py-2.5 mb-4 text-xs ${hasGps ? "bg-blue-50 text-[#005EB8]" : "bg-amber-50 text-amber-700"}`}>
-            {hasGps ? <Navigation size={15} className="mt-0.5 flex-shrink-0" /> : <MapPin size={15} className="mt-0.5 flex-shrink-0" />}
+          <div className={`mb-4 flex items-start gap-2 rounded-xl px-3 py-2.5 text-xs ${hasGps ? "bg-[#E7F2FF] text-wf-primary" : "bg-amber-50 text-amber-800"}`}>
+            {hasGps ? <Navigation size={15} className="mt-0.5 flex-shrink-0" aria-hidden="true" /> : <MapPin size={15} className="mt-0.5 flex-shrink-0" aria-hidden="true" />}
             <span>
               {hasGps
                 ? "The place will be pinned to your current location. Stand at its entrance or centre, then survey it to add points."
@@ -239,57 +155,64 @@ export default function VenuePicker({
             </span>
           </div>
 
-          <Field label="Name">
+          <Field label="Name" htmlFor="venue-name">
             <input
+              id="venue-name"
               autoFocus
+              data-autofocus
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Riverside Mall, 5th-floor office"
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-[#005EB8]"
+              className={inputClass}
             />
           </Field>
 
-          <Field label="Full name / subtitle (optional)">
+          <Field label="Full name / subtitle (optional)" htmlFor="venue-subtitle">
             <input
+              id="venue-subtitle"
               value={subtitle}
               onChange={(e) => setSubtitle(e.target.value)}
               placeholder="e.g. Riverside Shopping Centre, Level 2"
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-[#005EB8]"
+              className={inputClass}
             />
           </Field>
 
           <Field label="Type of place">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Type of place">
               {CATEGORY_META.map((c) => (
                 <button
                   key={c.value}
+                  role="radio"
+                  aria-checked={category === c.value}
                   onClick={() => setCategory(c.value)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
-                    category === c.value ? "bg-[#005EB8] text-white border-[#005EB8]" : "bg-white text-gray-600 border-gray-200"
+                  className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                    category === c.value ? "border-wf-primary bg-wf-primary text-white" : "border-wf-border bg-white text-wf-body hover:border-wf-primary"
                   }`}
                 >
-                  {c.icon} {c.label}
+                  <span aria-hidden="true">{c.icon}</span> {c.label}
                 </button>
               ))}
             </div>
           </Field>
 
           <Field label="Who can see it">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2" role="radiogroup" aria-label="Who can see it">
               {VISIBILITY_META.map(({ value, label, Icon, blurb }) => (
                 <button
                   key={value}
+                  role="radio"
+                  aria-checked={visibility === value}
                   onClick={() => setVisibility(value)}
-                  className={`flex items-start gap-3 rounded-xl border px-3 py-3 text-left transition-all ${
-                    visibility === value ? "border-[#005EB8] bg-blue-50" : "border-gray-200 bg-white"
+                  className={`flex items-start gap-3 rounded-[14px] border-[1.5px] px-3 py-3 text-left transition-colors ${
+                    visibility === value ? "border-wf-primary bg-[#F2F8FF]" : "border-wf-border bg-white"
                   }`}
                 >
-                  <Icon size={18} className={visibility === value ? "text-[#005EB8] mt-0.5" : "text-gray-400 mt-0.5"} />
+                  <Icon size={18} className={`mt-0.5 ${visibility === value ? "text-wf-primary" : "text-wf-faint"}`} aria-hidden="true" />
                   <div className="flex-1">
-                    <p className="text-sm font-semibold text-gray-900">{label}</p>
-                    <p className="text-xs text-gray-500 leading-snug">{blurb}</p>
+                    <p className="text-sm font-semibold text-wf-ink">{label}</p>
+                    <p className="text-xs leading-snug text-wf-muted">{blurb}</p>
                   </div>
-                  {visibility === value && <Check size={16} className="text-[#005EB8] mt-0.5" />}
+                  {visibility === value && <Check size={16} className="mt-0.5 text-wf-primary" aria-hidden="true" />}
                 </button>
               ))}
             </div>
@@ -297,15 +220,15 @@ export default function VenuePicker({
 
           {/* Measure: publishing a public place requires an authority attestation */}
           {visibility === "public" && (
-            <label className="flex items-start gap-2.5 rounded-xl bg-gray-50 border border-gray-200 px-3 py-3 mb-4 cursor-pointer">
+            <label className="mb-4 flex cursor-pointer items-start gap-2.5 rounded-xl border border-wf-border bg-wf-surface px-3 py-3">
               <input
                 type="checkbox"
                 checked={authorised}
                 onChange={(e) => setAuthorised(e.target.checked)}
-                className="mt-0.5 w-4 h-4 accent-[#005EB8]"
+                className="mt-0.5 h-4 w-4 accent-wf-primary"
               />
-              <span className="text-xs text-gray-600 leading-snug">
-                <ShieldCheck size={13} className="inline mb-0.5 mr-1 text-[#005EB8]" />
+              <span className="text-xs leading-snug text-wf-body">
+                <ShieldCheck size={13} className="mb-0.5 mr-1 inline text-wf-primary" aria-hidden="true" />
                 I&apos;m authorised to map and publish this place. It will appear as
                 <span className="font-semibold"> Unverified</span> until an administrator confirms it.
               </span>
@@ -315,14 +238,15 @@ export default function VenuePicker({
           {/* Measure: accessibility & safety info, encouraged for public venues */}
           <Field label="Accessibility (optional)">
             <div className="flex flex-col gap-2">
-              <Toggle label="Step-free route" Icon={Accessibility} on={stepFree} onChange={setStepFree} />
-              <Toggle label="Accessible toilets" Icon={Accessibility} on={accessibleToilets} onChange={setAccessibleToilets} />
-              <Toggle label="Hearing loop" Icon={Accessibility} on={hearingLoop} onChange={setHearingLoop} />
+              <OptionRow label="Step-free route" Icon={Accessibility} on={stepFree} onChange={setStepFree} />
+              <OptionRow label="Accessible toilets" Icon={Accessibility} on={accessibleToilets} onChange={setAccessibleToilets} />
+              <OptionRow label="Hearing loop" Icon={Accessibility} on={hearingLoop} onChange={setHearingLoop} />
               <input
                 value={accessNotes}
                 onChange={(e) => setAccessNotes(e.target.value)}
                 placeholder="Other access or safety notes…"
-                className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-[#005EB8]"
+                aria-label="Other access or safety notes"
+                className={`${inputClass} py-2.5`}
               />
             </div>
           </Field>
@@ -330,46 +254,134 @@ export default function VenuePicker({
           <button
             onClick={submit}
             disabled={!canCreate}
-            className="w-full flex items-center justify-center gap-2 bg-[#005EB8] text-white rounded-xl py-3.5 font-bold text-base disabled:opacity-50"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-wf-primary py-3.5 text-base font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)] disabled:opacity-50 disabled:shadow-none"
           >
-            <Check size={18} />
+            <Check size={18} aria-hidden="true" />
             Create place
           </button>
           {visibility === "public" && !authorised && (
-            <p className="text-center text-xs text-gray-400 mt-2">Confirm you&apos;re authorised to publish a public place.</p>
+            <p className="mt-2 text-center text-xs text-wf-muted">Confirm you&apos;re authorised to publish a public place.</p>
           )}
         </div>
-      )}
-    </div>
+      </Overlay>
+    )
+  }
+
+  return (
+    <Overlay title="Places" onClose={onClose} dismissLabel="Close places">
+      <div className="flex-1 overflow-y-auto pb-safe-bar">
+        <button
+          onClick={() => setView("create")}
+          className="flex w-full items-center gap-3 border-b border-wf-border-faint px-4 py-4 text-left hover:bg-[#F7FAFD] lg:px-6"
+        >
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-wf-primary to-wf-teal">
+            <Plus size={20} className="text-white" aria-hidden="true" />
+          </span>
+          <span className="flex-1">
+            <span className="block text-[14.5px] font-semibold text-wf-ink">Map a new place</span>
+            <span className="block text-xs text-wf-muted">Public or private — you choose who can see it</span>
+          </span>
+          <ChevronRight size={16} className="text-wf-faint" aria-hidden="true" />
+        </button>
+
+        <SectionLabel>Public places</SectionLabel>
+        <div className="px-4 py-2.5 lg:px-6">
+          <div className="flex items-center gap-2 rounded-xl border border-wf-border bg-wf-surface px-3 py-2.5 focus-within:border-wf-primary">
+            <Search size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search hospitals & places"
+              aria-label="Search hospitals and places"
+              className="flex-1 bg-transparent text-sm text-wf-ink placeholder:text-wf-muted focus:outline-none"
+            />
+            {query && (
+              <button onClick={() => setQuery("")} aria-label="Clear search" className="text-wf-faint hover:text-wf-ink">
+                <X size={16} />
+              </button>
+            )}
+          </div>
+        </div>
+        {/* Fully-mapped hospitals first — you can walk inside these. */}
+        {mappedVenues.length > 0 && (
+          <div className="flex items-center gap-1.5 px-4 pb-1.5 pt-3 lg:px-6">
+            <Footprints size={13} className="text-wf-primary" aria-hidden="true" />
+            <p className="text-[11.5px] font-semibold uppercase tracking-[0.08em] text-wf-primary">
+              Mapped hospitals · walk inside
+            </p>
+          </div>
+        )}
+        {mappedVenues.map((v) => (
+          <VenueRow key={v.id} venue={v} mapped active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
+        ))}
+
+        {/* Then the location-only directory pins. */}
+        {shownDirectory.length > 0 && (
+          <p className="px-4 pb-1.5 pt-4 text-[11.5px] font-semibold uppercase tracking-[0.08em] text-wf-muted lg:px-6">
+            Hospital directory · location only
+          </p>
+        )}
+        {shownDirectory.map((v) => (
+          <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
+        ))}
+
+        {mappedVenues.length === 0 && shownDirectory.length === 0 && (
+          <p className="px-4 py-6 text-center text-sm text-wf-muted">No places match “{query}”.</p>
+        )}
+        {hiddenDirectoryCount > 0 && (
+          <p className="px-4 py-3 text-center text-xs text-wf-muted">
+            Showing {shownDirectory.length} of {directoryVenues.length} directory hospitals. Keep typing to narrow it down.
+          </p>
+        )}
+
+        {otherVenues.length > 0 && (
+          <>
+            <SectionLabel>Your places</SectionLabel>
+            {otherVenues.map((v) => (
+              <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
+            ))}
+          </>
+        )}
+      </div>
+    </Overlay>
   )
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">{children}</p>
+    <p className="px-4 pb-2 pt-4 text-[11.5px] font-semibold uppercase tracking-[0.08em] text-wf-muted lg:px-6">{children}</p>
   )
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({ label, htmlFor, children }: { label: string; htmlFor?: string; children: React.ReactNode }) {
   return (
     <div className="mb-4">
-      <p className="text-xs font-semibold text-gray-500 mb-1.5">{label}</p>
+      {htmlFor ? (
+        <label htmlFor={htmlFor} className="mb-1.5 block text-xs font-semibold text-wf-muted">{label}</label>
+      ) : (
+        <p className="mb-1.5 text-xs font-semibold text-wf-muted">{label}</p>
+      )}
       {children}
     </div>
   )
 }
 
-function Toggle({ label, Icon, on, onChange }: { label: string; Icon: typeof Globe; on: boolean; onChange: (v: boolean) => void }) {
+// A tickable option row (checkbox semantics), distinct from the app's pill
+// Toggle switch: these are facts about the place, not settings.
+function OptionRow({ label, Icon, on, onChange }: { label: string; Icon: typeof Globe; on: boolean; onChange: (v: boolean) => void }) {
   return (
     <button
+      type="button"
+      role="checkbox"
+      aria-checked={on}
       onClick={() => onChange(!on)}
-      className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-left transition-all ${
-        on ? "border-[#005EB8] bg-blue-50" : "border-gray-200 bg-white"
+      className={`flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-left transition-colors ${
+        on ? "border-wf-primary bg-[#F2F8FF]" : "border-wf-border bg-white"
       }`}
     >
-      <Icon size={16} className={on ? "text-[#005EB8]" : "text-gray-400"} />
-      <span className="flex-1 text-sm text-gray-800">{label}</span>
-      {on && <Check size={16} className="text-[#005EB8]" />}
+      <Icon size={16} className={on ? "text-wf-primary" : "text-wf-faint"} aria-hidden="true" />
+      <span className="flex-1 text-sm text-wf-ink">{label}</span>
+      {on && <Check size={16} className="text-wf-primary" aria-hidden="true" />}
     </button>
   )
 }
@@ -377,41 +389,41 @@ function Toggle({ label, Icon, on, onChange }: { label: string; Icon: typeof Glo
 function VenueRow({ venue, active, mapped = false, onSelect, onDelete }: { venue: Venue; active: boolean; mapped?: boolean; onSelect: (id: string) => void; onDelete: (id: string) => void }) {
   const isUserVenue = venue.id.startsWith("venue-")
   return (
-    <div className={`w-full flex items-center gap-3 px-4 py-3 border-b border-gray-100 ${active ? "bg-blue-50" : mapped ? "bg-blue-50/30" : ""}`}>
-      <button onClick={() => onSelect(venue.id)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 ${mapped ? "bg-[#005EB8]/10 ring-1 ring-[#005EB8]/30" : "bg-gray-100"}`}>
+    <div className={`flex w-full items-center gap-3 border-b border-wf-border-faint px-4 py-3 lg:px-6 ${active ? "bg-[#EEF5FD]" : mapped ? "bg-[#F7FAFD]" : ""}`}>
+      <button onClick={() => onSelect(venue.id)} aria-current={active ? "true" : undefined} className="flex min-w-0 flex-1 items-center gap-3 text-left">
+        <span className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-xl ${mapped ? "bg-[#E7F2FF] ring-1 ring-wf-primary/30" : "bg-wf-surface"}`} aria-hidden="true">
           {categoryIcon(venue.category)}
-        </div>
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-gray-900 truncate flex items-center gap-1">
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="flex items-center gap-1 truncate text-[14.5px] font-semibold text-wf-ink">
             {venue.name}
-            {venue.verified && <BadgeCheck size={14} className="text-[#005EB8] flex-shrink-0" />}
-          </p>
-          <p className="text-xs text-gray-500 truncate flex items-center gap-1.5">
+            {venue.verified && <BadgeCheck size={14} className="flex-shrink-0 text-wf-primary" aria-label="Verified" />}
+          </span>
+          <span className="flex items-center gap-1.5 truncate text-xs text-wf-muted">
             {mapped && (venue.illustrative ? (
-              <span className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 px-1.5 py-0.5 text-[10px] font-semibold leading-none flex-shrink-0">
+              <span className="inline-flex flex-shrink-0 items-center rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-amber-800">
                 Illustrative
               </span>
             ) : (
-              <span className="inline-flex items-center gap-0.5 rounded-full bg-[#005EB8] text-white px-1.5 py-0.5 text-[10px] font-semibold leading-none flex-shrink-0">
-                <Footprints size={9} /> Mapped
+              <span className="inline-flex flex-shrink-0 items-center gap-0.5 rounded-full bg-wf-primary px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white">
+                <Footprints size={9} aria-hidden="true" /> Mapped
               </span>
             ))}
             <span className="truncate">
               {venue.subtitle ? `${venue.subtitle} · ` : ""}
               {venue.visibility[0].toUpperCase() + venue.visibility.slice(1)}
             </span>
-          </p>
-        </div>
+          </span>
+        </span>
       </button>
       {active ? (
-        <Check size={18} className="text-[#005EB8] flex-shrink-0" />
+        <Check size={18} className="flex-shrink-0 text-wf-primary" aria-label="Currently open" />
       ) : isUserVenue ? (
-        <button onClick={() => onDelete(venue.id)} aria-label="Delete place" className="p-1.5 text-gray-300 hover:text-red-500 flex-shrink-0">
+        <button onClick={() => onDelete(venue.id)} aria-label={`Delete ${venue.name}`} className="flex-shrink-0 rounded-full p-1.5 text-wf-faint hover:bg-red-50 hover:text-red-600">
           <Trash2 size={16} />
         </button>
       ) : (
-        <ChevronRight size={16} className="text-gray-300 flex-shrink-0" />
+        <ChevronRight size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
       )}
     </div>
   )

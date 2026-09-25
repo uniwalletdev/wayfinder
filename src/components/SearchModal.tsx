@@ -1,10 +1,10 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useId, useMemo, useRef, useState } from "react"
 import { Waypoint, Coordinates, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel } from "@/lib/waypoint-meta"
 import { rankWaypoints, rankNearMisses } from "@/lib/search"
-import { useEscapeClose } from "@/lib/use-escape"
+import Overlay from "@/components/Overlay"
 import { Search, X, ChevronRight, MapPin, Loader2 } from "lucide-react"
 
 interface Props {
@@ -58,8 +58,17 @@ function geoToWaypoint(r: GeoResult): Waypoint {
   }
 }
 
+// One row the keyboard can land on, whichever list it belongs to. The visible
+// lists are rendered from these so arrow keys and taps agree on the order.
+interface Item {
+  id: string
+  select: () => void
+  render: (active: boolean, id: string) => React.ReactNode
+}
+
 export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", onSelect, onClose }: Props) {
-  const searchPlaceholder = purpose === "origin" ? "Choose a starting point…" : "Search a room, place or address..."
+  const isOrigin = purpose === "origin"
+  const searchPlaceholder = isOrigin ? "Choose a starting point…" : "Search a room, place or address…"
   const [query, setQuery] = useState("")
   const [geoResults, setGeoResults] = useState<GeoResult[]>([])
   const [geoLoading, setGeoLoading] = useState(false)
@@ -70,6 +79,9 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
   // Queries already logged this session, so retyping the same thing doesn't
   // count the miss twice.
   const loggedMissesRef = useRef<Set<string>>(new Set())
+  const listRef = useRef<HTMLDivElement>(null)
+  const titleId = useId()
+  const listId = useId()
 
   // Latest proximity, read at fetch time so a moving GPS fix doesn't re-trigger
   // the debounced geocode on every position update.
@@ -80,12 +92,28 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
 
   const trimmed = query.trim()
 
-  useEscapeClose(onClose)
-
   // Ranked best-match-first, so the closest name wins among similar ones.
-  const filtered = trimmed ? rankWaypoints(trimmed, waypoints, (w) => WAYPOINT_TYPE_LABELS[w.type]) : []
+  const filtered = useMemo(
+    () => (trimmed ? rankWaypoints(trimmed, waypoints, (w) => WAYPOINT_TYPE_LABELS[w.type]) : []),
+    [trimmed, waypoints]
+  )
 
-  const quickWaypoints = waypoints.filter((w) => quickAccess.includes(w.name))
+  const quickWaypoints = useMemo(() => waypoints.filter((w) => quickAccess.includes(w.name)), [waypoints, quickAccess])
+
+  // The full directory, grouped by floor and alphabetical within each: a
+  // visitor who cannot spell the ward can still find it by browsing the floor
+  // they were told. Three hundred rows in arbitrary array order was no use.
+  const byFloor = useMemo(() => {
+    const groups = new Map<number, Waypoint[]>()
+    for (const w of waypoints) {
+      const list = groups.get(w.floor) ?? []
+      list.push(w)
+      groups.set(w.floor, list)
+    }
+    return [...groups.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .map(([floor, list]) => [floor, list.slice().sort((a, b) => a.name.localeCompare(b.name))] as const)
+  }, [waypoints])
 
   // Geocode anything the user types that the indoor list doesn't already cover,
   // so destinations beyond the venue's mapped points are still navigable.
@@ -150,190 +178,241 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
 
   const suggestSent = suggestedQuery !== null && suggestedQuery === trimmed
 
-  return (
-    <div className="fixed inset-0 z-[200] bg-white flex flex-col">
-      {/* Header */}
-      <div className="bg-[#005EB8] px-4 pt-safe-bar pb-4 flex items-center gap-3">
-        <button onClick={onClose} aria-label={purpose === "origin" ? "Close starting point picker" : "Close search"} className="text-white">
-          <X size={22} />
-        </button>
-        <div className="flex-1 bg-white rounded-xl flex items-center px-3 gap-2">
-          <Search size={18} className="text-gray-400" />
-          <input
-            autoFocus
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder={searchPlaceholder}
-            className="flex-1 py-2.5 text-sm text-gray-800 outline-none bg-transparent"
-          />
-          {query && (
-            <button onClick={() => setQuery("")}>
-              <X size={16} className="text-gray-400" />
-            </button>
-          )}
-        </div>
+  // ── Keyboard navigation ──────────────────────────────────────────────────
+  // Every selectable row, in visual order, so Up/Down/Enter work from the
+  // search field without leaving it — the desktop convention "/" opens search
+  // with, and the one a screen-reader user expects from a combobox.
+  const wpItem = (w: Waypoint, prefix: string): Item => ({
+    id: `${prefix}-${w.id}`,
+    select: () => onSelect(w),
+    render: (active, id) => <WaypointRow id={id} active={active} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />,
+  })
+  const sections: { label: React.ReactNode; items: Item[]; tone?: "primary" }[] = []
+  if (trimmed === "") {
+    if (quickWaypoints.length > 0) sections.push({ label: "Quick access", items: quickWaypoints.map((w) => wpItem(w, "quick")) })
+    for (const [floor, list] of byFloor) {
+      sections.push({ label: floorLabel(floor, floorNaming), items: list.map((w) => wpItem(w, `f${floor}`)) })
+    }
+  } else {
+    if (filtered.length > 0) {
+      sections.push({
+        label: `In this place · ${filtered.length} result${filtered.length !== 1 ? "s" : ""}`,
+        items: filtered.map((w) => wpItem(w, "hit")),
+        tone: "primary",
+      })
+    }
+    if (extraResults.length > 0) {
+      sections.push({
+        label: "On the map",
+        items: extraResults.map((r) => ({
+          id: `geo-${r.id}`,
+          select: () => onSelect(geoToWaypoint(r)),
+          render: (active, id) => <GeoRow id={id} active={active} result={r} onSelect={() => onSelect(geoToWaypoint(r))} />,
+        })),
+      })
+    }
+    if (showEmpty && nearMisses.length > 0) {
+      sections.push({ label: "Did you mean…", items: nearMisses.map((w) => wpItem(w, "near")) })
+    }
+  }
+  const flat = sections.flatMap((s) => s.items)
+
+  const [activeIndex, setActiveIndex] = useState(-1)
+  // A new result set restarts keyboard focus at the top when there is a query
+  // (the best match), and nowhere when browsing.
+  const resultKey = `${trimmed}|${flat.length}`
+  const [prevResultKey, setPrevResultKey] = useState(resultKey)
+  if (resultKey !== prevResultKey) {
+    setPrevResultKey(resultKey)
+    setActiveIndex(trimmed && flat.length > 0 ? 0 : -1)
+  }
+  const activeId = activeIndex >= 0 && activeIndex < flat.length ? flat[activeIndex].id : undefined
+
+  useEffect(() => {
+    if (!activeId) return
+    document.getElementById(activeId)?.scrollIntoView({ block: "nearest" })
+  }, [activeId])
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (flat.length === 0) return
+    if (e.key === "ArrowDown") {
+      e.preventDefault()
+      setActiveIndex((i) => Math.min(flat.length - 1, i + 1))
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault()
+      setActiveIndex((i) => Math.max(0, i - 1))
+    } else if (e.key === "Home" && activeIndex >= 0) {
+      e.preventDefault()
+      setActiveIndex(0)
+    } else if (e.key === "End" && activeIndex >= 0) {
+      e.preventDefault()
+      setActiveIndex(flat.length - 1)
+    } else if (e.key === "Enter" && activeIndex >= 0 && activeIndex < flat.length) {
+      e.preventDefault()
+      flat[activeIndex].select()
+    }
+  }
+
+  const header = (
+    <>
+      <h2 id={titleId} className="sr-only">{isOrigin ? "Choose a starting point" : "Search this place"}</h2>
+      <div className="flex items-center gap-2 rounded-[14px] border-[1.5px] border-wf-primary bg-white px-3.5 shadow-[0_4px_14px_rgba(10,93,194,0.12)]">
+        <Search size={17} className="flex-shrink-0 text-wf-primary" aria-hidden="true" />
+        <input
+          autoFocus
+          data-autofocus
+          type="search"
+          role="combobox"
+          aria-expanded={flat.length > 0}
+          aria-controls={listId}
+          aria-activedescendant={activeId}
+          aria-autocomplete="list"
+          aria-label={isOrigin ? "Starting point" : "Search a room, place or address"}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={onKeyDown}
+          placeholder={searchPlaceholder}
+          enterKeyHint="search"
+          autoComplete="off"
+          className="min-w-0 flex-1 bg-transparent py-[11px] text-[15px] text-wf-ink outline-none placeholder:text-wf-muted [&::-webkit-search-cancel-button]:hidden"
+        />
+        {query && (
+          <button
+            type="button"
+            onClick={() => setQuery("")}
+            aria-label="Clear search"
+            className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-wf-faint hover:bg-wf-surface hover:text-wf-ink"
+          >
+            <X size={15} />
+          </button>
+        )}
       </div>
+    </>
+  )
 
-      <div className="flex-1 overflow-y-auto">
-        {trimmed === "" ? (
-          <>
-            {quickWaypoints.length > 0 && (
-              <>
-                <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                  Quick access
-                </p>
-                {quickWaypoints.map((w) => (
-                  <WaypointRow key={w.id} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />
-                ))}
-              </>
-            )}
-
-            <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-              All locations
+  return (
+    <Overlay header={header} labelledBy={titleId} onClose={onClose} dismissLabel={isOrigin ? "Close starting point picker" : "Close search"}>
+      <div ref={listRef} id={listId} role="listbox" aria-label={isOrigin ? "Starting points" : "Places"} className="flex-1 overflow-y-auto pb-safe-bar">
+        {sections.map((section, i) => (
+          <div key={i} role="group" aria-label={typeof section.label === "string" ? section.label : undefined}>
+            <p
+              className={`sticky top-0 z-10 border-b border-wf-border-faint bg-white/95 px-4 pb-1.5 pt-3 text-[11.5px] font-semibold uppercase tracking-[0.08em] backdrop-blur lg:px-6 ${
+                section.tone === "primary" ? "text-wf-primary" : "text-wf-muted"
+              }`}
+            >
+              {section.label}
             </p>
-            {waypoints.map((w) => (
-              <WaypointRow key={w.id} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />
+            {section.items.map((item) => (
+              <div key={item.id}>{item.render(item.id === activeId, item.id)}</div>
             ))}
-          </>
-        ) : (
-          <>
-            {filtered.length > 0 && (
-              <>
-                <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                  In this place · {filtered.length} result{filtered.length !== 1 ? "s" : ""}
-                </p>
-                {filtered.map((w) => (
-                  <WaypointRow key={w.id} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />
-                ))}
-              </>
+          </div>
+        ))}
+
+        {trimmed === "" && waypoints.length === 0 && (
+          <p className="px-6 py-10 text-center text-sm text-wf-muted">
+            Nothing is mapped inside this place yet. Type an address to route to it from outside.
+          </p>
+        )}
+
+        {showLoading && (
+          <div className="flex items-center justify-center gap-2 py-6 text-wf-muted" role="status">
+            <Loader2 size={16} className="animate-spin" aria-hidden="true" />
+            <span className="text-sm">Searching the map…</span>
+          </div>
+        )}
+
+        {showEmpty && (
+          <div className="flex flex-col items-center justify-center px-6 py-10 text-center">
+            <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-wf-surface text-wf-primary" aria-hidden="true">
+              <Search size={24} />
+            </span>
+            <p className="font-display text-[16px] font-semibold text-wf-ink">No results for &ldquo;{query}&rdquo;</p>
+            {geoError === "not_configured" ? (
+              <p className="mt-1 max-w-xs text-sm text-wf-muted">
+                It isn&apos;t mapped here yet, and address search isn&apos;t enabled on this deployment —
+                only mapped places can be found.
+              </p>
+            ) : geoError ? (
+              <p className="mt-1 max-w-xs text-sm text-wf-muted">
+                Couldn&apos;t reach the map search just now — check your connection, or try a room,
+                place or floor number.
+              </p>
+            ) : (
+              <p className="mt-1 max-w-xs text-sm text-wf-muted">
+                It may not be mapped yet. Try another name, or a nearby address.
+              </p>
             )}
 
-            {extraResults.length > 0 && (
-              <>
-                <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                  On the map
-                </p>
-                {extraResults.map((r) => (
-                  <GeoRow key={r.id} result={r} onSelect={() => onSelect(geoToWaypoint(r))} />
+            {quickWaypoints.length > 0 && (
+              <div className="mt-5 flex flex-wrap justify-center gap-2">
+                {quickWaypoints.map((w) => (
+                  <button
+                    key={w.id}
+                    onClick={() => onSelect(w)}
+                    className="rounded-full border border-wf-border bg-white px-3.5 py-2 text-[13px] font-medium text-wf-body transition-colors hover:border-wf-primary hover:text-wf-primary"
+                  >
+                    <span aria-hidden="true">{WAYPOINT_TYPE_ICONS[w.type]} </span>
+                    {w.name}
+                  </button>
                 ))}
-              </>
-            )}
-
-            {showLoading && (
-              <div className="flex items-center justify-center gap-2 py-6 text-gray-400">
-                <Loader2 size={16} className="animate-spin" />
-                <span className="text-sm">Searching the map…</span>
               </div>
             )}
 
-            {showEmpty && (
-              <>
-                {nearMisses.length > 0 && (
-                  <>
-                    <p className="px-4 pt-4 pb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                      Did you mean…
-                    </p>
-                    {nearMisses.map((w) => (
-                      <WaypointRow key={w.id} waypoint={w} floorNaming={floorNaming} onSelect={onSelect} />
-                    ))}
-                  </>
-                )}
-
-                <div className="flex flex-col items-center justify-center px-6 py-10 text-center">
-                  <span className="text-5xl mb-3">🔍</span>
-                  <p className="text-gray-600 font-medium">No results for &ldquo;{query}&rdquo;</p>
-                  {geoError === "not_configured" ? (
-                    <p className="text-sm text-gray-400 mt-1">
-                      It isn&apos;t mapped here yet, and address search isn&apos;t enabled on this deployment —
-                      only mapped places can be found.
-                    </p>
-                  ) : geoError ? (
-                    <p className="text-sm text-gray-400 mt-1">
-                      Couldn&apos;t reach the map search just now — check your connection, or try a room,
-                      place or floor number.
-                    </p>
-                  ) : (
-                    <p className="text-sm text-gray-400 mt-1">
-                      It may not be mapped yet. Try another name, or a nearby address.
-                    </p>
-                  )}
-
-                  {quickWaypoints.length > 0 && (
-                    <div className="mt-5 flex flex-wrap justify-center gap-2">
-                      {quickWaypoints.map((w) => (
-                        <button
-                          key={w.id}
-                          onClick={() => onSelect(w)}
-                          className="rounded-full border border-gray-200 bg-white px-3.5 py-2 text-[13px] font-medium text-gray-700 active:bg-gray-100"
-                        >
-                          {WAYPOINT_TYPE_ICONS[w.type]} {w.name}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-
-                  <button
-                    onClick={() => {
-                      if (suggestSent) return
-                      setSuggestedQuery(trimmed)
-                      reportSearchMiss(venueId, trimmed, true)
-                    }}
-                    disabled={suggestSent}
-                    className={`mt-6 flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold ${
-                      suggestSent
-                        ? "bg-gray-100 text-gray-500"
-                        : "bg-[#005EB8] text-white active:bg-[#004a93]"
-                    }`}
-                  >
-                    <MapPin size={15} />
-                    {suggestSent ? "Thanks — noted for the venue team" : "Suggest this place to the venue team"}
-                  </button>
-                </div>
-              </>
-            )}
-          </>
+            <button
+              onClick={() => {
+                if (suggestSent) return
+                setSuggestedQuery(trimmed)
+                reportSearchMiss(venueId, trimmed, true)
+              }}
+              disabled={suggestSent}
+              className={`mt-6 flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors ${
+                suggestSent ? "bg-wf-teal-tint text-wf-teal-text" : "bg-wf-primary text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]"
+              }`}
+            >
+              <MapPin size={15} aria-hidden="true" />
+              {suggestSent ? "Thanks — noted for the venue team" : "Suggest this place to the venue team"}
+            </button>
+          </div>
         )}
       </div>
-    </div>
+    </Overlay>
   )
 }
 
-function WaypointRow({ waypoint, floorNaming, onSelect }: { waypoint: Waypoint; floorNaming?: FloorNaming; onSelect: (w: Waypoint) => void }) {
+const rowClass = (active: boolean) =>
+  `flex w-full items-center gap-3 border-b border-wf-border-faint px-4 py-3 text-left transition-colors lg:px-6 ${
+    active ? "bg-[#EEF5FD]" : "hover:bg-[#F7FAFD] active:bg-wf-surface"
+  }`
+
+function WaypointRow({ id, active, waypoint, floorNaming, onSelect }: { id: string; active: boolean; waypoint: Waypoint; floorNaming?: FloorNaming; onSelect: (w: Waypoint) => void }) {
   return (
-    <button
-      onClick={() => onSelect(waypoint)}
-      className="w-full flex items-center gap-3 px-4 py-3 border-b border-gray-100 hover:bg-gray-50 active:bg-gray-100 text-left"
-    >
-      <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-xl flex-shrink-0">
+    <button id={id} role="option" aria-selected={active} tabIndex={-1} onClick={() => onSelect(waypoint)} className={rowClass(active)}>
+      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] bg-wf-surface text-xl" aria-hidden="true">
         {WAYPOINT_TYPE_ICONS[waypoint.type]}
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-gray-900 truncate">{waypoint.name}</p>
-        <p className="text-xs text-gray-500">
-          {WAYPOINT_TYPE_LABELS[waypoint.type]} •{" "}
-          {floorLabel(waypoint.floor, floorNaming)}
-          {waypoint.description ? ` • ${waypoint.description}` : ""}
-        </p>
-      </div>
-      <ChevronRight size={16} className="text-gray-300 flex-shrink-0" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate text-[14.5px] font-semibold text-wf-ink">{waypoint.name}</span>
+        <span className="block truncate text-xs text-wf-muted">
+          {WAYPOINT_TYPE_LABELS[waypoint.type]} · {floorLabel(waypoint.floor, floorNaming)}
+          {waypoint.description ? ` · ${waypoint.description}` : ""}
+        </span>
+      </span>
+      <ChevronRight size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
     </button>
   )
 }
 
-function GeoRow({ result, onSelect }: { result: GeoResult; onSelect: () => void }) {
+function GeoRow({ id, active, result, onSelect }: { id: string; active: boolean; result: GeoResult; onSelect: () => void }) {
   return (
-    <button
-      onClick={onSelect}
-      className="w-full flex items-center gap-3 px-4 py-3 border-b border-gray-100 hover:bg-gray-50 active:bg-gray-100 text-left"
-    >
-      <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
-        <MapPin size={18} className="text-[#005EB8]" />
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-gray-900 truncate">{result.name}</p>
-        <p className="text-xs text-gray-500 truncate">{result.description}</p>
-      </div>
-      <ChevronRight size={16} className="text-gray-300 flex-shrink-0" />
+    <button id={id} role="option" aria-selected={active} tabIndex={-1} onClick={onSelect} className={rowClass(active)}>
+      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] bg-[#E7F2FF]" aria-hidden="true">
+        <MapPin size={18} className="text-wf-primary" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate text-[14.5px] font-semibold text-wf-ink">{result.name}</span>
+        <span className="block truncate text-xs text-wf-muted">{result.description}</span>
+      </span>
+      <ChevronRight size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
     </button>
   )
 }

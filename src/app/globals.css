@@ -74,6 +74,19 @@
     margin: 0;
     padding: 0;
   }
+
+  /* Keyboard focus has to be visible everywhere. Tailwind v4 ships no default
+     ring, and the app is driven from buttons that had none, so a keyboard
+     user could tab through the whole panel without seeing where they were. */
+  :focus-visible {
+    outline: 2px solid var(--wf-primary);
+    outline-offset: 2px;
+  }
+  /* Leaflet gives the map a tabindex; a ring around the whole canvas on click
+     reads as a glitch rather than help. */
+  .leaflet-container:focus-visible {
+    outline: none;
+  }
 }
 
 html, body {
@@ -196,6 +209,25 @@ html, body {
 
 .slide-up {
   animation: slideUp 0.3s ease-out;
+}
+
+/* Reading pages (accessibility, privacy). Kept in one rule set rather than
+   utility classes on every element so the prose reads as one measure. */
+.wf-prose h2 { font-family: var(--font-heading); font-size: 22px; font-weight: 600; letter-spacing: -0.3px; color: var(--wf-ink); margin-top: 2.25rem; margin-bottom: 0.75rem; }
+.wf-prose p, .wf-prose li { font-size: 16px; line-height: 1.65; color: var(--wf-body); }
+.wf-prose p + p { margin-top: 0.9rem; }
+.wf-prose ul { padding-left: 1.25rem; list-style: disc; display: flex; flex-direction: column; gap: 0.6rem; }
+.wf-prose strong { color: var(--wf-ink); font-weight: 600; }
+.wf-prose kbd { font: 600 13px var(--font-body), monospace; color: var(--wf-ink); background: var(--wf-surface); border: 1px solid var(--wf-border); border-radius: 6px; padding: 1px 6px; }
+
+/* Toasts slide in from the top edge (see Toast.tsx). */
+.wf-toast-in { animation: wf-toast-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1); }
+@keyframes wf-toast-in {
+  from { transform: translateY(-12px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wf-toast-in { animation: none; }
 }
 
 /* Draggable corner handle for georeferencing an uploaded floor plan onto the

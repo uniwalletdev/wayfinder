@@ -1,7 +1,7 @@
 import { randomUUID } from "crypto"
 import { query } from "./db"
 import { Venue, Waypoint } from "./types"
-import { NewVenueInput } from "./venues"
+import { NewVenueInput, slugify as slugifyName } from "./venues"
 
 // Server-side data access for shared venue maps (see db/migrations/0003_venues.sql).
 // Reads are open; writes are gated by a per-venue edit_token minted at creation —
@@ -37,9 +37,10 @@ interface WaypointRow {
 // can't leak through a read.
 const VENUE_COLS = "id, slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, created_at, updated_at"
 
+// Slugs on the server carry a random suffix: several people can create
+// venues with the same name, and each must stay independently addressable.
 function slugify(name: string): string {
-  const base = name.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
-  return `${base || "place"}-${Math.random().toString(36).slice(2, 7)}`
+  return `${slugifyName(name)}-${Math.random().toString(36).slice(2, 7)}`
 }
 
 function rowToWaypoint(r: WaypointRow): Waypoint {

@@ -29,8 +29,12 @@ function isSubsequence(needle: string, haystack: string): boolean {
 
 // Score how well one field matches the query. 0 means "no match"; larger is
 // better. The bands are ordered so an exact/prefix hit always outranks a
-// mid-string or fuzzy one.
-function scoreField(q: string, tokens: string[], field: string): number {
+// mid-string or fuzzy one. `fuzzy` allows the last-resort subsequence match:
+// it is meant for a mistyped or abbreviated NAME ("paeds" → Paediatrics), and
+// over a long description it matches almost anything — "pharm" was surfacing
+// "Ramp to Southwood" because p, h, a, r, m appear in that order somewhere in
+// "step-free ramp between the Mittal Children's Medical Centre…".
+function scoreField(q: string, tokens: string[], field: string, fuzzy = true): number {
   const f = normalize(field)
   if (!f) return 0
 
@@ -51,7 +55,7 @@ function scoreField(q: string, tokens: string[], field: string): number {
   }
 
   // Last resort: fuzzy subsequence, only for queries long enough to be meaningful.
-  if (q.length >= 3 && isSubsequence(q, f)) return 300
+  if (fuzzy && q.length >= 3 && isSubsequence(q, f)) return 300
 
   return 0
 }
@@ -71,8 +75,8 @@ export function scoreWaypoint(
 
   const best = Math.max(
     scoreField(q, tokens, name),
-    description ? scoreField(q, tokens, description) * 0.5 : 0,
-    scoreField(q, tokens, typeLabel) * 0.4
+    description ? scoreField(q, tokens, description, false) * 0.5 : 0,
+    scoreField(q, tokens, typeLabel, false) * 0.4
   )
   if (best <= 0) return 0
 

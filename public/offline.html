@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wayfinder — you're offline</title>
+<meta name="theme-color" content="#0A1626">
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         background: #0A1626; color: #fff; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+         padding: env(safe-area-inset-top) 24px env(safe-area-inset-bottom); box-sizing: border-box; }
+  main { max-width: 380px; text-align: center; }
+  .mark { width: 72px; height: 72px; border-radius: 20px; margin: 0 auto 24px;
+          background: linear-gradient(135deg, #0A5DC2, #0FB5AE); display: grid; place-items: center; }
+  h1 { font-size: 24px; margin: 0 0 8px; letter-spacing: -0.3px; }
+  p { color: rgba(255,255,255,.72); margin: 0 0 24px; }
+  .row { display: flex; flex-direction: column; gap: 10px; }
+  a, button { font: 600 16px system-ui, sans-serif; color: #fff; text-decoration: none; border: 0;
+              border-radius: 14px; padding: 14px 28px; cursor: pointer; }
+  button { background: #0A5DC2; box-shadow: 0 10px 24px rgba(10,93,194,.45); }
+  a { border: 1.5px solid rgba(255,255,255,.35); }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="#fff"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+  <h1>You're offline</h1>
+  <p>Wayfinder can't reach the network right now. A hospital you've opened before still works offline — try the map. Otherwise move nearer a window or the main entrance, or join the guest Wi-Fi, and try again.</p>
+  <div class="row">
+    <button onclick="location.reload()">Try again</button>
+    <a href="/navigate">Open the map</a>
+  </div>
+</main>
+</body>
+</html>

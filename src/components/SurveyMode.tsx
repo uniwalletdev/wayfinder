@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react"
 import { SurveyFrame, Coordinates, Waypoint, SurveyTrail } from "@/lib/types"
 import { WaypointType } from "@/lib/types"
-import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorShortLabel } from "@/lib/waypoint-meta"
+import { ALL_WAYPOINT_TYPES, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorShortLabel } from "@/lib/waypoint-meta"
+import { useDialog } from "@/lib/use-dialog"
 import { X, Square, MapPin, Check, ChevronUp, ChevronDown } from "lucide-react"
 
 export interface SurveyResult {
@@ -25,9 +26,8 @@ interface Props {
   onSurveyComplete: (result: SurveyResult) => void
 }
 
-const ANNOTATION_TYPES: WaypointType[] = ["ward", "department", "lift", "stairs", "toilet", "exit", "reception", "canteen", "pharmacy", "other"]
-
 export default function SurveyMode({ currentFloor, currentPosition, venueCenter, venueName, onClose, onSurveyComplete }: Props) {
+  const dialogRef = useDialog<HTMLDivElement>(onClose)
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const streamRef = useRef<MediaStream | null>(null)
@@ -213,21 +213,21 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
 
   if (permissionDenied) {
     return (
-      <div className="fixed inset-0 z-[300] bg-black flex flex-col items-center justify-center text-white p-6 text-center">
-        <span className="text-5xl mb-4">📷</span>
-        <h2 className="text-xl font-bold mb-2">Camera access needed</h2>
-        <p className="text-sm text-gray-300 mb-6">Allow camera access to use Survey Mode.</p>
-        <button onClick={onClose} className="bg-[#005EB8] text-white px-6 py-3 rounded-xl font-semibold">Go back</button>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Survey Mode" className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-black p-6 text-center text-white">
+        <span className="mb-4 text-5xl" aria-hidden="true">📷</span>
+        <h2 className="mb-2 font-display text-xl font-semibold">Camera access needed</h2>
+        <p className="mb-6 text-sm text-white/70">Allow camera access to use Survey Mode.</p>
+        <button onClick={onClose} className="rounded-xl bg-wf-primary px-6 py-3 font-semibold text-white">Go back</button>
       </div>
     )
   }
 
   if (analyzing) {
     return (
-      <div className="fixed inset-0 z-[300] bg-black flex flex-col items-center justify-center text-white p-6 text-center">
-        <div className="w-10 h-10 border-4 border-white/30 border-t-white rounded-full animate-spin mb-5" />
-        <h2 className="text-lg font-bold mb-1">Reading your survey…</h2>
-        <p className="text-sm text-gray-300">Scanning the footage for signs and rooms to add to the map.</p>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Survey Mode" aria-busy="true" className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-black p-6 text-center text-white">
+        <div className="mb-5 h-10 w-10 animate-spin rounded-full border-4 border-white/30 border-t-white" aria-hidden="true" />
+        <h2 className="mb-1 font-display text-lg font-semibold">Reading your survey…</h2>
+        <p className="text-sm text-white/70">Scanning the footage for signs and rooms to add to the map.</p>
         <button
           onClick={() => aiAbortRef.current?.abort()}
           className="mt-6 rounded-xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white"
@@ -239,8 +239,8 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
   }
 
   return (
-    <div className="fixed inset-0 z-[300] bg-black">
-      <video ref={videoRef} playsInline muted className="w-full h-full object-cover" />
+    <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Survey Mode" className="fixed inset-0 z-[300] bg-black">
+      <video ref={videoRef} playsInline muted className="w-full h-full object-cover" aria-hidden="true" />
       <canvas ref={canvasRef} className="hidden" />
 
       {/* Floor stepper — set the floor as you move between floors */}
@@ -254,7 +254,7 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
             <ChevronUp size={22} />
           </button>
           <div className="text-white text-center leading-tight py-1">
-            <div className="text-[10px] text-gray-300">Floor</div>
+            <div className="text-[10px] text-white/70">Floor</div>
             <div className="text-lg font-bold">{floorShortLabel(surveyFloor)}</div>
           </div>
           <button
@@ -270,7 +270,7 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
       {/* Top bar */}
       <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/80 to-transparent px-4 pt-safe-snug pb-4">
         <div className="flex items-center justify-between mb-2">
-          <button onClick={onClose} className="text-white bg-black/40 rounded-full p-2">
+          <button onClick={onClose} aria-label="Close Survey Mode" className="rounded-full bg-black/40 p-2 text-white">
             <X size={22} />
           </button>
           <div className="flex items-center gap-2 bg-black/50 rounded-full px-3 py-1.5">
@@ -303,14 +303,14 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
           {!recording ? (
             <div className="text-center mb-4">
               <p className="text-white text-sm mb-1">Walk through the area with the camera up</p>
-              <p className="text-gray-400 text-xs">
+              <p className="text-white/60 text-xs">
                 Walk down the middle of corridors — your path is drawn as the floor layout, with rooms placed alongside. A frame is captured every 3s; signs in the footage are read into map points when you stop, and tap “Mark Location” to add a spot yourself. Use the ▲▼ floor buttons each time you change floor.
               </p>
             </div>
           ) : (
             <div className="text-center mb-4">
               <p className="text-white text-sm">Recording — keep signs &amp; door plates in view</p>
-              <p className="text-gray-400 text-xs">Tap “Mark Location” at a key point, or just keep walking</p>
+              <p className="text-white/60 text-xs">Tap “Mark Location” at a key point, or just keep walking</p>
             </div>
           )}
 
@@ -327,14 +327,14 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
               <>
                 <button
                   onClick={() => setShowAnnotation(true)}
-                  className="flex-1 bg-[#005EB8] text-white rounded-2xl py-3.5 font-semibold text-sm flex items-center justify-center gap-2"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-wf-primary py-3.5 text-sm font-semibold text-white"
                 >
-                  <MapPin size={18} />
+                  <MapPin size={18} aria-hidden="true" />
                   Mark Location
                 </button>
                 <button
                   onClick={stopRecording}
-                  className="flex-1 bg-white text-gray-900 rounded-2xl py-3.5 font-semibold text-sm flex items-center justify-center gap-2"
+                  className="flex-1 bg-white text-wf-ink rounded-2xl py-3.5 font-semibold text-sm flex items-center justify-center gap-2"
                 >
                   <Square size={18} />
                   Stop &amp; Map
@@ -346,23 +346,24 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
       ) : (
         /* Annotation panel */
         <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl px-4 pt-4 pb-safe-bar slide-up">
-          <h3 className="font-bold text-gray-900 mb-3">What is at this location?</h3>
+          <h3 className="mb-3 font-display text-[16px] font-semibold text-wf-ink">What is at this location?</h3>
           <input
             autoFocus
             value={annotationName}
             onChange={(e) => setAnnotationName(e.target.value)}
             placeholder="e.g. Ward 5B, Main Lift, Toilets..."
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm mb-3 outline-none focus:border-[#005EB8]"
+            aria-label="Name of this location"
+            className="mb-3 w-full rounded-xl border border-wf-border px-4 py-3 text-sm text-wf-ink outline-none placeholder:text-wf-muted focus:border-wf-primary"
           />
           <div className="flex flex-wrap gap-2 mb-4">
-            {ANNOTATION_TYPES.map((t) => (
+            {ALL_WAYPOINT_TYPES.map((t) => (
               <button
                 key={t}
                 onClick={() => setAnnotationType(t)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
                   annotationType === t
-                    ? "bg-[#005EB8] text-white border-[#005EB8]"
-                    : "bg-white text-gray-600 border-gray-200"
+                    ? "border-wf-primary bg-wf-primary text-white"
+                    : "border-wf-border bg-white text-wf-body"
                 }`}
               >
                 {WAYPOINT_TYPE_ICONS[t]} {WAYPOINT_TYPE_LABELS[t]}
@@ -372,16 +373,16 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
           <div className="flex gap-2">
             <button
               onClick={() => setShowAnnotation(false)}
-              className="flex-1 bg-gray-100 text-gray-700 rounded-xl py-3 font-semibold text-sm"
+              className="flex-1 rounded-xl bg-wf-surface py-3 text-sm font-semibold text-wf-ink"
             >
               Cancel
             </button>
             <button
               onClick={saveAnnotation}
               disabled={!annotationName.trim()}
-              className="flex-1 bg-[#005EB8] text-white rounded-xl py-3 font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50"
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white disabled:opacity-50"
             >
-              <Check size={16} />
+              <Check size={16} aria-hidden="true" />
               Save &amp; Continue
             </button>
           </div>

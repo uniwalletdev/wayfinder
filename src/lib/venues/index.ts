@@ -86,18 +86,27 @@ export function getVenueById(id: string, extra: Venue[] = []): Venue | undefined
   return [...SEED_VENUES, ...extra].find((v) => v.id === id)
 }
 
-// The floor a venue should open on: the lowest one it actually has a plan for.
+// The floor a venue should open on: the ground floor when it has a plan for
+// it, otherwise the lowest floor that does.
 //
-// Not always 0. Southampton's Princess Anne is lettered A upward and only
-// levels C to H have usable plans, so its storeys run 2 to 7 — opening it at a
-// hardcoded floor 0 shows a venue with no floor plan at all. Zero is the right
-// answer for a single-storey site plan and the wrong one as a default.
+// The ground floor is where people arrive, so it is the floor to open on — and
+// under a venue's own numbering it is still internal floor 0 (GOSH's "Level
+// 2"). Opening on the lowest planned floor instead put GOSH on Level 1, a
+// storey below its entrance, so the position dot started underground and every
+// preview began with a lift ride the walker had not asked for.
+//
+// Not always 0, though. Southampton's Princess Anne is lettered A upward and
+// only levels C to H have usable plans, so its storeys run 2 to 7 — opening it
+// at floor 0 would show a venue with no floor plan at all, hence the fallback.
 export function openingFloor(venue: Pick<Venue, "floorPlans">): number {
   const floors = venue.floorPlans.map((p) => p.floor)
-  return floors.length ? Math.min(...floors) : 0
+  if (floors.length === 0) return 0
+  return floors.includes(0) ? 0 : Math.min(...floors)
 }
 
-function slugify(name: string): string {
+// URL-safe form of a place name. Shared with the server-side venue store so a
+// device-local venue and a shared one slug the same way.
+export function slugify(name: string): string {
   const base = name.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
   return base || "place"
 }

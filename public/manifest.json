@@ -1,12 +1,21 @@
 {
-  "name": "Wayfinder",
+  "id": "/navigate",
+  "name": "Wayfinder — NHS hospitals, mapped",
   "short_name": "Wayfinder",
-  "description": "Find your way around NHS hospitals \u2014 search a ward or clinic and follow the route, floor by floor.",
-  "start_url": "/",
+  "description": "Find your way around NHS hospitals — search a ward or clinic and follow the route, floor by floor.",
+  "start_url": "/navigate",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0A1626",
   "theme_color": "#0A1626",
   "orientation": "portrait",
+  "lang": "en-GB",
+  "categories": [
+    "navigation",
+    "health",
+    "medical",
+    "travel"
+  ],
   "icons": [
     {
       "src": "/icon-192.png",
@@ -25,6 +34,32 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Find a ward or clinic",
+      "short_name": "Find",
+      "description": "Search the hospital you're in",
+      "url": "/navigate",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Map a place",
+      "short_name": "Map",
+      "description": "Walk an area or upload a floor plan",
+      "url": "/map",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

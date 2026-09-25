@@ -6,6 +6,7 @@ export const dynamic = "force-dynamic"
 
 import { isDatabaseConfigured } from "@/lib/db"
 import { getVenue, deleteVenue } from "@/lib/venues-db"
+import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   if (!isDatabaseConfigured()) return Response.json({ configured: false, venue: null })
@@ -21,14 +22,16 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
 }
 
 export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  // The other write routes cap and limit; a delete is a write too, and an
+  // unbounded body here was the one place a request could still buffer
+  // arbitrary JSON, and the one write a loop could hammer at the database.
+  const limited = rateLimit(request, "venue-write", LIMITS.venueWrite.limit, LIMITS.venueWrite.windowMs)
+  if (limited) return limited
+
   if (!isDatabaseConfigured()) return Response.json({ configured: false })
   const { id } = await params
-  let body: { editToken?: unknown }
-  try {
-    body = await request.json()
-  } catch {
-    body = {}
-  }
+  const read = await readCappedJson<{ editToken?: unknown }>(request, BODY_LIMITS.venue)
+  const body = read.ok ? read.body : {}
   const editToken = typeof body.editToken === "string" ? body.editToken : ""
   try {
     const ok = await deleteVenue(id, editToken)

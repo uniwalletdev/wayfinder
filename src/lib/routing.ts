@@ -100,13 +100,16 @@ const TRAIL_STITCH_M = 6
 // bend), but if snapping forces a wildly longer detour the snap is probably
 // wrong — fall back to a straight line past this multiple of the direct distance.
 const TRAIL_DETOUR_LIMIT = 8
-// Safety valve: skip trail routing for pathologically long surveys so a route
-// build can't stall on the O(n²) graph stitching below.
-const TRAIL_MAX_NODES = 4000
+// Safety valve: skip trail routing for pathologically long surveys. Stitching
+// and search are both near-linear now (see buildTrailGraph and dijkstra), so
+// this only guards against a runaway import, not ordinary surveys.
+const TRAIL_MAX_NODES = 20_000
 // How far an end can sit from the nearest breadcrumb and still count as "on" the
 // mapped network. Keeps trail-following to journeys whose ends are genuinely near
 // walked corridors; anything further (a distant or geocoded place) stays straight.
 const TRAIL_SNAP_MAX_M = 30
+
+const M_PER_LAT = 111320
 
 interface TrailGraph {
   nodes: Coordinates[]
@@ -134,10 +137,41 @@ function buildTrailGraph(trails: SurveyTrail[]): TrailGraph {
     for (let k = 0; k < t.points.length - 1; k++) link(base + k, base + k + 1)
     base += t.points.length
   }
+
   // Stitch nearby breadcrumbs (from any walk) into shared junctions.
-  for (let i = 0; i < nodes.length; i++) {
-    for (let j = i + 1; j < nodes.length; j++) {
-      if (distanceMeters(nodes[i], nodes[j]) <= TRAIL_STITCH_M) link(i, j)
+  //
+  // Every pair used to be compared: 4,000 breadcrumbs was eight million
+  // haversines on the main thread, on every route build and on every off-route
+  // rebuild while someone walked. Bucketing the nodes into a grid of
+  // TRAIL_STITCH_M-sized cells means each node only looks at the nine cells
+  // around it. Two points within the stitch distance are always in the same or
+  // an adjacent cell, so nothing is missed, and the cost is proportional to the
+  // number of breadcrumbs rather than its square. A node is filed into its cell
+  // only after it has been compared, so each pair is linked once.
+  if (nodes.length > 1) {
+    const latCell = TRAIL_STITCH_M / M_PER_LAT
+    // Cells must never be narrower than the stitch distance anywhere on the
+    // site: size them for the reference latitude with a margin that covers the
+    // drift in cos(lat) across any venue-sized span.
+    const cosLat = Math.max(0.05, Math.cos((nodes[0].lat * Math.PI) / 180))
+    const lngCell = (TRAIL_STITCH_M * 1.01) / (M_PER_LAT * cosLat)
+    const cells = new Map<string, number[]>()
+    for (let i = 0; i < nodes.length; i++) {
+      const cy = Math.floor(nodes[i].lat / latCell)
+      const cx = Math.floor(nodes[i].lng / lngCell)
+      for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) {
+          const bucket = cells.get(`${cy + dy}:${cx + dx}`)
+          if (!bucket) continue
+          for (const j of bucket) {
+            if (distanceMeters(nodes[i], nodes[j]) <= TRAIL_STITCH_M) link(i, j)
+          }
+        }
+      }
+      const key = `${cy}:${cx}`
+      const own = cells.get(key)
+      if (own) own.push(i)
+      else cells.set(key, [i])
     }
   }
   return { nodes, adj, weights }
@@ -156,35 +190,81 @@ function nearestNode(g: TrailGraph, p: Coordinates): number {
   return best
 }
 
-// Shortest path (node indices) from start to goal over the trail graph, or null
-// if they're in disconnected parts of the network. O(n²) Dijkstra — fine for the
-// modest node counts a single survey produces.
-function dijkstra(g: TrailGraph, start: number, goal: number): number[] | null {
-  const n = g.nodes.length
-  const dist = new Array<number>(n).fill(Infinity)
-  const prev = new Array<number>(n).fill(-1)
-  const done = new Array<boolean>(n).fill(false)
-  dist[start] = 0
-
-  for (let iter = 0; iter < n; iter++) {
-    let u = -1
-    let ud = Infinity
-    for (let i = 0; i < n; i++) {
-      if (!done[i] && dist[i] < ud) {
-        ud = dist[i]
-        u = i
+// A binary min-heap of (key, value) pairs for Dijkstra. Two parallel arrays
+// rather than an array of objects: the search pushes one entry per relaxed
+// edge, and small numeric arrays are what the JIT handles best.
+class MinHeap {
+  private keys: number[] = []
+  private vals: number[] = []
+  get size() {
+    return this.keys.length
+  }
+  push(key: number, val: number) {
+    const k = this.keys
+    const v = this.vals
+    k.push(key)
+    v.push(val)
+    let i = k.length - 1
+    while (i > 0) {
+      const parent = (i - 1) >> 1
+      if (k[parent] <= k[i]) break
+      ;[k[parent], k[i]] = [k[i], k[parent]]
+      ;[v[parent], v[i]] = [v[i], v[parent]]
+      i = parent
+    }
+  }
+  pop(): [number, number] {
+    const k = this.keys
+    const v = this.vals
+    const top: [number, number] = [k[0], v[0]]
+    const lastK = k.pop()!
+    const lastV = v.pop()!
+    if (k.length > 0) {
+      k[0] = lastK
+      v[0] = lastV
+      let i = 0
+      for (;;) {
+        const l = 2 * i + 1
+        const r = l + 1
+        let m = i
+        if (l < k.length && k[l] < k[m]) m = l
+        if (r < k.length && k[r] < k[m]) m = r
+        if (m === i) break
+        ;[k[m], k[i]] = [k[i], k[m]]
+        ;[v[m], v[i]] = [v[i], v[m]]
+        i = m
       }
     }
-    if (u === -1 || u === goal) break
-    done[u] = true
+    return top
+  }
+}
+
+// Shortest path (node indices) from start to goal over the trail graph, or null
+// if they're in disconnected parts of the network. Heap-based, so a large
+// imported corridor network costs O(E log V) rather than the O(V²) of scanning
+// for the nearest unvisited node each round.
+function dijkstra(g: TrailGraph, start: number, goal: number): number[] | null {
+  const n = g.nodes.length
+  const dist = new Float64Array(n).fill(Infinity)
+  const prev = new Int32Array(n).fill(-1)
+  dist[start] = 0
+  const heap = new MinHeap()
+  heap.push(0, start)
+
+  while (heap.size > 0) {
+    const [d, u] = heap.pop()
+    // A stale entry: this node was already settled by a shorter path.
+    if (d > dist[u]) continue
+    if (u === goal) break
     const neigh = g.adj[u]
     const w = g.weights[u]
     for (let k = 0; k < neigh.length; k++) {
       const v = neigh[k]
-      const nd = dist[u] + w[k]
+      const nd = d + w[k]
       if (nd < dist[v]) {
         dist[v] = nd
         prev[v] = u
+        heap.push(nd, v)
       }
     }
   }
@@ -195,20 +275,41 @@ function dijkstra(g: TrailGraph, start: number, goal: number): number[] | null {
   return path.reverse()
 }
 
-// Follow the walked trails on one floor from `from` to `to`. Returns the polyline
-// (including the true start/end) and its length, or null when there are no usable
-// trails, the ends can't be connected, or the snapped detour is implausibly long.
-export function buildTrailPath(
-  from: Coordinates,
-  to: Coordinates,
-  trails: SurveyTrail[]
-): { geometry: Coordinates[]; distance: number } | null {
+// Build the graph for a set of trails, or null when there is nothing to route
+// along (no trail with two points, or a pathological number of nodes).
+function makeGraph(trails: SurveyTrail[]): TrailGraph | null {
   const usable = trails.filter((t) => t.points.length >= 2)
   if (usable.length === 0) return null
-
   const g = buildTrailGraph(usable)
   if (g.nodes.length < 2 || g.nodes.length > TRAIL_MAX_NODES) return null
+  return g
+}
 
+// Per-floor graphs, cached against the identity of the trails array they came
+// from. WayfinderApp memoises that array, so until someone surveys a new
+// corridor every route build — including the off-route rebuilds that fire as a
+// walker moves, and the fastest/step-free comparison the preview runs — reuses
+// the stitched graph instead of rebuilding it. A WeakMap, so a venue's graphs
+// go when its trails do.
+const graphCache = new WeakMap<SurveyTrail[], Map<number, TrailGraph | null>>()
+
+function trailGraphFor(trails: SurveyTrail[], floor: number): TrailGraph | null {
+  let byFloor = graphCache.get(trails)
+  if (!byFloor) {
+    byFloor = new Map()
+    graphCache.set(trails, byFloor)
+  }
+  const cached = byFloor.get(floor)
+  if (cached !== undefined) return cached
+  const g = makeGraph(trails.filter((t) => t.floor === floor))
+  byFloor.set(floor, g)
+  return g
+}
+
+// Follow a floor's graph from `from` to `to`. Returns the polyline (including
+// the true start/end) and its length, or null when the ends can't be connected
+// or the snapped detour is implausibly long.
+function pathOnGraph(g: TrailGraph, from: Coordinates, to: Coordinates): { geometry: Coordinates[]; distance: number } | null {
   const start = nearestNode(g, from)
   const goal = nearestNode(g, to)
   if (start === goal) return null // both ends snap to one point — no real path
@@ -231,6 +332,20 @@ export function buildTrailPath(
   return { geometry, distance }
 }
 
+// Follow the walked trails on one floor from `from` to `to`. Returns the polyline
+// (including the true start/end) and its length, or null when there are no usable
+// trails, the ends can't be connected, or the snapped detour is implausibly long.
+// Builds the graph for exactly the trails given; the route builder goes through
+// the per-floor cache instead.
+export function buildTrailPath(
+  from: Coordinates,
+  to: Coordinates,
+  trails: SurveyTrail[]
+): { geometry: Coordinates[]; distance: number } | null {
+  const g = makeGraph(trails)
+  return g ? pathOnGraph(g, from, to) : null
+}
+
 // One indoor leg: follow the floor's walked trails when they connect the two
 // ends, otherwise a straight hop. Always returns both ends in the points list.
 // `mapped` is false when it fell back to the straight hop — i.e. there was no
@@ -241,7 +356,8 @@ function indoorLeg(
   floor: number,
   trails: SurveyTrail[]
 ): { points: Coordinates[]; distance: number; mapped: boolean } {
-  const path = buildTrailPath(a, b, trails.filter((t) => t.floor === floor))
+  const g = trailGraphFor(trails, floor)
+  const path = g ? pathOnGraph(g, a, b) : null
   if (path) return { points: path.geometry, distance: path.distance, mapped: true }
   return { points: [a, b], distance: distanceMeters(a, b), mapped: false }
 }
@@ -482,7 +598,8 @@ export function shouldRouteOutdoors(
   if (isOutdoorDestination(dest)) return true
   if (fromFloor !== 0 || dest.floor !== 0) return false
   if (distanceMeters(from, dest.coordinates) <= OUTDOOR_DISTANCE_M) return false
-  return buildTrailPath(from, dest.coordinates, trails.filter((t) => t.floor === 0)) === null
+  const g = trailGraphFor(trails, 0)
+  return !g || pathOnGraph(g, from, dest.coordinates) === null
 }
 
 interface DirectionsResponse {

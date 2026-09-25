@@ -1279,8 +1279,8 @@ const B: [[number, number], [number, number]] = [[${round6(BB.S)}, ${round6(BB.W
 export const GOSH_VENUE: Venue = {
   id: "gosh",
   slug: "gosh",
-  name: "GOSH Wayfinder",
-  subtitle: "Great Ormond Street Hospital for Children",
+  name: "Great Ormond Street Hospital",
+  subtitle: "Great Ormond Street Hospital for Children NHS Foundation Trust · London WC1N 3JH",
   category: "hospital",
   // Where the map opens: the centre of the canvas, put through the same
   // projection as everything else. It was written out as a literal before, which

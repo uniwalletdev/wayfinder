@@ -2,10 +2,13 @@
 
 import { useEffect, useState } from "react"
 import QRCode from "qrcode"
-import { X, Link2, Download, Check, MapPin, Accessibility } from "lucide-react"
+import { X, Link2, Download, Check, MapPin, Accessibility, Share2 } from "lucide-react"
 import { Venue, Waypoint } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
-import { useEscapeClose } from "@/lib/use-escape"
+import { buildNavigateUrl, displayUrl } from "@/lib/share-link"
+import { useDialog } from "@/lib/use-dialog"
+import Toggle from "@/components/Toggle"
+import { toast } from "@/components/Toast"
 
 interface Props {
   venue: Venue
@@ -13,19 +16,17 @@ interface Props {
   onClose: () => void
 }
 
-// The QR encodes a real positioning anchor (the venue's main entrance, or its
-// centre if none is mapped) plus the destination, reusing the same
-// `floor:<n>:lat:<x>:lng:<y>` format the camera QR-scanner already understands
-// — scanning the poster both re-anchors your position and picks the destination.
-function buildQrPayload(venue: Venue, waypoint: Waypoint): string {
-  const anchor = venue.waypoints.find((w) => w.name === "Main Entrance") ?? null
-  const anchorCoords = anchor?.coordinates ?? venue.center
-  const anchorFloor = anchor?.floor ?? 0
-  return `floor:${anchorFloor}:lat:${anchorCoords.lat}:lng:${anchorCoords.lng}:dest:${waypoint.id}`
-}
-
-function shareUrl(venue: Venue, waypoint: Waypoint): string {
-  return `wayfinder.app/${venue.slug}/${waypoint.id}`
+// The QR code and the link are both real URLs on this deployment (see
+// share-link.ts). The poster's code additionally carries a positioning anchor —
+// the venue's main entrance, or its centre if none is mapped — so scanning it
+// with any phone camera opens the app, places the walker at the entrance it is
+// posted at, and starts guidance to the destination it advertises. The plain
+// link leaves the anchor out: a link opened at home should not pretend the
+// reader is standing in the lobby.
+function posterAnchor(venue: Venue): { name: string; floor: number; lat: number; lng: number } {
+  const entrance = venue.waypoints.find((w) => w.name === "Main Entrance") ?? null
+  const c = entrance?.coordinates ?? venue.center
+  return { name: entrance?.name ?? venue.name, floor: entrance?.floor ?? 0, lat: c.lat, lng: c.lng }
 }
 
 export default function ShareDialog({ venue, waypoint, onClose }: Props) {
@@ -33,21 +34,35 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
   const [copied, setCopied] = useState(false)
   const [qrThumb, setQrThumb] = useState<string | null>(null)
   const [showPoster, setShowPoster] = useState(false)
-
-  // Escape steps back like the X buttons do: poster first, then the dialog.
-  useEscapeClose(() => (showPoster ? setShowPoster(false) : onClose()))
-
-  const payload = buildQrPayload(venue, waypoint)
-  const url = shareUrl(venue, waypoint)
-  const anchorName = venue.waypoints.find((w) => w.name === "Main Entrance")?.name ?? venue.name
+  // The deployment's own origin, read in the browser. Empty during the first
+  // paint; the link and QR fill in as soon as it is known.
+  const [origin, setOrigin] = useState("")
+  const [canShare, setCanShare] = useState(false)
 
   useEffect(() => {
+    // Browser facts, unknown during server render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setOrigin(window.location.origin)
+    setCanShare(typeof navigator !== "undefined" && typeof navigator.share === "function")
+  }, [])
+
+  // Escape steps back like the X buttons do: poster first, then the dialog.
+  const dialogRef = useDialog<HTMLDivElement>(() => (showPoster ? setShowPoster(false) : onClose()))
+
+  const anchor = posterAnchor(venue)
+  const link = { venueId: venue.id, destinationId: waypoint.id, stepFree }
+  const url = origin ? buildNavigateUrl(origin, link) : ""
+  const posterUrl = origin ? buildNavigateUrl(origin, { ...link, anchor }) : ""
+  const shown = url ? displayUrl(url) : "…"
+
+  useEffect(() => {
+    if (!posterUrl) return
     let alive = true
-    QRCode.toDataURL(payload, { width: 128, margin: 1, color: { dark: "#0B1B2E", light: "#FFFFFF" } })
-      .then((url) => { if (alive) setQrThumb(url) })
+    QRCode.toDataURL(posterUrl, { width: 128, margin: 1, color: { dark: "#0B1B2E", light: "#FFFFFF" } })
+      .then((data) => { if (alive) setQrThumb(data) })
       .catch(() => {})
     return () => { alive = false }
-  }, [payload])
+  }, [posterUrl])
 
   useEffect(() => {
     if (!showPoster) return
@@ -58,21 +73,36 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
   }, [showPoster])
 
   const handleCopy = async () => {
+    if (!url) return
     try {
-      await navigator.clipboard.writeText(`https://${url}`)
+      await navigator.clipboard.writeText(url)
       setCopied(true)
       setTimeout(() => setCopied(false), 1600)
-    } catch {}
+    } catch {
+      toast.error("Couldn’t copy the link", "Select the address and copy it by hand.")
+    }
+  }
+
+  const handleShare = async () => {
+    if (!url) return
+    try {
+      await navigator.share({ title: `${waypoint.name} — ${venue.name}`, text: `Directions to ${waypoint.name} at ${venue.name}`, url })
+    } catch {
+      // The share sheet was dismissed, or the platform refused. Nothing to say.
+    }
   }
 
   const handleDownloadPng = async () => {
+    if (!posterUrl) return
     try {
-      const dataUrl = await QRCode.toDataURL(payload, { width: 640, margin: 2 })
+      const dataUrl = await QRCode.toDataURL(posterUrl, { width: 640, margin: 2 })
       const a = document.createElement("a")
       a.href = dataUrl
       a.download = `${waypoint.name.replace(/\s+/g, "-").toLowerCase()}-qr.png`
       a.click()
-    } catch {}
+    } catch {
+      toast.error("Couldn’t create the QR image")
+    }
   }
 
   if (showPoster) {
@@ -80,9 +110,9 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
       <Poster
         venue={venue}
         waypoint={waypoint}
-        anchorName={anchorName}
-        payload={payload}
-        url={url}
+        anchorName={anchor.name}
+        payload={posterUrl}
+        url={shown}
         onClose={() => setShowPoster(false)}
       />
     )
@@ -93,9 +123,15 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
       className="fixed inset-0 z-[250] flex items-center justify-center bg-black/40 px-4"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="w-full max-w-[420px] rounded-[20px] bg-white p-0 shadow-[0_24px_60px_rgba(11,27,46,0.25)]">
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="share-dialog-title"
+        className="w-full max-w-[420px] rounded-[20px] bg-white p-0 shadow-[0_24px_60px_rgba(11,27,46,0.25)]"
+      >
         <div className="flex items-center justify-between px-6 pt-5 pb-1">
-          <h2 className="font-display text-lg font-semibold text-wf-ink">Share this destination</h2>
+          <h2 id="share-dialog-title" className="font-display text-lg font-semibold text-wf-ink">Share this destination</h2>
           <button
             onClick={onClose}
             aria-label="Close"
@@ -107,7 +143,7 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
 
         <div className="px-6 pb-6 pt-4">
           <div className="flex items-center gap-3 rounded-[14px] bg-wf-surface px-3.5 py-3">
-            <div className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-[11px] bg-[#E7F2FF] text-lg">
+            <div className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-[11px] bg-[#E7F2FF] text-lg" aria-hidden="true">
               {WAYPOINT_TYPE_ICONS[waypoint.type]}
             </div>
             <div className="min-w-0 flex-1">
@@ -121,18 +157,19 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
             )}
           </div>
 
-          <p className="mb-1.5 mt-5 text-xs font-semibold uppercase tracking-[0.08em] text-wf-faint">Link</p>
+          <p className="mb-1.5 mt-5 text-xs font-semibold uppercase tracking-[0.08em] text-wf-muted">Link</p>
           <div className="flex items-center gap-2.5 rounded-xl border-[1.5px] border-wf-border px-3.5 py-2.5">
-            <Link2 size={16} className="flex-shrink-0 text-wf-faint" />
-            <span className="flex-1 truncate text-sm text-wf-body">{url}</span>
+            <Link2 size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
+            <span className="flex-1 truncate text-sm text-wf-body" title={url}>{shown}</span>
             <button
               onClick={handleCopy}
-              className={`flex-shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
+              disabled={!url}
+              className={`flex-shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors disabled:opacity-50 ${
                 copied ? "bg-wf-teal-tint text-wf-teal-text" : "bg-wf-primary text-white"
               }`}
             >
               {copied ? (
-                <span className="flex items-center gap-1"><Check size={13} /> Copied</span>
+                <span className="flex items-center gap-1"><Check size={13} aria-hidden="true" /> Copied</span>
               ) : (
                 "Copy"
               )}
@@ -141,38 +178,41 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
 
           <div className="mt-4 flex items-center justify-between gap-3">
             <span className="text-sm text-wf-body">Link opens the step-free route</span>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={stepFree}
-              onClick={() => setStepFree((v) => !v)}
-              className={`relative h-6 w-[42px] flex-shrink-0 rounded-full p-0.5 transition-colors duration-200 ${
-                stepFree ? "bg-wf-teal" : "bg-wf-border"
-              }`}
-            >
-              <span
-                className={`block h-5 w-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                  stepFree ? "translate-x-[18px]" : "translate-x-0"
-                }`}
-              />
-            </button>
+            <Toggle on={stepFree} onChange={setStepFree} aria-label="Link opens the step-free route" />
           </div>
 
           <div className="mt-5 flex flex-col gap-2.5">
+            {canShare && (
+              <button
+                onClick={handleShare}
+                disabled={!url}
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)] disabled:opacity-50"
+              >
+                <Share2 size={16} aria-hidden="true" />
+                Share…
+              </button>
+            )}
             <button
               onClick={() => setShowPoster(true)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]"
+              disabled={!posterUrl}
+              className={`flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold disabled:opacity-50 ${
+                canShare ? "border border-wf-border text-wf-ink" : "bg-wf-primary text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]"
+              }`}
             >
-              <Download size={16} />
-              Download poster (PDF)
+              <Download size={16} aria-hidden="true" />
+              Print poster (PDF)
             </button>
             <button
               onClick={handleDownloadPng}
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-wf-border py-3 text-sm font-semibold text-wf-ink"
+              disabled={!posterUrl}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-wf-border py-3 text-sm font-semibold text-wf-ink disabled:opacity-50"
             >
               QR only (PNG)
             </button>
           </div>
+          <p className="mt-3 text-center text-[11.5px] leading-snug text-wf-muted">
+            The poster’s code also places whoever scans it at {anchor.name}, so directions start from where it’s posted.
+          </p>
         </div>
       </div>
     </div>
@@ -199,7 +239,7 @@ function Poster({
   useEffect(() => {
     let alive = true
     QRCode.toDataURL(payload, { width: 320, margin: 1, color: { dark: "#0B1B2E", light: "#FFFFFF" } })
-      .then((url) => { if (alive) setQrLarge(url) })
+      .then((data) => { if (alive) setQrLarge(data) })
       .catch(() => {})
     return () => { alive = false }
   }, [payload])
@@ -223,7 +263,7 @@ function Poster({
         <div className="hidden items-center justify-between bg-wf-ink px-9 py-[26px] print:flex">
           <div className="flex items-center gap-2">
             <span className="flex h-7 w-7 items-center justify-center rounded-[10px] bg-gradient-to-br from-wf-primary to-wf-teal">
-              <MapPin size={15} className="text-white" />
+              <MapPin size={15} className="text-white" aria-hidden="true" />
             </span>
             <span className="font-display text-[17px] font-bold text-white">Wayfinder</span>
           </div>
@@ -239,19 +279,19 @@ function Poster({
             {qrLarge ? <img src={qrLarge} alt={`QR code to ${waypoint.name}`} width={220} height={220} /> : <div className="h-[220px] w-[220px]" />}
           </div>
           <p className="max-w-[320px] text-[14.5px] text-wf-muted">
-            Point your phone&apos;s camera at this code to open Wayfinder and get step-by-step directions from here.
+            Point your phone’s camera at this code to open Wayfinder and get step-by-step directions from here.
           </p>
           {venue.accessibility?.stepFreeRoute && (
             <span className="mt-4 flex items-center gap-1.5 rounded-full bg-wf-teal-tint px-3 py-1.5 text-xs font-semibold text-wf-teal-text">
-              <Accessibility size={13} />
+              <Accessibility size={13} aria-hidden="true" />
               Step-free route available
             </span>
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-[#EDF1F6] px-9 py-4.5">
-          <span className="text-xs text-wf-faint">{url}</span>
-          <span className="font-display text-[12.5px] font-semibold text-wf-ink">You are at: {anchorName}</span>
+        <div className="flex items-center justify-between gap-4 border-t border-[#EDF1F6] px-9 py-4.5">
+          <span className="min-w-0 truncate text-xs text-wf-faint">{url}</span>
+          <span className="flex-shrink-0 font-display text-[12.5px] font-semibold text-wf-ink">You are at: {anchorName}</span>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { X, QrCode, Search, Compass, ArrowUp, RotateCw, CheckCircle2, MapPin, Sp
 import type { Coordinates, Route, RouteStep, Waypoint } from "@/lib/types"
 import { distanceMeters, bearingBetween } from "@/lib/routing"
 import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
-import { useEscapeClose } from "@/lib/use-escape"
+import { useDialog } from "@/lib/use-dialog"
 
 // Live-mode AR navigation context. The camera view reads the same fused
 // position, compass heading and route the map uses, and paints turn guidance on
@@ -46,7 +46,8 @@ export default function CameraOverlay({ mode, onQRDetected, onClose, nav }: Prop
   const [detected, setDetected] = useState(false)
   const [permissionDenied, setPermissionDenied] = useState(false)
 
-  useEscapeClose(onClose)
+  const dialogRef = useDialog<HTMLDivElement>(onClose)
+  const label = mode === "qr" ? "Scan a QR code" : "Live camera navigation"
 
   async function startCamera() {
     try {
@@ -111,13 +112,13 @@ export default function CameraOverlay({ mode, onQRDetected, onClose, nav }: Prop
 
   if (permissionDenied) {
     return (
-      <div className="fixed inset-0 z-[300] bg-black flex flex-col items-center justify-center text-white p-6 text-center">
-        <span className="text-5xl mb-4">📷</span>
-        <h2 className="text-xl font-bold mb-2">Camera access needed</h2>
-        <p className="text-sm text-gray-300 mb-6">
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={label} className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-black p-6 text-center text-white">
+        <span className="mb-4 text-5xl" aria-hidden="true">📷</span>
+        <h2 className="mb-2 font-display text-xl font-semibold">Camera access needed</h2>
+        <p className="mb-6 text-sm text-white/70">
           Allow camera access in your browser settings to use QR scanning and live camera navigation.
         </p>
-        <button onClick={onClose} className="bg-[#005EB8] text-white px-6 py-3 rounded-xl font-semibold">
+        <button onClick={onClose} className="rounded-xl bg-wf-primary px-6 py-3 font-semibold text-white">
           Go back
         </button>
       </div>
@@ -125,17 +126,17 @@ export default function CameraOverlay({ mode, onQRDetected, onClose, nav }: Prop
   }
 
   return (
-    <div className="fixed inset-0 z-[300] bg-black">
-      <video ref={videoRef} playsInline muted className="w-full h-full object-cover" />
+    <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={label} className="fixed inset-0 z-[300] bg-black">
+      <video ref={videoRef} playsInline muted className="w-full h-full object-cover" aria-hidden="true" />
       <canvas ref={canvasRef} className="hidden" />
 
       {/* Top bar */}
       <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/70 to-transparent px-4 pt-safe-snug pb-4 flex items-center justify-between">
-        <button onClick={onClose} className="text-white bg-black/40 rounded-full p-2">
+        <button onClick={onClose} aria-label="Close camera" className="rounded-full bg-black/40 p-2 text-white">
           <X size={22} />
         </button>
-        <p className="text-white font-semibold text-sm">
-          {mode === "qr" ? "Scan QR Code" : "Live Camera Navigation"}
+        <p className="font-display text-sm font-semibold text-white">
+          {mode === "qr" ? "Scan QR code" : "Live camera"}
         </p>
         <div className="w-10" />
       </div>
@@ -153,10 +154,10 @@ function QRFinder({ detected }: { detected: boolean }) {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative w-64 h-64">
           <div className="absolute inset-0 border-2 border-white/30 rounded-2xl" />
-          <div className="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-[#00BFFF] rounded-tl-xl" />
-          <div className="absolute top-0 right-0 w-12 h-12 border-t-4 border-r-4 border-[#00BFFF] rounded-tr-xl" />
-          <div className="absolute bottom-0 left-0 w-12 h-12 border-b-4 border-l-4 border-[#00BFFF] rounded-bl-xl" />
-          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-[#00BFFF] rounded-br-xl" />
+          <div className="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-wf-route-cyan rounded-tl-xl" />
+          <div className="absolute top-0 right-0 w-12 h-12 border-t-4 border-r-4 border-wf-route-cyan rounded-tr-xl" />
+          <div className="absolute bottom-0 left-0 w-12 h-12 border-b-4 border-l-4 border-wf-route-cyan rounded-bl-xl" />
+          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-wf-route-cyan rounded-br-xl" />
           {detected && (
             <div className="absolute inset-0 bg-green-500/30 rounded-2xl flex items-center justify-center">
               <span className="text-4xl">✓</span>
@@ -165,8 +166,8 @@ function QRFinder({ detected }: { detected: boolean }) {
         </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-8 pt-8 pb-safe-bar text-center">
-        <p className="text-white text-sm">
-          {detected ? "QR Code detected! Locating you..." : "Point camera at a QR code on the wall"}
+        <p className="text-sm text-white" role="status" aria-live="polite">
+          {detected ? "Code found — placing you on the map…" : "Point the camera at a Wayfinder poster or QR code"}
         </p>
       </div>
     </>
@@ -236,14 +237,14 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
     return (
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
         <div className="bg-black/55 backdrop-blur-sm rounded-3xl px-6 py-7 max-w-xs">
-          <Compass size={40} className="text-[#00BFFF] mx-auto mb-3" />
+          <Compass size={40} className="text-wf-route-cyan mx-auto mb-3" />
           <h2 className="text-white text-lg font-bold mb-1.5">Point the way with live camera</h2>
-          <p className="text-gray-200 text-sm mb-5">
+          <p className="text-white/80 text-sm mb-5">
             Choose where you&apos;re going and an arrow will appear over the camera, guiding you turn by turn.
           </p>
           <button
             onClick={nav.onPickDestination}
-            className="w-full flex items-center justify-center gap-2 bg-[#009639] text-white rounded-xl py-3 font-bold"
+            className="w-full flex items-center justify-center gap-2 bg-wf-green text-white rounded-xl py-3 font-bold"
           >
             <Search size={18} />
             Choose destination
@@ -257,7 +258,7 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
     <>
       {/* Instruction banner */}
       <div className="absolute top-16 left-0 right-0 px-4 flex justify-center">
-        <div className="bg-[#005EB8] text-white rounded-2xl px-4 py-2.5 shadow-lg flex items-center gap-2.5 max-w-sm w-full">
+        <div className="bg-wf-primary text-white rounded-2xl px-4 py-2.5 shadow-lg flex items-center gap-2.5 max-w-sm w-full">
           <span className="text-2xl flex-shrink-0">
             {destination ? WAYPOINT_TYPE_ICONS[destination.type] : "📍"}
           </span>
@@ -275,7 +276,7 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
         <div className="absolute top-32 left-0 right-0 px-4 flex justify-center">
           <button
             onClick={nav.onStartAr}
-            className="flex items-center gap-2 bg-white/90 text-[#005EB8] rounded-full pl-3 pr-4 py-1.5 text-xs font-bold shadow-lg"
+            className="flex items-center gap-2 bg-white/90 text-wf-primary rounded-full pl-3 pr-4 py-1.5 text-xs font-bold shadow-lg"
           >
             <Sparkles size={14} />
             Try immersive AR
@@ -287,12 +288,12 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         {guide.arrived ? (
           <div className="flex flex-col items-center">
-            <CheckCircle2 size={96} className="text-[#009639] drop-shadow-lg" strokeWidth={2.5} />
+            <CheckCircle2 size={96} className="text-wf-green drop-shadow-lg" strokeWidth={2.5} />
             <p className="text-white font-bold text-lg mt-3 drop-shadow">You&apos;ve arrived</p>
           </div>
         ) : guide.isFloorChange ? (
           <div className="flex flex-col items-center">
-            <div className="w-32 h-32 rounded-full bg-[#005EB8]/85 flex items-center justify-center shadow-2xl border-4 border-white/70">
+            <div className="w-32 h-32 rounded-full bg-wf-primary/85 flex items-center justify-center shadow-2xl border-4 border-white/70">
               <span className="text-6xl">{guide.floorChange?.via === "stairs" ? "🪜" : "🛗"}</span>
             </div>
             <p className="text-white font-bold text-base mt-3 drop-shadow text-center px-6">
@@ -302,7 +303,7 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
         ) : guide.rel == null ? (
           // No compass fix yet — can't orient the arrow, so ask for a calibration wave.
           <div className="flex flex-col items-center px-8 text-center">
-            <RotateCw size={72} className="text-[#00BFFF] animate-spin drop-shadow" style={{ animationDuration: "3s" }} />
+            <RotateCw size={72} className="text-wf-route-cyan animate-spin drop-shadow" style={{ animationDuration: "3s" }} />
             <p className="text-white font-semibold text-sm mt-4 drop-shadow max-w-[15rem]">
               Hold your phone upright and move it in a figure-8 to find the compass
             </p>
@@ -313,7 +314,7 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
               className="transition-transform duration-300 ease-out will-change-transform"
               style={{ transform: `rotate(${guide.rel}deg)` }}
             >
-              <div className="w-40 h-40 rounded-full bg-[#005EB8]/80 flex items-center justify-center shadow-2xl border-4 border-white/70">
+              <div className="w-40 h-40 rounded-full bg-wf-primary/80 flex items-center justify-center shadow-2xl border-4 border-white/70">
                 <ArrowUp size={92} className="text-white" strokeWidth={3} />
               </div>
             </div>
@@ -327,12 +328,12 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
         <div className="flex items-center justify-center gap-6 mb-3">
           <div className="text-center">
             <p className="text-white text-lg font-bold leading-none">{guide.eta} min</p>
-            <p className="text-gray-300 text-[11px] mt-0.5">arrival</p>
+            <p className="text-white/70 text-[11px] mt-0.5">arrival</p>
           </div>
           <div className="w-px h-8 bg-white/25" />
           <div className="text-center">
             <p className="text-white text-lg font-bold leading-none">{fmtDistance(guide.remaining)}</p>
-            <p className="text-gray-300 text-[11px] mt-0.5">to destination</p>
+            <p className="text-white/70 text-[11px] mt-0.5">to destination</p>
           </div>
         </div>
         <div className="flex gap-2">
@@ -345,7 +346,7 @@ function LiveArOverlay({ nav, onClose }: { nav: LiveNav; onClose: () => void }) 
           </button>
           <button
             onClick={onClose}
-            className="flex-1 flex items-center justify-center gap-2 bg-white text-[#005EB8] rounded-xl py-2.5 text-sm font-semibold"
+            className="flex-1 flex items-center justify-center gap-2 bg-white text-wf-primary rounded-xl py-2.5 text-sm font-semibold"
           >
             <MapPin size={16} />
             Back to map

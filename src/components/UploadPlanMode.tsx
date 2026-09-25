@@ -9,7 +9,8 @@ import { ALL_ASSET_CATEGORIES, ASSET_CATEGORY_ICONS, ASSET_CATEGORY_LABELS } fro
 import { loadPlanFile, VectorPlanFeature, NormalisedAsset } from "@/lib/plan-import"
 import { PlanCorners, cornersToBounds, defaultPlanCorners, projectPlanPoint } from "@/lib/plan-georeference"
 import { SheetData, cropToMapRegion, remapToCrop, sampleZoneFootprints, placeDirectoryEntries } from "@/lib/sheet-import"
-import { X, Check, ChevronUp, ChevronDown, UploadCloud, MapPinned, Trash2, Plug } from "lucide-react"
+import { Check, ChevronUp, ChevronDown, UploadCloud, MapPinned, Trash2, Plug } from "lucide-react"
+import Overlay from "@/components/Overlay"
 
 export interface UploadPlanResult {
   floorPlans: FloorPlan[]
@@ -344,56 +345,46 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
 
   if (step === "analyzing") {
     return (
-      <div className="fixed inset-0 z-[300] bg-white flex flex-col items-center justify-center text-center p-6">
-        <div className="w-10 h-10 border-4 border-gray-200 border-t-[#005EB8] rounded-full animate-spin mb-5" />
-        <h2 className="text-lg font-bold text-gray-900 mb-1">Reading your plan…</h2>
-        <p className="text-sm text-gray-500">Scanning the file for rooms, labels and corridors.</p>
-        <button
-          onClick={cancelAnalyzing}
-          className="mt-6 rounded-xl border border-gray-200 px-5 py-2.5 text-sm font-semibold text-gray-700"
-        >
-          Cancel
-        </button>
-      </div>
+      <Overlay title="Reading your plan" z={300} onClose={cancelAnalyzing} dismissLabel="Cancel">
+        <div className="flex flex-1 flex-col items-center justify-center p-6 text-center" role="status" aria-live="polite">
+          <div className="mb-5 h-10 w-10 animate-spin rounded-full border-4 border-wf-border border-t-wf-primary" aria-hidden="true" />
+          <h3 className="mb-1 font-display text-lg font-semibold text-wf-ink">Reading your plan…</h3>
+          <p className="text-sm text-wf-muted">Scanning the file for rooms, labels and corridors.</p>
+          <button
+            onClick={cancelAnalyzing}
+            className="mt-6 rounded-xl border border-wf-border px-5 py-2.5 text-sm font-semibold text-wf-ink"
+          >
+            Cancel
+          </button>
+        </div>
+      </Overlay>
     )
   }
 
   if (step === "georeference" && rasterImage && corners) {
     return (
-      <div className="fixed inset-0 z-[300] bg-white flex flex-col">
-        <div className="bg-[#005EB8] px-4 pt-safe-bar pb-4 flex items-center gap-3">
-          <button onClick={() => setStep("pick")} className="text-white" aria-label="Back">
-            <X size={22} />
-          </button>
-          <h2 className="text-white font-bold text-lg flex-1">Position the plan</h2>
-        </div>
-        <div className="px-4 py-2.5 bg-blue-50 flex items-start gap-2">
-          <MapPinned size={15} className="text-[#005EB8] mt-0.5 flex-shrink-0" />
-          <p className="text-xs text-[#005EB8]">
+      <Overlay title="Position the plan" z={300} dismiss="back" onClose={() => setStep("pick")}>
+        <div className="flex items-start gap-2 bg-[#E7F2FF] px-4 py-2.5 lg:px-6">
+          <MapPinned size={15} className="mt-0.5 flex-shrink-0 text-wf-primary" aria-hidden="true" />
+          <p className="text-xs text-wf-primary">
             Drag the two corner handles so the plan lines up with the real building, then confirm.
           </p>
         </div>
-        <div className="flex-1 relative">
+        <div className="relative flex-1">
           <GeoreferenceMap imageUrl={rasterImage.dataUrl} initialCorners={corners} onConfirm={confirmGeoreference} />
         </div>
-      </div>
+      </Overlay>
     )
   }
 
   if (step === "review") {
     return (
-      <div className="fixed inset-0 z-[300] bg-white flex flex-col">
-        <div className="bg-[#005EB8] px-4 pt-safe-bar pb-4 flex items-center gap-3">
-          <button onClick={onClose} className="text-white" aria-label="Cancel">
-            <X size={22} />
-          </button>
-          <h2 className="text-white font-bold text-lg flex-1">Review detected places</h2>
-        </div>
-        <div className="flex-1 overflow-y-auto px-4 py-4 pb-safe-bar">
+      <Overlay title="Review detected places" z={300} onClose={onClose} dismissLabel="Cancel">
+        <div className="flex-1 overflow-y-auto px-4 py-4 pb-safe-bar lg:px-6">
           {notice && (
-            <p className="mb-3 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2.5">{notice}</p>
+            <p className="mb-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-xs text-amber-800">{notice}</p>
           )}
-          <p className="text-xs text-gray-500 mb-3">
+          <p className="mb-3 text-xs text-wf-muted">
             {reviewRooms.length} place{reviewRooms.length === 1 ? "" : "s"} detected{" "}
             {rawSheet
               ? `across ${new Set(reviewRooms.map((r) => r.floor)).size} floor${new Set(reviewRooms.map((r) => r.floor)).size === 1 ? "" : "s"}`
@@ -408,7 +399,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
           </p>
 
           {reviewRooms.length === 0 ? (
-            <p className="text-sm text-gray-400 text-center py-8">
+            <p className="py-8 text-center text-sm text-wf-muted">
               No places detected — you can still save the plan and add points to it yourself afterwards.
             </p>
           ) : (
@@ -417,24 +408,24 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
                 <div
                   key={i}
                   className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 ${
-                    r.include ? "border-gray-200 bg-white" : "border-gray-100 bg-gray-50 opacity-60"
+                    r.include ? "border-wf-border bg-white" : "border-wf-border-faint bg-wf-surface-2 opacity-60"
                   }`}
                 >
                   <input
                     type="checkbox"
                     checked={r.include}
                     onChange={(e) => updateRoom(i, { include: e.target.checked })}
-                    className="w-4 h-4 accent-[#005EB8] flex-shrink-0"
+                    className="w-4 h-4 accent-wf-primary flex-shrink-0"
                     aria-label={`Include ${r.name}`}
                   />
                   <span className="text-lg flex-shrink-0">{WAYPOINT_TYPE_ICONS[r.type]}</span>
                   <input
                     value={r.name}
                     onChange={(e) => updateRoom(i, { name: e.target.value })}
-                    className="flex-1 min-w-0 text-sm font-medium text-gray-900 outline-none border-b border-transparent focus:border-[#005EB8]"
+                    className="flex-1 min-w-0 text-sm font-medium text-wf-ink outline-none border-b border-transparent focus:border-wf-primary"
                   />
                   {rawSheet && (
-                    <span className="text-[10px] font-semibold text-gray-400 bg-gray-100 rounded-md px-1.5 py-0.5 flex-shrink-0 whitespace-nowrap">
+                    <span className="text-[10px] font-semibold text-wf-faint bg-wf-surface rounded-md px-1.5 py-0.5 flex-shrink-0 whitespace-nowrap">
                       {floorLabel(r.floor)}
                       {r.zone ? ` · ${r.zone}` : ""}
                     </span>
@@ -442,7 +433,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
                   <select
                     value={r.type}
                     onChange={(e) => updateRoom(i, { type: e.target.value as WaypointType })}
-                    className="text-xs text-gray-500 bg-transparent outline-none flex-shrink-0"
+                    className="text-xs text-wf-muted bg-transparent outline-none flex-shrink-0"
                   >
                     {ALL_WAYPOINT_TYPES.map((t) => (
                       <option key={t} value={t}>
@@ -452,7 +443,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
                   </select>
                   <button
                     onClick={() => removeRoom(i)}
-                    className="text-gray-300 hover:text-red-500 flex-shrink-0"
+                    className="text-wf-faint hover:text-red-500 flex-shrink-0"
                     aria-label={`Remove ${r.name}`}
                   >
                     <Trash2 size={15} />
@@ -465,12 +456,12 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
           {reviewAssets.length > 0 && (
             <div className="mt-6">
               <div className="flex items-center gap-1.5 mb-2">
-                <Plug size={14} className="text-[#005EB8]" />
-                <h3 className="text-xs font-semibold text-gray-600">
+                <Plug size={14} className="text-wf-primary" />
+                <h3 className="text-xs font-semibold text-wf-body">
                   Fixtures &amp; assets ({reviewAssets.length})
                 </h3>
               </div>
-              <p className="text-xs text-gray-400 mb-2.5">
+              <p className="text-xs text-wf-faint mb-2.5">
                 Located fixtures like plug sockets — saved as a separate overlay layer, not navigation destinations.
               </p>
               <div className="flex flex-col gap-2">
@@ -478,26 +469,26 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
                   <div
                     key={i}
                     className={`flex items-center gap-2 rounded-xl border px-3 py-2.5 ${
-                      a.include ? "border-gray-200 bg-white" : "border-gray-100 bg-gray-50 opacity-60"
+                      a.include ? "border-wf-border bg-white" : "border-wf-border-faint bg-wf-surface-2 opacity-60"
                     }`}
                   >
                     <input
                       type="checkbox"
                       checked={a.include}
                       onChange={(e) => updateAsset(i, { include: e.target.checked })}
-                      className="w-4 h-4 accent-[#005EB8] flex-shrink-0"
+                      className="w-4 h-4 accent-wf-primary flex-shrink-0"
                       aria-label={`Include ${a.name}`}
                     />
                     <span className="text-lg flex-shrink-0">{ASSET_CATEGORY_ICONS[a.category]}</span>
                     <input
                       value={a.name}
                       onChange={(e) => updateAsset(i, { name: e.target.value })}
-                      className="flex-1 min-w-0 text-sm font-medium text-gray-900 outline-none border-b border-transparent focus:border-[#005EB8]"
+                      className="flex-1 min-w-0 text-sm font-medium text-wf-ink outline-none border-b border-transparent focus:border-wf-primary"
                     />
                     <select
                       value={a.category}
                       onChange={(e) => updateAsset(i, { category: e.target.value as AssetCategory })}
-                      className="text-xs text-gray-500 bg-transparent outline-none flex-shrink-0"
+                      className="text-xs text-wf-muted bg-transparent outline-none flex-shrink-0"
                     >
                       {ALL_ASSET_CATEGORIES.map((c) => (
                         <option key={c} value={c}>
@@ -507,7 +498,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
                     </select>
                     <button
                       onClick={() => removeAsset(i)}
-                      className="text-gray-300 hover:text-red-500 flex-shrink-0"
+                      className="text-wf-faint hover:text-red-500 flex-shrink-0"
                       aria-label={`Remove ${a.name}`}
                     >
                       <Trash2 size={15} />
@@ -518,57 +509,51 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
             </div>
           )}
         </div>
-        <div className="px-4 pt-3 pb-safe-bar border-t border-gray-100">
+        <div className="border-t border-wf-border-faint px-4 pb-safe-bar pt-3 lg:px-6">
           <button
             onClick={handleSave}
-            className="w-full flex items-center justify-center gap-2 bg-[#005EB8] text-white rounded-xl py-3.5 font-bold text-base"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-wf-primary py-3.5 text-base font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]"
           >
-            <Check size={18} />
+            <Check size={18} aria-hidden="true" />
             Save to map
           </button>
         </div>
-      </div>
+      </Overlay>
     )
   }
 
   // step === "pick"
   return (
-    <div className="fixed inset-0 z-[300] bg-white flex flex-col">
-      <div className="bg-[#005EB8] px-4 pt-safe-bar pb-4 flex items-center gap-3">
-        <button onClick={onClose} className="text-white" aria-label="Close">
-          <X size={22} />
-        </button>
-        <h2 className="text-white font-bold text-lg flex-1">Upload a floor plan</h2>
-      </div>
-      <div className="flex-1 overflow-y-auto px-4 py-4 pb-safe-bar">
-        <p className="text-sm text-gray-600 mb-4">
+    <Overlay title="Upload a floor plan" z={300} onClose={onClose}>
+      <div className="flex-1 overflow-y-auto px-4 py-4 pb-safe-bar lg:px-6">
+        <p className="text-sm text-wf-body mb-4">
           Already have a plan? Upload a photo, scan, exported PDF, SVG diagram, GeoJSON export, or a DXF CAD drawing and
           it&apos;s read automatically — rooms and corridors are detected and turned into a navigable layout, the same way
           a Survey Mode walk would. A DXF also carries its located fixtures (plug sockets, data points…) onto a separate
           overlay.
         </p>
-        <p className="text-sm text-gray-600 mb-4">
+        <p className="text-sm text-wf-body mb-4">
           Full map sheets work too: a hospital-style site map with colour-coded zones and a Floor/Zone directory table is
           recognised as a whole — every listed ward and department is placed on its zone at the right floor, even ones
           only listed in the table, and the map serves every floor at once.
         </p>
 
-        <div className="flex items-center justify-between rounded-xl border border-gray-200 px-4 py-3 mb-4">
+        <div className="flex items-center justify-between rounded-xl border border-wf-border px-4 py-3 mb-4">
           <div>
-            <p className="text-xs font-semibold text-gray-500">Floor being uploaded</p>
-            <p className="text-sm font-bold text-gray-900">{floorLabel(planFloor)}</p>
+            <p className="text-xs font-semibold text-wf-muted">Floor being uploaded</p>
+            <p className="text-sm font-bold text-wf-ink">{floorLabel(planFloor)}</p>
           </div>
           <div className="flex items-center gap-1">
             <button
               onClick={() => setPlanFloor((f) => Math.max(f - 1, -5))}
-              className="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center active:bg-gray-200"
+              className="w-9 h-9 rounded-lg bg-wf-surface flex items-center justify-center active:bg-wf-border"
               aria-label="Floor down"
             >
               <ChevronDown size={18} />
             </button>
             <button
               onClick={() => setPlanFloor((f) => Math.min(f + 1, 30))}
-              className="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center active:bg-gray-200"
+              className="w-9 h-9 rounded-lg bg-wf-surface flex items-center justify-center active:bg-wf-border"
               aria-label="Floor up"
             >
               <ChevronUp size={18} />
@@ -589,12 +574,12 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
             if (file) void handleFile(file)
           }}
           className={`flex flex-col items-center justify-center gap-2 border-2 border-dashed rounded-2xl py-10 px-4 text-center cursor-pointer transition-colors ${
-            dragOver ? "border-[#005EB8] bg-blue-50" : "border-gray-200"
+            dragOver ? "border-wf-primary bg-[#E7F2FF]" : "border-wf-border"
           }`}
         >
-          <UploadCloud size={32} className="text-[#005EB8]" />
-          <p className="text-sm font-semibold text-gray-800">Tap to choose a file, or drag one here</p>
-          <p className="text-xs text-gray-400">Image (JPG/PNG/WEBP/SVG) · PDF · GeoJSON · DXF</p>
+          <UploadCloud size={32} className="text-wf-primary" />
+          <p className="text-sm font-semibold text-wf-ink">Tap to choose a file, or drag one here</p>
+          <p className="text-xs text-wf-faint">Image (JPG/PNG/WEBP/SVG) · PDF · GeoJSON · DXF</p>
           <input
             type="file"
             accept="image/*,.pdf,application/pdf,.svg,image/svg+xml,.geojson,.json,application/geo+json,application/json,.dxf,image/vnd.dxf,application/dxf"
@@ -609,12 +594,12 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, o
 
         {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
 
-        <p className="mt-4 text-xs text-gray-400">
+        <p className="mt-4 text-xs text-wf-muted">
           DXF CAD drawings are read directly. Binary/BIM formats (DWG, RVT, IFC…) aren&apos;t yet — export those to DXF,
           an image, PDF, or GeoJSON first.
         </p>
       </div>
-    </div>
+    </Overlay>
   )
 }
 
@@ -673,7 +658,7 @@ function GeoreferenceMap({
       <div ref={containerRef} className="w-full h-full" />
       <button
         onClick={() => onConfirm(cornersRef.current)}
-        className="absolute left-4 right-4 bottom-4 z-[1000] flex items-center justify-center gap-2 bg-[#005EB8] text-white rounded-xl py-3.5 font-bold text-base shadow-lg"
+        className="absolute left-4 right-4 bottom-4 z-[1000] flex items-center justify-center gap-2 bg-wf-primary text-white rounded-xl py-3.5 font-semibold text-base shadow-lg"
       >
         <Check size={18} />
         Confirm placement

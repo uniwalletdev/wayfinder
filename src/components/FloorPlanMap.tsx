@@ -367,20 +367,20 @@ export default function FloorPlanMap({
       const icon = L.divIcon({
         html: `<div style="
           background:white;
-          border:2px solid #005EB8;
+          border:2px solid #0A5DC2;
           border-radius:50%;
           width:32px;height:32px;
           display:flex;align-items:center;justify-content:center;
           font-size:16px;
-          box-shadow:0 2px 6px rgba(0,0,0,0.25);
-          ${destination?.id === w.id ? "border-color:#DA291C;background:#DA291C;" : ""}
+          box-shadow:0 2px 6px rgba(11,27,46,0.25);
+          ${destination?.id === w.id ? "border-color:#0FB5AE;background:#0FB5AE;" : ""}
         ">${WAYPOINT_TYPE_ICONS[w.type]}</div>`,
         iconSize: [32, 32],
         iconAnchor: [16, 16],
         className: "",
       })
 
-      const marker = L.marker([w.coordinates.lat, w.coordinates.lng], { icon })
+      const marker = L.marker([w.coordinates.lat, w.coordinates.lng], { icon, title: w.name, alt: w.name })
         .bindPopup(`<b>${escapeHtml(w.name)}</b>${w.description ? `<br><small>${escapeHtml(w.description)}</small>` : ""}`)
         .addTo(map)
 
@@ -522,13 +522,13 @@ export default function FloorPlanMap({
         <div class="wf-locate-ring" style="
           position:absolute;top:50%;left:50%;margin:-11px 0 0 -11px;
           width:22px;height:22px;border-radius:50%;
-          background:rgba(0,94,184,0.30);
+          background:rgba(10,140,255,0.30);
         "></div>
         <div class="wf-locate-core" style="
           position:absolute;top:50%;left:50%;margin:-9px 0 0 -9px;
           width:18px;height:18px;
-          background:#005EB8;border:3px solid white;border-radius:50%;
-          box-shadow:0 2px 8px rgba(0,94,184,0.6);
+          background:#0A8CFF;border:3px solid white;border-radius:50%;
+          box-shadow:0 2px 8px rgba(10,140,255,0.6);
         "></div>
       </div>`,
       iconSize: [72, 72],
@@ -610,7 +610,7 @@ export default function FloorPlanMap({
       lineJoin: "round",
     })
     const core = L.polyline(pts, {
-      color: "#0A84FF",
+      color: "#0A8CFF",
       weight: 7,
       opacity: 1,
       lineCap: "round",
@@ -641,12 +641,12 @@ export default function FloorPlanMap({
       // Outer wrapper carries the bob animation; inner teardrop keeps the
       // rotate so the two transforms don't fight.
       html: `<div class="wf-dest-pin"><div style="
-        background:#DA291C;
+        background:#0FB5AE;
         border:3px solid white;
         border-radius:50% 50% 50% 0;
         transform:rotate(-45deg);
         width:28px;height:28px;
-        box-shadow:0 2px 8px rgba(218,41,28,0.5);
+        box-shadow:0 2px 8px rgba(15,181,174,0.55);
       "></div></div>`,
       iconSize: [28, 28],
       iconAnchor: [14, 28],
@@ -654,7 +654,7 @@ export default function FloorPlanMap({
     })
     destMarkerRef.current = L.marker(
       [destination.coordinates.lat, destination.coordinates.lng],
-      { icon: destIcon, zIndexOffset: 900 }
+      { icon: destIcon, zIndexOffset: 900, title: `Destination: ${destination.name}`, alt: `Destination: ${destination.name}` }
     ).addTo(map)
 
     // Green "start" pin — only when the user chose a custom starting point.
@@ -741,7 +741,7 @@ export default function FloorPlanMap({
         <button
           onClick={recenter}
           aria-label="Re-centre on my location"
-          className="absolute bottom-28 right-4 z-[1000] flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-[#005EB8] shadow-lg active:scale-95 transition-transform"
+          className="absolute bottom-28 right-4 z-[1000] flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-wf-primary shadow-[0_8px_24px_rgba(11,27,46,0.16)] transition-transform active:scale-95"
         >
           <LocateFixed size={18} />
           Re-centre

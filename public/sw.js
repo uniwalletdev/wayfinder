@@ -6,11 +6,11 @@
 // Hospitals are exactly where phone reception dies and exactly where wayfinding
 // matters most, so the core journey has to survive losing the network.
 //
-// This is NOT a full offline app, deliberately. Nothing is precached — pages and
-// floor plans are cached as they are visited. So a venue you have opened at
-// least once while online stays usable when the signal drops, and one you have
-// never opened does not. That trades a little coverage for a much smaller,
-// simpler worker and no download forced on install.
+// This is NOT a full offline app, deliberately. Only the offline page is
+// precached — pages and floor plans are cached as they are visited. So a venue
+// you have opened at least once while online stays usable when the signal
+// drops, and one you have never opened does not. That trades a little coverage
+// for a much smaller, simpler worker and no download forced on install.
 //
 // Strategy:
 //   * /api/* and Clerk     — never cached. Auth and writes must always be live;
@@ -23,12 +23,28 @@
 //                            content-hashed or regenerated wholesale, so a
 //                            slightly stale copy is harmless and instant.
 
-const VERSION = "wayfinder-v1"
+const VERSION = "wayfinder-v2"
 const SHELL_CACHE = `${VERSION}-shell`
 const ASSET_CACHE = `${VERSION}-assets`
 
+// The one page that must exist before it is needed: what a navigation shows
+// when nothing else is cached and there is no signal. Without it the browser's
+// own "no internet" screen appeared, with no way back into the app.
+const OFFLINE_PAGE = "/offline.html"
+
 self.addEventListener("install", (event) => {
-  event.waitUntil(self.skipWaiting())
+  event.waitUntil(
+    (async () => {
+      try {
+        const cache = await caches.open(SHELL_CACHE)
+        await cache.add(OFFLINE_PAGE)
+      } catch {
+        // Installing without the offline page is still better than not
+        // installing: everything else here works the same.
+      }
+      await self.skipWaiting()
+    })()
+  )
 })
 
 self.addEventListener("activate", (event) => {
@@ -79,11 +95,13 @@ self.addEventListener("fetch", (event) => {
           cache.put(req, fresh.clone())
           return fresh
         } catch {
-          // Offline: this exact page, then the wayfinding shell, then the root.
+          // Offline: this exact page, then the wayfinding shell, then the root,
+          // and finally the offline page so there is always something to show.
           return (
             (await caches.match(req)) ||
             (await caches.match("/navigate")) ||
             (await caches.match("/")) ||
+            (await caches.match(OFFLINE_PAGE)) ||
             Response.error()
           )
         }

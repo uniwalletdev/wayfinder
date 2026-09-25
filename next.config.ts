@@ -56,6 +56,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Nothing needs to advertise the framework in a response header.
+  poweredByHeader: false,
+
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

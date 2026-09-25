@@ -62,9 +62,9 @@ if (footprintCollection) {
   log(STAGE, "no footprints.geojson yet — continuing without building outlines")
 }
 
-// A venue's display name is often not the name ODS knows it by — "GOSH
-// Wayfinder" shares no words at all with "Great Ormond Street Hospital For
-// Children". Aliases close that gap, and are also how one venue covering a whole
+// A venue's display name is often not the name ODS knows it by — GOSH was
+// once "GOSH Wayfinder", sharing no words at all with "Great Ormond Street
+// Hospital For Children". Aliases close that gap, and are also how one venue covering a whole
 // campus (the MFT Oxford Road site) claims each of the ODS hospitals on it.
 const aliasDoc = readJson(dataPath("venue-aliases.json"), { aliases: {} })
 const mapped = readMappedVenues().map((v) => ({

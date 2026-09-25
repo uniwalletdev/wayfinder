@@ -182,14 +182,20 @@ group("floors of one building")
   // one did not: Princess Anne's levels are lettered A upward and only C to H
   // have usable plans, so its storeys run 2 to 7 and floor 0 shows nothing.
   // Mirrors openingFloor in src/lib/venues/index.ts, which TypeScript checks but
-  // no runner here can import.
-  const openingFloor = (floorPlans) => (floorPlans.length ? Math.min(...floorPlans.map((p) => p.floor)) : 0)
+  // this plain-node suite cannot import: the ground floor when it has a plan,
+  // else the lowest floor that does.
+  const openingFloor = (floorPlans) => {
+    const floors = floorPlans.map((p) => p.floor)
+    if (floors.length === 0) return 0
+    return floors.includes(0) ? 0 : Math.min(...floors)
+  }
   check("a single ground-floor site plan still opens at 0", openingFloor([{ floor: 0 }]) === 0)
   check(
-    "a building whose plans start above ground opens on its lowest",
+    "a venue whose plans start above ground opens on its lowest planned floor",
     openingFloor([{ floor: 2 }, { floor: 3 }, { floor: 7 }]) === 2
   )
-  check("a basement opens below ground", openingFloor([{ floor: -1 }, { floor: 0 }]) === -1)
+  check("a venue with a basement still opens at the entrance, not below it", openingFloor([{ floor: -1 }, { floor: 0 }]) === 0)
+  check("a venue with only basement plans opens on the lowest of them", openingFloor([{ floor: -2 }, { floor: -1 }]) === -2)
   check("a venue with no plans falls back to 0", openingFloor([]) === 0)
 }
 

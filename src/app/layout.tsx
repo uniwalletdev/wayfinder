@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
 import ServiceWorkerRegistrar from "@/components/ServiceWorkerRegistrar"
+import { siteUrl } from "@/lib/site-url"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -18,11 +19,35 @@ const ibmPlexSans = IBM_Plex_Sans({
   display: "swap",
 })
 
+const DESCRIPTION =
+  "Wayfinder maps NHS hospitals floor by floor and guides patients, visitors and staff from the front door to the right ward, clinic or bedside — one clear step at a time."
+
 export const metadata: Metadata = {
-  title: "Wayfinder — NHS hospitals, mapped",
-  description:
-    "Wayfinder maps NHS hospitals floor by floor and guides patients, visitors and staff from the front door to the right ward, clinic or bedside — one clear step at a time.",
+  metadataBase: siteUrl(),
+  title: {
+    default: "Wayfinder — NHS hospitals, mapped",
+    template: "%s · Wayfinder",
+  },
+  description: DESCRIPTION,
+  applicationName: "Wayfinder",
   manifest: "/manifest.json",
+  // A shared link — a ward sent to a relative, a poster's URL — unfurls with
+  // the app's name and purpose rather than a bare address.
+  openGraph: {
+    type: "website",
+    siteName: "Wayfinder",
+    title: "Wayfinder — NHS hospitals, mapped",
+    description: DESCRIPTION,
+    locale: "en_GB",
+    images: [{ url: "/icon-512.png", width: 512, height: 512, alt: "Wayfinder" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Wayfinder — NHS hospitals, mapped",
+    description: DESCRIPTION,
+    images: ["/icon-512.png"],
+  },
+  formatDetection: { telephone: false },
   icons: {
     icon: [
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },

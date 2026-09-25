@@ -44,9 +44,12 @@ interface Props {
   dark?: boolean
 }
 
-const NHS_BLUE = 0x005eb8
-const NHS_RED = 0xda291c
-const ROUTE_BLUE = 0x0a84ff
+// Design tokens (globals.css): the you-are-here dot and route are route-blue,
+// the destination is teal — the same colours the 2D map and the landing page
+// use, so switching views never changes what a colour means.
+const NHS_BLUE = 0x0a8cff
+const NHS_RED = 0x0fb5ae
+const ROUTE_BLUE = 0x0a8cff
 // "Start" green, for the custom-origin node — matches the 2D map's start pin.
 const START_GREEN = 0x16a34a
 

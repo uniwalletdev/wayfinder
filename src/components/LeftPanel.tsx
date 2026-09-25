@@ -5,8 +5,8 @@ import { useRef, useState } from "react"
 import {
   Building, ChevronsUpDown, Search, BadgeCheck, X, Navigation, Share2, ChevronRight,
   Loader2, PersonStanding, Bike, Car, ClipboardList, UploadCloud, QrCode, Camera,
-  ArrowUp, ArrowUpLeft, ArrowUpRight, ArrowLeft, ArrowRight, ArrowUpDown, Footprints, CheckCircle2,
-  Info, MapPin, Pencil,
+  ArrowUp, ArrowDown, ArrowUpLeft, ArrowUpRight, ArrowLeft, ArrowRight, ArrowUpDown, CheckCircle2,
+  Info, MapPin, Pencil, Volume2,
 } from "lucide-react"
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel } from "@/lib/waypoint-meta"
@@ -54,6 +54,14 @@ interface Props {
   onMapArea: () => void
   onUploadPlan: () => void
   gpsStatus: "requesting" | "active" | "denied"
+  // Reported accuracy of the live position in metres; 0 means the demo fix.
+  positionAccuracy: number
+  // Compass heading, so the current-step arrow can point relative to the way
+  // the phone is facing. Null when the compass is off or unavailable.
+  heading: number | null
+  spokenDirections: boolean
+  speechSupported: boolean
+  onChangeSpokenDirections: (on: boolean) => void
   onUseDemo: () => void
   onScanQR: () => void
   onOpenCamera: () => void
@@ -105,6 +113,11 @@ export default function LeftPanel({
   onMapArea,
   onUploadPlan,
   gpsStatus,
+  positionAccuracy,
+  heading,
+  spokenDirections,
+  speechSupported,
+  onChangeSpokenDirections,
   onUseDemo,
   onScanQR,
   onOpenCamera,
@@ -267,6 +280,10 @@ export default function LeftPanel({
             currentStepIndex={currentStepIndex}
             floorNaming={venue.floorNaming}
             expanded={expanded}
+            heading={heading}
+            spokenDirections={spokenDirections}
+            speechSupported={speechSupported}
+            onChangeSpokenDirections={onChangeSpokenDirections}
             onStop={onStop}
             onScanQR={onScanQR}
             onOpenCamera={onOpenCamera}
@@ -290,6 +307,8 @@ export default function LeftPanel({
             routeLoading={routeLoading}
             floorNaming={venue.floorNaming}
             expanded={expanded}
+            gpsStatus={gpsStatus}
+            positionAccuracy={positionAccuracy}
             travelMode={travelMode}
             onTravelModeChange={onTravelModeChange}
             routePreference={routePreference}
@@ -454,6 +473,8 @@ function RoutePreviewCard({
   routeLoading,
   floorNaming,
   expanded,
+  gpsStatus,
+  positionAccuracy,
   travelMode,
   onTravelModeChange,
   routePreference,
@@ -473,6 +494,8 @@ function RoutePreviewCard({
   routeLoading: boolean
   floorNaming?: FloorNaming
   expanded: boolean
+  gpsStatus: "requesting" | "active" | "denied"
+  positionAccuracy: number
   travelMode: TravelMode
   onTravelModeChange: (m: TravelMode) => void
   routePreference: RoutePreference
@@ -579,7 +602,12 @@ function RoutePreviewCard({
           <div className="mb-4 grid grid-cols-3 gap-2">
             <StatTile label={routeLoading ? "…" : route.outdoor ? travelMode : "walking"} value={routeLoading ? "—" : `${route.estimatedMinutes} min`} />
             <StatTile label={route.floorChanges > 0 ? `${route.floorChanges} floor change${route.floorChanges > 1 ? "s" : ""}` : "same floor"} value={routeLoading ? "—" : fmtDistance(route.totalDistance)} />
-            <StatTile label="accuracy" value={destination ? "±4 m" : "—"} />
+            {/* The real fix, not a number typed into the design: what the
+                positioning actually reports right now. */}
+            <StatTile
+              label={gpsStatus === "active" && positionAccuracy === 0 ? "demo position" : "position"}
+              value={gpsStatus !== "active" ? "no fix" : positionAccuracy === 0 ? "virtual" : `±${Math.round(positionAccuracy)} m`}
+            />
           </div>
           {/* This venue has no mapped corridors on this leg, so the drawn line is
               a direction guide, not a precise path. Be honest about that. */}
@@ -751,16 +779,43 @@ function RouteChoice({
   )
 }
 
-function StepIcon({ step }: { step: RouteStep }) {
-  if (step.instruction.includes("arrived")) return <CheckCircle2 size={24} className="text-white" />
-  if (step.floorChange) return <ArrowUpDown size={24} className="text-white" />
-  if (step.instruction.includes("north")) return <ArrowUp size={24} className="text-white" />
-  if (step.instruction.includes("east")) return <ArrowUpRight size={24} className="text-white" />
-  if (step.instruction.includes("west")) return <ArrowUpLeft size={24} className="text-white" />
-  if (step.instruction.includes("south")) return <Footprints size={24} className="text-white" />
-  if (step.instruction.includes("left")) return <ArrowLeft size={24} className="text-white" />
-  if (step.instruction.includes("right")) return <ArrowRight size={24} className="text-white" />
-  return <Navigation size={24} className="text-white" />
+// Shortest signed turn from `heading` to `target`, in (-180, 180]: positive
+// means the target is to the right of where the phone points.
+function relativeAngle(target: number, heading: number): number {
+  return ((((target - heading) % 360) + 540) % 360) - 180
+}
+
+// The current step's arrow. With a compass fix it points the way to go
+// relative to the way the phone is facing — the same cue the camera overlay
+// gives — and its label says so. Without one it falls back to the compass
+// direction named in the instruction, so it is never just a generic icon.
+function StepIcon({ step, heading }: { step: RouteStep; heading: number | null }) {
+  if (step.instruction.includes("arrived")) return <CheckCircle2 size={24} className="text-white" aria-hidden="true" />
+  if (step.floorChange) {
+    const up = step.floorChange.to > step.floorChange.from
+    const Icon = step.floorChange.to === step.floorChange.from ? ArrowUpDown : up ? ArrowUp : ArrowDown
+    return <Icon size={24} className="text-white" aria-hidden="true" />
+  }
+  const directional = step.distance > 0 || /^Head/.test(step.instruction)
+  if (directional && heading != null) {
+    const rel = relativeAngle(step.heading, heading)
+    return (
+      <ArrowUp
+        size={24}
+        className="text-white transition-transform duration-300 ease-out"
+        style={{ transform: `rotate(${rel}deg)` }}
+        aria-hidden="true"
+      />
+    )
+  }
+  const t = step.instruction.toLowerCase()
+  if (t.includes("north-east") || t.includes("south-east")) return <ArrowUpRight size={24} className="text-white" aria-hidden="true" />
+  if (t.includes("north-west") || t.includes("south-west")) return <ArrowUpLeft size={24} className="text-white" aria-hidden="true" />
+  if (t.includes("north")) return <ArrowUp size={24} className="text-white" aria-hidden="true" />
+  if (t.includes("south")) return <ArrowDown size={24} className="text-white" aria-hidden="true" />
+  if (t.includes("east")) return <ArrowRight size={24} className="text-white" aria-hidden="true" />
+  if (t.includes("west")) return <ArrowLeft size={24} className="text-white" aria-hidden="true" />
+  return <Navigation size={24} className="text-white" aria-hidden="true" />
 }
 
 function NavigatingSummary({
@@ -769,6 +824,10 @@ function NavigatingSummary({
   currentStepIndex,
   floorNaming,
   expanded,
+  heading,
+  spokenDirections,
+  speechSupported,
+  onChangeSpokenDirections,
   onStop,
   onScanQR,
   onOpenCamera,
@@ -778,6 +837,10 @@ function NavigatingSummary({
   currentStepIndex: number
   floorNaming?: FloorNaming
   expanded: boolean
+  heading: number | null
+  spokenDirections: boolean
+  speechSupported: boolean
+  onChangeSpokenDirections: (on: boolean) => void
   onStop: () => void
   onScanQR: () => void
   onOpenCamera: () => void
@@ -808,7 +871,7 @@ function NavigatingSummary({
 
       <div className={`mb-4 flex items-center gap-3 rounded-[14px] px-4 py-3.5 ${isArrived ? "bg-wf-green-tint" : "bg-wf-primary"}`}>
         <span className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full ${isArrived ? "bg-wf-green" : "bg-wf-primary-deep"}`}>
-          <StepIcon step={step} />
+          <StepIcon step={step} heading={heading} />
         </span>
         <div className="min-w-0">
           <p className={`truncate text-[14.5px] font-semibold ${isArrived ? "text-wf-green-text" : "text-white"}`}>{step.instruction}</p>
@@ -822,6 +885,16 @@ function NavigatingSummary({
           <StatTile label="distance" value={fmtDistance(route.totalDistance)} />
           <StatTile label="floor" value={floorLabel(destination.floor, floorNaming)} />
         </div>
+
+        {speechSupported && (
+          <div className="mb-3 flex items-center justify-between gap-3 rounded-[14px] border border-wf-border-faint bg-[#F7FAFD] px-3.5 py-2.5">
+            <span className="flex items-center gap-2 text-[13.5px] text-wf-body">
+              <Volume2 size={15} className="text-wf-primary" aria-hidden="true" />
+              Spoken directions
+            </span>
+            <Toggle on={spokenDirections} onChange={onChangeSpokenDirections} aria-label="Spoken directions" />
+          </div>
+        )}
 
         <div className="mb-2.5 flex gap-2.5">
           <button

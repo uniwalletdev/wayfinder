@@ -1,8 +1,46 @@
 import Link from "next/link"
 import { Navigation, Map, ArrowRight, Search, ClipboardList } from "lucide-react"
+import { SEED_VENUES, DEFAULT_VENUE } from "@/lib/venues"
+import { buildRoute } from "@/lib/routing"
+import { floorLabel } from "@/lib/waypoint-meta"
 
-const NAV_LINKS = ["Product", "Hospitals", "For trusts", "Help"]
+// Every link on this page goes somewhere: the product story below, the map,
+// the trusts' call to action, and the accessibility statement. They were
+// decorative spans before, which on a landing page reads as "not finished".
+const NAV_LINKS: { label: string; href: string }[] = [
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Hospitals", href: "/navigate" },
+  { label: "For trusts", href: "#for-trusts" },
+  { label: "Accessibility", href: "/accessibility" },
+]
 const TRUST_ITEMS = ["A&E", "Outpatients", "Wards", "Pharmacy", "X-Ray & Imaging", "Maternity"]
+
+// Real numbers from the shipped data, not a claim typed into the copy: how
+// many hospitals can be walked inside, and how many more are located.
+const isMapped = (v: { floorPlans: unknown[]; waypoints: unknown[] }) => v.floorPlans.length > 0 || v.waypoints.length > 0
+const MAPPED_COUNT = SEED_VENUES.filter((v) => v.visibility === "public" && isMapped(v)).length
+const DIRECTORY_COUNT = SEED_VENUES.filter((v) => v.visibility === "public" && !isMapped(v)).length
+
+// The floating route card is a real route, built by the same router the app
+// uses: from the default venue's main entrance to a ward people actually look
+// for. If the data moves under it, the card degrades to the map link rather
+// than a stale number.
+const HERO_ROUTE = (() => {
+  const venue = DEFAULT_VENUE
+  const from = venue.waypoints.find((w) => w.id === "main-entrance") ?? venue.waypoints.find((w) => w.type === "exit")
+  const to = ["kangaroo-ward", "pharmacy", "x-ray"].map((id) => venue.waypoints.find((w) => w.id === id)).find(Boolean)
+  if (!from || !to) return null
+  const route = buildRoute(from.coordinates, from.floor, to, venue.waypoints, "walking", venue.trails ?? [], "stepfree", venue.floorNaming)
+  return {
+    venueId: venue.id,
+    venueName: venue.subtitle?.split(" · ")[0] ?? venue.name,
+    destination: to,
+    floor: floorLabel(to.floor, venue.floorNaming).replace(/ \(ground floor\)$/, ""),
+    minutes: route.estimatedMinutes,
+    distance: route.totalDistance < 1000 ? `${route.totalDistance} m` : `${(route.totalDistance / 1000).toFixed(1)} km`,
+    floorChanges: route.floorChanges,
+  }
+})()
 
 const FEATURES = [
   {
@@ -46,7 +84,9 @@ export default function Landing() {
           </div>
           <div className="hidden items-center gap-9 xl:flex">
             {NAV_LINKS.map((link) => (
-              <span key={link} className="text-[14.5px] font-medium text-white/85">{link}</span>
+              <Link key={link.label} href={link.href} className="text-[14.5px] font-medium text-white/85 transition-colors hover:text-white">
+                {link.label}
+              </Link>
             ))}
           </div>
           <Link
@@ -92,32 +132,39 @@ export default function Landing() {
           </div>
         </div>
 
-        {/* Floating route card */}
-        <div className="absolute right-6 top-[120px] z-10 hidden w-80 rounded-[20px] bg-white/97 p-5 shadow-[0_24px_60px_rgba(11,27,46,0.25)] backdrop-blur sm:right-10 lg:right-16 xl:right-24 lg:block">
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center rounded-xl bg-[#E7F2FF]">
-              <Map size={19} className="text-wf-primary" />
-            </span>
-            <div className="min-w-0">
-              <p className="truncate text-[15px] font-semibold text-wf-ink">Cardiology, Level 4</p>
-              <p className="truncate text-xs text-wf-muted">Great Ormond Street Hospital</p>
+        {/* Floating route card — a live route from the router, see HERO_ROUTE */}
+        {HERO_ROUTE && (
+          <div className="absolute right-6 top-[120px] z-10 hidden w-80 rounded-[20px] bg-white/97 p-5 shadow-[0_24px_60px_rgba(11,27,46,0.25)] backdrop-blur sm:right-10 lg:right-16 xl:right-24 lg:block">
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center rounded-xl bg-[#E7F2FF]">
+                <Map size={19} className="text-wf-primary" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <p className="truncate text-[15px] font-semibold text-wf-ink">{HERO_ROUTE.destination.name}, {HERO_ROUTE.floor}</p>
+                <p className="truncate text-xs text-wf-muted">{HERO_ROUTE.venueName}</p>
+              </div>
             </div>
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              <div className="rounded-xl bg-wf-surface px-3 py-2.5 text-center">
+                <p className="font-display text-[15px] font-bold text-wf-ink">{HERO_ROUTE.minutes} min</p>
+                <p className="text-[11px] text-wf-muted">on foot from the entrance</p>
+              </div>
+              <div className="rounded-xl bg-wf-surface px-3 py-2.5 text-center">
+                <p className="font-display text-[15px] font-bold text-wf-ink">{HERO_ROUTE.distance}</p>
+                <p className="text-[11px] text-wf-muted">
+                  {HERO_ROUTE.floorChanges === 0 ? "same floor" : `${HERO_ROUTE.floorChanges} floor change${HERO_ROUTE.floorChanges > 1 ? "s" : ""}`}
+                </p>
+              </div>
+            </div>
+            <Link
+              href={`/navigate?venue=${encodeURIComponent(HERO_ROUTE.venueId)}&to=${encodeURIComponent(HERO_ROUTE.destination.id)}`}
+              className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)] transition-transform active:scale-95"
+            >
+              <Navigation size={16} aria-hidden="true" />
+              Start guidance
+            </Link>
           </div>
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <div className="rounded-xl bg-wf-surface px-3 py-2.5 text-center">
-              <p className="font-display text-[15px] font-bold text-wf-ink">6 min</p>
-              <p className="text-[11px] text-wf-muted">on foot</p>
-            </div>
-            <div className="rounded-xl bg-wf-surface px-3 py-2.5 text-center">
-              <p className="font-display text-[15px] font-bold text-wf-ink">410 m</p>
-              <p className="text-[11px] text-wf-muted">2 floors up</p>
-            </div>
-          </div>
-          <button className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]">
-            <Navigation size={16} />
-            Start guidance
-          </button>
-        </div>
+        )}
 
         {/* Floating floor capsule */}
         <div className="absolute right-[352px] top-[340px] z-10 hidden flex-col gap-1 rounded-full bg-white/97 p-2 sm:right-[392px] lg:right-[432px] xl:right-[456px] lg:flex">
@@ -136,7 +183,15 @@ export default function Landing() {
 
       {/* ── Trust strip ──────────────────────────────────────────────────── */}
       <section className="border-b border-[#E8EDF4] px-6 py-8 sm:px-10 lg:px-16 xl:px-24">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.1em] text-wf-faint">Guiding patients to</p>
+        <p className="text-center text-[15px] text-wf-body">
+          <strong className="font-display font-bold text-wf-ink">{MAPPED_COUNT} hospitals</strong> mapped floor by floor
+          {DIRECTORY_COUNT > 0 && (
+            <>
+              {" "}· <strong className="font-display font-bold text-wf-ink">{DIRECTORY_COUNT.toLocaleString("en-GB")} more</strong> NHS hospitals located, ready to be mapped
+            </>
+          )}
+        </p>
+        <p className="mt-5 text-center text-xs font-semibold uppercase tracking-[0.1em] text-wf-muted">Guiding patients to</p>
         <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 sm:gap-3">
           {TRUST_ITEMS.map((item) => (
             <span
@@ -150,7 +205,7 @@ export default function Landing() {
       </section>
 
       {/* ── Features ─────────────────────────────────────────────────────── */}
-      <section className="px-6 pb-[88px] pt-24 sm:px-10 lg:px-16 xl:px-24">
+      <section id="how-it-works" className="scroll-mt-6 px-6 pb-[88px] pt-24 sm:px-10 lg:px-16 xl:px-24">
         <p className="text-sm font-semibold uppercase tracking-[0.08em] text-wf-primary">How it works</p>
         <h2 className="mt-3 max-w-2xl font-display text-[32px] font-bold leading-[1.12] -tracking-[0.5px] text-wf-ink sm:text-[38px] lg:text-[44px] lg:leading-[1.1] lg:-tracking-[1px]">
           From front door to final room, in three moves
@@ -214,7 +269,7 @@ export default function Landing() {
       </section>
 
       {/* ── CTA band ──────────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-b from-white to-[#EFF5FB] px-6 py-24 text-center">
+      <section id="for-trusts" className="scroll-mt-6 bg-gradient-to-b from-white to-[#EFF5FB] px-6 py-24 text-center">
         <h2 className="font-display text-[32px] font-bold leading-[1.12] -tracking-[0.5px] text-wf-ink sm:text-[38px] lg:text-[42px] lg:leading-[1.1] lg:-tracking-[1px]">
           Put your hospital on the map
         </h2>
@@ -247,9 +302,8 @@ export default function Landing() {
           <span className="font-display text-sm font-bold text-wf-ink">Wayfinder</span>
         </div>
         <div className="flex items-center gap-6 text-[13.5px] text-wf-muted">
-          <span>Privacy</span>
-          <span>Accessibility</span>
-          <span>Status</span>
+          <Link href="/privacy" className="transition-colors hover:text-wf-primary">Privacy</Link>
+          <Link href="/accessibility" className="transition-colors hover:text-wf-primary">Accessibility</Link>
           <span>© 2026 Wayfinder</span>
         </div>
       </footer>

@@ -14,6 +14,9 @@ import {
   migrateLegacyData, deleteUserVenue,
 } from "@/lib/venue-store"
 import { buildRoute, distanceMeters, distanceToPath, fetchOutdoorRoute, isOutdoorDestination, shouldRouteOutdoors } from "@/lib/routing"
+import { linkFromSearchParams, parseWayfinderLink, type WayfinderLink } from "@/lib/share-link"
+import { useGuidanceAnnouncer } from "@/lib/use-guidance-announcer"
+import ToastHost, { toast } from "@/components/Toast"
 import type { TravelMode } from "@/lib/types"
 import type { SurveyResult } from "@/components/SurveyMode"
 import type { UploadPlanResult } from "@/components/UploadPlanMode"
@@ -30,10 +33,24 @@ import { useTrailRecorder } from "@/lib/use-trail-recorder"
 import { useArSupport } from "@/lib/use-ar-support"
 import { fetchServerVenues, createServerVenue, addServerWaypoints, deleteServerVenue, ownsVenue } from "@/lib/venues-server"
 
-const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false })
+// While a map chunk loads (Leaflet on first visit, three.js on the first
+// switch to 3D) the canvas is not left blank: a quiet placeholder says what is
+// happening, so a slow hospital connection does not look like a broken app.
+function MapLoading() {
+  return (
+    <div className="flex h-full w-full items-center justify-center bg-wf-map-light-bg" role="status" aria-live="polite">
+      <div className="flex items-center gap-2.5 rounded-full bg-white/96 px-4 py-2.5 text-[13px] font-medium text-wf-muted shadow-[0_8px_24px_rgba(11,27,46,0.16)]">
+        <span className="h-2 w-2 animate-pulse rounded-full bg-wf-primary" aria-hidden="true" />
+        Loading the map…
+      </div>
+    </div>
+  )
+}
+
+const FloorPlanMap = dynamic(() => import("@/components/FloorPlanMap"), { ssr: false, loading: MapLoading })
 // The 3D half of the map's 2D/3D toggle. three.js is browser-only, and the
 // chunk loads lazily the first time the user switches to 3D.
-const Map3DView = dynamic(() => import("@/components/Map3DView"), { ssr: false })
+const Map3DView = dynamic(() => import("@/components/Map3DView"), { ssr: false, loading: MapLoading })
 // WebXR + three.js: only ever loaded in the browser, and only when the device
 // actually supports immersive AR.
 const ArNavView = dynamic(() => import("@/components/ArNavView"), { ssr: false })
@@ -143,6 +160,16 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // and their surveyed/AI-read points live on the server (reusable across
   // devices) instead of only in this browser's localStorage.
   const [serverConfigured, setServerConfigured] = useState(false)
+  // True once the server has answered (configured or not), so a link to a venue
+  // that is not on this device can stop waiting for the server's list.
+  const [serverChecked, setServerChecked] = useState(false)
+  // A link the app was opened with (shared URL, QR poster) that still needs its
+  // venue switched to or its destination picked — applied by the effect below
+  // once the venue's waypoints are in hand.
+  const pendingLinkRef = useRef<WayfinderLink | null>(null)
+  // Set once the saved state and any link have been read, so the URL sync does
+  // not overwrite a shared link before it has been acted on.
+  const hydratedRef = useRef(false)
   const venue = useMemo(() => getVenueById(activeVenueId, userVenues) ?? DEFAULT_VENUE, [activeVenueId, userVenues])
   const allVenues = useMemo(() => [...SEED_VENUES, ...userVenues], [userVenues])
 
@@ -210,9 +237,22 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     } catch {}
     const restored = loadUserVenues()
     const savedActive = loadActiveVenueId()
-    const startId = savedActive && getVenueById(savedActive, restored) ? savedActive : DEFAULT_VENUE.id
+    let startId = savedActive && getVenueById(savedActive, restored) ? savedActive : DEFAULT_VENUE.id
+
+    // A shared link or a scanned poster opens the app at a place: ?venue=&to=
+    // plus, for a poster, the position it is posted at. The venue in the link
+    // wins over the one last open; anything the link names that this device
+    // does not know yet is left pending for the server's venue list.
+    let link: WayfinderLink | null = null
+    try {
+      link = linkFromSearchParams(new URLSearchParams(window.location.search))
+    } catch {}
+    if (link?.venueId && getVenueById(link.venueId, restored)) startId = link.venueId
+    if (link && (link.destinationId || (link.venueId && link.venueId !== startId))) pendingLinkRef.current = link
+
     setUserVenues(restored)
     setActiveVenueId(startId)
+    saveActiveVenueId(startId)
     setCustomWaypoints(loadVenueWaypoints(startId))
     setSurveyTrails(loadVenueTrails(startId))
     setCustomFloorPlans(loadVenueFloorPlans(startId))
@@ -221,6 +261,17 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     // start above ground.
     const restoredVenue = getVenueById(startId, restored)
     if (restoredVenue) setNavState((s) => ({ ...s, currentFloor: openingFloor(restoredVenue) }))
+
+    // A poster's position fix: the walker is standing where the code is.
+    if (link?.anchor) {
+      const { floor, lat, lng } = link.anchor
+      setGpsStatus("active")
+      setNavState((s) => ({ ...s, currentFloor: floor }))
+      setAnchor({ position: { lat, lng }, accuracy: 1, source: "qr" })
+    }
+    hydratedRef.current = true
+    // setAnchor is stable; this is a one-time read of storage and the URL.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // If a shared-venue backend is configured, fold the server's venues into the
@@ -232,6 +283,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     fetchServerVenues().then(({ configured, venues }) => {
       if (!active) return
       setServerConfigured(configured)
+      setServerChecked(true)
       if (configured && venues.length > 0) {
         setUserVenues((prev) => {
           const byId = new Map(prev.map((v) => [v.id, v]))
@@ -379,14 +431,16 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // ETA) — the user taps Start to begin turn-by-turn, rather than jumping
   // straight into navigation.
   const handleDestinationSelect = useCallback(
-    (waypoint: Waypoint) => {
+    // `preferenceOverride` lets a shared link that asks for the step-free route
+    // get it without changing the walker's own default.
+    (waypoint: Waypoint, preferenceOverride?: RoutePreference) => {
       setOverlay("none")
       setFarRouteOverride(false)
       // The route starts from the user's chosen origin when they've set one,
       // otherwise from their live position (the everyday case).
       const position = navState.origin?.coordinates ?? navState.currentPosition ?? venue.center
       const fromFloor = navState.origin?.floor ?? navState.currentFloor
-      const pref: RoutePreference = alwaysStepFree ? "stepfree" : "fastest"
+      const pref: RoutePreference = preferenceOverride ?? (alwaysStepFree ? "stepfree" : "fastest")
       setRoutePreference(pref)
       // Offline route renders instantly; outdoor destinations then upgrade to
       // real street geometry once Directions responds.
@@ -563,33 +617,39 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setNavState((s) => ({ ...s, route, currentStepIndex: 0 }))
   }, [venue, navState.destination, navState.currentFloor, navState.travelMode, allWaypoints, allTrails, routePreference, activateDemoLocation])
 
-  // Also understands the shareable-destination poster format (2a): the same
-  // positioning anchor plus a trailing `dest:<waypointId>`, so scanning a
-  // poster both re-anchors your position at the entrance it's posted at and
-  // starts guidance to the destination it advertises.
+  // A scanned code is a Wayfinder link (see share-link.ts): a URL from a
+  // printed poster or a shared screen, or the older bare `floor:…:lat:…:lng:…`
+  // anchor. Either can re-anchor the walker where the code is posted and pick
+  // the destination it advertises. Anything else — a Wi-Fi code, a menu — is
+  // said so, not silently ignored, and a malformed number never reaches the
+  // position pipeline (the parser drops it).
   const handleQRDetected = useCallback((data: string) => {
-    try {
-      const parts = data.split(":")
-      const floorIdx = parts.indexOf("floor")
-      const latIdx = parts.indexOf("lat")
-      const lngIdx = parts.indexOf("lng")
-      const destIdx = parts.indexOf("dest")
-      if (floorIdx >= 0 && latIdx >= 0 && lngIdx >= 0) {
-        setGpsStatus("active")
-        setNavState((s) => ({ ...s, currentFloor: parseInt(parts[floorIdx + 1]) }))
-        // An exact known fix — re-anchor dead-reckoning here and clear drift.
-        setAnchor({
-          position: { lat: parseFloat(parts[latIdx + 1]), lng: parseFloat(parts[lngIdx + 1]) },
-          accuracy: 1,
-          source: "qr",
-        })
-      }
-      if (destIdx >= 0) {
-        const wp = allWaypoints.find((w) => w.id === parts[destIdx + 1])
-        if (wp) handleDestinationSelect(wp)
-      }
-    } catch {}
-  }, [setAnchor, allWaypoints, handleDestinationSelect])
+    const link = parseWayfinderLink(data)
+    if (!link) {
+      toast.warning("That isn’t a Wayfinder code", "Look for a Wayfinder poster at an entrance or lift lobby.")
+      return
+    }
+    if (link.anchor) {
+      const { floor, lat, lng } = link.anchor
+      setGpsStatus("active")
+      setNavState((s) => ({ ...s, currentFloor: floor }))
+      // An exact known fix — re-anchor dead-reckoning here and clear drift.
+      setAnchor({ position: { lat, lng }, accuracy: 1, source: "qr" })
+    }
+    if (link.venueId && link.venueId !== activeVenueId) {
+      // A poster from another mapped place: switch to it, then pick the
+      // destination once its points are loaded.
+      pendingLinkRef.current = link
+      return
+    }
+    if (link.destinationId) {
+      const wp = allWaypoints.find((w) => w.id === link.destinationId)
+      if (wp) handleDestinationSelect(wp, link.stepFree ? "stepfree" : undefined)
+      else toast.warning("That place isn’t on this map", "The code points somewhere this map doesn’t have yet.")
+    } else if (link.anchor) {
+      toast.success("Position updated", "You’re now placed where this code is posted.")
+    }
+  }, [setAnchor, allWaypoints, activeVenueId, handleDestinationSelect])
 
   // Persist points added by surveying / AI sign-reading. For a server venue this
   // device owns, they go to the shared backend (and are shown from the returned
@@ -637,19 +697,20 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const drewLayout = result.trails.some((t) => t.points.length >= 2)
     const layoutNote = drewLayout ? " Your walk was drawn as the floor layout." : ""
 
-    let message: string
     if (parts.length > 0) {
-      message = `Survey complete — ${parts.join(" and ")} location${marked + detected !== 1 ? "s" : ""} added to the map.${layoutNote}`
+      toast.success(
+        `Survey complete — ${parts.join(" and ")} location${marked + detected !== 1 ? "s" : ""} added`,
+        layoutNote.trim() || undefined
+      )
     } else if (result.aiError === "not_configured") {
-      message = "Survey saved. AI sign-reading isn't enabled on the server, so nothing was auto-detected — use “Mark Location” to add points yourself."
+      toast.info("Survey saved", "AI sign-reading isn’t enabled on this server, so nothing was auto-detected. Use “Mark Location” to add points yourself.")
     } else if (result.aiError === "cancelled") {
-      message = "Survey saved — sign-reading was skipped."
+      toast.info("Survey saved", "Sign-reading was skipped.")
     } else if (result.aiError) {
-      message = "Survey saved, but the footage couldn't be read this time. Try again, or use “Mark Location” to add points yourself."
+      toast.warning("Survey saved, but the footage couldn’t be read", "Try again, or use “Mark Location” to add points yourself.")
     } else {
-      message = "Survey complete — no clear signs were found in the footage. Try keeping signs and door plates in view, or use “Mark Location”."
+      toast.info("Survey complete — no clear signs found", "Keep signs and door plates in view, or use “Mark Location”.")
     }
-    alert(message)
   }, [activeVenueId, persistNewWaypoints])
 
   // Mirrors handleSurveyComplete above for plans uploaded via UploadPlanMode:
@@ -694,12 +755,14 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     if (result.assets.length > 0) parts.push(`${result.assets.length} fixture${result.assets.length !== 1 ? "s" : ""}`)
     if (result.floorPlans.length === 1) parts.push("the plan image")
     if (result.floorPlans.length > 1) parts.push(`the map on ${result.floorPlans.length} floors`)
-    let message = parts.length > 0 ? `Upload complete — ${parts.join(", ")} added to the map.` : "Upload complete, but nothing usable was found on the plan."
+    if (parts.length > 0) toast.success(`Upload complete — ${parts.join(", ")} added to the map`)
+    else toast.info("Upload complete", "Nothing usable was found on the plan.")
     if (!planStored) {
-      message +=
-        "\n\nHeads up: this device's storage is full, so the plan image will only last until you close the app. Free up space (e.g. delete unused places) or upload a smaller file to keep it."
+      toast.warning(
+        "This device’s storage is full",
+        "The plan image will only last until you close the app. Free up space (delete unused places) or upload a smaller file to keep it."
+      )
     }
-    alert(message)
   }, [activeVenueId, customFloorPlans, persistNewWaypoints])
 
   // Switching place clears the current route and re-centres on the new venue, so
@@ -722,6 +785,67 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     if (v) goToVenue(v)
   }, [userVenues, goToVenue])
 
+  // Finish acting on a link (shared URL, scanned poster): switch to its venue
+  // once that venue is known — it may only arrive with the server's list — and
+  // pick its destination once the venue's points are loaded. With an anchor,
+  // wait for the fix to land in navState so the route starts from where the
+  // poster is, not from the venue's centre.
+  useEffect(() => {
+    const link = pendingLinkRef.current
+    if (!link) return
+    if (link.venueId && link.venueId !== activeVenueId) {
+      const target = getVenueById(link.venueId, userVenues)
+      if (target) {
+        goToVenue(target)
+        return
+      }
+      if (serverChecked) {
+        pendingLinkRef.current = null
+        toast.warning("That place isn’t available here", "The link points at a venue this deployment doesn’t have.")
+      }
+      return
+    }
+    if (!link.destinationId) {
+      pendingLinkRef.current = null
+      return
+    }
+    if (link.anchor && !navState.currentPosition) return
+    const wp = allWaypoints.find((w) => w.id === link.destinationId)
+    if (wp) {
+      pendingLinkRef.current = null
+      handleDestinationSelect(wp, link.stepFree ? "stepfree" : undefined)
+      return
+    }
+    if (serverChecked) {
+      pendingLinkRef.current = null
+      toast.warning("That place isn’t on this map", "The link points somewhere this map doesn’t have yet.")
+    }
+  }, [activeVenueId, userVenues, allWaypoints, serverChecked, navState.currentPosition, goToVenue, handleDestinationSelect])
+
+  // Keep the address bar shareable: the venue and destination on screen are
+  // mirrored into ?venue=&to= (replaceState, so Back still leaves the page),
+  // which is what makes copying the URL, or a browser refresh, land on the same
+  // place. Not for typed addresses — they live outside the map.
+  useEffect(() => {
+    if (!hydratedRef.current || pendingLinkRef.current) return
+    const dest = navState.destination
+    const params = new URLSearchParams()
+    if (activeVenueId !== DEFAULT_VENUE.id || dest) params.set("venue", activeVenueId)
+    if (dest && !isOutdoorDestination(dest)) params.set("to", dest.id)
+    const q = params.toString()
+    const next = `${window.location.pathname}${q ? `?${q}` : ""}`
+    if (next !== `${window.location.pathname}${window.location.search}`) {
+      window.history.replaceState(null, "", next)
+    }
+  }, [activeVenueId, navState.destination])
+
+  // Spoken and screen-reader guidance for the step currently being walked.
+  const { announcement, spoken: spokenDirections, speechSupported, setSpokenDirections } = useGuidanceAnnouncer({
+    active: navState.isNavigating,
+    route: navState.route,
+    stepIndex: navState.currentStepIndex,
+  })
+
   // Mapping tools (Survey Mode, Upload plan) only ever show on the /map screen,
   // so a venue created while browsing /navigate needs to hand off there —
   // otherwise "Tap Map area" below would point at a button that isn't on screen.
@@ -739,7 +863,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         setUserVenues((prev) => [...prev, venue])
         goToVenue(venue)
         goMapNewVenue()
-        alert(`“${venue.name}” created. Tap “Map area” to walk through and add points to it.`)
+        toast.success(`“${venue.name}” created`, "Tap “Map area” to walk through and add points to it.")
         return
       }
     }
@@ -751,7 +875,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     })
     goToVenue(v)
     goMapNewVenue()
-    alert(`“${v.name}” created. Tap “Map area” to walk through and add points to it.`)
+    toast.success(`“${v.name}” created`, "Tap “Map area” to walk through and add points to it.")
   }, [serverConfigured, goToVenue, goMapNewVenue])
 
   const handleDeleteVenue = useCallback(async (id: string) => {
@@ -760,7 +884,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     if (serverConfigured && ownsVenue(id)) {
       const { ok } = await deleteServerVenue(id)
       if (!ok) {
-        alert("Couldn't delete this place.")
+        toast.error("Couldn’t delete this place", "Check your connection and try again.")
         return
       }
       setUserVenues((prev) => prev.filter((v) => v.id !== id))
@@ -794,13 +918,16 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const routeOptions = useMemo(() => {
     const dest = navState.destination
     const fromFloor = navState.origin?.floor ?? navState.currentFloor
-    if (!dest || navState.route?.outdoor || dest.floor === fromFloor) return null
+    // Only the preview offers the choice, so there is nothing to compare while
+    // guidance is running — and this would otherwise build two routes on every
+    // position tick of the walk.
+    if (!dest || navState.isNavigating || navState.route?.outdoor || dest.floor === fromFloor) return null
     const position = navState.origin?.coordinates ?? navState.currentPosition ?? venue.center
     const fastest = buildRoute(position, fromFloor, dest, allWaypoints, navState.travelMode, allTrails, "fastest", venue.floorNaming)
     const stepfree = buildRoute(position, fromFloor, dest, allWaypoints, navState.travelMode, allTrails, "stepfree", venue.floorNaming)
     if (fastest.estimatedMinutes === stepfree.estimatedMinutes && fastest.totalDistance === stepfree.totalDistance) return null
     return { fastest, stepfree }
-  }, [navState.destination, navState.origin, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, allTrails, venue.center, venue.floorNaming])
+  }, [navState.destination, navState.origin, navState.isNavigating, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, allTrails, venue.center, venue.floorNaming])
 
   const gpsLabel =
     gpsStatus === "requesting" ? "Locating…" :
@@ -815,6 +942,12 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
 
   return (
     <div className="relative flex h-dvh w-full overflow-hidden bg-wf-map-light-bg">
+      <h1 className="sr-only">Wayfinder — {venue.name}</h1>
+      {/* Screen readers hear each new instruction as the walk progresses. */}
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        {announcement}
+      </div>
+      <ToastHost />
       <LeftPanel
         venue={venue}
         userInitials={null}
@@ -846,6 +979,11 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         onMapArea={() => setOverlay("survey")}
         onUploadPlan={() => setOverlay("upload-plan")}
         gpsStatus={gpsStatus}
+        positionAccuracy={navState.positionAccuracy}
+        heading={heading}
+        spokenDirections={spokenDirections}
+        speechSupported={speechSupported}
+        onChangeSpokenDirections={setSpokenDirections}
         onUseDemo={activateDemoLocation}
         farFromVenue={navState.isNavigating ? null : farFromVenue}
         onPreviewFromVenue={handlePreviewFromVenue}

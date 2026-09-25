@@ -117,7 +117,11 @@ async function rasterizePdf(file: File): Promise<RasterPlan> {
   } catch {
     throw new Error("Couldn't load the PDF reader. Try again, or upload an image instead.")
   }
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`
+  // The worker ships with the app rather than being fetched from a public CDN
+  // at runtime: a mapper on hospital Wi-Fi that blocks unpkg.com, or a CDN
+  // outage, used to mean "Couldn't read that PDF" with nothing else wrong. The
+  // bundler resolves this URL to a copy of the exact version installed.
+  pdfjsLib.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString()
 
   const buffer = await file.arrayBuffer()
   const doc = await pdfjsLib.getDocument({ data: buffer }).promise

@@ -40,6 +40,14 @@ const GPS_ANCHOR_MAX_ACCURACY_M = 18
 const STEP_PEAK = 12.5
 const STEP_RESET = 10.2
 const STEP_MIN_INTERVAL_MS = 280
+// Dead-reckoning drifts: stride length varies, the compass wanders, a step
+// gets missed. Each step therefore widens the reported accuracy a little, so
+// after two hundred steps the UI no longer claims the ±1 m of the QR scan the
+// walker started from, and the off-route trigger (which is widened by the
+// accuracy) stops re-routing on what is now honest uncertainty. A fresh fix
+// clears it.
+const STEP_UNCERTAINTY_M = 0.25
+const MAX_DRIFT_M = 40
 
 const M_PER_LAT = 111320
 
@@ -65,6 +73,9 @@ export function usePedestrianPosition(heading: number | null) {
   // Step-detection state.
   const armedRef = useRef(true)
   const lastStepRef = useRef(0)
+  // The anchor's own accuracy plus what dead-reckoning has added since.
+  const baseAccuracyRef = useRef(0)
+  const driftRef = useRef(0)
 
   const recompute = useCallback(() => {
     const a = anchorRef.current
@@ -93,7 +104,9 @@ export function usePedestrianPosition(heading: number | null) {
     }
     anchorRef.current = { position: fix.position, source: fix.source }
     offsetRef.current = { x: 0, y: 0 }
-    setAccuracy(fix.source === "qr" ? 1 : fix.accuracy)
+    baseAccuracyRef.current = fix.source === "qr" ? 1 : fix.accuracy
+    driftRef.current = 0
+    setAccuracy(baseAccuracyRef.current)
     setSource(fix.source)
     setPosition(fix.position)
   }, [])
@@ -123,6 +136,12 @@ export function usePedestrianPosition(heading: number | null) {
       offsetRef.current.x += STEP_LENGTH_M * Math.sin(rad)
       offsetRef.current.y += STEP_LENGTH_M * Math.cos(rad)
       recompute()
+      // A demo anchor reports accuracy 0, which the UI reads as "demo mode";
+      // it is a virtual position, so no drift is added to it.
+      if (anchorRef.current.source !== "demo") {
+        driftRef.current = Math.min(MAX_DRIFT_M, driftRef.current + STEP_UNCERTAINTY_M)
+        setAccuracy(baseAccuracyRef.current + driftRef.current)
+      }
     },
     [recompute]
   )
