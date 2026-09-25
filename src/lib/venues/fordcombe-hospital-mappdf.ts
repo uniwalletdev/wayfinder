@@ -8,7 +8,7 @@ export const FORDCOMBE_HOSPITAL_MAPPDF_VENUE: Venue = {
   id: "fordcombe-hospital-mappdf-venue",
   slug: "fordcombe-hospital-mappdf",
   name: "Fordcombe Hospital",
-  subtitle: "Maidstone and Tunbridge Wells NHS Trust · TN3 0RD",
+  subtitle: "Maidstone and Tunbridge Wells NHS Trust · Fordcombe Road, Fordcombe, Tunbridge Wells TN3 0RD",
   category: "hospital",
   center: { lat: 51.134511, lng: 0.188172 },
   defaultZoom: 17,

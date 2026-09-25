@@ -19,6 +19,9 @@
 //     renames its floor-plan image to match
 //   - records the same name, subtitle, centre, scale and notes in
 //     data/mapped-sites.json, so the file reads true on its own
+//   - a hand-built venue (an entry naming its `module`) has no sheet: it is
+//     renamed, re-addressed, re-noted or moved in its module only, and never
+//     rescaled — there is no drafted span to scale against
 //
 // Idempotent: a venue already at its corrected identity is left untouched.
 //
@@ -62,11 +65,15 @@ const identity = readIdentity()
 const report = []
 
 for (const [slug, fix] of Object.entries(identity)) {
-  const path = join(VENUE_DIR, `${slug}.ts`)
-  const sheet = sitesDoc.sheets.find((s) => s.slug === slug)
+  const handBuilt = fix.module !== undefined
+  const path = join(VENUE_DIR, `${handBuilt ? fix.module : slug}.ts`)
+  // A hand-built venue's sheet entry is a stand-in with no span, so a move
+  // is a translation and the mapped-sites record is left alone.
+  const sheet = handBuilt ? { center: null, spanM: null } : sitesDoc.sheets.find((s) => s.slug === slug)
   if (!sheet) throw new Error(`${slug}: not in data/mapped-sites.json`)
   if (!existsSync(path)) throw new Error(`${slug}: no venue module at ${path}`)
   let src = readFileSync(path, "utf8")
+  if (handBuilt && !new RegExp(`^  slug: "${slug}",$`, "m").test(src)) throw new Error(`${slug}: module ${fix.module}.ts does not carry that slug`)
   const changes = []
 
   const oldName = unesc(NAME.exec(src)?.[1] ?? "")
@@ -82,7 +89,7 @@ for (const [slug, fix] of Object.entries(identity)) {
     const gcps = sheet.gcps ?? sheet.floors?.some((f) => f.gcps)
     if (gcps) throw new Error(`${slug}: placed from control points; correct those in mapped-sites.json instead`)
     const to = fix.center ?? oldCenter
-    const scale = fix.spanM ? fix.spanM / sheet.spanM : 1
+    const scale = fix.spanM && !handBuilt ? fix.spanM / sheet.spanM : 1
     const moved = Math.abs(to[0] - oldCenter[0]) > 1e-7 || Math.abs(to[1] - oldCenter[1]) > 1e-7 || Math.abs(scale - 1) > 1e-9
     if (moved) {
       const move = mover(oldCenter, to, scale)
@@ -107,7 +114,7 @@ for (const [slug, fix] of Object.entries(identity)) {
   // --- Name, trust, notes, shortcuts ---------------------------------------
   if (fix.name && fix.name !== oldName) {
     src = src.replace(NAME, `  name: "${esc(fix.name)}",`)
-    src = src.replace(`// ${oldName} — reconstructed`, `// ${fix.name} — reconstructed`)
+    src = src.replace(`// ${oldName} —`, () => `// ${fix.name} —`)
     changes.push(`renamed "${oldName}" -> "${fix.name}"`)
     sheet.name = fix.name
   }
@@ -172,6 +179,7 @@ for (const [slug, fix] of Object.entries(identity)) {
   if (!DRY) writeFileSync(path, src)
 }
 
-if (!DRY && report.length) writeFileSync(SITES, JSON.stringify(sitesDoc, null, 2) + "\n")
+const sheetChanges = report.some((r) => !identity[r.split(":")[0]]?.module)
+if (!DRY && sheetChanges) writeFileSync(SITES, JSON.stringify(sitesDoc, null, 2) + "\n")
 console.log(report.length ? report.join("\n") : "nothing to change")
 console.log(`${DRY ? "[dry run] " : ""}${report.length} venue(s) corrected`)

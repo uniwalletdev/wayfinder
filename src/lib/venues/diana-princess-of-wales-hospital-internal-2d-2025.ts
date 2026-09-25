@@ -8,7 +8,7 @@ export const DIANA_PRINCESS_OF_WALES_HOSPITAL_INTERNAL_2D_2025_VENUE: Venue = {
   id: "diana-princess-of-wales-hospital-internal-2d-2025-venue",
   slug: "diana-princess-of-wales-hospital-internal-2d-2025",
   name: "Diana, Princess of Wales Hospital",
-  subtitle: "Northern Lincolnshire and Goole NHS Foundation Trust · DN33 2BA",
+  subtitle: "Northern Lincolnshire and Goole NHS Foundation Trust · Scartho Road, Grimsby DN33 2BA",
   category: "hospital",
   center: { lat: 53.544883, lng: -0.096293 },
   defaultZoom: 17,

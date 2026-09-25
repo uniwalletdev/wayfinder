@@ -8,7 +8,7 @@ export const NOC_SITE_MAP_VENUE: Venue = {
   id: "noc-site-map-venue",
   slug: "noc-site-map",
   name: "Nuffield Orthopaedic Centre",
-  subtitle: "Oxford University Hospitals NHS Foundation Trust · OX3 7HE",
+  subtitle: "Oxford University Hospitals NHS Foundation Trust · Windmill Road, Headington, Oxford OX3 7HE",
   category: "hospital",
   center: { lat: 51.754093, lng: -1.20896 },
   defaultZoom: 17,

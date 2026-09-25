@@ -8,7 +8,7 @@ export const CHELSEA_AND_WESTMINSTER_HOSPITAL_SITE_MAP_VENUE: Venue = {
   id: "chelsea-and-westminster-hospital-site-map-venue",
   slug: "chelsea-and-westminster-hospital-site-map",
   name: "Chelsea & Westminster Hospital",
-  subtitle: "Chelsea and Westminster Hospital NHS Foundation Trust · SW10 9NH",
+  subtitle: "Chelsea and Westminster Hospital NHS Foundation Trust · 369 Fulham Road, London SW10 9NH",
   category: "hospital",
   center: { lat: 51.484309, lng: -0.18162 },
   defaultZoom: 17,

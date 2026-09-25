@@ -137,9 +137,11 @@ backstop. Still true.
 
 The hospital map data itself was reviewed venue by venue on 25 September 2026
 — identity, position and every label of all 67 venues — in
-[docs/venue-review-2026-09.md](docs/venue-review-2026-09.md): four venues sat
-at the wrong hospital and ten under the wrong trust or a department's name, all
-corrected; label problems 89 → 42. What that pass could not do is listed there.
+[docs/venue-review-2026-09.md](docs/venue-review-2026-09.md): five venues sat
+at the wrong hospital and fourteen under the wrong trust or a department's
+name, all corrected; label problems 89 → 42. A web pass then checked 54 of
+the 66 NHS venues against the trusts' sites (the session's search allowance
+ran out before the last 12) and recorded the site changes the sheets pre-date.
 
 Ordered by value. None blocks a deployment.
 

@@ -99,6 +99,17 @@ export function readIdentity() {
   }
   const venues = doc?.venues ?? {}
   for (const [slug, fix] of Object.entries(venues)) {
+    // A hand-built venue is corrected in its module, not through the sheet
+    // config: it names its module and may only be renamed, re-addressed,
+    // re-noted or moved — never rescaled or re-storeyed, which need a sheet.
+    if (fix.module !== undefined) {
+      if (typeof fix.module !== "string" || !/^[a-z0-9-]+$/.test(fix.module)) {
+        throw new Error(`data/venue-identity.json: "${slug}" has an invalid module name`)
+      }
+      for (const k of ["spanM", "floor", "floorNaming"]) {
+        if (fix[k] !== undefined) throw new Error(`data/venue-identity.json: "${slug}" is hand-built and cannot set ${k}`)
+      }
+    }
     if (fix.center && (!Array.isArray(fix.center) || fix.center.length !== 2 || !fix.center.every(Number.isFinite))) {
       throw new Error(`data/venue-identity.json: "${slug}" has an invalid center`)
     }
@@ -138,7 +149,8 @@ export function readSheets() {
   // A correction for a sheet that no longer exists is a mistake worth hearing
   // about, not a silent leftover.
   const slugs = new Set(sheets.map((s) => s.slug))
-  for (const slug of Object.keys(identity)) {
+  for (const [slug, fix] of Object.entries(identity)) {
+    if (fix.module !== undefined) continue // a hand-built venue, applied to its module only
     if (!slugs.has(slug)) throw new Error(`data/venue-identity.json corrects "${slug}", which is not in data/mapped-sites.json`)
   }
   return sheets.map((sheet) => {

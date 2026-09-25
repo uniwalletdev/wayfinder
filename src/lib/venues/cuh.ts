@@ -20,7 +20,7 @@ export const CUH_VENUE: Venue = {
   id: "cuh",
   slug: "cuh",
   name: "Addenbrooke's Hospital",
-  subtitle: "Cambridge University Hospitals, Cambridge",
+  subtitle: "Cambridge University Hospitals NHS Foundation Trust · Hills Road, Cambridge CB2 0QQ",
   category: "hospital",
   // The NHS directory's pin for Addenbrooke's — centre of the main hospital
   // block, north of the Rosie and the outlying campus buildings.

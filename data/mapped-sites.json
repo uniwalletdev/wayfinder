@@ -221,7 +221,7 @@
         "Royal Manchester Children's Hospital",
         "Adult Emergency Department (A&E)"
       ],
-      "notes": "Shared campus of Manchester Royal Infirmary, Saint Mary's, the Royal Eye Hospital and Royal Manchester Children's Hospital; zones A–N map to building entrances."
+      "notes": "Site map published by Manchester University NHS Foundation Trust (2019 edition). During the rebuild of the Manchester Royal Infirmary Emergency Department (Project RED, due to complete in summer 2026) the Emergency Department and Urgent Treatment Centre entrances moved to a temporary building outside the MRI Outpatients entrance, near the Grafton Street car park; the A&E pins here follow the 2019 sheet. The trust's February 2025 campus map is newer than this sheet."
     },
     {
       "slug": "trafford",
@@ -284,7 +284,7 @@
       "stem": "diana princess of wales hospital internal 2d 2025",
       "odsCode": "RJL30",
       "name": "Diana, Princess of Wales Hospital",
-      "subtitle": "Northern Lincolnshire and Goole NHS Foundation Trust · DN33 2BA",
+      "subtitle": "Northern Lincolnshire and Goole NHS Foundation Trust · Scartho Road, Grimsby DN33 2BA",
       "file": "map/auto/diana-princess-of-wales-hospital-internal-2d-2025.pdf",
       "page": 1,
       "center": [
@@ -323,7 +323,7 @@
       "stem": "chelsea and westminster hospital site map",
       "odsCode": "RQM01",
       "name": "Chelsea & Westminster Hospital",
-      "subtitle": "Chelsea and Westminster Hospital NHS Foundation Trust · SW10 9NH",
+      "subtitle": "Chelsea and Westminster Hospital NHS Foundation Trust · 369 Fulham Road, London SW10 9NH",
       "file": "map/auto/chelsea-and-westminster-hospital-site-map.pdf",
       "page": 1,
       "center": [
@@ -400,8 +400,8 @@
       "floorOf": null,
       "stem": "princess of wales community hospital site map",
       "odsCode": "R1ACG",
-      "name": "Princess of Wales Hospital",
-      "subtitle": "Herefordshire and Worcestershire Health and Care NHS Trust · B61 0BB",
+      "name": "Princess of Wales Community Hospital",
+      "subtitle": "Herefordshire and Worcestershire Health and Care NHS Trust · Stourbridge Road, Bromsgrove B61 0BB",
       "file": "map/auto/princess-of-wales-community-hospital-site-map.pdf",
       "page": 1,
       "center": [
@@ -440,7 +440,7 @@
       "stem": "site 1253769 hull teaching castle hill map",
       "odsCode": "G4V1I",
       "name": "Castle Hill Hospital",
-      "subtitle": "Hull University Teaching Hospitals NHS Trust · HU16 5JQ",
+      "subtitle": "Hull University Teaching Hospitals NHS Trust · Castle Road, Cottingham HU16 5JQ",
       "file": "map/auto/site-1253769-hull-teaching-castle-hill-map.pdf",
       "page": 1,
       "center": [
@@ -479,7 +479,7 @@
       "stem": "ealing hospital site map",
       "odsCode": "R1K04",
       "name": "Ealing Hospital",
-      "subtitle": "London North West University Healthcare NHS Trust · UB1 3HW",
+      "subtitle": "London North West University Healthcare NHS Trust · Uxbridge Road, Southall UB1 3HW",
       "file": "map/auto/ealing-hospital-site-map.pdf",
       "page": 1,
       "center": [
@@ -556,8 +556,8 @@
       "floorOf": null,
       "stem": "tunbridge wells hospital mappdf",
       "odsCode": "RWFTW",
-      "name": "The Tunbridge Wells Hospital",
-      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · TN2 4QJ",
+      "name": "Tunbridge Wells Hospital",
+      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · Pembury, Tunbridge Wells TN2 4QJ",
       "file": "map/auto/tunbridge-wells-hospital-mappdf.pdf",
       "page": 1,
       "center": [
@@ -596,7 +596,7 @@
       "stem": "hospital map external 2025",
       "odsCode": "RPAP1",
       "name": "Medway Maritime Hospital",
-      "subtitle": "Medway NHS Foundation Trust · ME7 5NY",
+      "subtitle": "Medway NHS Foundation Trust · Windmill Road, Gillingham ME7 5NY",
       "file": "map/auto/hospital-map-external-2025.pdf",
       "page": 1,
       "center": [
@@ -635,7 +635,7 @@
       "stem": "whiston site map full site",
       "odsCode": "M8D6F",
       "name": "Whiston Hospital",
-      "subtitle": "Mersey and West Lancashire Teaching Hospitals NHS Trust · L35 5DR",
+      "subtitle": "Mersey and West Lancashire Teaching Hospitals NHS Trust · Warrington Road, Prescot L35 5DR",
       "file": "map/auto/whiston-site-map-full-site.pdf",
       "page": 1,
       "center": [
@@ -752,7 +752,7 @@
       "stem": "noc site map",
       "odsCode": "RTH03",
       "name": "Nuffield Orthopaedic Centre",
-      "subtitle": "Oxford University Hospitals NHS Foundation Trust · OX3 7HE",
+      "subtitle": "Oxford University Hospitals NHS Foundation Trust · Windmill Road, Headington, Oxford OX3 7HE",
       "file": "map/auto/noc-site-map.pdf",
       "page": 1,
       "center": [
@@ -851,7 +851,7 @@
         "Main Entrance",
         "Facilities"
       ],
-      "notes": "Site map published by The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust (June 2026). Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
+      "notes": "Site map published by The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust (June 2026). The site is changing: the helipad moved in January 2026, a new bus stop opened near the site entrance in May 2026, and a multi-storey car park is being built opposite the community diagnostic centre from June 2026 ahead of the hospital's replacement by 2030. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
       "auto": {
         "odsCode": "RCX70",
         "spanSource": "osm-footprint-colocated",
@@ -868,8 +868,8 @@
       "floorOf": null,
       "stem": "site 6458 west park rehabilitation hospital",
       "odsCode": "RL4CD",
-      "name": "West Park Hospital",
-      "subtitle": "The Royal Wolverhampton NHS Trust · WV1 4PW",
+      "name": "West Park Rehabilitation Hospital",
+      "subtitle": "The Royal Wolverhampton NHS Trust · Park Road West, Wolverhampton WV1 4PW",
       "file": "map/auto/site-6458-west-park-rehabilitation-hospital.pdf",
       "page": 1,
       "center": [
@@ -908,7 +908,7 @@
       "stem": "grantham and district hospital map",
       "odsCode": "RWDLP",
       "name": "Grantham & District Hospital",
-      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · NG31 8DG",
+      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · 101 Manthorpe Road, Grantham NG31 8DG",
       "file": "map/auto/grantham-and-district-hospital-map.pdf",
       "page": 1,
       "center": [
@@ -947,7 +947,7 @@
       "stem": "alex map a4",
       "odsCode": "C2P9J",
       "name": "Alexandra Hospital",
-      "subtitle": "Worcestershire Acute Hospitals NHS Trust · B98 7UB",
+      "subtitle": "Worcestershire Acute Hospitals NHS Trust · Woodrow Drive, Redditch B98 7UB",
       "file": "map/auto/alex-map-a4.pdf",
       "page": 1,
       "center": [
@@ -1215,8 +1215,8 @@
     {
       "slug": "bishop-auckland-floor-plan-2023",
       "id": "bishop-auckland-floor-plan-2023-venue",
-      "name": "Bishop Auckland CDC",
-      "subtitle": "County Durham and Darlington NHS Foundation Trust · DL14 6AD",
+      "name": "Bishop Auckland Hospital",
+      "subtitle": "County Durham and Darlington NHS Foundation Trust · Cockton Hill Road, Bishop Auckland DL14 6AD",
       "file": "map/auto/bishop-auckland-floor-plan-2023.pdf",
       "page": 1,
       "center": [
@@ -1237,7 +1237,7 @@
         "BISHOP AUCKLAND HOSPITAL",
         "ORAL & MAXILLO FACIAL SURGERY ORTHODONTICS & DENTAL"
       ],
-      "notes": "Site map published by County Durham and Darlington NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Floor plan (2023) published by County Durham and Darlington NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
       "auto": {
         "odsCode": "H8C7C",
         "spanSource": "default",
@@ -1274,7 +1274,7 @@
         "PGME",
         "Day Nursery"
       ],
-      "notes": "Ground floor plan published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
+      "notes": "Ground floor plan published by United Lincolnshire Teaching Hospitals NHS Trust. The Emergency Department is being rebuilt (phase one opened May 2025, more cubicles October 2025, the old department remodelled through 2026), so its layout and entrance may differ from this plan. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
       "auto": {
         "odsCode": "RWD2A",
         "spanSource": "default",
@@ -1364,7 +1364,7 @@
       "slug": "maidstone-hospital-mappdf",
       "id": "maidstone-hospital-mappdf-venue",
       "name": "Maidstone Hospital",
-      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · ME16 9QQ",
+      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · Hermitage Lane, Maidstone ME16 9QQ",
       "file": "map/auto/maidstone-hospital-mappdf.pdf",
       "page": 1,
       "center": [
@@ -1401,7 +1401,7 @@
       "slug": "fordcombe-hospital-mappdf",
       "id": "fordcombe-hospital-mappdf-venue",
       "name": "Fordcombe Hospital",
-      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · TN3 0RD",
+      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · Fordcombe Road, Fordcombe, Tunbridge Wells TN3 0RD",
       "file": "map/auto/fordcombe-hospital-mappdf.pdf",
       "page": 1,
       "center": [
@@ -1475,7 +1475,7 @@
       "slug": "internal-site-map-north-tees-2019",
       "id": "internal-site-map-north-tees-2019-venue",
       "name": "University Hospital of North Tees",
-      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS19 8PE",
+      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · Hardwick Road, Stockton-on-Tees TS19 8PE",
       "file": "map/auto/internal-site-map-north-tees-2019.pdf",
       "page": 1,
       "center": [
@@ -1496,7 +1496,7 @@
         "Urgent Care Centre",
         "Main Entrance and Reception"
       ],
-      "notes": "Site map published by North Tees and Hartlepool NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye. RESTORED BY REQUEST: the current matcher refuses this sheet, so the hospital named here may be wrong. Kept deliberately; keep:true stops draft-sheets withdrawing it again.",
+      "notes": "Site map published by North Tees and Hartlepool NHS Foundation Trust (2019 edition, still the one the trust links). It pre-dates the Emergency Assessment Unit opened in October 2025 and the new urgent and emergency care entrance, so emergency-care pins may be out of date. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
       "auto": {
         "odsCode": "RVWND",
         "spanSource": "default",
@@ -1512,7 +1512,7 @@
       "slug": "external-site-map-north-tees-2019",
       "id": "external-site-map-north-tees-2019-venue",
       "name": "University Hospital of North Tees — Grounds & Car Parks",
-      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · TS19 8PE",
+      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · Hardwick Road, Stockton-on-Tees TS19 8PE",
       "file": "map/auto/external-site-map-north-tees-2019.pdf",
       "page": 1,
       "center": [
@@ -1586,7 +1586,7 @@
       "slug": "james-cook-campus-map-jul25",
       "id": "james-cook-campus-map-jul25-venue",
       "name": "The James Cook University Hospital",
-      "subtitle": "South Tees Hospitals NHS Foundation Trust · TS4 3BW",
+      "subtitle": "South Tees Hospitals NHS Foundation Trust · Marton Road, Middlesbrough TS4 3BW",
       "file": "map/auto/james-cook-campus-map-jul25.pdf",
       "page": 1,
       "center": [
@@ -1660,7 +1660,7 @@
       "slug": "a5-site-map-of-stratford-hospital-july-2025-update",
       "id": "a5-site-map-of-stratford-hospital-july-2025-update-venue",
       "name": "Stratford Hospital",
-      "subtitle": "South Warwickshire University NHS Foundation Trust · CV37 6NX",
+      "subtitle": "South Warwickshire University NHS Foundation Trust · Arden Street, Stratford-upon-Avon CV37 6NX",
       "file": "map/auto/a5-site-map-of-stratford-hospital-july-2025-update.pdf",
       "page": 1,
       "center": [
@@ -1809,7 +1809,7 @@
       "slug": "derriford-hospital-site-mappdf",
       "id": "derriford-hospital-site-mappdf-venue",
       "name": "Derriford Hospital",
-      "subtitle": "University Hospitals Plymouth NHS Trust · PL6 8DH",
+      "subtitle": "University Hospitals Plymouth NHS Trust · Derriford Road, Plymouth PL6 8DH",
       "file": "map/auto/derriford-hospital-site-mappdf.pdf",
       "page": 1,
       "center": [

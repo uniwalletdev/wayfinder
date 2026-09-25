@@ -8,7 +8,7 @@ export const ALEX_MAP_A4_VENUE: Venue = {
   id: "alex-map-a4-venue",
   slug: "alex-map-a4",
   name: "Alexandra Hospital",
-  subtitle: "Worcestershire Acute Hospitals NHS Trust · B98 7UB",
+  subtitle: "Worcestershire Acute Hospitals NHS Trust · Woodrow Drive, Redditch B98 7UB",
   category: "hospital",
   center: { lat: 52.279788, lng: -1.912119 },
   defaultZoom: 17,

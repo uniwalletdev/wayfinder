@@ -14,7 +14,7 @@ export const PILGRIM_GROUND_FLOOR_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
-  accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Ground floor plan published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
+  accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Ground floor plan published by United Lincolnshire Teaching Hospitals NHS Trust. The Emergency Department is being rebuilt (phase one opened May 2025, more cubicles October 2025, the old department remodelled through 2026), so its layout and entrance may differ from this plan. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
   quickAccess: ["Urgent Treatment Centre", "Emergency Department and Urgent Treatment Centre", "Main Entrance", "PGME", "Day Nursery"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/pilgrim-ground-floor/sitemap.svg", bounds: [[52.989722, -0.013318], [52.992578, -0.006602]] },

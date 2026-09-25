@@ -61,9 +61,9 @@
     "pilgrim-ground-floor": {
       "name": "Pilgrim Hospital, Boston",
       "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · Sibsey Road, Boston PE21 9QS",
-      "notes": "Ground floor plan published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
+      "notes": "Ground floor plan published by United Lincolnshire Teaching Hospitals NHS Trust. The Emergency Department is being rebuilt (phase one opened May 2025, more cubicles October 2025, the old department remodelled through 2026), so its layout and entrance may differ from this plan. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
       "checked": "2026-09-25",
-      "evidence": "ODS holds the trust's departments at this site as separate records ('Pilgrim A&E', 'Pilgrim Surgery') and the drafter took the first; the sheet is the ground floor of the whole hospital."
+      "evidence": "ulh.nhs.uk news on the Boston emergency department phases (May and October 2025); the trust's Pilgrim maps page."
     },
     "lister-map-2026": {
       "name": "Lister Hospital",
@@ -124,9 +124,9 @@
     "trust-map-june-2026": {
       "name": "The Queen Elizabeth Hospital, King's Lynn",
       "subtitle": "The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust · Gayton Road, King's Lynn PE30 4ET",
-      "notes": "Site map published by The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust (June 2026). Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
+      "notes": "Site map published by The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust (June 2026). The site is changing: the helipad moved in January 2026, a new bus stop opened near the site entrance in May 2026, and a multi-storey car park is being built opposite the community diagnostic centre from June 2026 ahead of the hospital's replacement by 2030. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye.",
       "checked": "2026-09-25",
-      "evidence": "Three venues carry a Queen Elizabeth name (Birmingham, Woolwich, King's Lynn); the town in the name is what tells them apart in search."
+      "evidence": "qehkl.nhs.uk 'Finding your way around'; qehklmediahub.com (car park approval, May 2026); newqeh.org.uk; the trust's June 2025 map is the latest edition search could find, the June 2026 file in use was not indexed."
     },
     "hull-royal-infirmary-site-map": {
       "subtitle": "Hull University Teaching Hospitals NHS Trust · Anlaby Road, Hull HU3 2JZ",
@@ -137,6 +137,158 @@
       "notes": "Site map published by Hull University Teaching Hospitals NHS Trust (April 2024). Position corrected September 2026: the sheet was matched to an ODS record in HU4 and sat 2.4 km west of the infirmary; now centred on the Anlaby Road site (NHS ODS register). Scale is the drafted default and has not been checked by eye.",
       "checked": "2026-09-25",
       "evidence": "Drafted against ODS A7G4P (postcode HU4 6BN), which is not the infirmary. Hull Royal Infirmary is Anlaby Road, Hull HU3 2JZ (CQC location RWA01, nhs.uk, Wikipedia); ODS site RR860 'Hull Royal Infirmary' geocodes to 53.744134, -0.358153, within 25 m of the Google Maps place pin (53.7441816, -0.3584076). The trust's site map at /wp-content/uploads/2024/04/Hull-Royal-Infirmary-Site-Map.pdf is still the one it links."
+    },
+    "bishop-auckland-floor-plan-2023": {
+      "name": "Bishop Auckland Hospital",
+      "subtitle": "County Durham and Darlington NHS Foundation Trust · Cockton Hill Road, Bishop Auckland DL14 6AD",
+      "notes": "Floor plan (2023) published by County Durham and Darlington NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye.",
+      "evidence": "The sheet's own title label is 'Bishop Auckland Hospital' and its labels span the whole hospital (Wards 16–19, theatres, the urgent care centre, outpatients, dental); it was drafted against ODS H8C7C, a diagnostic-centre record, and named for it. The trust's page for the site calls it Bishop Auckland Hospital, Cockton Hill Road DL14 6AD (cddft.nhs.uk; CQC RXPBA).",
+      "checked": "2026-09-25"
+    },
+    "tunbridge-wells-hospital-mappdf": {
+      "name": "Tunbridge Wells Hospital",
+      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · Pembury, Tunbridge Wells TN2 4QJ",
+      "evidence": "The trust's own map is titled 'Welcome to Tunbridge Wells Hospital' with no leading 'The' (mtw.nhs.uk, October 2024 edition); the hospital is at Pembury, TN2 4QJ.",
+      "checked": "2026-09-25"
+    },
+    "princess-of-wales-community-hospital-site-map": {
+      "name": "Princess of Wales Community Hospital",
+      "subtitle": "Herefordshire and Worcestershire Health and Care NHS Trust · Stourbridge Road, Bromsgrove B61 0BB",
+      "evidence": "The trust's page (hacw.nhs.uk/princess-of-wales-community-hospital/) carries 'Community' in the name, which also keeps it apart from the Princess of Wales hospitals in Bridgend and Grimsby. Stourbridge Road, Bromsgrove B61 0BB.",
+      "checked": "2026-09-25"
+    },
+    "site-6458-west-park-rehabilitation-hospital": {
+      "name": "West Park Rehabilitation Hospital",
+      "subtitle": "The Royal Wolverhampton NHS Trust · Park Road West, Wolverhampton WV1 4PW",
+      "evidence": "The trust's travel page and CQC location RL4CD both use 'West Park Rehabilitation Hospital' (nhs.uk shortens it); Park Road West, Wolverhampton WV1 4PW. Not the West Park hospitals in Epsom or Darlington.",
+      "checked": "2026-09-25"
+    },
+    "a5-site-map-of-stratford-hospital-july-2025-update": {
+      "subtitle": "South Warwickshire University NHS Foundation Trust · Arden Street, Stratford-upon-Avon CV37 6NX",
+      "evidence": "Address from the trust's Stratford Hospital page (swft.nhs.uk) and CQC RJC03; the postcode centroid matches the venue centre.",
+      "checked": "2026-09-25"
+    },
+    "fordcombe-hospital-mappdf": {
+      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · Fordcombe Road, Fordcombe, Tunbridge Wells TN3 0RD",
+      "evidence": "Address from the trust's Fordcombe Hospital page (mtw.nhs.uk) and CQC O1Q2M; formerly Spire Tunbridge Wells, bought by the trust in March 2024.",
+      "checked": "2026-09-25"
+    },
+    "internal-site-map-north-tees-2019": {
+      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · Hardwick Road, Stockton-on-Tees TS19 8PE",
+      "evidence": "nth.nhs.uk/locations/north-tees/hospital-map/ still serves the 2019 internal and external maps; nthsolutions.co.uk on the Emergency Assessment Unit (October 2025) and the new UEC entrance.",
+      "checked": "2026-09-25",
+      "notes": "Site map published by North Tees and Hartlepool NHS Foundation Trust (2019 edition, still the one the trust links). It pre-dates the Emergency Assessment Unit opened in October 2025 and the new urgent and emergency care entrance, so emergency-care pins may be out of date. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye."
+    },
+    "external-site-map-north-tees-2019": {
+      "subtitle": "North Tees and Hartlepool NHS Foundation Trust · Hardwick Road, Stockton-on-Tees TS19 8PE",
+      "evidence": "Same site as internal-site-map-north-tees-2019; address from the trust's North Tees page (nth.nhs.uk) and CQC RVWAE.",
+      "checked": "2026-09-25"
+    },
+    "maidstone-hospital-mappdf": {
+      "subtitle": "Maidstone and Tunbridge Wells NHS Trust · Hermitage Lane, Maidstone ME16 9QQ",
+      "evidence": "Address from the trust's Maidstone Hospital page (mtw.nhs.uk) and CQC RWF03.",
+      "checked": "2026-09-25"
+    },
+    "alex-map-a4": {
+      "subtitle": "Worcestershire Acute Hospitals NHS Trust · Woodrow Drive, Redditch B98 7UB",
+      "evidence": "Address from the trust's Alexandra Hospital page (worcsacute.nhs.uk) and nhs.uk RWP01.",
+      "checked": "2026-09-25"
+    },
+    "chelsea-and-westminster-hospital-site-map": {
+      "subtitle": "Chelsea and Westminster Hospital NHS Foundation Trust · 369 Fulham Road, London SW10 9NH",
+      "evidence": "Address from the trust's Getting here page (chelwest.nhs.uk).",
+      "checked": "2026-09-25"
+    },
+    "james-cook-campus-map-jul25": {
+      "subtitle": "South Tees Hospitals NHS Foundation Trust · Marton Road, Middlesbrough TS4 3BW",
+      "evidence": "Address from the trust's James Cook page (southtees.nhs.uk) and CQC RTRAT.",
+      "checked": "2026-09-25"
+    },
+    "whiston-site-map-full-site": {
+      "subtitle": "Mersey and West Lancashire Teaching Hospitals NHS Trust · Warrington Road, Prescot L35 5DR",
+      "evidence": "Address from the trust's Whiston Hospital page (sthk.merseywestlancs.nhs.uk).",
+      "checked": "2026-09-25"
+    },
+    "grantham-and-district-hospital-map": {
+      "subtitle": "United Lincolnshire Teaching Hospitals NHS Trust · 101 Manthorpe Road, Grantham NG31 8DG",
+      "evidence": "Address from the trust's Grantham page (ulh.nhs.uk) and CQC RWDLP.",
+      "checked": "2026-09-25"
+    },
+    "derriford-hospital-site-mappdf": {
+      "subtitle": "University Hospitals Plymouth NHS Trust · Derriford Road, Plymouth PL6 8DH",
+      "evidence": "Address from the trust's Getting here page (plymouthhospitals.nhs.uk) and CQC RK950.",
+      "checked": "2026-09-25"
+    },
+    "site-1253769-hull-teaching-castle-hill-map": {
+      "subtitle": "Hull University Teaching Hospitals NHS Trust · Castle Road, Cottingham HU16 5JQ",
+      "evidence": "Address from the trust's Getting to our hospitals page (hey.nhs.uk) and CQC RWA16.",
+      "checked": "2026-09-25"
+    },
+    "diana-princess-of-wales-hospital-internal-2d-2025": {
+      "subtitle": "Northern Lincolnshire and Goole NHS Foundation Trust · Scartho Road, Grimsby DN33 2BA",
+      "evidence": "Address from the trust's Grimsby page (nlg.nhs.uk) and CQC RJL30.",
+      "checked": "2026-09-25"
+    },
+    "hospital-map-external-2025": {
+      "subtitle": "Medway NHS Foundation Trust · Windmill Road, Gillingham ME7 5NY",
+      "evidence": "Address from nhs.uk RPA02 and CQC.",
+      "checked": "2026-09-25"
+    },
+    "noc-site-map": {
+      "subtitle": "Oxford University Hospitals NHS Foundation Trust · Windmill Road, Headington, Oxford OX3 7HE",
+      "evidence": "Address from the trust's NOC find-us page (ouh.nhs.uk).",
+      "checked": "2026-09-25"
+    },
+    "ealing-hospital-site-map": {
+      "subtitle": "London North West University Healthcare NHS Trust · Uxbridge Road, Southall UB1 3HW",
+      "evidence": "Address from the trust's Ealing Hospital page (lnwh.nhs.uk), nhs.uk R1K04 and CQC.",
+      "checked": "2026-09-25"
+    },
+    "oxford-road": {
+      "notes": "Site map published by Manchester University NHS Foundation Trust (2019 edition). During the rebuild of the Manchester Royal Infirmary Emergency Department (Project RED, due to complete in summer 2026) the Emergency Department and Urgent Treatment Centre entrances moved to a temporary building outside the MRI Outpatients entrance, near the Grafton Street car park; the A&E pins here follow the 2019 sheet. The trust's February 2025 campus map is newer than this sheet.",
+      "evidence": "mft.nhs.uk/mri/location/ links the 'ORC map with directory' (February 2025); mft.nhs.uk news, December 2025, on the Project RED milestone and the relocated ED/UTC entrances near Grafton Street car park.",
+      "checked": "2026-09-25"
+    },
+    "basildon-hospital": {
+      "module": "basildon",
+      "name": "Basildon University Hospital",
+      "subtitle": "Mid and South Essex NHS Foundation Trust · Nethermayne, Basildon SS16 5NL",
+      "center": [
+        51.5579,
+        0.4517
+      ],
+      "evidence": "The trust calls it Basildon University Hospital (mse.nhs.uk; CQC RDDH0) since Basildon and Thurrock University Hospitals NHS FT merged into Mid and South Essex in 2020. Position: the hand-built centre (51.556289, 0.461) was an unverified guess 670 m east of where Wikipedia's hospital point (51.5579, 0.4517), the SS16 5NL postcode centroid (51.5584, 0.4518) and the ODS geocode in this repo all put the hospital; moved to the Wikipedia point. The trust publishes a level-by-level map (mse.nhs.uk, basildon-hospital-map-level-by-level.pdf).",
+      "checked": "2026-09-25"
+    },
+    "newham-university-hospital": {
+      "module": "nuh",
+      "name": "Newham Hospital",
+      "subtitle": "Barts Health NHS Trust · Glen Road, Plaistow, London E13 8SL",
+      "evidence": "Barts Health's own pages and nhs.uk (R1HNH) now call it Newham Hospital; CQC still lists the longer name. The trust publishes newham-ext-map.pdf (zones 1–12) and a 'Know your way around' leaflet.",
+      "checked": "2026-09-25"
+    },
+    "cuh": {
+      "module": "cuh",
+      "subtitle": "Cambridge University Hospitals NHS Foundation Trust · Hills Road, Cambridge CB2 0QQ",
+      "evidence": "Trust name, address and postcode from cuh.nhs.uk and nhs.uk RGT01; the subtitle had neither the trust's full name nor a postcode.",
+      "checked": "2026-09-25"
+    },
+    "st-marys-paddington": {
+      "module": "st-marys",
+      "notes": "Step-free routes shown on the trust's site map; nearest step-free stations at Paddington. The site is changing: the main outpatients building was due to close by March 2026, structural problems were found in the Mint building in late 2025, and a new hospital is planned on the east of the estate — check where a service now sits before routing to it. The trust's February 2024 site map is the current edition.",
+      "evidence": "imperial.nhs.uk St Mary's find-us page (outpatients building closure by 31 March 2026), the trust's February 2025 statement on the Mint building, and its July 2026 news on the emerging designs; smh-map.pdf is dated February 2024.",
+      "checked": "2026-09-25"
+    },
+    "whipps-cross-hospital": {
+      "module": "wxh",
+      "notes": "Zones 1–12 across the ground and first floors of the main building, with further wards in the Gateway Surgical Centre. A new 500-space multi-storey car park opened in November 2025, entered from Hospital Road by the main entrance; the site will be under construction for the hospital's rebuild from 2027.",
+      "evidence": "bartshealth.nhs.uk news on the multi-storey car park (opened 3 November 2025) and the redevelopment update; the hospital page's description of the zones.",
+      "checked": "2026-09-25"
+    },
+    "gosh": {
+      "module": "gosh",
+      "evidence": "Checked September 2026: the Great Ormond Street entrance is closed for the Children's Cancer Centre build (the Frontage Building was taken down by July 2025) and the main entrance is the Morgan Stanley Clinical Building on Guilford Street — which is where this venue already places Main Entrance. No change needed; recorded so the next check knows.",
+      "checked": "2026-09-25"
     }
   }
 }

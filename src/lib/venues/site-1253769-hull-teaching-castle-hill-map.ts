@@ -8,7 +8,7 @@ export const SITE_1253769_HULL_TEACHING_CASTLE_HILL_MAP_VENUE: Venue = {
   id: "site-1253769-hull-teaching-castle-hill-map-venue",
   slug: "site-1253769-hull-teaching-castle-hill-map",
   name: "Castle Hill Hospital",
-  subtitle: "Hull University Teaching Hospitals NHS Trust · HU16 5JQ",
+  subtitle: "Hull University Teaching Hospitals NHS Trust · Castle Road, Cottingham HU16 5JQ",
   category: "hospital",
   center: { lat: 53.776754, lng: -0.44499 },
   defaultZoom: 17,

@@ -8,7 +8,7 @@ export const HOSPITAL_MAP_EXTERNAL_2025_VENUE: Venue = {
   id: "hospital-map-external-2025-venue",
   slug: "hospital-map-external-2025",
   name: "Medway Maritime Hospital",
-  subtitle: "Medway NHS Foundation Trust · ME7 5NY",
+  subtitle: "Medway NHS Foundation Trust · Windmill Road, Gillingham ME7 5NY",
   category: "hospital",
   center: { lat: 51.379861, lng: 0.54209 },
   defaultZoom: 17,

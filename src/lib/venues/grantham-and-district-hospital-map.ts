@@ -8,7 +8,7 @@ export const GRANTHAM_AND_DISTRICT_HOSPITAL_MAP_VENUE: Venue = {
   id: "grantham-and-district-hospital-map-venue",
   slug: "grantham-and-district-hospital-map",
   name: "Grantham & District Hospital",
-  subtitle: "United Lincolnshire Teaching Hospitals NHS Trust · NG31 8DG",
+  subtitle: "United Lincolnshire Teaching Hospitals NHS Trust · 101 Manthorpe Road, Grantham NG31 8DG",
   category: "hospital",
   center: { lat: 52.921108, lng: -0.640709 },
   defaultZoom: 17,

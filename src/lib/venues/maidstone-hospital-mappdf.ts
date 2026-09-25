@@ -8,7 +8,7 @@ export const MAIDSTONE_HOSPITAL_MAPPDF_VENUE: Venue = {
   id: "maidstone-hospital-mappdf-venue",
   slug: "maidstone-hospital-mappdf",
   name: "Maidstone Hospital",
-  subtitle: "Maidstone and Tunbridge Wells NHS Trust · ME16 9QQ",
+  subtitle: "Maidstone and Tunbridge Wells NHS Trust · Hermitage Lane, Maidstone ME16 9QQ",
   category: "hospital",
   center: { lat: 51.273661, lng: 0.484004 },
   defaultZoom: 17,

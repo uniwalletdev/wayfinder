@@ -8,7 +8,7 @@ export const A5_SITE_MAP_OF_STRATFORD_HOSPITAL_JULY_2025_UPDATE_VENUE: Venue = {
   id: "a5-site-map-of-stratford-hospital-july-2025-update-venue",
   slug: "a5-site-map-of-stratford-hospital-july-2025-update",
   name: "Stratford Hospital",
-  subtitle: "South Warwickshire University NHS Foundation Trust · CV37 6NX",
+  subtitle: "South Warwickshire University NHS Foundation Trust · Arden Street, Stratford-upon-Avon CV37 6NX",
   category: "hospital",
   center: { lat: 52.195279, lng: -1.713391 },
   defaultZoom: 17,

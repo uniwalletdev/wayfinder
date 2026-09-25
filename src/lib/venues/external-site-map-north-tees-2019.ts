@@ -8,7 +8,7 @@ export const EXTERNAL_SITE_MAP_NORTH_TEES_2019_VENUE: Venue = {
   id: "external-site-map-north-tees-2019-venue",
   slug: "external-site-map-north-tees-2019",
   name: "University Hospital of North Tees — Grounds & Car Parks",
-  subtitle: "North Tees and Hartlepool NHS Foundation Trust · TS19 8PE",
+  subtitle: "North Tees and Hartlepool NHS Foundation Trust · Hardwick Road, Stockton-on-Tees TS19 8PE",
   category: "hospital",
   center: { lat: 54.582869, lng: -1.347594 },
   defaultZoom: 17,

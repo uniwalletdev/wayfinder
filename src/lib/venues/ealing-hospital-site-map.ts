@@ -8,7 +8,7 @@ export const EALING_HOSPITAL_SITE_MAP_VENUE: Venue = {
   id: "ealing-hospital-site-map-venue",
   slug: "ealing-hospital-site-map",
   name: "Ealing Hospital",
-  subtitle: "London North West University Healthcare NHS Trust · UB1 3HW",
+  subtitle: "London North West University Healthcare NHS Trust · Uxbridge Road, Southall UB1 3HW",
   category: "hospital",
   center: { lat: 51.507606, lng: -0.345474 },
   defaultZoom: 17,

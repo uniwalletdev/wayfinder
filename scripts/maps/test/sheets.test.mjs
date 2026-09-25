@@ -4,6 +4,7 @@
 // that exist.
 //
 // Run: node scripts/maps/test/sheets.test.mjs
+import { existsSync } from "node:fs"
 import { applyIdentity, readIdentity, readSheets } from "../sheets.mjs"
 import { group, check, report } from "../../nhs/test/harness.mjs"
 
@@ -44,6 +45,11 @@ group("the committed corrections")
   if (sheets) {
     const bySlug = new Map(sheets.map((s) => [s.slug, s]))
     for (const [slug, fix] of Object.entries(identity)) {
+      if (fix.module) {
+        check(`"${slug}" names a hand-built module that exists`, existsSync(`src/lib/venues/${fix.module}.ts`))
+        check(`"${slug}" says what the correction rests on`, typeof fix.evidence === "string" && fix.evidence.length > 20)
+        continue
+      }
       const sheet = bySlug.get(slug)
       check(`"${slug}" is a sheet that exists`, !!sheet)
       if (!sheet) continue

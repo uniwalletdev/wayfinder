@@ -8,7 +8,7 @@ export const DERRIFORD_HOSPITAL_SITE_MAPPDF_VENUE: Venue = {
   id: "derriford-hospital-site-mappdf-venue",
   slug: "derriford-hospital-site-mappdf",
   name: "Derriford Hospital",
-  subtitle: "University Hospitals Plymouth NHS Trust · PL6 8DH",
+  subtitle: "University Hospitals Plymouth NHS Trust · Derriford Road, Plymouth PL6 8DH",
   category: "hospital",
   center: { lat: 50.416707, lng: -4.113712 },
   defaultZoom: 17,

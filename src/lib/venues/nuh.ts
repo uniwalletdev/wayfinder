@@ -1,6 +1,6 @@
 import { Venue } from "../types"
 
-// Newham University Hospital — Barts Health NHS Trust. The floor plan is the
+// Newham Hospital — Barts Health NHS Trust. The floor plan is the
 // trust's own 'Welcome' sheet as clean VECTOR artwork (aerial site view +
 // full Department/Floor/Zone directory). Zones here are NUMBERED points
 // (1-12) along the main building, so each directory entry sits at its zone
@@ -11,7 +11,7 @@ import { Venue } from "../types"
 export const NUH_VENUE: Venue = {
   id: "newham-university-hospital",
   slug: "newham-university-hospital",
-  name: "Newham University Hospital",
+  name: "Newham Hospital",
   subtitle: "Barts Health NHS Trust · Glen Road, Plaistow, London E13 8SL",
   category: "hospital",
   center: { lat: 51.522778, lng: 0.034732 },

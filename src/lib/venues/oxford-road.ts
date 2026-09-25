@@ -14,7 +14,7 @@ export const OXFORD_ROAD_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
-  accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Shared campus of Manchester Royal Infirmary, Saint Mary's, the Royal Eye Hospital and Royal Manchester Children's Hospital; zones A–N map to building entrances." },
+  accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Manchester University NHS Foundation Trust (2019 edition). During the rebuild of the Manchester Royal Infirmary Emergency Department (Project RED, due to complete in summer 2026) the Emergency Department and Urgent Treatment Centre entrances moved to a temporary building outside the MRI Outpatients entrance, near the Grafton Street car park; the A&E pins here follow the 2019 sheet. The trust's February 2025 campus map is newer than this sheet." },
   quickAccess: ["Manchester Royal Infirmary", "Manchester Royal Eye Hospital", "Saint Mary’s Hospital", "Royal Manchester Children’s Hospital", "Adult Emergency Department (A&E)"],
   floorPlans: [
     { id: "f0", floor: 0, label: "Ground Floor", imageUrl: "/floorplans/oxford-road/sitemap.svg", bounds: [[53.460252, -2.229371], [53.464825, -2.218507]] },
@@ -29,7 +29,7 @@ export const OXFORD_ROAD_VENUE: Venue = {
     { id: "emergency-eye-dept-f0", name: "Emergency Eye Dept", type: "other", coordinates: { lat: 53.463025, lng: -2.224337 }, floor: 0 },
     { id: "wellcome-f0", name: "Wellcome", type: "other", coordinates: { lat: 53.462914, lng: -2.228197 }, floor: 0 },
     { id: "royal-manchester-childrens-hospital-f0", name: "Royal Manchester Children’s Hospital", type: "department", coordinates: { lat: 53.46276, lng: -2.222351 }, floor: 0 },
-    { id: "adult-emergency-department-a-e-f0", name: "Adult Emergency Department (A&E)", type: "department", coordinates: { lat: 53.462653, lng: -2.227331 }, floor: 0 },
+    { id: "adult-emergency-department-a-e-f0", name: "Adult Emergency Department (A&E)", type: "department", coordinates: { lat: 53.462653, lng: -2.227331 }, floor: 0, description: "Entrance moved during the 2024–26 rebuild: temporary ED and UTC entrance outside MRI Outpatients, by Grafton Street car park" },
     { id: "mri-entrance-1-f0", name: "MRI Entrance 1", type: "exit", coordinates: { lat: 53.462649, lng: -2.227982 }, floor: 0 },
     { id: "manchester-royal-infirmary-f0", name: "Manchester Royal Infirmary", type: "other", coordinates: { lat: 53.462543, lng: -2.22571 }, floor: 0 },
     { id: "gi-medicine-surgery-building-f0", name: "GI Medicine & Surgery Building", type: "department", coordinates: { lat: 53.462462, lng: -2.228128 }, floor: 0 },

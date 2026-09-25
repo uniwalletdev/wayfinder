@@ -8,7 +8,7 @@ export const WHISTON_SITE_MAP_FULL_SITE_VENUE: Venue = {
   id: "whiston-site-map-full-site-venue",
   slug: "whiston-site-map-full-site",
   name: "Whiston Hospital",
-  subtitle: "Mersey and West Lancashire Teaching Hospitals NHS Trust · L35 5DR",
+  subtitle: "Mersey and West Lancashire Teaching Hospitals NHS Trust · Warrington Road, Prescot L35 5DR",
   category: "hospital",
   center: { lat: 53.420485, lng: -2.784953 },
   defaultZoom: 17,

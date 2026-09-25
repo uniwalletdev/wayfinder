@@ -8,7 +8,7 @@ export const JAMES_COOK_CAMPUS_MAP_JUL25_VENUE: Venue = {
   id: "james-cook-campus-map-jul25-venue",
   slug: "james-cook-campus-map-jul25",
   name: "The James Cook University Hospital",
-  subtitle: "South Tees Hospitals NHS Foundation Trust · TS4 3BW",
+  subtitle: "South Tees Hospitals NHS Foundation Trust · Marton Road, Middlesbrough TS4 3BW",
   category: "hospital",
   center: { lat: 54.551768, lng: -1.21482 },
   defaultZoom: 17,
