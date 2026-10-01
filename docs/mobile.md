@@ -54,23 +54,47 @@ Consequences worth knowing:
 
 ## Building
 
+You do not need to build locally to ship. CI (below) builds both apps on
+GitHub's machines, including iOS, which cannot be built on Windows or Linux
+at all. Build locally only to run the app on a phone or emulator from Android
+Studio or Xcode.
+
+Start from a current checkout: `git pull origin main`, or a fresh
+`git clone https://github.com/uniwalletdev/wayfinder.git`. An older copy is
+missing the scripts below. Then:
+
 ```bash
-export FINDWAY_API_URL=https://wayfinder-theta.vercel.app   # the deployment the app calls
-npm run mobile:build          # -> out/
-npm run mobile:sync           # mobile:build, then cap sync into android/ and ios/
+npm ci
+npm run mobile:build     # -> out/
+npm run mobile:sync      # mobile:build, then cap sync into android/ and ios/
 ```
 
-`FINDWAY_SITE_URL` sets the origin shared links are written on, when it differs
-from the API deployment.
+The apps call `https://wayfinder-theta.vercel.app` unless `FINDWAY_API_URL`
+names another deployment. Set it in the shell before the build:
+
+| Shell | Command |
+| --- | --- |
+| Windows Command Prompt | `set FINDWAY_API_URL=https://your-deployment` |
+| Windows PowerShell | `$env:FINDWAY_API_URL="https://your-deployment"` |
+| macOS / Linux | `export FINDWAY_API_URL=https://your-deployment` |
+
+`FINDWAY_SITE_URL` likewise sets the origin shared links are written on, when
+it differs from the API deployment. On Windows, type the commands without the
+`#` comments shown here: Command Prompt reads them as part of the command.
 
 ### Android
 
-Needs JDK 21 and the Android SDK (Android Studio installs both).
+Needs JDK 21 and the Android SDK (Android Studio installs both). Works on
+Windows, macOS and Linux.
 
 ```bash
 npm run android:build        # -> android/app/build/outputs/apk/debug/app-debug.apk
 npm run android:open         # or open in Android Studio and press Run
 ```
+
+To try the app on a phone without any of that, download the `findway-android`
+artifact from the latest *Mobile apps* run on GitHub and install the APK it
+contains, allowing *Install unknown apps* when asked.
 
 ### iOS
 
