@@ -66,12 +66,49 @@ projects, and on demand from the Actions tab (*Mobile apps → Run workflow*).
 Each run uploads:
 
 - `wayfinder-android` — `wayfinder-android-debug.apk`, installable on any
-  Android phone (allow *Install unknown apps*), plus a signed `.aab` for the
-  Play Store when signing secrets are set.
+  Android phone (allow *Install unknown apps*), plus
+  `wayfinder-android-release.aab` for the Play Store once Android signing is
+  configured.
 - `wayfinder-ios-simulator` — `Wayfinder-simulator.app.zip`, which runs in the
-  iOS Simulator. Device builds need Apple signing (below).
+  iOS Simulator.
+- `wayfinder-ios` — `wayfinder-ios-release.ipa` for TestFlight and the App
+  Store, once Apple signing is configured.
 
-Configure once in *Settings → Secrets and variables → Actions*:
+A store build's build number (Android `versionCode`, iOS `CFBundleVersion`) is
+the workflow run number, so every run can be uploaded without editing a
+project. The version people see (`1.0`) is set by hand in
+`android/app/build.gradle` and in Xcode. A store build is refused while
+`WAYFINDER_URL` is empty, because the app would open the placeholder page.
+
+### Getting to TestFlight and Play internal testing
+
+1. **Set the site URL.** *Settings → Secrets and variables → Actions →
+   Variables*: `WAYFINDER_URL` = the production site, no trailing slash.
+2. **Apple.** In [App Store Connect](https://appstoreconnect.apple.com):
+   - *Apps → +*: create the app with bundle ID `app.wayfinder.nav`. If the
+     identifier is not offered, register it first at *Certificates,
+     Identifiers & Profiles → Identifiers* on developer.apple.com.
+   - *Users and Access → Integrations → App Store Connect API → Team Keys →
+     +*: role **Admin**. Download the `.p8` (offered once) and note the
+     **Key ID** next to it and the **Issuer ID** above the list.
+   - Team ID: *Membership details* at developer.apple.com/account.
+   - Add the four `APPLE_*` / `APP_STORE_CONNECT_*` secrets from the table.
+     Nothing else is needed: the workflow uses Xcode cloud signing, so no
+     certificate or provisioning profile is ever created or exported.
+3. **Android.** Create the upload key once (command below) and add the four
+   `ANDROID_*` secrets. Run the workflow, download
+   `wayfinder-android-release.aab` from the run and upload it by hand to a new
+   app in the [Play Console](https://play.google.com/console) (*Testing →
+   Internal testing → Create release*). The console needs that first upload to
+   learn the app; from then on the workflow can upload (step 5).
+4. **Run it.** *Actions → Mobile apps → Run workflow*, tick **upload**. The
+   iOS build appears in TestFlight under the app a few minutes after
+   processing; add testers there. Android goes to the internal testing track
+   once step 5 is done; until then take the `.aab` from the run's artifacts.
+5. **Optional: let CI upload to Play.** Create a Google Cloud service account
+   with a JSON key, invite its email in *Play Console → Users and permissions*
+   with *Release apps to testing tracks* on the app, and store the JSON in
+   `PLAY_SERVICE_ACCOUNT_JSON`.
 
 | Name | Kind | Value |
 | --- | --- | --- |
@@ -80,6 +117,11 @@ Configure once in *Settings → Secrets and variables → Actions*:
 | `ANDROID_KEYSTORE_PASSWORD` | Secret | Keystore password |
 | `ANDROID_KEY_ALIAS` | Secret | Key alias |
 | `ANDROID_KEY_PASSWORD` | Secret | Key password |
+| `APPLE_TEAM_ID` | Secret | 10-character Team ID |
+| `APP_STORE_CONNECT_KEY_ID` | Secret | Key ID of the API key |
+| `APP_STORE_CONNECT_ISSUER_ID` | Secret | Issuer ID shown with the API keys |
+| `APP_STORE_CONNECT_KEY_P8` | Secret | Full contents of the downloaded `.p8` file |
+| `PLAY_SERVICE_ACCOUNT_JSON` | Secret | Optional: service-account JSON key for Play uploads |
 
 Create the Android upload key once and keep it safe — losing it means you can't
 update the app:
@@ -88,9 +130,11 @@ update the app:
 keytool -genkey -v -keystore release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias wayfinder
 ```
 
-iOS signing in CI needs an App Store Connect API key and a distribution
-certificate; the simplest path is [fastlane match](https://docs.fastlane.tools/actions/match/).
-Until that's set up, archive from Xcode on a Mac.
+Before releasing to testers, both consoles also ask for a privacy policy URL
+(the site's `/privacy` page) and a data-collection declaration (Play's *Data
+safety* form, App Store *App Privacy*). Location and camera are used on the
+device; what the app sends to the server is set out in
+[`location-data-and-gdpr.md`](location-data-and-gdpr.md).
 
 ## Icons and splash
 

@@ -10,10 +10,18 @@
 #   - Wayfinder-simulator.app.zip   drag onto an iOS Simulator
 #
 # Store builds are produced only when signing material is configured, because
-# an unsigned release is of no use to either store:
+# an unsigned release is of no use to either store. A store build is refused
+# when WAYFINDER_URL is empty: it would open the placeholder page. Each one
+# carries the workflow run number as its build number (Android versionCode,
+# iOS CFBundleVersion), so every run is uploadable without editing a project.
 #   Android: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD,
-#            ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD      -> signed .aab
-#   iOS:     signing needs an Apple Developer account; see docs/mobile.md.
+#            ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD        -> wayfinder-android-release.aab
+#   iOS:     APPLE_TEAM_ID, APP_STORE_CONNECT_KEY_ID,
+#            APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_P8 -> wayfinder-ios-release.ipa
+#
+# Run the workflow by hand with "upload" ticked to send those builds straight
+# to TestFlight and to Play's internal testing track (Play also needs
+# PLAY_SERVICE_ACCOUNT_JSON). docs/mobile.md walks through creating each secret.
 name: Mobile apps
 
 on:
@@ -22,6 +30,10 @@ on:
       wayfinder_url:
         description: "Site the apps load (defaults to the WAYFINDER_URL repository variable)"
         required: false
+      upload:
+        description: "Upload the signed builds to TestFlight and Play internal testing"
+        type: boolean
+        default: false
   push:
     paths:
       - "android/**"
@@ -44,6 +56,9 @@ concurrency:
 
 env:
   WAYFINDER_URL: ${{ inputs.wayfinder_url || vars.WAYFINDER_URL }}
+  # Monotonic across runs of this workflow, which is all the stores ask of a
+  # build number. The user-facing version (1.0) lives in the native projects.
+  BUILD_NUMBER: ${{ github.run_number }}
 
 jobs:
   android:
@@ -52,6 +67,7 @@ jobs:
     env:
       # Secrets cannot appear in a step's `if`; a job-level flag can.
       HAS_SIGNING: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+      HAS_PLAY: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON != '' }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -75,6 +91,12 @@ jobs:
         working-directory: android
         run: ./gradlew --no-daemon assembleDebug
 
+      - name: Refuse a store build that points at no site
+        if: env.HAS_SIGNING == 'true' && env.WAYFINDER_URL == ''
+        run: |
+          echo "::error::WAYFINDER_URL is empty, so a store build would open the placeholder page. Set the repository variable, or pass wayfinder_url to a manual run."
+          exit 1
+
       - name: Build signed release bundle
         if: env.HAS_SIGNING == 'true'
         env:
@@ -86,10 +108,12 @@ jobs:
         run: |
           echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
           ./gradlew --no-daemon bundleRelease \
+            -PversionCode="$BUILD_NUMBER" \
             -Pandroid.injected.signing.store.file="$RUNNER_TEMP/release.jks" \
             -Pandroid.injected.signing.store.password="$ANDROID_KEYSTORE_PASSWORD" \
             -Pandroid.injected.signing.key.alias="$ANDROID_KEY_ALIAS" \
             -Pandroid.injected.signing.key.password="$ANDROID_KEY_PASSWORD"
+          cp app/build/outputs/bundle/release/app-release.aab "$GITHUB_WORKSPACE/wayfinder-android-release.aab"
 
       - run: cp android/app/build/outputs/apk/debug/app-debug.apk wayfinder-android-debug.apk
       - uses: actions/upload-artifact@v4
@@ -97,12 +121,29 @@ jobs:
           name: wayfinder-android
           path: |
             wayfinder-android-debug.apk
-            android/app/build/outputs/bundle/release/*.aab
+            wayfinder-android-release.aab
           if-no-files-found: warn
+
+      # The Play Console has to know the app first: the very first bundle is
+      # uploaded by hand, after which the API can add releases to any track.
+      - name: Upload to Play internal testing
+        if: env.HAS_SIGNING == 'true' && env.HAS_PLAY == 'true' && inputs.upload
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: app.wayfinder.nav
+          releaseFiles: wayfinder-android-release.aab
+          track: internal
+          status: completed
 
   ios:
     runs-on: macos-15
     timeout-minutes: 40
+    env:
+      HAS_SIGNING: ${{ secrets.APP_STORE_CONNECT_KEY_P8 != '' && secrets.APPLE_TEAM_ID != '' }}
+      APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -133,3 +174,87 @@ jobs:
         with:
           name: wayfinder-ios-simulator
           path: Wayfinder-simulator.app.zip
+
+      - name: Refuse a store build that points at no site
+        if: env.HAS_SIGNING == 'true' && env.WAYFINDER_URL == ''
+        run: |
+          echo "::error::WAYFINDER_URL is empty, so a store build would open the placeholder page. Set the repository variable, or pass wayfinder_url to a manual run."
+          exit 1
+
+      # One App Store Connect API key does everything below. xcodebuild uses it
+      # for cloud signing (Apple holds the distribution certificate, so no
+      # certificate or provisioning profile is ever exported or stored here),
+      # and altool finds it by key id under ~/private_keys.
+      - name: Install the App Store Connect API key
+        if: env.HAS_SIGNING == 'true'
+        env:
+          ASC_KEY_P8: ${{ secrets.APP_STORE_CONNECT_KEY_P8 }}
+        run: |
+          mkdir -p "$HOME/private_keys"
+          printf '%s\n' "$ASC_KEY_P8" > "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8"
+          chmod 600 "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8"
+
+      - name: Archive for the App Store
+        if: env.HAS_SIGNING == 'true'
+        run: |
+          xcodebuild \
+            -project ios/App/App.xcodeproj \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            -archivePath "$RUNNER_TEMP/Wayfinder.xcarchive" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            CURRENT_PROJECT_VERSION="$BUILD_NUMBER" \
+            archive
+
+      - name: Export the signed .ipa
+        if: env.HAS_SIGNING == 'true'
+        run: |
+          cat > "$RUNNER_TEMP/export.plist" <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>app-store-connect</string>
+            <key>destination</key>
+            <string>export</string>
+            <key>signingStyle</key>
+            <string>automatic</string>
+            <key>teamID</key>
+            <string>$APPLE_TEAM_ID</string>
+            <key>uploadSymbols</key>
+            <true/>
+          </dict>
+          </plist>
+          EOF
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/Wayfinder.xcarchive" \
+            -exportOptionsPlist "$RUNNER_TEMP/export.plist" \
+            -exportPath "$RUNNER_TEMP/export" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+          cp "$RUNNER_TEMP"/export/*.ipa "$GITHUB_WORKSPACE/wayfinder-ios-release.ipa"
+
+      - uses: actions/upload-artifact@v4
+        if: env.HAS_SIGNING == 'true'
+        with:
+          name: wayfinder-ios
+          path: wayfinder-ios-release.ipa
+
+      # The app record (bundle id app.wayfinder.nav) must already exist in App
+      # Store Connect; the upload lands in TestFlight under that app.
+      - name: Upload to TestFlight
+        if: env.HAS_SIGNING == 'true' && inputs.upload
+        run: |
+          xcrun altool --upload-app --type ios \
+            --file wayfinder-ios-release.ipa \
+            --apiKey "$ASC_KEY_ID" \
+            --apiIssuer "$ASC_ISSUER_ID"
