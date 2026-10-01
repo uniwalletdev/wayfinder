@@ -18,6 +18,8 @@
 /out/
 # Where scripts/app-shell-build.mjs parks src/app/api and src/proxy.ts while it exports the pages.
 /.app-shell-excluded/
+# Store screenshots: rendered by scripts/store-screenshots.mjs, published as a workflow artifact.
+/store/
 
 # production
 /build

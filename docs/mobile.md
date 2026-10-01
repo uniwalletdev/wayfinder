@@ -191,6 +191,14 @@ device; what the app sends to the server is set out in
 [`location-data-and-gdpr.md`](location-data-and-gdpr.md). Apple also expects
 iPad screenshots while the Xcode target supports iPad.
 
+## Store listings and screenshots
+
+[`store-listing.md`](store-listing.md) has the listing text for both stores,
+the privacy-form answers, the App Review notes and the pre-release checklist.
+*Actions → Store screenshots → Run workflow* renders every required
+screenshot size and Play's feature graphic from the app itself
+(`scripts/store-screenshots.mjs`) into the `store-screenshots` artifact.
+
 ## Icons and splash
 
 `mobile/assets/icon.svg` is the master. After changing it:
