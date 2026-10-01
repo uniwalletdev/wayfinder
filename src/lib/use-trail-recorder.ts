@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import { Coordinates } from "./types"
 import { distanceMeters } from "./routing"
 import { getDeviceId } from "./device-id"
-import { apiUrl } from "@/lib/app-shell"
+import { apiUrl } from "./app-shell"
 
 // Records the path a navigator walks *while being routed* and posts it to
 // /api/signals as a 'trail' — the highest-value passive signal, because the

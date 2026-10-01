@@ -1,6 +1,6 @@
 import { Venue, Waypoint } from "./types"
 import { NewVenueInput } from "./venues"
-import { apiUrl } from "@/lib/app-shell"
+import { apiUrl } from "./app-shell"
 
 // Client-side access to shared venue maps on the server (see /api/venues). Reads
 // are open; the owner secret for each venue this device created is kept in

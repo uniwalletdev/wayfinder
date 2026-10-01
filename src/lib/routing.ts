@@ -1,6 +1,6 @@
 import { Waypoint, Route, RouteStep, Coordinates, TravelMode, SurveyTrail, RoutePreference, FloorNaming } from "./types"
 import { floorLabel } from "./waypoint-meta"
-import { apiUrl } from "@/lib/app-shell"
+import { apiUrl } from "./app-shell"
 
 // Geocoded destinations (beyond the hospital's mapped floors) carry a "geo-"
 // id. Those are the ones worth routing along real streets/footpaths; indoor
