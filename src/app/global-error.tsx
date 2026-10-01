@@ -27,7 +27,7 @@ export default function GlobalError({
         }}
       >
         <main style={{ maxWidth: 380 }}>
-          <h1 style={{ fontSize: 26, margin: "0 0 10px" }}>Wayfinder couldn’t start</h1>
+          <h1 style={{ fontSize: 26, margin: "0 0 10px" }}>Findway couldn’t start</h1>
           <p style={{ color: "#51627A", lineHeight: 1.55, margin: "0 0 22px" }}>
             Something failed before the page could load.{error.digest ? ` Reference ${error.digest}.` : ""} Try again, or reload the page.
           </p>

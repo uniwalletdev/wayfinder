@@ -11,6 +11,7 @@ import { PlanCorners, cornersToBounds, defaultPlanCorners, projectPlanPoint } fr
 import { SheetData, cropToMapRegion, remapToCrop, sampleZoneFootprints, placeDirectoryEntries } from "@/lib/sheet-import"
 import { Check, ChevronUp, ChevronDown, UploadCloud, MapPinned, Trash2, Plug } from "lucide-react"
 import Overlay from "@/components/Overlay"
+import { apiUrl } from "@/lib/app-shell"
 
 export interface UploadPlanResult {
   floorPlans: FloorPlan[]
@@ -143,7 +144,7 @@ export default function UploadPlanMode({ currentFloor, venueCenter, venueName, f
       try {
         const ac = new AbortController()
         parseAbortRef.current = ac
-        const res = await fetch("/api/parse-plan", {
+        const res = await fetch(apiUrl("/api/parse-plan"), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ imageData: parsed.dataUrl, venueName, floor: planFloor }),

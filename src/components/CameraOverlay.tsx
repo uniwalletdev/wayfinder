@@ -169,7 +169,7 @@ function QRFinder({ detected }: { detected: boolean }) {
       </div>
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-8 pt-8 pb-safe-bar text-center">
         <p className="text-sm text-white" role="status" aria-live="polite">
-          {detected ? "Code found — placing you on the map…" : "Point the camera at a Wayfinder poster or QR code"}
+          {detected ? "Code found — placing you on the map…" : "Point the camera at a Findway poster or QR code"}
         </p>
       </div>
     </>

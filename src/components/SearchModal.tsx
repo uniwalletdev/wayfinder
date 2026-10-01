@@ -7,6 +7,7 @@ import { rankWaypoints, rankNearMisses, scoreWaypoint } from "@/lib/search"
 import type { CrossVenueHit } from "@/lib/cross-venue-search"
 import Overlay from "@/components/Overlay"
 import { Search, X, ChevronRight, MapPin, Loader2, Building2, ArrowRightLeft } from "lucide-react"
+import { apiUrl } from "@/lib/app-shell"
 
 interface Props {
   // Which venue the search ran against — recorded with unmatched queries so
@@ -41,7 +42,7 @@ const MAX_VENUE_HITS = 5
 // Fire-and-forget: a missed search is telemetry for the venue's mappers, never
 // something the visitor should wait on or see fail.
 function reportSearchMiss(venueId: string, query: string, suggested: boolean) {
-  void fetch("/api/search-misses", {
+  void fetch(apiUrl("/api/search-misses"), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ venueId, query, suggested }),
@@ -159,7 +160,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
           params.set("lat", String(prox.lat))
           params.set("lng", String(prox.lng))
         }
-        const res = await fetch(`/api/geocode?${params}`, { signal: controller.signal })
+        const res = await fetch(apiUrl(`/api/geocode?${params}`), { signal: controller.signal })
         const data = (await res.json()) as { results?: GeoResult[]; error?: string }
         setGeoResults(Array.isArray(data.results) ? data.results : [])
         setGeoError(data.error ?? null)
@@ -188,7 +189,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
       setRemoteLoading(true)
       try {
         const params = new URLSearchParams({ q: trimmed, exclude: venueId })
-        const res = await fetch(`/api/search?${params}`, { signal: controller.signal })
+        const res = await fetch(apiUrl(`/api/search?${params}`), { signal: controller.signal })
         const data = (await res.json()) as { results?: CrossVenueHit[] }
         setRemoteResults(Array.isArray(data.results) ? data.results : [])
       } catch (err) {

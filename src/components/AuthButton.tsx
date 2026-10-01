@@ -1,7 +1,7 @@
 "use client"
 
 // The account affordance in the brand row. Deliberately small and optional:
-// Wayfinder works fully anonymously — like Google Maps or Apple Maps, you never
+// Findway works fully anonymously — like Google Maps or Apple Maps, you never
 // have to sign in to find a ward — and signing in only adds the one thing that
 // must follow a *person* rather than a device: ownership of the venues you map.
 // A venue created anonymously is owned by a per-device edit_token; on sign-in

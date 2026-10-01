@@ -8,6 +8,7 @@ import { Waypoint, Route, Coordinates, SurveyTrail, FloorPlan, Asset } from "@/l
 import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
 import { ASSET_CATEGORY_ICONS, ASSET_CATEGORY_LABELS } from "@/lib/asset-meta"
 import { buildFloorSchematic } from "@/lib/schematic"
+import { apiUrl } from "@/lib/app-shell"
 
 // Escape strings before they go into Leaflet popup/label HTML. Waypoint names and
 // descriptions come from other users (shared server venues), AI sign-reading, and
@@ -298,7 +299,7 @@ export default function FloorPlanMap({
 
     ;(async () => {
       try {
-        const res = await fetch(`/api/footprints?ods=${encodeURIComponent(siteOdsCode)}`, {
+        const res = await fetch(apiUrl(`/api/footprints?ods=${encodeURIComponent(siteOdsCode)}`), {
           signal: controller.signal,
         })
         if (!res.ok || cancelled) return

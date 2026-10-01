@@ -6,6 +6,7 @@ import { WaypointType } from "@/lib/types"
 import { ALL_WAYPOINT_TYPES, WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel, floorShortLabel } from "@/lib/waypoint-meta"
 import { useDialog } from "@/lib/use-dialog"
 import { X, Square, MapPin, Check, ChevronUp, ChevronDown } from "lucide-react"
+import { apiUrl } from "@/lib/app-shell"
 
 export interface SurveyResult {
   frames: SurveyFrame[]
@@ -131,7 +132,7 @@ export default function SurveyMode({ currentFloor, currentPosition, venueCenter,
       const ac = new AbortController()
       aiAbortRef.current = ac
       try {
-        const res = await fetch("/api/survey", {
+        const res = await fetch(apiUrl("/api/survey"), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ frames: frames.current, venueName }),

@@ -4,19 +4,19 @@ import DataControls from "@/components/DataControls"
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "What Wayfinder keeps on your device, what it sends to the server, and what it never collects.",
+  description: "What Findway keeps on your device, what it sends to the server, and what it never collects.",
 }
 
 // A technical summary of what the app does with data, written from the code
 // it describes (see docs/location-data-and-gdpr.md for the fuller analysis).
-// It is not a legal notice: the organisation deploying Wayfinder is the data
+// It is not a legal notice: the organisation deploying Findway is the data
 // controller and publishes its own.
 export default function PrivacyPage() {
   return (
     <InfoPage
       eyebrow="Privacy"
-      title="What Wayfinder does with your data"
-      lead="A plain description of what stays on your phone, what leaves it and why. It describes the software as built; the organisation running this copy of Wayfinder is responsible for its own privacy notice."
+      title="What Findway does with your data"
+      lead="A plain description of what stays on your phone, what leaves it and why. It describes the software as built; the organisation running this copy of Findway is responsible for its own privacy notice."
       updated="September 2026"
     >
       <h2>No account needed</h2>
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
 
       <h2>Where to ask</h2>
       <p>
-        Questions about how a particular hospital or organisation uses Wayfinder, or requests about your data, go to the team that deployed it.
+        Questions about how a particular hospital or organisation uses Findway, or requests about your data, go to the team that deployed it.
       </p>
     </InfoPage>
   )

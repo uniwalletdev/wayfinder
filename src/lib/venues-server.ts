@@ -1,5 +1,6 @@
 import { Venue, Waypoint } from "./types"
 import { NewVenueInput } from "./venues"
+import { apiUrl } from "./app-shell"
 
 // Client-side access to shared venue maps on the server (see /api/venues). Reads
 // are open; the owner secret for each venue this device created is kept in
@@ -60,7 +61,7 @@ export async function claimServerVenues(): Promise<number> {
     const editToken = getEditToken(id)
     if (!editToken) continue
     try {
-      const res = await fetch(`/api/venues/${id}/claim`, {
+      const res = await fetch(apiUrl(`/api/venues/${id}/claim`), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ editToken }),
@@ -76,7 +77,7 @@ export async function claimServerVenues(): Promise<number> {
 
 export async function fetchServerVenues(): Promise<{ configured: boolean; venues: Venue[] }> {
   try {
-    const res = await fetch("/api/venues", { cache: "no-store" })
+    const res = await fetch(apiUrl("/api/venues"), { cache: "no-store" })
     const data = await res.json()
     return { configured: !!data.configured, venues: Array.isArray(data.venues) ? data.venues : [] }
   } catch {
@@ -86,7 +87,7 @@ export async function fetchServerVenues(): Promise<{ configured: boolean; venues
 
 export async function createServerVenue(input: NewVenueInput): Promise<{ configured: boolean; venue?: Venue }> {
   try {
-    const res = await fetch("/api/venues", {
+    const res = await fetch(apiUrl("/api/venues"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
@@ -111,7 +112,7 @@ export async function addServerWaypoints(
   // second device, and the server authorises them by session.
   const editToken = getEditToken(venueId) ?? ""
   try {
-    const res = await fetch(`/api/venues/${venueId}/waypoints`, {
+    const res = await fetch(apiUrl(`/api/venues/${venueId}/waypoints`), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ editToken, waypoints }),
@@ -127,7 +128,7 @@ export async function addServerWaypoints(
 export async function deleteServerVenue(venueId: string): Promise<{ configured: boolean; ok: boolean }> {
   const editToken = getEditToken(venueId) ?? ""
   try {
-    const res = await fetch(`/api/venues/${venueId}`, {
+    const res = await fetch(apiUrl(`/api/venues/${venueId}`), {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ editToken }),

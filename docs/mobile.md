@@ -1,43 +1,67 @@
 # Android and iOS apps
 
-Wayfinder ships to phones three ways, all from this one codebase:
+Findway ships to phones three ways, all from this one codebase:
 
 | | How people get it | What you need |
 | --- | --- | --- |
-| **PWA** | Open the site, *Add to Home Screen* | Nothing — works today |
-| **Android** | Play Store, or sideload the APK | Play Console account ($25 once) for the store |
-| **iOS** | App Store / TestFlight | Apple Developer Program ($99/yr) and a Mac or CI |
+| **Web / PWA** | Open the site, *Add to Home Screen* | Nothing — works today |
+| **Android** | Play Store, or sideload the APK | Play Console account for the store |
+| **iOS** | App Store / TestFlight | Apple Developer Program; builds run in CI, no Mac needed |
 
 ## How the native apps work
 
-`android/` and `ios/` are [Capacitor](https://capacitorjs.com) projects. Wayfinder
-is a server-rendered Next.js app — directions, geocoding, the Claude survey,
-sign-in and the database all live on the server — so it can't be bundled as
-static files. The native shell opens the **deployed site** in a full-screen
-WebView and adds a real app icon, splash screen, store distribution and native
-permission prompts (location, camera, motion).
+`android/` and `ios/` are [Capacitor](https://capacitorjs.com) projects that
+carry the interface **inside the app**. `npm run mobile:build`
+(`scripts/app-shell-build.mjs`) makes a static export of the pages into `out/`,
+and `cap sync` copies that export, every floor plan included, into both native
+projects. Only `/api` is remote: directions, geocoding, the Claude survey,
+shared venues and signals are called on the deployment named by
+`FINDWAY_API_URL` when the app was built.
+
+What that buys, compared with a shell that loads the website:
+
+- **Opens straight onto the map, instantly.** Inside the apps the root page is
+  the navigation screen; the marketing page is web-only (`src/app/page.tsx`).
+- **Works on first launch with no signal** for every venue the build ships
+  with. Hospital basements are where first launches happen.
+- **System permission prompts** for location, camera and motion, with the
+  reasons written in `ios/App/App/Info.plist` and
+  `android/app/src/main/AndroidManifest.xml`.
+- **Real haptics on iPhone.** Safari has no vibration API, so the turn cue used
+  to vanish on iOS; in the apps it goes through the system haptics engine
+  (`src/lib/use-guidance-announcer.ts`).
+- **App Store review.** Apple's guideline 4.2 rejects apps that are a
+  repackaged website. An app whose interface ships in the binary and uses
+  native capabilities is on the right side of it. Still write reviewer notes
+  naming a demo venue and destination: the reviewer is nowhere near a
+  hospital, so anything GPS-led looks broken without them.
 
 Consequences worth knowing:
 
-- **Ship the web app first.** A fix deployed to the site reaches every installed
-  app immediately — no store review. A change to `android/`, `ios/`,
-  `capacitor.config.ts` or permissions needs a new store build.
-- **The first open needs a signal.** With no connection the app shows
-  `mobile/www/offline.html`. After that the service worker (`public/sw.js`)
-  serves what it has cached, as it does for the PWA.
-- **Apple guideline 4.2** rejects apps that are "just a website". Wayfinder
-  uses native location, camera and motion permissions and works as a
-  navigation tool, which is the usual answer — but expect the reviewer to ask,
-  and have the step-free routing and AR view ready to demo.
+- **A change under `src/` or `public/` reaches installed apps only through a
+  new app build.** The website updates on deploy; the apps do not, so plan
+  store releases for anything users must see on the phone.
+- **Sign-in stays on the web for now.** Clerk's proxy cannot run inside a
+  static export, so the apps are built without a Clerk key and run in the
+  anonymous mode the app has always supported. Saved places and venue
+  ownership are web features until Clerk's client SDK is wired into the apps.
+- **Share links and poster QR codes** are written against the website
+  (`publicOrigin()` in `src/lib/app-shell.ts`), never the app's own origin.
+- **The API allows the apps' origins.** `src/proxy.ts` answers CORS preflights
+  for `capacitor://localhost` and `https://localhost` on `/api`, without
+  credentials. A deployment running an older version of `src/proxy.ts` will
+  refuse the apps' calls.
 
 ## Building
 
-Set the site the app should load, then sync it into the native projects:
-
 ```bash
-export WAYFINDER_URL=https://your-deployment.example   # no trailing slash
-npm run mobile:sync
+export FINDWAY_API_URL=https://wayfinder-theta.vercel.app   # the deployment the app calls
+npm run mobile:build          # -> out/
+npm run mobile:sync           # mobile:build, then cap sync into android/ and ios/
 ```
+
+`FINDWAY_SITE_URL` sets the origin shared links are written on, when it differs
+from the API deployment.
 
 ### Android
 
@@ -50,14 +74,11 @@ npm run android:open         # or open in Android Studio and press Run
 
 ### iOS
 
-Needs a Mac with Xcode 16+.
+Needs a Mac with Xcode 16+ for local work; CI below builds without one.
 
 ```bash
 npm run ios:open             # opens Xcode; pick a simulator or your phone, press Run
 ```
-
-For a device or TestFlight build, in Xcode: *App* target → *Signing &
-Capabilities* → choose your team, then *Product → Archive*.
 
 ## CI builds
 
@@ -65,32 +86,77 @@ Capabilities* → choose your team, then *Product → Archive*.
 projects, and on demand from the Actions tab (*Mobile apps → Run workflow*).
 Each run uploads:
 
-- `wayfinder-android` — `wayfinder-android-debug.apk`, installable on any
-  Android phone (allow *Install unknown apps*), plus a signed `.aab` for the
-  Play Store when signing secrets are set.
-- `wayfinder-ios-simulator` — `Wayfinder-simulator.app.zip`, which runs in the
-  iOS Simulator. Device builds need Apple signing (below).
+- `findway-android` — `findway-android-debug.apk`, installable on any Android
+  phone (allow *Install unknown apps*), plus `findway-android-release.aab` for
+  the Play Store once Android signing is configured.
+- `findway-ios-simulator` — `Findway-simulator.app.zip`, which runs in the iOS
+  Simulator.
+- `findway-ios` — `findway-ios-release.ipa` for TestFlight and the App Store,
+  once Apple signing is configured.
 
-Configure once in *Settings → Secrets and variables → Actions*:
+A store build's build number (Android `versionCode`, iOS `CFBundleVersion`) is
+the workflow run number, so every run can be uploaded without editing a
+project. The version people see (`1.0`) is set by hand in
+`android/app/build.gradle` and in Xcode.
+
+The workflow defaults `FINDWAY_API_URL` to `https://wayfinder-theta.vercel.app`.
+Override it with a repository variable of the same name, or per run.
+
+### Getting to TestFlight and Play internal testing
+
+1. **Apple.** In [App Store Connect](https://appstoreconnect.apple.com):
+   - *Certificates, Identifiers & Profiles → Identifiers → +*: register an
+     App ID with bundle ID `ai.findway.app`.
+   - *Apps → +*: create the app named Findway with that bundle ID. The SKU is
+     any unique string, for example `findway-ios`.
+   - *Users and Access → Integrations → App Store Connect API → Team Keys →
+     +*: role **Admin**. Download the `.p8` (offered once) and note the
+     **Key ID** next to it and the **Issuer ID** above the list.
+   - Team ID: *Membership details* at developer.apple.com/account.
+   - Add the four `APPLE_*` / `APP_STORE_CONNECT_*` secrets from the table.
+     Nothing else is needed: the workflow uses Xcode cloud signing, so no
+     certificate or provisioning profile is ever created or exported.
+2. **Android.** Create the upload key once (command below) and add the four
+   `ANDROID_*` secrets. Run the workflow, download
+   `findway-android-release.aab` from the run and upload it by hand to a new
+   app in the [Play Console](https://play.google.com/console) (*Testing →
+   Internal testing → Create release*). The console needs that first upload to
+   learn the app; from then on the workflow can upload (step 4).
+3. **Run it.** *Actions → Mobile apps → Run workflow*, tick **upload**. The
+   iOS build appears in TestFlight under the app a few minutes after
+   processing; add testers there. Android goes to the internal testing track
+   once step 4 is done; until then take the `.aab` from the run's artifacts.
+4. **Optional: let CI upload to Play.** Create a Google Cloud service account
+   with a JSON key, invite its email in *Play Console → Users and permissions*
+   with *Release apps to testing tracks* on the app, and store the JSON in
+   `PLAY_SERVICE_ACCOUNT_JSON`.
 
 | Name | Kind | Value |
 | --- | --- | --- |
-| `WAYFINDER_URL` | Variable | The production site URL |
+| `FINDWAY_API_URL` | Variable | Optional: the deployment the apps call, if not the default |
 | `ANDROID_KEYSTORE_BASE64` | Secret | `base64 -w0 release.jks` |
 | `ANDROID_KEYSTORE_PASSWORD` | Secret | Keystore password |
 | `ANDROID_KEY_ALIAS` | Secret | Key alias |
 | `ANDROID_KEY_PASSWORD` | Secret | Key password |
+| `APPLE_TEAM_ID` | Secret | 10-character Team ID |
+| `APP_STORE_CONNECT_KEY_ID` | Secret | Key ID of the API key |
+| `APP_STORE_CONNECT_ISSUER_ID` | Secret | Issuer ID shown with the API keys |
+| `APP_STORE_CONNECT_KEY_P8` | Secret | Full contents of the downloaded `.p8` file |
+| `PLAY_SERVICE_ACCOUNT_JSON` | Secret | Optional: service-account JSON key for Play uploads |
 
 Create the Android upload key once and keep it safe — losing it means you can't
 update the app:
 
 ```bash
-keytool -genkey -v -keystore release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias wayfinder
+keytool -genkey -v -keystore release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias findway
 ```
 
-iOS signing in CI needs an App Store Connect API key and a distribution
-certificate; the simplest path is [fastlane match](https://docs.fastlane.tools/actions/match/).
-Until that's set up, archive from Xcode on a Mac.
+Before releasing to testers, both consoles also ask for a privacy policy URL
+(the site's `/privacy` page) and a data-collection declaration (Play's *Data
+safety* form, App Store *App Privacy*). Location and camera are used on the
+device; what the app sends to the server is set out in
+[`location-data-and-gdpr.md`](location-data-and-gdpr.md). Apple also expects
+iPad screenshots while the Xcode target supports iPad.
 
 ## Icons and splash
 
@@ -106,7 +172,8 @@ screens.
 
 ## App identity
 
-- Bundle / application id: `app.wayfinder.nav` (`capacitor.config.ts`). Change
-  it **before** the first store upload; it can't change afterwards.
-- Display name: *Wayfinder*.
+- Bundle / application id: `ai.findway.app` (`capacitor.config.ts`,
+  `android/app/build.gradle`, the Xcode project). It cannot change after the
+  first store upload.
+- Display name: *Findway*.
 - Orientation: portrait on phones.

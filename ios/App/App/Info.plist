@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-        <string>Wayfinder</string>
+        <string>Findway</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -56,9 +56,9 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Wayfinder shows where you are on the hospital map and guides you to your destination.</string>
+	<string>Findway shows where you are on the hospital map and guides you to your destination.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>The camera is used to scan Wayfinder QR signs, show directions in AR, and read signage when you map a building.</string>
+	<string>The camera is used to scan Findway QR signs, show directions in AR, and read signage when you map a building.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Motion and compass readings keep your position and direction up to date indoors, where GPS cannot reach.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
@@ -70,5 +70,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<!-- Only HTTPS, which is exempt from export compliance. Without this every
+	     TestFlight build waits on a "Missing Compliance" question. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

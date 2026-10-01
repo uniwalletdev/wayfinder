@@ -713,7 +713,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     setNavState((s) => ({ ...s, route, currentStepIndex: 0 }))
   }, [venue, navState.destination, navState.currentFloor, navState.travelMode, allWaypoints, allTrails, routePreference, activateDemoLocation])
 
-  // A scanned code is a Wayfinder link (see share-link.ts): a URL from a
+  // A scanned code is a Findway link (see share-link.ts): a URL from a
   // printed poster or a shared screen, or the older bare `floor:…:lat:…:lng:…`
   // anchor. Either can re-anchor the walker where the code is posted and pick
   // the destination it advertises. Anything else — a Wi-Fi code, a menu — is
@@ -722,7 +722,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const handleQRDetected = useCallback((data: string) => {
     const link = parseWayfinderLink(data)
     if (!link) {
-      toast.warning("That isn’t a Wayfinder code", "Look for a Wayfinder poster at an entrance or lift lobby.")
+      toast.warning("That isn’t a Findway code", "Look for a Findway poster at an entrance or lift lobby.")
       return
     }
     if (link.anchor) {
@@ -1040,7 +1040,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
 
   return (
     <div className="relative flex h-dvh w-full overflow-hidden bg-wf-map-light-bg">
-      <h1 className="sr-only">Wayfinder — {venue.name}</h1>
+      <h1 className="sr-only">Findway — {venue.name}</h1>
       {/* Screen readers hear each new instruction as the walk progresses. */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {announcement}

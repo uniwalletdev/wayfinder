@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+# Where scripts/app-shell-build.mjs parks src/app/api and src/proxy.ts while it exports the pages.
+/.app-shell-excluded/
 
 # production
 /build

@@ -21,11 +21,11 @@ export default function InfoPage({
   return (
     <main className="min-h-dvh bg-white">
       <nav className="flex items-center justify-between gap-4 border-b border-wf-border-faint px-6 py-5 sm:px-10 lg:px-16 xl:px-24">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Wayfinder home">
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Findway home">
           <span className="flex h-[30px] w-[30px] items-center justify-center rounded-[10px] bg-gradient-to-br from-wf-primary to-wf-teal">
             <Navigation size={15} className="text-white" aria-hidden="true" />
           </span>
-          <span className="font-display text-lg font-bold text-wf-ink">Wayfinder</span>
+          <span className="font-display text-lg font-bold text-wf-ink">Findway</span>
         </Link>
         <Link
           href="/navigate"
@@ -47,7 +47,7 @@ export default function InfoPage({
       </article>
 
       <footer className="flex flex-col items-center justify-between gap-4 border-t border-wf-border-faint px-6 py-7 text-[13.5px] text-wf-muted sm:flex-row sm:px-10 lg:px-16 xl:px-24">
-        <span>© 2026 Wayfinder</span>
+        <span>© 2026 Findway</span>
         <div className="flex items-center gap-6">
           <Link href="/privacy" className="hover:text-wf-primary">Privacy</Link>
           <Link href="/accessibility" className="hover:text-wf-primary">Accessibility</Link>

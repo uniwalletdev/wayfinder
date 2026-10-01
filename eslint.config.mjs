@@ -30,6 +30,7 @@ const eslintConfig = defineConfig([
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
+    ".app-shell-excluded/**",
     "build/**",
     "next-env.d.ts",
     // The design handoff's prototype runtime: vendored, never built or shipped.

@@ -16,7 +16,18 @@ import { readFile } from "node:fs/promises"
 import { fileURLToPath } from "node:url"
 import ts from "typescript"
 
+// tsconfig's "@/..." alias for src/, so a module under src/lib that reaches a
+// sibling through the alias loads the same way as one using a relative path.
+const SRC = new URL("../../src/", import.meta.url)
+
 export async function resolve(specifier, context, nextResolve) {
+  if (specifier.startsWith("@/")) {
+    const target = new URL(specifier.slice(2), SRC)
+    for (const ext of ["", ".ts", ".tsx"]) {
+      const candidate = new URL(target.href + ext)
+      if (existsSync(fileURLToPath(candidate))) return nextResolve(candidate.href, context)
+    }
+  }
   if (specifier.startsWith(".") && !/\.[a-z]+$/i.test(specifier)) {
     for (const ext of [".ts", ".tsx"]) {
       const candidate = new URL(specifier + ext, context.parentURL)

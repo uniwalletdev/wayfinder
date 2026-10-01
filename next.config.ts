@@ -84,13 +84,26 @@ const securityHeaders = [
   { key: "Strict-Transport-Security", value: "max-age=31536000" },
 ];
 
+// The Android and iOS apps are built from this same source as a static export
+// (scripts/app-shell-build.mjs sets APP_SHELL=1): the pages ship inside the
+// app and call a deployment's /api over the network. An export has no server,
+// so output switches to "export", next/image loses its optimizer, and the
+// response headers above, which only a server can send, are left out.
+const appShell = process.env.APP_SHELL === "1";
+
 const nextConfig: NextConfig = {
+  ...(appShell ? { output: "export" as const, images: { unoptimized: true } } : {}),
+
   // Nothing needs to advertise the framework in a response header.
   poweredByHeader: false,
 
-  async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
-  },
+  ...(appShell
+    ? {}
+    : {
+        async headers() {
+          return [{ source: "/:path*", headers: securityHeaders }];
+        },
+      }),
 
   // /api/footprints reads data/footprints.geojson at runtime with fs, rather
   // than importing it — the national collection of OpenStreetMap hospital

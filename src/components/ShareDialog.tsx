@@ -9,6 +9,7 @@ import { buildNavigateUrl, displayUrl } from "@/lib/share-link"
 import { useDialog } from "@/lib/use-dialog"
 import Toggle from "@/components/Toggle"
 import { toast } from "@/components/Toast"
+import { publicOrigin } from "@/lib/app-shell"
 
 interface Props {
   venue: Venue
@@ -42,7 +43,7 @@ export default function ShareDialog({ venue, waypoint, onClose }: Props) {
   useEffect(() => {
     // Browser facts, unknown during server render.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setOrigin(window.location.origin)
+    setOrigin(publicOrigin())
     setCanShare(typeof navigator !== "undefined" && typeof navigator.share === "function")
   }, [])
 
@@ -265,7 +266,7 @@ function Poster({
             <span className="flex h-7 w-7 items-center justify-center rounded-[10px] bg-gradient-to-br from-wf-primary to-wf-teal">
               <MapPin size={15} className="text-white" aria-hidden="true" />
             </span>
-            <span className="font-display text-[17px] font-bold text-white">Wayfinder</span>
+            <span className="font-display text-[17px] font-bold text-white">Findway</span>
           </div>
           <span className="text-xs text-white/65">{venue.name}</span>
         </div>
@@ -279,7 +280,7 @@ function Poster({
             {qrLarge ? <img src={qrLarge} alt={`QR code to ${waypoint.name}`} width={220} height={220} /> : <div className="h-[220px] w-[220px]" />}
           </div>
           <p className="max-w-[320px] text-[14.5px] text-wf-muted">
-            Point your phone’s camera at this code to open Wayfinder and get step-by-step directions from here.
+            Point your phone’s camera at this code to open Findway and get step-by-step directions from here.
           </p>
           {venue.accessibility?.stepFreeRoute && (
             <span className="mt-4 flex items-center gap-1.5 rounded-full bg-wf-teal-tint px-3 py-1.5 text-xs font-semibold text-wf-teal-text">

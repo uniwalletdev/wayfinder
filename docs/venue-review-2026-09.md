@@ -184,7 +184,7 @@ on: the ODS site code the drafter matched, or a hand-built plan.
 | **Wythenshawe Hospital** `wythenshawe` | Manchester University NHS FT | B | 22 | 1 | 83 | 0 | campus-only | hand-anchored sheet | — |
 | **Addenbrooke's Hospital** `cuh` | Cambridge University Hospitals NHS Foundation Trust | C | 36 | 5 | 0 | 0 | no-corridors | hand-built | trust corrected |
 | **Addenbrooke's Hospital — Level 3** `level-3-floorplan-cuh-map` | Cambridge University Hospitals NHS Foundation Trust | C | 13 | 1 | 0 | 0 | no-corridors | ODS B5D1I | renamed from “Addenbrooke's Hospital — Level 3”; moved to the right site; re-storeyed to Level 3; trust/address corrected |
-| **Cannery Trails Wayfinder** `cannery-trails` | Mixed-use residential building, Williamson St | C | 47 | 3 | 0 | 4 | no-corridors | hand-built | — |
+| **Cannery Trails Findway** `cannery-trails` | Mixed-use residential building, Williamson St | C | 47 | 3 | 0 | 4 | no-corridors | hand-built | — |
 | **Fordcombe Hospital** `fordcombe-hospital-mappdf` | Maidstone and Tunbridge Wells NHS Trust | C | 15 | 1 | 0 | 0 | no-corridors | ODS O1Q2M | trust corrected |
 | **Macclesfield District General Hospital** `macclesfield-district-general-hospital` | East Cheshire NHS Trust | C | 62 | 2 | 70 | 4 → 2 | no-vertical-circulation | ODS R0A73 | trust corrected |
 | **Princess of Wales Community Hospital** `princess-of-wales-community-hospital-site-map` | Herefordshire and Worcestershire Health and Care NHS Trust | C | 15 | 1 | 0 | 1 | no-corridors | ODS R1ACG | renamed from “Princess of Wales Hospital”; trust/address corrected |

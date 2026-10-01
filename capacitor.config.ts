@@ -1,39 +1,22 @@
 import type { CapacitorConfig } from "@capacitor/cli"
 
-// Native Android and iOS shells for Wayfinder.
+// Native Android and iOS apps for Findway.
 //
-// Wayfinder is a server-rendered Next.js app: API routes (directions, geocoding,
-// the Claude-backed survey), Clerk sign-in and Postgres all run on the server,
-// so it cannot be exported as static files and bundled into the app. The shells
-// load the deployed site instead — the same way the installed PWA does — and
-// add what a browser tab cannot: a home-screen app with its own icon, store
-// distribution, and native permission prompts for location, camera and motion.
+// The apps carry the interface inside them. `npm run mobile:build` makes a
+// static export of the pages into out/ (scripts/app-shell-build.mjs), and
+// `cap sync` copies that into both native projects. Only /api is remote, on the
+// deployment named by FINDWAY_API_URL at build time. So the app opens straight
+// onto the map, works on first launch with no signal for every venue it ships
+// with, and asks for location, camera and motion through the system's own
+// prompts with the reasons in Info.plist and AndroidManifest.xml.
 //
-// WAYFINDER_URL is read when `npx cap sync` runs and baked into the native
-// project, so set it before syncing (CI takes it from a repository variable).
-// Without it the shell opens mobile/www, which explains how to point it at a
-// deployment rather than showing a blank screen.
-const serverUrl = process.env.WAYFINDER_URL?.trim()
-
+// Capacitor's local file server hands every extensionless path to index.html,
+// which is why the app's root page is the navigation screen (src/app/page.tsx).
 const config: CapacitorConfig = {
-  appId: "app.wayfinder.nav",
-  appName: "Wayfinder",
-  webDir: "mobile/www",
+  appId: "ai.findway.app",
+  appName: "Findway",
+  webDir: "out",
   backgroundColor: "#0A1626",
-  ...(serverUrl
-    ? {
-        server: {
-          url: serverUrl,
-          // Only the deployment itself. Clerk's hosted sign-in and Mapbox are
-          // reached by the page as ordinary network requests, not navigations.
-          allowNavigation: [new URL(serverUrl).hostname],
-          // Never downgrade: a hospital's guest Wi-Fi is exactly where a
-          // plaintext page would be tampered with.
-          cleartext: false,
-          errorPath: "offline.html",
-        },
-      }
-    : {}),
   ios: {
     contentInset: "never",
     // Pinch-zoom belongs to the map, not the page.
