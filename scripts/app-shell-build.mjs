@@ -8,21 +8,28 @@
 // whatever happens. Nothing else about the source changes, and the web build
 // (`next build` with no APP_SHELL) is untouched.
 //
-//   FINDWAY_API_URL=https://your-deployment node scripts/app-shell-build.mjs
+//   npm run mobile:build
 //
-// Output: out/, which capacitor.config.ts points at. FINDWAY_SITE_URL, if set,
-// is the origin shared links are written on; it defaults to the API URL.
+// Output: out/, which capacitor.config.ts points at. The apps call the
+// production site unless FINDWAY_API_URL names another deployment;
+// FINDWAY_SITE_URL, if set, is the origin shared links are written on and
+// defaults to the API URL.
 import { existsSync, mkdirSync, renameSync, rmSync } from "fs"
 import { spawnSync } from "child_process"
 import { createRequire } from "module"
 
-const apiUrl = process.env.FINDWAY_API_URL?.trim().replace(/\/+$/, "")
-if (!apiUrl || !/^https:\/\/[^/\s]+/.test(apiUrl)) {
-  console.error(
-    "FINDWAY_API_URL must be the https origin the apps should call, e.g. FINDWAY_API_URL=https://wayfinder-theta.vercel.app"
-  )
+// The production site. A build with no FINDWAY_API_URL calls this, so
+// `npm run mobile:build` works on a fresh checkout on any OS; set the variable
+// to point a build at a preview or another deployment.
+const DEFAULT_API_URL = "https://wayfinder-theta.vercel.app"
+
+const explicitApiUrl = process.env.FINDWAY_API_URL?.trim()
+const apiUrl = (explicitApiUrl || DEFAULT_API_URL).replace(/\/+$/, "")
+if (!/^https:\/\/[^/\s]+/.test(apiUrl)) {
+  console.error(`FINDWAY_API_URL must be an https origin, e.g. ${DEFAULT_API_URL}; got "${explicitApiUrl}"`)
   process.exit(1)
 }
+if (!explicitApiUrl) console.log(`FINDWAY_API_URL is not set; the apps will call ${DEFAULT_API_URL}`)
 const siteUrl = process.env.FINDWAY_SITE_URL?.trim().replace(/\/+$/, "") || apiUrl
 
 const HOLD = ".app-shell-excluded"

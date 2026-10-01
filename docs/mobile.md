@@ -54,27 +54,52 @@ Consequences worth knowing:
 
 ## Building
 
+You do not need to build locally to ship. CI (below) builds both apps on
+GitHub's machines, including iOS, which cannot be built on Windows or Linux
+at all. Build locally only to run the app on a phone or emulator from Android
+Studio or Xcode.
+
+Start from a current checkout: `git pull origin main`, or a fresh
+`git clone https://github.com/uniwalletdev/wayfinder.git`. An older copy is
+missing the scripts below. Then:
+
 ```bash
-export FINDWAY_API_URL=https://wayfinder-theta.vercel.app   # the deployment the app calls
-npm run mobile:build          # -> out/
-npm run mobile:sync           # mobile:build, then cap sync into android/ and ios/
+npm ci
+npm run mobile:build     # -> out/
+npm run mobile:sync      # mobile:build, then cap sync into android/ and ios/
 ```
 
-`FINDWAY_SITE_URL` sets the origin shared links are written on, when it differs
-from the API deployment.
+The apps call `https://wayfinder-theta.vercel.app` unless `FINDWAY_API_URL`
+names another deployment. Set it in the shell before the build:
+
+| Shell | Command |
+| --- | --- |
+| Windows Command Prompt | `set FINDWAY_API_URL=https://your-deployment` |
+| Windows PowerShell | `$env:FINDWAY_API_URL="https://your-deployment"` |
+| macOS / Linux | `export FINDWAY_API_URL=https://your-deployment` |
+
+`FINDWAY_SITE_URL` likewise sets the origin shared links are written on, when
+it differs from the API deployment. On Windows, type the commands without the
+`#` comments shown here: Command Prompt reads them as part of the command.
 
 ### Android
 
-Needs JDK 21 and the Android SDK (Android Studio installs both).
+Needs JDK 21 and the Android SDK (Android Studio installs both). Works on
+Windows, macOS and Linux.
 
 ```bash
 npm run android:build        # -> android/app/build/outputs/apk/debug/app-debug.apk
 npm run android:open         # or open in Android Studio and press Run
 ```
 
+To try the app on a phone without any of that, download the `findway-android`
+artifact from the latest *Mobile apps* run on GitHub and install the APK it
+contains, allowing *Install unknown apps* when asked.
+
 ### iOS
 
-Needs a Mac with Xcode 16+ for local work; CI below builds without one.
+Needs a Mac with Xcode 26 or later for local work, since App Store Connect
+refuses uploads built with an older SDK; CI below builds without one.
 
 ```bash
 npm run ios:open             # opens Xcode; pick a simulator or your phone, press Run
@@ -116,7 +141,7 @@ Override it with a repository variable of the same name, or per run.
    - Add the four `APPLE_*` / `APP_STORE_CONNECT_*` secrets from the table.
      Nothing else is needed: the workflow uses Xcode cloud signing, so no
      certificate or provisioning profile is ever created or exported.
-2. **Android.** Create the upload key once (command below) and add the four
+2. **Android.** Create the upload key once (below) and add the four
    `ANDROID_*` secrets. Run the workflow, download
    `findway-android-release.aab` from the run and upload it by hand to a new
    app in the [Play Console](https://play.google.com/console) (*Testing →
@@ -144,12 +169,20 @@ Override it with a repository variable of the same name, or per run.
 | `APP_STORE_CONNECT_KEY_P8` | Secret | Full contents of the downloaded `.p8` file |
 | `PLAY_SERVICE_ACCOUNT_JSON` | Secret | Optional: service-account JSON key for Play uploads |
 
-Create the Android upload key once and keep it safe — losing it means you can't
-update the app:
+Create the Android upload key once. The easiest way needs no Java installed:
+add a repository secret `ANDROID_KEYSTORE_PASSWORD` with a password you choose,
+run *Actions → Android upload key → Run workflow*, download its
+`android-upload-key` artifact, and keep `release.jks` somewhere safe. Paste
+the contents of `release.jks.b64` into `ANDROID_KEYSTORE_BASE64`, and add
+`ANDROID_KEY_ALIAS` = `findway` and `ANDROID_KEY_PASSWORD` = the same password.
+The same key can be made locally instead:
 
 ```bash
 keytool -genkey -v -keystore release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias findway
 ```
+
+Play signs the app with its own key, so a lost upload key can be reset
+through Play Console support, but that is a day of delay worth avoiding.
 
 Before releasing to testers, both consoles also ask for a privacy policy URL
 (the site's `/privacy` page) and a data-collection declaration (Play's *Data
