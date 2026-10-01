@@ -141,7 +141,7 @@ Override it with a repository variable of the same name, or per run.
    - Add the four `APPLE_*` / `APP_STORE_CONNECT_*` secrets from the table.
      Nothing else is needed: the workflow uses Xcode cloud signing, so no
      certificate or provisioning profile is ever created or exported.
-2. **Android.** Create the upload key once (command below) and add the four
+2. **Android.** Create the upload key once (below) and add the four
    `ANDROID_*` secrets. Run the workflow, download
    `findway-android-release.aab` from the run and upload it by hand to a new
    app in the [Play Console](https://play.google.com/console) (*Testing →
@@ -169,12 +169,20 @@ Override it with a repository variable of the same name, or per run.
 | `APP_STORE_CONNECT_KEY_P8` | Secret | Full contents of the downloaded `.p8` file |
 | `PLAY_SERVICE_ACCOUNT_JSON` | Secret | Optional: service-account JSON key for Play uploads |
 
-Create the Android upload key once and keep it safe — losing it means you can't
-update the app:
+Create the Android upload key once. The easiest way needs no Java installed:
+add a repository secret `ANDROID_KEYSTORE_PASSWORD` with a password you choose,
+run *Actions → Android upload key → Run workflow*, download its
+`android-upload-key` artifact, and keep `release.jks` somewhere safe. Paste
+the contents of `release.jks.b64` into `ANDROID_KEYSTORE_BASE64`, and add
+`ANDROID_KEY_ALIAS` = `findway` and `ANDROID_KEY_PASSWORD` = the same password.
+The same key can be made locally instead:
 
 ```bash
 keytool -genkey -v -keystore release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias findway
 ```
+
+Play signs the app with its own key, so a lost upload key can be reset
+through Play Console support, but that is a day of delay worth avoiding.
 
 Before releasing to testers, both consoles also ask for a privacy policy URL
 (the site's `/privacy` page) and a data-collection declaration (Play's *Data

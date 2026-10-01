@@ -1,0 +1,57 @@
+# Create the Android upload key once, without Java on anyone's computer.
+#
+# Play signs the app with its own key (Play App Signing); this is only the
+# upload key the workflow signs bundles with, and Google can reset it if it is
+# ever lost. Set ANDROID_KEYSTORE_PASSWORD as a repository secret first. The
+# key is generated on the runner with that password, encoded ready for the
+# ANDROID_KEYSTORE_BASE64 secret, and handed back as a short-lived artifact.
+# Nothing secret is printed; the only output is the certificate fingerprint,
+# which is public and is what Android App Links will need one day.
+#
+# Then: download the artifact, keep release.jks somewhere safe for the life of
+# the app, paste the contents of release.jks.b64 into ANDROID_KEYSTORE_BASE64,
+# add ANDROID_KEY_ALIAS=findway and ANDROID_KEY_PASSWORD (the same password),
+# and let the artifact expire. docs/mobile.md walks through it.
+name: Android upload key
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HAS_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD != '' }}
+    steps:
+      - name: Require the password secret
+        if: env.HAS_PASSWORD != 'true'
+        run: |
+          echo "::error::Add a repository secret named ANDROID_KEYSTORE_PASSWORD first. The key is created with that password."
+          exit 1
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Generate the keystore
+        env:
+          PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          mkdir -p key
+          keytool -genkeypair -v \
+            -keystore key/release.jks -alias findway \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass "$PASSWORD" -keypass "$PASSWORD" \
+            -dname "CN=Findway, O=Universal Wallet LTD, C=GB"
+          base64 -w0 key/release.jks > key/release.jks.b64
+          echo "Certificate fingerprint (public):"
+          keytool -list -v -keystore key/release.jks -storepass "$PASSWORD" | grep -E 'SHA256:|Valid from'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-upload-key
+          path: key/
+          retention-days: 2
+          if-no-files-found: error
