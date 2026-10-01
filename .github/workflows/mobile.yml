@@ -180,10 +180,10 @@ jobs:
           name: findway-ios-simulator
           path: Findway-simulator.app.zip
 
-      # One App Store Connect API key does everything below. xcodebuild uses it
-      # for cloud signing (Apple holds the distribution certificate, so no
-      # certificate or provisioning profile is ever exported or stored here),
-      # and altool finds it by key id under ~/private_keys.
+      # One App Store Connect API key does everything below. The export step
+      # uses it for cloud signing (Apple holds the distribution certificate, so
+      # no certificate or provisioning profile is ever exported or stored
+      # here), and altool finds it by key id under ~/private_keys.
       - name: Install the App Store Connect API key
         if: env.HAS_SIGNING == 'true'
         env:
@@ -193,6 +193,13 @@ jobs:
           printf '%s\n' "$ASC_KEY_P8" > "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8"
           chmod 600 "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8"
 
+      # The archive is built unsigned on purpose. With automatic signing Xcode
+      # signs an archive with a *development* profile and only signs for the
+      # App Store at export time, and Apple refuses to issue a development
+      # profile to a team with no registered devices ("Your team has no
+      # devices from which to generate a provisioning profile"). The export
+      # step below signs the app for the App Store, which needs no device, so
+      # nothing is lost by skipping the development signature here.
       - name: Archive for the App Store
         if: env.HAS_SIGNING == 'true'
         run: |
@@ -203,12 +210,10 @@ jobs:
             -sdk iphoneos \
             -destination "generic/platform=iOS" \
             -archivePath "$RUNNER_TEMP/Findway.xcarchive" \
-            -allowProvisioningUpdates \
-            -authenticationKeyPath "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8" \
-            -authenticationKeyID "$ASC_KEY_ID" \
-            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
             DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
             CURRENT_PROJECT_VERSION="$BUILD_NUMBER" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
             archive
 
       - name: Export the signed .ipa
