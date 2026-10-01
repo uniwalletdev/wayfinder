@@ -1,4 +1,4 @@
-package app.wayfinder.nav;
+package ai.findway.app;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -3,18 +3,18 @@ apply plugin: 'com.android.application'
 // CI passes its run number in as -PversionCode, so every store build carries a
 // new build number without this file being edited; a local build keeps the
 // defaults. versionName is the version people see and is bumped by hand.
-def wayfinderVersionCode = (project.findProperty("versionCode") ?: "1").toString().toInteger()
-def wayfinderVersionName = (project.findProperty("versionName") ?: "1.0").toString()
+def findwayVersionCode = (project.findProperty("versionCode") ?: "1").toString().toInteger()
+def findwayVersionName = (project.findProperty("versionName") ?: "1.0").toString()
 
 android {
-    namespace = "app.wayfinder.nav"
+    namespace = "ai.findway.app"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "app.wayfinder.nav"
+        applicationId "ai.findway.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode wayfinderVersionCode
-        versionName wayfinderVersionName
+        versionCode findwayVersionCode
+        versionName findwayVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

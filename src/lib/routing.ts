@@ -1,5 +1,6 @@
 import { Waypoint, Route, RouteStep, Coordinates, TravelMode, SurveyTrail, RoutePreference, FloorNaming } from "./types"
 import { floorLabel } from "./waypoint-meta"
+import { apiUrl } from "@/lib/app-shell"
 
 // Geocoded destinations (beyond the hospital's mapped floors) carry a "geo-"
 // id. Those are the ones worth routing along real streets/footpaths; indoor
@@ -624,7 +625,7 @@ export async function fetchOutdoorRoute(
       to: `${destination.coordinates.lat},${destination.coordinates.lng}`,
       mode,
     })
-    const res = await fetch(`/api/directions?${params}`, { signal })
+    const res = await fetch(apiUrl(`/api/directions?${params}`), { signal })
     if (!res.ok) return null
     const data = (await res.json()) as DirectionsResponse
     if (data.error || !data.geometry || data.geometry.length < 2) return null

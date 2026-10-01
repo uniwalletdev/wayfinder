@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Trash2, Loader2, Check } from "lucide-react"
+import { apiUrl } from "@/lib/app-shell"
 
 // The one control the privacy page needs: a way to erase what this device has
 // sent to the server. The device id is minted on the phone and is the only
@@ -30,7 +31,7 @@ export default function DataControls() {
     if (!deviceId) return
     setState("working")
     try {
-      const res = await fetch("/api/signals", {
+      const res = await fetch(apiUrl("/api/signals"), {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ deviceId }),

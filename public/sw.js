@@ -1,4 +1,4 @@
-// Offline support for Wayfinder.
+// Offline support for Findway.
 //
 // The point of this file is a specific, concrete failure: someone deep inside a
 // building with no signal, trying to find a ward — GOSH's Level 6 Octav Botnar

@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import type { Route } from "./types"
+import { Capacitor } from "@capacitor/core"
+import { Haptics, ImpactStyle, NotificationType } from "@capacitor/haptics"
 
 // Turn-by-turn guidance you can hear and feel, not just read.
 //
@@ -40,8 +42,17 @@ function speak(text: string) {
   }
 }
 
+// iPhones have no Vibration API, in Safari or in the apps' web view, so the
+// turn cue used to vanish there. Inside the apps it goes through the system
+// haptics engine: one tap for a step, the two-pulse "warning" for arrival. The
+// web keeps navigator.vibrate where the browser has it.
 function buzz(pattern: number | number[]) {
   try {
+    if (Capacitor.isNativePlatform()) {
+      const pulses = Array.isArray(pattern) ? Math.ceil(pattern.length / 2) : 1
+      void (pulses > 1 ? Haptics.notification({ type: NotificationType.Warning }) : Haptics.impact({ style: ImpactStyle.Medium })).catch(() => {})
+      return
+    }
     if (typeof navigator !== "undefined" && typeof navigator.vibrate === "function") navigator.vibrate(pattern)
   } catch {}
 }

@@ -1,8 +1,8 @@
-# Location data: what Wayfinder collects, and the gaps
+# Location data: what Findway collects, and the gaps
 
 **Status: for decision, not a bug report.** Nothing here is an attack path. It is a
 data-protection exposure that needs a product/legal answer — ideally with a DPO or the
-partner trust — before Wayfinder is deployed into an NHS setting at scale.
+partner trust — before Findway is deployed into an NHS setting at scale.
 
 Written 2026-07-21 during a security review. No behaviour was changed.
 
@@ -55,7 +55,7 @@ pseudonymised data explicitly remains in scope (Art. 4(5)).
 The sharper issue is **special category data (Art. 9)**. In a hospital, the destination is
 the message. A trail that terminates at an oncology ward, a sexual-health clinic, or
 maternity is a health inference about an identifiable device — and inferred health data is
-still health data. Wayfinder's own GOSH map makes ward-level destinations explicit, which
+still health data. Findway's own GOSH map makes ward-level destinations explicit, which
 is exactly what makes the traces revealing.
 
 Search misses compound it: users may type a clinician's name, a relative's name, or a

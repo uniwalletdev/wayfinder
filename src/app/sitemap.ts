@@ -24,3 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]
 }
+
+// Already static on the web; declared so the apps' static export (scripts/app-shell-build.mjs)
+// can include this route rather than refuse the build.
+export const dynamic = "force-static"

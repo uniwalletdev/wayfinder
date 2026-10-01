@@ -3,18 +3,18 @@ import InfoPage from "@/components/InfoPage"
 
 export const metadata: Metadata = {
   title: "Accessibility",
-  description: "How Wayfinder works with screen readers, keyboards, zoom and reduced motion, and what it cannot yet do.",
+  description: "How Findway works with screen readers, keyboards, zoom and reduced motion, and what it cannot yet do.",
 }
 
 // A plain account of what the app does for people who use it differently, and
 // of its limits. It describes the software as built; the organisation that
-// deploys Wayfinder is responsible for its own published statement.
+// deploys Findway is responsible for its own published statement.
 export default function AccessibilityPage() {
   return (
     <InfoPage
       eyebrow="Accessibility"
       title="Built to be used by everyone who needs to find their way"
-      lead="Wayfinder is used by people who are ill, anxious, in a hurry, or all three. This page says what the app does to be usable by as many of them as possible, and where it still falls short."
+      lead="Findway is used by people who are ill, anxious, in a hurry, or all three. This page says what the app does to be usable by as many of them as possible, and where it still falls short."
       updated="September 2026"
     >
       <h2>Getting around the app</h2>
@@ -68,7 +68,7 @@ export default function AccessibilityPage() {
 
       <h2>Telling us about a problem</h2>
       <p>
-        If something in Wayfinder does not work with the way you use your device, tell the team running this deployment. Say what you were
+        If something in Findway does not work with the way you use your device, tell the team running this deployment. Say what you were
         trying to do, which device and assistive technology you were using, and what happened instead; that is enough to reproduce most problems.
       </p>
     </InfoPage>

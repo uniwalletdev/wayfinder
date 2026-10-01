@@ -1,34 +1,39 @@
 # Build the Android and iOS apps.
 #
-# The native projects are thin Capacitor shells around the deployed site (see
-# capacitor.config.ts), so what they load is decided here by WAYFINDER_URL.
-# Set it once as a repository variable (Settings -> Secrets and variables ->
-# Actions -> Variables) to the production URL; a manual run can override it.
+# The apps carry the interface inside them (capacitor.config.ts): every run
+# first exports the pages with scripts/app-shell-build.mjs, then packages that
+# export into both native projects. The one thing decided here is which
+# deployment the apps call for /api, FINDWAY_API_URL. It defaults to the
+# production site; a repository variable or a manual run can override it.
 #
 # Every run produces installable test builds:
-#   - wayfinder-android-debug.apk   sideload on any Android phone
-#   - Wayfinder-simulator.app.zip   drag onto an iOS Simulator
+#   - findway-android-debug.apk   sideload on any Android phone
+#   - Findway-simulator.app.zip   drag onto an iOS Simulator
 #
 # Store builds are produced only when signing material is configured, because
-# an unsigned release is of no use to either store. A store build is refused
-# when WAYFINDER_URL is empty: it would open the placeholder page. Each one
-# carries the workflow run number as its build number (Android versionCode,
-# iOS CFBundleVersion), so every run is uploadable without editing a project.
+# an unsigned release is of no use to either store. Each one carries the
+# workflow run number as its build number (Android versionCode, iOS
+# CFBundleVersion), so every run is uploadable without editing a project.
 #   Android: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD,
-#            ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD        -> wayfinder-android-release.aab
+#            ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD        -> findway-android-release.aab
 #   iOS:     APPLE_TEAM_ID, APP_STORE_CONNECT_KEY_ID,
-#            APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_P8 -> wayfinder-ios-release.ipa
+#            APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_P8 -> findway-ios-release.ipa
 #
 # Run the workflow by hand with "upload" ticked to send those builds straight
 # to TestFlight and to Play's internal testing track (Play also needs
 # PLAY_SERVICE_ACCOUNT_JSON). docs/mobile.md walks through creating each secret.
+#
+# Because the apps bundle the pages, a change under src/ or public/ reaches
+# installed apps only through a new build here, unlike the website. Runs are
+# deliberate (manual, or a change to the native projects) rather than on every
+# push, since each iOS run spends macOS runner minutes.
 name: Mobile apps
 
 on:
   workflow_dispatch:
     inputs:
-      wayfinder_url:
-        description: "Site the apps load (defaults to the WAYFINDER_URL repository variable)"
+      api_url:
+        description: "Deployment the apps call for /api (defaults to the FINDWAY_API_URL repository variable, then the production site)"
         required: false
       upload:
         description: "Upload the signed builds to TestFlight and Play internal testing"
@@ -40,6 +45,7 @@ on:
       - "ios/**"
       - "mobile/**"
       - "capacitor.config.ts"
+      - "scripts/app-shell-build.mjs"
       - "scripts/mobile-icons.mjs"
       - ".github/workflows/mobile.yml"
   pull_request:
@@ -48,6 +54,7 @@ on:
       - "ios/**"
       - "mobile/**"
       - "capacitor.config.ts"
+      - "scripts/app-shell-build.mjs"
       - ".github/workflows/mobile.yml"
 
 concurrency:
@@ -55,7 +62,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  WAYFINDER_URL: ${{ inputs.wayfinder_url || vars.WAYFINDER_URL }}
+  FINDWAY_API_URL: ${{ inputs.api_url || vars.FINDWAY_API_URL || 'https://wayfinder-theta.vercel.app' }}
   # Monotonic across runs of this workflow, which is all the stores ask of a
   # build number. The user-facing version (1.0) lives in the native projects.
   BUILD_NUMBER: ${{ github.run_number }}
@@ -84,18 +91,14 @@ jobs:
       # platform or build-tools itself.
 
       - run: npm ci
-      - name: Sync web config into the Android project
+      - name: Build the pages the app carries
+        run: npm run mobile:build
+      - name: Package them into the Android project
         run: npx cap sync android
 
       - name: Build debug APK
         working-directory: android
         run: ./gradlew --no-daemon assembleDebug
-
-      - name: Refuse a store build that points at no site
-        if: env.HAS_SIGNING == 'true' && env.WAYFINDER_URL == ''
-        run: |
-          echo "::error::WAYFINDER_URL is empty, so a store build would open the placeholder page. Set the repository variable, or pass wayfinder_url to a manual run."
-          exit 1
 
       - name: Build signed release bundle
         if: env.HAS_SIGNING == 'true'
@@ -113,15 +116,15 @@ jobs:
             -Pandroid.injected.signing.store.password="$ANDROID_KEYSTORE_PASSWORD" \
             -Pandroid.injected.signing.key.alias="$ANDROID_KEY_ALIAS" \
             -Pandroid.injected.signing.key.password="$ANDROID_KEY_PASSWORD"
-          cp app/build/outputs/bundle/release/app-release.aab "$GITHUB_WORKSPACE/wayfinder-android-release.aab"
+          cp app/build/outputs/bundle/release/app-release.aab "$GITHUB_WORKSPACE/findway-android-release.aab"
 
-      - run: cp android/app/build/outputs/apk/debug/app-debug.apk wayfinder-android-debug.apk
+      - run: cp android/app/build/outputs/apk/debug/app-debug.apk findway-android-debug.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: wayfinder-android
+          name: findway-android
           path: |
-            wayfinder-android-debug.apk
-            wayfinder-android-release.aab
+            findway-android-debug.apk
+            findway-android-release.aab
           if-no-files-found: warn
 
       # The Play Console has to know the app first: the very first bundle is
@@ -131,8 +134,8 @@ jobs:
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
-          packageName: app.wayfinder.nav
-          releaseFiles: wayfinder-android-release.aab
+          packageName: ai.findway.app
+          releaseFiles: findway-android-release.aab
           track: internal
           status: completed
 
@@ -151,7 +154,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Sync web config into the iOS project
+      - name: Build the pages the app carries
+        run: npm run mobile:build
+      - name: Package them into the iOS project
         run: npx cap sync ios
 
       # A simulator build needs no signing, so it proves the project compiles
@@ -168,18 +173,12 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build
           cd "$RUNNER_TEMP/dd/Build/Products/Debug-iphonesimulator"
-          zip -qry "$GITHUB_WORKSPACE/Wayfinder-simulator.app.zip" App.app
+          zip -qry "$GITHUB_WORKSPACE/Findway-simulator.app.zip" App.app
 
       - uses: actions/upload-artifact@v4
         with:
-          name: wayfinder-ios-simulator
-          path: Wayfinder-simulator.app.zip
-
-      - name: Refuse a store build that points at no site
-        if: env.HAS_SIGNING == 'true' && env.WAYFINDER_URL == ''
-        run: |
-          echo "::error::WAYFINDER_URL is empty, so a store build would open the placeholder page. Set the repository variable, or pass wayfinder_url to a manual run."
-          exit 1
+          name: findway-ios-simulator
+          path: Findway-simulator.app.zip
 
       # One App Store Connect API key does everything below. xcodebuild uses it
       # for cloud signing (Apple holds the distribution certificate, so no
@@ -203,7 +202,7 @@ jobs:
             -configuration Release \
             -sdk iphoneos \
             -destination "generic/platform=iOS" \
-            -archivePath "$RUNNER_TEMP/Wayfinder.xcarchive" \
+            -archivePath "$RUNNER_TEMP/Findway.xcarchive" \
             -allowProvisioningUpdates \
             -authenticationKeyPath "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8" \
             -authenticationKeyID "$ASC_KEY_ID" \
@@ -234,27 +233,27 @@ jobs:
           </plist>
           EOF
           xcodebuild -exportArchive \
-            -archivePath "$RUNNER_TEMP/Wayfinder.xcarchive" \
+            -archivePath "$RUNNER_TEMP/Findway.xcarchive" \
             -exportOptionsPlist "$RUNNER_TEMP/export.plist" \
             -exportPath "$RUNNER_TEMP/export" \
             -allowProvisioningUpdates \
             -authenticationKeyPath "$HOME/private_keys/AuthKey_$ASC_KEY_ID.p8" \
             -authenticationKeyID "$ASC_KEY_ID" \
             -authenticationKeyIssuerID "$ASC_ISSUER_ID"
-          cp "$RUNNER_TEMP"/export/*.ipa "$GITHUB_WORKSPACE/wayfinder-ios-release.ipa"
+          cp "$RUNNER_TEMP"/export/*.ipa "$GITHUB_WORKSPACE/findway-ios-release.ipa"
 
       - uses: actions/upload-artifact@v4
         if: env.HAS_SIGNING == 'true'
         with:
-          name: wayfinder-ios
-          path: wayfinder-ios-release.ipa
+          name: findway-ios
+          path: findway-ios-release.ipa
 
-      # The app record (bundle id app.wayfinder.nav) must already exist in App
+      # The app record (bundle id ai.findway.app) must already exist in App
       # Store Connect; the upload lands in TestFlight under that app.
       - name: Upload to TestFlight
         if: env.HAS_SIGNING == 'true' && inputs.upload
         run: |
           xcrun altool --upload-app --type ios \
-            --file wayfinder-ios-release.ipa \
+            --file findway-ios-release.ipa \
             --apiKey "$ASC_KEY_ID" \
             --apiIssuer "$ASC_ISSUER_ID"

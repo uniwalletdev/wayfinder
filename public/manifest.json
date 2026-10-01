@@ -1,7 +1,7 @@
 {
   "id": "/navigate",
-  "name": "Wayfinder — NHS hospitals, mapped",
-  "short_name": "Wayfinder",
+  "name": "Findway",
+  "short_name": "Findway",
   "description": "Find your way around NHS hospitals — search a ward or clinic and follow the route, floor by floor.",
   "start_url": "/navigate",
   "scope": "/",

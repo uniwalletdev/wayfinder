@@ -8,10 +8,14 @@
 // before anyone suspects the cache.
 
 import { useEffect } from "react"
+import { IS_APP_SHELL } from "@/lib/app-shell"
 
 export default function ServiceWorkerRegistrar() {
   useEffect(() => {
     if (process.env.NODE_ENV !== "production") return
+    // The apps already carry every page and floor plan on disk, and a worker
+    // cannot register on the capacitor:// scheme anyway.
+    if (IS_APP_SHELL) return
     if (!("serviceWorker" in navigator)) return
 
     // Wait for load so registration never competes with first paint.

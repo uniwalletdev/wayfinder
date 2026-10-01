@@ -184,7 +184,7 @@ export default function LeftPanel({
           <span className="flex h-[30px] w-[30px] items-center justify-center rounded-[10px] bg-gradient-to-br from-wf-primary to-wf-teal">
             <Navigation size={15} className="text-white" />
           </span>
-          <span className="font-display text-lg font-bold text-wf-ink">Wayfinder</span>
+          <span className="font-display text-lg font-bold text-wf-ink">Findway</span>
         </Link>
         <AuthButton initials={userInitials} />
       </div>

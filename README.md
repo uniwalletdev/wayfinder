@@ -1,4 +1,4 @@
-# Wayfinder
+# Findway
 
 Indoor navigation for NHS hospitals. Search for a ward, clinic or department
 and follow the route from the front door, floor by floor, with step-free
@@ -7,7 +7,8 @@ options, live re-routing, QR re-positioning and an AR view.
 - **Web / PWA:** Next.js 16 App Router, Leaflet (2D) and three.js (3D).
   Works offline for any hospital opened once while online, with an offline
   page for everything else.
-- **Android and iOS:** Capacitor shells around the deployed site. See
+- **Android and iOS:** Capacitor apps that carry the pages and floor plans
+  inside them and call this site's `/api`. Built in CI; see
   [`docs/mobile.md`](docs/mobile.md).
 - **Maps:** 67 mapped hospital venues built from trusts' published site maps,
   plus every NHS hospital from the ODS register as a located directory entry.

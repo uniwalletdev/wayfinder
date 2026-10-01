@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import { Coordinates } from "./types"
 import { distanceMeters } from "./routing"
 import { getDeviceId } from "./device-id"
+import { apiUrl } from "@/lib/app-shell"
 
 // Records the path a navigator walks *while being routed* and posts it to
 // /api/signals as a 'trail' — the highest-value passive signal, because the
@@ -31,7 +32,7 @@ interface Params {
 
 function flush(venueId: string, floor: number, points: Coordinates[]) {
   if (!venueId || points.length < MIN_SEGMENT_POINTS) return
-  void fetch("/api/signals", {
+  void fetch(apiUrl("/api/signals"), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ venueId, deviceId: getDeviceId(), kind: "trail", floor, points }),

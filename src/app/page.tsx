@@ -1,4 +1,6 @@
 import Link from "next/link"
+import WayfinderApp from "@/components/WayfinderApp"
+import { IS_APP_SHELL } from "@/lib/app-shell"
 import { Navigation, Map, ArrowRight, Search, ClipboardList } from "lucide-react"
 import { SEED_VENUES, DEFAULT_VENUE } from "@/lib/venues"
 import { buildRoute } from "@/lib/routing"
@@ -63,7 +65,16 @@ const FEATURES = [
   },
 ]
 
-export default function Landing() {
+// The Android and iOS apps open straight onto the map. Their local file server
+// hands every extensionless path to this page (Capacitor serves a single
+// index.html), so inside the apps the root is the navigation screen and the
+// marketing page below is web-only.
+export default function Home() {
+  if (IS_APP_SHELL) return <WayfinderApp initialMode="navigate" />
+  return <Landing />
+}
+
+function Landing() {
   return (
     <main className="bg-white">
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
@@ -80,7 +91,7 @@ export default function Landing() {
             <span className="flex h-[34px] w-[34px] items-center justify-center rounded-[10px] bg-gradient-to-br from-wf-primary to-wf-teal">
               <Navigation size={17} className="text-white" />
             </span>
-            <span className="font-display text-xl font-bold text-white">Wayfinder</span>
+            <span className="font-display text-xl font-bold text-white">Findway</span>
           </div>
           <div className="hidden items-center gap-9 xl:flex">
             {NAV_LINKS.map((link) => (
@@ -110,7 +121,7 @@ export default function Landing() {
             Every appointment, <span className="whitespace-nowrap">on time.</span>
           </h1>
           <p className="mt-6 max-w-[520px] text-[17px] leading-relaxed text-white/72 sm:text-[19px]">
-            A hospital is the easiest place in Britain to get lost — and the worst place to be late. Wayfinder maps
+            A hospital is the easiest place in Britain to get lost — and the worst place to be late. Findway maps
             NHS hospitals floor by floor, then walks patients, visitors and staff from the front door to the right
             ward, clinic or bedside — one clear step at a time.
           </p>
@@ -211,7 +222,7 @@ export default function Landing() {
           From front door to final room, in three moves
         </h2>
         <p className="mt-4 max-w-xl text-base text-wf-muted">
-          No beacons, no hardware. Wayfinder fuses GPS, your steps and your compass to keep the blue dot
+          No beacons, no hardware. Findway fuses GPS, your steps and your compass to keep the blue dot
           moving — even deep inside the building, where satellites can&apos;t see you.
         </p>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -274,7 +285,7 @@ export default function Landing() {
           Put your hospital on the map
         </h2>
         <p className="mx-auto mt-4 max-w-md text-base text-wf-muted">
-          Walk it with your phone or upload a floor plan — Wayfinder does the rest. Fewer missed
+          Walk it with your phone or upload a floor plan — Findway does the rest. Fewer missed
           appointments, fewer stopped-in-the-corridor directions, calmer arrivals.
         </p>
         <div className="mx-auto mt-8 flex max-w-xs flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center sm:gap-4">
@@ -299,12 +310,12 @@ export default function Landing() {
           <span className="flex h-6 w-6 items-center justify-center rounded-[7px] bg-gradient-to-br from-wf-primary to-wf-teal">
             <Navigation size={12} className="text-white" />
           </span>
-          <span className="font-display text-sm font-bold text-wf-ink">Wayfinder</span>
+          <span className="font-display text-sm font-bold text-wf-ink">Findway</span>
         </div>
         <div className="flex items-center gap-6 text-[13.5px] text-wf-muted">
           <Link href="/privacy" className="transition-colors hover:text-wf-primary">Privacy</Link>
           <Link href="/accessibility" className="transition-colors hover:text-wf-primary">Accessibility</Link>
-          <span>© 2026 Wayfinder</span>
+          <span>© 2026 Findway</span>
         </div>
       </footer>
     </main>

@@ -20,30 +20,30 @@ const ibmPlexSans = IBM_Plex_Sans({
 })
 
 const DESCRIPTION =
-  "Wayfinder maps NHS hospitals floor by floor and guides patients, visitors and staff from the front door to the right ward, clinic or bedside — one clear step at a time."
+  "Findway maps NHS hospitals floor by floor and guides patients, visitors and staff from the front door to the right ward, clinic or bedside — one clear step at a time."
 
 export const metadata: Metadata = {
   metadataBase: siteUrl(),
   title: {
-    default: "Wayfinder — NHS hospitals, mapped",
-    template: "%s · Wayfinder",
+    default: "Findway — NHS hospitals, mapped",
+    template: "%s · Findway",
   },
   description: DESCRIPTION,
-  applicationName: "Wayfinder",
+  applicationName: "Findway",
   manifest: "/manifest.json",
   // A shared link — a ward sent to a relative, a poster's URL — unfurls with
   // the app's name and purpose rather than a bare address.
   openGraph: {
     type: "website",
-    siteName: "Wayfinder",
-    title: "Wayfinder — NHS hospitals, mapped",
+    siteName: "Findway",
+    title: "Findway — NHS hospitals, mapped",
     description: DESCRIPTION,
     locale: "en_GB",
-    images: [{ url: "/icon-512.png", width: 512, height: 512, alt: "Wayfinder" }],
+    images: [{ url: "/icon-512.png", width: 512, height: 512, alt: "Findway" }],
   },
   twitter: {
     card: "summary",
-    title: "Wayfinder — NHS hospitals, mapped",
+    title: "Findway — NHS hospitals, mapped",
     description: DESCRIPTION,
     images: ["/icon-512.png"],
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
   },
-  appleWebApp: { capable: true, title: "Wayfinder", statusBarStyle: "black-translucent" },
+  appleWebApp: { capable: true, title: "Findway", statusBarStyle: "black-translucent" },
 }
 
 export const viewport: Viewport = {
