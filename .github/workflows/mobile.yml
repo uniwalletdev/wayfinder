@@ -159,6 +159,20 @@ jobs:
       - name: Package them into the iOS project
         run: npx cap sync ios
 
+      # App Store Connect only accepts apps built with the current iOS SDK
+      # (iOS 26 as of 2026: "All iOS and iPadOS apps must be built with the
+      # iOS 26 SDK or later"), and the runner's default Xcode trails it. The
+      # image ships several versions, so pick the newest Xcode 26 present.
+      - name: Select Xcode 26
+        run: |
+          xcode=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$xcode" ]; then
+            echo "::error::No Xcode 26 on this runner image. Installed: $(ls /Applications | grep -i xcode | tr '\n' ' ')"
+            exit 1
+          fi
+          sudo xcode-select -s "$xcode"
+          xcodebuild -version
+
       # A simulator build needs no signing, so it proves the project compiles
       # on every change and gives reviewers something to run.
       - name: Build for the iOS Simulator

@@ -98,7 +98,8 @@ contains, allowing *Install unknown apps* when asked.
 
 ### iOS
 
-Needs a Mac with Xcode 16+ for local work; CI below builds without one.
+Needs a Mac with Xcode 26 or later for local work, since App Store Connect
+refuses uploads built with an older SDK; CI below builds without one.
 
 ```bash
 npm run ios:open             # opens Xcode; pick a simulator or your phone, press Run
