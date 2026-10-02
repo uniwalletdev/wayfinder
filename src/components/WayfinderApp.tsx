@@ -576,7 +576,12 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const gpsFix = gpsStatus === "active" && navState.positionAccuracy > 0 ? navState.currentPosition : null
   useEffect(() => {
     if (!autoVenueRef.current) return
-    const local = catalog.filter((v) => v.visibility === "public" && v.country === country)
+    // Not before the country's directory is in: with only the bundled
+    // summaries to choose from, a visitor in Ohio was sent to the one
+    // "mapped" US entry known at that moment, a demonstration building in
+    // Wisconsin. Hospitals only, for the same reason.
+    if (!catalogReady) return
+    const local = catalog.filter((v) => v.visibility === "public" && v.country === country && v.category === "hospital")
     if (local.length === 0) return
     let pick: VenueSummary | undefined
     if (gpsFix) {
@@ -602,7 +607,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     })
     // activeVenueId is read, not reacted to: a venue switch must not re-run this.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [catalog, country, gpsFix, switchToVenueId])
+  }, [catalog, catalogReady, country, gpsFix, switchToVenueId])
 
   // Selecting a destination shows a route *preview* (overview + travel mode +
   // ETA) — the user taps Start to begin turn-by-turn, rather than jumping
