@@ -71,7 +71,8 @@ for (const file of readdirSync(HOSPITALS).filter((f) => f.endsWith(".json"))) {
 const campusReport = { generatedAt, built: [], refused: {} }
 const campusIds = new Set()
 if (existsSync(CAMPUS_RAW)) {
-  for (const file of readdirSync(CAMPUS_RAW).filter((f) => f.endsWith(".json")).sort()) {
+  // Country files only: the directory also holds status.json and areas/.
+  for (const file of readdirSync(CAMPUS_RAW).filter((f) => /^[A-Z]{2}\.json$/.test(f)).sort()) {
     const { country, hospitals } = JSON.parse(readFileSync(`${CAMPUS_RAW}/${file}`, "utf8"))
     let n = 0
     for (const [rowId, elements] of Object.entries(hospitals)) {

@@ -33,9 +33,9 @@ on:
       max_detail:
         description: "Most hospitals to download indoor geometry for"
         default: "400"
-      budget_min:
-        description: "Minutes for the grounds stage before it stops and leaves the rest to the next run (the job itself times out at 330)"
-        default: "270"
+      stop_grounds_at:
+        description: "Minutes after the job starts at which the grounds stage stops and leaves the rest to the next run (the job times out at 330)"
+        default: "290"
   push:
     paths:
       - "scripts/world/**"
@@ -62,11 +62,13 @@ env:
   # Grounds are fetched area by area (a country, or a state of a large one),
   # and each area that comes in whole is kept for a week in the Actions cache,
   # so a run that runs out of time carries on where the last one stopped. The
-  # stage stops with a margin under the job's timeout; a country with areas
+  # stage stops this many minutes after the job started, forty under the
+  # job's timeout, so the build, the publish and the cache save always get
+  # their turn however long the earlier stages took; a country with areas
   # still to fetch is held back from publishing until a run completes it. A
   # complete answer late is preferred to a partial one on time.
   CAMPUS_REUSE_DAYS: "7"
-  CAMPUS_BUDGET_MIN: ${{ inputs.budget_min || '270' }}
+  CAMPUS_STOP_AT_MIN: ${{ inputs.stop_grounds_at || '290' }}
   # The shared Postgres the website reads from (Railway's public URL). Without
   # it the run still builds and reports, and publishes nothing.
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
@@ -79,6 +81,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: ${{ github.ref }}
+      - run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v5
         with:
           node-version: 22
@@ -106,8 +109,11 @@ jobs:
 
       - name: Hospital grounds
         run: |
-          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs --reuse-days "$CAMPUS_REUSE_DAYS" ${CAMPUS_BUDGET_MIN:+--budget-min "$CAMPUS_BUDGET_MIN"}
-          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES" --reuse-days "$CAMPUS_REUSE_DAYS" ${CAMPUS_BUDGET_MIN:+--budget-min "$CAMPUS_BUDGET_MIN"}; fi
+          budget=$(( CAMPUS_STOP_AT_MIN - ( $(date +%s) - JOB_START ) / 60 ))
+          [ "$budget" -lt 5 ] && budget=5
+          echo "The grounds stage has $budget minutes before it leaves the rest to the next run"
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs --reuse-days "$CAMPUS_REUSE_DAYS" --budget-min "$budget"
+          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES" --reuse-days "$CAMPUS_REUSE_DAYS" --budget-min "$budget"; fi
 
       - name: Keep the grounds for the next run
         if: always()
