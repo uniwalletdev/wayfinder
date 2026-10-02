@@ -14,16 +14,6 @@ export function apiUrl(path: string): string {
   return `${API_BASE}${path}`
 }
 
-// Where the worldwide hospital data lives: the per-country lists, the venues
-// built from OpenStreetMap and their floor plans under /world and
-// /floorplans/osm. They run to tens of megabytes across the world, so the apps
-// do not carry them (scripts/app-shell-build.mjs leaves them out of the
-// bundle) and read them from the website instead; the web reads its own.
-export function worldUrl(path: string): string {
-  const site = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "") ?? ""
-  return IS_APP_SHELL && site ? `${site}${path}` : path
-}
-
 // The origin a shareable link or poster QR code should carry. Inside the apps
 // window.location.origin is capacitor://localhost, which nobody else can open,
 // so links are written against the website instead.

@@ -33,7 +33,8 @@ because Overpass is not reachable from sandboxed development machines:
 | 1 | `fetch-hospitals.mjs` | `data/world/hospitals/<CC>.json` — every named hospital in each ISO country, from Overpass |
 | 2 | `fetch-indoor.mjs` | `data/world/indoor-candidates.json`, `data/world/indoor-raw/<id>.json` — hospitals whose insides are mapped with OSM's Simple Indoor Tagging, and their full indoor geometry |
 | 2b | `fetch-campus.mjs` | `data/world/campus-raw/<CC>.json` (not committed) — what is mapped on every hospital's grounds: buildings, entrances, car parks, facilities, footpaths. Countries with more than a thousand hospitals are fetched by state or Land |
-| 3 | `build.mjs` | `public/world/<CC>.json` (what the app reads), `public/world/venues/<id>.json` and `public/floorplans/osm/<id>/*.svg` for the hospitals with indoor maps or site maps, `data/world/indoor-report.json`, `data/world/campus-report.json` |
+| 3 | `build.mjs` | `public/world/<CC>.json`, `public/world/venues/<id>.json` and `public/floorplans/osm/<id>/*.svg` for the hospitals with indoor maps or site maps (not committed), `data/world/indoor-report.json`, `data/world/campus-report.json` |
+| 4 | `publish.mjs` | the same, written into the shared Postgres (`db/migrations/0005_world.sql`), country by country in one transaction each; `/api/world/*` serves it |
 
 A push that touches `scripts/world/` runs a sample of countries, reusing
 hospital lists and indoor geometry fetched in the last two days, and commits
@@ -73,14 +74,27 @@ place — a visitor knows which hospital they are at.
 Ids are `osm-<cc>-<w|n|r><osm id>`, so an id alone says which country file
 lists it and a saved venue survives a data refresh.
 
-## Where the apps get it
+## Where it lives, and how the apps get it
 
-The per-country lists, venues and plans add up to tens of megabytes across the
-world, so the Android and iOS apps do not carry them: `scripts/app-shell-build.mjs`
-leaves `/world` and `/floorplans/osm` out of the bundle and
-`src/lib/app-shell.ts`'s `worldUrl()` points the apps at the website for them
-(`next.config.ts` lets any origin read those paths). The website serves its
-own copy. The UK's NHS directory stays in the bundle.
+The per-country lists, venues and plans add up to hundreds of megabytes across
+the world and are refreshed monthly, so they live in the shared Postgres (the
+same Railway database the venue store uses) rather than in the repository or
+the app bundle. `src/lib/world-db.ts` reads it and these routes serve it,
+cached at the edge:
+
+- `/api/world/<CC>` — a country's directory
+- `/api/world/nearest?country=&lat=&lng=` — the hospitals nearest a position, which is what a visitor outside the UK opens on, without downloading the list
+- `/api/world/hospitals/<id>` and `/api/world/venues/<id>` — one hospital, or its built map
+- `/api/world/plans/<id>/<plan>.svg` — a floor plan
+
+The website and the apps read the same routes (the apps through the API base
+they are built with). A data refresh therefore reaches installed apps on the
+next run, with no deploy and no store release. Without `DATABASE_URL` the
+routes answer 404 and a country reads as having no hospitals listed yet. The
+UK's NHS directory stays in the bundle.
+
+The workflow needs `DATABASE_URL` as a repository secret (Railway → Postgres →
+Connect → Public Network → Connection URL) to publish.
 
 ## Licence
 

@@ -1,7 +1,7 @@
 import type { Venue, VenueSummary } from "../types"
 import { DEFAULT_VENUE, slugify } from "./core"
 import { HOME_COUNTRY, countryName } from "../country"
-import { worldUrl } from "../app-shell"
+import { apiUrl } from "../app-shell"
 import { MAPPED_VENUE_SUMMARIES, VENUE_LOADERS } from "./catalog-data"
 
 // The client's view of the seed venues: summaries up front, interiors on
@@ -16,10 +16,10 @@ import { MAPPED_VENUE_SUMMARIES, VENUE_LOADERS } from "./catalog-data"
 // life of the page, so a venue is never fetched twice.
 //
 // Directories are per country. The UK's is the NHS register, a module in the
-// bundle. Every other country's is a file built from OpenStreetMap by
-// scripts/world/build.mjs and served from /world/<CC>.json — static on the
-// web, fetched from the website by the apps (see worldUrl) — so a visitor in
-// Luxembourg downloads Luxembourg's hospitals and nobody else's.
+// bundle. Every other country's comes from /api/world/<CC>, served from the
+// shared database the World hospital data workflow publishes into, so a
+// visitor in Luxembourg downloads Luxembourg's hospitals and nobody else's —
+// and a hospital opened by id is fetched on its own, without the list.
 
 export function summaryOf(v: Venue): VenueSummary {
   return {
@@ -47,7 +47,7 @@ const WORLD_ID = /^osm-([a-z]{2})-([nwr]\d+)$/
 
 export const OSM_ATTRIBUTION = "© OpenStreetMap contributors (ODbL)"
 
-// One row of /world/<CC>.json, as scripts/world/build.mjs writes it.
+// One row of a country's directory, as /api/world/<CC> serves it.
 export interface WorldHospitalRow {
   id: string
   name: string
@@ -58,8 +58,8 @@ export interface WorldHospitalRow {
   postcode?: string
   operator?: string
   emergency?: boolean
-  // Set when the hospital's inside is mapped: /world/venues/<app id>.json
-  // holds the full venue.
+  // Set when the hospital has a map (indoor or of its grounds):
+  // /api/world/venues/<app id> holds the full venue.
   mapped?: boolean
 }
 
@@ -97,15 +97,21 @@ export function worldVenueOf(country: string, row: WorldHospitalRow, generatedAt
   }
 }
 
-// null for a file that is not there. Inside the apps a missing path can come
-// back as the page itself rather than a 404 (the shell serves index.html for
-// unknown paths), so anything that is not JSON counts as missing too.
-async function fetchJson<T>(path: string): Promise<T | null> {
-  const res = await fetch(path)
+// null for what is not there (a country never published, a hospital with no
+// map). A deployment without the database answers 404 for everything, which
+// reads the same way: nothing listed yet.
+async function fetchJson<T>(url: string): Promise<T | null> {
+  const res = await fetch(url)
   if (res.status === 404) return null
-  if (!res.ok) throw new Error(`${path}: ${res.status}`)
+  if (!res.ok) throw new Error(`${url}: ${res.status}`)
   if (!(res.headers.get("content-type") ?? "").includes("json")) return null
   return (await res.json()) as T
+}
+
+// A world venue's plans are served by the API; inside the apps that is the
+// website's API, so the paths need its origin.
+function withPlanUrls(v: Venue): Venue {
+  return { ...v, floorPlans: v.floorPlans.map((p) => ({ ...p, imageUrl: p.imageUrl.startsWith("/") ? apiUrl(p.imageUrl) : p.imageUrl })) }
 }
 
 const directoryByCountry = new Map<string, Promise<Venue[]>>()
@@ -119,7 +125,7 @@ function loadDirectory(country: string): Promise<Venue[]> {
   if (cached) return cached
   const p = (country === HOME_COUNTRY
     ? import("./nhs-hospitals").then((m) => m.NHS_HOSPITAL_VENUES)
-    : fetchJson<WorldCountryFile>(worldUrl(`/world/${country}.json`)).then((file) =>
+    : fetchJson<WorldCountryFile>(apiUrl(`/api/world/${country}`)).then((file) =>
         (file?.hospitals ?? []).map((row) => {
           const v = worldVenueOf(country, row, file?.generatedAt)
           // The summary must say "walk inside" before the venue is opened, so
@@ -186,16 +192,14 @@ export function loadVenue(id: string): Promise<Venue | null> {
   else if (id.startsWith(NHS_PREFIX)) p = loadDirectory(HOME_COUNTRY).then((list) => list.find((v) => v.id === id) ?? null)
   else if (world) {
     const country = world[1].toUpperCase()
-    p = loadDirectory(country).then(async (list) => {
-      const pin = list.find((v) => v.id === id)
-      if (!pin) return null
-      if (pin.floorPlans.length === 0) return pin
-      // Mapped from OpenStreetMap, inside or grounds: the venue file has the
-      // plans, places and corridors. Plan images live beside it.
-      const full = await fetchJson<Venue>(worldUrl(`/world/venues/${id}.json`))
-      if (!full) return { ...pin, floorPlans: [] }
-      return { ...full, country, floorPlans: full.floorPlans.map((p) => ({ ...p, imageUrl: worldUrl(p.imageUrl) })) }
-    })
+    // By id, without the country's list: the built venue (indoor or grounds)
+    // when there is one, else the hospital's row as a location-only pin.
+    p = (async () => {
+      const full = await fetchJson<Venue>(apiUrl(`/api/world/venues/${id}`))
+      if (full) return withPlanUrls({ ...full, country })
+      const one = await fetchJson<{ hospital: WorldHospitalRow }>(apiUrl(`/api/world/hospitals/${id}`))
+      return one?.hospital ? worldVenueOf(country, one.hospital) : null
+    })()
   } else return Promise.resolve(null)
   const guarded = p.catch((err) => {
     venueCache.delete(id)

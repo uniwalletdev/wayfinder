@@ -101,15 +101,7 @@ const nextConfig: NextConfig = {
     ? {}
     : {
         async headers() {
-          return [
-            { source: "/:path*", headers: securityHeaders },
-            // The Android and iOS apps read the worldwide hospital data from
-            // this site (capacitor://localhost and https://localhost origins,
-            // see src/lib/app-shell.ts). It is public open data, so any
-            // origin may read it.
-            { source: "/world/:path*", headers: [{ key: "Access-Control-Allow-Origin", value: "*" }] },
-            { source: "/floorplans/osm/:path*", headers: [{ key: "Access-Control-Allow-Origin", value: "*" }] },
-          ];
+          return [{ source: "/:path*", headers: securityHeaders }];
         },
       }),
 

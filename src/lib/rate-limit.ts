@@ -94,6 +94,9 @@ export const LIMITS = {
   // still needs a ceiling. Tune this if real mapping sessions hit it.
   survey: { limit: 20, windowMs: 60 * 60 * 1000 }, // 20/hour
   geocode: { limit: 60, windowMs: 60 * 1000 }, // 60/min
+  // The worldwide hospital data: a country's list, a venue, and one request
+  // per floor plan image, all cached at the edge after the first hit.
+  world: { limit: 240, windowMs: 60 * 1000 }, // 240/min
   directions: { limit: 60, windowMs: 60 * 1000 }, // 60/min
   // Venue writes are unauthenticated, and POST /api/venues defaults to
   // visibility:"public" — so without a ceiling an anonymous loop can inject spam

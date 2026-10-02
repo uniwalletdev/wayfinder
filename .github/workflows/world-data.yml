@@ -9,12 +9,15 @@
 #      grounds (buildings, entrances, car parks,
 #      paths), state by state for large countries    -> data/world/campus-raw/ (not committed)
 #   3. builds the app's per-country files, indoor
-#      venues and site-map venues                    -> public/world/, public/floorplans/osm/
+#      venues and site-map venues                    -> public/world/, public/floorplans/osm/ (not committed)
+#   4. publishes them into the shared Postgres       -> /api/world/* serves them
 #
-# A run started by a push to a feature branch commits the results back to that
-# branch, so they ride along in its pull request. A scheduled or manual run on
-# main opens a pull request instead. The UK is skipped: its hospitals come from
-# the NHS register (nhs-data.yml).
+# The built files are published, not committed: they run to hundreds of
+# megabytes across the world. What a run commits back is the small raw data
+# under data/world (hospital lists, indoor geometry, reports), so a later run
+# can reuse it: a push to a feature branch commits to that branch, a scheduled
+# or manual run on main opens a pull request. The UK is skipped: its hospitals
+# come from the NHS register (nhs-data.yml).
 #
 # Data © OpenStreetMap contributors, ODbL 1.0. Attribution is shown in the app.
 name: World hospital data
@@ -56,6 +59,9 @@ env:
   # the scripts is checked within the hour. The schedule and a manual run
   # cover every state.
   CAMPUS_AREAS: ${{ github.event_name == 'push' && 'US-CA,US-TX,US-FL,US-NY,US-PA,US-IL,US-OH,US-GA,US-NC,US-MI,US-NJ,US-VA,US-WA,US-AZ,US-MA,US-CO' || '' }}
+  # The shared Postgres the website reads from (Railway's public URL). Without
+  # it the run still builds and reports, and publishes nothing.
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
 jobs:
   fetch:
@@ -88,6 +94,10 @@ jobs:
 
       - name: Build the app's files
         run: node scripts/world/build.mjs
+
+      - name: Publish to the database
+        if: env.DATABASE_URL != ''
+        run: node scripts/world/publish.mjs
 
       - name: Summarise
         if: always()
@@ -132,9 +142,7 @@ jobs:
           git config user.email "data@findway.invalid"
           # One pathspec that matches nothing makes git add refuse the lot, so
           # only the folders that exist are named.
-          for p in data/world public/world public/floorplans/osm; do
-            [ -e "$p" ] && git add -A -- "$p"
-          done
+          git add -A -- data/world
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Refresh world hospital data from OpenStreetMap ($COUNTRIES)" -m "Data © OpenStreetMap contributors, ODbL 1.0."
           git pull --rebase origin "${GITHUB_REF_NAME}"
@@ -153,8 +161,6 @@ jobs:
           base: main
           add-paths: |
             data/world
-            public/world
-            public/floorplans/osm
           commit-message: "Refresh world hospital data from OpenStreetMap"
           title: "Refresh world hospital data from OpenStreetMap"
           body: |
