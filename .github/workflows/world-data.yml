@@ -5,8 +5,11 @@
 #   1. fetches every named hospital per country      -> data/world/hospitals/
 #   2. finds hospitals whose insides are mapped and
 #      downloads their indoor geometry               -> data/world/indoor-raw/
-#   3. builds the app's per-country files and indoor
-#      venues                                        -> public/world/, public/floorplans/osm/
+#   2b. fetches what is mapped on every hospital's
+#      grounds (buildings, entrances, car parks,
+#      paths), state by state for large countries    -> data/world/campus-raw/ (not committed)
+#   3. builds the app's per-country files, indoor
+#      venues and site-map venues                    -> public/world/, public/floorplans/osm/
 #
 # A run started by a push to a feature branch commits the results back to that
 # branch, so they ride along in its pull request. A scheduled or manual run on
@@ -70,6 +73,11 @@ jobs:
           if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-indoor.mjs --max-detail "$MAX_DETAIL"
           else node scripts/world/fetch-indoor.mjs --countries "$COUNTRIES" --max-detail "$MAX_DETAIL"; fi
 
+      - name: Hospital grounds
+        run: |
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs
+          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES"; fi
+
       - name: Build the app's files
         run: node scripts/world/build.mjs
 
@@ -92,6 +100,12 @@ jobs:
               }
               const raw = "data/world/indoor-raw";
               if (fs.existsSync(raw)) console.log(`- indoor geometry downloaded for **${fs.readdirSync(raw).length}** hospitals`);
+              if (fs.existsSync("data/world/campus-report.json")) {
+                const c = JSON.parse(fs.readFileSync("data/world/campus-report.json"));
+                const per = {};
+                for (const b of c.built) per[b.country] = (per[b.country] ?? 0) + 1;
+                console.log(`- **${c.built.length}** site maps built from hospital grounds: ` + Object.entries(per).map(([k, v]) => `${k} ${v}`).join(", ") + (Object.keys(c.refused).length ? `; refused: ` + Object.entries(c.refused).map(([k, v]) => `${k} ×${v}`).join(", ") : ""));
+              }
               if (fs.existsSync("data/world/indoor-report.json")) {
                 const r = JSON.parse(fs.readFileSync("data/world/indoor-report.json"));
                 console.log(`- **${r.built.length}** indoor venues built: ` + r.built.slice(0, 12).map(x => `${x.name} (${x.country}, ${x.floors} floors, ${x.waypoints} places)`).join("; "));

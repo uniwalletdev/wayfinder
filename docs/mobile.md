@@ -40,7 +40,10 @@ Consequences worth knowing:
 
 - **A change under `src/` or `public/` reaches installed apps only through a
   new app build.** The website updates on deploy; the apps do not, so plan
-  store releases for anything users must see on the phone.
+  store releases for anything users must see on the phone. The exception is
+  the worldwide hospital data (`public/world`, `public/floorplans/osm`): the
+  apps read it from the website, so a data refresh reaches them on deploy
+  (see [`world-data.md`](world-data.md)).
 - **Sign-in stays on the web for now.** Clerk's proxy cannot run inside a
   static export, so the apps are built without a Clerk key and run in the
   anonymous mode the app has always supported. Saved places and venue

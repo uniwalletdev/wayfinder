@@ -1,6 +1,7 @@
 import type { Venue, VenueSummary } from "../types"
 import { DEFAULT_VENUE, slugify } from "./core"
 import { HOME_COUNTRY, countryName } from "../country"
+import { worldUrl } from "../app-shell"
 import { MAPPED_VENUE_SUMMARIES, VENUE_LOADERS } from "./catalog-data"
 
 // The client's view of the seed venues: summaries up front, interiors on
@@ -16,9 +17,9 @@ import { MAPPED_VENUE_SUMMARIES, VENUE_LOADERS } from "./catalog-data"
 //
 // Directories are per country. The UK's is the NHS register, a module in the
 // bundle. Every other country's is a file built from OpenStreetMap by
-// scripts/world/build.mjs and served from /world/<CC>.json — bundled into the
-// apps, static on the web — so a visitor in Luxembourg downloads Luxembourg's
-// hospitals and nobody else's.
+// scripts/world/build.mjs and served from /world/<CC>.json — static on the
+// web, fetched from the website by the apps (see worldUrl) — so a visitor in
+// Luxembourg downloads Luxembourg's hospitals and nobody else's.
 
 export function summaryOf(v: Venue): VenueSummary {
   return {
@@ -118,7 +119,7 @@ function loadDirectory(country: string): Promise<Venue[]> {
   if (cached) return cached
   const p = (country === HOME_COUNTRY
     ? import("./nhs-hospitals").then((m) => m.NHS_HOSPITAL_VENUES)
-    : fetchJson<WorldCountryFile>(`/world/${country}.json`).then((file) =>
+    : fetchJson<WorldCountryFile>(worldUrl(`/world/${country}.json`)).then((file) =>
         (file?.hospitals ?? []).map((row) => {
           const v = worldVenueOf(country, row, file?.generatedAt)
           // The summary must say "walk inside" before the venue is opened, so
@@ -189,10 +190,11 @@ export function loadVenue(id: string): Promise<Venue | null> {
       const pin = list.find((v) => v.id === id)
       if (!pin) return null
       if (pin.floorPlans.length === 0) return pin
-      // Mapped from OpenStreetMap's indoor tagging: the venue file has the
-      // floor plans, rooms and corridors.
-      const full = await fetchJson<Venue>(`/world/venues/${id}.json`)
-      return full ? { ...full, country } : { ...pin, floorPlans: [] }
+      // Mapped from OpenStreetMap, inside or grounds: the venue file has the
+      // plans, places and corridors. Plan images live beside it.
+      const full = await fetchJson<Venue>(worldUrl(`/world/venues/${id}.json`))
+      if (!full) return { ...pin, floorPlans: [] }
+      return { ...full, country, floorPlans: full.floorPlans.map((p) => ({ ...p, imageUrl: worldUrl(p.imageUrl) })) }
     })
   } else return Promise.resolve(null)
   const guarded = p.catch((err) => {

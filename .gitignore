@@ -82,3 +82,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Stage 2b of the world data: too large to commit, consumed by build.mjs in the same CI run.
+/data/world/campus-raw/

@@ -14,7 +14,7 @@
 // production site unless FINDWAY_API_URL names another deployment;
 // FINDWAY_SITE_URL, if set, is the origin shared links are written on and
 // defaults to the API URL.
-import { existsSync, mkdirSync, renameSync, rmSync } from "fs"
+import { existsSync, mkdirSync, renameSync, rmSync, readdirSync } from "fs"
 import { spawnSync } from "child_process"
 import { createRequire } from "module"
 
@@ -79,4 +79,15 @@ if (!existsSync("out/index.html")) {
   console.error("next build finished but produced no out/index.html")
   process.exit(1)
 }
+// The worldwide hospital data (per-country lists, OpenStreetMap venues and
+// their plans) runs to tens of megabytes across the world. The apps read it
+// from the site (src/lib/app-shell.ts worldUrl) rather than carrying it, so
+// it is left out of the bundle.
+let dropped = 0
+for (const dir of ["out/world", "out/floorplans/osm"]) {
+  if (!existsSync(dir)) continue
+  dropped += readdirSync(dir).length
+  rmSync(dir, { recursive: true, force: true })
+}
+if (dropped) console.log(`Left the worldwide hospital data out of the bundle (${dropped} entries); the apps read it from ${siteUrl}`)
 console.log(`\nApp shell built in out/: calls ${apiUrl}/api, shares links on ${siteUrl}`)

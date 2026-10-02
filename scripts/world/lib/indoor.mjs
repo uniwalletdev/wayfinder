@@ -25,7 +25,7 @@ const mPerLng = (lat) => M_PER_LAT * Math.cos((lat * Math.PI) / 180)
 
 // What an indoor venue needs before it is worth shipping: fewer rooms than
 // this is a single ward someone started, not a hospital you can navigate.
-export const MIN_ROOMS = 8
+export const MIN_ROOMS = 6
 export const MIN_NAMED = 4
 
 // ---- tags -------------------------------------------------------------------
@@ -502,13 +502,13 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
 
 // ---- drawing ----------------------------------------------------------------
 
-const FILL = {
+export const FILL = {
   toilet: "#e0f2fe", lift: "#fef3c7", stairs: "#fef3c7", exit: "#dcfce7", reception: "#eef2ff",
   canteen: "#fdf2f8", pharmacy: "#ecfdf5", ward: "#f0fdf4", department: "#f5f3ff", other: "#ffffff",
 }
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
-const f1 = (n) => (Math.round(n * 10) / 10).toString()
-const pathOf = (polys, px) =>
+export const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+export const f1 = (n) => (Math.round(n * 10) / 10).toString()
+export const pathOf = (polys, px) =>
   polys
     .map((poly) => [poly.outer, ...poly.inners].map((ring) => ring.map((p, i) => `${i ? "L" : "M"}${f1(px(p)[0])} ${f1(px(p)[1])}`).join("") + "Z").join(""))
     .join("")
@@ -516,9 +516,9 @@ const pathOf = (polys, px) =>
 // The words of a label laid out in up to two lines at the largest size that
 // fits the room, or nothing when none does — a plan crowded with clipped text
 // is worse than one with fewer labels.
-function fitLabel(name, w, h) {
+export function fitLabel(name, w, h, sizes = [1.8, 1.5, 1.25, 1.0, 0.85]) {
   const words = name.split(/\s+/)
-  for (const fs of [1.8, 1.5, 1.25, 1.0, 0.85]) {
+  for (const fs of sizes) {
     const lineW = (s) => s.length * fs * 0.56
     if (lineW(name) <= w * 0.92 && fs * 1.3 <= h) return { lines: [name], fs }
     if (words.length > 1 && fs * 2.5 <= h) {

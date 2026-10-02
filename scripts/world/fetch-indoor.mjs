@@ -10,7 +10,7 @@
 // Reads data/world/hospitals/<CC>.json (stage 1) to know the hospital outlines.
 // Writes data/world/indoor-candidates.json and data/world/indoor-raw/<id>.json.
 //
-// Run: node scripts/world/fetch-indoor.mjs [--countries LU,DE] [--min-rooms 8] [--max-detail 400]
+// Run: node scripts/world/fetch-indoor.mjs [--countries LU,DE] [--min-rooms 6] [--max-detail 400]
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
 import { overpass, pointOf } from "./lib/overpass.mjs"
 
@@ -19,7 +19,7 @@ const arg = (name, def) => {
   return i > -1 ? process.argv[i + 1] : def
 }
 const only = arg("--countries", null)?.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean)
-const MIN_ROOMS = Number(arg("--min-rooms", 8))
+const MIN_ROOMS = Number(arg("--min-rooms", 6))
 const MAX_DETAIL = Number(arg("--max-detail", 400))
 const RAW = "data/world/indoor-raw"
 mkdirSync(RAW, { recursive: true })
