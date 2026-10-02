@@ -1,0 +1,130 @@
+# Worldwide hospitals and indoor maps from OpenStreetMap.
+#
+# Sandboxed development environments can't reach Overpass, so the fetching
+# happens here (see scripts/world/). Each run:
+#   1. fetches every named hospital per country      -> data/world/hospitals/
+#   2. finds hospitals whose insides are mapped and
+#      downloads their indoor geometry               -> data/world/indoor-raw/
+#   3. builds the app's per-country files and indoor
+#      venues                                        -> public/world/, public/floorplans/osm/
+#
+# A run started by a push to a feature branch commits the results back to that
+# branch, so they ride along in its pull request. A scheduled or manual run on
+# main opens a pull request instead. The UK is skipped: its hospitals come from
+# the NHS register (nhs-data.yml).
+#
+# Data © OpenStreetMap contributors, ODbL 1.0. Attribution is shown in the app.
+name: World hospital data
+
+on:
+  schedule:
+    - cron: "41 2 12 * *"
+  workflow_dispatch:
+    inputs:
+      countries:
+        description: "Comma-separated ISO codes, or ALL"
+        default: "ALL"
+      max_detail:
+        description: "Most hospitals to download indoor geometry for"
+        default: "400"
+  push:
+    paths:
+      - "scripts/world/**"
+      - ".github/workflows/world-data.yml"
+
+concurrency:
+  group: world-data-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  # A push runs a sample so a change to the scripts is checked in minutes; the
+  # monthly schedule and a manual run with ALL cover the world.
+  COUNTRIES: ${{ github.event_name == 'push' && 'LU,BE,NL,CH,AT,DE,DK,IE,US' || inputs.countries || 'ALL' }}
+  MAX_DETAIL: ${{ github.event_name == 'push' && '60' || inputs.max_detail || '400' }}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Hospitals per country
+        run: |
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-hospitals.mjs
+          else node scripts/world/fetch-hospitals.mjs --countries "$COUNTRIES"; fi
+
+      - name: Indoor mapping
+        run: |
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-indoor.mjs --max-detail "$MAX_DETAIL"
+          else node scripts/world/fetch-indoor.mjs --countries "$COUNTRIES" --max-detail "$MAX_DETAIL"; fi
+
+      - name: Build the app's files
+        run: |
+          if [ -f scripts/world/build.mjs ]; then node scripts/world/build.mjs; fi
+
+      - name: Summarise
+        if: always()
+        run: |
+          {
+            echo "## World hospital data ($COUNTRIES)"
+            echo
+            node -e '
+              const fs = require("fs");
+              const dir = "data/world/hospitals";
+              if (!fs.existsSync(dir)) process.exit(0);
+              let n = 0, c = 0;
+              for (const f of fs.readdirSync(dir)) { const d = JSON.parse(fs.readFileSync(dir + "/" + f)); n += d.hospitals.length; c++; }
+              console.log(`- **${n}** hospitals in **${c}** countries`);
+              if (fs.existsSync("data/world/indoor-candidates.json")) {
+                const k = JSON.parse(fs.readFileSync("data/world/indoor-candidates.json")).candidates;
+                console.log(`- **${k.length}** hospitals with some indoor mapping; top: ` + k.slice(0, 8).map(x => `${x.name} (${x.country}, ${x.named} named rooms)`).join("; "));
+              }
+              const raw = "data/world/indoor-raw";
+              if (fs.existsSync(raw)) console.log(`- indoor geometry downloaded for **${fs.readdirSync(raw).length}** hospitals`);
+            '
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # A feature branch gets the results as a commit of its own. Pushes made
+      # with the workflow token do not start further workflow runs, so this
+      # cannot loop.
+      - name: Commit to the branch
+        if: github.ref != 'refs/heads/main'
+        run: |
+          git config user.name "Findway data"
+          git config user.email "data@findway.invalid"
+          git add -A data/world public/world public/floorplans/osm src/lib/world 2>/dev/null || true
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Refresh world hospital data from OpenStreetMap ($COUNTRIES)" -m "Data © OpenStreetMap contributors, ODbL 1.0."
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Open a pull request
+        if: github.ref == 'refs/heads/main'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/world-data
+          base: main
+          add-paths: |
+            data/world
+            public/world
+            public/floorplans/osm
+            src/lib/world
+          commit-message: "Refresh world hospital data from OpenStreetMap"
+          title: "Refresh world hospital data from OpenStreetMap"
+          body: |
+            Automated refresh run by `.github/workflows/world-data.yml`. The run
+            summary has the counts. Data © OpenStreetMap contributors, ODbL 1.0.
+          labels: automated, data
+          delete-branch: true
