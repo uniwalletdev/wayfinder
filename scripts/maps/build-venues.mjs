@@ -164,6 +164,7 @@ async function build(v) {
   L.push("  defaultZoom: 17,")
   L.push('  visibility: "public",')
   L.push("  verified: false,")
+  L.push('  country: "GB",')
   L.push(`  accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "${esc(v.notes)}" },`)
   // A trust that numbers its storeys "Level 1, 2, 3" from a lower ground has to
   // say which one you walk in on, or the floor rail calls Level 2 "Floor 1".

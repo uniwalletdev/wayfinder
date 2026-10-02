@@ -4,14 +4,15 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import type { Route } from "./types"
 import { Capacitor } from "@capacitor/core"
 import { Haptics, ImpactStyle, NotificationType } from "@capacitor/haptics"
+import { speak, speechAvailable, spokenStep, stopSpeaking } from "./voice"
 
 // Turn-by-turn guidance you can hear and feel, not just read.
 //
 // A navigation app is used with the phone half-lowered and eyes on the
 // corridor, and for someone with low vision the map is no use at all. So when
 // the current step changes while navigating, the instruction is (a) written to
-// a polite live region for screen readers, always; (b) spoken aloud through the
-// Web Speech API, when the walker has turned that on; and (c) accompanied by a
+// a polite live region for screen readers, always; (b) spoken aloud in a calm
+// voice (src/lib/voice.ts), when the walker has turned that on; and (c) accompanied by a
 // short vibration where the device supports it. Nothing here blocks or
 // interrupts navigation; every capability is feature-detected and optional.
 //
@@ -24,21 +25,6 @@ function readSpokenPreference(): boolean {
     return window.localStorage.getItem(SPOKEN_KEY) === "true"
   } catch {
     return false
-  }
-}
-
-function speak(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return
-  try {
-    const synth = window.speechSynthesis
-    synth.cancel()
-    const u = new SpeechSynthesisUtterance(text)
-    u.lang = "en-GB"
-    u.rate = 1
-    synth.speak(u)
-  } catch {
-    // A browser that lists the API but refuses to use it (no voices, autoplay
-    // rules) simply stays silent.
   }
 }
 
@@ -75,7 +61,7 @@ export function useGuidanceAnnouncer({ active, route, stepIndex }: Params) {
   useEffect(() => {
     // Both are browser facts unknown during server render.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setSpeechSupported(typeof window !== "undefined" && "speechSynthesis" in window)
+    setSpeechSupported(speechAvailable())
     const pref = readSpokenPreference()
     spokenRef.current = pref
     setSpoken(pref)
@@ -87,14 +73,14 @@ export function useGuidanceAnnouncer({ active, route, stepIndex }: Params) {
     try {
       window.localStorage.setItem(SPOKEN_KEY, String(on))
     } catch {}
-    if (on) speak("Spoken directions on.")
-    else if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.cancel()
+    if (on) void speak("Spoken directions are on. I'll guide you, step by step.")
+    else stopSpeaking()
   }, [])
 
   useEffect(() => {
     if (!active || !route) {
       lastKeyRef.current = null
-      if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.cancel()
+      stopSpeaking()
       return
     }
     const step = route.steps[stepIndex]
@@ -111,7 +97,7 @@ export function useGuidanceAnnouncer({ active, route, stepIndex }: Params) {
     const text = `${step.instruction}${distance}`
     // Announcing is a reaction to the walker reaching a step, not derived state.
     setAnnouncement(text)
-    if (spokenRef.current) speak(text)
+    if (spokenRef.current) void speak(spokenStep(step.instruction, step.distance, { first: isFirst }))
     // The first step buzzes as a "guidance started" cue; arrival is a longer
     // double buzz; every turn in between a short one.
     buzz(arrived ? [120, 80, 160] : isFirst ? 60 : 40)

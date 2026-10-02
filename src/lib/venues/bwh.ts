@@ -14,6 +14,7 @@ export const BWH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map (from the Clinical Genetics sheet) showing Birmingham Women's Hospital and the adjacent Queen Elizabeth Hospital Birmingham; nearest station University." },
   quickAccess: ["Main Entrance", "A&E", "Clinical Genetics Clinic"],
   floorPlans: [

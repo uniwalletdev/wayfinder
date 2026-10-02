@@ -14,6 +14,7 @@ export const TRUST_MAP_JUNE_2026_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust (June 2026). The site is changing: the helipad moved in January 2026, a new bus stop opened near the site entrance in May 2026, and a multi-storey car park is being built opposite the community diagnostic centre from June 2026 ahead of the hospital's replacement by 2030. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Accident & Emergency Department", "Urgent Care", "Accident & Emergency Entrance", "Main Entrance"],
   floorPlans: [

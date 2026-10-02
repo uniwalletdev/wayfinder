@@ -14,6 +14,7 @@ export const MACCLESFIELD_DISTRICT_GENERAL_HOSPITAL_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "2 floor plans published by East Cheshire NHS Trust (May 2025). Placement is derived automatically (centre from the NHS ODS register) and has not been checked by eye." },
   quickAccess: ["Accident & Emergency", "Accident & Emergency Entrance", "NHS", "East Cheshire"],
   floorPlans: [

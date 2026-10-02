@@ -14,6 +14,7 @@ export const SOUTHPORT_HOSPITAL_SITE_MAP_A3_SEPT_2024_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Mersey and West Lancashire Teaching Hospitals NHS Trust (September 2024). Position corrected September 2026: the sheet was matched to the closed Southport General Infirmary in the town centre; now centred on the District General Hospital at Town Lane (NHS ODS register). Scale is estimated and has not been checked by eye." },
   quickAccess: ["Main Entrance", "Accident & Emergency Entrance"],
   floorPlans: [

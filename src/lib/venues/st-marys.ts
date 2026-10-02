@@ -15,6 +15,7 @@ export const ST_MARYS_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Step-free routes shown on the trust's site map; nearest step-free stations at Paddington. The site is changing: the main outpatients building was due to close by March 2026, structural problems were found in the Mint building in late 2025, and a new hospital is planned on the east of the estate — check where a service now sits before routing to it. The trust's February 2024 site map is the current edition." },
   quickAccess: ["Queen Elizabeth the Queen Mother Building (Main Reception)", "A&E", "Urgent Treatment Centre", "Main Outpatients", "Lindo Wing"],
   floorPlans: [

@@ -14,6 +14,7 @@ export const WEST_MIDDLESEX_UNIVERSITY_HOSPITAL_SITE_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Chelsea and Westminster Hospital NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Accident & Emergency - Main Reception", "Accident and Emergency Entrance", "Outpatients Department (OPD) 1", "A&E Ambulance Entrance", "Main Entrance"],
   floorPlans: [

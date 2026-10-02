@@ -14,6 +14,7 @@ export const COMMUNITY_DIAGNOSTIC_CENTRE_SITE_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Plan of Westgate Retail Park published by Mid Yorkshire Teaching NHS Trust, showing where the Community Diagnostic Centre (Unit 9B) sits among the retail units. Position corrected September 2026 to the WF2 9SD postcode; the drawing has not been checked by eye, and the centre's own unit is not labelled on it." },
   quickAccess: [],
   floorPlans: [

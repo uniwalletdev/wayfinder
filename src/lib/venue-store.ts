@@ -70,6 +70,31 @@ export function loadActiveVenueId(): string | null {
   }
 }
 
+// Who chose the open venue: the visitor, or the app on their behalf (the
+// nearest hospital in their country, see WayfinderApp's autoVenueRef). While
+// it is the app's choice, a later launch may still move them to the hospital
+// they are at; once they pick a place themselves it stays picked.
+const CHOICE_KEY = "wayfinder.venueChoice"
+
+export function loadVenueChoice(): "app" | "user" | null {
+  if (typeof window === "undefined") return null
+  try {
+    const v = window.localStorage.getItem(CHOICE_KEY)
+    return v === "app" || v === "user" ? v : null
+  } catch {
+    return null
+  }
+}
+
+export function saveVenueChoice(by: "app" | "user"): void {
+  if (typeof window === "undefined") return
+  try {
+    window.localStorage.setItem(CHOICE_KEY, by)
+  } catch {
+    // ignore
+  }
+}
+
 export function saveActiveVenueId(id: string): void {
   if (typeof window === "undefined") return
   try {

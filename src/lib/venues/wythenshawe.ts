@@ -14,6 +14,7 @@ export const WYTHENSHAWE_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Colour-zoned campus (purple, green, blue, yellow, orange) with numbered entrances; specialist heart, lung and cystic-fibrosis centres." },
   quickAccess: ["Entrance 3 Main Entrance", "Acute Block", "North West Heart Centre", "Treatment & Diagnostic Centre", "Education Research Centre"],
   floorPlans: [

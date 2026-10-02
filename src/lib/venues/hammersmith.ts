@@ -14,6 +14,7 @@ export const HAMMERSMITH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map with lettered building zones, main and Urgent Treatment Centre entrances, and bus stops on Du Cane Road." },
   quickAccess: ["Main entrance", "Urgent Treatment Centre", "Heart attack centre", "Outpatients, x-ray and pharmacy"],
   floorPlans: [

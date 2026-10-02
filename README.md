@@ -14,6 +14,9 @@ options, live re-routing, QR re-positioning and an AR view.
   plus every NHS hospital from the ODS register as a located directory entry.
   See [`data/README.md`](data/README.md) for the pipeline and
   [`docs/mapping-review.md`](docs/mapping-review.md) for how good they are.
+  Outside the UK the app shows the hospitals of the country the visitor is
+  in, from OpenStreetMap, with indoor maps where OSM has them; see
+  [`docs/world-data.md`](docs/world-data.md).
 - **Links and posters:** `/navigate?venue=<id>&to=<waypointId>` opens a
   hospital with a destination chosen; add `&stepfree=1` to ask for the
   step-free route, and `&floor=&lat=&lng=` (what a printed poster's QR code

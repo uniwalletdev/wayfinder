@@ -31,6 +31,7 @@ export const CUH_VENUE: Venue = {
   // Addenbrooke's. A placeholder was wearing the Verified badge, which told
   // people the rooms were where the drawing put them.
   verified: false,
+  country: "GB",
   illustrative: true,
   accessibility: {
     stepFreeRoute: true,

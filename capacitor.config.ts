@@ -17,6 +17,12 @@ const config: CapacitorConfig = {
   appName: "Findway",
   webDir: "out",
   backgroundColor: "#0A1626",
+  plugins: {
+    // With the keyboard up, the web view shrinks to the space above it, so the
+    // search box and its results stay in view instead of the page being pushed
+    // up and left there after the keyboard closes.
+    Keyboard: { resize: "native", resizeOnFullScreen: true },
+  },
   ios: {
     contentInset: "never",
     // Pinch-zoom belongs to the map, not the page.

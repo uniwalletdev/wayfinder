@@ -14,6 +14,7 @@ export const PILGRIM_GROUND_FLOOR_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Ground floor plan published by United Lincolnshire Teaching Hospitals NHS Trust. The Emergency Department is being rebuilt (phase one opened May 2025, more cubicles October 2025, the old department remodelled through 2026), so its layout and entrance may differ from this plan. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
   quickAccess: ["Urgent Treatment Centre", "Emergency Department and Urgent Treatment Centre", "Main Entrance", "PGME", "Day Nursery"],
   floorPlans: [

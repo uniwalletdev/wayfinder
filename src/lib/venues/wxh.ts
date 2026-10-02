@@ -18,6 +18,7 @@ export const WXH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Zones 1–12 across the ground and first floors of the main building, with further wards in the Gateway Surgical Centre. A new 500-space multi-storey car park opened in November 2025, entered from Hospital Road by the main entrance; the site will be under construction for the hospital's rebuild from 2027." },
   quickAccess: ["Main Entrance", "A&E", "Urgent Care Centre (UCC)", "Outpatients Reception", "Maternity"],
   floorPlans: [

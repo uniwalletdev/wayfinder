@@ -14,6 +14,7 @@ export const LEVEL_3_FLOORPLAN_CUH_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Level 3 floor plan published by Cambridge University Hospitals NHS Foundation Trust. Identity corrected September 2026: this is a level of Addenbrooke's, not Doddington Hospital. Placed on the Addenbrooke's venue centre; scale is the drafted estimate and has not been checked by eye." },
   floorNaming: { word: "Level", groundLevel: 1 },
   quickAccess: ["Lifts", "Stairs", "Toilets with disabled access"],

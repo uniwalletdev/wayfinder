@@ -14,6 +14,7 @@ export const WHISTON_SITE_MAP_FULL_SITE_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Mersey and West Lancashire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Main Entrance", "A&E Entrance", "Emergency A&E Entrance", "A&E and EMERGENCY PARKING"],
   floorPlans: [

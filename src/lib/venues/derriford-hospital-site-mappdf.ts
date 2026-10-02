@@ -14,6 +14,7 @@ export const DERRIFORD_HOSPITAL_SITE_MAPPDF_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by University Hospitals Plymouth NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
   quickAccess: ["Main Entrance", "Emergency Department"],
   floorPlans: [

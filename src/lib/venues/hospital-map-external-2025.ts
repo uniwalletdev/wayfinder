@@ -14,6 +14,7 @@ export const HOSPITAL_MAP_EXTERNAL_2025_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Medway NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Emergency Department Entrance", "Staff Parking Only", "Residences 1 to 5 (Accommodation)", "Gate House Lodge (Typing Pool)"],
   floorPlans: [

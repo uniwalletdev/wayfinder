@@ -8,9 +8,10 @@ import { getAvailableFloors, floorLabel } from "@/lib/waypoint-meta"
 import { venueBuildings, buildingAt } from "@/lib/buildings"
 import { DEFAULT_VENUE, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues/core"
 import { loadVenue, loadCatalog, catalogSnapshot, summaryOf } from "@/lib/venues/catalog"
+import { HOME_COUNTRY, detectCountry, saveCountry, countryName } from "@/lib/country"
 import { isSiteOnly, siteDestination } from "@/lib/site-destination"
 import {
-  loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId,
+  loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId, loadVenueChoice, saveVenueChoice,
   loadVenueWaypoints, saveVenueWaypoints, loadVenueTrails, saveVenueTrails,
   loadVenueFloorPlans, saveVenueFloorPlans, loadVenueAssets, saveVenueAssets,
   migrateLegacyData, deleteUserVenue,
@@ -172,11 +173,25 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const venueLoadingRef = useRef<string | null>(null)
   // Ignore a slow switch that resolves after a later one.
   const switchSeqRef = useRef(0)
+  // The country whose hospitals the visitor sees (src/lib/country.ts): read
+  // from the device on mount — the server render cannot know it — and changed
+  // only by the visitor searching for another country in the places list.
+  const [country, setCountry] = useState(HOME_COUNTRY)
+  const countryRef = useRef(HOME_COUNTRY)
   // Summaries of every seed venue for the places list and hospital search. The
-  // mapped venues are known at once; the directory half loads the first time
-  // either list opens.
+  // mapped venues are known at once; the country's directory loads the first
+  // time either list opens, or at once for a visitor outside the home country,
+  // whose opening venue comes from it.
   const [catalog, setCatalog] = useState<VenueSummary[]>(() => catalogSnapshot())
   const [catalogReady, setCatalogReady] = useState(false)
+  const catalogRef = useRef<VenueSummary[]>(catalog)
+  useEffect(() => {
+    catalogRef.current = catalog
+  }, [catalog])
+  // True while the open venue is one the app chose for the visitor (the
+  // nearest in their country), not one they picked: the first GPS fix may
+  // then move them to the hospital they are actually at.
+  const autoVenueRef = useRef(false)
   // Whether a shared-venue backend is reachable. When true, user-created venues
   // and their surveyed/AI-read points live on the server (reusable across
   // devices) instead of only in this browser's localStorage.
@@ -243,12 +258,18 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   }, [])
 
 
-  // The places list and hospital search show every seed venue, so the first
-  // time either opens the directory half of the catalog is fetched.
+  // The places list and hospital search show every seed venue the visitor can
+  // see, so the first time either opens the country's directory is fetched —
+  // and straight away outside the home country, where the opening venue is
+  // one of its hospitals rather than the bundled default.
   useEffect(() => {
-    if (overlay !== "venues" && overlay !== "search" && overlay !== "search-origin") return
+    const wanted = overlay === "venues" || overlay === "search" || overlay === "search-origin" || country !== HOME_COUNTRY
+    if (!wanted) return
     let active = true
-    loadCatalog()
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCatalog(catalogSnapshot(country))
+    setCatalogReady(false)
+    loadCatalog(country)
       .then((list) => {
         if (!active) return
         setCatalog(list)
@@ -261,7 +282,17 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     return () => {
       active = false
     }
-  }, [overlay])
+  }, [overlay, country])
+
+  // The visitor searched for another country in the places list: show that
+  // country's hospitals from now on, and open its nearest one to them.
+  const handleCountryChange = useCallback((code: string) => {
+    if (code === countryRef.current) return
+    countryRef.current = code
+    saveCountry(code)
+    setCountry(code)
+    autoVenueRef.current = true
+  }, [])
 
   // If a shared-venue backend is configured, fold the server's venues into the
   // list (each already carries its waypoints). Merged by id with the server
@@ -437,6 +468,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // Switching place clears the current route and re-centres on the new venue, so
   // navigation state never leaks across venues.
   const goToVenue = useCallback((v: Venue, opts?: { floor?: number }) => {
+    autoVenueRef.current = false
+    saveVenueChoice("user")
     applyVenue(v, opts)
     setOverlay("none")
     setFarRouteOverride(false)
@@ -507,9 +540,21 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     // The default venue's own data goes on screen synchronously so the map is
     // right on first paint; any other venue is fetched, and the default stays
     // up until it lands.
+    // Read before applyVenue below records the default as the open venue.
+    const saved = loadActiveVenueId()
     applyVenue(DEFAULT_VENUE, { floor })
-    const wanted = link?.venueId ?? loadActiveVenueId() ?? DEFAULT_VENUE.id
+    const wanted = link?.venueId ?? saved ?? DEFAULT_VENUE.id
     if (wanted !== DEFAULT_VENUE.id) void switchToVenueId(wanted, { silent: true, floor })
+
+    // Which country's hospitals to show. A visitor outside the home country
+    // who has not picked a place (nothing saved, or only what the app chose
+    // last time) and has no link should not open on a London hospital: the
+    // effect below opens one of their own country's instead, and the first
+    // GPS fix narrows that to the nearest.
+    const detected = detectCountry()
+    countryRef.current = detected
+    setCountry(detected)
+    if (!link?.venueId && (!saved || loadVenueChoice() === "app") && detected !== HOME_COUNTRY) autoVenueRef.current = true
 
     // A poster's position fix: the walker is standing where the code is.
     if (link?.anchor) {
@@ -522,6 +567,42 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     // storage and the URL.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // Open the visitor's own country's hospital when the app chose the venue
+  // for them (see autoVenueRef): the nearest to their position once there is
+  // a fix, and until then — or without one — a mapped hospital in the country
+  // if there is one, else the first in its directory. Runs again when the fix
+  // arrives or the directory lands, and stops once they pick a place.
+  const gpsFix = gpsStatus === "active" && navState.positionAccuracy > 0 ? navState.currentPosition : null
+  useEffect(() => {
+    if (!autoVenueRef.current) return
+    const local = catalog.filter((v) => v.visibility === "public" && v.country === country)
+    if (local.length === 0) return
+    let pick: VenueSummary | undefined
+    if (gpsFix) {
+      let best = Infinity
+      for (const v of local) {
+        const d = distanceMeters(gpsFix, v.center)
+        if (d < best) {
+          best = d
+          pick = v
+        }
+      }
+      // A fix in hand means the choice is final, however it turned out.
+      autoVenueRef.current = false
+    } else {
+      pick = local.find((v) => v.mapped) ?? local[0]
+    }
+    if (!pick || pick.id === activeVenueId) return
+    const withFix = !!gpsFix
+    void switchToVenueId(pick.id, { silent: true }).then((v) => {
+      if (!v) return
+      saveVenueChoice("app")
+      if (withFix) toast.info(`Showing ${v.name}`, `The nearest hospital to you in ${countryName(country)}.`)
+    })
+    // activeVenueId is read, not reacted to: a venue switch must not re-run this.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [catalog, country, gpsFix, switchToVenueId])
 
   // Selecting a destination shows a route *preview* (overview + travel mode +
   // ETA) — the user taps Start to begin turn-by-turn, rather than jumping
@@ -1027,6 +1108,22 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     return { fastest, stepfree }
   }, [navState.destination, navState.origin, navState.isNavigating, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, allTrails, venue.center, venue.floorNaming])
 
+  // The map screen never scrolls as a page (it is exactly the screen's height),
+  // but iOS still nudges the page up to keep a focused text field clear of the
+  // keyboard, and with page scrolling switched off in the app nothing could
+  // nudge it back. Put it back whenever a field loses focus.
+  useEffect(() => {
+    const settle = (e: FocusEvent) => {
+      const el = e.target as HTMLElement | null
+      if (!el || !/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return
+      requestAnimationFrame(() => {
+        if (window.scrollY !== 0 || document.documentElement.scrollTop !== 0) window.scrollTo(0, 0)
+      })
+    }
+    document.addEventListener("focusout", settle)
+    return () => document.removeEventListener("focusout", settle)
+  }, [])
+
   const gpsLabel =
     gpsStatus === "requesting" ? "Locating…" :
     gpsStatus === "denied" ? "GPS unavailable" :
@@ -1177,6 +1274,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           proximity={navState.currentPosition ?? venue.center}
           purpose={overlay === "search-origin" ? "origin" : "destination"}
           otherVenues={allVenues}
+          country={country}
           onSwitchVenue={handleSelectVenue}
           onSelectRemote={overlay === "search" ? handleSelectRemote : undefined}
           onSelect={overlay === "search-origin" ? handleOriginSelect : handleDestinationSelect}
@@ -1188,6 +1286,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         <VenuePicker
           venues={allVenues}
           directoryLoading={!catalogReady}
+          country={country}
+          onCountryChange={handleCountryChange}
           activeVenueId={activeVenueId}
           currentCenter={navState.currentPosition ?? venue.center}
           hasGps={gpsStatus === "active" && navState.currentPosition !== null && navState.positionAccuracy > 0}

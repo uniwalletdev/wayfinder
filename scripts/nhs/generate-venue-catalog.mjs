@@ -61,6 +61,7 @@ for (const v of mapped) {
     verified: v.verified,
     ...(v.illustrative ? { illustrative: true } : {}),
     ...(v.odsCode ? { odsCode: v.odsCode } : {}),
+    ...(v.country ? { country: v.country } : {}),
     mapped: v.floorPlans.length > 0 || v.waypoints.length > 0,
   }
   summaries.push(`  ${JSON.stringify(summary)},`)

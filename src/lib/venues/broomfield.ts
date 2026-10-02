@@ -17,6 +17,7 @@ export const BROOMFIELD_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Colour-coded zones (A-E) with lifts and stairs in every zone; Blue Badge parking near the Main and A&E entrances." },
   quickAccess: ["Main Entrance", "A&E / Accident & Emergency", "Main Outpatients", "Maternity", "Radiology / X-ray Outpatients"],
   floorPlans: [

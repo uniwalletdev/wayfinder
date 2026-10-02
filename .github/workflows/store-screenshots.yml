@@ -1,0 +1,41 @@
+# Render the App Store and Google Play screenshots and the Play feature
+# graphic from the app itself (scripts/store-screenshots.mjs), on a runner with
+# internet so the street map behind the floor plans loads.
+#
+# Run it from the Actions tab after a visible change, then download the
+# "store-screenshots" artifact. It holds one folder per store size, named for
+# the slot it fills in App Store Connect or Play Console.
+name: Store screenshots
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/store-screenshots.mjs"
+      - ".github/workflows/store-screenshots.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build the pages the apps carry
+        run: npm run mobile:build
+      # Not a project dependency: only this workflow needs a browser.
+      - name: Install Playwright and Chromium
+        run: |
+          npm i --no-save --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Render the screenshots
+        run: node scripts/store-screenshots.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: store-screenshots
+          path: store/
+          if-no-files-found: error

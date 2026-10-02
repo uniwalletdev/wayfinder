@@ -14,6 +14,7 @@ export const EXTERNAL_SITE_MAP_NORTH_TEES_2019_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by North Tees and Hartlepool NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
   quickAccess: ["Emergency Assessment Unit", "Main Entrance Reception", "Emergency Entrance", "Urgent Care Entrance", "Outpatients Entrance"],
   floorPlans: [

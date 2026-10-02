@@ -14,6 +14,7 @@ export const BISHOP_AUCKLAND_FLOOR_PLAN_2023_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Floor plan (2023) published by County Durham and Darlington NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
   quickAccess: ["Main Entrance", "Outpatients Entrance", "Urgent Care Centre / Minor Injuries Unit", "Oral & Maxillo Facial Surgery Orthodontics & Dental"],
   floorPlans: [

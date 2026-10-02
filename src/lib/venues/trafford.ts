@@ -14,6 +14,7 @@ export const TRAFFORD_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Colour-zoned map (Blue / Green / Red) with a ground and first-floor plan and a full department directory. AccessAble accessibility guide available." },
   quickAccess: ["Main Entrance", "Urgent Care Centre"],
   floorPlans: [

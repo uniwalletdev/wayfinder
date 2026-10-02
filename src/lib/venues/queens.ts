@@ -17,6 +17,7 @@ export const QUEENS_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Blue Badge and drop-off bays at the main and maternity entrances; step-free routes marked on the site map. Lifts to all tower floors." },
   quickAccess: ["Main Entrance", "Urgent and Emergency Care", "Maternity Emergency Entrance", "Coronary Care Unit", "Multi-storey paid parking"],
   floorPlans: [

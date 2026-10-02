@@ -16,6 +16,7 @@ export const KGH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Level entrance from the main car park; lifts (junctions B, G, H, I) serve both floors; accessible toilets throughout." },
   quickAccess: ["Main Entrance", "Emergency Department", "Urgent Treatment Centre", "Outpatient Departments", "Theatres"],
   floorPlans: [

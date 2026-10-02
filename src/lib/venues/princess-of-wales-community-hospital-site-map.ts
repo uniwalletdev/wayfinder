@@ -14,6 +14,7 @@ export const PRINCESS_OF_WALES_COMMUNITY_HOSPITAL_SITE_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Herefordshire and Worcestershire Health and Care NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Reception", "Main entrance", "Lifts and stairs to 1st floor"],
   floorPlans: [

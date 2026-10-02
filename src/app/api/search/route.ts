@@ -23,9 +23,13 @@ export async function GET(request: Request) {
   const sp = new URL(request.url).searchParams
   const q = (sp.get("q") ?? "").trim().slice(0, MAX_QUERY_CHARS)
   const exclude = sp.get("exclude")?.trim() || undefined
+  // The visitor's country (ISO 3166-1 alpha-2): hits elsewhere are not offered,
+  // for the same reason the places list does not show them.
+  const countryParam = sp.get("country")?.trim().toUpperCase()
+  const country = countryParam && /^[A-Z]{2}$/.test(countryParam) ? countryParam : undefined
   if (q.length < 2) return Response.json({ results: [] })
 
   if (!index) index = buildCrossVenueIndex(SEED_VENUES)
-  const results = searchAcrossVenues(index, q, { exclude, limit: MAX_RESULTS })
+  const results = searchAcrossVenues(index, q, { exclude, country, limit: MAX_RESULTS })
   return Response.json({ results }, { headers: { "cache-control": "public, max-age=300, stale-while-revalidate=3600" } })
 }

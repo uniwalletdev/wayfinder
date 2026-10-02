@@ -14,6 +14,7 @@ export const FRIARAGE_SITE_MAP_JULY_2025_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by South Tees Hospitals NHS Foundation Trust (July 2025). Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
   quickAccess: ["A&E Urgent Treatment Centre", "Main Entrance", "Logistics Centre & Estates Workshops", "Energy Centre", "Dining"],
   floorPlans: [

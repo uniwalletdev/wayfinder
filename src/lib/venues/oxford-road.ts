@@ -14,6 +14,7 @@ export const OXFORD_ROAD_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Manchester University NHS Foundation Trust (2019 edition). During the rebuild of the Manchester Royal Infirmary Emergency Department (Project RED, due to complete in summer 2026) the Emergency Department and Urgent Treatment Centre entrances moved to a temporary building outside the MRI Outpatients entrance, near the Grafton Street car park; the A&E pins here follow the 2019 sheet. The trust's February 2025 campus map is newer than this sheet." },
   quickAccess: ["Manchester Royal Infirmary", "Manchester Royal Eye Hospital", "Saint Mary’s Hospital", "Royal Manchester Children’s Hospital", "Adult Emergency Department (A&E)"],
   floorPlans: [

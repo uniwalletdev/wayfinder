@@ -14,6 +14,7 @@ export const QCCH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Maternity and neonatal hospital sharing the Hammersmith Hospital site; floor legend runs GF (main reception) up to level 4 (neonatal intensive care)." },
   quickAccess: ["Main entrance", "Delivery suite", "Birth centre Edith Dare ward", "Centre for fetal care Early pregnancy unit (EPU)", "Neonatal intensive Care"],
   floorPlans: [
