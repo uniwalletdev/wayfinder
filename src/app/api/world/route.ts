@@ -13,7 +13,7 @@ const CACHE = "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400"
 export async function GET(request: Request) {
   const limited = rateLimit(request, "world", LIMITS.world.limit, LIMITS.world.windowMs)
   if (limited) return limited
-  if (!worldAvailable()) return Response.json({ countries: [], attribution: OSM_ATTRIBUTION }, { status: 404 })
+  if (!worldAvailable()) return Response.json({ error: "No world data on this deployment", countries: [], attribution: OSM_ATTRIBUTION }, { status: 404 })
   const countries = await listCountries()
   return Response.json({ countries, attribution: OSM_ATTRIBUTION }, { headers: { "cache-control": CACHE } })
 }

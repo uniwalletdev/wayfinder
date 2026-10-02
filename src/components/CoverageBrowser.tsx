@@ -53,7 +53,9 @@ const n = (v: number) => v.toLocaleString("en-GB")
 
 export default function CoverageBrowser() {
   const [countries, setCountries] = useState<CountryRow[] | null>(null)
-  const [unpublished, setUnpublished] = useState(false)
+  // Why only the UK is listed, when it is: the deployment has no database
+  // (404), or the database has nothing published yet.
+  const [missing, setMissing] = useState<"no-database" | "unpublished" | null>(null)
   const [selected, setSelected] = useState<string | null>(null)
   const [maps, setMaps] = useState<Record<string, MapRow[] | "error">>({ [HOME_COUNTRY]: UK_MAPS })
   const [query, setQuery] = useState("")
@@ -88,12 +90,12 @@ export default function CoverageBrowser() {
   useEffect(() => {
     let cancelled = false
     fetch(apiUrl("/api/world"))
-      .then((r) => (r.ok ? r.json() : null))
+      .then((r) => (r.ok ? r.json() : r.status === 404 ? { countries: [], noDatabase: true } : null))
       .catch(() => null)
-      .then((data: { countries?: CountryRow[] } | null) => {
+      .then((data: { countries?: CountryRow[]; noDatabase?: boolean } | null) => {
         if (cancelled) return
         const world = (data?.countries ?? []).filter((c) => c.country !== HOME_COUNTRY)
-        if (world.length === 0) setUnpublished(true)
+        if (world.length === 0) setMissing(data?.noDatabase ? "no-database" : "unpublished")
         const rows = [UK_ROW, ...world].sort((a, b) => mapsOf(b) - mapsOf(a) || (b.hospitals ?? 0) - (a.hospitals ?? 0))
         setCountries(rows)
         // The country in the link, else the visitor's own, else the one with the most maps.
@@ -135,9 +137,11 @@ export default function CoverageBrowser() {
         <Stat value={n(totals.indoor)} label="indoor maps" />
       </div>
 
-      {unpublished && (
+      {missing && (
         <div className="mt-6 rounded-2xl border border-wf-border bg-wf-surface px-5 py-4 text-[15px] text-wf-muted">
-          The worldwide hospital data has not been published to this deployment yet, so only the UK’s maps are listed for now.
+          {missing === "no-database"
+            ? "This deployment is not connected to the database that holds the worldwide hospital data (DATABASE_URL), so only the UK’s maps are listed."
+            : "No worldwide hospital data has been published to the database yet, so only the UK’s maps are listed for now."}
         </div>
       )}
 
