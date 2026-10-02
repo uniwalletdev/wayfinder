@@ -155,18 +155,26 @@ export function buildCampusVenue(raw, { id, country, generatedAt }) {
     waypoints.push(w)
   }
   for (const b of namedBuildings) if (b.polys[0].outer.some(inside)) add(b.name, b.type, centroidOf(b.polys[0].outer), b.tags)
+  // A campus has many doors. Main, emergency and named entrances all count;
+  // an anonymous door on a named building is kept up to two per building
+  // (Ohio State's campus has ninety-five doors mapped, which as pins is a
+  // wall, not a map); anonymous doors on nothing in particular up to eight.
   let plain = 0
+  const perBuilding = new Map()
   for (const e of entrances) {
     const p = { lat: e.el.lat, lon: e.el.lon }
     if (!inside(p)) continue
+    if (e.tags.access === "private" || e.tags.access === "no") continue
     let name = placeName(e.tags, "exit")
     if (!name) continue
     if (name === "Entrance") {
       const of = outlineNodes.get(e.el.id)
-      if (of) name = `${of} entrance`
-      // A campus has many doors; without a building to name them after, a
-      // dozen anonymous "Entrance" pins is noise rather than help.
-      else if (++plain > 8) continue
+      if (of) {
+        const n = (perBuilding.get(of) ?? 0) + 1
+        perBuilding.set(of, n)
+        if (n > 2) continue
+        name = `${of} entrance`
+      } else if (++plain > 8) continue
     }
     add(name, "exit", p, e.tags)
   }
