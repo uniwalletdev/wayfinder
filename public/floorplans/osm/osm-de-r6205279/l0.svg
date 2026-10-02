@@ -80,7 +80,6 @@
 <circle cx="40.8" cy="19.9" r="0.3" fill="#22c55e"/>
 <circle cx="40.7" cy="16.9" r="0.3" fill="#22c55e"/>
 <circle cx="17.8" cy="22.2" r="0.3" fill="#22c55e"/>
-<circle cx="-51.6" cy="118.1" r="0.3" fill="#22c55e"/>
 <text x="151.1" y="33.9" font-size="1.8" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="151.1" dy="0">Institut und Poliklinik für Radiologische Diagnostik</tspan></text>
 <text x="131.3" y="22" font-size="0.85" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="131.3" dy="0">Leitstelle</tspan><tspan x="131.3" dy="1">E</tspan></text>
 <text x="78.5" y="25.6" font-size="0.85" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="78.5" dy="0">Leitstelle</tspan><tspan x="78.5" dy="1">C</tspan></text>

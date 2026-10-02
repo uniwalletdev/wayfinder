@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-02T08:49:46.981Z",
+ "generatedAt": "2026-10-02T08:35:18.294Z",
  "built": [
   {
    "id": "osm-us-r18181549",
@@ -202,7 +202,7 @@
    "id": "osm-at-r2764083",
    "country": "AT",
    "name": "AKH Wien",
-   "reason": "0 rooms"
+   "reason": "3 rooms"
   }
  ]
 }
