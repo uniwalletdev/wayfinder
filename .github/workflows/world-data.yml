@@ -47,9 +47,11 @@ permissions:
   pull-requests: write
 
 env:
-  # A push runs a sample so a change to the scripts is checked in minutes; the
+  # A push runs a sample so a change to the scripts is checked within the
+  # hour: a few European countries, the US, and Nigeria, Ghana, Kenya, South
+  # Africa and Egypt for the other kind of coverage OpenStreetMap has. The
   # monthly schedule and a manual run with ALL cover the world.
-  COUNTRIES: ${{ github.event_name == 'push' && 'LU,BE,NL,CH,AT,DE,DK,IE,US' || inputs.countries || 'ALL' }}
+  COUNTRIES: ${{ github.event_name == 'push' && 'LU,BE,NL,CH,AT,DE,DK,IE,US,NG,GH,KE,ZA,EG' || inputs.countries || 'ALL' }}
   MAX_DETAIL: ${{ github.event_name == 'push' && '60' || inputs.max_detail || '400' }}
   # A push that changes the scripts reuses hospital lists and indoor geometry
   # fetched in the last two days; the schedule and a manual run fetch afresh.
