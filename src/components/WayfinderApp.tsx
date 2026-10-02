@@ -1027,6 +1027,22 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     return { fastest, stepfree }
   }, [navState.destination, navState.origin, navState.isNavigating, navState.route?.outdoor, navState.currentFloor, navState.currentPosition, navState.travelMode, allWaypoints, allTrails, venue.center, venue.floorNaming])
 
+  // The map screen never scrolls as a page (it is exactly the screen's height),
+  // but iOS still nudges the page up to keep a focused text field clear of the
+  // keyboard, and with page scrolling switched off in the app nothing could
+  // nudge it back. Put it back whenever a field loses focus.
+  useEffect(() => {
+    const settle = (e: FocusEvent) => {
+      const el = e.target as HTMLElement | null
+      if (!el || !/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return
+      requestAnimationFrame(() => {
+        if (window.scrollY !== 0 || document.documentElement.scrollTop !== 0) window.scrollTo(0, 0)
+      })
+    }
+    document.addEventListener("focusout", settle)
+    return () => document.removeEventListener("focusout", settle)
+  }, [])
+
   const gpsLabel =
     gpsStatus === "requesting" ? "Locating…" :
     gpsStatus === "denied" ? "GPS unavailable" :

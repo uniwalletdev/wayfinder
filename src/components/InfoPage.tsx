@@ -19,7 +19,13 @@ export default function InfoPage({
   children: ReactNode
 }) {
   return (
-    <main className="min-h-dvh bg-white">
+    <main
+      // Scrolls itself rather than the page: the iOS app turns page scrolling
+      // off (capacitor.config.ts, so the map never rubber-bands), and a page
+      // that relied on it froze with its footer, and the data-deletion button,
+      // out of reach.
+      className="h-dvh overflow-y-auto overscroll-contain bg-white"
+    >
       <nav className="flex items-center justify-between gap-4 border-b border-wf-border-faint px-6 py-5 sm:px-10 lg:px-16 xl:px-24">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Findway home">
           <span className="flex h-[30px] w-[30px] items-center justify-center rounded-[10px] bg-gradient-to-br from-wf-primary to-wf-teal">
