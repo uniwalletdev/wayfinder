@@ -7,9 +7,11 @@
 // in one transaction: its hospitals, then the venues and plans built for it;
 // a hospital this run did not list for a country it covered is removed, and
 // its map with it. A map the run did not rebuild stays as long as its hospital
-// is listed: a grounds fetch cut short by its time limit, or an indoor stage
-// that looked at fewer hospitals, is no reason to take a map away. Countries
-// this run did not cover are left untouched.
+// is listed: an indoor stage that looked at fewer hospitals is no reason to
+// take a map away. Countries this run did not cover are left untouched, and so
+// is a country whose grounds did not all come in (fetch-campus.mjs): it is
+// held back whole, list and all, until a run completes it, because a complete
+// answer late is preferred to a partial one on time.
 //
 // Run: DATABASE_URL=postgres://… node scripts/world/publish.mjs
 import { existsSync, readdirSync, readFileSync } from "node:fs"
@@ -32,6 +34,18 @@ await client.query(ddl)
 
 const OUT = "public/world"
 const PLANS = "public/floorplans/osm"
+const CAMPUS_RAW = "data/world/campus-raw"
+// Stage 2b's verdict per country. Without the stage at all (no directory, as
+// in a run that skipped it) everything goes.
+const groundsStatus = existsSync(`${CAMPUS_RAW}/status.json`) ? JSON.parse(readFileSync(`${CAMPUS_RAW}/status.json`, "utf8")) : null
+function groundsComplete(country) {
+  if (!existsSync(CAMPUS_RAW)) return true
+  if (groundsStatus) return groundsStatus.countries?.[country]?.complete === true
+  const path = `${CAMPUS_RAW}/${country}.json`
+  if (!existsSync(path)) return false
+  const g = JSON.parse(readFileSync(path, "utf8"))
+  return g.complete ?? !(g.failed > 0)
+}
 const countries = readdirSync(OUT).filter((f) => /^[A-Z]{2}\.json$/.test(f)).map((f) => f.slice(0, 2)).sort()
 const venueFiles = existsSync(`${OUT}/venues`) ? readdirSync(`${OUT}/venues`).filter((f) => f.endsWith(".json")) : []
 const venuesByCountry = new Map()
@@ -48,7 +62,14 @@ let totalHospitals = 0
 let totalVenues = 0
 let totalKept = 0
 let totalPlans = 0
+const published = []
+const held = []
 for (const country of countries) {
+  if (!groundsComplete(country)) {
+    held.push(country)
+    console.log(`${country}: grounds incomplete; held back until a run completes them`)
+    continue
+  }
   const file = JSON.parse(readFileSync(`${OUT}/${country}.json`, "utf8"))
   const rows = file.hospitals
   const venues = venuesByCountry.get(country) ?? []
@@ -123,7 +144,10 @@ for (const country of countries) {
   }
   totalHospitals += rows.length
   totalVenues += venues.length
+  published.push(country)
   console.log(`${country}: ${rows.length} hospitals, ${venues.length} venues`)
 }
 await client.end()
-console.log(`\nPublished ${totalHospitals} hospitals, ${totalVenues} venues and ${totalPlans} plans for ${countries.length} countries${totalKept ? `; ${totalKept} venues from earlier runs kept` : ""}`)
+console.log(
+  `\nPublished ${totalHospitals} hospitals, ${totalVenues} venues and ${totalPlans} plans for ${published.length} countries${totalKept ? `; ${totalKept} venues from earlier runs kept` : ""}${held.length ? `; held back, grounds incomplete: ${held.join(", ")}` : ""}`
+)
