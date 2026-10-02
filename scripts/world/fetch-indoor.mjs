@@ -10,8 +10,10 @@
 // Reads data/world/hospitals/<CC>.json (stage 1) to know the hospital outlines.
 // Writes data/world/indoor-candidates.json and data/world/indoor-raw/<id>.json.
 //
-// Run: node scripts/world/fetch-indoor.mjs [--countries LU,DE] [--min-rooms 8] [--max-detail 400]
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
+// Run: node scripts/world/fetch-indoor.mjs [--countries LU,DE] [--min-rooms 6] [--max-detail 400] [--reuse-days N]
+// --reuse-days keeps the candidate scan and the downloaded geometry when they
+// are younger than N days.
+import { mkdirSync, readdirSync, readFileSync, writeFileSync, existsSync } from "fs"
 import { overpass, pointOf } from "./lib/overpass.mjs"
 
 const arg = (name, def) => {
@@ -19,8 +21,10 @@ const arg = (name, def) => {
   return i > -1 ? process.argv[i + 1] : def
 }
 const only = arg("--countries", null)?.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean)
-const MIN_ROOMS = Number(arg("--min-rooms", 8))
+const MIN_ROOMS = Number(arg("--min-rooms", 6))
 const MAX_DETAIL = Number(arg("--max-detail", 400))
+const reuseDays = Number(arg("--reuse-days", 0))
+const freshAt = (at) => !!reuseDays && !!at && Date.now() - Date.parse(at) < reuseDays * 86_400_000
 const RAW = "data/world/indoor-raw"
 mkdirSync(RAW, { recursive: true })
 
@@ -40,8 +44,15 @@ const levelsOf = (v) =>
       return part.trim() ? [part.trim()] : []
     })
 
-const candidates = []
-for (const code of countries) {
+// A scan from the last few days covering these countries is reused.
+let previous = null
+if (existsSync("data/world/indoor-candidates.json")) {
+  const p = JSON.parse(readFileSync("data/world/indoor-candidates.json", "utf8"))
+  if (freshAt(p.generatedAt) && Array.isArray(p.countries) && countries.every((c) => p.countries.includes(c))) previous = p
+}
+const candidates = previous ? previous.candidates.filter((c) => countries.includes(c.country)) : []
+if (previous) console.log(`reusing the indoor scan from ${previous.generatedAt}`)
+for (const code of previous ? [] : countries) {
   const { hospitals } = JSON.parse(readFileSync(`data/world/hospitals/${code}.json`, "utf8"))
   const outlined = hospitals.filter((h) => h.bbox && /^osm-[wr]/.test(h.id))
   if (outlined.length === 0) continue
@@ -87,48 +98,67 @@ out tags center qt;`)
   let n = 0
   for (const [id, st] of stats) {
     const h = outlined.find((x) => x.id === id)
-    candidates.push({ id, country: code, name: h.name, city: h.city, lat: h.lat, lng: h.lng, rooms: st.rooms, named: st.named, corridors: st.corridors, levels: [...st.levels].sort((a, b) => Number(a) - Number(b)) })
+    candidates.push({ id, country: code, name: h.name, city: h.city, lat: h.lat, lng: h.lng, bbox: h.bbox, rooms: st.rooms, named: st.named, corridors: st.corridors, levels: [...st.levels].sort((a, b) => Number(a) - Number(b)) })
     n++
   }
   console.log(`${code}: ${els.length} indoor features in ${n} hospitals`)
 }
 
 candidates.sort((a, b) => b.named - a.named || b.rooms - a.rooms)
-writeFileSync("data/world/indoor-candidates.json", JSON.stringify({ generatedAt: new Date().toISOString(), minRooms: MIN_ROOMS, candidates }, null, 1) + "\n")
+if (!previous) writeFileSync("data/world/indoor-candidates.json", JSON.stringify({ generatedAt: new Date().toISOString(), countries, minRooms: MIN_ROOMS, candidates }, null, 1) + "\n")
 const worth = candidates.filter((c) => c.rooms >= MIN_ROOMS && c.named >= Math.ceil(MIN_ROOMS / 2))
 console.log(`\n${candidates.length} hospitals have some indoor mapping; ${worth.length} have enough to build (>= ${MIN_ROOMS} rooms)`)
 
 // Full geometry for the ones worth building.
 let fetched = 0
+let kept = 0
 for (const c of worth.slice(0, MAX_DETAIL)) {
+  if (existsSync(`${RAW}/${c.id}.json`)) {
+    try {
+      if (freshAt(JSON.parse(readFileSync(`${RAW}/${c.id}.json`, "utf8")).fetchedAt)) {
+        kept++
+        continue
+      }
+    } catch {}
+  }
   const [, kind, num] = c.id.match(/^osm-([wr])(\d+)$/)
   const sel = kind === "w" ? `way(${num})` : `relation(${num})`
+  const inside = (where) => `(
+  nwr${where}["indoor"];
+  nwr${where}["door"];
+  nwr${where}["entrance"];
+  nwr${where}["highway"="elevator"];
+  nwr${where}["elevator"="yes"];
+  nwr${where}["stairs"="yes"];
+  nwr${where}["highway"~"^(corridor|steps|footway|path|elevator)$"]["level"];
+  nwr${where}["level"]["name"];
+  nwr${where}["level"]["amenity"];
+  nwr${where}["level"]["healthcare"];
+  nwr${where}["level"]["shop"];
+  nwr${where}["building"];
+  nwr${where}["building:part"];
+);
+out geom;`
   try {
-    const els = await overpass(`[out:json][timeout:300];
+    let els = await overpass(`[out:json][timeout:300];
 ${sel};
 out geom;
 map_to_area->.a;
-(
-  nwr(area.a)["indoor"];
-  nwr(area.a)["door"];
-  nwr(area.a)["entrance"];
-  nwr(area.a)["highway"="elevator"];
-  nwr(area.a)["elevator"="yes"];
-  nwr(area.a)["stairs"="yes"];
-  nwr(area.a)["highway"~"^(corridor|steps|footway|path|elevator)$"]["level"];
-  nwr(area.a)["level"]["name"];
-  nwr(area.a)["level"]["amenity"];
-  nwr(area.a)["level"]["healthcare"];
-  nwr(area.a)["level"]["shop"];
-  nwr(area.a)["building"];
-  nwr(area.a)["building:part"];
-);
-out geom;`)
-    writeFileSync(`${RAW}/${c.id}.json`, JSON.stringify({ hospital: c, elements: els }) + "\n")
+${inside("(area.a)")}`)
+    // A site relation Overpass has no area for (AKH Wien) answers with the
+    // outline alone; its bounding box finds the inside instead.
+    if (els.length <= 1 && c.bbox) {
+      const [s, w, n, e] = c.bbox
+      els = await overpass(`[out:json][timeout:300];
+${sel};
+out geom;
+${inside(`(${s},${w},${n},${e})`)}`)
+    }
+    writeFileSync(`${RAW}/${c.id}.json`, JSON.stringify({ hospital: c, fetchedAt: new Date().toISOString(), elements: els }) + "\n")
     fetched++
     console.log(`  ${c.country} ${c.name}: ${els.length} elements`)
   } catch (err) {
     console.warn(`  ${c.name}: detail failed (${String(err.message ?? err).slice(0, 120)})`)
   }
 }
-console.log(`Fetched indoor geometry for ${fetched} hospitals`)
+console.log(`Fetched indoor geometry for ${fetched} hospitals${kept ? `, kept ${kept} from the last ${reuseDays} days` : ""}`)

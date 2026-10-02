@@ -1,0 +1,111 @@
+// Stage 4 — publish what build.mjs wrote into the shared Postgres, where
+// /api/world/* serves it (src/lib/world-db.ts).
+//
+// The per-country lists, venues and plans are too large and too often
+// refreshed to live in the repository, so the workflow runs this right after
+// the build, with DATABASE_URL from a secret. Each country is replaced whole
+// in one transaction: its hospitals, then the venues and plans built for it;
+// a hospital or venue that this run did not produce for a country it covered
+// is removed, so the database never says "walk inside" about a map that is
+// gone. Countries this run did not cover are left untouched.
+//
+// Run: DATABASE_URL=postgres://… node scripts/world/publish.mjs
+import { existsSync, readdirSync, readFileSync } from "node:fs"
+import pg from "pg"
+
+const url = (process.env.DATABASE_URL || process.env.DATABASE_PUBLIC_URL || "").trim().replace(/^['"]+|['"]+$/g, "")
+if (!url) {
+  console.log("DATABASE_URL is not set; nothing published")
+  process.exit(0)
+}
+// The same TLS rule as src/lib/db.ts: Railway's public host needs it, local
+// and private hosts refuse it.
+const host = (() => { try { return new URL(url).hostname } catch { return "" } })()
+const local = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".railway.internal") || /sslmode=disable/.test(url)
+const client = new pg.Client({ connectionString: url, ssl: local ? undefined : { rejectUnauthorized: false } })
+await client.connect()
+
+const ddl = readFileSync(new URL("../../db/migrations/0005_world.sql", import.meta.url), "utf8")
+await client.query(ddl)
+
+const OUT = "public/world"
+const PLANS = "public/floorplans/osm"
+const countries = readdirSync(OUT).filter((f) => /^[A-Z]{2}\.json$/.test(f)).map((f) => f.slice(0, 2)).sort()
+const venueFiles = existsSync(`${OUT}/venues`) ? readdirSync(`${OUT}/venues`).filter((f) => f.endsWith(".json")) : []
+const venuesByCountry = new Map()
+for (const f of venueFiles) {
+  const v = JSON.parse(readFileSync(`${OUT}/venues/${f}`, "utf8"))
+  if (!venuesByCountry.has(v.country)) venuesByCountry.set(v.country, [])
+  venuesByCountry.get(v.country).push(v)
+}
+
+const CHUNK = 500
+let totalHospitals = 0
+let totalVenues = 0
+let totalPlans = 0
+for (const country of countries) {
+  const file = JSON.parse(readFileSync(`${OUT}/${country}.json`, "utf8"))
+  const rows = file.hospitals
+  const venues = venuesByCountry.get(country) ?? []
+  await client.query("begin")
+  try {
+    for (let i = 0; i < rows.length; i += CHUNK) {
+      const slice = rows.slice(i, i + CHUNK)
+      const values = []
+      const params = []
+      slice.forEach((h, j) => {
+        const b = j * 11
+        values.push(`($${b + 1},$${b + 2},$${b + 3},$${b + 4},$${b + 5},$${b + 6},$${b + 7},$${b + 8},$${b + 9},$${b + 10},$${b + 11},now())`)
+        params.push(country, h.id, h.name, h.lat, h.lng, h.city ?? null, h.street ?? null, h.postcode ?? null, h.operator ?? null, !!h.emergency, !!h.mapped)
+      })
+      await client.query(
+        `insert into public.world_hospitals (country, id, name, lat, lng, city, street, postcode, operator, emergency, mapped, updated_at)
+         values ${values.join(",")}
+         on conflict (country, id) do update set name = excluded.name, lat = excluded.lat, lng = excluded.lng, city = excluded.city,
+           street = excluded.street, postcode = excluded.postcode, operator = excluded.operator, emergency = excluded.emergency,
+           mapped = excluded.mapped, updated_at = now()`,
+        params
+      )
+    }
+    await client.query("delete from public.world_hospitals where country = $1 and not (id = any($2::text[]))", [country, rows.map((h) => h.id)])
+
+    for (const v of venues) {
+      const kind = v.floorPlans?.[0]?.id === "site" ? "campus" : "indoor"
+      await client.query(
+        `insert into public.world_venues (id, country, kind, venue, updated_at) values ($1, $2, $3, $4::jsonb, now())
+         on conflict (id) do update set country = excluded.country, kind = excluded.kind, venue = excluded.venue, updated_at = now()`,
+        [v.id, country, kind, JSON.stringify(v)]
+      )
+      const planIds = []
+      for (const p of v.floorPlans ?? []) {
+        const path = `${PLANS}/${v.id}/${p.id}.svg`
+        if (!existsSync(path)) continue
+        planIds.push(p.id)
+        await client.query(
+          `insert into public.world_plans (venue_id, plan_id, svg) values ($1, $2, $3)
+           on conflict (venue_id, plan_id) do update set svg = excluded.svg`,
+          [v.id, p.id, readFileSync(path, "utf8")]
+        )
+        totalPlans++
+      }
+      await client.query("delete from public.world_plans where venue_id = $1 and not (plan_id = any($2::text[]))", [v.id, planIds])
+    }
+    await client.query("delete from public.world_venues where country = $1 and not (id = any($2::text[]))", [country, venues.map((v) => v.id)])
+
+    await client.query(
+      `insert into public.world_countries (country, name, hospitals, mapped, generated_at, updated_at) values ($1, $2, $3, $4, $5, now())
+       on conflict (country) do update set name = excluded.name, hospitals = excluded.hospitals, mapped = excluded.mapped,
+         generated_at = excluded.generated_at, updated_at = now()`,
+      [country, file.name ?? null, rows.length, rows.filter((h) => h.mapped).length, file.generatedAt ?? null]
+    )
+    await client.query("commit")
+  } catch (err) {
+    await client.query("rollback")
+    throw err
+  }
+  totalHospitals += rows.length
+  totalVenues += venues.length
+  console.log(`${country}: ${rows.length} hospitals, ${venues.length} venues`)
+}
+await client.end()
+console.log(`\nPublished ${totalHospitals} hospitals, ${totalVenues} venues and ${totalPlans} plans for ${countries.length} countries`)

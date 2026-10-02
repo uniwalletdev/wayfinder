@@ -25,7 +25,7 @@ const mPerLng = (lat) => M_PER_LAT * Math.cos((lat * Math.PI) / 180)
 
 // What an indoor venue needs before it is worth shipping: fewer rooms than
 // this is a single ward someone started, not a hospital you can navigate.
-export const MIN_ROOMS = 8
+export const MIN_ROOMS = 6
 export const MIN_NAMED = 4
 
 // ---- tags -------------------------------------------------------------------
@@ -77,7 +77,7 @@ const humanise = (v) => {
   return key.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase())
 }
 
-const WARD_RE = /\b(ward|station|unit|wing)\b|\bstation\b|\bbettenstation\b|\bservice\b|\bafdeling\b|\bunité\b/i
+const WARD_RE = /\b(ward|station|unit|wing)\b|\bbettenstation\b|\bservice\b|verpleeg|\bafdeling\b|\bunité\b|\bpflege/i
 const DEPT_RE = /\b(department|clinic|clinique|klinik|ambulanz|poli|outpatients?|radiolog|imaging|laborator|labor|surgery|theatre|oncolog|cardiolog|neurolog|orthop|dialys|maternity|paediatric|pediatric|urgence|notaufnahme|emergency|a&e|spoed|physio|therapy|pharmac|apotheke|x-ray|mri|ct\b|scanner|consult|praxis|dentist|ophthalm|dermatolog|urolog|gyn)/i
 
 // What kind of place a tagged element is, in the app's vocabulary.
@@ -123,6 +123,11 @@ export function nameOf(tags, type) {
 }
 
 // ---- geometry ---------------------------------------------------------------
+
+// Rooms that are really circulation space: skeletonised for routing along
+// with indoor=corridor polygons, since people walk through them, not to them.
+const CIRCULATION = new Set(["corridor", "hallway", "hall", "lobby", "foyer", "atrium", "vestibule", "passage", "entrance_hall", "waiting"])
+const isCirculation = (t) => t.indoor === "corridor" || (t.indoor === "room" && CIRCULATION.has((t.room ?? "").toLowerCase()))
 
 const closed = (pts) => pts.length > 3 && pts[0].lat === pts[pts.length - 1].lat && pts[0].lon === pts[pts.length - 1].lon
 
@@ -249,6 +254,10 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
   const lines = []      // routable ways: highway=corridor|footway|steps…
   const points = []     // lifts, stairs, entrances, named points
   const buildings = []
+  // Nodes that sit on a building outline: an entrance=yes there is a way in
+  // from outside; one anywhere else is an interior door some mappers tag the
+  // same way, and Denver Health alone has two dozen of those.
+  const outlineNodes = new Set()
   for (const el of els) {
     const t = el.tags ?? {}
     const polys = polygonsOf(el)
@@ -256,6 +265,7 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
     const levels = levelsOf(t)
     if (t.building || t["building:part"]) {
       if (polys) buildings.push({ polys, tags: t })
+      if (el.type === "way") for (const n of el.nodes ?? []) outlineNodes.add(n)
       // A building outline carries its entrances as nodes; those arrive as
       // their own elements. Nothing else to take from it.
       if (!t.indoor) continue
@@ -268,11 +278,12 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
       for (const L of levels) walls.push({ line, level: L })
       continue
     }
-    if (t.indoor === "corridor" || t.indoor === "area") {
-      if (polys) for (const L of levels) corridors.push({ polys, level: L, kind: t.indoor })
+    if (t.indoor === "corridor" || t.indoor === "area" || isCirculation(t)) {
+      if (polys) for (const L of levels) corridors.push({ polys, level: L, kind: isCirculation(t) ? "corridor" : "area" })
       else if (line) for (const L of levels) lines.push({ line, level: L })
-      // A named corridor/area (an atrium, a hall) is a place too.
-      if (t.name && polys) rooms.push({ el, polys, levels, tags: t })
+      // A named corridor/area (an atrium, a hall, a clinic drawn as an open
+      // area) is a place too.
+      if (t.name && polys) rooms.push({ el, polys, levels, tags: t, area: t.indoor === "area" })
       continue
     }
     if (t.indoor === "room" && polys) {
@@ -280,7 +291,8 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
       continue
     }
     if (el.type === "node" && (t.door || t.entrance)) {
-      if (t.entrance && t.entrance !== "no") points.push({ el, tags: t, levels: levels.length ? levels : [0] })
+      const isEntrance = t.entrance && t.entrance !== "no" && (outlineNodes.has(el.id) || t.entrance === "main" || t.entrance === "emergency" || t.name)
+      if (isEntrance) points.push({ el, tags: t, levels: levels.length ? levels : [0] })
       else for (const L of levels) doors.push({ lat: el.lat, lon: el.lon, level: L })
       continue
     }
@@ -293,24 +305,37 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
       else points.push({ el, tags: t, levels })
       continue
     }
-    // Anything else named and levelled (a shop node, a reception desk).
-    if (levels.length && (t.name || t.amenity || t.healthcare || t.shop) && !t.building) {
+    // Anything else named and levelled (a shop node, a reception desk) — but
+    // not the site itself: a hospital outline carrying a stray level tag is
+    // not a room, and would stretch the plan to the whole campus.
+    const siteLevel = t.amenity === "hospital" || t.healthcare === "hospital" || t.amenity === "parking" || t.landuse || t.leisure || t.natural
+    if (levels.length && (t.name || t.amenity || t.healthcare || t.shop) && !t.building && !siteLevel) {
       if (polys) rooms.push({ el, polys, levels, tags: t })
       else if (el.type === "node") points.push({ el, tags: t, levels })
     }
   }
 
-  const roomCount = rooms.filter((r) => r.tags.indoor === "room").length
+  const isCore = (t) => ["lift", "stairs"].includes(classify(t, t.name ?? ""))
+  const realRooms = rooms.filter((r) => (r.tags.indoor === "room" || r.area) && !isCore(r.tags))
+  const roomCount = realRooms.length
   if (roomCount < MIN_ROOMS) return { reason: `${roomCount} rooms` }
 
   // 2. The venue's extent: everything indoor, padded. A building the indoor
   //    mapping sits in is drawn too, so the plan does not float in space.
-  const pts = []
-  for (const r of rooms) for (const p of r.polys) pts.push(...p.outer)
-  for (const c of corridors) for (const p of c.polys) pts.push(...p.outer)
-  for (const o of levelOutlines) for (const p of o.polys) pts.push(...p.outer)
-  for (const l of lines) pts.push(...l.line)
-  const inner = bboxOf(pts)
+  // The rooms and corridors set the extent. Open areas and level outlines
+  // join it only when they do not blow it up: a site-wide "area" relation
+  // around a campus would otherwise shrink every room to a speck.
+  const corePts = []
+  for (const r of rooms) if (!r.area) for (const p of r.polys) corePts.push(...p.outer)
+  for (const c of corridors) if (c.kind === "corridor") for (const p of c.polys) corePts.push(...p.outer)
+  const allPts = [...corePts]
+  for (const r of rooms) if (r.area) for (const p of r.polys) allPts.push(...p.outer)
+  for (const c of corridors) if (c.kind !== "corridor") for (const p of c.polys) allPts.push(...p.outer)
+  for (const o of levelOutlines) for (const p of o.polys) allPts.push(...p.outer)
+  const core = bboxOf(corePts.length ? corePts : allPts)
+  const full = bboxOf(allPts)
+  const grows = (full.n - full.s) <= (core.n - core.s) * 1.5 && (full.e - full.w) <= (core.e - core.w) * 1.5
+  const inner = grows ? full : core
   const shownBuildings = buildings.filter((b) => b.polys.some((p) => p.outer.some((q) => q.lat >= inner.s && q.lat <= inner.n && q.lon >= inner.w && q.lon <= inner.e) || pointInRing({ lat: (inner.s + inner.n) / 2, lon: (inner.w + inner.e) / 2 }, p.outer)))
   const midLat = (inner.s + inner.n) / 2
   const kx = mPerLng(midLat)
@@ -322,10 +347,15 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
   if (W > 2500 || H > 2500) return { reason: `indoor extent ${Math.round(W)}×${Math.round(H)} m — several sites tagged as one` }
   const px = (p) => [(p.lon - bounds.w) * kx, (bounds.n - p.lat) * M_PER_LAT]
   const toLatLng = ([x, y]) => ({ lat: r6(bounds.n - y / M_PER_LAT), lng: r6(bounds.w + x / kx) })
+  // Walking lines that leave the plan are campus paths with a level tag, not
+  // corridors; they are not drawn or routed here.
+  const inside = (p) => p.lat >= bounds.s && p.lat <= bounds.n && p.lon >= bounds.w && p.lon <= bounds.e
+  const linesHere = lines.filter((l) => l.line.every(inside))
 
-  // 3. Floors: every level with a room or corridor on it.
+  // 3. Floors: every level with a room or corridor on it. A lift tagged with
+  //    every level it serves does not make a floor of each.
   const floorSet = new Set()
-  for (const r of rooms) for (const L of r.levels) floorSet.add(L)
+  for (const r of realRooms) for (const L of r.levels) floorSet.add(L)
   for (const c of corridors) floorSet.add(c.level)
   const floors = [...floorSet].sort((a, b) => a - b).filter((L) => L >= -5 && L <= 40)
   if (!floors.length) return { reason: "no levelled rooms" }
@@ -377,7 +407,7 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
     trails.push({ id: `osm-${floor < 0 ? `b${-floor}` : `f${floor}`}-${trails.length + 1}`, floor, points: pathPx.map(toLatLng) })
   }
   for (const L of floors) {
-    for (const l of lines) if (l.level === L) pushTrail(L, l.line.map(px))
+    for (const l of linesHere) if (l.level === L) pushTrail(L, l.line.map(px))
     const polysHere = corridors.filter((c) => c.level === L && c.kind === "corridor")
     if (!polysHere.length) continue
     // Medial axis of the corridor polygons, all of a floor in one grid so
@@ -415,7 +445,7 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
       rooms: rooms.filter((r) => r.levels.includes(L)),
       walls: walls.filter((w) => w.level === L),
       doors: doors.filter((d) => d.level === L),
-      lines: lines.filter((l) => l.level === L),
+      lines: linesHere.filter((l) => l.level === L),
       hospital: hospital.name,
     })
     plans.set(L, svg)
@@ -429,13 +459,24 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
   }
 
   // 7. The venue.
-  const prefer = (re) => waypoints.find((w) => re.test(w.name))?.name
+  // Shortcuts for the search box: the way in, the desk, emergency, the
+  // pharmacy, somewhere to eat — public-facing places, never a staff room
+  // that happens to share the word.
+  const STAFF = /staff|lounge|office|work ?area|storage|locker|technolog|training|supply|kitchen|cashier/i
+  // With a pattern, only a name that matches it will do: the first reception
+  // by type at Denver Health is a cashier's window, and the first canteen a
+  // ward kitchen.
+  const pick = (type, re, { any = false } = {}) => {
+    const pool = waypoints.filter((w) => w.type === type && !STAFF.test(w.name))
+    const named = re ? pool.find((w) => re.test(w.name)) : undefined
+    return named?.name ?? (any ? pool[0]?.name : undefined)
+  }
   const quick = [
-    prefer(/^main entrance$/i) ?? prefer(/entrance/i),
-    prefer(/reception|information|accueil|empfang|receptie/i),
-    prefer(/emergency|urgence|notaufnahme|spoed|a&e/i),
-    prefer(/pharmac|apotheke|apotheek/i),
-    prefer(/caf|restaurant|canteen|kantine/i),
+    pick("exit", /^main entrance$|main|haupt/i, { any: true }),
+    pick("reception", /reception|information|accueil|empfang|receptie|anmeld|aufnahme|front desk|check-?in|desk/i),
+    waypoints.find((w) => w.type === "department" && /emergency|urgence|notaufnahme|spoed|a&e|accident|unfall/i.test(w.name) && !STAFF.test(w.name))?.name,
+    pick("pharmacy", /pharmac|apothe|chemist/i, { any: true }),
+    pick("canteen", /caf|restaurant|canteen|kantine|mensa|bistro|coffee|dining|food/i),
   ].filter((v, i, a) => v && a.indexOf(v) === i).slice(0, 5)
   const venue = {
     id,
@@ -461,13 +502,13 @@ export function buildIndoorVenue(raw, { id, country, generatedAt }) {
 
 // ---- drawing ----------------------------------------------------------------
 
-const FILL = {
+export const FILL = {
   toilet: "#e0f2fe", lift: "#fef3c7", stairs: "#fef3c7", exit: "#dcfce7", reception: "#eef2ff",
   canteen: "#fdf2f8", pharmacy: "#ecfdf5", ward: "#f0fdf4", department: "#f5f3ff", other: "#ffffff",
 }
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
-const f1 = (n) => (Math.round(n * 10) / 10).toString()
-const pathOf = (polys, px) =>
+export const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+export const f1 = (n) => (Math.round(n * 10) / 10).toString()
+export const pathOf = (polys, px) =>
   polys
     .map((poly) => [poly.outer, ...poly.inners].map((ring) => ring.map((p, i) => `${i ? "L" : "M"}${f1(px(p)[0])} ${f1(px(p)[1])}`).join("") + "Z").join(""))
     .join("")
@@ -475,9 +516,9 @@ const pathOf = (polys, px) =>
 // The words of a label laid out in up to two lines at the largest size that
 // fits the room, or nothing when none does — a plan crowded with clipped text
 // is worse than one with fewer labels.
-function fitLabel(name, w, h) {
+export function fitLabel(name, w, h, sizes = [1.8, 1.5, 1.25, 1.0, 0.85]) {
   const words = name.split(/\s+/)
-  for (const fs of [1.8, 1.5, 1.25, 1.0, 0.85]) {
+  for (const fs of sizes) {
     const lineW = (s) => s.length * fs * 0.56
     if (lineW(name) <= w * 0.92 && fs * 1.3 <= h) return { lines: [name], fs }
     if (words.length > 1 && fs * 2.5 <= h) {

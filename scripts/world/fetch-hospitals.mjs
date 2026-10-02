@@ -9,8 +9,10 @@
 // (scripts/nhs/), which is authoritative and already reconciled with the
 // mapped venues.
 //
-// Run: node scripts/world/fetch-hospitals.mjs [--countries LU,DE] [--skip GB]
-import { mkdirSync, writeFileSync, existsSync } from "fs"
+// Run: node scripts/world/fetch-hospitals.mjs [--countries LU,DE] [--skip GB] [--reuse-days N]
+// --reuse-days keeps a country's file when it was fetched within N days, so a
+// run that only changes a later stage does not spend half an hour here.
+import { mkdirSync, writeFileSync, existsSync, readFileSync } from "fs"
 import { overpass, pointOf, osmId } from "./lib/overpass.mjs"
 
 const OUT = "data/world/hospitals"
@@ -20,6 +22,16 @@ const arg = (name) => {
 }
 const only = arg("--countries")?.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean)
 const skip = new Set((arg("--skip") ?? "GB").split(",").map((s) => s.trim().toUpperCase()))
+const reuseDays = Number(arg("--reuse-days") ?? 0)
+const fresh = (file) => {
+  if (!reuseDays || !existsSync(file)) return false
+  try {
+    const at = JSON.parse(readFileSync(file, "utf8")).generatedAt
+    return !!at && Date.now() - Date.parse(at) < reuseDays * 86_400_000
+  } catch {
+    return false
+  }
+}
 
 mkdirSync(OUT, { recursive: true })
 
@@ -67,8 +79,14 @@ const codes = Object.keys(all).sort().filter((c) => !skip.has(c) && (!only || on
 console.log(`${Object.keys(all).length} countries in OSM; fetching ${codes.length}`)
 
 let total = 0
+let reused = 0
 const failed = []
 for (const code of codes) {
+  if (fresh(`${OUT}/${code}.json`)) {
+    reused++
+    total += JSON.parse(readFileSync(`${OUT}/${code}.json`, "utf8")).hospitals.length
+    continue
+  }
   try {
     const els = await overpass(`[out:json][timeout:600];
 area["ISO3166-1"="${code}"]["admin_level"="2"]->.c;
@@ -95,7 +113,7 @@ out tags center bb qt;`)
       if (!dup) kept.push(r)
     }
     kept.sort((a, b) => a.name.localeCompare(b.name))
-    writeFileSync(`${OUT}/${code}.json`, JSON.stringify({ country: code, name: all[code], hospitals: kept }) + "\n")
+    writeFileSync(`${OUT}/${code}.json`, JSON.stringify({ country: code, name: all[code], generatedAt: new Date().toISOString(), hospitals: kept }) + "\n")
     total += kept.length
     console.log(`${code} ${all[code]}: ${kept.length} hospitals`)
   } catch (err) {
@@ -106,5 +124,5 @@ out tags center bb qt;`)
     console.warn(`${code}: keeping the previous data`)
   }
 }
-console.log(`\n${total} hospitals across ${codes.length - failed.length} countries${failed.length ? `; failed: ${failed.join(", ")}` : ""}`)
+console.log(`\n${total} hospitals across ${codes.length - failed.length} countries${reused ? ` (${reused} reused from the last ${reuseDays} days)` : ""}${failed.length ? `; failed: ${failed.join(", ")}` : ""}`)
 if (failed.length > codes.length / 2) process.exit(1)

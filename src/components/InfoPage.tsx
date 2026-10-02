@@ -3,19 +3,22 @@ import { Navigation, ArrowLeft } from "lucide-react"
 import type { ReactNode } from "react"
 
 // Shared frame for the reading pages (accessibility statement, privacy
-// summary): the brand row, a title block, and a measure of prose that matches
-// the landing page's type and colour.
+// summary, coverage): the brand row, a title block, and a measure of prose
+// that matches the landing page's type and colour. `wide` gives the body the
+// width of a grid of cards rather than a column of reading.
 export default function InfoPage({
   eyebrow,
   title,
   lead,
   updated,
+  wide,
   children,
 }: {
   eyebrow: string
   title: string
   lead: string
   updated?: string
+  wide?: boolean
   children: ReactNode
 }) {
   return (
@@ -41,13 +44,13 @@ export default function InfoPage({
         </Link>
       </nav>
 
-      <article className="mx-auto max-w-[720px] px-6 pb-24 pt-12 sm:px-10">
+      <article className={`mx-auto ${wide ? "max-w-[1080px]" : "max-w-[720px]"} px-6 pb-24 pt-12 sm:px-10`}>
         <Link href="/" className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-wf-muted hover:text-wf-primary">
           <ArrowLeft size={14} aria-hidden="true" /> Home
         </Link>
         <p className="mt-6 text-xs font-semibold uppercase tracking-[0.1em] text-wf-primary">{eyebrow}</p>
         <h1 className="mt-2 font-display text-[34px] font-bold leading-[1.1] -tracking-[0.8px] text-wf-ink sm:text-[40px]">{title}</h1>
-        <p className="mt-4 text-[17px] leading-relaxed text-wf-muted">{lead}</p>
+        <p className="mt-4 max-w-[680px] text-[17px] leading-relaxed text-wf-muted">{lead}</p>
         {updated && <p className="mt-3 text-[13px] text-wf-faint">Last updated {updated}</p>}
         <div className="wf-prose mt-10">{children}</div>
       </article>

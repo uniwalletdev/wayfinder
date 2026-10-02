@@ -32,10 +32,13 @@ because Overpass is not reachable from sandboxed development machines:
 | --- | --- | --- |
 | 1 | `fetch-hospitals.mjs` | `data/world/hospitals/<CC>.json` — every named hospital in each ISO country, from Overpass |
 | 2 | `fetch-indoor.mjs` | `data/world/indoor-candidates.json`, `data/world/indoor-raw/<id>.json` — hospitals whose insides are mapped with OSM's Simple Indoor Tagging, and their full indoor geometry |
-| 3 | `build.mjs` | `public/world/<CC>.json` (what the app reads), `public/world/venues/<id>.json` and `public/floorplans/osm/<id>/*.svg` for the hospitals with indoor maps, `data/world/indoor-report.json` |
+| 2b | `fetch-campus.mjs` | `data/world/campus-raw/<CC>.json` (not committed) — what is mapped on every hospital's grounds: buildings, entrances, car parks, facilities, footpaths. Countries with more than a thousand hospitals are fetched by state or Land |
+| 3 | `build.mjs` | `public/world/<CC>.json`, `public/world/venues/<id>.json` and `public/floorplans/osm/<id>/*.svg` for the hospitals with indoor maps or site maps (not committed), `data/world/indoor-report.json`, `data/world/campus-report.json` |
+| 4 | `publish.mjs` | the same, written into the shared Postgres (`db/migrations/0005_world.sql`), country by country in one transaction each; `/api/world/*` serves it |
 
-A push that touches `scripts/world/` runs a sample of countries and commits the
-results back to the branch. The monthly schedule, or *Run workflow* with
+A push that touches `scripts/world/` runs a sample of countries, reusing
+hospital lists and indoor geometry fetched in the last two days, and commits
+the results back to the branch. The monthly schedule, or *Run workflow* with
 `ALL`, covers the world and opens a pull request.
 
 ## What an indoor map becomes
@@ -56,8 +59,54 @@ OSM level 0 is internal floor 0 (the ground floor); level −1 is Basement 1.
 Hospitals with fewer than eight rooms or four named places are not built —
 the report says why.
 
+## Site maps for everyone else
+
+Indoor mapping is rare; mapped grounds are common. A hospital without an
+indoor map but with named buildings on its grounds gets a site-map venue from
+`scripts/world/lib/campus.mjs` (`scripts/world/test/campus.test.mjs`): one
+plan drawn from the building outlines, car parks, footpaths and entrances; a
+waypoint per named building, entrance (main, emergency, or on a named
+building), car park, pharmacy, café, bus stop; the footpaths as corridors. The
+bar is two named buildings plus a couple of entrances, or one building and a
+handful of facilities. The hospital's own name on its main block is not a
+place — a visitor knows which hospital they are at.
+
 Ids are `osm-<cc>-<w|n|r><osm id>`, so an id alone says which country file
 lists it and a saved venue survives a data refresh.
+
+## Where it lives, and how the apps get it
+
+The per-country lists, venues and plans add up to hundreds of megabytes across
+the world and are refreshed monthly, so they live in the shared Postgres (the
+same Railway database the venue store uses) rather than in the repository or
+the app bundle. `src/lib/world-db.ts` reads it and these routes serve it,
+cached at the edge:
+
+- `/api/world` — every published country with its counts of hospitals, site maps and indoor maps
+- `/api/world/<CC>` — a country's directory
+- `/api/world/<CC>/maps` — the site maps and indoor maps built for a country, richest first, without the venues themselves
+- `/api/world/nearest?country=&lat=&lng=` — the hospitals nearest a position, which is what a visitor outside the UK opens on, without downloading the list
+- `/api/world/hospitals/<id>` and `/api/world/venues/<id>` — one hospital, or its built map
+- `/api/world/plans/<id>/<plan>.svg` — a floor plan
+
+The website and the apps read the same routes (the apps through the API base
+they are built with). A data refresh therefore reaches installed apps on the
+next run, with no deploy and no store release. Without `DATABASE_URL` the
+routes answer 404 and a country reads as having no hospitals listed yet. The
+UK's NHS directory stays in the bundle.
+
+The workflow needs `DATABASE_URL` as a repository secret (Railway → Postgres →
+Connect → Public Network → Connection URL) to publish. The run's summary says
+whether it did.
+
+### Seeing everything that has been published
+
+`/coverage` on the site (and in the apps) lists every country, its counts and
+a card per site map and indoor map, with a thumbnail of the plan, that opens
+it in the app. It starts on the visitor's own country and takes
+`?country=US` to start on another, so a link to one country can be shared.
+The UK's maps are listed from the bundle. The page is not linked from the
+visitor's screens, which only ever show their own country.
 
 ## Licence
 

@@ -5,13 +5,19 @@
 #   1. fetches every named hospital per country      -> data/world/hospitals/
 #   2. finds hospitals whose insides are mapped and
 #      downloads their indoor geometry               -> data/world/indoor-raw/
-#   3. builds the app's per-country files and indoor
-#      venues                                        -> public/world/, public/floorplans/osm/
+#   2b. fetches what is mapped on every hospital's
+#      grounds (buildings, entrances, car parks,
+#      paths), state by state for large countries    -> data/world/campus-raw/ (not committed)
+#   3. builds the app's per-country files, indoor
+#      venues and site-map venues                    -> public/world/, public/floorplans/osm/ (not committed)
+#   4. publishes them into the shared Postgres       -> /api/world/* serves them
 #
-# A run started by a push to a feature branch commits the results back to that
-# branch, so they ride along in its pull request. A scheduled or manual run on
-# main opens a pull request instead. The UK is skipped: its hospitals come from
-# the NHS register (nhs-data.yml).
+# The built files are published, not committed: they run to hundreds of
+# megabytes across the world. What a run commits back is the small raw data
+# under data/world (hospital lists, indoor geometry, reports), so a later run
+# can reuse it: a push to a feature branch commits to that branch, a scheduled
+# or manual run on main opens a pull request. The UK is skipped: its hospitals
+# come from the NHS register (nhs-data.yml).
 #
 # Data © OpenStreetMap contributors, ODbL 1.0. Attribution is shown in the app.
 name: World hospital data
@@ -41,10 +47,23 @@ permissions:
   pull-requests: write
 
 env:
-  # A push runs a sample so a change to the scripts is checked in minutes; the
+  # A push runs a sample so a change to the scripts is checked within the
+  # hour: a few European countries, the US, and Nigeria, Ghana, Kenya, South
+  # Africa and Egypt for the other kind of coverage OpenStreetMap has. The
   # monthly schedule and a manual run with ALL cover the world.
-  COUNTRIES: ${{ github.event_name == 'push' && 'LU,BE,NL,CH,AT,DE,DK,IE,US' || inputs.countries || 'ALL' }}
+  COUNTRIES: ${{ github.event_name == 'push' && 'LU,BE,NL,CH,AT,DE,DK,IE,US,NG,GH,KE,ZA,EG' || inputs.countries || 'ALL' }}
   MAX_DETAIL: ${{ github.event_name == 'push' && '60' || inputs.max_detail || '400' }}
+  # A push that changes the scripts reuses hospital lists and indoor geometry
+  # fetched in the last two days; the schedule and a manual run fetch afresh.
+  REUSE_DAYS: ${{ github.event_name == 'push' && '2' || '0' }}
+  # Grounds are fetched state by state in the US; a push run covers the sixteen
+  # most populous states (about three fifths of US hospitals) so a change to
+  # the scripts is checked within the hour. The schedule and a manual run
+  # cover every state.
+  CAMPUS_AREAS: ${{ github.event_name == 'push' && 'US-CA,US-TX,US-FL,US-NY,US-PA,US-IL,US-OH,US-GA,US-NC,US-MI,US-NJ,US-VA,US-WA,US-AZ,US-MA,US-CO' || '' }}
+  # The shared Postgres the website reads from (Railway's public URL). Without
+  # it the run still builds and reports, and publishes nothing.
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
 jobs:
   fetch:
@@ -62,23 +81,40 @@ jobs:
 
       - name: Hospitals per country
         run: |
-          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-hospitals.mjs
-          else node scripts/world/fetch-hospitals.mjs --countries "$COUNTRIES"; fi
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-hospitals.mjs --reuse-days "$REUSE_DAYS"
+          else node scripts/world/fetch-hospitals.mjs --countries "$COUNTRIES" --reuse-days "$REUSE_DAYS"; fi
 
       - name: Indoor mapping
         run: |
-          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-indoor.mjs --max-detail "$MAX_DETAIL"
-          else node scripts/world/fetch-indoor.mjs --countries "$COUNTRIES" --max-detail "$MAX_DETAIL"; fi
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-indoor.mjs --max-detail "$MAX_DETAIL" --reuse-days "$REUSE_DAYS"
+          else node scripts/world/fetch-indoor.mjs --countries "$COUNTRIES" --max-detail "$MAX_DETAIL" --reuse-days "$REUSE_DAYS"; fi
+
+      - name: Hospital grounds
+        run: |
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs
+          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES" ${CAMPUS_AREAS:+--areas "$CAMPUS_AREAS"}; fi
 
       - name: Build the app's files
         run: node scripts/world/build.mjs
 
+      - name: Publish to the database
+        id: publish
+        if: env.DATABASE_URL != ''
+        run: node scripts/world/publish.mjs
+
       - name: Summarise
         if: always()
+        env:
+          PUBLISHED: ${{ steps.publish.outcome }}
         run: |
           {
             echo "## World hospital data ($COUNTRIES)"
             echo
+            case "$PUBLISHED" in
+              success) echo "- published to the shared database: every country and map is listed at /coverage on the site" ;;
+              failure) echo "- **publishing to the database failed**: see the Publish to the database step" ;;
+              *) echo "- **not published**: add the DATABASE_URL repository secret (docs/world-data.md)" ;;
+            esac
             node -e '
               const fs = require("fs");
               const dir = "data/world/hospitals";
@@ -92,6 +128,12 @@ jobs:
               }
               const raw = "data/world/indoor-raw";
               if (fs.existsSync(raw)) console.log(`- indoor geometry downloaded for **${fs.readdirSync(raw).length}** hospitals`);
+              if (fs.existsSync("data/world/campus-report.json")) {
+                const c = JSON.parse(fs.readFileSync("data/world/campus-report.json"));
+                const per = {};
+                for (const b of c.built) per[b.country] = (per[b.country] ?? 0) + 1;
+                console.log(`- **${c.built.length}** site maps built from hospital grounds: ` + Object.entries(per).map(([k, v]) => `${k} ${v}`).join(", ") + (Object.keys(c.refused).length ? `; refused: ` + Object.entries(c.refused).map(([k, v]) => `${k} ×${v}`).join(", ") : ""));
+              }
               if (fs.existsSync("data/world/indoor-report.json")) {
                 const r = JSON.parse(fs.readFileSync("data/world/indoor-report.json"));
                 console.log(`- **${r.built.length}** indoor venues built: ` + r.built.slice(0, 12).map(x => `${x.name} (${x.country}, ${x.floors} floors, ${x.waypoints} places)`).join("; "));
@@ -110,24 +152,25 @@ jobs:
           git config user.email "data@findway.invalid"
           # One pathspec that matches nothing makes git add refuse the lot, so
           # only the folders that exist are named.
-          for p in data/world public/world public/floorplans/osm; do
-            [ -e "$p" ] && git add -A -- "$p"
-          done
+          git add -A -- data/world
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Refresh world hospital data from OpenStreetMap ($COUNTRIES)" -m "Data © OpenStreetMap contributors, ODbL 1.0."
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
+      # Needs "Allow GitHub Actions to create and approve pull requests" under
+      # Settings → Actions → General. Without it the branch is still pushed and
+      # the summary says where to open the pull request by hand.
       - name: Open a pull request
         if: github.ref == 'refs/heads/main'
+        id: pr
+        continue-on-error: true
         uses: peter-evans/create-pull-request@v7
         with:
           branch: automation/world-data
           base: main
           add-paths: |
             data/world
-            public/world
-            public/floorplans/osm
           commit-message: "Refresh world hospital data from OpenStreetMap"
           title: "Refresh world hospital data from OpenStreetMap"
           body: |
@@ -135,3 +178,11 @@ jobs:
             summary has the counts. Data © OpenStreetMap contributors, ODbL 1.0.
           labels: automated, data
           delete-branch: true
+      - name: Say where the data went when no pull request could be opened
+        if: github.ref == 'refs/heads/main' && steps.pr.outcome == 'failure'
+        run: |
+          {
+            echo
+            echo "The refreshed data was pushed to the branch \`automation/world-data\` but GitHub Actions is not allowed to open pull requests in this repository (Settings → Actions → General → Workflow permissions)."
+            echo "Open it by hand: https://github.com/${GITHUB_REPOSITORY}/compare/main...automation/world-data?expand=1"
+          } >> "$GITHUB_STEP_SUMMARY"

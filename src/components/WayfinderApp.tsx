@@ -9,6 +9,8 @@ import { venueBuildings, buildingAt } from "@/lib/buildings"
 import { DEFAULT_VENUE, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues/core"
 import { loadVenue, loadCatalog, catalogSnapshot, summaryOf } from "@/lib/venues/catalog"
 import { HOME_COUNTRY, detectCountry, saveCountry, countryName } from "@/lib/country"
+import { apiUrl } from "@/lib/app-shell"
+import { worldVenueId, type WorldHospitalRow } from "@/lib/venues/catalog"
 import { isSiteOnly, siteDestination } from "@/lib/site-destination"
 import {
   loadUserVenues, saveUserVenues, loadActiveVenueId, saveActiveVenueId, loadVenueChoice, saveVenueChoice,
@@ -192,6 +194,9 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // nearest in their country), not one they picked: the first GPS fix may
   // then move them to the hospital they are actually at.
   const autoVenueRef = useRef(false)
+  // The nearest-hospital query is asked once per fix-and-country; if it
+  // fails (offline, no database) the country's list decides instead.
+  const nearestAskedRef = useRef<string | null>(null)
   // Whether a shared-venue backend is reachable. When true, user-created venues
   // and their surveyed/AI-read points live on the server (reusable across
   // devices) instead of only in this browser's localStorage.
@@ -576,7 +581,40 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   const gpsFix = gpsStatus === "active" && navState.positionAccuracy > 0 ? navState.currentPosition : null
   useEffect(() => {
     if (!autoVenueRef.current) return
-    const local = catalog.filter((v) => v.visibility === "public" && v.country === country)
+    // With a fix, outside the home country, one small query names the
+    // nearest hospital — no need to download the country's whole list first
+    // (the US list is over a megabyte). The list is the fallback.
+    if (gpsFix && country !== HOME_COUNTRY && nearestAskedRef.current !== country) {
+      nearestAskedRef.current = country
+      const params = new URLSearchParams({ country, lat: gpsFix.lat.toFixed(5), lng: gpsFix.lng.toFixed(5), limit: "1" })
+      let cancelled = false
+      void fetch(apiUrl(`/api/world/nearest?${params}`))
+        .then((res) => (res.ok ? (res.json() as Promise<{ hospitals: WorldHospitalRow[] }>) : null))
+        .then((data) => {
+          const row = data?.hospitals?.[0]
+          if (cancelled || !row || !autoVenueRef.current) return
+          autoVenueRef.current = false
+          const id = worldVenueId(country, row.id)
+          if (id === activeVenueId) return
+          void switchToVenueId(id, { silent: true }).then((v) => {
+            if (!v) return
+            saveVenueChoice("app")
+            toast.info(`Showing ${v.name}`, `The nearest hospital to you in ${countryName(country)}.`)
+          })
+        })
+        .catch(() => {
+          // The list below takes over once it is in.
+        })
+      return () => {
+        cancelled = true
+      }
+    }
+    // Not before the country's directory is in: with only the bundled
+    // summaries to choose from, a visitor in Ohio was sent to the one
+    // "mapped" US entry known at that moment, a demonstration building in
+    // Wisconsin. Hospitals only, for the same reason.
+    if (!catalogReady) return
+    const local = catalog.filter((v) => v.visibility === "public" && v.country === country && v.category === "hospital")
     if (local.length === 0) return
     let pick: VenueSummary | undefined
     if (gpsFix) {
@@ -602,7 +640,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     })
     // activeVenueId is read, not reacted to: a venue switch must not re-run this.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [catalog, country, gpsFix, switchToVenueId])
+  }, [catalog, catalogReady, country, gpsFix, switchToVenueId])
 
   // Selecting a destination shows a route *preview* (overview + travel mode +
   // ETA) — the user taps Start to begin turn-by-turn, rather than jumping

@@ -1,0 +1,253 @@
+{
+ "generatedAt": "2026-10-02T11:43:05.835Z",
+ "built": [
+  {
+   "id": "osm-us-r12130441",
+   "country": "US",
+   "name": "Stanford Hospital",
+   "rooms": 7,
+   "waypoints": 17,
+   "named": 13,
+   "floors": 2,
+   "trails": 10,
+   "corridorM": 129,
+   "extentM": [
+    82,
+    90
+   ]
+  },
+  {
+   "id": "osm-us-r18181549",
+   "country": "US",
+   "name": "Malcolm Grow Medical Clinics and Surgery Center",
+   "rooms": 29,
+   "waypoints": 40,
+   "named": 28,
+   "floors": 4,
+   "trails": 14,
+   "corridorM": 111,
+   "extentM": [
+    55,
+    170
+   ]
+  },
+  {
+   "id": "osm-us-r21411763",
+   "country": "US",
+   "name": "The Good Shepherd Rehabilitation Hospital",
+   "rooms": 54,
+   "waypoints": 109,
+   "named": 52,
+   "floors": 3,
+   "trails": 120,
+   "corridorM": 616,
+   "extentM": [
+    79,
+    78
+   ]
+  },
+  {
+   "id": "osm-de-r6205279",
+   "country": "DE",
+   "name": "Universitätsklinikum Carl Gustav Carus",
+   "rooms": 20,
+   "waypoints": 155,
+   "named": 17,
+   "floors": 6,
+   "trails": 104,
+   "corridorM": 1076,
+   "extentM": [
+    196,
+    63
+   ]
+  },
+  {
+   "id": "osm-us-w1421285994",
+   "country": "US",
+   "name": "AdventHealth Castle Rock Emergency Department",
+   "rooms": 52,
+   "waypoints": 29,
+   "named": 19,
+   "floors": 1,
+   "trails": 20,
+   "corridorM": 128,
+   "extentM": [
+    81,
+    70
+   ]
+  },
+  {
+   "id": "osm-de-w361240594",
+   "country": "DE",
+   "name": "Universitätsklinikum Ulm",
+   "rooms": 28,
+   "waypoints": 34,
+   "named": 20,
+   "floors": 6,
+   "trails": 47,
+   "corridorM": 314,
+   "extentM": [
+    151,
+    88
+   ]
+  },
+  {
+   "id": "osm-us-w38198942",
+   "country": "US",
+   "name": "Kaiser Permanente Santa Clara Medical Center",
+   "rooms": 13,
+   "waypoints": 162,
+   "named": 85,
+   "floors": 4,
+   "trails": 31,
+   "corridorM": 2154,
+   "extentM": [
+    303,
+    239
+   ]
+  },
+  {
+   "id": "osm-nl-w400026613",
+   "country": "NL",
+   "name": "Universitair Medisch Centrum Groningen",
+   "rooms": 34,
+   "waypoints": 134,
+   "named": 55,
+   "floors": 5,
+   "trails": 60,
+   "corridorM": 1333,
+   "extentM": [
+    469,
+    351
+   ]
+  },
+  {
+   "id": "osm-us-w463483594",
+   "country": "US",
+   "name": "Ruby Memorial Hospital",
+   "rooms": 10,
+   "waypoints": 10,
+   "named": 10,
+   "floors": 2,
+   "trails": 0,
+   "corridorM": 0,
+   "extentM": [
+    62,
+    218
+   ]
+  },
+  {
+   "id": "osm-us-w471352511",
+   "country": "US",
+   "name": "Denver Health Medical Center",
+   "rooms": 562,
+   "waypoints": 636,
+   "named": 533,
+   "floors": 1,
+   "trails": 156,
+   "corridorM": 1255,
+   "extentM": [
+    220,
+    152
+   ]
+  },
+  {
+   "id": "osm-us-w580881275",
+   "country": "US",
+   "name": "AdventHealth Castle Rock Hospital",
+   "rooms": 251,
+   "waypoints": 143,
+   "named": 82,
+   "floors": 2,
+   "trails": 67,
+   "corridorM": 463,
+   "extentM": [
+    159,
+    198
+   ]
+  },
+  {
+   "id": "osm-de-w583306346",
+   "country": "DE",
+   "name": "Campus Charité Mitte",
+   "rooms": 59,
+   "waypoints": 98,
+   "named": 16,
+   "floors": 6,
+   "trails": 18,
+   "corridorM": 257,
+   "extentM": [
+    565,
+    626
+   ]
+  },
+  {
+   "id": "osm-de-w892966689",
+   "country": "DE",
+   "name": "Krankenhaus Bad Arolsen",
+   "rooms": 22,
+   "waypoints": 23,
+   "named": 21,
+   "floors": 1,
+   "trails": 0,
+   "corridorM": 0,
+   "extentM": [
+    54,
+    30
+   ]
+  },
+  {
+   "id": "osm-at-w9451729",
+   "country": "AT",
+   "name": "Landeskrankenhaus Feldkirch",
+   "rooms": 16,
+   "waypoints": 82,
+   "named": 38,
+   "floors": 7,
+   "trails": 122,
+   "corridorM": 1521,
+   "extentM": [
+    210,
+    121
+   ]
+  }
+ ],
+ "refused": [
+  {
+   "id": "osm-at-r2764083",
+   "country": "AT",
+   "name": "AKH Wien",
+   "reason": "3 rooms"
+  },
+  {
+   "id": "osm-us-w1096305153",
+   "country": "US",
+   "name": "NMBHI",
+   "reason": "no levelled rooms"
+  },
+  {
+   "id": "osm-de-w131823815",
+   "country": "DE",
+   "name": "Medizinische Universität Lausitz – Carl Thiem",
+   "reason": "5 rooms"
+  },
+  {
+   "id": "osm-nl-w151233702",
+   "country": "NL",
+   "name": "Leids Universitair Medisch Centrum",
+   "reason": "4 rooms"
+  },
+  {
+   "id": "osm-us-w517817443",
+   "country": "US",
+   "name": "University of Virginia Medical Center",
+   "reason": "5 rooms"
+  },
+  {
+   "id": "osm-nl-w660699519",
+   "country": "NL",
+   "name": "Flevoziekenhuis",
+   "reason": "no levelled rooms"
+  }
+ ]
+}
