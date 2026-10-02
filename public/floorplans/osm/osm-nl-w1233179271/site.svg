@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 345.8 317.4" font-family="Arial, Helvetica, sans-serif">
+<title>Dijklander Ziekenhuis — site map</title>
+<path d="M314.5 266.5L305.7 269.7L255.2 285.9L216 293.9L203.8 295.8L203.4 294L200.3 294.5L196.8 294.9L194.1 295.4L194.3 297.2L173.3 299.2L117.1 302.6L107.4 302.9L102.7 302.4L91.9 297.9L88.4 296.6L82.9 295.6L77.2 295.7L70.2 269.7L66.9 260.8L32.6 186.6L36.5 187.2L32.8 180.1L29.2 171.7L26.2 164.7L15.7 126.6L44.8 110.3L134.9 66.1L163.5 52.3L169.5 54L179.2 62.5L181.3 64L180.1 88.4L180.9 99.6L195.4 98.1L194.4 83.4L195.3 69.5L198.5 62.2L201.5 55.5L204.3 50.7L208.7 41.9L215.4 32.9L219.3 28.6L224 24.9L233 19.3L239.5 16.4L239.7 17L245.5 14.4L330.1 261L314.5 266.5Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M124 301.4L124.1 303.3L128.1 303.1L128 301.2L124 301.4Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M182.8 178L189.9 192.8L207.3 184.4L203.5 176.5L204.6 176L199 164.3L191.4 167.9L193.7 172.7L182.8 178Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M143.4 128.3L80 158.1L82.4 163.1L145.7 133.3L143.4 128.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M167.6 101.9L170.2 107.6L164.7 110.2L162.1 104.5L167.6 101.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M50.9 160.7L163.6 108.1L160.9 102.2L163 101.3L164.5 95.1L164.7 95.2L165.2 95.5L165.7 95.7L166.3 95.8L166.8 95.8L167 95.8L167.6 95.7L168.2 95.6L168.7 95.3L169 95.2L169.4 94.9L169.7 94.5L170.1 94.1L170.5 93.3L170.8 92.4L171 91.8L171 91.2L171 90.6L170.9 89.7L170.7 88.8L170.4 87.9L170.1 87.1L169.7 86.3L169.2 85.6L168.6 84.8L168 84.2L167.5 83.7L167 83.4L166.5 83.1L165.6 82.8L164.7 82.6L164.2 82.6L163.7 82.6L163.2 82.8L162.9 82.9L162.4 83.1L161.9 83.5L161.5 83.9L161.3 84L161 84.5L160.7 85L160.5 85.5L160.4 86L160.4 86.3L156.9 84.6L154.7 83.6L152.8 84.4L152.6 84.5L152.2 83.5L150.6 80.1L150 79L149.9 78.7L37.3 131.3L35.6 132L49.3 161.4L50.9 160.7ZM101.8 123.6L98 115.1L104.8 111.9L108.7 120.4L101.8 123.6Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="202,303 200.1,297.4 189.4,275.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="216.1,161.4 210.1,164.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="188.1,224.8 183.6,230.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="216.1,161.4 229.1,164.3 240.3,163.3 258,161.2 263.5,160.3 268.5,159.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="218,25.2 214.3,28.1 212.2,30.6 210.2,33.2 201.8,47.2 197.7,56.4 193.3,65.7 190.7,75.7 190.3,99.1 194.3,116.3 216.1,161.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="56.2" cy="110.2" r="1" fill="#64748b"/>
+<circle cx="216.7" cy="128.6" r="1" fill="#64748b"/>
+<circle cx="124" cy="78.4" r="1" fill="#64748b"/>
+<circle cx="127.1" cy="84.3" r="1" fill="#64748b"/>
+<circle cx="126.1" cy="302.2" r="1" fill="#64748b"/>
+<circle cx="195.4" cy="179.4" r="1" fill="#64748b"/>
+<text x="112.9" y="145.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="166.2" y="106.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="189.4" cy="275.8" r="0.9" fill="#16a34a"/>
+<circle cx="233.5" cy="212.7" r="1.4" fill="#dc2626"/>
+<circle cx="183.6" cy="230.6" r="1.4" fill="#16a34a"/>
+<circle cx="267.4" cy="172.9" r="1.4" fill="#dc2626"/>
+<circle cx="150.6" cy="80.1" r="0.9" fill="#16a34a"/>
+<text x="102.6" y="118.7" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="102.6" dy="0">Maelsonstraat</tspan></text>
+<text x="343.8" y="315.4" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

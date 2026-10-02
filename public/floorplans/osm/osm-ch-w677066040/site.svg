@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 263.2 237.1" font-family="Arial, Helvetica, sans-serif">
+<title>Hôpital neuchâtelois Val-de-Ruz — site map</title>
+<path d="M131.6 53.1L112.9 10.8L87.1 40.7L54.9 90.3L22.8 129.2L12 141.1L40.6 163.8L79.6 193.2L94.1 186.3L118.7 199.6L133 179.9L216.3 226.3L243.7 179.3L251.2 167.7L217.9 147.5L184.3 120.3L152.6 87.1L131.6 53.1Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M85 103.9L92.5 95.4L99.6 101.7L92.1 110.1L85 103.9Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M70.6 141.9L74.2 145.3L69.9 150.3L67.4 148.9L55 162.6L73.7 180.4L87.3 166.8L72.6 152.9L77.3 147.9L82.6 152.6L138.2 91.4L115.9 69.7L103 81.4L114.4 92.1L87.2 118.8L72.3 105L60.8 116.8L78.6 133L70.6 141.9Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M134.2 135.9L166 175.3L192.4 153.9L182.6 143.9L175.7 149.5L139.3 109L132.2 115L143.3 127.3L134.2 135.9Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="136.8,85.8 140.3,83.4 142,82.1 144.5,80.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="137.7" cy="75.6" r="1" fill="#64748b"/>
+<text x="92.3" y="102.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="94.3" y="122.5" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="94.3" dy="0">Hôpital de Landeyeux</tspan></text>
+<text x="159.5" y="145.5" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="159.5" dy="0">Home de Landeyeux</tspan></text>
+<text x="261.2" y="235.1" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

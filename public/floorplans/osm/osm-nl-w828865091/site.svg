@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 294.9 261.1" font-family="Arial, Helvetica, sans-serif">
+<title>Admiraal De Ruyter Ziekenhuis — site map</title>
+<path d="M13.4 100.9L27.1 164.8L35.3 203L45.2 249.2L178.6 221L196.4 217.2L218.1 212.6L281.5 199.2L265.9 156.1L261.4 143.9L251.5 146.5L224.8 153.4L204.1 158.8L143.5 43L126.6 11.9L86.5 38.7L60.4 69L13.4 100.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M16.9 114.3L18.1 114.2L18.7 117.9L17.5 118L16.9 114.3Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M27.1 164.8L61 157.1L67.3 184.6L73 183.2L79.1 210L152.7 193.2L149.2 177.7L176.4 169.9L183.5 167.4L196.4 217.2L178.6 221L73.7 243.1L67.5 244.5L45.2 249.2L35.3 203L27.1 164.8Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M196.4 217.2L218.1 212.6L281.5 199.2L265.9 156.1L258.9 157.7L254 155.3L251.5 146.5L224.8 153.4L204.1 158.8L183.5 167.4L196.4 217.2Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M53.4 107.8L54.6 113.4L59.1 112.3L59.8 115.4L60.7 115.1L63.9 128.7L62.6 129L63.3 131.9L61.7 132.7L59.2 133.7L56.1 134.6L52.9 135.1L51.2 135.2L47.5 135.8L43.9 136.8L43.2 137.1L47 153.7L31.5 157.3L20.6 110.3L16.6 113.1L14.2 103L53.9 76.5L61.2 87.1L54.8 91.5L56.3 93.7L61.7 101.8L53.4 107.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="86.9,126.3 82.6,122.8 80,119.7 77.3,116.5 75,113.9 72.8,112.7 70.3,112.7 68,112.9 66.5,113.9 65.2,117.1 65.8,121.1 67.3,126.4 68,128.6 66.3,135.6 65.4,139.4 64.8,142.6 54.2,151.7 49.8,154.9 47.6,156.6 40.6,158.3 28.7,162.1 24.7,141.5 18.9,142.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="86.9,126.3 77.5,130.1 75.6,136.2 65.4,139.4 55.9,143.4 49.1,150.8 49.8,154.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="89" cy="187.9" r="1" fill="#64748b"/>
+<text x="82" y="162.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">+</text>
+<circle cx="17.8" cy="116.1" r="1" fill="#64748b"/>
+<text x="103.8" y="206.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="230.6" y="182.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="40.8" y="114.1" font-size="2.6" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="40.8" dy="0">Zuidwest Radiotherapeutisch</tspan><tspan x="40.8" dy="3">Instituut</tspan></text>
+<text x="292.9" y="259.1" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

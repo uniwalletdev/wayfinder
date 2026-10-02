@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 339.3 265.5" font-family="Arial, Helvetica, sans-serif">
+<title>Mercy Medical Center Merced — site map</title>
+<path d="M322.6 252.4L323.8 250.6L322.7 192L317.9 160.9L316.1 139.7L318 26.6L312.1 19.1L301 17.2L220.4 12.4L50.4 12.1L21.5 18.1L20.6 77.7L19.1 129.6L16.4 173.9L15.4 234.7L49.7 239.9L93 253.5L322.6 252.4Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M59 160.9L59.3 81.1L51.5 81L51.5 73.4L26.9 73.3L27.1 79.4L21.4 79.7L20.3 160.8L59 160.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M224.6 20.4L225.4 71.5L207.4 71.8L210.4 253.3L306.5 249L313.1 242.3L314.1 177.4L313 81.5L312.9 37L304.6 19.1L224.6 20.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M197.9 27L190.8 26.8L185.8 31.7L185.6 38.7L190.8 43.9L198 43.9L200.4 41.6L203 39.1L202.9 31.8L197.9 27Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M153.7 21.3L153.7 68.9L126.8 68.9L124.3 76.6L115.4 76.9L114.8 21.4L153.7 21.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M47.1 182.1L66.9 187.9L68.8 181.2L72.9 182.1L73.6 179.2L78.3 180.2L79.1 178.8L89.8 181.7L86.7 193.7L83.3 205.9L78.2 223.2L65.6 219.9L65 222.1L58.1 220.6L58.7 218.2L38.6 213L47.1 182.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="104,83.7 168.9,84.6 203.1,85.1 214.1,85.2 214.6,79.2 225.1,79.2 304,79.2 319.2,79.2 318.1,120.8 318.1,136.8 319.5,155.3 321.9,170.9 325.5,188.1 326.5,198.8 327,252.6 324.9,255.1 204.6,254.6 193.7,255 119.5,256.3 111.1,256.9 97.1,256.1 53.3,244.1 33.8,239.7 16.7,238.6 12.5,232.1 14.7,191 14.6,157 16.9,129.1 15.2,106.7 19,78.9 19.6,19.3 19.4,12.4 20.2,-1.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="168.9,84.6 168.8,83.2 168.5,74.3 168.7,63.2 169.6,60.1 172,57.5 175.3,56.6 178.2,56.1 192.9,56.3 196,55.6 198.6,53.7 200.5,51.1 201,47.5 200.4,41.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="39.9" y="118.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="262.4" y="138.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="194.3" y="35.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="133.8" y="46.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="64.9" y="200.6" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="64.9" dy="0">Clinic</tspan></text>
+<text x="337.3" y="263.5" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

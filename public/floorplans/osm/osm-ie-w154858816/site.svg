@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275.8 289.6" font-family="Arial, Helvetica, sans-serif">
+<title>Kilcreene Hospital — site map</title>
+<path d="M33.2 257.1L91.6 276.4L199.6 222.1L210.7 205.3L224.1 169.5L263.3 130.3L252 105.2L223.9 103.4L173.5 29.9L156.1 13.2L109 53.2L97.9 57.4L76.2 75L46.9 101.9L12.5 170.8L45.8 223.2L19.1 248L33.2 257.1Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M96 99.9L97 101.3L98.1 102.7L102.1 107.4L104.5 110.3L113.3 120.8L116.4 124.5L119.7 128.4L86.5 158.4L62.3 129.5L76.5 117.6L80.2 114.5L85.7 110L88.3 109L90.7 106.9L93.5 102L96 99.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M80 209.6L95.2 197.8L113.4 221.4L115.5 224.2L117.7 226.9L129.9 242.8L114.7 254.6L110 248.4L96.1 230.4L80 209.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M48.7 221.9L66.4 205.5L60.4 195.8L54.7 199.5L53.1 195.5L42.8 199.7L38.3 202.5L48.7 221.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M114.6 185.1L112 190.8L119.9 207.8L122.9 202.5L127.6 200.5L131.9 200.8L127.5 190L121 188.8L118.2 183L114.6 185.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M110 248.4L105 252.1L94 267.9L73.5 252.1L96.1 230.4L110 248.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M78.7 167.8L83.7 177.3L58.3 190.5L53.4 181L78.7 167.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M81.7 242.8L71.2 252.7L56.9 237.6L62.8 232L65 234.4L68.1 231.4L67.4 230.6L70.5 227.6L76.8 234.3L75.1 235.9L81.7 242.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M83.4 118.4L79.7 121.5L76.5 117.6L80.2 114.5L81 115.5L83.4 118.4Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="105,227.2 113.8,220.1 126.3,219.5 127.8,220.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="93.4,117.7 85.9,108.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="91.1" y="129.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="104.9" y="226.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="52.1" y="206.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="120.9" y="194.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="92.6" y="249.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="85.9" cy="108.1" r="0.9" fill="#16a34a"/>
+<circle cx="81" cy="115.5" r="0.9" fill="#16a34a"/>
+<text x="68.5" y="176.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="68.5" dy="0">Lá Nua</tspan><tspan x="68.5" dy="4.6">Centre</tspan></text>
+<text x="69.8" y="239" font-size="2.1" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="69.8" dy="0">Children</tspan><tspan x="69.8" dy="2.4">Vaccination Centre</tspan></text>
+<text x="273.8" y="287.6" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

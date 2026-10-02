@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 373.3 334.7" font-family="Arial, Helvetica, sans-serif">
+<title>Saint Vincent's Hospital — site map</title>
+<path d="M17 192.9L169.6 15.2L203.8 44.8L210.6 36.3L257.6 74.8L267.1 82.6L356.4 196.5L352.2 238.6L309.1 319.5L229.9 270.3L194.3 302L63.9 222.4L52.7 213.2L17 192.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M147.5 203L173.8 179L240.4 249.3L231.7 267.5L228.8 265.6L226.8 269.1L188.6 244.6L147.5 203Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M113.2 134.8L95.9 150.1L79.5 132.4L96.9 116.8L113.2 134.8Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M246 101L239.6 107.1L229.9 97L236.2 90.9L246 101Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M145 250L150.1 255.6L140.1 264.7L133.5 257.5L129.4 261.2L121.5 252.5L131.3 243.6L140.7 253.9L145 250Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M27 189.7L29.9 184.9L38.9 190.4L39.4 189.6L43.6 192.1L39.2 199.3L35 196.8L36 195.2L27 189.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="278.7,139.7 283.9,145.3 326.7,185 330.8,190.4 343.3,216.9 345.6,224.8 344.6,232.5 342.6,239 339.7,245.4 332.4,256.3 327.2,260.1 318.3,262.3 309.7,264.3 302.3,267.6 294,273.4 283.5,282.5 277,285.2 272,282.9 265.8,278 258.1,274.1 250.7,267.1 245.1,258.9 241.5,251.2 229.9,250.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="170.6,89.6 172.7,91.6 175.9,95.6 177.8,99.8 175.1,107.6 173.1,112.7 172.4,117 172.1,121.8 173.1,125.8 175.4,131.2 178.7,136.2 174,134.6 166.8,133.1 161.7,133.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="178,150.2 181.3,148.8 184.6,149.5 186.8,149.9 189.8,148.5 189.9,146.3 189.2,144.5 183,140.8 178.7,136.2 178.3,133.1 178.8,129 180.8,125.3 184.7,123 189.9,122.2 194.6,122.5 197.3,125 205.8,134.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="194.4" y="224.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="96.4" y="133.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="237.9" y="98" font-size="1.7" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="237.9" dy="0">Athy Ambulance</tspan><tspan x="237.9" dy="2">Station</tspan></text>
+<text x="135.3" y="252.9" font-size="2.6" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="135.3" dy="0">Alzheimer</tspan><tspan x="135.3" dy="3">Resource Centre</tspan></text>
+<text x="35.6" y="191.9" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="35.6" dy="0">Mortuary</tspan></text>
+<text x="371.3" y="332.7" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

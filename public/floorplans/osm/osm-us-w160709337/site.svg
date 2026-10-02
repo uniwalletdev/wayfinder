@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161.6 183.5" font-family="Arial, Helvetica, sans-serif">
+<title>CPMC Mission Bernal Campus — site map</title>
+<path d="M151.6 152.1L142.2 12.4L137.9 10.2L100.4 11.3L66.2 12.4L61 10L10 14.2L16.5 89L63.1 85.4L38.9 173.5L137.2 165.6L143 162.7L145.8 159.7L148.5 156.4L151.6 152.1Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M60.7 124.3L60.3 118.6L58.8 118.7L58 107.4L62.7 107.1L62.2 100.2L79.8 99L79.7 97.5L85.6 97.1L85.8 98.6L86.4 98.5L86.5 99.5L88.5 99.4L89.6 115.9L87.6 116L88 122.4L60.7 124.3Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M98.9 161.5L106 161L103.2 123.9L53.9 128.4L54.7 134.4L48.5 134.5L49.8 156.4L50 160.2L50.2 163.3L55.2 163.1L55.5 170L99.4 166.6L98.9 161.5Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M7.5 16.7L55.5 13.2L60.1 12.9L65 81.3L60.2 81.6L16.6 84.8L13.4 40.4L9.2 40.7L7.5 16.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M109.5 130.8L108.6 119.4L109.5 119.3L108 100.7L106.3 100.8L105.6 91.4L120.1 90.2L120.2 91.4L132.8 90.4L133.4 97.9L120.2 98.9L121.9 119.8L134.6 118.8L135.2 126.2L123 127.2L123.1 128.1L121.8 128.2L121.9 129.8L109.5 130.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M104.3 136.8L127.7 135.2L127.3 129.4L147.6 128L148.3 138.7L137 139.5L138.7 163.9L106.4 165.9L106 161L104.3 136.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="-24.1,16.8 89,10.1 139.8,9.1 139.8,7.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="160.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="49.8" y="156.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="143.9" cy="50.3" r="1" fill="#64748b"/>
+<circle cx="60.2" cy="81.6" r="1.4" fill="#dc2626"/>
+<circle cx="55.5" cy="13.2" r="0.9" fill="#16a34a"/>
+<text x="74.4" y="109" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="74.4" dy="0">Hartzell</tspan><tspan x="74.4" dy="4.6">Building</tspan></text>
+<text x="77.6" y="147" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="77.6" dy="0">Parking garage</tspan></text>
+<text x="37.5" y="48.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="37.5" dy="0">CPMC Mission Bernal</tspan></text>
+<text x="118.1" y="107.5" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="118.1" dy="0">1912</tspan><tspan x="118.1" dy="4.6">Building</tspan></text>
+<text x="124.3" y="145.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="124.3" dy="0">Monteagle Medical</tspan><tspan x="124.3" dy="4.6">Office Building</tspan></text>
+<text x="159.6" y="181.5" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

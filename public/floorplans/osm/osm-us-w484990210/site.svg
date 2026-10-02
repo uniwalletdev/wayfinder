@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.9 150.1" font-family="Arial, Helvetica, sans-serif">
+<title>Willapa Harbor Hospital — site map</title>
+<path d="M189.4 139.9L192.9 32.8L181.3 20.7L157.3 12.7L138.6 10L92.1 15.6L41.4 34.6L18 63.7L10 88.3L11.5 117.9L21.6 134.2L30.7 138.9L95.7 140.1L109 137.5L130.5 131.7L145.3 129.2L159.8 131.2L170.4 135.4L189.4 139.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M148.1 124.3L146.3 105.2L157.4 106.4L171.1 110.8L170.7 117L172.8 122.9L172.3 126L169.3 131.8L156.6 127.3L148.1 124.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M102.5 136.3L102.1 114.2L94.3 114.2L93.5 111.4L17.6 110.5L18.1 90.5L36.6 91L36.6 95.5L46.5 95.7L49 95.7L49.1 68.1L58 68.3L57.8 99.4L93.9 101.9L93.9 104.8L131.1 106.4L130.8 112.4L134.1 112L134.4 124.4L125.5 126L125.4 129.9L116.2 133.9L102.5 136.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M149.4 20.6L148.9 33.5L162.1 34.1L162.6 21.1L149.4 20.6Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M92.1 91.7L92.1 94.3L80.4 94.2L80.4 91.6L92.1 91.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M110.6 92L125.9 91.9L126 94.3L110.6 94.4L110.6 92Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="159.5" y="117.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="76.3" y="107" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="155.7" y="27.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<circle cx="94.8" cy="95.1" r="1.4" fill="#16a34a"/>
+<circle cx="73.5" cy="79" r="1.4" fill="#dc2626"/>
+<text x="86.3" y="92.9" font-size="1.7" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="86.3" dy="0">Shelter</tspan></text>
+<text x="118.3" y="93.2" font-size="1.7" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="118.3" dy="0">Shelter</tspan></text>
+<text x="200.9" y="148.1" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

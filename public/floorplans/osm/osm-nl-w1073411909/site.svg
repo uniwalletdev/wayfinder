@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.5 242.2" font-family="Arial, Helvetica, sans-serif">
+<title>Noordwest Ziekenhuisgroep Den Helder — site map</title>
+<path d="M149.1 231.2L126 217.8L16.7 88.8L84.4 11L123.3 23.3L213.1 29.7L350.8 39.3L308.9 81.6L292 97.4L149.1 231.2Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M226.2 156.7L234.5 148.6L222.2 136L213.9 143.9L226.2 156.7Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M58.5 52.2L90.1 21.5L102.8 34.7L105.8 31.8L120.3 47L119.9 47.4L117.4 49.8L121.4 54L88.8 85.5L85.2 81.8L82.5 84.3L81 85.8L66.4 70.6L71.5 65.7L58.5 52.2Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="143,188.7 150.9,181.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="207,154.9 204.4,157.3 198.7,179.6 178.5,199.1 177.1,199.4 175.2,198.8 159.5,184 150.9,181.6 146.7,180.4 140.9,178.8 138,179 135.6,178.9 129.7,173.6 125,171.4 121,167.1 116.1,161.9 109.1,157.3 106.4,155.6 98.3,147 88,136.2 77.8,125.9 69.1,116.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="195.6,132.8 212.1,149.7 228.9,166.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="207,154.9 212.1,149.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="135.9" cy="159.2" r="1" fill="#64748b"/>
+<circle cx="280.9" cy="101.4" r="1" fill="#64748b"/>
+<circle cx="224.2" cy="146.3" r="1" fill="#64748b"/>
+<circle cx="195.6" cy="132.8" r="1.4" fill="#16a34a"/>
+<circle cx="147.2" cy="174.1" r="1.4" fill="#dc2626"/>
+<text x="89.8" y="54.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="89.8" dy="0">Parking</tspan></text>
+<text x="365.5" y="240.2" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

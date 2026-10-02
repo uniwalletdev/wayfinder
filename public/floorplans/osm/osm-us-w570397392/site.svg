@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 457.7 840.2" font-family="Arial, Helvetica, sans-serif">
+<title>Naval Hospital Camp Pendleton — site map</title>
+<path d="M314 802L380.5 800.5L383.5 617.7L403.5 570.7L414 556.7L436.9 533.3L420.5 512.8L391 427.8L348 359.4L282.6 267.5L236.6 158.6L211.1 140.1L174.7 38.2L54.3 73.7L26.3 155.6L20.8 193L29.8 275L77.8 429.8L122.2 556.7L151.7 590.2L164.7 613.2L113.2 704.6L314 802Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M279.6 760L273.6 757L268.7 752.3L265.6 746.3L264.5 739.6L265.5 733L268.5 726.9L273.2 722.1L279.2 719L286.6 717.9L293.9 719.3L300.3 723.2L305 729.1L307.3 736.2L307.2 743.7L304.4 750.6L299.5 756.2L292.9 759.8L286.3 760.9L279.6 760Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M166 52L63.3 83.6L82.7 146.8L23.8 164.9L50.9 252.9L212.5 203.1L166 52Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M217.6 232.5L219 236.8L222.9 235.5L253.8 328.2L256.7 338.4L133 379.1L130.6 371.7L109.9 378.5L78 281.7L83.2 280L82.2 277L87.1 275.4L119.1 264.9L120.7 269.6L131.2 266.1L129.6 261.4L213.5 233.8L217.6 232.5Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="298.9,590.1 303.9,598.7 309.4,600.7 318.7,602.2 324.6,605.2 329.7,609.6 336,621 341.8,641.8 345.7,647.2 350.5,653.3 358.3,658.9 363,664.2 366,671 372.5,679.5 381.2,684.8 388.4,685.8 395.8,685.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="253.8" y="328.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="213.5" y="233.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="87.1" y="275.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="286" y="739.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="120.1" y="157.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="167.6" y="308.1" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="167.6" dy="0">Parking garage</tspan></text>
+<text x="455.7" y="838.2" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

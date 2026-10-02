@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 309.9 224.2" font-family="Arial, Helvetica, sans-serif">
+<title>Hospital Grounds New Ross — site map</title>
+<path d="M14.1 167.3L62.3 173.1L112.5 179L142.1 179.9L243 183.2L286.1 214L295.8 60.9L197.8 53.6L196.3 46.3L200.5 17.7L178.8 13.7L144.9 12.8L123.8 11.2L111.5 10.2L57.5 10.7L56.6 13.2L14.1 167.3Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M47.6 91.1L55.4 92.1L89.7 96L83.1 135L45.8 131.4L37.1 130.4L47.6 91.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M101.2 46.2L108.9 42.3L114.4 54.6L120.4 52.8L124.4 63.3L120.5 64.8L117.3 65.6L117.8 71.4L134.3 71.5L134.7 80.2L142.5 79.9L141.9 82.8L144.5 84.9L144.1 87.2L142.3 88.8L142.4 92.2L139.6 93.6L136.1 93.1L131.3 95.8L121.5 94.8L119.4 103.5L131.3 107.5L128.8 114.1L116.5 110.7L113 119.8L111.8 122.8L103.3 122L111.2 97.7L111.6 72.2L106.5 57.2L101.2 46.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M244.3 117.1L241 117.1L241.1 126.2L260.3 126.1L260.3 130.3L268.5 130.2L268.6 140.9L207.9 141.5L206 139.4L205.6 136.7L206.3 134.7L207.9 133.4L207.8 130.3L221.5 130.1L221.5 125.5L216.6 125.6L216.5 116.5L232.2 116.4L232.1 104.3L236.1 104.3L236.1 100.2L225.5 100.3L225.5 95.1L237.7 95L237.7 89.1L244.3 89.1L244.3 94.2L251.7 94.1L251.8 105.4L244.2 105.5L244.3 117.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M163 56.7L192.1 57L191.6 101.6L185.1 101.6L185 104.4L174.6 104.3L174.6 108.9L168.2 108.8L168.3 102L162.5 101.9L163 56.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="64.2" y="113.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="119.8" y="82.5" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="119.8" dy="0">New Ross</tspan><tspan x="119.8" dy="3.7">Community Hospital</tspan></text>
+<text x="237.1" y="123.6" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="237.1" dy="0">New Houghton Hospital</tspan></text>
+<text x="177.1" y="78.3" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="177.1" dy="0">New Ross Day</tspan><tspan x="177.1" dy="4.6">Care Centre</tspan></text>
+<text x="307.9" y="222.2" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

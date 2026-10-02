@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435.1 285.4" font-family="Arial, Helvetica, sans-serif">
+<title>Grand Junction VA Medical Center — site map</title>
+<path d="M19.8 13L20.2 123.2L20.6 250.7L142.5 268.7L167.5 272.4L396.4 128L414.5 116.6L415.3 14.1L19.8 13Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M104.3 122.1L104.8 176.7L51.3 177L51.3 224.9L113.6 225.7L146.6 258.5L142.5 268.7L20.6 250.7L20.2 123.2L104.3 122.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M119.3 48.4L116.6 62.6L119.6 63.6L119.3 64.5L117.8 70.3L114.6 68.6L114.1 69.8L100.1 66.8L92 66.9L91.8 74.7L52.2 74L52.5 55.8L51 55.8L51 47.3L59.5 47.5L59.5 49L78.8 48.6L78.9 41.2L112.4 41.7L112.5 40.2L121.1 40.5L121 48.4L119.3 48.4Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M134.1 54.3L134.2 23.5L181.2 23.8L181.2 28.2L180.9 98.2L174.6 98.2L174.6 103L139.3 102.8L139.4 99.3L134 99.3L134.2 73.7L134.2 70.1L134.2 68.1L135.8 68.1L135.9 59.5L134.1 59.5L134.1 54.3Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="168.1,17.8 182.3,12.9 211.9,13.2 214.9,14.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="48.3,14.5 54.5,14.2 65.9,17 164.6,18.1 168.1,17.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="34.1,15 40.5,14.9 48.3,14.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="121.2,64.5 119.8,72.4 129.5,73.6 134.2,73.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="119.3,64.5 121.2,64.5 125.3,64.5 129,64.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="214.9,14.4 223.7,14.2 232.1,14.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="232.1,14.1 235.8,12.4 417.5,12.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="181.2" y="28.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="66" y="193.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="85.9" y="56.3" font-size="2.6" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="85.9" dy="0">Physical Medicine and Rehabilitation Service</tspan><tspan x="85.9" dy="3">&amp; Prosthetics and Sensory Aids Service</tspan></text>
+<text x="157.6" y="62.7" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="157.6" dy="0">Parking garage</tspan></text>
+<text x="433.1" y="283.4" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

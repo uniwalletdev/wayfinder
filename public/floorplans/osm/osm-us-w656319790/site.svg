@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 303.9 230.4" font-family="Arial, Helvetica, sans-serif">
+<title>St. Alexius Medical Plaza — site map</title>
+<path d="M13.8 220L135.4 210.7L149 209L146.6 156.1L148.3 156L175.3 154.5L177 154.4L179 141.1L230 139.3L259 137.7L290.1 54.6L176.1 10.5L83 36.4L17 61.7L13.8 220Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M28.4 140.7L129.1 130.7L119.5 34.4L88.5 37.5L81.7 41L77.9 49.4L80.5 75.8L22.5 81.5L28.4 140.7Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M201.9 28.9L275.5 54.1L273.6 59.9L281.3 62.6L263.6 114.3L243.1 107.3L237.5 108.8L200.3 96.1L209.4 69.5L190.3 63L201.9 28.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M147.4 142.1L174.2 141.8L175.3 154.5L148.3 156L147.4 142.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M137.4 148.2L141.5 208.1L101.2 210.8L97.1 151L137.4 148.2Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M180.4 44L181.8 64.3L197.6 63.3L199 85L190.1 85.6L183.1 94.9L183.7 103.2L155.1 105.1L154.1 90.5L133 91.9L132.2 79.1L123.4 71.7L125.7 67.9L134.1 59.4L133.7 47.6L153.9 46.2L154.2 49.3L162.2 48.8L162 45.3L180.4 44Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M28.3 192.4L58.8 189.8L55.9 155.6L92.5 152.4L94 169.7L74.2 171.4L75.5 187L85.1 186.1L87.3 211.9L60.1 214.2L59.3 204.5L29.5 207.1L28.3 192.4Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="80.9" y="95.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="235.8" y="72" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="161.1" y="148.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="119.3" y="179.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="162.3" y="73.5" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="162.3" dy="0">Alexian Brothers Medical Plaza</tspan></text>
+<text x="66.4" y="183.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="66.4" dy="0">S.H.A.R.E. Drug</tspan><tspan x="66.4" dy="4.6">Rehabilitation</tspan></text>
+<text x="301.9" y="228.4" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

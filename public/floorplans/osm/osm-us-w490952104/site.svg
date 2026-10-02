@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.8 323.6" font-family="Arial, Helvetica, sans-serif">
+<title>Augusta University Medical Center — site map</title>
+<path d="M266.3 308.9L321.1 179.3L325.3 169.4L217.9 126.8L243.7 64.2L144.9 22.5L136.9 17L130.1 14.7L117.4 17.9L105.5 25.1L53.4 87.5L29.1 133.5L15.5 174.9L100 211.5L95.1 223.4L266.3 308.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M44.3 174.3L38.7 170.3L34.7 163.2L37.1 155.2L46.5 131.2L59.4 98.6L63.4 93.8L70.6 90.6L76.9 90.6L89.8 96.1L100.2 100.5L103.6 102L114.4 106.6L119.2 110.6L122.4 117.7L121.6 125.7L97.7 182.3L94.5 187.1L87.3 190.2L81.3 189.7L78.5 189.5L55.8 179.4L44.3 174.3Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M109.1 217.2L168.1 242.7L176.9 221.2L200.8 231.6L192 253.9L234.2 273L278.9 163L266.5 157.7L268.5 153L256.1 147.9L254.9 150.9L238 144L236.5 147.4L232.9 146L221.1 174.5L212.4 170.9L224.8 139.9L196.3 128.9L202.9 114.8L216.6 119.6L224 102.1L230.9 86.3L233.8 79.9L121.1 33.1L105.1 73L147.3 90.6L162.5 96.9L147.4 133.5L139.4 152.7L135.4 154.3L128.6 151.5L127.4 151.1L120.3 167L120.9 167.4L125.8 170.2L126.6 176.6L109.1 217.2Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="146.3,-16.4 147,-10.5 149.1,-4.9 151.1,-1.2 154.8,2.8 181.4,21.7 195.7,29.8 206.3,35.7 226,45.1 244,54.1 281.1,69.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="76.9" y="90.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="46.5" y="131.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="103.6" y="102" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="55.8" y="179.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="81.3" y="189.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="100.2" y="100.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="89.8" y="96.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="79" y="140.3" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="79" dy="0">Parking garage</tspan></text>
+<text x="338.8" y="321.6" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

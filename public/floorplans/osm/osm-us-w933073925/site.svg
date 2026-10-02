@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 431.5 573.2" font-family="Arial, Helvetica, sans-serif">
+<title>Children's Healthcare of Atlanta Arthur M. Blank Hospital — site map</title>
+<path d="M19.6 501.3L54.8 547.2L154.4 470.6L212 541L246 539.3L276.7 536.4L300.5 524.6L395.6 526.3L402.3 423.5L407.3 326.5L410.7 266.1L411.9 176.8L319.1 149.1L315.5 147.1L298.5 115.8L292.9 89.8L257.3 26.1L170.2 74.1L199.4 127.7L189.2 143.5L156.8 171.9L101.3 241.8L121.1 265.3L128.1 274.7L134.6 286.3L113.1 303L80.8 340.5L23.3 412L47.2 442.7L60.8 458.2L57.5 469.3L37.8 485.5L19.6 501.3Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M246 136.6L313.4 154.7L284.9 263.3L267.3 258.8L268.5 253.9L218.2 240.5L246 136.6Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M282.2 456.8L401.4 457.2L401.2 466.8L400 527.1L391.3 527.2L293.9 528L282.2 528.1L282.2 518.2L282.2 456.8Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="-16.4,452 -11.2,460.1 2.5,475.6 14.6,491.8 23.3,501.5 32.2,513.9 41.4,525 49.7,532.5 50.9,536.2 67.1,554.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="242.8,141.8 231.1,182.7 213.1,177.1 215.4,166.7 219.9,153.9 225.1,144.9 236.3,133.9 248.2,125.3 261.7,117.9 270,116.3 277,117.4 281.5,119.9 285.8,123.5 288.9,121.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="265.4,34.2 261.6,35.9 256.5,37.6 251.3,37.5 244.7,41.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="236.9,46.2 230,49.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="236.9,46.2 241.2,42.8 244.7,41.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="288.9,121.5 295.1,117.8 298.5,115.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="275.4,47 273.9,59 276.3,68.3 283.9,76.2 289.6,78.3 297.5,78.5 299.4,77.5 338.1,56.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="199.7,67.6 230,49.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="230.5" y="189.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="227.6" y="200.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="282.2" y="518.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="273" y="273.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="236.8" y="281.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="302.6" y="149.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="266" y="198.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="266" dy="0">Parking garage</tspan></text>
+<text x="341.2" y="492.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="341.2" dy="0">Parking garage</tspan></text>
+<text x="429.5" y="571.2" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

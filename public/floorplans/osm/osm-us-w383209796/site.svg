@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 361.4 276.9" font-family="Arial, Helvetica, sans-serif">
+<title>PeaceHealth St. John Medical Center — site map</title>
+<path d="M108.1 12.6L85.1 94.5L76.7 102L38.2 91.9L16.4 166.6L17.3 172L21.6 176.9L92.2 205.7L116.9 214.2L232 249.4L288.7 264.3L293.9 261L345 83.5L344.8 79.8L342.4 77.4L108.1 12.6Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M313.1 99.4L331 104.3L324.9 126.4L307 121.5L313.1 99.4Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M107.6 19.2L173.2 35.9L163.2 72.4L160.1 71.6L152.9 97.9L88.9 85.1L107.6 19.2Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M133.5 143.5L128.3 142.2L131.3 130.4L117.4 126.9L121.6 110.5L126.1 111.6L124.6 117.8L139.1 121.5L133.5 143.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M48 100.9L41.2 126.6L43.7 135.5L44.1 139.9L64.5 147.1L75.6 141.8L79.7 137.5L89.7 98.7L84.8 97.1L81.3 109.6L48 100.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M246.4 206L286.8 216.8L288.5 223.3L295 225L304.4 190L309 194.5L292.8 254.9L163.2 220.3L164.9 213.8L239 233.6L246.4 206Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M281.6 74.2L287.4 75.8L288.6 71.5L333.7 84.2L332.6 87.9L336.4 89L314.1 168.4L308.4 166.8L307.3 171L258.4 157.2L259.4 153.4L259.6 152.9L262.7 141.7L270 115.9L272.7 106.2L279.4 82.3L281.6 74.2Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M27 162.1L36.9 137.7L109.4 167.3L99.4 191.6L27 162.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="319" y="112.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="130.6" y="59.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="128.6" y="126" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="63.5" y="123.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="257.9" y="228.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="279.4" cy="82.3" r="0.9" fill="#16a34a"/>
+<text x="297.8" y="121.3" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="297.8" dy="0">Parking garage</tspan></text>
+<text x="68.2" y="164.7" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="68.2" dy="0">PeaceHealth Family Medicine</tspan></text>
+<text x="359.4" y="274.9" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

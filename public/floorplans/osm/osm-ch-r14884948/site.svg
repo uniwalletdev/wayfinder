@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 399.6 198.1" font-family="Arial, Helvetica, sans-serif">
+<title>Klinik St. Anna — site map</title>
+<path d="M299.6 63.2L306.6 62.7L310.4 57.5L316.4 61.9L315.8 54.9L323.4 54.3L325.3 78.6L325.4 79.9L323.7 80L301 81.8L299.6 63.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M336.9 38.7L348 25.6L354.7 31.3L354.6 29.8L360 29.4L360.5 36.2L361.3 36.9L365.9 31.4L371.8 36.3L356.4 54.5L356.1 54.9L355 54L336.9 38.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="58.6,156.4 48.4,132.2 61,126.7 65.5,125.3" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<polyline points="127,139.1 122.8,139.4 105.2,141 99.4,140.5 91.9,139.2 83.6,136.2 81,134 79.5,131.5 79.4,129.4 79.7,128.5 80.5,128.1 83.1,128.5 91.2,131.6 100,133.8 110.4,134.2 172.3,125.2 293.6,107.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="355,54 352.5,57.3 345.5,59.9 344.8,63 339.9,77.1 325.3,78.6 323.6,78.8 323.7,80 324.2,87.8 304.7,89.3 301.9,87.3 289,88.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="206.7,131.6 207.3,136.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="286.2,121.3 289.6,121.1 290,134.2 291.8,134.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="65.8,120.2 72.8,124.9 78.7,128.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="65.5,125.3 65.5,120" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="355,54 356.4,54.5 357.6,56 379.4,49.5 380.8,53.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="348.4,81.4 343.8,78.6 341.9,77.4 339.9,77.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="78.7,128.9 79.4,129.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="189.8" cy="180.7" r="1" fill="#64748b"/>
+<circle cx="194" cy="156" r="1" fill="#64748b"/>
+<text x="129.7" y="135.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="320.6" cy="78.2" r="1" fill="#64748b"/>
+<circle cx="356.7" cy="40.2" r="1" fill="#64748b"/>
+<circle cx="282.2" cy="127.8" r="1" fill="#64748b"/>
+<circle cx="191.8" cy="140.6" r="1" fill="#64748b"/>
+<circle cx="184.2" cy="148.7" r="1" fill="#64748b"/>
+<circle cx="355.8" cy="45.2" r="1" fill="#64748b"/>
+<text x="313.2" y="67.9" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="313.2" dy="0">Ärztehaus</tspan><tspan x="313.2" dy="3.7">Lützelmatt L1</tspan></text>
+<text x="353.9" y="37.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="353.9" dy="0">Ärztehaus</tspan><tspan x="353.9" dy="4.6">Lützelmatt L3</tspan></text>
+<text x="397.6" y="196.1" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

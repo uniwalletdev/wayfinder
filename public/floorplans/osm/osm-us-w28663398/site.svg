@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 417.8 418.9" font-family="Arial, Helvetica, sans-serif">
+<title>Fountain Valley Regional Hospital and Medical Center — site map</title>
+<path d="M19 21.2L21.1 304.4L21.7 394.5L22 399.9L205.4 396.6L398.8 395.7L394.6 19L19 21.2Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M44.4 205.9L172.7 205.1L173.1 261.2L194.2 261L194 225.8L303.2 225.1L304.1 359.5L209.8 360.1L210.1 393.2L31.2 394.4L21.7 394.5L21.1 304.4L244.7 302.9L244.6 289.7L44.9 291L44.4 205.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M353.4 275.1L313 275.5L312.7 248.4L339.8 248.1L342.4 245.4L347.1 245.5L349.5 247.9L376.1 247.6L376.4 274.8L371.2 274.9L371.4 287.6L353.6 287.9L353.4 275.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M214.6 367.1L292.2 366.4L292.4 391.2L214.8 391.8L214.6 367.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M127.8 88.2L127.8 82.9L124.5 82.9L124.6 86.5L112.3 86.6L112.3 82.9L109 83L109 88.6L56.2 88.9L56.1 75.3L55.1 75.3L55 65.6L56 65.6L55.9 57.4L109 57.1L109 62.4L111.9 62.4L111.9 66.3L113 66.3L113 64.1L124.4 64.1L124.4 62.4L127.6 62.3L127.5 56.7L180.3 56.4L180.4 61.8L182.5 61.8L182.6 82.1L180.4 82.1L180.5 87.9L127.8 88.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="124.8" y="265.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="119.3" y="98.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">+</text>
+<text x="39.4" y="63.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="158.4" y="302.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="234.7" cy="202.7" r="1.4" fill="#16a34a"/>
+<text x="346.6" y="261.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="346.6" dy="0">Fountain Valley</tspan><tspan x="346.6" dy="4.6">Regional Cancer Center</tspan></text>
+<text x="253.5" y="377.3" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="253.5" dy="0">Fountain Valley Regional</tspan><tspan x="253.5" dy="3.7">Hospital - Shipping and Receiving</tspan></text>
+<text x="118.8" y="72.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="118.8" dy="0">Medical Offices</tspan></text>
+<text x="415.8" y="416.9" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

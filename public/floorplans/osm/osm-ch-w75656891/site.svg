@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.5 120.1" font-family="Arial, Helvetica, sans-serif">
+<title>Engeriedspital — site map</title>
+<path d="M169.2 10L176.4 38.4L176.9 40.6L177.5 42.9L174.1 43.8L174.4 44.7L160.1 48.6L158.4 42.8L137.4 48.4L140.1 55.8L102.9 71.3L77.8 88.3L55.9 98.9L39.2 105.7L28.5 110.1L10 80.4L43.7 58.5L88 30.9L90.7 29.5L93.6 28.2L97.4 27L101 26.2L103.5 25.8L107.7 23.8L104.2 16.6L131.9 16.7L147.3 14L169.2 10Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M38.3 68.3L53.3 94.4L69.7 86.1L57.5 65.4L53.2 67.7L49.7 61.7L38.3 68.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M98.4 47.2L73.3 62.9L66.9 66.9L59.8 55.6L59.4 54.8L63.6 52.2L64 52.9L67.5 50.7L69 49.8L68.6 49.3L71.6 47.4L71.9 48L91.2 35.8L98.4 47.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M106.1 28.8L111 27.5L164.1 14.2L167.3 27.1L167.1 27.1L168.7 33.4L111.1 47.9L109.6 41.6L109.3 41.7L106.1 28.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="39.8,78.4 41.3,77.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="41.3,77.4 44.1,75.9" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<polyline points="44.1,75.9 51.6,71.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="31.5,65.1 39.8,78.4 47.7,91.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="53.9" y="77.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="38.5" cy="79.7" r="1.4" fill="#16a34a"/>
+<circle cx="46.2" cy="92.1" r="1.4" fill="#16a34a"/>
+<text x="78.9" y="49.5" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="78.9" dy="0">Alterswohn- und</tspan><tspan x="78.9" dy="3.7">Pflegeheim Engeried</tspan></text>
+<text x="137.5" y="31" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="137.5" dy="0">Klinik Engeried</tspan></text>
+<text x="185.5" y="118.1" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

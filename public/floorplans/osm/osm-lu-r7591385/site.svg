@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203.2 212.6" font-family="Arial, Helvetica, sans-serif">
+<title>ZithaKlinik — site map</title>
+<path d="M76.6 141.4L95.3 129.3L107.1 148.2L98 154.1L89 159.9L76.6 141.4Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M67.2 62.7L60.9 52.6L63.2 51.1L62 49.1L63.3 48.6L74.2 41.3L99.2 26.1L104.6 34.9L122.6 23.8L119.1 18.2L131.7 10.4L138.8 21.6L132.2 25.7L145.8 47.7L135.6 54.1L131.7 48L129.6 49.3L125.6 43.2L123.8 40.2L117.7 44L118.7 45.6L109.5 51.2L106.8 46.8L75.3 66.3L73.4 63.1L71.4 64.3L69.5 61.2L67.2 62.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M30.6 135.1L38.8 130L37.5 127.8L41.6 125.3L59.9 155L56 157.4L65.2 172.4L56.8 177.6L49.9 166.4L41.4 152.7L30.6 135.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<circle cx="173.7" cy="167" r="1" fill="#64748b"/>
+<circle cx="63.7" cy="175.1" r="1" fill="#64748b"/>
+<text x="92" y="144.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="104.4" y="41.1" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="104.4" dy="0">Seniorie Saint-Jean de la Croix</tspan></text>
+<text x="48.1" y="150.7" font-size="2.6" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="48.1" dy="0">GesondheetsZentrum</tspan></text>
+<text x="201.2" y="210.6" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

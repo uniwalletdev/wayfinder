@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.2 146.9" font-family="Arial, Helvetica, sans-serif">
+<title>Sanatorium Kettenbrücke — site map</title>
+<path d="M249 26.4L246.2 24.1L247.5 15.4L253.1 16.2L251.5 26.7L249 26.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M76.9 19.3L89.9 30.1L89 31.2L99 39.5L84.1 57.5L82.9 56.5L74.1 67.1L62.5 57.4L63.4 56.3L58.5 52.2L54.8 49.2L53.9 50.3L37 36.3L36.1 35.5L39.8 31.1L35.2 27.2L39.4 22.2L43.6 17.1L47.4 20.3L49.8 17.4L53.3 20.4L53.1 20.7L67.5 32.6L72 27.3L71 26.5L76.9 19.3Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="248.5,29 249,26.4 250.1,19.1 251,12.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="144.7,80 153.5,69.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="165.9,83.8 157.3,92.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="180.2,94.7 170,104.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="208.6,98.8 187.3,121.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="170.8,83.5 179.7,91.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="128.5,64.5 126.4,62.8 116.1,63.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="212.6,102.5 218.2,96.6 223.2,96.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="236.7,78.6 252.7,70.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="236.7,61.9 246.8,63.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="190.7,82 183.2,90.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="178.2,70.3 170.6,78.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="157.6,70.2 165.7,78.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="158.1,65.7 165.1,58.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="149.7,87.2 148.8,88.2 147.8,89.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="154.5,91.8 149.7,87.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="155.5,90.6 154.5,91.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="221.7" cy="80.1" r="1" fill="#64748b"/>
+<circle cx="217.3" cy="83.4" r="1" fill="#64748b"/>
+<circle cx="186.2" cy="61.1" r="1" fill="#64748b"/>
+<circle cx="249.7" cy="20.9" r="1" fill="#64748b"/>
+<circle cx="226.3" cy="54.8" r="1.4" fill="#16a34a"/>
+<circle cx="181.4" cy="67.6" r="0.9" fill="#16a34a"/>
+<circle cx="58.5" cy="52.2" r="0.9" fill="#16a34a"/>
+<text x="67.3" y="37.3" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="67.3" dy="0">Wohn- und Pflegeheim</tspan><tspan x="67.3" dy="4.6">St. Vinzenz</tspan></text>
+<text x="267.2" y="144.9" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

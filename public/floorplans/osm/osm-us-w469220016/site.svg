@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.4 296" font-family="Arial, Helvetica, sans-serif">
+<title>Valley View Hospital — site map</title>
+<path d="M12.4 233.8L13.3 254.4L18.6 278.8L80.2 279.4L80.3 257.2L123.3 258.1L153.4 265.1L152.2 271L166.2 274.1L191.7 275.5L191.6 282.4L245.4 282.5L258 270.6L258.2 259L260 113.5L253.9 104L213.4 103.3L210.4 100.1L211.3 55.5L137.1 54.8L137.5 16.2L30.7 13.5L29 43.6L28.7 49.3L28.5 52.5L26.6 85.4L21.7 171.3L19.5 209.4L15.6 224.2L12.4 233.8Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M34.8 144.9L50.6 145.2L50.9 129.7L35 129.4L34.8 144.9Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M41.5 55.8L41.3 127.1L52.3 127.1L52.3 134.7L62.5 134.7L62.6 90.7L72.8 90.8L72.9 55.9L41.5 55.8Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M208.6 113.9L248 115.4L260 113.5L258.2 259L233.3 259.2L224.3 254.7L217.6 246.3L216.8 232.6L218.6 174.1L218.4 144L218.4 122.5L208.6 113.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M170.8 207.3L170.4 255L183.2 255.1L183.8 202.8L192.6 203L194.6 128.7L172.9 128.3L173.6 158.3L173.4 202.1L170.8 207.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M133.4 66.9L194.8 67.7L195.5 107L136.9 103.4L133.4 66.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M139.5 118.9L166.4 119L166.2 158.3L173.6 158.3L173.4 202.1L142.3 201.9L142.3 211.8L161.4 211.9L161.2 241.4L170.5 241.4L170.4 255L136.8 254.8L136.9 249L129.4 249L129.4 253.2L110.3 253.1L110.3 250.3L51.7 249.6L51.6 252.5L46.4 252.4L46.5 249.6L44.1 249.6L44.3 233.9L24.7 233.6L25 214L35.6 214.2L35.7 208.8L44.1 208.9L44.2 203.4L40.9 203.4L41 196.4L31.8 196.3L32 185.8L40.8 185.9L40.9 180.8L63.4 181.2L63.3 186.6L69.1 186.7L69 191.9L72.9 192L74.8 192.6L75.9 194L76.4 195.6L89.1 195.6L89.1 189.4L86.2 189.4L86.2 183.9L95.2 184L95.2 179.5L91.1 179.5L91.2 155.8L139.3 156L139.5 118.9Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="141.1,343.1 118.1,342.7 102.9,342.4 94.4,342.2 87,340.6 81,339.7 77.2,336.4 68.7,336.7 53,333.3 43.7,332.3 35.9,331.6 31.4,321.7 31.6,302.5 31.6,300.1 31.6,280 24.9,277.1 23.2,272 22.1,267.3 21.2,256.4 19.1,255.1 14,250.2 12.4,247.6 11.1,245.4 10.8,239.3 11,238.2 12.5,231.1 15.5,221.5 17.6,213.6 21,199 22.8,166 36.2,166.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="20.8,125.1 26.6,125.2 26.5,111.7 27.9,99 26.6,85.4 28.5,52.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="28.5,52.5 28.7,49.3 29,43.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="26.6,125.2 26.5,136.3 27.9,150.2 28.2,152.3 40.2,152.2 40.3,149.5 62.3,150.1 70.6,149.2 85.3,141.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="28.2,152.3 25.4,153.2 21.1,154" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="9.5,165.6 16,165.8 22.8,166" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="163.7,205.3 183.7,205.7 202.4,206.3 207.5,205.7 216.1,200.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="175,157.3 184.6,155 187.1,154.4 191.4,154.5 196.9,155.2 199.5,156.8 203.6,156.6 206.6,156.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="213.1,119 213.3,158 206.6,156.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="213.1,119 204.5,118.7 193.6,118.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="193.6,118.2 188.9,118.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="188.9,118.2 185.2,118.2 179.6,118.1 178.2,118.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="179.6,118.1 179.6,113 179.5,107.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="178.2,118.1 136.2,117" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="136.2,117 134.2,117 125.1,116.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="125.1,116.4 132.7,108 136.9,103.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="125.1,116.4 125.1,148.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="125.1,116.4 125.2,111.2 122.7,103.9 114.9,75.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="114.9,75.6 115.2,54 115.3,48.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42.8" y="137.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="55.1" y="89.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="238.6" y="185.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="181.5" y="184.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="165.5" y="86.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="111.1" y="201.9" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="111.1" dy="0">Calaway Young Cancer Center</tspan></text>
+<text x="270.4" y="294" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.5 284.1" font-family="Arial, Helvetica, sans-serif">
+<title>Spital Zofingen — site map</title>
+<path d="M203.5 12.9L254.4 98.1L216.2 142.6L209.1 157.3L188.4 206.5L178.6 235.3L155.9 271.2L68.9 213.3L26.2 265.1L18.8 267.3L12.1 243.7L15.1 191.5L14.7 173.7L27.9 164.1L53.4 137.3L69 121.9L112.3 84.7L203.5 12.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M186 151.9L171.1 169.8L172.5 178.8L169.4 182.6L171 183.9L176.6 184.2L195.7 161.2L189.3 158L186 151.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M199.4 125.9L213.9 135.7L211.1 139.9L196.5 130.1L199.4 125.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M193.9 195.3L191.4 194.4L189.4 200.2L192 201.1L193.9 195.3Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M228.3 84.6L244.2 95.2L220.2 131.1L204.3 120.5L228.3 84.6Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="10.6,178.2 27.4,168.6 48.2,149.1 56.9,147 66.9,149.7 72.3,152.9 73.6,159.8 75.2,173.1 77.5,174.8 80.5,176.9 92.6,176 97.1,176.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="72.3,152.9 87.3,135.8 91.2,133.4 95.3,133.8 122.3,151.7 123,154.6 121.4,156.7 113.1,162.6 100.5,173.6 97.1,176.6 86.8,187.3 80,197.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="165.3,267.2 140.6,250.9 137.8,255.9 139.5,275.6 138.7,278.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="77.5,174.8 61,187.1 54.7,196.4 47.4,212.1 39.9,232.6 42.8,248.7 40,252.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="47.4,212.1 59.6,217.7 57.7,225.4 42.8,248.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="140.6,250.9 139,243 140.7,237.6 138.7,228.9 131.4,222.4 127.4,222.7 125.2,225.4 125.4,231.6 130.9,238.9 139,243" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="140.7,237.6 150.6,244.6 155.5,245.9 160.7,245 163.8,242.5 181.5,216.4 181.8,213.2 172,200.3 157.6,189.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="159,160.9 165.7,168 167.2,175 166.2,180.9 167.8,184.6 175.6,187.2 195.6,193.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="203.6,160.7 203.1,161.8 186.7,175 175.6,187.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="205.6,156 203.6,160.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="205.8,155.5 205.6,156" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="195.5" cy="182.3" r="1" fill="#64748b"/>
+<text x="181.3" y="168.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="205.2" y="132.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="191.7" cy="197.7" r="1" fill="#64748b"/>
+<text x="224.2" y="107.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="224.2" dy="0">Partnerhaus</tspan></text>
+<text x="264.5" y="282.1" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

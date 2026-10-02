@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 177.4 225.9" font-family="Arial, Helvetica, sans-serif">
+<title>Glendora Hospital — site map</title>
+<path d="M167.4 215.7L166.9 10.3L19.4 12.2L10 21.1L11.7 207L18.7 213.2L167.4 215.7Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M23.5 17.6L17.6 24.1L17.6 101.7L48 102.4L49.7 18.4L23.5 17.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M111.3 93L161.7 94L162.5 15.9L112 15.9L111.3 93Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M108.5 20L108.9 20.1L109.3 20.6L109.4 20.9L108.4 94.6L108.1 95.2L107.6 95.5L107.2 95.6L105.6 95.7L98.6 95.4L98.7 94.6L96.6 94.5L96.7 92.8L89.3 92.5L89.3 93.3L89 93.6L87.9 93.8L87.5 93.7L87.1 93.4L87 92.9L87.9 21.9L88.1 21.6L88.4 21.3L89.1 21.1L89.5 21.2L90 21.6L90.2 21.9L90.4 22.4L97.6 22.5L97.7 20.6L99.5 20.7L99.5 19.8L107.9 19.9L108.5 20Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<circle cx="88.5" cy="81.2" r="1" fill="#64748b"/>
+<text x="33.3" y="59.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="136.9" y="54.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="67.1" cy="126.3" r="1.4" fill="#dc2626"/>
+<text x="98.3" y="56.6" font-size="1.7" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="98.3" dy="0">Hill Imaging;doctor</tspan><tspan x="98.3" dy="2">offices</tspan></text>
+<text x="175.4" y="223.9" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227.3 184.7" font-family="Arial, Helvetica, sans-serif">
+<title>Penn Medicine Rittenhouse — site map</title>
+<path d="M110.3 174.7L111.1 170.1L112.6 160.9L113.2 156.5L115.8 139.9L116.6 136.5L118.4 125L198.9 137.5L217 35.3L80.5 15.1L48.7 10L47.7 16.4L42.8 15.6L40.1 32.7L13.4 28.5L10.3 47.7L73.7 57.8L84.9 59.3L66.7 168.7L110.3 174.7Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M47.7 16.4L42.8 15.6L40.1 32.7L13.4 28.5L10.3 47.7L73.7 57.8L80.5 15.1L48.7 10L47.7 16.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M145.9 39.6L147.9 26.8L211.8 37.3L209.8 50.1L145.9 39.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M209.2 57.9L207 71.4L178.4 66.3L183.9 54.4L209.2 57.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M111.1 170.1L71.4 163.9L74.6 143.4L76.9 143.7L77.7 138.5L78.4 137.1L80.3 135.2L81.6 134.6L103.2 138L105.4 138.3L107.9 138.7L115.8 139.9L113.2 156.5L112.6 160.9L111.1 170.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M95 62L102 20.4L121.3 23.6L120.9 25.8L138.9 28.8L140.3 29L139.8 32.2L142.3 32.6L142 34.2L141 40.5L140.7 42.2L136.6 41.6L136.1 44.4L122.1 42.1L119.9 55.4L137.6 58.4L140.3 62.1L129.6 69.9L122.5 68.7L122.8 66.7L114.7 65.3L95 62Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="216.8,35.8 213.6,55.1 210.1,78.2 200.4,135.1 200,137.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="68.5,169.3 75.5,128.9 75.8,126.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="75.5,128.9 74,128.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="65.8,127.3 69.6,128 71.8,128.4 74,128.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="75.8,126.8 76.6,122.5 77.4,117.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="77.4,117.9 77.8,115.8 76.1,115.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="76.1,115.6 72.5,115.1 67.7,114.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="77.8,115.8 200.4,135.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="198.4,148.3 166.3,142.4 75.5,128.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="85.8" y="30.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="50.5" y="35.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="178.8" y="38.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="194.8" y="62.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="94" y="149.9" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="94" dy="0">The Tuttleman</tspan><tspan x="94" dy="4.6">Center</tspan></text>
+<text x="116.6" y="44.6" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="116.6" dy="0">Pepper Building</tspan></text>
+<text x="225.3" y="182.7" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

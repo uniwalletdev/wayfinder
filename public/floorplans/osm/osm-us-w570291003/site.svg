@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 313.1 365.6" font-family="Arial, Helvetica, sans-serif">
+<title>Kaiser Permanente Zion Medical Center — site map</title>
+<path d="M104.3 246.8L18 246.8L14.2 347.2L291.3 348.9L295.6 343.4L298.9 22.9L292.3 17.6L110.1 16.6L108.9 98.4L106.2 114.3L104.3 246.8Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M253.6 20.3L295.5 21L294.8 241.1L271.3 241.1L269.8 159.8L265.5 144.3L263.3 103.8L251.8 91.5L253.6 20.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M112.6 18.2L232.1 18.7L231.7 97.7L112.2 97.2L112.6 18.2Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M19.5 260.7L18.8 330.3L23 330.3L22.9 336.5L126 337.5L267.1 338.9L267.2 332.8L272.6 332.8L273.2 268.2L268.2 268.1L268.2 263.2L263.7 263.2L203 262.6L122.7 261.8L96.7 261.5L28.2 260.8L19.5 260.7Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="203,262.6 203.7,233.3 203.5,229.3 215.5,217.7 215.9,204.2 212.5,201.8 212.5,199.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="122.7,261.8 123.3,231.2 115.8,224.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="109,231 101.1,232.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="115.8,224.4 109,231" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="337.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="28.2" y="260.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="263.7" y="263.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="96.7" y="261.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="278" y="116.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="172.2" y="58" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="145.8" y="299.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="145.8" dy="0">Parking garage</tspan></text>
+<text x="311.1" y="363.6" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 395.5 448.3" font-family="Arial, Helvetica, sans-serif">
+<title>Pottstown Hospital — site map</title>
+<path d="M18 417.2L91.7 428L254.6 247.9L377.6 112L357 26.3L133.7 20.4L18 417.2Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M187.3 195.7L196.3 157.8L134.5 141.8L133 147.9L118 143.9L114.8 143.9L112.3 145.8L110.2 148.3L109.1 151.2L103 175.7L187.3 195.7Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M179.7 212.3L174.7 251.8L100.9 234.2L110.5 195.1L179.7 212.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M95.7 255.1L183.3 265.5L182.5 272L191.6 273.2L184.9 322.8L141.6 367.8L137.6 367.1L136.9 371.8L119.1 370L116.8 370.6L115.6 372L114.4 373.7L110.8 398L109.6 400L94.2 415.8L87.9 415.2L86.9 421.3L40.4 415.2L71.9 294.7L84 297.2L95.7 255.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M312.5 73.4L331.5 75.7L333.8 56.8L314.8 54.5L314 60.6L312.5 73.4Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M234.1 41.5L295 49.5L293.9 58.1L233 50L234.1 41.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M199.4 127.2L143.6 113.3L145.1 107.8L128.7 101.2L127.6 99.7L127 97.2L127.3 94.7L138 49.1L140.5 45.6L143.4 43.3L146.5 43.2L150.1 43.1L151.3 38.3L210.3 52.4L196.8 112.4L202.3 114L199.4 127.2Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M208.3 217.6L217.2 218.8L217.4 216L257 221.3L265.4 222.6L264.9 225.5L257.2 224.5L254.6 247.9L233 244.7L233.3 242.4L221.6 240.3L221.1 247L213.8 245.9L214 242.4L205.2 241.2L208.3 217.6Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M247.9 59.7L245.4 77.4L240.6 76.9L238.7 93.2L248.5 94.4L274.2 97L274.5 94.7L285 95.9L286.2 96L290.4 65.2L247.9 59.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="198.3,243.9 195.8,250.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="195.8,250.6 193.4,270.2" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<polyline points="193.4,270.2 192,281.5 206.3,305.9 219.2,312.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="150.9" y="167.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="141.3" y="223.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="113.9" y="331.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="323.1" y="65.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="264.1" y="49.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="169.1" y="81.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="195.8" cy="230.7" r="1.4" fill="#16a34a"/>
+<circle cx="211.3" cy="145.4" r="1.4" fill="#16a34a"/>
+<text x="232.2" y="231.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="232.2" dy="0">Outpatient Pavillion</tspan></text>
+<text x="265.2" y="79.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="265.2" dy="0">Emergency Department</tspan></text>
+<text x="393.5" y="446.3" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

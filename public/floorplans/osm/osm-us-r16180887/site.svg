@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 421.9 372.3" font-family="Arial, Helvetica, sans-serif">
+<title>UCI Health Medical Campus — site map</title>
+<path d="M22 187.8L35.4 201L52.6 179.8L68 161.1L63.7 157.9L82.1 135L87.3 139L90.7 135L93.6 130.7L95.5 127L91.6 123.1L91.4 122.2L78 125.3L77.5 129.7L76.7 132.4L74 126.1L22 187.8Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M56 184.3L105.1 125.5L107.9 128.3L112 123.2L138.8 145.6L109.9 181.1L86.4 209.9L83.5 207.1L80.7 210.9L55.4 190.4L58.5 186.8L56 184.3Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M124.9 200.2L129.1 195.2L166.5 150.2L176.9 137.7L181.1 141.2L185.6 136.2L194.4 148.9L201.4 158.9L217.6 182.3L166.4 242L125.4 207.1L128.5 203.3L124.9 200.2Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M351.3 194.4L316.5 229.7L313.7 230.3L309.9 231.3L307.8 230.8L262.5 182.8L266.9 177.3L253.9 168.2L279.4 137.8L351.3 194.4Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M226.6 204L238.6 194.6L266.4 248.9L259.7 253.7L292 304.3L252.5 325.1L226.3 282.3L212.7 286.5L188.3 252.2L215.1 227.2L212.7 221.4L226.6 204Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M136.9 70.6L164.9 43L186.4 69.6L161.4 105L136.9 130.7L109.3 110.4L136.9 70.6Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<circle cx="148.9" cy="88" r="1" fill="#64748b"/>
+<text x="55.7" y="161.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="96.1" y="164.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="96.1" dy="0">UCI Health Medical</tspan><tspan x="96.1" dy="4.6">Campus - Parking Garage</tspan></text>
+<text x="171.6" y="189.5" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="171.6" dy="0">UCI Health - Parking Structure</tspan></text>
+<text x="300.7" y="183.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="300.7" dy="0">UCI Health Chao Family Comprehensive</tspan><tspan x="300.7" dy="4.6">Cancer Center and Ambulatory Care</tspan></text>
+<text x="240.2" y="262.9" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="240.2" dy="0">UCI Health Irvine Hospital</tspan></text>
+<text x="148.9" y="85.7" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="148.9" dy="0">Joe C. Wen &amp; Family</tspan><tspan x="148.9" dy="4.6">Center For Advanced Care</tspan></text>
+<text x="419.9" y="370.3" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

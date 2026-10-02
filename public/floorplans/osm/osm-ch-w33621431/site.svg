@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.9 348.6" font-family="Arial, Helvetica, sans-serif">
+<title>Ospedale Civico — site map</title>
+<path d="M203.5 15.8L255.8 53.9L278.7 69.6L198.4 169.3L114.4 252.9L13.3 332.8L16.9 296.8L29.4 259.1L44 227.6L56.7 197.9L77.2 136.9L86.2 118L99.9 110.8L105.8 106.3L108.1 98.3L112.7 86.9L150.6 57.4L203.5 15.8Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M72 217.5L76.4 222L101.1 246.9L31.9 307.3L18.5 291.5L21.5 278.8L28.4 261.3L72 217.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M174.8 179.1L188.6 163.3L195.5 169.3L181.6 185.1L174.8 179.1Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M186.3 79.1L215.4 46.1L243 70.5L213.9 103.5L200.5 91.7L194.8 86.6L186.3 79.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="76.4,222 80.6,215.8 81.5,211 82.8,201" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="82.8,201 87.4,170.3 97.9,160 93.5,136.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="191.5,20.3 187.7,32.9 182.3,43.7 174.4,56.9 172.7,61.9 164,71.9 155.3,80.2 150.8,84.3 140.4,88.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="128" cy="239.2" r="1" fill="#64748b"/>
+<circle cx="124.3" cy="119.9" r="1" fill="#64748b"/>
+<text x="56.5" y="261.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="185.1" y="174.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="214.7" y="74.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="214.7" dy="0">CardioCentro</tspan></text>
+<text x="289.9" y="346.6" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

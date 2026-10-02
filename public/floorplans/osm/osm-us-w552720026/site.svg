@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 524.7 509.5" font-family="Arial, Helvetica, sans-serif">
+<title>Conemaugh Memorial Medical Center — site map</title>
+<path d="M115.8 435.3L273.6 332.1L336.5 276.4L352.9 264.1L371.5 245.2L385.2 226.7L392.7 210.1L396.6 197.1L397.7 179.4L464.5 177.8L486.8 181.9L500.9 165L477 134L457.6 99.9L453.1 89L397.1 91.7L396.6 72.8L356.8 61.4L333.5 45.5L314.4 28.2L299.8 23.2L283.7 32L263.2 124.9L258.8 162.7L293 202.8L193.3 280.7L160.2 238.1L192.3 212.8L170.3 186.6L113.8 233.3L111.3 249.3L74.6 281.4L66.4 268.6L30.9 299.4L83.5 384.7L38.4 411.2L58.2 445.8L23.9 465.8L36.4 486.3L115.8 435.3Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M293.8 294.1L304.2 285.6L295.3 274.7L284.8 283.2L293.8 294.1Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M477.5 139.7L468.1 145.7L468.6 147.4L468.5 148.7L467.8 149.6L463.9 152.6L478.1 173.9L482.4 171.2L485.2 175.2L491.5 171L490.5 169L494.9 166.3L477.5 139.7Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M93.8 400.7L139.3 371.5L160 403.7L114.5 432.9L93.8 400.7Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M415.4 133.2L414.4 98.8L420.1 92.5L445.9 92L446 98.2L452.4 98.1L453.2 138.3L446.8 145.2L428.5 145.7L428.1 132.8L422.2 133.1L415.4 133.2Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="294.5" y="284.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="479.1" y="158.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="126.9" y="402.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="126.9" dy="0">South Parking Garage</tspan></text>
+<text x="434.6" y="115.1" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="434.6" dy="0">North Parking</tspan><tspan x="434.6" dy="4.6">Garage</tspan></text>
+<text x="522.7" y="507.5" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

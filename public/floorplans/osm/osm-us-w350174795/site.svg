@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.2 265.7" font-family="Arial, Helvetica, sans-serif">
+<title>Frye Regional Medical Center — site map</title>
+<path d="M14.9 64.6L15.2 72.5L21.5 72.7L22.8 107.2L16.2 108.7L16.5 115.2L22.1 115.8L22.5 122.5L69.2 122.3L69.6 57.2L21.7 57.7L21.7 63.7L14.9 64.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M21.7 57.7L21.6 39.3L78.1 38.8L78.2 57.2L69.6 57.2L21.7 57.7Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M121.3 175.5L118 247.2L157.7 247.9L160.9 154.1L136 153.8L128.4 153.7L128.2 175.4L121.3 175.5Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M271.3 23.4L202.9 22.4L203.1 14.9L187.8 14.7L186.8 75L186.7 78L189.7 78L189.6 86L186.4 86L186.2 97.5L187.9 97.5L187.3 131.8L196.2 131.9L196.1 135.7L201.6 135.8L201.4 148.1L198.5 148L198.2 168.7L192.2 168.6L192 177.3L194.4 177.3L194.2 185.2L244.1 186.1L244.4 170.2L270.1 170.6L270.6 145L269.2 144.9L270.5 69.5L279.8 69.7L280.2 49.1L271.2 49L271.3 23.4Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="173.7,85.3 179.7,85.3 185.8,85.3 186,75 186.8,75" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="163,93.4 173.7,85.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="173.7,85.3 172.5,148.1 171.9,181.1 169.4,318.7 168.7,321.1 167.2,322.3 164.8,322.5 22,317.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="184,181.1 184.9,140.3 185.8,85.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="186,75 186.8,13.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="177.7,181.1 184,181.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="171.9,181.1 177.7,181.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="280.3,15 278,17.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="278,17.8 275.7,20.2" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<polyline points="287.4,15 280.3,15 282.3,10.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="280.3,15 266.7,14.3 214.5,13.5 186.8,13.9 181.2,14 174.9,14.2 173.7,85.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="275.7,20.2 271.6,23.3 271.3,23.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="277.9,323.3 270.5,323.2 267.4,323.7 188.1,323.2 184.8,323 182.9,322 181.6,319.5 182.5,279.5 183.3,225.2 183.8,192.2 184,181.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="136" y="153.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="44.9" y="89.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="49.9" y="48.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="271.3" cy="23.4" r="0.9" fill="#16a34a"/>
+<circle cx="186.8" cy="75" r="1.4" fill="#16a34a"/>
+<text x="140.3" y="202.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="140.3" dy="0">Parking garage</tspan></text>
+<text x="297.2" y="263.7" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

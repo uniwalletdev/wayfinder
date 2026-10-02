@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.4 345.6" font-family="Arial, Helvetica, sans-serif">
+<title>UCHealth Highlands Ranch Hospital — site map</title>
+<path d="M28.8 83.2L32.5 261.8L37.1 275.7L46.3 279.3L376 281.2L420.9 291.3L443.5 299L476.6 315.5L507.7 329.9L554.3 273.7L588.4 186.6L599.1 112.6L604.6 17.6L414.2 15.7L376 63.7L351.1 76.7L336.4 82.3L318.9 86L296.8 86.9L277.4 85L262.7 83.2L248 79.5L236.9 72.1L227.7 67.5L221.4 53.2L200.3 56.5L187.5 58.5L163.7 63.1L138 70.6L114.6 70.7L94.7 73.2L62.9 74.1L38.6 74.1L33.6 76.8L28.8 83.2Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M251.8 159.2L269.1 159.2L269 176.3L251.8 176.3L251.8 159.2Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M66 178L150.7 177.7L162.9 177.6L178.4 186L178.2 272.5L50.6 272.2L41.6 267.2L41.4 220L66.2 219.9L66 178Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M515.3 147.4L549.6 157.6L526.6 226.6L493.3 214.4L515.3 147.4Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="34.2,46.3 34.7,62.4 34.7,76.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="343.2,63.6 345,68.3 350.5,80.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="271.5,71.7 270.5,77.9 269.5,84.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="258.5,68 255.2,74.8 250.9,83.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="233.8,37.7 222.6,37.1 217.5,36.6 218.1,42.3 219.5,54" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="150.7" y="177.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="260.4" y="167.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="114.7" y="227.5" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="114.7" dy="0">Parking garage</tspan></text>
+<text x="521.3" y="184.6" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="521.3" dy="0">UCHealth Highlands Ranch</tspan><tspan x="521.3" dy="3.7">Hospital Pavilion 2</tspan></text>
+<text x="631.4" y="343.6" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

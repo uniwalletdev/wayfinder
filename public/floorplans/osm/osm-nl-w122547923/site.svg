@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.8 400.2" font-family="Arial, Helvetica, sans-serif">
+<title>Spaarne Gasthuis Zuid — site map</title>
+<path d="M18.5 67.2L17.5 55.8L18.8 46.8L33.7 29L50.8 22.5L75.2 20.8L116.6 19L220.2 18.2L279.8 19.1L293.7 23.8L312.1 30.6L354.9 49.9L362.6 53.2L367.9 184.3L367.8 193.9L368.1 245.2L368.3 252L368.1 259.2L367.3 313.4L366.5 361L360.8 382L257.7 377.5L229.4 376.3L167 376.4L140.2 374.9L128.5 365.3L81 175.9L76 156.2L64.8 124.7L33.8 83.3L18.5 67.2Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M113.9 125.8L147.3 125.5L146.7 84.9L149.3 85L149.4 34.7L172.2 34.8L172.4 103.5L172.4 131.4L132.1 131.1L129.5 132.2L128.2 133.4L127.7 135.3L131.4 149L141.2 146.8L143.3 154.1L160.5 149.5L162.5 156.3L163.6 160.3L143.5 165.4L150.3 191L152.4 199.3L161.8 234.9L163.2 240.1L165.2 248.3L165.6 249.9L157.2 284.3L164.7 286.6L177.1 289.6L177.2 295L177.5 296.9L194.1 297.1L194.3 301.8L206.9 301.9L213.1 324.9L216.6 356.4L217.5 359L221.2 370.2L136.8 364.1L119.4 293.7L119.3 259.2L108.8 261.9L108.1 259.2L92.7 194.5L117.5 188L130.2 184.7L113.9 125.8Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M92.7 194.5L73.3 122.7L70.6 123.3L67.9 112.8L54.6 100.3L36.9 83.4L21.1 67.1L21.7 56.2L26.1 46.5L31.6 40.6L40.4 35.5L54.5 31.5L62.9 29L83.3 28.8L89.8 28.6L132.1 28.2L149.8 28.1L149.4 34.7L149.3 85L146.7 84.9L147.3 125.5L113.9 125.8L130.2 184.7L92.7 194.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M347.8 307.4L353.9 306.8L354 292.1L348.7 292.1L347.8 307.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M199.4 27.7L261.2 27.1L261.4 49.6L243.4 49.8L206.8 50.2L199.6 50.2L199.4 27.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="249.5,382.4 249.1,283.7 248.9,236.8 178,237.2 171.8,234.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="171.8,234.6 151.9,241.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="160.8,293.9 178,237.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="185.7,181.5 169.8,192 171.8,234.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="169.8,192 140.9,197.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="249.1,283.7 266.3,283.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="89.9,194.9 94.9,195.6 102.1,197.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="20.7,223.6 22.8,212.2 26.9,211.1 41.3,207 53.2,204 58.8,202.6 61.8,201.9 69.3,200 74.5,198.7 77.7,197.9 85.4,196 89.9,194.9 90.8,192.7 96.7,187.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="192.6" cy="202.7" r="1" fill="#64748b"/>
+<circle cx="281" cy="268.5" r="1" fill="#64748b"/>
+<text x="220.5" y="189" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">+</text>
+<circle cx="237.2" cy="20.4" r="1" fill="#64748b"/>
+<circle cx="245.9" cy="35.6" r="1" fill="#64748b"/>
+<text x="152" y="244.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="95.6" y="90.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="351.1" y="299.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="203.8" cy="207.4" r="1.4" fill="#16a34a"/>
+<circle cx="202.6" cy="171.4" r="1.4" fill="#16a34a"/>
+<text x="230.4" y="38.7" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="230.4" dy="0">Boerhaavegebouw</tspan></text>
+<text x="383.8" y="398.2" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

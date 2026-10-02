@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211.4 388.3" font-family="Arial, Helvetica, sans-serif">
+<title>Mind Springs Health — site map</title>
+<path d="M10 370.6L10.3 83.2L127.4 83.3L127.4 17.7L201.4 17.7L201.2 269.4L103.3 269.4L103.2 370.7L10 370.6Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M107.6 238.8L107.5 215.3L124.9 215.4L124.9 218.4L141.3 218.5L141.4 238.7L138.6 238.7L138.6 240.9L129 241L128.9 238.6L107.6 238.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M140.4 194L147.6 153.4L150.5 153.9L150.6 153L158.8 154.5L162.2 151.2L163.2 152.6L164.4 153.9L165.7 155L167.1 156L168.7 156.8L170.3 157.4L172 157.8L171.3 160.1L173.5 160.4L175.7 160.4L177.9 160.2L180 159.6L179.3 164L181.4 164.3L181.1 166.3L192.3 168.1L188.6 190.8L176.9 188.9L176 194.6L173.9 194.3L173.2 198.4L171.6 197.2L169.8 196.2L167.9 195.5L166 195L165 194.8L165 197.5L163.3 197.3L161.5 197.3L159.8 197.6L158.2 198.1L156.6 198.8L155.1 199.6L153.7 200.7L152.1 197L150 196.6L150.2 195.8L140.4 194Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M84.6 138.2L95.4 149.1L94 150.5L97.9 154.5L113.6 154.5L113.8 166.4L98 166.5L97.9 182.2L86.1 182.3L86 166.4L79.8 160.2L78.3 161.6L75.3 158.6L72.7 161.3L67.2 155.7L71.4 151.5L66.9 147L73.1 140.8L70.2 138L75.9 132.3L83.1 139.6L84.6 138.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="200.2,117.7 200.3,123.4 200.5,131.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="200.8,251.7 200.8,258 200.8,264.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="200.5,131.4 197.8,135 197.3,146.8 197.5,152.3 199.7,159.2 199.7,164.1 197.8,172.4 197.8,175.7 199.6,192.5 198.4,203.5 201.9,207.2 202.3,246.3 200.8,251.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="200.8,264.9 202.4,270.1 202.4,310.5 202.4,368.1 200.6,371.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="124.1" y="225.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="124.1" dy="0">Withdrawal</tspan><tspan x="124.1" dy="4.6">Management</tspan></text>
+<text x="164.5" y="174.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="164.5" dy="0">Mind Springs Health</tspan><tspan x="164.5" dy="4.6">- Outpatient Services</tspan></text>
+<text x="88.7" y="155.1" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="88.7" dy="0">Recovery at</tspan><tspan x="88.7" dy="4.6">West Springs</tspan></text>
+<text x="209.4" y="386.3" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

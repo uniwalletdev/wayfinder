@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 398" font-family="Arial, Helvetica, sans-serif">
+<title>Sacramento VA Medical Center — site map</title>
+<path d="M77.6 379.9L64.8 355L52.9 339.8L31.4 322.1L30.6 173.1L30 68.1L30.3 68.1L226.4 65.7L289.8 55.9L320.9 49.2L351.6 40.3L413.8 18.1L468.7 18.4L467.8 66.4L628.4 66L630 137.7L540.6 145.2L486.6 151.4L478.2 153.7L400.2 195.8L77.6 379.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M466 65.5L466.5 20.7L414.1 20.2L348.7 43.5L295.6 56.5L229.8 66.9L419.3 65.4L466 65.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M52.3 271.6L68.8 301.4L84.3 292.9L67.8 263L52.3 271.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M48.9 314.6L55.2 301.1L64.3 300.3L50.3 274.2L41.3 273.8L35.7 289.9L48.9 314.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M525.2 69.6L526.8 126.3L540.6 126.7L540.6 145.2L630 137.7L628.4 66L525.2 69.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M70.7 335.1L90 368.4L150.6 332.2L131.9 299.7L78.4 330.6L70.7 335.1Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="321.3,44.5 321.7,46.2 291.9,52.8 275.3,56.4 228.6,63.3 203.8,64.9 157.3,66.9 134.2,66.2 30.8,66.9 22.6,67.3 13.4,67.7 -18.9,71.5 -52.6,81.9 -74.4,90.1 -111.4,105.8 -120.2,109.2 -129.7,110.5 -140.1,112.9 -151.4,113 -162.8,111.8 -172.2,110.4 -173.8,110.8 -175.1,111.8 -177,114.1 -177.6,116.3 -179.3,116.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="78.4" y="330.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="392.4" y="48.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="68.3" y="282.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="48.3" y="291.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="578.7" y="103.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="110.7" y="333.9" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="110.7" dy="0">Parking garage</tspan></text>
+<text x="658" y="396" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.6 482.5" font-family="Arial, Helvetica, sans-serif">
+<title>Kaiser Permanente South San Francisco Medical Center — site map</title>
+<path d="M134.6 21.9L162.2 47.7L240.9 147.7L309 269.1L384.5 403.4L417.7 443.3L402.3 460.5L342.3 422L318 405.9L264.1 369.8L162 297.9L135.2 276.4L104.7 248.5L64.7 203.9L49.7 185.9L19.9 142.6L134.6 21.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M290.7 323L294.8 320.6L302.8 316L299.7 310.8L311.8 303.9L314.4 308.5L319.3 305.7L373.8 400.6L367 404.6L349.4 414.7L345.1 417.1L343 413.5L339.1 415.7L325.3 391.7L321.4 393.9L315.9 384.3L319.5 382.2L314.8 374.1L308.3 362.7L304.5 364.9L298.8 355.1L302.7 352.8L288.1 327.5L292 325.3L290.7 323Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="277,310.5 254.9,334.6 212.6,294.3 198.5,308.6 197.2,309.1 183.2,296.1 176.5,292.2 169.7,290.3 164.6,288.7 151.6,278.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="298.8,310 294.5,306.3 288.5,301.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="288.1,300.9 287.1,300.1 283.5,304.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="285.7,331.4 289.6,337.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="328.9,406.6 325.9,408.1 321.1,410.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="321.1,410.8 285.1,386.9 259.8,369.9 257.3,366.9 256.6,364 256.8,361 258,358.7 268.3,347.9 270.6,345.7 271.7,345.4 272.7,345.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="282.1,335.3 285.7,331.4 287.5,329.5 285.8,327.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="314.8" y="374.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="349.4" y="414.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="367" y="404.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="294.8" y="320.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="251.9" cy="193.8" r="1.4" fill="#dc2626"/>
+<circle cx="208.6" cy="290.8" r="0.9" fill="#16a34a"/>
+<circle cx="279.8" cy="302.2" r="1.4" fill="#16a34a"/>
+<text x="329.5" y="361.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="329.5" dy="0">Parking garage</tspan></text>
+<text x="435.6" y="480.5" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305.8 385.7" font-family="Arial, Helvetica, sans-serif">
+<title>St. Joseph's Hospital — site map</title>
+<path d="M155.4 264.3L161.3 265.9L160.5 268.8L185.4 275.5L186.2 272.8L192.5 274.5L187.7 292.6L174.6 289.1L175.7 285.1L163 281.7L162.2 284.8L158.8 283.9L157.9 287.2L153.1 285.9L153.8 283.1L150.6 282.2L155.4 264.3Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M42.3 54.6L51.5 48.9L54.7 54.2L57.2 56.6L60.2 55.1L63.7 56.5L71.6 52.8L81 68.8L67.6 77L69.2 79.6L71.8 82.1L74.8 83.6L112.8 94.2L110 105.9L103.8 104.2L104.5 102.5L72.4 93L66.9 90.6L62.6 87.4L60.3 83.8L55.4 76.3L52.2 78.6L55.4 84.1L47.3 89.2L37.7 72.2L45.7 67.7L50.3 75.6L53.6 73.8L49.2 65.2L42.3 54.6Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M228.9 162.6L240.5 165.8L241.2 163.2L246.8 164.8L246.1 167.4L257.9 170.6L248.1 206.7L219.1 198.8L228.9 162.6Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M213.7 113.8L227 106.4L240 104.2L245.8 105.7L259.6 116.1L265.3 127.6L253.1 134.5L248.4 124.5L243.9 120.7L236.2 118.1L230.8 118.2L220 125.1L213.7 113.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<circle cx="84.1" cy="30.7" r="1" fill="#64748b"/>
+<text x="171.3" y="276.6" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="171.3" dy="0">Mount Carmel</tspan><tspan x="171.3" dy="4.6">Hospital</tspan></text>
+<text x="69.5" y="77.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="69.5" dy="0">County Clinic</tspan></text>
+<text x="238.6" y="182.1" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="238.6" dy="0">Longford</tspan><tspan x="238.6" dy="4.6">Health Centre</tspan></text>
+<text x="240.9" y="116.7" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="240.9" dy="0">Mental Health Centre</tspan></text>
+<text x="303.8" y="383.7" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

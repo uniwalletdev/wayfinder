@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 229.3 217.4" font-family="Arial, Helvetica, sans-serif">
+<title>Mercy Allen Hospital — site map</title>
+<path d="M205.7 207.4L207.1 130.1L208.1 84L218.9 74.5L217.9 11.6L73.5 10L71.1 99L13.9 98.2L10.4 206.5L205.7 207.4Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M208.9 57.4L209 30.4L197.7 30.2L198 37.9L190.7 37.5L191.1 58.6L197.1 58.7L208.9 57.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M139.3 26.4L139.4 12.7L154.4 12.7L154.3 26.5L139.3 26.4Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M12.3 197.4L14.7 104.6L64.8 105.6L65.1 103.7L71.9 103.5L73.4 37.7L86.2 37.8L85.9 55.2L115.9 55.8L114.5 132.7L98.7 132.4L98.1 198.9L12.3 197.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M198.9 163.8L198.2 193.9L197.6 194.7L195.8 195.2L193.3 195.3L193.1 200.8L114.5 200.8L114.4 207.5L114.4 209.7L114.6 210.9L115.3 212.4L116.1 213.3L116.8 213.8L103.4 214L105.5 212.9L106.4 211.5L106.5 208.6L106.2 189.8L162 189.4L162.2 163.7L198.9 163.8ZM199.6 144.2L176 143.8L175.7 133.7L199.9 134.2L199.6 144.2Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M109 139L108.8 156.5L103.9 156.5L99.9 156.4L99.8 164.1L104.3 164.2L108.8 164.2L108.4 184.2L118.8 184.3L118.8 185.7L147.4 186.1L148.6 159.8L148.5 154.2L153 154.2L156.4 154.3L159.2 154.4L161.6 152.1L161.6 151L161.7 144.7L154.1 144.8L149.3 144.3L149.1 139.3L119 139.1L109 139Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="164.5,215.1 164.6,208.8 164.9,192.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="150.7,192.3 150.9,159.2 156.4,154.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="161.6,152.1 168.3,152.1 171,153.8 172.6,153.8 172.4,157.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="172.6,153.8 172.8,130.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="143.9" cy="159.4" r="1" fill="#64748b"/>
+<circle cx="156.1" cy="151.5" r="1" fill="#64748b"/>
+<text x="200.5" y="45.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="146.8" y="19.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="66.2" y="133.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="162.3" y="187.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="129.4" y="161.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="129.4" dy="0">Chuang Medical Center</tspan></text>
+<text x="227.3" y="215.4" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

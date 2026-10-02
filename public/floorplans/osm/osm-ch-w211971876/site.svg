@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.9 248.3" font-family="Arial, Helvetica, sans-serif">
+<title>EMS Maison de Vessy — site map</title>
+<path d="M218.6 194.3L188.2 179.4L119.2 145L77 237L72.2 234.7L18.4 208.4L13.5 205.7L46.9 182.1L53.6 161.5L60.5 144.5L89.1 100.5L95 100.2L125.9 47.2L141.1 11.3L284.4 77.1L218.6 194.3Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M83.7 196.4L67 230.7L32.2 213.8L36.7 203.6L42.3 206.1L48.6 193L57.5 197.4L63.1 186.8L83.7 196.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M89.1 100.5L95 104.5L65.3 148.6L60.5 144.5L89.1 100.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M236.9 157.3L208.5 141.8L189 177.6L213.7 189.9L215.2 186.8L219.7 189L236.9 157.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M91.5 128.8L61.7 168.7L73.5 177.2L102.6 138.1L101.2 136.2L98.5 134L95.4 131.8L91.5 128.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M117.6 91.2L115 90.6L114.3 91.5L112.7 98.1L112.8 99.5L113.9 100.2L117.5 101.1L126.6 103.3L144.2 107.8L153.5 110.3L154.6 108.9L156.1 109.3L157.2 108.9L157.6 107.1L156.6 105.5L159.5 93.7L152.9 92L144.1 89.7L135.1 87.3L119.7 83.3L117.6 91.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M148.7 71.4L155 73L165.7 30.7L148.8 26.5L139.8 61.8L141.7 62.3L141.4 63.2L138.4 62.5L137.8 62.9L136.6 68L139.6 68.9L148.7 71.4Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M256.7 76.2L222.4 138.7L237.1 147.6L272.2 85.1L256.7 76.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M190.8 161.2L174.4 156.2L200.4 71.7L216.7 76.7L190.8 161.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="110,203.1 107.6,201 105.1,199.8 99.5,198.1 93.5,196.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="96.9,106.3 92.4,99.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="38.1,208 36.9,209.2 22.9,202.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="114.6,150.4 117.2,151.5 118.7,153.1 122.6,158 125.3,160.5 127.1,161.8 130,163" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="59.6" y="208.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="77.8" y="124.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="213" y="166.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="82.4" y="153.1" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="82.4" dy="0">Bâtiment Gomarin</tspan></text>
+<text x="136.6" y="97" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="136.6" dy="0">Bâtiment Principal</tspan></text>
+<text x="151.8" y="48" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="151.8" dy="0">Bâtiment</tspan><tspan x="151.8" dy="3.7">Beaux-Champs</tspan></text>
+<text x="247.2" y="111.7" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="247.2" dy="0">Bâtiment Les Esserts</tspan></text>
+<text x="195.6" y="114.1" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="195.6" dy="0">Bâtiment</tspan><tspan x="195.6" dy="4.6">Le Salève</tspan></text>
+<text x="295.9" y="246.3" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

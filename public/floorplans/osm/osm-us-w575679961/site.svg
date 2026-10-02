@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301.7 248.6" font-family="Arial, Helvetica, sans-serif">
+<title>Providence Tarzana Medical Center — site map</title>
+<path d="M287.4 237.3L288 88.3L264.2 81.4L214.3 59.6L167.4 34.3L132.8 40.6L114.2 41.8L94.9 40.8L81.8 38.6L78.1 39.6L72.4 38.1L54.7 35.8L54.1 31.8L44.2 28L31.5 21.9L15.6 11.3L13.7 37.9L30.3 42.5L29.9 236.5L287.4 237.3Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M90.9 95.1L96.5 89.6L161.2 89.3L164.9 95.7L165 118.2L165.2 138.6L167.4 142.2L164 145.8L161.8 143.7L160.1 145.5L162.4 147.7L160.7 149.5L157.9 146.8L157.1 147.7L101.3 147.7L96.7 147.7L91.1 142.6L90.9 95.1Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M243 119.7L243 119.4L245.4 119.4L245.5 150L256.6 149.9L256.6 152.8L269.8 152.7L269.8 161.9L273 161.9L273 166.4L269.8 166.4L269.7 204.8L272.6 204.8L272.5 213.4L269.5 213.4L269.4 230.3L236.5 230.2L236.5 218.6L230.2 218.6L230.2 230.1L190.1 230.1L190.1 235.8L182.9 235.8L182.9 229.9L180.5 229.9L180.6 206.2L226.9 206.2L226.9 199L208.5 199L208.5 191.6L196.4 191.6L196.5 167.8L208.2 167.8L208.2 162L203.4 162.1L203.4 158.4L200 158.4L200 154.7L196.4 154.7L196.3 149.1L191.4 149.2L191.4 149.4L190.1 149.4L190 145.9L181.5 145.9L181.6 98.2L206.7 98.2L206.7 121.6L228.4 121.6L229.7 121.6L229.7 121.9L234.2 121.9L234.2 119.7L236.7 119.7L243 119.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M57.6 207.2L45.1 207.2L45.1 185.6L83.8 185.6L83.8 210.5L85 210.5L85 217.2L83.6 217.2L83.6 235.4L57.6 235.4L57.6 207.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M89 57.4L49.7 57.5L49.4 137.2L49.3 143L54.8 143L54.8 147.2L88.5 147.7L89 57.4Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M269.8 152.7L256.6 152.8L256.6 149.9L245.5 150L245.4 119.4L243 119.4L243 119.7L236.7 119.7L234.2 119.7L234.2 121.9L229.7 121.9L229.7 121.6L228.4 121.6L228.4 119.2L229.9 119L231.5 118.5L233.2 117.6L234.7 116.3L235.8 114.8L236.8 112.8L237 110.3L236.6 108.3L236.1 106.2L213.5 94.7L211.2 92.9L201 87.4L200.8 88.2L198.2 85.6L197.6 83.7L197.5 81.7L197.9 81.7L197.9 65L208.8 73.9L209 71.6L204.8 68.9L205.3 57.5L211.6 60.2L255.2 83L265.1 88.2L268.7 91L270.7 94.8L270.9 100.6L270.7 152.7L269.8 152.7Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="35.6,214.5 39.2,216 43.1,217.1 47.9,217.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="66.4" cy="210.2" r="1" fill="#64748b"/>
+<text x="101.3" y="147.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="165" y="118.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="49.4" cy="137.2" r="0.9" fill="#16a34a"/>
+<text x="128.2" y="118.6" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="128.2" dy="0">Parking garage</tspan></text>
+<text x="225.3" y="171.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="225.3" dy="0">Providence Cedars-Sinai</tspan><tspan x="225.3" dy="4.6">Tarzana Medical Center</tspan></text>
+<text x="67.4" y="208" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="67.4" dy="0">Clinic</tspan></text>
+<text x="69.3" y="102.1" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="69.3" dy="0">Parking garage</tspan></text>
+<text x="241.5" y="102.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="241.5" dy="0">Friese Family Tower</tspan></text>
+<text x="299.7" y="246.6" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.7 219.8" font-family="Arial, Helvetica, sans-serif">
+<title>Loma Linda University Medical Center — site map</title>
+<path d="M419.3 208.9L212.8 209.8L20 209.3L20.2 75.8L21.4 27.1L73.5 26.9L148 27.5L147.5 10L169.3 10.5L170.1 26.6L239.3 26.3L246.2 26.4L246.2 17.7L413.1 19.8L419.8 29.6L419.3 208.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M176.4 167.5L191.6 167.8L192 152.8L176.8 152.4L176.4 167.5Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M230.9 168.5L231.1 194.2L398.5 192.6L398.3 166.8L230.9 168.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M357.9 79.9L357.8 139.3L400.2 139.4L400.3 80L357.9 79.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M24 66.9L85.1 67L85.1 86.8L97 86.8L97 102L83.6 102L83 108.8L23.4 109L24 66.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M151.1 14.5L150.7 30.8L166.9 31.1L167.2 14.9L151.1 14.5Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M322.9 59.6L414.3 59.6L416 27.9L321.8 27.9L322.9 59.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M30.1 117.3L69.6 117.3L69.5 157L102.1 157L102.1 197.6L30 197.5L30.1 135.8L30.1 117.3Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="305.9,16.7 301.6,16.8 301.6,19 255.1,19.2 229,19.5 169.7,19 147.8,18.8 94.8,18.4 87.5,18.3 78.2,21.8 30.7,22.2 25.6,25.8 20.4,25.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="217.3,74.5 218.6,69.4 221.7,63.6 226,60 234.5,58.6 242.1,58.4 249.4,58.3 249.2,25.4 254,25.4 255.1,24.6 255.1,19.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="30.1" y="135.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="184.2" y="160.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="314.7" y="180.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="379" y="109.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="56.7" y="88.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="159" y="22.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="368.8" y="43.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="60.4" y="163.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="60.4" dy="0">Patient Parking Structure</tspan></text>
+<text x="437.7" y="217.8" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

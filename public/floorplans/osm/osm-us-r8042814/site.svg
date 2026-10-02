@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 354.5 262" font-family="Arial, Helvetica, sans-serif">
+<title>Memorial Hospital of Carbondale — site map</title>
+<path d="M104.8 195.4L115.5 194.4L114.4 183.4L103.7 184.5L104.8 195.4Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M199.3 115.1L191.6 32.3L93.1 43L72 50L77.1 106.9L128 99.9L145.4 97.4L148.4 121.9L199.3 115.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M323 125.3L273.2 130.3L276.3 161.5L326.2 156.4L323 125.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M23.2 50.3L26.1 89.2L43.9 87.8L43.2 77.7L67.6 75.8L68.6 88.3L72.3 87.9L70.6 65.7L67.1 65.9L65.7 47.1L23.2 50.3Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M251.2 28.9L259.8 107.6L309.7 102.2L309.1 97.1L315.2 96.5L307.5 27L302.4 27.5L301.9 23.3L251.2 28.9Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="109.6" y="189.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="139.9" y="74.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="299.7" y="143.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="45.5" y="64" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="45.5" dy="0">Prairie Heart</tspan><tspan x="45.5" dy="4.6">Institute</tspan></text>
+<text x="283.1" y="65.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="283.1" dy="0">Parking garage</tspan></text>
+<text x="352.5" y="260" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

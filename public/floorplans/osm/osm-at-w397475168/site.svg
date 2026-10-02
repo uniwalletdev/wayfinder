@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 345.5 352.2" font-family="Arial, Helvetica, sans-serif">
+<title>Universitätsklinikum Tulln — site map</title>
+<path d="M113.7 336.2L66.3 182.5L18.3 26.4L15.7 18.1L16.7 16L121.3 71.3L180.5 103L210.3 122.2L238.2 211.5L266.5 202.8L265.3 198.8L281.8 194.4L276.8 175.2L281.8 166.9L302.4 179.5L329.7 267.9L329.8 268.9L329.7 270L329.2 270.7L328.8 271L328.1 271.5L113.7 336.2Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M288.2 278.4L290.2 277.8L291.7 282.5L295.4 281.4L328.1 271.1L326.8 267L329.4 266.2L302.1 179.5L297.2 181L295.8 176.4L278.8 181.7L282.8 194.3L267.8 199L266.1 199.6L269.8 211.4L271 215.1L268.6 215.9L288.2 278.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M246 214.4L245.3 210.6L260.7 206.6L261.8 210.1L246 214.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M133.8 116.4L136 115.7L128.9 93.3L126.6 94.1L133.8 116.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M128.1 156.3L133.3 173.2L149.4 168.2L144.3 151.4L128.1 156.3Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M121.4 76.5L40 32.5L29.4 33.8L32.2 47.5L27.6 48.6L59.6 157.2L64.9 155.4L137.9 130.4L133.8 116.4L126.6 94.1L121.4 76.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M200.6 305L195.9 288.9L141.1 305.1L142.9 311.4L147 310.1L147.4 311.2L143.6 312.3L146.2 321.4L159.5 317.5L158.4 313.8L160.7 313.1L161.6 316.5L200.6 305Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="255.5,299.2 254,295.1 230.5,222.7 210.2,157.6 198.2,116.3 196.7,109.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="63.1,139.4 81.3,133.8 98.7,128.4 115,123.3 126.8,119.7 138.6,116 140.9,115.3 153.3,111.5 158.5,109.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="153,89.9 158.3,106.9" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<polyline points="223.8,224.3 230.5,222.7 234,222.2 241.7,219.4 246,214.4 261.8,210.1 265.3,211.8 269.8,211.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="210.2,157.6 207.2,158.4 203.3,158.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="134.1,299.3 125.3,296.6 120.8,292.7 117.7,282.1 115.8,274.9 112.5,270.5 108.2,266.7 99.7,261.2 93.5,256.2 91.8,251.2 79.7,209.7 81.2,203.8 82.8,196.2 77.6,179.8 72.6,173.9 67.8,165.6 64.9,155.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="156.3,78.5 154.7,84.2 153,89.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="138.6,116 128.2,86.2 128.1,73.7 128.6,68.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="182.6" cy="159.3" r="1" fill="#64748b"/>
+<circle cx="196.7" cy="146.3" r="1" fill="#64748b"/>
+<circle cx="194" cy="151.6" r="1" fill="#64748b"/>
+<circle cx="172.1" cy="132.8" r="1" fill="#64748b"/>
+<circle cx="104.6" cy="64.9" r="1" fill="#64748b"/>
+<text x="297" y="231.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="253.4" cy="210.5" r="1" fill="#64748b"/>
+<circle cx="131.3" cy="104.9" r="1" fill="#64748b"/>
+<text x="138.8" y="162.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="79.4" y="96.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="164.5" cy="103.6" r="0.9" fill="#16a34a"/>
+<circle cx="223.8" cy="224.3" r="0.9" fill="#16a34a"/>
+<circle cx="196.7" cy="234.7" r="0.9" fill="#16a34a"/>
+<circle cx="203.3" cy="158.8" r="0.9" fill="#16a34a"/>
+<text x="171" y="302.7" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="171" dy="0">Schule für Gesundheits-</tspan><tspan x="171" dy="4.6">und Krankenpflege Tulln</tspan></text>
+<text x="343.5" y="350.2" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

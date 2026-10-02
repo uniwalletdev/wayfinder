@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333.3 306.8" font-family="Arial, Helvetica, sans-serif">
+<title>Reha Rheinfelden — site map</title>
+<path d="M15.2 232.6L44.2 155.6L59.6 90.1L65.2 50.7L69.9 18.8L76.9 13.9L111.9 23.3L157.8 41.5L205.8 56.9L306.5 101.4L318.2 118.6L288.8 150.6L226.3 227.6L164.5 292.8L141.5 291.2L15.2 232.6Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M97 250.5L110.1 258.1L107.7 262.9L154.5 288.8L157 284.3L161.8 286L192.5 255.5L190.7 254.7L193 249.6L145.7 223.8L138.7 228.4L103.7 243.9L100.3 243.7L99.8 244.8L97.9 248.7L97 250.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M300.8 134.2L276.5 163.6L274.7 162.1L299 132.7L300.8 134.2Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M143.9 221.1L145.2 223.2L141.3 225.7L140 223.7L143.9 221.1Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="246.4,213.5 242.2,209.7 203.9,191.8 184.4,181.7 167.6,169.3 152.7,154.1 126,143.6 119.7,147.9 97.2,159.5 65.3,161.9 51.5,164.3 50.6,177.6 37.8,197.5 28.9,222.1 22.5,231.2 17.4,240.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="22.5,231.2 42.3,233.5 68.1,227.8 88.1,218.8 105.5,215 119.7,216.2 129.4,217.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="167.6,169.3 170.5,182.6 171.9,188.7 171,195.1 164.8,206.8 154.5,218.2 146.6,224 140,230.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="126,143.6 123.7,138.4 113.9,129 86.9,117.4 72.2,107 64.1,101.1 53.5,100.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="192.5,255.5 226.4,218.5 234.9,218.1 242.2,209.7 249.3,200.2 253.2,193.5 266.6,171.7 271.8,162.5 297.3,131.4 314.4,110 316.4,107.5 315.8,105.4 316.4,97.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="38.5,159.6 51.5,164.3 50.4,139.4 53,128.7 58.6,123.3 64.8,117.4 72.2,107" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="64.1,101.1 75.7,80 71.3,77.5 85.2,52.5 93.9,56.5 104.7,37.9 112.1,36.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="154.5,218.2 176.7,223.8 188.8,225.7 199.8,225.3 226.4,218.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="297.3,131.4 250.5,103.4 254.9,96.6 224,76.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="254.9,96.6 263.5,82.8 228.5,68 213.3,61.2 178.9,47.1 134,32.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="228.5,68 224,76.9 212.9,95.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="154.5,218.2 141,217 129.4,217.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="218.9,145.3 228,150.6 242.6,158.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="218.8,166.3 228,150.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="71.8" cy="118.7" r="1" fill="#64748b"/>
+<circle cx="102.7" cy="28" r="1" fill="#64748b"/>
+<text x="146.9" y="255.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="287.7" cy="148.2" r="1" fill="#64748b"/>
+<circle cx="155.5" cy="144.7" r="1.4" fill="#16a34a"/>
+<text x="331.3" y="304.8" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.1 269.3" font-family="Arial, Helvetica, sans-serif">
+<title>Candler County Hospital — site map</title>
+<path d="M83 257.1L194.6 207.5L178.4 165.1L211.1 153.6L153.8 12.2L10.1 68.2L83 257.1Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M160.9 87.1L179 80.2L174.6 68.9L156.6 75.8L160.9 87.1Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M80.6 196.6L95.8 237.4L110.8 230.8L121.3 220L107.3 185.9L80.6 196.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M139.3 173.2L144.2 185.4L156.7 180.4L152.3 168L139.3 173.2Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M68.1 112.6L64.8 116.9L62.8 119.4L52 114.9L52.2 117.2L42.7 116.8L46.6 127.2L40.4 135.8L62.8 193.3L68.8 186L76.7 187.5L79.2 183L87.6 184.6L95.1 176.4L68.1 112.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M89.2 41.7L107.4 82.7L133.6 67.5L118.2 30.3L89.2 41.7Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M134 190L143.3 212.6L131.9 217.3L122.5 194.8L134 190Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M121.3 220L124.6 223.1L126.7 220.9L132.1 226.1L117.9 240.8L112.1 235.2L113.7 233.5L110.8 230.8L121.3 220Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M162.5 178.2L166.2 187.8L146.7 195.5L143 185.9L144.2 185.4L156.7 180.4L162.5 178.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="167.8" y="78" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="101.3" y="211" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="148.1" y="176.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="66.3" y="152.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="111.8" y="55.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="132.9" y="202.5" font-size="2.1" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="132.9" dy="0">Family</tspan><tspan x="132.9" dy="2.4">Medical Clinic</tspan></text>
+<text x="120.8" y="228.5" font-size="2.1" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="120.8" dy="0">Candler</tspan><tspan x="120.8" dy="2.4">Gastroenterology</tspan></text>
+<text x="154.6" y="185" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="154.6" dy="0">Candler</tspan><tspan x="154.6" dy="3.7">Senior Care</tspan></text>
+<text x="219.1" y="267.3" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

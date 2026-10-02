@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.4 181.7" font-family="Arial, Helvetica, sans-serif">
+<title>Ospedale Regionale di Lugano — site map</title>
+<path d="M10 13.9L47.6 10L59.7 47.5L86.5 45L102.9 43.4L104.3 59.1L155.2 54.1L161.4 111.4L90.9 118.8L97.2 160.6L34 171.7L31.9 171.2L30.4 170.3L24.8 146.7L10 13.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M15.5 29.6L23.2 28.7L22.7 24.2L38.7 22.4L39.2 26.5L46.9 25.6L50.4 57.5L42.8 58.3L44.5 74.1L51.8 73.3L57 120.5L49.9 121.3L50.2 124.6L57.3 123.8L60.8 155.7L29.7 159.1L26.2 126.7L34.1 125.9L33.8 122.8L25.7 123.7L20.6 76.9L28 76.1L26.3 60L18.9 60.8L15.5 29.6Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M114.9 61.8L119.2 104.3L136.2 102.6L151.9 101L157 100.5L152.7 58L114.9 61.8Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="130.1" y="107.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="151.9" y="101" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="38.2" y="90.4" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="38.2" dy="0">Ospedale Regionale di</tspan><tspan x="38.2" dy="3.7">Lugano, Sede Italiano</tspan></text>
+<text x="136" y="78.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="136" dy="0">Autosilo</tspan><tspan x="136" dy="4.6">Ospedale Italiano</tspan></text>
+<text x="169.4" y="179.7" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

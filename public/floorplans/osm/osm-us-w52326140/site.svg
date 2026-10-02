@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 598.4 608.5" font-family="Arial, Helvetica, sans-serif">
+<title>Mercy Health – Fairfield Hospital — site map</title>
+<path d="M32.7 580.9L35.7 475.1L34 462.3L27.2 411.8L36.4 354.5L51 212.5L45.9 151L82.4 56.8L213.2 27.7L450.6 91.9L451.1 251.3L571.2 230.3L562.4 348.6L499.6 346L490.2 482.3L456.1 492L428.8 493.8L360 508.3L285.2 525.7L190.3 549.1L160.3 557L104.9 567.8L93 570.1L43.1 578.9L32.7 580.9Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M200.7 469.1L203.2 481L215.3 478.5L212.7 466.5L200.7 469.1Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M364.9 447.9L358.2 433.8L362.8 411L366.3 340.6L380.4 325.4L408.4 308.4L412.5 311.7L422.3 299.9L426.8 290.8L428.4 282.7L426.7 275.1L429.3 260.1L545.8 254.2L545 283L544 293.4L540.8 309.5L537.8 322.3L484 320L479.1 323.7L477.7 328.5L477.5 339.9L475.5 404.1L472.6 411.2L467.2 417.1L458.4 422L423.8 436.6L407.6 440.9L364.9 447.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M121.3 455.7L129 491.6L139.2 489.4L178 481.1L172.1 453.3L170.4 445.2L121.3 455.7Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M295.4 285.9L356.4 289.1L356.4 276.7L359 278.2L361.9 279.2L361.5 293.3L368.2 293.5L369 279.6L371.4 278.5L373.9 275.1L375.6 271.1L375.3 266.5L387.2 269.8L391.1 257.6L384.8 255.4L385.3 250.8L388.7 250.8L391.6 250L392 245.7L385.4 245.2L387 214.2L370.7 213L371.6 196.3L365.1 196L368.9 178.1L407 179.7L410.7 115.6L326.2 110.8L322.6 175.3L314 174.9L313.1 189.8L307 189.7L305.6 215.8L296.7 215.2L295 238.6L302.5 239.2L302.1 251.1L297 250.8L296.4 260.6L286.4 260.2L281 260L280.7 265.2L285.9 265.5L296.3 266.1L295.4 285.9Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="139.2" y="489.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="343.1" cy="262.6" r="1" fill="#64748b"/>
+<text x="208" y="473.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="442.6" y="345.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="149.7" y="468.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="149.7" dy="0">Parking garage</tspan></text>
+<text x="350.1" y="200.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="350.1" dy="0">Mercy Hospital Medical</tspan></text>
+<text x="596.4" y="606.5" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

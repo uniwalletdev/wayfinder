@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161.3 187.4" font-family="Arial, Helvetica, sans-serif">
+<title>LKH Klagenfurt — site map</title>
+<path d="M27.9 10L29.2 10L116.8 31.2L151.3 40.1L141.8 78.1L112.9 77L105.2 117.8L116.4 136.9L115 147.7L112.3 153L105.2 160.8L90.6 169.3L75.4 174L59.1 177.4L37.2 175.6L18.5 171.8L10 151.2L27.6 13L27.9 10Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M151.3 40.1L141.8 78.1L113 72.1L111.4 78.3L105 77L116.8 31.2L151.3 40.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M59.4 72.6L68.9 74.5L67.8 79.5L70.3 80.1L69.1 84.4L79.3 87.1L60.8 150.4L50.5 147.5L51.8 142L48.9 141.3L51.8 130.5L45.8 129.2L47.3 122.7L48.6 117.4L54.3 118.8L55.4 114.2L49.7 112.9L52.2 102.3L57.7 103.7L58.7 99.4L53.2 98.1L55.8 87.5L61.4 88.8L62.4 84.6L56.8 83.3L59.4 72.6Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M46.6 17.8L78.1 25.4L80.1 25.8L109.8 32.9L98.2 81.5L80.8 77.4L88.5 45.2L81.5 43.5L80.5 47.5L75.6 46.4L69.3 73.2L68.9 74.5L64.8 73.5L65.1 72.2L71.6 45L66.3 43.8L67.1 40.7L60.1 39L52.5 70.6L35 66.4L45.7 21.8L46.6 17.8Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="99.2,134.1 88.4,133.6" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<polyline points="28.1,75.8 53.3,81.4 55.8,70.2 65.1,72.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="69.3,73.2 73,74.2 70.7,84 87.6,89.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="65.1,72.2 69.3,73.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="17.4,129.5 19.1,150.1 20.4,155 23.2,159.6 26.1,161.8 29.2,164.1 41.8,168.8 68.3,162.4 70.3,159.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="49.5,131.7 33.5,152.3 26.1,161.8 16.6,174.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="99,92.7 87.6,89.1 87.2,95.1 87.8,98.7 87.1,101.2 84.7,104 82.7,105.7 81.1,108.4 80.6,111.3 80.5,113.1 81,114.6 83.5,116.6 87.8,118.9 92.8,120.2 96.4,121.9 98.4,124.3 99.2,127.1 99.6,131.7 99.2,134.1 98.8,137.5 97,143 94.4,146.3 92.4,148.8 90.1,150.6 85.7,153.3 80.8,156.2 74.7,158.7 70.3,159.5 65.8,160.4 53.4,159.2 43.4,156.5 33.5,152.3 26.3,147.9 22.5,143.4 19.7,138.5 18.2,132.8 17.4,129.5 16.8,126.8 16.8,120.2 17.3,115.7 25.2,97.5 28.1,75.8 35.5,19.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="7.6,152.9 11.9,119.5 25.8,14.4 29.2,10 29.8,4.5" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="118.9" cy="39.2" r="1" fill="#64748b"/>
+<text x="128.4" y="55.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="61.8" y="109.8" font-size="2.1" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="61.8" dy="0">Medizinisch</tspan><tspan x="61.8" dy="2.4">Geriatrische Tagesklinik</tspan></text>
+<text x="73" y="46.8" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="73" dy="0">Haus der Geriatrie</tspan></text>
+<text x="159.3" y="185.4" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

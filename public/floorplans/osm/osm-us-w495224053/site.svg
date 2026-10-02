@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.6 336.4" font-family="Arial, Helvetica, sans-serif">
+<title>Washington Hospital — site map</title>
+<path d="M405.5 201L387.9 237.4L397.7 241.4L356.8 321.1L141.3 215.5L114.7 267.6L80.4 248.1L75 214L23.6 224.6L19.9 205.6L81.7 193.1L77.6 170.8L142.2 157.3L134.7 118.3L173 109.9L176.7 101.1L174.1 16L188.4 15.3L390 118.3L378.5 148.9L417.7 169.8L402.4 199.4L405.5 201Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M247.4 223.4L258.1 228.8L263.6 218L252.8 212.6L247.4 223.4Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M393.2 245L382.3 267.3L375.7 265.9L369.1 262.6L365.5 259.2L376.6 236.9L393.2 245Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M365.2 297.8L358.9 310L353.3 307.1L353.7 313.1L348.6 313L313.5 295.2L326.7 268.6L337.3 274L340.1 268.3L362.8 279.7L360.8 284.9L360.9 295.8L365.2 297.8Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M392.4 211.9L386.9 209.1L384.1 214.7L343.8 194.5L346.6 188.9L330 180.6L335.3 170L340.1 172.4L349.3 153.8L407 182.6L392.4 211.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M124.8 167.9L127.8 182.8L111.4 185.3L96.1 214.3L129.8 231.5L114.6 263L87.8 249.1L82.3 248.6L76.7 216.3L82.5 215L81.7 210.9L23.8 222.9L23.4 205.7L80.6 194.5L81 191.3L78.2 176.4L124.8 167.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M179.7 182.3L146.9 194.3L144.1 192.9L137.8 193.3L134 189.2L131.5 181.9L132 177.9L133.8 172.9L131.3 171.7L132.8 168.5L156.8 159.8L162.5 161.9L173.5 179.4L179.7 182.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M143 161.9L136.7 124.1L158.6 121.2L159.8 138.1L163 158.2L143 161.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M264.5 272.2L270 261.4L205 228.8L213 212.8L192.9 203L173.4 216.2L169.4 224.4L264.5 272.2Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M289.8 75.7L273.1 109.5L187.4 67.1L204.2 33.3L289.8 75.7Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<text x="255.5" y="220.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="379.1" y="252.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="340.9" y="290.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="369.3" y="184.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="88.1" y="213.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="151.7" y="177.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="150" y="141.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="213.3" y="235.3" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="213.3" dy="0">Parking garage</tspan></text>
+<text x="238.6" y="71.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="238.6" dy="0">Parking garage</tspan></text>
+<text x="435.6" y="334.4" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

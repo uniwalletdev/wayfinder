@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393.2 297.6" font-family="Arial, Helvetica, sans-serif">
+<title>Bloomfield Health Services &amp; Quaker House — site map</title>
+<path d="M69.6 68L29.8 110.1L17.9 126L22.9 129.6L36.2 138.7L50.5 183.3L66.6 207.3L72.7 217.1L142.5 246.4L279.8 284.1L354.1 278.3L375.3 273.8L329.8 223L293.3 181.8L265.8 148.8L245 125.3L225.1 103L200.3 75.7L171.2 48.3L148.9 29.2L134.8 13.5L130.7 16.7L156 44.1L150.3 49.1L136.8 49.8L133.5 54.4L152.1 65.1L149.1 75.7L185.5 83.5L176.9 127.6L136 119L125.3 96.2L115.5 87.4L106.2 81L77.5 63.3L69.6 68Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M65.5 140.5L80 120L93.3 129.4L78.9 149.9L65.5 140.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M105.9 148.5L138.9 159.2L145.1 140.1L119.2 131.7L117.4 137.2L110.3 134.9L105.9 148.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M92.5 184.9L88.9 195.8L94.8 197.8L93.5 201.7L116.4 209.2L115.7 211.4L129.4 216.7L130.3 214.4L150.3 222.6L149.8 224L162.5 229.6L163.4 228L187.5 238.3L186 241L201.4 246.7L216 207.4L218.9 208.7L227.3 192.1L195 179L188.5 193.9L180.1 190.5L189.8 165L176 158.9L172.6 169.1L167.1 167.1L168 165.5L149.1 158L146.1 165.1L141.6 163.3L136.7 161.3L137.2 159.6L112.3 151.9L107.8 166.2L129.1 172.1L121.5 195L92.5 184.9ZM178.7 205.9L184.3 208.3L183.6 209.7L191.8 212.8L192.2 211.6L197.3 213.7L193 224.4L174.8 216.5L178.7 205.9ZM194 208.5L196.4 202.4L201.2 204.6L198.7 210.5L194 208.5ZM180.2 203L182.8 196.6L187.7 198.9L185.5 205.2L180.2 203ZM135.6 199.3L143 179.9L167.7 190.4L160.2 209.7L135.6 199.3Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="146.9,150.3 141.6,163.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="87.4,192.1 86.4,195.3 85.3,199 84.8,201.3 87.3,206.1 99.1,213.4 110,219.9 119.1,222.9 128.7,225.6 158.9,237.7 196.4,251.8 200.5,252.6 204.6,253 208.2,251.3 211.6,248.9 214.1,245 214.4,244.2 225,216.9 232.1,198.7 236.4,200.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="225,216.9 229.8,219.2 231.6,220.1 232.9,223.4 232.5,225.8 229.9,227.9 227.1,229.6 225.8,233 228.6,237.7 230.2,241.1 229.1,244.9 225.5,246.9 221.5,247.1 218,245.5 214.4,244.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="93.3" cy="117.4" r="1" fill="#64748b"/>
+<text x="214.7" y="179.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="79.4" y="135" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="126.2" y="145" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="141.6" cy="163.3" r="0.9" fill="#16a34a"/>
+<text x="162.9" y="197.5" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="162.9" dy="0">Bloomfield Health Services</tspan></text>
+<text x="391.2" y="295.6" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

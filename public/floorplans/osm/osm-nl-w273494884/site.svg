@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430.9 320.3" font-family="Arial, Helvetica, sans-serif">
+<title>Catharina Ziekenhuis — site map</title>
+<path d="M26.9 305.7L34.3 305.1L171 300.8L258.6 297.4L305.7 295.7L339.9 294.4L352.9 293.1L385.7 291.4L399.1 289.7L405.8 286.8L408.6 283.6L411.3 276.9L404.2 226.7L397.9 176.5L393.1 151.5L379.9 111.2L363.6 82L361.6 50.3L361 38L357.1 33.3L350.7 17.8L346 16.6L341.3 15.5L318.9 14.6L173.6 19.5L107.9 22.4L23.9 25.4L29.8 51.6L24 67L19.6 78L21.1 135.4L26.9 305.7Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M40.9 68.9L58.8 68L58.7 79.5L41.5 76.6L40.9 68.9Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M46 51L43.2 46.6L39.6 46.7L39.3 33.2L39.2 30L94.7 28.2L158.9 26L159.1 31.2L147.1 31.8L147.4 47.7L46 51Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M325.8 235.3L394.5 232.2L397.5 280.4L392.6 280.5L392.6 284.8L327.6 287.4L325.8 235.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M363.1 120.1L377.4 119.9L377.6 133.8L382.4 133.5L385.8 215.1L378.3 215.3L314.3 217.5L313 179.9L319.3 179.7L313.9 44.2L323.3 43.7L355.4 42.5L356.8 79.8L361.7 79.4L363.1 120.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M109.9 237.1L303.6 229.9L305.3 289L111.5 297.2L109.9 237.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M216.9 41.8L216.4 30.9L184.3 32L184.3 29.7L184.3 27.2L275.9 24L276.5 39.8L216.9 41.8Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M25.8 243.4L27.5 293L30.3 292.9L107.9 290.3L106.3 245.8L101.3 246L101.1 240.6L97.7 240.7L25.8 243.4Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M84.7 142.9L90 142.7L90.7 164.7L85.4 164.9L84.7 142.9Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="90.4,232.6 19.6,235.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="200.2,248.5 200,240" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="160.7,228.9 161.6,250" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="199.9,238.7 199.6,227.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="200,240 199.9,238.7" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 1"/>
+<polyline points="243.5,226.4 244.3,246.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="359,222.3 358.8,212.9" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="377.2,221.5 377.1,212.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="340.8,223.1 340.5,213.6" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="322.2,214.3 322.5,219.7 323.2,223.9 324.3,243.5 326.3,300.2" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="90.4,232.6 97.3,230.8 107.5,230.5 160.7,228.9 199.6,227.7 243.5,226.4 314.3,224.3 323.2,223.9 340.8,223.1 359,222.3 377.2,221.5 407.8,220.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="172.2" y="47.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">+</text>
+<circle cx="156.2" cy="63.5" r="1" fill="#64748b"/>
+<text x="30.3" y="292.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="97.7" y="240.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="179.1" cy="203.9" r="1" fill="#64748b"/>
+<circle cx="126" cy="226.9" r="1" fill="#64748b"/>
+<circle cx="83.9" cy="196.7" r="1" fill="#64748b"/>
+<circle cx="83.1" cy="172.4" r="1" fill="#64748b"/>
+<circle cx="272.4" cy="222.3" r="1" fill="#64748b"/>
+<circle cx="239.3" cy="222.7" r="1" fill="#64748b"/>
+<text x="50.6" y="73.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="95.5" y="38.5" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="361.2" y="259.8" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="345.5" y="139.7" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="207.3" y="263.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="239.9" y="32.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<circle cx="220.7" cy="218.8" r="0.9" fill="#16a34a"/>
+<circle cx="155.9" cy="55.4" r="1.4" fill="#dc2626"/>
+<text x="66.6" y="266.9" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="66.6" dy="0">Parking garage</tspan></text>
+<text x="428.9" y="318.3" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

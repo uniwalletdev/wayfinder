@@ -1,6 +1,21 @@
 {
- "generatedAt": "2026-10-02T08:35:18.294Z",
+ "generatedAt": "2026-10-02T11:43:05.835Z",
  "built": [
+  {
+   "id": "osm-us-r12130441",
+   "country": "US",
+   "name": "Stanford Hospital",
+   "rooms": 7,
+   "waypoints": 17,
+   "named": 13,
+   "floors": 2,
+   "trails": 10,
+   "corridorM": 129,
+   "extentM": [
+    82,
+    90
+   ]
+  },
   {
    "id": "osm-us-r18181549",
    "country": "US",
@@ -203,6 +218,36 @@
    "country": "AT",
    "name": "AKH Wien",
    "reason": "3 rooms"
+  },
+  {
+   "id": "osm-us-w1096305153",
+   "country": "US",
+   "name": "NMBHI",
+   "reason": "no levelled rooms"
+  },
+  {
+   "id": "osm-de-w131823815",
+   "country": "DE",
+   "name": "Medizinische Universität Lausitz – Carl Thiem",
+   "reason": "5 rooms"
+  },
+  {
+   "id": "osm-nl-w151233702",
+   "country": "NL",
+   "name": "Leids Universitair Medisch Centrum",
+   "reason": "4 rooms"
+  },
+  {
+   "id": "osm-us-w517817443",
+   "country": "US",
+   "name": "University of Virginia Medical Center",
+   "reason": "5 rooms"
+  },
+  {
+   "id": "osm-nl-w660699519",
+   "country": "NL",
+   "name": "Flevoziekenhuis",
+   "reason": "no levelled rooms"
   }
  ]
 }

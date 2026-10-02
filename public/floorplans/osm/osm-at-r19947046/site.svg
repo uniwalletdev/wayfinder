@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 761.6 431" font-family="Arial, Helvetica, sans-serif">
+<title>Landeskrankenhaus Murtal, Standort Stolzalpe — site map</title>
+<path d="M127.5 302.1L128.8 309.4L147.5 315.3L146.5 309.2L135.8 303.4L127.5 302.1Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M617.9 53.5L571.3 25.4L568.7 29.9L614.1 57.9L617.9 53.5Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M624.6 64.3L619.9 68.4L618.1 72.9L623.4 76.6L629.9 66.1L624.6 64.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M568.3 32L575.4 41L579.9 39.7L611.2 67.3L605.3 70.8L602.5 68.6L598.7 69.8L582.2 57.5L580.1 60.4L571.2 57.1L574.4 51.4L562.1 36.9L568.3 32Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M352.2 401.5L355.4 400L358.1 397.6L359.9 394.5L360.9 391.1L360.8 387.5L359.7 384.1L357.8 381.2L355 378.9L351.8 377.5L348.2 377.1L344.7 377.6L341.5 379.2L338.9 381.5L337 384.6L336 388L336.1 391.6L337.2 395L339.2 397.9L341.9 400.2L345.2 401.6L348.7 402.1L352.2 401.5Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M567.5 84.3L571 78.6L563.6 73.9L568.2 66.3L572.7 59L579.2 63.2L580.3 61.4L632.2 93.8L646.5 70.6L669.7 85.8L666.2 92.7L656.8 109.2L701.4 136.7L699 140.7L714 149.9L703.9 166.3L604.8 105.5L609.5 117.5L606.1 122L604.3 121.5L600.1 127.7L592.8 127.3L588.1 120L583.4 120.4L573.4 101.1L573.5 94L576.2 89.7L567.5 84.3Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="715.7,163.2 712.3,169 705.8,174.6 700.9,176.6 696,176.4 690.3,174.7 685.3,172 681.8,169.3 678.4,163.3 676.3,158.6 674.9,156.1 615.2,119.7 611.6,123.8 607.1,127 602.4,129.1 596.2,129.6 588.5,129.8 584.8,121.9 578,119.7 571.5,106.5 566.1,89.9 562.9,76.6 562.6,74.9 560.3,62.3 559.8,55.7 560.8,45.2 560.1,39 560.4,37.3 561.2,32.1" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="560.3,62.3 568.2,66.3" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="588.5,129.8 599.7,139 611.3,146.9 619.5,153.2 629.9,158.2 642.7,162.6 670.6,170.6 690.3,174.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="602.6" cy="93.9" r="1" fill="#64748b"/>
+<circle cx="581.6" cy="81" r="1" fill="#64748b"/>
+<circle cx="640.5" cy="77.7" r="1" fill="#64748b"/>
+<text x="137.2" y="308.4" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="593.5" y="42" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="623.7" y="70" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="585.3" y="53.1" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="348.5" y="389.6" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">H</text>
+<text x="632.8" y="108.2" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="632.8" dy="0">Landeskrankenhaus Murtal, Standort Stolzalpe Haus 2</tspan></text>
+<text x="759.6" y="429" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>

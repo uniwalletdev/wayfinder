@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 443.9 423.1" font-family="Arial, Helvetica, sans-serif">
+<title>Clienia Littenheid — site map</title>
+<path d="M194.2 76.3L78.1 182.6L20.2 264.9L106 349.6L115.2 340L143.8 371.7L180.1 403.9L223.9 351.2L201.4 333.8L226.8 296.9L241.5 258.7L305.5 214.4L330.4 237.9L313.9 255.7L351.4 289.5L404.7 239.4L412.8 232L386.1 204.2L365.4 181.2L423.8 141.2L397.6 103.6L368.2 123.8L359.7 129.6L299.9 58.4L302.2 39L292 19.2L232.6 46.7L194.2 76.3Z" fill="#f8fafc" fill-opacity="0.85" stroke="#64748b" stroke-width="0.6" stroke-dasharray="3 2" fill-rule="evenodd"/>
+<path d="M389.1 209.4L410.4 232.8L370.5 269.2L350 247.4L348.8 246.1L389.1 209.4Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M327 243L315.2 255.6L349.6 285.7L356.8 277.7L354.9 276.2L358 272.5L327 243Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M76.9 269.3L51.1 301.3L107.8 346.9L134 315.5L76.9 269.3Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M211.7 314.6L186.8 345.3L182.8 342.2L175 342.2L150.3 321.9L172.3 294.9L202.2 308.8L211.7 314.6Z" fill="#eef2f7" stroke="#cbd5e1" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M199 222.2L215.4 203.8L234 220.4L217.7 238.8L199 222.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M275.8 187.6L261.3 168.3L241.7 183.1L256.2 202.4L275.8 187.6Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M288.7 29.2L296.8 45.7L274.8 56.4L266.7 39.9L288.7 29.2Z" fill="#dbe4ee" stroke="#94a3b8" stroke-width="0.4" fill-rule="evenodd"/>
+<polyline points="246.4,236.4 235.8,238.5 226.7,243.5 213.9,246.3 201.9,243.9 196.1,244.2 185.7,245.1 180.2,246.8 174.1,244.8" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="272.4,238.4 267.9,235.7 264,235.2 255.5,237.5 246.4,236.4 244.2,224.7 240,217.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="264.9,208.1 271.2,203.3 276.2,201.7 280.5,203 286.3,202.1 288.9,204.6 292.5,210.3 288,213.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="286.3,202.1 294.6,197.7" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="350,247.4 344.5,253.4" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="249.7" cy="203.6" r="1" fill="#64748b"/>
+<circle cx="249.9" cy="130.6" r="1" fill="#64748b"/>
+<text x="379.7" y="239.3" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="337.3" y="264.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="92.4" y="308.2" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="180.4" y="319.9" font-size="3" font-weight="bold" fill="#475569" text-anchor="middle" dominant-baseline="middle">P</text>
+<text x="216.5" y="221.3" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="216.5" dy="0">das café</tspan></text>
+<text x="258.8" y="185.4" font-size="4" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="258.8" dy="0">Haus Zentrum</tspan></text>
+<text x="281.8" y="42.8" font-size="3.2" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="281.8" dy="0">Mehrzweckhalle</tspan></text>
+<text x="441.9" y="421.1" font-size="2.2" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>
+</svg>
