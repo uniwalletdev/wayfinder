@@ -82,8 +82,11 @@ out tags bb;`)
 // When the server cannot answer for a whole state or country at once (504s
 // under load are common), the same question is asked for each cell of a grid
 // over its bounding box, which is a fraction of the work per query. A cell
-// that still fails is skipped; the rest are kept.
+// that still fails is skipped; the rest are kept. One area gets twenty
+// minutes in all: past that the remaining cells are left for the next run
+// rather than holding the whole job.
 const GRID = 3
+const AREA_BUDGET_MS = 20 * 60_000
 async function fetchGrounds(a) {
   let firstErr
   try {
@@ -97,16 +100,24 @@ async function fetchGrounds(a) {
   const out = []
   const seen = new Set()
   let failed = 0
+  const started = Date.now()
   for (let i = 0; i < GRID; i++) {
     for (let j = 0; j < GRID; j++) {
+      if (Date.now() - started > AREA_BUDGET_MS) {
+        failed++
+        console.warn(`  ${a.name} cell ${i},${j}: out of time, left for the next run`)
+        continue
+      }
       const cs = s + ((n - s) * i) / GRID
       const cn = s + ((n - s) * (i + 1)) / GRID
       const cw = w + ((e - w) * j) / GRID
       const ce = w + ((e - w) * (j + 1)) / GRID
       try {
-        const els = await overpass(`[out:json][timeout:300];
+        const t0 = Date.now()
+        const els = await overpass(`[out:json][timeout:180];
 ${HOSPITALS(`(${cs},${cw},${cn},${ce})`)}
-${WHAT("(area.ha)")}`, { timeoutMs: 360_000, retries: 1, endpoints: 3, gapMs: 6000 })
+${WHAT("(area.ha)")}`, { timeoutMs: 200_000, retries: 0, endpoints: 2, gapMs: 4000 })
+        console.log(`  ${a.name} cell ${i},${j}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s`)
         for (const el of els) {
           const k = `${el.type}${el.id}`
           if (!seen.has(k)) {
