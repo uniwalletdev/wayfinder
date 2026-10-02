@@ -118,8 +118,13 @@ jobs:
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
+      # Needs "Allow GitHub Actions to create and approve pull requests" under
+      # Settings → Actions → General. Without it the branch is still pushed and
+      # the summary says where to open the pull request by hand.
       - name: Open a pull request
         if: github.ref == 'refs/heads/main'
+        id: pr
+        continue-on-error: true
         uses: peter-evans/create-pull-request@v7
         with:
           branch: automation/world-data
@@ -135,3 +140,11 @@ jobs:
             summary has the counts. Data © OpenStreetMap contributors, ODbL 1.0.
           labels: automated, data
           delete-branch: true
+      - name: Say where the data went when no pull request could be opened
+        if: github.ref == 'refs/heads/main' && steps.pr.outcome == 'failure'
+        run: |
+          {
+            echo
+            echo "The refreshed data was pushed to the branch \`automation/world-data\` but GitHub Actions is not allowed to open pull requests in this repository (Settings → Actions → General → Workflow permissions)."
+            echo "Open it by hand: https://github.com/${GITHUB_REPOSITORY}/compare/main...automation/world-data?expand=1"
+          } >> "$GITHUB_STEP_SUMMARY"
