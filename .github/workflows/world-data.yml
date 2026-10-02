@@ -71,8 +71,7 @@ jobs:
           else node scripts/world/fetch-indoor.mjs --countries "$COUNTRIES" --max-detail "$MAX_DETAIL"; fi
 
       - name: Build the app's files
-        run: |
-          if [ -f scripts/world/build.mjs ]; then node scripts/world/build.mjs; fi
+        run: node scripts/world/build.mjs
 
       - name: Summarise
         if: always()
@@ -93,6 +92,11 @@ jobs:
               }
               const raw = "data/world/indoor-raw";
               if (fs.existsSync(raw)) console.log(`- indoor geometry downloaded for **${fs.readdirSync(raw).length}** hospitals`);
+              if (fs.existsSync("data/world/indoor-report.json")) {
+                const r = JSON.parse(fs.readFileSync("data/world/indoor-report.json"));
+                console.log(`- **${r.built.length}** indoor venues built: ` + r.built.slice(0, 12).map(x => `${x.name} (${x.country}, ${x.floors} floors, ${x.waypoints} places)`).join("; "));
+                if (r.refused.length) console.log(`- ${r.refused.length} refused: ` + r.refused.slice(0, 8).map(x => `${x.name} — ${x.reason}`).join("; "));
+              }
             '
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -104,7 +108,11 @@ jobs:
         run: |
           git config user.name "Findway data"
           git config user.email "data@findway.invalid"
-          git add -A data/world public/world public/floorplans/osm src/lib/world 2>/dev/null || true
+          # One pathspec that matches nothing makes git add refuse the lot, so
+          # only the folders that exist are named.
+          for p in data/world public/world public/floorplans/osm; do
+            [ -e "$p" ] && git add -A -- "$p"
+          done
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Refresh world hospital data from OpenStreetMap ($COUNTRIES)" -m "Data © OpenStreetMap contributors, ODbL 1.0."
           git pull --rebase origin "${GITHUB_REF_NAME}"
@@ -120,7 +128,6 @@ jobs:
             data/world
             public/world
             public/floorplans/osm
-            src/lib/world
           commit-message: "Refresh world hospital data from OpenStreetMap"
           title: "Refresh world hospital data from OpenStreetMap"
           body: |

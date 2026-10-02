@@ -19,6 +19,7 @@ export const ST_GEORGES_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: true,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Large multi-wing site; lifts serve all wings, step-free routes and Blue Badge parking (Car Parks 1 & 3). Main reception in Grosvenor Wing." },
   quickAccess: ["Emergency Department (ED)", "Grosvenor Wing Main Reception", "Major Trauma Ward", "Lanesborough Wing Outpatients", "Ingredients Restaurant & Costa Coffee"],
   floorPlans: [

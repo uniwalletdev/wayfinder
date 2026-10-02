@@ -28,6 +28,9 @@ interface Props {
   // Every other place the app knows, so a search for a hospital that is not
   // the open one offers to switch to it instead of "no results".
   otherVenues?: VenueSummary[]
+  // The visitor's country: only hospitals in it are offered, here and from
+  // the server's across-every-hospital search.
+  country?: string
   onSwitchVenue?: (id: string) => void
   // Picking a place found at ANOTHER hospital (served by /api/search): the app
   // switches venue and routes to it. Only offered when choosing a destination.
@@ -78,7 +81,7 @@ interface Item {
   render: (active: boolean, id: string) => React.ReactNode
 }
 
-export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", otherVenues = [], onSwitchVenue, onSelectRemote, onSelect, onClose }: Props) {
+export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", otherVenues = [], country, onSwitchVenue, onSelectRemote, onSelect, onClose }: Props) {
   const isOrigin = purpose === "origin"
   const searchPlaceholder = isOrigin ? "Choose a starting point…" : "Search a room, place or address…"
   const [query, setQuery] = useState("")
@@ -120,14 +123,14 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
   const venueHits = useMemo(() => {
     if (trimmed.length < 2 || !onSwitchVenue) return []
     return otherVenues
-      .filter((v) => v.id !== venueId && v.visibility === "public")
+      .filter((v) => v.id !== venueId && v.visibility === "public" && (!country || !v.country || v.country === country))
       .map((v) => ({ v, score: scoreWaypoint(trimmed, v.name, v.subtitle, "") }))
       .filter((x) => x.score > 0)
       // Mapped hospitals before location-only pins, then by match.
       .sort((a, b) => Number(b.v.mapped) - Number(a.v.mapped) || b.score - a.score || a.v.name.localeCompare(b.v.name))
       .slice(0, MAX_VENUE_HITS)
       .map((x) => x.v)
-  }, [trimmed, otherVenues, venueId, onSwitchVenue])
+  }, [trimmed, otherVenues, venueId, country, onSwitchVenue])
 
   // The full directory, grouped by floor and alphabetical within each: a
   // visitor who cannot spell the ward can still find it by browsing the floor
@@ -189,6 +192,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
       setRemoteLoading(true)
       try {
         const params = new URLSearchParams({ q: trimmed, exclude: venueId })
+        if (country) params.set("country", country)
         const res = await fetch(apiUrl(`/api/search?${params}`), { signal: controller.signal })
         const data = (await res.json()) as { results?: CrossVenueHit[] }
         setRemoteResults(Array.isArray(data.results) ? data.results : [])
@@ -202,7 +206,7 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
       controller.abort()
       clearTimeout(handle)
     }
-  }, [trimmed, venueId, onSelectRemote])
+  }, [trimmed, venueId, country, onSelectRemote])
 
   // Only surface geocoding state once the query is long enough to have been
   // searched; below that the stored results belong to an earlier, longer query.

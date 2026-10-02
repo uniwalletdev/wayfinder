@@ -14,6 +14,7 @@ export const SITE_1253769_HULL_TEACHING_CASTLE_HILL_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Hull University Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Outpatients (Queens)", "Reception (Main Hospital Reception Desk)", "Respiratory Diagnostic Centre", "Main Hospital"],
   floorPlans: [

@@ -17,6 +17,7 @@ export const QMH_VENUE: Venue = {
   defaultZoom: 18,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Main lifts and stairs serve all floors from the ground-floor main entrance; accessible toilets on every floor; drop-off/pick-up point at the main entrance." },
   quickAccess: ["Information desk", "Minor injuries unit", "Pharmacy", "Radiology", "Courtyard Restaurant"],
   floorPlans: [

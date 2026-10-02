@@ -17,6 +17,7 @@ export const RLH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Blue Badge drop-off by the main entrances; step-free entrances marked on the sheet." },
   quickAccess: ["Main Entrance", "Emergency Entrance", "Outpatients Department", "Dental Hospital"],
   floorPlans: [

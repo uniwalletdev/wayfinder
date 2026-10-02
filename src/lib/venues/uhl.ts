@@ -24,6 +24,7 @@ export const UHL_VENUE: Venue = {
   visibility: "public",
   // Real trust map data, but not owner-confirmed in-app — left unverified.
   verified: false,
+  country: "GB",
   accessibility: {
     stepFreeRoute: true,
     accessibleToilets: true,

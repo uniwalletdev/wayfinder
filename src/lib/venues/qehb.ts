@@ -14,6 +14,7 @@ export const QEHB_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Large acute site with numbered entrances 1–6; free shuttle bus between car parks and entrances. Nearest station University." },
   quickAccess: ["A&E", "Acute Medical Unit (AMU) entrance", "Cancer Centre"],
   floorPlans: [

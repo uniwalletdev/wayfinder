@@ -14,6 +14,7 @@ export const INTERNAL_SITE_MAP_NORTH_TEES_2019_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by North Tees and Hartlepool NHS Foundation Trust (2019 edition, still the one the trust links). It pre-dates the Emergency Assessment Unit opened in October 2025 and the new urgent and emergency care entrance, so emergency-care pins may be out of date. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Emergency Assessment Unit", "Emergency Department", "Urgent Care Centre", "Main Entrance and Reception"],
   floorPlans: [

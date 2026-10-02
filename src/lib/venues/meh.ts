@@ -16,6 +16,7 @@ export const MEH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Level site with marked building entrances, disabled parking by the Bancroft Unit, and lifts marked per block." },
   quickAccess: ["MHU Reception", "Grove Outpatients", "Imaging Department", "Restaurant", "Community Diagnostic Centre (CDC)"],
   floorPlans: [

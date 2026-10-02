@@ -14,6 +14,7 @@ export const ALEX_MAP_A4_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Worcestershire Acute Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Main Entrance", "A&E Entrance", "Accident & Emergency", "Outpatients, Antenatal and Primary Care Unit", "Outpatients ENT"],
   floorPlans: [

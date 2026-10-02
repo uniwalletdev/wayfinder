@@ -14,6 +14,7 @@ export const INTERNAL_SITE_MAP_HARTLEPOOL_2018_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by North Tees and Hartlepool NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
   quickAccess: ["Outpatients Entrance", "Reception", "Main Entrance 15", "Main Entrance (Reception) Car Park Pay Machine", "Hart Building"],
   floorPlans: [

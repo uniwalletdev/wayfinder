@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react"
 import { VenueSummary, VenueCategory, VenueVisibility, Coordinates } from "@/lib/types"
 import { NewVenueInput } from "@/lib/venues/core"
+import { HOME_COUNTRY, countryName, matchCountries } from "@/lib/country"
 import Overlay from "@/components/Overlay"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
@@ -24,8 +25,14 @@ interface Props {
   // Summaries, not full venues: the list must not cost every hospital's
   // interior. The venue is loaded when it is chosen.
   venues: VenueSummary[]
-  // True until the NHS directory half of the list has arrived.
+  // True until the directory half of the list has arrived.
   directoryLoading?: boolean
+  // The country whose public places are listed (ISO 3166-1 alpha-2). Public
+  // venues elsewhere are not shown at all: a visitor sees their own country's
+  // hospitals, and reaches another country only by searching for it, which
+  // calls onCountryChange.
+  country: string
+  onCountryChange: (code: string) => void
   activeVenueId: string
   // Centre used for a newly-created venue — the live GPS fix when available,
   // otherwise the current map centre.
@@ -82,7 +89,7 @@ const inputClass =
   "w-full rounded-xl border border-wf-border bg-white px-4 py-3 text-sm text-wf-ink outline-none placeholder:text-wf-muted focus:border-wf-primary"
 
 export default function VenuePicker({
-  venues, directoryLoading = false, activeVenueId, currentCenter, hasGps,
+  venues, directoryLoading = false, country, onCountryChange, activeVenueId, currentCenter, hasGps,
   onSelect, onCreate, onDelete, onClose,
 }: Props) {
   const [view, setView] = useState<"list" | "create">("list")
@@ -100,8 +107,12 @@ export default function VenuePicker({
 
   const [query, setQuery] = useState("")
 
-  const publicVenues = venues.filter((v) => v.visibility === "public")
+  // Public places in the visitor's country. A venue without a country is one
+  // someone made on this device, which is theirs wherever they are.
+  const publicVenues = venues.filter((v) => v.visibility === "public" && (!v.country || v.country === country))
   const otherVenues = venues.filter((v) => v.visibility !== "public")
+  // Typing a country's name is how someone reaches hospitals elsewhere.
+  const countryMatches = useMemo(() => matchCountries(query).filter((c) => c !== country), [query, country])
 
   // Split public venues into the fully-mapped places (real floor plans / points
   // — walk inside) and the location-only directory pins, each alphabetical. The
@@ -290,7 +301,7 @@ export default function VenuePicker({
           <ChevronRight size={16} className="text-wf-faint" aria-hidden="true" />
         </button>
 
-        <SectionLabel>Public places</SectionLabel>
+        <SectionLabel>Public places · {countryName(country)}</SectionLabel>
         <div className="px-4 py-2.5 lg:px-6">
           <div className="flex items-center gap-2 rounded-xl border border-wf-border bg-wf-surface px-3 py-2.5 focus-within:border-wf-primary">
             <Search size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
@@ -308,6 +319,22 @@ export default function VenuePicker({
             )}
           </div>
         </div>
+        {countryMatches.map((code) => (
+          <button
+            key={code}
+            onClick={() => { onCountryChange(code); setQuery("") }}
+            className="flex w-full items-center gap-3 border-b border-wf-border-faint px-4 py-3 text-left hover:bg-[#F7FAFD] lg:px-6"
+          >
+            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-wf-surface" aria-hidden="true">
+              <Globe size={18} className="text-wf-primary" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block truncate text-[14.5px] font-semibold text-wf-ink">Hospitals in {countryName(code)}</span>
+              <span className="block text-xs text-wf-muted">Show that country&apos;s places instead</span>
+            </span>
+            <ChevronRight size={16} className="text-wf-faint" aria-hidden="true" />
+          </button>
+        ))}
         {/* Fully-mapped hospitals first — you can walk inside these. */}
         {mappedVenues.length > 0 && (
           <div className="flex items-center gap-1.5 px-4 pb-1.5 pt-3 lg:px-6">
@@ -333,12 +360,17 @@ export default function VenuePicker({
 
         {directoryLoading && (
           <p className="flex items-center gap-2 px-4 py-3 text-xs text-wf-muted lg:px-6" role="status">
-            <Loader2 size={13} className="animate-spin" aria-hidden="true" /> Loading the NHS hospital directory…
+            <Loader2 size={13} className="animate-spin" aria-hidden="true" />{" "}
+            {country === HOME_COUNTRY ? "Loading the NHS hospital directory…" : `Loading hospitals in ${countryName(country)}…`}
           </p>
         )}
 
-        {!directoryLoading && mappedVenues.length === 0 && shownDirectory.length === 0 && (
-          <p className="px-4 py-6 text-center text-sm text-wf-muted">No places match “{query}”.</p>
+        {!directoryLoading && mappedVenues.length === 0 && shownDirectory.length === 0 && countryMatches.length === 0 && (
+          <p className="px-4 py-6 text-center text-sm text-wf-muted">
+            {query.trim()
+              ? `No places match “${query}”.`
+              : `No hospitals are listed for ${countryName(country)} yet. You can map a place yourself.`}
+          </p>
         )}
         {hiddenDirectoryCount > 0 && (
           <p className="px-4 py-3 text-center text-xs text-wf-muted">

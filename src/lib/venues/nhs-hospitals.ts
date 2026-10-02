@@ -61,6 +61,7 @@ export const NHS_HOSPITAL_VENUES: Venue[] = (() => {
       ...(odsCode ? { odsCode } : {}),
       ...(postcode ? { postcode } : {}),
       dataSource: "NHS Organisation Data Service",
+      country: "GB",
       ...(NHS_DATA_GENERATED_AT ? { updatedAt: NHS_DATA_GENERATED_AT } : {}),
     }
   })

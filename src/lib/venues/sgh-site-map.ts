@@ -14,6 +14,7 @@ export const SGH_SITE_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by St George's University Hospitals NHS Foundation Trust (2013). Identity and position corrected September 2026: the sheet draws the Tooting site, not Woking. Placed on the centre and scale of the hand-built St George's venue; the drawing itself has not been checked by eye." },
   quickAccess: ["Outpatients", "Urgent Treatment Centre (UTC)", "Emergency Department", "Emergency Ambulance Bay", "Entrance to Car Park 1 and 3"],
   floorPlans: [

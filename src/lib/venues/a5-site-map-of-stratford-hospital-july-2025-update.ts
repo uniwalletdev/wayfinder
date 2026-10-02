@@ -14,6 +14,7 @@ export const A5_SITE_MAP_OF_STRATFORD_HOSPITAL_JULY_2025_UPDATE_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by South Warwickshire University NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Outpatients", "Building Two", "Multi-Storey", "Radiology"],
   floorPlans: [

@@ -11,7 +11,7 @@
 // Writes data/world/indoor-candidates.json and data/world/indoor-raw/<id>.json.
 //
 // Run: node scripts/world/fetch-indoor.mjs [--countries LU,DE] [--min-rooms 8] [--max-detail 400]
-import { mkdirSync, readdirSync, readFileSync, writeFileSync, existsSync } from "fs"
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
 import { overpass, pointOf } from "./lib/overpass.mjs"
 
 const arg = (name, def) => {

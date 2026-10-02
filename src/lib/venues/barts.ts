@@ -18,6 +18,7 @@ export const BARTS_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Disabled access via all entrances; on-site Blue Badge parking. Main reception at the King Edward Street entrance." },
   quickAccess: ["Main Reception", "Minor Injuries", "Cafe and Restaurant", "Phlebotomy (blood tests)", "Maggie's Centre, Barts"],
   floorPlans: [

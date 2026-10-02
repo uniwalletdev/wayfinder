@@ -10,7 +10,7 @@
 // mapped venues.
 //
 // Run: node scripts/world/fetch-hospitals.mjs [--countries LU,DE] [--skip GB]
-import { mkdirSync, writeFileSync, existsSync, readFileSync } from "fs"
+import { mkdirSync, writeFileSync, existsSync } from "fs"
 import { overpass, pointOf, osmId } from "./lib/overpass.mjs"
 
 const OUT = "data/world/hospitals"

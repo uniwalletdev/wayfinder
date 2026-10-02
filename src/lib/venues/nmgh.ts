@@ -14,6 +14,7 @@ export const NMGH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map with lettered blocks A–J, colour-coded car parks and pedestrian/emergency entrances. Nearest Metrolink at Crumpsall." },
   quickAccess: ["Main Entrance", "Emergency Department (A&E)", "North Manchester House", "MRI Scanning"],
   floorPlans: [

@@ -14,6 +14,7 @@ export const HULL_ROYAL_INFIRMARY_SITE_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Hull University Teaching Hospitals NHS Trust (April 2024). Position corrected September 2026: the sheet was matched to an ODS record in HU4 and sat 2.4 km west of the infirmary; now centred on the Anlaby Road site (NHS ODS register). Scale is the drafted default and has not been checked by eye." },
   quickAccess: ["Emergency Department - Childrens", "Emergency Department", "Urgent Treatment Centre (UTC) - Building 7", "Hospital Car Park"],
   floorPlans: [

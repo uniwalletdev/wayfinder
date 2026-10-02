@@ -14,6 +14,7 @@ export const NGH_HOSPITAL_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Northampton General Hospital NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Emergency Department & Paeds ED", "Urgent Care Centre", "Main Entrance", "Emergency Department Entrance"],
   floorPlans: [

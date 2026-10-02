@@ -14,6 +14,7 @@ export const DIANA_PRINCESS_OF_WALES_HOSPITAL_INTERNAL_2D_2025_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Northern Lincolnshire and Goole NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Emergency Department", "Entrance via Amethyst entrance", "Family Services", "Discharge Lounge", "Café Croft"],
   floorPlans: [

@@ -22,6 +22,8 @@ export interface CrossVenueHit {
 interface Entry {
   venueId: string
   venueName: string
+  // The venue's country, so a visitor is only offered hospitals in theirs.
+  country?: string
   naming?: FloorNaming
   w: Waypoint
 }
@@ -36,7 +38,7 @@ export function buildCrossVenueIndex(venues: Venue[]): CrossVenueIndex {
   const entries: Entry[] = []
   for (const v of venues) {
     if (v.visibility !== "public") continue
-    for (const w of v.waypoints) entries.push({ venueId: v.id, venueName: v.name, naming: v.floorNaming, w })
+    for (const w of v.waypoints) entries.push({ venueId: v.id, venueName: v.name, country: v.country, naming: v.floorNaming, w })
   }
   return { entries }
 }
@@ -48,7 +50,7 @@ const PER_VENUE = 3
 export function searchAcrossVenues(
   index: CrossVenueIndex,
   query: string,
-  opts: { exclude?: string; limit?: number } = {}
+  opts: { exclude?: string; limit?: number; country?: string } = {}
 ): CrossVenueHit[] {
   const q = query.trim()
   if (q.length < 2) return []
@@ -56,6 +58,7 @@ export function searchAcrossVenues(
   const scored: { e: Entry; score: number }[] = []
   for (const e of index.entries) {
     if (opts.exclude && e.venueId === opts.exclude) continue
+    if (opts.country && e.country && e.country !== opts.country) continue
     const score = scoreWaypoint(q, e.w.name, e.w.description, WAYPOINT_TYPE_LABELS[e.w.type])
     if (score > 0) scored.push({ e, score })
   }

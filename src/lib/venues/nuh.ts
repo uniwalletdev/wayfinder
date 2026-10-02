@@ -18,6 +18,7 @@ export const NUH_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Disabled parking and drop-off marked at the main entrances; pedestrian crossings marked on the welcome map." },
   quickAccess: ["Main Hospital Entrance", "Emergency Department", "Urgent Care Centre (UCC)", "Main Reception St Andrews Wing", "Pharmacy"],
   floorPlans: [

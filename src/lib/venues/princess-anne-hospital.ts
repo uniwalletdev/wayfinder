@@ -14,6 +14,7 @@ export const PRINCESS_ANNE_HOSPITAL_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "6 floor plans published by University Hospital Southampton NHS Foundation Trust. Placement is derived automatically (centre from the NHS ODS register) and has not been checked by eye." },
   quickAccess: ["University Hospital Southampton", "Stairwell", "Lift", "Male WC", "Female WC"],
   floorPlans: [

@@ -14,6 +14,7 @@ export const PINDERFIELDS_HOSPITAL_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by Mid Yorkshire Teaching NHS Trust. Position corrected September 2026: the sheet was matched to the Dewsbury record and sat ten miles west of the hospital it draws; now centred on Pinderfields, Aberford Road. Scale is the drafted estimate and has not been checked by eye." },
   quickAccess: ["Main Entrance", "Accident and Emergency Entrance (A&E)"],
   floorPlans: [

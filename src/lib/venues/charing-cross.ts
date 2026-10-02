@@ -14,6 +14,7 @@ export const CHARING_CROSS_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map with building entrances, step-free routes and the nearest Underground stations (Hammersmith, Barons Court, West Kensington)." },
   quickAccess: ["Main entrance", "A&E", "A&E and Urgent Treatment Centre entrance", "Main outpatients", "Tower block"],
   floorPlans: [

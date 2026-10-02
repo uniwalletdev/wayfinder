@@ -19,6 +19,7 @@ export const LINCOLN_COUNTY_HOSPITAL_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "3 floor plans published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale estimated) and has not been checked by eye." },
   floorNaming: { word: "Level", groundLevel: 2 },
   quickAccess: ["Main Entrance", "Emergency Department (A&E)", "Urgent Treatment Centre", "Reception", "Blood Tests"],

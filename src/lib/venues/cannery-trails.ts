@@ -30,6 +30,7 @@ export const CANNERY_TRAILS_VENUE: Venue = {
   defaultZoom: 19,
   visibility: "public",
   verified: false,
+  country: "US",
   accessibility: {
     stepFreeRoute: true,
     accessibleToilets: true,

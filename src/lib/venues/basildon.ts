@@ -17,6 +17,7 @@ export const BASILDON_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Level isometric site with marked entrances, accessible parking and information points; levels A-D served by lifts." },
   quickAccess: ["Main Entrance", "Emergency Department", "X-Ray", "The Essex Cardiothoracic Centre", "Outpatients Entrance"],
   floorPlans: [

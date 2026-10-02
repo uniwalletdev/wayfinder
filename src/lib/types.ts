@@ -171,6 +171,11 @@ export interface Venue {
   postcode?: string
   address?: string[]
   dataSource?: string
+  // ISO 3166-1 alpha-2 code of the country the venue is in ("GB", "LU"). The
+  // app shows a visitor the places of the country they are in (see
+  // src/lib/country.ts), so every public seed venue carries one. Absent on a
+  // user-created venue, which is listed regardless.
+  country?: string
   createdAt?: string
   updatedAt?: string
 }
@@ -192,6 +197,7 @@ export interface VenueSummary {
   verified: boolean
   illustrative?: boolean
   odsCode?: string
+  country?: string
   // True when it can be walked inside: it ships a floor plan or mapped points.
   mapped: boolean
 }

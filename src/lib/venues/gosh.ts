@@ -44,6 +44,7 @@ export const GOSH_VENUE: Venue = {
   defaultZoom: 18,
   visibility: "public",
   verified: true,
+  country: "GB",
   accessibility: {
     stepFreeRoute: true,
     accessibleToilets: true,

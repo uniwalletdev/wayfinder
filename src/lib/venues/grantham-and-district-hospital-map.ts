@@ -14,6 +14,7 @@ export const GRANTHAM_AND_DISTRICT_HOSPITAL_MAP_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "Site map published by United Lincolnshire Teaching Hospitals NHS Trust. Placement is derived automatically (centre from the NHS ODS register, scale from the OpenStreetMap footprint) and has not been checked by eye." },
   quickAccess: ["Emergency Assessment Unit", "Urgent Treatment Centre", "Urgent Treatment Centre Entrance", "Main Entrance", "Harrowby Ward"],
   floorPlans: [

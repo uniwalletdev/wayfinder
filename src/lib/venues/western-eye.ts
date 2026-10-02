@@ -14,6 +14,7 @@ export const WESTERN_EYE_VENUE: Venue = {
   defaultZoom: 17,
   visibility: "public",
   verified: false,
+  country: "GB",
   accessibility: { stepFreeRoute: true, accessibleToilets: true, notes: "24-hour eye A&E. Nearest stations Marylebone, Baker Street and Edgware Road; floor legend GF–4." },
   quickAccess: ["Eye A&E department", "Macular clinic Optician Toilets", "Day care unit Theatres"],
   floorPlans: [
