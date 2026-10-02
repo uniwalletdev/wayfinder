@@ -33,6 +33,9 @@ on:
       max_detail:
         description: "Most hospitals to download indoor geometry for"
         default: "400"
+      budget_min:
+        description: "Minutes for the grounds stage in all, smallest countries first; blank for no limit"
+        default: ""
   push:
     paths:
       - "scripts/world/**"
@@ -61,10 +64,12 @@ env:
   # the scripts is checked within the hour. The schedule and a manual run
   # cover every state.
   CAMPUS_AREAS: ${{ github.event_name == 'push' && 'US-CA,US-TX,US-FL,US-NY,US-PA,US-IL,US-OH,US-GA,US-NC,US-MI,US-NJ,US-VA,US-WA,US-AZ,US-MA,US-CO' || '' }}
-  # ...and thirty minutes in all for the grounds, smallest countries first;
-  # what is not reached waits for the next run, and the database keeps the
-  # maps a run did not get to. Overpass has days when one state takes an hour.
-  CAMPUS_BUDGET_MIN: ${{ github.event_name == 'push' && '30' || '' }}
+  # The grounds stage has no time limit unless a manual run gives it one: on
+  # a slow Overpass day a run takes hours, and a complete answer late is
+  # preferred to a partial one on time. With a limit, what is not reached
+  # waits for the next run, and the database keeps the maps a run did not
+  # get to.
+  CAMPUS_BUDGET_MIN: ${{ inputs.budget_min || '' }}
   # The shared Postgres the website reads from (Railway's public URL). Without
   # it the run still builds and reports, and publishes nothing.
   DATABASE_URL: ${{ secrets.DATABASE_URL }}

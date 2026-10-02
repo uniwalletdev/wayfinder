@@ -28,9 +28,10 @@ mkdirSync(OUT, { recursive: true })
 // An overall limit for the stage. Past it, the areas and countries not yet
 // asked for are left for the next run, logged as such, and the run goes on to
 // build and publish what it has; a map the run did not get to stays in the
-// database (publish.mjs). A push run sets one so a change to the scripts is
-// checked within the hour whatever state Overpass is in — on a slow day
-// sixteen states took hours. The schedule and a manual run set none.
+// database (publish.mjs). No run sets one by default — a complete answer
+// hours late is preferred to a partial one on time — but a manual run can
+// (the workflow's budget_min input), for a quick check of the scripts on a
+// slow Overpass day.
 const budgetMin = Number(arg("--budget-min")) || 0
 const deadline = budgetMin ? Date.now() + budgetMin * 60_000 : Infinity
 const msLeft = () => deadline - Date.now()
