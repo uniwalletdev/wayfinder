@@ -68,8 +68,61 @@ ${WHAT("(area.ha)")}`, { timeoutMs: 360_000, retries: 0, endpoints: 2 })
 async function subdivisions(code) {
   const els = await overpass(`[out:json][timeout:180];
 relation["boundary"="administrative"]["admin_level"="4"]["ISO3166-2"~"^${code}-"];
-out tags;`)
-  return [...new Set(els.map((e) => e.tags["ISO3166-2"]).filter(Boolean))].sort()
+out tags bb;`)
+  const seen = new Map()
+  for (const e of els) {
+    const iso = e.tags["ISO3166-2"]
+    if (!iso || seen.has(iso)) continue
+    const b = e.bounds
+    seen.set(iso, { name: iso, filter: `area["ISO3166-2"="${iso}"]->.c;`, bbox: b ? [b.minlat, b.minlon, b.maxlat, b.maxlon] : null })
+  }
+  return [...seen.values()].sort((a, b) => a.name.localeCompare(b.name))
+}
+
+// When the server cannot answer for a whole state or country at once (504s
+// under load are common), the same question is asked for each cell of a grid
+// over its bounding box, which is a fraction of the work per query. A cell
+// that still fails is skipped; the rest are kept.
+const GRID = 3
+async function fetchGrounds(a) {
+  let firstErr
+  try {
+    return await fetchArea(a.filter)
+  } catch (err) {
+    firstErr = err
+    if (!a.bbox) throw err
+  }
+  console.warn(`  ${a.name}: whole area failed (${String(firstErr.message ?? firstErr).slice(0, 80)}); trying ${GRID}×${GRID} cells`)
+  const [s, w, n, e] = a.bbox
+  const out = []
+  const seen = new Set()
+  let failed = 0
+  for (let i = 0; i < GRID; i++) {
+    for (let j = 0; j < GRID; j++) {
+      const cs = s + ((n - s) * i) / GRID
+      const cn = s + ((n - s) * (i + 1)) / GRID
+      const cw = w + ((e - w) * j) / GRID
+      const ce = w + ((e - w) * (j + 1)) / GRID
+      try {
+        const els = await overpass(`[out:json][timeout:300];
+${HOSPITALS(`(${cs},${cw},${cn},${ce})`)}
+${WHAT("(area.ha)")}`, { timeoutMs: 360_000, retries: 1, endpoints: 3, gapMs: 6000 })
+        for (const el of els) {
+          const k = `${el.type}${el.id}`
+          if (!seen.has(k)) {
+            seen.add(k)
+            out.push(el)
+          }
+        }
+      } catch (err) {
+        failed++
+        console.warn(`  ${a.name} cell ${i},${j}: failed (${String(err.message ?? err).slice(0, 60)})`)
+      }
+    }
+  }
+  if (failed === GRID * GRID) throw new Error("every cell failed")
+  if (failed) console.warn(`  ${a.name}: ${failed} of ${GRID * GRID} cells failed`)
+  return out
 }
 
 // Grid index of hospital outlines, so attributing a hundred thousand elements
@@ -115,14 +168,20 @@ for (const code of countries) {
   let areas
   if (hospitals.length > SPLIT_ABOVE) {
     try {
-      areas = (await subdivisions(code)).map((iso) => ({ name: iso, filter: `area["ISO3166-2"="${iso}"]->.c;` }))
+      areas = await subdivisions(code)
     } catch (err) {
       console.warn(`${code}: could not list subdivisions (${String(err.message ?? err).slice(0, 100)})`)
       continue
     }
-    if (onlyAreas) areas = areas.filter((a) => onlyAreas.includes(a.name))
+    // --areas narrows only the countries it names: a list of US states must
+    // not empty Germany's Länder.
+    const mine = onlyAreas?.filter((x) => x.startsWith(`${code}-`))
+    if (mine?.length) areas = areas.filter((a) => mine.includes(a.name))
   } else {
-    areas = [{ name: code, filter: `area["ISO3166-1"="${code}"]["admin_level"="2"]->.c;` }]
+    // The country's own hospitals bound the fallback grid; no extra query.
+    const lats = outlined.map((h) => h.lat)
+    const lngs = outlined.map((h) => h.lng)
+    areas = [{ name: code, filter: `area["ISO3166-1"="${code}"]["admin_level"="2"]->.c;`, bbox: [Math.min(...lats) - 0.05, Math.min(...lngs) - 0.05, Math.max(...lats) + 0.05, Math.max(...lngs) + 0.05] }]
   }
   let elements = 0
   let failed = 0
@@ -130,7 +189,7 @@ for (const code of countries) {
     let els
     const t0 = Date.now()
     try {
-      els = await fetchArea(a.filter)
+      els = await fetchGrounds(a)
     } catch (err) {
       failed++
       console.warn(`  ${a.name}: failed (${String(err.message ?? err).slice(0, 100)})`)

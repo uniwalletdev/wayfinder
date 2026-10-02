@@ -28,10 +28,10 @@ const MIN_GAP_MS = Number(process.env.OVERPASS_GAP_MS ?? 2500)
 // `retries` is per endpoint (default 3, as for the small queries); `endpoints`
 // caps how many instances are tried. A query the server itself times out after
 // 15 minutes must not be retried a dozen times across three instances.
-export async function overpass(query, { timeoutMs = 600_000, retries = 3, endpoints = ENDPOINTS.length } = {}) {
+export async function overpass(query, { timeoutMs = 600_000, retries = 3, endpoints = ENDPOINTS.length, gapMs = MIN_GAP_MS } = {}) {
   let lastErr
   for (const endpoint of ENDPOINTS.slice(0, endpoints)) {
-    const wait = lastRequestAt + MIN_GAP_MS - Date.now()
+    const wait = lastRequestAt + gapMs - Date.now()
     if (wait > 0) await sleep(wait)
     lastRequestAt = Date.now()
     try {
