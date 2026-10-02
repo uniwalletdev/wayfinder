@@ -1,0 +1,51 @@
+{
+ "generatedAt": "2026-10-02T07:27:06.421Z",
+ "attribution": "© OpenStreetMap contributors (ODbL)",
+ "countries": {
+  "AT": {
+   "name": "Austria",
+   "hospitals": 183,
+   "mapped": 1
+  },
+  "BE": {
+   "name": "Belgium",
+   "hospitals": 265,
+   "mapped": 0
+  },
+  "CH": {
+   "name": "Switzerland",
+   "hospitals": 296,
+   "mapped": 0
+  },
+  "DE": {
+   "name": "Germany",
+   "hospitals": 2342,
+   "mapped": 4
+  },
+  "DK": {
+   "name": "Denmark",
+   "hospitals": 185,
+   "mapped": 0
+  },
+  "IE": {
+   "name": "Ireland",
+   "hospitals": 183,
+   "mapped": 0
+  },
+  "LU": {
+   "name": "Luxembourg",
+   "hospitals": 15,
+   "mapped": 0
+  },
+  "NL": {
+   "name": "Netherlands",
+   "hospitals": 200,
+   "mapped": 1
+  },
+  "US": {
+   "name": "United States",
+   "hospitals": 7376,
+   "mapped": 6
+  }
+ }
+}

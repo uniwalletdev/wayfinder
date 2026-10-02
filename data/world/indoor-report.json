@@ -1,0 +1,199 @@
+{
+ "generatedAt": "2026-10-02T07:27:06.421Z",
+ "built": [
+  {
+   "id": "osm-us-r21411763",
+   "country": "US",
+   "name": "The Good Shepherd Rehabilitation Hospital",
+   "rooms": 51,
+   "waypoints": 121,
+   "named": 52,
+   "floors": 3,
+   "trails": 119,
+   "corridorM": 608,
+   "extentM": [
+    79,
+    78
+   ]
+  },
+  {
+   "id": "osm-de-r6205279",
+   "country": "DE",
+   "name": "Universitätsklinikum Carl Gustav Carus",
+   "rooms": 23,
+   "waypoints": 226,
+   "named": 17,
+   "floors": 6,
+   "trails": 113,
+   "corridorM": 1239,
+   "extentM": [
+    196,
+    133
+   ]
+  },
+  {
+   "id": "osm-us-w1421285994",
+   "country": "US",
+   "name": "AdventHealth Castle Rock Emergency Department",
+   "rooms": 49,
+   "waypoints": 33,
+   "named": 19,
+   "floors": 1,
+   "trails": 0,
+   "corridorM": 0,
+   "extentM": [
+    81,
+    70
+   ]
+  },
+  {
+   "id": "osm-de-w361240594",
+   "country": "DE",
+   "name": "Universitätsklinikum Ulm",
+   "rooms": 29,
+   "waypoints": 51,
+   "named": 20,
+   "floors": 6,
+   "trails": 47,
+   "corridorM": 314,
+   "extentM": [
+    151,
+    88
+   ]
+  },
+  {
+   "id": "osm-us-w38198942",
+   "country": "US",
+   "name": "Kaiser Permanente Santa Clara Medical Center",
+   "rooms": 13,
+   "waypoints": 165,
+   "named": 85,
+   "floors": 4,
+   "trails": 31,
+   "corridorM": 2154,
+   "extentM": [
+    303,
+    239
+   ]
+  },
+  {
+   "id": "osm-nl-w400026613",
+   "country": "NL",
+   "name": "Universitair Medisch Centrum Groningen",
+   "rooms": 32,
+   "waypoints": 143,
+   "named": 57,
+   "floors": 6,
+   "trails": 60,
+   "corridorM": 1333,
+   "extentM": [
+    469,
+    351
+   ]
+  },
+  {
+   "id": "osm-us-w463483594",
+   "country": "US",
+   "name": "Ruby Memorial Hospital",
+   "rooms": 10,
+   "waypoints": 10,
+   "named": 10,
+   "floors": 2,
+   "trails": 0,
+   "corridorM": 0,
+   "extentM": [
+    108,
+    268
+   ]
+  },
+  {
+   "id": "osm-us-w471352511",
+   "country": "US",
+   "name": "Denver Health Medical Center",
+   "rooms": 515,
+   "waypoints": 775,
+   "named": 535,
+   "floors": 12,
+   "trails": 64,
+   "corridorM": 644,
+   "extentM": [
+    220,
+    152
+   ]
+  },
+  {
+   "id": "osm-us-w580881275",
+   "country": "US",
+   "name": "AdventHealth Castle Rock Hospital",
+   "rooms": 248,
+   "waypoints": 185,
+   "named": 83,
+   "floors": 6,
+   "trails": 0,
+   "corridorM": 0,
+   "extentM": [
+    457,
+    512
+   ]
+  },
+  {
+   "id": "osm-de-w583306346",
+   "country": "DE",
+   "name": "Campus Charité Mitte",
+   "rooms": 69,
+   "waypoints": 189,
+   "named": 16,
+   "floors": 6,
+   "trails": 7,
+   "corridorM": 163,
+   "extentM": [
+    565,
+    626
+   ]
+  },
+  {
+   "id": "osm-de-w892966689",
+   "country": "DE",
+   "name": "Krankenhaus Bad Arolsen",
+   "rooms": 20,
+   "waypoints": 32,
+   "named": 21,
+   "floors": 6,
+   "trails": 0,
+   "corridorM": 0,
+   "extentM": [
+    54,
+    30
+   ]
+  },
+  {
+   "id": "osm-at-w9451729",
+   "country": "AT",
+   "name": "Landeskrankenhaus Feldkirch",
+   "rooms": 20,
+   "waypoints": 102,
+   "named": 39,
+   "floors": 16,
+   "trails": 122,
+   "corridorM": 1521,
+   "extentM": [
+    210,
+    121
+   ]
+  }
+ ],
+ "refused": [
+  {
+   "id": "osm-us-r18181549",
+   "country": "US",
+   "name": "Malcolm Grow Medical Clinics and Surgery Center",
+   "reason": "0 rooms"
+  },
+  {
+   "id": "osm-at-r2764083",
+   "country": "AT",
+   "name": "AKH Wien",
+   "reason": "0 rooms"
+  }
+ ]
+}
