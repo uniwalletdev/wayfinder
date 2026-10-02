@@ -51,6 +51,11 @@ env:
   # A push that changes the scripts reuses hospital lists and indoor geometry
   # fetched in the last two days; the schedule and a manual run fetch afresh.
   REUSE_DAYS: ${{ github.event_name == 'push' && '2' || '0' }}
+  # Grounds are fetched state by state in the US; a push run covers the sixteen
+  # most populous states (about three fifths of US hospitals) so a change to
+  # the scripts is checked within the hour. The schedule and a manual run
+  # cover every state.
+  CAMPUS_AREAS: ${{ github.event_name == 'push' && 'US-CA,US-TX,US-FL,US-NY,US-PA,US-IL,US-OH,US-GA,US-NC,US-MI,US-NJ,US-VA,US-WA,US-AZ,US-MA,US-CO' || '' }}
 
 jobs:
   fetch:
@@ -79,7 +84,7 @@ jobs:
       - name: Hospital grounds
         run: |
           if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs
-          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES"; fi
+          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES" ${CAMPUS_AREAS:+--areas "$CAMPUS_AREAS"}; fi
 
       - name: Build the app's files
         run: node scripts/world/build.mjs
