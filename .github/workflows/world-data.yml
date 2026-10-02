@@ -61,6 +61,10 @@ env:
   # the scripts is checked within the hour. The schedule and a manual run
   # cover every state.
   CAMPUS_AREAS: ${{ github.event_name == 'push' && 'US-CA,US-TX,US-FL,US-NY,US-PA,US-IL,US-OH,US-GA,US-NC,US-MI,US-NJ,US-VA,US-WA,US-AZ,US-MA,US-CO' || '' }}
+  # ...and thirty minutes in all for the grounds, smallest countries first;
+  # what is not reached waits for the next run, and the database keeps the
+  # maps a run did not get to. Overpass has days when one state takes an hour.
+  CAMPUS_BUDGET_MIN: ${{ github.event_name == 'push' && '30' || '' }}
   # The shared Postgres the website reads from (Railway's public URL). Without
   # it the run still builds and reports, and publishes nothing.
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
@@ -91,8 +95,8 @@ jobs:
 
       - name: Hospital grounds
         run: |
-          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs
-          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES" ${CAMPUS_AREAS:+--areas "$CAMPUS_AREAS"}; fi
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs ${CAMPUS_BUDGET_MIN:+--budget-min "$CAMPUS_BUDGET_MIN"}
+          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES" ${CAMPUS_AREAS:+--areas "$CAMPUS_AREAS"} ${CAMPUS_BUDGET_MIN:+--budget-min "$CAMPUS_BUDGET_MIN"}; fi
 
       - name: Build the app's files
         run: node scripts/world/build.mjs

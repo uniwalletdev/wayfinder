@@ -12,7 +12,7 @@
 // [elements] } }. Not committed — it is large and build.mjs consumes it in the
 // same run.
 //
-// Run: node scripts/world/fetch-campus.mjs [--countries US,DE] [--areas US-CO,US-NY]
+// Run: node scripts/world/fetch-campus.mjs [--countries US,DE] [--areas US-CO,US-NY] [--budget-min 30]
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
 import { overpass, pointOf } from "./lib/overpass.mjs"
 
@@ -24,6 +24,21 @@ const only = arg("--countries")?.split(",").map((s) => s.trim().toUpperCase()).f
 const onlyAreas = arg("--areas")?.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean)
 const OUT = "data/world/campus-raw"
 mkdirSync(OUT, { recursive: true })
+
+// An overall limit for the stage. Past it, the areas and countries not yet
+// asked for are left for the next run, logged as such, and the run goes on to
+// build and publish what it has; a map the run did not get to stays in the
+// database (publish.mjs). A push run sets one so a change to the scripts is
+// checked within the hour whatever state Overpass is in — on a slow day
+// sixteen states took hours. The schedule and a manual run set none.
+const budgetMin = Number(arg("--budget-min")) || 0
+const deadline = budgetMin ? Date.now() + budgetMin * 60_000 : Infinity
+const msLeft = () => deadline - Date.now()
+// Not worth starting a query with less than this left.
+const MIN_QUERY_MS = 60_000
+// Two instances are tried in turn, so each gets half of what is left.
+const perTry = (ms, capMs) => Math.min(capMs, Math.floor(ms / 2))
+const serverSeconds = (ms, capSec) => Math.max(30, Math.min(capSec, Math.floor(ms / 2000) - 10))
 
 // Above this many hospitals a country is fetched by first-level subdivision
 // (US states, German Länder): the response for the whole country would be
@@ -55,14 +70,15 @@ const HOSPITALS = (selector) => `(
 )->.h;
 .h map_to_area->.ha;`
 
-// A state's grounds in one query. The server gets five minutes and one try
-// per instance on two instances: a state too heavy for that is skipped and
-// logged, rather than holding the run for hours.
-async function fetchArea(areaFilter) {
-  return overpass(`[out:json][timeout:300];
+// A state's grounds in one query. The server gets five minutes (less when
+// the stage's limit is closer) and one try per instance on two instances: a
+// state too heavy for that is skipped and logged, rather than holding the run
+// for hours.
+async function fetchArea(areaFilter, ms) {
+  return overpass(`[out:json][timeout:${serverSeconds(ms, 300)}];
 ${areaFilter}
 ${HOSPITALS("(area.c)")}
-${WHAT("(area.ha)")}`, { timeoutMs: 360_000, retries: 0, endpoints: 2 })
+${WHAT("(area.ha)")}`, { timeoutMs: perTry(ms, 360_000), retries: 0, endpoints: 2 })
 }
 
 async function subdivisions(code) {
@@ -83,14 +99,15 @@ out tags bb;`)
 // under load are common), the same question is asked for each cell of a grid
 // over its bounding box, which is a fraction of the work per query. A cell
 // that still fails is skipped; the rest are kept. One area gets twenty
-// minutes in all: past that the remaining cells are left for the next run
-// rather than holding the whole job.
+// minutes in all, or what is left of the stage's limit if that is less: past
+// that the remaining cells are left for the next run rather than holding the
+// whole job.
 const GRID = 3
 const AREA_BUDGET_MS = 20 * 60_000
 async function fetchGrounds(a) {
   let firstErr
   try {
-    return await fetchArea(a.filter)
+    return await fetchArea(a.filter, msLeft())
   } catch (err) {
     firstErr = err
     if (!a.bbox) throw err
@@ -100,10 +117,11 @@ async function fetchGrounds(a) {
   const out = []
   const seen = new Set()
   let failed = 0
-  const started = Date.now()
+  const areaDeadline = Math.min(Date.now() + AREA_BUDGET_MS, deadline)
   for (let i = 0; i < GRID; i++) {
     for (let j = 0; j < GRID; j++) {
-      if (Date.now() - started > AREA_BUDGET_MS) {
+      const left = areaDeadline - Date.now()
+      if (left < MIN_QUERY_MS) {
         failed++
         console.warn(`  ${a.name} cell ${i},${j}: out of time, left for the next run`)
         continue
@@ -114,9 +132,9 @@ async function fetchGrounds(a) {
       const ce = w + ((e - w) * (j + 1)) / GRID
       try {
         const t0 = Date.now()
-        const els = await overpass(`[out:json][timeout:180];
+        const els = await overpass(`[out:json][timeout:${serverSeconds(left, 180)}];
 ${HOSPITALS(`(${cs},${cw},${cn},${ce})`)}
-${WHAT("(area.ha)")}`, { timeoutMs: 200_000, retries: 0, endpoints: 2, gapMs: 4000 })
+${WHAT("(area.ha)")}`, { timeoutMs: perTry(left, 200_000), retries: 0, endpoints: 2, gapMs: 4000 })
         console.log(`  ${a.name} cell ${i},${j}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s`)
         for (const el of els) {
           const k = `${el.type}${el.id}`
@@ -168,10 +186,21 @@ function outlineIndex(hospitals) {
 }
 
 const files = readdirSync("data/world/hospitals").filter((f) => f.endsWith(".json"))
-const countries = files.map((f) => f.slice(0, 2)).filter((c) => !only || only.includes(c))
+const lists = new Map(
+  files.map((f) => f.slice(0, 2)).filter((c) => !only || only.includes(c)).map((c) => [c, JSON.parse(readFileSync(`data/world/hospitals/${c}.json`, "utf8")).hospitals])
+)
+// Smallest countries first: under a time limit the many quick ones finish,
+// and the United States gets what is left, state by state.
+const countries = [...lists.keys()].sort((a, b) => lists.get(a).length - lists.get(b).length || a.localeCompare(b))
 let totalHospitals = 0
+let countriesLeft = 0
 for (const code of countries) {
-  const { hospitals } = JSON.parse(readFileSync(`data/world/hospitals/${code}.json`, "utf8"))
+  if (msLeft() < MIN_QUERY_MS) {
+    countriesLeft++
+    console.warn(`${code}: out of time, left for the next run`)
+    continue
+  }
+  const hospitals = lists.get(code)
   const outlined = hospitals.filter((h) => h.bbox && /^osm-[wr]/.test(h.id))
   if (!outlined.length) continue
   const attribute = outlineIndex(outlined)
@@ -196,7 +225,13 @@ for (const code of countries) {
   }
   let elements = 0
   let failed = 0
+  let left = 0
   for (const a of areas) {
+    if (msLeft() < MIN_QUERY_MS) {
+      left++
+      console.warn(`  ${a.name}: out of time, left for the next run`)
+      continue
+    }
     let els
     const t0 = Date.now()
     try {
@@ -217,8 +252,13 @@ for (const code of countries) {
     }
     console.log(`  ${a.name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s`)
   }
-  writeFileSync(`${OUT}/${code}.json`, JSON.stringify({ country: code, generatedAt: new Date().toISOString(), areas: areas.length, failed, hospitals: Object.fromEntries(byHospital) }))
+  writeFileSync(
+    `${OUT}/${code}.json`,
+    JSON.stringify({ country: code, generatedAt: new Date().toISOString(), areas: areas.length, failed, left, complete: !failed && !left, hospitals: Object.fromEntries(byHospital) })
+  )
   totalHospitals += byHospital.size
-  console.log(`${code}: ${elements} elements on the grounds of ${byHospital.size} hospitals${failed ? ` (${failed} of ${areas.length} areas failed)` : ""}`)
+  const notes = [failed ? `${failed} of ${areas.length} areas failed` : "", left ? `${left} of ${areas.length} areas left for the next run` : ""].filter(Boolean)
+  console.log(`${code}: ${elements} elements on the grounds of ${byHospital.size} hospitals${notes.length ? ` (${notes.join("; ")})` : ""}`)
 }
+if (countriesLeft) console.warn(`\n${countriesLeft} of ${countries.length} countries left for the next run: the ${budgetMin}-minute limit ran out`)
 console.log(`\nGrounds fetched for ${totalHospitals} hospitals`)

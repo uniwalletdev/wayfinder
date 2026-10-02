@@ -5,9 +5,11 @@
 // refreshed to live in the repository, so the workflow runs this right after
 // the build, with DATABASE_URL from a secret. Each country is replaced whole
 // in one transaction: its hospitals, then the venues and plans built for it;
-// a hospital or venue that this run did not produce for a country it covered
-// is removed, so the database never says "walk inside" about a map that is
-// gone. Countries this run did not cover are left untouched.
+// a hospital this run did not list for a country it covered is removed, and
+// its map with it. A map the run did not rebuild stays as long as its hospital
+// is listed: a grounds fetch cut short by its time limit, or an indoor stage
+// that looked at fewer hospitals, is no reason to take a map away. Countries
+// this run did not cover are left untouched.
 //
 // Run: DATABASE_URL=postgres://… node scripts/world/publish.mjs
 import { existsSync, readdirSync, readFileSync } from "node:fs"
@@ -40,8 +42,11 @@ for (const f of venueFiles) {
 }
 
 const CHUNK = 500
+// The venue id a hospital row maps to: rows are osm-w123, venues osm-us-w123.
+const VENUE_ID_OF_ROW = "'osm-' || lower(h.country) || '-' || substr(h.id, 5)"
 let totalHospitals = 0
 let totalVenues = 0
+let totalKept = 0
 let totalPlans = 0
 for (const country of countries) {
   const file = JSON.parse(readFileSync(`${OUT}/${country}.json`, "utf8"))
@@ -90,15 +95,28 @@ for (const country of countries) {
       }
       await client.query("delete from public.world_plans where venue_id = $1 and not (plan_id = any($2::text[]))", [v.id, planIds])
     }
-    await client.query("delete from public.world_venues where country = $1 and not (id = any($2::text[]))", [country, venues.map((v) => v.id)])
+    await client.query(
+      `delete from public.world_venues v where v.country = $1
+         and not exists (select 1 from public.world_hospitals h where h.country = v.country and ${VENUE_ID_OF_ROW} = v.id)`,
+      [country]
+    )
+    // The list says "mapped" for the maps this run built; the kept ones count too.
+    await client.query(
+      `update public.world_hospitals h set mapped = true where h.country = $1 and not h.mapped
+         and exists (select 1 from public.world_venues v where v.id = ${VENUE_ID_OF_ROW})`,
+      [country]
+    )
+    const kept = await client.query("select count(*)::int as n from public.world_venues where country = $1", [country])
 
     await client.query(
-      `insert into public.world_countries (country, name, hospitals, mapped, generated_at, updated_at) values ($1, $2, $3, $4, $5, now())
+      `insert into public.world_countries (country, name, hospitals, mapped, generated_at, updated_at)
+       values ($1, $2, $3, (select count(*)::int from public.world_hospitals where country = $1 and mapped), $4, now())
        on conflict (country) do update set name = excluded.name, hospitals = excluded.hospitals, mapped = excluded.mapped,
          generated_at = excluded.generated_at, updated_at = now()`,
-      [country, file.name ?? null, rows.length, rows.filter((h) => h.mapped).length, file.generatedAt ?? null]
+      [country, file.name ?? null, rows.length, file.generatedAt ?? null]
     )
     await client.query("commit")
+    totalKept += kept.rows[0].n - venues.length
   } catch (err) {
     await client.query("rollback")
     throw err
@@ -108,4 +126,4 @@ for (const country of countries) {
   console.log(`${country}: ${rows.length} hospitals, ${venues.length} venues`)
 }
 await client.end()
-console.log(`\nPublished ${totalHospitals} hospitals, ${totalVenues} venues and ${totalPlans} plans for ${countries.length} countries`)
+console.log(`\nPublished ${totalHospitals} hospitals, ${totalVenues} venues and ${totalPlans} plans for ${countries.length} countries${totalKept ? `; ${totalKept} venues from earlier runs kept` : ""}`)
