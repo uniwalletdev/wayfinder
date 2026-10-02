@@ -82,7 +82,9 @@ same Railway database the venue store uses) rather than in the repository or
 the app bundle. `src/lib/world-db.ts` reads it and these routes serve it,
 cached at the edge:
 
+- `/api/world` — every published country with its counts of hospitals, site maps and indoor maps
 - `/api/world/<CC>` — a country's directory
+- `/api/world/<CC>/maps` — the site maps and indoor maps built for a country, richest first, without the venues themselves
 - `/api/world/nearest?country=&lat=&lng=` — the hospitals nearest a position, which is what a visitor outside the UK opens on, without downloading the list
 - `/api/world/hospitals/<id>` and `/api/world/venues/<id>` — one hospital, or its built map
 - `/api/world/plans/<id>/<plan>.svg` — a floor plan
@@ -94,7 +96,17 @@ routes answer 404 and a country reads as having no hospitals listed yet. The
 UK's NHS directory stays in the bundle.
 
 The workflow needs `DATABASE_URL` as a repository secret (Railway → Postgres →
-Connect → Public Network → Connection URL) to publish.
+Connect → Public Network → Connection URL) to publish. The run's summary says
+whether it did.
+
+### Seeing everything that has been published
+
+`/coverage` on the site (and in the apps) lists every country, its counts and
+a card per site map and indoor map, with a thumbnail of the plan, that opens
+it in the app. It starts on the visitor's own country and takes
+`?country=US` to start on another, so a link to one country can be shared.
+The UK's maps are listed from the bundle. The page is not linked from the
+visitor's screens, which only ever show their own country.
 
 ## Licence
 

@@ -98,15 +98,23 @@ jobs:
         run: node scripts/world/build.mjs
 
       - name: Publish to the database
+        id: publish
         if: env.DATABASE_URL != ''
         run: node scripts/world/publish.mjs
 
       - name: Summarise
         if: always()
+        env:
+          PUBLISHED: ${{ steps.publish.outcome }}
         run: |
           {
             echo "## World hospital data ($COUNTRIES)"
             echo
+            case "$PUBLISHED" in
+              success) echo "- published to the shared database: every country and map is listed at /coverage on the site" ;;
+              failure) echo "- **publishing to the database failed**: see the Publish to the database step" ;;
+              *) echo "- **not published**: add the DATABASE_URL repository secret (docs/world-data.md)" ;;
+            esac
             node -e '
               const fs = require("fs");
               const dir = "data/world/hospitals";

@@ -225,3 +225,80 @@ export async function getPlan(venueId: string, planId: string): Promise<string |
   const res = await query<{ svg: string }>("select svg from public.world_plans where venue_id = $1 and plan_id = $2", [venueId, planId])
   return res.rowCount ? res.rows[0].svg : null
 }
+
+// ---- coverage: what has been published, for the /coverage page -----------
+
+export interface WorldCountrySummary {
+  country: string
+  name?: string
+  hospitals: number
+  indoor: number
+  siteMaps: number
+  generatedAt?: string
+}
+
+// Every published country with its counts, largest first.
+export async function listCountries(): Promise<WorldCountrySummary[]> {
+  await ensureWorldSchema()
+  const res = await query<{ country: string; name: string | null; hospitals: number; indoor: number; site_maps: number; generated_at: Date | null }>(
+    `select c.country, c.name, c.hospitals, c.generated_at,
+            (count(v.id) filter (where v.kind = 'indoor'))::int as indoor,
+            (count(v.id) filter (where v.kind = 'campus'))::int as site_maps
+       from public.world_countries c left join public.world_venues v on v.country = c.country
+      group by c.country order by c.hospitals desc, c.country`
+  )
+  return res.rows.map((r) => ({
+    country: r.country,
+    ...(r.name ? { name: r.name } : {}),
+    hospitals: r.hospitals,
+    indoor: r.indoor,
+    siteMaps: r.site_maps,
+    ...(r.generated_at ? { generatedAt: r.generated_at.toISOString() } : {}),
+  }))
+}
+
+export interface WorldMapSummary {
+  id: string
+  name: string
+  kind: "indoor" | "campus"
+  city?: string
+  lat: number
+  lng: number
+  // Floor plans: one for a site map, one per storey for an indoor map.
+  floors: number
+  // Places a visitor can be guided to.
+  places: number
+  // The first plan, for a thumbnail: /api/world/plans/<id>/<plan>.svg.
+  plan: string
+}
+
+// The venues built for a country, the richest first. The city comes from the
+// hospital's row: a venue id is osm-<cc>-<osm id>, a hospital row osm-<osm id>.
+export async function listMaps(country: string): Promise<WorldMapSummary[]> {
+  await ensureWorldSchema()
+  const res = await query<{ id: string; kind: "indoor" | "campus"; name: string; city: string | null; lat: number; lng: number; floors: number; places: number; plan: string | null }>(
+    `select v.id, v.kind, v.venue->>'name' as name, h.city,
+            (v.venue->'center'->>'lat')::float8 as lat, (v.venue->'center'->>'lng')::float8 as lng,
+            coalesce(jsonb_array_length(v.venue->'floorPlans'), 0) as floors,
+            coalesce(jsonb_array_length(v.venue->'waypoints'), 0) as places,
+            v.venue->'floorPlans'->0->>'id' as plan
+       from public.world_venues v
+       left join public.world_hospitals h on h.country = v.country and h.id = 'osm-' || split_part(v.id, '-', 3)
+      where v.country = $1
+      order by places desc, name`,
+    [country]
+  )
+  return res.rows
+    .filter((r) => r.plan)
+    .map((r) => ({
+      id: r.id,
+      name: r.name,
+      kind: r.kind,
+      ...(r.city ? { city: r.city } : {}),
+      lat: r.lat,
+      lng: r.lng,
+      floors: r.floors,
+      places: r.places,
+      plan: r.plan as string,
+    }))
+}
