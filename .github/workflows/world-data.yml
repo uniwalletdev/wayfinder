@@ -48,6 +48,9 @@ env:
   # monthly schedule and a manual run with ALL cover the world.
   COUNTRIES: ${{ github.event_name == 'push' && 'LU,BE,NL,CH,AT,DE,DK,IE,US' || inputs.countries || 'ALL' }}
   MAX_DETAIL: ${{ github.event_name == 'push' && '60' || inputs.max_detail || '400' }}
+  # A push that changes the scripts reuses hospital lists and indoor geometry
+  # fetched in the last two days; the schedule and a manual run fetch afresh.
+  REUSE_DAYS: ${{ github.event_name == 'push' && '2' || '0' }}
 
 jobs:
   fetch:
@@ -65,13 +68,13 @@ jobs:
 
       - name: Hospitals per country
         run: |
-          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-hospitals.mjs
-          else node scripts/world/fetch-hospitals.mjs --countries "$COUNTRIES"; fi
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-hospitals.mjs --reuse-days "$REUSE_DAYS"
+          else node scripts/world/fetch-hospitals.mjs --countries "$COUNTRIES" --reuse-days "$REUSE_DAYS"; fi
 
       - name: Indoor mapping
         run: |
-          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-indoor.mjs --max-detail "$MAX_DETAIL"
-          else node scripts/world/fetch-indoor.mjs --countries "$COUNTRIES" --max-detail "$MAX_DETAIL"; fi
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-indoor.mjs --max-detail "$MAX_DETAIL" --reuse-days "$REUSE_DAYS"
+          else node scripts/world/fetch-indoor.mjs --countries "$COUNTRIES" --max-detail "$MAX_DETAIL" --reuse-days "$REUSE_DAYS"; fi
 
       - name: Hospital grounds
         run: |

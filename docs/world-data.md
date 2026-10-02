@@ -35,8 +35,9 @@ because Overpass is not reachable from sandboxed development machines:
 | 2b | `fetch-campus.mjs` | `data/world/campus-raw/<CC>.json` (not committed) — what is mapped on every hospital's grounds: buildings, entrances, car parks, facilities, footpaths. Countries with more than a thousand hospitals are fetched by state or Land |
 | 3 | `build.mjs` | `public/world/<CC>.json` (what the app reads), `public/world/venues/<id>.json` and `public/floorplans/osm/<id>/*.svg` for the hospitals with indoor maps or site maps, `data/world/indoor-report.json`, `data/world/campus-report.json` |
 
-A push that touches `scripts/world/` runs a sample of countries and commits the
-results back to the branch. The monthly schedule, or *Run workflow* with
+A push that touches `scripts/world/` runs a sample of countries, reusing
+hospital lists and indoor geometry fetched in the last two days, and commits
+the results back to the branch. The monthly schedule, or *Run workflow* with
 `ALL`, covers the world and opens a pull request.
 
 ## What an indoor map becomes

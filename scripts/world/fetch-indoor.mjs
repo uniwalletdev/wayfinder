@@ -10,8 +10,10 @@
 // Reads data/world/hospitals/<CC>.json (stage 1) to know the hospital outlines.
 // Writes data/world/indoor-candidates.json and data/world/indoor-raw/<id>.json.
 //
-// Run: node scripts/world/fetch-indoor.mjs [--countries LU,DE] [--min-rooms 6] [--max-detail 400]
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
+// Run: node scripts/world/fetch-indoor.mjs [--countries LU,DE] [--min-rooms 6] [--max-detail 400] [--reuse-days N]
+// --reuse-days keeps the candidate scan and the downloaded geometry when they
+// are younger than N days.
+import { mkdirSync, readdirSync, readFileSync, writeFileSync, existsSync } from "fs"
 import { overpass, pointOf } from "./lib/overpass.mjs"
 
 const arg = (name, def) => {
@@ -21,6 +23,8 @@ const arg = (name, def) => {
 const only = arg("--countries", null)?.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean)
 const MIN_ROOMS = Number(arg("--min-rooms", 6))
 const MAX_DETAIL = Number(arg("--max-detail", 400))
+const reuseDays = Number(arg("--reuse-days", 0))
+const freshAt = (at) => !!reuseDays && !!at && Date.now() - Date.parse(at) < reuseDays * 86_400_000
 const RAW = "data/world/indoor-raw"
 mkdirSync(RAW, { recursive: true })
 
@@ -40,8 +44,15 @@ const levelsOf = (v) =>
       return part.trim() ? [part.trim()] : []
     })
 
-const candidates = []
-for (const code of countries) {
+// A scan from the last few days covering these countries is reused.
+let previous = null
+if (existsSync("data/world/indoor-candidates.json")) {
+  const p = JSON.parse(readFileSync("data/world/indoor-candidates.json", "utf8"))
+  if (freshAt(p.generatedAt) && Array.isArray(p.countries) && countries.every((c) => p.countries.includes(c))) previous = p
+}
+const candidates = previous ? previous.candidates.filter((c) => countries.includes(c.country)) : []
+if (previous) console.log(`reusing the indoor scan from ${previous.generatedAt}`)
+for (const code of previous ? [] : countries) {
   const { hospitals } = JSON.parse(readFileSync(`data/world/hospitals/${code}.json`, "utf8"))
   const outlined = hospitals.filter((h) => h.bbox && /^osm-[wr]/.test(h.id))
   if (outlined.length === 0) continue
@@ -94,13 +105,22 @@ out tags center qt;`)
 }
 
 candidates.sort((a, b) => b.named - a.named || b.rooms - a.rooms)
-writeFileSync("data/world/indoor-candidates.json", JSON.stringify({ generatedAt: new Date().toISOString(), minRooms: MIN_ROOMS, candidates }, null, 1) + "\n")
+if (!previous) writeFileSync("data/world/indoor-candidates.json", JSON.stringify({ generatedAt: new Date().toISOString(), countries, minRooms: MIN_ROOMS, candidates }, null, 1) + "\n")
 const worth = candidates.filter((c) => c.rooms >= MIN_ROOMS && c.named >= Math.ceil(MIN_ROOMS / 2))
 console.log(`\n${candidates.length} hospitals have some indoor mapping; ${worth.length} have enough to build (>= ${MIN_ROOMS} rooms)`)
 
 // Full geometry for the ones worth building.
 let fetched = 0
+let kept = 0
 for (const c of worth.slice(0, MAX_DETAIL)) {
+  if (existsSync(`${RAW}/${c.id}.json`)) {
+    try {
+      if (freshAt(JSON.parse(readFileSync(`${RAW}/${c.id}.json`, "utf8")).fetchedAt)) {
+        kept++
+        continue
+      }
+    } catch {}
+  }
   const [, kind, num] = c.id.match(/^osm-([wr])(\d+)$/)
   const sel = kind === "w" ? `way(${num})` : `relation(${num})`
   const inside = (where) => `(
@@ -134,11 +154,11 @@ ${sel};
 out geom;
 ${inside(`(${s},${w},${n},${e})`)}`)
     }
-    writeFileSync(`${RAW}/${c.id}.json`, JSON.stringify({ hospital: c, elements: els }) + "\n")
+    writeFileSync(`${RAW}/${c.id}.json`, JSON.stringify({ hospital: c, fetchedAt: new Date().toISOString(), elements: els }) + "\n")
     fetched++
     console.log(`  ${c.country} ${c.name}: ${els.length} elements`)
   } catch (err) {
     console.warn(`  ${c.name}: detail failed (${String(err.message ?? err).slice(0, 120)})`)
   }
 }
-console.log(`Fetched indoor geometry for ${fetched} hospitals`)
+console.log(`Fetched indoor geometry for ${fetched} hospitals${kept ? `, kept ${kept} from the last ${reuseDays} days` : ""}`)

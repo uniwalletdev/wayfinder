@@ -24,9 +24,13 @@ const MIN_GAP_MS = Number(process.env.OVERPASS_GAP_MS ?? 2500)
 
 // Run one Overpass QL query and return its elements. Tries each endpoint in
 // turn, so one overloaded instance does not stop the run.
-export async function overpass(query, { timeoutMs = 600_000 } = {}) {
+//
+// `retries` is per endpoint (default 3, as for the small queries); `endpoints`
+// caps how many instances are tried. A query the server itself times out after
+// 15 minutes must not be retried a dozen times across three instances.
+export async function overpass(query, { timeoutMs = 600_000, retries = 3, endpoints = ENDPOINTS.length } = {}) {
   let lastErr
-  for (const endpoint of ENDPOINTS) {
+  for (const endpoint of ENDPOINTS.slice(0, endpoints)) {
     const wait = lastRequestAt + MIN_GAP_MS - Date.now()
     if (wait > 0) await sleep(wait)
     lastRequestAt = Date.now()
@@ -38,7 +42,7 @@ export async function overpass(query, { timeoutMs = 600_000 } = {}) {
           headers: { "content-type": "application/x-www-form-urlencoded", "user-agent": USER_AGENT },
           body: "data=" + encodeURIComponent(query),
         },
-        { retries: 3, baseMs: 5000, timeoutMs }
+        { retries, baseMs: 5000, timeoutMs }
       )
       const text = await res.text()
       const json = JSON.parse(text)

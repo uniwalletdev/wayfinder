@@ -30,8 +30,10 @@ mkdirSync(OUT, { recursive: true })
 // hundreds of megabytes and time out.
 const SPLIT_ABOVE = 1000
 
+// Named buildings only: the unnamed ones were most of the response and the
+// base map already draws them under the plan.
 const WHAT = (area) => `(
-  way${area}["building"];
+  way${area}["building"]["name"];
   relation${area}["building"]["name"];
   way${area}["building:part"]["name"];
   node${area}["entrance"];
@@ -53,11 +55,14 @@ const HOSPITALS = (selector) => `(
 )->.h;
 .h map_to_area->.ha;`
 
+// A state's grounds in one query. The server gets five minutes and one try
+// per instance on two instances: a state too heavy for that is skipped and
+// logged, rather than holding the run for hours.
 async function fetchArea(areaFilter) {
-  return overpass(`[out:json][timeout:900];
+  return overpass(`[out:json][timeout:300];
 ${areaFilter}
 ${HOSPITALS("(area.c)")}
-${WHAT("(area.ha)")}`, { timeoutMs: 1_000_000 })
+${WHAT("(area.ha)")}`, { timeoutMs: 360_000, retries: 0, endpoints: 2 })
 }
 
 async function subdivisions(code) {
@@ -123,6 +128,7 @@ for (const code of countries) {
   let failed = 0
   for (const a of areas) {
     let els
+    const t0 = Date.now()
     try {
       els = await fetchArea(a.filter)
     } catch (err) {
@@ -139,7 +145,7 @@ for (const code of countries) {
       byHospital.get(h.id).push(el)
       elements++
     }
-    console.log(`  ${a.name}: ${els.length} elements`)
+    console.log(`  ${a.name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s`)
   }
   writeFileSync(`${OUT}/${code}.json`, JSON.stringify({ country: code, generatedAt: new Date().toISOString(), areas: areas.length, failed, hospitals: Object.fromEntries(byHospital) }))
   totalHospitals += byHospital.size
