@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-02T07:27:06.421Z",
+ "generatedAt": "2026-10-02T07:39:02.418Z",
  "attribution": "© OpenStreetMap contributors (ODbL)",
  "countries": {
   "AT": {
@@ -45,7 +45,7 @@
   "US": {
    "name": "United States",
    "hospitals": 7376,
-   "mapped": 6
+   "mapped": 7
   }
  }
 }

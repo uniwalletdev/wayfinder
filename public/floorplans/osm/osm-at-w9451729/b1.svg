@@ -23,6 +23,7 @@
 <path d="M30.7 43.6L32.7 37.2L38.2 38.9L36.2 45.3L30.7 43.6Z" fill="#fef3c7" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
 <path d="M38.2 38.9L43.8 40.6L41.8 47.1L41.8 47.1L36.2 45.3L38.2 38.9Z" fill="#fef3c7" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
 <path d="M31.2 81.3L27.3 80L26.1 83.7L25.8 84.7L29.7 85.9L31.2 81.3Z" fill="#fef3c7" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<circle cx="272.7" cy="11.7" r="0.3" fill="#22c55e"/>
 <text x="161.6" y="82.8" font-size="1.8" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="161.6" dy="0">Lift</tspan></text>
 <text x="156.4" y="81.2" font-size="1.8" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="156.4" dy="0">Stairs</tspan></text>
 <text x="34.5" y="41.3" font-size="1.8" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="34.5" dy="0">Lift</tspan></text>

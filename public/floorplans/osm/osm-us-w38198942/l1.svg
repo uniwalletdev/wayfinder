@@ -21,6 +21,7 @@
 <polyline points="142.2,95.6 142.2,93.6" fill="none" stroke="#cbd5e1" stroke-width="1.2" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
 <polyline points="42.2,163.9 42.1,160.5 44.1,160.5 44.1,155.4 40.6,155.3 40.5,160.5 42.1,160.5" fill="none" stroke="#cbd5e1" stroke-width="0.6" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.6 0.6"/>
 <polyline points="97,97.2 99.7,97.1 99.7,98.2 103,98.2 103,96.1 99.8,96.1 99.7,97.1" fill="none" stroke="#cbd5e1" stroke-width="0.6" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.6 0.6"/>
+<circle cx="47" cy="197.1" r="0.3" fill="#22c55e"/>
 <text x="23.7" y="217.4" font-size="0.85" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="23.7" dy="0">Kaiser Permanente Medical</tspan><tspan x="23.7" dy="1">Center Santa Clara Heliport</tspan></text>
 <text x="142.2" y="99" font-size="1" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="142.2" dy="0">Stairs</tspan></text>
 <text x="302.3" y="237.6" font-size="1.4" fill="#64748b" text-anchor="end">© OpenStreetMap contributors</text>

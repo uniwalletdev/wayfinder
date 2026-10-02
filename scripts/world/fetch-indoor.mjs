@@ -87,7 +87,7 @@ out tags center qt;`)
   let n = 0
   for (const [id, st] of stats) {
     const h = outlined.find((x) => x.id === id)
-    candidates.push({ id, country: code, name: h.name, city: h.city, lat: h.lat, lng: h.lng, rooms: st.rooms, named: st.named, corridors: st.corridors, levels: [...st.levels].sort((a, b) => Number(a) - Number(b)) })
+    candidates.push({ id, country: code, name: h.name, city: h.city, lat: h.lat, lng: h.lng, bbox: h.bbox, rooms: st.rooms, named: st.named, corridors: st.corridors, levels: [...st.levels].sort((a, b) => Number(a) - Number(b)) })
     n++
   }
   console.log(`${code}: ${els.length} indoor features in ${n} hospitals`)
@@ -103,27 +103,37 @@ let fetched = 0
 for (const c of worth.slice(0, MAX_DETAIL)) {
   const [, kind, num] = c.id.match(/^osm-([wr])(\d+)$/)
   const sel = kind === "w" ? `way(${num})` : `relation(${num})`
+  const inside = (where) => `(
+  nwr${where}["indoor"];
+  nwr${where}["door"];
+  nwr${where}["entrance"];
+  nwr${where}["highway"="elevator"];
+  nwr${where}["elevator"="yes"];
+  nwr${where}["stairs"="yes"];
+  nwr${where}["highway"~"^(corridor|steps|footway|path|elevator)$"]["level"];
+  nwr${where}["level"]["name"];
+  nwr${where}["level"]["amenity"];
+  nwr${where}["level"]["healthcare"];
+  nwr${where}["level"]["shop"];
+  nwr${where}["building"];
+  nwr${where}["building:part"];
+);
+out geom;`
   try {
-    const els = await overpass(`[out:json][timeout:300];
+    let els = await overpass(`[out:json][timeout:300];
 ${sel};
 out geom;
 map_to_area->.a;
-(
-  nwr(area.a)["indoor"];
-  nwr(area.a)["door"];
-  nwr(area.a)["entrance"];
-  nwr(area.a)["highway"="elevator"];
-  nwr(area.a)["elevator"="yes"];
-  nwr(area.a)["stairs"="yes"];
-  nwr(area.a)["highway"~"^(corridor|steps|footway|path|elevator)$"]["level"];
-  nwr(area.a)["level"]["name"];
-  nwr(area.a)["level"]["amenity"];
-  nwr(area.a)["level"]["healthcare"];
-  nwr(area.a)["level"]["shop"];
-  nwr(area.a)["building"];
-  nwr(area.a)["building:part"];
-);
-out geom;`)
+${inside("(area.a)")}`)
+    // A site relation Overpass has no area for (AKH Wien) answers with the
+    // outline alone; its bounding box finds the inside instead.
+    if (els.length <= 1 && c.bbox) {
+      const [s, w, n, e] = c.bbox
+      els = await overpass(`[out:json][timeout:300];
+${sel};
+out geom;
+${inside(`(${s},${w},${n},${e})`)}`)
+    }
     writeFileSync(`${RAW}/${c.id}.json`, JSON.stringify({ hospital: c, elements: els }) + "\n")
     fetched++
     console.log(`  ${c.country} ${c.name}: ${els.length} elements`)

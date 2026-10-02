@@ -31,14 +31,14 @@
 <path d="M270 218.1L285.5 240.4L260.1 257.4L245 236L270 218.1Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.12" fill-rule="evenodd"/>
 <path d="M399.4 245.5L405 260.9L410.1 275.4L414.2 273.9L441.1 263.9L441.5 262.9L444.3 256.8L437.1 237.2L430.1 233.9L408.5 242L399.4 245.5Z" fill="#f5f3ff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
 <path d="M163 96.6L156.8 92L146.9 83.8L152.5 76.8L168.9 89.5L166 93.1L163 96.6Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
-<path d="M260.1 257.4L258.2 258.7L256.9 266.2L265.6 278.6L269.2 283.7L276.6 284.9L278.4 283.6L297.7 270L303.3 266L285.5 240.4L260.1 257.4Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
-<path d="M318.6 288L293.5 305L291.7 306.4L290.4 313.8L297.4 323.7L302.6 331.1L309.6 332.4L310.3 332.5L337.2 313.4L318.6 288Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
-<path d="M341.1 147.4L349.1 142.3L367.9 129L375.6 130.3L387.7 147.5L386.2 153.9L358.8 171.9L341.1 147.4Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
-<path d="M379.8 191.5L409.3 179.4L411.2 178.7L421.7 183.6L427.2 198.6L422.8 208.7L399.5 217.4L390.3 220.5L379.8 191.5Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
-<path d="M307.4 100.7L314.1 95.9L334.3 81.4L342 82.7L354.2 99.9L352.8 107.6L334.1 121L325.9 126.3L316.6 113.5L308.3 102L307.4 100.7Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
-<path d="M162.4 109.4L159.7 112.9L140.5 136.9L141.3 144.6L149.1 151L157.7 157.9L165.4 157L166.8 155.2L187.2 129.1L173.9 118.5L162.4 109.4Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
-<path d="M207.2 145L219.1 154.9L233.3 165.7L226.8 173.1L210.7 193.3L203 194.2L194.1 187.1L186.5 181L185.7 173.3L187.2 171.5L207.2 145Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
-<path d="M252 192.2L270 218.1L245 236L243.1 237.3L235.7 236.1L223.4 218.6L224.7 211.2L246.7 195.7L252 192.2Z" fill="#ffffff" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<path d="M260.1 257.4L258.2 258.7L256.9 266.2L265.6 278.6L269.2 283.7L276.6 284.9L278.4 283.6L297.7 270L303.3 266L285.5 240.4L260.1 257.4Z" fill="#f0fdf4" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<path d="M318.6 288L293.5 305L291.7 306.4L290.4 313.8L297.4 323.7L302.6 331.1L309.6 332.4L310.3 332.5L337.2 313.4L318.6 288Z" fill="#f0fdf4" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<path d="M341.1 147.4L349.1 142.3L367.9 129L375.6 130.3L387.7 147.5L386.2 153.9L358.8 171.9L341.1 147.4Z" fill="#f0fdf4" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<path d="M379.8 191.5L409.3 179.4L411.2 178.7L421.7 183.6L427.2 198.6L422.8 208.7L399.5 217.4L390.3 220.5L379.8 191.5Z" fill="#f0fdf4" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<path d="M307.4 100.7L314.1 95.9L334.3 81.4L342 82.7L354.2 99.9L352.8 107.6L334.1 121L325.9 126.3L316.6 113.5L308.3 102L307.4 100.7Z" fill="#f0fdf4" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<path d="M162.4 109.4L159.7 112.9L140.5 136.9L141.3 144.6L149.1 151L157.7 157.9L165.4 157L166.8 155.2L187.2 129.1L173.9 118.5L162.4 109.4Z" fill="#f0fdf4" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<path d="M207.2 145L219.1 154.9L233.3 165.7L226.8 173.1L210.7 193.3L203 194.2L194.1 187.1L186.5 181L185.7 173.3L187.2 171.5L207.2 145Z" fill="#f0fdf4" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
+<path d="M252 192.2L270 218.1L245 236L243.1 237.3L235.7 236.1L223.4 218.6L224.7 211.2L246.7 195.7L252 192.2Z" fill="#f0fdf4" stroke="#64748b" stroke-width="0.18" fill-rule="evenodd"/>
 <text x="422.4" y="253.9" font-size="1.8" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="422.4" dy="0">Neurologie</tspan></text>
 <text x="157.8" y="86.7" font-size="1.8" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="157.8" dy="0">De Stee</tspan></text>
 <text x="279" y="263.8" font-size="1.8" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="279" dy="0">Verpleegafdeling B</tspan></text>

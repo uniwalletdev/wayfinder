@@ -72,6 +72,7 @@
 <polyline points="325.5,136.8 319.3,140.4 300.1,153.5 262.6,179 254.8,184" fill="none" stroke="#cbd5e1" stroke-width="1.2" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
 <polyline points="220.6,65.5 261.6,97.9 297.4,149.5 300.1,153.5" fill="none" stroke="#cbd5e1" stroke-width="1.2" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
 <polyline points="255.7,185.4 243.1,193.2" fill="none" stroke="#cbd5e1" stroke-width="1.2" stroke-opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="302.8" cy="106" r="0.3" fill="#22c55e"/>
 <circle cx="295.7" cy="286.5" r="0.3" fill="#22c55e"/>
 <circle cx="305" cy="274.5" r="0.3" fill="#22c55e"/>
 <text x="348.9" y="318.1" font-size="1.8" fill="#1e293b" text-anchor="middle" dominant-baseline="middle"><tspan x="348.9" dy="0">Grand Café</tspan></text>
