@@ -21,7 +21,7 @@
 //
 // Run: node scripts/world/fetch-campus.mjs [--countries US,DE] [--areas US-CO,US-NY] [--reuse-days 7] [--budget-min 270]
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
-import { areaDataCheck, lastHost, overpass, pointOf, splitCounts } from "./lib/overpass.mjs"
+import { AREA_PROBE, areaDataCheck, lastHost, overpass, pointOf, splitCounts } from "./lib/overpass.mjs"
 
 const arg = (name) => {
   const i = process.argv.indexOf(name)
@@ -73,11 +73,12 @@ const WHAT = (area) => `(
 );
 out geom qt;`
 
-// Every query counts the hospitals it found and the areas made of them
-// before answering, and the answer is checked against those counts
-// (areaDataCheck): a mirror without area data would otherwise hand back a
-// complete, empty answer.
-const HOSPITALS = (selector) => `(
+// Every query first asks the server whether it has area data at all, then
+// counts the hospitals it found and the areas made of them, and the answer is
+// checked (areaDataCheck): a server without area data would otherwise hand
+// back a complete, empty answer.
+const HOSPITALS = (selector) => `${AREA_PROBE}
+(
   way${selector}["amenity"="hospital"];
   relation${selector}["amenity"="hospital"];
   way${selector}["healthcare"="hospital"];
@@ -222,15 +223,17 @@ function outlineIndex(hospitals) {
   }
 }
 
-// An area's file from this or an earlier run, if it is fresh enough to reuse.
-// An empty one is asked for again: a genuinely empty area costs one query a
-// run, an empty answer from a mirror without area data must not stick.
+// An area's file from this or an earlier run, if it is fresh enough to reuse
+// and was fetched with the area-data probe. Files from before the probe are
+// asked for again: an area pieced together from cells then may hold empty
+// answers from a server without area data. A probed empty answer is real.
+const CHECKED = 2
 function cachedArea(name) {
   const path = `${AREAS}/${name}.json`
   if (!existsSync(path)) return null
   try {
     const c = JSON.parse(readFileSync(path, "utf8"))
-    return c.elements?.length && Date.parse(c.fetchedAt) >= freshSince ? c : null
+    return c.checked === CHECKED && Date.parse(c.fetchedAt) >= freshSince ? c : null
   } catch {
     return null
   }
@@ -345,7 +348,7 @@ for (const code of countries) {
         continue
       }
       els = r.elements
-      writeFileSync(`${AREAS}/${a.name}.json`, JSON.stringify({ name: a.name, country: code, fetchedAt: new Date().toISOString(), elements: els }))
+      writeFileSync(`${AREAS}/${a.name}.json`, JSON.stringify({ name: a.name, country: code, checked: CHECKED, fetchedAt: new Date().toISOString(), elements: els }))
       console.log(`  ${a.name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s via ${lastHost}`)
     }
     for (const el of els) {

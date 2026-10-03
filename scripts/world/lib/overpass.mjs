@@ -93,17 +93,28 @@ export function splitCounts(elements) {
   return { counts, elements: rest }
 }
 
-// For a query that counts the hospitals it found (`.h out count;`) and the
-// areas made of them (`.ha out count;`) before answering: an instance without
-// area data — it happens on the volunteer mirrors — makes no areas for any
-// number of hospitals, and finds no hospitals at all when the state's own area
-// is missing. Both would read as a complete, empty answer. `minHospitals` is
-// how many the caller knows to be there.
+// Whether the server that answers has area data at all, asked in the same
+// request so that the answer and the probe come from the same machine
+// (overpass-api.de spreads requests over several): Luxembourg's country area
+// is in every working area database. A server without one — a volunteer
+// mirror was like that all night, and one of overpass-api.de's machines for
+// spells — makes no areas from the hospitals it finds and finds no hospitals
+// inside a state, and both read as a complete, empty answer.
+export const AREA_PROBE = `area["ISO3166-1"="LU"]["admin_level"="2"]->.probe;
+.probe out count;`
+
+// For a query that starts with AREA_PROBE, then counts the hospitals it found
+// (`.h out count;`) and the areas made of them (`.ha out count;`). The probe
+// alone decides whether the server has area data: a hospital with no area on
+// a server that has it is real — an outline drawn as an open line, or one
+// edited since the server last rebuilt its areas — and refusing those left
+// cells that no server could ever answer. `minHospitals` is how many the
+// caller knows to be there: none found where some are is a missing state area.
 export function areaDataCheck({ minHospitals = 0 } = {}) {
   return (elements, host) => {
-    const [h, ha] = splitCounts(elements).counts
-    if (!h || !ha) throw new Error(`${host}: the answer carries no counts`)
-    if (h.total > 0 && ha.areas === 0) throw new Error(`${host} has no area data: ${h.total} hospitals, 0 areas`)
+    const [probe, h, ha] = splitCounts(elements).counts
+    if (!probe || !h || !ha) throw new Error(`${host}: the answer carries no counts`)
+    if (!((probe.areas || probe.total) > 0)) throw new Error(`${host} has no area data: it does not know Luxembourg`)
     if (h.total < minHospitals) throw new Error(`${host} found ${h.total} hospitals where at least ${minHospitals} are known: its area is missing`)
   }
 }
