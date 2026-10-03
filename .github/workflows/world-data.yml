@@ -42,6 +42,9 @@ on:
       chain:
         description: "How many runs in a row have carried on to this one (set by the workflow itself; leave at 0)"
         default: "0"
+      first:
+        description: "Countries whose grounds are fetched first, in this order, before the rest smallest-first"
+        default: "NG"
   push:
     paths:
       - "scripts/world/**"
@@ -72,8 +75,9 @@ env:
   # another; the schedule and a manual run fetch afresh unless told otherwise.
   REUSE_DAYS: ${{ github.event_name == 'push' && '2' || inputs.reuse_days || '0' }}
   # Grounds are fetched area by area (a country, or a state of a large one),
-  # and each area that comes in whole is kept for a week in the Actions cache,
-  # so a run that runs out of time carries on where the last one stopped. The
+  # and each area that comes in — whole, or the cells of it that did — is
+  # kept for a week in the Actions cache, so a run that runs out of time
+  # carries on where the last one stopped, cell by cell if need be. The
   # stage stops this many minutes after the job started, forty under the
   # job's timeout, so the build, the publish and the cache save always get
   # their turn however long the earlier stages took; a country with areas
@@ -81,6 +85,9 @@ env:
   # complete answer late is preferred to a partial one on time.
   CAMPUS_REUSE_DAYS: "7"
   CAMPUS_STOP_AT_MIN: ${{ inputs.stop_grounds_at || '290' }}
+  # Grounds are fetched for these countries first, in this order, then the
+  # rest smallest-first; Nigeria is the one most asked for.
+  CAMPUS_FIRST: ${{ inputs.first || 'NG' }}
   # The shared Postgres the website reads from (Railway's public URL). Without
   # it the run still builds and reports, and publishes nothing.
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
@@ -124,8 +131,8 @@ jobs:
           budget=$(( CAMPUS_STOP_AT_MIN - ( $(date +%s) - JOB_START ) / 60 ))
           [ "$budget" -lt 5 ] && budget=5
           echo "The grounds stage has $budget minutes before it leaves the rest to the next run"
-          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs --reuse-days "$CAMPUS_REUSE_DAYS" --budget-min "$budget"
-          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES" --reuse-days "$CAMPUS_REUSE_DAYS" --budget-min "$budget"; fi
+          if [ "$COUNTRIES" = "ALL" ]; then node scripts/world/fetch-campus.mjs --first "$CAMPUS_FIRST" --reuse-days "$CAMPUS_REUSE_DAYS" --budget-min "$budget"
+          else node scripts/world/fetch-campus.mjs --countries "$COUNTRIES" --first "$CAMPUS_FIRST" --reuse-days "$CAMPUS_REUSE_DAYS" --budget-min "$budget"; fi
 
       - name: Keep the grounds for the next run
         if: always()
@@ -257,5 +264,5 @@ jobs:
           NEXT_CHAIN: ${{ steps.carry.outputs.chain }}
         run: |
           gh workflow run world-data.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" \
-            -f countries="$NEXT_COUNTRIES" -f max_detail=60 -f reuse_days=2 -f chain="$NEXT_CHAIN"
+            -f countries="$NEXT_COUNTRIES" -f first="$CAMPUS_FIRST" -f max_detail=60 -f reuse_days=2 -f chain="$NEXT_CHAIN"
           echo "- started the next run for $NEXT_COUNTRIES" >> "$GITHUB_STEP_SUMMARY"

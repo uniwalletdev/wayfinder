@@ -10,11 +10,12 @@
 // Attribution is required wherever it is shown; the map credits it.
 import { fetchRetry } from "../../nhs/lib/net.mjs"
 
-const ENDPOINTS = [
-  "https://overpass-api.de/api/interpreter",
-  "https://overpass.private.coffee/api/interpreter",
-  "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
-]
+// OVERPASS_ENDPOINTS=<url,url,…> points the scripts at other instances: a
+// local stand-in under test.
+const custom = (process.env.OVERPASS_ENDPOINTS ?? "").split(",").map((s) => s.trim()).filter(Boolean)
+const ENDPOINTS = custom.length
+  ? custom
+  : ["https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter"]
 
 export const USER_AGENT = "findway-world-data/1.0 (+https://github.com/uniwalletdev/wayfinder)"
 
