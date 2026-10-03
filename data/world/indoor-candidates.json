@@ -1,6 +1,22 @@
 {
- "generatedAt": "2026-10-02T08:08:07.950Z",
- "minRooms": 8,
+ "generatedAt": "2026-10-02T20:22:10.161Z",
+ "countries": [
+  "AT",
+  "BE",
+  "CH",
+  "DE",
+  "DK",
+  "EG",
+  "GH",
+  "IE",
+  "KE",
+  "LU",
+  "NG",
+  "NL",
+  "US",
+  "ZA"
+ ],
+ "minRooms": 6,
  "candidates": [
   {
    "id": "osm-w471352511",
@@ -608,27 +624,6 @@
    ]
   },
   {
-   "id": "osm-w326171112",
-   "country": "BE",
-   "name": "Hôpital Delta - Delta Ziekenhuis",
-   "lat": 50.81645,
-   "lng": 4.40084,
-   "bbox": [
-    50.81549,
-    4.39895,
-    50.81742,
-    4.40273
-   ],
-   "rooms": 10,
-   "named": 1,
-   "corridors": 1,
-   "levels": [
-    "0",
-    "1",
-    "4"
-   ]
-  },
-  {
    "id": "osm-w557123810",
    "country": "DE",
    "name": "Johanniter-Krankenhaus Geesthacht",
@@ -648,40 +643,6 @@
     "0",
     "4"
    ]
-  },
-  {
-   "id": "osm-w277556799",
-   "country": "BE",
-   "name": "Vitaz Campus Hospitaalstraat",
-   "lat": 51.16275,
-   "lng": 4.15191,
-   "bbox": [
-    51.16167,
-    4.14983,
-    51.16384,
-    4.15399
-   ],
-   "rooms": 1,
-   "named": 1,
-   "corridors": 0,
-   "levels": []
-  },
-  {
-   "id": "osm-w78610843",
-   "country": "BE",
-   "name": "Regionaal ziekenhuis Heilig Hart Leuven",
-   "lat": 50.87236,
-   "lng": 4.70097,
-   "bbox": [
-    50.87162,
-    4.69967,
-    50.87311,
-    4.70226
-   ],
-   "rooms": 1,
-   "named": 1,
-   "corridors": 0,
-   "levels": []
   },
   {
    "id": "osm-r6172896",
@@ -1001,24 +962,6 @@
    ]
   },
   {
-   "id": "osm-w1218298644",
-   "country": "BE",
-   "name": "UZ Leuven campus Gasthuisberg",
-   "city": "Leuven",
-   "lat": 50.87992,
-   "lng": 4.67299,
-   "bbox": [
-    50.87585,
-    4.66759,
-    50.88399,
-    4.67839
-   ],
-   "rooms": 5,
-   "named": 0,
-   "corridors": 0,
-   "levels": []
-  },
-  {
    "id": "osm-w464365604",
    "country": "US",
    "name": "Akron Children's Hospital",
@@ -1182,24 +1125,6 @@
     "-3",
     "-1"
    ]
-  },
-  {
-   "id": "osm-w782660184",
-   "country": "BE",
-   "name": "AZ Groeninge - campus Kennedylaan",
-   "city": "Kortrijk",
-   "lat": 50.80161,
-   "lng": 3.26488,
-   "bbox": [
-    50.79946,
-    3.26073,
-    50.80376,
-    3.26904
-   ],
-   "rooms": 1,
-   "named": 0,
-   "corridors": 0,
-   "levels": []
   },
   {
    "id": "osm-w39193494",
@@ -1441,45 +1366,6 @@
    ]
   },
   {
-   "id": "osm-w1320120284",
-   "country": "BE",
-   "name": "Campus Helha/IESCA/UCL",
-   "city": "Charleroi",
-   "lat": 50.40859,
-   "lng": 4.48134,
-   "bbox": [
-    50.40717,
-    4.47953,
-    50.41001,
-    4.48315
-   ],
-   "rooms": 0,
-   "named": 0,
-   "corridors": 1,
-   "levels": [
-    "-1"
-   ]
-  },
-  {
-   "id": "osm-w23379006",
-   "country": "BE",
-   "name": "Universitair Ziekenhuis Gent",
-   "lat": 51.02348,
-   "lng": 3.72739,
-   "bbox": [
-    51.01894,
-    3.72179,
-    51.02802,
-    3.733
-   ],
-   "rooms": 0,
-   "named": 0,
-   "corridors": 1,
-   "levels": [
-    "1"
-   ]
-  },
-  {
    "id": "osm-r9458117",
    "country": "CH",
    "name": "Centre hospitalier universitaire vaudois",
@@ -1556,6 +1442,40 @@
    ]
   },
   {
+   "id": "osm-w486409430",
+   "country": "GH",
+   "name": "Tarkwa Nsuaem Municipal Hospital",
+   "lat": 5.30553,
+   "lng": -1.97638,
+   "bbox": [
+    5.30406,
+    -1.97796,
+    5.30699,
+    -1.9748
+   ],
+   "rooms": 0,
+   "named": 0,
+   "corridors": 5,
+   "levels": []
+  },
+  {
+   "id": "osm-w1433596206",
+   "country": "GH",
+   "name": "Salaga Hospital",
+   "lat": 8.54275,
+   "lng": -0.50423,
+   "bbox": [
+    8.54077,
+    -0.50575,
+    8.54472,
+    -0.50271
+   ],
+   "rooms": 0,
+   "named": 0,
+   "corridors": 1,
+   "levels": []
+  },
+  {
    "id": "osm-w56968562",
    "country": "IE",
    "name": "Midland Regional Hospital Tullamore",
@@ -1572,26 +1492,6 @@
    "named": 0,
    "corridors": 4,
    "levels": []
-  },
-  {
-   "id": "osm-w51985549",
-   "country": "IE",
-   "name": "St. Michael's Hospital",
-   "city": "Dún Laoghaire",
-   "lat": 53.29413,
-   "lng": -6.13803,
-   "bbox": [
-    53.29345,
-    -6.13925,
-    53.29481,
-    -6.1368
-   ],
-   "rooms": 0,
-   "named": 0,
-   "corridors": 1,
-   "levels": [
-    "1"
-   ]
   },
   {
    "id": "osm-w459416567",
@@ -1928,17 +1828,24 @@
    "named": 0,
    "corridors": 3,
    "levels": []
+  },
+  {
+   "id": "osm-w791778586",
+   "country": "ZA",
+   "name": "Medi clinic Sandton",
+   "city": "Bryanston, Johannesburg",
+   "lat": -26.07734,
+   "lng": 28.01245,
+   "bbox": [
+    -26.07847,
+    28.01125,
+    -26.07621,
+    28.01365
+   ],
+   "rooms": 0,
+   "named": 0,
+   "corridors": 3,
+   "levels": []
   }
- ],
- "countries": [
-  "LU",
-  "BE",
-  "NL",
-  "CH",
-  "AT",
-  "DE",
-  "DK",
-  "IE",
-  "US"
  ]
 }
