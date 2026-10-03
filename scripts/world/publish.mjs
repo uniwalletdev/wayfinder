@@ -64,7 +64,15 @@ let totalKept = 0
 let totalPlans = 0
 const published = []
 const held = []
+const notCovered = []
 for (const country of countries) {
+  // A run that carries on for a few countries (scripts/world/carry-on.mjs)
+  // builds every country's list but fetched grounds for those few only; the
+  // rest are left as they are in the database.
+  if (groundsStatus && !(country in (groundsStatus.countries ?? {}))) {
+    notCovered.push(country)
+    continue
+  }
   if (!groundsComplete(country)) {
     held.push(country)
     console.log(`${country}: grounds incomplete; held back until a run completes them`)
@@ -149,5 +157,5 @@ for (const country of countries) {
 }
 await client.end()
 console.log(
-  `\nPublished ${totalHospitals} hospitals, ${totalVenues} venues and ${totalPlans} plans for ${published.length} countries${totalKept ? `; ${totalKept} venues from earlier runs kept` : ""}${held.length ? `; held back, grounds incomplete: ${held.join(", ")}` : ""}`
+  `\nPublished ${totalHospitals} hospitals, ${totalVenues} venues and ${totalPlans} plans for ${published.length} countries${totalKept ? `; ${totalKept} venues from earlier runs kept` : ""}${held.length ? `; held back, grounds incomplete: ${held.join(", ")}` : ""}${notCovered.length ? `; not covered by this run, left as they are: ${notCovered.join(", ")}` : ""}`
 )

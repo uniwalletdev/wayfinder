@@ -36,18 +36,29 @@ on:
       stop_grounds_at:
         description: "Minutes after the job starts at which the grounds stage stops and leaves the rest to the next run (the job times out at 330)"
         default: "290"
+      reuse_days:
+        description: "Reuse hospital lists and indoor geometry fetched within this many days (0 fetches afresh)"
+        default: "0"
+      chain:
+        description: "How many runs in a row have carried on to this one (set by the workflow itself; leave at 0)"
+        default: "0"
   push:
     paths:
       - "scripts/world/**"
       - ".github/workflows/world-data.yml"
 
+# A push cancels the run in progress so the new scripts take over (the grounds
+# fetched so far are kept: the cache save runs on cancel too). A run that
+# carries on, or a manual one, waits its turn instead.
 concurrency:
   group: world-data-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 permissions:
   contents: write
   pull-requests: write
+  # To start the next run when countries are still held back.
+  actions: write
 
 env:
   # A push runs a sample so a change to the scripts is checked within the
@@ -57,8 +68,9 @@ env:
   COUNTRIES: ${{ github.event_name == 'push' && 'LU,BE,NL,CH,AT,DE,DK,IE,US,NG,GH,KE,ZA,EG' || inputs.countries || 'ALL' }}
   MAX_DETAIL: ${{ github.event_name == 'push' && '60' || inputs.max_detail || '400' }}
   # A push that changes the scripts reuses hospital lists and indoor geometry
-  # fetched in the last two days; the schedule and a manual run fetch afresh.
-  REUSE_DAYS: ${{ github.event_name == 'push' && '2' || '0' }}
+  # fetched in the last two days, and so does a run that carries on from
+  # another; the schedule and a manual run fetch afresh unless told otherwise.
+  REUSE_DAYS: ${{ github.event_name == 'push' && '2' || inputs.reuse_days || '0' }}
   # Grounds are fetched area by area (a country, or a state of a large one),
   # and each area that comes in whole is kept for a week in the Actions cache,
   # so a run that runs out of time carries on where the last one stopped. The
@@ -222,3 +234,28 @@ jobs:
             echo "The refreshed data was pushed to the branch \`automation/world-data\` but GitHub Actions is not allowed to open pull requests in this repository (Settings → Actions → General → Workflow permissions)."
             echo "Open it by hand: https://github.com/${GITHUB_REPOSITORY}/compare/main...automation/world-data?expand=1"
           } >> "$GITHUB_STEP_SUMMARY"
+
+      # A run that ends with countries still held back starts the next one
+      # itself, for just those countries, reusing everything fetched so far —
+      # as many runs as it takes. scripts/world/carry-on.mjs decides, and stops
+      # when everything is complete, when a run kept nothing new, or after
+      # eight in a row. workflow_dispatch is the one event a workflow may start
+      # with its own token; the new run queues behind this one.
+      - name: Decide whether to carry on
+        id: carry
+        if: success() && env.DATABASE_URL != ''
+        env:
+          CHAIN: ${{ inputs.chain || '0' }}
+          CARRY_ON_MAX: "8"
+        run: node scripts/world/carry-on.mjs
+
+      - name: Carry on with what is still held back
+        if: success() && steps.carry.outputs.countries != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEXT_COUNTRIES: ${{ steps.carry.outputs.countries }}
+          NEXT_CHAIN: ${{ steps.carry.outputs.chain }}
+        run: |
+          gh workflow run world-data.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" \
+            -f countries="$NEXT_COUNTRIES" -f max_detail=60 -f reuse_days=2 -f chain="$NEXT_CHAIN"
+          echo "- started the next run for $NEXT_COUNTRIES" >> "$GITHUB_STEP_SUMMARY"

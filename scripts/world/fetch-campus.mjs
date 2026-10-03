@@ -258,6 +258,9 @@ const lists = new Map(
 const countries = [...lists.keys()].sort((a, b) => lists.get(a).length - lists.get(b).length || a.localeCompare(b))
 const status = { generatedAt: new Date().toISOString(), reuseDays, budgetMin, countries: {} }
 let totalHospitals = 0
+// Areas this run fetched and kept, as opposed to reused: a run that kept none
+// made no progress, and scripts/world/carry-on.mjs does not start another.
+let fetchedNew = 0
 
 function finish(code, { areas, failed, left, byHospital, elements = 0, reused = 0, note }) {
   const complete = !failed && !left
@@ -349,6 +352,7 @@ for (const code of countries) {
       }
       els = r.elements
       writeFileSync(`${AREAS}/${a.name}.json`, JSON.stringify({ name: a.name, country: code, checked: CHECKED, fetchedAt: new Date().toISOString(), elements: els }))
+      fetchedNew++
       console.log(`  ${a.name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s via ${lastHost}`)
     }
     for (const el of els) {
@@ -365,6 +369,7 @@ for (const code of countries) {
 }
 const incomplete = Object.entries(status.countries).filter(([, c]) => !c.complete).map(([k]) => k)
 status.complete = incomplete.length === 0
+status.fetchedNew = fetchedNew
 writeFileSync(`${OUT}/status.json`, JSON.stringify(status, null, 1) + "\n")
 if (incomplete.length) console.warn(`\nGrounds incomplete for ${incomplete.join(", ")}: held back from publishing until a run completes them`)
 console.log(`\nGrounds fetched for ${totalHospitals} hospitals`)
