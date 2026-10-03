@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-03T00:33:14.126Z",
+ "generatedAt": "2026-10-03T07:46:04.675Z",
  "built": [
   {
    "id": "osm-at-w361987022",
@@ -19331,6 +19331,1315 @@
    "score": 12
   },
   {
+   "id": "osm-eg-w1525678372",
+   "country": "EG",
+   "name": "مستشفى العلمين النموذجي",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 2,
+   "waypoints": 6,
+   "trails": 10,
+   "pathM": 571,
+   "extentM": [
+    236,
+    187
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-eg-w771243782",
+   "country": "EG",
+   "name": "مستشفى الشيخ زايد التخصصي",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 8,
+   "facilities": 4,
+   "waypoints": 11,
+   "trails": 4,
+   "pathM": 108,
+   "extentM": [
+    292,
+    264
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-eg-w900302929",
+   "country": "EG",
+   "name": "مستشفى بهمان",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 15,
+   "trails": 25,
+   "pathM": 793,
+   "extentM": [
+    231,
+    237
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-eg-r16740885",
+   "country": "EG",
+   "name": "مستشفيات جامعة القاهرة",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 2,
+   "facilities": 1,
+   "waypoints": 8,
+   "trails": 3,
+   "pathM": 109,
+   "extentM": [
+    800,
+    740
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-gh-w875374275",
+   "country": "GH",
+   "name": "Enchi Government Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 8,
+   "pathM": 567,
+   "extentM": [
+    236,
+    397
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-gh-w303162760",
+   "country": "GH",
+   "name": "Korle Bu Teaching Hospital",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 20,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    546,
+    559
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-gh-w786143438",
+   "country": "GH",
+   "name": "37 Military Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 11,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    577,
+    945
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-gh-w786216093",
+   "country": "GH",
+   "name": "Pantang Hospital",
+   "buildings": 66,
+   "named": 66,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 69,
+   "trails": 38,
+   "pathM": 3315,
+   "extentM": [
+    1603,
+    1678
+   ],
+   "score": 128
+  },
+  {
+   "id": "osm-gh-w478696524",
+   "country": "GH",
+   "name": "Eastern Regional Hospital",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 15,
+   "trails": 1,
+   "pathM": 24,
+   "extentM": [
+    418,
+    392
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-gh-w622139394",
+   "country": "GH",
+   "name": "Goaso Municipal Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 0,
+   "waypoints": 5,
+   "trails": 1,
+   "pathM": 121,
+   "extentM": [
+    340,
+    465
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-gh-w553381087",
+   "country": "GH",
+   "name": "Bibiani Government Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 1,
+   "waypoints": 9,
+   "trails": 7,
+   "pathM": 359,
+   "extentM": [
+    318,
+    276
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-gh-w556253601",
+   "country": "GH",
+   "name": "Komfo Anokye Teaching Hospital",
+   "buildings": 17,
+   "named": 17,
+   "entrances": 2,
+   "facilities": 7,
+   "waypoints": 26,
+   "trails": 1,
+   "pathM": 37,
+   "extentM": [
+    855,
+    778
+   ],
+   "score": 41
+  },
+  {
+   "id": "osm-gh-w406732178",
+   "country": "GH",
+   "name": "Wa Municipal Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 13,
+   "pathM": 569,
+   "extentM": [
+    433,
+    472
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-gh-w787648877",
+   "country": "GH",
+   "name": "GMC Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 3,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    150,
+    129
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-gh-w358337142",
+   "country": "GH",
+   "name": "Tema General Hospital",
+   "buildings": 23,
+   "named": 23,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 23,
+   "trails": 20,
+   "pathM": 1345,
+   "extentM": [
+    969,
+    1047
+   ],
+   "score": 46
+  },
+  {
+   "id": "osm-gh-w786224221",
+   "country": "GH",
+   "name": "Tetteh Quarshie Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 3,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    259,
+    297
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-gh-w786337395",
+   "country": "GH",
+   "name": "Tech Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 8,
+   "pathM": 376,
+   "extentM": [
+    210,
+    150
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-gh-w786944629",
+   "country": "GH",
+   "name": "Manhyia District Hospital",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    249,
+    300
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-gh-w406732179",
+   "country": "GH",
+   "name": "Upper West Regional Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 25,
+   "pathM": 944,
+   "extentM": [
+    523,
+    522
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-gh-w441237332",
+   "country": "GH",
+   "name": "Pishigu Clinic",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 7,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    192,
+    161
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-gh-w786595766",
+   "country": "GH",
+   "name": "Comboni Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 3,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    192,
+    212
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-ie-w256747625",
+   "country": "IE",
+   "name": "Bon Secours Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 5,
+   "waypoints": 7,
+   "trails": 2,
+   "pathM": 87,
+   "extentM": [
+    307,
+    208
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-ie-w111471269",
+   "country": "IE",
+   "name": "University Hospital Kerry",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 19,
+   "waypoints": 24,
+   "trails": 31,
+   "pathM": 1312,
+   "extentM": [
+    601,
+    481
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-ie-w118618667",
+   "country": "IE",
+   "name": "Cork University Hospital",
+   "buildings": 10,
+   "named": 9,
+   "entrances": 4,
+   "facilities": 24,
+   "waypoints": 37,
+   "trails": 34,
+   "pathM": 1162,
+   "extentM": [
+    698,
+    520
+   ],
+   "score": 45
+  },
+  {
+   "id": "osm-ie-w75918606",
+   "country": "IE",
+   "name": "Saint Mary's Health Campus",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 2,
+   "waypoints": 9,
+   "trails": 14,
+   "pathM": 1746,
+   "extentM": [
+    511,
+    429
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w78179212",
+   "country": "IE",
+   "name": "Saint Finbarr's Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 10,
+   "trails": 51,
+   "pathM": 1634,
+   "extentM": [
+    330,
+    617
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-ie-w32284254",
+   "country": "IE",
+   "name": "South Infirmary-Victoria University Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 3,
+   "pathM": 85,
+   "extentM": [
+    245,
+    157
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w45766917",
+   "country": "IE",
+   "name": "University Hospital Limerick",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 5,
+   "facilities": 16,
+   "waypoints": 26,
+   "trails": 6,
+   "pathM": 210,
+   "extentM": [
+    510,
+    554
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-ie-w26131060",
+   "country": "IE",
+   "name": "University Hospital Galway",
+   "buildings": 30,
+   "named": 30,
+   "entrances": 9,
+   "facilities": 44,
+   "waypoints": 81,
+   "trails": 112,
+   "pathM": 4550,
+   "extentM": [
+    527,
+    672
+   ],
+   "score": 111
+  },
+  {
+   "id": "osm-ie-w28475753",
+   "country": "IE",
+   "name": "Merlin Park University Hospital",
+   "buildings": 29,
+   "named": 29,
+   "entrances": 0,
+   "facilities": 17,
+   "waypoints": 46,
+   "trails": 19,
+   "pathM": 2261,
+   "extentM": [
+    1589,
+    508
+   ],
+   "score": 75
+  },
+  {
+   "id": "osm-ie-w850141045",
+   "country": "IE",
+   "name": "Galway Clinic",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 2,
+   "pathM": 97,
+   "extentM": [
+    323,
+    301
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ie-w353442127",
+   "country": "IE",
+   "name": "South Tipperary General Hospital",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 15,
+   "facilities": 14,
+   "waypoints": 29,
+   "trails": 33,
+   "pathM": 2289,
+   "extentM": [
+    767,
+    591
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-ie-w32152329",
+   "country": "IE",
+   "name": "University Hospital Waterford",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 1,
+   "pathM": 18,
+   "extentM": [
+    717,
+    528
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w154858816",
+   "country": "IE",
+   "name": "Kilcreene Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 10,
+   "trails": 2,
+   "pathM": 37,
+   "extentM": [
+    276,
+    290
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w153983834",
+   "country": "IE",
+   "name": "Saint Canice's Psychiatric Hospital",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 5,
+   "facilities": 8,
+   "waypoints": 14,
+   "trails": 9,
+   "pathM": 253,
+   "extentM": [
+    397,
+    395
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w120235458",
+   "country": "IE",
+   "name": "St. Luke's General Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 11,
+   "facilities": 14,
+   "waypoints": 23,
+   "trails": 38,
+   "pathM": 1622,
+   "extentM": [
+    424,
+    401
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-ie-r2248001",
+   "country": "IE",
+   "name": "Saint Dympna's Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 16,
+   "waypoints": 18,
+   "trails": 7,
+   "pathM": 458,
+   "extentM": [
+    556,
+    449
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-ie-w223248196",
+   "country": "IE",
+   "name": "Midland Regional Hospital Portlaoise",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 5,
+   "facilities": 5,
+   "waypoints": 14,
+   "trails": 5,
+   "pathM": 190,
+   "extentM": [
+    355,
+    348
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-ie-w56968562",
+   "country": "IE",
+   "name": "Midland Regional Hospital Tullamore",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 15,
+   "waypoints": 20,
+   "trails": 14,
+   "pathM": 659,
+   "extentM": [
+    457,
+    499
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-ie-w444951067",
+   "country": "IE",
+   "name": "Mayo University Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 18,
+   "waypoints": 25,
+   "trails": 7,
+   "pathM": 344,
+   "extentM": [
+    636,
+    650
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-ie-w449243073",
+   "country": "IE",
+   "name": "Sacred Heart Hospital",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 5,
+   "pathM": 145,
+   "extentM": [
+    305,
+    228
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ie-w1174875834",
+   "country": "IE",
+   "name": "St. Joseph's Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    306,
+    386
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-ie-w152613437",
+   "country": "IE",
+   "name": "Cavan General Hospital",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 1,
+   "facilities": 19,
+   "waypoints": 27,
+   "trails": 38,
+   "pathM": 1889,
+   "extentM": [
+    670,
+    525
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-ie-r5589207",
+   "country": "IE",
+   "name": "Letterkenny University Hospital",
+   "buildings": 12,
+   "named": 11,
+   "entrances": 2,
+   "facilities": 19,
+   "waypoints": 28,
+   "trails": 11,
+   "pathM": 684,
+   "extentM": [
+    363,
+    486
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-ie-w353438490",
+   "country": "IE",
+   "name": "Wexford General Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 20,
+   "waypoints": 24,
+   "trails": 69,
+   "pathM": 2522,
+   "extentM": [
+    637,
+    366
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-ie-w506757519",
+   "country": "IE",
+   "name": "Saint John's Community Hospital and Community Service",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 1,
+   "facilities": 13,
+   "waypoints": 20,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    755,
+    433
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-ie-w307509515",
+   "country": "IE",
+   "name": "Bloomfield Health Services & Quaker House",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 3,
+   "pathM": 276,
+   "extentM": [
+    393,
+    298
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-ie-w52156721",
+   "country": "IE",
+   "name": "National Rehabilitation Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 16,
+   "waypoints": 18,
+   "trails": 80,
+   "pathM": 2126,
+   "extentM": [
+    613,
+    557
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-ie-r4078472",
+   "country": "IE",
+   "name": "St. Raphael's Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 8,
+   "trails": 22,
+   "pathM": 928,
+   "extentM": [
+    532,
+    475
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-ie-w51231573",
+   "country": "IE",
+   "name": "Tallaght University Hospital",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 24,
+   "facilities": 21,
+   "waypoints": 46,
+   "trails": 62,
+   "pathM": 3752,
+   "extentM": [
+    598,
+    539
+   ],
+   "score": 44
+  },
+  {
+   "id": "osm-ie-w29504327",
+   "country": "IE",
+   "name": "Cherry Orchard Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 29,
+   "facilities": 9,
+   "waypoints": 18,
+   "trails": 84,
+   "pathM": 4006,
+   "extentM": [
+    816,
+    334
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ie-w12219521",
+   "country": "IE",
+   "name": "Connolly Hospital",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 8,
+   "facilities": 25,
+   "waypoints": 44,
+   "trails": 66,
+   "pathM": 4698,
+   "extentM": [
+    666,
+    681
+   ],
+   "score": 52
+  },
+  {
+   "id": "osm-ie-w120086086",
+   "country": "IE",
+   "name": "Saint Mary's Hospital",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 14,
+   "waypoints": 17,
+   "trails": 32,
+   "pathM": 1170,
+   "extentM": [
+    460,
+    477
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-ie-w32015912",
+   "country": "IE",
+   "name": "St. James's Hospital",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 13,
+   "facilities": 39,
+   "waypoints": 66,
+   "trails": 73,
+   "pathM": 3722,
+   "extentM": [
+    731,
+    550
+   ],
+   "score": 80
+  },
+  {
+   "id": "osm-ie-w129217469",
+   "country": "IE",
+   "name": "Coombe Women & Infants University Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 4,
+   "pathM": 195,
+   "extentM": [
+    256,
+    206
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-ie-w48460622",
+   "country": "IE",
+   "name": "The Meath Primary Care Centre (Former Meath Hospital)",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 2,
+   "pathM": 98,
+   "extentM": [
+    189,
+    121
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-ie-w22770493",
+   "country": "IE",
+   "name": "Royal Hospital Donnybrook",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 14,
+   "pathM": 883,
+   "extentM": [
+    298,
+    367
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ie-w128516759",
+   "country": "IE",
+   "name": "Saint John of God Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 17,
+   "pathM": 1092,
+   "extentM": [
+    488,
+    568
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w84762457",
+   "country": "IE",
+   "name": "Blackrock Clinic",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 11,
+   "waypoints": 11,
+   "trails": 9,
+   "pathM": 402,
+   "extentM": [
+    257,
+    288
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ie-r12144599",
+   "country": "IE",
+   "name": "St Vincent's University Hospital",
+   "buildings": 34,
+   "named": 34,
+   "entrances": 13,
+   "facilities": 21,
+   "waypoints": 59,
+   "trails": 41,
+   "pathM": 2359,
+   "extentM": [
+    527,
+    403
+   ],
+   "score": 89
+  },
+  {
+   "id": "osm-ie-w43675789",
+   "country": "IE",
+   "name": "Bon Secours Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 9,
+   "waypoints": 10,
+   "trails": 3,
+   "pathM": 63,
+   "extentM": [
+    237,
+    277
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w22634348",
+   "country": "IE",
+   "name": "Beaumont Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 27,
+   "waypoints": 33,
+   "trails": 15,
+   "pathM": 1250,
+   "extentM": [
+    763,
+    859
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-ie-w51985549",
+   "country": "IE",
+   "name": "St. Michael's Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 12,
+   "trails": 2,
+   "pathM": 47,
+   "extentM": [
+    183,
+    171
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ie-r5274433",
+   "country": "IE",
+   "name": "Louth County Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 5,
+   "pathM": 494,
+   "extentM": [
+    434,
+    287
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ie-w177777682",
+   "country": "IE",
+   "name": "Bantry General Hospital",
+   "buildings": 5,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 7,
+   "trails": 5,
+   "pathM": 109,
+   "extentM": [
+    257,
+    202
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-ie-w177571700",
+   "country": "IE",
+   "name": "Mallow General Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 2,
+   "pathM": 19,
+   "extentM": [
+    286,
+    325
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ie-w353440320",
+   "country": "IE",
+   "name": "Ennis Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    254,
+    245
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ie-w506757558",
+   "country": "IE",
+   "name": "Hospital Grounds New Ross",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 4,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    310,
+    224
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ie-w143927675",
+   "country": "IE",
+   "name": "Saint Vincent's Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 3,
+   "pathM": 410,
+   "extentM": [
+    373,
+    335
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-ie-w473024122",
+   "country": "IE",
+   "name": "Ballina District Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    169,
+    244
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-ie-w49414502",
+   "country": "IE",
+   "name": "Midland Regional Hospital Mullingar",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 2,
+   "pathM": 75,
+   "extentM": [
+    274,
+    417
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ie-w184057250",
+   "country": "IE",
+   "name": "St. Mary's Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 3,
+   "trails": 1,
+   "pathM": 8,
+   "extentM": [
+    259,
+    266
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-ie-w49151419",
+   "country": "IE",
+   "name": "Saint Loman's Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 8,
+   "trails": 5,
+   "pathM": 405,
+   "extentM": [
+    704,
+    610
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-ie-w51680291",
+   "country": "IE",
+   "name": "St. Columcille's Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 37,
+   "pathM": 1187,
+   "extentM": [
+    346,
+    335
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w79498864",
+   "country": "IE",
+   "name": "Rotunda Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    217,
+    242
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ie-w257323730",
+   "country": "IE",
+   "name": "Our Lady of Lourdes Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 4,
+   "trails": 1,
+   "pathM": 8,
+   "extentM": [
+    317,
+    324
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ie-w975984802",
+   "country": "IE",
+   "name": "Saint Mary's Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 12,
+   "trails": 6,
+   "pathM": 203,
+   "extentM": [
+    783,
+    764
+   ],
+   "score": 14
+  },
+  {
    "id": "osm-ke-w666097819",
    "country": "KE",
    "name": "Bungoma county referral Hospital",
@@ -19363,6 +20672,210 @@
     114
    ],
    "score": 18
+  },
+  {
+   "id": "osm-ke-w138227891",
+   "country": "KE",
+   "name": "Nairobi Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    445,
+    293
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-ke-w245262898",
+   "country": "KE",
+   "name": "Kenyatta National Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    445,
+    617
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ke-w25473029",
+   "country": "KE",
+   "name": "Aga Khan University Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    397,
+    268
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-lu-w72872456",
+   "country": "LU",
+   "name": "Centre Hospitalier Émile Mayrisch",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 8,
+   "trails": 3,
+   "pathM": 205,
+   "extentM": [
+    255,
+    331
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-lu-w570707211",
+   "country": "LU",
+   "name": "Hôpital Intercommunal Princesse Marie-Astrid",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 13,
+   "pathM": 544,
+   "extentM": [
+    266,
+    213
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-lu-r7591385",
+   "country": "LU",
+   "name": "ZithaKlinik",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    203,
+    213
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-lu-w41407070",
+   "country": "LU",
+   "name": "Centre Hospitalier de Luxembourg",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 9,
+   "facilities": 9,
+   "waypoints": 24,
+   "trails": 29,
+   "pathM": 1085,
+   "extentM": [
+    607,
+    398
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-lu-w189452987",
+   "country": "LU",
+   "name": "CHL Eich",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 3,
+   "pathM": 69,
+   "extentM": [
+    125,
+    248
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-lu-w784866880",
+   "country": "LU",
+   "name": "Rehazenter",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 3,
+   "pathM": 202,
+   "extentM": [
+    286,
+    283
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-lu-r17514812",
+   "country": "LU",
+   "name": "Hôpital Kirchberg",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 26,
+   "waypoints": 29,
+   "trails": 8,
+   "pathM": 1072,
+   "extentM": [
+    257,
+    360
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-lu-w884212046",
+   "country": "LU",
+   "name": "Centre Hospitalier du Nord",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 14,
+   "waypoints": 19,
+   "trails": 14,
+   "pathM": 431,
+   "extentM": [
+    334,
+    301
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-ng-w98919901",
+   "country": "NG",
+   "name": "National Hospital Abuja",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 4,
+   "trails": 5,
+   "pathM": 273,
+   "extentM": [
+    804,
+    822
+   ],
+   "score": 6
   },
   {
    "id": "osm-nl-w454408600",
@@ -20811,8 +22324,8 @@
   }
  ],
  "refused": {
-  "no named buildings": 2431,
-  "score n": 246,
+  "no named buildings": 3982,
+  "score n": 303,
   "grounds n×n m — too large for one plan": 1
  }
 }
