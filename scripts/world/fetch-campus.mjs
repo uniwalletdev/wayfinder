@@ -21,7 +21,7 @@
 //
 // Run: node scripts/world/fetch-campus.mjs [--countries US,DE] [--areas US-CO,US-NY] [--reuse-days 7] [--budget-min 270]
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
-import { overpass, pointOf } from "./lib/overpass.mjs"
+import { areaDataCheck, lastHost, overpass, pointOf, splitCounts } from "./lib/overpass.mjs"
 
 const arg = (name) => {
   const i = process.argv.indexOf(name)
@@ -73,22 +73,29 @@ const WHAT = (area) => `(
 );
 out geom qt;`
 
+// Every query counts the hospitals it found and the areas made of them
+// before answering, and the answer is checked against those counts
+// (areaDataCheck): a mirror without area data would otherwise hand back a
+// complete, empty answer.
 const HOSPITALS = (selector) => `(
   way${selector}["amenity"="hospital"];
   relation${selector}["amenity"="hospital"];
   way${selector}["healthcare"="hospital"];
   relation${selector}["healthcare"="hospital"];
 )->.h;
-.h map_to_area->.ha;`
+.h map_to_area->.ha;
+.h out count;
+.ha out count;`
 
 // A state's grounds in one query. The server gets five minutes (less when
 // the stage's limit is closer) and one try per instance on two instances: a
 // state too heavy for that is asked for in pieces instead.
-async function fetchArea(areaFilter, ms) {
-  return overpass(`[out:json][timeout:${serverSeconds(ms, 300)}];
+async function fetchArea(areaFilter, ms, minHospitals) {
+  const answer = await overpass(`[out:json][timeout:${serverSeconds(ms, 300)}];
 ${areaFilter}
 ${HOSPITALS("(area.c)")}
-${WHAT("(area.ha)")}`, { timeoutMs: perTry(ms, 360_000), retries: 0, endpoints: 2 })
+${WHAT("(area.ha)")}`, { timeoutMs: perTry(ms, 360_000), retries: 0, endpoints: 2, validate: areaDataCheck({ minHospitals }) })
+  return splitCounts(answer).elements
 }
 
 async function subdivisions(code) {
@@ -121,10 +128,11 @@ async function fetchCell(name, [s, w, n, e], depth, areaDeadline, out, seen) {
   if (left < MIN_QUERY_MS) return { failed: 0, left: 1 }
   try {
     const t0 = Date.now()
-    const els = await overpass(`[out:json][timeout:${serverSeconds(left, 180)}];
+    const answer = await overpass(`[out:json][timeout:${serverSeconds(left, 180)}];
 ${HOSPITALS(`(${s},${w},${n},${e})`)}
-${WHAT("(area.ha)")}`, { timeoutMs: perTry(left, 200_000), retries: 0, endpoints: 2, gapMs: 4000 })
-    console.log(`  ${name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s`)
+${WHAT("(area.ha)")}`, { timeoutMs: perTry(left, 200_000), retries: 0, endpoints: 2, gapMs: 4000, validate: areaDataCheck() })
+    const els = splitCounts(answer).elements
+    console.log(`  ${name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s via ${lastHost}`)
     for (const el of els) {
       const k = `${el.type}${el.id}`
       if (!seen.has(k)) {
@@ -161,7 +169,7 @@ ${WHAT("(area.ha)")}`, { timeoutMs: perTry(left, 200_000), retries: 0, endpoints
 async function fetchGrounds(a) {
   let firstErr
   try {
-    return { elements: await fetchArea(a.filter, msLeft()), failed: 0, left: 0 }
+    return { elements: await fetchArea(a.filter, msLeft(), a.minHospitals), failed: 0, left: 0 }
   } catch (err) {
     firstErr = err
     if (!a.bbox) throw err
@@ -215,15 +223,27 @@ function outlineIndex(hospitals) {
 }
 
 // An area's file from this or an earlier run, if it is fresh enough to reuse.
+// An empty one is asked for again: a genuinely empty area costs one query a
+// run, an empty answer from a mirror without area data must not stick.
 function cachedArea(name) {
   const path = `${AREAS}/${name}.json`
   if (!existsSync(path)) return null
   try {
     const c = JSON.parse(readFileSync(path, "utf8"))
-    return Date.parse(c.fetchedAt) >= freshSince ? c : null
+    return c.elements?.length && Date.parse(c.fetchedAt) >= freshSince ? c : null
   } catch {
     return null
   }
+}
+
+// How many outlined hospitals an area is known to hold: those inside its
+// bounding box, which overlaps the neighbours', so an answer is held to at
+// least one only when the box holds a handful.
+function knownHospitals(a, outlined) {
+  if (!a.bbox) return 0
+  const [s, w, n, e] = a.bbox
+  const inBox = outlined.filter((h) => h.lat >= s && h.lat <= n && h.lng >= w && h.lng <= e).length
+  return inBox >= 5 ? 1 : 0
 }
 
 const files = readdirSync("data/world/hospitals").filter((f) => f.endsWith(".json"))
@@ -275,11 +295,19 @@ for (const code of countries) {
     // not empty Germany's Länder.
     const mine = onlyAreas?.filter((x) => x.startsWith(`${code}-`))
     if (mine?.length) areas = areas.filter((a) => mine.includes(a.name))
+    for (const a of areas) a.minHospitals = knownHospitals(a, outlined)
   } else {
     // The country's own hospitals bound the fallback grid; no extra query.
     const lats = outlined.map((h) => h.lat)
     const lngs = outlined.map((h) => h.lng)
-    areas = [{ name: code, filter: `area["ISO3166-1"="${code}"]["admin_level"="2"]->.c;`, bbox: [Math.min(...lats) - 0.05, Math.min(...lngs) - 0.05, Math.max(...lats) + 0.05, Math.max(...lngs) + 0.05] }]
+    areas = [
+      {
+        name: code,
+        filter: `area["ISO3166-1"="${code}"]["admin_level"="2"]->.c;`,
+        bbox: [Math.min(...lats) - 0.05, Math.min(...lngs) - 0.05, Math.max(...lats) + 0.05, Math.max(...lngs) + 0.05],
+        minHospitals: outlined.length >= 5 ? 1 : 0,
+      },
+    ]
   }
   let elements = 0
   let failed = 0
@@ -318,7 +346,7 @@ for (const code of countries) {
       }
       els = r.elements
       writeFileSync(`${AREAS}/${a.name}.json`, JSON.stringify({ name: a.name, country: code, fetchedAt: new Date().toISOString(), elements: els }))
-      console.log(`  ${a.name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s`)
+      console.log(`  ${a.name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s via ${lastHost}`)
     }
     for (const el of els) {
       const p = pointOf(el)

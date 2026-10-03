@@ -28,7 +28,10 @@ const MIN_GAP_MS = Number(process.env.OVERPASS_GAP_MS ?? 2500)
 // `retries` is per endpoint (default 3, as for the small queries); `endpoints`
 // caps how many instances are tried. A query the server itself times out after
 // 15 minutes must not be retried a dozen times across three instances.
-export async function overpass(query, { timeoutMs = 600_000, retries = 3, endpoints = ENDPOINTS.length, gapMs = MIN_GAP_MS } = {}) {
+// The instance that gave the last answer, for the log.
+export let lastHost = ""
+
+export async function overpass(query, { timeoutMs = 600_000, retries = 3, endpoints = ENDPOINTS.length, gapMs = MIN_GAP_MS, validate } = {}) {
   let lastErr
   for (const endpoint of ENDPOINTS.slice(0, endpoints)) {
     const wait = lastRequestAt + gapMs - Date.now()
@@ -52,7 +55,13 @@ export async function overpass(query, { timeoutMs = 600_000, retries = 3, endpoi
       if (json.remark && /runtime error|timed out|out of memory/i.test(json.remark)) {
         throw new Error(`Overpass: ${json.remark.slice(0, 200)}`)
       }
-      return json.elements ?? []
+      const elements = json.elements ?? []
+      // A caller can refuse an answer that is well formed but wrong — an
+      // instance whose area data is missing answers an area query with
+      // nothing and no error — so that the next instance is asked instead.
+      if (validate) validate(elements, new URL(endpoint).host)
+      lastHost = new URL(endpoint).host
+      return elements
     } catch (err) {
       lastErr = err
       console.warn(`  ${new URL(endpoint).host} failed: ${String(err.message ?? err).slice(0, 160)}`)
@@ -70,3 +79,31 @@ export function pointOf(el) {
 }
 
 export const osmId = (el) => `${el.type[0]}${el.id}`
+
+// `out count;` puts an element {type: "count", tags: {nodes, ways, relations,
+// areas, total}} in the answer, in the order the statements ran. Split those
+// from the real elements, with their numbers as numbers.
+export function splitCounts(elements) {
+  const counts = []
+  const rest = []
+  for (const el of elements) {
+    if (el.type === "count") counts.push(Object.fromEntries(Object.entries(el.tags ?? {}).map(([k, v]) => [k, Number(v) || 0])))
+    else rest.push(el)
+  }
+  return { counts, elements: rest }
+}
+
+// For a query that counts the hospitals it found (`.h out count;`) and the
+// areas made of them (`.ha out count;`) before answering: an instance without
+// area data — it happens on the volunteer mirrors — makes no areas for any
+// number of hospitals, and finds no hospitals at all when the state's own area
+// is missing. Both would read as a complete, empty answer. `minHospitals` is
+// how many the caller knows to be there.
+export function areaDataCheck({ minHospitals = 0 } = {}) {
+  return (elements, host) => {
+    const [h, ha] = splitCounts(elements).counts
+    if (!h || !ha) throw new Error(`${host}: the answer carries no counts`)
+    if (h.total > 0 && ha.areas === 0) throw new Error(`${host} has no area data: ${h.total} hospitals, 0 areas`)
+    if (h.total < minHospitals) throw new Error(`${host} found ${h.total} hospitals where at least ${minHospitals} are known: its area is missing`)
+  }
+}
