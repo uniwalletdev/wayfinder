@@ -1,91 +1,6 @@
 {
- "generatedAt": "2026-10-04T01:26:50.702Z",
+ "generatedAt": "2026-10-04T01:41:20.387Z",
  "built": [
-  {
-   "id": "osm-ke-w666097819",
-   "country": "KE",
-   "name": "Bungoma county referral Hospital",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 0,
-   "facilities": 0,
-   "waypoints": 5,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    168,
-    307
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-ke-w879827328",
-   "country": "KE",
-   "name": "Kenyenya Sub-County Hospital",
-   "buildings": 9,
-   "named": 9,
-   "entrances": 0,
-   "facilities": 0,
-   "waypoints": 9,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    124,
-    114
-   ],
-   "score": 18
-  },
-  {
-   "id": "osm-ke-w138227891",
-   "country": "KE",
-   "name": "Nairobi Hospital",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 0,
-   "facilities": 4,
-   "waypoints": 6,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    445,
-    293
-   ],
-   "score": 8
-  },
-  {
-   "id": "osm-ke-w245262898",
-   "country": "KE",
-   "name": "Kenyatta National Hospital",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 0,
-   "facilities": 9,
-   "waypoints": 11,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    445,
-    617
-   ],
-   "score": 13
-  },
-  {
-   "id": "osm-ke-w25473029",
-   "country": "KE",
-   "name": "Aga Khan University Hospital",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 7,
-   "waypoints": 9,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    397,
-    268
-   ],
-   "score": 9
-  },
   {
    "id": "osm-ng-w569464466",
    "country": "NG",
@@ -121,6 +36,23 @@
    "score": 6
   },
   {
+   "id": "osm-ng-w287495752",
+   "country": "NG",
+   "name": "Abdullahi Muhammad Wase General Hospital;Kano Emergency Operations Center",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 2,
+   "pathM": 508,
+   "extentM": [
+    355,
+    400
+   ],
+   "score": 10
+  },
+  {
    "id": "osm-ng-w802561083",
    "country": "NG",
    "name": "Usmanu Danfodio University Teaching Hospital",
@@ -136,23 +68,6 @@
     1456
    ],
    "score": 32
-  },
-  {
-   "id": "osm-ng-w287495752",
-   "country": "NG",
-   "name": "Abdullahi Muhammad Wase General Hospital;Kano Emergency Operations Center",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 0,
-   "facilities": 1,
-   "waypoints": 5,
-   "trails": 1,
-   "pathM": 254,
-   "extentM": [
-    355,
-    400
-   ],
-   "score": 9
   },
   {
    "id": "osm-ng-w795535489",
@@ -7808,18 +7723,35 @@
    "id": "osm-us-r16029463",
    "country": "US",
    "name": "Northwest Specialty Hospital Medical Park",
-   "buildings": 4,
-   "named": 4,
+   "buildings": 8,
+   "named": 8,
    "entrances": 0,
-   "facilities": 8,
+   "facilities": 16,
    "waypoints": 12,
-   "trails": 2,
-   "pathM": 779,
+   "trails": 4,
+   "pathM": 1558,
    "extentM": [
     413,
     411
    ],
-   "score": 16
+   "score": 24
+  },
+  {
+   "id": "osm-us-w1185619605",
+   "country": "US",
+   "name": "Kootenai Clinic Post Falls",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 3,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    314,
+    149
+   ],
+   "score": 6
   },
   {
    "id": "osm-us-r16393497",
@@ -11341,6 +11273,23 @@
    "score": 8
   },
   {
+   "id": "osm-us-w271045585",
+   "country": "US",
+   "name": "Merrimack Health Methuen Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 3,
+   "trails": 8,
+   "pathM": 3830,
+   "extentM": [
+    726,
+    787
+   ],
+   "score": 6
+  },
+  {
    "id": "osm-us-w495002456",
    "country": "US",
    "name": "Cape Cod Hospital",
@@ -12041,10 +11990,10 @@
    "id": "osm-us-w430207528",
    "country": "US",
    "name": "MaineHealth Maine Medical Center Sanford",
-   "buildings": 2,
-   "named": 2,
+   "buildings": 4,
+   "named": 4,
    "entrances": 0,
-   "facilities": 9,
+   "facilities": 18,
    "waypoints": 11,
    "trails": 0,
    "pathM": 0,
@@ -12052,7 +12001,7 @@
     374,
     351
    ],
-   "score": 13
+   "score": 22
   },
   {
    "id": "osm-us-w443127417",
@@ -15776,6 +15725,244 @@
     170
    ],
    "score": 6
+  },
+  {
+   "id": "osm-us-w442972814",
+   "country": "US",
+   "name": "Springfield Hospital",
+   "buildings": 6,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 12,
+   "waypoints": 9,
+   "trails": 26,
+   "pathM": 1313,
+   "extentM": [
+    346,
+    224
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-us-w204761875",
+   "country": "US",
+   "name": "Saint Joseph Hospital",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 6,
+   "facilities": 10,
+   "waypoints": 12,
+   "trails": 72,
+   "pathM": 2654,
+   "extentM": [
+    360,
+    435
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-us-w204760117",
+   "country": "US",
+   "name": "Southern New Hampshire Medical Center",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 15,
+   "waypoints": 20,
+   "trails": 72,
+   "pathM": 3019,
+   "extentM": [
+    524,
+    419
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-us-r11138147",
+   "country": "US",
+   "name": "Catholic Medical Center",
+   "buildings": 6,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 16,
+   "waypoints": 11,
+   "trails": 68,
+   "pathM": 2283,
+   "extentM": [
+    297,
+    231
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-us-w162742801",
+   "country": "US",
+   "name": "Elliot Hospital",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 17,
+   "waypoints": 21,
+   "trails": 67,
+   "pathM": 1990,
+   "extentM": [
+    467,
+    396
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-us-w263354893",
+   "country": "US",
+   "name": "Concord Hospital",
+   "buildings": 22,
+   "named": 22,
+   "entrances": 20,
+   "facilities": 46,
+   "waypoints": 41,
+   "trails": 148,
+   "pathM": 4931,
+   "extentM": [
+    684,
+    798
+   ],
+   "score": 80
+  },
+  {
+   "id": "osm-us-w338909307",
+   "country": "US",
+   "name": "VA Medical Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 7,
+   "waypoints": 10,
+   "trails": 39,
+   "pathM": 1272,
+   "extentM": [
+    446,
+    631
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-us-w443656816",
+   "country": "US",
+   "name": "Exeter Hospital",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 9,
+   "facilities": 25,
+   "waypoints": 37,
+   "trails": 62,
+   "pathM": 2172,
+   "extentM": [
+    548,
+    619
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-us-w443635862",
+   "country": "US",
+   "name": "Frisbie Memorial Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 26,
+   "pathM": 914,
+   "extentM": [
+    428,
+    274
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w245015216",
+   "country": "US",
+   "name": "Wentworth-Douglass Hospital",
+   "buildings": 6,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 12,
+   "trails": 36,
+   "pathM": 1462,
+   "extentM": [
+    409,
+    597
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w442962551",
+   "country": "US",
+   "name": "White River Junction VA Medical Center",
+   "buildings": 16,
+   "named": 16,
+   "entrances": 2,
+   "facilities": 10,
+   "waypoints": 14,
+   "trails": 66,
+   "pathM": 3169,
+   "extentM": [
+    486,
+    791
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-us-w443493239",
+   "country": "US",
+   "name": "Alice Peck Day Memorial Hospital",
+   "buildings": 18,
+   "named": 18,
+   "entrances": 2,
+   "facilities": 14,
+   "waypoints": 17,
+   "trails": 90,
+   "pathM": 4281,
+   "extentM": [
+    363,
+    624
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-us-r10601053",
+   "country": "US",
+   "name": "Dartmouth-Hitchcock Medical Center",
+   "buildings": 16,
+   "named": 16,
+   "entrances": 14,
+   "facilities": 76,
+   "waypoints": 52,
+   "trails": 370,
+   "pathM": 14220,
+   "extentM": [
+    1268,
+    925
+   ],
+   "score": 104
+  },
+  {
+   "id": "osm-us-w442870317",
+   "country": "US",
+   "name": "Northeastern Vermont Regional Hospital",
+   "buildings": 18,
+   "named": 18,
+   "entrances": 2,
+   "facilities": 48,
+   "waypoints": 34,
+   "trails": 116,
+   "pathM": 3305,
+   "extentM": [
+    927,
+    645
+   ],
+   "score": 66
   },
   {
    "id": "osm-us-w224144735",
@@ -19606,35 +19793,35 @@
    "id": "osm-us-r18811957",
    "country": "US",
    "name": "Legacy Emanuel Medical Center",
-   "buildings": 16,
-   "named": 16,
-   "entrances": 3,
-   "facilities": 28,
+   "buildings": 32,
+   "named": 32,
+   "entrances": 6,
+   "facilities": 56,
    "waypoints": 46,
-   "trails": 9,
-   "pathM": 552,
+   "trails": 18,
+   "pathM": 1103,
    "extentM": [
     430,
     671
    ],
-   "score": 62
+   "score": 92
   },
   {
    "id": "osm-us-r18022560",
    "country": "US",
    "name": "Kaiser Permanente",
-   "buildings": 7,
-   "named": 7,
+   "buildings": 14,
+   "named": 14,
    "entrances": 0,
-   "facilities": 9,
+   "facilities": 18,
    "waypoints": 16,
-   "trails": 15,
-   "pathM": 850,
+   "trails": 30,
+   "pathM": 1700,
    "extentM": [
     310,
     584
    ],
-   "score": 23
+   "score": 32
   },
   {
    "id": "osm-us-w315565538",
@@ -19657,35 +19844,35 @@
    "id": "osm-us-w233419976",
    "country": "US",
    "name": "Columbia Memorial Hospital",
-   "buildings": 1,
-   "named": 1,
+   "buildings": 2,
+   "named": 2,
    "entrances": 0,
-   "facilities": 12,
+   "facilities": 24,
    "waypoints": 13,
-   "trails": 18,
-   "pathM": 1271,
+   "trails": 36,
+   "pathM": 2542,
    "extentM": [
     647,
     220
    ],
-   "score": 14
+   "score": 26
   },
   {
    "id": "osm-us-w453670114",
    "country": "US",
    "name": "Providence Hood River Memorial Hospital",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 4,
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 8,
    "waypoints": 6,
-   "trails": 1,
-   "pathM": 15,
+   "trails": 2,
+   "pathM": 31,
    "extentM": [
     286,
     167
    ],
-   "score": 7
+   "score": 12
   },
   {
    "id": "osm-us-w370131162",
@@ -25400,74 +25587,6 @@
    "score": 9
   },
   {
-   "id": "osm-us-w442972814",
-   "country": "US",
-   "name": "Springfield Hospital",
-   "buildings": 3,
-   "named": 2,
-   "entrances": 2,
-   "facilities": 6,
-   "waypoints": 9,
-   "trails": 13,
-   "pathM": 656,
-   "extentM": [
-    346,
-    224
-   ],
-   "score": 10
-  },
-  {
-   "id": "osm-us-w204761875",
-   "country": "US",
-   "name": "Saint Joseph Hospital",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 3,
-   "facilities": 5,
-   "waypoints": 12,
-   "trails": 36,
-   "pathM": 1327,
-   "extentM": [
-    360,
-    435
-   ],
-   "score": 12
-  },
-  {
-   "id": "osm-us-r11138147",
-   "country": "US",
-   "name": "Catholic Medical Center",
-   "buildings": 3,
-   "named": 2,
-   "entrances": 1,
-   "facilities": 8,
-   "waypoints": 11,
-   "trails": 34,
-   "pathM": 1141,
-   "extentM": [
-    297,
-    231
-   ],
-   "score": 13
-  },
-  {
-   "id": "osm-us-w263354893",
-   "country": "US",
-   "name": "Concord Hospital",
-   "buildings": 11,
-   "named": 11,
-   "entrances": 10,
-   "facilities": 23,
-   "waypoints": 41,
-   "trails": 74,
-   "pathM": 2466,
-   "extentM": [
-    684,
-    798
-   ],
-   "score": 51
-  },
-  {
    "id": "osm-us-r7914032",
    "country": "US",
    "name": "Porter Medical Center",
@@ -25483,57 +25602,6 @@
     508
    ],
    "score": 22
-  },
-  {
-   "id": "osm-us-w442962551",
-   "country": "US",
-   "name": "White River Junction VA Medical Center",
-   "buildings": 8,
-   "named": 8,
-   "entrances": 1,
-   "facilities": 5,
-   "waypoints": 14,
-   "trails": 33,
-   "pathM": 1584,
-   "extentM": [
-    486,
-    791
-   ],
-   "score": 21
-  },
-  {
-   "id": "osm-us-w443493239",
-   "country": "US",
-   "name": "Alice Peck Day Memorial Hospital",
-   "buildings": 9,
-   "named": 9,
-   "entrances": 1,
-   "facilities": 7,
-   "waypoints": 17,
-   "trails": 45,
-   "pathM": 2141,
-   "extentM": [
-    363,
-    624
-   ],
-   "score": 26
-  },
-  {
-   "id": "osm-us-r10601053",
-   "country": "US",
-   "name": "Dartmouth-Hitchcock Medical Center",
-   "buildings": 8,
-   "named": 8,
-   "entrances": 7,
-   "facilities": 38,
-   "waypoints": 52,
-   "trails": 185,
-   "pathM": 7110,
-   "extentM": [
-    1268,
-    925
-   ],
-   "score": 60
   },
   {
    "id": "osm-us-w885219383",
@@ -25553,21 +25621,854 @@
    "score": 20
   },
   {
-   "id": "osm-us-w442870317",
+   "id": "osm-us-w375433280",
    "country": "US",
-   "name": "Northeastern Vermont Regional Hospital",
-   "buildings": 9,
-   "named": 9,
-   "entrances": 1,
-   "facilities": 24,
-   "waypoints": 34,
-   "trails": 58,
-   "pathM": 1653,
+   "name": "PeaceHealth Southwest Medical Center",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 20,
+   "waypoints": 23,
+   "trails": 24,
+   "pathM": 1191,
    "extentM": [
-    927,
-    645
+    431,
+    673
    ],
-   "score": 42
+   "score": 24
+  },
+  {
+   "id": "osm-us-w374904217",
+   "country": "US",
+   "name": "Portland VA Medical Center - Vancouver Division",
+   "buildings": 15,
+   "named": 15,
+   "entrances": 0,
+   "facilities": 25,
+   "waypoints": 39,
+   "trails": 31,
+   "pathM": 1521,
+   "extentM": [
+    720,
+    566
+   ],
+   "score": 55
+  },
+  {
+   "id": "osm-us-w163857391",
+   "country": "US",
+   "name": "Legacy Salmon Creek Medical Center",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 8,
+   "facilities": 9,
+   "waypoints": 20,
+   "trails": 15,
+   "pathM": 838,
+   "extentM": [
+    337,
+    311
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w484990210",
+   "country": "US",
+   "name": "Willapa Harbor Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    203,
+    150
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w383209796",
+   "country": "US",
+   "name": "PeaceHealth St. John Medical Center",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    361,
+    277
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w484972615",
+   "country": "US",
+   "name": "Klickitat Valley Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 4,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    207,
+    172
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w448073378",
+   "country": "US",
+   "name": "Trios Southridge Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 11,
+   "waypoints": 16,
+   "trails": 20,
+   "pathM": 2688,
+   "extentM": [
+    575,
+    624
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-us-w485419285",
+   "country": "US",
+   "name": "Kadlec Regional Medical Center",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 12,
+   "trails": 15,
+   "pathM": 614,
+   "extentM": [
+    328,
+    274
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w224387827",
+   "country": "US",
+   "name": "Lourdes Medical Center",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 6,
+   "pathM": 617,
+   "extentM": [
+    193,
+    187
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-us-w484992150",
+   "country": "US",
+   "name": "Harbor Regional Health Community Hospital",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 7,
+   "waypoints": 12,
+   "trails": 15,
+   "pathM": 348,
+   "extentM": [
+    256,
+    263
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w485226630",
+   "country": "US",
+   "name": "Providence St. Peter Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 43,
+   "pathM": 2452,
+   "extentM": [
+    564,
+    508
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-us-w51242100",
+   "country": "US",
+   "name": "American Lake VA Medical Center",
+   "buildings": 24,
+   "named": 24,
+   "entrances": 2,
+   "facilities": 74,
+   "waypoints": 96,
+   "trails": 139,
+   "pathM": 6305,
+   "extentM": [
+    1076,
+    1508
+   ],
+   "score": 123
+  },
+  {
+   "id": "osm-us-w51221374",
+   "country": "US",
+   "name": "Madigan Army Medical Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 69,
+   "pathM": 4160,
+   "extentM": [
+    662,
+    1038
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w25101011",
+   "country": "US",
+   "name": "Western State Hospital",
+   "buildings": 24,
+   "named": 24,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 32,
+   "trails": 33,
+   "pathM": 2007,
+   "extentM": [
+    1752,
+    801
+   ],
+   "score": 56
+  },
+  {
+   "id": "osm-us-w25099135",
+   "country": "US",
+   "name": "Saint Clare Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 6,
+   "facilities": 8,
+   "waypoints": 18,
+   "trails": 25,
+   "pathM": 783,
+   "extentM": [
+    428,
+    308
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-us-w25054939",
+   "country": "US",
+   "name": "MultiCare Allenmore Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 1,
+   "waypoints": 8,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    501,
+    222
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w485203226",
+   "country": "US",
+   "name": "St. Michael Medical Center Silverdale",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 8,
+   "facilities": 8,
+   "waypoints": 19,
+   "trails": 21,
+   "pathM": 1228,
+   "extentM": [
+    329,
+    578
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-us-w25108936",
+   "country": "US",
+   "name": "MultiCare Good Samaritan Hospital",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 18,
+   "waypoints": 24,
+   "trails": 81,
+   "pathM": 3896,
+   "extentM": [
+    563,
+    543
+   ],
+   "score": 28
+  },
+  {
+   "id": "osm-us-w25054859",
+   "country": "US",
+   "name": "Saint Joseph Medical Center",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 13,
+   "trails": 28,
+   "pathM": 2285,
+   "extentM": [
+    389,
+    371
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w264478313",
+   "country": "US",
+   "name": "MultiCare Tacoma General Hospital",
+   "buildings": 6,
+   "named": 5,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 13,
+   "trails": 32,
+   "pathM": 2134,
+   "extentM": [
+    463,
+    380
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-us-w172783647",
+   "country": "US",
+   "name": "St. Anne Hospital",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 16,
+   "trails": 1,
+   "pathM": 100,
+   "extentM": [
+    351,
+    335
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-us-w53615315",
+   "country": "US",
+   "name": "VA Medical Center - Seattle",
+   "buildings": 15,
+   "named": 15,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 21,
+   "trails": 103,
+   "pathM": 2751,
+   "extentM": [
+    497,
+    444
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-us-w333369584",
+   "country": "US",
+   "name": "Swedish First Hill Medical Center",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 4,
+   "facilities": 37,
+   "waypoints": 52,
+   "trails": 91,
+   "pathM": 3749,
+   "extentM": [
+    474,
+    518
+   ],
+   "score": 63
+  },
+  {
+   "id": "osm-us-w297302349",
+   "country": "US",
+   "name": "Virginia Mason Hospital & Seattle Medical Center",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 3,
+   "facilities": 10,
+   "waypoints": 24,
+   "trails": 35,
+   "pathM": 1669,
+   "extentM": [
+    322,
+    276
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-us-w1066764914",
+   "country": "US",
+   "name": "Swedish Medical Center Cherry Hill Campus",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 8,
+   "facilities": 6,
+   "waypoints": 22,
+   "trails": 17,
+   "pathM": 1058,
+   "extentM": [
+    302,
+    204
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-us-w297300958",
+   "country": "US",
+   "name": "Kaiser Permanente Capitol Hill Campus",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 8,
+   "facilities": 6,
+   "waypoints": 14,
+   "trails": 19,
+   "pathM": 991,
+   "extentM": [
+    105,
+    327
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w485061269",
+   "country": "US",
+   "name": "Valley Medical Center",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 4,
+   "facilities": 17,
+   "waypoints": 35,
+   "trails": 3,
+   "pathM": 241,
+   "extentM": [
+    387,
+    545
+   ],
+   "score": 48
+  },
+  {
+   "id": "osm-us-w292245531",
+   "country": "US",
+   "name": "Swedish Medical Center Ballard Campus",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 8,
+   "facilities": 13,
+   "waypoints": 24,
+   "trails": 26,
+   "pathM": 1353,
+   "extentM": [
+    201,
+    232
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-us-r7528363",
+   "country": "US",
+   "name": "Seattle Children's Hospital",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 8,
+   "facilities": 14,
+   "waypoints": 30,
+   "trails": 69,
+   "pathM": 2825,
+   "extentM": [
+    569,
+    427
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-us-w485036588",
+   "country": "US",
+   "name": "Swedish Medical Center Edmonds Campus",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 17,
+   "waypoints": 23,
+   "trails": 37,
+   "pathM": 1399,
+   "extentM": [
+    331,
+    339
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-us-w249487376",
+   "country": "US",
+   "name": "Saint Anthony Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    345,
+    497
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w391949890",
+   "country": "US",
+   "name": "Overlake Medical Center",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 9,
+   "facilities": 12,
+   "waypoints": 27,
+   "trails": 59,
+   "pathM": 1416,
+   "extentM": [
+    192,
+    401
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-us-w485040439",
+   "country": "US",
+   "name": "EvergreenHealth Kirkland",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 23,
+   "facilities": 34,
+   "waypoints": 39,
+   "trails": 68,
+   "pathM": 1940,
+   "extentM": [
+    422,
+    323
+   ],
+   "score": 41
+  },
+  {
+   "id": "osm-us-w384088396",
+   "country": "US",
+   "name": "Swedish Issaquah",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 5,
+   "facilities": 5,
+   "waypoints": 14,
+   "trails": 20,
+   "pathM": 1167,
+   "extentM": [
+    349,
+    204
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-us-w35827609",
+   "country": "US",
+   "name": "Central Washington Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 13,
+   "waypoints": 18,
+   "trails": 1,
+   "pathM": 10,
+   "extentM": [
+    425,
+    376
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-us-w51564664",
+   "country": "US",
+   "name": "Wenatchee Valley Medical Center",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 1,
+   "waypoints": 4,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    236,
+    341
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-us-r6651469",
+   "country": "US",
+   "name": "Providence Sacred Heart Medical Center and Children's Hospital",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 2,
+   "facilities": 30,
+   "waypoints": 43,
+   "trails": 60,
+   "pathM": 4437,
+   "extentM": [
+    692,
+    578
+   ],
+   "score": 54
+  },
+  {
+   "id": "osm-us-r15990680",
+   "country": "US",
+   "name": "MultiCare Deaconess Hospital",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 0,
+   "facilities": 14,
+   "waypoints": 25,
+   "trails": 26,
+   "pathM": 1641,
+   "extentM": [
+    694,
+    491
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-us-w485446325",
+   "country": "US",
+   "name": "Providence Holy Family Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 10,
+   "trails": 4,
+   "pathM": 497,
+   "extentM": [
+    423,
+    429
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w485444102",
+   "country": "US",
+   "name": "Valley Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 1,
+   "pathM": 32,
+   "extentM": [
+    212,
+    325
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w485518333",
+   "country": "US",
+   "name": "Lincoln Hospital",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 16,
+   "pathM": 494,
+   "extentM": [
+    216,
+    263
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-us-w158294960",
+   "country": "US",
+   "name": "Whitman Hospital & Medical Clinics",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    380,
+    221
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w485000916",
+   "country": "US",
+   "name": "Forks Community Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 7,
+   "pathM": 181,
+   "extentM": [
+    244,
+    240
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w485007813",
+   "country": "US",
+   "name": "WhidbeyHealth Medical Center",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 8,
+   "trails": 25,
+   "pathM": 922,
+   "extentM": [
+    265,
+    238
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-us-w40038371",
+   "country": "US",
+   "name": "Providence Regional Medical Center",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 12,
+   "waypoints": 15,
+   "trails": 7,
+   "pathM": 605,
+   "extentM": [
+    218,
+    307
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-us-w307674922",
+   "country": "US",
+   "name": "Island Hospital",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 33,
+   "pathM": 1854,
+   "extentM": [
+    369,
+    198
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-us-w307401368",
+   "country": "US",
+   "name": "PeaceHealth St. Joseph Medical Center",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 23,
+   "waypoints": 26,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    624,
+    350
+   ],
+   "score": 31
+  },
+  {
+   "id": "osm-us-w314175122",
+   "country": "US",
+   "name": "Skagit Valley Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 6,
+   "facilities": 8,
+   "waypoints": 16,
+   "trails": 18,
+   "pathM": 914,
+   "extentM": [
+    173,
+    422
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-us-w335845847",
+   "country": "US",
+   "name": "Olympic Medical Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 22,
+   "waypoints": 21,
+   "trails": 3,
+   "pathM": 197,
+   "extentM": [
+    300,
+    205
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-us-w221422722",
+   "country": "US",
+   "name": "Providence Regional Medical Center Everett",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    395,
+    380
+   ],
+   "score": 9
   },
   {
    "id": "osm-us-w407512857",
@@ -26761,8 +27662,8 @@
   }
  ],
  "refused": {
-  "no named buildings": 6182,
-  "score n": 602,
+  "no named buildings": 5829,
+  "score n": 594,
   "grounds n×n m — too large for one plan": 4
  }
 }
