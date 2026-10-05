@@ -30,12 +30,19 @@ create table if not exists public.backoffice_audit (
 );
 create index if not exists backoffice_audit_created_idx on public.backoffice_audit (created_at desc);
 
-alter table public.wf_venues add column if not exists verified boolean not null default false;
-alter table public.wf_venues add column if not exists verified_at timestamptz;
-alter table public.wf_venues add column if not exists verified_by text;
-
-alter table public.search_misses add column if not exists resolved_at timestamptz;
-alter table public.search_misses add column if not exists resolved_by text;
+-- ALTER TABLE locks the table even when the column is already there, and
+-- this runs on every cold start: alter only what is missing.
+do $bo$ begin
+  if not exists (select 1 from information_schema.columns where table_schema = 'public' and table_name = 'wf_venues' and column_name = 'verified') then
+    alter table public.wf_venues add column verified boolean not null default false;
+    alter table public.wf_venues add column verified_at timestamptz;
+    alter table public.wf_venues add column verified_by text;
+  end if;
+  if not exists (select 1 from information_schema.columns where table_schema = 'public' and table_name = 'search_misses' and column_name = 'resolved_at') then
+    alter table public.search_misses add column resolved_at timestamptz;
+    alter table public.search_misses add column resolved_by text;
+  end if;
+end $bo$;
 
 -- Data retention purges by age.
 create index if not exists nav_signals_created_idx on public.nav_signals (created_at);

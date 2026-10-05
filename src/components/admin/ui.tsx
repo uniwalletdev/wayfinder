@@ -352,8 +352,10 @@ export function ConfirmDialog({ request, onClose }: { request: ConfirmRequest | 
     setError(null)
   }
   useEffect(() => {
+    if (request) cancelRef.current?.focus()
+  }, [request])
+  useEffect(() => {
     if (!request) return
-    cancelRef.current?.focus()
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" && !busy) onClose()
     }
@@ -417,8 +419,9 @@ export function ConfirmDialog({ request, onClose }: { request: ConfirmRequest | 
 export function downloadCsv(filename: string, rows: (string | number | null)[][]) {
   const cell = (v: string | number | null) => {
     const s = v == null ? "" : String(v)
-    // A leading = + - @ would run as a formula in a spreadsheet.
-    const safe = /^[=+\-@]/.test(s) ? `'${s}` : s
+    // A leading = + - @ (or a tab or carriage return before one) would run as
+    // a formula in a spreadsheet.
+    const safe = /^[=+\-@\t\r]/.test(s) ? `'${s}` : s
     return /[",\n]/.test(safe) ? `"${safe.replace(/"/g, '""')}"` : safe
   }
   const blob = new Blob([rows.map((r) => r.map(cell).join(",")).join("\n")], { type: "text/csv;charset=utf-8" })

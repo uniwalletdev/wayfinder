@@ -190,7 +190,8 @@ export async function addWaypoints(
     )
     saved.push(rowToWaypoint(rows[0]))
   }
-  await query(`update public.wf_venues set updated_at = now() where id = $1`, [venueId])
+  // What staff verified has changed: the badge waits for them to look again.
+  await query(`update public.wf_venues set updated_at = now(), verified = false, verified_at = null, verified_by = null where id = $1`, [venueId])
   return { ok: true, saved }
 }
 

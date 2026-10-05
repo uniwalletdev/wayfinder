@@ -237,26 +237,29 @@ export interface Activity {
   retention: { days: number; older: number; oldest: string | null }
 }
 
+// The last `days` whole days in UTC, today included — the days the chart draws.
+const SINCE_UTC_MIDNIGHT = "(date_trunc('day', now() at time zone 'UTC') - make_interval(days => $1 - 1)) at time zone 'UTC'"
+
 export async function activity(days: number): Promise<Activity> {
   const [totals, daily, venues, retention] = await Promise.all([
     query<{ total: number; devices: number }>(
-      "select count(*)::int as total, count(distinct device_id)::int devices from public.nav_signals where created_at > now() - make_interval(days => $1)",
+      `select count(*)::int as total, count(distinct device_id)::int as devices from public.nav_signals where created_at >= ${SINCE_UTC_MIDNIGHT}`,
       [days]
     ),
     query<{ day: string; kind: string; count: number }>(
-      `select to_char(date_trunc('day', created_at), 'YYYY-MM-DD') as day, kind, count(*)::int as count
-         from public.nav_signals where created_at > now() - make_interval(days => $1)
+      `select to_char(created_at at time zone 'UTC', 'YYYY-MM-DD') as day, kind, count(*)::int as count
+         from public.nav_signals where created_at >= ${SINCE_UTC_MIDNIGHT}
         group by 1, 2 order by 1`,
       [days]
     ),
     query<{ venue_key: string; count: number; devices: number }>(
       `select venue_key, count(*)::int as count, count(distinct device_id)::int as devices
-         from public.nav_signals where created_at > now() - make_interval(days => $1)
+         from public.nav_signals where created_at >= ${SINCE_UTC_MIDNIGHT}
         group by venue_key order by count desc limit 12`,
       [days]
     ),
     query<{ older: number; oldest: string | null }>(
-      "select count(*) filter (where created_at < now() - make_interval(days => $1))::int as older, min(created_at)::text oldest from public.nav_signals",
+      "select count(*) filter (where created_at < now() - make_interval(days => $1))::int as older, min(created_at)::text as oldest from public.nav_signals",
       [RETENTION_DAYS]
     ),
   ])
@@ -371,6 +374,8 @@ export async function databaseHealth(): Promise<{ ok: boolean; latencyMs: number
     }
     return { ok: true, latencyMs, tables }
   } catch (err) {
-    return { ok: false, latencyMs: null, tables: [], error: err instanceof Error ? err.message.slice(0, 200) : "error" }
+    // The message can name the host or the user; it goes to the log, not the page.
+    console.warn("Back office: database health check failed:", err instanceof Error ? err.message : err)
+    return { ok: false, latencyMs: null, tables: [], error: "unreachable" }
   }
 }
