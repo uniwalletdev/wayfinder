@@ -11,17 +11,19 @@
 // Writes data/world/campus-raw/<CC>.json: { country, complete, hospitals:
 // { "<osm id>": [elements] } }, assembled from one file per area (a country,
 // or a state of a large one) under data/world/campus-raw/areas/. An area's
-// file is written only when the area came in whole, and is reused for
-// --reuse-days, so a run that runs out of time carries on where the last one
-// stopped; the workflow caches that directory between runs. A country is
-// `complete` only when every one of its areas is, and publish.mjs holds a
-// country back until then: a complete answer late is preferred to a partial
-// one on time. data/world/campus-raw/status.json sums it up. None of it is
-// committed — it is large, and build.mjs consumes it in the same run.
+// file holds the area whole once it has all come in, or until then the cells
+// of it that have (`partial`); either is reused for --reuse-days, so a run
+// that runs out of time carries on where the last one stopped, cell by cell;
+// the workflow caches that directory between runs. A country is `complete`
+// only when every one of its areas is, and publish.mjs holds a country back
+// until then: a complete answer late is preferred to a partial one on time.
+// data/world/campus-raw/status.json sums it up. None of it is committed — it
+// is large, and build.mjs consumes it in the same run.
 //
-// Run: node scripts/world/fetch-campus.mjs [--countries US,DE] [--areas US-CO,US-NY] [--reuse-days 7] [--budget-min 270]
+// Run: node scripts/world/fetch-campus.mjs [--countries US,DE] [--first NG,KE] [--areas US-CO,US-NY] [--reuse-days 7] [--budget-min 270]
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs"
-import { overpass, pointOf } from "./lib/overpass.mjs"
+import { AREA_PROBE, areaDataCheck, lastHost, overpass, pointOf, splitCounts } from "./lib/overpass.mjs"
+import { cellKey, freshCells, gridCells, orderCountries, quarters } from "./lib/grounds-cells.mjs"
 
 const arg = (name) => {
   const i = process.argv.indexOf(name)
@@ -29,6 +31,8 @@ const arg = (name) => {
 }
 const only = arg("--countries")?.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean)
 const onlyAreas = arg("--areas")?.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean)
+// Countries to take first, in this order, before the rest smallest-first.
+const first = arg("--first")?.split(",").map((s) => s.trim().toUpperCase()).filter(Boolean) ?? []
 const OUT = "data/world/campus-raw"
 const AREAS = `${OUT}/areas`
 mkdirSync(AREAS, { recursive: true })
@@ -73,22 +77,30 @@ const WHAT = (area) => `(
 );
 out geom qt;`
 
-const HOSPITALS = (selector) => `(
+// Every query first asks the server whether it has area data at all, then
+// counts the hospitals it found and the areas made of them, and the answer is
+// checked (areaDataCheck): a server without area data would otherwise hand
+// back a complete, empty answer.
+const HOSPITALS = (selector) => `${AREA_PROBE}
+(
   way${selector}["amenity"="hospital"];
   relation${selector}["amenity"="hospital"];
   way${selector}["healthcare"="hospital"];
   relation${selector}["healthcare"="hospital"];
 )->.h;
-.h map_to_area->.ha;`
+.h map_to_area->.ha;
+.h out count;
+.ha out count;`
 
 // A state's grounds in one query. The server gets five minutes (less when
 // the stage's limit is closer) and one try per instance on two instances: a
 // state too heavy for that is asked for in pieces instead.
-async function fetchArea(areaFilter, ms) {
-  return overpass(`[out:json][timeout:${serverSeconds(ms, 300)}];
+async function fetchArea(areaFilter, ms, minHospitals) {
+  const answer = await overpass(`[out:json][timeout:${serverSeconds(ms, 300)}];
 ${areaFilter}
 ${HOSPITALS("(area.c)")}
-${WHAT("(area.ha)")}`, { timeoutMs: perTry(ms, 360_000), retries: 0, endpoints: 2 })
+${WHAT("(area.ha)")}`, { timeoutMs: perTry(ms, 360_000), retries: 0, endpoints: 2, validate: areaDataCheck({ minHospitals }) })
+  return splitCounts(answer).elements
 }
 
 async function subdivisions(code) {
@@ -108,79 +120,114 @@ out tags bb;`)
 // When the server cannot answer for a whole state or country at once (504s
 // under load are common), the same question is asked for each cell of a 3×3
 // grid over its bounding box; a cell that still fails is split in four, twice
-// over, before it counts as failed. One area gets twenty minutes in all, or
-// what is left of the stage's limit if that is less. The answer is whole or
-// nothing: an area with a cell failed or out of time is not kept, and is asked
-// for again next run.
+// over, before it counts as failed. One area gets twenty minutes of a run, or
+// what is left of the stage's limit if that is less. The cells that came in
+// are kept in the area's file (`partial`, cells by their bounds), so the next
+// run asks only for the ones still missing — a county the servers answer at
+// three cells a run still comes in, over a few runs — and the area counts as
+// fetched, and is reused whole, only once every cell is in.
 const GRID = 3
 const SPLIT_DEPTH = 2
 const AREA_BUDGET_MS = 20 * 60_000
 
-async function fetchCell(name, [s, w, n, e], depth, areaDeadline, out, seen) {
-  const left = areaDeadline - Date.now()
-  if (left < MIN_QUERY_MS) return { failed: 0, left: 1 }
-  try {
-    const t0 = Date.now()
-    const els = await overpass(`[out:json][timeout:${serverSeconds(left, 180)}];
-${HOSPITALS(`(${s},${w},${n},${e})`)}
-${WHAT("(area.ha)")}`, { timeoutMs: perTry(left, 200_000), retries: 0, endpoints: 2, gapMs: 4000 })
-    console.log(`  ${name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s`)
+// `c` is the area's state for this run: `cells` its cache (key → {fetchedAt,
+// elements}), `touched` the keys reused or fetched this run, `out` and `seen`
+// the elements gathered, and `save` writes the file after every cell that
+// comes in, so a run cancelled mid-area loses one cell at most.
+async function fetchCell(name, bbox, depth, areaDeadline, c) {
+  const key = cellKey(bbox)
+  const take = (els) => {
     for (const el of els) {
       const k = `${el.type}${el.id}`
-      if (!seen.has(k)) {
-        seen.add(k)
-        out.push(el)
+      if (!c.seen.has(k)) {
+        c.seen.add(k)
+        c.out.push(el)
       }
     }
+  }
+  const kept = c.cells[key]
+  if (kept) {
+    c.touched.add(key)
+    c.reused++
+    take(kept.elements)
+    console.log(`  ${name}: ${kept.elements.length} elements, kept from ${kept.fetchedAt.slice(0, 16).replace("T", " ")}`)
     return { failed: 0, left: 0 }
-  } catch (err) {
-    const why = String(err.message ?? err).slice(0, 60)
-    if (depth >= SPLIT_DEPTH) {
-      console.warn(`  ${name}: failed (${why})`)
-      return { failed: 1, left: 0 }
-    }
-    console.warn(`  ${name}: failed (${why}); splitting in four`)
-    const ms = (s + n) / 2
-    const me = (w + e) / 2
-    const quarters = [
-      [s, w, ms, me],
-      [s, me, ms, e],
-      [ms, w, n, me],
-      [ms, me, n, e],
-    ]
+  }
+  const parts = depth < SPLIT_DEPTH ? quarters(bbox) : null
+  const split = async () => {
     const r = { failed: 0, left: 0 }
-    for (let q = 0; q < quarters.length; q++) {
-      const sub = await fetchCell(`${name}.${q}`, quarters[q], depth + 1, areaDeadline, out, seen)
+    for (let q = 0; q < parts.length; q++) {
+      const sub = await fetchCell(`${name}.${q}`, parts[q], depth + 1, areaDeadline, c)
       r.failed += sub.failed
       r.left += sub.left
     }
     return r
   }
+  // A cell an earlier run already split, with quarters in: straight to the
+  // quarters, rather than failing on the whole cell again first.
+  if (parts && parts.some((q) => c.cells[cellKey(q)])) return split()
+  const left = areaDeadline - Date.now()
+  if (left < MIN_QUERY_MS) return { failed: 0, left: 1 }
+  const [s, w, n, e] = bbox
+  try {
+    const t0 = Date.now()
+    const answer = await overpass(`[out:json][timeout:${serverSeconds(left, 180)}];
+${HOSPITALS(`(${s},${w},${n},${e})`)}
+${WHAT("(area.ha)")}`, { timeoutMs: perTry(left, 200_000), retries: 0, endpoints: 2, gapMs: 4000, validate: areaDataCheck() })
+    const els = splitCounts(answer).elements
+    console.log(`  ${name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s via ${lastHost}`)
+    c.cells[key] = { fetchedAt: new Date().toISOString(), elements: els }
+    c.touched.add(key)
+    c.fetched++
+    c.save()
+    take(els)
+    return { failed: 0, left: 0 }
+  } catch (err) {
+    const why = String(err.message ?? err).slice(0, 60)
+    if (!parts) {
+      console.warn(`  ${name}: failed (${why})`)
+      return { failed: 1, left: 0 }
+    }
+    console.warn(`  ${name}: failed (${why}); splitting in four`)
+    return split()
+  }
 }
 
+function writePartial(path, a, cells) {
+  writeFileSync(path, JSON.stringify({ name: a.name, country: a.country, checked: CHECKED, partial: true, fetchedAt: new Date().toISOString(), cells }))
+}
+
+// An area's grounds: whole in one query when the server can, else cell by
+// cell. Returns the elements with how many cells failed or were left out of
+// time, and how many were reused, fetched and kept this run.
 async function fetchGrounds(a) {
-  let firstErr
-  try {
-    return { elements: await fetchArea(a.filter, msLeft()), failed: 0, left: 0 }
-  } catch (err) {
-    firstErr = err
-    if (!a.bbox) throw err
-  }
-  console.warn(`  ${a.name}: whole area failed (${String(firstErr.message ?? firstErr).slice(0, 80)}); trying ${GRID}×${GRID} cells`)
-  const [s, w, n, e] = a.bbox
-  const out = []
-  const seen = new Set()
-  const areaDeadline = Math.min(Date.now() + AREA_BUDGET_MS, deadline)
-  const r = { failed: 0, left: 0 }
-  for (let i = 0; i < GRID; i++) {
-    for (let j = 0; j < GRID; j++) {
-      const cell = [s + ((n - s) * i) / GRID, w + ((e - w) * j) / GRID, s + ((n - s) * (i + 1)) / GRID, w + ((e - w) * (j + 1)) / GRID]
-      const sub = await fetchCell(`${a.name} cell ${i},${j}`, cell, 0, areaDeadline, out, seen)
-      r.failed += sub.failed
-      r.left += sub.left
+  const path = `${AREAS}/${a.name}.json`
+  const cells = a.bbox ? cachedCells(a.name) : {}
+  const had = Object.keys(cells).length
+  if (had) {
+    // The whole area failed in an earlier run and some of its cells are in:
+    // straight to the rest.
+    console.log(`  ${a.name}: ${had} cells kept from an earlier run; asking for the rest`)
+  } else {
+    try {
+      return { elements: await fetchArea(a.filter, msLeft(), a.minHospitals), failed: 0, left: 0, reused: 0, fetched: 0, kept: 0 }
+    } catch (err) {
+      if (!a.bbox) throw err
+      console.warn(`  ${a.name}: whole area failed (${String(err.message ?? err).slice(0, 80)}); trying ${GRID}×${GRID} cells`)
     }
   }
-  return { elements: out, ...r }
+  const c = { out: [], seen: new Set(), cells, touched: new Set(), reused: 0, fetched: 0, save: () => writePartial(path, a, c.cells) }
+  const areaDeadline = Math.min(Date.now() + AREA_BUDGET_MS, deadline)
+  const r = { failed: 0, left: 0 }
+  for (const { i, j, bbox } of gridCells(a.bbox, GRID)) {
+    const sub = await fetchCell(`${a.name} cell ${i},${j}`, bbox, 0, areaDeadline, c)
+    r.failed += sub.failed
+    r.left += sub.left
+  }
+  // Left for the next run: keep the cells this run reused or fetched, and
+  // drop any from a grid that no longer applies (the area's bounds moved).
+  if (r.failed || r.left) writePartial(path, a, Object.fromEntries([...c.touched].map((k) => [k, c.cells[k]])))
+  return { elements: c.out, ...r, reused: c.reused, fetched: c.fetched, kept: c.touched.size }
 }
 
 // Grid index of hospital outlines, so attributing a hundred thousand elements
@@ -214,27 +261,54 @@ function outlineIndex(hospitals) {
   }
 }
 
-// An area's file from this or an earlier run, if it is fresh enough to reuse.
-function cachedArea(name) {
+// An area's file from this or an earlier run, if it is fresh enough to reuse
+// and was fetched with the area-data probe. Files from before the probe are
+// asked for again: an area pieced together from cells then may hold empty
+// answers from a server without area data. A probed empty answer is real.
+const CHECKED = 2
+function areaFile(name) {
   const path = `${AREAS}/${name}.json`
   if (!existsSync(path)) return null
   try {
-    const c = JSON.parse(readFileSync(path, "utf8"))
-    return Date.parse(c.fetchedAt) >= freshSince ? c : null
+    return JSON.parse(readFileSync(path, "utf8"))
   } catch {
     return null
   }
+}
+function cachedArea(name) {
+  const c = areaFile(name)
+  return c && !c.partial && c.checked === CHECKED && Date.parse(c.fetchedAt) >= freshSince ? c : null
+}
+// The cells of an area that came in piecemeal in earlier runs, while the
+// rest did not: fresh ones are kept, the rest asked for.
+function cachedCells(name) {
+  return freshCells(areaFile(name), freshSince, CHECKED)
+}
+
+// How many outlined hospitals an area is known to hold: those inside its
+// bounding box, which overlaps the neighbours', so an answer is held to at
+// least one only when the box holds a handful.
+function knownHospitals(a, outlined) {
+  if (!a.bbox) return 0
+  const [s, w, n, e] = a.bbox
+  const inBox = outlined.filter((h) => h.lat >= s && h.lat <= n && h.lng >= w && h.lng <= e).length
+  return inBox >= 5 ? 1 : 0
 }
 
 const files = readdirSync("data/world/hospitals").filter((f) => f.endsWith(".json"))
 const lists = new Map(
   files.map((f) => f.slice(0, 2)).filter((c) => !only || only.includes(c)).map((c) => [c, JSON.parse(readFileSync(`data/world/hospitals/${c}.json`, "utf8")).hospitals])
 )
-// Smallest countries first: under a time limit the many quick ones finish,
-// and the United States gets what is left, state by state.
-const countries = [...lists.keys()].sort((a, b) => lists.get(a).length - lists.get(b).length || a.localeCompare(b))
+// The countries asked for first (--first) in that order, then the smallest
+// first: under a time limit the many quick ones finish, and the United
+// States gets what is left, state by state.
+const countries = orderCountries([...lists.keys()], (c) => lists.get(c).length, first)
 const status = { generatedAt: new Date().toISOString(), reuseDays, budgetMin, countries: {} }
 let totalHospitals = 0
+// Areas — or, of an area left unfinished, cells — this run fetched and kept,
+// as opposed to reused: a run that kept nothing made no progress, and
+// scripts/world/carry-on.mjs does not start another.
+let fetchedNew = 0
 
 function finish(code, { areas, failed, left, byHospital, elements = 0, reused = 0, note }) {
   const complete = !failed && !left
@@ -275,12 +349,21 @@ for (const code of countries) {
     // not empty Germany's Länder.
     const mine = onlyAreas?.filter((x) => x.startsWith(`${code}-`))
     if (mine?.length) areas = areas.filter((a) => mine.includes(a.name))
+    for (const a of areas) a.minHospitals = knownHospitals(a, outlined)
   } else {
     // The country's own hospitals bound the fallback grid; no extra query.
     const lats = outlined.map((h) => h.lat)
     const lngs = outlined.map((h) => h.lng)
-    areas = [{ name: code, filter: `area["ISO3166-1"="${code}"]["admin_level"="2"]->.c;`, bbox: [Math.min(...lats) - 0.05, Math.min(...lngs) - 0.05, Math.max(...lats) + 0.05, Math.max(...lngs) + 0.05] }]
+    areas = [
+      {
+        name: code,
+        filter: `area["ISO3166-1"="${code}"]["admin_level"="2"]->.c;`,
+        bbox: [Math.min(...lats) - 0.05, Math.min(...lngs) - 0.05, Math.max(...lats) + 0.05, Math.max(...lngs) + 0.05],
+        minHospitals: outlined.length >= 5 ? 1 : 0,
+      },
+    ]
   }
+  for (const a of areas) a.country = code
   let elements = 0
   let failed = 0
   let left = 0
@@ -306,19 +389,20 @@ for (const code of countries) {
         console.warn(`  ${a.name}: failed (${String(err.message ?? err).slice(0, 100)})`)
         continue
       }
-      if (r.left) {
-        left++
-        console.warn(`  ${a.name}: ${r.left} cells out of time; the whole area is asked for again next run`)
-        continue
-      }
-      if (r.failed) {
-        failed++
-        console.warn(`  ${a.name}: ${r.failed} cells failed; the whole area is asked for again next run`)
+      if (r.left || r.failed) {
+        // Progress all the same: the cells that came in are kept, and count
+        // towards carrying on.
+        fetchedNew += r.fetched
+        if (r.left) left++
+        else failed++
+        const what = r.left ? `${r.left} cells out of time` : `${r.failed} cells failed`
+        console.warn(`  ${a.name}: ${what}; ${r.kept} cells kept, the rest asked for again next run`)
         continue
       }
       els = r.elements
-      writeFileSync(`${AREAS}/${a.name}.json`, JSON.stringify({ name: a.name, country: code, fetchedAt: new Date().toISOString(), elements: els }))
-      console.log(`  ${a.name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s`)
+      writeFileSync(`${AREAS}/${a.name}.json`, JSON.stringify({ name: a.name, country: code, checked: CHECKED, fetchedAt: new Date().toISOString(), elements: els }))
+      fetchedNew++
+      console.log(`  ${a.name}: ${els.length} elements in ${Math.round((Date.now() - t0) / 1000)}s via ${lastHost}`)
     }
     for (const el of els) {
       const p = pointOf(el)
@@ -334,6 +418,7 @@ for (const code of countries) {
 }
 const incomplete = Object.entries(status.countries).filter(([, c]) => !c.complete).map(([k]) => k)
 status.complete = incomplete.length === 0
+status.fetchedNew = fetchedNew
 writeFileSync(`${OUT}/status.json`, JSON.stringify(status, null, 1) + "\n")
 if (incomplete.length) console.warn(`\nGrounds incomplete for ${incomplete.join(", ")}: held back from publishing until a run completes them`)
 console.log(`\nGrounds fetched for ${totalHospitals} hospitals`)
