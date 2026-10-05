@@ -6,7 +6,8 @@ import { WAYPOINT_TYPE_ICONS, WAYPOINT_TYPE_LABELS, floorLabel, waypointDetail }
 import { rankWaypoints, rankNearMisses, scoreWaypoint } from "@/lib/search"
 import type { CrossVenueHit } from "@/lib/cross-venue-search"
 import Overlay from "@/components/Overlay"
-import { Search, X, ChevronRight, MapPin, Loader2, Building2, ArrowRightLeft } from "lucide-react"
+import { Search, X, ChevronRight, MapPin, Loader2, Building2, ArrowRightLeft, LocateFixed } from "lucide-react"
+import { mainEntrance } from "@/lib/route-start"
 import { apiUrl } from "@/lib/app-shell"
 
 interface Props {
@@ -25,6 +26,11 @@ interface Props {
   // "where to?" search; "origin" is picking a custom starting point, which only
   // changes the wording so it's clear which end of the journey is being set.
   purpose?: "origin" | "destination"
+  // When choosing a starting point: whether the walker's live position is
+  // known (a GPS fix, or the demo or poster anchor), and the way to start from
+  // it again after a place was chosen instead.
+  liveLocationAvailable?: boolean
+  onUseLiveLocation?: () => void
   // Every other place the app knows, so a search for a hospital that is not
   // the open one offers to switch to it instead of "no results".
   otherVenues?: VenueSummary[]
@@ -81,9 +87,9 @@ interface Item {
   render: (active: boolean, id: string) => React.ReactNode
 }
 
-export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", otherVenues = [], country, onSwitchVenue, onSelectRemote, onSelect, onClose }: Props) {
+export default function SearchModal({ venueId, waypoints, quickAccess = [], floorNaming, proximity, purpose = "destination", liveLocationAvailable = false, onUseLiveLocation, otherVenues = [], country, onSwitchVenue, onSelectRemote, onSelect, onClose }: Props) {
   const isOrigin = purpose === "origin"
-  const searchPlaceholder = isOrigin ? "Choose a starting point…" : "Search a room, place or address…"
+  const searchPlaceholder = isOrigin ? "Where are you starting from?" : "Search a room, place or address…"
   const [query, setQuery] = useState("")
   const [geoResults, setGeoResults] = useState<GeoResult[]>([])
   const [geoLoading, setGeoLoading] = useState(false)
@@ -117,6 +123,16 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
   )
 
   const quickWaypoints = useMemo(() => waypoints.filter((w) => quickAccess.includes(w.name)), [waypoints, quickAccess])
+
+  // Choosing where to start: the entrances come first, the main one at the
+  // top, since that is where most journeys begin — and the live position above
+  // them when there is one.
+  const entrances = useMemo(() => {
+    if (!isOrigin) return []
+    const main = mainEntrance(waypoints)
+    const rest = waypoints.filter((w) => w.type === "exit" && w !== main).sort((a, b) => a.name.localeCompare(b.name))
+    return main ? [main, ...rest] : rest
+  }, [waypoints, isOrigin])
 
   // Other hospitals whose name matches: someone at the wrong hospital, or
   // planning from home, types the hospital's name and used to get nothing.
@@ -249,7 +265,20 @@ export default function SearchModal({ venueId, waypoints, quickAccess = [], floo
   })
   const sections: { label: React.ReactNode; items: Item[]; tone?: "primary" }[] = []
   if (trimmed === "") {
-    if (quickWaypoints.length > 0) sections.push({ label: "Quick access", items: quickWaypoints.map((w) => wpItem(w, "quick")) })
+    if (isOrigin) {
+      const items: Item[] = []
+      if (onUseLiveLocation) {
+        items.push({
+          id: "start-live",
+          select: () => { if (liveLocationAvailable) onUseLiveLocation() },
+          render: (active, id) => <LiveLocationRow id={id} active={active} available={liveLocationAvailable} onSelect={onUseLiveLocation} />,
+        })
+      }
+      items.push(...entrances.map((w) => wpItem(w, "door")))
+      if (items.length > 0) sections.push({ label: "Start from", items, tone: "primary" })
+    }
+    const quick = isOrigin ? quickWaypoints.filter((w) => w.type !== "exit") : quickWaypoints
+    if (quick.length > 0) sections.push({ label: "Quick access", items: quick.map((w) => wpItem(w, "quick")) })
     for (const [floor, list] of byFloor) {
       sections.push({ label: floorLabel(floor, floorNaming), items: list.map((w) => wpItem(w, `f${floor}`)) })
     }
@@ -478,6 +507,34 @@ function WaypointRow({ id, active, waypoint, floorNaming, onSelect }: { id: stri
         </span>
       </span>
       <ChevronRight size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
+    </button>
+  )
+}
+
+// "Your location" as a starting point. Greyed when there is no position to
+// start from, with the reason, rather than hidden: it tells the walker why the
+// route starts at the entrance, and what would change that.
+function LiveLocationRow({ id, active, available, onSelect }: { id: string; active: boolean; available: boolean; onSelect: () => void }) {
+  return (
+    <button
+      id={id}
+      role="option"
+      aria-selected={active}
+      aria-disabled={!available}
+      tabIndex={-1}
+      onClick={() => { if (available) onSelect() }}
+      className={`${rowClass(active)} ${available ? "" : "cursor-default"}`}
+    >
+      <span className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] ${available ? "bg-[#E7F2FF]" : "bg-wf-surface"}`} aria-hidden="true">
+        <LocateFixed size={18} className={available ? "text-wf-primary" : "text-wf-faint"} />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className={`block truncate text-[14.5px] font-semibold ${available ? "text-wf-ink" : "text-wf-muted"}`}>Your location</span>
+        <span className="block truncate text-xs text-wf-muted">
+          {available ? "Where you are now" : "Location is off — turn it on to start from where you stand"}
+        </span>
+      </span>
+      {available && <ChevronRight size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />}
     </button>
   )
 }

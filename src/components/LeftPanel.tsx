@@ -11,6 +11,7 @@ import {
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel, waypointDetail } from "@/lib/waypoint-meta"
 import { isOutdoorDestination } from "@/lib/routing"
+import { formatMinutes, type RouteStart } from "@/lib/route-start"
 import Toggle from "@/components/Toggle"
 import AuthButton from "@/components/AuthButton"
 
@@ -33,9 +34,10 @@ interface Props {
   nearby: NearbyItem[]
   currentFloor: number
   // The user-chosen starting point, or null to route from their live location.
-  origin: Waypoint | null
+  start: RouteStart
   onEditOrigin: () => void
   onResetOrigin: () => void
+  onSwapEnds: () => void
   destination: Waypoint | null
   route: Route | null
   routeLoading: boolean
@@ -92,9 +94,10 @@ export default function LeftPanel({
   onSelectDestination,
   nearby,
   currentFloor,
-  origin,
+  start,
   onEditOrigin,
   onResetOrigin,
+  onSwapEnds,
   destination,
   route,
   routeLoading,
@@ -300,9 +303,10 @@ export default function LeftPanel({
           />
         ) : destination && route ? (
           <RoutePreviewCard
-            origin={origin}
+            start={start}
             onEditOrigin={onEditOrigin}
             onResetOrigin={onResetOrigin}
+            onSwapEnds={onSwapEnds}
             destination={destination}
             route={route}
             routeLoading={routeLoading}
@@ -466,9 +470,10 @@ const TRAVEL_MODES: { mode: TravelMode; label: string; Icon: typeof PersonStandi
 ]
 
 function RoutePreviewCard({
-  origin,
+  start,
   onEditOrigin,
   onResetOrigin,
+  onSwapEnds,
   destination,
   route,
   routeLoading,
@@ -487,9 +492,10 @@ function RoutePreviewCard({
   onStop,
   onShare,
 }: {
-  origin: Waypoint | null
+  start: RouteStart
   onEditOrigin: () => void
   onResetOrigin: () => void
+  onSwapEnds: () => void
   destination: Waypoint
   route: Route
   routeLoading: boolean
@@ -530,6 +536,25 @@ function RoutePreviewCard({
           <X size={15} />
         </button>
       </div>
+
+      {/* Folded on a phone, the card still says where the walk starts and how
+          long it is — the two things that were hidden until now — and the start
+          is a tap away. Unfolded, the From/To block below carries this. */}
+      {!expanded && (
+        <button
+          onClick={onEditOrigin}
+          className="mb-3.5 flex w-full items-center gap-2 rounded-xl bg-wf-surface px-3 py-2 text-left lg:hidden"
+        >
+          <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full border-2 border-[#CFE3FA] bg-wf-primary" aria-hidden="true" />
+          <span className="min-w-0 flex-1 truncate text-[13px] text-wf-body">
+            From <span className="font-semibold text-wf-ink">{start.label}</span>
+          </span>
+          <span className="flex-shrink-0 text-[13px] font-semibold text-wf-ink">
+            {routeLoading ? "…" : `${formatMinutes(route)} · ${fmtDistance(route.totalDistance)}`}
+          </span>
+          <Pencil size={12} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
+        </button>
+      )}
 
       <div className={detail}>
       {hasArrivalInfo && (
@@ -582,11 +607,12 @@ function RoutePreviewCard({
       )}
 
       <RouteEndpoints
-        origin={origin}
+        start={start}
         destination={destination}
         floorNaming={floorNaming}
         onEditOrigin={onEditOrigin}
         onResetOrigin={onResetOrigin}
+        onSwapEnds={onSwapEnds}
       />
 
       {routeOptions ? (
@@ -601,13 +627,13 @@ function RoutePreviewCard({
       ) : (
         <>
           <div className="mb-4 grid grid-cols-3 gap-2">
-            <StatTile label={routeLoading ? "…" : route.outdoor ? travelMode : "walking"} value={routeLoading ? "—" : `${route.estimatedMinutes} min`} />
+            <StatTile label={routeLoading ? "…" : route.outdoor ? travelMode : "walking"} value={routeLoading ? "—" : formatMinutes(route)} />
             <StatTile label={route.floorChanges > 0 ? `${route.floorChanges} floor change${route.floorChanges > 1 ? "s" : ""}` : "same floor"} value={routeLoading ? "—" : fmtDistance(route.totalDistance)} />
             {/* The real fix, not a number typed into the design: what the
                 positioning actually reports right now. */}
             <StatTile
-              label={gpsStatus === "active" && positionAccuracy === 0 ? "demo position" : "position"}
-              value={gpsStatus !== "active" ? "no fix" : positionAccuracy === 0 ? "virtual" : `±${Math.round(positionAccuracy)} m`}
+              label={gpsStatus !== "active" ? "location" : positionAccuracy === 0 ? "demo position" : "position"}
+              value={gpsStatus === "requesting" ? "finding…" : gpsStatus === "denied" ? "off" : positionAccuracy === 0 ? "virtual" : `±${Math.round(positionAccuracy)} m`}
             />
           </div>
           {/* The drawn line is a direction guide, not a precise path: indoors
@@ -657,54 +683,79 @@ function StatTile({ label, value }: { label: string; value: string }) {
   )
 }
 
-// The route's two endpoints. The start row is a button: tap it to pick a
-// specific starting point instead of "Your location" (the live-GPS default) —
-// e.g. to plan a route from the Main Entrance before you've arrived. Once a
-// custom start is set, a reset control returns it to the live position.
+// The route's two ends, each said plainly. The From row is a button: tap it to
+// start somewhere else — the Main Entrance before you've arrived, or a ward
+// you're leaving — and when the start is a stand-in for an unknown position
+// (location off), it says so rather than claiming to be "Your location". A
+// swap turns the journey round; a reset returns the start to the default.
 function RouteEndpoints({
-  origin,
+  start,
   destination,
   floorNaming,
   onEditOrigin,
   onResetOrigin,
+  onSwapEnds,
 }: {
-  origin: Waypoint | null
+  start: RouteStart
   destination: Waypoint
   floorNaming?: FloorNaming
   onEditOrigin: () => void
   onResetOrigin: () => void
+  onSwapEnds: () => void
 }) {
+  const canSwap = !!start.waypoint
   return (
-    <div className="mb-4 flex flex-col gap-0">
-      <div className="flex items-center gap-3">
-        <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full border-2 border-[#CFE3FA] bg-wf-primary" />
-        <button
-          onClick={onEditOrigin}
-          className="group flex min-w-0 flex-1 items-center gap-1.5 rounded-lg py-0.5 text-left hover:bg-[#F7FAFD]"
-        >
-          <span className={`truncate text-[13.5px] ${origin ? "font-medium text-wf-ink" : "text-wf-body"}`}>
-            {origin ? origin.name : "Your location"}
-          </span>
-          {origin && (
-            <span className="flex-shrink-0 text-[11.5px] text-wf-muted">{floorLabel(origin.floor, floorNaming)}</span>
-          )}
-          <Pencil size={12} className="flex-shrink-0 text-wf-faint group-hover:text-wf-primary" />
-        </button>
-        {origin && (
+    <div className="mb-4 flex items-stretch gap-2">
+      <div className="flex min-w-0 flex-1 flex-col gap-0">
+        <div className="flex items-center gap-3">
+          <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full border-2 border-[#CFE3FA] bg-wf-primary" aria-hidden="true" />
           <button
-            onClick={onResetOrigin}
-            aria-label="Start from my location instead"
-            className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-wf-faint hover:bg-wf-surface hover:text-wf-ink"
+            onClick={onEditOrigin}
+            aria-label={`Starting point: ${start.label}. Change`}
+            className="group flex min-w-0 flex-1 items-center gap-2 rounded-lg py-1 text-left hover:bg-[#F7FAFD]"
           >
-            <X size={13} />
+            <span className="w-9 flex-shrink-0 text-[10.5px] font-semibold uppercase tracking-[0.08em] text-wf-muted">From</span>
+            <span className="min-w-0 flex-1">
+              <span className={`block truncate text-[13.5px] ${start.kind === "live" ? "text-wf-body" : "font-medium text-wf-ink"}`}>{start.label}</span>
+              {(start.note || start.waypoint) && (
+                <span className="block truncate text-[11.5px] text-wf-muted">
+                  {start.note ? `${start.note} · tap to change` : floorLabel(start.waypoint!.floor, floorNaming)}
+                </span>
+              )}
+            </span>
+            <Pencil size={12} className="flex-shrink-0 text-wf-faint group-hover:text-wf-primary" aria-hidden="true" />
           </button>
-        )}
+          {start.kind === "chosen" && (
+            <button
+              onClick={onResetOrigin}
+              aria-label="Start from my location instead"
+              className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-wf-faint hover:bg-wf-surface hover:text-wf-ink"
+            >
+              <X size={13} />
+            </button>
+          )}
+        </div>
+        <div className="ml-[5px] h-[14px] w-0.5 bg-wf-border" aria-hidden="true" />
+        <div className="flex items-center gap-3">
+          <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full border-2 border-[#CFF3EF] bg-wf-teal" aria-hidden="true" />
+          <span className="flex min-w-0 flex-1 items-center gap-2 py-1">
+            <span className="w-9 flex-shrink-0 text-[10.5px] font-semibold uppercase tracking-[0.08em] text-wf-muted">To</span>
+            <span className="min-w-0 flex-1">
+              <span className="block truncate text-[13.5px] font-medium text-wf-ink">{destination.name}</span>
+              <span className="block truncate text-[11.5px] text-wf-muted">{floorLabel(destination.floor, floorNaming)}</span>
+            </span>
+          </span>
+        </div>
       </div>
-      <div className="ml-[5px] h-[22px] w-0.5 bg-wf-border" />
-      <div className="flex items-center gap-3">
-        <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full border-2 border-[#CFF3EF] bg-wf-teal" />
-        <span className="truncate text-[13.5px] font-medium text-wf-ink">{destination.name}</span>
-      </div>
+      <button
+        onClick={onSwapEnds}
+        disabled={!canSwap}
+        aria-label="Swap start and destination"
+        title={canSwap ? "Swap start and destination" : "Pick a starting place to swap"}
+        className="flex w-9 flex-shrink-0 items-center justify-center self-center rounded-full border border-wf-border text-wf-body hover:border-wf-primary hover:text-wf-primary disabled:cursor-not-allowed disabled:opacity-35 h-9"
+      >
+        <ArrowUpDown size={15} aria-hidden="true" />
+      </button>
     </div>
   )
 }
@@ -744,7 +795,7 @@ function RouteChoice({
             </p>
           </div>
           <div className="flex-shrink-0 text-right">
-            <p className="font-display text-[17px] font-bold text-wf-ink">{routeOptions.fastest.estimatedMinutes} min</p>
+            <p className="font-display text-[17px] font-bold text-wf-ink">{formatMinutes(routeOptions.fastest)}</p>
             <p className="text-[11.5px] text-wf-muted">{fmtDistance(routeOptions.fastest.totalDistance)}</p>
           </div>
         </button>
@@ -759,7 +810,7 @@ function RouteChoice({
             </p>
           </div>
           <div className="flex-shrink-0 text-right">
-            <p className="font-display text-[17px] font-bold text-wf-ink">{routeOptions.stepfree.estimatedMinutes} min</p>
+            <p className="font-display text-[17px] font-bold text-wf-ink">{formatMinutes(routeOptions.stepfree)}</p>
             <p className="text-[11.5px] text-wf-muted">{fmtDistance(routeOptions.stepfree.totalDistance)}</p>
           </div>
         </button>
@@ -886,7 +937,7 @@ function NavigatingSummary({
 
       <div className={detail}>
         <div className="mb-4 grid grid-cols-3 gap-2">
-          <StatTile label="time" value={`${route.estimatedMinutes} min`} />
+          <StatTile label="time" value={formatMinutes(route)} />
           <StatTile label="distance" value={fmtDistance(route.totalDistance)} />
           <StatTile label="floor" value={floorLabel(destination.floor, floorNaming)} />
         </div>
