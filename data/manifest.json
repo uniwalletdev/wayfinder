@@ -12,7 +12,7 @@
       "noPostcode": 0
     },
     "licence": "Open Government Licence v3.0",
-    "fetchedAt": "2026-08-08T06:32:12.262Z"
+    "fetchedAt": "2026-10-05T10:34:28.642Z"
   },
   "plans.candidates": {
     "description": "Floor-plan PDF discovery queue",
@@ -30,34 +30,34 @@
     "via": "ORD API fallback",
     "url": "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations",
     "description": "NHS Trust Sites (England)",
-    "sha256": "9c8fbc42379c94aa58cd69174b8c0f91b61db2d9fed73f4313f52ef03ffa4054",
-    "rows": 38250,
-    "usableRecords": 38250,
+    "sha256": "c3925d95b0eb8bda65f981c70dddba3a000285d6c6110c5e6809c38933ec763f",
+    "rows": 38275,
+    "usableRecords": 38275,
     "skipped": {
       "short": 0,
       "closed": 0,
       "noPostcode": 0
     },
     "licence": "Open Government Licence v3.0",
-    "fetchedAt": "2026-08-08T06:43:07.696Z"
+    "fetchedAt": "2026-10-05T10:35:26.759Z"
   },
   "osm.footprints": {
     "url": "https://overpass-api.de/api/interpreter",
     "description": "Hospital building footprints from OpenStreetMap via Overpass",
     "searchRadiusM": 300,
-    "sitesSearched": 3727,
-    "footprints": 5069,
-    "matchedToSite": 4342,
-    "failedBatches": 2,
+    "sitesSearched": 3744,
+    "footprints": 4949,
+    "matchedToSite": 4243,
+    "failedBatches": 5,
     "licence": "ODbL 1.0 — © OpenStreetMap contributors",
-    "fetchedAt": "2026-08-08T09:56:40.000Z"
+    "fetchedAt": "2026-10-05T12:27:34.187Z"
   },
   "nhs.sites": {
     "description": "Canonical merged NHS site list",
-    "count": 33740,
-    "withFootprints": 897,
-    "coveredByMappedVenue": 624,
+    "count": 33725,
+    "withFootprints": 875,
+    "coveredByMappedVenue": 555,
     "trusts": 247,
-    "fetchedAt": "2026-08-08T11:10:27.639Z"
+    "fetchedAt": "2026-10-05T12:27:35.130Z"
   }
 }
