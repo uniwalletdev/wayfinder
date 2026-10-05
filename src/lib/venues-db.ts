@@ -24,6 +24,7 @@ interface VenueRow {
   default_zoom: number
   visibility: "public" | "unlisted" | "private"
   owner_id: string | null
+  verified: boolean | null
   created_at: string
   updated_at: string
 }
@@ -41,7 +42,7 @@ interface WaypointRow {
 
 // Columns returned to clients — never selects edit_token, so the owner secret
 // can't leak through a read.
-const VENUE_COLS = "id, slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, owner_id, created_at, updated_at"
+const VENUE_COLS = "id, slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, owner_id, verified, created_at, updated_at"
 
 // Slugs on the server carry a random suffix: several people can create
 // venues with the same name, and each must stay independently addressable.
@@ -72,7 +73,8 @@ function rowToVenue(r: VenueRow, waypoints: Waypoint[], viewerId: string | null)
     floorPlans: [],
     waypoints,
     visibility: r.visibility,
-    verified: false,
+    // Set by staff in the back office (/admin/venues).
+    verified: !!r.verified,
     // Revealed to the owner only: it is how their client knows the venue is
     // theirs on a device that never held the edit token.
     ownerId: r.owner_id && viewerId && r.owner_id === viewerId ? r.owner_id : undefined,

@@ -172,6 +172,35 @@ create index if not exists wf_waypoints_venue_idx on public.wf_waypoints (venue_
 -- mirrored in db/migrations/0004_venue_owner.sql.
 alter table public.wf_venues add column if not exists owner_id text;
 create index if not exists wf_venues_owner_idx on public.wf_venues (owner_id) where owner_id is not null;
+
+-- Back office (/admin): staff roles for signed-in accounts, a record of every
+-- change made there, a verified mark on shared venues and a resolved mark on
+-- search misses. Owners named in ADMIN_EMAILS need no row. Mirrored in
+-- db/migrations/0006_backoffice.sql.
+create table if not exists public.backoffice_members (
+  user_id    text primary key,
+  role       text not null check (role in ('owner','admin','editor','viewer')),
+  email      text,
+  added_by   text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+create table if not exists public.backoffice_audit (
+  id          bigserial primary key,
+  actor_id    text not null,
+  actor_email text,
+  action      text not null,
+  target      text,
+  detail      jsonb not null default '{}'::jsonb,
+  created_at  timestamptz not null default now()
+);
+create index if not exists backoffice_audit_created_idx on public.backoffice_audit (created_at desc);
+alter table public.wf_venues add column if not exists verified boolean not null default false;
+alter table public.wf_venues add column if not exists verified_at timestamptz;
+alter table public.wf_venues add column if not exists verified_by text;
+alter table public.search_misses add column if not exists resolved_at timestamptz;
+alter table public.search_misses add column if not exists resolved_by text;
+create index if not exists nav_signals_created_idx on public.nav_signals (created_at);
 `
 
 // Run the schema once per process. Cheap, and keeps setup zero-touch: a fresh
