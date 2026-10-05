@@ -33,9 +33,13 @@ if (!explicitApiUrl) console.log(`FINDWAY_API_URL is not set; the apps will call
 const siteUrl = process.env.FINDWAY_SITE_URL?.trim().replace(/\/+$/, "") || apiUrl
 
 const HOLD = ".app-shell-excluded"
+// The back office (and /coverage, which leads into it) needs a server and a
+// signed-in person: web only, like the API.
 const MOVES = [
   ["src/app/api", `${HOLD}/api`],
   ["src/proxy.ts", `${HOLD}/proxy.ts`],
+  ["src/app/admin", `${HOLD}/admin`],
+  ["src/app/coverage", `${HOLD}/coverage`],
 ]
 mkdirSync(HOLD, { recursive: true })
 
