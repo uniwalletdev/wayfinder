@@ -68,7 +68,7 @@ export default function SystemView() {
               <Row label="Accounts and back office sign-in (Clerk)"><On on={data.integrations.accounts} /></Row>
               <Row label="Fixed owners (ADMIN_EMAILS)"><span className="text-wf-ink">{data.integrations.ownerEmails}</span></Row>
               <Row label="Shared database"><On on={data.database.ok} yes="Connected" no={data.database.error === "not_configured" ? "Not set" : "Unreachable"} /></Row>
-              <Row label="Street routing and address search (Mapbox)"><On on={data.integrations.outdoorRouting} /></Row>
+              <Row label="Street map, street routing and address search (Mapbox)"><On on={data.integrations.outdoorRouting} /></Row>
               <Row label="Sign reading in Survey Mode (Anthropic)"><On on={data.integrations.signReading} /></Row>
               <Row label="Data refresh from the back office"><On on={data.integrations.dataRefreshFromHere} /></Row>
               <Row label="Public site address"><span className="text-wf-ink">{data.integrations.siteUrl ?? <span className="text-wf-faint">inferred from the host</span>}</span></Row>

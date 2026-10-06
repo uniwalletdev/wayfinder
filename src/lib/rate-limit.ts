@@ -98,6 +98,10 @@ export const LIMITS = {
   // per floor plan image, all cached at the edge after the first hit.
   world: { limit: 240, windowMs: 60 * 1000 }, // 240/min
   directions: { limit: 60, windowMs: 60 * 1000 }, // 60/min
+  // Street map tiles through the server (src/lib/basemap.ts). A screen of map
+  // is a few dozen tiles and panning loads more, so this is generous; the CDN
+  // answers repeat tiles without reaching it.
+  basemap: { limit: 900, windowMs: 60 * 1000 }, // 900/min
   // Venue writes are unauthenticated, and POST /api/venues defaults to
   // visibility:"public" — so without a ceiling an anonymous loop can inject spam
   // straight into the directory every user sees. Generous enough for a real

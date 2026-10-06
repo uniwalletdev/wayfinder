@@ -9,6 +9,7 @@ import { WAYPOINT_TYPE_ICONS } from "@/lib/waypoint-meta"
 import { ASSET_CATEGORY_ICONS, ASSET_CATEGORY_LABELS } from "@/lib/asset-meta"
 import { buildFloorSchematic } from "@/lib/schematic"
 import { apiUrl } from "@/lib/app-shell"
+import { basemapLayer, useBasemapSource } from "@/lib/use-basemap"
 
 // Escape strings before they go into Leaflet popup/label HTML. Waypoint names and
 // descriptions come from other users (shared server venues), AI sign-reading, and
@@ -62,8 +63,6 @@ interface Props {
 // plan effect below for why the rotation cannot live on the image itself.
 const ROTATED_PLAN_PANE = "rotated-floor-plan"
 
-const LIGHT_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-const DARK_TILES = "https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png"
 
 export default function FloorPlanMap({
   currentFloor,
@@ -140,6 +139,12 @@ export default function FloorPlanMap({
       zoomControl: false,
       attributionControl: false,
     })
+    // The street map's terms ask for its credit on screen. The default
+    // control's "Leaflet" prefix is left off. On phones the bottom sheet covers
+    // the map's bottom edge, so the credit sits under the status pill instead
+    // (globals.css).
+    const wide = window.matchMedia("(min-width: 1024px)").matches
+    L.control.attribution({ prefix: false, position: wide ? "bottomleft" : "topleft" }).addTo(map)
 
     // A user-initiated drag or zoom means they want to explore — pause follow.
     // Programmatic moves (fitBounds/panTo) set programmaticRef to opt out.
@@ -163,17 +168,18 @@ export default function FloorPlanMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Swap basemap tiles when the map-style control toggles light/dark.
+  // The street map (src/lib/basemap.ts): drawn once the server has said
+  // whose, and swapped when the map-style control toggles light/dark.
+  const basemapSource = useBasemapSource()
   useEffect(() => {
-    if (!mapRef.current) return
+    if (!mapRef.current || !basemapSource) return
     const map = mapRef.current
     if (tileLayerRef.current) map.removeLayer(tileLayerRef.current)
-    const url = mapStyle === "dark" ? DARK_TILES : LIGHT_TILES
-    tileLayerRef.current = L.tileLayer(url, {
-      maxZoom: 22,
+    tileLayerRef.current = basemapLayer(basemapSource, mapStyle === "dark" ? "dark" : "light", (fallback) => {
+      tileLayerRef.current = fallback
     }).addTo(map)
     tileLayerRef.current.bringToBack()
-  }, [mapStyle])
+  }, [mapStyle, basemapSource])
 
   // Recentre when the active venue changes. The map is only positioned at mount
   // and by route/floor-plan framing, so switching to a venue elsewhere in the
@@ -332,12 +338,7 @@ export default function FloorPlanMap({
         tileLayerRef.current?.bringToBack()
         footprintLayerRef.current = layer
 
-        // ODbL requires attribution wherever the data is shown. The map is built
-        // with attributionControl disabled (it has its own chrome), so the
-        // control is added only while OSM-derived geometry is actually on screen.
-        if (!map.attributionControl) {
-          L.control.attribution({ prefix: false, position: "bottomleft" }).addTo(map)
-        }
+        // ODbL requires attribution wherever the data is shown.
         map.attributionControl?.addAttribution(
           data.attribution ?? '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         )

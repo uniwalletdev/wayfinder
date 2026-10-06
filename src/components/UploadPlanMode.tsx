@@ -12,6 +12,7 @@ import { SheetData, cropToMapRegion, remapToCrop, sampleZoneFootprints, placeDir
 import { Check, ChevronUp, ChevronDown, UploadCloud, MapPinned, Trash2, Plug } from "lucide-react"
 import Overlay from "@/components/Overlay"
 import { apiUrl } from "@/lib/app-shell"
+import { basemapLayer, useBasemapSource } from "@/lib/use-basemap"
 
 export interface UploadPlanResult {
   floorPlans: FloorPlan[]
@@ -622,12 +623,27 @@ function GeoreferenceMap({
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<L.Map | null>(null)
   const cornersRef = useRef<PlanCorners>(initialCorners)
+  const basemapSource = useBasemapSource()
+
+  // The street map under the plan (src/lib/basemap.ts), once the server has
+  // said whose.
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !basemapSource) return
+    let layer = basemapLayer(basemapSource, "light", (fallback) => {
+      layer = fallback
+    }).addTo(map)
+    layer.bringToBack()
+    return () => {
+      map.removeLayer(layer)
+    }
+  }, [basemapSource])
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
 
     const map = L.map(containerRef.current, { zoomControl: true, attributionControl: false })
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", { maxZoom: 22 }).addTo(map)
+    L.control.attribution({ prefix: false }).addTo(map)
 
     const overlay = L.imageOverlay(imageUrl, cornersToBounds(cornersRef.current), { opacity: 0.75 }).addTo(map)
     map.fitBounds(overlay.getBounds(), { padding: [40, 40] })
