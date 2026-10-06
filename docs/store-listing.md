@@ -6,7 +6,10 @@ the form answers say which box to pick and why. Character limits are checked.
 
 Screenshots and Play's feature graphic come from *Actions → Store screenshots
 → Run workflow*; download its `store-screenshots` artifact. Each folder is
-named for the slot it fills.
+named for the slot it fills: `app-store-iphone-6.3` for App Store Connect's
+"iPhone with Dynamic Island (medium display)" (1206 × 2622), `app-store-iphone-6.9`
+for the larger iPhones in its Media Manager (1320 × 2868), `app-store-ipad-13`
+for iPad 13" (2048 × 2732), and `google-play-phone` for Play (1080 × 1920).
 
 ## Things to know first
 
