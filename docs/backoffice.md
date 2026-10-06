@@ -26,8 +26,9 @@ Each role includes everything below it.
 | Editor | Moderate shared venues, the Inbox and missed searches |
 | Viewer | Read every section except the Inbox, accounts and the audit log; change nothing |
 
-Anyone else who signs in is an ordinary Findway user and sees "No back office
-access". Nobody can change their own role, and the owners named in
+Whoever signs in with the owner's email and password (below) is an owner.
+Anyone else who signs in with a Clerk account is an ordinary Findway user and
+sees "No back office access" until given a role. Nobody can change their own role, and the owners named in
 `ADMIN_EMAILS` cannot be demoted, banned or deleted from the back office, so a
 deployment can never lock its owners out.
 
@@ -36,7 +37,29 @@ The rules live in `src/lib/backoffice/roles.ts` and are tested by
 
 ## Setting it up
 
-Sign-in uses Clerk, which Findway already supports for optional accounts.
+There are two ways to sign in. Use either or both.
+
+### The owner's email and password (simplest)
+
+1. In the hosting project's environment variables (Vercel: Settings,
+   Environment Variables), add:
+   - `BACKOFFICE_EMAIL`: your email address.
+   - `BACKOFFICE_PASSWORD`: a password of at least 12 characters. A shorter one
+     is refused, and the sign-in page says so.
+2. Redeploy, open `/admin`, and sign in with them. You are the owner.
+
+The session lasts 7 days on that browser; Sign out (beside your name) ends it.
+Changing either variable and redeploying signs every browser out. After ten
+attempts from one address, sign-in pauses there for 15 minutes. Each sign-in is
+written to the audit log. The code is `src/lib/backoffice/password-login.ts`, tested by
+`scripts/lib-test/backoffice-password.test.mjs`.
+
+This is one shared login. To give other people their own sign-in and a role
+that fits them, add Clerk too.
+
+### Clerk accounts (for a team)
+
+Clerk is what Findway already supports for optional accounts.
 
 1. Create an application at dashboard.clerk.com and copy its publishable key and
    secret key.
@@ -87,6 +110,9 @@ kept more than a year.
 
 - Every route under `/api/admin` checks the signed-in account's role on the
   server before reading or changing anything. The pages only decide what to draw.
+- The owner password never leaves the server. A signed-in browser holds an
+  HTTP-only cookie signed with a key derived from it by scrypt, so a stolen
+  cookie does not help anyone guess the password.
 - A change must come from the site itself: a request carrying another origin is
   refused.
 - Roles are read on every request, so a demotion or ban takes effect at once.

@@ -122,6 +122,9 @@ export const LIMITS = {
   // is plenty for someone with something to say, and keeps a script from
   // burying the real ones.
   feedback: { limit: 10, windowMs: 60 * 60 * 1000 }, // 10/hour
+  // Back office password sign-in: enough for someone mistyping, far too few
+  // to guess a 12-character password.
+  backofficeLogin: { limit: 10, windowMs: 15 * 60 * 1000 }, // 10 per 15 min
   // Across-every-hospital search: read-only, from shipped data, but it ranks
   // several thousand rows per call.
   search: { limit: 120, windowMs: 60 * 1000 }, // 120/min
