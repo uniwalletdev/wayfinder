@@ -267,3 +267,11 @@ html, body {
   .wf-poster-print, .wf-poster-print * { visibility: visible; }
   .wf-poster-print { position: fixed; inset: 0; box-shadow: none !important; }
 }
+
+/* The street map's credit on phones (FloorPlanMap): under the status pill,
+   since the bottom sheet covers the map's bottom edge. */
+#map-container .leaflet-top.leaflet-left .leaflet-control-attribution {
+  margin: 58px 0 0 16px;
+  border-radius: 6px;
+  font-size: 10px;
+}
