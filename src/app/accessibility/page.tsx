@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import InfoPage from "@/components/InfoPage"
 
 export const metadata: Metadata = {
@@ -68,8 +69,9 @@ export default function AccessibilityPage() {
 
       <h2>Telling us about a problem</h2>
       <p>
-        If something in Findway does not work with the way you use your device, tell the team running this deployment. Say what you were
-        trying to do, which device and assistive technology you were using, and what happened instead; that is enough to reproduce most problems.
+        If something in Findway does not work with the way you use your device, tell us through the form on the{" "}
+        <Link href="/support#contact">Support</Link> page and choose Accessibility. Say what you were trying to do, which device and assistive
+        technology you were using, and what happened instead; that is enough to reproduce most problems.
       </p>
     </InfoPage>
   )

@@ -8,6 +8,7 @@ too. It is web only: the Android and iOS apps leave it out.
 | Overview | Counts of hospitals, maps, shared venues, accounts and activity, and what needs attention |
 | Coverage | Every country, site map and indoor map published, each one opening in the app |
 | Venues | Venues people mapped and shared: change who can find them, mark them verified, delete them |
+| Inbox | Reports about places people published (sent from the app) and messages from the support page: remove a reported place, block whoever published it, dismiss, reply by email; unblock publishers |
 | Searches | What people searched for inside a hospital and did not find, grouped; mark each resolved; export CSV |
 | Activity | Navigation signals by day and by hospital, aggregated; delete signals past the 30-day retention |
 | Users & roles | The back office team, and every account: give or take roles, ban, unban, delete |
@@ -22,8 +23,8 @@ Each role includes everything below it.
 | --- | --- |
 | Owner | Everything, including making someone an admin or owner, and deleting accounts |
 | Admin | Accounts (ban, unban, make someone an editor or viewer), the audit log, data retention, data refreshes |
-| Editor | Moderate shared venues and missed searches |
-| Viewer | Read every section except accounts and the audit log; change nothing |
+| Editor | Moderate shared venues, the Inbox and missed searches |
+| Viewer | Read every section except the Inbox, accounts and the audit log; change nothing |
 
 Anyone else who signs in is an ordinary Findway user and sees "No back office
 access". Nobody can change their own role, and the owners named in
@@ -58,7 +59,29 @@ Optional:
 
 The back office also needs the shared database (`DATABASE_URL`), which the
 deployment already has for world data. Its tables are created on first use; see
-`db/migrations/0006_backoffice.sql`.
+`db/migrations/0006_backoffice.sql` and `db/migrations/0007_feedback.sql`.
+
+## Moderating shared places
+
+Anyone can publish a place, so the App Store asks for four things, and Findway
+has each:
+
+1. **A filter.** A place or point whose name carries a slur or strong
+   profanity is refused when it is published (`src/lib/moderation.ts`).
+2. **Reporting.** Anyone can report a place someone else published: Report
+   under the place's name, or the flag beside it in the places list. Reports
+   arrive in the Inbox. Answer them within a day: that is what the support
+   page promises.
+3. **Blocking.** In the app, anyone can hide a place from their own list at
+   once. In the Inbox, Remove and block deletes the place and stops whoever
+   published it from publishing again, from that device (a one-way hash of the
+   app's random device identifier) and from their account if they were signed
+   in. Unblock them under Blocked publishers.
+4. **Rules and a contact.** `/support` publishes the rules for shared places
+   and a contact form, and is the Support URL in both stores.
+
+Reports and messages are deleted 180 days after they are resolved, and never
+kept more than a year.
 
 ## How it is protected
 
@@ -70,7 +93,9 @@ deployment already has for world data. Its tables are created on first use; see
 - Destructive actions ask for confirmation, and deleting a venue or an account
   asks for its name or email to be typed.
 - Every change is written to the audit log, which the back office cannot edit.
-- Account emails are shown only to admins and owners.
+- Account emails are shown only to admins and owners. An email address someone
+  typed into a report or support message, so the team can reply, is shown to
+  editors and above.
 
 ## Working on it locally
 

@@ -118,6 +118,10 @@ export const LIMITS = {
   // once per settled query. Anything past this is a script.
   signals: { limit: 60, windowMs: 60 * 1000 }, // 60/min
   searchMiss: { limit: 60, windowMs: 60 * 1000 }, // 60/min
+  // Reports and support messages land in a person's inbox: a handful an hour
+  // is plenty for someone with something to say, and keeps a script from
+  // burying the real ones.
+  feedback: { limit: 10, windowMs: 60 * 60 * 1000 }, // 10/hour
   // Across-every-hospital search: read-only, from shipped data, but it ranks
   // several thousand rows per call.
   search: { limit: 120, windowMs: 60 * 1000 }, // 120/min
@@ -149,6 +153,8 @@ export const BODY_LIMITS = {
   venue: 16 * 1024,
   // A venue key plus a search string.
   searchMiss: 8 * 1024,
+  // A report or support message: 2,000 characters of text and a few fields.
+  feedback: 16 * 1024,
   // One or a handful of CSP violation reports.
   cspReport: 16 * 1024,
   // Up to MAX_TRAIL_POINTS (400) trail points plus their keys.

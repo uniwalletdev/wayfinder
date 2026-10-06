@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { createContext, useContext, type ReactNode } from "react"
 import { UserButton } from "@clerk/nextjs"
-import { LayoutDashboard, Earth, Building2, SearchX, Activity, Users, ScrollText, Server, Navigation, ExternalLink } from "lucide-react"
+import { LayoutDashboard, Earth, Building2, Inbox, SearchX, Activity, Users, ScrollText, Server, Navigation, ExternalLink } from "lucide-react"
 import ToastHost from "@/components/Toast"
 import { Badge } from "./ui"
 import { ROLE_LABELS, type Permission, type Role } from "@/lib/backoffice/roles"
@@ -33,6 +33,7 @@ export const SECTIONS: { href: string; label: string; icon: typeof LayoutDashboa
   { href: "/admin", label: "Overview", icon: LayoutDashboard, permission: "overview.view" },
   { href: "/admin/coverage", label: "Coverage", icon: Earth, permission: "coverage.view" },
   { href: "/admin/venues", label: "Venues", icon: Building2, permission: "venues.view" },
+  { href: "/admin/inbox", label: "Inbox", icon: Inbox, permission: "inbox.view" },
   { href: "/admin/searches", label: "Searches", icon: SearchX, permission: "searches.view" },
   { href: "/admin/activity", label: "Activity", icon: Activity, permission: "activity.view" },
   { href: "/admin/users", label: "Users & roles", icon: Users, permission: "users.view" },

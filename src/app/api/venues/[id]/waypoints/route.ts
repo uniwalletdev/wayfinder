@@ -8,7 +8,9 @@ export const dynamic = "force-dynamic"
 import { isDatabaseConfigured } from "@/lib/db"
 import { currentUserId } from "@/lib/auth"
 import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
-import { addWaypoints } from "@/lib/venues-db"
+import { addWaypoints, venueVisibility } from "@/lib/venues-db"
+import { isObjectionable } from "@/lib/moderation"
+import { publisherKeys, isBlocked } from "@/lib/publishers"
 import type { Waypoint, WaypointType } from "@/lib/types"
 
 const WAYPOINT_TYPES: WaypointType[] = [
@@ -52,7 +54,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   if (!isDatabaseConfigured()) return Response.json({ configured: false })
   const { id } = await params
 
-  const read = await readCappedJson<{ editToken?: unknown; waypoints?: unknown }>(request, BODY_LIMITS.waypoints)
+  const read = await readCappedJson<{ editToken?: unknown; waypoints?: unknown; deviceId?: unknown }>(request, BODY_LIMITS.waypoints)
   if (!read.ok) {
     return Response.json(
       { configured: true, ok: false, error: read.reason === "too_large" ? "too_large" : "bad_request" },
@@ -61,15 +63,29 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   }
   const body = read.body
   const editToken = typeof body.editToken === "string" ? body.editToken : ""
-  const waypoints = sanitize(body.waypoints)
-  if (waypoints.length === 0) {
+  const sane = sanitize(body.waypoints)
+  if (sane.length === 0) {
     return Response.json({ configured: true, ok: false, error: "no_waypoints" }, { status: 400 })
   }
-
   try {
-    const { ok, saved } = await addWaypoints(id, editToken, waypoints, await currentUserId())
+    // In a place others can open, a point named with a slur or strong
+    // profanity (src/lib/moderation.ts) is dropped like a malformed one; the
+    // response says how many, and a batch with nothing left is refused
+    // outright so the app can say why. A private place is nobody else's to see.
+    const filter = (await venueVisibility(id)) !== "private"
+    const waypoints = filter ? sane.filter((w) => !isObjectionable(w.name, w.description)) : sane
+    const rejected = sane.length - waypoints.length
+    if (waypoints.length === 0) {
+      return Response.json({ configured: true, ok: false, error: "name_not_allowed", rejected }, { status: 422 })
+    }
+
+    const userId = await currentUserId()
+    if (await isBlocked(publisherKeys(body.deviceId, userId))) {
+      return Response.json({ configured: true, ok: false, error: "blocked" }, { status: 403 })
+    }
+    const { ok, saved } = await addWaypoints(id, editToken, waypoints, userId)
     if (!ok) return Response.json({ configured: true, ok: false }, { status: 403 })
-    return Response.json({ configured: true, ok: true, waypoints: saved })
+    return Response.json({ configured: true, ok: true, waypoints: saved, rejected })
   } catch (err) {
     console.warn("Could not add waypoints:", err instanceof Error ? err.message : err)
     return Response.json({ configured: true, ok: false, error: "write_failed" }, { status: 500 })

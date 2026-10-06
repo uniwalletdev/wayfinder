@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: at("/"), lastModified: now, changeFrequency: "monthly", priority: 1 },
     { url: at("/navigate"), lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: at("/map"), lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: at("/support"), lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: at("/accessibility"), lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: at("/privacy"), lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     ...mapped.map((v) => ({

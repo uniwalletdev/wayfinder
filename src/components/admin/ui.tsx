@@ -75,6 +75,10 @@ export function errorText(err: unknown): string {
       return "That request did not come from this site."
     case "unreachable":
       return "Could not reach the server. Check your connection."
+    case "not_a_shared_place":
+      return "Only a place someone published can be removed from here."
+    case "cannot_block":
+      return "There is no publisher on record for this place. Remove it instead."
     default:
       return "Something went wrong on the server. Try again."
   }

@@ -10,6 +10,8 @@ import { isDatabaseConfigured } from "@/lib/db"
 import { currentUserId } from "@/lib/auth"
 import { rateLimit, readCappedJson, LIMITS, BODY_LIMITS } from "@/lib/rate-limit"
 import { listPublicVenues, createVenue } from "@/lib/venues-db"
+import { isObjectionable } from "@/lib/moderation"
+import { publisherKeys, isBlocked } from "@/lib/publishers"
 import type { NewVenueInput } from "@/lib/venues"
 import type { VenueCategory, VenueVisibility } from "@/lib/types"
 
@@ -69,8 +71,20 @@ export async function POST(request: Request) {
     subtitle: typeof body.subtitle === "string" ? body.subtitle : undefined,
     defaultZoom: isFiniteNumber(body.defaultZoom) ? body.defaultZoom : undefined,
   }
+  // Moderation (src/lib/moderation.ts, src/lib/publishers.ts): a name with a
+  // slur or strong profanity is refused before anyone else can see it (a
+  // private place is seen by nobody else, so it is left alone), and a
+  // publisher staff have blocked cannot share places. Both are answered
+  // plainly so the app can say why, instead of quietly keeping the place on
+  // the device.
+  if (visibility !== "private" && isObjectionable(input.name, input.subtitle)) {
+    return Response.json({ configured: true, error: "name_not_allowed" }, { status: 422 })
+  }
   try {
-    const { venue, editToken } = await createVenue(input, await currentUserId())
+    const userId = await currentUserId()
+    const keys = publisherKeys(body.deviceId, userId)
+    if (await isBlocked(keys)) return Response.json({ configured: true, error: "blocked" }, { status: 403 })
+    const { venue, editToken } = await createVenue(input, userId, keys.device)
     // editToken is returned exactly once — the client stores it as the venue's
     // owner key and it's never readable again.
     return Response.json({ configured: true, venue, editToken })

@@ -33,11 +33,13 @@ import SearchModal from "@/components/SearchModal"
 import CameraOverlay from "@/components/CameraOverlay"
 import SurveyModeComponent from "@/components/SurveyMode"
 import VenuePicker from "@/components/VenuePicker"
+import ReportPlaceDialog from "@/components/ReportPlaceDialog"
+import { loadHiddenPlaces, saveHiddenPlaces } from "@/lib/hidden-places"
 import { useDeviceHeading } from "@/lib/use-heading"
 import { usePedestrianPosition } from "@/lib/use-pedestrian-position"
 import { useTrailRecorder } from "@/lib/use-trail-recorder"
 import { useArSupport } from "@/lib/use-ar-support"
-import { fetchServerVenues, createServerVenue, addServerWaypoints, deleteServerVenue, ownsVenue } from "@/lib/venues-server"
+import { fetchServerVenues, createServerVenue, addServerWaypoints, deleteServerVenue, ownsVenue, isServerVenueId, type PublishRefusal } from "@/lib/venues-server"
 
 // While a map chunk loads (Leaflet on first visit, three.js on the first
 // switch to 3D) the canvas is not left blank: a quiet placeholder says what is
@@ -97,6 +99,17 @@ const OFF_ROUTE_TRIGGER_M = 25
 // "you're far from the venue" card instead of a straight-faced multi-hour
 // walking route computed from the user's sofa.
 const FAR_FROM_VENUE_M = 2000
+
+// What to tell someone whose place or points the server would not publish
+// (src/lib/venues-server.ts).
+function refusalTitle(r: PublishRefusal): string {
+  return r === "blocked" ? "You can’t share places" : "That name isn’t allowed"
+}
+function refusalBody(r: PublishRefusal): string {
+  return r === "blocked"
+    ? "Sharing was turned off for this device after a place broke the rules. Contact support if you think this is a mistake."
+    : "Names with offensive words can’t be shared. Change the name and try again."
+}
 
 export default function WayfinderApp({ initialMode = "navigate" }: { initialMode?: WayfinderMode }) {
   const router = useRouter()
@@ -212,10 +225,16 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   // Set once the saved state and any link have been read, so the URL sync does
   // not overwrite a shared link before it has been acted on.
   const hydratedRef = useRef(false)
+  // Places this person chose not to see (src/lib/hidden-places.ts): left out
+  // of the places list, unless one is open right now.
+  const [hiddenPlaces, setHiddenPlaces] = useState<string[]>([])
   const allVenues = useMemo<VenueSummary[]>(() => {
     const seen = new Set(catalog.map((v) => v.id))
-    return [...catalog, ...userVenues.filter((v) => !seen.has(v.id)).map(summaryOf)]
-  }, [catalog, userVenues])
+    const hidden = new Set(hiddenPlaces)
+    return [...catalog, ...userVenues.filter((v) => !seen.has(v.id)).map(summaryOf)].filter((v) => !hidden.has(v.id) || v.id === venue.id)
+  }, [catalog, userVenues, hiddenPlaces, venue.id])
+  // A place someone else published, being reported (ReportPlaceDialog).
+  const [reportTarget, setReportTarget] = useState<{ id: string; name: string } | null>(null)
 
   // Whether this phone can run immersive WebXR AR (native SLAM). Decides whether
   // "Live camera" opens the floor-anchored AR view or the compass overlay.
@@ -551,6 +570,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     const restored = loadUserVenues()
     userVenuesRef.current = restored
     setUserVenues(restored)
+    setHiddenPlaces(loadHiddenPlaces())
 
     // A shared link or a scanned poster opens the app at a place: ?venue=&to=
     // plus, for a poster, the position it is posted at. The venue in the link
@@ -937,8 +957,20 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       // Owned by this device's token, or by the signed-in account (the server
       // reveals ownerId only to its owner).
       if (serverConfigured && (ownsVenue(activeVenueId) || !!venue.ownerId)) {
-        const { ok, saved } = await addServerWaypoints(activeVenueId, newWaypoints)
-        setCustomWaypoints((prev) => [...prev, ...(ok && saved.length ? saved : newWaypoints)])
+        const { ok, saved, rejected, refused } = await addServerWaypoints(activeVenueId, newWaypoints)
+        // Refused by moderation: nothing was saved, so nothing is shown as if
+        // it had been.
+        if (refused) {
+          toast.error(refusalTitle(refused), refusalBody(refused))
+          return
+        }
+        if (ok && rejected > 0) {
+          toast.warning(
+            `${rejected} point${rejected === 1 ? " wasn’t" : "s weren’t"} saved`,
+            "Names with offensive words aren’t allowed on shared places."
+          )
+        }
+        setCustomWaypoints((prev) => [...prev, ...(ok && saved.length ? saved : ok ? [] : newWaypoints)])
         return
       }
       setCustomWaypoints((prev) => {
@@ -1131,12 +1163,18 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     // devices; this device keeps its edit token. Fall back to a device-local
     // venue when there's no backend (or the create didn't land).
     if (serverConfigured) {
-      const { configured, venue } = await createServerVenue(input)
+      const { configured, venue, refused } = await createServerVenue(input)
       if (configured && venue) {
         setUserVenues((prev) => [...prev, venue])
         goToVenue(venue)
         goMapNewVenue()
         toast.success(`“${venue.name}” created`, "Tap “Map area” to walk through and add points to it.")
+        return
+      }
+      // Refused by moderation: keeping it on the device instead would look
+      // like it had been published.
+      if (refused) {
+        toast.error(refusalTitle(refused), refusalBody(refused))
         return
       }
     }
@@ -1169,6 +1207,37 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     // If the open venue was deleted, fall back to the default and reload its map.
     if (activeVenueId === id) goToVenue(DEFAULT_VENUE)
   }, [serverConfigured, activeVenueId, goToVenue])
+
+  // A place is this person's own when this device made it (it holds the edit
+  // token, or it never left the device) or their account owns it. Reporting
+  // and hiding are for places someone else published.
+  const accountOwnedIds = useMemo(() => new Set(userVenues.filter((v) => v.ownerId).map((v) => v.id)), [userVenues])
+  const isOwnPlace = useCallback(
+    (id: string) => id.startsWith("venue-") || ownsVenue(id) || accountOwnedIds.has(id) || (id === venue.id && !!venue.ownerId),
+    [accountOwnedIds, venue.id, venue.ownerId]
+  )
+  const canReportPlace = useCallback((id: string) => isServerVenueId(id) && !isOwnPlace(id), [isOwnPlace])
+
+  const handleReportPlace = useCallback((place: { id: string; name: string }) => {
+    // One dialog at a time: Escape would otherwise close the places list too.
+    setOverlay("none")
+    setReportTarget(place)
+  }, [])
+
+  const handleHidePlace = useCallback((id: string) => {
+    setHiddenPlaces((prev) => {
+      const next = prev.includes(id) ? prev : [...prev, id]
+      saveHiddenPlaces(next)
+      return next
+    })
+    if (activeVenueId === id) goToVenue(DEFAULT_VENUE)
+  }, [activeVenueId, goToVenue])
+
+  const handleShowHiddenPlaces = useCallback(() => {
+    setHiddenPlaces([])
+    saveHiddenPlaces([])
+    toast.success("Hidden places are back in your list")
+  }, [])
 
   const currentStep = navState.route?.steps[navState.currentStepIndex] ?? null
 
@@ -1245,6 +1314,8 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         venue={venue}
         userInitials={null}
         onOpenVenues={() => setOverlay("venues")}
+        sharedBy={isServerVenueId(venue.id) ? (isOwnPlace(venue.id) ? "you" : "someone") : null}
+        onReportPlace={() => handleReportPlace({ id: venue.id, name: venue.name })}
         onOpenSearch={() => setOverlay("search")}
         quickAccess={quickAccessWaypoints}
         onSelectDestination={handleDestinationSelect}
@@ -1395,9 +1466,16 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
           onSelect={handleSelectVenue}
           onCreate={handleCreateVenue}
           onDelete={handleDeleteVenue}
+          isOwnPlace={isOwnPlace}
+          canReportPlace={canReportPlace}
+          onReportPlace={handleReportPlace}
+          hiddenCount={hiddenPlaces.length}
+          onShowHidden={handleShowHiddenPlaces}
           onClose={() => setOverlay("none")}
         />
       )}
+
+      {reportTarget && <ReportPlaceDialog place={reportTarget} onHide={handleHidePlace} onClose={() => setReportTarget(null)} />}
 
       {(overlay === "qr" || overlay === "live-camera") && (
         <CameraOverlay
