@@ -20,9 +20,15 @@ named for the slot it fills.
   public release, confirm each trust is content for its map to be reused in a
   commercial app, or limit the public build to venues you have permission
   for. `data/plan-sources.json` records where every map came from.
-- **Launch in the United Kingdom only.** Every venue is in England. A UK-only
-  release also sidesteps the EU Digital Services Act trader-status banner in
-  App Store Connect until you want EU distribution.
+- **Launch in the United Kingdom first.** Every indoor map is in England;
+  elsewhere the app lists hospitals and their grounds only. A UK-only release
+  also sidesteps the EU Digital Services Act trader-status question in App
+  Store Connect until you want EU distribution.
+- **People can publish places, so the app is moderated.** App Store guideline
+  1.2 asks apps with user content for a filter, reporting, blocking, published
+  rules and a contact. Findway has all five (see docs/backoffice.md,
+  "Moderating shared places"); someone on the team must answer reports in the
+  back office Inbox within a day, as the support page promises.
 
 ## Text
 
@@ -34,6 +40,8 @@ named for the slot it fills.
 | Google Play short description (80) | `Find any ward, clinic or department in hospital, floor by floor, step-free.` |
 | App Store promotional text (170) | `Lost in a hospital corridor? Search the ward or clinic you need and follow the line, floor by floor and lift by lift. No sign-in, and maps work without signal.` |
 | App Store keywords (100) | `hospital,indoor,wayfinding,ward,clinic,directions,floor plan,map,step-free,accessible,lift,route` |
+| Support URL (both stores) | `https://wayfinder-theta.vercel.app/support` |
+| Marketing URL (App Store, optional) | `https://wayfinder-theta.vercel.app` |
 
 ### Description (both stores)
 
@@ -87,11 +95,14 @@ What leaves the phone, from the code:
 | Text of searches that found nothing | When a search returns nothing | 90 days | Nothing |
 | Approximate position with an address search | When typing an address | Not stored; forwarded to the map provider | Nothing |
 | Camera frames or a plan image | Survey Mode and Upload plan, both started deliberately | Not stored; read by an AI model | Nothing |
-| Places a user maps and publishes | When they publish a place | Until deleted | Nothing |
+| Places a user maps and publishes | When they publish a place | Until deleted | A one-way hash of the random identifier, so staff can block an abusive publisher |
+| A report about a published place | When they report one | 180 days after it is dealt with, a year at most | Nothing, unless they add an email for a reply |
+| A support message | When they send one from the support page | 180 days after it is dealt with, a year at most | Nothing, unless they add an email for a reply |
 
 No analytics, crash-reporting or advertising SDKs are in the app. Deletion:
-*Help and accessibility* (the ? button) → *Privacy* → **Delete my walks from
-the server**, which deletes the device's traces and forgets its identifier.
+*Help* (the ? button) → *Privacy* → **Delete my walks from the server**, which
+deletes the device's traces and forgets its identifier. A published place is
+deleted from the places list (the bin beside it).
 
 ### App Store Connect → App Privacy
 
@@ -102,10 +113,12 @@ the server**, which deletes the device's traces and forgets its identifier.
 | Type | Linked to the user? | Why |
 | --- | --- | --- |
 | Location → Precise Location | Yes | Traces carry the device's random identifier, and Apple counts linkage to a device as linked. |
-| Identifiers → Device ID | Yes | The random identifier itself. |
+| Identifiers → Device ID | Yes | The random identifier itself, and its hash on published places. |
+| Contact Info → Email Address | Yes | Optional, on a report or support message, so the team can reply. |
+| User Content → Customer Support | Yes | Support messages, with the email if given. |
 | Search History | No | Stored with no identifier. |
 | Photos or Videos | No | Survey Mode frames go to an AI provider; declared so the label is never short of the truth. |
-| Other User Content | No | Published places. |
+| Other User Content | No | Published places and reports. |
 
 Answering *linked* is the safe reading of Apple's definition: over-declaring
 costs a slightly longer label, under-declaring can get the app pulled.
@@ -124,6 +137,7 @@ to your own domain when you have one).
 | --- | --- | --- | --- | --- |
 | Location → Precise location | Yes | No | Optional (only while guided) | App functionality, Analytics |
 | Location → Approximate location | Yes | Yes | Optional | App functionality |
+| Personal info → Email address | Yes | No | Optional (to get a reply to a report or support message) | App functionality |
 | App activity → In-app search history | Yes | No | Optional | App functionality, Analytics |
 | App activity → Other user-generated content | Yes | No | Optional | App functionality |
 | Photos and videos → Photos | Yes | Yes | Optional | App functionality |
@@ -147,11 +161,13 @@ Paste into *App Review Information → Notes*. Sign-in required: **No**.
 ```
 Findway is indoor navigation for hospitals. No account is needed.
 
-The reviewer will not be inside a hospital, so to see routing:
-1. The app opens on Great Ormond Street Hospital, London. Allow location when asked.
-2. Tap the search bar, type "Kangaroo Ward" and tap the result.
-3. The app notices you are far from the hospital and offers "Preview from Great Ormond Street Hospital". Tap it: the route draws from inside the hospital to the ward.
-4. Tap Start for turn-by-turn guidance, one step at a time.
+Our indoor maps are of hospitals in England, and the app opens on a hospital in the country the device is set to. To see indoor routing from outside the UK:
+1. Open the app and allow location when asked.
+2. Tap the hospital name (the card with the building icon). In "Search hospitals & places", type "United Kingdom" and tap "Hospitals in United Kingdom".
+3. Type "Great Ormond Street" and tap Great Ormond Street Hospital.
+4. Tap the search bar, type "Kangaroo Ward" and tap the result.
+5. Because you are far from the hospital, the app offers "Preview from Great Ormond Street Hospital". Tap it: the route draws from the Main Entrance to the ward. (With location off, the route starts at the Main Entrance straight away.)
+6. Tap Start for turn-by-turn guidance, one step at a time.
 Try "Ear, Nose and Throat" for a route that changes floor by lift, or the floor button (top right) to browse the levels.
 
 What the app does natively:
@@ -159,7 +175,13 @@ What the app does natively:
 - Location, motion and camera are requested through the system permission prompts, for the blue dot, indoor step-and-compass positioning, and scanning Findway QR posters.
 - Turn cues use the system haptics engine; directions can be spoken aloud.
 
-Location leaves the device only while the user is being guided, as an anonymous corridor trace with the destination trimmed off, deleted after 30 days. Users can delete it in the app under Help and accessibility, then Privacy.
+Places people publish (guideline 1.2):
+- Anyone can map a place and publish it. Names with offensive words are refused when published.
+- Any place someone else published can be reported (Report under the place's name, or the flag beside it in the places list) and hidden from the user's own list at once.
+- Reports reach our moderation inbox; we review them within 24 hours, remove places that break the rules and block publishers who break them deliberately.
+- The rules, a contact form and help are on the Help (?) page in the app and at https://wayfinder-theta.vercel.app/support.
+
+Location leaves the device only while the user is being guided, as an anonymous corridor trace with the destination trimmed off, deleted after 30 days. Users can delete it in the app: Help (the ? button), then Privacy.
 ```
 
 ## Before each public release
@@ -170,6 +192,7 @@ Location leaves the device only while the user is being guided, as an anonymous 
    opens on the map in flight mode; location prompt shows its reason; search
    finds a ward; a route draws; address search returns results (proves the
    live API accepts the app); a shared link is a website link; the phone
-   buzzes on each step.
+   buzzes on each step; the ? button opens Help and support, and a test
+   message sent from it arrives in the back office Inbox.
 4. In App Store Connect, add the build to the version, then *Add for Review*.
    In Play Console, promote the internal release to production.

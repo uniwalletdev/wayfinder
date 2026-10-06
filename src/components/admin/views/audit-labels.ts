@@ -13,6 +13,14 @@ export function actionLabel(action: string, detail: Record<string, unknown> = {}
     }
     case "venue.delete":
       return `Venue “${s("name")}” deleted`
+    case "inbox.resolve":
+      return detail.kind === "report" ? `Report about “${s("name")}” dismissed` : "Support message marked done"
+    case "inbox.reopen":
+      return detail.kind === "report" ? `Report about “${s("name")}” reopened` : "Support message reopened"
+    case "publisher.block":
+      return `Publisher of “${s("name")}” blocked from sharing places`
+    case "publisher.unblock":
+      return s("name") ? `Publisher of “${s("name")}” unblocked` : "A publisher unblocked"
     case "search.resolve":
       return `Search “${s("query")}” marked resolved`
     case "search.reopen":
@@ -38,6 +46,8 @@ export const ACTION_GROUPS = [
   { value: "", label: "All changes" },
   { value: "venue.", label: "Venues" },
   { value: "search.", label: "Searches" },
+  { value: "inbox.", label: "Inbox" },
+  { value: "publisher.", label: "Blocked publishers" },
   { value: "user.", label: "Accounts" },
   { value: "data.", label: "Data" },
 ]

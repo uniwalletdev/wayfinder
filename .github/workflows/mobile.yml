@@ -63,6 +63,9 @@ concurrency:
 
 env:
   FINDWAY_API_URL: ${{ inputs.api_url || vars.FINDWAY_API_URL || 'https://wayfinder-theta.vercel.app' }}
+  # Optional public support address shown on the bundled support page; the
+  # contact form there works without it (see .env.example).
+  NEXT_PUBLIC_SUPPORT_EMAIL: ${{ vars.SUPPORT_EMAIL }}
   # Monotonic across runs of this workflow, which is all the stores ask of a
   # build number. The user-facing version (1.0) lives in the native projects.
   BUILD_NUMBER: ${{ github.run_number }}

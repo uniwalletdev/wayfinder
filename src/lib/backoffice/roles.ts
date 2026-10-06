@@ -3,8 +3,10 @@
 // gate the API routes, the navigation and the buttons.
 //
 // Four staff roles, each including everything below it:
-//   viewer — reads every page except the account list and the audit log
-//   editor — viewer, plus moderating shared venues and search misses
+//   viewer — reads every page except the inbox, the account list and the
+//            audit log
+//   editor — viewer, plus moderating shared venues, reports, support messages
+//            and search misses
 //   admin  — editor, plus accounts (ban, unban, give or take editor/viewer),
 //            the audit log, data retention and starting a data refresh
 //   owner  — admin, plus granting and revoking admin and owner, and deleting
@@ -31,8 +33,8 @@ export const ROLE_LABELS: Record<RoleOrNone, string> = {
 export const ROLE_SUMMARIES: Record<Role, string> = {
   owner: "Everything, including who is an admin or owner, and deleting accounts",
   admin: "Accounts, the audit log, data retention and data refreshes",
-  editor: "Moderates shared venues and search misses",
-  viewer: "Reads the back office; changes nothing",
+  editor: "Moderates shared venues, reports, messages and search misses",
+  viewer: "Reads the back office except the inbox and accounts; changes nothing",
 }
 
 export const PERMISSIONS = {
@@ -44,6 +46,10 @@ export const PERMISSIONS = {
   "system.view": "viewer",
   "venues.edit": "editor",
   "searches.edit": "editor",
+  // Reports about places and support messages. Editors answer them, so they
+  // see the email someone typed in to get a reply.
+  "inbox.view": "editor",
+  "inbox.edit": "editor",
   "users.view": "admin",
   "users.manage": "admin",
   "audit.view": "admin",

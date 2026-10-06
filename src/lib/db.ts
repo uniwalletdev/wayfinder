@@ -209,6 +209,41 @@ do $bo$ begin
   end if;
 end $bo$;
 create index if not exists nav_signals_created_idx on public.nav_signals (created_at);
+
+-- Moderation and support: reports about places people published, messages
+-- from the support page, and the publishers blocked from sharing places.
+-- Mirrored in db/migrations/0007_feedback.sql.
+create table if not exists public.feedback (
+  id            bigserial primary key,
+  kind          text not null check (kind in ('report','support')),
+  topic         text not null,
+  venue_id      text,
+  venue_name    text,
+  message       text not null default '',
+  contact_email text,
+  source        text not null default 'web' check (source in ('web','ios','android')),
+  created_at    timestamptz not null default now(),
+  resolved_at   timestamptz,
+  resolved_by   text,
+  resolution    text,
+  constraint feedback_topic_len   check (char_length(topic) between 1 and 40),
+  constraint feedback_message_len check (char_length(message) <= 2000)
+);
+create index if not exists feedback_open_idx on public.feedback (created_at desc) where resolved_at is null;
+create index if not exists feedback_venue_idx on public.feedback (venue_id) where venue_id is not null;
+create table if not exists public.blocked_publishers (
+  publisher_key text primary key,
+  venue_id      text,
+  venue_name    text,
+  reason        text,
+  blocked_by    text not null,
+  created_at    timestamptz not null default now()
+);
+do $fb$ begin
+  if not exists (select 1 from information_schema.columns where table_schema = 'public' and table_name = 'wf_venues' and column_name = 'publisher_key') then
+    alter table public.wf_venues add column publisher_key text;
+  end if;
+end $fb$;
 `
 
 // Run the schema once per process. Cheap, and keeps setup zero-touch: a fresh

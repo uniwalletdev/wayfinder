@@ -1,6 +1,7 @@
 import { Venue, Waypoint } from "./types"
 import { NewVenueInput } from "./venues"
 import { apiUrl } from "./app-shell"
+import { getDeviceId } from "./device-id"
 
 // Client-side access to shared venue maps on the server (see /api/venues). Reads
 // are open; the owner secret for each venue this device created is kept in
@@ -35,6 +36,12 @@ function clearEditToken(id: string) {
   try {
     window.localStorage.removeItem(tokenKey(id))
   } catch {}
+}
+
+// A venue someone published to the server (its id is the database's uuid), as
+// opposed to a bundled or OpenStreetMap hospital, or a place kept on one device.
+export function isServerVenueId(id: string): boolean {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)
 }
 
 // True for venues this device created and therefore holds the edit token for.
@@ -85,12 +92,23 @@ export async function fetchServerVenues(): Promise<{ configured: boolean; venues
   }
 }
 
-export async function createServerVenue(input: NewVenueInput): Promise<{ configured: boolean; venue?: Venue }> {
+// Why the server refused to publish: a name the moderation filter caught, or
+// a publisher staff have blocked (see /api/venues). Anything else is a failure
+// to reach or write, after which the app keeps the place on the device.
+export type PublishRefusal = "name_not_allowed" | "blocked"
+
+function refusalOf(data: { error?: unknown }): PublishRefusal | undefined {
+  return data.error === "name_not_allowed" || data.error === "blocked" ? data.error : undefined
+}
+
+// The device identifier rides along with every write, so staff can stop an
+// abusive publisher (the server keeps only a one-way hash of it).
+export async function createServerVenue(input: NewVenueInput): Promise<{ configured: boolean; venue?: Venue; refused?: PublishRefusal }> {
   try {
     const res = await fetch(apiUrl("/api/venues"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(input),
+      body: JSON.stringify({ ...input, deviceId: getDeviceId() || undefined }),
     })
     const data = await res.json()
     if (!data.configured) return { configured: false }
@@ -98,7 +116,7 @@ export async function createServerVenue(input: NewVenueInput): Promise<{ configu
       setEditToken(data.venue.id, data.editToken)
       return { configured: true, venue: data.venue }
     }
-    return { configured: true }
+    return { configured: true, refused: refusalOf(data) }
   } catch {
     return { configured: false }
   }
@@ -107,7 +125,7 @@ export async function createServerVenue(input: NewVenueInput): Promise<{ configu
 export async function addServerWaypoints(
   venueId: string,
   waypoints: Waypoint[]
-): Promise<{ configured: boolean; ok: boolean; saved: Waypoint[] }> {
+): Promise<{ configured: boolean; ok: boolean; saved: Waypoint[]; rejected: number; refused?: PublishRefusal }> {
   // No token is not a refusal: the signed-in owner of the venue has none on a
   // second device, and the server authorises them by session.
   const editToken = getEditToken(venueId) ?? ""
@@ -115,13 +133,20 @@ export async function addServerWaypoints(
     const res = await fetch(apiUrl(`/api/venues/${venueId}/waypoints`), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ editToken, waypoints }),
+      body: JSON.stringify({ editToken, waypoints, deviceId: getDeviceId() || undefined }),
     })
     const data = await res.json()
-    if (!data.configured) return { configured: false, ok: false, saved: [] }
-    return { configured: true, ok: !!data.ok, saved: Array.isArray(data.waypoints) ? data.waypoints : [] }
+    if (!data.configured) return { configured: false, ok: false, saved: [], rejected: 0 }
+    return {
+      configured: true,
+      ok: !!data.ok,
+      saved: Array.isArray(data.waypoints) ? data.waypoints : [],
+      // Points the server dropped for their names (src/lib/moderation.ts).
+      rejected: typeof data.rejected === "number" ? data.rejected : 0,
+      refused: refusalOf(data),
+    }
   } catch {
-    return { configured: false, ok: false, saved: [] }
+    return { configured: false, ok: false, saved: [], rejected: 0 }
   }
 }
 

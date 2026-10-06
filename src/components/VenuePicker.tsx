@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
+import Link from "next/link"
 import { VenueSummary, VenueCategory, VenueVisibility, Coordinates } from "@/lib/types"
 import { NewVenueInput } from "@/lib/venues/core"
 import { HOME_COUNTRY, countryName, matchCountries } from "@/lib/country"
@@ -8,7 +9,7 @@ import Overlay from "@/components/Overlay"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
-  Search, Footprints, Loader2,
+  Search, Footprints, Loader2, Flag, EyeOff,
 } from "lucide-react"
 
 // Cap how many directory venues render at once. The NHS hospital directory adds
@@ -41,6 +42,14 @@ interface Props {
   onSelect: (id: string) => void
   onCreate: (input: NewVenueInput) => void
   onDelete: (id: string) => void
+  // Places this person made (theirs to delete), and places someone else
+  // published (theirs to report or hide). See WayfinderApp.
+  isOwnPlace: (id: string) => boolean
+  canReportPlace: (id: string) => boolean
+  onReportPlace: (place: { id: string; name: string }) => void
+  // How many places this person has hidden, and bringing them back.
+  hiddenCount: number
+  onShowHidden: () => void
   onClose: () => void
 }
 
@@ -90,9 +99,32 @@ const inputClass =
 
 export default function VenuePicker({
   venues, directoryLoading = false, country, onCountryChange, activeVenueId, currentCenter, hasGps,
-  onSelect, onCreate, onDelete, onClose,
+  onSelect, onCreate, onDelete, isOwnPlace, canReportPlace, onReportPlace, hiddenCount, onShowHidden, onClose,
 }: Props) {
   const [view, setView] = useState<"list" | "create">("list")
+  // A published place is deleted for everyone, so the bin asks once more.
+  const [confirmDelete, setConfirmDelete] = useState<string | null>(null)
+  const row = (v: VenueSummary, mapped = false) => (
+    <VenueRow
+      key={v.id}
+      venue={v}
+      mapped={mapped}
+      active={v.id === activeVenueId}
+      own={isOwnPlace(v.id)}
+      reportable={canReportPlace(v.id)}
+      confirming={confirmDelete === v.id}
+      onSelect={onSelect}
+      onDelete={(id) => {
+        // Only on this device: gone at once, as before.
+        if (id.startsWith("venue-") || confirmDelete === id) {
+          setConfirmDelete(null)
+          onDelete(id)
+        } else setConfirmDelete(id)
+      }}
+      onCancelDelete={() => setConfirmDelete(null)}
+      onReport={() => onReportPlace({ id: v.id, name: v.name })}
+    />
+  )
 
   // Create-form state
   const [name, setName] = useState("")
@@ -246,10 +278,22 @@ export default function VenuePicker({
               />
               <span className="text-xs leading-snug text-wf-body">
                 <ShieldCheck size={13} className="mb-0.5 mr-1 inline text-wf-primary" aria-hidden="true" />
-                I&apos;m authorised to map and publish this place. It will appear as
-                <span className="font-semibold"> Unverified</span> until an administrator confirms it.
+                I&apos;m authorised to map and publish this place, and it follows the{" "}
+                <Link href="/support#place-rules" className="font-semibold text-wf-primary underline-offset-2 hover:underline">
+                  rules for shared places
+                </Link>
+                . It will appear as <span className="font-semibold">Unverified</span> until an administrator confirms it.
               </span>
             </label>
+          )}
+          {visibility === "unlisted" && (
+            <p className="mb-4 rounded-xl bg-wf-surface px-3 py-2.5 text-xs leading-snug text-wf-body">
+              Anyone with the link can open an unlisted place, so it must follow the{" "}
+              <Link href="/support#place-rules" className="font-semibold text-wf-primary underline-offset-2 hover:underline">
+                rules for shared places
+              </Link>
+              .
+            </p>
           )}
 
           {/* Measure: accessibility & safety info, encouraged for public venues */}
@@ -344,9 +388,7 @@ export default function VenuePicker({
             </p>
           </div>
         )}
-        {mappedVenues.map((v) => (
-          <VenueRow key={v.id} venue={v} mapped active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
-        ))}
+        {mappedVenues.map((v) => row(v, true))}
 
         {/* Then the location-only directory pins. */}
         {shownDirectory.length > 0 && (
@@ -354,9 +396,7 @@ export default function VenuePicker({
             Hospital directory · location only
           </p>
         )}
-        {shownDirectory.map((v) => (
-          <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
-        ))}
+        {shownDirectory.map((v) => row(v))}
 
         {directoryLoading && (
           <p className="flex items-center gap-2 px-4 py-3 text-xs text-wf-muted lg:px-6" role="status">
@@ -381,10 +421,20 @@ export default function VenuePicker({
         {otherVenues.length > 0 && (
           <>
             <SectionLabel>Your places</SectionLabel>
-            {otherVenues.map((v) => (
-              <VenueRow key={v.id} venue={v} active={v.id === activeVenueId} onSelect={onSelect} onDelete={onDelete} />
-            ))}
+            {otherVenues.map((v) => row(v))}
           </>
+        )}
+
+        {hiddenCount > 0 && (
+          <p className="flex flex-wrap items-center justify-center gap-x-2 px-4 py-4 text-center text-xs text-wf-muted">
+            <span>
+              <EyeOff size={12} className="mb-0.5 mr-1 inline" aria-hidden="true" />
+              You’ve hidden {hiddenCount} place{hiddenCount === 1 ? "" : "s"} someone else published.
+            </span>
+            <button onClick={onShowHidden} className="font-semibold text-wf-primary">
+              Show them again
+            </button>
+          </p>
         )}
       </div>
     </Overlay>
@@ -430,8 +480,47 @@ function OptionRow({ label, Icon, on, onChange }: { label: string; Icon: typeof 
   )
 }
 
-function VenueRow({ venue, active, mapped = false, onSelect, onDelete }: { venue: VenueSummary; active: boolean; mapped?: boolean; onSelect: (id: string) => void; onDelete: (id: string) => void }) {
-  const isUserVenue = venue.id.startsWith("venue-")
+function VenueRow({
+  venue,
+  active,
+  mapped = false,
+  own,
+  reportable,
+  confirming,
+  onSelect,
+  onDelete,
+  onCancelDelete,
+  onReport,
+}: {
+  venue: VenueSummary
+  active: boolean
+  mapped?: boolean
+  own: boolean
+  reportable: boolean
+  confirming: boolean
+  onSelect: (id: string) => void
+  onDelete: (id: string) => void
+  onCancelDelete: () => void
+  onReport: () => void
+}) {
+  // Published by a person rather than mapped by Findway: said so, with whether
+  // the team has checked it yet.
+  const shared = own ? (venue.id.startsWith("venue-") ? "" : " · Yours") : reportable ? (venue.verified ? " · Shared by a user" : " · Shared by a user, unverified") : ""
+  if (confirming) {
+    return (
+      <div className="flex w-full items-center gap-3 border-b border-wf-border-faint bg-red-50 px-4 py-3 lg:px-6" role="group" aria-label={`Delete ${venue.name}?`}>
+        <p className="min-w-0 flex-1 text-[13px] leading-snug text-red-800">
+          Delete <span className="font-semibold">{venue.name}</span> for good? This can’t be undone.
+        </p>
+        <button autoFocus onClick={onCancelDelete} className="flex-shrink-0 rounded-lg px-2.5 py-1.5 text-[13px] font-semibold text-wf-body hover:bg-white">
+          Cancel
+        </button>
+        <button onClick={() => onDelete(venue.id)} className="flex-shrink-0 rounded-lg bg-red-600 px-2.5 py-1.5 text-[13px] font-semibold text-white">
+          Delete
+        </button>
+      </div>
+    )
+  }
   return (
     <div className={`flex w-full items-center gap-3 border-b border-wf-border-faint px-4 py-3 lg:px-6 ${active ? "bg-[#EEF5FD]" : mapped ? "bg-[#F7FAFD]" : ""}`}>
       <button onClick={() => onSelect(venue.id)} aria-current={active ? "true" : undefined} className="flex min-w-0 flex-1 items-center gap-3 text-left">
@@ -456,17 +545,28 @@ function VenueRow({ venue, active, mapped = false, onSelect, onDelete }: { venue
             <span className="truncate">
               {venue.subtitle ? `${venue.subtitle} · ` : ""}
               {venue.visibility[0].toUpperCase() + venue.visibility.slice(1)}
+              {shared}
             </span>
           </span>
         </span>
       </button>
+      {reportable && (
+        <button
+          onClick={onReport}
+          aria-label={`Report or hide ${venue.name}`}
+          title="Report or hide"
+          className="flex-shrink-0 rounded-full p-1.5 text-wf-faint hover:bg-red-50 hover:text-red-600"
+        >
+          <Flag size={16} />
+        </button>
+      )}
       {active ? (
         <Check size={18} className="flex-shrink-0 text-wf-primary" aria-label="Currently open" />
-      ) : isUserVenue ? (
+      ) : own ? (
         <button onClick={() => onDelete(venue.id)} aria-label={`Delete ${venue.name}`} className="flex-shrink-0 rounded-full p-1.5 text-wf-faint hover:bg-red-50 hover:text-red-600">
           <Trash2 size={16} />
         </button>
-      ) : (
+      ) : reportable ? null : (
         <ChevronRight size={16} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
       )}
     </div>

@@ -6,7 +6,7 @@ import {
   Building, ChevronsUpDown, Search, BadgeCheck, X, Navigation, Share2, ChevronRight,
   Loader2, PersonStanding, Bike, Car, ClipboardList, UploadCloud, QrCode, Camera,
   ArrowUp, ArrowDown, ArrowUpLeft, ArrowUpRight, ArrowLeft, ArrowRight, ArrowUpDown, CheckCircle2,
-  Info, MapPin, Pencil, Volume2,
+  Info, MapPin, Pencil, Volume2, Flag,
 } from "lucide-react"
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel, waypointDetail } from "@/lib/waypoint-meta"
@@ -28,6 +28,10 @@ interface Props {
   venue: Venue
   userInitials: string | null
   onOpenVenues: () => void
+  // Set when the open place was published by a person rather than mapped by
+  // Findway: "you", or "someone" else (who can be reported).
+  sharedBy: "you" | "someone" | null
+  onReportPlace: () => void
   onOpenSearch: () => void
   quickAccess: Waypoint[]
   onSelectDestination: (w: Waypoint) => void
@@ -89,6 +93,8 @@ export default function LeftPanel({
   venue,
   userInitials,
   onOpenVenues,
+  sharedBy,
+  onReportPlace,
   onOpenSearch,
   quickAccess,
   onSelectDestination,
@@ -226,6 +232,18 @@ export default function LeftPanel({
           </div>
           <ChevronsUpDown size={15} className="flex-shrink-0 text-wf-faint" />
         </button>
+        {sharedBy && (
+          <div className={`${expandable} -mt-1.5 items-center justify-between gap-2 px-1 text-xs text-wf-muted`}>
+            <span className="min-w-0 truncate">
+              {sharedBy === "you" ? "You published this place" : venue.verified ? "Shared by a Findway user" : "Shared by a Findway user · not yet verified"}
+            </span>
+            {sharedBy === "someone" && (
+              <button onClick={onReportPlace} className="flex flex-shrink-0 items-center gap-1 font-semibold text-wf-muted hover:text-red-600">
+                <Flag size={12} aria-hidden="true" /> Report
+              </button>
+            )}
+          </div>
+        )}
 
         {!isNavigating && (
           <>

@@ -10,6 +10,7 @@ interface OverviewData {
   accounts: number | null
   venues?: { total: number; public: number; unlisted: number; private: number; verified: number; newThisWeek: number }
   searches?: { openGroups: number; lastWeek: number }
+  inbox?: { reports: number; messages: number }
   signals?: { lastWeek: number; lastMonth: number; devicesLastMonth: number }
   staff?: number
   world?: { countries: number; hospitals: number; siteMaps: number; indoorMaps: number; lastPublished: string | null } | null
@@ -54,8 +55,21 @@ export default function OverviewView() {
               hint={`${data.searches?.lastWeek ?? 0} missed searches this week`}
               tone={(data.searches?.openGroups ?? 0) > 0 ? "attention" : "default"}
             />
-            <Stat label="Navigation signals" value={fmtNumber(data.signals?.lastWeek)} hint="this week" />
-            <Stat label="Devices" value={fmtNumber(data.signals?.devicesLastMonth)} hint="sent signals in 30 days" />
+            <Stat
+              label="Inbox to review"
+              value={fmtNumber((data.inbox?.reports ?? 0) + (data.inbox?.messages ?? 0))}
+              hint={
+                staff.can("inbox.view") ? (
+                  <Link href="/admin/inbox" className="font-semibold text-wf-primary">
+                    {data.inbox?.reports ?? 0} reports · {data.inbox?.messages ?? 0} messages
+                  </Link>
+                ) : (
+                  `${data.inbox?.reports ?? 0} reports · ${data.inbox?.messages ?? 0} messages`
+                )
+              }
+              tone={(data.inbox?.reports ?? 0) > 0 ? "attention" : "default"}
+            />
+            <Stat label="Navigation signals" value={fmtNumber(data.signals?.lastWeek)} hint={`this week · ${fmtNumber(data.signals?.devicesLastMonth)} devices in 30 days`} />
           </div>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-2">

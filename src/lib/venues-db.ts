@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto"
 import { query } from "./db"
-import { Venue, Waypoint } from "./types"
+import { Venue, VenueVisibility, Waypoint } from "./types"
 import { NewVenueInput, slugify as slugifyName } from "./venues/core"
 
 // Server-side data access for shared venue maps (see db/migrations/0003_venues.sql
@@ -40,8 +40,8 @@ interface WaypointRow {
   description: string | null
 }
 
-// Columns returned to clients — never selects edit_token, so the owner secret
-// can't leak through a read.
+// Columns returned to clients — never selects edit_token or publisher_key, so
+// the owner secret and the publisher's device key can't leak through a read.
 const VENUE_COLS = "id, slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, owner_id, verified, created_at, updated_at"
 
 // Slugs on the server carry a random suffix: several people can create
@@ -123,11 +123,17 @@ export async function getVenue(id: string, viewerId: string | null = null): Prom
 // Create a venue and mint its edit_token. The token is returned exactly once,
 // here — it is never selected by any read path. A signed-in creator also owns
 // it by account from the start.
-export async function createVenue(input: NewVenueInput, ownerId: string | null = null): Promise<{ venue: Venue; editToken: string }> {
+// publisherKey is the hashed device key (src/lib/publishers.ts) that lets
+// staff block an abusive publisher; it is never returned to clients.
+export async function createVenue(
+  input: NewVenueInput,
+  ownerId: string | null = null,
+  publisherKey: string | null = null
+): Promise<{ venue: Venue; editToken: string }> {
   const editToken = randomUUID()
   const { rows } = await query<VenueRow>(
-    `insert into public.wf_venues (slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, edit_token, owner_id)
-     values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+    `insert into public.wf_venues (slug, name, subtitle, category, center_lat, center_lng, default_zoom, visibility, edit_token, owner_id, publisher_key)
+     values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
      returning ${VENUE_COLS}`,
     [
       slugify(input.name),
@@ -140,6 +146,7 @@ export async function createVenue(input: NewVenueInput, ownerId: string | null =
       input.visibility,
       editToken,
       ownerId,
+      publisherKey,
     ]
   )
   return { venue: rowToVenue(rows[0], [], ownerId), editToken }
@@ -170,6 +177,12 @@ export async function claimVenue(id: string, editToken: string, userId: string):
     [id, editToken, userId]
   )
   return rows.length > 0
+}
+
+// Who can see a venue, or null when there is no such venue.
+export async function venueVisibility(id: string): Promise<VenueVisibility | null> {
+  const { rows } = await query<{ visibility: VenueVisibility }>("select visibility from public.wf_venues where id::text = $1", [id])
+  return rows[0]?.visibility ?? null
 }
 
 export async function addWaypoints(

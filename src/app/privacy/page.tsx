@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import InfoPage from "@/components/InfoPage"
 import DataControls from "@/components/DataControls"
 
@@ -17,7 +18,7 @@ export default function PrivacyPage() {
       eyebrow="Privacy"
       title="What Findway does with your data"
       lead="A plain description of what stays on your phone, what leaves it and why. It describes the software as built; the organisation running this copy of Findway is responsible for its own privacy notice."
-      updated="September 2026"
+      updated="October 2026"
     >
       <h2>No account needed</h2>
       <p>
@@ -29,7 +30,11 @@ export default function PrivacyPage() {
       <ul>
         <li>The place you last had open, your map style and view, and whether you prefer step-free routes and spoken directions.</li>
         <li>Any places, floor plans and corridors you have mapped yourself, unless you chose to publish them.</li>
-        <li>A random identifier for this browser, used only so that several people walking the same corridor can be counted as several people.</li>
+        <li>Places someone else published that you chose to hide from your list.</li>
+        <li>
+          A random identifier for this browser, used so that several people walking the same corridor can be counted as several people, and
+          so that someone who publishes abusive places can be stopped from publishing more.
+        </li>
       </ul>
       <p>All of this is in your browser’s storage and goes when you clear it.</p>
 
@@ -49,7 +54,7 @@ export default function PrivacyPage() {
         nothing are deleted after 90 days.
       </p>
 
-      <h2>Your data on this device</h2>
+      <h2 id="your-data">Your data on this device</h2>
       <DataControls />
 
       <h2>Sent to the server when you use a feature</h2>
@@ -69,6 +74,15 @@ export default function PrivacyPage() {
         <li>
           <strong>Map tiles</strong> for the street map are fetched from a map tile provider, which sees the request like any web server does.
         </li>
+        <li>
+          <strong>Places you publish.</strong> A public or unlisted place, and the points you add to it, are stored on the server so other
+          people can open them, together with a one-way scramble of the browser identifier above, so that staff can stop someone who publishes
+          abusive places. Delete a place you published from the places list and it is removed from the server.
+        </li>
+        <li>
+          <strong>Reports and support messages.</strong> What you write, the place a report is about, and your email address if you give one,
+          so the team can reply. Kept while the team deals with it and for 180 days after, and never more than a year.
+        </li>
       </ul>
 
       <h2>Not collected</h2>
@@ -80,7 +94,9 @@ export default function PrivacyPage() {
 
       <h2>Where to ask</h2>
       <p>
-        Questions about how a particular hospital or organisation uses Findway, or requests about your data, go to the team that deployed it.
+        Questions about this summary, or requests about your data, go to the Findway team through the form on the{" "}
+        <Link href="/support#contact">Support</Link> page. Questions about how a particular hospital or organisation uses Findway go to that
+        organisation.
       </p>
     </InfoPage>
   )

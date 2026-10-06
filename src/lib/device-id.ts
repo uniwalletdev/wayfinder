@@ -3,8 +3,9 @@
 // aggregation that promotes a correction counts *independent* devices agreeing —
 // so one phone can't single-handedly move a pin. This id is what makes "8 people
 // walked the same corridor" countable. It identifies a browser, not a person:
-// no account, no PII, and it resets if storage is cleared, which is fine — the
-// only thing it's used for is de-duplicating agreement.
+// no account, no PII, and it resets if storage is cleared, which is fine. Its
+// one other use: a place published to the server carries a one-way hash of it
+// (src/lib/publishers.ts), so staff can stop an abusive publisher.
 
 const KEY = "wayfinder.deviceId"
 

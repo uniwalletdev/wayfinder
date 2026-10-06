@@ -8,12 +8,12 @@
 // this device's venues are claimed for the account (see
 // db/migrations/0004_venue_owner.sql), so they can be edited from any device.
 //
-// Three states, in order of how most people will see it:
-//   1. Clerk not configured  → a Help button (the accessibility and how-to
-//                               page). A "?" circle that did nothing used to sit
-//                               here, which on a hospital kiosk reads as broken.
-//   2. Configured, signed out → the circle as a sign-in affordance.
-//   3. Configured, signed in  → Clerk's <UserButton>.
+// The Help button (the support page: help, contact, the rules for shared
+// places, and the way to privacy and accessibility) is always there; a "?"
+// circle that did nothing used to sit here, which on a hospital kiosk reads as
+// broken. Beside it, when Clerk is configured:
+//   signed out → a circle as a sign-in affordance
+//   signed in  → Clerk's <UserButton>
 //
 // <Show> from @clerk/nextjs is an async *server* component and cannot be used
 // here, so this reads session state through the client hook instead.
@@ -34,7 +34,7 @@ const circle =
 
 function HelpLink() {
   return (
-    <Link href="/accessibility" className={`${circle} transition-colors hover:bg-wf-border`} title="Help and accessibility" aria-label="Help and accessibility">
+    <Link href="/support" className={`${circle} transition-colors hover:bg-wf-border`} title="Help and support" aria-label="Help and support">
       <HelpCircle size={16} aria-hidden="true" />
     </Link>
   )
@@ -75,6 +75,10 @@ function ClerkAuthButton({ initials }: { initials?: string | null }) {
 }
 
 export default function AuthButton({ initials }: { initials?: string | null }) {
-  if (!clerkEnabled) return <HelpLink />
-  return <ClerkAuthButton initials={initials} />
+  return (
+    <div className="flex items-center gap-2">
+      <HelpLink />
+      {clerkEnabled && <ClerkAuthButton initials={initials} />}
+    </div>
+  )
 }

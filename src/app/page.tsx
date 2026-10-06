@@ -313,6 +313,7 @@ function Landing() {
           <span className="font-display text-sm font-bold text-wf-ink">Findway</span>
         </div>
         <div className="flex items-center gap-6 text-[13.5px] text-wf-muted">
+          <Link href="/support" className="transition-colors hover:text-wf-primary">Support</Link>
           <Link href="/privacy" className="transition-colors hover:text-wf-primary">Privacy</Link>
           <Link href="/accessibility" className="transition-colors hover:text-wf-primary">Accessibility</Link>
           <span>© 2026 Findway</span>
