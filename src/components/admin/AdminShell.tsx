@@ -2,10 +2,10 @@
 // The back office frame: the sections a role may open, who is signed in, and
 // the page. Narrow screens get the sections as a row of tabs under the brand.
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { createContext, useContext, type ReactNode } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { createContext, useContext, useState, type ReactNode } from "react"
 import { UserButton } from "@clerk/nextjs"
-import { LayoutDashboard, Earth, Building2, Inbox, SearchX, Activity, Users, ScrollText, Server, Navigation, ExternalLink } from "lucide-react"
+import { LayoutDashboard, Earth, Building2, Inbox, SearchX, Activity, Users, ScrollText, Server, Navigation, ExternalLink, LogOut } from "lucide-react"
 import ToastHost from "@/components/Toast"
 import { Badge } from "./ui"
 import { ROLE_LABELS, type Permission, type Role } from "@/lib/backoffice/roles"
@@ -17,7 +17,7 @@ export interface ClientStaff {
   imageUrl: string | null
   role: Role
   fixedOwner: boolean
-  dev: boolean
+  via: "clerk" | "password" | "dev"
   permissions: Permission[]
 }
 
@@ -57,27 +57,49 @@ function Brand() {
   )
 }
 
-function Who({ staff }: { staff: ClientStaff }) {
-  const initials = staff.name
-    .split(/\s+/)
-    .map((s) => s[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase()
+// Signing out of a password session: the server deletes its cookie, then the
+// layout is drawn again and shows the sign-in form.
+function PasswordSignOut() {
+  const router = useRouter()
+  const [busy, setBusy] = useState(false)
   return (
-    <div className="flex items-center gap-2.5">
-      {staff.dev ? (
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-wf-surface text-[12px] font-semibold text-wf-muted">{initials}</span>
-      ) : (
+    <button
+      type="button"
+      disabled={busy}
+      onClick={async () => {
+        setBusy(true)
+        try {
+          await fetch("/api/admin/session", { method: "DELETE" })
+        } finally {
+          router.refresh()
+        }
+      }}
+      aria-label="Sign out"
+      title="Sign out"
+      className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-wf-muted hover:bg-wf-surface hover:text-wf-primary disabled:opacity-50"
+    >
+      <LogOut size={16} aria-hidden="true" />
+    </button>
+  )
+}
+
+function Who({ staff }: { staff: ClientStaff }) {
+  const initials = (staff.via === "password" ? (staff.email ?? staff.name).slice(0, 2) : staff.name.split(/\s+/).map((s) => s[0]).join("").slice(0, 2)).toUpperCase()
+  return (
+    <div className="flex min-w-0 items-center gap-2.5">
+      {staff.via === "clerk" ? (
         <UserButton />
+      ) : (
+        <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-wf-surface text-[12px] font-semibold text-wf-muted">{initials}</span>
       )}
-      <div className="min-w-0">
+      <div className="min-w-0 flex-1">
         <p className="truncate text-[13px] font-semibold text-wf-ink">{staff.name}</p>
         <p className="flex items-center gap-1.5 truncate text-[11.5px] text-wf-muted">
           <Badge tone={ROLE_TONE[staff.role]}>{ROLE_LABELS[staff.role]}</Badge>
-          {staff.dev && <span>development</span>}
+          {staff.via === "dev" && <span>development</span>}
         </p>
       </div>
+      {staff.via === "password" && <PasswordSignOut />}
     </div>
   )
 }

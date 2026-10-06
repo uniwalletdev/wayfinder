@@ -37,6 +37,10 @@ export function actionLabel(action: string, detail: Record<string, unknown> = {}
       return `Navigation signals older than ${String(detail.olderThanDays ?? "?")} days deleted (${String(detail.deleted ?? 0)})`
     case "data.refresh":
       return `Data refresh started for ${s("countries")}`
+    case "session.sign_in":
+      return "Signed in with the owner password"
+    case "session.sign_out":
+      return "Signed out"
     default:
       return action
   }

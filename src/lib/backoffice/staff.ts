@@ -1,15 +1,20 @@
 import "server-only"
 import { cache } from "react"
-import { headers } from "next/headers"
+import { cookies, headers } from "next/headers"
 import { isDatabaseConfigured, query } from "../db"
 import { can, parseOwnerEmails, permissionsOf, resolveRole, type Permission, type Role } from "./roles"
 import { sameOrigin } from "./origin"
+import { readPasswordLogin, verifySession, SESSION_COOKIE, type PasswordLoginProblem } from "./password-login"
 
 // Who is using the back office, checked on the server for every page render
 // and every API call (the data access layer the Next.js auth guide describes:
-// node_modules/next/dist/docs/01-app/02-guides/authentication.md). Sign-in is
-// Clerk's; the staff role is ours — ADMIN_EMAILS for the fixed owners, the
-// backoffice_members table for everyone else.
+// node_modules/next/dist/docs/01-app/02-guides/authentication.md). Two ways in,
+// either or both:
+//   - the owner's email and password from the environment (BACKOFFICE_EMAIL,
+//     BACKOFFICE_PASSWORD; src/lib/backoffice/password-login.ts), which makes
+//     them an owner and needs no accounts at all;
+//   - Clerk accounts, where the staff role is ours: ADMIN_EMAILS for the fixed
+//     owners, the backoffice_members table for everyone else.
 //
 // Development only: with BACKOFFICE_DEV=1 and NODE_ENV not "production" (that
 // is, `next dev` — never a deployed build, where `next build` fixes NODE_ENV),
@@ -32,6 +37,9 @@ export function ownerEmails(): string[] {
   return parseOwnerEmails(process.env.ADMIN_EMAILS)
 }
 
+// The identity a password sign-in acts as, in the audit log and elsewhere.
+export const PASSWORD_OWNER_ID = "password-login"
+
 export interface Staff {
   userId: string
   email: string | null
@@ -39,14 +47,15 @@ export interface Staff {
   imageUrl: string | null
   role: Role
   fixedOwner: boolean
-  dev: boolean
+  // How they signed in, which decides how they sign out.
+  via: "clerk" | "password" | "dev"
 }
 
 export type StaffState =
   | { kind: "staff"; staff: Staff }
-  | { kind: "signed-out" }
+  | { kind: "signed-out"; password: boolean; clerk: boolean }
   | { kind: "no-access"; email: string | null; ownersConfigured: boolean }
-  | { kind: "unconfigured"; missing: string[] }
+  | { kind: "unconfigured"; missing: string[]; passwordProblem: PasswordLoginProblem | null }
 
 export async function storedRole(userId: string): Promise<string | null> {
   if (!isDatabaseConfigured()) return null
@@ -63,27 +72,37 @@ export const getStaffState = cache(async (): Promise<StaffState> => {
   if (await devMode()) {
     return {
       kind: "staff",
-      staff: { userId: "dev-owner", email: "dev@localhost", name: "Development owner", imageUrl: null, role: "owner", fixedOwner: true, dev: true },
+      staff: { userId: "dev-owner", email: "dev@localhost", name: "Development owner", imageUrl: null, role: "owner", fixedOwner: true, via: "dev" },
+    }
+  }
+  const passwordLogin = readPasswordLogin(process.env)
+  const password = !!passwordLogin?.ok
+  if (passwordLogin?.ok && verifySession((await cookies()).get(SESSION_COOKIE)?.value, passwordLogin.login, Date.now())) {
+    const { email } = passwordLogin.login
+    return {
+      kind: "staff",
+      staff: { userId: PASSWORD_OWNER_ID, email, name: email, imageUrl: null, role: "owner", fixedOwner: true, via: "password" },
     }
   }
   if (!clerkConfigured()) {
+    if (password) return { kind: "signed-out", password, clerk: false }
     const missing = ["NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY", "CLERK_SECRET_KEY"].filter((k) => !process.env[k])
-    return { kind: "unconfigured", missing }
+    return { kind: "unconfigured", missing, passwordProblem: passwordLogin && !passwordLogin.ok ? passwordLogin.problem : null }
   }
   const { auth, currentUser } = await import("@clerk/nextjs/server")
   const { userId } = await auth()
-  if (!userId) return { kind: "signed-out" }
+  if (!userId) return { kind: "signed-out", password, clerk: true }
   const user = await currentUser()
   // Banning revokes the sessions, but a session token already issued stays
   // valid for up to a minute: a banned or locked account is out at once.
-  if (!user || user.banned || user.locked) return { kind: "signed-out" }
+  if (!user || user.banned || user.locked) return { kind: "signed-out", password, clerk: true }
   const verified = user.emailAddresses.filter((e) => e.verification?.status === "verified").map((e) => e.emailAddress)
   const primary = user.emailAddresses.find((e) => e.id === user.primaryEmailAddressId)?.emailAddress ?? verified[0] ?? null
   const owners = ownerEmails()
   const { role, fixedOwner } = resolveRole({ verifiedEmails: verified, ownerEmails: owners, storedRole: await storedRole(userId) })
   if (!role) return { kind: "no-access", email: primary, ownersConfigured: owners.length > 0 }
   const name = [user.firstName, user.lastName].filter(Boolean).join(" ") || user.username || primary || "Staff member"
-  return { kind: "staff", staff: { userId, email: primary, name, imageUrl: user.imageUrl || null, role, fixedOwner, dev: false } }
+  return { kind: "staff", staff: { userId, email: primary, name, imageUrl: user.imageUrl || null, role, fixedOwner, via: "clerk" } }
 })
 
 // What the client is told about the signed-in staff member.
