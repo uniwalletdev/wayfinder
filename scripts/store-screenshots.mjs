@@ -165,6 +165,7 @@ const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePa
 rmSync(OUT, { recursive: true, force: true })
 
 const problems = []
+const streetMap = { mapbox: 0, failed: 0, carto: 0 }
 try {
   for (const size of SIZES) {
     mkdirSync(join(OUT, size.dir), { recursive: true })
@@ -178,11 +179,29 @@ try {
       locale: "en-GB",
       colorScheme: "light",
     })
-    await context.route("**/*", (route) => {
-      const url = new URL(route.request().url())
+    await context.route("**/*", async (route) => {
+      const request = route.request()
+      const url = new URL(request.url())
       if (NEVER_SEND.test(url.pathname)) return route.fulfill({ status: 204, body: "" })
       if (OFFLINE && url.hostname !== "localhost") return route.fulfill({ status: 204, body: "" })
+      // The pages are served from this machine but call the live /api, as the
+      // apps do. The API labels its answers for the apps' own origins only
+      // (src/proxy.ts), so a page here could not read them: without this, the
+      // question of which street map to draw went unanswered and the map fell
+      // back to CARTO's tiles. Fetch those answers outside the browser and
+      // hand them over as readable. Images need no such label.
+      if (url.hostname !== "localhost" && url.pathname.startsWith("/api/") && request.resourceType() !== "image") {
+        const response = await route.fetch()
+        return route.fulfill({ response, headers: { ...response.headers(), "access-control-allow-origin": "*" } })
+      }
       return route.continue()
+    })
+    // Which street map each screenshot shows, so the log says if it is not
+    // the deployment's Mapbox map.
+    context.on("response", (response) => {
+      const u = response.url()
+      if (u.includes("/api/basemap/")) response.ok() ? streetMap.mapbox++ : streetMap.failed++
+      else if (u.includes("basemaps.cartocdn.com")) streetMap.carto++
     })
     for (const scene of SCENES) {
       const page = await context.newPage()
@@ -206,5 +225,11 @@ try {
   server.close()
 }
 
+if (!OFFLINE) {
+  console.log(`Street map tiles: ${streetMap.mapbox} from Mapbox, ${streetMap.failed} Mapbox failed, ${streetMap.carto} from CARTO`)
+  if (streetMap.carto > 0 || streetMap.mapbox === 0) {
+    problems.push("the street map is not the deployment's Mapbox map: check MAPBOX_ACCESS_TOKEN (it needs the styles:tiles scope and no URL restriction)")
+  }
+}
 for (const p of problems) console.warn("warning:", p)
 console.log(`Screenshots written to ${OUT}/${OFFLINE ? " (offline: street map left blank)" : ""}`)
