@@ -92,6 +92,39 @@ export default function PrivacyPage() {
         <li>No camera footage is stored on the server, and the camera is only used while a camera feature is open.</li>
       </ul>
 
+      <h2 id="delete-your-data">Deleting your data</h2>
+      <p>
+        Findway, from Universal Wallet Ltd, has no accounts, so nothing the server holds carries your name. To delete what it holds from your
+        phone:
+      </p>
+      <ol>
+        <li>
+          <strong>Your walks.</strong> Open <Link href="#your-data">Your data on this device</Link> above (in the app: the ? button, then
+          Privacy) and press <strong>Delete my walks from the server</strong>. Every corridor trace filed under this phone&apos;s identifier
+          is deleted at once, and the identifier is forgotten.
+        </li>
+        <li>
+          <strong>Places you published.</strong> Open the places list and tap the bin beside the place. It is removed from the server with the
+          points in it.
+        </li>
+        <li>
+          <strong>Anything else</strong>, such as a report or support message you sent, or a place you published from a phone you no longer
+          have: use the form on the <Link href="/support#contact">Support</Link>
+          {" page, choose \u201cPrivacy or my data\u201d, and say what to delete."} We delete it within 30 days, and reply if you leave an email address.
+        </li>
+      </ol>
+      <p>If you ask for nothing, data is kept for these periods and then deleted:</p>
+      <ul>
+        <li>Corridor traces: 30 days.</li>
+        <li>Searches that found nothing: 90 days. They carry no identifier, so they cannot be picked out for one person.</li>
+        <li>Reports and support messages: 180 days after they are dealt with, never more than a year.</li>
+        <li>Places you published: until you or the Findway team delete them.</li>
+        <li>
+          A publisher blocked for breaking the rules: the block is kept so that it holds, as a one-way scramble of the phone&apos;s identifier,
+          not the identifier itself.
+        </li>
+      </ul>
+
       <h2>Where to ask</h2>
       <p>
         Questions about this summary, or requests about your data, go to the Findway team through the form on the{" "}
