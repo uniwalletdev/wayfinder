@@ -8,7 +8,8 @@
 //   editor — viewer, plus moderating shared venues, reports, support messages
 //            and search misses
 //   admin  — editor, plus accounts (ban, unban, give or take editor/viewer),
-//            the audit log, data retention and starting a data refresh
+//            the audit log, data retention, starting a data refresh and the
+//            hospitals that pay for a listing
 //   owner  — admin, plus granting and revoking admin and owner, and deleting
 //            accounts
 // Everyone else who signs in is an ordinary Findway user and sees no back
@@ -32,7 +33,7 @@ export const ROLE_LABELS: Record<RoleOrNone, string> = {
 
 export const ROLE_SUMMARIES: Record<Role, string> = {
   owner: "Everything, including who is an admin or owner, and deleting accounts",
-  admin: "Accounts, the audit log, data retention and data refreshes",
+  admin: "Accounts, the audit log, data retention, data refreshes and paying hospitals",
   editor: "Moderates shared venues, reports, messages and search misses",
   viewer: "Reads the back office except the inbox and accounts; changes nothing",
 }
@@ -55,6 +56,11 @@ export const PERMISSIONS = {
   "audit.view": "admin",
   "data.purge": "admin",
   "pipeline.run": "admin",
+  // Hospitals that pay for an Official listing: who they are, what they pay
+  // and when they renew, and approving the sign-ups whose email did not
+  // prove they work there.
+  "customers.view": "admin",
+  "customers.edit": "admin",
   "roles.admin": "owner",
   "users.delete": "owner",
 } as const satisfies Record<string, Role>

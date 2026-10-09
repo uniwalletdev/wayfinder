@@ -11,6 +11,7 @@ too. It is web only: the Android and iOS apps leave it out.
 | Inbox | Reports about places people published (sent from the app) and messages from the support page: remove a reported place, block whoever published it, dismiss, reply by email; unblock publishers |
 | Searches | What people searched for inside a hospital and did not find, grouped; mark each resolved; export CSV |
 | Activity | Navigation signals by day and by hospital, aggregated; delete signals past the 30-day retention |
+| Customers | Hospitals that pay for an Official listing: plans, renewals, PO numbers, and sign-ups waiting for review (docs/subscriptions.md) |
 | Users & roles | The back office team, and every account: give or take roles, ban, unban, delete |
 | Audit log | Every change made in the back office, who made it and when |
 | System | Which integrations are on, database health, recent workflow runs, and starting a data refresh |
@@ -22,7 +23,7 @@ Each role includes everything below it.
 | Role | Can |
 | --- | --- |
 | Owner | Everything, including making someone an admin or owner, and deleting accounts |
-| Admin | Accounts (ban, unban, make someone an editor or viewer), the audit log, data retention, data refreshes |
+| Admin | Accounts (ban, unban, make someone an editor or viewer), the audit log, data retention, data refreshes, paying hospitals |
 | Editor | Moderate shared venues, the Inbox and missed searches |
 | Viewer | Read every section except the Inbox, accounts and the audit log; change nothing |
 

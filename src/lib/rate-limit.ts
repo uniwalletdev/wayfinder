@@ -132,6 +132,11 @@ export const LIMITS = {
   // Across-every-hospital search: read-only, from shipped data, but it ranks
   // several thousand rows per call.
   search: { limit: 120, windowMs: 60 * 1000 }, // 120/min
+  // Hospital sign-up and account changes (/api/billing): each can call
+  // Stripe, so a person clicking through is fine and a loop is not.
+  billing: { limit: 60, windowMs: 60 * 60 * 1000 }, // 60/hour
+  // Finding a hospital to list, as someone types.
+  billingSearch: { limit: 120, windowMs: 60 * 1000 }, // 120/min
 } as const
 
 // ── Request body caps ───────────────────────────────────────────────────────
@@ -166,6 +171,13 @@ export const BODY_LIMITS = {
   cspReport: 16 * 1024,
   // Up to MAX_TRAIL_POINTS (400) trail points plus their keys.
   signals: 64 * 1024,
+  // A sign-up or account change: a few short fields.
+  billing: 8 * 1024,
+  // A hospital's logo, up to 100 KB, base64-encoded in a data URL.
+  billingLogo: 160 * 1024,
+  // A Stripe webhook event. Stripe's are a few kilobytes; an invoice with
+  // many lines can be more.
+  stripeWebhook: 512 * 1024,
 } as const
 
 export type CappedBody<T> =

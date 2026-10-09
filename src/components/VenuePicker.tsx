@@ -6,6 +6,7 @@ import { VenueSummary, VenueCategory, VenueVisibility, Coordinates } from "@/lib
 import { NewVenueInput } from "@/lib/venues/core"
 import { HOME_COUNTRY, countryName, matchCountries } from "@/lib/country"
 import Overlay from "@/components/Overlay"
+import { useOfficialListings } from "@/lib/official"
 import {
   X, Plus, Check, MapPin, ChevronRight, Globe, Lock, Link2,
   ShieldCheck, Accessibility, Trash2, BadgeCheck, Navigation,
@@ -104,10 +105,12 @@ export default function VenuePicker({
   const [view, setView] = useState<"list" | "create">("list")
   // A published place is deleted for everyone, so the bin asks once more.
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null)
+  const official = useOfficialListings()
   const row = (v: VenueSummary, mapped = false) => (
     <VenueRow
       key={v.id}
       venue={v}
+      officialBy={official[v.id]?.org}
       mapped={mapped}
       active={v.id === activeVenueId}
       own={isOwnPlace(v.id)}
@@ -482,6 +485,7 @@ function OptionRow({ label, Icon, on, onChange }: { label: string; Icon: typeof 
 
 function VenueRow({
   venue,
+  officialBy,
   active,
   mapped = false,
   own,
@@ -493,6 +497,8 @@ function VenueRow({
   onReport,
 }: {
   venue: VenueSummary
+  // The hospital that lists it as Official, if one does.
+  officialBy?: string
   active: boolean
   mapped?: boolean
   own: boolean
@@ -530,7 +536,13 @@ function VenueRow({
         <span className="min-w-0 flex-1">
           <span className="flex items-center gap-1 truncate text-[14.5px] font-semibold text-wf-ink">
             {venue.name}
-            {venue.verified && <BadgeCheck size={14} className="flex-shrink-0 text-wf-primary" aria-label="Verified" />}
+            {officialBy ? (
+              <span className="inline-flex flex-shrink-0 items-center gap-0.5 rounded-full bg-[#E7F2FF] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-wf-primary" title={`Official: kept up to date by ${officialBy}`}>
+                <BadgeCheck size={11} aria-hidden="true" /> Official
+              </span>
+            ) : (
+              venue.verified && <BadgeCheck size={14} className="flex-shrink-0 text-wf-primary" aria-label="Verified" />
+            )}
           </span>
           <span className="flex items-center gap-1.5 truncate text-xs text-wf-muted">
             {mapped && (venue.illustrative ? (

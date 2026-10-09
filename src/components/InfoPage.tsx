@@ -58,6 +58,7 @@ export default function InfoPage({
       <footer className="flex flex-col items-center justify-between gap-4 border-t border-wf-border-faint px-6 py-7 text-[13.5px] text-wf-muted sm:flex-row sm:px-10 lg:px-16 xl:px-24">
         <span>© 2026 Findway</span>
         <div className="flex items-center gap-6">
+          <Link href="/for-hospitals" className="hover:text-wf-primary">For hospitals</Link>
           <Link href="/support" className="hover:text-wf-primary">Support</Link>
           <Link href="/privacy" className="hover:text-wf-primary">Privacy</Link>
           <Link href="/accessibility" className="hover:text-wf-primary">Accessibility</Link>

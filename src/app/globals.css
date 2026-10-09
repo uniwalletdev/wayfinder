@@ -212,9 +212,11 @@ html, body {
 }
 
 /* Reading pages (accessibility, privacy). Kept in one rule set rather than
-   utility classes on every element so the prose reads as one measure. */
+   utility classes on every element so the prose reads as one measure.
+   Anything inside .not-prose (a sign-up form, a grid of cards) is left to its
+   own classes. */
 .wf-prose h2 { font-family: var(--font-heading); font-size: 22px; font-weight: 600; letter-spacing: -0.3px; color: var(--wf-ink); margin-top: 2.25rem; margin-bottom: 0.75rem; }
-.wf-prose p, .wf-prose li { font-size: 16px; line-height: 1.65; color: var(--wf-body); }
+.wf-prose p:not(.not-prose *), .wf-prose li:not(.not-prose *) { font-size: 16px; line-height: 1.65; color: var(--wf-body); }
 /* In the components layer, under the utilities, so anything on a reading page
    that sets its own type or colour (a form, a card) keeps it. */
 @layer components {
@@ -222,8 +224,9 @@ html, body {
   .wf-prose a { color: var(--wf-primary); font-weight: 600; }
   .wf-prose p + ul, .wf-prose ul + p { margin-top: 0.9rem; }
 }
-.wf-prose p + p { margin-top: 0.9rem; }
-.wf-prose ul { padding-left: 1.25rem; list-style: disc; display: flex; flex-direction: column; gap: 0.6rem; }
+.wf-prose p + p:not(.not-prose *) { margin-top: 0.9rem; }
+.wf-prose ul:not(.not-prose, .not-prose *) { padding-left: 1.25rem; list-style: disc; display: flex; flex-direction: column; gap: 0.6rem; }
+.wf-prose ol:not(.not-prose, .not-prose *) { padding-left: 1.25rem; list-style: decimal; display: flex; flex-direction: column; gap: 0.6rem; }
 .wf-prose strong { color: var(--wf-ink); font-weight: 600; }
 .wf-prose kbd { font: 600 13px var(--font-body), monospace; color: var(--wf-ink); background: var(--wf-surface); border: 1px solid var(--wf-border); border-radius: 6px; padding: 1px 6px; }
 

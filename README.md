@@ -26,6 +26,10 @@ options, live re-routing, QR re-positioning and an AR view.
 - **Guidance you can hear:** while navigating, *Spoken directions* reads each
   step aloud; every step is also announced to screen readers and marked with a
   short vibration where the device supports it.
+- **For hospitals:** hospitals pay, per site, monthly or yearly, for an
+  Official listing (badge, branding, priority updates, visitor counts). They
+  sign up at `/for-hospitals` and pay through Stripe with no one in the loop;
+  see [`docs/subscriptions.md`](docs/subscriptions.md).
 - **Pages:** `/` (landing), `/navigate` (the map), `/map` (mapping tools),
   `/accessibility`, `/privacy`.
 
@@ -39,7 +43,7 @@ npm run dev          # http://localhost:3000
 Every environment variable is optional. With none set the app runs
 device-only. `.env.example` lists what each one turns on: Postgres for shared
 venues and signals, Anthropic for sign-reading in Survey Mode, Mapbox for
-outdoor routing, Clerk for optional accounts and the back office, and `NEXT_PUBLIC_SITE_URL` for
+outdoor routing, Clerk for optional accounts and the back office, Stripe for hospital subscriptions, and `NEXT_PUBLIC_SITE_URL` for
 absolute URLs in link previews and the sitemap. The back office at `/admin` manages
 venues, coverage, searches, activity, accounts and roles: see `docs/backoffice.md`.
 

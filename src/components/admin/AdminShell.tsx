@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { createContext, useContext, useState, type ReactNode } from "react"
 import { UserButton } from "@clerk/nextjs"
-import { LayoutDashboard, Earth, Building2, Inbox, SearchX, Activity, Users, ScrollText, Server, Navigation, ExternalLink, LogOut } from "lucide-react"
+import { LayoutDashboard, Earth, Building2, Inbox, SearchX, Activity, Users, ScrollText, Server, Navigation, ExternalLink, LogOut, CreditCard } from "lucide-react"
 import ToastHost from "@/components/Toast"
 import { Badge } from "./ui"
 import { ROLE_LABELS, type Permission, type Role } from "@/lib/backoffice/roles"
@@ -36,6 +36,7 @@ export const SECTIONS: { href: string; label: string; icon: typeof LayoutDashboa
   { href: "/admin/inbox", label: "Inbox", icon: Inbox, permission: "inbox.view" },
   { href: "/admin/searches", label: "Searches", icon: SearchX, permission: "searches.view" },
   { href: "/admin/activity", label: "Activity", icon: Activity, permission: "activity.view" },
+  { href: "/admin/customers", label: "Customers", icon: CreditCard, permission: "customers.view" },
   { href: "/admin/users", label: "Users & roles", icon: Users, permission: "users.view" },
   { href: "/admin/audit", label: "Audit log", icon: ScrollText, permission: "audit.view" },
   { href: "/admin/system", label: "System", icon: Server, permission: "system.view" },

@@ -14,6 +14,7 @@ import { isOutdoorDestination } from "@/lib/routing"
 import { formatMinutes, type RouteStart } from "@/lib/route-start"
 import Toggle from "@/components/Toggle"
 import AuthButton from "@/components/AuthButton"
+import { officialLogoUrl, useOfficialListings } from "@/lib/official"
 
 interface NearbyItem extends Waypoint {
   distanceM: number
@@ -150,6 +151,10 @@ export default function LeftPanel({
     setExpanded(false)
   }
 
+  // Listed and kept up to date by the hospital itself.
+  const official = useOfficialListings()[venue.id]
+  const officialLogo = official ? officialLogoUrl(official) : null
+
   // Peek-state sections only hide on phones; lg+ always shows everything.
   const expandable = `${expanded ? "flex" : "hidden"} lg:flex`
 
@@ -217,12 +222,22 @@ export default function LeftPanel({
           onClick={onOpenVenues}
           className={`${expandable} items-center gap-2.5 rounded-[14px] border border-wf-border bg-wf-surface px-3.5 py-3 text-left`}
         >
-          <span className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center rounded-[11px] bg-[#E7F2FF]">
-            <Building size={17} className="text-wf-primary" />
+          <span className="flex h-[38px] w-[38px] flex-shrink-0 items-center justify-center overflow-hidden rounded-[11px] bg-[#E7F2FF]">
+            {officialLogo ? (
+              // eslint-disable-next-line @next/next/no-img-element -- served by our own API, sized here
+              <img src={officialLogo} alt="" className="h-full w-full bg-white object-contain p-0.5" />
+            ) : (
+              <Building size={17} className="text-wf-primary" />
+            )}
           </span>
           <div className="min-w-0 flex-1">
             <p className="truncate text-[14.5px] font-semibold text-wf-ink">{venue.name}</p>
-            {venue.illustrative ? (
+            {official && !venue.illustrative ? (
+              <p className="flex items-center gap-1 truncate text-xs text-wf-muted" title={`Kept up to date by ${official.org}`}>
+                <BadgeCheck size={12} style={{ color: official.brandColor ?? undefined }} className="flex-shrink-0 text-wf-primary" aria-hidden="true" />
+                <span className="font-semibold text-wf-ink">Official</span> · {official.org}
+              </p>
+            ) : venue.illustrative ? (
               <p className="truncate text-xs font-medium text-amber-700">Illustrative layout · not the real building</p>
             ) : venue.visibility === "public" && venue.verified && (
               <p className="flex items-center gap-1 truncate text-xs text-wf-muted">

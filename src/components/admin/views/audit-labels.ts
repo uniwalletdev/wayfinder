@@ -35,6 +35,12 @@ export function actionLabel(action: string, detail: Record<string, unknown> = {}
       return `${s("email") || "An account"} deleted`
     case "data.purge_signals":
       return `Navigation signals older than ${String(detail.olderThanDays ?? "?")} days deleted (${String(detail.deleted ?? 0)})`
+    case "customers.approve":
+      return `Sign-up for “${s("name")}” approved (${s("email")})`
+    case "customers.reject":
+      return `Sign-up for “${s("name")}” turned down (${s("email")})`
+    case "billing.status":
+      return `Listing ${s("from")} → ${s("to")} (Stripe: ${s("event")})`
     case "data.refresh":
       return `Data refresh started for ${s("countries")}`
     case "session.sign_in":
@@ -52,6 +58,8 @@ export const ACTION_GROUPS = [
   { value: "search.", label: "Searches" },
   { value: "inbox.", label: "Inbox" },
   { value: "publisher.", label: "Blocked publishers" },
+  { value: "customers.", label: "Hospital sign-ups" },
+  { value: "billing.", label: "Payments" },
   { value: "user.", label: "Accounts" },
   { value: "data.", label: "Data" },
 ]
