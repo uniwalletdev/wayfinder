@@ -75,6 +75,116 @@ place — a visitor knows which hospital they are at.
 Ids are `osm-<cc>-<w|n|r><osm id>`, so an id alone says which country file
 lists it and a saved venue survives a data refresh.
 
+## Maps the hospitals publish themselves
+
+OpenStreetMap has the insides of a few hundred hospitals and the grounds of
+many thousands. The maps most visitors actually use are the ones hospitals
+publish on their own websites: a PDF under *Maps & directions* or *Patient &
+visitor information*, a page per floor if the hospital is thorough, the
+campus from above if not. For the NHS, `scripts/nhs/discover-plans.mjs`
+crawls every trust's website for them, and most of the mapped venues came
+out of that queue (`data/README.md`). The same crawl now runs for everywhere
+else, the United States first.
+
+### How the NHS crawl works, and what is different elsewhere
+
+The NHS crawl gets each trust's website from the NHS register. For each site
+it reads robots.txt and stays out if told to; loads the homepage, through any
+redirect, so it knows which host the site really is; reads the sitemap where
+there is one; scores every link by how likely its page is to carry a map
+(*our locations*, *getting here*, *maps and parking*…) and follows the best,
+two hops deep, with a share of the page budget held back for the second hop;
+and classifies every document it sees from its link text and filename
+(`scripts/nhs/lib/discovery-match.mjs`) as `floor-plan`, `site-map`,
+`directory` or `unknown`, with a confidence. That crawl is
+`scripts/nhs/lib/crawl-site.mjs`, shared by both scripts and tested against
+local servers in `scripts/nhs/test/crawl-site.test.mjs`.
+
+Outside the UK there is no register that says which website belongs to which
+hospital. `scripts/world/fetch-hospitals.mjs` keeps OpenStreetMap's `website`
+tag where mappers filled it in, and `scripts/world/discover-plans.mjs` crawls
+those sites, once each, because a health system runs dozens of hospitals on one
+website (Allina Health a dozen, Sutter Health more than twenty). The page the
+tag pointed at (`…/unity-hospital` rather than the system's homepage) is read
+first. Each document found is attributed to the hospital whose distinctive
+name words appear in its link text or filename; one that names none on a
+shared site is kept with the site's hospitals listed, for a person to pick
+from (`scripts/world/lib/plans.mjs`, `scripts/world/test/discover-plans.test.mjs`).
+
+Maps found by hand go in `data/world/known-maps.json` and are merged on every
+run, classified the same way, with the hospital id checked against the
+country file. The result is `data/world/plan-candidates.json`: a triage
+queue, not an import list. The maps are the hospitals' copyright.
+
+```
+npm run world:discover -- --countries US --limit 20    # a trial run
+npm run world:discover -- --countries US               # the lot; hours
+npm run world:discover:known                           # merge the hand-found maps; no network
+```
+
+Hospital websites are not reachable from sandboxed development environments,
+so `.github/workflows/world-plan-discovery.yml` runs the crawl (*Run
+workflow*, countries `US` by default), refreshes the hospital lists first so
+they carry websites, and opens a pull request with the queue. Lists fetched
+before websites were kept carry none, and the script says so.
+
+### What the United States has so far
+
+Found by hand on 10 October 2026 and recorded in `known-maps.json`, from a
+machine that could search for the files but not open them: each entry's note
+says what the search index showed of the document and when it is dated, so
+check the file before building on it.
+
+| Hospital | What it publishes |
+| --- | --- |
+| Mercy Hospital – Unity Campus, Fridley MN | floor maps, lower and main level (2017) |
+| Tanner Medical Center/Villa Rica, GA | floor maps, floors 1–3; a 2025 edition on the staging host |
+| St. Peter's Health Regional Medical Center, Helena MT | patient floors 1–4 on one map, the 2nd floor on its own |
+| Stillwater Medical Center, OK | public floor maps, floors 1–5 (2025) |
+| Montrose Regional Health, CO | floor maps with an elevator guide (May 2026) |
+| Maria Fareri Children's Hospital, Valhalla NY | floor plan, floors 1–3 with room ranges |
+| Lucile Packard Children's Hospital Stanford, CA | floor-by-floor wayfinding maps for two buildings, English and Spanish |
+| Aultman Hospital, Canton OH | floor plans, ground to fourth floor (2023) |
+| UW Medical Center – Montlake, Seattle | floor maps for patients and visitors (2019; revised twice a year) |
+| Stormont Vail Health, Topeka KS | hospital maps with first-floor routes from the main entrance (2019) |
+| Mills-Peninsula Medical Center, Burlingame CA | campus map covering floors 1–5 |
+| Brigham and Women's Hospital, Boston | campus map and elevator directory in three languages |
+| Cleveland Clinic main campus | campus map with the lettered building system |
+| Northwestern Memorial Hospital, Chicago | medical campus map, English and Spanish |
+| Rush University Medical Center, Chicago | street-level campus map (2017) |
+| Johns Hopkins Hospital, Baltimore | campus map with a building index (2018) |
+| Mayo Clinic, Rochester MN | campus maps booklet, downtown and Saint Marys |
+
+Ten of the eighteen documents are indoor floor maps; the rest are campus
+maps. What the search also showed, for the crawl and its reviewers to
+expect:
+
+- **Maps that are web pages, not documents.** Michigan Medicine, Children's
+  Hospital of Philadelphia and Boston Children's publish a page per floor and
+  no PDF. The crawl collects documents only (`data/README.md` says why), so
+  these need their own treatment.
+- **Documents with no extension.** Houston Methodist's wayfinding map is
+  served as `….ashx`, and Cleveland Clinic's campus map also at a path with no
+  extension; the classifier reads the filename and cannot see either.
+- **Maps hosted off the hospital's own domain.** Brigham and Women's on the
+  parent system's site, Mayo's on `mayo.edu`, UW Medical Center's on the
+  patient-education site. The NHS approve stage refuses off-domain documents;
+  a world equivalent needs the same rule, with the hosts that count recorded.
+- **Apps instead of maps.** Mount Sinai, Cedars-Sinai, Mass General and NYU
+  Langone offer an app or an interactive map and no printable plan.
+
+### From a candidate to a venue
+
+Not built for the world yet. For the NHS, `approve-plans`, `fetch-plans` and
+`draft-sheets` take a candidate PDF to a placed sheet, with the hospital's
+centre from the register and its span from the OpenStreetMap footprint
+(`data/README.md`). A world candidate has both, `lat`, `lng` and `bbox` in
+`data/world/hospitals/<CC>.json`, so the same chain can be pointed at it; the
+missing pieces are a download stage keyed on the hospital id instead of an
+ODS code, and the own-domain rule above. Until then a candidate is built by
+hand the way the first NHS venues were: fetch the PDF, add a sheet to
+`data/mapped-sites.json`, run the generators.
+
 ## Where it lives, and how the apps get it
 
 The per-country lists, venues and plans add up to hundreds of megabytes across

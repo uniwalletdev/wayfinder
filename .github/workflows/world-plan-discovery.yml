@@ -1,0 +1,130 @@
+# Search hospitals' own websites, outside the UK, for the maps they publish.
+#
+# The counterpart of nhs-plan-discovery.yml for the rest of the world. It lives
+# in CI for the same reason: sandboxed development environments (agent sessions
+# included) cannot reach hospital websites, and a GitHub runner can.
+#
+# Where the NHS crawl gets each trust's website from the NHS register, this one
+# gets each hospital's from OpenStreetMap's `website` tag, which
+# scripts/world/fetch-hospitals.mjs keeps. Lists fetched before that was kept
+# carry no websites, so by default the run refreshes the chosen countries'
+# lists first (a few minutes per country, half an hour for the US).
+#
+# It does NOT download or import any map: the maps are the hospitals' own
+# copyright. It commits data/world/plan-candidates.json, a worklist, on a
+# branch and opens a pull request so the findings come back into the repo.
+name: World hospital map discovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      countries:
+        description: "Comma-separated ISO codes to crawl (the UK has its own workflow)"
+        type: string
+        default: "US"
+      limit:
+        description: "Only crawl the first N websites (blank = all). Useful for a trial run."
+        type: string
+        default: ""
+      refresh_hospitals:
+        description: "Refresh these countries' hospital lists from OpenStreetMap first, so they carry websites"
+        type: boolean
+        default: true
+
+concurrency:
+  group: world-plan-discovery
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  COUNTRIES: ${{ inputs.countries || 'US' }}
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    # The crawl paces itself: it honours robots.txt and any Crawl-delay, and
+    # waits between requests. The US alone has thousands of hospitals on
+    # hundreds of health-system websites.
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Test the pipeline
+        run: node scripts/world/test/discover-plans.test.mjs && node scripts/nhs/test/discovery.test.mjs && node scripts/nhs/test/crawl-site.test.mjs
+
+      - name: Hospital lists with websites
+        if: inputs.refresh_hospitals
+        run: node scripts/world/fetch-hospitals.mjs --countries "$COUNTRIES"
+
+      - name: Crawl hospital websites for maps
+        run: |
+          if [ -n "${{ inputs.limit }}" ]; then
+            node scripts/world/discover-plans.mjs --countries "$COUNTRIES" --limit "${{ inputs.limit }}"
+          else
+            node scripts/world/discover-plans.mjs --countries "$COUNTRIES"
+          fi
+
+      - name: Summarise what was found
+        if: always()
+        run: |
+          {
+            echo "## World hospital map discovery ($COUNTRIES)"
+            echo
+            if [ -f data/world/plan-candidates.json ]; then
+              node -e '
+                const d = require("./data/world/plan-candidates.json");
+                const by = (c) => d.candidates.filter(x => x.confidence === c).length;
+                const kinds = {};
+                for (const c of d.candidates) kinds[c.kind] = (kinds[c.kind] ?? 0) + 1;
+                const s = d.stats;
+                console.log(`- **${d.count}** candidate documents for **${s.hospitalsWithCandidates}** hospitals (${d.candidates.filter(c => !c.hospitalId).length} not yet attributed to one)`);
+                console.log(`- confidence: **${by("high")}** high, ${by("medium")} medium, ${by("low")} low`);
+                console.log(`- kinds: ${Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+                console.log(`- ${s.hospitals} hospitals in scope, ${s.withWebsite} with a website on ${s.sites} sites; ${s.crawled} sites crawled, ${s.crawlFailed} unreachable, ${s.botChallenged} behind a bot challenge, ${s.robotsBlocked} disallowed by robots.txt`);
+                console.log("");
+                console.log("### Highest-confidence finds");
+                console.log("");
+                console.log("| Hospital | Kind | Link text |");
+                console.log("|---|---|---|");
+                for (const c of d.candidates.filter(x => x.confidence === "high").slice(0, 40)) {
+                  const who = c.hospitalName ?? (c.siteHospitals ?? []).map(h => h.name).slice(0, 3).join(", ") + " (unattributed)";
+                  console.log(`| ${who} | ${c.kind} | ${(c.linkText || "").replace(/\|/g, "\\|").slice(0, 80)} |`);
+                }
+              '
+            else
+              echo "No candidates file was produced — check the crawl step above."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open a pull request with the findings
+        if: always()
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/world-plan-discovery
+          base: main
+          add-paths: |
+            data/world/plan-candidates.json
+            data/world/hospitals
+          commit-message: "Add discovered hospital map candidates outside the UK"
+          title: "World hospital map discovery results"
+          body: |
+            Every candidate site-map / floor-plan document found on hospitals'
+            own websites, from `.github/workflows/world-plan-discovery.yml`.
+            Counts and the highest-confidence finds are in the run summary.
+
+            **This is a worklist, not an import.** Nothing has been downloaded.
+            The documents are the hospitals' copyright; see
+            `docs/world-data.md` for what it takes to turn one into a venue.
+          labels: automated, data
+          delete-branch: true

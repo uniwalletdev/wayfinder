@@ -15,7 +15,9 @@ options, live re-routing, QR re-positioning and an AR view.
   See [`data/README.md`](data/README.md) for the pipeline and
   [`docs/mapping-review.md`](docs/mapping-review.md) for how good they are.
   Outside the UK the app shows the hospitals of the country the visitor is
-  in, from OpenStreetMap, with indoor maps where OSM has them; see
+  in, from OpenStreetMap, with indoor maps where OSM has them, and the maps
+  hospitals publish on their own websites are searched for the way the NHS
+  ones are (`npm run world:discover`); see
   [`docs/world-data.md`](docs/world-data.md).
 - **Links and posters:** `/navigate?venue=<id>&to=<waypointId>` opens a
   hospital with a destination chosen; add `&stepfree=1` to ask for the

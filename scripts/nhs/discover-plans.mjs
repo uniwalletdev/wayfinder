@@ -19,30 +19,17 @@
 // where it stopped. Interrupting it is safe.
 //
 // Run: node scripts/nhs/discover-plans.mjs [--limit N] [--restart] [--retry-failed]
-import { fetchRetry, BROWSER_HEADERS } from "./lib/net.mjs"
-import { isAllowed, crawlDelayFor } from "./lib/robots.mjs"
+import { fetchRetry } from "./lib/net.mjs"
 import { loadOdsRecords } from "./lib/sites.mjs"
-import { classifyDocument, rankPages, decodeEntities, canonicalUrl, CRAWLER_VERSION } from "./lib/discovery-match.mjs"
-import { fetchSitemapUrls } from "./lib/sitemap.mjs"
+import { classifyDocument, decodeEntities, canonicalUrl, CRAWLER_VERSION } from "./lib/discovery-match.mjs"
+import { crawlSite } from "./lib/crawl-site.mjs"
 import { dataPath, readJson, writeJson, updateManifest, log } from "./lib/paths.mjs"
 
 const STAGE = "discover-plans"
 const ORD_API = "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations"
 const WEBSITE_CACHE = dataPath("trust-websites.json")
-const MIN_PAUSE_MS = 1500
-// Pages fetched per trust, across both hops. Six was too few and, worse, was
-// spent on whichever nav links happened to come first in the markup.
-const MAX_PAGES_PER_TRUST = 20
-// Hospital maps are routinely two hops from the homepage — Sunderland Royal's
-// sits at /our-locations/our-locations, under a section landing page. One hop
-// could never reach it.
-const MAX_DEPTH = 2
-// A separate allowance for pages the sitemap pointed at, so they never compete
-// with the homepage's own navigation for slots.
-const MAX_SITEMAP_PAGES = 40
-// Fetches held back for the second hop. The maps that matter sit under a section
-// page rather than on it, so the deeper pass must be guaranteed a share.
-const RESERVED_FOR_DEEPER = 15
+// How many pages a site gets, how deep, and how fast: lib/crawl-site.mjs,
+// which is the crawl itself and is shared with scripts/world/discover-plans.mjs.
 // How many trusts to crawl at once. Politeness is per host and these are 247
 // different hosts, so this costs no site any extra load — it just stops the
 // wall clock being the reason the page budget has to be small.
@@ -57,60 +44,6 @@ const RESTART = process.argv.includes("--restart")
 const RETRY_FAILED = process.argv.includes("--retry-failed")
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
-
-// Which links are worth following and which PDFs are worth keeping now lives in
-// lib/discovery-match.mjs, where it can be tested without a network. The old
-// patterns matched on raw hrefs, so "SRH_Map_update.pdf" was invisible: `_` is a
-// word character, leaving no boundary around "Map".
-
-// Deliberately regex-based rather than a DOM parser: this repo has no HTML
-// parsing dependency, and all we need is href plus link text. Malformed markup
-// costs us a missed candidate, which a human reviewing the queue can live with.
-const LINK_RE = /<a\b[^>]*?href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi
-
-function extractLinks(html, baseUrl) {
-  const links = []
-  for (const m of html.matchAll(LINK_RE)) {
-    const text = decodeEntities(m[2].replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim())
-    try {
-      // Decode entities before parsing. An href written as
-      // "…?ver=42880&amp;doc=…" is a corrupt query string once taken literally,
-      // and a real run produced four such URLs — every one of which would have
-      // 404'd at download time, long after the crawl looked successful.
-      const url = new URL(decodeEntities(m[1]), baseUrl)
-      url.hash = ""
-      links.push({ url: url.href, text, host: url.host })
-    } catch {
-      // Relative junk, mailto:, javascript: — not a page we can fetch.
-    }
-  }
-  return links
-}
-
-async function fetchHtml(url) {
-  if (!(await isAllowed(url))) return null
-  let res
-  try {
-    res = await fetchRetry(url, { headers: { accept: "text/html" } }, { retries: 1, timeoutMs: 30_000 })
-  } catch (err) {
-    // Several trust sites refuse or reset a request that doesn't look like a
-    // browser — the same filtering that blocked the ODS download host. Worth one
-    // more attempt before writing the whole trust off.
-    res = await fetchRetry(
-      url,
-      { headers: { ...BROWSER_HEADERS, accept: "text/html,application/xhtml+xml" } },
-      { retries: 1, timeoutMs: 30_000 }
-    ).catch(() => {
-      throw err
-    })
-  }
-  const type = res.headers.get("content-type") ?? ""
-  if (!/text\/html/i.test(type)) return null
-  // The final URL matters as much as the body: a trust recorded in ODS under one
-  // domain may redirect to another, and its sitemap will list the new one. Read
-  // through the redirect and everything downstream agrees on which host this is.
-  return { html: await res.text(), finalUrl: res.url || url }
-}
 
 // The ORD API gives per-organisation detail including contact records; a website
 // arrives as a contact of type "http".
@@ -260,134 +193,24 @@ async function crawlTrust(trust) {
   const origin = overrideOrigins[trust.odsCode]?.[0] ?? websites[trust.odsCode]
   if (!origin) return { outcome: "no-website", found: 0, via: "-", note: "no website recorded in ODS" }
 
-  const pause = Math.max(MIN_PAUSE_MS, await crawlDelayFor(origin))
-  const found = new Map()
-  const visited = new Set()
-  let outcome = "ok"
-  let via = "links"
-
-  const collect = (links) => {
-    for (const link of links) {
-      // classifyDocument decides what counts as a downloadable map, formats
-      // included — the filter here used to be a bare /\.pdf$/ test, which threw
-      // away every trust that publishes a PNG or a JPEG before it was looked at.
-      const signal = classifyDocument(link.text, link.url)
-      if (!signal) continue
-      // Key on the canonical URL so a cache-busting parameter can't present the
-      // same document twice.
-      const key = canonicalUrl(link.url)
-      if (!found.has(key)) {
-        found.set(key, {
-          trustCode: trust.odsCode,
-          trustName: trust.name,
-          url: link.url,
-          linkText: link.text.slice(0, 200),
-          kind: signal.kind,
-          confidence: signal.confidence,
-          format: signal.format,
-        })
-      }
-    }
-  }
-
-  try {
-    if (!(await isAllowed(origin))) {
-      return { outcome: "robots-blocked", found: 0, via: "-", note: "robots.txt disallows crawling" }
-    }
-
-    // Load the homepage first, because it settles which host this trust really
-    // is. Solent is recorded in ODS under one domain and serves its sitemap
-    // listing another; comparing against the ODS host discarded all 424 of its
-    // URLs and the crawl quietly fell back to following links.
-    const home = await fetchHtml(origin)
-    const effectiveOrigin = home ? new URL(home.finalUrl).origin : origin
-    const host = new URL(effectiveOrigin).host
-    if (effectiveOrigin !== origin) {
-      log(STAGE, `  ${trust.odsCode}: redirects to ${host}`)
-    }
-
-    // Ask the site for its own index. Where a sitemap exists it finds pages —
-    // and often PDFs — that no amount of following navigation reaches.
-    const sitemapUrls = await fetchSitemapUrls(effectiveOrigin, { log: (m) => log(STAGE, m) })
-    if (sitemapUrls.length) {
-      via = "sitemap"
-      collect(sitemapUrls.map((url) => ({ url, text: "", host })))
-    }
-
-    if (!home && !sitemapUrls.length) {
-      return { outcome: "failed", found: 0, via: "-", note: "homepage unreadable" }
-    }
-    visited.add(origin)
-    visited.add(effectiveOrigin)
-
-    const homeLinks = home ? extractLinks(home.html, home.finalUrl) : []
-    collect(homeLinks)
-
-    // Two separate budgets. Pooling them let hundreds of sitemap entries crowd
-    // out the homepage's own navigation, and trusts whose maps had been found
-    // via links started returning nothing.
-    const fromLinks = rankPages(homeLinks, { host, limit: MAX_PAGES_PER_TRUST })
-    const fromSitemap = rankPages(
-      sitemapUrls.map((url) => ({ url, text: "", host })),
-      { host, limit: MAX_SITEMAP_PAGES }
-    )
-    const queue = [...fromLinks, ...fromSitemap]
-      .filter((p, idx, all) => all.findIndex((o) => o.url === p.url) === idx)
-      .map((p) => ({ ...p, depth: 1 }))
-
-    const budget = MAX_PAGES_PER_TRUST + (sitemapUrls.length ? MAX_SITEMAP_PAGES : 0)
-    // Slots the first hop may not touch, so the second hop can happen at all.
-    const depthOneCap = Math.max(6, budget - RESERVED_FOR_DEEPER)
-
-    let fetched = 0
-    let fetchedAtDepthOne = 0
-    while (queue.length && fetched < budget) {
-      let index = 0
-      if (fetchedAtDepthOne >= depthOneCap) {
-        index = queue.findIndex((p) => p.depth > 1)
-        if (index === -1) break
-      }
-      const [page] = queue.splice(index, 1)
-      if (visited.has(page.url)) continue
-      visited.add(page.url)
-      await sleep(pause)
-      fetched++
-      if (page.depth === 1) fetchedAtDepthOne++
-      try {
-        const page_ = await fetchHtml(page.url)
-        if (!page_) continue
-        const links = extractLinks(page_.html, page_.finalUrl)
-        collect(links)
-
-        if (page.depth < MAX_DEPTH) {
-          const next = rankPages(links, { host, limit: budget })
-            .filter((l) => !visited.has(l.url) && l.score >= 8)
-            // A child of a page we already rated highly is a more targeted lead
-            // than an untried seed, so it outranks one of equal raw score.
-            .map((l) => ({ ...l, score: l.score + 3, depth: page.depth + 1 }))
-          queue.push(...next)
-          queue.sort((a, b) => b.score - a.score)
-        }
-      } catch {
-        // A single dead sub-page is not worth failing the trust over.
-      }
-    }
-  } catch (err) {
-    // A Cloudflare interstitial ("Just a moment…") is a JavaScript challenge, not
-    // a refusal headers can talk past — it needs a real browser. Recording it
-    // separately keeps the failure count honest.
-    const challenged = /just a moment|cf-browser-verification|challenge-platform|attention required/i.test(err.message ?? "")
-    outcome = challenged ? "bot-challenge" : "failed"
+  const result = await crawlSite(origin, { label: trust.odsCode, log: (m) => log(STAGE, m) })
+  if (result.error) {
     console.warn(
       `[${STAGE}] ${trust.odsCode} (${trust.name}): ` +
-        (challenged
+        (result.outcome === "bot-challenge"
           ? "blocked by a bot challenge (needs a real browser) — skipping"
-          : `crawl failed — ${err.message}`)
+          : `crawl failed — ${result.error}`)
     )
   }
-
-  if (found.size) candidates.push(...found.values())
-  return { outcome, found: found.size, via, high: [...found.values()].filter((c) => c.confidence === "high").length }
+  const found = result.documents.map((doc) => ({ trustCode: trust.odsCode, trustName: trust.name, ...doc }))
+  if (found.length) candidates.push(...found)
+  return {
+    outcome: result.outcome,
+    found: found.length,
+    via: result.via,
+    note: result.note,
+    high: found.filter((c) => c.confidence === "high").length,
+  }
 }
 
 // Crawl several trusts at once.

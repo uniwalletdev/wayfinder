@@ -1,0 +1,204 @@
+{
+  "description": "Hospital maps found by hand on hospitals' own websites outside the UK, merged into data/world/plan-candidates.json by scripts/world/discover-plans.mjs. This is the way in for a map a crawler cannot reach (a site behind a bot challenge, navigation built in script, a hospital whose OpenStreetMap entry has no website) and the record of what a person checked. Entries are classified exactly like discovered ones, from their link text and filename. THESE ARE THE HOSPITALS' COPYRIGHT: listing one here reviews it, it does not import it.",
+  "howToAdd": "Find the document in a browser and check it is genuinely a map of the hospital. Record the ISO country, the hospital's id from data/world/hospitals/<CC>.json (search the file by name), the URL as the hospital's site serves it, the link text the page uses or a short honest description (the classifier reads it: say 'floor maps' when it is one), and in the note what the map covers, when it is dated and anything a reviewer should know.",
+  "maps": [
+    {
+      "country": "US",
+      "hospitalId": "osm-w24254170",
+      "hospitalName": "Mercy Hospital - Unity Campus",
+      "city": "Fridley, Minnesota",
+      "website": "https://www.allinahealth.org",
+      "url": "https://www.allinahealth.org/uploadedFiles/Content/Business_units/Unity_Hospital/Patient_and_visitor_information/Mercy-Hospital-Unity-Campus-floor-maps.pdf",
+      "linkText": "Mercy Hospital – Unity Campus floor maps",
+      "note": "Lower level and main level, a page each: lobby, surgical services, radiation therapy, auditorium, cardiac rehab, cafeteria, gift shop, information desks at the main and emergency entrances. Copyright line says 2017. Allina Health runs a dozen hospitals on this one site.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w493989530",
+      "hospitalName": "Tanner Medical Center/Villa Rica",
+      "city": "Villa Rica, Georgia",
+      "website": "https://www.tanner.org",
+      "url": "https://www.tanner.org/upload/docs/Maps/TMCVR-FloorMaps.pdf",
+      "linkText": "Tanner Medical Center/Villa Rica floor maps",
+      "note": "First to third floors: information desk, cafeteria, outpatient registration, diagnostic imaging and the main and outpatient entrances on the first; emergency department, cath lab, ICU and med/surg rooms 201–222 on the second; nursery on the third. A 2025 edition (TMCVR-All-Floors-2025.pdf, adding a chapel, a clinical decision unit, labour and delivery and rooms 301–316) was only seen on the hospital's staging host, stg.tanner.org. Campus maps for 2024 and 2025 sit beside it at upload/docs/Maps/.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w499350658",
+      "hospitalName": "St. Peter's Health Regional Medical Center",
+      "city": "Helena, Montana",
+      "website": "https://www.sphealth.org",
+      "url": "https://www.sphealth.org/sites/default/files/RMC%20Patient%20Floors%20Map%20VISITOR-DL.pdf",
+      "linkText": "Map of 1st, 2nd, 3rd & 4th Patient Floors",
+      "note": "Linked from /patients-visitors/parking-and-facility-maps. First floor: admitting, gift shop, diagnostic imaging. Second: surgical and oncology. Third: medical, rooms 3101–3136. Fourth: women's and children's, rooms 4107–4132. The same page links single-floor maps of the 1st and 2nd floors.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w499350658",
+      "hospitalName": "St. Peter's Health Regional Medical Center",
+      "city": "Helena, Montana",
+      "website": "https://www.sphealth.org",
+      "url": "https://www.sphealth.org/sites/default/files/RMC%202nd%20Floor%20Map%20VISITOR-DL.pdf",
+      "linkText": "Map of 2nd Floor",
+      "note": "Second floor alone: emergency department and emergency entrance, ICU, lab, chapel, behavioural health unit.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w438745456",
+      "hospitalName": "Stillwater Medical Center",
+      "city": "Stillwater, Oklahoma",
+      "website": "https://www.stillwater-medical.org",
+      "url": "https://www.stillwater-medical.org/wp-content/uploads/2024/03/SM_PublicFloorMaps_2025.pdf",
+      "linkText": "Stillwater Medical Center public floor maps (2025)",
+      "note": "First floor; second floor (Heart & Vascular Institute registration, Maternal Child Health, Women's Health Center, a NICU); third to fifth floors (ICU, joint replacement centre). Legend marks restrooms, lifts, waiting areas and public hallways. A 2020 edition is at /sites/default/files/inline-files/SM_PublicFloorMaps_2020.pdf with different second-floor occupants.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w216032664",
+      "hospitalName": "Stormont Vail Health",
+      "city": "Topeka, Kansas",
+      "website": "https://www.stormontvail.org",
+      "url": "https://stormontvail.org/wp-content/uploads/2020/05/Hospital-Maps_10-2019.pdf",
+      "linkText": "Stormont Vail hospital maps (October 2019)",
+      "note": "Hospital and education centre maps with routes from the first-floor main entrance (North Tower, SW 9th and Horne) to the surgery centre and classrooms. 1500 SW 10th Ave.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w391773657",
+      "hospitalName": "Mills-Peninsula Medical Center",
+      "city": "Burlingame, California",
+      "website": "https://www.sutterhealth.org",
+      "url": "https://www.sutterhealth.org/pdf/for-patients/campus-map-mpmc.pdf",
+      "linkText": "Mills-Peninsula Medical Center campus map, first through fifth floors",
+      "note": "One sheet with a visitor circulation key covering the first to fifth floors; the lower level is not to scale. Sutter Health runs more than twenty hospitals on this one site.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w497344596",
+      "hospitalName": "Montrose Regional Hospital",
+      "city": "Montrose, Colorado",
+      "website": "https://montrosehealth.com",
+      "url": "https://montrosehealth.com/wp-content/uploads/2026/05/MRH-Floor-Maps.pdf",
+      "linkText": "Montrose Regional Health floor maps",
+      "note": "Visitor floor guide with an elevator guide, published May 2026.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-n5408870771",
+      "hospitalName": "Maria Fareri Children's Hospital",
+      "city": "Valhalla, New York",
+      "website": "https://www.mariafarerichildrens.org",
+      "url": "https://www.mariafarerichildrens.org/Uploads/Public/Documents/Documents/MFCH-FloorPlan-Map.pdf",
+      "linkText": "Maria Fareri Children's Hospital floor plan map",
+      "note": "Three pages: main/1st floor (main entrance and lobby, paediatric and adult emergency departments, operating room, radiology, PACU, gift shop, café, conference rooms A and B); 2nd floor (trauma ICU, NICU, PICU); 3rd floor (child life, non-invasive cardiology, themed neighbourhoods with room ranges). Legend for entrances, corridors, restrooms and lifts. 100 Woods Road.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-r12130449",
+      "hospitalName": "Lucile Packard Children's Hospital",
+      "city": "Stanford, California",
+      "website": "https://www.stanfordchildrens.org",
+      "url": "https://www.stanfordchildrens.org/content-public/pdf/wayfinding-maps-stanford-childrens.pdf",
+      "linkText": "Lucile Packard Children's Hospital Stanford floor-by-floor wayfinding maps",
+      "note": "Main Building (Land theme) and West Building (Ocean theme), basement to the upper floors, each floor with its own colour and animal; the buildings join by a bridge on Level 1. Linked from /en/patient-family-resources/finding-your-way; Spanish edition at /content/dam/sch/content-public/pdf/wayfinding-maps-spanish-stanford-childrens.pdf. The West lobby entrance closes from 1 February 2026 for about two years.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w90607133",
+      "hospitalName": "Aultman Hospital",
+      "city": "Canton, Ohio",
+      "website": "https://www.aultman.org",
+      "url": "https://www.aultman.org/assets/Patients-and-Visitors/Visitors/Parking-and-Maps/2023-Aultman-Floor-Plans-Maps-Updated.pdf",
+      "linkText": "Aultman Hospital floor plans (2023)",
+      "note": "Main hospital, ground to fourth floor, and the Bedford lobby (Deuble Heart & Vascular Hospital, Birth Center; the emergency department entrance is on Bedford Avenue). A simplified March 2022 edition is at /assets/Patients-/Aultman-Floor-Plans_Simplified_March-2022.pdf and a campus map at /assets/Patients-and-Visitors/Visitors/Parking-and-Maps/2023-Simple-Campus-Map.pdf.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": null,
+      "hospitalName": "University of Washington Medical Center – Montlake",
+      "city": "Seattle, Washington",
+      "website": "https://www.uwmedicine.org",
+      "url": "https://healthonline.washington.edu/sites/default/files/UWMC-floormaps-Nov-2019.pdf",
+      "linkText": "UWMC floor maps for patients and visitors (November 2019)",
+      "note": "Floors of the main hospital, the Surgery Pavilion and the towers. Published on UW Medicine's patient-education site (healthonline.washington.edu, record uwmc-floor-maps), not on uwmedicine.org; the record says the maps are revised twice a year, so look for a newer edition. The hospital was not in the OpenStreetMap list for the US when this was recorded; add its id when the list is refreshed.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-r3061383",
+      "hospitalName": "Brigham and Women's Hospital",
+      "city": "Boston, Massachusetts",
+      "website": "https://www.brighamandwomens.org",
+      "url": "https://www.massgeneralbrigham.org/content/dam/unified-xwalk/documents/en/patients-visitors/bwh-campus-map-english-spanish-arabic.pdf",
+      "linkText": "Brigham and Women's Hospital main campus map and elevator directory (English, Spanish, Arabic)",
+      "note": "Campus map with an elevator directory. Served from the parent system's domain, massgeneralbrigham.org; brighamandwomens.org links to it from /about-bwh/locations/boston-main-campus-map.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w388106749",
+      "hospitalName": "Cleveland Clinic",
+      "city": "Cleveland, Ohio",
+      "website": "https://my.clevelandclinic.org",
+      "url": "https://my.clevelandclinic.org/ccf/media/Files/Corporate/campus_map.pdf",
+      "linkText": "Cleveland Clinic main campus map",
+      "note": "Outdoor campus map carrying the lettered, colour-coded building system the interior signage uses (desks are named like A31). The same map is also served without an extension at /-/scassets/files/org/patients-visitors/visitors/campus-map, which the classifier cannot see.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-r17607255",
+      "hospitalName": "Northwestern Memorial Hospital",
+      "city": "Chicago, Illinois",
+      "website": "https://www.nm.org",
+      "url": "https://www.nm.org/-/media/Northwestern/Resources/locations/northwestern-memorial-hospital/northwestern-medicine-nmh-medical-campus-map-en.pdf",
+      "linkText": "Northwestern Medicine Northwestern Memorial Hospital medical campus map",
+      "note": "Campus map numbering the entrances (main drive-through at 251 East Huron, emergency department at 250 East Erie), the Prentice and Galter pavilions, the Lurie Cancer Center. Spanish edition at the same path with -es.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-r20590975",
+      "hospitalName": "Rush University Medical Center",
+      "city": "Chicago, Illinois",
+      "website": "https://www.rush.edu",
+      "url": "https://www.rush.edu/sites/default/files/rush-campus-map-062217.pdf",
+      "linkText": "Rush University Medical Center campus map (June 2017)",
+      "note": "Street-level 'getting around' map: restrooms, registration, gift shop, parking office. Dated 22 June 2017.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w113103986",
+      "hospitalName": "Johns Hopkins Hospital",
+      "city": "Baltimore, Maryland",
+      "website": "https://www.hopkinsmedicine.org",
+      "url": "https://www.hopkinsmedicine.org/-/media/som/documents/jhi_som_map.pdf",
+      "linkText": "Johns Hopkins Medicine East Baltimore campus map (May 2018)",
+      "note": "Campus map with a building index on a grid: main entrance, Blalock, Bloomberg Children's Center, Sheikh Zayed Tower, Weinberg, Rubenstein. A near-identical copy is at /-/media/radiology/_docs/jhm_radiology_map.pdf.",
+      "seen": "2026-10-10"
+    },
+    {
+      "country": "US",
+      "hospitalId": "osm-w141596823",
+      "hospitalName": "Mayo Clinic Saint Marys Campus",
+      "city": "Rochester, Minnesota",
+      "website": "https://www.mayoclinic.org",
+      "url": "https://mcforms.mayo.edu/mc1600-mc1699/mc1663-55.pdf",
+      "linkText": "Mayo Clinic Rochester campus maps",
+      "note": "Booklet with a location key: the downtown campus (Mayo, Gonda and Charlton buildings, Mayo Clinic Hospital Methodist Campus, osm-w74380141) and the Saint Marys Campus ten blocks west, with the subway and skyway links. Served from mayo.edu; mayoclinic.org links to it from the campus-buildings-maps pages. A March 2024 site map of the Saint Marys buildings (Domitilla, Mary Brigh, Generose, Francis, Alfred, Joseph, Nasseff Tower) is at https://ce.mayo.edu/sites/default/files/media/2024-03/Downtown%20Map.pdf.",
+      "seen": "2026-10-10"
+    }
+  ]
+}

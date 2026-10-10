@@ -34,6 +34,21 @@ check("reads camelCase filenames", !!classifyDocument("", "/docs/siteMap.pdf"))
 check("reads percent-encoded names", !!classifyDocument("", "/docs/Hospital%20Map%202024.pdf"))
 check("still finds floor plans", classifyDocument("", "/x/ward-floor-plan.pdf")?.kind === "floor-plan")
 
+group("floor maps named the American way")
+// Crawler v6 could not see any of these: the plural "Floors Map", the ordinal
+// "2nd Floor", "floormaps" run together. Each is a real hospital's filename.
+check("Patient Floors Map", classifyDocument("", "/sites/default/files/RMC%20Patient%20Floors%20Map%20VISITOR-DL.pdf")?.kind === "floor-plan")
+check("Public Floor Maps", classifyDocument("", "/wp-content/uploads/2024/03/SM_PublicFloorMaps_2025.pdf")?.kind === "floor-plan")
+check("floormaps run together", classifyDocument("", "/sites/default/files/UWMC-floormaps-Nov-2019.pdf")?.kind === "floor-plan")
+check("2nd Floor Map", classifyDocument("", "/files/RMC%202nd%20Floor%20Map.pdf")?.kind === "floor-plan")
+check("1st floor in the link text", classifyDocument("Map of the 1st floor", "/files/map.pdf")?.kind === "floor-plan")
+check("level 2 map", classifyDocument("", "/x/level-2-map.pdf")?.kind === "floor-plan")
+check("map of level 3", classifyDocument("Map of Level 3", "/x/map.pdf")?.kind === "floor-plan")
+check("FloorPlan-Map in camelCase", classifyDocument("", "/Documents/MFCH-FloorPlan-Map.pdf")?.kind === "floor-plan")
+check("wayfinding maps are a medium lead", classifyDocument("", "/pdf/wayfinding-maps-stanford-childrens.pdf")?.confidence === "medium")
+check("a level 2 trauma brochure is not a map", classifyDocument("Level 2 trauma centre leaflet", "/x/leaflet.pdf") === null)
+check("a road map is still not a map", classifyDocument("", "/x/road-map-2030.pdf") === null)
+
 group("formats other than PDF")
 // Not every trust publishes a PDF. The crawl used to filter on /\.pdf$/ before
 // classifying anything, so a hospital whose only map is a PNG looked exactly

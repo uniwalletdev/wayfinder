@@ -68,6 +68,11 @@ function hospitalRow(el) {
   if (t.operator && t.operator !== name) row.operator = t.operator
   if (t["addr:street"]) row.street = [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" ")
   if (t["addr:postcode"]) row.postcode = t["addr:postcode"]
+  // The hospital's website, for scripts/world/discover-plans.mjs to look on for
+  // the maps it publishes. Mappers record it under three tags, sometimes
+  // several addresses separated by ";": the first is kept.
+  const website = String(t.website || t["contact:website"] || t.url || "").split(";")[0].trim()
+  if (website) row.website = website
   if (t.emergency === "yes") row.emergency = true
   if (el.bounds) row.bbox = [r5(el.bounds.minlat), r5(el.bounds.minlon), r5(el.bounds.maxlat), r5(el.bounds.maxlon)]
   return row

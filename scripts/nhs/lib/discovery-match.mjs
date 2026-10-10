@@ -18,7 +18,9 @@
 //
 // Lives here rather than in the script so tests can assert against it instead of
 // hardcoding a number that goes stale on the next bump.
-export const CRAWLER_VERSION = 6
+// v7: floor maps named the way US hospitals name them — "Patient Floors Map",
+// "2nd Floor Map", "UWMC-floormaps" — were invisible to v6's patterns.
+export const CRAWLER_VERSION = 7
 
 // Turn a URL or filename into something the word-based patterns can read.
 //
@@ -61,7 +63,14 @@ export const PDF_SIGNALS = [
   // Sheffield Children's names its storeys by letter: "hospital-map-a-floor.pdf",
   // "Hospital map – B Floor". The storey word can sit on either side of "map".
   { re: /\bmaps?\s+[a-z]\s+floor\b/i, confidence: "high", kind: "floor-plan" },
-  { re: /\bfloor\s?(map|guide)\b/i, confidence: "high", kind: "floor-plan" },
+  // Plural on either side: "Patient Floors Map", "Public Floor Maps", and run
+  // together as "floormaps" — US hospitals name them all three ways.
+  { re: /\bfloors?\s?(maps?|guides?)\b/i, confidence: "high", kind: "floor-plan" },
+  // Ordinal storeys: "1st Floor Map", "2nd floor", "3rd & 4th Patient Floors".
+  { re: /\b\d{1,2}(st|nd|rd|th)\s?floors?\b/i, confidence: "high", kind: "floor-plan" },
+  // A numbered level with a map or plan somewhere in the name: "Level 2 map",
+  // "map of level 3". "Level by level" has its own line below.
+  { re: /\blevel\s?\d{1,2}\b.*\b(maps?|plans?)\b|\b(maps?|plans?)\b.*\blevel\s?\d{1,2}\b/i, confidence: "high", kind: "floor-plan" },
   // A sheet covering every storey is an interior map by definition.
   { re: /\blevel\s?by\s?level\b|\bby\s?floor\b/i, confidence: "high", kind: "floor-plan" },
   // Trusts that publish an "external" and an "internal" map mean outdoors and
@@ -72,6 +81,9 @@ export const PDF_SIGNALS = [
   { re: /\bmaps?\b.*\b(hospital|site|campus|ward|department|entrance|parking)\b/i, confidence: "medium", kind: "site-map" },
   { re: /\b(hospital|site|campus)\b.*\bmaps?\b/i, confidence: "medium", kind: "site-map" },
   { re: /\bward\s?(map|guide|directory)|department\s?(map|directory)\b/i, confidence: "medium", kind: "directory" },
+  // "Wayfinding maps" is what US hospitals call the booklet of floor plans
+  // handed out at the desk — usually indoors, but the name alone does not say.
+  { re: /\bwayfinding\s?(maps?|guides?)\b/i, confidence: "medium", kind: "site-map" },
   // Bare "map" anywhere. Weak on its own, which is what `low` records — but a
   // file literally called "map" usually is one, and these are triaged later.
   { re: /\bmaps?\b/i, confidence: "low", kind: "unknown" },
