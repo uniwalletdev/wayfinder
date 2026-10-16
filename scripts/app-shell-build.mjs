@@ -20,8 +20,11 @@ import { createRequire } from "module"
 
 // The production site. A build with no FINDWAY_API_URL calls this, so
 // `npm run mobile:build` works on a fresh checkout on any OS; set the variable
-// to point a build at a preview or another deployment.
-const DEFAULT_API_URL = "https://wayfinder-theta.vercel.app"
+// to point a build at a preview or another deployment. It must answer itself,
+// not redirect (to www, say): a browser will not follow a redirect on the
+// apps' cross-origin requests. Builds made before findway.ai call
+// https://wayfinder-theta.vercel.app, which stays live for them.
+const DEFAULT_API_URL = "https://findway.ai"
 
 const explicitApiUrl = process.env.FINDWAY_API_URL?.trim()
 const apiUrl = (explicitApiUrl || DEFAULT_API_URL).replace(/\/+$/, "")

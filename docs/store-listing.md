@@ -43,8 +43,8 @@ for iPad 13" (2048 × 2732), and `google-play-phone` for Play (1080 × 1920).
 | Google Play short description (80) | `Find any ward, clinic or department in hospital, floor by floor, step-free.` |
 | App Store promotional text (170) | `Lost in a hospital corridor? Search the ward or clinic you need and follow the line, floor by floor and lift by lift. No sign-in, and maps work without signal.` |
 | App Store keywords (100) | `hospital,indoor,wayfinding,ward,clinic,directions,floor plan,map,step-free,accessible,lift,route` |
-| Support URL (both stores) | `https://wayfinder-theta.vercel.app/support` |
-| Marketing URL (App Store, optional) | `https://wayfinder-theta.vercel.app` |
+| Support URL (both stores) | `https://findway.ai/support` |
+| Marketing URL (App Store, optional) | `https://findway.ai` |
 
 ### Description (both stores)
 
@@ -126,8 +126,12 @@ deleted from the places list (the bin beside it).
 Answering *linked* is the safe reading of Apple's definition: over-declaring
 costs a slightly longer label, under-declaring can get the app pulled.
 
-**Privacy Policy URL:** `https://wayfinder-theta.vercel.app/privacy` (move it
-to your own domain when you have one).
+**Privacy Policy URL:** `https://findway.ai/privacy`. Google Play's Data
+safety deletion link is `https://findway.ai/privacy#delete-your-data`.
+
+The first submissions used `https://wayfinder-theta.vercel.app`, which still
+serves the same pages; move each store field to findway.ai when that store
+next allows an edit (not while a version is waiting for review).
 
 ### Google Play → Data safety
 
@@ -150,7 +154,7 @@ to your own domain when you have one).
 
 | Form | Answer |
 | --- | --- |
-| Privacy policy | `https://wayfinder-theta.vercel.app/privacy` |
+| Privacy policy | `https://findway.ai/privacy` |
 | App access | All functionality is available without special access |
 | Ads | No, the app contains no ads |
 | Target audience | 18 and over. Patients and visitors of every age benefit, but choosing under-13s brings in the Families policy. |
@@ -182,7 +186,7 @@ Places people publish (guideline 1.2):
 - Anyone can map a place and publish it. Names with offensive words are refused when published.
 - Any place someone else published can be reported (Report under the place's name, or the flag beside it in the places list) and hidden from the user's own list at once.
 - Reports reach our moderation inbox; we review them within 24 hours, remove places that break the rules and block publishers who break them deliberately.
-- The rules, a contact form and help are on the Help (?) page in the app and at https://wayfinder-theta.vercel.app/support.
+- The rules, a contact form and help are on the Help (?) page in the app and at https://findway.ai/support.
 
 Location leaves the device only while the user is being guided, as an anonymous corridor trace with the destination trimmed off, deleted after 30 days. Users can delete it in the app: Help (the ? button), then Privacy.
 ```
