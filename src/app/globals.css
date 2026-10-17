@@ -225,6 +225,12 @@ html, body {
 .wf-prose p + p { margin-top: 0.9rem; }
 .wf-prose ul, .wf-prose ol { padding-left: 1.25rem; list-style: disc; display: flex; flex-direction: column; gap: 0.6rem; }
 .wf-prose ol { list-style: decimal; }
+/* A long list of short items (a hospital's wards) in two columns where there
+   is room. Unlayered like the list rule above, so utilities could not undo it. */
+@media (min-width: 640px) {
+  .wf-prose ul.wf-cols { display: block; columns: 2; column-gap: 2.5rem; }
+  .wf-prose ul.wf-cols > li { break-inside: avoid; margin-bottom: 0.6rem; }
+}
 .wf-prose strong { color: var(--wf-ink); font-weight: 600; }
 .wf-prose kbd { font: 600 13px var(--font-body), monospace; color: var(--wf-ink); background: var(--wf-surface); border: 1px solid var(--wf-border); border-radius: 6px; padding: 1px 6px; }
 

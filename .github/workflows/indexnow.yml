@@ -1,0 +1,28 @@
+# Tell Bing and the other IndexNow search engines about the site's pages after
+# each production deployment, so a new or changed hospital page is crawled
+# within hours (scripts/indexnow.mjs). Vercel reports its deployments to
+# GitHub, and each report starts this; only a finished production deployment
+# goes past the `if`, the rest show as skipped. Run it by hand to resend.
+name: IndexNow
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    # Vercel names the environment "Production", or "Production – <project>".
+    if: github.event_name == 'workflow_dispatch' || (github.event.deployment_status.state == 'success' && startsWith(github.event.deployment.environment, 'Production'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: node scripts/indexnow.mjs
+        env:
+          FINDWAY_SITE_URL: ${{ vars.FINDWAY_SITE_URL || 'https://findway.ai' }}
