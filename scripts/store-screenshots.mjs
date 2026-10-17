@@ -200,8 +200,10 @@ try {
     // the deployment's Mapbox map.
     context.on("response", (response) => {
       const u = response.url()
-      if (u.includes("/api/basemap/")) response.ok() ? streetMap.mapbox++ : streetMap.failed++
-      else if (u.includes("basemaps.cartocdn.com")) streetMap.carto++
+      if (u.includes("/api/basemap/")) {
+        if (response.ok()) streetMap.mapbox++
+        else streetMap.failed++
+      } else if (u.includes("basemaps.cartocdn.com")) streetMap.carto++
     })
     for (const scene of SCENES) {
       const page = await context.newPage()

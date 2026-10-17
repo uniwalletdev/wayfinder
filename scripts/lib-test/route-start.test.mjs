@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url"
 register(new URL("./ts-hooks.mjs", import.meta.url), import.meta.url)
 
 const SRC = new URL("../../src/lib/", import.meta.url)
-const { mainEntrance, resolveRouteStart, formatMinutes } = await import(fileURLToPath(new URL("route-start.ts", SRC)))
+const { mainEntrance, resolveRouteStart, formatMinutes, startIsReal, UNKNOWN } = await import(fileURLToPath(new URL("route-start.ts", SRC)))
 const { GOSH_VENUE } = await import(fileURLToPath(new URL("venues/gosh.ts", SRC)))
 const { group, check, report } = await import("../nhs/test/harness.mjs")
 
@@ -60,6 +60,19 @@ group("formatMinutes")
   check("a measured route is plain", formatMinutes({ estimatedMinutes: 3, approximate: false }) === "3 min")
   check("a route with an unmapped stretch is marked", formatMinutes({ estimatedMinutes: 1, approximate: true }) === "~1 min")
   check("absent flag reads as measured", formatMinutes({ estimatedMinutes: 2 }) === "2 min")
+  check("a route of no length has no time, not a made-up minute", formatMinutes({ estimatedMinutes: 1, totalDistance: 0 }) === UNKNOWN && UNKNOWN === "—")
+  check("a route with length keeps its time", formatMinutes({ estimatedMinutes: 4, totalDistance: 310 }) === "4 min")
+  check("an hour or more reads in hours", formatMinutes({ estimatedMinutes: 135 }) === "2 h 15 min" && formatMinutes({ estimatedMinutes: 120 }) === "2 h" && formatMinutes({ estimatedMinutes: 59 }) === "59 min")
+  check("a long guess is still marked", formatMinutes({ estimatedMinutes: 5003, approximate: true, totalDistance: 400200 }) === "~83 h 23 min")
+}
+
+group("startIsReal (journeys out of the building)")
+{
+  check("a picked place is a real start", startIsReal({ kind: "chosen" }, 0))
+  check("a live fix is a real start", startIsReal({ kind: "live" }, 8))
+  check("the demo position on site is not", !startIsReal({ kind: "live" }, 0))
+  check("the entrance standing in for an unknown position is not", !startIsReal({ kind: "entrance" }, 5))
+  check("the centre of the site is not", !startIsReal({ kind: "centre" }, 5))
 }
 
 report()

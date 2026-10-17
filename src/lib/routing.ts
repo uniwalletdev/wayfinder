@@ -9,6 +9,11 @@ export function isOutdoorDestination(w: Waypoint): boolean {
   return w.id.startsWith("geo-")
 }
 
+// What directions call a destination (see Waypoint.placeName).
+export function placeName(w: Pick<Waypoint, "name" | "placeName">): string {
+  return w.placeName ?? w.name
+}
+
 const WALK_SPEED_M_PER_MIN = 80
 
 // Walking speed in metres/min per mode, used to estimate indoor ETAs (outdoor
@@ -529,7 +534,7 @@ export function buildRoute(
         totalDistance += leg2.distance
         geometry = geometry.concat(leg2.points)
         steps.push({
-          instruction: `Exit and head to ${destination.name}`,
+          instruction: `Exit and head to ${placeName(destination)}`,
           distance: Math.round(leg2.distance),
           heading: bearing(matchOnDestFloor.coordinates, destination.coordinates),
           waypoint: destination,
@@ -551,7 +556,7 @@ export function buildRoute(
     totalDistance += leg.distance
     geometry = leg.points
     steps.push({
-      instruction: `${headingToInstruction(bearing(from, destination.coordinates))} toward ${destination.name}${approximate ? " — follow the corridor signs" : ""}`,
+      instruction: `${headingToInstruction(bearing(from, destination.coordinates))} toward ${placeName(destination)}${approximate ? " — follow the corridor signs" : ""}`,
       distance: Math.round(leg.distance),
       heading: bearing(from, destination.coordinates),
     })
@@ -561,7 +566,7 @@ export function buildRoute(
   if (geometry.length < 2) geometry = [from, destination.coordinates]
 
   steps.push({
-    instruction: `You have arrived at ${destination.name}`,
+    instruction: `You have arrived at ${placeName(destination)}`,
     distance: 0,
     heading: 0,
     waypoint: destination,
@@ -638,11 +643,11 @@ export async function fetchOutdoorRoute(
     return {
       steps: [
         {
-          instruction: `${headingToInstruction(bearing(from, destination.coordinates))} toward ${destination.name}`,
+          instruction: `${headingToInstruction(bearing(from, destination.coordinates))} toward ${placeName(destination)}`,
           distance,
           heading: bearing(from, destination.coordinates),
         },
-        { instruction: `You have arrived at ${destination.name}`, distance: 0, heading: 0, waypoint: destination },
+        { instruction: `You have arrived at ${placeName(destination)}`, distance: 0, heading: 0, waypoint: destination },
       ],
       totalDistance: distance,
       estimatedMinutes: minutes,

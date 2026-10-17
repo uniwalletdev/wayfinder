@@ -29,6 +29,7 @@ export function siteDestination(v: Venue): Waypoint {
   return {
     id: `${SITE_DESTINATION_PREFIX}${v.id}`,
     name: "Directions to the hospital",
+    placeName: v.name,
     type: "exit",
     coordinates: v.center,
     floor: 0,
