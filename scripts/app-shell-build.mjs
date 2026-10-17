@@ -37,12 +37,16 @@ const siteUrl = process.env.FINDWAY_SITE_URL?.trim().replace(/\/+$/, "") || apiU
 
 const HOLD = ".app-shell-excluded"
 // The back office (and /coverage, which leads into it) needs a server and a
-// signed-in person: web only, like the API.
+// signed-in person: web only, like the API. The hospital pages and llms.txt are
+// there for search engines and AI assistants reading the website; the apps open
+// on the map.
 const MOVES = [
   ["src/app/api", `${HOLD}/api`],
   ["src/proxy.ts", `${HOLD}/proxy.ts`],
   ["src/app/admin", `${HOLD}/admin`],
   ["src/app/coverage", `${HOLD}/coverage`],
+  ["src/app/hospitals", `${HOLD}/hospitals`],
+  ["src/app/llms.txt", `${HOLD}/llms.txt`],
 ]
 mkdirSync(HOLD, { recursive: true })
 

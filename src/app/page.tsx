@@ -1,17 +1,21 @@
 import Link from "next/link"
 import WayfinderApp from "@/components/WayfinderApp"
+import JsonLd from "@/components/JsonLd"
 import { IS_APP_SHELL } from "@/lib/app-shell"
 import { Navigation, Map, ArrowRight, Search, ClipboardList } from "lucide-react"
 import { SEED_VENUES, DEFAULT_VENUE } from "@/lib/venues"
 import { buildRoute } from "@/lib/routing"
 import { floorLabel } from "@/lib/waypoint-meta"
+import { HOSPITALS_PATH } from "@/lib/hospital-pages"
+import { appNode, graph, organizationNode, websiteNode } from "@/lib/structured-data"
+import { siteUrl } from "@/lib/site-url"
 
 // Every link on this page goes somewhere: the product story below, the map,
 // the trusts' call to action, and the accessibility statement. They were
 // decorative spans before, which on a landing page reads as "not finished".
 const NAV_LINKS: { label: string; href: string }[] = [
   { label: "How it works", href: "#how-it-works" },
-  { label: "Hospitals", href: "/navigate" },
+  { label: "Hospitals", href: HOSPITALS_PATH },
   { label: "For trusts", href: "#for-trusts" },
   { label: "Accessibility", href: "/accessibility" },
 ]
@@ -75,8 +79,10 @@ export default function Home() {
 }
 
 function Landing() {
+  const base = siteUrl()
   return (
     <main className="bg-white">
+      <JsonLd data={graph(organizationNode(base), websiteNode(base), appNode(base))} />
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[600px] overflow-hidden bg-wf-ink-hero pb-16 lg:h-[780px] lg:pb-0">
         <HeroMap />
@@ -312,7 +318,8 @@ function Landing() {
           </span>
           <span className="font-display text-sm font-bold text-wf-ink">Findway</span>
         </div>
-        <div className="flex items-center gap-6 text-[13.5px] text-wf-muted">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13.5px] text-wf-muted">
+          <Link href={HOSPITALS_PATH} className="transition-colors hover:text-wf-primary">Hospital maps</Link>
           <Link href="/support" className="transition-colors hover:text-wf-primary">Support</Link>
           <Link href="/privacy" className="transition-colors hover:text-wf-primary">Privacy</Link>
           <Link href="/accessibility" className="transition-colors hover:text-wf-primary">Accessibility</Link>
