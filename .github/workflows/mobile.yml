@@ -62,7 +62,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  FINDWAY_API_URL: ${{ inputs.api_url || vars.FINDWAY_API_URL || 'https://wayfinder-theta.vercel.app' }}
+  FINDWAY_API_URL: ${{ inputs.api_url || vars.FINDWAY_API_URL || 'https://findway.ai' }}
   # Optional public support address shown on the bundled support page; the
   # contact form there works without it (see .env.example).
   NEXT_PUBLIC_SUPPORT_EMAIL: ${{ vars.SUPPORT_EMAIL }}

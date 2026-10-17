@@ -61,8 +61,26 @@ export function resolveRouteStart(input: {
   return { kind: "centre", coordinates: input.venueCenter, floor: input.currentFloor, waypoint: null, label: `Centre of ${input.venueName}`, note }
 }
 
+// What a figure the app does not know shows as.
+export const UNKNOWN = "—"
+
 // The walk time as the card shows it: "~" when any leg of the route is a
-// straight line through unmapped space, so a guess reads as a guess.
-export function formatMinutes(route: { estimatedMinutes: number; approximate?: boolean }): string {
-  return `${route.approximate ? "~" : ""}${route.estimatedMinutes} min`
+// straight line through unmapped space, so a guess reads as a guess, and a
+// dash when there is no journey to time (a route of no length starts where it
+// ends, which means the start is not really known): never a made-up "1 min".
+export function formatMinutes(route: { estimatedMinutes: number; approximate?: boolean; totalDistance?: number }): string {
+  if (route.totalDistance !== undefined && route.totalDistance <= 0) return UNKNOWN
+  const m = route.estimatedMinutes
+  // An hour or more reads in hours ("2 h 15 min"), not "135 min".
+  const time = m >= 60 ? `${Math.floor(m / 60)} h${m % 60 ? ` ${m % 60} min` : ""}` : `${m} min`
+  return `${route.approximate ? "~" : ""}${time}`
+}
+
+// Whether a route's start is where the walker really is, for a journey that
+// leaves the building (an address, or directions to a hospital): a place they
+// picked, or a live fix. The entrance or site centre standing in for an
+// unknown position, and the demo position on site, are not: a journey from
+// there to the hospital is no journey at all.
+export function startIsReal(start: Pick<RouteStart, "kind">, positionAccuracy: number): boolean {
+  return start.kind === "chosen" || (start.kind === "live" && positionAccuracy > 0)
 }

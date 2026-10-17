@@ -72,8 +72,10 @@ npm run mobile:build     # -> out/
 npm run mobile:sync      # mobile:build, then cap sync into android/ and ios/
 ```
 
-The apps call `https://wayfinder-theta.vercel.app` unless `FINDWAY_API_URL`
-names another deployment. Set it in the shell before the build:
+The apps call `https://findway.ai` unless `FINDWAY_API_URL` names another
+deployment. (Builds made before the domain moved call
+`https://wayfinder-theta.vercel.app`; keep that address on the Vercel project
+for as long as those builds are installed.) Set it in the shell before the build:
 
 | Shell | Command |
 | --- | --- |
@@ -127,7 +129,7 @@ the workflow run number, so every run can be uploaded without editing a
 project. The version people see (`1.0`) is set by hand in
 `android/app/build.gradle` and in Xcode.
 
-The workflow defaults `FINDWAY_API_URL` to `https://wayfinder-theta.vercel.app`.
+The workflow defaults `FINDWAY_API_URL` to `https://findway.ai`.
 Override it with a repository variable of the same name, or per run.
 
 ### Getting to TestFlight and Play internal testing

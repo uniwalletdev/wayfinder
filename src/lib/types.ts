@@ -24,6 +24,10 @@ export interface Waypoint {
   hours?: string
   arrivalNotes?: string
   typicalWait?: string
+  // What directions call the place, when its name is a label for an action
+  // instead ("Directions to the hospital" is the hospital): "Head north toward
+  // St Nicholas Hospital", not "toward Directions to the hospital".
+  placeName?: string
 }
 
 export type WaypointType =

@@ -9,7 +9,7 @@ import { venueBuildings, buildingAt } from "@/lib/buildings"
 import { DEFAULT_VENUE, openingFloor, createVenue, type NewVenueInput } from "@/lib/venues/core"
 import { loadVenue, loadCatalog, catalogSnapshot, summaryOf } from "@/lib/venues/catalog"
 import { HOME_COUNTRY, detectCountry, saveCountry, countryName } from "@/lib/country"
-import { resolveRouteStart, mainEntrance } from "@/lib/route-start"
+import { mainEntrance, resolveRouteStart, startIsReal } from "@/lib/route-start"
 import { apiUrl } from "@/lib/app-shell"
 import { worldVenueId, type WorldHospitalRow } from "@/lib/venues/catalog"
 import { isSiteOnly, siteDestination } from "@/lib/site-destination"
@@ -708,11 +708,14 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         currentStepIndex: 0,
         isNavigating: false,
       }))
-      if (shouldRouteOutdoors(position, fromFloor, waypoint, allTrails)) {
+      // A journey out of the building is only worth a street route from where
+      // the walker really is; from the entrance standing in for an unknown
+      // position it would be a route of no length (the card says so instead).
+      if (shouldRouteOutdoors(position, fromFloor, waypoint, allTrails) && (!isOutdoorDestination(waypoint) || startIsReal(start, navState.positionAccuracy))) {
         void refreshOutdoorRoute(position, waypoint, navState.travelMode)
       }
     },
-    [venue, start, navState.travelMode, allWaypoints, allTrails, refreshOutdoorRoute, alwaysStepFree]
+    [venue, start, navState.travelMode, navState.positionAccuracy, allWaypoints, allTrails, refreshOutdoorRoute, alwaysStepFree]
   )
 
   // The user picked a specific place to start from (instead of their live
@@ -748,10 +751,10 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     }
     const route = buildRoute(from.coordinates, from.floor, dest, allWaypoints, navState.travelMode, allTrails, routePreference, venue.floorNaming)
     setNavState((s) => ({ ...s, origin: null, route, currentStepIndex: 0 }))
-    if (shouldRouteOutdoors(from.coordinates, from.floor, dest, allTrails)) {
+    if (shouldRouteOutdoors(from.coordinates, from.floor, dest, allTrails) && (!isOutdoorDestination(dest) || startIsReal(from, navState.positionAccuracy))) {
       void refreshOutdoorRoute(from.coordinates, dest, navState.travelMode)
     }
-  }, [venue, navState.destination, navState.travelMode, resolveStart, allWaypoints, allTrails, refreshOutdoorRoute, routePreference])
+  }, [venue, navState.destination, navState.travelMode, navState.positionAccuracy, resolveStart, allWaypoints, allTrails, refreshOutdoorRoute, routePreference])
 
   // Swap the ends: the destination becomes the start and the start the
   // destination. Only when the start is a place (chosen, or the entrance
@@ -776,13 +779,13 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
       const from = start.coordinates
       const fromFloor = start.floor
       if (shouldRouteOutdoors(from, fromFloor, dest, allTrails)) {
-        void refreshOutdoorRoute(from, dest, mode)
+        if (!isOutdoorDestination(dest) || startIsReal(start, navState.positionAccuracy)) void refreshOutdoorRoute(from, dest, mode)
       } else {
         const route = buildRoute(from, fromFloor, dest, allWaypoints, mode, allTrails, routePreference, venue.floorNaming)
         setNavState((s) => ({ ...s, route }))
       }
     },
-    [venue, navState.destination, start, allWaypoints, allTrails, refreshOutdoorRoute, routePreference]
+    [venue, navState.destination, navState.positionAccuracy, start, allWaypoints, allTrails, refreshOutdoorRoute, routePreference]
   )
 
   // Accessibility-first routing (2b): switch between the fastest and
@@ -798,6 +801,18 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
     },
     [venue, navState.destination, start, navState.travelMode, allWaypoints, allTrails]
   )
+
+  // Moving through the steps by hand (Back, Next, or a pick from the list).
+  // Indoors the position often cannot tell which step the walker is on, and
+  // they should never be stuck on the first; the steps still move on by
+  // themselves when it can.
+  const handleStepChange = useCallback((index: number) => {
+    setNavState((s) => {
+      if (!s.route) return s
+      const i = Math.max(0, Math.min(index, s.route.steps.length - 1))
+      return i === s.currentStepIndex ? s : { ...s, currentStepIndex: i }
+    })
+  }, [])
 
   const handleStartNavigation = useCallback(() => {
     enableSensors()
@@ -902,15 +917,20 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
   useEffect(() => {
     const dest = navState.destination
     if (!dest || navState.isNavigating || navState.route?.outdoor || routeLoading) return
-    const key = `${dest.id}|${startKey}`
+    const key = `${dest.id}|${startKey}|${startIsReal(start, navState.positionAccuracy)}`
     if (previewBuiltFor.current === key) return
     previewBuiltFor.current = key
-    if (shouldRouteOutdoors(start.coordinates, start.floor, dest, allTrails)) return
+    if (shouldRouteOutdoors(start.coordinates, start.floor, dest, allTrails)) {
+      // The position arrived after a journey out of the building was picked:
+      // now there is a real start to route the streets from. This, and the
+      // rebuild below, react to the start moving (a sensor event or a pick).
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (isOutdoorDestination(dest) && startIsReal(start, navState.positionAccuracy)) void refreshOutdoorRoute(start.coordinates, dest, navState.travelMode)
+      return
+    }
     const route = buildRoute(start.coordinates, start.floor, dest, allWaypoints, navState.travelMode, allTrails, routePreference, venue.floorNaming)
-    // The preview reacts to the start moving (a sensor event or a pick).
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setNavState((s) => (s.destination?.id === dest.id && !s.isNavigating ? { ...s, route, currentStepIndex: 0 } : s))
-  }, [startKey, start, navState.destination, navState.isNavigating, navState.route?.outdoor, navState.travelMode, routeLoading, allWaypoints, allTrails, routePreference, venue.floorNaming])
+  }, [startKey, start, navState.destination, navState.isNavigating, navState.route?.outdoor, navState.travelMode, navState.positionAccuracy, routeLoading, allWaypoints, allTrails, routePreference, venue.floorNaming, refreshOutdoorRoute])
 
   // A scanned code is a Findway link (see share-link.ts): a URL from a
   // printed poster or a shared screen, or the older bare `floor:…:lat:…:lng:…`
@@ -1354,6 +1374,7 @@ export default function WayfinderApp({ initialMode = "navigate" }: { initialMode
         onPreviewFromVenue={handlePreviewFromVenue}
         onRouteFromHereAnyway={() => setFarRouteOverride(true)}
         onScanQR={() => { enableSensors(); setOverlay("qr") }}
+        onStepChange={handleStepChange}
         onOpenCamera={() => {
           enableSensors()
           // Prefer floor-anchored immersive AR when the device supports it and we

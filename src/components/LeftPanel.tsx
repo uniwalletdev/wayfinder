@@ -6,12 +6,13 @@ import {
   Building, ChevronsUpDown, Search, BadgeCheck, X, Navigation, Share2, ChevronRight,
   Loader2, PersonStanding, Bike, Car, ClipboardList, UploadCloud, QrCode, Camera,
   ArrowUp, ArrowDown, ArrowUpLeft, ArrowUpRight, ArrowLeft, ArrowRight, ArrowUpDown, CheckCircle2,
-  Info, MapPin, Pencil, Volume2, Flag,
+  Info, MapPin, Pencil, Volume2, Flag, ChevronLeft, ChevronDown, ListOrdered, ExternalLink,
 } from "lucide-react"
 import { Waypoint, Route, RouteStep, TravelMode, Venue, RoutePreference, FloorNaming } from "@/lib/types"
 import { WAYPOINT_TYPE_ICONS, floorLabel, waypointDetail } from "@/lib/waypoint-meta"
-import { isOutdoorDestination } from "@/lib/routing"
-import { formatMinutes, type RouteStart } from "@/lib/route-start"
+import { isOutdoorDestination, placeName } from "@/lib/routing"
+import { formatMinutes, startIsReal, UNKNOWN, type RouteStart } from "@/lib/route-start"
+import { MAPS_PROVIDER_NAMES, mapsDirectionsUrl, preferredMapsProvider, type MapsProvider } from "@/lib/maps-handoff"
 import Toggle from "@/components/Toggle"
 import AuthButton from "@/components/AuthButton"
 
@@ -72,6 +73,8 @@ interface Props {
   onUseDemo: () => void
   onScanQR: () => void
   onOpenCamera: () => void
+  // Moves guidance to another step (Back, Next, or a pick from the list).
+  onStepChange: (index: number) => void
   // Set when the user's live position is a long way from the venue and they've
   // picked an indoor destination — the panel offers alternatives instead of a
   // straight-faced multi-hour walking route.
@@ -131,6 +134,7 @@ export default function LeftPanel({
   onUseDemo,
   onScanQR,
   onOpenCamera,
+  onStepChange,
   farFromVenue,
   onPreviewFromVenue,
   onRouteFromHereAnyway,
@@ -309,6 +313,7 @@ export default function LeftPanel({
             onStop={onStop}
             onScanQR={onScanQR}
             onOpenCamera={onOpenCamera}
+            onStepChange={onStepChange}
           />
         ) : destination && route && farFromVenue ? (
           <FarFromVenueCard
@@ -537,6 +542,16 @@ function RoutePreviewCard({
   // Phones peek the destination header + Start button and fold away the options
   // so the previewed route is visible on the map; the grab handle expands them.
   const detail = expanded ? "" : "hidden lg:block"
+  // A journey out of the building (an address, or directions to the hospital)
+  // is handed to the phone's maps app (src/lib/maps-handoff.ts), and its time
+  // and distance count only from where the walker really is. Without that,
+  // the card says it does not know rather than showing a route of no length.
+  const outdoor = isOutdoorDestination(destination)
+  const known = !outdoor || startIsReal(start, positionAccuracy)
+  const timeText = routeLoading ? "…" : known ? formatMinutes(route) : UNKNOWN
+  const distanceText = routeLoading ? "…" : known && route.totalDistance > 0 ? fmtDistance(route.totalDistance) : UNKNOWN
+  const provider: MapsProvider = preferredMapsProvider(typeof navigator === "undefined" ? "" : navigator.userAgent)
+  const other: MapsProvider = provider === "apple" ? "google" : "apple"
 
   return (
     <div className="rounded-[18px] border border-wf-border p-[18px] shadow-[0_10px_30px_rgba(11,27,46,0.08)]">
@@ -546,8 +561,12 @@ function RoutePreviewCard({
             {WAYPOINT_TYPE_ICONS[destination.type]}
           </span>
           <div className="min-w-0">
-            <p className="truncate text-[15.5px] font-semibold text-wf-ink">{destination.name}</p>
-            <p className="truncate text-xs text-wf-muted">{floorLabel(destination.floor, floorNaming)}{waypointDetail(destination) ? ` · ${waypointDetail(destination)}` : ""}</p>
+            <p className="truncate text-[15.5px] font-semibold text-wf-ink">{outdoor ? placeName(destination) : destination.name}</p>
+            <p className="truncate text-xs text-wf-muted">
+              {outdoor
+                ? destination.description ?? destination.name
+                : `${floorLabel(destination.floor, floorNaming)}${waypointDetail(destination) ? ` · ${waypointDetail(destination)}` : ""}`}
+            </p>
           </div>
         </div>
         <button onClick={onStop} aria-label="Clear destination" className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
@@ -558,7 +577,18 @@ function RoutePreviewCard({
       {/* Folded on a phone, the card still says where the walk starts and how
           long it is — the two things that were hidden until now — and the start
           is a tap away. Unfolded, the From/To block below carries this. */}
-      {!expanded && (
+      {!expanded && outdoor && (
+        <p className="mb-3.5 rounded-xl bg-wf-surface px-3 py-2 text-[13px] text-wf-body lg:hidden">
+          {known ? (
+            <>
+              From <span className="font-semibold text-wf-ink">{start.label}</span> · <span className="font-semibold text-wf-ink">{timeText} · {distanceText}</span>
+            </>
+          ) : (
+            "Turn on location to see how far you are"
+          )}
+        </p>
+      )}
+      {!expanded && !outdoor && (
         <button
           onClick={onEditOrigin}
           className="mb-3.5 flex w-full items-center gap-2 rounded-xl bg-wf-surface px-3 py-2 text-left lg:hidden"
@@ -568,7 +598,7 @@ function RoutePreviewCard({
             From <span className="font-semibold text-wf-ink">{start.label}</span>
           </span>
           <span className="flex-shrink-0 text-[13px] font-semibold text-wf-ink">
-            {routeLoading ? "…" : `${formatMinutes(route)} · ${fmtDistance(route.totalDistance)}`}
+            {routeLoading ? "…" : `${timeText} · ${distanceText}`}
           </span>
           <Pencil size={12} className="flex-shrink-0 text-wf-faint" aria-hidden="true" />
         </button>
@@ -604,7 +634,7 @@ function RoutePreviewCard({
         </div>
       )}
 
-      {route.outdoor && (
+      {(outdoor || route.outdoor) && (
         <div className="mb-3 flex gap-2">
           {TRAVEL_MODES.map(({ mode, label, Icon }) => {
             const active = mode === travelMode
@@ -624,14 +654,18 @@ function RoutePreviewCard({
         </div>
       )}
 
-      <RouteEndpoints
-        start={start}
-        destination={destination}
-        floorNaming={floorNaming}
-        onEditOrigin={onEditOrigin}
-        onResetOrigin={onResetOrigin}
-        onSwapEnds={onSwapEnds}
-      />
+      {/* The maps app starts from the phone's own location, so a From row
+          would only mislead on a journey that leaves the building. */}
+      {!outdoor && (
+        <RouteEndpoints
+          start={start}
+          destination={destination}
+          floorNaming={floorNaming}
+          onEditOrigin={onEditOrigin}
+          onResetOrigin={onResetOrigin}
+          onSwapEnds={onSwapEnds}
+        />
+      )}
 
       {routeOptions ? (
         <RouteChoice
@@ -645,8 +679,11 @@ function RoutePreviewCard({
       ) : (
         <>
           <div className="mb-4 grid grid-cols-3 gap-2">
-            <StatTile label={routeLoading ? "…" : route.outdoor ? travelMode : "walking"} value={routeLoading ? "—" : formatMinutes(route)} />
-            <StatTile label={route.floorChanges > 0 ? `${route.floorChanges} floor change${route.floorChanges > 1 ? "s" : ""}` : "same floor"} value={routeLoading ? "—" : fmtDistance(route.totalDistance)} />
+            <StatTile label={routeLoading ? "…" : outdoor ? travelMode : "walking"} value={timeText} />
+            <StatTile
+              label={outdoor ? "distance" : route.floorChanges > 0 ? `${route.floorChanges} floor change${route.floorChanges > 1 ? "s" : ""}` : "same floor"}
+              value={distanceText}
+            />
             {/* The real fix, not a number typed into the design: what the
                 positioning actually reports right now. */}
             <StatTile
@@ -658,13 +695,17 @@ function RoutePreviewCard({
               because this venue has no mapped corridors on this leg; outdoors
               (an address, or directions to a hospital's site) because street
               routing is not configured on this deployment. Say which. */}
-          {route.approximate && !routeLoading && (
+          {outdoor && !routeLoading && (
+            <p className="mb-4 rounded-xl bg-wf-surface px-3 py-2.5 text-[12.5px] leading-snug text-wf-body">
+              {known ? "" : "Turn on location to see how far you are. "}
+              {MAPS_PROVIDER_NAMES[provider]} gives step-by-step directions there, with live traffic and public transport.
+            </p>
+          )}
+          {!outdoor && route.approximate && !routeLoading && (
             <div className="mb-4 flex items-start gap-2 rounded-xl bg-amber-50 border border-amber-200 px-3 py-2.5">
               <MapPin size={14} className="mt-0.5 flex-shrink-0 text-amber-600" aria-hidden="true" />
               <p className="text-[12px] leading-snug text-amber-700">
-                {isOutdoorDestination(destination)
-                  ? "Straight-line direction — street routing isn’t available on this deployment, so use the pin as a bearing and follow road signs."
-                  : "Approximate direction — corridors aren’t mapped inside this building yet, so follow the on-site signs for the exact route."}
+                Approximate direction — corridors aren’t mapped inside this building yet, so follow the on-site signs for the exact route.
               </p>
             </div>
           )}
@@ -673,13 +714,25 @@ function RoutePreviewCard({
       </div>
 
       <div className="flex gap-2.5">
-        <button
-          onClick={onStart}
-          className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]"
-        >
-          {routeLoading ? <Loader2 size={16} className="animate-spin" /> : <Navigation size={16} />}
-          {routeLoading ? "Finding route…" : routeOptions ? `Start ${routePreference === "fastest" ? "fastest" : "step-free"} route` : "Start"}
-        </button>
+        {outdoor ? (
+          <a
+            href={mapsDirectionsUrl(provider, destination.coordinates, travelMode)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]"
+          >
+            <Navigation size={16} aria-hidden="true" />
+            Open in {MAPS_PROVIDER_NAMES[provider]}
+          </a>
+        ) : (
+          <button
+            onClick={onStart}
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-wf-primary py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(10,93,194,0.3)]"
+          >
+            {routeLoading ? <Loader2 size={16} className="animate-spin" /> : <Navigation size={16} />}
+            {routeLoading ? "Finding route…" : routeOptions ? `Start ${routePreference === "fastest" ? "fastest" : "step-free"} route` : "Start"}
+          </button>
+        )}
         <button
           onClick={onShare}
           aria-label="Share this destination"
@@ -688,6 +741,16 @@ function RoutePreviewCard({
           <Share2 size={17} />
         </button>
       </div>
+      {outdoor && (
+        <a
+          href={mapsDirectionsUrl(other, destination.coordinates, travelMode)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2.5 flex items-center justify-center gap-1.5 text-[12.5px] font-semibold text-wf-muted hover:text-wf-primary"
+        >
+          Or open in {MAPS_PROVIDER_NAMES[other]} <ExternalLink size={12} aria-hidden="true" />
+        </a>
+      )}
     </div>
   )
 }
@@ -905,6 +968,7 @@ function NavigatingSummary({
   onStop,
   onScanQR,
   onOpenCamera,
+  onStepChange,
 }: {
   destination: Waypoint
   route: Route
@@ -918,9 +982,16 @@ function NavigatingSummary({
   onStop: () => void
   onScanQR: () => void
   onOpenCamera: () => void
+  onStepChange: (index: number) => void
 }) {
   const step = route.steps[currentStepIndex] ?? route.steps[route.steps.length - 1]
   const isArrived = step.instruction.includes("arrived")
+  // Steps move on by themselves as the walker's position reaches each one, but
+  // indoors the position often cannot tell, so they can also be stepped
+  // through by hand, or picked from the list.
+  const canBack = currentStepIndex > 0
+  const canNext = currentStepIndex < route.steps.length - 1
+  const [showSteps, setShowSteps] = useState(false)
   // On phones the sheet collapses to a peek so the map is visible while walking:
   // the destination header and the current-step banner stay, the details drop
   // away. The grab handle brings them back. lg+ always shows everything.
@@ -948,17 +1019,76 @@ function NavigatingSummary({
           <StepIcon step={step} heading={heading} />
         </span>
         <div className="min-w-0">
-          <p className={`truncate text-[14.5px] font-semibold ${isArrived ? "text-wf-green-text" : "text-white"}`}>{step.instruction}</p>
+          <p className={`line-clamp-2 text-[14.5px] font-semibold leading-snug ${isArrived ? "text-wf-green-text" : "text-white"}`}>{step.instruction}</p>
           {step.distance > 0 && <p className={`text-xs ${isArrived ? "text-wf-green-text" : "text-white/80"}`}>{fmtDistance(step.distance)}</p>}
         </div>
+      </div>
+
+      <div className="mb-4 flex gap-2">
+        <button
+          onClick={() => onStepChange(currentStepIndex - 1)}
+          disabled={!canBack}
+          aria-label="Previous step"
+          className="flex h-10 flex-1 items-center justify-center gap-1 rounded-xl border border-wf-border text-[13px] font-semibold text-wf-ink disabled:opacity-40"
+        >
+          <ChevronLeft size={16} aria-hidden="true" /> Back
+        </button>
+        <button
+          onClick={() => onStepChange(currentStepIndex + 1)}
+          disabled={!canNext}
+          aria-label="Next step"
+          className="flex h-10 flex-1 items-center justify-center gap-1 rounded-xl border border-wf-primary text-[13px] font-semibold text-wf-primary disabled:border-wf-border disabled:text-wf-ink disabled:opacity-40"
+        >
+          Next <ChevronRight size={16} aria-hidden="true" />
+        </button>
       </div>
 
       <div className={detail}>
         <div className="mb-4 grid grid-cols-3 gap-2">
           <StatTile label="time" value={formatMinutes(route)} />
-          <StatTile label="distance" value={fmtDistance(route.totalDistance)} />
+          <StatTile label="distance" value={route.totalDistance > 0 ? fmtDistance(route.totalDistance) : UNKNOWN} />
           <StatTile label="floor" value={floorLabel(destination.floor, floorNaming)} />
         </div>
+
+        <button
+          onClick={() => setShowSteps((v) => !v)}
+          aria-expanded={showSteps}
+          className="mb-3 flex w-full items-center justify-between gap-3 rounded-[14px] border border-wf-border-faint bg-[#F7FAFD] px-3.5 py-2.5 text-[13.5px] text-wf-body"
+        >
+          <span className="flex items-center gap-2">
+            <ListOrdered size={15} className="text-wf-primary" aria-hidden="true" />
+            All steps
+          </span>
+          <span className="flex items-center gap-1.5 text-wf-muted">
+            {route.steps.length}
+            <ChevronDown size={15} className={`transition-transform ${showSteps ? "rotate-180" : ""}`} aria-hidden="true" />
+          </span>
+        </button>
+        {showSteps && (
+          <ol className="mb-4 flex flex-col gap-1">
+            {route.steps.map((s, i) => (
+              <li key={i}>
+                <button
+                  onClick={() => onStepChange(i)}
+                  aria-current={i === currentStepIndex ? "step" : undefined}
+                  className={`flex w-full items-start gap-3 rounded-xl px-3 py-2 text-left ${
+                    i === currentStepIndex ? "bg-[#EEF5FD]" : "hover:bg-wf-surface"
+                  }`}
+                >
+                  <span
+                    className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${
+                      i === currentStepIndex ? "bg-wf-primary text-white" : i < currentStepIndex ? "bg-wf-surface text-wf-faint" : "bg-wf-surface text-wf-muted"
+                    }`}
+                  >
+                    {i + 1}
+                  </span>
+                  <span className={`min-w-0 flex-1 text-[13px] leading-snug ${i < currentStepIndex ? "text-wf-faint" : "text-wf-ink"}`}>{s.instruction}</span>
+                  {s.distance > 0 && <span className="flex-shrink-0 text-[12px] text-wf-muted">{fmtDistance(s.distance)}</span>}
+                </button>
+              </li>
+            ))}
+          </ol>
+        )}
 
         {speechSupported && (
           <div className="mb-3 flex items-center justify-between gap-3 rounded-[14px] border border-wf-border-faint bg-[#F7FAFD] px-3.5 py-2.5">
