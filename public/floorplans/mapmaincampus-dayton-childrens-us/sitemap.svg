@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="612" height="792" fill="#ffffff"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M621.4 83.5L621.4 -83.5L-9 -83.5L-9 64.6C61 89.4 147.8 85 221.1 76.7C238 74.8 255 72.7 272 70.7C372.7 59.7 519.9 44.9 621.4 83.5" fill="#75b8db"/>
+<path d="M222 535.9L576 535.9" fill="none" stroke="#828e90" stroke-width="1"/>
+<path d="M36 341.6L576 341.6" fill="none" stroke="#828e90" stroke-width="1"/>
+<path d="M543.1 784.3L543 784.3C532.3 793.7 514.4 793.1 500.1 791.4C497.7 791.2 495.2 790.9 492.7 790.6C478.1 789 456.7 786.8 441.9 792.4L441.9 738.6C456.7 733 478.1 735.2 492.7 736.8C495.2 737.1 497.7 737.4 500.1 737.7C514.5 739.3 532.3 739.9 543.1 730.5" fill="#808e90"/>
+<path d="M543.1 786.1L543 786.1C532.3 795.4 514.4 794.9 500.1 793.2C497.7 793 495.2 792.6 492.7 792.4C478.1 790.8 456.7 788.6 441.9 794.2L441.9 740.4C456.7 734.8 478.1 737 492.7 738.6C495.2 738.9 497.7 739.2 500.1 739.5C514.5 741.1 532.3 741.7 543.1 732.3" fill="#ffffff"/>
+<path d="M462.3 694.6C460.5 694.6 458.9 696 458.9 698.4C458.9 700.7 460.5 702.2 462.3 702.2C464.2 702.2 465.8 700.7 465.8 698.4C465.8 696.1 464.2 694.6 462.3 694.6M465.7 704.3L465.7 702.3C464.9 703.6 463.6 704.5 461.7 704.5C458.9 704.5 456.2 702.3 456.2 698.4C456.2 694.4 458.9 692.2 461.7 692.2C463.6 692.2 464.9 693.2 465.7 694.3L465.7 687.9L468.4 687.9L468.4 704.3Z" fill="#808e90"/>
+<path d="M477.6 699.3C476.9 699 475.9 698.8 474.8 698.8C473.1 698.8 472.1 699.5 472.1 700.7L472.1 700.8C472.1 701.9 473.1 702.5 474.4 702.5C476.2 702.5 477.6 701.5 477.6 700ZM477.5 704.3L477.5 702.8C476.7 703.8 475.5 704.5 473.7 704.5C471.4 704.5 469.4 703.3 469.4 700.9L469.4 700.8C469.4 698.3 471.5 697 474.2 697C475.7 697 476.6 697.2 477.5 697.5L477.5 697.2C477.5 695.6 476.5 694.7 474.6 694.7C473.3 694.7 472.3 695 471.2 695.4L470.5 693.3C471.8 692.7 473.1 692.3 475 692.3C478.5 692.3 480.2 694.1 480.2 697.3L480.2 704.3Z" fill="#808e90"/>
+<path d="M487.7 704.6C486.8 707.1 485.7 707.9 483.8 707.9C482.7 707.9 481.8 707.7 481 707.2L481.9 705.2C482.4 705.5 483 705.7 483.5 705.7C484.3 705.7 484.7 705.3 485.2 704.3L480.3 692.5L483.2 692.5L486.5 701.2L489.6 692.5L492.4 692.5Z" fill="#808e90"/>
+<path d="M496.4 700.6C496.4 701.7 497 702.1 497.9 702.1C498.5 702.1 499 701.9 499.6 701.7L499.6 703.9C498.9 704.3 498.1 704.5 497.1 704.5C495.1 704.5 493.7 703.6 493.7 701L493.7 694.8L491.5 694.8L492.2 692.5L493.7 692.5L493.7 689.2L496.4 689.2L496.4 692.5L499.6 692.5L499.6 694.8L496.4 694.8Z" fill="#808e90"/>
+<path d="M506.1 694.6C503.9 694.6 502.5 696.3 502.5 698.4C502.5 700.5 504 702.2 506.1 702.2C508.3 702.2 509.7 700.5 509.7 698.4C509.7 696.3 508.2 694.6 506.1 694.6M506.1 704.6C502.5 704.6 499.8 701.8 499.8 698.4C499.8 695 502.5 692.2 506.1 692.2C509.7 692.2 512.4 695 512.4 698.4C512.4 701.8 509.7 704.6 506.1 704.6" fill="#808e90"/>
+<path d="M516.3 704.3L513.6 704.3L513.6 692.5L516.3 692.5L516.3 694.3C517.1 693.2 518.2 692.2 520 692.2C522.7 692.2 524.2 694 524.2 696.8L524.2 704.3L521.5 704.3L521.5 697.6C521.5 695.7 520.6 694.7 519 694.7C517.4 694.7 516.3 695.8 516.3 697.6Z" fill="#808e90"/>
+<path d="M451.6 724.3C448.1 724.3 445.5 721.6 445.5 718.2C445.5 714.8 448.1 712 451.6 712C453.9 712 455.2 712.8 456.3 714L454.7 715.9C453.8 715 453 714.4 451.6 714.4C449.6 714.4 448.2 716.1 448.2 718.2C448.2 720.3 449.6 722 451.7 722C453 722 453.9 721.4 454.8 720.5L456.4 722.1C455.3 723.4 453.9 724.3 451.6 724.3" fill="#808e90"/>
+<path d="M460.1 724.1L457.3 724.1L457.3 707.7L460.1 707.7L460.1 714.1C460.8 713 461.9 712 463.8 712C466.4 712 468 713.8 468 716.5L468 724.1L465.3 724.1L465.3 717.4C465.3 715.5 464.3 714.5 462.7 714.5C461.2 714.5 460.1 715.6 460.1 717.4Z" fill="#808e90"/>
+<path d="M469.8 712.2L472.5 712.2L472.5 724.1L469.8 724.1ZM469.8 724.1M469.7 707.9L472.6 707.9L472.6 710.4L469.7 710.4Z" fill="#808e90"/>
+<path d="M474.7 707.7L477.4 707.7L477.4 724.1L474.7 724.1Z" fill="#808e90"/>
+<path d="M484.9 714.4C483 714.4 481.5 715.8 481.5 718.2C481.5 720.5 483 722 484.9 722C486.7 722 488.3 720.5 488.3 718.2C488.3 715.9 486.7 714.4 484.9 714.4M488.3 724.1L488.3 722.1C487.4 723.3 486.2 724.3 484.2 724.3C481.5 724.3 478.7 722.1 478.7 718.2C478.7 714.2 481.4 712 484.2 712C486.2 712 487.4 713 488.3 714.1L488.3 707.7L491 707.7L491 724.1Z" fill="#808e90"/>
+<path d="M495.5 724.1L492.8 724.1L492.8 712.2L495.5 712.2L495.5 714.9C496.2 713.1 497.6 711.9 499.7 712L499.7 714.9L499.5 714.9C497.2 714.9 495.5 716.4 495.5 719.6Z" fill="#808e90"/>
+<path d="M508.2 717.3C508 715.6 507 714.2 505.2 714.2C503.5 714.2 502.4 715.5 502.1 717.3ZM505.5 722.1C506.9 722.1 507.8 721.6 508.7 720.7L510.3 722.1C509.2 723.5 507.7 724.3 505.5 724.3C502.1 724.3 499.4 721.9 499.4 718.2C499.4 714.8 501.8 712 505.2 712C509 712 510.9 715 510.9 718.4C510.9 718.6 510.8 718.9 510.8 719.1L502.1 719.1C502.4 721.1 503.8 722.1 505.5 722.1" fill="#808e90"/>
+<path d="M514.7 724.1L512 724.1L512 712.2L514.7 712.2L514.7 714.1C515.5 713 516.6 712 518.4 712C521.1 712 522.7 713.8 522.7 716.5L522.7 724.1L519.9 724.1L519.9 717.4C519.9 715.5 519 714.5 517.4 714.5C515.8 714.5 514.7 715.6 514.7 717.4Z" fill="#808e90"/>
+<path d="M525.4 711.5L524.3 711.5L524.3 708.4L527.3 708.4L527.3 711C527.3 713.5 526.1 714.6 523.8 714.7L523.5 713.6C524.9 713.3 525.5 712.6 525.4 711.5" fill="#808e90"/>
+<path d="M531.3 724.3C529.6 724.3 527.8 723.7 526.3 722.5L527.5 720.7C528.8 721.7 530.2 722.1 531.4 722.1C532.5 722.1 533.2 721.7 533.2 720.9L533.2 720.8C533.2 719.9 532 719.6 530.6 719.2C528.8 718.7 526.9 718 526.9 715.7L526.9 715.7C526.9 713.4 528.7 712 531.1 712C532.6 712 534.2 712.6 535.4 713.4L534.4 715.3C533.2 714.6 532 714.2 531 714.2C530 714.2 529.4 714.7 529.4 715.4L529.4 715.4C529.4 716.3 530.6 716.6 532 717.1C533.7 717.6 535.7 718.4 535.7 720.5L535.7 720.6C535.7 723.1 533.8 724.3 531.3 724.3" fill="#808e90"/>
+<path d="M502.2 665.9C500.3 664.9 498.4 663.6 496.5 662.2C496.5 662.2 496.5 662.2 496.5 662.2L496.5 662.2C496.5 662.2 496.5 662.2 496.5 662.2C498.5 660.9 500.4 659.6 502.2 658.1C500 658.4 497.8 658.5 495.4 658.5C495.4 658.5 495.4 658.5 495.4 658.5L495.4 658.5C495.4 658.5 495.4 658.5 495.4 658.5C495.6 658.1 495.7 657.7 495.9 657.3C496.5 655.5 497.2 653.6 497.6 651.8C496.1 653.3 494.3 654.7 492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1L492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1C492.3 655.7 492.1 655.3 492 654.9C491.5 653 490.9 651.1 490.2 649.4C489.9 651.6 489.2 653.7 488.5 655.9C488.2 655.7 487.8 655.4 487.5 655.2C485.9 654 484.4 652.8 482.8 651.8C483.8 653.8 484.6 655.9 485.3 658.1C485.3 658.1 485.3 658.1 485.3 658.1L485.3 658.1C485.3 658.1 485.3 658.1 485.3 658.1C484.8 658.1 484.4 658.1 484 658.1C482 658 480.1 658 478.2 658.1C480.2 659.1 482.1 660.4 483.9 661.8C483.9 661.8 483.9 661.8 483.9 661.8L483.9 661.8C483.9 661.8 483.9 661.8 483.9 661.8C483.6 662 483.2 662.2 482.9 662.5C481.3 663.6 479.7 664.7 478.2 665.9C480.4 665.6 482.7 665.5 485 665.5L485 665.5C484.2 667.7 483.4 670 482.8 672.2C484.4 670.6 486.2 669.3 488 667.9C488 667.9 488 667.9 488 667.9L488.1 667.9C488.1 667.9 488.1 667.9 488 667.9C488.7 670.2 489.4 672.5 490.2 674.6C490.6 672.4 491.2 670.3 491.9 668.1L492 668.1C493.8 669.5 495.7 671 497.6 672.2C496.6 670.2 495.9 668.1 495.2 665.9L495.2 665.9C497.6 666 499.9 666 502.2 665.9" fill="#ffffff"/>
+<path d="M488 667.9C488.1 667.9 488.1 667.9 488.1 667.9L488 667.9C488 667.9 488 667.9 488 667.9" fill="#b18ac2"/>
+<path d="M492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1L492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1" fill="#b18ac2"/>
+<path d="M488 667.9C488.1 667.9 488.1 667.9 488.1 667.9L488 667.9C488 667.9 488 667.9 488 667.9" fill="#b18ac2"/>
+<path d="M492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1L492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1" fill="#b18ac2"/>
+<path d="M491.4 685.4C491.4 685.4 491.4 685.4 491.4 685.4C489.7 681.9 489.6 678.3 490.2 674.6C489.4 672.5 488.7 670.2 488 667.9C486.2 669.3 484.4 670.6 482.8 672.2C481.5 677.1 481.1 681.9 483.6 686.5L484.4 686.4C484.4 686.4 484.4 686.4 484.4 686.4C484.9 686.3 485.3 686.3 485.8 686.2L491.4 685.4Z" fill="#b18ac2"/>
+<path d="M504.9 680.2C501.5 678.4 499.3 675.5 497.6 672.2C495.7 671 493.8 669.5 492 668.1L491.9 668.1C491.2 670.3 490.6 672.4 490.2 674.6C492 679.4 494.6 683.5 499.3 685.8C499.3 685.7 499.3 685.7 499.4 685.6Z" fill="#ffa62d"/>
+<path d="M485.3 658.1L485.3 658.1C485.3 658.1 485.3 658.1 485.3 658.1C485.3 658.1 485.3 658.1 485.3 658.1" fill="#75b8db"/>
+<path d="M512.9 668.1C509 668.6 505.5 667.6 502.2 665.9C499.9 666 497.6 666 495.2 665.9L495.2 665.9C495.9 668.1 496.6 670.2 497.6 672.2C501.9 675 506.4 676.8 511.5 675.9L512.8 668.1L512.9 668.1C512.9 668.1 512.9 668.1 512.9 668.1" fill="#75b8db"/>
+<path d="M483.9 661.8L483.9 661.8C483.9 661.8 483.9 661.8 483.9 661.8C483.9 661.8 483.9 661.8 483.9 661.8" fill="#f57938"/>
+<path d="M515.6 660.7L514.4 658.4C514.4 658.4 514.4 658.4 514.4 658.4L512.1 653.6C509.3 656.3 505.9 657.6 502.2 658.1C500.4 659.6 498.5 660.9 496.5 662.2C498.4 663.6 500.3 664.9 502.2 665.9C507.3 665.6 512 664.5 515.6 660.7C515.6 660.7 515.6 660.7 515.6 660.7" fill="#f57938"/>
+<path d="M496.5 662.2C496.5 662.2 496.5 662.2 496.5 662.2C496.5 662.2 496.5 662.2 496.5 662.2Z" fill="#f57938"/>
+<path d="M495.4 658.5C495.4 658.5 495.4 658.5 495.4 658.5C495.4 658.5 495.4 658.5 495.4 658.5Z" fill="#a6af3b"/>
+<path d="M503 642.4L503 642.3C503 642.3 503 642.3 503 642.3C502.3 646.2 500.3 649.2 497.6 651.8C497.1 653.6 496.5 655.5 495.9 657.3C495.7 657.7 495.6 658.1 495.4 658.5C497.8 658.5 500 658.4 502.2 658.1C506.2 654.9 509.3 651.2 510 646.1Z" fill="#a6af3b"/>
+<path d="M492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1L492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1" fill="#b18ac2"/>
+<path d="M487.9 667.9C487.9 667.9 487.9 667.9 487.9 667.9L487.9 667.9C487.9 667.9 487.9 667.9 487.9 667.9" fill="#b18ac2"/>
+<path d="M492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1L492.4 656.1C492.4 656.1 492.4 656.1 492.4 656.1" fill="#b18ac2"/>
+<path d="M487.9 667.9C487.9 667.9 487.9 667.9 487.9 667.9L487.9 667.9C487.9 667.9 487.9 667.9 487.9 667.9" fill="#b18ac2"/>
+<path d="M489 638.6C489 638.6 489 638.6 489 638.6C490.7 642.1 490.9 645.7 490.2 649.4C491.1 651.6 491.7 653.8 492.4 656.1C494.3 654.8 496.1 653.4 497.6 651.8C499 646.9 499.3 642.1 496.9 637.5L496 637.6C496 637.6 496 637.6 496 637.6C495.6 637.7 495.1 637.7 494.6 637.8L489 638.6Z" fill="#b18ac2"/>
+<path d="M475.5 643.8C478.9 645.6 481.2 648.5 482.8 651.8C484.7 653.1 486.6 654.5 488.5 656L488.5 655.9C489.2 653.8 489.9 651.6 490.2 649.4C488.4 644.7 485.8 640.5 481.2 638.3C481.1 638.3 481.1 638.3 481 638.4Z" fill="#ffa62d"/>
+<path d="M495.2 665.9L495.1 665.9C495.1 665.9 495.2 665.9 495.2 665.9C495.2 665.9 495.2 665.9 495.2 665.9" fill="#75b8db"/>
+<path d="M467.6 655.9C471.4 655.4 474.9 656.4 478.2 658.1C480.5 658 482.9 658 485.2 658.1L485.3 658.1C484.6 655.9 483.8 653.8 482.8 651.8C478.6 649.1 474.1 647.2 468.9 648.1L467.6 655.9L467.6 655.9C467.6 655.9 467.6 655.9 467.6 655.9" fill="#75b8db"/>
+<path d="M496.5 662.2L496.5 662.3C496.5 662.3 496.5 662.3 496.5 662.3C496.5 662.3 496.5 662.3 496.5 662.2" fill="#f57938"/>
+<path d="M464.8 663.3L466 665.7C466 665.7 466 665.7 466 665.7L468.3 670.4C471.1 667.7 474.5 666.4 478.2 665.9C480 664.5 482 663.1 483.9 661.8C482.1 660.4 480.2 659.1 478.2 658.1C473.1 658.4 468.4 659.5 464.8 663.3C464.8 663.3 464.8 663.3 464.8 663.3" fill="#f57938"/>
+<path d="M483.9 661.8C483.9 661.8 483.9 661.8 483.9 661.8C483.9 661.8 483.9 661.8 483.9 661.8Z" fill="#f57938"/>
+<path d="M485 665.5C485 665.5 485 665.5 485 665.5C485 665.5 485 665.5 485 665.5Z" fill="#a6af3b"/>
+<path d="M477.4 681.7L477.4 681.7C477.4 681.7 477.4 681.7 477.4 681.7C478.1 677.9 480.1 674.8 482.8 672.2C483.3 670.4 483.9 668.6 484.6 666.7C484.7 666.3 484.8 665.9 485 665.5C482.7 665.5 480.4 665.6 478.2 665.9C474.3 669.1 471.1 672.8 470.4 677.9Z" fill="#a6af3b"/>
+<path d="M36 535.9L204 535.9" fill="none" stroke="#828e90" stroke-width="1"/>
+</g>
+<g fill="#1a1a1a" stroke="#ffffff" stroke-linejoin="round" paint-order="stroke">
+<text x="35.3" y="61.6" font-size="32" stroke-width="5.4">main campus</text>
+<text x="36" y="150.1" font-size="11" stroke-width="1.9">Culinairy Kitchen and Up Cafe</text>
+<text x="168.2" y="150.1" font-size="11" stroke-width="1.9">................................... 1</text>
+<text x="36" y="164" font-size="11" stroke-width="1.9">Entrance &amp; parking garage</text>
+<text x="151.1" y="164" font-size="11" stroke-width="1.9">.......................................... 1</text>
+<text x="36" y="177.8" font-size="11" stroke-width="1.9">Pharmacy</text>
+<text x="77.6" y="177.8" font-size="11" stroke-width="1.9">........................................................................ 1</text>
+<text x="36" y="191.7" font-size="11" stroke-width="1.9">Admitting</text>
+<text x="80.1" y="191.7" font-size="11" stroke-width="1.9">...................................Yellow</text>
+<text x="195.2" y="191.7" font-size="11" stroke-width="1.9">........................ 1</text>
+<text x="36" y="205.5" font-size="11" stroke-width="1.9">Adult cystic fibrosis clinic</text>
+<text x="141.3" y="205.5" font-size="11" stroke-width="1.9">........... Blue</text>
+<text x="190.3" y="205.5" font-size="11" stroke-width="1.9">.......................... 4</text>
+<text x="36" y="219.4" font-size="11" stroke-width="1.9">Auditorium</text>
+<text x="87.4" y="219.4" font-size="11" stroke-width="1.9">................................Purple</text>
+<text x="195.2" y="219.4" font-size="11" stroke-width="1.9">....................... LL</text>
+<text x="36" y="233.3" font-size="11" stroke-width="1.9">Cardiology/Lipid</text>
+<text x="109.5" y="233.3" font-size="11" stroke-width="1.9">........................ Blue</text>
+<text x="190.3" y="233.3" font-size="11" stroke-width="1.9">.......................... 3</text>
+<text x="36" y="247.1" font-size="11" stroke-width="1.9">Child advocacy clinic</text>
+<text x="124.2" y="247.1" font-size="11" stroke-width="1.9">.................. Blue</text>
+<text x="190.3" y="247.1" font-size="11" stroke-width="1.9">.......................... 1</text>
+<text x="36" y="261" font-size="11" stroke-width="1.9">Genetics</text>
+<text x="72.7" y="261" font-size="11" stroke-width="1.9">....................................... Blue</text>
+<text x="190.3" y="261" font-size="11" stroke-width="1.9">.......................... 4</text>
+<text x="36" y="274.8" font-size="11" stroke-width="1.9">Genetic counseling</text>
+<text x="116.8" y="274.8" font-size="11" stroke-width="1.9">..................... Blue</text>
+<text x="190.3" y="274.8" font-size="11" stroke-width="1.9">.......................... 4</text>
+<text x="35.9" y="288.7" font-size="11" stroke-width="1.9">Gynecology</text>
+<text x="84.9" y="288.7" font-size="11" stroke-width="1.9">.................................. Blue</text>
+<text x="190.2" y="288.7" font-size="11" stroke-width="1.9">.......................... 4</text>
+<text x="35.9" y="302.6" font-size="11" stroke-width="1.9">Hematology/oncology</text>
+<text x="131.5" y="302.6" font-size="11" stroke-width="1.9">.............. Tower</text>
+<text x="192.7" y="302.6" font-size="11" stroke-width="1.9">......................... 4</text>
+<text x="35.9" y="316.4" font-size="11" stroke-width="1.9">Lab/Imaging</text>
+<text x="92.3" y="316.4" font-size="11" stroke-width="1.9">..............................Yellow</text>
+<text x="195.1" y="316.4" font-size="11" stroke-width="1.9">........................ 1</text>
+<text x="35.9" y="330.3" font-size="11" stroke-width="1.9">Neuro-oncology</text>
+<text x="102" y="330.3" font-size="11" stroke-width="1.9">.......................... Tower</text>
+<text x="192.7" y="330.3" font-size="11" stroke-width="1.9">......................... 4</text>
+<text x="314.9" y="141.2" font-size="11" stroke-width="1.9">Neurosurgery</text>
+<text x="371.3" y="141.2" font-size="11" stroke-width="1.9">..............................Purple</text>
+<text x="474.1" y="141.2" font-size="11" stroke-width="1.9">........................ 2</text>
+<text x="314.9" y="155.1" font-size="11" stroke-width="1.9">NICU</text>
+<text x="344.3" y="155.1" font-size="11" stroke-width="1.9">......................................... Tower</text>
+<text x="471.7" y="155.1" font-size="11" stroke-width="1.9">......................... 5</text>
+<text x="315" y="169" font-size="10.4" stroke-width="1.8">Pediatric procedural unit (PPU)</text>
+<text x="440.6" y="169" font-size="10.4" stroke-width="1.8">..Yellow</text>
+<text x="474.2" y="169" font-size="11" stroke-width="1.9">........................ 2</text>
+<text x="315" y="182.8" font-size="11" stroke-width="1.9">PICU</text>
+<text x="341.9" y="182.8" font-size="11" stroke-width="1.9">.......................................... Tower</text>
+<text x="471.8" y="182.8" font-size="11" stroke-width="1.9">......................... 6</text>
+<text x="315" y="196.7" font-size="11" stroke-width="1.9">Psychology</text>
+<text x="361.5" y="196.7" font-size="11" stroke-width="1.9">................................... Blue</text>
+<text x="469.3" y="196.7" font-size="11" stroke-width="1.9">.......................... 1</text>
+<text x="315" y="210.5" font-size="11" stroke-width="1.9">Rehab services</text>
+<text x="315" y="222.2" font-size="11" stroke-width="1.9">(Physical &amp; occupational</text>
+<text x="315" y="233.9" font-size="11" stroke-width="1.9">therapy, Speech/</text>
+<text x="315" y="245.6" font-size="11" stroke-width="1.9">language pathology)</text>
+<text x="398.2" y="245.6" font-size="11" stroke-width="1.9">.................... Blue</text>
+<text x="469.3" y="245.6" font-size="11" stroke-width="1.9">......................... LL</text>
+<text x="315" y="259.5" font-size="11" stroke-width="1.9">Sleep lab</text>
+<text x="354.2" y="259.5" font-size="11" stroke-width="1.9">.....................................Yellow</text>
+<text x="474.2" y="259.5" font-size="11" stroke-width="1.9">....................... LL</text>
+<text x="315" y="273.4" font-size="11" stroke-width="1.9">Specialty pediatrics</text>
+<text x="393.4" y="273.4" font-size="11" stroke-width="1.9">..................... Tower</text>
+<text x="471.7" y="273.4" font-size="11" stroke-width="1.9">..................... 7 &amp; 8</text>
+<text x="315" y="287.2" font-size="11" stroke-width="1.9">Southwest Ohio ENT</text>
+<text x="405.6" y="287.2" font-size="11" stroke-width="1.9">................Purple</text>
+<text x="474.2" y="287.2" font-size="11" stroke-width="1.9">....................... LL</text>
+<text x="315" y="301.1" font-size="11" stroke-width="1.9">Surgery center</text>
+<text x="376.2" y="301.1" font-size="11" stroke-width="1.9">............................Yellow</text>
+<text x="474.2" y="301.1" font-size="11" stroke-width="1.9">........................ 2</text>
+<text x="315" y="314.9" font-size="11" stroke-width="1.9">TCU</text>
+<text x="339.5" y="314.9" font-size="11" stroke-width="1.9">........................................... Tower</text>
+<text x="471.7" y="314.9" font-size="11" stroke-width="1.9">......................... 8</text>
+<text x="315" y="328.8" font-size="11" stroke-width="1.9">3 West</text>
+<text x="344.4" y="328.8" font-size="11" stroke-width="1.9">.........................................Yellow</text>
+<text x="474.2" y="328.8" font-size="11" stroke-width="1.9">........................ 3</text>
+<text x="232.6" y="111" font-size="11" stroke-width="1.9">registration/</text>
+<text x="36" y="123" font-size="11" stroke-width="1.9">destination</text>
+<text x="163.5" y="123" font-size="11" stroke-width="1.9">elevator</text>
+<text x="229" y="123" font-size="11" stroke-width="1.9">clinic location</text>
+<text x="511.6" y="111.2" font-size="11" stroke-width="1.9">registration/</text>
+<text x="315" y="123.2" font-size="11" stroke-width="1.9">destination</text>
+<text x="442.5" y="123.2" font-size="11" stroke-width="1.9">elevator</text>
+<text x="508" y="123.2" font-size="11" stroke-width="1.9">clinic location</text>
+<text x="36" y="557.4" font-size="12" stroke-width="2">Connor Child Health Pavilion</text>
+<text x="36" y="581.4" font-size="11" stroke-width="1.9">clinic</text>
+<text x="86.7" y="581.4" font-size="11" stroke-width="1.9">registration/clinic location</text>
+<text x="36" y="596.4" font-size="11" stroke-width="1.9">Entrance, parking &amp; registration</text>
+<text x="170.7" y="596.4" font-size="11" stroke-width="1.9">.......1</text>
+<text x="36" y="611" font-size="11" stroke-width="1.9">Financial advocates</text>
+<text x="116.8" y="611" font-size="11" stroke-width="1.9">.............................1</text>
+<text x="36" y="625.6" font-size="11" stroke-width="1.9">Up Cafe</text>
+<text x="72.7" y="625.6" font-size="11" stroke-width="1.9">...............................................1</text>
+<text x="36" y="640.2" font-size="11" stroke-width="1.9">Complex critical care</text>
+<text x="124.2" y="640.2" font-size="11" stroke-width="1.9">..........................1</text>
+<text x="36" y="654.8" font-size="11" stroke-width="1.9">Dayton Children’s Pediatrics</text>
+<text x="156" y="654.8" font-size="11" stroke-width="1.9">.............1</text>
+<text x="36" y="670.4" font-size="11" stroke-width="1.9">Dentistry</text>
+<text x="75.2" y="670.4" font-size="11" stroke-width="1.9">..............................................1</text>
+<text x="36" y="686" font-size="11" stroke-width="1.9">Developmental pediatrics</text>
+<text x="141.3" y="686" font-size="11" stroke-width="1.9">...................2</text>
+<text x="36" y="700.6" font-size="11" stroke-width="1.9">Family Resource Connection</text>
+<text x="160.9" y="700.6" font-size="11" stroke-width="1.9">...........1</text>
+<text x="36" y="715.2" font-size="11" stroke-width="1.9">Foster &amp; kinship care</text>
+<text x="126.6" y="715.2" font-size="11" stroke-width="1.9">.........................1</text>
+<text x="36" y="729.8" font-size="11" stroke-width="1.9">Healthy Me</text>
+<text x="85" y="729.8" font-size="11" stroke-width="1.9">..........................................1</text>
+<text x="36" y="745.4" font-size="11" stroke-width="1.9">Infant developmental follow-up</text>
+<text x="165.8" y="745.4" font-size="11" stroke-width="1.9">.........2</text>
+<text x="36" y="761" font-size="11" stroke-width="1.9">Lactation clinic</text>
+<text x="99.7" y="761" font-size="11" stroke-width="1.9">....................................1</text>
+<text x="36" y="359.2" font-size="12" stroke-width="2">specialty care center</text>
+<text x="36" y="376.3" font-size="11" stroke-width="1.9">destination</text>
+<text x="180.5" y="376.3" font-size="11" stroke-width="1.9">floor</text>
+<text x="36" y="393.3" font-size="11" stroke-width="1.9">Entrance, parking &amp; registration</text>
+<text x="170.7" y="393.3" font-size="11" stroke-width="1.9">......2</text>
+<text x="36" y="407.5" font-size="11" stroke-width="1.9">Financial advocates</text>
+<text x="116.8" y="407.5" font-size="11" stroke-width="1.9">............................2</text>
+<text x="36" y="421.6" font-size="11" stroke-width="1.9">Up Cafe</text>
+<text x="72.7" y="421.6" font-size="11" stroke-width="1.9">..............................................2</text>
+<text x="36" y="435.5" font-size="11" stroke-width="1.9">Allergy &amp; immunology</text>
+<text x="131.5" y="435.5" font-size="11" stroke-width="1.9">.................... 4A</text>
+<text x="36" y="449.3" font-size="11" stroke-width="1.9">Audiology</text>
+<text x="80.1" y="449.3" font-size="11" stroke-width="1.9">......................................... 1C</text>
+<text x="36" y="463.2" font-size="11" stroke-width="1.9">Cerebral palsy clinic</text>
+<text x="119.3" y="463.2" font-size="11" stroke-width="1.9">......................... 3A</text>
+<text x="36" y="477" font-size="11" stroke-width="1.9">Chronic pain clinic</text>
+<text x="116.8" y="477" font-size="11" stroke-width="1.9">.......................... 3A</text>
+<text x="36" y="490.9" font-size="11" stroke-width="1.9">Cleft palate clinic</text>
+<text x="109.5" y="490.9" font-size="11" stroke-width="1.9">..............................1B</text>
+<text x="36" y="504.8" font-size="11" stroke-width="1.9">Endocrinology &amp; diabetes</text>
+<text x="146.2" y="504.8" font-size="11" stroke-width="1.9">.............. 4A</text>
+<text x="36" y="518.6" font-size="11" stroke-width="1.9">ENT (Ears, Nose &amp; Throat)</text>
+<text x="153.5" y="518.6" font-size="11" stroke-width="1.9">............1B</text>
+<text x="222" y="393.3" font-size="11" stroke-width="1.9">Gastroenterology</text>
+<text x="293" y="393.3" font-size="11" stroke-width="1.9">.............................. 2A</text>
+<text x="222" y="407.1" font-size="11" stroke-width="1.9">Infectious disease</text>
+<text x="295.5" y="407.1" font-size="11" stroke-width="1.9">............................. 4A</text>
+<text x="222" y="421.3" font-size="11" stroke-width="1.9">Lab/Imaging</text>
+<text x="278.3" y="421.3" font-size="11" stroke-width="1.9">.....................................2B</text>
+<text x="222" y="435.2" font-size="11" stroke-width="1.9">Myelomeningocele clinic</text>
+<text x="324.9" y="435.2" font-size="11" stroke-width="1.9">................. 3A</text>
+<text x="222" y="449" font-size="11" stroke-width="1.9">Nephrology</text>
+<text x="271" y="449" font-size="11" stroke-width="1.9">........................................1B</text>
+<text x="222" y="462.9" font-size="11" stroke-width="1.9">Neurology and EEG</text>
+<text x="307.7" y="462.9" font-size="11" stroke-width="1.9">........................ 4A</text>
+<text x="222" y="476.7" font-size="11" stroke-width="1.9">Nutrition</text>
+<text x="263.7" y="476.7" font-size="11" stroke-width="1.9">...........................................1B</text>
+<text x="222" y="490.6" font-size="11" stroke-width="1.9">Ophthalmology</text>
+<text x="288.2" y="490.6" font-size="11" stroke-width="1.9">................................ 1A</text>
+<text x="222" y="504.5" font-size="11" stroke-width="1.9">Orthopedics</text>
+<text x="275.9" y="504.5" font-size="11" stroke-width="1.9">..................................... 3A</text>
+<text x="222" y="518.3" font-size="11" stroke-width="1.9">Physical medicine &amp; rehab</text>
+<text x="334.7" y="518.3" font-size="11" stroke-width="1.9">............. 3A</text>
+<text x="222" y="376.2" font-size="11" stroke-width="1.9">destination</text>
+<text x="366.5" y="376.2" font-size="11" stroke-width="1.9">floor</text>
+<text x="408" y="393.3" font-size="11" stroke-width="1.9">Plastic surgery</text>
+<text x="466.8" y="393.3" font-size="11" stroke-width="1.9">................................... 2A</text>
+<text x="408" y="407.2" font-size="11" stroke-width="1.9">Pre-anesthesia clinic</text>
+<text x="491.3" y="407.2" font-size="11" stroke-width="1.9">......................... 3A</text>
+<text x="408" y="421" font-size="11" stroke-width="1.9">Pulmonary</text>
+<text x="454.5" y="421" font-size="11" stroke-width="1.9">........................................ 4A</text>
+<text x="408" y="434.9" font-size="11" stroke-width="1.9">Pulmonary function lab</text>
+<text x="508.4" y="434.9" font-size="11" stroke-width="1.9">.................. 4A</text>
+<text x="408" y="448.7" font-size="11" stroke-width="1.9">Rheumatology</text>
+<text x="469.2" y="448.7" font-size="11" stroke-width="1.9">.................................. 3A</text>
+<text x="408" y="462.6" font-size="11" stroke-width="1.9">RSV prevention clinic</text>
+<text x="501.1" y="462.6" font-size="11" stroke-width="1.9">..................... 4A</text>
+<text x="408" y="476.5" font-size="11" stroke-width="1.9">Sleep medicine</text>
+<text x="471.7" y="476.5" font-size="11" stroke-width="1.9">................................. 4A</text>
+<text x="408" y="490.3" font-size="11" stroke-width="1.9">Sports medicine</text>
+<text x="476.6" y="490.3" font-size="11" stroke-width="1.9">............................... 3A</text>
+<text x="408" y="504.5" font-size="11" stroke-width="1.9">Surgery clinic</text>
+<text x="464.3" y="504.5" font-size="11" stroke-width="1.9">.................................... 2A</text>
+<text x="408" y="518.3" font-size="11" stroke-width="1.9">Urology</text>
+<text x="442.3" y="518.3" font-size="11" stroke-width="1.9">............................................. 2A</text>
+<text x="408" y="376.3" font-size="11" stroke-width="1.9">destination</text>
+<text x="552.5" y="376.3" font-size="11" stroke-width="1.9">floor</text>
+<text x="35.3" y="100.9" font-size="12" stroke-width="2">main hospital</text>
+<text x="222" y="581.4" font-size="11" stroke-width="1.9">clinic</text>
+<text x="272.7" y="581.4" font-size="11" stroke-width="1.9">registration/clinic location</text>
+<text x="221.2" y="557.2" font-size="12" stroke-width="2">Mathile Center for Mental Health and Wellness</text>
+<text x="222" y="596.4" font-size="11" stroke-width="1.9">Price Family Crisis Center</text>
+<text x="332.2" y="596.4" font-size="11" stroke-width="1.9">.................1</text>
+<text x="222" y="612" font-size="11" stroke-width="1.9">Day treatment/</text>
+<text x="222" y="624" font-size="11" stroke-width="1.9">partial hospitalization</text>
+<text x="312.6" y="624" font-size="11" stroke-width="1.9">.........................1</text>
+<text x="222" y="639.6" font-size="11" stroke-width="1.9">Bridge therapy</text>
+<text x="283.2" y="639.6" font-size="11" stroke-width="1.9">.....................................1</text>
+<text x="222" y="655.2" font-size="11" stroke-width="1.9">Mental health</text>
+<text x="222" y="667.2" font-size="11" stroke-width="1.9">inpatient unit</text>
+<text x="280.8" y="667.2" font-size="11" stroke-width="1.9">.......................... 2 and 3</text>
+<text x="455.6" y="750.2" font-size="7.4" stroke-width="1.3">above and beyond</text>
+</g>
+</svg>

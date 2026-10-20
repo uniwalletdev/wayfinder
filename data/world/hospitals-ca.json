@@ -1,0 +1,1849 @@
+{
+  "countryCode": "CA",
+  "fetchedAt": "2026-10-17T20:39:33.879Z",
+  "count": 230,
+  "droppedNoUsableWebsite": 1,
+  "droppedNoName": 2,
+  "hospitals": [
+    {
+      "code": "osm:node/469440380",
+      "name": "Musquodoboit Valley Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 45.0403498,
+      "lng": -63.1403411
+    },
+    {
+      "code": "osm:node/931251913",
+      "name": "Roseway Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 43.7492064,
+      "lng": -65.3097898
+    },
+    {
+      "code": "osm:node/1752774549",
+      "name": "Flin Flon General Hospital",
+      "countryCode": "CA",
+      "origin": "https://northernhealthregion.com",
+      "lat": 54.7651164,
+      "lng": -101.8777507
+    },
+    {
+      "code": "osm:node/2390914683",
+      "name": "Churchill Health Centre",
+      "countryCode": "CA",
+      "origin": "http://www.churchillrha.com",
+      "lat": 58.7720584,
+      "lng": -94.1714057
+    },
+    {
+      "code": "osm:node/2496131041",
+      "name": "CLSC de Mercier-Est-Anjou",
+      "countryCode": "CA",
+      "origin": "https://cssspointe.ca",
+      "lat": 45.6117513,
+      "lng": -73.5270569
+    },
+    {
+      "code": "osm:node/2923666090",
+      "name": "Chetwynd Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 55.6963359,
+      "lng": -121.6442067
+    },
+    {
+      "code": "osm:node/3155946154",
+      "name": "Pemberton Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.vch.ca",
+      "lat": 50.3211236,
+      "lng": -122.8043451
+    },
+    {
+      "code": "osm:node/4858168655",
+      "name": "Arrow Lakes Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 50.238755,
+      "lng": -117.794981
+    },
+    {
+      "code": "osm:node/5549289222",
+      "name": "Eastern Shore Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 44.9207756,
+      "lng": -62.5327695
+    },
+    {
+      "code": "osm:node/6388426551",
+      "name": "Ashnola at the Crossing",
+      "countryCode": "CA",
+      "origin": "https://www.bcmhsus.ca",
+      "lat": 49.2205368,
+      "lng": -119.9559674
+    },
+    {
+      "code": "osm:node/7779697254",
+      "name": "Twin Oaks Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 44.7829962,
+      "lng": -63.1582526
+    },
+    {
+      "code": "osm:node/8508184533",
+      "name": "UBC Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.vch.ca",
+      "lat": 49.2641866,
+      "lng": -123.245747
+    },
+    {
+      "code": "osm:node/9203661849",
+      "name": "St. Joseph's Hospital and Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.saskhealthauthority.ca",
+      "lat": 55.4455763,
+      "lng": -107.8998224
+    },
+    {
+      "code": "osm:node/10792747906",
+      "name": "Complexe médicale Saint Laurent",
+      "countryCode": "CA",
+      "origin": "https://www.centre-urgence-st-laurent.ca",
+      "lat": 45.5161608,
+      "lng": -73.696249
+    },
+    {
+      "code": "osm:node/11060200105",
+      "name": "CHUM",
+      "countryCode": "CA",
+      "origin": "http://chumontreal.qc.ca",
+      "lat": 45.5116095,
+      "lng": -73.5567709
+    },
+    {
+      "code": "osm:node/11203418148",
+      "name": "Hôpital de l'Archipel",
+      "countryCode": "CA",
+      "origin": "https://www.cisssdesiles.com",
+      "lat": 47.3755551,
+      "lng": -61.8687518
+    },
+    {
+      "code": "osm:node/12621046484",
+      "name": "centre dentaire nuvosmile terrebonne",
+      "countryCode": "CA",
+      "origin": "https://www.nuvosmile.com",
+      "lat": 45.7113424,
+      "lng": -73.5100535
+    },
+    {
+      "code": "osm:node/12621209395",
+      "name": "Clinique Dentaire Cartier - Salaberry",
+      "countryCode": "CA",
+      "origin": "https://www.cliniquedentairecartier.com",
+      "lat": 45.5309199,
+      "lng": -73.7085153
+    },
+    {
+      "code": "osm:node/12621229708",
+      "name": "Centre dentaire Westminster",
+      "countryCode": "CA",
+      "origin": "https://www.centredentairewestminster.com",
+      "lat": 45.4538544,
+      "lng": -73.6473763
+    },
+    {
+      "code": "osm:node/12621241246",
+      "name": "Clinique Dentaire Cartier - Verdun",
+      "countryCode": "CA",
+      "origin": "https://cliniquedentairecartier.com",
+      "lat": 45.4560135,
+      "lng": -73.572119
+    },
+    {
+      "code": "osm:node/12621287966",
+      "name": "Linea Smile - DENTISTE et ORTHODONTISTE - St-Hubert",
+      "countryCode": "CA",
+      "origin": "https://lineasmile.com",
+      "lat": 45.4928794,
+      "lng": -73.38111
+    },
+    {
+      "code": "osm:node/12821442807",
+      "name": "Three Sixty Health",
+      "countryCode": "CA",
+      "origin": "https://www.tshealth.ca",
+      "lat": 44.3530518,
+      "lng": -78.7365006
+    },
+    {
+      "code": "osm:node/13231937549",
+      "name": "Jensen Lakes Dental",
+      "countryCode": "CA",
+      "origin": "https://www.jensenlakesdental.com",
+      "lat": 53.6643976,
+      "lng": -113.636479
+    },
+    {
+      "code": "osm:node/13343201823",
+      "name": "Dr. S. Beckley Health Care Centre",
+      "countryCode": "CA",
+      "origin": "https://nlhealthservices.ca",
+      "lat": 47.0947172,
+      "lng": -55.7616129
+    },
+    {
+      "code": "osm:node/13478609392",
+      "name": "Stittsville Kanata Veterinary Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.skvh.ca",
+      "lat": 45.273924,
+      "lng": -75.8703818
+    },
+    {
+      "code": "osm:node/13751443002",
+      "name": "Juravinski Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.hamiltonhealthsciences.ca",
+      "lat": 43.2399259,
+      "lng": -79.8448877
+    },
+    {
+      "code": "osm:node/14015573901",
+      "name": "Dr Georges Dumont Hospital",
+      "countryCode": "CA",
+      "origin": "https://vitalitenb.ca",
+      "lat": 46.097861,
+      "lng": -64.7870292
+    },
+    {
+      "code": "osm:node/14015573902",
+      "name": "Moncton Hospital",
+      "countryCode": "CA",
+      "origin": "https://horizonnb.ca",
+      "lat": 46.1046075,
+      "lng": -64.8051777
+    },
+    {
+      "code": "osm:node/14179873948",
+      "name": "Neighbourhood Dental Blackfalds",
+      "countryCode": "CA",
+      "origin": "https://www.nhdblackfalds.com",
+      "lat": 52.3732187,
+      "lng": -113.794956
+    },
+    {
+      "code": "osm:way/4766901",
+      "name": "Royal Jubilee Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.islandhealth.ca",
+      "lat": 48.4324503,
+      "lng": -123.3269499
+    },
+    {
+      "code": "osm:way/4814073",
+      "name": "Alberta Children's Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 51.0747205,
+      "lng": -114.1479501
+    },
+    {
+      "code": "osm:way/4860451",
+      "name": "Foothills Medical Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 51.0651377,
+      "lng": -114.1351878
+    },
+    {
+      "code": "osm:way/4860979",
+      "name": "Peter Lougheed Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 51.0791215,
+      "lng": -113.9845973
+    },
+    {
+      "code": "osm:way/23453313",
+      "name": "Saskatoon City Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.saskhealthauthority.ca",
+      "lat": 52.1357176,
+      "lng": -106.6539174
+    },
+    {
+      "code": "osm:way/23811142",
+      "name": "Lions Gate Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.vch.ca",
+      "lat": 49.3209784,
+      "lng": -123.0676719
+    },
+    {
+      "code": "osm:way/25207131",
+      "name": "Chilliwack General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.1668554,
+      "lng": -121.9638602
+    },
+    {
+      "code": "osm:way/27006473",
+      "name": "Sunnybrook Health Sciences Centre - Bayview Campus",
+      "countryCode": "CA",
+      "origin": "https://www.sunnybrook.ca",
+      "lat": 43.7227903,
+      "lng": -79.3738222
+    },
+    {
+      "code": "osm:way/30773464",
+      "name": "Misericordia Health Centre",
+      "countryCode": "CA",
+      "origin": "https://misericordia.mb.ca",
+      "lat": 49.8795308,
+      "lng": -97.1600048
+    },
+    {
+      "code": "osm:way/40047037",
+      "name": "Hôpital Pierre-Boucher",
+      "countryCode": "CA",
+      "origin": "https://www.santemonteregie.qc.ca",
+      "lat": 45.5378061,
+      "lng": -73.4592445
+    },
+    {
+      "code": "osm:way/41770711",
+      "name": "Eagle Ridge Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.2851831,
+      "lng": -122.8243716
+    },
+    {
+      "code": "osm:way/41839791",
+      "name": "Burnaby Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.2496764,
+      "lng": -123.0154562
+    },
+    {
+      "code": "osm:way/41879302",
+      "name": "Royal Columbian Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.2266427,
+      "lng": -122.890664
+    },
+    {
+      "code": "osm:way/43809864",
+      "name": "Mount Sinai Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.mountsinai.on.ca",
+      "lat": 43.6579066,
+      "lng": -79.3917604
+    },
+    {
+      "code": "osm:way/51185697",
+      "name": "St. Paul's Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.providencehealthcare.org",
+      "lat": 49.2806221,
+      "lng": -123.1289183
+    },
+    {
+      "code": "osm:way/77402854",
+      "name": "Guysborough Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 45.4023533,
+      "lng": -61.5071217
+    },
+    {
+      "code": "osm:way/93844827",
+      "name": "Kitimat General Hospital and Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 54.0504474,
+      "lng": -128.6471304
+    },
+    {
+      "code": "osm:way/98249415",
+      "name": "Leduc Community Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 53.2551282,
+      "lng": -113.5457984
+    },
+    {
+      "code": "osm:way/100584338",
+      "name": "Kelowna General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.8738661,
+      "lng": -119.4934868
+    },
+    {
+      "code": "osm:way/102179690",
+      "name": "Elk Valley Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.5136559,
+      "lng": -115.0560971
+    },
+    {
+      "code": "osm:way/112892894",
+      "name": "Yorkton Regional Health Center",
+      "countryCode": "CA",
+      "origin": "http://www.sunrisehealthregion.sk.ca",
+      "lat": 51.2017726,
+      "lng": -102.4807859
+    },
+    {
+      "code": "osm:way/118487958",
+      "name": "Drumheller Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 51.4692237,
+      "lng": -112.7264737
+    },
+    {
+      "code": "osm:way/120454311",
+      "name": "Saint Boniface Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.sbgh.mb.ca",
+      "lat": 49.8845636,
+      "lng": -97.1252603
+    },
+    {
+      "code": "osm:way/123962247",
+      "name": "Fort Macleod Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 49.7259032,
+      "lng": -113.3933087
+    },
+    {
+      "code": "osm:way/140180455",
+      "name": "WRHN @ Midtown",
+      "countryCode": "CA",
+      "origin": "https://www.grhosp.on.ca",
+      "lat": 43.4562139,
+      "lng": -80.5120509
+    },
+    {
+      "code": "osm:way/142952019",
+      "name": "Hôpital de Chandler",
+      "countryCode": "CA",
+      "origin": "http://csssrocherperce.org",
+      "lat": 48.3548126,
+      "lng": -64.671661
+    },
+    {
+      "code": "osm:way/143310816",
+      "name": "Strathcona Community Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 53.5682411,
+      "lng": -113.2758681
+    },
+    {
+      "code": "osm:way/144825870",
+      "name": "Shuswap Lake General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 50.7042326,
+      "lng": -119.2744311
+    },
+    {
+      "code": "osm:way/149812959",
+      "name": "Sackville Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "http://en.horizonnb.ca",
+      "lat": 45.8922263,
+      "lng": -64.3732397
+    },
+    {
+      "code": "osm:way/155641442",
+      "name": "Regina General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.rqhealth.ca",
+      "lat": 50.4439653,
+      "lng": -104.6012873
+    },
+    {
+      "code": "osm:way/160634366",
+      "name": "Hudson's Hope Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 56.0263624,
+      "lng": -121.9157467
+    },
+    {
+      "code": "osm:way/162624424",
+      "name": "Cape Breton Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 46.1128947,
+      "lng": -60.174454
+    },
+    {
+      "code": "osm:way/167486872",
+      "name": "Three Hills Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 51.708089,
+      "lng": -113.2512616
+    },
+    {
+      "code": "osm:way/177614384",
+      "name": "Brampton Civic Hospital",
+      "countryCode": "CA",
+      "origin": "http://www.williamoslerhc.on.ca",
+      "lat": 43.7470704,
+      "lng": -79.743132
+    },
+    {
+      "code": "osm:way/177677911",
+      "name": "Strathroy Middlesex General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.mhalliance.on.ca",
+      "lat": 42.9606271,
+      "lng": -81.6336844
+    },
+    {
+      "code": "osm:way/183333366",
+      "name": "Gimli Community Health Centre",
+      "countryCode": "CA",
+      "origin": "http://www.irha.mb.ca",
+      "lat": 50.6278891,
+      "lng": -96.994107
+    },
+    {
+      "code": "osm:way/184193563",
+      "name": "Dawson Creek and District Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 55.7496995,
+      "lng": -120.2355971
+    },
+    {
+      "code": "osm:way/184775525",
+      "name": "Eastern Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://nshealth.ca",
+      "lat": 45.3327264,
+      "lng": -60.9841336
+    },
+    {
+      "code": "osm:way/188135708",
+      "name": "St. Anne Community and Nursing Care Centre",
+      "countryCode": "CA",
+      "origin": "https://stannecentre.ca",
+      "lat": 45.5110163,
+      "lng": -61.0320507
+    },
+    {
+      "code": "osm:way/188852883",
+      "name": "Pine Falls Health Complex",
+      "countryCode": "CA",
+      "origin": "https://www.ierha.ca",
+      "lat": 50.563405,
+      "lng": -96.2151339
+    },
+    {
+      "code": "osm:way/202828386",
+      "name": "Shoal Lake/Strathclair Health Centre",
+      "countryCode": "CA",
+      "origin": "http://www.assiniboine-rha.ca",
+      "lat": 50.4388227,
+      "lng": -100.5947592
+    },
+    {
+      "code": "osm:way/211459961",
+      "name": "Royal Victoria Regional Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.rvh.on.ca",
+      "lat": 44.4149163,
+      "lng": -79.6629195
+    },
+    {
+      "code": "osm:way/219726162",
+      "name": "Peel Memorial Centre for Integrated Health and Wellness",
+      "countryCode": "CA",
+      "origin": "https://www.williamoslerhs.ca",
+      "lat": 43.6907756,
+      "lng": -79.7513406
+    },
+    {
+      "code": "osm:way/222375116",
+      "name": "Golden and District Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 51.2970132,
+      "lng": -116.9670973
+    },
+    {
+      "code": "osm:way/222828095",
+      "name": "Invermere and District Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 50.5065317,
+      "lng": -116.0333289
+    },
+    {
+      "code": "osm:way/224042852",
+      "name": "Victoria County Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 46.1003359,
+      "lng": -60.7559763
+    },
+    {
+      "code": "osm:way/233309999",
+      "name": "Langley Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.0942805,
+      "lng": -122.6119512
+    },
+    {
+      "code": "osm:way/239004221",
+      "name": "Sacred Heart Community Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 46.6235036,
+      "lng": -61.0156075
+    },
+    {
+      "code": "osm:way/244286841",
+      "name": "Institut universitaire en santé mentale de Québec",
+      "countryCode": "CA",
+      "origin": "https://www.ciusss-capitalenationale.gouv.qc.ca",
+      "lat": 46.8473608,
+      "lng": -71.2206113
+    },
+    {
+      "code": "osm:way/254686675",
+      "name": "Great War Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://psfdh.on.ca",
+      "lat": 44.9061279,
+      "lng": -76.2527458
+    },
+    {
+      "code": "osm:way/255067742",
+      "name": "Winchester District Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.wdmh.on.ca",
+      "lat": 45.0881418,
+      "lng": -75.3542846
+    },
+    {
+      "code": "osm:way/258499176",
+      "name": "Fort St. John Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 56.255584,
+      "lng": -120.8156753
+    },
+    {
+      "code": "osm:way/259652372",
+      "name": "Children's & Women's Health Centre of British Columbia",
+      "countryCode": "CA",
+      "origin": "http://www.cw.bc.ca",
+      "lat": 49.2442391,
+      "lng": -123.124124
+    },
+    {
+      "code": "osm:way/264000989",
+      "name": "Fort Saskatchewan Community Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 53.6919431,
+      "lng": -113.2107967
+    },
+    {
+      "code": "osm:way/265043747",
+      "name": "Lennox and Addington County General Hospital",
+      "countryCode": "CA",
+      "origin": "https://web.lacgh.napanee.on.ca",
+      "lat": 44.2397904,
+      "lng": -76.9670234
+    },
+    {
+      "code": "osm:way/274886879",
+      "name": "Centre hospitalier de l'Université Laval",
+      "countryCode": "CA",
+      "origin": "https://www.chudequebec.ca",
+      "lat": 46.768486,
+      "lng": -71.2823254
+    },
+    {
+      "code": "osm:way/278139080",
+      "name": "Kootenay Lake Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.4950185,
+      "lng": -117.2851231
+    },
+    {
+      "code": "osm:way/286099009",
+      "name": "Peace River Community Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 56.2301198,
+      "lng": -117.3537191
+    },
+    {
+      "code": "osm:way/288267375",
+      "name": "Raymond Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 49.4644335,
+      "lng": -112.6510414
+    },
+    {
+      "code": "osm:way/293945054",
+      "name": "Abbotsford Regional Hospital & Cancer Centre",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.03684,
+      "lng": -122.3134181
+    },
+    {
+      "code": "osm:way/295394895",
+      "name": "Red Deer Regional Hospital Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 52.2604237,
+      "lng": -113.8177702
+    },
+    {
+      "code": "osm:way/297894724",
+      "name": "Institut universitaire en santé mentale de Montréal",
+      "countryCode": "CA",
+      "origin": "https://ciusss-estmtl.gouv.qc.ca",
+      "lat": 45.5888051,
+      "lng": -73.5306201
+    },
+    {
+      "code": "osm:way/298029407",
+      "name": "Sechelt Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.vch.ca",
+      "lat": 49.4754626,
+      "lng": -123.7493433
+    },
+    {
+      "code": "osm:way/299381366",
+      "name": "Mattawa Hospital",
+      "countryCode": "CA",
+      "origin": "http://www.mattawahospital.ca",
+      "lat": 46.310768,
+      "lng": -78.713589
+    },
+    {
+      "code": "osm:way/302252809",
+      "name": "Centre Hospitalier Du Granit",
+      "countryCode": "CA",
+      "origin": "http://www.csssgranit.qc.ca",
+      "lat": 45.5887664,
+      "lng": -70.905875
+    },
+    {
+      "code": "osm:way/305645932",
+      "name": "Deep River and District Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.drdh.org",
+      "lat": 46.0910099,
+      "lng": -77.4748723
+    },
+    {
+      "code": "osm:way/314659291",
+      "name": "Centennial Centre for Mental Health & Brain Injury",
+      "countryCode": "CA",
+      "origin": "https://mentalhealthexcellence.ca",
+      "lat": 52.651106,
+      "lng": -113.5733283
+    },
+    {
+      "code": "osm:way/323715053",
+      "name": "Hôpital Montfort",
+      "countryCode": "CA",
+      "origin": "https://hopitalmontfort.com",
+      "lat": 45.445825,
+      "lng": -75.6393574
+    },
+    {
+      "code": "osm:way/330174593",
+      "name": "Boundary Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.0299743,
+      "lng": -118.4686659
+    },
+    {
+      "code": "osm:way/339691950",
+      "name": "South Health Campus",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 50.8822636,
+      "lng": -113.9525711
+    },
+    {
+      "code": "osm:way/345811594",
+      "name": "Hôpital Notre-Dame",
+      "countryCode": "CA",
+      "origin": "https://www.ciusss-centresudmtl.gouv.qc.ca",
+      "lat": 45.5256657,
+      "lng": -73.5625139
+    },
+    {
+      "code": "osm:way/351679605",
+      "name": "Chemainus Health Care Centre",
+      "countryCode": "CA",
+      "origin": "https://www.islandhealth.ca",
+      "lat": 48.9272775,
+      "lng": -123.7158643
+    },
+    {
+      "code": "osm:way/354698177",
+      "name": "G.R. Baker Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 52.9811026,
+      "lng": -122.4996364
+    },
+    {
+      "code": "osm:way/356410197",
+      "name": "Soldiers' Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 44.9468009,
+      "lng": -65.059352
+    },
+    {
+      "code": "osm:way/362080622",
+      "name": "Canmore General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 51.0930742,
+      "lng": -115.3504884
+    },
+    {
+      "code": "osm:way/363169810",
+      "name": "Penticton Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.4817041,
+      "lng": -119.5777232
+    },
+    {
+      "code": "osm:way/364712236",
+      "name": "Hôpital Jean-Talon",
+      "countryCode": "CA",
+      "origin": "https://www.ciusssnordmtl.ca",
+      "lat": 45.5459549,
+      "lng": -73.6095003
+    },
+    {
+      "code": "osm:way/368030604",
+      "name": "Princeton General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.4543487,
+      "lng": -120.5265
+    },
+    {
+      "code": "osm:way/386564895",
+      "name": "Oakville Trafalgar Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.haltonhealthcare.on.ca",
+      "lat": 43.4503117,
+      "lng": -79.7648006
+    },
+    {
+      "code": "osm:way/388597293",
+      "name": "Cortellucci Vaughan Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.mackenziehealth.ca",
+      "lat": 43.8502009,
+      "lng": -79.5429899
+    },
+    {
+      "code": "osm:way/393123395",
+      "name": "Weeneebayko General Hospital",
+      "countryCode": "CA",
+      "origin": "http://www.weeneebaykohealth.ca",
+      "lat": 51.2500668,
+      "lng": -80.617269
+    },
+    {
+      "code": "osm:way/396326194",
+      "name": "Mission Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.1351851,
+      "lng": -122.3310621
+    },
+    {
+      "code": "osm:way/397790846",
+      "name": "Hôpital Glengarry Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.hgmh.on.ca",
+      "lat": 45.3061364,
+      "lng": -74.6440525
+    },
+    {
+      "code": "osm:way/406228670",
+      "name": "Dr. Helmcken Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 51.6453573,
+      "lng": -120.017682
+    },
+    {
+      "code": "osm:way/407414651",
+      "name": "Claresholm General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 50.0173044,
+      "lng": -113.5806841
+    },
+    {
+      "code": "osm:way/420654453",
+      "name": "Bella Coola General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.vch.ca",
+      "lat": 52.3734959,
+      "lng": -126.7572708
+    },
+    {
+      "code": "osm:way/421154322",
+      "name": "Hawkesbury & District General Hospital",
+      "countryCode": "CA",
+      "origin": "https://hgh.ca",
+      "lat": 45.5995337,
+      "lng": -74.6073582
+    },
+    {
+      "code": "osm:way/423513808",
+      "name": "Magrath Community Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 49.4225669,
+      "lng": -112.8636878
+    },
+    {
+      "code": "osm:way/426896367",
+      "name": "Waypoint Centre for Mental Health Care",
+      "countryCode": "CA",
+      "origin": "https://www.waypointcentre.ca",
+      "lat": 44.8024908,
+      "lng": -79.92819
+    },
+    {
+      "code": "osm:way/427630969",
+      "name": "Grey Nuns Community Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.covenanthealth.ca",
+      "lat": 53.4617351,
+      "lng": -113.4296542
+    },
+    {
+      "code": "osm:way/437519686",
+      "name": "Hennick Bridgepoint Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.hennickbridgepointhospital.ca",
+      "lat": 43.6663683,
+      "lng": -79.3545719
+    },
+    {
+      "code": "osm:way/442214760",
+      "name": "Crowsnest Pass Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 49.616799,
+      "lng": -114.4581192
+    },
+    {
+      "code": "osm:way/444624615",
+      "name": "Pincher Creek Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 49.4932315,
+      "lng": -113.9472382
+    },
+    {
+      "code": "osm:way/445255625",
+      "name": "University Hospital of Northern British Columbia",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 53.913002,
+      "lng": -122.764458
+    },
+    {
+      "code": "osm:way/457146687",
+      "name": "Alberta Hospital Edmonton",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 53.6363295,
+      "lng": -113.3738962
+    },
+    {
+      "code": "osm:way/458700227",
+      "name": "Royal Alexandra Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 53.5571119,
+      "lng": -113.4975777
+    },
+    {
+      "code": "osm:way/466268540",
+      "name": "St. Joseph's Healthcare Hamilton",
+      "countryCode": "CA",
+      "origin": "https://www.stjoes.ca",
+      "lat": 43.2418762,
+      "lng": -79.8863152
+    },
+    {
+      "code": "osm:way/476150022",
+      "name": "Peace Arch Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.0301701,
+      "lng": -122.7923172
+    },
+    {
+      "code": "osm:way/478963167",
+      "name": "The Ottawa Hospital - Civic Campus",
+      "countryCode": "CA",
+      "origin": "https://www.ottawahospital.on.ca",
+      "lat": 45.39283,
+      "lng": -75.721693
+    },
+    {
+      "code": "osm:way/492185593",
+      "name": "Hôpital en santé mentale Albert-Prévost",
+      "countryCode": "CA",
+      "origin": "https://www.ciusssnordmtl.ca",
+      "lat": 45.5290757,
+      "lng": -73.7284257
+    },
+    {
+      "code": "osm:way/506076242",
+      "name": "Cape Dorset Health Centre",
+      "countryCode": "CA",
+      "origin": "https://gov.nu.ca",
+      "lat": 64.2328459,
+      "lng": -76.5410455
+    },
+    {
+      "code": "osm:way/506485057",
+      "name": "Centre de santé Inuulitsivik",
+      "countryCode": "CA",
+      "origin": "https://www.inuulitsivik.ca",
+      "lat": 60.0378815,
+      "lng": -77.2759525
+    },
+    {
+      "code": "osm:way/507601188",
+      "name": "Campbellton Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.vitalitenb.ca",
+      "lat": 47.9930859,
+      "lng": -66.6665446
+    },
+    {
+      "code": "osm:way/510888494",
+      "name": "Hôpital de Fortierville",
+      "countryCode": "CA",
+      "origin": "https://www.ciusssmcq.ca",
+      "lat": 46.4863417,
+      "lng": -72.0304364
+    },
+    {
+      "code": "osm:way/520349002",
+      "name": "Prince County Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.princeedwardisland.ca",
+      "lat": 46.4176643,
+      "lng": -63.7730559
+    },
+    {
+      "code": "osm:way/534618461",
+      "name": "Nats’oojeh Hospital and Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 54.440048,
+      "lng": -124.2420302
+    },
+    {
+      "code": "osm:way/535568798",
+      "name": "Northeast Healthplex",
+      "countryCode": "CA",
+      "origin": "https://www.kelseytrailhealth.ca",
+      "lat": 52.8571906,
+      "lng": -104.0562457
+    },
+    {
+      "code": "osm:way/537152652",
+      "name": "Centre Hospitalier Pierre-Janet",
+      "countryCode": "CA",
+      "origin": "https://www.chpj.ca",
+      "lat": 45.4258371,
+      "lng": -75.740117
+    },
+    {
+      "code": "osm:way/545093167",
+      "name": "Castlegar and District Community Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.3149807,
+      "lng": -117.6614888
+    },
+    {
+      "code": "osm:way/547492771",
+      "name": "Medicine Hat Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 50.0357049,
+      "lng": -110.7040287
+    },
+    {
+      "code": "osm:way/550514260",
+      "name": "Kemptville District Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.kdh.on.ca",
+      "lat": 45.0097695,
+      "lng": -75.6424008
+    },
+    {
+      "code": "osm:way/558116033",
+      "name": "Alexis Creek Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 52.0839141,
+      "lng": -123.2798243
+    },
+    {
+      "code": "osm:way/565659424",
+      "name": "Victoria General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.islandhealth.ca",
+      "lat": 48.4665748,
+      "lng": -123.4323111
+    },
+    {
+      "code": "osm:way/571903758",
+      "name": "North Island Hospital - Campbell River & District",
+      "countryCode": "CA",
+      "origin": "https://www.islandhealth.ca",
+      "lat": 50.0093328,
+      "lng": -125.243287
+    },
+    {
+      "code": "osm:way/579986274",
+      "name": "qathet General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.vch.ca",
+      "lat": 49.8509733,
+      "lng": -124.5182329
+    },
+    {
+      "code": "osm:way/584781362",
+      "name": "Campbellford Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://cmh.ca",
+      "lat": 44.3128385,
+      "lng": -77.7901376
+    },
+    {
+      "code": "osm:way/590820287",
+      "name": "Queensway Carleton Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.qch.on.ca",
+      "lat": 45.3350974,
+      "lng": -75.8075443
+    },
+    {
+      "code": "osm:way/598178730",
+      "name": "Stewart Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 55.9399624,
+      "lng": -129.9899554
+    },
+    {
+      "code": "osm:way/611078054",
+      "name": "Summerland Community Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.6013159,
+      "lng": -119.6688599
+    },
+    {
+      "code": "osm:way/653447597",
+      "name": "St. Francis Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.sfmhosp.com",
+      "lat": 45.4822987,
+      "lng": -77.694553
+    },
+    {
+      "code": "osm:way/653447600",
+      "name": "Perth and Smiths Falls District Hospital - Smiths Falls Site",
+      "countryCode": "CA",
+      "origin": "https://psfdh.on.ca",
+      "lat": 44.9073948,
+      "lng": -76.0268497
+    },
+    {
+      "code": "osm:way/673002279",
+      "name": "Hennick Humber Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.hrh.ca",
+      "lat": 43.7232868,
+      "lng": -79.4882486
+    },
+    {
+      "code": "osm:way/678508080",
+      "name": "Baycrest Health Sciences",
+      "countryCode": "CA",
+      "origin": "https://www.baycrest.org",
+      "lat": 43.7298827,
+      "lng": -79.435417
+    },
+    {
+      "code": "osm:way/681002035",
+      "name": "North Hastings Hospital",
+      "countryCode": "CA",
+      "origin": "http://www.qhc.on.ca",
+      "lat": 45.0552756,
+      "lng": -77.8644488
+    },
+    {
+      "code": "osm:way/681021469",
+      "name": "Haliburton Highlands Health Services - Minden",
+      "countryCode": "CA",
+      "origin": "https://www.hhhs.ca",
+      "lat": 44.9252206,
+      "lng": -78.730161
+    },
+    {
+      "code": "osm:way/682308258",
+      "name": "Charlotte County Hospital",
+      "countryCode": "CA",
+      "origin": "https://horizonnb.ca",
+      "lat": 45.1947058,
+      "lng": -67.2664764
+    },
+    {
+      "code": "osm:way/684426043",
+      "name": "North York General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nygh.on.ca",
+      "lat": 43.7692346,
+      "lng": -79.3625755
+    },
+    {
+      "code": "osm:way/684431222",
+      "name": "Holland Bloorview Kids Rehabilitation Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.hollandbloorview.ca",
+      "lat": 43.7185764,
+      "lng": -79.3735208
+    },
+    {
+      "code": "osm:way/712075200",
+      "name": "Reactivation Care Center",
+      "countryCode": "CA",
+      "origin": "https://www.hrh.ca",
+      "lat": 43.7095847,
+      "lng": -79.5105994
+    },
+    {
+      "code": "osm:way/712078928",
+      "name": "Toronto General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.uhn.ca",
+      "lat": 43.6586555,
+      "lng": -79.3881573
+    },
+    {
+      "code": "osm:way/712078929",
+      "name": "Hospital for Sick Children",
+      "countryCode": "CA",
+      "origin": "https://www.sickkids.ca",
+      "lat": 43.6572585,
+      "lng": -79.3875736
+    },
+    {
+      "code": "osm:way/712078931",
+      "name": "Mount Sinai Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.sinaihealth.ca",
+      "lat": 43.6574485,
+      "lng": -79.390327
+    },
+    {
+      "code": "osm:way/712078932",
+      "name": "Princess Margaret Cancer Centre",
+      "countryCode": "CA",
+      "origin": "https://www.uhn.ca",
+      "lat": 43.6581745,
+      "lng": -79.3906375
+    },
+    {
+      "code": "osm:way/712078934",
+      "name": "E.W. Bickle Centre for Complex Continuing Care",
+      "countryCode": "CA",
+      "origin": "https://www.uhn.ca",
+      "lat": 43.6353385,
+      "lng": -79.4331483
+    },
+    {
+      "code": "osm:way/712085020",
+      "name": "St. Michael's Hospital",
+      "countryCode": "CA",
+      "origin": "https://unityhealth.to",
+      "lat": 43.6536319,
+      "lng": -79.3778049
+    },
+    {
+      "code": "osm:way/712100615",
+      "name": "Milton District Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.haltonhealthcare.on.ca",
+      "lat": 43.4971331,
+      "lng": -79.8684638
+    },
+    {
+      "code": "osm:way/712110939",
+      "name": "West Lincoln Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.hamiltonhealthsciences.ca",
+      "lat": 43.1891166,
+      "lng": -79.5414649
+    },
+    {
+      "code": "osm:way/712115389",
+      "name": "Hotel Dieu Shaver Health and Rehabilitation Centre",
+      "countryCode": "CA",
+      "origin": "https://www.hoteldieushaver.org",
+      "lat": 43.1227667,
+      "lng": -79.2420472
+    },
+    {
+      "code": "osm:way/720684128",
+      "name": "Sackville Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://horizonnb.ca",
+      "lat": 45.8918462,
+      "lng": -64.3730029
+    },
+    {
+      "code": "osm:way/743437101",
+      "name": "South Shore Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 44.3826777,
+      "lng": -64.5113099
+    },
+    {
+      "code": "osm:way/744734229",
+      "name": "ƛ̓uxválásu̓ilas (kwil-valas-iwaylas) Heiltsuk Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.vch.ca",
+      "lat": 52.1612112,
+      "lng": -128.1433196
+    },
+    {
+      "code": "osm:way/749105487",
+      "name": "Victoria Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.lhsc.on.ca",
+      "lat": 42.9605251,
+      "lng": -81.2254879
+    },
+    {
+      "code": "osm:way/765551471",
+      "name": "Devon General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 53.3512143,
+      "lng": -113.7301071
+    },
+    {
+      "code": "osm:way/772926654",
+      "name": "Homewood Health Centre",
+      "countryCode": "CA",
+      "origin": "https://homewoodhealthcentre.com",
+      "lat": 43.5568324,
+      "lng": -80.2579049
+    },
+    {
+      "code": "osm:way/772926655",
+      "name": "Guelph General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.gghorg.ca",
+      "lat": 43.5563906,
+      "lng": -80.2536238
+    },
+    {
+      "code": "osm:way/772950213",
+      "name": "St. Joseph's Health Centre Guelph",
+      "countryCode": "CA",
+      "origin": "https://www.sjhcg.ca",
+      "lat": 43.5494015,
+      "lng": -80.2720428
+    },
+    {
+      "code": "osm:way/775824381",
+      "name": "St. Joseph's Healthcare Hamilton - Charlton Campus",
+      "countryCode": "CA",
+      "origin": "https://www.stjoes.ca",
+      "lat": 43.2483019,
+      "lng": -79.8712474
+    },
+    {
+      "code": "osm:way/781407435",
+      "name": "Markdale Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.gbhs.on.ca",
+      "lat": 44.3135795,
+      "lng": -80.6448659
+    },
+    {
+      "code": "osm:way/781407438",
+      "name": "Louise Marshall Hospital",
+      "countryCode": "CA",
+      "origin": "https://nwhc.whca.ca",
+      "lat": 43.9741949,
+      "lng": -80.7374384
+    },
+    {
+      "code": "osm:way/781414343",
+      "name": "Lion's Head Hospital",
+      "countryCode": "CA",
+      "origin": "http://www.gbhs.on.ca",
+      "lat": 44.9862796,
+      "lng": -81.2490048
+    },
+    {
+      "code": "osm:way/781430742",
+      "name": "Manitoulin Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.mhc.on.ca",
+      "lat": 45.9784933,
+      "lng": -81.9265763
+    },
+    {
+      "code": "osm:way/781430754",
+      "name": "Health Sciences North",
+      "countryCode": "CA",
+      "origin": "https://hsnsudbury.ca",
+      "lat": 46.4668551,
+      "lng": -80.9949754
+    },
+    {
+      "code": "osm:way/781434223",
+      "name": "Lady Dunn Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.ldhc.com",
+      "lat": 48.0005903,
+      "lng": -84.7722976
+    },
+    {
+      "code": "osm:way/819314272",
+      "name": "South Okanagan General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.1833484,
+      "lng": -119.5390828
+    },
+    {
+      "code": "osm:way/826311571",
+      "name": "Bonnyville Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.covenanthealth.ca",
+      "lat": 54.2636137,
+      "lng": -110.739325
+    },
+    {
+      "code": "osm:way/851965703",
+      "name": "East Kootenay Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.5125463,
+      "lng": -115.7501949
+    },
+    {
+      "code": "osm:way/888625615",
+      "name": "Creston Valley Hospital & Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.0983684,
+      "lng": -116.5076183
+    },
+    {
+      "code": "osm:way/890968467",
+      "name": "Yarmouth Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 43.8503056,
+      "lng": -66.1225568
+    },
+    {
+      "code": "osm:way/902053499",
+      "name": "Ridge Meadows Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.215389,
+      "lng": -122.6300087
+    },
+    {
+      "code": "osm:way/902487947",
+      "name": "Fraser Canyon Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.3769596,
+      "lng": -121.4247032
+    },
+    {
+      "code": "osm:way/902491360",
+      "name": "Delta Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.fraserhealth.ca",
+      "lat": 49.0861835,
+      "lng": -123.0619072
+    },
+    {
+      "code": "osm:way/929915775",
+      "name": "Hôpital de Verdun",
+      "countryCode": "CA",
+      "origin": "https://www.ciusss-centresudmtl.gouv.qc.ca",
+      "lat": 45.4637363,
+      "lng": -73.5637627
+    },
+    {
+      "code": "osm:way/936056064",
+      "name": "Saint John Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://en.horizonnb.ca",
+      "lat": 45.301692,
+      "lng": -66.085675
+    },
+    {
+      "code": "osm:way/961058486",
+      "name": "Cariboo Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 52.1374009,
+      "lng": -122.1442847
+    },
+    {
+      "code": "osm:way/961673806",
+      "name": "Aberdeen Hospital",
+      "countryCode": "CA",
+      "origin": "https://nshealth.ca",
+      "lat": 45.5730135,
+      "lng": -62.6438251
+    },
+    {
+      "code": "osm:way/970434087",
+      "name": "Cormorant Island Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.islandhealth.ca",
+      "lat": 50.593754,
+      "lng": -126.9428011
+    },
+    {
+      "code": "osm:way/991903216",
+      "name": "Lakes District Hospital and Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 54.2355925,
+      "lng": -125.761223
+    },
+    {
+      "code": "osm:way/992113143",
+      "name": "Wrinch Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 55.2596586,
+      "lng": -127.651183
+    },
+    {
+      "code": "osm:way/992672370",
+      "name": "Prince Rupert Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 54.3047714,
+      "lng": -130.329985
+    },
+    {
+      "code": "osm:way/1014977786",
+      "name": "Hants Community Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 44.9863393,
+      "lng": -64.1196351
+    },
+    {
+      "code": "osm:way/1040332972",
+      "name": "Sheldon M. Chumir Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 51.0412033,
+      "lng": -114.0728688
+    },
+    {
+      "code": "osm:way/1050394978",
+      "name": "Oilfields General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 50.6777735,
+      "lng": -114.2346948
+    },
+    {
+      "code": "osm:way/1065734018",
+      "name": "Hôpital du Sacré-Cœur de Montréal",
+      "countryCode": "CA",
+      "origin": "https://www.ciusssnordmtl.ca",
+      "lat": 45.5328284,
+      "lng": -73.7138427
+    },
+    {
+      "code": "osm:way/1111229457",
+      "name": "Fisherman's Memorial Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.nshealth.ca",
+      "lat": 44.3824265,
+      "lng": -64.3272313
+    },
+    {
+      "code": "osm:way/1125272605",
+      "name": "Kinngait Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.gov.nu.ca",
+      "lat": 64.2315798,
+      "lng": -76.5396803
+    },
+    {
+      "code": "osm:way/1126568967",
+      "name": "Centre de santé Lebel",
+      "countryCode": "CA",
+      "origin": "https://crsssbaiejames.gouv.qc.ca",
+      "lat": 49.0561793,
+      "lng": -76.9835327
+    },
+    {
+      "code": "osm:way/1126960983",
+      "name": "Cowichan District Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.islandhealth.ca",
+      "lat": 48.786188,
+      "lng": -123.7225471
+    },
+    {
+      "code": "osm:way/1130633174",
+      "name": "Hôpital Chisasibi",
+      "countryCode": "CA",
+      "origin": "https://www.creehealth.org",
+      "lat": 53.7838132,
+      "lng": -78.891289
+    },
+    {
+      "code": "osm:way/1190276710",
+      "name": "Squamish General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.vch.ca",
+      "lat": 49.6984397,
+      "lng": -123.1406004
+    },
+    {
+      "code": "osm:way/1200583936",
+      "name": "John D’Or Prairie Health Centre",
+      "countryCode": "CA",
+      "origin": "https://lrrcn.ab.ca",
+      "lat": 58.499428,
+      "lng": -115.1464293
+    },
+    {
+      "code": "osm:way/1238706206",
+      "name": "Glenrose Rehabilitation Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 53.5599838,
+      "lng": -113.4983129
+    },
+    {
+      "code": "osm:way/1278591971",
+      "name": "South Similkameen Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.204561,
+      "lng": -119.8326679
+    },
+    {
+      "code": "osm:way/1280515113",
+      "name": "Sir Mortimer B. Davis Jewish General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.jgh.ca",
+      "lat": 45.4970431,
+      "lng": -73.6300222
+    },
+    {
+      "code": "osm:way/1281884626",
+      "name": "Grande Prairie Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 55.1815972,
+      "lng": -118.8252404
+    },
+    {
+      "code": "osm:way/1290124439",
+      "name": "McBride and District Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 53.3010251,
+      "lng": -120.1613856
+    },
+    {
+      "code": "osm:way/1291767163",
+      "name": "Ed's House",
+      "countryCode": "CA",
+      "origin": "https://edshouse.northumberlandhospice.ca",
+      "lat": 43.9878694,
+      "lng": -78.1899133
+    },
+    {
+      "code": "osm:way/1315606027",
+      "name": "Two Hills Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 53.7133117,
+      "lng": -111.7316914
+    },
+    {
+      "code": "osm:way/1351408206",
+      "name": "Dr. Kingston Memorial Community Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.drkingstoncommunityhealthcenter.com",
+      "lat": 45.611234,
+      "lng": -60.7737013
+    },
+    {
+      "code": "osm:way/1375715623",
+      "name": "Hardisty Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 52.6689752,
+      "lng": -111.3081255
+    },
+    {
+      "code": "osm:way/1415671343",
+      "name": "Ksyen Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://letstalk.northernhealth.ca",
+      "lat": 54.5118822,
+      "lng": -128.5964846
+    },
+    {
+      "code": "osm:way/1435555664",
+      "name": "Queen Victoria Hospital and Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 50.9776332,
+      "lng": -118.1907408
+    },
+    {
+      "code": "osm:way/1442213136",
+      "name": "Kootenay Boundary Regional Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 49.1034343,
+      "lng": -117.7018822
+    },
+    {
+      "code": "osm:way/1467890950",
+      "name": "Grand Manan Hospital",
+      "countryCode": "CA",
+      "origin": "https://horizonnb.ca",
+      "lat": 44.7621959,
+      "lng": -66.7638799
+    },
+    {
+      "code": "osm:way/1469034158",
+      "name": "100 Mile District general hospital",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 51.6382609,
+      "lng": -121.29142
+    },
+    {
+      "code": "osm:way/1471108233",
+      "name": "Nicola Valley Hospital and Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.interiorhealth.ca",
+      "lat": 50.1215093,
+      "lng": -120.7731139
+    },
+    {
+      "code": "osm:way/1472560623",
+      "name": "Stikine Regional Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 58.4418316,
+      "lng": -129.9918708
+    },
+    {
+      "code": "osm:way/1472772876",
+      "name": "Fort Nelson General Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.northernhealth.ca",
+      "lat": 58.8089047,
+      "lng": -122.7046247
+    },
+    {
+      "code": "osm:way/1478447653",
+      "name": "Port Hardy Hospital",
+      "countryCode": "CA",
+      "origin": "https://www.islandhealth.ca",
+      "lat": 50.7203903,
+      "lng": -127.5028533
+    },
+    {
+      "code": "osm:way/1513216334",
+      "name": "Cardston Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 49.201762,
+      "lng": -113.3058921
+    },
+    {
+      "code": "osm:way/1559239757",
+      "name": "Seton - Jasper Healthcare Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 52.8763253,
+      "lng": -118.0843293
+    },
+    {
+      "code": "osm:way/1560966411",
+      "name": "Vulcan Community Health Centre",
+      "countryCode": "CA",
+      "origin": "https://www.albertahealthservices.ca",
+      "lat": 50.3963124,
+      "lng": -113.2589132
+    }
+  ]
+}

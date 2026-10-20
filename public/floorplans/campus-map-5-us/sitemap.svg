@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="612" height="792" fill="#ffffff"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M399.2 403.3L383.2 390.7L390.7 381.2L406.7 393.8Z" fill="#ececec"/>
+<path d="M341.4 295C340.8 295.3 340.1 295.5 339.3 295.5L316.4 295.5L290 328.6L341.5 369.7L377.9 324.1Z" fill="#ffffff"/>
+<path d="M279.2 420C239.4 420 207.2 471.4 207.2 534.8C207.2 598.1 239.4 649.5 279.2 649.5C319 649.5 351.2 598.1 351.2 534.8C351.2 471.4 319 420 279.2 420" fill="#ffffff" fill-rule="evenodd"/>
+<path d="M270.2 483C230.4 483 198.2 534.4 198.2 597.8C198.2 661.1 230.4 712.5 270.2 712.5C310 712.5 342.2 661.1 342.2 597.8C342.2 534.4 310 483 270.2 483Z" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+<path d="M36.5 564L232 564L232 88.9L36.5 88.9Z" fill="#ffffff" fill-rule="evenodd"/>
+<path d="M524.2 558.1C484.4 558.1 452.2 609.5 452.2 672.9C452.2 736.2 484.4 787.6 524.2 787.6C564 787.6 596.2 736.2 596.2 672.9C596.2 609.5 564 558.1 524.2 558.1" fill="#ffffff" fill-rule="evenodd"/>
+<path d="M270.2 674.2L50.9 674.2L50.9 547.1L270.2 547.1Z" fill="#ececec" fill-rule="evenodd" stroke="#000000" stroke-width="0.5"/>
+<path d="M190 620.3L131 620.3C124.4 620.3 119 614.9 119 608.3L119 596C119 589.4 124.4 584 131 584L190 584C196.6 584 202 589.4 202 596L202 608.3C202 614.9 196.6 620.3 190 620.3" fill="#07658c" fill-rule="evenodd"/>
+<path d="M94 603.2L66.4 603.2C59.8 603.2 54.4 597.8 54.4 591.2C54.4 584.6 59.8 579.2 66.4 579.2L94 579.2C100.6 579.2 106 584.6 106 591.2C106 597.8 100.6 603.2 94 603.2" fill="#8aabb7" fill-rule="evenodd"/>
+<path d="M169.2 670L118 670C111.4 670 106 664.6 106 658L106 650.4C106 643.8 111.4 638.4 118 638.4L169.2 638.4C175.8 638.4 181.2 643.8 181.2 650.4L181.2 658C181.2 664.6 175.8 670 169.2 670" fill="#8aabb7" fill-rule="evenodd"/>
+<path d="M255.6 586.5L228 586.5C221.4 586.5 216 581.1 216 574.5L216 572C216 565.4 221.4 560 228 560L255.6 560C262.2 560 267.6 565.4 267.6 572L267.6 574.5C267.6 581.1 262.2 586.5 255.6 586.5" fill="#8aabb7" fill-rule="evenodd"/>
+<path d="M255.6 616.7L228 616.7C221.4 616.7 216 611.3 216 604.7L216 602.7C216 596.1 221.4 590.7 228 590.7L255.6 590.7C262.2 590.7 267.6 596.1 267.6 602.7L267.6 604.7C267.6 611.3 262.2 616.7 255.6 616.7" fill="#8aabb7" fill-rule="evenodd"/>
+<path d="M220.8 670L198.9 670C192.3 670 186.9 664.6 186.9 658C186.9 651.4 192.3 646 198.9 646L220.8 646C227.4 646 232.8 651.4 232.8 658C232.8 664.6 227.4 670 220.8 670" fill="#8aabb7" fill-rule="evenodd"/>
+<path d="M255.6 644L228 644C221.4 644 216 638.6 216 632C216 625.4 221.4 620 228 620L255.6 620C262.2 620 267.6 625.4 267.6 632C267.6 638.6 262.2 644 255.6 644" fill="#8aabb7" fill-rule="evenodd"/>
+<path d="M18 741.6L262 741.6" fill="#a4a4a4"/>
+<path d="M18 741.6L261.5 741.6" fill="none" stroke="#a4a4a4" stroke-width="1"/>
+<path d="M262 744.9L261 744.9L261 738.4L262 738.4Z" fill="#a4a4a4"/>
+<path d="M18 764L351.2 764" fill="#a4a4a4" stroke="#a4a4a4" stroke-width="1"/>
+<path d="M298 741.6L351.2 741.6" fill="#a4a4a4"/>
+<path d="M298.5 741.6L351.2 741.6" fill="none" stroke="#a4a4a4" stroke-width="1"/>
+<path d="M298 744.9L299 744.9L299 738.4L298 738.4Z" fill="#a4a4a4"/>
+<path d="M262 675.5L262 691.3M252 692L252 676.2M241.2 675.8L241.2 691.7M230 692L230 676.2M208.6 675.8L208.6 691.7M185.9 691.3L185.9 675.5M197.2 675.5L197.2 691.3M218.8 692L218.8 676.2M174.4 674.8L174.4 690.7M163.2 690.8L163.2 674.9M152 675.5L152 691.3M140.9 691.3L140.9 675.5M129.2 675.8L129.2 691.7M119 675.5L119 691.3M107.4 691.7L107.4 675.8M95.2 675.5L95.2 691.3M83.1 691.7L83.1 675.8M71 675.3L71 691.5M59.1 675.8L59.1 691.7" fill="none" stroke="#a4a4a4" stroke-width="1"/>
+<path d="M287 559.9L271.2 559.9M286.7 570.6L270.9 570.6M287 581.9L271.2 581.9M286.7 603.3L270.9 603.3M286.4 626L270.5 626M286.4 614.7L270.5 614.7M271.2 593L287 593M285.7 637.5L269.9 637.5M285.8 648.6L270 648.6M270.5 659.9L286.4 659.9" fill="none" stroke="#a4a4a4" stroke-width="1"/>
+<path d="M218.8 727L244.8 727M218.8 718L244.8 718M218.8 709.3L244.8 709.3M231.8 701L231.8 734.5M180.2 727L206.2 727M180.2 718L206.2 718M180.2 709.3L206.2 709.3M193.2 734.5L193.2 701M142 727L168 727M142 718L168 718M142 709.3L168 709.3M155 734.5L155 701M102 727L128 727M102 718L128 718M102 709.3L128 709.3M115 701L115 734.5M62.2 727L88.2 727M62.2 718L88.2 718M62.2 709.3L88.2 709.3M75.2 734.5L75.2 701" fill="none" stroke="#a4a4a4" stroke-width="1"/>
+<path d="M50.4 560.6L34.6 560.6M50.1 571.4L34.3 571.4M50.4 582.6L34.6 582.6M50.1 604L34.3 604M49.8 626.8L33.9 626.8M49.8 615.4L33.9 615.4M34.6 593.8L50.4 593.8M49.1 638.2L33.3 638.2M49.2 649.4L33.4 649.4M33.9 660.6L49.8 660.6" fill="none" stroke="#a4a4a4" stroke-width="1"/>
+<path d="M405.8 377.1L397.6 370.7L405.1 361.1L413.3 367.6Z" fill="#ececec"/>
+<path d="M396.3 369.7L388.2 363.2L395.7 353.7L403.9 360.2Z" fill="#ececec"/>
+<path d="M359.2 371.1L351.6 365.1L359 355.7L366.6 361.7Z" fill="#ececec"/>
+<path d="M374.3 352.1L366.7 346.2L374.1 336.8L381.7 342.7Z" fill="#ececec"/>
+<path d="M377 325.1L341.9 369.1" fill="none" stroke="#000000" stroke-width="1"/>
+<path d="M441.6 230.2L381.9 250.1L390.1 274.8L449.8 254.9Z" fill="#ffffff"/>
+<path d="M472 319.2L451.3 251.4L430.7 257.7L451.4 325.5Z" fill="#ffffff"/>
+<path d="M445.2 256.4L404.3 270L412 293.3L453 279.7Z" fill="#ffffff"/>
+</g>
+<g fill="#1a1a1a" stroke="#ffffff" stroke-linejoin="round" paint-order="stroke">
+<text x="21.4" y="47.8" font-size="31" stroke-width="5.3">Oroville Hospital</text>
+<text x="36.9" y="78.8" font-size="31" stroke-width="5.3">Campus Map</text>
+<text x="133.7" y="600.6" font-size="15" stroke-width="2.6">DOVE’S</text>
+<text x="126.8" y="614.6" font-size="15" stroke-width="2.6">LANDING</text>
+<text x="56.5" y="593.6" font-size="9.5" stroke-width="1.6">Pharmacy</text>
+<text x="110.9" y="651.9" font-size="10" stroke-width="1.7">Multispecialty</text>
+<text x="123.6" y="663.9" font-size="10" stroke-width="1.7">Practice</text>
+<text x="236" y="570.2" font-size="9" stroke-width="1.5">HR</text>
+<text x="219.5" y="579.2" font-size="9" stroke-width="1.5">Education</text>
+<text x="217.5" y="606.5" font-size="7" stroke-width="1.2">Endocrinology</text>
+<text x="193.9" y="660.9" font-size="10" stroke-width="1.7">Rehab</text>
+<text x="227.3" y="629.3" font-size="9" stroke-width="1.5">Urgent</text>
+<text x="230.8" y="639.3" font-size="9" stroke-width="1.5">Care</text>
+<text x="113.1" y="756.4" font-size="10" stroke-width="1.7">WASHINGTON AVENUE</text>
+<text x="386.7" y="389.8" font-size="10" stroke-width="1.7" transform="rotate(38.4 386.7 389.8)">10B</text>
+<text x="399.4" y="368.6" font-size="9" stroke-width="1.5" transform="rotate(38.4 399.4 368.6)">9D</text>
+<text x="390.1" y="361.7" font-size="9" stroke-width="1.5" transform="rotate(38.4 390.1 361.7)">9C</text>
+<text x="353.1" y="363.3" font-size="9" stroke-width="1.5" transform="rotate(38.4 353.1 363.3)">9A</text>
+<text x="368.9" y="343.9" font-size="9" stroke-width="1.5" transform="rotate(38.4 368.9 343.9)">9B</text>
+</g>
+</svg>

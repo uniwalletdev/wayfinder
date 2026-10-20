@@ -20,6 +20,7 @@ import { DIANA_PRINCESS_OF_WALES_HOSPITAL_INTERNAL_2D_2025_VENUE } from "./diana
 import { EALING_HOSPITAL_SITE_MAP_VENUE } from "./ealing-hospital-site-map"
 import { GRANTHAM_AND_DISTRICT_HOSPITAL_MAP_VENUE } from "./grantham-and-district-hospital-map"
 import { HOSPITAL_MAP_EXTERNAL_2025_VENUE } from "./hospital-map-external-2025"
+import { HULL_ROYAL_INFIRMARY_SITE_MAP_VENUE } from "./hull-royal-infirmary-site-map"
 import { JR_HOSPITAL_SITEMAP_VENUE } from "./jr-hospital-sitemap"
 import { MACCLESFIELD_DISTRICT_GENERAL_HOSPITAL_VENUE } from "./macclesfield-district-general-hospital"
 import { NGH_HOSPITAL_MAP_VENUE } from "./ngh-hospital-map"
@@ -35,7 +36,7 @@ import { TUNBRIDGE_WELLS_HOSPITAL_MAPPDF_VENUE } from "./tunbridge-wells-hospita
 import { WEST_MIDDLESEX_UNIVERSITY_HOSPITAL_SITE_MAP_VENUE } from "./west-middlesex-university-hospital-site-map"
 import { WHISTON_SITE_MAP_FULL_SITE_VENUE } from "./whiston-site-map-full-site"
 
-// 21 venue(s) built from published trust site maps.
+// 22 venue(s) built from published trust site maps.
 export const GENERATED_SHEET_VENUES: Venue[] = [
   ALEX_MAP_A4_VENUE,
   CH_HOSPITAL_SITEMAP_VENUE,
@@ -44,6 +45,7 @@ export const GENERATED_SHEET_VENUES: Venue[] = [
   EALING_HOSPITAL_SITE_MAP_VENUE,
   GRANTHAM_AND_DISTRICT_HOSPITAL_MAP_VENUE,
   HOSPITAL_MAP_EXTERNAL_2025_VENUE,
+  HULL_ROYAL_INFIRMARY_SITE_MAP_VENUE,
   JR_HOSPITAL_SITEMAP_VENUE,
   MACCLESFIELD_DISTRICT_GENERAL_HOSPITAL_VENUE,
   NGH_HOSPITAL_MAP_VENUE,

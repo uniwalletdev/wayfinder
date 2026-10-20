@@ -1,0 +1,3593 @@
+{
+  "countryCode": "AU",
+  "fetchedAt": "2026-10-17T20:40:14.956Z",
+  "count": 448,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/27288796",
+      "name": "Waverley Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.waverleyprivate.com.au",
+      "lat": -37.8843792,
+      "lng": 145.1455722
+    },
+    {
+      "code": "osm:node/262777337",
+      "name": "Peter James Centre",
+      "countryCode": "AU",
+      "origin": "https://www.easternhealth.org.au",
+      "lat": -37.8526149,
+      "lng": 145.1649491
+    },
+    {
+      "code": "osm:node/489359423",
+      "name": "Seymour Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.seymourhealth.org.au",
+      "lat": -37.0185154,
+      "lng": 145.1381959
+    },
+    {
+      "code": "osm:node/832508110",
+      "name": "Lorne Community Hospital",
+      "countryCode": "AU",
+      "origin": "https://lch.org.au",
+      "lat": -38.5454422,
+      "lng": 143.9804248
+    },
+    {
+      "code": "osm:node/1257803645",
+      "name": "Ballan District Health and Care",
+      "countryCode": "AU",
+      "origin": "https://www.ballanhospital.com.au",
+      "lat": -37.5995317,
+      "lng": 144.2224358
+    },
+    {
+      "code": "osm:node/1279003446",
+      "name": "Mercy Hospital for Women",
+      "countryCode": "AU",
+      "origin": "https://www.mercyhealth.com.au",
+      "lat": -37.7558954,
+      "lng": 145.0609462
+    },
+    {
+      "code": "osm:node/3441478360",
+      "name": "Cunderdin Health Centre",
+      "countryCode": "AU",
+      "origin": "https://www.health.wa.gov.au",
+      "lat": -31.649291,
+      "lng": 117.240485
+    },
+    {
+      "code": "osm:node/3790049233",
+      "name": "Neerim District Soldiers Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://neerimhealth.org.au",
+      "lat": -38.021958,
+      "lng": 145.954129
+    },
+    {
+      "code": "osm:node/3818420288",
+      "name": "Heywood Rural Health",
+      "countryCode": "AU",
+      "origin": "https://swarh.com.au",
+      "lat": -38.1379457,
+      "lng": 141.624074
+    },
+    {
+      "code": "osm:node/4225187051",
+      "name": "Holsworthy Health Centre",
+      "countryCode": "AU",
+      "origin": "https://www.defence.gov.au",
+      "lat": -33.98221,
+      "lng": 150.960896
+    },
+    {
+      "code": "osm:node/4225187059",
+      "name": "Saint Luke's Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.slc.org.au",
+      "lat": -33.8743612,
+      "lng": 151.2261153
+    },
+    {
+      "code": "osm:node/4225187062",
+      "name": "Thomas Walker Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -33.832533,
+      "lng": 151.0977
+    },
+    {
+      "code": "osm:node/6255283296",
+      "name": "Alderley Child Health",
+      "countryCode": "AU",
+      "origin": "https://www.childrens.health.qld.gov.au",
+      "lat": -27.4246865,
+      "lng": 153.0002372
+    },
+    {
+      "code": "osm:node/6588931000",
+      "name": "Clear Orthodontic Studio",
+      "countryCode": "AU",
+      "origin": "https://www.clearorthodonticstudio.com.au",
+      "lat": -31.9893086,
+      "lng": 115.7573057
+    },
+    {
+      "code": "osm:node/8354579919",
+      "name": "Cloncurry Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -20.7045943,
+      "lng": 140.5277433
+    },
+    {
+      "code": "osm:node/8515870500",
+      "name": "Surat Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -27.1563789,
+      "lng": 149.0637619
+    },
+    {
+      "code": "osm:node/9029271292",
+      "name": "Sir Charles Gairdner Hospital",
+      "countryCode": "AU",
+      "origin": "https://scgh.health.wa.gov.au",
+      "lat": -31.967636,
+      "lng": 115.8152839
+    },
+    {
+      "code": "osm:node/9480319109",
+      "name": "Double Bay Day Hospital",
+      "countryCode": "AU",
+      "origin": "https://dbdh.com.au",
+      "lat": -33.8775997,
+      "lng": 151.2438007
+    },
+    {
+      "code": "osm:node/9576622181",
+      "name": "Yarra Ranges Health",
+      "countryCode": "AU",
+      "origin": "https://www.easternhealth.org.au",
+      "lat": -37.7565429,
+      "lng": 145.351376
+    },
+    {
+      "code": "osm:node/10729581058",
+      "name": "Think Well Hypnotherapy",
+      "countryCode": "AU",
+      "origin": "https://www.thinkwellhypnotherapy.com.au",
+      "lat": -33.4265856,
+      "lng": 151.3210687
+    },
+    {
+      "code": "osm:node/11056431342",
+      "name": "Integrative Clinical Psychology",
+      "countryCode": "AU",
+      "origin": "https://www.icpsych.com.au",
+      "lat": -26.6722667,
+      "lng": 153.0873278
+    },
+    {
+      "code": "osm:node/11150416770",
+      "name": "Evolve Therapeutic Services",
+      "countryCode": "AU",
+      "origin": "https://www.childrens.health.qld.gov.au",
+      "lat": -27.4247635,
+      "lng": 152.9906196
+    },
+    {
+      "code": "osm:node/12600349516",
+      "name": "Dr Mani Panat",
+      "countryCode": "AU",
+      "origin": "https://www.ramsayhealth.com.au",
+      "lat": -31.0750226,
+      "lng": 150.9227095
+    },
+    {
+      "code": "osm:node/12998478973",
+      "name": "Cronulla Medical Practice",
+      "countryCode": "AU",
+      "origin": "https://www.cronullamp.com.au",
+      "lat": -34.0512289,
+      "lng": 151.1539943
+    },
+    {
+      "code": "osm:node/13232198650",
+      "name": "Community Rehabilitation Centre",
+      "countryCode": "AU",
+      "origin": "https://www.cghs.com.au",
+      "lat": -38.1095618,
+      "lng": 147.0811812
+    },
+    {
+      "code": "osm:node/13232198651",
+      "name": "X-Ray Department",
+      "countryCode": "AU",
+      "origin": "https://www.cghs.com.au",
+      "lat": -38.1082248,
+      "lng": 147.0806395
+    },
+    {
+      "code": "osm:node/13232198654",
+      "name": "Central Gippsland Health, Community Services",
+      "countryCode": "AU",
+      "origin": "https://www.cghs.com.au",
+      "lat": -38.1073634,
+      "lng": 147.0802689
+    },
+    {
+      "code": "osm:node/13232243519",
+      "name": "Central Gippsland Health",
+      "countryCode": "AU",
+      "origin": "https://www.cghs.com.au",
+      "lat": -38.1088977,
+      "lng": 147.0808073
+    },
+    {
+      "code": "osm:node/13997069364",
+      "name": "Yarrabah Emergency Service",
+      "countryCode": "AU",
+      "origin": "https://www.cairns-hinterland.health.qld.gov.au",
+      "lat": -16.9316074,
+      "lng": 145.8776641
+    },
+    {
+      "code": "osm:node/14016681602",
+      "name": "Lifeblood Donor centre",
+      "countryCode": "AU",
+      "origin": "http://lifeblood.com.au",
+      "lat": -33.8197569,
+      "lng": 151.0195359
+    },
+    {
+      "code": "osm:node/14057638441",
+      "name": "Sir John Monash Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://curagroup.com.au",
+      "lat": -37.9188381,
+      "lng": 145.121446
+    },
+    {
+      "code": "osm:node/14088107511",
+      "name": "Vision Day Surgery",
+      "countryCode": "AU",
+      "origin": "https://visionhospitalgroup.com.au",
+      "lat": -37.8325041,
+      "lng": 145.055562
+    },
+    {
+      "code": "osm:node/14115085867",
+      "name": "Royal Perth Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.rph.wa.gov.au",
+      "lat": -31.9555801,
+      "lng": 115.8688028
+    },
+    {
+      "code": "osm:node/14120554765",
+      "name": "Royal Perth Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.rph.wa.gov.au",
+      "lat": -31.954677,
+      "lng": 115.8678268
+    },
+    {
+      "code": "osm:node/14230247901",
+      "name": "RMH Elizabeth St",
+      "countryCode": "AU",
+      "origin": "https://www.thermh.org.au",
+      "lat": -37.8033283,
+      "lng": 144.9578132
+    },
+    {
+      "code": "osm:way/4754494",
+      "name": "Monash Medical Centre, Clayton Campus",
+      "countryCode": "AU",
+      "origin": "http://www.southernhealth.org.au",
+      "lat": -37.9200317,
+      "lng": 145.1240614
+    },
+    {
+      "code": "osm:way/4787055",
+      "name": "Maroondah Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.easternhealth.org.au",
+      "lat": -37.8069112,
+      "lng": 145.2543839
+    },
+    {
+      "code": "osm:way/4827312",
+      "name": "Queen Elizabeth II Medical Centre",
+      "countryCode": "AU",
+      "origin": "https://www.qeiimc.health.wa.gov.au",
+      "lat": -31.9674991,
+      "lng": 115.814346
+    },
+    {
+      "code": "osm:way/4984426",
+      "name": "Saint John of God Murdoch Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sjog.org.au",
+      "lat": -32.0678631,
+      "lng": 115.8446253
+    },
+    {
+      "code": "osm:way/5179320",
+      "name": "The Royal Melbourne Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.thermh.org.au",
+      "lat": -37.7986482,
+      "lng": 144.9556526
+    },
+    {
+      "code": "osm:way/8073571",
+      "name": "Bethesda Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.bethesda.org.au",
+      "lat": -31.9878752,
+      "lng": 115.778916
+    },
+    {
+      "code": "osm:way/8655735",
+      "name": "Epworth Eastern",
+      "countryCode": "AU",
+      "origin": "https://www.epworth.org.au",
+      "lat": -37.8151524,
+      "lng": 145.1191847
+    },
+    {
+      "code": "osm:way/8655737",
+      "name": "Box Hill Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.easternhealth.org.au",
+      "lat": -37.8136201,
+      "lng": 145.118406
+    },
+    {
+      "code": "osm:way/9518031",
+      "name": "King Edward Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://kemh.health.wa.gov.au",
+      "lat": -31.9495315,
+      "lng": 115.8187789
+    },
+    {
+      "code": "osm:way/9858809",
+      "name": "Royal Brisbane and Women’s Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -27.447703,
+      "lng": 153.0268862
+    },
+    {
+      "code": "osm:way/9923714",
+      "name": "John Fawkner Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://johnfawknerprivatehospital.com.au",
+      "lat": -37.754276,
+      "lng": 144.9588422
+    },
+    {
+      "code": "osm:way/9934636",
+      "name": "The Prince Charles Hospital",
+      "countryCode": "AU",
+      "origin": "https://metronorth.health.qld.gov.au",
+      "lat": -27.3888227,
+      "lng": 153.0238033
+    },
+    {
+      "code": "osm:way/12295272",
+      "name": "St Andrews War Memorial Private Hospital",
+      "countryCode": "AU",
+      "origin": "http://standrewshospital.com.au",
+      "lat": -27.4611598,
+      "lng": 153.0213857
+    },
+    {
+      "code": "osm:way/19692048",
+      "name": "Werribee Mercy Hospital",
+      "countryCode": "AU",
+      "origin": "https://health-services.mercyhealth.com.au",
+      "lat": -37.8870949,
+      "lng": 144.6979243
+    },
+    {
+      "code": "osm:way/22900265",
+      "name": "The Sydney Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sydneyprivate.com.au",
+      "lat": -33.894186,
+      "lng": 151.1293149
+    },
+    {
+      "code": "osm:way/24530691",
+      "name": "St Vincent's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.svhm.org.au",
+      "lat": -37.806832,
+      "lng": 144.974734
+    },
+    {
+      "code": "osm:way/24595717",
+      "name": "Austin Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.austin.org.au",
+      "lat": -37.7566052,
+      "lng": 145.0589139
+    },
+    {
+      "code": "osm:way/24690740",
+      "name": "Sunshine Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.westernhealth.org.au",
+      "lat": -37.7587979,
+      "lng": 144.8174425
+    },
+    {
+      "code": "osm:way/25480829",
+      "name": "York Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -31.8943746,
+      "lng": 116.7576481
+    },
+    {
+      "code": "osm:way/25520531",
+      "name": "Rosebud Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.peninsulahealth.org.au",
+      "lat": -38.3628832,
+      "lng": 144.8849086
+    },
+    {
+      "code": "osm:way/25583774",
+      "name": "Royal Children's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.rch.org.au",
+      "lat": -37.7938098,
+      "lng": 144.9495285
+    },
+    {
+      "code": "osm:way/26830083",
+      "name": "Thomas Embling Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.forensicare.vic.gov.au",
+      "lat": -37.7891777,
+      "lng": 145.0125134
+    },
+    {
+      "code": "osm:way/27129399",
+      "name": "The Wesley Hospital",
+      "countryCode": "AU",
+      "origin": "https://wesley.com.au",
+      "lat": -27.4779572,
+      "lng": 152.9978636
+    },
+    {
+      "code": "osm:way/27164568",
+      "name": "Goulburn Valley Health (Shepparton)",
+      "countryCode": "AU",
+      "origin": "https://www.gvhealth.org.au",
+      "lat": -36.3637143,
+      "lng": 145.4046626
+    },
+    {
+      "code": "osm:way/27704708",
+      "name": "St Vincent's Private Hospital East Melbourne",
+      "countryCode": "AU",
+      "origin": "http://www.stvincentsmercy.com.au",
+      "lat": -37.812272,
+      "lng": 144.9843896
+    },
+    {
+      "code": "osm:way/27877701",
+      "name": "Frankston Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.peninsulahealth.org.au",
+      "lat": -38.1509936,
+      "lng": 145.1288442
+    },
+    {
+      "code": "osm:way/28135555",
+      "name": "Angliss Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.easternhealth.org.au",
+      "lat": -37.8989497,
+      "lng": 145.3144798
+    },
+    {
+      "code": "osm:way/28222442",
+      "name": "St George's Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.svhm.org.au",
+      "lat": -37.8084104,
+      "lng": 145.0528124
+    },
+    {
+      "code": "osm:way/28738920",
+      "name": "Kingston Centre",
+      "countryCode": "AU",
+      "origin": "https://monashhealth.org",
+      "lat": -37.9559492,
+      "lng": 145.0784929
+    },
+    {
+      "code": "osm:way/29200207",
+      "name": "Launceston General Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.dhhs.tas.gov.au",
+      "lat": -41.4470102,
+      "lng": 147.1417553
+    },
+    {
+      "code": "osm:way/29336955",
+      "name": "Brisbane Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://brisbaneprivatehospital.com.au",
+      "lat": -27.4646094,
+      "lng": 153.0225948
+    },
+    {
+      "code": "osm:way/29478206",
+      "name": "Royal Hobart Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.tas.gov.au",
+      "lat": -42.8799143,
+      "lng": 147.3299414
+    },
+    {
+      "code": "osm:way/29548387",
+      "name": "Epworth Richmond Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.epworth.org.au",
+      "lat": -37.8171818,
+      "lng": 144.9930382
+    },
+    {
+      "code": "osm:way/30182117",
+      "name": "Queen Elizabeth II Jubilee Hospital",
+      "countryCode": "AU",
+      "origin": "https://metrosouth.health.qld.gov.au",
+      "lat": -27.559617,
+      "lng": 153.0484063
+    },
+    {
+      "code": "osm:way/30409532",
+      "name": "Barwon Health - University Hospital Geelong",
+      "countryCode": "AU",
+      "origin": "https://www.barwonhealth.org.au",
+      "lat": -38.152119,
+      "lng": 144.3655917
+    },
+    {
+      "code": "osm:way/30756094",
+      "name": "The Bays Cancer Care Centre",
+      "countryCode": "AU",
+      "origin": "https://www.thebays.com.au",
+      "lat": -38.224461,
+      "lng": 145.0423353
+    },
+    {
+      "code": "osm:way/30929255",
+      "name": "Dandenong Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.monashhealth.org",
+      "lat": -37.9763627,
+      "lng": 145.2180015
+    },
+    {
+      "code": "osm:way/30967824",
+      "name": "Heidelberg Repatriation Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.austin.org.au",
+      "lat": -37.7544111,
+      "lng": 145.0475338
+    },
+    {
+      "code": "osm:way/31294433",
+      "name": "Sunnybank Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://sunnybankprivatehospital.com.au",
+      "lat": -27.5725596,
+      "lng": 153.0613968
+    },
+    {
+      "code": "osm:way/32224646",
+      "name": "St Vincent's Private Hospital Lismore",
+      "countryCode": "AU",
+      "origin": "https://www.svh.org.au",
+      "lat": -28.8199344,
+      "lng": 153.2880536
+    },
+    {
+      "code": "osm:way/32920232",
+      "name": "The Avenue Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.theavenuehospital.com.au",
+      "lat": -37.8548897,
+      "lng": 144.9987132
+    },
+    {
+      "code": "osm:way/32920650",
+      "name": "Caulfield Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.alfredhealth.org.au",
+      "lat": -37.8828808,
+      "lng": 145.0173834
+    },
+    {
+      "code": "osm:way/33347995",
+      "name": "Nundah Community Health Centre",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -27.3991376,
+      "lng": 153.0647267
+    },
+    {
+      "code": "osm:way/33765043",
+      "name": "The Northern Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nh.org.au",
+      "lat": -37.6534657,
+      "lng": 145.0139378
+    },
+    {
+      "code": "osm:way/34240262",
+      "name": "North West Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.northwestprivatehospital.com.au",
+      "lat": -27.3939813,
+      "lng": 152.9930092
+    },
+    {
+      "code": "osm:way/34406728",
+      "name": "Wantirna Health",
+      "countryCode": "AU",
+      "origin": "https://www.easternhealth.org.au",
+      "lat": -37.8486081,
+      "lng": 145.2252814
+    },
+    {
+      "code": "osm:way/34587543",
+      "name": "Masada Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.masadaprivate.com.au",
+      "lat": -37.8695224,
+      "lng": 145.0032963
+    },
+    {
+      "code": "osm:way/34804621",
+      "name": "The Victorian Rehabilitation Centre",
+      "countryCode": "AU",
+      "origin": "https://thevictorianrehabilitationcentre.com.au",
+      "lat": -37.8981016,
+      "lng": 145.1604517
+    },
+    {
+      "code": "osm:way/36024967",
+      "name": "The Melbourne Clinic",
+      "countryCode": "AU",
+      "origin": "https://themelbourneclinic.com.au",
+      "lat": -37.814824,
+      "lng": 144.9989314
+    },
+    {
+      "code": "osm:way/36308871",
+      "name": "St Andrews Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.standrewsipswich.com.au",
+      "lat": -27.6190082,
+      "lng": 152.7632388
+    },
+    {
+      "code": "osm:way/37193791",
+      "name": "Osborne Park Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.oph.health.wa.gov.au",
+      "lat": -31.8866607,
+      "lng": 115.8036328
+    },
+    {
+      "code": "osm:way/37519748",
+      "name": "Royal Melbourne Hospital - Royal Park Campus",
+      "countryCode": "AU",
+      "origin": "https://www.thermh.org.au",
+      "lat": -37.7779502,
+      "lng": 144.9478187
+    },
+    {
+      "code": "osm:way/37731396",
+      "name": "North Canberra Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.act.gov.au",
+      "lat": -35.2525221,
+      "lng": 149.089927
+    },
+    {
+      "code": "osm:way/38507406",
+      "name": "The Mater Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.svph.org.au",
+      "lat": -33.8318467,
+      "lng": 151.2017881
+    },
+    {
+      "code": "osm:way/39705236",
+      "name": "Wyong Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.cclhd.health.nsw.gov.au",
+      "lat": -33.2604434,
+      "lng": 151.4788627
+    },
+    {
+      "code": "osm:way/39798989",
+      "name": "St Vincents Private Hospital Fitzroy",
+      "countryCode": "AU",
+      "origin": "http://www.stvincentsmercy.com.au",
+      "lat": -37.8074801,
+      "lng": 144.9760713
+    },
+    {
+      "code": "osm:way/41414658",
+      "name": "Womens and Childrens Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.wch.sa.gov.au",
+      "lat": -34.9115191,
+      "lng": 138.6000066
+    },
+    {
+      "code": "osm:way/41991699",
+      "name": "Roma Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -26.568461,
+      "lng": 148.7755731
+    },
+    {
+      "code": "osm:way/42156313",
+      "name": "St John of God Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sjog.org.au",
+      "lat": -37.5575562,
+      "lng": 143.8461801
+    },
+    {
+      "code": "osm:way/42295626",
+      "name": "Toowoomba Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -27.5693925,
+      "lng": 151.9442677
+    },
+    {
+      "code": "osm:way/42336221",
+      "name": "St Andrew's Toowoomba Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sath.org.au",
+      "lat": -27.540168,
+      "lng": 151.934492
+    },
+    {
+      "code": "osm:way/42336452",
+      "name": "St Vincent's Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.svpht.org.au",
+      "lat": -27.5666001,
+      "lng": 151.9720309
+    },
+    {
+      "code": "osm:way/42676341",
+      "name": "Ashford Hospital",
+      "countryCode": "AU",
+      "origin": "https://ashfordhospital.org.au",
+      "lat": -34.9480596,
+      "lng": 138.5767297
+    },
+    {
+      "code": "osm:way/42744189",
+      "name": "Northpark Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://northparkprivatehospital.com.au",
+      "lat": -37.6912917,
+      "lng": 145.0620371
+    },
+    {
+      "code": "osm:way/43419834",
+      "name": "Epworth Cliveden",
+      "countryCode": "AU",
+      "origin": "https://www.epworth.org.au",
+      "lat": -37.8156928,
+      "lng": 144.9874666
+    },
+    {
+      "code": "osm:way/45067264",
+      "name": "Hollywood Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.hollywoodprivate.com.au",
+      "lat": -31.9689019,
+      "lng": 115.8099847
+    },
+    {
+      "code": "osm:way/46150715",
+      "name": "Noosa Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.noosahospital.com.au",
+      "lat": -26.4033064,
+      "lng": 153.0459522
+    },
+    {
+      "code": "osm:way/47125731",
+      "name": "Fremantle Hospital and Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.fhhs.health.wa.gov.au",
+      "lat": -32.0574584,
+      "lng": 115.7530033
+    },
+    {
+      "code": "osm:way/48255597",
+      "name": "Mulgrave Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://mulgraveprivate.com.au",
+      "lat": -37.9386758,
+      "lng": 145.2130127
+    },
+    {
+      "code": "osm:way/49810136",
+      "name": "Gove District Hospital",
+      "countryCode": "AU",
+      "origin": "https://nt.gov.au",
+      "lat": -12.1866547,
+      "lng": 136.7777713
+    },
+    {
+      "code": "osm:way/49831010",
+      "name": "Tamara Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.ramsayhealth.com.au",
+      "lat": -31.0776214,
+      "lng": 150.9216598
+    },
+    {
+      "code": "osm:way/51653416",
+      "name": "Bundaberg Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -24.8688712,
+      "lng": 152.3353629
+    },
+    {
+      "code": "osm:way/51653459",
+      "name": "Mater Misericordiae Hospital Bundaberg",
+      "countryCode": "AU",
+      "origin": "https://www.mercycq.com",
+      "lat": -24.8702746,
+      "lng": 152.3298853
+    },
+    {
+      "code": "osm:way/53143332",
+      "name": "Rochester and Elmore District Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.redhs.com.au",
+      "lat": -36.3666946,
+      "lng": 144.6972727
+    },
+    {
+      "code": "osm:way/54238205",
+      "name": "Benalla and District Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.benallahospital.com.au",
+      "lat": -36.5549959,
+      "lng": 145.9944956
+    },
+    {
+      "code": "osm:way/54329621",
+      "name": "Euroa Health",
+      "countryCode": "AU",
+      "origin": "https://euroahealth.com.au",
+      "lat": -36.75982,
+      "lng": 145.5694044
+    },
+    {
+      "code": "osm:way/55055416",
+      "name": "Norwest Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://norwestprivatehospital.com.au",
+      "lat": -33.7452152,
+      "lng": 150.9539318
+    },
+    {
+      "code": "osm:way/55770489",
+      "name": "Numurkah District Health Service",
+      "countryCode": "AU",
+      "origin": "http://www.numurkahhospital.org.au",
+      "lat": -36.1000331,
+      "lng": 145.4435742
+    },
+    {
+      "code": "osm:way/56019615",
+      "name": "Yea and District Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://yeahospital.org.au",
+      "lat": -37.2135346,
+      "lng": 145.4308489
+    },
+    {
+      "code": "osm:way/56063795",
+      "name": "RiverCity Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://rivercityph.com.au",
+      "lat": -27.4735167,
+      "lng": 152.9951229
+    },
+    {
+      "code": "osm:way/56191265",
+      "name": "Alexandra District Health",
+      "countryCode": "AU",
+      "origin": "http://www.alexandrahospital.org.au",
+      "lat": -37.1949719,
+      "lng": 145.7166014
+    },
+    {
+      "code": "osm:way/57903063",
+      "name": "North Eastern Rehabilitation Centre",
+      "countryCode": "AU",
+      "origin": "https://northeasternrehabilitationcentre.com.au",
+      "lat": -37.763531,
+      "lng": 145.0310364
+    },
+    {
+      "code": "osm:way/58187331",
+      "name": "Melbourne Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://melbourneprivatehospital.com.au",
+      "lat": -37.7982692,
+      "lng": 144.9571353
+    },
+    {
+      "code": "osm:way/58974175",
+      "name": "Kyneton District Health Service",
+      "countryCode": "AU",
+      "origin": "http://www.kynetonhealth.org.au",
+      "lat": -37.2548393,
+      "lng": 144.4698525
+    },
+    {
+      "code": "osm:way/62344619",
+      "name": "Royal Women's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.thewomens.org.au",
+      "lat": -37.7989273,
+      "lng": 144.9549594
+    },
+    {
+      "code": "osm:way/67145045",
+      "name": "Ringwood Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://ringwoodprivatehospital.com.au",
+      "lat": -37.8114049,
+      "lng": 145.2437941
+    },
+    {
+      "code": "osm:way/68191791",
+      "name": "Peninsula Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://peninsulaprivatehospital.com.au",
+      "lat": -27.2303711,
+      "lng": 153.0929971
+    },
+    {
+      "code": "osm:way/68328059",
+      "name": "Queensland Children's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -27.4839991,
+      "lng": 153.0265288
+    },
+    {
+      "code": "osm:way/69548890",
+      "name": "Hornsby Ku-ring-gai Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nslhd.health.nsw.gov.au",
+      "lat": -33.7025654,
+      "lng": 151.1125326
+    },
+    {
+      "code": "osm:way/70069273",
+      "name": "Redlands Satellite Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.qld.gov.au",
+      "lat": -27.6203519,
+      "lng": 153.3075758
+    },
+    {
+      "code": "osm:way/72046204",
+      "name": "Bulli District Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.islhd.health.nsw.gov.au",
+      "lat": -34.3366944,
+      "lng": 150.9073746
+    },
+    {
+      "code": "osm:way/74688930",
+      "name": "St John of God Geelong Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sjog.org.au",
+      "lat": -38.1516366,
+      "lng": 144.3578379
+    },
+    {
+      "code": "osm:way/80908544",
+      "name": "Hobart Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://hobartprivatehospital.com.au",
+      "lat": -42.8807362,
+      "lng": 147.3298441
+    },
+    {
+      "code": "osm:way/85396934",
+      "name": "Manning Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.hnehealth.nsw.gov.au",
+      "lat": -31.9101542,
+      "lng": 152.4549357
+    },
+    {
+      "code": "osm:way/86808526",
+      "name": "Boonah Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.westmoreton.health.qld.gov.au",
+      "lat": -27.9990782,
+      "lng": 152.6788314
+    },
+    {
+      "code": "osm:way/90296305",
+      "name": "North West Regional Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.tas.gov.au",
+      "lat": -41.0472387,
+      "lng": 145.8811658
+    },
+    {
+      "code": "osm:way/90961556",
+      "name": "Mersey Community Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.dhhs.tas.gov.au",
+      "lat": -41.2291638,
+      "lng": 146.422253
+    },
+    {
+      "code": "osm:way/92031905",
+      "name": "East Grampians Health Service",
+      "countryCode": "AU",
+      "origin": "https://eghs.net.au",
+      "lat": -37.2786493,
+      "lng": 142.9328222
+    },
+    {
+      "code": "osm:way/94670969",
+      "name": "Royal Talbot Rehabilitation Centre",
+      "countryCode": "AU",
+      "origin": "https://www.austin.org.au",
+      "lat": -37.7895278,
+      "lng": 145.023268
+    },
+    {
+      "code": "osm:way/96911474",
+      "name": "Ramsay Clinic Thirroul",
+      "countryCode": "AU",
+      "origin": "https://www.ramsaymentalhealth.com.au",
+      "lat": -34.3102481,
+      "lng": 150.91766
+    },
+    {
+      "code": "osm:way/97923439",
+      "name": "Monash Medical Centre Moorabbin",
+      "countryCode": "AU",
+      "origin": "http://www.southernhealth.org.au",
+      "lat": -37.9207639,
+      "lng": 145.0638995
+    },
+    {
+      "code": "osm:way/99661811",
+      "name": "Casino and District Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.8598348,
+      "lng": 153.0358959
+    },
+    {
+      "code": "osm:way/99998610",
+      "name": "Warringal Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.warringalprivate.com.au",
+      "lat": -37.7546567,
+      "lng": 145.0609665
+    },
+    {
+      "code": "osm:way/116673527",
+      "name": "Kyogle Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.6270837,
+      "lng": 153.0017724
+    },
+    {
+      "code": "osm:way/116778899",
+      "name": "Stawell District Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.srh.org.au",
+      "lat": -37.0593531,
+      "lng": 142.7814653
+    },
+    {
+      "code": "osm:way/124151116",
+      "name": "St Andrew’s Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.stand.org.au",
+      "lat": -34.9342289,
+      "lng": 138.6149956
+    },
+    {
+      "code": "osm:way/126552820",
+      "name": "Queen Elizabeth Centre",
+      "countryCode": "AU",
+      "origin": "https://www.bhs.org.au",
+      "lat": -37.5635116,
+      "lng": 143.8426697
+    },
+    {
+      "code": "osm:way/128255346",
+      "name": "President Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.presidentprivate.com.au",
+      "lat": -34.0365489,
+      "lng": 151.0792507
+    },
+    {
+      "code": "osm:way/130506068",
+      "name": "Royal Ryde Rehabilitation Centre",
+      "countryCode": "AU",
+      "origin": "https://royalrehab-ryde.com.au",
+      "lat": -33.8219365,
+      "lng": 151.1081084
+    },
+    {
+      "code": "osm:way/131476925",
+      "name": "Latrobe Regional Health",
+      "countryCode": "AU",
+      "origin": "https://lrh.com.au",
+      "lat": -38.2186793,
+      "lng": 146.4721033
+    },
+    {
+      "code": "osm:way/132510713",
+      "name": "Leongatha Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.gshs.com.au",
+      "lat": -38.487662,
+      "lng": 145.9505296
+    },
+    {
+      "code": "osm:way/135642318",
+      "name": "Peninsula Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.peninsulaph.com.au",
+      "lat": -38.1576175,
+      "lng": 145.1689877
+    },
+    {
+      "code": "osm:way/141323808",
+      "name": "Mater Hospital Brisbane",
+      "countryCode": "AU",
+      "origin": "https://www.mater.org.au",
+      "lat": -27.4859669,
+      "lng": 153.0272217
+    },
+    {
+      "code": "osm:way/146222743",
+      "name": "The Park Private Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.tpph.com.au",
+      "lat": -31.9343418,
+      "lng": 115.8743834
+    },
+    {
+      "code": "osm:way/146355581",
+      "name": "St John of God Mt Lawley Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sjog.org.au",
+      "lat": -31.9367124,
+      "lng": 115.8848181
+    },
+    {
+      "code": "osm:way/148287816",
+      "name": "Mount Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.mountprivatehospital.com.au",
+      "lat": -31.9581745,
+      "lng": 115.8456158
+    },
+    {
+      "code": "osm:way/150604204",
+      "name": "Westmead Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.wslhd.health.nsw.gov.au",
+      "lat": -33.802676,
+      "lng": 150.9877346
+    },
+    {
+      "code": "osm:way/150604206",
+      "name": "The Children's Hospital at Westmead",
+      "countryCode": "AU",
+      "origin": "http://bandagedbear.org.au",
+      "lat": -33.8015906,
+      "lng": 150.9915973
+    },
+    {
+      "code": "osm:way/151666744",
+      "name": "Westmead Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.westmeadprivate.com.au",
+      "lat": -33.8028936,
+      "lng": 150.9825115
+    },
+    {
+      "code": "osm:way/153513681",
+      "name": "Peter James Centre",
+      "countryCode": "AU",
+      "origin": "https://www.easternhealth.org.au",
+      "lat": -37.8527443,
+      "lng": 145.1645738
+    },
+    {
+      "code": "osm:way/158029744",
+      "name": "Golf Links Road Rehabilitation Centre",
+      "countryCode": "AU",
+      "origin": "https://www.peninsulahealth.org.au",
+      "lat": -38.1731361,
+      "lng": 145.1493226
+    },
+    {
+      "code": "osm:way/158308079",
+      "name": "The Mornington Centre",
+      "countryCode": "AU",
+      "origin": "https://www.peninsulahealth.org.au",
+      "lat": -38.2304515,
+      "lng": 145.0410907
+    },
+    {
+      "code": "osm:way/164675865",
+      "name": "Koo Wee Rup Hospital",
+      "countryCode": "AU",
+      "origin": "https://kooweeruphospital.net.au",
+      "lat": -38.2006794,
+      "lng": 145.4842578
+    },
+    {
+      "code": "osm:way/174881688",
+      "name": "Broken Hill Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -31.9475314,
+      "lng": 141.4544354
+    },
+    {
+      "code": "osm:way/175993587",
+      "name": "Campbelltown Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.sswahs.nsw.gov.au",
+      "lat": -34.078008,
+      "lng": 150.8059399
+    },
+    {
+      "code": "osm:way/176174104",
+      "name": "Bathurst Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.myhospitals.gov.au",
+      "lat": -33.4061851,
+      "lng": 149.5722678
+    },
+    {
+      "code": "osm:way/177482396",
+      "name": "Mater Misericordiae Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.mercycq.com",
+      "lat": -21.130745,
+      "lng": 149.1662548
+    },
+    {
+      "code": "osm:way/178735795",
+      "name": "Kilmore & District Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.kilmoredistricthospital.org.au",
+      "lat": -37.3019393,
+      "lng": 144.9581572
+    },
+    {
+      "code": "osm:way/178740161",
+      "name": "Gumeracha District Soldiers’ Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sahealth.sa.gov.au",
+      "lat": -34.8261212,
+      "lng": 138.8819596
+    },
+    {
+      "code": "osm:way/179102074",
+      "name": "Canberra Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.act.gov.au",
+      "lat": -35.3467658,
+      "lng": 149.102109
+    },
+    {
+      "code": "osm:way/180653963",
+      "name": "Repat Health Precinct",
+      "countryCode": "AU",
+      "origin": "https://www.sahealth.sa.gov.au",
+      "lat": -34.9903557,
+      "lng": 138.5897048
+    },
+    {
+      "code": "osm:way/181219963",
+      "name": "The Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://thememorialhospital.org.au",
+      "lat": -34.9129092,
+      "lng": 138.6000843
+    },
+    {
+      "code": "osm:way/182327961",
+      "name": "Royal Adelaide Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.rah.sa.gov.au",
+      "lat": -34.9206105,
+      "lng": 138.5861774
+    },
+    {
+      "code": "osm:way/182807929",
+      "name": "Sandringham & District Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.alfredhealth.org.au",
+      "lat": -37.9608788,
+      "lng": 145.018102
+    },
+    {
+      "code": "osm:way/183857711",
+      "name": "Albury Wodonga Health - Albury Campus",
+      "countryCode": "AU",
+      "origin": "https://www.awh.org.au",
+      "lat": -36.0785565,
+      "lng": 146.9381365
+    },
+    {
+      "code": "osm:way/184393676",
+      "name": "Greenwich Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.hammond.com.au",
+      "lat": -33.8275378,
+      "lng": 151.1838617
+    },
+    {
+      "code": "osm:way/187088351",
+      "name": "Exmouth Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.exmouth.wa.gov.au",
+      "lat": -21.9281332,
+      "lng": 114.1199283
+    },
+    {
+      "code": "osm:way/188745684",
+      "name": "Hamilton Base Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.wdhs.net",
+      "lat": -37.7370173,
+      "lng": 142.0310146
+    },
+    {
+      "code": "osm:way/191176073",
+      "name": "Warwick Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -28.2243586,
+      "lng": 152.0174016
+    },
+    {
+      "code": "osm:way/191213661",
+      "name": "Baillie Henderson Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -27.5250689,
+      "lng": 151.9377413
+    },
+    {
+      "code": "osm:way/192854416",
+      "name": "Quilpie Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -26.6163882,
+      "lng": 144.2745387
+    },
+    {
+      "code": "osm:way/192882344",
+      "name": "Charleville Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -26.4117062,
+      "lng": 146.2390492
+    },
+    {
+      "code": "osm:way/192884557",
+      "name": "Beaufort Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.bashs.org.au",
+      "lat": -37.4311502,
+      "lng": 143.3824179
+    },
+    {
+      "code": "osm:way/194422047",
+      "name": "Cunnamulla Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -28.0710743,
+      "lng": 145.6899406
+    },
+    {
+      "code": "osm:way/197853012",
+      "name": "Casterton Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://castertonmemorialhospital.com.au",
+      "lat": -37.5899953,
+      "lng": 141.392392
+    },
+    {
+      "code": "osm:way/203432526",
+      "name": "Coolah Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -31.8215353,
+      "lng": 149.7099885
+    },
+    {
+      "code": "osm:way/203844106",
+      "name": "Belmont Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://belmontprivate.com.au",
+      "lat": -27.5007836,
+      "lng": 153.0991327
+    },
+    {
+      "code": "osm:way/206967239",
+      "name": "Royal Prince Alfred Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.slhd.nsw.gov.au",
+      "lat": -33.8891843,
+      "lng": 151.1815371
+    },
+    {
+      "code": "osm:way/207844007",
+      "name": "Royal North Shore Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nslhd.health.nsw.gov.au",
+      "lat": -33.8213643,
+      "lng": 151.1910889
+    },
+    {
+      "code": "osm:way/209448491",
+      "name": "Manilla Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.hnehealth.nsw.gov.au",
+      "lat": -30.7455721,
+      "lng": 150.7320309
+    },
+    {
+      "code": "osm:way/213482233",
+      "name": "Heathcote Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.heathcotehealth.org",
+      "lat": -36.9254545,
+      "lng": 144.708717
+    },
+    {
+      "code": "osm:way/217420018",
+      "name": "Deloraine District Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.dhhs.tas.gov.au",
+      "lat": -41.5281157,
+      "lng": 146.659655
+    },
+    {
+      "code": "osm:way/218426176",
+      "name": "St John of God Warrnambool Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sjog.org.au",
+      "lat": -38.3711596,
+      "lng": 142.4792541
+    },
+    {
+      "code": "osm:way/219503952",
+      "name": "Orbost Regional Health",
+      "countryCode": "AU",
+      "origin": "https://orbostregionalhealth.com.au",
+      "lat": -37.7020906,
+      "lng": 148.4654221
+    },
+    {
+      "code": "osm:way/219515373",
+      "name": "Griffith Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -34.2820163,
+      "lng": 146.0439426
+    },
+    {
+      "code": "osm:way/219621563",
+      "name": "Bellinger River District Hospital",
+      "countryCode": "AU",
+      "origin": "https://mnclhd.health.nsw.gov.au",
+      "lat": -30.4572931,
+      "lng": 152.8934935
+    },
+    {
+      "code": "osm:way/219892802",
+      "name": "Gippsland Southern Health Service - Korumburra",
+      "countryCode": "AU",
+      "origin": "https://www.gshs.com.au",
+      "lat": -38.4303508,
+      "lng": 145.8281161
+    },
+    {
+      "code": "osm:way/219893484",
+      "name": "Wonthaggi Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.basscoasthealth.org.au",
+      "lat": -38.6082884,
+      "lng": 145.5810851
+    },
+    {
+      "code": "osm:way/220229876",
+      "name": "Mount Gambier & Districts Health Service",
+      "countryCode": "AU",
+      "origin": "http://www.countryhealthsa.sa.gov.au",
+      "lat": -37.805261,
+      "lng": 140.7868982
+    },
+    {
+      "code": "osm:way/220463642",
+      "name": "East Wimmera Health Service (Birchip Campus)",
+      "countryCode": "AU",
+      "origin": "https://ewhs.org.au",
+      "lat": -35.9802129,
+      "lng": 142.9158769
+    },
+    {
+      "code": "osm:way/221447439",
+      "name": "Cranbourne Integrated Care Centre",
+      "countryCode": "AU",
+      "origin": "https://www.monashhealth.org",
+      "lat": -38.1134128,
+      "lng": 145.2811056
+    },
+    {
+      "code": "osm:way/221802620",
+      "name": "Rupanyup Hospital & Nursing Home",
+      "countryCode": "AU",
+      "origin": "http://www.rupanyup.com.au",
+      "lat": -36.6365522,
+      "lng": 142.6319211
+    },
+    {
+      "code": "osm:way/222622253",
+      "name": "Rural Northwest Health Hopetoun",
+      "countryCode": "AU",
+      "origin": "https://www.rnh.net.au",
+      "lat": -35.7320215,
+      "lng": 142.366548
+    },
+    {
+      "code": "osm:way/222882730",
+      "name": "East Melbourne Specialist Day Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.emsdh.com.au",
+      "lat": -37.8096448,
+      "lng": 144.9832424
+    },
+    {
+      "code": "osm:way/223101843",
+      "name": "Warrnambool Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://swarh.com.au",
+      "lat": -38.3800614,
+      "lng": 142.4729942
+    },
+    {
+      "code": "osm:way/229238510",
+      "name": "Batlow-Adelong Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -35.5225983,
+      "lng": 148.1481145
+    },
+    {
+      "code": "osm:way/229626099",
+      "name": "Tumut District Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -35.3075152,
+      "lng": 148.2192019
+    },
+    {
+      "code": "osm:way/230220219",
+      "name": "Dudley Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.dudleyprivate.com.au",
+      "lat": -33.2815856,
+      "lng": 149.1215183
+    },
+    {
+      "code": "osm:way/233813192",
+      "name": "Tweed Hospital",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.1770908,
+      "lng": 153.545653
+    },
+    {
+      "code": "osm:way/235109786",
+      "name": "St John of God Midland Public and Private Hospitals",
+      "countryCode": "AU",
+      "origin": "https://www.sjog.org.au",
+      "lat": -31.8948663,
+      "lng": 116.0093035
+    },
+    {
+      "code": "osm:way/237757013",
+      "name": "Insight Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nexushospitals.com.au",
+      "lat": -36.0816742,
+      "lng": 146.9108585
+    },
+    {
+      "code": "osm:way/238150175",
+      "name": "Robinvale District Health Services",
+      "countryCode": "AU",
+      "origin": "https://www.rdhs.com.au",
+      "lat": -34.5841406,
+      "lng": 142.7815093
+    },
+    {
+      "code": "osm:way/239391734",
+      "name": "Peel Health Campus",
+      "countryCode": "AU",
+      "origin": "https://www.peel.health.wa.gov.au",
+      "lat": -32.5331561,
+      "lng": 115.7646384
+    },
+    {
+      "code": "osm:way/240451380",
+      "name": "Mungindi Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -28.9724556,
+      "lng": 148.9891342
+    },
+    {
+      "code": "osm:way/241060687",
+      "name": "Mercy Health Albury",
+      "countryCode": "AU",
+      "origin": "https://health-services.mercyhealth.com.au",
+      "lat": -36.0691968,
+      "lng": 146.9166105
+    },
+    {
+      "code": "osm:way/242335706",
+      "name": "Broome Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -17.9607897,
+      "lng": 122.2365268
+    },
+    {
+      "code": "osm:way/242912630",
+      "name": "Carnarvon Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.wa.gov.au",
+      "lat": -24.886785,
+      "lng": 113.6589874
+    },
+    {
+      "code": "osm:way/256675887",
+      "name": "Shoalhaven District Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.islhd.health.nsw.gov.au",
+      "lat": -34.8696066,
+      "lng": 150.5949589
+    },
+    {
+      "code": "osm:way/257200524",
+      "name": "Toowoomba Surgicentre",
+      "countryCode": "AU",
+      "origin": "https://www.curagroup.com.au",
+      "lat": -27.5664778,
+      "lng": 151.9739098
+    },
+    {
+      "code": "osm:way/258244752",
+      "name": "Mitcham Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.mitchamprivate.com.au",
+      "lat": -37.8104805,
+      "lng": 145.1947515
+    },
+    {
+      "code": "osm:way/260681381",
+      "name": "Tom Price Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.wa.gov.au",
+      "lat": -22.6957118,
+      "lng": 117.7899537
+    },
+    {
+      "code": "osm:way/260707340",
+      "name": "Port Pirie Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sahealth.sa.gov.au",
+      "lat": -33.1768124,
+      "lng": 138.0055749
+    },
+    {
+      "code": "osm:way/260881623",
+      "name": "Clare Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sahealth.sa.gov.au",
+      "lat": -33.8296325,
+      "lng": 138.6143902
+    },
+    {
+      "code": "osm:way/265523681",
+      "name": "Mount Isa Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -20.7305473,
+      "lng": 139.4938889
+    },
+    {
+      "code": "osm:way/265723966",
+      "name": "Creswick Hospital and Nursing Home",
+      "countryCode": "AU",
+      "origin": "http://humanservicesdirectory.vic.gov.au",
+      "lat": -37.4205108,
+      "lng": 143.8920283
+    },
+    {
+      "code": "osm:way/265910010",
+      "name": "Alfred Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.alfred.org.au",
+      "lat": -37.8461529,
+      "lng": 144.9825885
+    },
+    {
+      "code": "osm:way/266067397",
+      "name": "Winchelsea Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.hesseruralhealth.net.au",
+      "lat": -38.2431107,
+      "lng": 143.9857983
+    },
+    {
+      "code": "osm:way/268296612",
+      "name": "Calvary Adelaide Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.calvarycare.org.au",
+      "lat": -34.9294254,
+      "lng": 138.6054117
+    },
+    {
+      "code": "osm:way/270504290",
+      "name": "Bordertown Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sahealth.sa.gov.au",
+      "lat": -36.3120742,
+      "lng": 140.7664886
+    },
+    {
+      "code": "osm:way/270790547",
+      "name": "St Vincent's Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.svph.org.au",
+      "lat": -33.8809226,
+      "lng": 151.219813
+    },
+    {
+      "code": "osm:way/273864558",
+      "name": "St George Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.seslhd.health.nsw.gov.au",
+      "lat": -33.9669519,
+      "lng": 151.1339799
+    },
+    {
+      "code": "osm:way/276434644",
+      "name": "Western Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://westernprivatehospital.com.au",
+      "lat": -37.7931918,
+      "lng": 144.8858725
+    },
+    {
+      "code": "osm:way/280416427",
+      "name": "North West Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://northwestprivate.com.au",
+      "lat": -41.0459692,
+      "lng": 145.8794282
+    },
+    {
+      "code": "osm:way/280924579",
+      "name": "Coffs Harbour Health Campus",
+      "countryCode": "AU",
+      "origin": "https://mnclhd.health.nsw.gov.au",
+      "lat": -30.3178673,
+      "lng": 153.0942936
+    },
+    {
+      "code": "osm:way/282932225",
+      "name": "Redcliffe Hospital",
+      "countryCode": "AU",
+      "origin": "https://metronorth.health.qld.gov.au",
+      "lat": -27.2277121,
+      "lng": 153.1040298
+    },
+    {
+      "code": "osm:way/285841781",
+      "name": "Parkwyn Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://parkwyndprivatehospital.com.au",
+      "lat": -34.9284041,
+      "lng": 138.6142728
+    },
+    {
+      "code": "osm:way/287856345",
+      "name": "The Hills Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://thehillsprivatehospital.com.au",
+      "lat": -33.7439375,
+      "lng": 150.9827212
+    },
+    {
+      "code": "osm:way/288191361",
+      "name": "Bacchus Marsh & Melton Regional Hospital",
+      "countryCode": "AU",
+      "origin": "https://djhs.com.au",
+      "lat": -37.6779418,
+      "lng": 144.4335569
+    },
+    {
+      "code": "osm:way/288404912",
+      "name": "Melton Health Hub",
+      "countryCode": "AU",
+      "origin": "https://djhs.com.au",
+      "lat": -37.6873774,
+      "lng": 144.5581469
+    },
+    {
+      "code": "osm:way/290512590",
+      "name": "St Vincent's Private Hospital Kew",
+      "countryCode": "AU",
+      "origin": "http://www.svpm.com.au",
+      "lat": -37.8065139,
+      "lng": 145.023702
+    },
+    {
+      "code": "osm:way/293187632",
+      "name": "Dartmoor & District Bush Nursing Centre",
+      "countryCode": "AU",
+      "origin": "http://home.glenelgnow.net.au",
+      "lat": -37.9242465,
+      "lng": 141.2754502
+    },
+    {
+      "code": "osm:way/295344938",
+      "name": "Mildura Base Public Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.mbph.org.au",
+      "lat": -34.1862443,
+      "lng": 142.1430602
+    },
+    {
+      "code": "osm:way/296429114",
+      "name": "Caboolture Hospital",
+      "countryCode": "AU",
+      "origin": "https://metronorth.health.qld.gov.au",
+      "lat": -27.0815029,
+      "lng": 152.9640229
+    },
+    {
+      "code": "osm:way/302254309",
+      "name": "Biloela Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.cq.health.qld.gov.au",
+      "lat": -24.3960611,
+      "lng": 150.5176732
+    },
+    {
+      "code": "osm:way/302375095",
+      "name": "Canossa Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.canossahospital.org.au",
+      "lat": -27.5545839,
+      "lng": 152.9636686
+    },
+    {
+      "code": "osm:way/302380921",
+      "name": "Gosford Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -33.4203958,
+      "lng": 151.3390631
+    },
+    {
+      "code": "osm:way/302399578",
+      "name": "South Eastern Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.southeasternprivate.com.au",
+      "lat": -37.9662586,
+      "lng": 145.1919684
+    },
+    {
+      "code": "osm:way/304746676",
+      "name": "North Lakes Day Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.montserrat.com.au",
+      "lat": -27.2391198,
+      "lng": 153.0218759
+    },
+    {
+      "code": "osm:way/306193479",
+      "name": "Hay Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -34.5004103,
+      "lng": 144.8515187
+    },
+    {
+      "code": "osm:way/306825486",
+      "name": "Capricorn Coast Hospital and Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.cq.health.qld.gov.au",
+      "lat": -23.1434545,
+      "lng": 150.7337802
+    },
+    {
+      "code": "osm:way/307128016",
+      "name": "Moruya Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -35.9039908,
+      "lng": 150.0704471
+    },
+    {
+      "code": "osm:way/308980633",
+      "name": "Toronto Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://torontoprivate.com.au",
+      "lat": -33.0153634,
+      "lng": 151.5933954
+    },
+    {
+      "code": "osm:way/309527369",
+      "name": "Yarrawonga Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.yh.org.au",
+      "lat": -36.0118521,
+      "lng": 146.0065935
+    },
+    {
+      "code": "osm:way/311852621",
+      "name": "Craigieburn Community Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nh.org.au",
+      "lat": -37.5954644,
+      "lng": 144.9190167
+    },
+    {
+      "code": "osm:way/312572527",
+      "name": "The Park Centre for Mental Health",
+      "countryCode": "AU",
+      "origin": "https://www.westmoreton.health.qld.gov.au",
+      "lat": -27.6009706,
+      "lng": 152.9109787
+    },
+    {
+      "code": "osm:way/316384292",
+      "name": "Cooktown Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.torres-cape.health.qld.gov.au",
+      "lat": -15.477718,
+      "lng": 145.2503837
+    },
+    {
+      "code": "osm:way/317070811",
+      "name": "Bundoora Extended Care Centre",
+      "countryCode": "AU",
+      "origin": "https://www.nh.org.au",
+      "lat": -37.7016091,
+      "lng": 145.0555902
+    },
+    {
+      "code": "osm:way/317355138",
+      "name": "Shellharbour Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.islhd.health.nsw.gov.au",
+      "lat": -34.559049,
+      "lng": 150.8404165
+    },
+    {
+      "code": "osm:way/320149328",
+      "name": "Port Lincoln Hospital and Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.sahealth.sa.gov.au",
+      "lat": -34.7240252,
+      "lng": 135.8501943
+    },
+    {
+      "code": "osm:way/320493071",
+      "name": "Goroke Community Health Centre",
+      "countryCode": "AU",
+      "origin": "https://www.wwhs.net.au",
+      "lat": -36.714911,
+      "lng": 141.4833686
+    },
+    {
+      "code": "osm:way/329374268",
+      "name": "West Gippsland Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.wghg.com.au",
+      "lat": -38.1737894,
+      "lng": 145.9281489
+    },
+    {
+      "code": "osm:way/329631219",
+      "name": "Nambour General Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -26.6209955,
+      "lng": 152.9511615
+    },
+    {
+      "code": "osm:way/332359171",
+      "name": "Albury Wodonga Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.alburywodongaprivate.com.au",
+      "lat": -36.0757559,
+      "lng": 146.8832662
+    },
+    {
+      "code": "osm:way/332532205",
+      "name": "Lismore Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.8087462,
+      "lng": 153.2916148
+    },
+    {
+      "code": "osm:way/350761126",
+      "name": "Mater Private Hospital Rockhampton",
+      "countryCode": "AU",
+      "origin": "https://www.mater.org.au",
+      "lat": -23.3981148,
+      "lng": 150.4979403
+    },
+    {
+      "code": "osm:way/351040236",
+      "name": "Northeast Health Wangaratta",
+      "countryCode": "AU",
+      "origin": "http://nhw.hume.org.au",
+      "lat": -36.3542232,
+      "lng": 146.3131755
+    },
+    {
+      "code": "osm:way/352050532",
+      "name": "Anne Caudle Campus",
+      "countryCode": "AU",
+      "origin": "https://www.bendigohealth.org.au",
+      "lat": -36.7511052,
+      "lng": 144.2807093
+    },
+    {
+      "code": "osm:way/352542557",
+      "name": "Moura Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.cq.health.qld.gov.au",
+      "lat": -24.5757332,
+      "lng": 149.9764712
+    },
+    {
+      "code": "osm:way/354273903",
+      "name": "Buderim Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://buderimprivatehospital.com.au",
+      "lat": -26.6839138,
+      "lng": 153.0930128
+    },
+    {
+      "code": "osm:way/354318930",
+      "name": "Saint Vincent's Private Hospital Brisbane",
+      "countryCode": "AU",
+      "origin": "https://www.svphb.org.au",
+      "lat": -27.4734911,
+      "lng": 153.0349198
+    },
+    {
+      "code": "osm:way/355374798",
+      "name": "Robina Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -28.0710487,
+      "lng": 153.3757188
+    },
+    {
+      "code": "osm:way/362191474",
+      "name": "Kareena Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.kareenaprivate.com.au",
+      "lat": -34.0351232,
+      "lng": 151.1142599
+    },
+    {
+      "code": "osm:way/370667820",
+      "name": "Wagga Wagga Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -35.1185967,
+      "lng": 147.3574456
+    },
+    {
+      "code": "osm:way/370798261",
+      "name": "Newcastle Eye Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.huntereyesurgeons.com.au",
+      "lat": -32.9099719,
+      "lng": 151.7176586
+    },
+    {
+      "code": "osm:way/370853869",
+      "name": "John Flynn Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.johnflynnprivate.com.au",
+      "lat": -28.1542553,
+      "lng": 153.4882597
+    },
+    {
+      "code": "osm:way/372008303",
+      "name": "Goulburn Base Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -34.747867,
+      "lng": 149.7132041
+    },
+    {
+      "code": "osm:way/373859385",
+      "name": "Goodooga Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -29.1102562,
+      "lng": 147.4560175
+    },
+    {
+      "code": "osm:way/376633768",
+      "name": "Friendly Society Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://thefriendlies.org.au",
+      "lat": -24.8710012,
+      "lng": 152.3424726
+    },
+    {
+      "code": "osm:way/377682365",
+      "name": "Cobram District Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.cobramdistricthealth.org.au",
+      "lat": -35.9157383,
+      "lng": 145.6507258
+    },
+    {
+      "code": "osm:way/377719598",
+      "name": "Cooma Hospital and Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -36.2414045,
+      "lng": 149.1305911
+    },
+    {
+      "code": "osm:way/381394010",
+      "name": "Strathfield Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.strathfieldprivate.com.au",
+      "lat": -33.8719185,
+      "lng": 151.0975672
+    },
+    {
+      "code": "osm:way/384316966",
+      "name": "Esperance Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.wa.gov.au",
+      "lat": -33.8560992,
+      "lng": 121.8919508
+    },
+    {
+      "code": "osm:way/386442122",
+      "name": "Cowra Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -33.8316932,
+      "lng": 148.6925443
+    },
+    {
+      "code": "osm:way/387748051",
+      "name": "Sydney Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.seslhd.health.nsw.gov.au",
+      "lat": -33.8682126,
+      "lng": 151.212863
+    },
+    {
+      "code": "osm:way/389781737",
+      "name": "Como Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.comoprivatehospital.com.au",
+      "lat": -37.9908387,
+      "lng": 145.0725043
+    },
+    {
+      "code": "osm:way/391287604",
+      "name": "Mayo Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://mayoprivate.com.au",
+      "lat": -31.882995,
+      "lng": 152.4306664
+    },
+    {
+      "code": "osm:way/397719128",
+      "name": "Blue Mountains District ANZAC Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nbmlhd.health.nsw.gov.au",
+      "lat": -33.7052341,
+      "lng": 150.3217188
+    },
+    {
+      "code": "osm:way/399149634",
+      "name": "Stanthorpe Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.darlingdowns.health.qld.gov.au",
+      "lat": -28.6608943,
+      "lng": 151.9285398
+    },
+    {
+      "code": "osm:way/401709588",
+      "name": "Barham Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -35.6240769,
+      "lng": 144.1330554
+    },
+    {
+      "code": "osm:way/415194318",
+      "name": "Clifton Co-Op Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.cliftonhospital.org",
+      "lat": -27.9303565,
+      "lng": 151.9115693
+    },
+    {
+      "code": "osm:way/415385427",
+      "name": "Eden Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://edenprivate.com.au",
+      "lat": -26.4199204,
+      "lng": 152.9087497
+    },
+    {
+      "code": "osm:way/417248060",
+      "name": "Pindara Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.pindaraprivate.com.au",
+      "lat": -28.0075242,
+      "lng": 153.3935671
+    },
+    {
+      "code": "osm:way/419608150",
+      "name": "Hirondelle Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://hirondelleprivate.com.au",
+      "lat": -33.7901048,
+      "lng": 151.1786082
+    },
+    {
+      "code": "osm:way/421988719",
+      "name": "Bonalbo Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.7340598,
+      "lng": 152.6225782
+    },
+    {
+      "code": "osm:way/422791257",
+      "name": "Goondiwindi Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -28.5479514,
+      "lng": 150.3020667
+    },
+    {
+      "code": "osm:way/430675026",
+      "name": "Currumbin Private Clinic",
+      "countryCode": "AU",
+      "origin": "https://currumbinclinic.com.au",
+      "lat": -28.1334462,
+      "lng": 153.4869358
+    },
+    {
+      "code": "osm:way/430754098",
+      "name": "Colac Area Health",
+      "countryCode": "AU",
+      "origin": "https://cah.vic.gov.au",
+      "lat": -38.3412731,
+      "lng": 143.5828381
+    },
+    {
+      "code": "osm:way/435140412",
+      "name": "John Fawkner Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://johnfawknerprivatehospital.com.au",
+      "lat": -37.7541001,
+      "lng": 144.9591274
+    },
+    {
+      "code": "osm:way/438361661",
+      "name": "Beaudesert Hospital",
+      "countryCode": "AU",
+      "origin": "https://metrosouth.health.qld.gov.au",
+      "lat": -27.9850652,
+      "lng": 153.0024375
+    },
+    {
+      "code": "osm:way/439643028",
+      "name": "Hawkesbury District Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.hdhs.com.au",
+      "lat": -33.6105784,
+      "lng": 150.8208091
+    },
+    {
+      "code": "osm:way/440681638",
+      "name": "Neringah Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.hammond.com.au",
+      "lat": -33.7176475,
+      "lng": 151.1143266
+    },
+    {
+      "code": "osm:way/441086347",
+      "name": "Bowral and District Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.swslhd.nsw.gov.au",
+      "lat": -34.484891,
+      "lng": 150.4234374
+    },
+    {
+      "code": "osm:way/444675754",
+      "name": "Wollongong Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.islhd.health.nsw.gov.au",
+      "lat": -34.4245226,
+      "lng": 150.8829736
+    },
+    {
+      "code": "osm:way/445910480",
+      "name": "Millicent and Districts Hospital and Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.sahealth.sa.gov.au",
+      "lat": -37.5979252,
+      "lng": 140.359103
+    },
+    {
+      "code": "osm:way/450185203",
+      "name": "Portland District Hospital",
+      "countryCode": "AU",
+      "origin": "https://swarh.com.au",
+      "lat": -38.3411647,
+      "lng": 141.6055578
+    },
+    {
+      "code": "osm:way/455387843",
+      "name": "Murwillumbah Hospital",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.3235647,
+      "lng": 153.4003781
+    },
+    {
+      "code": "osm:way/459140274",
+      "name": "Lake Cargelligo Multi Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -33.2926985,
+      "lng": 146.3741615
+    },
+    {
+      "code": "osm:way/466854851",
+      "name": "Baringa Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.baringaprivate.com.au",
+      "lat": -30.2788804,
+      "lng": 153.1032184
+    },
+    {
+      "code": "osm:way/469370525",
+      "name": "Queanbeyan Hospital and Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -35.3481003,
+      "lng": 149.2326027
+    },
+    {
+      "code": "osm:way/480675917",
+      "name": "La Trobe Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://latrobeprivatehospital.com.au",
+      "lat": -37.7158903,
+      "lng": 145.0444969
+    },
+    {
+      "code": "osm:way/494037040",
+      "name": "Fiona Stanley Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.fsh.health.wa.gov.au",
+      "lat": -32.0696897,
+      "lng": 115.8463311
+    },
+    {
+      "code": "osm:way/495571476",
+      "name": "Calvary Riverina Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.calvarycare.org.au",
+      "lat": -35.1195074,
+      "lng": 147.35297
+    },
+    {
+      "code": "osm:way/495966217",
+      "name": "Liverpool Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.swslhd.health.nsw.gov.au",
+      "lat": -33.9198636,
+      "lng": 150.9311205
+    },
+    {
+      "code": "osm:way/500397105",
+      "name": "St George Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -28.0274054,
+      "lng": 148.5929224
+    },
+    {
+      "code": "osm:way/504675502",
+      "name": "Bentley Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.bhs.health.wa.gov.au",
+      "lat": -32.0057575,
+      "lng": 115.9278537
+    },
+    {
+      "code": "osm:way/507666827",
+      "name": "Graylands Hospital",
+      "countryCode": "AU",
+      "origin": "https://ww2.health.wa.gov.au",
+      "lat": -31.9626939,
+      "lng": 115.7889208
+    },
+    {
+      "code": "osm:way/507700592",
+      "name": "Chatswood Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.cphospital.com.au",
+      "lat": -33.7976629,
+      "lng": 151.1857327
+    },
+    {
+      "code": "osm:way/511921065",
+      "name": "St Vincent's Private Hospital Werribee",
+      "countryCode": "AU",
+      "origin": "https://www.svphw.org.au",
+      "lat": -37.8878433,
+      "lng": 144.7022103
+    },
+    {
+      "code": "osm:way/511921069",
+      "name": "Wyndham Private Medical Centre",
+      "countryCode": "AU",
+      "origin": "https://www.wyndhamprivate.com.au",
+      "lat": -37.8865687,
+      "lng": 144.7014541
+    },
+    {
+      "code": "osm:way/513626781",
+      "name": "Joondalup Health Campus",
+      "countryCode": "AU",
+      "origin": "https://www.joondaluphealthcampus.com.au",
+      "lat": -31.7379834,
+      "lng": 115.7723783
+    },
+    {
+      "code": "osm:way/515818556",
+      "name": "Moree Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.hnehealth.nsw.gov.au",
+      "lat": -29.4703112,
+      "lng": 149.83995
+    },
+    {
+      "code": "osm:way/543864386",
+      "name": "Ballina District Hospital",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.8631826,
+      "lng": 153.564441
+    },
+    {
+      "code": "osm:way/545921886",
+      "name": "Braidwood Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -35.4434753,
+      "lng": 149.8056746
+    },
+    {
+      "code": "osm:way/546916140",
+      "name": "Nambour Selangor Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nambourselangor.com.au",
+      "lat": -26.6181772,
+      "lng": 152.9562451
+    },
+    {
+      "code": "osm:way/571212900",
+      "name": "Saint Joseph's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.svhs.org.au",
+      "lat": -33.8488504,
+      "lng": 151.0284676
+    },
+    {
+      "code": "osm:way/571495472",
+      "name": "Westside Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://theurbandeveloper.com",
+      "lat": -27.4926801,
+      "lng": 152.9816278
+    },
+    {
+      "code": "osm:way/583620377",
+      "name": "Mater Women's & Children's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.mater.org.au",
+      "lat": -19.2764241,
+      "lng": 146.7991166
+    },
+    {
+      "code": "osm:way/591106984",
+      "name": "Lightning Ridge Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -29.4299798,
+      "lng": 147.9819799
+    },
+    {
+      "code": "osm:way/611049200",
+      "name": "Loxton Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sahealth.sa.gov.au",
+      "lat": -34.454724,
+      "lng": 140.5643188
+    },
+    {
+      "code": "osm:way/612118522",
+      "name": "Murgon Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -26.2392779,
+      "lng": 151.9506913
+    },
+    {
+      "code": "osm:way/612649832",
+      "name": "Gordon Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.gordonprivate.com.au",
+      "lat": -33.7579396,
+      "lng": 151.1527906
+    },
+    {
+      "code": "osm:way/615520995",
+      "name": "Bendigo Day Surgery",
+      "countryCode": "AU",
+      "origin": "https://bendigodaysurgery.com.au",
+      "lat": -36.7621968,
+      "lng": 144.2615474
+    },
+    {
+      "code": "osm:way/629498193",
+      "name": "Toowoomba Hospice Association",
+      "countryCode": "AU",
+      "origin": "https://www.toowoombahospice.org.au",
+      "lat": -27.5674622,
+      "lng": 151.9339405
+    },
+    {
+      "code": "osm:way/632337568",
+      "name": "St Vincent's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.svhs.org.au",
+      "lat": -33.8803239,
+      "lng": 151.2211731
+    },
+    {
+      "code": "osm:way/637390514",
+      "name": "Northern Beaches Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nslhd.health.nsw.gov.au",
+      "lat": -33.7508414,
+      "lng": 151.2327528
+    },
+    {
+      "code": "osm:way/637393152",
+      "name": "Sutherland Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.seslhd.health.nsw.gov.au",
+      "lat": -34.0373855,
+      "lng": 151.1147396
+    },
+    {
+      "code": "osm:way/664761386",
+      "name": "Miami Day Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.miamidayhospital.com.au",
+      "lat": -28.0630329,
+      "lng": 153.4368197
+    },
+    {
+      "code": "osm:way/665503968",
+      "name": "Linacre Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.linacreprivate.com.au",
+      "lat": -37.9426794,
+      "lng": 145.0033614
+    },
+    {
+      "code": "osm:way/669497397",
+      "name": "Silver Chain Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.silverchain.org.au",
+      "lat": -34.9781961,
+      "lng": 116.7328188
+    },
+    {
+      "code": "osm:way/669631283",
+      "name": "Saint John of God Hospital Subiaco",
+      "countryCode": "AU",
+      "origin": "https://www.sjog.org.au",
+      "lat": -31.9418631,
+      "lng": 115.8254163
+    },
+    {
+      "code": "osm:way/684296970",
+      "name": "Cairns North Community Health Facility",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -16.9020328,
+      "lng": 145.756276
+    },
+    {
+      "code": "osm:way/688062120",
+      "name": "Shellharbour Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://shellharbourprivate.com.au",
+      "lat": -34.5589063,
+      "lng": 150.8479911
+    },
+    {
+      "code": "osm:way/688143634",
+      "name": "David Berry Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.islhd.health.nsw.gov.au",
+      "lat": -34.7762254,
+      "lng": 150.7128672
+    },
+    {
+      "code": "osm:way/729422819",
+      "name": "St John of God Geraldton Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.sjog.org.au",
+      "lat": -28.7841291,
+      "lng": 114.6159578
+    },
+    {
+      "code": "osm:way/810652867",
+      "name": "Macksville Hospital",
+      "countryCode": "AU",
+      "origin": "https://mnclhd.health.nsw.gov.au",
+      "lat": -30.6936735,
+      "lng": 152.9438152
+    },
+    {
+      "code": "osm:way/815092449",
+      "name": "Adeney Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://adeneyprivate.com.au",
+      "lat": -37.8085717,
+      "lng": 145.0481393
+    },
+    {
+      "code": "osm:way/818272392",
+      "name": "Footscray Hospital",
+      "countryCode": "AU",
+      "origin": "https://westernhealth.org.au",
+      "lat": -37.7946946,
+      "lng": 144.8982181
+    },
+    {
+      "code": "osm:way/830703830",
+      "name": "Glengarry Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.glengarryprivate.com.au",
+      "lat": -31.8342027,
+      "lng": 115.7846714
+    },
+    {
+      "code": "osm:way/843379454",
+      "name": "Dysart Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.mackay.health.qld.gov.au",
+      "lat": -22.5829329,
+      "lng": 148.353138
+    },
+    {
+      "code": "osm:way/844677231",
+      "name": "Byron Central Hospital",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.6376172,
+      "lng": 153.556357
+    },
+    {
+      "code": "osm:way/844881045",
+      "name": "Dirranbandi Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -28.5794422,
+      "lng": 148.2286616
+    },
+    {
+      "code": "osm:way/844885299",
+      "name": "Texas Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -28.8564497,
+      "lng": 151.1797006
+    },
+    {
+      "code": "osm:way/844886469",
+      "name": "Inglewood Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -28.4180671,
+      "lng": 151.0615973
+    },
+    {
+      "code": "osm:way/844887392",
+      "name": "Millmerran Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -27.8795814,
+      "lng": 151.2627366
+    },
+    {
+      "code": "osm:way/844889435",
+      "name": "Urbenville Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.4714415,
+      "lng": 152.5429693
+    },
+    {
+      "code": "osm:way/845940088",
+      "name": "St Vincent's Private Hospital Northside",
+      "countryCode": "AU",
+      "origin": "https://www.svphn.org.au",
+      "lat": -27.3911089,
+      "lng": 153.0236398
+    },
+    {
+      "code": "osm:way/845941690",
+      "name": "Pine Rivers Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://pineriversprivatehospital.com.au",
+      "lat": -27.3085474,
+      "lng": 152.9948308
+    },
+    {
+      "code": "osm:way/846797582",
+      "name": "Mitchell Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -26.4900359,
+      "lng": 147.9721919
+    },
+    {
+      "code": "osm:way/846800609",
+      "name": "Injune Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -25.8470065,
+      "lng": 148.5625362
+    },
+    {
+      "code": "osm:way/846803651",
+      "name": "Wallumbilla Community Clinic",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -26.5816938,
+      "lng": 149.1810965
+    },
+    {
+      "code": "osm:way/851929154",
+      "name": "Redland Hospital",
+      "countryCode": "AU",
+      "origin": "https://metrosouth.health.qld.gov.au",
+      "lat": -27.5402473,
+      "lng": 153.2517541
+    },
+    {
+      "code": "osm:way/891830800",
+      "name": "Alexandria Specialist Day Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.asdh.com.au",
+      "lat": -33.9048915,
+      "lng": 151.1961705
+    },
+    {
+      "code": "osm:way/894881008",
+      "name": "Boort District Health",
+      "countryCode": "AU",
+      "origin": "https://bdh.vic.gov.au",
+      "lat": -36.1117788,
+      "lng": 143.7273499
+    },
+    {
+      "code": "osm:way/911686299",
+      "name": "Atherton Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -17.2663755,
+      "lng": 145.4833159
+    },
+    {
+      "code": "osm:way/911687275",
+      "name": "Aramac Primary Health Centre",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -22.9664868,
+      "lng": 145.2447815
+    },
+    {
+      "code": "osm:way/911689336",
+      "name": "Augathella Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.southwest.health.qld.gov.au",
+      "lat": -25.7958585,
+      "lng": 146.5906089
+    },
+    {
+      "code": "osm:way/921646709",
+      "name": "Ramsay Clinic Northside",
+      "countryCode": "AU",
+      "origin": "https://www.ramsaymentalhealth.com.au",
+      "lat": -33.8173666,
+      "lng": 151.190549
+    },
+    {
+      "code": "osm:way/921948679",
+      "name": "North Shore Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.northshoreprivate.com.au",
+      "lat": -33.8200801,
+      "lng": 151.1893068
+    },
+    {
+      "code": "osm:way/940739663",
+      "name": "Perth Children's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.pch.health.wa.gov.au",
+      "lat": -31.9693342,
+      "lng": 115.8171383
+    },
+    {
+      "code": "osm:way/943440280",
+      "name": "Castlecrag Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.castlecragprivate.com.au",
+      "lat": -33.8018462,
+      "lng": 151.2170447
+    },
+    {
+      "code": "osm:way/954455990",
+      "name": "Tuggerah Lakes Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://tuggerahlakesprivate.com.au",
+      "lat": -33.2623141,
+      "lng": 151.4824213
+    },
+    {
+      "code": "osm:way/960996372",
+      "name": "Mercy Care Centre",
+      "countryCode": "AU",
+      "origin": "https://health-services.mercyhealth.com.au",
+      "lat": -34.321242,
+      "lng": 148.2888041
+    },
+    {
+      "code": "osm:way/965598409",
+      "name": "Riverina Day Surgery",
+      "countryCode": "AU",
+      "origin": "https://www.curagroup.com.au",
+      "lat": -35.1211895,
+      "lng": 147.3544554
+    },
+    {
+      "code": "osm:way/965598445",
+      "name": "Calvary Riverina Surgicentre",
+      "countryCode": "AU",
+      "origin": "https://www.calvarycare.org.au",
+      "lat": -35.1160005,
+      "lng": 147.3525106
+    },
+    {
+      "code": "osm:way/965790001",
+      "name": "Ramsay Clinic Wentworthville",
+      "countryCode": "AU",
+      "origin": "https://www.ramsaymentalhealth.com.au",
+      "lat": -33.8108717,
+      "lng": 150.974478
+    },
+    {
+      "code": "osm:way/965960376",
+      "name": "Holroyd Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.holroydprivate.com.au",
+      "lat": -33.8462715,
+      "lng": 150.9789263
+    },
+    {
+      "code": "osm:way/965960426",
+      "name": "Auburn Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.wslhd.health.nsw.gov.au",
+      "lat": -33.8604042,
+      "lng": 151.0331241
+    },
+    {
+      "code": "osm:way/972755489",
+      "name": "Calvary Central Districts Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.calvarycare.org.au",
+      "lat": -34.7554575,
+      "lng": 138.6561969
+    },
+    {
+      "code": "osm:way/975596525",
+      "name": "Tamworth Cardiology",
+      "countryCode": "AU",
+      "origin": "https://www.tamworthcardiology.com.au",
+      "lat": -31.0855242,
+      "lng": 150.9276265
+    },
+    {
+      "code": "osm:way/987544205",
+      "name": "Vermont Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nexushospitals.com.au",
+      "lat": -37.8582155,
+      "lng": 145.1996514
+    },
+    {
+      "code": "osm:way/1005668821",
+      "name": "Walgett Multi Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -30.0309782,
+      "lng": 148.1160976
+    },
+    {
+      "code": "osm:way/1017020342",
+      "name": "Varsity Lakes Day Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.goldcoast.health.qld.gov.au",
+      "lat": -28.0750023,
+      "lng": 153.4129594
+    },
+    {
+      "code": "osm:way/1019853502",
+      "name": "Balranald Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -34.6444424,
+      "lng": 143.5686835
+    },
+    {
+      "code": "osm:way/1020713366",
+      "name": "Tingha Multipurpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -29.950888,
+      "lng": 151.2069556
+    },
+    {
+      "code": "osm:way/1020719772",
+      "name": "Milton Ulladulla Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.islhd.health.nsw.gov.au",
+      "lat": -35.3172285,
+      "lng": 150.4389448
+    },
+    {
+      "code": "osm:way/1020719773",
+      "name": "Wollongong Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.wollongongprivate.com.au",
+      "lat": -34.4256605,
+      "lng": 150.8807989
+    },
+    {
+      "code": "osm:way/1020719774",
+      "name": "Wollongong Day Surgery",
+      "countryCode": "AU",
+      "origin": "https://wollongongdaysurgery.com.au",
+      "lat": -34.4258289,
+      "lng": 150.8814977
+    },
+    {
+      "code": "osm:way/1021549391",
+      "name": "Tocumwal Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -35.8153489,
+      "lng": 145.5690649
+    },
+    {
+      "code": "osm:way/1022141323",
+      "name": "Nimbin Health Service",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.597568,
+      "lng": 153.2230702
+    },
+    {
+      "code": "osm:way/1022761749",
+      "name": "Sydney Southwest Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://healthscopehospitals.com.au",
+      "lat": -33.9172651,
+      "lng": 150.9283216
+    },
+    {
+      "code": "osm:way/1022766660",
+      "name": "Bankstown-Lidcombe Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.swslhd.health.nsw.gov.au",
+      "lat": -33.9331303,
+      "lng": 151.0208087
+    },
+    {
+      "code": "osm:way/1023475620",
+      "name": "Camden Hospital",
+      "countryCode": "AU",
+      "origin": "http://www.swslhd.nsw.gov.au",
+      "lat": -34.0625617,
+      "lng": 150.6936671
+    },
+    {
+      "code": "osm:way/1024099005",
+      "name": "Yass District Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.service.nsw.gov.au",
+      "lat": -34.8441009,
+      "lng": 148.9067301
+    },
+    {
+      "code": "osm:way/1024120595",
+      "name": "Sydney Children's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.schn.health.nsw.gov.au",
+      "lat": -33.9175161,
+      "lng": 151.2385205
+    },
+    {
+      "code": "osm:way/1024384089",
+      "name": "Bathurst Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.bathurstprivate.com.au",
+      "lat": -33.4351291,
+      "lng": 149.5885281
+    },
+    {
+      "code": "osm:way/1025036292",
+      "name": "Canowindra Soldiers Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -33.5570746,
+      "lng": 148.675859
+    },
+    {
+      "code": "osm:way/1025092422",
+      "name": "Gulgong Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -32.366524,
+      "lng": 149.5225814
+    },
+    {
+      "code": "osm:way/1025093125",
+      "name": "Molong Multi-Purpose Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -33.0879791,
+      "lng": 148.8602148
+    },
+    {
+      "code": "osm:way/1025362665",
+      "name": "Rylstone Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -32.8049068,
+      "lng": 149.9754444
+    },
+    {
+      "code": "osm:way/1025366278",
+      "name": "Wellington Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -32.5498451,
+      "lng": 148.9522099
+    },
+    {
+      "code": "osm:way/1025693897",
+      "name": "Manly Waters Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.mhsmanly.com.au",
+      "lat": -33.8051362,
+      "lng": 151.2845238
+    },
+    {
+      "code": "osm:way/1025737377",
+      "name": "Allowah Presbyterian Children's Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.allowah.org.au",
+      "lat": -33.7918705,
+      "lng": 151.0638784
+    },
+    {
+      "code": "osm:way/1025740416",
+      "name": "Alwyn Rehabilitation Hospital",
+      "countryCode": "AU",
+      "origin": "https://alwyn.com.au",
+      "lat": -33.8828968,
+      "lng": 151.0942665
+    },
+    {
+      "code": "osm:way/1025742287",
+      "name": "Wesley Hospital Kogarah",
+      "countryCode": "AU",
+      "origin": "https://www.wesleymission.org.au",
+      "lat": -33.9683646,
+      "lng": 151.1288389
+    },
+    {
+      "code": "osm:way/1025991506",
+      "name": "Maitland Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://maitlandprivatehospital.com.au",
+      "lat": -32.7655278,
+      "lng": 151.5977309
+    },
+    {
+      "code": "osm:way/1025991666",
+      "name": "Hunter Valley Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://huntervalleyprivatehospital.com.au",
+      "lat": -32.8828488,
+      "lng": 151.6952866
+    },
+    {
+      "code": "osm:way/1026863284",
+      "name": "Nowra Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nowraprivate.com.au",
+      "lat": -34.8938249,
+      "lng": 150.6065124
+    },
+    {
+      "code": "osm:way/1026864147",
+      "name": "Forster Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://forsterprivate.com.au",
+      "lat": -32.1884137,
+      "lng": 152.5138781
+    },
+    {
+      "code": "osm:way/1026865918",
+      "name": "Wingham Community Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.healthdirect.gov.au",
+      "lat": -31.8780223,
+      "lng": 152.3651415
+    },
+    {
+      "code": "osm:way/1026868423",
+      "name": "Wauchope District Memorial Hospital",
+      "countryCode": "AU",
+      "origin": "https://mnclhd.health.nsw.gov.au",
+      "lat": -31.457424,
+      "lng": 152.7280475
+    },
+    {
+      "code": "osm:way/1036417519",
+      "name": "Laidley Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.westmoreton.health.qld.gov.au",
+      "lat": -27.6330806,
+      "lng": 152.3997659
+    },
+    {
+      "code": "osm:way/1036834755",
+      "name": "Weststate Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.weststate.com.au",
+      "lat": -19.2682691,
+      "lng": 146.8041061
+    },
+    {
+      "code": "osm:way/1037285419",
+      "name": "Nepean Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://nepeanprivatehospital.com.au",
+      "lat": -33.7576926,
+      "lng": 150.7131875
+    },
+    {
+      "code": "osm:way/1075791157",
+      "name": "Kingsgrove Day Hospital",
+      "countryCode": "AU",
+      "origin": "https://kingsgrovedayhospital.com.au",
+      "lat": -33.9438522,
+      "lng": 151.1020998
+    },
+    {
+      "code": "osm:way/1080937753",
+      "name": "Caboolture Satellite Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.qld.gov.au",
+      "lat": -27.079656,
+      "lng": 152.9555701
+    },
+    {
+      "code": "osm:way/1080937754",
+      "name": "Bribie Island Satellite Health Centre",
+      "countryCode": "AU",
+      "origin": "https://metronorth.health.qld.gov.au",
+      "lat": -27.0816519,
+      "lng": 153.1687893
+    },
+    {
+      "code": "osm:way/1081661576",
+      "name": "Tweed Day Surgery",
+      "countryCode": "AU",
+      "origin": "https://tweeddaysurgery.com.au",
+      "lat": -28.178789,
+      "lng": 153.5402696
+    },
+    {
+      "code": "osm:way/1091639065",
+      "name": "Waratah Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://waratahprivate.com.au",
+      "lat": -33.9643932,
+      "lng": 151.1004615
+    },
+    {
+      "code": "osm:way/1167765261",
+      "name": "Attadale Rehabilitation Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.attadalerehabilitation.com.au",
+      "lat": -32.029683,
+      "lng": 115.8106475
+    },
+    {
+      "code": "osm:way/1167905350",
+      "name": "Mildura Health Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.milduraprivatehospital.com.au",
+      "lat": -34.1848421,
+      "lng": 142.1457019
+    },
+    {
+      "code": "osm:way/1174705690",
+      "name": "Jarrah House",
+      "countryCode": "AU",
+      "origin": "https://jarrahhouse.com.au",
+      "lat": -33.9816089,
+      "lng": 151.2438327
+    },
+    {
+      "code": "osm:way/1185896250",
+      "name": "Merredin Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.wacountry.health.wa.gov.au",
+      "lat": -31.4851482,
+      "lng": 118.27642
+    },
+    {
+      "code": "osm:way/1216374222",
+      "name": "Toowong Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://toowongprivatehospital.com.au",
+      "lat": -27.4774659,
+      "lng": 152.9916817
+    },
+    {
+      "code": "osm:way/1257131333",
+      "name": "The George Centre",
+      "countryCode": "AU",
+      "origin": "https://thegeorgecentre.com.au",
+      "lat": -34.0235851,
+      "lng": 150.7707977
+    },
+    {
+      "code": "osm:way/1263644813",
+      "name": "St Marys Community Health Centre",
+      "countryCode": "AU",
+      "origin": "https://www.health.tas.gov.au",
+      "lat": -41.5758765,
+      "lng": 148.1813023
+    },
+    {
+      "code": "osm:way/1273216368",
+      "name": "Long Jetty Healthcare Centre",
+      "countryCode": "AU",
+      "origin": "https://www.cclhd.health.nsw.gov.au",
+      "lat": -33.368892,
+      "lng": 151.4684897
+    },
+    {
+      "code": "osm:way/1298901776",
+      "name": "Central Coast Day Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.ccdhospital.com.au",
+      "lat": -33.4391326,
+      "lng": 151.3837485
+    },
+    {
+      "code": "osm:way/1300805801",
+      "name": "Epworth Freemasons",
+      "countryCode": "AU",
+      "origin": "https://www.epworth.org.au",
+      "lat": -37.809447,
+      "lng": 144.982266
+    },
+    {
+      "code": "osm:way/1300807676",
+      "name": "Epworth Freemasons Albert Street",
+      "countryCode": "AU",
+      "origin": "https://www.epworth.org.au",
+      "lat": -37.811062,
+      "lng": 144.9841927
+    },
+    {
+      "code": "osm:way/1300823812",
+      "name": "Hobart Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://hobartprivatehospital.com.au",
+      "lat": -42.8807567,
+      "lng": 147.3299695
+    },
+    {
+      "code": "osm:way/1301295216",
+      "name": "St Stephen's Hospital",
+      "countryCode": "AU",
+      "origin": "http://ststephenshospital.com.au",
+      "lat": -25.30009,
+      "lng": 152.8245553
+    },
+    {
+      "code": "osm:way/1301650287",
+      "name": "Tweed Valley Hospital",
+      "countryCode": "AU",
+      "origin": "https://nnswlhd.health.nsw.gov.au",
+      "lat": -28.263906,
+      "lng": 153.5673929
+    },
+    {
+      "code": "osm:way/1301658335",
+      "name": "East Sydney Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.eastsydneyprivatehospital.com",
+      "lat": -33.8737014,
+      "lng": 151.2159658
+    },
+    {
+      "code": "osm:way/1301870157",
+      "name": "Barton Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://curagroup.com.au",
+      "lat": -35.3126185,
+      "lng": 149.1327778
+    },
+    {
+      "code": "osm:way/1301915756",
+      "name": "St Vincent's Private Hospital Griffith",
+      "countryCode": "AU",
+      "origin": "https://www.svph.org.au",
+      "lat": -34.2806508,
+      "lng": 146.0437223
+    },
+    {
+      "code": "osm:way/1302171882",
+      "name": "Cobar Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.nsw.gov.au",
+      "lat": -31.5073866,
+      "lng": 145.8254607
+    },
+    {
+      "code": "osm:way/1302173111",
+      "name": "Sydney Surgical Centre",
+      "countryCode": "AU",
+      "origin": "https://curagroup.com.au",
+      "lat": -33.9169445,
+      "lng": 151.2407974
+    },
+    {
+      "code": "osm:way/1303612833",
+      "name": "Deakin Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://deakinprivate.com.au",
+      "lat": -35.3191828,
+      "lng": 149.0944556
+    },
+    {
+      "code": "osm:way/1303633468",
+      "name": "The Skin Hospital Darlinghurst",
+      "countryCode": "AU",
+      "origin": "https://skinhospital.edu.au",
+      "lat": -33.8753889,
+      "lng": 151.2157873
+    },
+    {
+      "code": "osm:way/1304966452",
+      "name": "North Eastern Community Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.northeasternhospital.com.au",
+      "lat": -34.8826746,
+      "lng": 138.6619862
+    },
+    {
+      "code": "osm:way/1311471183",
+      "name": "Wolper Jewish Hospital",
+      "countryCode": "AU",
+      "origin": "https://wolper.com.au",
+      "lat": -33.8840266,
+      "lng": 151.2409677
+    },
+    {
+      "code": "osm:way/1317301289",
+      "name": "Cabramatta Day Surgery",
+      "countryCode": "AU",
+      "origin": "https://cabradaysurgery.com.au",
+      "lat": -33.8962276,
+      "lng": 150.9372996
+    },
+    {
+      "code": "osm:way/1319370206",
+      "name": "Townsville Private Clinic",
+      "countryCode": "AU",
+      "origin": "https://townsvilleprivate.com.au",
+      "lat": -19.2586641,
+      "lng": 146.8135264
+    },
+    {
+      "code": "osm:way/1321515740",
+      "name": "Kirwan Health Campus",
+      "countryCode": "AU",
+      "origin": "https://www.townsville.health.qld.gov.au",
+      "lat": -19.3043448,
+      "lng": 146.7320889
+    },
+    {
+      "code": "osm:way/1332413444",
+      "name": "Macquarie Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.nslhd.health.nsw.gov.au",
+      "lat": -33.8010841,
+      "lng": 151.1251322
+    },
+    {
+      "code": "osm:way/1332878599",
+      "name": "Monto",
+      "countryCode": "AU",
+      "origin": "https://www.health.qld.gov.au",
+      "lat": -24.8664241,
+      "lng": 151.112535
+    },
+    {
+      "code": "osm:way/1368021944",
+      "name": "Tugun Satellite Health Centre (Banyahrmabah)",
+      "countryCode": "AU",
+      "origin": "https://www.goldcoast.health.qld.gov.au",
+      "lat": -28.1543522,
+      "lng": 153.4945187
+    },
+    {
+      "code": "osm:way/1391345538",
+      "name": "Wyvern Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.wyvernprivatehospital.com.au",
+      "lat": -33.6878503,
+      "lng": 151.2209502
+    },
+    {
+      "code": "osm:way/1410810514",
+      "name": "Murray District Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.rkpg.health.wa.gov.au",
+      "lat": -32.6397225,
+      "lng": 115.871302
+    },
+    {
+      "code": "osm:way/1477801220",
+      "name": "Mount Morgan Multipurpose Health Service",
+      "countryCode": "AU",
+      "origin": "https://www.cq.health.qld.gov.au",
+      "lat": -23.6452271,
+      "lng": 150.3929441
+    },
+    {
+      "code": "osm:way/1501760345",
+      "name": "Delmont Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://www.delmonthospital.com.au",
+      "lat": -37.8570093,
+      "lng": 145.0940364
+    },
+    {
+      "code": "osm:way/1534788231",
+      "name": "Robina Private Hospital",
+      "countryCode": "AU",
+      "origin": "https://robinaprivate.com.au",
+      "lat": -28.0721774,
+      "lng": 153.3775697
+    },
+    {
+      "code": "osm:way/1552444400",
+      "name": "Hope Vale Primary Health Care Centre",
+      "countryCode": "AU",
+      "origin": "https://www.torres-cape.health.qld.gov.au",
+      "lat": -15.2943401,
+      "lng": 145.1061722
+    }
+  ]
+}

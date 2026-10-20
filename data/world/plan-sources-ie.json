@@ -1,0 +1,75 @@
+{
+  "sources": [
+    {
+      "slug": "uhk-floormap-2022",
+      "file": "map/world/auto/ie/uhk-floormap-2022.pdf",
+      "url": "https://uhk.ie/wp-content/uploads/2022/09/UHK-FloorMap-2022.pdf",
+      "sha256": "34d4719e7a43c68f466761d006d0f88430ae6ecce8ec6c48260d9f14895300ab",
+      "hospitalCode": "osm:way/111471269",
+      "hospitalName": "University Hospital Kerry",
+      "countryCode": "IE",
+      "linkText": "Download Floor Map",
+      "kind": "floor-plan",
+      "approvedAt": "2026-10-17T21:05:24.224Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 1203071,
+      "fetchedAt": "2026-10-17T21:05:24.844Z"
+    },
+    {
+      "slug": "site-map-uhg",
+      "file": "map/world/auto/ie/site-map-uhg.pdf",
+      "url": "https://saolta.ie/sites/default/files/publications/Site%20map%20UHG.pdf",
+      "sha256": null,
+      "hospitalCode": "osm:way/444951067",
+      "hospitalName": "Mayo University Hospital",
+      "countryCode": "IE",
+      "linkText": "Click here for a map of UHG with the locations of the car parks.",
+      "kind": "site-map",
+      "approvedAt": "2026-10-17T21:05:24.235Z",
+      "approvedBy": "auto:high-confidence-official-domain"
+    },
+    {
+      "slug": "cross-programmatic-1-1-a4-hospital-campus-map",
+      "file": "map/world/auto/ie/cross-programmatic-1-1-a4-hospital-campus-map.pdf",
+      "url": "https://www.nrh.ie/wp-content/uploads/2026/05/Cross-Programmatic-1.1-A4-Hospital-Campus-Map.pdf",
+      "sha256": "add0e03ffce34b5e553d4ea5787ea895c32af791d7c092c00f6e9556f232b59c",
+      "hospitalCode": "osm:way/52156721",
+      "hospitalName": "National Rehabilitation Hospital",
+      "countryCode": "IE",
+      "linkText": "Map of the NRH Campus",
+      "kind": "site-map",
+      "approvedAt": "2026-10-17T21:05:24.235Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 196094,
+      "fetchedAt": "2026-10-17T21:05:41.029Z"
+    },
+    {
+      "slug": "hospital-map-leaflet",
+      "file": "map/world/auto/ie/hospital-map-leaflet.pdf",
+      "url": "https://www.tuh.ie/Adult-Services/Hospital-Map-Leaflet.pdf",
+      "sha256": "1062988f476cec8adf7b3a939c98a0e330cfa19f28bb9e8b5b597ee1808adf2a",
+      "hospitalCode": "osm:way/51231573",
+      "hospitalName": "Tallaght University Hospital",
+      "countryCode": "IE",
+      "linkText": "Hospital Map",
+      "kind": "site-map",
+      "approvedAt": "2026-10-17T21:05:24.236Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 9687368,
+      "fetchedAt": "2026-10-17T21:05:42.031Z"
+    },
+    {
+      "slug": "hospital-map",
+      "file": "map/world/auto/ie/hospital-map.pdf",
+      "url": "https://www.tuh.ie/Patient-Visitor-Services/How-to-Find-Us-/Hospital-Map-.pdf",
+      "sha256": null,
+      "hospitalCode": "osm:way/51231573",
+      "hospitalName": "Tallaght University Hospital",
+      "countryCode": "IE",
+      "linkText": "Hospital Map",
+      "kind": "site-map",
+      "approvedAt": "2026-10-17T21:05:24.236Z",
+      "approvedBy": "auto:high-confidence-official-domain"
+    }
+  ]
+}

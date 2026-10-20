@@ -59,5 +59,56 @@
     "coveredByMappedVenue": 624,
     "trusts": 247,
     "fetchedAt": "2026-08-08T11:10:27.639Z"
+  },
+  "world.plans.candidates.ie": {
+    "description": "Floor-plan PDF discovery queue — IE",
+    "hospitalsInScope": 39,
+    "candidates": 10,
+    "crawlFailed": 6,
+    "botChallenged": 0,
+    "robotsBlocked": 0,
+    "withCandidates": 5,
+    "crawled": 39,
+    "fetchedAt": "2026-10-20T21:35:19.883Z"
+  },
+  "world.plans.candidates.au": {
+    "description": "Floor-plan PDF discovery queue — AU",
+    "hospitalsInScope": 448,
+    "candidates": 178,
+    "crawlFailed": 54,
+    "botChallenged": 81,
+    "robotsBlocked": 1,
+    "withCandidates": 47,
+    "crawled": 448,
+    "fetchedAt": "2026-10-20T21:35:19.867Z"
+  },
+  "world.plans.candidates.ca": {
+    "description": "Floor-plan PDF discovery queue — CA",
+    "hospitalsInScope": 230,
+    "candidates": 173,
+    "crawlFailed": 16,
+    "botChallenged": 3,
+    "robotsBlocked": 2,
+    "withCandidates": 29,
+    "crawled": 230,
+    "fetchedAt": "2026-10-20T21:35:19.837Z"
+  },
+  "world.plans.candidates.us": {
+    "description": "Floor-plan PDF discovery queue — US",
+    "hospitalsInScope": 6461,
+    "candidates": 1912,
+    "crawlFailed": 1125,
+    "botChallenged": 571,
+    "robotsBlocked": 55,
+    "withCandidates": 429,
+    "crawled": 6461,
+    "fetchedAt": "2026-10-20T21:35:19.823Z"
+  },
+  "world.sites": {
+    "description": "Merged world hospital directory (located pins, OSM-sourced) outside NHS England",
+    "count": 6986,
+    "excludedAlreadyMapped": 192,
+    "droppedNoPosition": 0,
+    "fetchedAt": "2026-10-20T21:18:33.914Z"
   }
 }

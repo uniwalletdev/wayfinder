@@ -27,7 +27,9 @@ import { OXFORD_ROAD_VENUE } from "./oxford-road"
 import { TRAFFORD_VENUE } from "./trafford"
 import { WYTHENSHAWE_VENUE } from "./wythenshawe"
 import { GENERATED_SHEET_VENUES } from "./generated-sheets"
+import { WORLD_GENERATED_SHEET_VENUES } from "./world-generated-sheets"
 import { NHS_HOSPITAL_VENUES } from "./nhs-hospitals"
+import { WORLD_HOSPITAL_VENUES } from "./world-hospitals"
 
 // Registry of venues the app knows about. Seed venues ship with the build;
 // user-created venues (added via "Map a place") are layered on top of these at
@@ -72,7 +74,19 @@ export const SEED_VENUES: Venue[] = [
   // hand-built venues — their placement is derived rather than checked by eye —
   // but ahead of the location-only directory, keeping "mapped places first".
   ...GENERATED_SHEET_VENUES,
+  // Venues built automatically from world hospitals' own published site maps
+  // (scripts/world/draft-sheets.mjs + build-venues.mjs). Placement is derived
+  // (OpenStreetMap centre, default-estimated scale — no footprint fetch for
+  // world hospitals yet, unlike the NHS pipeline's), same as GENERATED_SHEET_VENUES.
+  ...WORLD_GENERATED_SHEET_VENUES,
   ...NHS_HOSPITAL_VENUES,
+  // World hospital directory (scripts/world/): the same located-pin treatment
+  // as NHS_HOSPITAL_VENUES, for hospitals outside NHS England that OpenStreetMap
+  // lists with amenity=hospital. Last, since it's the least-curated tier —
+  // crowd-sourced coverage rather than a national register. Hospitals that now
+  // have a real venue above (WORLD_GENERATED_SHEET_VENUES) are excluded here by
+  // scripts/world/build-sites.mjs before this file is (re)generated.
+  ...WORLD_HOSPITAL_VENUES,
 ]
 
 // The venue the app opens into until the user picks or creates another.

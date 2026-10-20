@@ -24,6 +24,14 @@ const NOT_A_VENUE = new Set([
   "nhs-hospitals.ts",
   "nhs-hospitals-data.ts",
   "generated-sheets.ts",
+  // Located-pin directories, same shape problem as nhs-hospitals.ts: many
+  // venues built from an array at module load, not one hand-built literal.
+  "world-hospitals.ts",
+  "world-hospitals-data.ts",
+  // The world equivalent of generated-sheets.ts — a barrel of imports, not a
+  // venue literal itself. The individual files it imports (one per world
+  // sheet venue) ARE scanned normally.
+  "world-generated-sheets.ts",
 ])
 
 // Venue modules are either hand-written or generated, but all of them declare

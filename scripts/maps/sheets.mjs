@@ -11,6 +11,7 @@ import { dirname, join } from "path"
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..")
 const CONFIG = join(REPO_ROOT, "data", "mapped-sites.json")
+const WORLD_CONFIG = join(REPO_ROOT, "data", "world", "mapped-sites.json")
 
 const REQUIRED = ["slug", "id", "name", "subtitle", "file", "page", "center", "spanM", "plan", "quick", "notes"]
 
@@ -64,32 +65,36 @@ export function normaliseFloors(sheet) {
   })
 }
 
-export function readSheets() {
+// configPath defaults to the NHS sheet config, unchanged for every existing
+// caller. Pass WORLD_CONFIG (exported below) to read the world equivalent
+// instead — same shape, same two consumers (generate-all.mjs, build-venues.mjs),
+// just a different list of sheets.
+export function readSheets(configPath = CONFIG) {
   let doc
   try {
-    doc = JSON.parse(readFileSync(CONFIG, "utf8"))
+    doc = JSON.parse(readFileSync(configPath, "utf8"))
   } catch (err) {
-    throw new Error(`cannot read data/mapped-sites.json: ${err.message}`)
+    throw new Error(`cannot read ${configPath}: ${err.message}`)
   }
   const sheets = doc?.sheets
   if (!Array.isArray(sheets) || !sheets.length) {
-    throw new Error("data/mapped-sites.json has no `sheets` array")
+    throw new Error(`${configPath} has no \`sheets\` array`)
   }
   // Validate up front rather than letting a missing field turn into NaN
   // coordinates halfway through a generated venue module.
   for (const sheet of sheets) {
     const missing = REQUIRED.filter((k) => sheet[k] === undefined || sheet[k] === null)
     if (missing.length) {
-      throw new Error(`data/mapped-sites.json: sheet "${sheet.slug ?? "?"}" is missing ${missing.join(", ")}`)
+      throw new Error(`${configPath}: sheet "${sheet.slug ?? "?"}" is missing ${missing.join(", ")}`)
     }
     if (!Array.isArray(sheet.center) || sheet.center.length !== 2 || !sheet.center.every(Number.isFinite)) {
-      throw new Error(`data/mapped-sites.json: sheet "${sheet.slug}" has an invalid center`)
+      throw new Error(`${configPath}: sheet "${sheet.slug}" has an invalid center`)
     }
     if (!Array.isArray(sheet.plan) || sheet.plan.length !== 4 || !sheet.plan.every(Number.isFinite)) {
-      throw new Error(`data/mapped-sites.json: sheet "${sheet.slug}" has an invalid plan crop`)
+      throw new Error(`${configPath}: sheet "${sheet.slug}" has an invalid plan crop`)
     }
   }
   return sheets.map((sheet) => ({ ...sheet, floors: normaliseFloors(sheet) }))
 }
 
-export { REPO_ROOT }
+export { REPO_ROOT, WORLD_CONFIG }

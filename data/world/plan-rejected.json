@@ -1,0 +1,1117 @@
+{
+  "rejections": [
+    {
+      "slug": "wayfinding1floor-us",
+      "url": "https://www.mercyonenorthiowaaffiliates.org/hchs/_assets/documents/hancock/wayfinding1floor.pdf",
+      "hospitalName": "Franklin General Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "hhh-internalmap-website-8-2020-us",
+      "url": "https://www.hammondhenry.com/media-library/documents/Maps/HHH_InternalMap_Website_(8-2020).pdf",
+      "hospitalName": "Hammond-Henry Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "cancer-pavilion-floorplans-all-5-floors-us",
+      "url": "https://www.henryford.com/-/media/files/henry-ford/locations/cancer-institute-detroit/cancer-pavilion-floorplans-all-5-floors.pdf",
+      "hospitalName": "Henry Ford Jackson Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "cancer-pavilion-2nd-floor-us",
+      "url": "https://www.henryford.com/-/media/files/henry-ford/locations/cancer-institute-detroit/cancer-pavilion-2nd-floor.pdf",
+      "hospitalName": "Henry Ford Jackson Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "7 < 8"
+    },
+    {
+      "slug": "cancer-pavilion-4th-floor-us",
+      "url": "https://www.henryford.com/-/media/files/henry-ford/locations/cancer-institute-detroit/cancer-pavilion-4th-floor.pdf",
+      "hospitalName": "Henry Ford Jackson Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "holy-cross-hospital-map-2-us",
+      "url": "https://www.holycrosshealth.org/sites/default/files/hg_features/mercury_standard_layout/7bb2e9b642d7c8bf0add61ce6aaa4ab6.pdf",
+      "hospitalName": "Holy Cross Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "site-2014-hospital-floor-map-us",
+      "url": "https://www.mgmc.org/app/files/public/4225/2014-Hospital-Floor-Map.pdf",
+      "hospitalName": "Mary Greeley Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "department-map-1-us",
+      "url": "https://pawneevalleyhospital.com/wp-content/uploads/2023/07/Department-Map-1.pdf",
+      "hospitalName": "Pawnee Valley Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "arlington-campus-visitor-guide-us",
+      "url": "https://www.ridgeviewmedical.org/app/files/public/2055/Arlington-Campus-Visitor-Guide.pdf",
+      "hospitalName": "Ridgeview Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "le-sueur-campus-visitor-guide-us",
+      "url": "https://www.ridgeviewmedical.org/app/files/public/2056/Le-Sueur-Campus-Visitor-Guide.pdf",
+      "hospitalName": "Ridgeview Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "waconia-campus-visitor-guide-us",
+      "url": "https://www.ridgeviewmedical.org/app/files/public/2057/Waconia-Campus-Visitor-Guide.pdf",
+      "hospitalName": "Ridgeview Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "floor-plan-map12-8-2020-us",
+      "url": "https://www.samc.com/assets/documents/floor-plan-map12-8-2020.pdf",
+      "hospitalName": "Saint Agnes Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "shehadey-pavilion-library-map-5-11-us",
+      "url": "https://www.samc.com/assets/documents/maps/shehadey_pavilion_library_map_5_11.pdf",
+      "hospitalName": "Saint Agnes Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "sky-lakes-first-floor-11-2018-us",
+      "url": "https://www.skylakes.org/wp-content/uploads/2023/09/sky-lakes_first-floor_11-2018.pdf",
+      "hospitalName": "Sky Lakes Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "scmh-floorplans-colorcoded-final-8-5x11-us",
+      "url": "https://www.scmhks.org/files/2020/05/SCMH_FloorPlans_ColorCoded_Final_8.5x11.pdf",
+      "hospitalName": "Smith County Memorial Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "hospitalmapsecondfloor-us",
+      "url": "https://springhillmedicalcenter.com/sites/default/files/2023-03/HospitalMapSecondFloor.pdf",
+      "hospitalName": "Springhill Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "addenda-2-e-sweetwater-hospital-building-e-original-floor-plans-us",
+      "url": "https://sweetwaterhospital.org/wp-content/uploads/2025/06/Addenda-2.e-Sweetwater-Hospital-building-E-original-floor-plans.pdf",
+      "hospitalName": "Sweetwater Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "wakemed-cary-hospital-map-us",
+      "url": "https://www.wakemed.org/sites/default/files/hg_features/mercury_standard_layout/111aeebf881a3a9703423af35fb86f2e.pdf",
+      "hospitalName": "WakeMed Cary Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "main-hospital-map-ab-us",
+      "url": "https://www.luriechildrens.org/globalassets/media/locations/lurie-childrens/main-hospital-map_ab.pdf",
+      "hospitalName": "Ann & Robert H. Lurie Children's Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "3 < 8"
+    },
+    {
+      "slug": "baptist-nassau-campus-map-and-visitor-guide-us",
+      "url": "https://cdn.baptistjax.com/image/upload/v1699381489/BaptistJax/images/pdf/Baptist_Nassau_-_Campus_map_and_visitor_guide.pdf",
+      "hospitalName": "Baptist Medical Center Beaches",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "2 < 8"
+    },
+    {
+      "slug": "barstowhospitalmap-us",
+      "url": "https://barstowhospital.com/wp-content/uploads/2021/04/BarstowHospitalMap.pdf",
+      "hospitalName": "Barstow Community Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "beverly-campus-map-us",
+      "url": "https://beverlyhospital.org/-/media/files/beverly/beverly-campus-map.pdf",
+      "hospitalName": "BayRidge Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "bid-plymouth-campus-map-062223-us",
+      "url": "https://bidplymouth.org/-/media/files/plymouth/bid-plymouth-campus-map-062223.pdf",
+      "hospitalName": "Beth Israel Deaconess Hospital - Plymouth",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "bidmc-west-campus-map-us",
+      "url": "https://bidmc.org/-/media/files/bidmc/bidmc-west-campus-map.pdf",
+      "hospitalName": "Beth Israel Lahey Health Primary Care",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "bidmc-full-campus-map-us",
+      "url": "https://bidmc.org/-/media/files/bidmc/bidmc-full-campus-map.pdf",
+      "hospitalName": "Beth Israel Lahey Health Primary Care",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "bidmc-east-campus-map-us",
+      "url": "https://bidmc.org/-/media/files/bidmc/bidmc-east-campus-map.pdf",
+      "hospitalName": "Beth Israel Lahey Health Primary Care",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "bethesda-north-trihealth-hospital-campus-map-us",
+      "url": "https://cd.trihealth.com/-/media/trihealth/documents/hospitals-and-practices/bethesda-north-hospital/directions-and-parking/bethesda-north-trihealth-hospital-campus-map.pdf",
+      "hospitalName": "Bethesda North Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "bradley-campus-map-2017-us",
+      "url": "https://www.bradleyhospital.org/sites/default/files/lifespan-files/Bradley-Campus-Map-2017.pdf",
+      "hospitalName": "Bradley Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "site-2024-campus-and-parking-map-us",
+      "url": "https://www.brattlebororetreat.org/wp-content/uploads/2025/05/2024-Campus-and-Parking-Map.pdf",
+      "hospitalName": "Brattleboro Retreat",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "cmh-facility-map-us",
+      "url": "https://chambershospital.com/wp-content/uploads/2021/12/CMH_facility_map.pdf",
+      "hospitalName": "Chambers Memorial Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "crh-campus-map-9-24-1-us",
+      "url": "https://chesapeakeregional.com/sites/default/files/2024-12/CRH%20Campus%20Map%209-24_1.pdf",
+      "hospitalName": "Chesapeake Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "campus-map-march-2022-us",
+      "url": "https://www.claritycgc.org/wp-content/uploads/2024/02/campus-map-march-2022.pdf",
+      "hospitalName": "Clarity Child Guidance Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campus-map-clovis-community-medical-center-us",
+      "url": "https://www.communitymedical.org/getContentAsset/849d3a1c-5b04-4ef4-b3f8-38b6d01cfa23/9827f364-fe14-478a-9627-0c392332e416/campus-map-clovis-community-medical-center.pdf?language=en-US",
+      "hospitalName": "Community Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campus-map-clovis-community-medical-center-spanish-us",
+      "url": "https://www.communitymedical.org/getContentAsset/cc050613-5aa7-40c3-bed9-520fba69abd6/9827f364-fe14-478a-9627-0c392332e416/campus-map-clovis-community-medical-center-spanish.pdf?language=en-US",
+      "hospitalName": "Community Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campus-map-fresno-heart-and-surgical-hospital-us",
+      "url": "https://www.communitymedical.org/getContentAsset/4f207dcd-48dc-4cbd-a352-41e1fd228f63/9827f364-fe14-478a-9627-0c392332e416/campus-map-fresno-heart-and-surgical-hospital.pdf?language=en-US",
+      "hospitalName": "Community Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campus-map-fresno-heart-and-surgical-hospital-spanish-us",
+      "url": "https://www.communitymedical.org/getContentAsset/42a78bb8-3cb2-4f8c-b24f-f6ae66f5db4b/9827f364-fe14-478a-9627-0c392332e416/campus-map-fresno-heart-and-surgical-hospital-spanish.pdf?language=en-US",
+      "hospitalName": "Community Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campus-map-community-regional-medical-center-spanish-us",
+      "url": "https://www.communitymedical.org/getContentAsset/29717497-38c9-4096-8e31-59049d792be8/9827f364-fe14-478a-9627-0c392332e416/campus-map-community-regional-medical-center-spanish.pdf?language=en-US",
+      "hospitalName": "Community Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "illustrated-campus-map-us",
+      "url": "https://www.concordhospital.org/app/files/public/66666e94-c721-460a-a6db-5255e844c36f/Illustrated-Campus-Map.pdf",
+      "hospitalName": "Concord Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "chfillustratedcampusmap-us",
+      "url": "https://www.concordhospital.org/app/files/public/28e85b2d-01f9-49b3-890f-981e2f29f826/CHFIllustratedCampusMap.pdf",
+      "hospitalName": "Concord Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "chlillustratedcampusmap-us",
+      "url": "https://www.concordhospital.org/app/files/public/3b17325f-bc6b-41b9-85b2-c9c96156fabe/CHLIllustratedCampusMap.pdf",
+      "hospitalName": "Concord Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "cmc-hospital-map-parking-us",
+      "url": "https://www.conwaymedicalcenter.com/wp-content/uploads/2025/04/cmc-hospital-map-parking.pdf",
+      "hospitalName": "Conway Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "final-proof-crawford-memorial-aerial-low-res-rgb-07-13-15-us",
+      "url": "https://www.crawfordmh.org/patient-visitor-info/clientuploads/Exterior_Photos/Final_Proof_Crawford_Memorial_aerial_(Low_Res_RGB)_07-13-15.pdf",
+      "hospitalName": "Crawford Memorial Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "campusmap-us",
+      "url": "https://www.denverhealth.org/sites/default/files/2026-08/CampusMap.pdf",
+      "hospitalName": "Denver Health Medical Emergency Center for Children",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campusmap-espanol-us",
+      "url": "https://www.denverhealth.org/sites/default/files/2026-08/CampusMap_Espanol.pdf",
+      "hospitalName": "Denver Health Medical Emergency Center for Children",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "2 < 8"
+    },
+    {
+      "slug": "west-campus-map-ara-8-11-23-us",
+      "url": "https://www.ohsu.edu/sites/default/files/2023-08/west-campus-map-ara-8-11-23.pdf",
+      "hospitalName": "Doernbecher Children's Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "west-campus-map-prs-8-11-23-us",
+      "url": "https://www.ohsu.edu/sites/default/files/2023-08/west-campus-map-prs-8-11-23.pdf",
+      "hospitalName": "Doernbecher Children's Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "west-campus-map-ilo-10-17-23-us",
+      "url": "https://www.ohsu.edu/sites/default/files/2023-10/west-campus-map_ilo-10-17-23.pdf",
+      "hospitalName": "Doernbecher Children's Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "3 < 8"
+    },
+    {
+      "slug": "dukeregionalhospitalmap-edit4-15-23-41-us",
+      "url": "https://www.dukehealth.org/sites/default/files/hospital_location/DukeRegionalHospitalMap_edit4_15_23%5B41%5D.pdf",
+      "hospitalName": "Duke Raleigh Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "fchc-campus-map-2026-us",
+      "url": "https://fultoncountyhealthcenter.org/wp-content/uploads/2026/06/FCHC-Campus-Map-2026.pdf",
+      "hospitalName": "Fulton County Health Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "sagh-campus-map-us",
+      "url": "https://samhealth.org/wp-content/uploads/2023/09/SAGH-Campus-Map.pdf",
+      "hospitalName": "Good Samaritan Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "grace-cottage-map-2025-us",
+      "url": "https://gracecottage.org/wp-content/uploads/2025/02/Grace-Cottage-Map-2025.pdf",
+      "hospitalName": "Grace Cottage Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "site-2023-campus-map-general-us",
+      "url": "https://www.grandviewhealth.com/Uploads/Public/Documents/Division%201/Grandview/2023%20Campus%20Map%20general.pdf",
+      "hospitalName": "Grandview Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "leap-watertestinglocation-foundation-flyer-v3-us",
+      "url": "https://www.guthrie.org/sites/default/files/LEAP_WaterTestingLocation_Foundation_Flyer-v3.pdf",
+      "hospitalName": "Guthrie Cortland Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "hhh-campusmap-us",
+      "url": "https://www.hammondhenry.com/media-library/documents/Maps/HHH-CampusMap.pdf",
+      "hospitalName": "Hammond-Henry Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "henry-mayo-campus-map-4-13-2026-us",
+      "url": "https://www.henrymayo.com/app/files/public/0542b174-3db9-4b3a-b542-72ff17ba1592/Henry-Mayo-Campus-Map-4-13-2026.pdf",
+      "hospitalName": "Henry Mayo Newhall Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "main-map-us",
+      "url": "https://www.huronregional.org/Content/Uploads/huron_regional/images/Main%20Map.pdf",
+      "hospitalName": "Huron Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "lgmc-map-final-update-2020-1-28-us",
+      "url": "https://www.lakegranburymedicalcenter.com/Uploads/Public/Documents/Division%202/Lake%20Granbury%20Medical%20Center/LGMC%20Map%20(FINAL%20update%202020.1.28).pdf",
+      "hospitalName": "Lake Granbury Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "lmh-level-2-program-diagram-copy-1-5-26-us",
+      "url": "https://www.lmh.org/wp-content/uploads/2026/05/LMH-Level-2-Program-Diagram-copy-1.5.26.pdf",
+      "hospitalName": "Lawrence Memorial Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "little-falls-hospital-map-us",
+      "url": "https://www.bassett.org/sites/default/files/hg_features/mercury_standard_layout/b929d240186e5f778815806bda1b998d.pdf",
+      "hospitalName": "Little Falls Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "campus-map-updated-3-24-21-us",
+      "url": "https://www.mlkch.org/sites/default/files/2021-03/Campus_Map_Updated_3-24-21.pdf",
+      "hospitalName": "Martin Luther King, Jr. Community Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "the-memorial-hermann-medical-center-campus-map-us",
+      "url": "https://memorialhermann.org/-/media/memorial-hermann/org/files/locations/the-memorial-hermann-medical-center-campus-map.pdf",
+      "hospitalName": "Memorial Hermann Rehabilitation Hospital Katy",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "greater-heights-campus-map-us",
+      "url": "https://memorialhermann.org/-/media/memorial-hermann/org/files/locations/greater-heights-campus-map.pdf",
+      "hospitalName": "Memorial Hermann Rehabilitation Hospital Katy",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "the-woodlands-medical-center-campus-map-us",
+      "url": "https://memorialhermann.org/-/media/memorial-hermann/org/files/locations/the-woodlands-medical-center-campus-map.pdf",
+      "hospitalName": "Memorial Hermann Rehabilitation Hospital Katy",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "southeast-hospital-campus-map-us",
+      "url": "https://memorialhermann.org/-/media/memorial-hermann/org/files/locations/southeast-hospital-campus-map.pdf",
+      "hospitalName": "Memorial Hermann Rehabilitation Hospital Katy",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "centerpoint-campus-directions-sept-2024-us",
+      "url": "https://www.covenanthealth.com/wp-content/uploads/2025/12/Centerpoint_Campus_Directions_Sept_2024.pdf",
+      "hospitalName": "Methodist Medical Center of Oak Ridge",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "6 < 8"
+    },
+    {
+      "slug": "final-proof-claiborne-medical-center-medium-res-12-21-us",
+      "url": "https://www.covenanthealth.com/wp-content/uploads/2025/07/Final-Proof-Claiborne-Medical-Center-medium-res-12-21.pdf",
+      "hospitalName": "Methodist Medical Center of Oak Ridge",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "site-4500-3508-cumc-map-footprint-updated-prints-r2-2024-us",
+      "url": "https://www.covenanthealth.com/wp-content/uploads/2025/07/4500-3508-CUMC-Map-Footprint-updated-Prints-R2-2024.pdf",
+      "hospitalName": "Methodist Medical Center of Oak Ridge",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "site-1000-2331-leconte-map-visitor-guide-reprint-2024-r6-us",
+      "url": "https://www.covenanthealth.com/wp-content/uploads/2025/07/1000-2331-LeConte-Map-Visitor-Guide-reprint-2024-R6.pdf",
+      "hospitalName": "Methodist Medical Center of Oak Ridge",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "3 < 8"
+    },
+    {
+      "slug": "methodist-medical-center-campus-map-2014-final-us",
+      "url": "https://www.covenanthealth.com/wp-content/uploads/2016/05/Methodist-Medical-Center-Campus-Map-2014-FINAL.pdf",
+      "hospitalName": "Methodist Medical Center of Oak Ridge",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "final20proof20morristown20hamblen20brochure20high20res2006-18-2025-us",
+      "url": "https://www.covenanthealth.com/wp-content/uploads/2023/03/Final20Proof20Morristown20Hamblen20Brochure20High20Res2006-18-2025.pdf",
+      "hospitalName": "Methodist Medical Center of Oak Ridge",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "site-8110-1246-rmc-facility-map-2023-us",
+      "url": "https://www.covenanthealth.com/wp-content/uploads/2025/07/8110-1246-RMC-Facility-Map-2023.pdf",
+      "hospitalName": "Methodist Medical Center of Oak Ridge",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "mptf-map-screening-2024-us",
+      "url": "https://mptf.com/wp-content/uploads/2023/04/MPTF-Map_Screening_2024.pdf",
+      "hospitalName": "Motion Picture And Television Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "7 < 8"
+    },
+    {
+      "slug": "mah-campus-map-us",
+      "url": "https://mountauburnhospital.org/-/media/files/mount-auburn/mah-campus-map.pdf",
+      "hospitalName": "Mount Auburn Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "nrmc-campus-map-9-21-23-us",
+      "url": "https://www.nrmchospital.org/wp-content/uploads/2023/09/NRMC_Campus_Map_9-21-23.pdf",
+      "hospitalName": "Natchitoches Regional Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "campus-map-4-us",
+      "url": "https://www.nrmchospital.org/wp-content/uploads/2018/10/Campus_Map.pdf",
+      "hospitalName": "Natchitoches Regional Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "campus-map-updated-3-9-2022-us",
+      "url": "https://www.navarrohospital.com/Uploads/Public/Documents/Division%202/Navarro%20Regional%20Hospital/Campus%20map%20updated%203.9.2022.pdf",
+      "hospitalName": "Navarro Regional Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "rmc-campus-map-us",
+      "url": "https://rmccares.org/wp-content/uploads/rmc-campus-map.pdf",
+      "hospitalName": "Northeast Alabama Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "map-52515-nbh-campus-map-us",
+      "url": "https://nortonhealthcare.com/wp-content/uploads/2024/11/MAP-52515-NBH-Campus-Map.pdf",
+      "hospitalName": "Norton Audubon Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "4 < 8"
+    },
+    {
+      "slug": "norton-downtown-campus-map-0424-us",
+      "url": "https://nortonhealthcare.com/wp-content/uploads/2024/04/norton-downtown-campus-map-0424.pdf",
+      "hospitalName": "Norton Audubon Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "campus-map-2018-us",
+      "url": "http://www.rchsd.org/documents/2017/12/campus-map-2018.pdf",
+      "hospitalName": "Rady Children's Hospital-San Diego",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campusmap-st-mary-2590-2019-v2-us",
+      "url": "https://www.rwhs.org/sites/default/files/2025-08/campusmap-st.mary-2590-2019-v2.pdf",
+      "hospitalName": "Regional West Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "map-cumc-bergan-mercy-us",
+      "url": "https://www.chihealth.com/content/dam/chihealthcom/documents/locations/campus-maps/map-cumc-bergan-mercy.pdf",
+      "hospitalName": "Richard Young Behavioral Health",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "map-good-samaritan-us",
+      "url": "https://www.chihealth.com/content/dam/chihealthcom/documents/locations/campus-maps/map-good-samaritan.pdf",
+      "hospitalName": "Richard Young Behavioral Health",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "map-lakeside-us",
+      "url": "https://www.chihealth.com/content/dam/chihealthcom/documents/locations/campus-maps/map-lakeside.pdf",
+      "hospitalName": "Richard Young Behavioral Health",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "map-midlands-us",
+      "url": "https://www.chihealth.com/content/dam/chihealthcom/documents/locations/campus-maps/map-midlands.pdf",
+      "hospitalName": "Richard Young Behavioral Health",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "3 < 8"
+    },
+    {
+      "slug": "map-mercy-cb-us",
+      "url": "https://www.chihealth.com/content/dam/chihealthcom/documents/locations/campus-maps/map-mercy-cb.pdf",
+      "hospitalName": "Richard Young Behavioral Health",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "map-st-elizabeth-us",
+      "url": "https://www.chihealth.com/content/dam/chihealthcom/documents/locations/campus-maps/map-st-elizabeth.pdf",
+      "hospitalName": "Richard Young Behavioral Health",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "map-st-francis-us",
+      "url": "https://www.chihealth.com/content/dam/chihealthcom/documents/locations/campus-maps/map-st-francis.pdf",
+      "hospitalName": "Richard Young Behavioral Health",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "2 < 8"
+    },
+    {
+      "slug": "mirmont-treatment-center-campus-map-us",
+      "url": "https://www.mainlinehealth.org/-/media/files/pdf/locations/mirmont-treatment-center/mirmont-treatment-center-campus-map.pdf",
+      "hospitalName": "Riddle Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campusmapbmh-us",
+      "url": "https://www.mainlinehealth.org/-/media/files/pdf/locations/bmh/campusmapbmh.pdf",
+      "hospitalName": "Riddle Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "phcampusmap-us",
+      "url": "https://www.mainlinehealth.org/-/media/files/pdf/locations/ph/phcampusmap.pdf",
+      "hospitalName": "Riddle Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "riddle-hospital-map-us",
+      "url": "https://www.mainlinehealth.org/-/media/files/pdf/locations/rh/riddle-hospital-map.pdf",
+      "hospitalName": "Riddle Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "site-2024-annual-report-us",
+      "url": "https://www.rockcastleregional.org/campus-map-directions/wp-content/uploads/2026/06/2024_Annual_Report.pdf",
+      "hospitalName": "Rockcastle Regional Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "med-center-map-8-25-2020-us",
+      "url": "https://www.samc.com/assets/documents/maps/med-center-map-8-25-2020.pdf",
+      "hospitalName": "Saint Agnes Medical Center",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "campusmap-rev-10-29-25-us",
+      "url": "https://www.samc.com/sites/default/files/pdf/CampusMap_REV.10.29.25.pdf",
+      "hospitalName": "Saint Agnes Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "saint-alphonsus-medical-center-nampa-map-us",
+      "url": "https://www.saintalphonsus.org/sites/default/files/hg_features/mercury_standard_layout/ffe40e021df181de8ebbec199c7b5668.pdf",
+      "hospitalName": "Saint Alphonsus Medical Center - Nampa",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "covington-campus-map-us",
+      "url": "https://www.stelizabeth.com/docs/default-source/patients-and-visitors-documents/documents/campus-maps/covington-campus-map.pdf",
+      "hospitalName": "Saint Elizabeth Medical Center Florence",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "dearborn-campus-map-us",
+      "url": "https://www.stelizabeth.com/docs/default-source/patients-and-visitors-documents/documents/campus-maps/dearborn-campus-map.pdf",
+      "hospitalName": "Saint Elizabeth Medical Center Florence",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "edgewood-campus-map-us",
+      "url": "https://www.stelizabeth.com/docs/default-source/patients-and-visitors-documents/documents/campus-maps/edgewood-campus-map.pdf",
+      "hospitalName": "Saint Elizabeth Medical Center Florence",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "florence-campus-map83858a6a625f638aa6e9ff0000f9be92-us",
+      "url": "https://www.stelizabeth.com/docs/default-source/patients-and-visitors-documents/documents/campus-maps/florence-campus-map83858a6a625f638aa6e9ff0000f9be92.pdf",
+      "hospitalName": "Saint Elizabeth Medical Center Florence",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "ft-thomas-campus-map-us",
+      "url": "https://www.stelizabeth.com/docs/default-source/patients-and-visitors-documents/documents/campus-maps/ft-thomas-campus-map.pdf",
+      "hospitalName": "Saint Elizabeth Medical Center Florence",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "grant-county-campus-map-us",
+      "url": "https://www.stelizabeth.com/docs/default-source/patients-and-visitors-documents/documents/campus-maps/grant-county-campus-map.pdf",
+      "hospitalName": "Saint Elizabeth Medical Center Florence",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "strong-west-campus-map-us",
+      "url": "https://www.urmc.rochester.edu/getmedia/8570d5a1-9a69-4d34-a34f-e02971e7fb6d/strong-west-campus-map.pdf",
+      "hospitalName": "Saint James Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "sheltering-arms-institute-main-campus-map-us",
+      "url": "https://shelteringarmsinstitute.com/wp-content/uploads/2026/01/Sheltering_Arms_Institute_Main_Campus_Map.pdf",
+      "hospitalName": "Sheltering Arms Institute",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "sheridan-campus-combined-12-1-2021-us",
+      "url": "https://www.sheridanhospital.org/wp-content/uploads/2022/01/Sheridan-Campus-combined_12.1.-2021.pdf",
+      "hospitalName": "Sheridan Memorial Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "silver-cross-hospital-campus-map-us",
+      "url": "https://www.silvercross.org/app/files/public/2721/Silver-Cross-Hospital-Campus-Map.pdf",
+      "hospitalName": "Silver Cross Hospital",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "srga-map-us",
+      "url": "https://southernregional.org/wp-content/uploads/2022/12/SRGA-Map.pdf",
+      "hospitalName": "Southern Regional Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "hocc-nb-campus-map-us",
+      "url": "https://thocc.org/file%20library/unassigned/hocc-nb-campus-map.pdf",
+      "hospitalName": "The Hospital of Central Connecticut - New Britain General Campus",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "campus-map-6-us",
+      "url": "https://www.torrancememorial.org/app/files/public/2d5ad9c4-1cbe-4585-b1c0-8ddb86f78651/Map/Campus%20Map.pdf",
+      "hospitalName": "Torrance Memorial",
+      "countryCode": "US",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country US"
+    },
+    {
+      "slug": "campus-map-7-us",
+      "url": "https://www.kansashealthsystem.com/-/media/files/pdf/cray/campus_map.pdf",
+      "hospitalName": "University of Kansas Health System - Great Bend Campus",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "utah-state-hospital-map-us",
+      "url": "https://ush.utah.gov/wp-content/uploads/2024-USH-map.pdf",
+      "hospitalName": "Utah State Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "valley-childrens-hospital-map-4-us",
+      "url": "https://www.valleychildrens.org/sites/default/files/hg_features/mercury_standard_layout/2ec58c42e15f2fede5d9e27dccc603af.pdf",
+      "hospitalName": "Valley Children's Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "2 < 8"
+    },
+    {
+      "slug": "wakemed-cary-hospital-map-3-us",
+      "url": "https://www.wakemed.org/sites/default/files/hg_features/mercury_standard_layout/67e8387f081355d6b7574c124ff4a76d.pdf",
+      "hospitalName": "WakeMed Cary Hospital",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "2 < 8"
+    },
+    {
+      "slug": "whiterivermedical-center-campus-map-us",
+      "url": "https://whiteriverhealth.org/files/documents/WhiteRiverMedical%20Center_Campus%20Map.pdf",
+      "hospitalName": "White River Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "hospital-campus-map-2022-us",
+      "url": "https://whiteriverhealth.org/files/documents/Hospital%20Campus%20Map_2022.pdf",
+      "hospitalName": "White River Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "whmc-limitedaccessmap-us",
+      "url": "https://www.woodlandheights.net/Uploads/Public/Documents/Division%202/Woodland%20Heights%20Medical%20Center/whmc%20-%20limitedaccessmap.pdf",
+      "hospitalName": "Woodland Heights Medical Center",
+      "countryCode": "US",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "inpatientbuilding-map-ca",
+      "url": "https://www.hoteldieushaver.org/files/InpatientBuilding-Map.pdf",
+      "hospitalName": "Hotel Dieu Shaver Health and Rehabilitation Centre",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "floor-plan-jhcc-ca",
+      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/05/Floor_Plan_JHCC.pdf",
+      "hospitalName": "Juravinski Hospital",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "6 < 8"
+    },
+    {
+      "slug": "ron-joyce-childrens-health-centre-ca",
+      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/03/Ron_Joyce_Childrens_Health_Centre.pdf",
+      "hospitalName": "Juravinski Hospital",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "7 < 8"
+    },
+    {
+      "slug": "wlmhnew-level1-floorplan-ca",
+      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/05/WLMHnew-Level1-FloorPlan.pdf",
+      "hospitalName": "Juravinski Hospital",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "mhc-main-map-2026-ca",
+      "url": "https://misericordia.mb.ca/wp-content/uploads/MHC-Main-Map-2026.pdf",
+      "hospitalName": "Misericordia Health Centre",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "hospital-map-ca",
+      "url": "https://horizonnb.ca/media/1109091/hospital_map.pdf",
+      "hospitalName": "Moncton Hospital",
+      "countryCode": "CA",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country CA"
+    },
+    {
+      "slug": "ajec-site-map-ca",
+      "url": "https://www.albertahealthservices.ca/assets/hospitals/ajec/ajec-site-map.pdf",
+      "hospitalName": "Peter Lougheed Centre",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "west-5th-campus-map-and-directory-march-26-2015-web-ca",
+      "url": "https://www.stjoes.ca/patients-visitors/your-visit-or-stay/maps-and-directions/west-5th-campus-map-and-directory_march-26-2015-web.pdf",
+      "hospitalName": "St. Joseph's Healthcare Hamilton",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "sjhh-west-5th-campus-map-and-directory-jan-2020-1-ca",
+      "url": "https://www.stjoes.ca/contact/sjhh_west-5th-campus-map-and-directory_jan-2020-1-.pdf",
+      "hospitalName": "St. Joseph's Healthcare Hamilton",
+      "countryCode": "CA",
+      "reason": "not-a-site-plan",
+      "detail": "aspect 2.24 — too tall"
+    },
+    {
+      "slug": "bendigo-hospital-site-map-2025-26-au",
+      "url": "https://www.bendigohealth.org.au/Assets/Files/Bendigo%20Hospital%20Site%20Map%202025-26.pdf",
+      "hospitalName": "Anne Caudle Campus",
+      "countryCode": "AU",
+      "reason": "not-a-site-plan",
+      "detail": "aspect 2.14 — too tall"
+    },
+    {
+      "slug": "austin-hospital-map-1-au",
+      "url": "https://www.austin.org.au/Assets/Files/Austin%20Hospital%20Map%20(1).pdf",
+      "hospitalName": "Austin Hospital",
+      "countryCode": "AU",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country AU"
+    },
+    {
+      "slug": "repat-map-au",
+      "url": "https://www.austin.org.au/Assets/Files/Repat%20Map.pdf",
+      "hospitalName": "Austin Hospital",
+      "countryCode": "AU",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country AU"
+    },
+    {
+      "slug": "austin-hospital-map-july-2016-au",
+      "url": "https://www.austin.org.au/Assets/Files/Austin%20Hospital%20map_July%202016.pdf",
+      "hospitalName": "Austin Hospital",
+      "countryCode": "AU",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country AU"
+    },
+    {
+      "slug": "visit-site-au",
+      "url": "https://www.swslhd.health.nsw.gov.au/Fairfield/pdf/visit_Site.pdf",
+      "hospitalName": "Bankstown-Lidcombe Hospital",
+      "countryCode": "AU",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "liverpool-map-au",
+      "url": "https://www.swslhd.health.nsw.gov.au/Liverpool/pdf/Liverpool_Map.pdf",
+      "hospitalName": "Bankstown-Lidcombe Hospital",
+      "countryCode": "AU",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "central-gippsland-health-community-services-map-au",
+      "url": "https://www.cghs.com.au/_files/ugd/9d29b8_d6eef45f8c6740e58de4b223c6fb42b9.pdf",
+      "hospitalName": "Central Gippsland Health, Community Services",
+      "countryCode": "AU",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "peel-health-campus-map-au",
+      "url": "https://www.peel.health.wa.gov.au/~/media/HSPs/SMHS/Hospitals/RkPG/Files/PDF/MDH-map.pdf",
+      "hospitalName": "Peel Health Campus",
+      "countryCode": "AU",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "site-144041-pch-maps-consumer-map-v12-full-map-full-colour-web-au",
+      "url": "https://www.pch.health.wa.gov.au/~/media/Images/Hospitals/PCH/Page-Images/For-Patients-and-Visitors/Hospital-map/144041-PCH-Maps--Consumer-Map-V12-Full-Map--Full-Colour-web.pdf",
+      "hospitalName": "Perth Children's Hospital",
+      "countryCode": "AU",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country AU"
+    },
+    {
+      "slug": "randwick-20campus-20accessibility-20guide-final-230617-au",
+      "url": "https://www.seslhd.health.nsw.gov.au/sites/default/files/groups/Prince_of_Wales_Hospital/map/Randwick%2520Campus%2520Accessibility%2520Guide_FINAL_230617.pdf",
+      "hospitalName": "St George Hospital",
+      "countryCode": "AU",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country AU"
+    },
+    {
+      "slug": "map-campus-au",
+      "url": "https://metronorth.health.qld.gov.au/rbwh/wp-content/uploads/sites/2/2017/07/map-campus.pdf",
+      "hospitalName": "The Prince Charles Hospital",
+      "countryCode": "AU",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "site-map-uhg-ie",
+      "url": "https://saolta.ie/sites/default/files/publications/Site%20map%20UHG.pdf",
+      "hospitalName": "Mayo University Hospital",
+      "countryCode": "IE",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country IE"
+    },
+    {
+      "slug": "hospital-map-leaflet-ie",
+      "url": "https://www.tuh.ie/Adult-Services/Hospital-Map-Leaflet.pdf",
+      "hospitalName": "Tallaght University Hospital",
+      "countryCode": "IE",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "hospital-map-ie",
+      "url": "https://www.tuh.ie/Patient-Visitor-Services/How-to-Find-Us-/Hospital-Map-.pdf",
+      "hospitalName": "Tallaght University Hospital",
+      "countryCode": "IE",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country IE"
+    }
+  ],
+  "generatedAt": "2026-10-20T21:09:43.256Z"
+}

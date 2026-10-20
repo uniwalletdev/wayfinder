@@ -1,0 +1,326 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="612" height="792" fill="#ffffff"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M590.2 674.3C592.8 673.6 594.8 673.3 595.1 675.3C595.3 676.2 593.9 678.4 592.8 679.5C591.2 681.4 588.6 682.9 588.6 682.9L588.5 683.1C576.7 691.3 552.2 702.8 535.8 702.9C513.3 703 504.3 697.5 495.7 695.3C487.5 693.2 482.3 693.1 481.8 692.1C481.3 691.1 482.8 687.5 492.2 686.7C501.6 685.9 507.6 687.6 511 687.7C519 688 522.6 685.6 522.6 685.6C522.6 685.6 508.2 676.5 492.2 675.2C476.2 673.9 452.4 683.7 452.4 683.7C452.4 683.7 449.6 684.6 447.1 684.6C445.5 684.6 442.9 684.3 442.4 683.6C441.1 681.9 442.6 680.7 444.9 679.1C447.1 677.6 465.7 668.4 473.9 664.9L473.9 664.8C474.9 664.3 475.8 663.9 476.5 663.5C484 659.8 494 654.4 505.4 654.2C523.7 654 555.6 673.3 581.3 674.6C585.2 674.8 588 674.5 590.1 674.2Z" fill="#00a9b5" fill-opacity="0.1"/>
+<path d="M540.7 707.6C540.2 706.9 537.5 706.6 535.9 706.6C533.4 706.6 531.1 707.2 531.1 707.2C531.1 707.2 508.3 714 492.3 712.7C492.3 712.7 489.9 712.7 489 712.1C488.9 712 491.2 710.6 493 710C498.4 708.5 500.8 706.9 498.8 705.2C497.7 704.3 497 705 484.7 699.4C473.7 694.4 468.6 690.5 448.3 692C444 692.3 438.8 693.5 433.4 695.2C418 700.1 401.3 708.9 402 711.9C402.3 712.9 403.2 713.5 405.7 713.3C407.4 713.2 410.1 712.2 417.5 712.3C427.9 712.3 437.4 715.5 446.3 719.3C459.3 725 470.8 732.1 481.1 732.9C488.8 733.5 495.5 731.5 509 725.9C517.3 722.5 535.9 713.5 538.2 712C540.5 710.5 542 709.2 540.7 707.6" fill="#00a9b5" fill-opacity="0.1"/>
+<path d="M516 642.4C514.4 641.5 489.3 633 479.7 631.3C473.2 630.1 463.4 632.6 461 633.6C453.1 636.6 431.4 646 422.3 649.7C421.4 650.1 420.5 650.5 419.7 650.8C413 653.6 407.4 655.8 401.4 657.3C393 659.3 389.7 655.9 388.2 659.3C388.1 661.3 391.7 663.1 400 665.4C407.1 667.4 415 668.5 423.4 668.4C427.4 668.4 431.4 668.1 435.5 667.5C451.7 665 476.3 652.8 482 650.2C491.5 646 501.2 643.2 515 646.9C515 646.9 517.9 647.5 518.4 645.2C518.7 643.6 517.5 643.2 516 642.4" fill="#00a9b5" fill-opacity="0.1"/>
+<path d="M18 774L594 774L594 738L18 738Z" fill="#00a9b5"/>
+<path d="M18 49.2L594 49.2L594 18L18 18Z" fill="#00a9b5"/>
+<path d="M22.8 488.3L204.8 488.3" fill="none" stroke="#00a9b5" stroke-width="0.5"/>
+<path d="M22.8 693L204.8 693" fill="none" stroke="#00a9b5" stroke-width="0.5"/>
+<path d="M34.8 97.2C41.4 97.2 46.8 91.8 46.8 85.2C46.8 78.6 41.4 73.2 34.8 73.2C28.2 73.2 22.8 78.6 22.8 85.2C22.8 91.8 28.2 97.2 34.8 97.2" fill="#2c2e35"/>
+<path d="M228.8 97.2C235.4 97.2 240.8 91.8 240.8 85.2C240.8 78.6 235.4 73.2 228.8 73.2C222.2 73.2 216.8 78.6 216.8 85.2C216.8 91.8 222.2 97.2 228.8 97.2" fill="#2c2e35"/>
+<path d="M228.8 293.6C235.4 293.6 240.8 288.2 240.8 281.6C240.8 275 235.4 269.6 228.8 269.6C222.2 269.6 216.8 275 216.8 281.6C216.8 288.2 222.2 293.6 228.8 293.6" fill="#2c2e35"/>
+<path d="M228.8 459.6C235.4 459.6 240.8 454.2 240.8 447.6C240.8 441 235.4 435.6 228.8 435.6C222.2 435.6 216.8 441 216.8 447.6C216.8 454.2 222.2 459.6 228.8 459.6" fill="#2c2e35"/>
+<path d="M410.8 115L592.8 115" fill="none" stroke="#00a9b5" stroke-width="0.5"/>
+<path d="M410.8 556.6L592.8 556.6" fill="none" stroke="#00a9b5" stroke-width="0.5"/>
+<path d="M422.8 97.2C429.4 97.2 434.8 91.8 434.8 85.2C434.8 78.6 429.4 73.2 422.8 73.2C416.2 73.2 410.8 78.6 410.8 85.2C410.8 91.8 416.2 97.2 422.8 97.2" fill="#2c2e35"/>
+<path d="M159 764.2C160.4 764.1 160.7 763.7 160.7 762.6L160.7 753C160.7 751.9 160.4 751.4 159 751.4L159 750.8C160.9 750.8 162.2 750.9 162.7 750.9C163.4 750.9 164.3 750.8 165.9 750.8L165.9 751.4C164.6 751.4 164.2 751.9 164.2 753L164.2 762.6C164.2 763.7 164.6 764.1 165.9 764.2L165.9 764.7C164.3 764.7 163.4 764.7 162.7 764.7C162.1 764.7 160.7 764.7 159 764.7Z" fill="#ffffff"/>
+<path d="M184.7 764.2C186 764.1 186.4 763.7 186.4 762.6L186.4 753C186.4 751.9 186 751.4 184.7 751.4L184.7 750.8C185.3 750.8 187 750.9 188.1 750.9C191.2 750.9 193.8 750.8 195.7 750.8L195.8 754.1L195.1 754.1C194.8 752.2 193.9 751.6 191.4 751.6L189.8 751.6L189.8 757.2L191.2 757.2C193.1 757.2 193.4 756.6 193.5 755.3L194.2 755.3C194.2 756.1 194.2 756.8 194.2 757.4C194.2 758.4 194.2 759.1 194.2 759.9L193.5 759.9C193.5 758.3 193 757.9 191.2 757.9L189.8 757.9L189.8 762.6C189.8 763.5 190.2 764 192.1 764C194.2 764 195.7 763.6 196.2 761.2L196.9 761.2C196.8 762.1 196.6 763.7 196.6 764.7C194.6 764.7 191.8 764.7 188.6 764.7C187 764.7 185.1 764.7 184.7 764.7Z" fill="#ffffff"/>
+<path d="M147.7 761L148.5 761C149 763.3 150.2 764 152.1 764.1C154.4 764.2 155.1 763 155.1 761.9C155.1 758.8 147.5 759.8 147.6 754.6C147.6 753.7 148.1 750.6 152.7 750.5C153.8 750.5 155.5 750.8 156.6 751.2L156.8 754.7L156 754.7C155.8 752.7 154.8 751.3 152.6 751.3C150.9 751.3 150 752.3 150 753.4C150 755.9 157.6 755.7 157.6 760.8C157.7 763.1 155.9 765 152.5 765C151.2 765 149.4 764.8 147.9 764.4Z" fill="#ffffff"/>
+<path d="M168.1 764.2C169.4 764.1 169.8 763.7 169.8 762.6L169.8 753C169.8 751.9 169.4 751.4 168.1 751.4L168.1 750.8C168.7 750.8 170.4 750.9 171.4 750.9C173.2 750.9 175 750.8 176.7 750.8C181.9 750.8 184.6 753.8 184.6 758C184.6 760.1 183.2 764.7 176 764.7C174.4 764.7 172.8 764.7 171.2 764.7C170.3 764.7 168.7 764.7 168.1 764.7ZM173.3 762.6C173.3 763.7 173.3 763.9 174.8 763.9C178.1 763.9 180.9 762.6 180.9 758.2C180.9 755.5 179.9 753.6 178.7 752.6C177.7 751.8 176.6 751.6 174.2 751.6L173.3 751.6Z" fill="#ffffff"/>
+<path d="M78.3 764.1C80 764.1 80.4 763.5 80.4 762.1L80.4 749.8C80.4 748.4 80 747.8 78.3 747.8L78.3 747C79.5 747.1 81.3 747.1 82.2 747.1C83.9 747.1 85.6 747 87.3 747C91.8 747 93.2 749.2 93.2 751.6C93.2 753.2 92.1 755.1 89.6 755.8L92.8 761.5C94 763.5 94.6 764 96 764.2L96 764.7C95.7 764.8 95 764.8 94.6 764.8C91.2 764.8 89.5 763.7 88 760.7L87 758.7C86 756.5 86.2 756.4 84.4 756.3L84.4 762.1C84.4 763.5 84.9 764.1 86.6 764.1L86.6 764.8C84.5 764.8 83.6 764.8 82.8 764.8C82 764.8 80.4 764.8 78.3 764.8ZM84.4 755.4C84.9 755.5 84.9 755.6 85.4 755.6C87.7 755.6 89.1 754.6 89.1 752.2C89.1 750.4 88.2 747.7 84.8 747.7C84.4 747.7 84.8 747.8 84.4 747.9Z" fill="#ffffff"/>
+<path d="M132.4 764.2C133.7 764.1 134.1 763.7 134.1 762.6L134.1 753C134.1 751.9 133.7 751.4 132.4 751.4L132.4 750.8C133.3 750.8 134.9 750.9 135.7 750.9C137 750.9 138.6 750.8 139.9 750.8C143.5 750.8 144.6 752.5 144.6 754.4C144.6 755.8 143.7 757.3 141.8 757.8L143.8 761.3C145 763.1 145.6 764.3 146.7 764.5L146.7 765C146.4 765 146.1 765 145.8 765C143 765 141.7 764.1 140.5 761.8L139.7 760.1C138.8 758.4 139 758.3 137.6 758.3L137.6 762.6C137.6 763.7 138 764.1 139.3 764.2L139.3 764.7C137.7 764.7 137 764.7 136.3 764.7C135.7 764.7 134 764.7 132.4 764.7ZM137.6 757.5C138 757.6 138 757.6 138.4 757.6C140.3 757.6 141.4 756.8 141.4 754.9C141.4 753.5 140.6 751.4 137.9 751.4C137.6 751.4 137.9 751.4 137.6 751.5Z" fill="#ffffff"/>
+<path d="M96.1 764.2C97.4 764.1 97.8 763.7 97.8 762.6L97.8 753C97.8 751.9 97.2 751.5 96.5 751.4L96.5 750.8C98.1 750.8 99.3 750.9 99.9 750.9C100.6 750.9 100.9 750.8 102.5 750.8L102.5 751.4C101.6 751.5 101.2 751.9 101.2 753L101.2 762.6C101.2 763.7 101.8 764.1 102.9 764.2L102.9 764.7C100.9 764.7 100.6 764.7 99.9 764.7C99.3 764.7 97.7 764.7 96.1 764.7Z" fill="#ffffff"/>
+<path d="M118.6 751.4C117.2 751.4 117 751.6 116.2 753.7L111.8 764.9L110.2 764.9L104.9 752.8C104.4 751.6 103.9 751.4 103.1 751.4L103.1 750.8C104.3 750.8 106 750.9 106.8 750.9C107.6 750.9 108.5 750.8 109.8 750.8L109.8 751.4L109.2 751.4C108.7 751.4 108.4 752.2 108.9 753.4L112.2 761.2L114.8 753.5C115 752.9 115.2 752.5 115.2 752.1C115.2 751.5 114.7 751.4 113.9 751.4L113.9 750.8C114.9 750.8 115.5 750.9 116 750.9C116.5 750.9 117.6 750.8 118.6 750.8Z" fill="#ffffff"/>
+<path d="M118.7 764.2C119.9 764.2 120.4 763.7 120.4 762.6L120.4 753C120.4 751.9 119.9 751.4 119.1 751.4L119.1 750.8C119.8 750.8 121.3 750.9 122.3 750.9C125.4 750.9 127.8 750.8 129.7 750.8L129.8 754.1L129.1 754.1C128.8 752.2 127.9 751.6 125.4 751.6L123.8 751.6L123.8 757.2L125.2 757.2C127.1 757.2 127.4 756.6 127.5 755.3L128.2 755.3C128.2 756.1 128.2 756.8 128.2 757.4C128.2 758.4 128.2 759.1 128.2 759.9L127.5 759.9C127.5 758.3 127 757.9 125.2 757.9L123.8 757.9L123.8 762.6C123.8 763.5 124.2 764 126.2 764C128.3 764 129.7 763.6 130.2 761.2L130.9 761.2C130.8 762.1 130.6 763.7 130.6 764.7C128.6 764.7 126 764.7 122.8 764.7C121.2 764.7 119.5 764.7 118.7 764.7Z" fill="#ffffff"/>
+<path d="M56.4 761.1C56.6 761.2 57 761.2 57 761.2C59.7 761.4 63.6 760.2 63.6 760.2C63.6 760.2 64 760.1 64.4 760.1C64.7 760.1 65.1 760.2 65.2 760.3C65.4 760.6 65.2 760.8 64.8 761C64.4 761.3 61.2 762.8 59.8 763.4C57.5 764.3 56.4 764.7 55.1 764.6C52.2 764.3 48.7 761.1 44.3 761.1C43 761.1 42.6 761.2 42.3 761.3C41.9 761.3 41.7 761.2 41.7 761C41.5 760.3 46.7 757.8 49.5 757.6C53 757.4 53.8 758.1 55.7 758.9C57.8 759.8 57.9 759.7 58.1 759.9C58.4 760.2 58 760.4 57.1 760.7C56.8 760.8 56.4 761 56.4 761.1" fill="#ffffff"/>
+<path d="M73.6 754.6C74.1 754.5 74.4 754.5 74.5 754.8C74.5 755 74.2 755.3 74.1 755.5C73.8 755.9 73.3 756.1 73.3 756.1L73.3 756.1C71.3 757.5 67.2 759.5 64.4 759.5C60.6 759.5 59 758.6 57.6 758.2C56.2 757.9 55.3 757.8 55.2 757.7C55.1 757.5 55.4 756.9 57 756.7C58.6 756.6 59.6 756.9 60.2 756.9C61.5 757 62.1 756.6 62.1 756.6C62.1 756.6 59.7 755 57 754.8C54.3 754.6 50.2 756.2 50.2 756.2C50.2 756.2 49.7 756.4 49.3 756.4C49.1 756.4 48.6 756.3 48.5 756.2C48.3 755.9 48.6 755.7 48.9 755.5C49.3 755.2 52.5 753.6 53.9 753.1L53.9 753C54 753 54.2 752.9 54.3 752.8C55.6 752.2 57.3 751.3 59.2 751.2C62.3 751.2 67.7 754.5 72.1 754.7C72.8 754.7 73.2 754.7 73.6 754.6Z" fill="#ffffff"/>
+<path d="M41.3 753.1C39.9 752.7 39.3 752.4 39.3 752.1C39.6 751.5 40.2 752.1 41.6 751.8C42.7 751.5 43.8 751 45.1 750.5C46.7 749.8 50.4 748.3 51.7 747.7C52.1 747.6 53.8 747.2 54.9 747.3C56.5 747.6 60.7 749.1 61 749.2C61.3 749.4 61.5 749.4 61.4 749.7C61.3 750.1 60.9 750 60.9 750C58.5 749.4 56.9 749.8 55.3 750.6C54.3 751 50.1 753.1 47.4 753.5C45.2 753.8 43.1 753.6 41.3 753.1" fill="#ffffff"/>
+<path d="M211.2 750.8L211.2 756.4L217.1 756.4L217.1 750.8L219.7 750.8L219.7 764.8L217.1 764.8L217.1 758.6L211.2 758.6L211.2 764.8L208.6 764.8L208.6 750.8Z" fill="#ffffff"/>
+<path d="M230.5 758.6L225.2 758.6L225.2 762.7L231.1 762.7L231.1 764.8L222.6 764.8L222.6 750.8L230.8 750.8L230.8 752.9L225.2 752.9L225.2 756.5L230.5 756.5Z" fill="#ffffff"/>
+<path d="M240.2 758.9L239.1 755.4C238.8 754.6 238.6 753.6 238.4 752.8L238.4 752.8C238.1 753.6 237.9 754.6 237.7 755.4L236.6 758.9ZM236.2 760.9L235 764.8L232.3 764.8L236.8 750.8L240.1 750.8L244.7 764.8L241.9 764.8L240.6 760.9Z" fill="#ffffff"/>
+<path d="M246.6 750.8L249.2 750.8L249.2 762.7L255 762.7L255 764.8L246.6 764.8Z" fill="#ffffff"/>
+<path d="M257.6 752.9L253.6 752.9L253.6 750.8L264.2 750.8L264.2 752.9L260.2 752.9L260.2 764.8L257.6 764.8Z" fill="#ffffff"/>
+<path d="M268.4 750.8L268.4 756.4L274.4 756.4L274.4 750.8L276.9 750.8L276.9 764.8L274.4 764.8L274.4 758.6L268.4 758.6L268.4 764.8L265.9 764.8L265.9 750.8Z" fill="#ffffff"/>
+<path d="M290 764.4C289.4 764.7 288 765 286.3 765C281.8 765 279.1 762.3 279.1 758C279.1 753.3 282.4 750.6 286.7 750.6C288.4 750.6 289.5 750.9 290.1 751.2L289.5 753.2C288.9 752.9 287.9 752.7 286.8 752.7C283.9 752.7 281.8 754.5 281.8 757.9C281.8 760.9 283.6 762.9 286.7 762.9C287.8 762.9 288.9 762.7 289.5 762.4Z" fill="#ffffff"/>
+<path d="M299.1 758.9L298 755.4C297.8 754.6 297.5 753.6 297.3 752.8L297.3 752.8C297.1 753.6 296.9 754.6 296.6 755.4L295.5 758.9ZM295.1 760.9L293.9 764.8L291.3 764.8L295.8 750.8L299 750.8L303.6 764.8L300.9 764.8L299.6 760.9Z" fill="#ffffff"/>
+<path d="M308.1 757.2L309.6 757.2C311.4 757.2 312.4 756.3 312.4 754.9C312.4 753.3 311.4 752.6 309.7 752.6C308.9 752.6 308.4 752.7 308.1 752.7ZM305.6 751C306.6 750.8 308 750.7 309.5 750.7C311.5 750.7 312.8 751 313.8 751.8C314.6 752.4 315 753.4 315 754.6C315 756.5 313.8 757.7 312.4 758.1L312.4 758.2C313.5 758.6 314.1 759.6 314.4 760.9C314.9 762.7 315.2 764.3 315.5 764.8L312.9 764.8C312.7 764.4 312.3 763.3 311.9 761.5C311.5 759.7 310.9 759.1 309.4 759.1L308.1 759.1L308.1 764.8L305.6 764.8Z" fill="#ffffff"/>
+<path d="M325.3 758.6L320 758.6L320 762.7L325.9 762.7L325.9 764.8L317.4 764.8L317.4 750.8L325.6 750.8L325.6 752.9L320 752.9L320 756.5L325.3 756.5Z" fill="#ffffff"/>
+<path d="M355.9 747L355.9 767" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+</g>
+<g fill="#1a1a1a" stroke="#ffffff" stroke-linejoin="round" paint-order="stroke">
+<text x="28.6" y="92.7" font-size="22" stroke-width="3.7">1</text>
+<text x="49.8" y="85.2" font-size="16" stroke-width="2.7">PAVILION</text>
+<text x="49.8" y="97.2" font-size="10" stroke-width="1.7">(375 N. Wall Street)</text>
+<text x="22.8" y="121.8" font-size="10.5" stroke-width="1.8">Pelvic Health Clinic</text>
+<text x="102.4" y="121.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . .</text>
+<text x="160.3" y="121.8" font-size="10.5" stroke-width="1.8">Suite P640</text>
+<text x="22.8" y="143.4" font-size="10.5" stroke-width="1.8">Pigato, Joseph (Urologist)</text>
+<text x="127.5" y="143.4" font-size="10.5" stroke-width="1.8">. . . . . . . .</text>
+<text x="160.3" y="143.4" font-size="10.5" stroke-width="1.8">Suite P630</text>
+<text x="22.8" y="164.4" font-size="10" stroke-width="1.7">Riverside Urology Specialists</text>
+<text x="22.8" y="177" font-size="10.5" stroke-width="1.8">Gambla, Michael</text>
+<text x="94" y="177" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="177" font-size="10.5" stroke-width="1.8">Suite P420</text>
+<text x="22.8" y="198" font-size="10" stroke-width="1.7">Riverside ENT and Hearing Specialists</text>
+<text x="22.8" y="210.6" font-size="10.5" stroke-width="1.8">Brown, Kristal</text>
+<text x="81.5" y="210.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="210.6" font-size="10.5" stroke-width="1.8">Suite P620</text>
+<text x="22.8" y="223.2" font-size="10.5" stroke-width="1.8">Wahlen, Jana</text>
+<text x="77.3" y="223.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="223.2" font-size="10.5" stroke-width="1.8">Suite P620</text>
+<text x="22.8" y="244.8" font-size="10" stroke-width="1.7">Outpatient Infusion Center</text>
+<text x="135.9" y="244.8" font-size="10.5" stroke-width="1.8">. . . . . .</text>
+<text x="160.3" y="244.8" font-size="10.5" stroke-width="1.8">Suite P320</text>
+<text x="22.8" y="265.8" font-size="10" stroke-width="1.7">Riverside Primary Care Associates (Pavilion)</text>
+<text x="22.8" y="278.4" font-size="10.5" stroke-width="1.8">Dean, Erin</text>
+<text x="64.7" y="278.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="278.4" font-size="10.5" stroke-width="1.8">Suite P310</text>
+<text x="22.8" y="291" font-size="10.5" stroke-width="1.8">Hodges, Kendree’a</text>
+<text x="98.2" y="291" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . .</text>
+<text x="160.3" y="291" font-size="10.5" stroke-width="1.8">Suite P310</text>
+<text x="22.8" y="303.6" font-size="10.5" stroke-width="1.8">McCuiston, Stonewall</text>
+<text x="110.8" y="303.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . .</text>
+<text x="160.3" y="303.6" font-size="10.5" stroke-width="1.8">Suite P310</text>
+<text x="22.8" y="316.2" font-size="10.5" stroke-width="1.8">Patel, Payal</text>
+<text x="68.9" y="316.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="316.2" font-size="10.5" stroke-width="1.8">Suite P310</text>
+<text x="22.8" y="328.8" font-size="10.5" stroke-width="1.8">Schroeder, Deanna</text>
+<text x="102.4" y="328.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . .</text>
+<text x="160.3" y="328.8" font-size="10.5" stroke-width="1.8">Suite P310</text>
+<text x="22.8" y="349.8" font-size="10" stroke-width="1.7">Riverside Rheumatology Specialists</text>
+<text x="22.8" y="362.4" font-size="10.5" stroke-width="1.8">Dhingra, Manan</text>
+<text x="89.8" y="362.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="362.4" font-size="10.5" stroke-width="1.8">Suite P320</text>
+<text x="22.8" y="375" font-size="10.5" stroke-width="1.8">Sibai, Firas</text>
+<text x="68.9" y="375" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="375" font-size="10.5" stroke-width="1.8">Suite P320</text>
+<text x="22.8" y="395" font-size="10" stroke-width="1.7">Riverside Women’s Health Specialists</text>
+<text x="22.8" y="407.6" font-size="10.5" stroke-width="1.8">Asamoah, Clementina</text>
+<text x="115" y="407.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . .</text>
+<text x="160.3" y="407.6" font-size="10.5" stroke-width="1.8">Suite P610</text>
+<text x="22.8" y="420.2" font-size="10.5" stroke-width="1.8">Akinde, Yetunde</text>
+<text x="89.8" y="420.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="420.2" font-size="10.5" stroke-width="1.8">Suite P610</text>
+<text x="22.8" y="432.8" font-size="10.5" stroke-width="1.8">Andrews, Lizy</text>
+<text x="81.5" y="432.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="432.8" font-size="10.5" stroke-width="1.8">Suite P610</text>
+<text x="22.8" y="445.4" font-size="10.5" stroke-width="1.8">Bishop, Leanne</text>
+<text x="85.6" y="445.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="445.4" font-size="10.5" stroke-width="1.8">Suite P610</text>
+<text x="22.8" y="458" font-size="10.5" stroke-width="1.8">Kwakye-Ackah, Grazelda</text>
+<text x="123.3" y="458" font-size="10.5" stroke-width="1.8">. . . . . . . . .</text>
+<text x="160.3" y="458" font-size="10.5" stroke-width="1.8">Suite P610</text>
+<text x="22.8" y="470.6" font-size="10.5" stroke-width="1.8">Yalamanchili, Saroja</text>
+<text x="106.6" y="470.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . .</text>
+<text x="160.3" y="470.6" font-size="10.5" stroke-width="1.8">Suite P610</text>
+<text x="22.8" y="500.6" font-size="10" stroke-width="1.7">Riverside Neurosciences Institute</text>
+<text x="22.8" y="518.6" font-size="10" stroke-width="1.7">Neurology/Neuropsychology</text>
+<text x="22.8" y="531.2" font-size="10.5" stroke-width="1.8">Dodt, Bruce</text>
+<text x="73.1" y="531.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="531.2" font-size="10.5" stroke-width="1.8">Suite P510</text>
+<text x="22.8" y="543.8" font-size="10.5" stroke-width="1.8">Guimond, Matthew</text>
+<text x="102.4" y="543.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . .</text>
+<text x="160.3" y="543.8" font-size="10.5" stroke-width="1.8">Suite P510</text>
+<text x="22.8" y="556.4" font-size="10.5" stroke-width="1.8">Lem, Stefanie</text>
+<text x="77.3" y="556.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="556.4" font-size="10.5" stroke-width="1.8">Suite P510</text>
+<text x="22.8" y="569" font-size="10.5" stroke-width="1.8">Mitsdarffer, Christina</text>
+<text x="106.6" y="569" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . .</text>
+<text x="160.3" y="569" font-size="10.5" stroke-width="1.8">Suite P510</text>
+<text x="22.8" y="581.6" font-size="10.5" stroke-width="1.8">Pauley, Kendra</text>
+<text x="85.6" y="581.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="581.6" font-size="10.5" stroke-width="1.8">Suite P510</text>
+<text x="22.8" y="594.2" font-size="10.5" stroke-width="1.8">UI Haq, Israr</text>
+<text x="73.1" y="594.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="594.2" font-size="10.5" stroke-width="1.8">Suite P510</text>
+<text x="22.8" y="612.2" font-size="10" stroke-width="1.7">Neurosurgery</text>
+<text x="22.8" y="624.8" font-size="10.5" stroke-width="1.8">Bouferrache, Karim</text>
+<text x="102.4" y="624.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . .</text>
+<text x="160.3" y="624.8" font-size="10.5" stroke-width="1.8">Suite P530</text>
+<text x="22.8" y="637.4" font-size="10.5" stroke-width="1.8">Buza, Keith</text>
+<text x="68.9" y="637.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="637.4" font-size="10.5" stroke-width="1.8">Suite P530</text>
+<text x="22.8" y="650" font-size="10.5" stroke-width="1.8">Cheatham, Emma</text>
+<text x="98.2" y="650" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . .</text>
+<text x="160.3" y="650" font-size="10.5" stroke-width="1.8">Suite P530</text>
+<text x="22.8" y="662.6" font-size="10.5" stroke-width="1.8">Cyrier, Kristin</text>
+<text x="77.3" y="662.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="662.6" font-size="10.5" stroke-width="1.8">Suite P530</text>
+<text x="22.8" y="675.2" font-size="10.5" stroke-width="1.8">Jimenez, Juan</text>
+<text x="81.5" y="675.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . .</text>
+<text x="160.3" y="675.2" font-size="10.5" stroke-width="1.8">Suite P530</text>
+<text x="22.8" y="687.8" font-size="10.5" stroke-width="1.8">Zakaria, Jehad</text>
+<text x="82.6" y="687.8" font-size="10" stroke-width="1.7">. . . . . . . . . . . . . . . . . . . .</text>
+<text x="162.3" y="687.8" font-size="10" stroke-width="1.7">Suite P530</text>
+<text x="222.6" y="92.7" font-size="22" stroke-width="3.7">1</text>
+<text x="243.8" y="85.2" font-size="16" stroke-width="2.7">PAVILION</text>
+<text x="243.8" y="97.2" font-size="10" stroke-width="1.7">(375 N. Wall Street)</text>
+<text x="216.8" y="121.2" font-size="10" stroke-width="1.7">Riverside Physical Medicine</text>
+<text x="216.8" y="133.2" font-size="10" stroke-width="1.7">&amp; Rehabilitation</text>
+<text x="216.8" y="145.8" font-size="10.5" stroke-width="1.8">Gilbert-Baffoe, Ekua</text>
+<text x="300.6" y="145.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . .</text>
+<text x="354.3" y="145.8" font-size="10.5" stroke-width="1.8">Suite P520</text>
+<text x="216.8" y="158.4" font-size="10.5" stroke-width="1.8">Hung, Ming</text>
+<text x="267.1" y="158.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . .</text>
+<text x="354.3" y="158.4" font-size="10.5" stroke-width="1.8">Suite P520</text>
+<text x="216.8" y="171" font-size="10.5" stroke-width="1.8">Hussein, Yasser</text>
+<text x="279.6" y="171" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="354.3" y="171" font-size="10.5" stroke-width="1.8">Suite P520</text>
+<text x="216.8" y="183.6" font-size="10.5" stroke-width="1.8">Jain, Ishita</text>
+<text x="258.7" y="183.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="354.3" y="183.6" font-size="10.5" stroke-width="1.8">Suite P520</text>
+<text x="216.8" y="204.6" font-size="10" stroke-width="1.7">Riverside Pulmonary and</text>
+<text x="216.8" y="216.6" font-size="10" stroke-width="1.7">Sleep Medicine Specialists</text>
+<text x="216.8" y="229.2" font-size="10.5" stroke-width="1.8">Abraham, Raju</text>
+<text x="279.6" y="229.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="354.3" y="229.2" font-size="10.5" stroke-width="1.8">Suite P410</text>
+<text x="216.8" y="241.8" font-size="10.5" stroke-width="1.8">Almeida, Roselle</text>
+<text x="283.8" y="241.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="354.3" y="241.8" font-size="10.5" stroke-width="1.8">Suite P410</text>
+<text x="216.8" y="254.4" font-size="10.5" stroke-width="1.8">Khanna, Samrat</text>
+<text x="283.8" y="254.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="354.3" y="254.4" font-size="10.5" stroke-width="1.8">Suite P410</text>
+<text x="222.6" y="289.1" font-size="22" stroke-width="3.7">2</text>
+<text x="243.8" y="281.6" font-size="16" stroke-width="2.7">WESTWOOD</text>
+<text x="243.8" y="293.6" font-size="10" stroke-width="1.7">(401 N. Wall Street)</text>
+<text x="216.8" y="313.6" font-size="10" stroke-width="1.7">Riverside Internal &amp; Geriatric Medicine</text>
+<text x="216.8" y="326.2" font-size="10.5" stroke-width="1.8">Chandan, Naresh</text>
+<text x="288" y="326.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="359.4" y="326.2" font-size="10.5" stroke-width="1.8">Suite 102</text>
+<text x="216.8" y="338.8" font-size="10.5" stroke-width="1.8">Guastalli, Nicholas</text>
+<text x="292.2" y="338.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . .</text>
+<text x="359.4" y="338.8" font-size="10.5" stroke-width="1.8">Suite 102</text>
+<text x="216.8" y="351.4" font-size="10.5" stroke-width="1.8">Henderson, Tammie</text>
+<text x="300.6" y="351.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . .</text>
+<text x="359.4" y="351.4" font-size="10.5" stroke-width="1.8">Suite 102</text>
+<text x="216.8" y="364" font-size="10.5" stroke-width="1.8">Peachey, Tracey</text>
+<text x="279.6" y="364" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . .</text>
+<text x="359.4" y="364" font-size="10.5" stroke-width="1.8">Suite 102</text>
+<text x="216.8" y="376.6" font-size="10.5" stroke-width="1.8">Suleiman, Mobolaji</text>
+<text x="296.4" y="376.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . .</text>
+<text x="359.4" y="376.6" font-size="10.5" stroke-width="1.8">Suite 102</text>
+<text x="216.8" y="389.2" font-size="10.5" stroke-width="1.8">Wroblewski, Thomas</text>
+<text x="300.6" y="389.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . .</text>
+<text x="359.4" y="389.2" font-size="10.5" stroke-width="1.8">Suite 102</text>
+<text x="216.8" y="407.8" font-size="10.5" stroke-width="1.8">Riverside Hyperbaric Oxygen Therapy</text>
+<text x="216.8" y="420.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Suite LL02</text>
+<text x="222.6" y="455.1" font-size="22" stroke-width="3.7">3</text>
+<text x="243.8" y="447.6" font-size="16" stroke-width="2.7">B WING</text>
+<text x="243.8" y="459.6" font-size="10" stroke-width="1.7">(400 N. Wall Street)</text>
+<text x="216.8" y="484.2" font-size="10" stroke-width="1.7">AIM Hospitalist Group</text>
+<text x="309" y="484.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . .</text>
+<text x="354.1" y="484.2" font-size="10.5" stroke-width="1.8">Suite B302</text>
+<text x="216.8" y="505.8" font-size="10" stroke-width="1.7">Patient Care Services</text>
+<text x="304.8" y="505.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . .</text>
+<text x="354.1" y="505.8" font-size="10.5" stroke-width="1.8">Suite B307</text>
+<text x="216.8" y="525.8" font-size="10" stroke-width="1.7">Riverside Medical Group –</text>
+<text x="216.8" y="536.8" font-size="10" stroke-width="1.7">General Surgery Specialists</text>
+<text x="216.8" y="549.4" font-size="10.5" stroke-width="1.8">Dang, Aline</text>
+<text x="267.1" y="549.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . .</text>
+<text x="354.1" y="549.4" font-size="10.5" stroke-width="1.8">Suite B410</text>
+<text x="216.8" y="562" font-size="10.5" stroke-width="1.8">Groene, Steven</text>
+<text x="279.6" y="562" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="354.1" y="562" font-size="10.5" stroke-width="1.8">Suite B410</text>
+<text x="216.8" y="574.6" font-size="10.5" stroke-width="1.8">Lang, S. David</text>
+<text x="275.5" y="574.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . .</text>
+<text x="354.1" y="574.6" font-size="10.5" stroke-width="1.8">Suite B410</text>
+<text x="216.8" y="587.2" font-size="10.5" stroke-width="1.8">Williams, Gretchen</text>
+<text x="292.2" y="587.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . .</text>
+<text x="354.1" y="587.2" font-size="10.5" stroke-width="1.8">Suite B410</text>
+<text x="216.8" y="608.2" font-size="10" stroke-width="1.7">Ramakrishna OB/GYN Ltd.</text>
+<text x="216.8" y="620.8" font-size="10.5" stroke-width="1.8">Ramakrishna, Renuka</text>
+<text x="304.8" y="620.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . .</text>
+<text x="354.1" y="620.8" font-size="10.5" stroke-width="1.8">Suite B308</text>
+<text x="216.8" y="642.4" font-size="10.5" stroke-width="1.8">Iskander, Safwat</text>
+<text x="283.8" y="642.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="354.1" y="642.4" font-size="10.5" stroke-width="1.8">Suite B312</text>
+<text x="216.8" y="655" font-size="10.5" stroke-width="1.8">Olofsson, Brian</text>
+<text x="279.6" y="655" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="354.1" y="655" font-size="10.5" stroke-width="1.8">Suite B510</text>
+<text x="216.8" y="667.6" font-size="10.5" stroke-width="1.8">Wu, Simon</text>
+<text x="262.9" y="667.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="354.1" y="667.6" font-size="10.5" stroke-width="1.8">Suite B303</text>
+<text x="416.6" y="92.7" font-size="22" stroke-width="3.7">4</text>
+<text x="437.8" y="85.2" font-size="16" stroke-width="2.7">C WING</text>
+<text x="437.8" y="97.2" font-size="10" stroke-width="1.7">(500 N. Wall Street)</text>
+<text x="410.8" y="127.2" font-size="10" stroke-width="1.7">Riverside Heart &amp; Vascular Institute</text>
+<text x="410.8" y="144.2" font-size="10" stroke-width="1.7">Cardiology</text>
+<text x="410.8" y="156.8" font-size="10.5" stroke-width="1.8">Huynh, Nha</text>
+<text x="461.1" y="156.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="156.8" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="169.4" font-size="10.5" stroke-width="1.8">Strezo, Jennie</text>
+<text x="469.5" y="169.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="169.4" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="186.4" font-size="10" stroke-width="1.7">Interventional Cardiology</text>
+<text x="410.8" y="199" font-size="10.5" stroke-width="1.8">Jain, Tarun</text>
+<text x="456.9" y="199" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="199" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="211.6" font-size="10.5" stroke-width="1.8">Patel, Vikas</text>
+<text x="456.9" y="211.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="211.6" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="224.2" font-size="10.5" stroke-width="1.8">Zachariah, Amit</text>
+<text x="477.8" y="224.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="548" y="224.2" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="241.2" font-size="10" stroke-width="1.7">Cardiothoracic and Vascular Surgery</text>
+<text x="410.8" y="253.8" font-size="10.5" stroke-width="1.8">Hussain, Syed</text>
+<text x="469.5" y="253.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="253.8" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="266.4" font-size="10.5" stroke-width="1.8">Morrison, Sherri</text>
+<text x="477.8" y="266.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="548" y="266.4" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="284.4" font-size="10" stroke-width="1.7">Cardiovascular &amp; Vascular Surgical</text>
+<text x="410.8" y="296.4" font-size="10" stroke-width="1.7">Associates</text>
+<text x="410.8" y="309" font-size="10.5" stroke-width="1.8">Alexander, Philip</text>
+<text x="482" y="309" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . .</text>
+<text x="548" y="309" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="321.6" font-size="10.5" stroke-width="1.8">Cross, Chadrick</text>
+<text x="473.6" y="321.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="321.6" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="334.2" font-size="10.5" stroke-width="1.8">Dole, Jennifer</text>
+<text x="469.5" y="334.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="334.2" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="346.8" font-size="10.5" stroke-width="1.8">Hodakowski, George</text>
+<text x="494.6" y="346.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . .</text>
+<text x="548" y="346.8" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="359.4" font-size="10.5" stroke-width="1.8">Frank, Michael</text>
+<text x="473.6" y="359.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="359.4" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="372" font-size="10.5" stroke-width="1.8">Pappas, Patrokolos</text>
+<text x="486.2" y="372" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . .</text>
+<text x="548" y="372" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="390" font-size="10" stroke-width="1.7">Electrophysiology Specialists</text>
+<text x="410.8" y="402.6" font-size="10.5" stroke-width="1.8">Beri, Abhimanyu</text>
+<text x="477.8" y="402.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="548" y="402.6" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="415.2" font-size="10.5" stroke-width="1.8">Hansen, Kendra</text>
+<text x="477.8" y="415.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="548" y="415.2" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="427.8" font-size="10.5" stroke-width="1.8">Reddy, Vivek</text>
+<text x="461.1" y="427.8" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="427.8" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="446.4" font-size="10" stroke-width="1.7">Anticoagultation Clinic</text>
+<text x="507.2" y="446.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . .</text>
+<text x="548" y="446.4" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="465" font-size="10" stroke-width="1.7">Cardiopulmonary Rehab</text>
+<text x="515.5" y="465" font-size="10.5" stroke-width="1.8">. . . . . . . .</text>
+<text x="548" y="465" font-size="10.5" stroke-width="1.8">Suite C401</text>
+<text x="410.8" y="483.6" font-size="10" stroke-width="1.7">Cardiac &amp; Neuro Diagnostics Center</text>
+<text x="557.4" y="483.6" font-size="10.5" stroke-width="1.8">. . . . . . . .</text>
+<text x="410.8" y="496.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Suite B180</text>
+<text x="410.8" y="514.8" font-size="10" stroke-width="1.7">Interventional Radiology Clinic</text>
+<text x="540.7" y="514.8" font-size="10.5" stroke-width="1.8">. .</text>
+<text x="548" y="514.8" font-size="10.5" stroke-width="1.8">Suite C501</text>
+<text x="410.8" y="533.4" font-size="10" stroke-width="1.7">Pacemaker Clinic</text>
+<text x="482" y="533.4" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . .</text>
+<text x="548" y="533.4" font-size="10.5" stroke-width="1.8">Suite C100</text>
+<text x="410.8" y="551.4" font-size="10" stroke-width="1.7">Valve Clinic</text>
+<text x="458.7" y="551.4" font-size="10" stroke-width="1.7">. . . . . . . . . . . . . . . . . . . . . . .</text>
+<text x="550" y="551.4" font-size="10" stroke-width="1.7">Suite C100</text>
+<text x="410.8" y="576" font-size="10" stroke-width="1.7">Riverside Wound Center</text>
+<text x="511.3" y="576" font-size="10.5" stroke-width="1.8">. . . . . . . . .</text>
+<text x="548" y="576" font-size="10.5" stroke-width="1.8">Suite C200</text>
+<text x="410.8" y="588.6" font-size="10.5" stroke-width="1.8">Hussaini, Asima</text>
+<text x="473.6" y="588.6" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . . .</text>
+<text x="548" y="588.6" font-size="10.5" stroke-width="1.8">Suite C200</text>
+<text x="410.8" y="601.2" font-size="10.5" stroke-width="1.8">Papineau, Elaine</text>
+<text x="477.8" y="601.2" font-size="10.5" stroke-width="1.8">. . . . . . . . . . . . . . . . .</text>
+<text x="548" y="601.2" font-size="10.5" stroke-width="1.8">Suite C200</text>
+<text x="381.2" y="762.4" font-size="12" stroke-width="2">Visit us online at</text>
+<text x="458.3" y="762.4" font-size="12" stroke-width="2">riversidehealthcare.org</text>
+<text x="28.4" y="40.5" font-size="18" stroke-width="3.1">RIVERSIDE MEDICAL CENTER PHYSICIAN OFFICE LOCATIONS</text>
+<text x="18" y="780" font-size="7" stroke-width="1.2">910000</text>
+<text x="44" y="780" font-size="7" stroke-width="1.2">Revised 6/2025</text>
+</g>
+</svg>

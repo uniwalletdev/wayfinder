@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 810" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="630" height="810" fill="#ffffff"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M117.3 190.2C117.3 193.9 114.3 196.8 110.6 196.8C107 196.8 104 193.9 104 190.2C104 186.5 107 183.5 110.6 183.5C114.3 183.5 117.3 186.5 117.3 190.2" fill="#ffffff"/>
+<path d="M211.8 200.7C211.8 204.4 208.8 207.3 205.1 207.3C201.4 207.3 198.5 204.4 198.5 200.7C198.5 197 201.4 194 205.1 194C208.8 194 211.8 197 211.8 200.7" fill="#ffffff"/>
+<path d="M340.6 248C340.6 251.7 337.6 254.7 334 254.7C330.3 254.7 327.3 251.7 327.3 248C327.3 244.3 330.3 241.4 334 241.4C337.6 241.4 340.6 244.3 340.6 248" fill="#ffffff"/>
+<path d="M488.1 229.9C488.1 233.6 485.1 236.6 481.5 236.6C477.8 236.6 474.8 233.6 474.8 229.9C474.8 226.3 477.8 223.3 481.5 223.3C485.1 223.3 488.1 226.3 488.1 229.9" fill="#ffffff"/>
+<path d="M557.7 214.7C557.7 218.4 554.7 221.4 551.1 221.4C547.4 221.4 544.4 218.4 544.4 214.7C544.4 211.1 547.4 208.1 551.1 208.1C554.7 208.1 557.7 211.1 557.7 214.7" fill="#ffffff"/>
+<path d="M580.5 234L549 234L549 223.3L580.5 223.3Z" fill="#cb2d27"/>
+<path d="M534.7 228.1L551.7 228.1" fill="none" stroke="#cb2d27" stroke-width="0.9"/>
+<path d="M529.3 228.1C531.8 229 535 230.6 536.9 232.3L535.4 228.1L536.9 223.9C535 225.5 531.8 227.1 529.3 228.1" fill="#cb2d27"/>
+<path d="M60.4 337.1C60.4 341.3 57.2 344.6 53.2 344.6C49.3 344.6 46.1 341.3 46.1 337.1C46.1 333 49.3 329.6 53.2 329.6C57.2 329.6 60.4 333 60.4 337.1" fill="#43454b"/>
+<path d="M355.1 479.4C355.1 483.6 351.9 486.9 347.9 486.9C344 486.9 340.8 483.6 340.8 479.4C340.8 475.3 344 472 347.9 472C351.9 472 355.1 475.3 355.1 479.4" fill="#43454b"/>
+<path d="M60.4 448.6C60.4 452.7 57.2 456 53.2 456C49.3 456 46.1 452.7 46.1 448.6C46.1 444.4 49.3 441.1 53.2 441.1C57.2 441.1 60.4 444.4 60.4 448.6" fill="#43454b"/>
+<path d="M355.1 337.1C355.1 341.3 351.9 344.6 347.9 344.6C344 344.6 340.8 341.3 340.8 337.1C340.8 333 344 329.6 347.9 329.6C351.9 329.6 355.1 333 355.1 337.1" fill="#43454b"/>
+<path d="M355.1 543C355.1 547.2 351.9 550.5 347.9 550.5C344 550.5 340.8 547.2 340.8 543C340.8 538.9 344 535.6 347.9 535.6C351.9 535.6 355.1 538.9 355.1 543" fill="#43454b"/>
+</g>
+<g fill="#1a1a1a" stroke="#ffffff" stroke-linejoin="round" paint-order="stroke">
+<text x="43" y="80.2" font-size="35" stroke-width="6">Mercy Fort Smith Main Campus</text>
+<text x="43" y="116.2" font-size="30" stroke-width="5.1">7001, 7301, 7303 Rogers Ave.</text>
+<text x="67.3" y="341.9" font-size="14" stroke-width="2.4">Labor and Delivery Entrance</text>
+<text x="67.3" y="357.9" font-size="12" stroke-width="2">Mercy Clinic OB/GYN</text>
+<text x="176.9" y="357.9" font-size="12" stroke-width="2">| Ste. 403</text>
+<text x="67.3" y="373.9" font-size="12" stroke-width="2">Mercy Childbirth Center</text>
+<text x="67.3" y="389.9" font-size="12" stroke-width="2">Mercy Level III Neonatal Intensive Care</text>
+<text x="67.3" y="405.9" font-size="12" stroke-width="2">Mercy Clinic OB/GYN</text>
+<text x="176.9" y="405.9" font-size="12" stroke-width="2">| Eastside Rogers Ave.</text>
+<text x="67.3" y="421.9" font-size="12" stroke-width="2">Mercy Oncology and Hematology</text>
+<text x="67.3" y="453.9" font-size="14" stroke-width="2.4">Medical Building Entrance</text>
+<text x="67.3" y="469.9" font-size="12" stroke-width="2">Mercy Clinic Cardiology</text>
+<text x="185.3" y="469.9" font-size="12" stroke-width="2">| Ste. 401A</text>
+<text x="67.3" y="485.9" font-size="12" stroke-width="2">Mercy Heart and Vascular</text>
+<text x="67.3" y="501.9" font-size="12" stroke-width="2">Mercy Clinic General Surgery</text>
+<text x="67.3" y="517.9" font-size="12" stroke-width="2">Mercy Clinic Cardiology</text>
+<text x="185.3" y="517.9" font-size="12" stroke-width="2">| Ste. 503</text>
+<text x="67.3" y="533.9" font-size="12" stroke-width="2">Mercy Clinic Neurosurgery</text>
+<text x="67.3" y="549.9" font-size="12" stroke-width="2">Mercy Endoscopy Services</text>
+<text x="67.3" y="565.9" font-size="12" stroke-width="2">Mercy Breast Center</text>
+<text x="67.3" y="581.9" font-size="12" stroke-width="2">Mercy Bariatric Center</text>
+<text x="67.3" y="597.9" font-size="12" stroke-width="2">Mercy Outpatient Surgery Center</text>
+<text x="67.3" y="613.9" font-size="12" stroke-width="2">Mercy Imaging Services</text>
+<text x="67.3" y="629.9" font-size="12" stroke-width="2">Mercy Infusion Services</text>
+<text x="362" y="341.9" font-size="14" stroke-width="2.4">Physicians Building Entrance</text>
+<text x="362" y="357.9" font-size="12" stroke-width="2">Mercy Cardiac Rehabilitation</text>
+<text x="362" y="373.9" font-size="12" stroke-width="2">Mercy Pulmonary Rehabilitation</text>
+<text x="362" y="389.9" font-size="12" stroke-width="2">Mercy Clinic Cardiovascular,</text>
+<text x="362" y="403.9" font-size="12" stroke-width="2">Thoracic and Vascular Surgery</text>
+<text x="362" y="419.9" font-size="12" stroke-width="2">Mercy Clinic Nephrology</text>
+<text x="362" y="435.9" font-size="12" stroke-width="2">Mercy Clinic Palliative Care</text>
+<text x="362" y="451.9" font-size="12" stroke-width="2">Mercy Clinic Internal Medicine</text>
+<text x="362" y="483.9" font-size="14" stroke-width="2.4">Hospital Entrance</text>
+<text x="362" y="499.9" font-size="12" stroke-width="2">Mercy Hospital Fort Smith</text>
+<text x="362" y="515.9" font-size="12" stroke-width="2">(patient rooms &amp; ICU)</text>
+<text x="362" y="547.9" font-size="14" stroke-width="2.4">Hembree Cancer Center Entrance</text>
+<text x="362" y="563.9" font-size="12" stroke-width="2">Mercy Radiation Oncology</text>
+<text x="539" y="758.2" font-size="5" stroke-width="1">FSM_45687 (3/17/26)</text>
+<text x="108.6" y="193.7" font-size="10.7" stroke-width="1.8">1</text>
+<text x="202.2" y="204.2" font-size="10.7" stroke-width="1.8">2</text>
+<text x="331.2" y="251.5" font-size="10.7" stroke-width="1.8">3</text>
+<text x="478.3" y="233.5" font-size="10.7" stroke-width="1.8">4</text>
+<text x="548.2" y="218.3" font-size="10.7" stroke-width="1.8">5</text>
+<text x="550.1" y="227.6" font-size="4" stroke-width="1">Emergency Room</text>
+<text x="557.3" y="232.3" font-size="4" stroke-width="1">Entrance</text>
+<text x="50.9" y="341.2" font-size="12" stroke-width="2">1</text>
+<text x="344.3" y="483.5" font-size="12" stroke-width="2">4</text>
+<text x="50" y="452.6" font-size="12" stroke-width="2">2</text>
+<text x="344.8" y="341.2" font-size="12" stroke-width="2">3</text>
+<text x="344.7" y="547.1" font-size="12" stroke-width="2">5</text>
+</g>
+</svg>

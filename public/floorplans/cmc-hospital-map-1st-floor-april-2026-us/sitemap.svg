@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 612" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="792" height="612" fill="#ffffff"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M0 0L792 0L792 612L0 612Z" fill="#ffffff"/>
+<path d="M90.7 145.7L305.5 145.7L305.5 276.9L90.7 276.9Z" fill="#ffffff"/>
+<path d="M536.8 17.5L771 17.5L771 118.9L536.8 118.9Z" fill="#17315a"/>
+<path d="M201 77.2L438.1 77.2L438.1 161L201 161Z" fill="#ffffff"/>
+<path d="M538 257.2L542.2 255.6L542.7 257L538.5 258.6M543.6 255L547.8 253.4L548.3 254.8L544.1 256.4M549.2 252.9L553.4 251.3L553.9 252.7L549.7 254.3M554.8 250.7L559 249.1L559.5 250.5L555.3 252.1M560.4 248.6L564.6 247L565.1 248.4L560.9 250M566 246.4L570.2 244.8L570.7 246.2L566.5 247.8M571.6 244.3L575.8 242.7L576.3 244.1L572.1 245.7M577.2 242.1L581.4 240.5L581.9 241.9L577.7 243.5M582.8 240L587 238.4L587.5 239.8L583.3 241.4M588.4 237.8L592.6 236.2L593.1 237.6L588.9 239.2M594 235.7L598.2 234.1L598.7 235.5L594.5 237.1M599.6 233.5L603.8 231.9L604.3 233.3L600.1 234.9M605.2 231.4L608.8 230L609.3 231.4L605.7 232.8" fill="#ea4459"/>
+<path d="M271.1 269.2L273.8 272.8L272.6 273.7L269.9 270.1M274.7 274L277.4 277.6L276.2 278.5L273.5 274.9M278.3 278.8L281 282.4L279.8 283.3L277.1 279.7M281.9 283.6L284.7 287.2L283.5 288.1L280.7 284.5M285.6 288.4L288.3 292L287.1 292.9L284.4 289.3M289.2 293.2L291.9 296.8L290.7 297.7L288 294.1M292.8 298L295.5 301.6L294.3 302.5L291.6 298.9M296.4 302.8L299.1 306.4L297.9 307.3L295.2 303.7M300 307.6L302.7 311.2L301.5 312.1L298.8 308.5M303.6 312.3L306.3 315.9L305.1 316.8L302.4 313.3M307.2 317.1L310 320.7L308.8 321.6L306 318M310.9 321.9L313.6 325.5L312.4 326.4L309.7 322.8M314.5 326.7L317.2 330.3L316 331.2L313.3 327.6M318.1 331.5L320.8 335.1L319.6 336L316.9 332.4M321.7 336.3L324.4 339.9L323.2 340.8L320.5 337.2M325.3 341.1L328 344.7L326.8 345.6L324.1 342M328.9 345.9L329 346L327.8 346.9L327.7 346.8" fill="#28a7b2"/>
+<path d="M290.8 427.7L294.7 425.4L295.5 426.7L291.6 429M296 424.7L299.9 422.5L300.7 423.8L296.8 426M301.2 421.7L305.2 419.5L305.9 420.8L302 423M306.5 418.8L310.4 416.5L311.1 417.8L307.2 420.1M311.7 415.8L315.6 413.6L316.3 414.9L312.4 417.1M316.9 412.8L320.8 410.6L321.5 411.9L317.6 414.1M322.1 409.8L326 407.6L326.7 408.9L322.8 411.1M327.3 406.9L331.2 404.6L332 405.9L328 408.2M332.5 403.9L336.4 401.7L337.2 403L333.3 405.2M337.7 400.9L339.2 400.1L339.9 401.4L338.5 402.2" fill="#fa908e"/>
+<path d="M295.7 441.9L299.8 440L300.4 441.3L296.4 443.3M301.1 439.3L305.2 437.3L305.8 438.7L301.8 440.7M306.5 436.7L310.6 434.7L311.2 436.1L307.2 438M311.9 434.1L316 432.1L316.6 433.5L312.6 435.4M317.3 431.5L321.4 429.5L322.1 430.9L318 432.8M322.8 428.9L326.8 426.9L327.5 428.3L323.4 430.2M328.2 426.3L332.2 424.3L332.9 425.7L328.8 427.6M333.6 423.7L337.6 421.7L338.3 423.1L334.2 425" fill="#2ea5b3"/>
+<path d="M383.1 442.1L390.7 442.1L390.7 449.7L383.1 449.7Z" fill="#f8a051"/>
+<path d="M346.9 474L350.6 471.3L351.4 472.6L347.8 475.2M351.8 470.5L355.4 467.9L356.3 469.1L352.6 471.7M356.7 467L360.3 464.4L361.2 465.6L357.5 468.2M361.5 463.5L365.2 460.9L366.1 462.1L362.4 464.7M366.4 460L370.1 457.4L370.9 458.6L367.3 461.2M371.3 456.5L374.9 453.9L375.8 455.1L372.1 457.7M376.1 453L379.8 450.4L380.7 451.6L377 454.2M381 449.5L384.7 446.9L385.6 448.1L381.9 450.7" fill="#faa14f"/>
+<path d="M296.1 479L373.4 479L373.4 490.4L296.1 490.4Z" fill="#ffffff"/>
+<path d="M531.6 138.4L609.1 138.4L609.1 172.4L531.6 172.4Z" fill="#ffffff"/>
+<path d="M63.7 332.2L121.2 332.2L121.2 355.3L63.7 355.3Z" fill="#ffffff"/>
+<path d="M88.2 484.7L143.9 484.7L143.9 504.4L88.2 504.4Z" fill="#ffffff"/>
+<path d="M390.7 329.4L458.2 329.4L458.2 361.9L390.7 361.9Z" fill="#ffffff"/>
+<path d="M347.3 190.1L414.8 190.1L414.8 222.6L347.3 222.6Z" fill="#ffffff"/>
+<path d="M440.7 257.9L508.2 257.9L508.2 289.9L440.7 289.9Z" fill="#ffffff"/>
+<path d="M528.2 336.2L595.7 336.2L595.7 368.2L528.2 368.2Z" fill="#ffffff"/>
+<path d="M190.6 391.5L256.4 391.5L256.4 418.5L190.6 418.5Z" fill="#ffffff"/>
+<path d="M124.3 386.1L174.1 386.1L174.1 405L124.3 405Z" fill="#ffffff"/>
+<path d="M161.9 401.3L158.6 404.3L157.6 403.1L160.9 400.2M157.4 405.3L154.1 408.2L153.1 407.1L156.4 404.1M152.9 409.2L149.6 412.2L148.6 411.1L151.9 408.1M148.4 413.2L145.1 416.2L144.1 415.1L147.4 412.1M143.9 417.2L140.6 420.2L139.6 419L142.9 416" fill="#17315a"/>
+<path d="M576.4 263.9L759.9 263.9L759.9 270.7L576.4 270.7Z" fill="#ffffff"/>
+<path d="M595.7 268.9L600.2 268.9L600.2 270.4L595.7 270.4M601.7 268.9L606.2 268.9L606.2 270.4L601.7 270.4M607.7 268.9L612.2 268.9L612.2 270.4L607.7 270.4M613.7 268.9L618.2 268.9L618.2 270.4L613.7 270.4M619.7 268.9L624.2 268.9L624.2 270.4L619.7 270.4M625.7 268.9L630.2 268.9L630.2 270.4L625.7 270.4M631.7 268.9L636.2 268.9L636.2 270.4L631.7 270.4M637.7 268.9L642.2 268.9L642.2 270.4L637.7 270.4M643.7 268.9L648.2 268.9L648.2 270.4L643.7 270.4M649.7 268.9L654.2 268.9L654.2 270.4L649.7 270.4M655.7 268.9L660.2 268.9L660.2 270.4L655.7 270.4M661.7 268.9L666.2 268.9L666.2 270.4L661.7 270.4M667.7 268.9L672.2 268.9L672.2 270.4L667.7 270.4M673.7 268.9L678.2 268.9L678.2 270.4L673.7 270.4M679.7 268.9L684.2 268.9L684.2 270.4L679.7 270.4M685.7 268.9L690.2 268.9L690.2 270.4L685.7 270.4M691.7 268.9L696.2 268.9L696.2 270.4L691.7 270.4M697.7 268.9L702.2 268.9L702.2 270.4L697.7 270.4M703.7 268.9L708.2 268.9L708.2 270.4L703.7 270.4M709.7 268.9L710.2 268.9L710.2 270.4L709.7 270.4" fill="#2493ca"/>
+<path d="M707.2 267.4L710.2 269.7L707.2 271.9" fill="none" stroke="#2493ca" stroke-width="0.7"/>
+<path d="M414.9 449.8L495.6 449.8L495.6 478.2L414.9 478.2Z" fill="#ffffff"/>
+<path d="M567.1 281.3L634.4 281.3L634.4 304.9L567.1 304.9Z" fill="#ffffff"/>
+<path d="M466.2 319.2L505 319.2L505 342.8L466.2 342.8Z" fill="#ffffff"/>
+<path d="M519.9 210L558.7 210L558.7 233.6L519.9 233.6Z" fill="#ffffff"/>
+<path d="M63.7 531L165.4 531L165.4 554.5L63.7 554.5Z" fill="#ffffff"/>
+<path d="M564.4 300.5L568.4 302.6L567.7 303.9L563.7 301.8M569.7 303.3L573.7 305.3L573 306.7L569 304.6M575 306L579 308.1L578.3 309.4L574.3 307.4M580.3 308.8L584.3 310.9L583.6 312.2L579.7 310.1M585.7 311.6L589.7 313.7L589 315L585 312.9M591 314.4L595 316.4L594.3 317.8L590.3 315.7M596.3 317.1L600.3 319.2L599.6 320.5L595.6 318.5M601.6 319.9L605.6 322L604.9 323.3L600.9 321.2M606.9 322.7L610.9 324.8L610.2 326.1L606.2 324M612.3 325.5L616.3 327.5L615.6 328.9L611.6 326.8M617.6 328.2L621.6 330.3L620.9 331.7L616.9 329.6M622.9 331L626.9 333.1L626.2 334.4L622.2 332.3M628.2 333.8L631.6 335.6L630.9 336.9L627.5 335.1" fill="#6d99ce"/>
+<path d="M63.7 506.9L165.4 506.9L165.4 530.3L63.7 530.3Z" fill="#ffffff"/>
+<path d="M371.7 529.9L483.3 529.9L483.3 552L371.7 552Z" fill="#ffffff"/>
+<path d="M394.9 577.6L517.7 577.6L517.7 601.9L394.9 601.9Z" fill="#ffffff"/>
+<path d="M136.8 361L136.8 356.5L138.3 356.5L138.3 361M136.8 355L136.8 350.5L138.3 350.5L138.3 355M136.8 349L136.8 344.5L138.3 344.5L138.3 349M136.8 343L136.8 338.5L138.3 338.5L138.3 343M136.8 337L136.8 332.5L138.3 332.5L138.3 337M136.8 331L136.8 326.5L138.3 326.5L138.3 331M136.8 325L136.8 320.5L138.3 320.5L138.3 325M136.8 319L136.8 314.5L138.3 314.5L138.3 319M136.8 313L136.8 308.5L138.3 308.5L138.3 313M136.8 307L136.8 303.3L138.3 303.3L138.3 307" fill="#fa908e"/>
+<path d="M137.2 302.3L132.8 301.4L133.1 299.9L137.5 300.8M131.3 301.1L126.9 300.2L127.2 298.7L131.6 299.6M125.5 299.9L121 299L121.3 297.6L125.8 298.4M119.6 298.7L115.2 297.9L115.5 296.4L119.9 297.3M113.7 297.6L109.3 296.7L109.6 295.2L114 296.1M107.8 296.4L103.4 295.5L103.7 294L108.1 294.9M101.9 295.2L100.2 294.9L100.5 293.4L102.2 293.8" fill="#fa908e"/>
+<path d="M644.5 416.6L771.7 416.6L771.7 590L644.5 590Z" fill="#17315a"/>
+<path d="M281.4 222.1L284.2 225.6L283.1 226.6L280.3 223M285.2 226.8L288 230.3L286.8 231.3L284 227.7M288.9 231.5L291.7 235L290.5 236L287.7 232.4M292.6 236.2L295.4 239.7L294.2 240.7L291.4 237.1M296.3 240.9L299.1 244.4L298 245.4L295.2 241.8M300.1 245.6L302.9 249.1L301.7 250.1L298.9 246.5M303.8 250.3L306.6 253.8L305.4 254.8L302.6 251.2M307.5 255L310.3 258.5L309.1 259.5L306.3 255.9M311.2 259.7L314 263.2L312.9 264.2L310.1 260.7M315 264.4L317.8 267.9L316.6 268.9L313.8 265.4M318.7 269.1L321.5 272.7L320.3 273.6L317.5 270.1M322.4 273.8L325.2 277.4L324 278.3L321.2 274.8M326.1 278.5L328.9 282.1L327.8 283L325 279.5M329.9 283.2L332.7 286.8L331.5 287.7L328.7 284.2M333.6 287.9L336.4 291.5L335.2 292.4L332.4 288.9M337.3 292.6L340.1 296.2L338.9 297.1L336.2 293.6M341.1 297.3L343.8 300.9L342.7 301.8L339.9 298.3M344.8 302L347.6 305.6L346.4 306.5L343.6 303M348.5 306.7L351.3 310.3L350.1 311.2L347.3 307.7M352.2 311.4L353.3 312.8L352.1 313.8L351.1 312.4" fill="#17315a"/>
+<path d="M355.8 315.1L364.1 315.1L364.1 323.3L355.8 323.3Z" fill="#17315a"/>
+<path d="M280.3 313.7L353.3 313.7L353.3 222.1L280.3 222.1Z" fill="#000000" fill-opacity="0"/>
+<path d="M538 258.6L609.3 258.6L609.3 230.1L538 230.1Z" fill="#000000" fill-opacity="0"/>
+<path d="M269.9 346.9L329 346.9L329 269.3L269.9 269.3Z" fill="#000000" fill-opacity="0"/>
+<path d="M100.3 302.2L137.5 302.2L137.5 293.5L100.3 293.5Z" fill="#000000" fill-opacity="0"/>
+<path d="M563.7 336.9L631.6 336.9L631.6 300.5L563.7 300.5Z" fill="#000000" fill-opacity="0"/>
+<path d="M136.9 361.1L138.3 361.1L138.3 303.3L136.9 303.3Z" fill="#000000" fill-opacity="0"/>
+<path d="M290.8 429L339.9 429L339.9 400.1L290.8 400.1Z" fill="#000000" fill-opacity="0"/>
+<path d="M138.7 421L161.9 421L161.9 400.2L138.7 400.2Z" fill="#000000" fill-opacity="0"/>
+<path d="M295.7 443.2L339.4 443.2L339.4 421.2L295.7 421.2Z" fill="#000000" fill-opacity="0"/>
+<path d="M346.9 475.2L386.6 475.2L386.6 446.2L346.9 446.2Z" fill="#000000" fill-opacity="0"/>
+<path d="M595.7 270.4L711 270.4L711 269L595.7 269Z" fill="#000000" fill-opacity="0"/>
+</g>
+<g fill="#1a1a1a" stroke="#ffffff" stroke-linejoin="round" paint-order="stroke">
+<text x="31.4" y="269.6" font-size="13" stroke-width="2.2">CHECK IN:</text>
+<text x="31.4" y="284.1" font-size="13" stroke-width="2.2">Rheumatology</text>
+<text x="31.4" y="298.5" font-size="13" stroke-width="2.2">Endoscopy</text>
+<text x="31.4" y="313" font-size="13" stroke-width="2.2">Colonoscopy</text>
+<text x="33.7" y="331.3" font-size="13" stroke-width="2.2">Rheumatology</text>
+<text x="33.7" y="342.2" font-size="13" stroke-width="2.2">Waiting</text>
+<text x="56.4" y="426.9" font-size="11.7" stroke-width="2">Rheumatology/</text>
+<text x="56.1" y="437.1" font-size="11.7" stroke-width="2">Infusion Center</text>
+<text x="587.8" y="288.7" font-size="12.6" stroke-width="2.1">Cath</text>
+<text x="590.6" y="299.5" font-size="12.6" stroke-width="2.1">Lab</text>
+<text x="365" y="546" font-size="12.8" stroke-width="2.2">Volunteer/Auxiliary</text>
+<text x="364.5" y="567.7" font-size="13" stroke-width="2.2">Spiritual Services</text>
+<text x="571.5" y="161.2" font-size="14.6" stroke-width="2.5">Patient Services &amp;</text>
+<text x="582.7" y="176.4" font-size="14.6" stroke-width="2.5">The BirthPlace</text>
+<text x="601.8" y="191.6" font-size="14.6" stroke-width="2.5">Entrance</text>
+<text x="262.3" y="506.9" font-size="16.6" stroke-width="2.8">Main</text>
+<text x="247.3" y="524.3" font-size="16.6" stroke-width="2.8">Entrance</text>
+<text x="13.5" y="374.4" font-size="14.6" stroke-width="2.5">North Tower</text>
+<text x="24.8" y="389.6" font-size="14.6" stroke-width="2.5">Entrance</text>
+<text x="572.5" y="36.9" font-size="17.4" stroke-width="3">Medical Arts Building</text>
+<text x="579.6" y="54.9" font-size="17.4" stroke-width="3">2376 Cypress Circle</text>
+<text x="577.4" y="76" font-size="13.8" stroke-width="2.3">Quest - Pulmonary/Sleep -</text>
+<text x="576.3" y="89.5" font-size="13.8" stroke-width="2.3">Cardiac Lab - Cardiology -</text>
+<text x="551.7" y="102.9" font-size="13.8" stroke-width="2.3">Digestive Health - Women’s Health</text>
+<text x="451.6" y="410.1" font-size="12.2" stroke-width="2.1" transform="rotate(-90 451.6 410.1)">One Day Surgery</text>
+<text x="355.8" y="197.1" font-size="13" stroke-width="2.2">Emergency</text>
+<text x="354.1" y="211.6" font-size="13" stroke-width="2.2">Department</text>
+<text x="359.1" y="226" font-size="13" stroke-width="2.2">Rms 1 - 38</text>
+<text x="220.1" y="252.2" font-size="13" stroke-width="2.2">Case</text>
+<text x="197.1" y="263" font-size="13" stroke-width="2.2">Management</text>
+<text x="612.2" y="228.7" font-size="13" stroke-width="2.2">Outpatient Lab</text>
+<text x="637.4" y="341.4" font-size="13" stroke-width="2.2">OR Waiting</text>
+<text x="437.4" y="244.8" font-size="13" stroke-width="2.2">Radiology</text>
+<text x="536.6" y="347.4" font-size="13" stroke-width="2.2">Surgical</text>
+<text x="524.4" y="361.9" font-size="13" stroke-width="2.2">Services/OR</text>
+<text x="199.5" y="431.6" font-size="13" stroke-width="2.2">CMC Pharmacy</text>
+<text x="232.7" y="456.4" font-size="12.8" stroke-width="2.2">Patient Financial</text>
+<text x="232.7" y="470.9" font-size="12.8" stroke-width="2.2">Services</text>
+<text x="300" y="487.3" font-size="13" stroke-width="2.2">CMC Gift Shop</text>
+<text x="190.1" y="398.9" font-size="11.7" stroke-width="2">Endoscopy</text>
+<text x="201.2" y="409.2" font-size="11.7" stroke-width="2">Center</text>
+<text x="672.4" y="255.6" font-size="9.2" stroke-width="1.6">To Medical</text>
+<text x="669.4" y="265.1" font-size="9.2" stroke-width="1.6">Arts Building</text>
+<text x="435.2" y="456.2" font-size="11.7" stroke-width="2">Dietary/</text>
+<text x="431.9" y="466.4" font-size="11.7" stroke-width="2">Cafeteria</text>
+<text x="471.7" y="339" font-size="11.7" stroke-width="2">PACU</text>
+<text x="525.9" y="219" font-size="10.5" stroke-width="1.8">Patient</text>
+<text x="522.4" y="228.1" font-size="10.5" stroke-width="1.8">Services</text>
+<text x="259.4" y="149.5" font-size="14.6" stroke-width="2.5">Emergency</text>
+<text x="256.9" y="164.6" font-size="14.6" stroke-width="2.5">Department</text>
+<text x="268.9" y="179.8" font-size="14.6" stroke-width="2.5">Entrance</text>
+<text x="59.9" y="546.3" font-size="13" stroke-width="2.2">Restrooms</text>
+<text x="59.9" y="521.5" font-size="13" stroke-width="2.2">Elevator/Stairs</text>
+<text x="449.6" y="259.7" font-size="9.2" stroke-width="1.6">Imagery</text>
+<text x="458.2" y="269.9" font-size="9.2" stroke-width="1.6">MRI</text>
+<text x="449" y="280.1" font-size="9.2" stroke-width="1.6">CT Scan</text>
+<text x="450.2" y="290.3" font-size="9.2" stroke-width="1.6">Nuclear</text>
+<text x="658.8" y="441.8" font-size="18.3" stroke-width="3.1">CMC Rehab</text>
+<text x="673.2" y="460.8" font-size="18.3" stroke-width="3.1">Services</text>
+<text x="673.8" y="479.7" font-size="18.3" stroke-width="3.1">Building</text>
+<text x="664.3" y="495.7" font-size="14.2" stroke-width="2.4">2369 Cypress</text>
+<text x="690.2" y="510.1" font-size="14.2" stroke-width="2.4">Circle</text>
+<text x="682.3" y="533.6" font-size="14.5" stroke-width="2.5">Dietation</text>
+<text x="683.8" y="547.7" font-size="14.5" stroke-width="2.5">Nutrition</text>
+<text x="672.5" y="561.8" font-size="14.5" stroke-width="2.5">Weight Loss</text>
+<text x="657.1" y="576" font-size="14.5" stroke-width="2.5">Physical Therapy</text>
+<text x="223.2" y="207.4" font-size="13" stroke-width="2.2">Specialty</text>
+<text x="222.7" y="218.3" font-size="13" stroke-width="2.2">Pharmacy</text>
+</g>
+</svg>

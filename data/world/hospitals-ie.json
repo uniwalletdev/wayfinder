@@ -1,0 +1,321 @@
+{
+  "countryCode": "IE",
+  "fetchedAt": "2026-10-17T20:10:31.384Z",
+  "count": 39,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/12219521",
+      "name": "Connolly Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.hse.ie",
+      "lat": 53.3891627,
+      "lng": -6.3675965
+    },
+    {
+      "code": "osm:way/23587855",
+      "name": "Lucena Clinic & St Peter's School",
+      "countryCode": "IE",
+      "origin": "http://www.lucenaclinic.ie",
+      "lat": 53.3102672,
+      "lng": -6.2710269
+    },
+    {
+      "code": "osm:way/32015912",
+      "name": "St. James's Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.stjames.ie",
+      "lat": 53.3401104,
+      "lng": -6.2957732
+    },
+    {
+      "code": "osm:way/32063615",
+      "name": "Children's Health Ireland at Crumlin",
+      "countryCode": "IE",
+      "origin": "https://www.olchc.ie",
+      "lat": 53.3261478,
+      "lng": -6.318888
+    },
+    {
+      "code": "osm:way/33738850",
+      "name": "Central Remedial Clinic",
+      "countryCode": "IE",
+      "origin": "https://www.crc.ie",
+      "lat": 53.3690166,
+      "lng": -6.2014039
+    },
+    {
+      "code": "osm:way/43675789",
+      "name": "Bon Secours Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.bonsecours.ie",
+      "lat": 53.3757543,
+      "lng": -6.2674225
+    },
+    {
+      "code": "osm:way/49404615",
+      "name": "St. Francis Private Hospital",
+      "countryCode": "IE",
+      "origin": "http://stfrancisprivatehospital.com",
+      "lat": 53.5142637,
+      "lng": -7.3348933
+    },
+    {
+      "code": "osm:way/51231573",
+      "name": "Tallaght University Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.tuh.ie",
+      "lat": 53.2911993,
+      "lng": -6.3788402
+    },
+    {
+      "code": "osm:way/51567967",
+      "name": "Hermitage Clinic",
+      "countryCode": "IE",
+      "origin": "https://www.hermitageclinic.ie",
+      "lat": 53.3592363,
+      "lng": -6.4057718
+    },
+    {
+      "code": "osm:way/51680291",
+      "name": "St. Columcille's Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.hse.ie",
+      "lat": 53.242361,
+      "lng": -6.1328959
+    },
+    {
+      "code": "osm:way/51985549",
+      "name": "St. Michael's Hospital",
+      "countryCode": "IE",
+      "origin": "https://stmichaels.ie",
+      "lat": 53.2941298,
+      "lng": -6.1380259
+    },
+    {
+      "code": "osm:way/52156721",
+      "name": "National Rehabilitation Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.nrh.ie",
+      "lat": 53.2755616,
+      "lng": -6.1527603
+    },
+    {
+      "code": "osm:way/79498864",
+      "name": "Rotunda Hospital",
+      "countryCode": "IE",
+      "origin": "https://rotunda.ie",
+      "lat": 53.3529786,
+      "lng": -6.2633433
+    },
+    {
+      "code": "osm:way/80528752",
+      "name": "Bon Secours Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.bonsecours.ie",
+      "lat": 51.8925233,
+      "lng": -8.4974258
+    },
+    {
+      "code": "osm:way/82085707",
+      "name": "Phoenix Care Centre",
+      "countryCode": "IE",
+      "origin": "https://www.hse.ie",
+      "lat": 53.3572814,
+      "lng": -6.2851429
+    },
+    {
+      "code": "osm:way/86207904",
+      "name": "Leopardstown Park Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.lph.ie",
+      "lat": 53.268336,
+      "lng": -6.2027095
+    },
+    {
+      "code": "osm:way/111471269",
+      "name": "University Hospital Kerry",
+      "countryCode": "IE",
+      "origin": "https://uhk.ie",
+      "lat": 52.2658252,
+      "lng": -9.687501
+    },
+    {
+      "code": "osm:way/128516759",
+      "name": "Saint John of God Hospital",
+      "countryCode": "IE",
+      "origin": "https://stjohnofgodhospital.ie",
+      "lat": 53.2853729,
+      "lng": -6.1911131
+    },
+    {
+      "code": "osm:way/129217469",
+      "name": "Coombe Women & Infants University Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.coombe.ie",
+      "lat": 53.3346769,
+      "lng": -6.2882595
+    },
+    {
+      "code": "osm:way/133528910",
+      "name": "Highfield Healthcare",
+      "countryCode": "IE",
+      "origin": "https://highfieldhealthcare.ie",
+      "lat": 53.3785494,
+      "lng": -6.2453342
+    },
+    {
+      "code": "osm:way/137349173",
+      "name": "Children's Health Ireland at Temple Street",
+      "countryCode": "IE",
+      "origin": "https://www.cuh.ie",
+      "lat": 53.3570939,
+      "lng": -6.2615305
+    },
+    {
+      "code": "osm:way/141131842",
+      "name": "Bon Secours Hospital Galway",
+      "countryCode": "IE",
+      "origin": "http://www.bonsecoursireland.org",
+      "lat": 53.2777871,
+      "lng": -9.0205464
+    },
+    {
+      "code": "osm:way/153097627",
+      "name": "Gheel Autism Services",
+      "countryCode": "IE",
+      "origin": "http://www.gheel.ie",
+      "lat": 53.3676609,
+      "lng": -6.241519
+    },
+    {
+      "code": "osm:way/156638577",
+      "name": "Aut Even Hospital",
+      "countryCode": "IE",
+      "origin": "https://autevenhospital.ie",
+      "lat": 52.6765697,
+      "lng": -7.2702811
+    },
+    {
+      "code": "osm:way/183750993",
+      "name": "Portiuncula University Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.hse.ie",
+      "lat": 53.3270871,
+      "lng": -8.2355326
+    },
+    {
+      "code": "osm:way/277289764",
+      "name": "Royal Victoria Eye and Ear Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.rveeh.ie",
+      "lat": 53.3328193,
+      "lng": -6.2556569
+    },
+    {
+      "code": "osm:way/307509515",
+      "name": "Bloomfield Health Services & Quaker House",
+      "countryCode": "IE",
+      "origin": "https://www.bloomfield.ie",
+      "lat": 53.2722253,
+      "lng": -6.3043015
+    },
+    {
+      "code": "osm:way/353427032",
+      "name": "Mercy University Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.muh.ie",
+      "lat": 51.8989402,
+      "lng": -8.4824487
+    },
+    {
+      "code": "osm:way/353435239",
+      "name": "Naas General Hospital",
+      "countryCode": "IE",
+      "origin": "http://www.naashospital.ie",
+      "lat": 53.2113879,
+      "lng": -6.6609706
+    },
+    {
+      "code": "osm:way/353438490",
+      "name": "Wexford General Hospital",
+      "countryCode": "IE",
+      "origin": "https://www2.hse.ie",
+      "lat": 52.3431683,
+      "lng": -6.4818362
+    },
+    {
+      "code": "osm:way/394470425",
+      "name": "The National Maternity Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.nmh.ie",
+      "lat": 53.3401458,
+      "lng": -6.2457854
+    },
+    {
+      "code": "osm:way/444951067",
+      "name": "Mayo University Hospital",
+      "countryCode": "IE",
+      "origin": "https://www.saolta.ie",
+      "lat": 53.8507613,
+      "lng": -9.3040352
+    },
+    {
+      "code": "osm:way/500288024",
+      "name": "Children's Health Ireland at Crumlin",
+      "countryCode": "IE",
+      "origin": "https://www.olchc.ie",
+      "lat": 53.3245475,
+      "lng": -6.3219684
+    },
+    {
+      "code": "osm:way/563272077",
+      "name": "Incorporated Orthopaedic Hospital of Ireland",
+      "countryCode": "IE",
+      "origin": "https://www.ioh.ie",
+      "lat": 53.3672912,
+      "lng": -6.2022513
+    },
+    {
+      "code": "osm:way/730796812",
+      "name": "University Maternity Hospital, Limerick",
+      "countryCode": "IE",
+      "origin": "https://www.hse.ie",
+      "lat": 52.6674412,
+      "lng": -8.6334651
+    },
+    {
+      "code": "osm:way/975984802",
+      "name": "Saint Mary's Hospital",
+      "countryCode": "IE",
+      "origin": "https://sjognortheastservices.ie",
+      "lat": 53.8619394,
+      "lng": -6.3785508
+    },
+    {
+      "code": "osm:way/1335524644",
+      "name": "Bon Secours Hospital Limerick",
+      "countryCode": "IE",
+      "origin": "https://www.bonsecours.ie",
+      "lat": 52.6524499,
+      "lng": -8.5777588
+    },
+    {
+      "code": "osm:way/1457877516",
+      "name": "Beaumont Lodge Transitional Care Unit",
+      "countryCode": "IE",
+      "origin": "https://www.bartrahealthcare.ie",
+      "lat": 53.3903038,
+      "lng": -6.2161272
+    },
+    {
+      "code": "osm:way/1533710112",
+      "name": "Kingsbridge Private Hospital",
+      "countryCode": "IE",
+      "origin": "http://www.kingsbridgeprivatehospital.ie",
+      "lat": 54.2685112,
+      "lng": -8.4816617
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 792" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="612" height="792" fill="#ffffff"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M0.6 6L0.6 14.3L610.5 14.3L610.5 6Z" fill="#376092" fill-rule="evenodd"/>
+<path d="M610.5 6L610.5 14.3L0.6 14.3L0.6 6" fill="none" stroke="#385d8a" stroke-width="1.1"/>
+<path d="M-0.2 779L-0.2 787.3L610.5 787.3L610.5 779Z" fill="#376092" fill-rule="evenodd"/>
+<path d="M252.3 321.4L260.1 321.2L256.8 317.8L259.4 317.7L263.6 321.9C263.7 322 260.1 326.2 259.6 326.2L257.1 326.2L260 322.9L252.4 323Z" fill="#00b9f2" fill-rule="evenodd"/>
+<path d="M378.5 336.1L378.3 328.4L374.9 331.7L374.8 329.1L378.9 324.9C379 324.8 383.2 328.3 383.2 328.8L383.3 331.3L379.9 328.4L380.2 336.1Z" fill="#2c2e35" fill-rule="evenodd"/>
+<path d="M519.1 278.3L511.3 278.2L514.5 281.7L511.9 281.7L507.8 277.4C507.8 277.3 511.5 273.3 511.9 273.3L514.5 273.3L511.4 276.5L519.1 276.6Z" fill="#00b9f2" fill-rule="evenodd"/>
+<path d="M403.8 329.6L411.6 329.3L408.2 325.9L410.8 325.8L415.1 329.9C415.2 329.9 411.7 334.2 411.2 334.2L408.7 334.3L411.6 330.9L403.9 331.3Z" fill="#2c2e35" fill-rule="evenodd"/>
+<path d="M429.6 397L429.3 389.3L425.9 392.6L425.8 390L429.9 385.7C430 385.6 434.2 389.2 434.2 389.6L434.3 392.2L430.9 389.3L431.2 396.9Z" fill="#00b9f2" fill-rule="evenodd"/>
+<path d="M375.2 110.9L375.1 118.6L378.6 115.4L378.6 118.1L374.3 122.1C374.2 122.2 370.1 118.5 370.1 118L370.1 115.5L373.4 118.5L373.5 110.9Z" fill="#00b9f2" fill-rule="evenodd"/>
+<path d="M318.6 178.8L346.1 178L346.1 179.3L318.6 180ZZM342.2 175.7L347.4 178.6L342.3 181.8L342 181.8L341.8 181.8L341.6 181.7L341.4 181.5L341.3 181.3L341.3 181.1L341.4 180.8L341.6 180.7L345.8 178.1L345.7 179.2L341.5 176.8L341.3 176.7L341.2 176.4L341.2 176.2L341.2 176L341.4 175.8L341.6 175.7L341.9 175.6L342.2 175.7ZZ" fill="#00b050" stroke="#00b050" stroke-width="0.3"/>
+<path d="M348.4 384.9L340.7 384.8L343.9 388.3L341.3 388.3L337.2 384C337.1 383.9 340.9 379.8 341.3 379.8L343.8 379.8L340.8 383.1L348.4 383.2Z" fill="#00b9f2" fill-rule="evenodd"/>
+<path d="M276.3 392.1L276 384.4L272.6 387.8L272.5 385.1L276.6 380.9C276.7 380.8 280.9 384.3 280.9 384.8L281.1 387.3L277.7 384.4L277.9 392.1Z" fill="#00b9f2" fill-rule="evenodd"/>
+<path d="M515.1 336.6L505.8 336.6L509.7 340.8L506.5 340.8L501.6 335.6C501.5 335.5 506 330.6 506.5 330.6L509.6 330.6L505.9 334.6L515.1 334.6Z" fill="#ff2e17" fill-rule="evenodd"/>
+<path d="M375.8 197.3L386.8 197.3L386.8 207.5L375.8 207.5Z" fill="#c4c4c7" fill-rule="evenodd"/>
+<path d="M12.7 428.2L12.7 441.1L194.6 441.1L194.6 428.2Z" fill="#16365c" fill-rule="evenodd"/>
+<path d="M213.8 428.2L213.8 441.1L395.7 441.1L395.7 428.2Z" fill="#16365c" fill-rule="evenodd"/>
+<path d="M414.9 428.2L414.9 441.1L596.8 441.1L596.8 428.2Z" fill="#16365c" fill-rule="evenodd"/>
+<path d="M12.7 440.8L12.7 453.3L194.6 453.3L194.6 440.8Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 440.8L213.8 453.3L395.7 453.3L395.7 440.8Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 440.8L414.9 453.3L596.8 453.3L596.8 440.8Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 465.3L12.7 477.8L194.6 477.8L194.6 465.3Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 465.3L213.8 477.8L395.7 477.8L395.7 465.3Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 465.3L414.9 477.8L596.8 477.8L596.8 465.3Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 489.7L12.7 502.3L194.6 502.3L194.6 489.7Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 489.7L213.8 502.3L395.7 502.3L395.7 489.7Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 489.7L414.9 502.3L596.8 502.3L596.8 489.7Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 514.2L12.7 526.7L194.6 526.7L194.6 514.2Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 514.2L213.8 526.7L395.7 526.7L395.7 514.2Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 514.2L414.9 526.7L596.8 526.7L596.8 514.2Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 538.7L12.7 551.2L194.6 551.2L194.6 538.7Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 538.7L213.8 551.2L395.7 551.2L395.7 538.7Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 538.7L414.9 551.2L596.8 551.2L596.8 538.7Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 563.1L12.7 575.7L194.6 575.7L194.6 563.1Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 563.1L213.8 575.7L395.7 575.7L395.7 563.1Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 563.1L414.9 575.7L596.8 575.7L596.8 563.1Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 587.6L12.7 600.1L194.6 600.1L194.6 587.6Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 587.6L213.8 600.1L395.7 600.1L395.7 587.6Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 587.6L414.9 600.1L596.8 600.1L596.8 587.6Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 612.1L12.7 624.6L194.6 624.6L194.6 612.1Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 612.1L213.8 624.6L395.7 624.6L395.7 612.1Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 612.1L414.9 624.6L596.8 624.6L596.8 612.1Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 636.5L12.7 649.1L194.6 649.1L194.6 636.5Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 636.5L213.8 649.1L395.7 649.1L395.7 636.5Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 636.5L414.9 649.1L596.8 649.1L596.8 636.5Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 661L12.7 673.5L194.6 673.5L194.6 661Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 661L213.8 673.5L395.7 673.5L395.7 661Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 661L414.9 673.5L596.8 673.5L596.8 661Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 685.5L12.7 698L194.6 698L194.6 685.5Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 685.5L213.8 698L395.7 698L395.7 685.5Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 685.5L414.9 698L596.8 698L596.8 685.5Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 709.9L12.7 722.5L194.6 722.5L194.6 709.9Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 709.9L213.8 722.5L395.7 722.5L395.7 709.9Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 709.9L414.9 722.5L596.8 722.5L596.8 709.9Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 734.4L12.7 747L194.6 747L194.6 734.4Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 734.4L213.8 747L395.7 747L395.7 734.4Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M414.9 734.4L414.9 747L596.8 747L596.8 734.4Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 758.9L12.7 771.4L194.6 771.4L194.6 758.9Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M213.8 758.9L213.8 771.4L395.7 771.4L395.7 758.9Z" fill="#daeef3" fill-rule="evenodd"/>
+<path d="M12.7 771.1L12.7 774.8L194.6 774.8L194.6 771.1Z" fill="#16365c" fill-rule="evenodd"/>
+<path d="M213.8 771.1L213.8 774.8L395.7 774.8L395.7 771.1Z" fill="#16365c" fill-rule="evenodd"/>
+<path d="M414.9 771.1L414.9 774.8L596.8 774.8L596.8 771.1Z" fill="#16365c" fill-rule="evenodd"/>
+<path d="M18.8 513.5C17.9 513.5 17.1 514.2 17.1 515.2L17.1 524.9C17.1 525.8 17.9 526.6 18.8 526.6L28.5 526.6C29.4 526.6 30.2 525.8 30.2 524.9L30.2 515.2C30.2 514.2 29.4 513.5 28.5 513.5ZZ" fill="#99cc33" stroke="#33cc33" stroke-width="0.3"/>
+<path d="M24.5 522.9C24.4 523 24.2 523.5 24.1 523.6C24 523.9 23.7 524 23.4 523.9C23.3 523.8 23.2 523.7 23.2 523.7C23.1 523.6 23 523.3 23 523.3C22.9 523.3 22.7 523.5 22.6 523.5C22.5 523.6 22.4 523.6 22.3 523.5C22.2 523.4 22.3 523.3 22.4 523.2C22.5 523.1 22.9 522.9 22.9 522.9C23 522.8 23.2 522.8 23.3 522.9L23.4 523.3L23.7 522.7L23.5 522.6C23.4 522.6 23.4 522.6 23.3 522.6L23.1 522.1C23.1 522 23.1 521.9 23.2 521.9C23.3 521.8 23.4 521.8 23.5 521.9C23.5 521.9 23.6 522.2 23.6 522.3C23.8 522.3 24.3 522.5 24.3 522.5C24.3 522.5 24.3 522.5 24.4 522.5C24.5 522.6 24.5 522.8 24.5 522.9ZM24 522.3C23.8 522.2 23.7 521.9 23.8 521.7C23.9 521.4 24.2 521.3 24.4 521.5C24.7 521.6 24.7 521.8 24.6 522.1C24.5 522.3 24.3 522.4 24 522.3ZM23.6 520.9C22.6 520.9 21.8 521.7 21.8 522.7C21.8 523.8 22.6 524.6 23.6 524.6C24.7 524.6 25.5 523.8 25.5 522.7C25.5 521.7 24.7 520.9 23.6 520.9ZM27.1 523.2C26.8 523.3 26.5 523.2 26.4 522.9L25.5 519.5L25 519.5L26.5 524.9L20.8 524.9L22.3 519.5L21.8 519.5L20.9 522.9C20.8 523.2 20.5 523.3 20.2 523.2C19.9 523.1 19.8 522.9 19.8 522.6L20.8 519.1C21.2 517.7 22.4 517.8 22.4 517.8L24.9 517.8C24.9 517.8 26 517.7 26.4 519.1L27.4 522.6C27.5 522.9 27.3 523.1 27.1 523.2" fill="#ffffff"/>
+<path d="M23.6 517.4C22.9 517.4 22.4 516.8 22.4 516.1C22.4 515.4 22.9 514.9 23.6 514.9C24.3 514.9 24.9 515.4 24.9 516.1C24.9 516.8 24.3 517.4 23.6 517.4" fill="#ffffff"/>
+<path d="M18.4 661C17.5 661 16.8 661.7 16.8 662.5L16.8 671.4C16.8 672.2 17.5 672.9 18.4 672.9L27.2 672.9C28.1 672.9 28.8 672.2 28.8 671.4L28.8 662.5C28.8 661.7 28.1 661 27.2 661Z" fill="#000000"/>
+<path d="M23.8 667.8L17.6 667.8L17.6 668.4L23.8 668.4Z" fill="#ffffff"/>
+<path d="M22.5 666.6C22.5 666.2 22.8 665.8 23.2 665.8C23.6 665.8 24 666.2 24 666.6C24 667 23.6 667.3 23.2 667.3C22.8 667.3 22.5 667 22.5 666.6" fill="#ffffff"/>
+<path d="M21.6 665.8L19.1 665.8L17.6 666L17.6 667.3L18.4 667.3C18.3 667.2 18.3 667.1 18.3 667C18.3 666.6 18.6 666.4 18.9 666.4L20.2 666.4L21.3 666.1L21.4 666.4L20.3 666.7L18.9 666.7C18.7 666.7 18.6 666.8 18.6 667C18.6 667.2 18.7 667.3 18.9 667.3L21.6 667.3C22 667.3 22.3 667 22.3 666.6C22.3 666.2 22 665.8 21.6 665.8" fill="#ffffff"/>
+<path d="M22.8 669.9C24.5 669.9 25.8 668.6 25.8 667C25.8 665.3 24.5 664 22.8 664C21.8 664 20.8 664.6 20.3 665.4L21.5 665.4C21.9 665.1 22.3 665 22.8 665C23.9 665 24.8 665.9 24.8 667C24.8 668.1 23.9 669 22.8 669C22.5 669 22.2 668.9 22 668.8L20.5 668.8C21 669.5 21.9 669.9 22.8 669.9" fill="#ffffff"/>
+<path d="M23.9 663.4C23.9 663.5 23.8 663.5 23.7 663.5C23.7 663.5 23.7 663.5 23.7 663.5C23.1 663.4 22.5 663.4 22 663.5C21.9 663.5 21.8 663.5 21.8 663.4C21.8 663.3 21.8 663.3 21.9 663.2C22.5 663.1 23.2 663.1 23.8 663.2C23.8 663.3 23.9 663.3 23.9 663.4ZM22.8 662.4C20.8 662.4 19.1 663.7 18.5 665.5L19 665.4L20 665.4C20.5 664.4 21.6 663.7 22.8 663.7C24.6 663.7 26.1 665.2 26.1 667C26.1 668.8 24.6 670.2 22.8 670.2C21.7 670.2 20.7 669.7 20.1 668.8L18.6 668.8C19.3 670.4 20.9 671.5 22.8 671.5C25.4 671.5 27.4 669.5 27.4 667C27.4 664.4 25.4 662.4 22.8 662.4" fill="#ffffff"/>
+</g>
+<g fill="#1a1a1a" stroke="#ffffff" stroke-linejoin="round" paint-order="stroke">
+<text x="70.6" y="134.7" font-size="9.2" stroke-width="1.6">LEGEND</text>
+<text x="67.3" y="267.3" font-size="7.2" stroke-width="1.2">YOU ARE HERE</text>
+<text x="66.9" y="241.4" font-size="7.2" stroke-width="1.2">PARKING</text>
+<text x="66.3" y="226.1" font-size="7.2" stroke-width="1.2">INFORMATION</text>
+<text x="66.4" y="196.4" font-size="7.2" stroke-width="1.2">ELEVATORS TO</text>
+<text x="98.9" y="204.4" font-size="7.2" stroke-width="1.2">, FONTBONNE</text>
+<text x="66.4" y="204.4" font-size="7.2" stroke-width="1.2">PARKING</text>
+<text x="66.4" y="212.4" font-size="7.2" stroke-width="1.2">AND MAIN LOBBY</text>
+<text x="66.6" y="184.4" font-size="7.2" stroke-width="1.2">ELEVATORS</text>
+<text x="67" y="161.9" font-size="7.2" stroke-width="1.2">FOOD SERVICES</text>
+<text x="67" y="148.1" font-size="7.2" stroke-width="1.2">ACCESSIBLE ENTRY</text>
+<text x="66.5" y="255" font-size="7.2" stroke-width="1.2">WASHROOMS</text>
+<text x="66.6" y="172.7" font-size="7.2" stroke-width="1.2">EMERGENCY</text>
+<text x="18.5" y="325.8" font-size="16" stroke-width="2.7">Emergency Entrance</text>
+<text x="18.5" y="343.7" font-size="16" stroke-width="2.7">open 24/7. All other</text>
+<text x="18.5" y="361.6" font-size="16" stroke-width="2.7">entrances are locked</text>
+<text x="18.5" y="379.5" font-size="16" stroke-width="2.7">at 6pm or 9pm.</text>
+<text x="326.1" y="410" font-size="13.5" stroke-width="2.3">Charlton Avenue E.</text>
+<text x="539.2" y="318.7" font-size="13.5" stroke-width="2.3" transform="rotate(-89.7 539.2 318.7)">James Street S.</text>
+<text x="371.5" y="217.5" font-size="13.5" stroke-width="2.3">St. Joseph’s Drive</text>
+<text x="245.6" y="344.4" font-size="13.5" stroke-width="2.3" transform="rotate(-90.2 245.6 344.4)">John Street S.</text>
+<text x="468.2" y="262" font-size="7.9" stroke-width="1.3">SURGICAL</text>
+<text x="472.5" y="270.8" font-size="7.9" stroke-width="1.3">CENTRE</text>
+<text x="300.8" y="252.2" font-size="7.9" stroke-width="1.3">BISHOP</text>
+<text x="300.8" y="261" font-size="7.9" stroke-width="1.3">DOWLING</text>
+<text x="300.8" y="269.8" font-size="7.9" stroke-width="1.3">WING</text>
+<text x="403.5" y="251.7" font-size="7.9" stroke-width="1.3">SISTER</text>
+<text x="391.1" y="260.5" font-size="7.9" stroke-width="1.3">MARY GRACE</text>
+<text x="407" y="269.3" font-size="7.9" stroke-width="1.3">WING</text>
+<text x="484.7" y="336" font-size="7.9" stroke-width="1.3">ST.</text>
+<text x="480.7" y="344.8" font-size="7.9" stroke-width="1.3">LUKE</text>
+<text x="479.6" y="353.6" font-size="7.9" stroke-width="1.3">WING</text>
+<text x="432.6" y="362.4" font-size="7.9" stroke-width="1.3">JURAVINSKI</text>
+<text x="432" y="371.2" font-size="7.9" stroke-width="1.3">INNOVATION</text>
+<text x="441.6" y="380" font-size="7.9" stroke-width="1.3">TOWER</text>
+<text x="303.5" y="377.9" font-size="7.9" stroke-width="1.3">MARTHA</text>
+<text x="309.9" y="386.7" font-size="7.9" stroke-width="1.3">WING</text>
+<text x="260.3" y="362.3" font-size="7.9" stroke-width="1.3">MARIAN</text>
+<text x="265.4" y="371.1" font-size="7.9" stroke-width="1.3">WING</text>
+<text x="491.7" y="161.1" font-size="7.9" stroke-width="1.3">STAFF</text>
+<text x="486.2" y="169.9" font-size="7.9" stroke-width="1.3">PARKING</text>
+<text x="486.7" y="178.7" font-size="7.9" stroke-width="1.3">(RAMP 2)</text>
+<text x="393.4" y="143.3" font-size="7.9" stroke-width="1.3">FONTBONNE</text>
+<text x="399.4" y="152.1" font-size="7.9" stroke-width="1.3">BUILDING</text>
+<text x="392.3" y="181.1" font-size="7.9" stroke-width="1.3">STAFF PARKING</text>
+<text x="406.2" y="189.9" font-size="7.9" stroke-width="1.3">(RAMP 1)</text>
+<text x="375" y="151.1" font-size="19.7" stroke-width="3.4">F</text>
+<text x="448.6" y="342.9" font-size="20.9" stroke-width="3.6">T</text>
+<text x="456.7" y="251.5" font-size="20.5" stroke-width="3.5">S</text>
+<text x="371.7" y="252.2" font-size="20.2" stroke-width="3.4">G</text>
+<text x="327.1" y="350.2" font-size="19.9" stroke-width="3.4">H</text>
+<text x="282" y="345.1" font-size="20.9" stroke-width="3.6">M</text>
+<text x="486.3" y="303.1" font-size="20.5" stroke-width="3.5">L</text>
+<text x="287.7" y="292.8" font-size="20.3" stroke-width="3.4">D</text>
+<text x="251.8" y="166.9" font-size="6.4" stroke-width="1.1">Take Bishop Dowling or</text>
+<text x="254.7" y="174" font-size="6.4" stroke-width="1.1">Mary Grace elevators</text>
+<text x="258.1" y="181.2" font-size="6.4" stroke-width="1.1">to level 3 to access</text>
+<text x="272.3" y="188.4" font-size="6.4" stroke-width="1.1">overpass</text>
+<text x="356.8" y="206.6" font-size="6.6" stroke-width="1.1" transform="rotate(-89.1 356.8 206.6)">Overpass</text>
+<text x="518.3" y="343.2" font-size="11.3" stroke-width="1.9">EMERGENCY</text>
+<text x="430.2" y="96.5" font-size="7.9" stroke-width="1.3">PUBLIC PARKING</text>
+<text x="446.4" y="105.3" font-size="7.9" stroke-width="1.3">(RAMP 3)</text>
+<text x="63.8" y="435.6" font-size="6.4" stroke-width="1.1">DEPARTMENT</text>
+<text x="136.3" y="435.6" font-size="6.4" stroke-width="1.1">WING</text>
+<text x="177.3" y="435.6" font-size="6.4" stroke-width="1.1">LEVEL</text>
+<text x="265" y="435.6" font-size="6.4" stroke-width="1.1">DEPARTMENT</text>
+<text x="337.5" y="435.6" font-size="6.4" stroke-width="1.1">WING</text>
+<text x="378.5" y="435.6" font-size="6.4" stroke-width="1.1">LEVEL</text>
+<text x="466.3" y="435.6" font-size="6.4" stroke-width="1.1">DEPARTMENT</text>
+<text x="538.8" y="435.6" font-size="6.4" stroke-width="1.1">WING</text>
+<text x="579.8" y="435.6" font-size="6.4" stroke-width="1.1">LEVEL</text>
+<text x="33.5" y="449.3" font-size="5.8" stroke-width="1">Acute Mental Health</text>
+<text x="133.2" y="449.3" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="176.3" y="449.3" font-size="5.8" stroke-width="1">9 &amp; 10</text>
+<text x="234.8" y="449.3" font-size="5.8" stroke-width="1">Firestone Clinic (FIRH)</text>
+<text x="334.5" y="449.3" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="384.3" y="449.3" font-size="5.8" stroke-width="1">1</text>
+<text x="436" y="449.3" font-size="5.8" stroke-width="1">(PACU) Post Anaesthetic Recovery</text>
+<text x="535.7" y="449.3" font-size="5.8" stroke-width="1">Surgical Centre</text>
+<text x="585.6" y="449.3" font-size="5.8" stroke-width="1">2</text>
+<text x="33.5" y="461.6" font-size="5.8" stroke-width="1">ALC</text>
+<text x="133.2" y="461.6" font-size="5.8" stroke-width="1">Marian</text>
+<text x="183.1" y="461.6" font-size="5.8" stroke-width="1">2</text>
+<text x="234.8" y="461.6" font-size="5.8" stroke-width="1">FIRH Administrative Offices</text>
+<text x="334.5" y="461.6" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="384.3" y="461.6" font-size="5.8" stroke-width="1">2</text>
+<text x="436" y="461.6" font-size="5.8" stroke-width="1">Parking Office</text>
+<text x="535.7" y="461.6" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="585.6" y="461.6" font-size="5.8" stroke-width="1">1</text>
+<text x="33.5" y="473.8" font-size="5.8" stroke-width="1">ALC 6 Tower</text>
+<text x="133.2" y="473.8" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="183.1" y="473.8" font-size="5.8" stroke-width="1">6</text>
+<text x="234.8" y="473.8" font-size="5.8" stroke-width="1">Fracture &amp; Orthopaedic Clinic</text>
+<text x="334.5" y="473.8" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="384.3" y="473.8" font-size="5.8" stroke-width="1">0</text>
+<text x="436" y="473.8" font-size="5.8" stroke-width="1">Patient Accounts</text>
+<text x="535.7" y="473.8" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="585.6" y="473.8" font-size="5.8" stroke-width="1">7</text>
+<text x="33.5" y="486.1" font-size="5.8" stroke-width="1">Audiology Dept. (Hearing Aid Clinic)</text>
+<text x="133.2" y="486.1" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="183.1" y="486.1" font-size="5.8" stroke-width="1">0</text>
+<text x="234.8" y="486.1" font-size="5.8" stroke-width="1">Geriatrics</text>
+<text x="334.5" y="486.1" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="384.3" y="486.1" font-size="5.8" stroke-width="1">5</text>
+<text x="436" y="486.1" font-size="5.8" stroke-width="1">Pediatric Clinic on Fontbonne 2</text>
+<text x="535.7" y="486.1" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="585.6" y="486.1" font-size="5.8" stroke-width="1">2</text>
+<text x="33.5" y="498.3" font-size="5.8" stroke-width="1">Baby Assessment Clinic (BAC)</text>
+<text x="133.2" y="498.3" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="183.1" y="498.3" font-size="5.8" stroke-width="1">3</text>
+<text x="234.8" y="498.3" font-size="5.8" stroke-width="1">Gastroenterology</text>
+<text x="334.5" y="498.3" font-size="5.8" stroke-width="1">Martha</text>
+<text x="384.3" y="498.3" font-size="5.8" stroke-width="1">4</text>
+<text x="436" y="498.3" font-size="5.8" stroke-width="1">PET / CT</text>
+<text x="535.7" y="498.3" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="585.6" y="498.3" font-size="5.8" stroke-width="1">1</text>
+<text x="33.5" y="510.5" font-size="5.8" stroke-width="1">BANA Clinic</text>
+<text x="133.2" y="510.5" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="183.1" y="510.5" font-size="5.8" stroke-width="1">3</text>
+<text x="234.8" y="510.5" font-size="5.8" stroke-width="1">GIM (4 BD) Surge Space</text>
+<text x="334.5" y="510.5" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="384.3" y="510.5" font-size="5.8" stroke-width="1">4</text>
+<text x="436" y="510.5" font-size="5.8" stroke-width="1">Pharmacy - Retail</text>
+<text x="535.7" y="510.5" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="585.6" y="510.5" font-size="5.8" stroke-width="1">1</text>
+<text x="33.5" y="522.8" font-size="5.8" stroke-width="1">Birthing Unit</text>
+<text x="133.2" y="522.8" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="183.1" y="522.8" font-size="5.8" stroke-width="1">2</text>
+<text x="234.8" y="522.8" font-size="5.8" stroke-width="1">G.I. Motility Unit</text>
+<text x="334.5" y="522.8" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="384.3" y="522.8" font-size="5.8" stroke-width="1">6</text>
+<text x="436" y="522.4" font-size="5.2" stroke-width="1">Psychiatric Emergency Services (PES)</text>
+<text x="535.7" y="522.8" font-size="5.8" stroke-width="1">Luke</text>
+<text x="585.6" y="522.8" font-size="5.8" stroke-width="1">1</text>
+<text x="33.5" y="535" font-size="5.8" stroke-width="1">Brain-Body Institute</text>
+<text x="133.2" y="535" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="183.1" y="535" font-size="5.8" stroke-width="1">3</text>
+<text x="234.8" y="535" font-size="5.8" stroke-width="1">Gift and Flower Shop</text>
+<text x="334.5" y="535" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="384.3" y="535" font-size="5.8" stroke-width="1">1</text>
+<text x="436" y="535" font-size="5.8" stroke-width="1">Physiotherapy</text>
+<text x="535.7" y="535" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="585.6" y="535" font-size="5.8" stroke-width="1">0</text>
+<text x="33.5" y="547.2" font-size="5.8" stroke-width="1">Cafeteria</text>
+<text x="133.2" y="547.2" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="183.1" y="547.2" font-size="5.8" stroke-width="1">2</text>
+<text x="234.8" y="547.2" font-size="5.8" stroke-width="1">Hamilton Centre for Kidney Research</text>
+<text x="334.5" y="547.2" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="384.3" y="547.2" font-size="5.8" stroke-width="1">3</text>
+<text x="436" y="547.2" font-size="5.8" stroke-width="1">Rehabilitation Inpatient Unit</text>
+<text x="535.7" y="547.2" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="585.6" y="547.2" font-size="5.8" stroke-width="1">8</text>
+<text x="33.5" y="559.5" font-size="5.8" stroke-width="1">Cardiology Services</text>
+<text x="133.2" y="559.5" font-size="5.8" stroke-width="1">Martha</text>
+<text x="183.1" y="559.5" font-size="5.8" stroke-width="1">0</text>
+<text x="234.8" y="559.5" font-size="5.8" stroke-width="1">Hearing Aid Clinic (Audiology)</text>
+<text x="334.5" y="559.5" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="384.3" y="559.5" font-size="5.8" stroke-width="1">0</text>
+<text x="436" y="559.5" font-size="5.8" stroke-width="1">Renal Transplant Inpatient Unit</text>
+<text x="535.7" y="559.5" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="585.6" y="559.5" font-size="5.8" stroke-width="1">7</text>
+<text x="33.5" y="571.4" font-size="4.9" stroke-width="1">Ce. for Interventional Radiology &amp; Oncology</text>
+<text x="133.2" y="571.7" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="183.1" y="571.7" font-size="5.8" stroke-width="1">1</text>
+<text x="234.8" y="571.7" font-size="5.8" stroke-width="1">Hemodialysis</text>
+<text x="334.5" y="571.7" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="384.3" y="571.7" font-size="5.8" stroke-width="1">7</text>
+<text x="436" y="571.7" font-size="5.8" stroke-width="1">Renal Transplant Outpatient Clinic</text>
+<text x="535.7" y="571.7" font-size="5.8" stroke-width="1">Marian</text>
+<text x="585.6" y="571.7" font-size="5.8" stroke-width="1">0</text>
+<text x="33.5" y="583.6" font-size="4.9" stroke-width="1">Centre for Minimal Access Surgery (CMAS)</text>
+<text x="133.2" y="583.9" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="183.1" y="583.9" font-size="5.8" stroke-width="1">2</text>
+<text x="234.8" y="583.9" font-size="5.8" stroke-width="1">Imaging Research Centre</text>
+<text x="334.5" y="583.9" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="384.3" y="583.9" font-size="5.8" stroke-width="1">1</text>
+<text x="436" y="583.9" font-size="5.8" stroke-width="1">Research Administration</text>
+<text x="535.7" y="583.9" font-size="5.8" stroke-width="1">Martha</text>
+<text x="585.6" y="583.9" font-size="5.8" stroke-width="1">3</text>
+<text x="33.5" y="596.2" font-size="5.8" stroke-width="1">Chapel</text>
+<text x="133.2" y="596.2" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="183.1" y="596.2" font-size="5.8" stroke-width="1">1</text>
+<text x="234.8" y="596.2" font-size="5.8" stroke-width="1">Information</text>
+<text x="334.5" y="596.2" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="384.3" y="596.2" font-size="5.8" stroke-width="1">1</text>
+<text x="436" y="596.2" font-size="5.8" stroke-width="1">Respiratory Rehab Day Program</text>
+<text x="535.7" y="596.2" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="585.6" y="596.2" font-size="5.8" stroke-width="1">8</text>
+<text x="33.5" y="608.4" font-size="5.8" stroke-width="1">Chest, Head and Neck Units</text>
+<text x="133.2" y="608.4" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="183.1" y="608.4" font-size="5.8" stroke-width="1">4</text>
+<text x="234.8" y="608.4" font-size="5.8" stroke-width="1">Infusion &amp; Treatment Centre</text>
+<text x="334.5" y="608.4" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="384.3" y="608.4" font-size="5.8" stroke-width="1">1</text>
+<text x="436" y="608.4" font-size="5.8" stroke-width="1">Security</text>
+<text x="535.7" y="608.4" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="585.6" y="608.4" font-size="5.8" stroke-width="1">1</text>
+<text x="33.5" y="620.6" font-size="5.8" stroke-width="1">Clinical Teaching Unit (CTU 4 BD)</text>
+<text x="133.2" y="620.6" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="183.1" y="620.6" font-size="5.8" stroke-width="1">4</text>
+<text x="234.8" y="620.6" font-size="5.8" stroke-width="1">Intensive Care Unit</text>
+<text x="334.5" y="620.6" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="384.3" y="620.6" font-size="5.8" stroke-width="1">1</text>
+<text x="436" y="620.6" font-size="5.8" stroke-width="1">Sleep Lab &amp; Sleep Clinic</text>
+<text x="535.7" y="620.6" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="585.6" y="620.6" font-size="5.8" stroke-width="1">4</text>
+<text x="33.5" y="632.9" font-size="5.8" stroke-width="1">Clinical Teaching Unit (CTU 4 MG)</text>
+<text x="133.2" y="632.9" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="183.1" y="632.9" font-size="5.8" stroke-width="1">4</text>
+<text x="234.8" y="632.6" font-size="4.9" stroke-width="1">Internal Med Rapid Assessment (IMRAC)</text>
+<text x="334.5" y="632.9" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="384.3" y="632.9" font-size="5.8" stroke-width="1">1</text>
+<text x="436" y="632.9" font-size="5.8" stroke-width="1">Special Care Nursery</text>
+<text x="535.7" y="632.9" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="585.6" y="632.9" font-size="5.8" stroke-width="1">3</text>
+<text x="33.5" y="645.1" font-size="5.8" stroke-width="1">Clinical Teaching Unit (CTU 5 MG)</text>
+<text x="133.2" y="645.1" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="183.1" y="645.1" font-size="5.8" stroke-width="1">5</text>
+<text x="234.8" y="645.1" font-size="5.8" stroke-width="1">Kidney Function Program (MCKC)</text>
+<text x="334.5" y="645.1" font-size="5.8" stroke-width="1">Marian</text>
+<text x="384.3" y="645.1" font-size="5.8" stroke-width="1">4</text>
+<text x="436" y="645.1" font-size="5.8" stroke-width="1">Speech Language Pathology (SLP)</text>
+<text x="535.7" y="645.1" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="585.6" y="645.1" font-size="5.8" stroke-width="1">0</text>
+<text x="33.5" y="657.3" font-size="5.8" stroke-width="1">Complex Care</text>
+<text x="133.2" y="657.3" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="177.9" y="657.3" font-size="5.8" stroke-width="1">5 &amp; 8</text>
+<text x="234.8" y="657.3" font-size="5.8" stroke-width="1">McMaster Institute of Urology (MIU)</text>
+<text x="334.5" y="657.3" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="384.3" y="657.3" font-size="5.8" stroke-width="1">3</text>
+<text x="436" y="657.3" font-size="5.8" stroke-width="1">Spiritual Care Department</text>
+<text x="535.7" y="657.3" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="585.6" y="657.3" font-size="5.8" stroke-width="1">1</text>
+<text x="33.5" y="669.6" font-size="5.8" stroke-width="1">CT in Emergency</text>
+<text x="133.2" y="669.6" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="183.1" y="669.6" font-size="5.8" stroke-width="1">1</text>
+<text x="234.8" y="669.6" font-size="5.8" stroke-width="1">Medical Step Down Unit (MSDU)</text>
+<text x="334.5" y="669.6" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="384.3" y="669.6" font-size="5.8" stroke-width="1">4</text>
+<text x="436" y="669.6" font-size="5.8" stroke-width="1">Spiritual Centre</text>
+<text x="535.7" y="669.6" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="585.6" y="669.6" font-size="5.8" stroke-width="1">1</text>
+<text x="33.5" y="681.8" font-size="5.8" stroke-width="1">Day Surgery</text>
+<text x="133.2" y="681.8" font-size="5.8" stroke-width="1">Surgical Centre</text>
+<text x="183.1" y="681.8" font-size="5.8" stroke-width="1">2</text>
+<text x="234.8" y="681.8" font-size="5.8" stroke-width="1">Minor Procedures Suite</text>
+<text x="334.5" y="681.8" font-size="5.8" stroke-width="1">Surgical Centre</text>
+<text x="384.3" y="681.8" font-size="5.8" stroke-width="1">2</text>
+<text x="436" y="681.8" font-size="5.8" stroke-width="1">Spiritual Care Education Centre</text>
+<text x="535.7" y="681.8" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="585.6" y="681.8" font-size="5.8" stroke-width="1">8</text>
+<text x="33.5" y="694" font-size="5.8" stroke-width="1">Department of Medicine</text>
+<text x="133.2" y="694" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="183.1" y="694" font-size="5.8" stroke-width="1">5</text>
+<text x="234.8" y="694" font-size="5.8" stroke-width="1">(MSK) 7 Surgical Inpatient Unit</text>
+<text x="334.5" y="694" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="384.3" y="694" font-size="5.8" stroke-width="1">7</text>
+<text x="436" y="694" font-size="5.8" stroke-width="1">Surgical Outpatient Clinic</text>
+<text x="535.7" y="694" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="585.6" y="694" font-size="5.8" stroke-width="1">8</text>
+<text x="33.5" y="706.3" font-size="5.8" stroke-width="1">Diagnostic Imaging</text>
+<text x="133.2" y="706.3" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="183.1" y="706.3" font-size="5.8" stroke-width="1">0</text>
+<text x="234.8" y="706.3" font-size="5.8" stroke-width="1">Nephrology Inpatient Unit</text>
+<text x="334.5" y="706.3" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="384.3" y="706.3" font-size="5.8" stroke-width="1">7</text>
+<text x="436" y="706.3" font-size="5.8" stroke-width="1">Surgical Step Down Unit (SSDU)</text>
+<text x="535.7" y="706.3" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="585.6" y="706.3" font-size="5.8" stroke-width="1">4</text>
+<text x="33.5" y="718.5" font-size="5.8" stroke-width="1">Dialysis</text>
+<text x="133.2" y="718.5" font-size="5.8" stroke-width="1">Marian</text>
+<text x="183.1" y="718.5" font-size="5.8" stroke-width="1">1</text>
+<text x="234.8" y="718.5" font-size="5.8" stroke-width="1">Nephrology Outpatient Unit</text>
+<text x="334.5" y="718.5" font-size="5.8" stroke-width="1">Marian</text>
+<text x="384.3" y="718.5" font-size="5.8" stroke-width="1">4</text>
+<text x="436" y="718.5" font-size="5.8" stroke-width="1">Ultrasound - Obstetrics / Gynecology</text>
+<text x="535.7" y="718.5" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="585.6" y="718.5" font-size="5.8" stroke-width="1">4</text>
+<text x="33.5" y="730.7" font-size="5.8" stroke-width="1">Ear, Nose and Throat Clinic (ENT)</text>
+<text x="133.2" y="730.7" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="183.1" y="730.7" font-size="5.8" stroke-width="1">8</text>
+<text x="234.8" y="730.7" font-size="5.8" stroke-width="1">Obstetrics &amp; Gynecology Clinics</text>
+<text x="334.5" y="730.7" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="379.1" y="730.7" font-size="5.8" stroke-width="1">2 &amp; 4</text>
+<text x="436" y="730.7" font-size="5.8" stroke-width="1">Urology Inpatient Unit</text>
+<text x="535.7" y="730.7" font-size="5.8" stroke-width="1">Mary Grace</text>
+<text x="585.6" y="730.7" font-size="5.8" stroke-width="1">7</text>
+<text x="33.5" y="743" font-size="5.8" stroke-width="1">EMERGENCY</text>
+<text x="133.2" y="743" font-size="5.8" stroke-width="1">Luke</text>
+<text x="183.1" y="743" font-size="5.8" stroke-width="1">1</text>
+<text x="234.8" y="743" font-size="5.8" stroke-width="1">Obstetrics / Newborn Family Centre</text>
+<text x="334.5" y="743" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="384.3" y="743" font-size="5.8" stroke-width="1">2</text>
+<text x="436" y="743" font-size="5.8" stroke-width="1">Volunteer Resources &amp; Retail</text>
+<text x="535.7" y="743" font-size="5.8" stroke-width="1">Juravinski</text>
+<text x="585.6" y="743" font-size="5.8" stroke-width="1">1</text>
+<text x="33.5" y="755.2" font-size="5.8" stroke-width="1">Endoscopy</text>
+<text x="133.2" y="755.2" font-size="5.8" stroke-width="1">Luke</text>
+<text x="183.1" y="755.2" font-size="5.8" stroke-width="1">1</text>
+<text x="234.8" y="755.2" font-size="5.8" stroke-width="1">Occupational Therapy (OT)</text>
+<text x="334.5" y="755.2" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="384.3" y="755.2" font-size="5.8" stroke-width="1">0</text>
+<text x="33.5" y="767.5" font-size="5.8" stroke-width="1">Early Pregnancy Assessment Clinic</text>
+<text x="133.2" y="767.5" font-size="5.8" stroke-width="1">Dowling</text>
+<text x="183.1" y="767.5" font-size="5.8" stroke-width="1">2</text>
+<text x="234.8" y="767.5" font-size="5.8" stroke-width="1">Outpatient Department (OPD)</text>
+<text x="334.5" y="767.5" font-size="5.8" stroke-width="1">Fontbonne</text>
+<text x="384.3" y="767.5" font-size="5.8" stroke-width="1">1</text>
+</g>
+</svg>

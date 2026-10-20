@@ -24,7 +24,17 @@
     "nhs:ingest": "npm run nhs:build && npm run nhs:approve && npm run nhs:plans && npm run nhs:draft && node scripts/maps/generate-all.mjs && node scripts/maps/build-venues.mjs && npm run nhs:registry && npm run nhs:previews && npm run nhs:build && npm run nhs:venues",
     "nhs:doctor": "node scripts/nhs/doctor.mjs",
     "nhs:discover:quick": "node scripts/nhs/discover-plans.mjs --limit 20",
-    "nhs:why": "node scripts/nhs/why-site.mjs"
+    "nhs:why": "node scripts/nhs/why-site.mjs",
+    "world:discover": "node scripts/world/discover-plans.mjs",
+    "world:approve": "node scripts/world/approve-plans.mjs",
+    "world:plans": "node scripts/world/fetch-plans.mjs",
+    "world:build": "node scripts/world/build-sites.mjs",
+    "world:venues": "node scripts/world/generate-venues.mjs",
+    "world:draft": "node scripts/world/draft-sheets.mjs",
+    "world:floorplans": "node scripts/world/generate-floorplans.mjs",
+    "world:build-venues": "node scripts/world/build-venues.mjs",
+    "world:registry": "node scripts/world/generate-registry.mjs",
+    "world:ingest": "npm run world:draft && npm run world:floorplans && npm run world:build-venues && npm run world:registry && npm run world:build && npm run world:venues"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.101.0",
