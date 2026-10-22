@@ -15,6 +15,7 @@
 // are younger than N days.
 import { mkdirSync, readdirSync, readFileSync, writeFileSync, existsSync } from "fs"
 import { overpass, pointOf } from "./lib/overpass.mjs"
+import pg from "pg"
 
 const arg = (name, def) => {
   const i = process.argv.indexOf(name)
@@ -106,8 +107,33 @@ out tags center qt;`)
 
 candidates.sort((a, b) => b.named - a.named || b.rooms - a.rooms)
 if (!previous) writeFileSync("data/world/indoor-candidates.json", JSON.stringify({ generatedAt: new Date().toISOString(), countries, minRooms: MIN_ROOMS, candidates }, null, 1) + "\n")
-const worth = candidates.filter((c) => c.rooms >= MIN_ROOMS && c.named >= Math.ceil(MIN_ROOMS / 2))
+let worth = candidates.filter((c) => c.rooms >= MIN_ROOMS && c.named >= Math.ceil(MIN_ROOMS / 2))
 console.log(`\n${candidates.length} hospitals have some indoor mapping; ${worth.length} have enough to build (>= ${MIN_ROOMS} rooms)`)
+
+// A country can have more "worth" hospitals than MAX_DETAIL covers in one
+// run (dense OSM indoor coverage, e.g. parts of Europe). data/world/indoor-raw
+// is not cached between separate workflow runs the way campus-raw is, so
+// there is nothing on disk a second run could use to know what a first run
+// already finished — the published database is the only thing that persists
+// across runs, so that is what a second run checks to pick up the next batch
+// instead of refetching the same top MAX_DETAIL forever.
+const dbUrl = (process.env.DATABASE_URL || process.env.DATABASE_PUBLIC_URL || "").trim().replace(/^['"]+|['"]+$/g, "")
+if (dbUrl) {
+  const host = (() => { try { return new URL(dbUrl).hostname } catch { return "" } })()
+  const local = host === "localhost" || host === "127.0.0.1" || host === "::1" || host.endsWith(".railway.internal") || /sslmode=disable/.test(dbUrl)
+  const client = new pg.Client({ connectionString: dbUrl, ssl: local ? undefined : { rejectUnauthorized: false } })
+  await client.connect()
+  const res = await client.query(
+    "select id, country from public.world_venues where kind = 'indoor' and country = any($1)",
+    [countries]
+  )
+  await client.end()
+  // venue id osm-<cc>-<w123|r123> <-> hospital id osm-<w123|r123>
+  const done = new Set(res.rows.map((r) => `${r.country}:osm-${r.id.slice(r.id.indexOf("-", 4) + 1)}`))
+  const before = worth.length
+  worth = worth.filter((c) => !done.has(`${c.country}:${c.id}`))
+  if (before !== worth.length) console.log(`${before - worth.length} already published in an earlier run — continuing with the next ${worth.length}`)
+}
 
 // Full geometry for the ones worth building.
 let fetched = 0
