@@ -20,13 +20,13 @@
 import { dataPath, readJson, writeJson, log } from "../nhs/lib/paths.mjs"
 import { onTrustDomain } from "../nhs/lib/discovery-match.mjs"
 import { mappedVenueNames, mappedVenueFor } from "../nhs/lib/mapped.mjs"
+import { countriesFromArgs } from "./lib/osm.mjs"
 
 const STAGE = "world-approve"
 const DRY_RUN = process.argv.includes("--dry-run")
 const limitArg = process.argv.indexOf("--limit")
 const LIMIT = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity
-const countryArg = process.argv.indexOf("--country")
-const COUNTRIES = countryArg > -1 ? [process.argv[countryArg + 1].toUpperCase()] : ["US", "CA", "AU", "IE"]
+const COUNTRIES = countriesFromArgs()
 
 const APPROVED_KINDS = new Set(["floor-plan", "site-map"])
 const USABLE_FORMATS = new Set(["pdf"])

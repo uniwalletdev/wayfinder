@@ -1,0 +1,17 @@
+{
+  "countryCode": "CV",
+  "fetchedAt": "2026-10-21T01:08:39.055Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/194252475",
+      "name": "Hospital Agostinho Neto",
+      "countryCode": "CV",
+      "origin": "https://www.han.gov.cv",
+      "lat": 14.9203197,
+      "lng": -23.5055219
+    }
+  ]
+}

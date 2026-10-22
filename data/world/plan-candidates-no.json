@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-10-22T08:41:46.251Z",
+  "countryCode": "NO",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 0,
+    "botChallenged": 0,
+    "robotsBlocked": 0,
+    "withCandidates": 1,
+    "crawled": 27
+  },
+  "count": 1,
+  "crawled": {
+    "osm:node/10556673294": "ok",
+    "osm:node/1236472340": "ok",
+    "osm:node/13159302471": "ok",
+    "osm:node/191744245": "ok",
+    "osm:node/2126289890": "ok",
+    "osm:node/2591277915": "ok",
+    "osm:node/3628512406": "ok",
+    "osm:node/5003683211": "ok",
+    "osm:node/5306426765": "ok",
+    "osm:node/5898801726": "ok",
+    "osm:node/9532261536": "ok",
+    "osm:way/1046174045": "ok",
+    "osm:way/1239480922": "ok",
+    "osm:way/1424797583": "ok",
+    "osm:way/190025212": "ok",
+    "osm:way/227968694": "ok",
+    "osm:way/285982048": "ok",
+    "osm:way/288109824": "ok",
+    "osm:way/36073467": "ok",
+    "osm:way/51446838": "ok",
+    "osm:way/625751300": "ok",
+    "osm:way/649207577": "ok",
+    "osm:way/649210218": "ok",
+    "osm:way/769649008": "ok",
+    "osm:way/793790365": "ok",
+    "osm:way/879982478": "ok",
+    "osm:way/890590320": "ok"
+  },
+  "candidates": [
+    {
+      "hospitalCode": "osm:way/190025212",
+      "hospitalName": "Longyearbyen sykehus",
+      "countryCode": "NO",
+      "website": "https://unn.no",
+      "url": "https://unn.fnsp.test.nhn.no/4aaa63/contentassets/307b2650fe2e4e8cb246023c336d87b9/omradekart-parkering-unn-harstad-og-helsehuset.jpg",
+      "linkText": "Map of parking spaces",
+      "kind": "site-map",
+      "confidence": "medium",
+      "format": "image"
+    }
+  ]
+}

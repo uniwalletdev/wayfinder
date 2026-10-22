@@ -1,0 +1,113 @@
+{
+  "countryCode": "MA",
+  "fetchedAt": "2026-10-21T02:01:21.363Z",
+  "count": 13,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/7571651896",
+      "name": "Cabinet Dr Siham BENALI OUMJOUD",
+      "countryCode": "MA",
+      "origin": "https://cabinet-docteur-siham-benali-oumjoud.business.site",
+      "lat": 34.0076276,
+      "lng": -6.5294678
+    },
+    {
+      "code": "osm:node/9792586717",
+      "name": "طبيب النساء و التوليد",
+      "countryCode": "MA",
+      "origin": "https://gynecomeknes.ma",
+      "lat": 33.8589416,
+      "lng": -5.5717484
+    },
+    {
+      "code": "osm:node/12558700501",
+      "name": "Clinique de L'Universite",
+      "countryCode": "MA",
+      "origin": "https://cliniquedeluniversite.ma",
+      "lat": 30.3990175,
+      "lng": -9.5237685
+    },
+    {
+      "code": "osm:node/13006074098",
+      "name": "Groupe Akdital",
+      "countryCode": "MA",
+      "origin": "https://akdital.ma",
+      "lat": 33.5606808,
+      "lng": -7.6293283
+    },
+    {
+      "code": "osm:node/13060807979",
+      "name": "La Symphony Dental Centre",
+      "countryCode": "MA",
+      "origin": "https://lasymphonydental.com",
+      "lat": 35.7493705,
+      "lng": -5.7989835
+    },
+    {
+      "code": "osm:node/13827510345",
+      "name": "Clinique Riad Marshan",
+      "countryCode": "MA",
+      "origin": "https://cliniqueriadmarshan.ma",
+      "lat": 35.7869368,
+      "lng": -5.8201577
+    },
+    {
+      "code": "osm:way/150779200",
+      "name": "Centre Hospitalier Universitaire Ibn Rochd المركز الإستشفائي الجامعي إبن رشد",
+      "countryCode": "MA",
+      "origin": "https://chuibnrochd.ma",
+      "lat": 33.5789091,
+      "lng": -7.6215532
+    },
+    {
+      "code": "osm:way/289025339",
+      "name": "Hôpital Cheikh Zaid مستشفي الشيخ زايد بالرباط",
+      "countryCode": "MA",
+      "origin": "https://www.hcz.ma",
+      "lat": 33.9774766,
+      "lng": -6.8696998
+    },
+    {
+      "code": "osm:way/307556884",
+      "name": "Hopital de Trone",
+      "countryCode": "MA",
+      "origin": "https://www.sante.gov.ma",
+      "lat": 34.4800253,
+      "lng": -1.7630063
+    },
+    {
+      "code": "osm:way/584436482",
+      "name": "Clinique Internationale de Marrakech",
+      "countryCode": "MA",
+      "origin": "https://www.clinique-internationale-marrakech.com",
+      "lat": 31.6127853,
+      "lng": -7.9967519
+    },
+    {
+      "code": "osm:way/789230597",
+      "name": "ATLANTIC CLINIC CASABLANCA",
+      "countryCode": "MA",
+      "origin": "https://www.atlanticclinic.ma",
+      "lat": 33.5912926,
+      "lng": -7.5903533
+    },
+    {
+      "code": "osm:way/871505068",
+      "name": "CHU de Tanger-Tétouan-Al Hoceima",
+      "countryCode": "MA",
+      "origin": "https://chutanger.ma",
+      "lat": 35.6837521,
+      "lng": -5.9258114
+    },
+    {
+      "code": "osm:way/1549723799",
+      "name": "CHU Agadir (sous massa)",
+      "countryCode": "MA",
+      "origin": "https://www.chusm.ma",
+      "lat": 30.409372,
+      "lng": -9.5359802
+    }
+  ]
+}

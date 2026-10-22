@@ -1,0 +1,97 @@
+{
+  "countryCode": "IL",
+  "fetchedAt": "2026-10-21T01:38:31.025Z",
+  "count": 11,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1712531739",
+      "name": "מרכז רפואי ירושלים",
+      "countryCode": "IL",
+      "origin": "https://sites.google.com",
+      "lat": 31.776193,
+      "lng": 35.2098687
+    },
+    {
+      "code": "osm:node/12946222126",
+      "name": "מרפאות טופ איכיפוב",
+      "countryCode": "IL",
+      "origin": "https://www.topichilov.com",
+      "lat": 32.0814443,
+      "lng": 34.7897265
+    },
+    {
+      "code": "osm:way/42449535",
+      "name": "בית חולים תל השומר",
+      "countryCode": "IL",
+      "origin": "http://www.sheba.co.il",
+      "lat": 32.0470959,
+      "lng": 34.8454675
+    },
+    {
+      "code": "osm:way/48949522",
+      "name": "מרכז רפואי יצחק שמיר – קמפוס אסף הרופא",
+      "countryCode": "IL",
+      "origin": "http://www.assafh.org",
+      "lat": 31.9662146,
+      "lng": 34.8398117
+    },
+    {
+      "code": "osm:way/73816932",
+      "name": "המרכז הרפואי לגליל",
+      "countryCode": "IL",
+      "origin": "https://www.gmc.org.il",
+      "lat": 33.0100679,
+      "lng": 35.1170769
+    },
+    {
+      "code": "osm:way/91707465",
+      "name": "המרכז הרפואי לשיקום לוינשטיין",
+      "countryCode": "IL",
+      "origin": "https://hospitals.clalit.co.il",
+      "lat": 32.1868651,
+      "lng": 34.8560535
+    },
+    {
+      "code": "osm:way/158437697",
+      "name": "Saint Louis French Hospital",
+      "countryCode": "IL",
+      "origin": "https://hfsl.org",
+      "lat": 31.7794877,
+      "lng": 35.2255569
+    },
+    {
+      "code": "osm:way/284576720",
+      "name": "הדסה עין כרם",
+      "countryCode": "IL",
+      "origin": "https://www.hadassah.org.il",
+      "lat": 31.764985,
+      "lng": 35.1499499
+    },
+    {
+      "code": "osm:way/315570268",
+      "name": "מרכז לבריאות הנפש טירת כרמל",
+      "countryCode": "IL",
+      "origin": "https://www.tiratcarmel-med.org.il",
+      "lat": 32.7519955,
+      "lng": 34.9751395
+    },
+    {
+      "code": "osm:way/610344804",
+      "name": "المقاصد",
+      "countryCode": "IL",
+      "origin": "https://almakassed.org",
+      "lat": 31.7805435,
+      "lng": 35.2457749
+    },
+    {
+      "code": "osm:way/680567545",
+      "name": "היחידה לגריאטריה שיקומית",
+      "countryCode": "IL",
+      "origin": "https://hospitals.clalit.co.il",
+      "lat": 32.1743083,
+      "lng": 34.8972778
+    }
+  ]
+}

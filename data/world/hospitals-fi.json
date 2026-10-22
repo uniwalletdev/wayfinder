@@ -1,0 +1,1017 @@
+{
+  "countryCode": "FI",
+  "fetchedAt": "2026-10-21T01:21:33.993Z",
+  "count": 126,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/415334051",
+      "name": "Pieksämäen sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.pieksamaki.fi",
+      "lat": 62.3028253,
+      "lng": 27.1496364
+    },
+    {
+      "code": "osm:node/936807878",
+      "name": "Kalajärven terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://www.espoo.fi",
+      "lat": 60.3058866,
+      "lng": 24.7390295
+    },
+    {
+      "code": "osm:node/941381821",
+      "name": "Lapinjärven terveystalo",
+      "countryCode": "FI",
+      "origin": "https://www.lapinjarvi.fi",
+      "lat": 60.6238156,
+      "lng": 26.1978689
+    },
+    {
+      "code": "osm:node/954550289",
+      "name": "Pihlajalinna Dextra",
+      "countryCode": "FI",
+      "origin": "https://www.pihlajalinna.fi",
+      "lat": 60.2055365,
+      "lng": 24.8793842
+    },
+    {
+      "code": "osm:node/1641640650",
+      "name": "Hervannan sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.4504577,
+      "lng": 23.8487371
+    },
+    {
+      "code": "osm:node/2061405028",
+      "name": "Parolannummen terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.puolustusvoimat.fi",
+      "lat": 61.0361518,
+      "lng": 24.3646418
+    },
+    {
+      "code": "osm:node/2122172756",
+      "name": "Korppoon terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pargas.fi",
+      "lat": 60.1608458,
+      "lng": 21.5638502
+    },
+    {
+      "code": "osm:node/2482743481",
+      "name": "Kämmenniemen terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.6291883,
+      "lng": 23.839345
+    },
+    {
+      "code": "osm:node/5486476500",
+      "name": "Kalvolan terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.hameenlinna.fi",
+      "lat": 61.0903932,
+      "lng": 24.1347806
+    },
+    {
+      "code": "osm:node/7170295743",
+      "name": "Salpausselän kuntoutussairaala Jalmari",
+      "countryCode": "FI",
+      "origin": "https://www.phhyky.fi",
+      "lat": 60.9916285,
+      "lng": 25.5902564
+    },
+    {
+      "code": "osm:node/7985585624",
+      "name": "Veikkolan terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.kirkkonummi.fi",
+      "lat": 60.2695325,
+      "lng": 24.4432439
+    },
+    {
+      "code": "osm:node/8378024819",
+      "name": "Kortesjärven sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.hyvaep.fi",
+      "lat": 63.2993283,
+      "lng": 23.1608554
+    },
+    {
+      "code": "osm:node/8657798405",
+      "name": "Pargas rådgivning",
+      "countryCode": "FI",
+      "origin": "https://www.varha.fi",
+      "lat": 60.31031,
+      "lng": 22.2932131
+    },
+    {
+      "code": "osm:node/8983061803",
+      "name": "Houtskär hälsostation",
+      "countryCode": "FI",
+      "origin": "https://www.pargas.fi",
+      "lat": 60.2195654,
+      "lng": 21.3737351
+    },
+    {
+      "code": "osm:node/9422645785",
+      "name": "Rymättylän terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.naantali.fi",
+      "lat": 60.377695,
+      "lng": 21.9556189
+    },
+    {
+      "code": "osm:node/10087096334",
+      "name": "Sydänkeskus Helsinki",
+      "countryCode": "FI",
+      "origin": "https://www.sydankeskus.com",
+      "lat": 60.1594058,
+      "lng": 24.9096931
+    },
+    {
+      "code": "osm:node/13034415669",
+      "name": "Satasairaala",
+      "countryCode": "FI",
+      "origin": "http://sata.fi",
+      "lat": 61.4738029,
+      "lng": 21.779568
+    },
+    {
+      "code": "osm:node/13260871598",
+      "name": "Ihosairaala Kamppi",
+      "countryCode": "FI",
+      "origin": "https://ihosairaala.fi",
+      "lat": 60.1707064,
+      "lng": 24.9350429
+    },
+    {
+      "code": "osm:node/13383854323",
+      "name": "Ihosairaala Eteläranta",
+      "countryCode": "FI",
+      "origin": "https://ihosairaala.fi",
+      "lat": 60.1659971,
+      "lng": 24.9514764
+    },
+    {
+      "code": "osm:node/13629412921",
+      "name": "Tyks Orto Kirurginen sairaala",
+      "countryCode": "FI",
+      "origin": "https://tyksorto.fi",
+      "lat": 60.440528,
+      "lng": 22.2740047
+    },
+    {
+      "code": "osm:node/13696713639",
+      "name": "Kotisairaala, palliatiivinen poliklinikka",
+      "countryCode": "FI",
+      "origin": "https://pohjanmaanhyvinvointi.fi",
+      "lat": 63.0859653,
+      "lng": 21.6149812
+    },
+    {
+      "code": "osm:way/11983690",
+      "name": "Kyllön terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.jyvaskyla.fi",
+      "lat": 62.233232,
+      "lng": 25.7075688
+    },
+    {
+      "code": "osm:way/27746622",
+      "name": "Hyvinkään sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hus.fi",
+      "lat": 60.610077,
+      "lng": 24.8293835
+    },
+    {
+      "code": "osm:way/33323000",
+      "name": "Auroran sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hel.fi",
+      "lat": 60.1934705,
+      "lng": 24.9257817
+    },
+    {
+      "code": "osm:way/37280744",
+      "name": "Kirurginen sairaala",
+      "countryCode": "FI",
+      "origin": "https://hus.fi",
+      "lat": 60.161501,
+      "lng": 24.9493439
+    },
+    {
+      "code": "osm:way/41975313",
+      "name": "Suursuon sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hel.fi",
+      "lat": 60.2348386,
+      "lng": 24.9323938
+    },
+    {
+      "code": "osm:way/43767362",
+      "name": "Haminan terveysasema",
+      "countryCode": "FI",
+      "origin": "https://kymenhva.fi",
+      "lat": 60.5770801,
+      "lng": 27.1770159
+    },
+    {
+      "code": "osm:way/46599245",
+      "name": "Mikkelin keskussairaala",
+      "countryCode": "FI",
+      "origin": "https://etelasavonha.fi",
+      "lat": 61.6917519,
+      "lng": 27.2782397
+    },
+    {
+      "code": "osm:way/46961983",
+      "name": "Nivalan sosiaali- ja terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 63.9259301,
+      "lng": 24.9421643
+    },
+    {
+      "code": "osm:way/49083505",
+      "name": "Pohjois-Karjalan keskussairaala",
+      "countryCode": "FI",
+      "origin": "https://www.siunsote.fi",
+      "lat": 62.5917121,
+      "lng": 29.7785962
+    },
+    {
+      "code": "osm:way/50123447",
+      "name": "Oulun yliopistollinen sairaala",
+      "countryCode": "FI",
+      "origin": "https://oys.fi",
+      "lat": 65.007604,
+      "lng": 25.5187495
+    },
+    {
+      "code": "osm:way/68336779",
+      "name": "Tays Hatanpään kantasairaala",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.4844747,
+      "lng": 23.755202
+    },
+    {
+      "code": "osm:way/104228431",
+      "name": "OYS Psykiatria",
+      "countryCode": "FI",
+      "origin": "https://oys.fi",
+      "lat": 65.0157644,
+      "lng": 25.5157424
+    },
+    {
+      "code": "osm:way/118596910",
+      "name": "Vankisairaala",
+      "countryCode": "FI",
+      "origin": "https://www.vth.fi",
+      "lat": 61.0213393,
+      "lng": 24.3989331
+    },
+    {
+      "code": "osm:way/125089515",
+      "name": "Etelä-Tuusulan sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.keusote.fi",
+      "lat": 60.4016162,
+      "lng": 25.0249862
+    },
+    {
+      "code": "osm:way/128405772",
+      "name": "Rauman sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.rauma.fi",
+      "lat": 61.1306034,
+      "lng": 21.5236539
+    },
+    {
+      "code": "osm:way/159223947",
+      "name": "Akaan sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.1728358,
+      "lng": 23.8622647
+    },
+    {
+      "code": "osm:way/160061399",
+      "name": "Kangasalan sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.4583344,
+      "lng": 24.0840253
+    },
+    {
+      "code": "osm:way/163744134",
+      "name": "Pirkkalan sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.4612501,
+      "lng": 23.6374269
+    },
+    {
+      "code": "osm:way/167835668",
+      "name": "Kiimingin sosiaali- ja terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 65.1289601,
+      "lng": 25.7751759
+    },
+    {
+      "code": "osm:way/207078173",
+      "name": "Ikaalisten lähiasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.7696718,
+      "lng": 23.073665
+    },
+    {
+      "code": "osm:way/222765638",
+      "name": "Virtain sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 62.2407659,
+      "lng": 23.7594917
+    },
+    {
+      "code": "osm:way/245472846",
+      "name": "Lohjan sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hus.fi",
+      "lat": 60.2235209,
+      "lng": 24.0175232
+    },
+    {
+      "code": "osm:way/260459646",
+      "name": "Kiihtelysvaaran terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.siunsote.fi",
+      "lat": 62.4949474,
+      "lng": 30.2507799
+    },
+    {
+      "code": "osm:way/262240163",
+      "name": "Ylöjärven sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.5467747,
+      "lng": 23.5998139
+    },
+    {
+      "code": "osm:way/315041192",
+      "name": "Pyhäselän terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.siunsote.fi",
+      "lat": 62.4391626,
+      "lng": 29.9726528
+    },
+    {
+      "code": "osm:way/360782167",
+      "name": "Ålands centralsjukhus",
+      "countryCode": "FI",
+      "origin": "https://www.ahs.ax",
+      "lat": 60.1157146,
+      "lng": 19.9323481
+    },
+    {
+      "code": "osm:way/398676288",
+      "name": "Kainuun keskussairaala",
+      "countryCode": "FI",
+      "origin": "https://sote.kainuu.fi",
+      "lat": 64.2141288,
+      "lng": 27.7279523
+    },
+    {
+      "code": "osm:way/401419557",
+      "name": "Valkeakosken sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.2704824,
+      "lng": 24.0320761
+    },
+    {
+      "code": "osm:way/405746227",
+      "name": "Ylitornion terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://www.ylitornio.fi",
+      "lat": 66.319653,
+      "lng": 23.6758248
+    },
+    {
+      "code": "osm:way/413112118",
+      "name": "Kymenlaakson keskussairaala",
+      "countryCode": "FI",
+      "origin": "https://kymenhva.fi",
+      "lat": 60.4777498,
+      "lng": 26.9120743
+    },
+    {
+      "code": "osm:way/421653826",
+      "name": "Muonion terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://www.muonio.fi",
+      "lat": 67.9626602,
+      "lng": 23.6830847
+    },
+    {
+      "code": "osm:way/421856460",
+      "name": "Kittilän terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://www.kittila.fi",
+      "lat": 67.6480648,
+      "lng": 24.9259052
+    },
+    {
+      "code": "osm:way/424422384",
+      "name": "Sastamalan sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.3375198,
+      "lng": 22.9214166
+    },
+    {
+      "code": "osm:way/426248176",
+      "name": "Keski-Pohjanmaan keskussairaala",
+      "countryCode": "FI",
+      "origin": "https://www.soite.fi",
+      "lat": 63.8452809,
+      "lng": 23.1080571
+    },
+    {
+      "code": "osm:way/442872034",
+      "name": "Meilahden sairaala-alue",
+      "countryCode": "FI",
+      "origin": "https://www.hus.fi",
+      "lat": 60.1882784,
+      "lng": 24.9064949
+    },
+    {
+      "code": "osm:way/442872035",
+      "name": "Iho- ja allergiasairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hus.fi",
+      "lat": 60.1915725,
+      "lng": 24.8951019
+    },
+    {
+      "code": "osm:way/442872036",
+      "name": "Laakson sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hel.fi",
+      "lat": 60.1924648,
+      "lng": 24.9177596
+    },
+    {
+      "code": "osm:way/446860881",
+      "name": "Karkkilan terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.luvn.fi",
+      "lat": 60.5395372,
+      "lng": 24.2256142
+    },
+    {
+      "code": "osm:way/448649321",
+      "name": "Pihlajalinna Pikku Huopalahti",
+      "countryCode": "FI",
+      "origin": "https://www.pihlajalinna.fi",
+      "lat": 60.2079086,
+      "lng": 24.8935919
+    },
+    {
+      "code": "osm:way/449900889",
+      "name": "Savonlinnan sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.isshp.fi",
+      "lat": 61.8714302,
+      "lng": 28.852407
+    },
+    {
+      "code": "osm:way/449900893",
+      "name": "Savonlinnan sosiaali- ja terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://etelasavonha.fi",
+      "lat": 61.8716109,
+      "lng": 28.8506259
+    },
+    {
+      "code": "osm:way/457721959",
+      "name": "Kauhajoen terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://www.hyvaep.fi",
+      "lat": 62.4247222,
+      "lng": 22.1714554
+    },
+    {
+      "code": "osm:way/492508780",
+      "name": "Pyhäjärven sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 63.6833571,
+      "lng": 25.968692
+    },
+    {
+      "code": "osm:way/495219243",
+      "name": "Leppävirran terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.psshp.fi",
+      "lat": 62.4870712,
+      "lng": 27.7987928
+    },
+    {
+      "code": "osm:way/499397116",
+      "name": "Jorvin sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hus.fi",
+      "lat": 60.2216556,
+      "lng": 24.6882778
+    },
+    {
+      "code": "osm:way/501469487",
+      "name": "Rantsilan terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 64.510821,
+      "lng": 25.6505437
+    },
+    {
+      "code": "osm:way/537097310",
+      "name": "Pulkkilan terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 64.2770079,
+      "lng": 25.8697609
+    },
+    {
+      "code": "osm:way/539497399",
+      "name": "Herttoniemen sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hus.fi",
+      "lat": 60.2077628,
+      "lng": 25.0363383
+    },
+    {
+      "code": "osm:way/541336509",
+      "name": "Kaskenlinnan sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.turku.fi",
+      "lat": 60.438452,
+      "lng": 22.2797012
+    },
+    {
+      "code": "osm:way/544127743",
+      "name": "Iin sosiaali- ja terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 65.3200072,
+      "lng": 25.4043573
+    },
+    {
+      "code": "osm:way/544291551",
+      "name": "Viitasaaren terveysasema",
+      "countryCode": "FI",
+      "origin": "https://hyvaks.fi",
+      "lat": 63.0706617,
+      "lng": 25.8514009
+    },
+    {
+      "code": "osm:way/545257672",
+      "name": "Muhoksen sosiaali- ja terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 64.8120001,
+      "lng": 26.0325662
+    },
+    {
+      "code": "osm:way/546598068",
+      "name": "Eiran sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.eiransairaala.fi",
+      "lat": 60.1577442,
+      "lng": 24.9420427
+    },
+    {
+      "code": "osm:way/547711510",
+      "name": "Aalto-hyvinvointikeskus",
+      "countryCode": "FI",
+      "origin": "https://pshyvinvointialue.fi",
+      "lat": 62.3296905,
+      "lng": 27.8903754
+    },
+    {
+      "code": "osm:way/553631462",
+      "name": "Kuhmon terveysasema",
+      "countryCode": "FI",
+      "origin": "https://sote.kainuu.fi",
+      "lat": 64.1280851,
+      "lng": 29.5111468
+    },
+    {
+      "code": "osm:way/566349621",
+      "name": "Hyrynsalmen terveysasema",
+      "countryCode": "FI",
+      "origin": "https://hyvinvointialue.kainuu.fi",
+      "lat": 64.6808451,
+      "lng": 28.4923041
+    },
+    {
+      "code": "osm:way/578591083",
+      "name": "Siilaisen terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.siunsote.fi",
+      "lat": 62.6160385,
+      "lng": 29.7259305
+    },
+    {
+      "code": "osm:way/589771973",
+      "name": "Oriveden sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.6632743,
+      "lng": 24.3649729
+    },
+    {
+      "code": "osm:way/592055581",
+      "name": "Espoon sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.luvn.fi",
+      "lat": 60.2222,
+      "lng": 24.6852345
+    },
+    {
+      "code": "osm:way/592461677",
+      "name": "Kuopion yliopistollinen sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.psshp.fi",
+      "lat": 62.8977459,
+      "lng": 27.6478695
+    },
+    {
+      "code": "osm:way/627576608",
+      "name": "Mäntän terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 62.0350523,
+      "lng": 24.6120463
+    },
+    {
+      "code": "osm:way/629448400",
+      "name": "Tammelan terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.fshky.fi",
+      "lat": 60.8081993,
+      "lng": 23.7711246
+    },
+    {
+      "code": "osm:way/630755576",
+      "name": "Kyrön terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.poytyanterveyskeskus.fi",
+      "lat": 60.701574,
+      "lng": 22.7520996
+    },
+    {
+      "code": "osm:way/631106187",
+      "name": "Jokilaakson sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.jamsanterveys.fi",
+      "lat": 61.8757432,
+      "lng": 25.1884849
+    },
+    {
+      "code": "osm:way/635698631",
+      "name": "Kihniön lähiasiointipiste",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 62.2146397,
+      "lng": 23.1824211
+    },
+    {
+      "code": "osm:way/640611323",
+      "name": "Tays Keskussairaala",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.5061447,
+      "lng": 23.8155078
+    },
+    {
+      "code": "osm:way/657827034",
+      "name": "Ohkolan sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.hus.fi",
+      "lat": 60.5418662,
+      "lng": 25.1105213
+    },
+    {
+      "code": "osm:way/660889953",
+      "name": "Nokian sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.4787959,
+      "lng": 23.5030978
+    },
+    {
+      "code": "osm:way/695711669",
+      "name": "Harjavallan sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.satasairaala.fi",
+      "lat": 61.3011875,
+      "lng": 22.1488834
+    },
+    {
+      "code": "osm:way/708319387",
+      "name": "Vaasan keskussairaala",
+      "countryCode": "FI",
+      "origin": "https://www.vaasankeskussairaala.fi",
+      "lat": 63.0851846,
+      "lng": 21.6157203
+    },
+    {
+      "code": "osm:way/719663713",
+      "name": "Halikon sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.tyks.fi",
+      "lat": 60.4386148,
+      "lng": 23.0394862
+    },
+    {
+      "code": "osm:way/729126655",
+      "name": "Niuvanniemen sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.niuva.fi",
+      "lat": 62.9141383,
+      "lng": 27.6254554
+    },
+    {
+      "code": "osm:way/796514376",
+      "name": "Hartolan sosiaali- ja terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://paijat-sote.fi",
+      "lat": 61.5816399,
+      "lng": 26.0246021
+    },
+    {
+      "code": "osm:way/823507158",
+      "name": "Sodankylän Hyvinvointikeskus Sopukka",
+      "countryCode": "FI",
+      "origin": "https://www.sodankyla.fi",
+      "lat": 67.4113512,
+      "lng": 26.5740801
+    },
+    {
+      "code": "osm:way/837385129",
+      "name": "Taivalkosken sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 65.5690613,
+      "lng": 28.2318571
+    },
+    {
+      "code": "osm:way/860064675",
+      "name": "Nummelan terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.luvn.fi",
+      "lat": 60.3451772,
+      "lng": 24.3233576
+    },
+    {
+      "code": "osm:way/913456603",
+      "name": "Viipurintien terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.hameenlinna.fi",
+      "lat": 60.9988648,
+      "lng": 24.4754988
+    },
+    {
+      "code": "osm:way/927013084",
+      "name": "Vesilahden lähiasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.3091154,
+      "lng": 23.6126752
+    },
+    {
+      "code": "osm:way/935745980",
+      "name": "Rautjärven hyvinvointiasema",
+      "countryCode": "FI",
+      "origin": "https://www.eksote.fi",
+      "lat": 61.4319644,
+      "lng": 29.3682319
+    },
+    {
+      "code": "osm:way/935850081",
+      "name": "Tyrnävän sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 64.7615086,
+      "lng": 25.6550917
+    },
+    {
+      "code": "osm:way/968813461",
+      "name": "Kiljavan sairaala",
+      "countryCode": "FI",
+      "origin": "http://www.kiljavansairaala.fi",
+      "lat": 60.5038963,
+      "lng": 24.6844162
+    },
+    {
+      "code": "osm:way/1019105781",
+      "name": "Keski-Suomen Sairaala Nova",
+      "countryCode": "FI",
+      "origin": "https://www.hyvaks.fi",
+      "lat": 62.2302813,
+      "lng": 25.7040324
+    },
+    {
+      "code": "osm:way/1071132180",
+      "name": "Järvi-Pohjanmaan sote-keskus, Alajärvi",
+      "countryCode": "FI",
+      "origin": "https://www.hyvaep.fi",
+      "lat": 62.9967453,
+      "lng": 23.827652
+    },
+    {
+      "code": "osm:way/1071826817",
+      "name": "Seinäjoen keskussairaala, Y-Talo",
+      "countryCode": "FI",
+      "origin": "https://hyvaep.fi",
+      "lat": 62.7714015,
+      "lng": 22.8188521
+    },
+    {
+      "code": "osm:way/1102434339",
+      "name": "Parkanon sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 62.0058523,
+      "lng": 23.0258336
+    },
+    {
+      "code": "osm:way/1104929409",
+      "name": "Tyks Loimaan sairaala",
+      "countryCode": "FI",
+      "origin": "https://www.tyks.fi",
+      "lat": 60.852261,
+      "lng": 23.050323
+    },
+    {
+      "code": "osm:way/1111544077",
+      "name": "Laitilan terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://www.varha.fi",
+      "lat": 60.8776666,
+      "lng": 21.6876659
+    },
+    {
+      "code": "osm:way/1113189629",
+      "name": "Nurmijärven Kirkonkylän terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.keusote.fi",
+      "lat": 60.4680649,
+      "lng": 24.8063955
+    },
+    {
+      "code": "osm:way/1120192611",
+      "name": "Päijät-Hämeen keskussairaala",
+      "countryCode": "FI",
+      "origin": "https://paijat-sote.fi",
+      "lat": 60.9925912,
+      "lng": 25.5684837
+    },
+    {
+      "code": "osm:way/1123036138",
+      "name": "Oulaskankaan sairaala",
+      "countryCode": "FI",
+      "origin": "https://oys.fi",
+      "lat": 64.2673487,
+      "lng": 24.8387307
+    },
+    {
+      "code": "osm:way/1125671798",
+      "name": "Hollolan sote-keskus",
+      "countryCode": "FI",
+      "origin": "https://paijat-sote.fi",
+      "lat": 60.9913052,
+      "lng": 25.508744
+    },
+    {
+      "code": "osm:way/1127520519",
+      "name": "Himangan sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 64.0609153,
+      "lng": 23.6523896
+    },
+    {
+      "code": "osm:way/1157637037",
+      "name": "Harjavallan terveysasema",
+      "countryCode": "FI",
+      "origin": "https://satakunnanhyvinvointialue.fi",
+      "lat": 61.3108721,
+      "lng": 22.1504646
+    },
+    {
+      "code": "osm:way/1201487891",
+      "name": "Alastaron terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.varha.fi",
+      "lat": 60.9501018,
+      "lng": 22.8621524
+    },
+    {
+      "code": "osm:way/1207263903",
+      "name": "Alavuden sosiaali- ja terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://www.hyvaep.fi",
+      "lat": 62.5864892,
+      "lng": 23.6269464
+    },
+    {
+      "code": "osm:way/1207271259",
+      "name": "Haapaveden sosiaali- ja terveysasema",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 64.1374902,
+      "lng": 25.3734196
+    },
+    {
+      "code": "osm:way/1207277334",
+      "name": "Hatanpään puistosairaala",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.4823042,
+      "lng": 23.7535368
+    },
+    {
+      "code": "osm:way/1207277989",
+      "name": "Haukiputaan sosiaali- ja terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 65.1714648,
+      "lng": 25.3594416
+    },
+    {
+      "code": "osm:way/1216346989",
+      "name": "Kimito hälsostation",
+      "countryCode": "FI",
+      "origin": "https://www.varha.fi",
+      "lat": 60.1667228,
+      "lng": 22.7169013
+    },
+    {
+      "code": "osm:way/1234444614",
+      "name": "Ruoveden terveyskeskus",
+      "countryCode": "FI",
+      "origin": "https://www.pirha.fi",
+      "lat": 61.9822855,
+      "lng": 24.0767407
+    },
+    {
+      "code": "osm:way/1290674760",
+      "name": "Parolan terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.hattula.fi",
+      "lat": 61.0559532,
+      "lng": 24.3694497
+    },
+    {
+      "code": "osm:way/1308157078",
+      "name": "Teuvan sote-keskus",
+      "countryCode": "FI",
+      "origin": "https://www.hyvaep.fi",
+      "lat": 62.4845076,
+      "lng": 21.7517493
+    },
+    {
+      "code": "osm:way/1309830525",
+      "name": "Riihikosken terveysasema",
+      "countryCode": "FI",
+      "origin": "https://www.varha.fi",
+      "lat": 60.7210148,
+      "lng": 22.60257
+    },
+    {
+      "code": "osm:way/1342652707",
+      "name": "Toivakan sosiaali- ja terveyspalvelupiste",
+      "countryCode": "FI",
+      "origin": "https://www.hyvaks.fi",
+      "lat": 62.0984116,
+      "lng": 26.088126
+    },
+    {
+      "code": "osm:way/1368054185",
+      "name": "Raahen sairaala (RAS)",
+      "countryCode": "FI",
+      "origin": "https://pohde.fi",
+      "lat": 64.6966848,
+      "lng": 24.4722596
+    }
+  ]
+}

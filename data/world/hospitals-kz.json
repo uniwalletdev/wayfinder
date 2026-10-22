@@ -1,0 +1,449 @@
+{
+  "countryCode": "KZ",
+  "fetchedAt": "2026-10-21T01:53:12.953Z",
+  "count": 55,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/688931484",
+      "name": "Клиника Кристина",
+      "countryCode": "KZ",
+      "origin": "http://www.krismed.kz",
+      "lat": 49.8236284,
+      "lng": 73.1059357
+    },
+    {
+      "code": "osm:node/787810618",
+      "name": "Стома",
+      "countryCode": "KZ",
+      "origin": "http://stoma-luxe.kz",
+      "lat": 49.7871216,
+      "lng": 73.1592146
+    },
+    {
+      "code": "osm:node/1650088993",
+      "name": "Medical Assistance Group",
+      "countryCode": "KZ",
+      "origin": "https://assistance.kz",
+      "lat": 43.264376,
+      "lng": 76.9595365
+    },
+    {
+      "code": "osm:node/2144965985",
+      "name": "Медицинский Центр \"Здоровый позвоночник\"",
+      "countryCode": "KZ",
+      "origin": "https://pozvonki.kz",
+      "lat": 53.1808447,
+      "lng": 63.6059638
+    },
+    {
+      "code": "osm:node/2388376790",
+      "name": "Городской кожно-венерологический диспансер",
+      "countryCode": "KZ",
+      "origin": "https://www.03portal.kz",
+      "lat": 43.232757,
+      "lng": 76.9092268
+    },
+    {
+      "code": "osm:node/2639642352",
+      "name": "Private Clinic",
+      "countryCode": "KZ",
+      "origin": "https://www.privateclinic.kz",
+      "lat": 43.1885493,
+      "lng": 76.8724616
+    },
+    {
+      "code": "osm:node/2655436324",
+      "name": "защитинская железнодорожная больница",
+      "countryCode": "KZ",
+      "origin": "http://mst-zashita.kz",
+      "lat": 50.0094947,
+      "lng": 82.5637978
+    },
+    {
+      "code": "osm:node/4301820993",
+      "name": "Областная клиническая больница",
+      "countryCode": "KZ",
+      "origin": "http://okb.karaganda.kz",
+      "lat": 49.8135826,
+      "lng": 73.0855687
+    },
+    {
+      "code": "osm:node/4370582389",
+      "name": "Клиника Жумагалиева",
+      "countryCode": "KZ",
+      "origin": "https://www.urocenter.kz",
+      "lat": 42.9022051,
+      "lng": 71.3617931
+    },
+    {
+      "code": "osm:node/4548904196",
+      "name": "Диагностический центр",
+      "countryCode": "KZ",
+      "origin": "https://kdczko.kz",
+      "lat": 51.2284673,
+      "lng": 51.4249361
+    },
+    {
+      "code": "osm:node/4601151592",
+      "name": "КДЛ Олимп",
+      "countryCode": "KZ",
+      "origin": "https://www.kdl.kz",
+      "lat": 51.1576369,
+      "lng": 71.4753905
+    },
+    {
+      "code": "osm:node/4938764788",
+      "name": "Городская поликлиника №14",
+      "countryCode": "KZ",
+      "origin": "https://med-emer.kz",
+      "lat": 51.1896944,
+      "lng": 71.4064899
+    },
+    {
+      "code": "osm:node/4946990076",
+      "name": "Шортанды аудандық орталық ауруханасы",
+      "countryCode": "KZ",
+      "origin": "http://crbshor.kz",
+      "lat": 51.687307,
+      "lng": 71.0060227
+    },
+    {
+      "code": "osm:node/5005425535",
+      "name": "Районная больница",
+      "countryCode": "KZ",
+      "origin": "http://astrahancrb.skom.kz",
+      "lat": 51.5270754,
+      "lng": 69.7950697
+    },
+    {
+      "code": "osm:node/5201564002",
+      "name": "SBS med",
+      "countryCode": "KZ",
+      "origin": "https://sbsmed.kz",
+      "lat": 43.2176729,
+      "lng": 76.8803927
+    },
+    {
+      "code": "osm:node/5201586060",
+      "name": "Клиника \"SBS med\"",
+      "countryCode": "KZ",
+      "origin": "https://www.sbsmed.kz",
+      "lat": 43.2338253,
+      "lng": 76.9377837
+    },
+    {
+      "code": "osm:node/6517379128",
+      "name": "IMC Mukanova",
+      "countryCode": "KZ",
+      "origin": "https://imcalmaty.kz",
+      "lat": 43.2474105,
+      "lng": 76.9150345
+    },
+    {
+      "code": "osm:node/8226287955",
+      "name": "Қазақстан Республикасы Денсаулық сақтау министрлігінің «Қазақ республикалық лепрозорийі» мемлекеттік мекемесі",
+      "countryCode": "KZ",
+      "origin": "https://leprozorii.kz",
+      "lat": 44.9044568,
+      "lng": 65.3459779
+    },
+    {
+      "code": "osm:node/8595114086",
+      "name": "Дамбинская врачебная амбулатория",
+      "countryCode": "KZ",
+      "origin": "https://dambava.kz",
+      "lat": 46.9716696,
+      "lng": 51.7832685
+    },
+    {
+      "code": "osm:node/8595114091",
+      "name": "Еркинкалинская врачебная амбулатория",
+      "countryCode": "KZ",
+      "origin": "https://erkin-ambul.kz",
+      "lat": 47.0249457,
+      "lng": 51.81184
+    },
+    {
+      "code": "osm:node/8595205127",
+      "name": "Атырауская городская поликлиника № 3",
+      "countryCode": "KZ",
+      "origin": "https://www.gor-pol3.kz",
+      "lat": 47.1306081,
+      "lng": 51.9496938
+    },
+    {
+      "code": "osm:node/10570195052",
+      "name": "Атырауская областная больница",
+      "countryCode": "KZ",
+      "origin": "https://ohospital.kz",
+      "lat": 47.0917173,
+      "lng": 51.8724461
+    },
+    {
+      "code": "osm:node/10574175740",
+      "name": "Восточно-Казахстанская областная больница",
+      "countryCode": "KZ",
+      "origin": "https://vkoob.kz",
+      "lat": 49.9589788,
+      "lng": 82.6312946
+    },
+    {
+      "code": "osm:node/10917742805",
+      "name": "«Жаңа ұрпақ клиникасы» халықаралық репродукция орталығы – NGC",
+      "countryCode": "KZ",
+      "origin": "https://ngc.kz",
+      "lat": 43.2171701,
+      "lng": 76.9296014
+    },
+    {
+      "code": "osm:node/12518757060",
+      "name": "Erensau",
+      "countryCode": "KZ",
+      "origin": "https://erensau.kz",
+      "lat": 43.2107764,
+      "lng": 76.9499539
+    },
+    {
+      "code": "osm:node/13835497032",
+      "name": "Interna Clinic",
+      "countryCode": "KZ",
+      "origin": "https://internaclinic.kz",
+      "lat": 43.2504196,
+      "lng": 76.909043
+    },
+    {
+      "code": "osm:way/58097986",
+      "name": "Павлодар облыстық онкологиялық диспансері",
+      "countryCode": "KZ",
+      "origin": "https://onkodispancer.depzdrav.kz",
+      "lat": 52.2954859,
+      "lng": 77.0058391
+    },
+    {
+      "code": "osm:way/130536316",
+      "name": "Областной противотуберкулезный диспансер",
+      "countryCode": "KZ",
+      "origin": "https://atyrau-opd.kz",
+      "lat": 47.1607775,
+      "lng": 51.8338408
+    },
+    {
+      "code": "osm:way/160722434",
+      "name": "Поликлиника № 2",
+      "countryCode": "KZ",
+      "origin": "http://www.2policlinic.kz",
+      "lat": 53.1983988,
+      "lng": 63.6184894
+    },
+    {
+      "code": "osm:way/161570849",
+      "name": "Қостанай темір жол ауруханасы",
+      "countryCode": "KZ",
+      "origin": "https://kzhdb.kz",
+      "lat": 53.2306964,
+      "lng": 63.6220407
+    },
+    {
+      "code": "osm:way/165766912",
+      "name": "Облыстық перинаталдық орталығы",
+      "countryCode": "KZ",
+      "origin": "https://www.opc.sko.kz",
+      "lat": 54.8889228,
+      "lng": 69.1379747
+    },
+    {
+      "code": "osm:way/168756334",
+      "name": "СКОФ РГП на ПХВ \"Республиканский центр электронного здравоохранения\" МЗСР РК",
+      "countryCode": "KZ",
+      "origin": "http://skof-rcez.kz",
+      "lat": 54.8575525,
+      "lng": 69.1551166
+    },
+    {
+      "code": "osm:way/173458661",
+      "name": "Медикер",
+      "countryCode": "KZ",
+      "origin": "https://mediker.kz",
+      "lat": 51.1660863,
+      "lng": 53.0392757
+    },
+    {
+      "code": "osm:way/199582076",
+      "name": "Облыстық балалар клиникалық ауруханасы",
+      "countryCode": "KZ",
+      "origin": "http://odkbaktobe.kz",
+      "lat": 50.2926473,
+      "lng": 57.11376
+    },
+    {
+      "code": "osm:way/225206363",
+      "name": "Карасайская районная центральная больница",
+      "countryCode": "KZ",
+      "origin": "http://crb-karasay.kz",
+      "lat": 43.1906081,
+      "lng": 76.5338359
+    },
+    {
+      "code": "osm:way/227789527",
+      "name": "Областной перинатальный центр",
+      "countryCode": "KZ",
+      "origin": "http://p-center.kz",
+      "lat": 51.2003141,
+      "lng": 51.3845331
+    },
+    {
+      "code": "osm:way/249722903",
+      "name": "№4-ші Қалалық Клиникалық Аурухана",
+      "countryCode": "KZ",
+      "origin": "https://gkb4.kz",
+      "lat": 43.3193111,
+      "lng": 76.9627734
+    },
+    {
+      "code": "osm:way/252867229",
+      "name": "Жедел медициналық жәрдем ауруханасы",
+      "countryCode": "KZ",
+      "origin": "https://www.aktobe-bsmp.kz",
+      "lat": 50.2983559,
+      "lng": 57.1474903
+    },
+    {
+      "code": "osm:way/258859797",
+      "name": "Акмолинская областная больница",
+      "countryCode": "KZ",
+      "origin": "https://amob.kz",
+      "lat": 53.2766439,
+      "lng": 69.3566469
+    },
+    {
+      "code": "osm:way/277666585",
+      "name": "№1 Қалалық клиникалық ауруханасының перитонеалдық орталығы",
+      "countryCode": "KZ",
+      "origin": "http://agkb1.kz",
+      "lat": 43.2294296,
+      "lng": 76.8016917
+    },
+    {
+      "code": "osm:way/277666586",
+      "name": "Городская Клиническая Больница №7",
+      "countryCode": "KZ",
+      "origin": "https://www.gkb7.kz",
+      "lat": 43.2321736,
+      "lng": 76.7998407
+    },
+    {
+      "code": "osm:way/321137993",
+      "name": "Степногорская многопрофильная городская больница",
+      "countryCode": "KZ",
+      "origin": "https://stepgb.akmol.kz",
+      "lat": 52.3426934,
+      "lng": 71.8685845
+    },
+    {
+      "code": "osm:way/349224121",
+      "name": "Больница №1",
+      "countryCode": "KZ",
+      "origin": "https://xn--1-wtbpsh.xn--p1ai",
+      "lat": 45.6150041,
+      "lng": 63.3126302
+    },
+    {
+      "code": "osm:way/375237680",
+      "name": "Ұлттық фтизиопульмонология орталығы",
+      "countryCode": "KZ",
+      "origin": "https://www.nncf.kz",
+      "lat": 43.2455276,
+      "lng": 76.9629901
+    },
+    {
+      "code": "osm:way/424894638",
+      "name": "№ 3 көпбейінді қалалық балалар ауруханасы",
+      "countryCode": "KZ",
+      "origin": "http://mgdb-3.kz",
+      "lat": 51.0828655,
+      "lng": 71.4193851
+    },
+    {
+      "code": "osm:way/424894649",
+      "name": "№2 көпбейінді қалалық аурухана",
+      "countryCode": "KZ",
+      "origin": "http://astanaclinic.kz",
+      "lat": 51.0841395,
+      "lng": 71.4091539
+    },
+    {
+      "code": "osm:way/439124437",
+      "name": "Областной противотуберкулёзный диспансер",
+      "countryCode": "KZ",
+      "origin": "http://www.optd.sko.kz",
+      "lat": 54.9172216,
+      "lng": 69.1549566
+    },
+    {
+      "code": "osm:way/560769884",
+      "name": "Хромтау орталық аудандық ауруханасы",
+      "countryCode": "KZ",
+      "origin": "https://khromtaucrb.kz",
+      "lat": 50.2632883,
+      "lng": 58.4353479
+    },
+    {
+      "code": "osm:way/587041260",
+      "name": "Явленка орталық аудандық ауруханасы",
+      "countryCode": "KZ",
+      "origin": "https://www.yavcrb.sko.kz",
+      "lat": 54.3492671,
+      "lng": 68.4553787
+    },
+    {
+      "code": "osm:way/1168291599",
+      "name": "СМП №12",
+      "countryCode": "KZ",
+      "origin": "https://ssmp-almaty.kz",
+      "lat": 43.3194285,
+      "lng": 76.8317648
+    },
+    {
+      "code": "osm:way/1185789301",
+      "name": "ҚР Президенті Әкімшілігінің Медициналық орталығының Ұлттық госпиталі",
+      "countryCode": "KZ",
+      "origin": "https://snh.kz",
+      "lat": 43.2472567,
+      "lng": 76.9455788
+    },
+    {
+      "code": "osm:way/1349840027",
+      "name": "Viamedis",
+      "countryCode": "KZ",
+      "origin": "https://www.viamedis.kz",
+      "lat": 52.264915,
+      "lng": 76.9474574
+    },
+    {
+      "code": "osm:way/1455980749",
+      "name": "Қалалық психикалық денсаулық орталығы",
+      "countryCode": "KZ",
+      "origin": "https://www.cmsr.kz",
+      "lat": 51.0815262,
+      "lng": 71.4151754
+    },
+    {
+      "code": "osm:way/1513435694",
+      "name": "№2 көпбейінді қалалық балалар ауруханасы",
+      "countryCode": "KZ",
+      "origin": "http://www.gdb2astana.kz",
+      "lat": 51.140491,
+      "lng": 71.5281397
+    },
+    {
+      "code": "osm:way/1564607006",
+      "name": "Многопрофильная больница № 1",
+      "countryCode": "KZ",
+      "origin": "http://karhospital.kz",
+      "lat": 49.8903265,
+      "lng": 73.2026887
+    }
+  ]
+}

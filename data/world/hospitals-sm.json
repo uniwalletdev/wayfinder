@@ -1,0 +1,17 @@
+{
+  "countryCode": "SM",
+  "fetchedAt": "2026-10-21T02:48:05.031Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/86953828",
+      "name": "Ospedale di Stato - Istituto per la Sicurezza Sociale",
+      "countryCode": "SM",
+      "origin": "https://www.iss.sm",
+      "lat": 43.9502553,
+      "lng": 12.4555132
+    }
+  ]
+}

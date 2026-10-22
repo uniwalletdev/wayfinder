@@ -1,0 +1,537 @@
+{
+  "countryCode": "NP",
+  "fetchedAt": "2026-10-21T02:19:59.519Z",
+  "count": 66,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/943246318",
+      "name": "मनमोहन मेमोरियल अस्पताल",
+      "countryCode": "NP",
+      "origin": "https://mmchospital.org.np",
+      "lat": 27.7179394,
+      "lng": 85.3112441
+    },
+    {
+      "code": "osm:node/1617044401",
+      "name": "Amppipal",
+      "countryCode": "NP",
+      "origin": "https://www.amppipal.de",
+      "lat": 28.0692468,
+      "lng": 84.5296803
+    },
+    {
+      "code": "osm:node/1985458243",
+      "name": "CIWEC Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.ciwec-clinic.com",
+      "lat": 27.7202714,
+      "lng": 85.3178811
+    },
+    {
+      "code": "osm:node/2165424708",
+      "name": "ब्लु क्रस अस्पताल",
+      "countryCode": "NP",
+      "origin": "https://www.bluecross.com.np",
+      "lat": 27.6937147,
+      "lng": 85.3152583
+    },
+    {
+      "code": "osm:node/4240911790",
+      "name": "जिल्ला स्वास्थ्य कार्यालय",
+      "countryCode": "NP",
+      "origin": "https://www.dhodolakha.gov.np",
+      "lat": 27.6713156,
+      "lng": 86.049564
+    },
+    {
+      "code": "osm:node/4504643591",
+      "name": "Lifeguard Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.lifeguardhospital.com.np",
+      "lat": 26.4728365,
+      "lng": 87.2755094
+    },
+    {
+      "code": "osm:node/4579894969",
+      "name": "निदान अस्पताल प्रा.लि.",
+      "countryCode": "NP",
+      "origin": "http://www.nidanhospital.com",
+      "lat": 27.6773339,
+      "lng": 85.3217511
+    },
+    {
+      "code": "osm:node/4611193689",
+      "name": "कपन अस्पताल",
+      "countryCode": "NP",
+      "origin": "https://www.karunahospital.com.np",
+      "lat": 27.7347534,
+      "lng": 85.3602424
+    },
+    {
+      "code": "osm:node/4631720892",
+      "name": "B & C Teaching Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.bnchospital.edu.np",
+      "lat": 26.6447115,
+      "lng": 87.997455
+    },
+    {
+      "code": "osm:node/4748269321",
+      "name": "स्वाकोन अन्तर्राष्ट्रिय अस्पताल (काठमाडौं)",
+      "countryCode": "NP",
+      "origin": "https://www.swaconhospital.com",
+      "lat": 27.7042102,
+      "lng": 85.3364085
+    },
+    {
+      "code": "osm:node/4765971343",
+      "name": "Self Help Group For Cerebral Palsy Nepal",
+      "countryCode": "NP",
+      "origin": "https://www.cpnepal.org",
+      "lat": 27.6213032,
+      "lng": 85.3283959
+    },
+    {
+      "code": "osm:node/4887200021",
+      "name": "Hospital Building",
+      "countryCode": "NP",
+      "origin": "https://www.janakimedicalcollege.edu.np",
+      "lat": 26.8153163,
+      "lng": 85.9528582
+    },
+    {
+      "code": "osm:node/4914729121",
+      "name": "Prime Hospital Private Limited",
+      "countryCode": "NP",
+      "origin": "http://www.primehospital.com.np",
+      "lat": 26.4582486,
+      "lng": 87.2843481
+    },
+    {
+      "code": "osm:node/4970452921",
+      "name": "Annapurna Bal Tatha Mahila Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.annapurnahospital.org.np",
+      "lat": 28.2031193,
+      "lng": 84.0059428
+    },
+    {
+      "code": "osm:node/5308645122",
+      "name": "Let Me in",
+      "countryCode": "NP",
+      "origin": "http://let-mein.com",
+      "lat": 27.6891653,
+      "lng": 85.3324587
+    },
+    {
+      "code": "osm:node/5772190755",
+      "name": "Obstetric and Gynaecology Department, BPKIHS",
+      "countryCode": "NP",
+      "origin": "https://www.bpkihs.edu",
+      "lat": 26.8097233,
+      "lng": 87.2691151
+    },
+    {
+      "code": "osm:node/6558714385",
+      "name": "Bhachchek Health Post",
+      "countryCode": "NP",
+      "origin": "https://www.ajirkotmun.gov.np",
+      "lat": 28.1564784,
+      "lng": 84.647658
+    },
+    {
+      "code": "osm:node/6578542186",
+      "name": "नर्भिक अन्तर्राष्ट्रिय स्वास्थ्य मूल्यांकन केन्द्र",
+      "countryCode": "NP",
+      "origin": "https://www.norvichospital.com",
+      "lat": 27.6893068,
+      "lng": 85.3200625
+    },
+    {
+      "code": "osm:node/8109802122",
+      "name": "करुणा अस्पताल",
+      "countryCode": "NP",
+      "origin": "https://www.karunahospital.com.np",
+      "lat": 27.7512928,
+      "lng": 85.3624523
+    },
+    {
+      "code": "osm:node/9709424353",
+      "name": "Butwal Lion Eye Hospital",
+      "countryCode": "NP",
+      "origin": "https://lei.org.np",
+      "lat": 27.7045281,
+      "lng": 83.458448
+    },
+    {
+      "code": "osm:node/9709499649",
+      "name": "Lumbini Province Hospital(LPH) लुम्बिनी प्रादेशिक अस्पताल",
+      "countryCode": "NP",
+      "origin": "http://lzhospital.gov.np",
+      "lat": 27.6978144,
+      "lng": 83.4641361
+    },
+    {
+      "code": "osm:node/9719638257",
+      "name": "वत्सल्या प्राकृतिक आईवीएफ, फर्टिलिटी क्लिनिक",
+      "countryCode": "NP",
+      "origin": "https://www.vatsalya.com.np",
+      "lat": 27.7155843,
+      "lng": 85.3252763
+    },
+    {
+      "code": "osm:node/9845843806",
+      "name": "DI Skin Hospital And Referral Center",
+      "countryCode": "NP",
+      "origin": "https://disharc.org",
+      "lat": 27.7501486,
+      "lng": 85.3450168
+    },
+    {
+      "code": "osm:node/9956505746",
+      "name": "काठमाडौँ न्यूरो एण्ड जनरल अस्पताल",
+      "countryCode": "NP",
+      "origin": "https://www.kathamanduneuro.com.np",
+      "lat": 27.705956,
+      "lng": 85.3180007
+    },
+    {
+      "code": "osm:node/10198512117",
+      "name": "अलिफ स्वास्थ सेवा केन्द्र",
+      "countryCode": "NP",
+      "origin": "http://www.alifphama.com.np",
+      "lat": 27.7616933,
+      "lng": 85.317815
+    },
+    {
+      "code": "osm:node/12854576818",
+      "name": "Health post of ward 4, sarumarani",
+      "countryCode": "NP",
+      "origin": "https://sarumaranimun.gov.np",
+      "lat": 27.960226,
+      "lng": 82.8212126
+    },
+    {
+      "code": "osm:node/13339758218",
+      "name": "Kathmandu Netralaya",
+      "countryCode": "NP",
+      "origin": "https://kathmandunetralaya.com",
+      "lat": 27.750303,
+      "lng": 85.3452858
+    },
+    {
+      "code": "osm:node/14081637984",
+      "name": "Millennium Aesthetics",
+      "countryCode": "NP",
+      "origin": "https://milleniumaestheticsnepal.netlify.app",
+      "lat": 27.6762067,
+      "lng": 85.3012549
+    },
+    {
+      "code": "osm:way/124480166",
+      "name": "एभरेष्ट अस्पताल (नयाँ बानेश्वर)",
+      "countryCode": "NP",
+      "origin": "https://everesthospital.org.np",
+      "lat": 27.6884948,
+      "lng": 85.3328992
+    },
+    {
+      "code": "osm:way/152604442",
+      "name": "Fishtail Hospital & Research Centre",
+      "countryCode": "NP",
+      "origin": "https://www.fishtailhospital.com.np",
+      "lat": 28.2258835,
+      "lng": 83.9901417
+    },
+    {
+      "code": "osm:way/176768699",
+      "name": "Upendra Devkota Memorial - National Institute of Neurological and Allied Sciences",
+      "countryCode": "NP",
+      "origin": "https://neuro.org.np",
+      "lat": 27.7487097,
+      "lng": 85.3459614
+    },
+    {
+      "code": "osm:way/176772311",
+      "name": "Shahid Gangalal National Heart Centre",
+      "countryCode": "NP",
+      "origin": "https://www.sgnhc.org.np",
+      "lat": 27.745821,
+      "lng": 85.3436443
+    },
+    {
+      "code": "osm:way/204127848",
+      "name": "Manipal Teaching Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.manipal.edu.np",
+      "lat": 28.2364667,
+      "lng": 83.996356
+    },
+    {
+      "code": "osm:way/211750710",
+      "name": "Sumeru Hospital",
+      "countryCode": "NP",
+      "origin": "https://sumeruhospital.org.np",
+      "lat": 27.6448249,
+      "lng": 85.325761
+    },
+    {
+      "code": "osm:way/218203441",
+      "name": "ग्रीन सिटी अस्पताल (बसुन्धरा)",
+      "countryCode": "NP",
+      "origin": "https://www.gch.com.np",
+      "lat": 27.7372446,
+      "lng": 85.3227706
+    },
+    {
+      "code": "osm:way/221295256",
+      "name": "अन्तर्राष्ट्रिय मैत्री बाल अस्पताल (महाराजगञ्ज)",
+      "countryCode": "NP",
+      "origin": "https://www.ifch.com.np",
+      "lat": 27.7312886,
+      "lng": 85.3263639
+    },
+    {
+      "code": "osm:way/223275409",
+      "name": "Grande International Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.grandehospital.com",
+      "lat": 27.7529192,
+      "lng": 85.3252409
+    },
+    {
+      "code": "osm:way/227893818",
+      "name": "B & B Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.bbhospital.com.np",
+      "lat": 27.6650525,
+      "lng": 85.3294439
+    },
+    {
+      "code": "osm:way/227939182",
+      "name": "Shanti Sewa Griha",
+      "countryCode": "NP",
+      "origin": "https://shanti-leprahilfe.de",
+      "lat": 27.704607,
+      "lng": 85.3508873
+    },
+    {
+      "code": "osm:way/228694693",
+      "name": "INF Surkhet Leprosy and Disability Referral Centre",
+      "countryCode": "NP",
+      "origin": "http://www.inf.org",
+      "lat": 28.6014305,
+      "lng": 81.617091
+    },
+    {
+      "code": "osm:way/239081179",
+      "name": "Fewa City Hospital",
+      "countryCode": "NP",
+      "origin": "https://fewacityhospital.com.np",
+      "lat": 28.2068121,
+      "lng": 83.98165
+    },
+    {
+      "code": "osm:way/311900679",
+      "name": "Himalaya Eye Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.heh.org.np",
+      "lat": 28.1904272,
+      "lng": 83.9774198
+    },
+    {
+      "code": "osm:way/339895579",
+      "name": "Lumbini Medical College",
+      "countryCode": "NP",
+      "origin": "https://www.lmc.edu.np",
+      "lat": 27.8441274,
+      "lng": 83.5442041
+    },
+    {
+      "code": "osm:way/344918746",
+      "name": "United Mission Hospital -Tansen, Nepal",
+      "countryCode": "NP",
+      "origin": "http://www.tansenhospital.org.np",
+      "lat": 27.8718414,
+      "lng": 83.5574725
+    },
+    {
+      "code": "osm:way/345725462",
+      "name": "Kalika Dental Care",
+      "countryCode": "NP",
+      "origin": "https://kalikadental.com",
+      "lat": 27.6398743,
+      "lng": 84.1198202
+    },
+    {
+      "code": "osm:way/369214248",
+      "name": "CIWEC Hospital",
+      "countryCode": "NP",
+      "origin": "https://ciwec-clinic.com",
+      "lat": 28.2092705,
+      "lng": 83.9590162
+    },
+    {
+      "code": "osm:way/405415268",
+      "name": "Lake City Hospital and Critical Care",
+      "countryCode": "NP",
+      "origin": "http://www.lakecityhospital.org",
+      "lat": 28.2208174,
+      "lng": 83.9837423
+    },
+    {
+      "code": "osm:way/414776142",
+      "name": "Kaski Sewa Hospital and Research Center",
+      "countryCode": "NP",
+      "origin": "https://kaskisewahospital.com",
+      "lat": 28.2132105,
+      "lng": 84.0007934
+    },
+    {
+      "code": "osm:way/418029147",
+      "name": "Sahara Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.saharahospital.com",
+      "lat": 28.2314308,
+      "lng": 83.983226
+    },
+    {
+      "code": "osm:way/423278568",
+      "name": "Metro City Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.metrocityhospital.com",
+      "lat": 28.2118599,
+      "lng": 83.9816202
+    },
+    {
+      "code": "osm:way/426287124",
+      "name": "AB Care and Rehabilitation Center",
+      "countryCode": "NP",
+      "origin": "https://www.abcrehabilitation.com",
+      "lat": 28.2384377,
+      "lng": 83.9826805
+    },
+    {
+      "code": "osm:way/426287879",
+      "name": "BG Hospital and Research Center",
+      "countryCode": "NP",
+      "origin": "https://www.bghospital.com",
+      "lat": 28.2157216,
+      "lng": 84.0033192
+    },
+    {
+      "code": "osm:way/426289934",
+      "name": "Kantipur Institute of Health Science",
+      "countryCode": "NP",
+      "origin": "https://kantipurkdh.edu.np",
+      "lat": 28.2134414,
+      "lng": 83.9849394
+    },
+    {
+      "code": "osm:way/426558850",
+      "name": "Aaragyodham Homiopathy Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.arogyadhamhomiopathyhospital.com",
+      "lat": 28.2059191,
+      "lng": 83.9934581
+    },
+    {
+      "code": "osm:way/426952936",
+      "name": "Pashchimanchal Community Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.pch.com.np",
+      "lat": 28.2088669,
+      "lng": 83.9882843
+    },
+    {
+      "code": "osm:way/449184056",
+      "name": "Green Pasture",
+      "countryCode": "NP",
+      "origin": "https://www.inf.org",
+      "lat": 28.1920881,
+      "lng": 83.9884392
+    },
+    {
+      "code": "osm:way/449301810",
+      "name": "Spark B and D Hospital",
+      "countryCode": "NP",
+      "origin": "https://sparkhealth.com.np",
+      "lat": 28.211947,
+      "lng": 83.9833593
+    },
+    {
+      "code": "osm:way/451814624",
+      "name": "Namaste Hospital and Research Center",
+      "countryCode": "NP",
+      "origin": "https://www.namsatehospital.com",
+      "lat": 28.1932171,
+      "lng": 83.9720483
+    },
+    {
+      "code": "osm:way/456506568",
+      "name": "Kathmandu Cancer Center",
+      "countryCode": "NP",
+      "origin": "https://www.kccrc.org",
+      "lat": 27.669452,
+      "lng": 85.4659796
+    },
+    {
+      "code": "osm:way/517714469",
+      "name": "BP Koirala Institute of Health Science",
+      "countryCode": "NP",
+      "origin": "https://www.bpkihs.edu",
+      "lat": 26.8123329,
+      "lng": 87.2694106
+    },
+    {
+      "code": "osm:way/518871885",
+      "name": "Biratnagar Eye Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.erec-p.org",
+      "lat": 26.4224836,
+      "lng": 87.2712073
+    },
+    {
+      "code": "osm:way/546246875",
+      "name": "नेपाल मेडिसिटी अस्पताल (नख्खु)",
+      "countryCode": "NP",
+      "origin": "https://www.nepalmediciti.com",
+      "lat": 27.6624155,
+      "lng": 85.3028015
+    },
+    {
+      "code": "osm:way/563747770",
+      "name": "Karnali Academy of Health Sciences",
+      "countryCode": "NP",
+      "origin": "https://kahs.edu.np",
+      "lat": 29.2828729,
+      "lng": 82.1830109
+    },
+    {
+      "code": "osm:way/649080016",
+      "name": "HAMS Hospital",
+      "countryCode": "NP",
+      "origin": "https://hamshospital.com",
+      "lat": 27.7333656,
+      "lng": 85.3462532
+    },
+    {
+      "code": "osm:way/1173885385",
+      "name": "Ishan Children and Women's Hospital (P) Ltd.",
+      "countryCode": "NP",
+      "origin": "https://ishanhospital.com.np",
+      "lat": 27.7446241,
+      "lng": 85.3328423
+    },
+    {
+      "code": "osm:way/1458420784",
+      "name": "Siddhartha Children and Women Hospital",
+      "countryCode": "NP",
+      "origin": "https://www.amda.org.np",
+      "lat": 27.6915621,
+      "lng": 83.4798853
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "countryCode": "ET",
+  "fetchedAt": "2026-10-21T01:20:42.260Z",
+  "count": 10,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/7368469585",
+      "name": "ያኔት ሀየር እስፔሻላይዝድ ክሊኒክ",
+      "countryCode": "ET",
+      "origin": "http://www.liyanahealthcare.com",
+      "lat": 7.0245706,
+      "lng": 38.4693788
+    },
+    {
+      "code": "osm:node/8513036622",
+      "name": "Dream Orthopedics Trauma and Spine Center",
+      "countryCode": "ET",
+      "origin": "https://dreamorthospine.com",
+      "lat": 9.0045033,
+      "lng": 38.737961
+    },
+    {
+      "code": "osm:node/9961317417",
+      "name": "New leaf fertility cent",
+      "countryCode": "ET",
+      "origin": "https://newleaffertility.org",
+      "lat": 8.9948015,
+      "lng": 38.7300161
+    },
+    {
+      "code": "osm:way/200620468",
+      "name": "ኢትዮ ጠቢብ ሆስፒታል",
+      "countryCode": "ET",
+      "origin": "https://ethiotebibhospital.com",
+      "lat": 9.0366859,
+      "lng": 38.7199167
+    },
+    {
+      "code": "osm:way/379705567",
+      "name": "Nordic Medical Centre",
+      "countryCode": "ET",
+      "origin": "https://www.nordicmedicalcentre.com",
+      "lat": 8.9844734,
+      "lng": 38.7779637
+    },
+    {
+      "code": "osm:way/787549761",
+      "name": "The Lion's Den Resort;The Lion’s Den resort",
+      "countryCode": "ET",
+      "origin": "https://www.thelionsdenhotel.com",
+      "lat": 9.0042212,
+      "lng": 38.7639349
+    },
+    {
+      "code": "osm:way/787549827",
+      "name": "አዲስ ሂወት ከፍተኛ ሆሰፒታል Addis Hiwot General Hospital",
+      "countryCode": "ET",
+      "origin": "http://www.addishiwot.com",
+      "lat": 9.0128066,
+      "lng": 38.7833435
+    },
+    {
+      "code": "osm:way/1123619933",
+      "name": "Moyale Hospital",
+      "countryCode": "ET",
+      "origin": "http://moyalehospital.weebly.com",
+      "lat": 3.5551544,
+      "lng": 39.0337544
+    },
+    {
+      "code": "osm:way/1466865704",
+      "name": "Ethio-Istanbul General Hospital",
+      "countryCode": "ET",
+      "origin": "https://ethioistanbulgeneralhospital.com",
+      "lat": 8.9894295,
+      "lng": 38.7947553
+    },
+    {
+      "code": "osm:way/1523078894",
+      "name": "Leghar General Hospital",
+      "countryCode": "ET",
+      "origin": "https://legehargeneralhospital.com",
+      "lat": 9.0108973,
+      "lng": 38.7356855
+    }
+  ]
+}

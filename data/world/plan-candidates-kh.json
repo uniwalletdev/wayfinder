@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-10-22T08:41:46.055Z",
+  "countryCode": "KH",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 5,
+    "botChallenged": 0,
+    "robotsBlocked": 1,
+    "withCandidates": 1,
+    "crawled": 12
+  },
+  "count": 1,
+  "crawled": {
+    "osm:node/11601341969": "ok",
+    "osm:node/4118322389": "failed",
+    "osm:node/4367951293": "failed",
+    "osm:node/4472294392": "failed",
+    "osm:node/4790957124": "failed",
+    "osm:node/8001656167": "failed",
+    "osm:way/1009545224": "robots-blocked",
+    "osm:way/190538951": "ok",
+    "osm:way/295124083": "ok",
+    "osm:way/376041075": "ok",
+    "osm:way/432206240": "ok",
+    "osm:way/561746525": "ok"
+  },
+  "candidates": [
+    {
+      "hospitalCode": "osm:way/295124083",
+      "hospitalName": "Institut Pasteur du Cambodge",
+      "countryCode": "KH",
+      "website": "https://www.pasteur-kh.org",
+      "url": "https://www.pasteur-kh.org/wp-content/uploads/2022/06/PN_Map_links_VEng-scaled.jpg",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low",
+      "format": "image"
+    }
+  ]
+}

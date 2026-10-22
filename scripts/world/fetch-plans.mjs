@@ -13,10 +13,10 @@ import { writeFileSync } from "fs"
 import { dirname } from "path"
 import { fetchBuffer } from "../nhs/lib/net.mjs"
 import { dataPath, repoPath, readJson, writeJson, ensureDir, log } from "../nhs/lib/paths.mjs"
+import { countriesFromArgs } from "./lib/osm.mjs"
 
 const STAGE = "world-fetch-plans"
-const countryArg = process.argv.indexOf("--country")
-const COUNTRIES = countryArg > -1 ? [process.argv[countryArg + 1].toUpperCase()] : ["US", "CA", "AU", "IE"]
+const COUNTRIES = countriesFromArgs()
 
 for (const countryCode of COUNTRIES) {
   const sourcesPath = dataPath("world", `plan-sources-${countryCode.toLowerCase()}.json`)

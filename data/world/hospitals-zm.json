@@ -1,0 +1,57 @@
+{
+  "countryCode": "ZM",
+  "fetchedAt": "2026-10-21T03:19:53.824Z",
+  "count": 6,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4195191381",
+      "name": "Northern Command Military Hospital",
+      "countryCode": "ZM",
+      "origin": "https://northcommmh.org",
+      "lat": -12.9910772,
+      "lng": 28.6543767
+    },
+    {
+      "code": "osm:node/12860535397",
+      "name": "DNA Hub Africa",
+      "countryCode": "ZM",
+      "origin": "https://www.dnahubafrica.com",
+      "lat": -15.4036555,
+      "lng": 28.2868697
+    },
+    {
+      "code": "osm:node/13832236992",
+      "name": "Rehan Hospital",
+      "countryCode": "ZM",
+      "origin": "https://rehanhospital.com",
+      "lat": -15.4253895,
+      "lng": 28.2902036
+    },
+    {
+      "code": "osm:way/291376437",
+      "name": "St. Francis Mission Hospital",
+      "countryCode": "ZM",
+      "origin": "https://www.saintfrancishospital.net",
+      "lat": -14.0660719,
+      "lng": 32.01564
+    },
+    {
+      "code": "osm:way/1092915957",
+      "name": "Forest Park Specialised Hospital",
+      "countryCode": "ZM",
+      "origin": "https://forestparkhospital.co.zm",
+      "lat": -15.4039456,
+      "lng": 28.3174665
+    },
+    {
+      "code": "osm:way/1551300804",
+      "name": "Chikuni Mission Hospital",
+      "countryCode": "ZM",
+      "origin": "http://www.hbc-chikuni.com",
+      "lat": -16.4299108,
+      "lng": 27.5463793
+    }
+  ]
+}

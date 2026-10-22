@@ -1,0 +1,81 @@
+{
+  "countryCode": "GT",
+  "fetchedAt": "2026-10-21T01:33:25.697Z",
+  "count": 9,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/922956616",
+      "name": "Centro Hospitalario La Paz - Zona 10",
+      "countryCode": "GT",
+      "origin": "https://www.hospitaleslapaz.com",
+      "lat": 14.6105197,
+      "lng": -90.5054691
+    },
+    {
+      "code": "osm:node/4264093291",
+      "name": "IGSS - Oficinas - Suchitepéquez",
+      "countryCode": "GT",
+      "origin": "http://www.mazatecos.com",
+      "lat": 14.5307635,
+      "lng": -91.502528
+    },
+    {
+      "code": "osm:node/4298911160",
+      "name": "Hospital Nacional de Solola Juan de Dios Rodas",
+      "countryCode": "GT",
+      "origin": "http://hospitalsolola.gob.gt",
+      "lat": 14.7643386,
+      "lng": -91.1766182
+    },
+    {
+      "code": "osm:node/4334394300",
+      "name": "Visión Integral",
+      "countryCode": "GT",
+      "origin": "https://www.visionintegral.com.gt",
+      "lat": 14.6065977,
+      "lng": -90.523812
+    },
+    {
+      "code": "osm:node/4334398324",
+      "name": "Unidad Nacional De Oncologia Pediatrica",
+      "countryCode": "GT",
+      "origin": "https://www.icpcn.org",
+      "lat": 14.6118249,
+      "lng": -90.543872
+    },
+    {
+      "code": "osm:node/11190663037",
+      "name": "Hospital Inside Health",
+      "countryCode": "GT",
+      "origin": "https://insidehealthgt.com",
+      "lat": 14.5927435,
+      "lng": -90.5141597
+    },
+    {
+      "code": "osm:way/81398329",
+      "name": "Hospital Roosevelt",
+      "countryCode": "GT",
+      "origin": "https://www.hospitalroosevelt.gob.gt",
+      "lat": 14.6138099,
+      "lng": -90.5423121
+    },
+    {
+      "code": "osm:way/400891291",
+      "name": "Centro Médico",
+      "countryCode": "GT",
+      "origin": "https://www.centromedico.com.gt",
+      "lat": 14.6102177,
+      "lng": -90.5098328
+    },
+    {
+      "code": "osm:way/1455013443",
+      "name": "Hospital Nasir de Humanity First",
+      "countryCode": "GT",
+      "origin": "https://hospitalnasir.com",
+      "lat": 14.6487967,
+      "lng": -90.7049818
+    }
+  ]
+}

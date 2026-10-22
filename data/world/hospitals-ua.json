@@ -1,0 +1,2481 @@
+{
+  "countryCode": "UA",
+  "fetchedAt": "2026-10-21T03:03:56.806Z",
+  "count": 309,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/608009911",
+      "name": "Пологовий будинок №2",
+      "countryCode": "UA",
+      "origin": "https://www.vinroddom.com.ua",
+      "lat": 49.2394854,
+      "lng": 28.4951751
+    },
+    {
+      "code": "osm:node/1305973984",
+      "name": "Онкологічна клініка «Іновація»",
+      "countryCode": "UA",
+      "origin": "https://www.innovacia.com.ua",
+      "lat": 50.6702798,
+      "lng": 30.3851257
+    },
+    {
+      "code": "osm:node/1720292812",
+      "name": "Віола Мед",
+      "countryCode": "UA",
+      "origin": "https://violamed.com.ua",
+      "lat": 49.2501892,
+      "lng": 28.4757591
+    },
+    {
+      "code": "osm:node/2093073048",
+      "name": "Медичний центр УМЕЦ",
+      "countryCode": "UA",
+      "origin": "https://umec.com.ua",
+      "lat": 48.037358,
+      "lng": 37.9610867
+    },
+    {
+      "code": "osm:node/2550376927",
+      "name": "Київський дитячий міський гастроентерологічний центр",
+      "countryCode": "UA",
+      "origin": "https://deti-gastro.org.ua",
+      "lat": 50.4861908,
+      "lng": 30.4691826
+    },
+    {
+      "code": "osm:node/2678996276",
+      "name": "Арніка",
+      "countryCode": "UA",
+      "origin": "https://arnika.dn.ua",
+      "lat": 48.5345548,
+      "lng": 37.0658283
+    },
+    {
+      "code": "osm:node/2940353801",
+      "name": "Акушерсько-гінекологічний стаціонар та жіноча консультація КНП «Міська клінічна лікарня № 27»",
+      "countryCode": "UA",
+      "origin": "https://roddom3.kh.ua",
+      "lat": 49.995401,
+      "lng": 36.2477588
+    },
+    {
+      "code": "osm:node/3091939955",
+      "name": "Арніка",
+      "countryCode": "UA",
+      "origin": "https://www.arnica.webgid.info",
+      "lat": 49.059192,
+      "lng": 33.4045032
+    },
+    {
+      "code": "osm:node/3190324177",
+      "name": "Обласний госпіталь для інвалідів війни",
+      "countryCode": "UA",
+      "origin": "https://hospital.volyn.ua",
+      "lat": 50.7497315,
+      "lng": 25.2876609
+    },
+    {
+      "code": "osm:node/4329806497",
+      "name": "Опіковий центр",
+      "countryCode": "UA",
+      "origin": "http://opik-center.com.ua",
+      "lat": 50.4568317,
+      "lng": 30.6238463
+    },
+    {
+      "code": "osm:node/4405872190",
+      "name": "медична компанія \"Медгоризонт (МГ)\"",
+      "countryCode": "UA",
+      "origin": "http://medgorizont.com.ua",
+      "lat": 50.356443,
+      "lng": 30.9439512
+    },
+    {
+      "code": "osm:node/4441952789",
+      "name": "Київська обласна психоневрологічна лікарня №2",
+      "countryCode": "UA",
+      "origin": "https://kopnl.com.ua",
+      "lat": 50.5603293,
+      "lng": 30.1394232
+    },
+    {
+      "code": "osm:node/4444998590",
+      "name": "Офтальмологічна клініка доктора Курило",
+      "countryCode": "UA",
+      "origin": "http://www.kurilo.dp.ua",
+      "lat": 48.4752767,
+      "lng": 34.9964387
+    },
+    {
+      "code": "osm:node/4524477893",
+      "name": "Сигма Медичний Центр",
+      "countryCode": "UA",
+      "origin": "http://sigmalugansk.com",
+      "lat": 48.580126,
+      "lng": 39.3004443
+    },
+    {
+      "code": "osm:node/4697519790",
+      "name": "Бесарабський лікувально-діагностичний центр",
+      "countryCode": "UA",
+      "origin": "http://shabo-clinic.od.ua",
+      "lat": 46.1468471,
+      "lng": 30.3731593
+    },
+    {
+      "code": "osm:node/4904043521",
+      "name": "\"Твоє здоров'я\"",
+      "countryCode": "UA",
+      "origin": "https://tvoie-zdorovia.com.ua",
+      "lat": 49.8320899,
+      "lng": 23.9826366
+    },
+    {
+      "code": "osm:node/5115241522",
+      "name": "Сосновий Бір (Санаторій)",
+      "countryCode": "UA",
+      "origin": "http://sanatorij.com.ua",
+      "lat": 50.1577552,
+      "lng": 34.3233299
+    },
+    {
+      "code": "osm:node/5295230914",
+      "name": "Амбулаторія №6",
+      "countryCode": "UA",
+      "origin": "https://artemcpmsd.at.ua",
+      "lat": 48.5946717,
+      "lng": 38.0214091
+    },
+    {
+      "code": "osm:node/5327071623",
+      "name": "Odrex",
+      "countryCode": "UA",
+      "origin": "http://odrex-med.com",
+      "lat": 46.4796047,
+      "lng": 30.7013872
+    },
+    {
+      "code": "osm:node/5336883122",
+      "name": "Центр спортивної травматології",
+      "countryCode": "UA",
+      "origin": "https://www.sportmed.com.ua",
+      "lat": 50.4305715,
+      "lng": 30.5190822
+    },
+    {
+      "code": "osm:node/5422262701",
+      "name": "Андромеда+",
+      "countryCode": "UA",
+      "origin": "https://andromedaplus.ck.ua",
+      "lat": 49.4459514,
+      "lng": 32.0570169
+    },
+    {
+      "code": "osm:node/5422266142",
+      "name": "Андромеда+",
+      "countryCode": "UA",
+      "origin": "https://andromedaplus.ck.ua",
+      "lat": 49.4470801,
+      "lng": 32.049932
+    },
+    {
+      "code": "osm:node/5425307422",
+      "name": "Міжнародний комітет червоного хреста",
+      "countryCode": "UA",
+      "origin": "https://www.icrc.org",
+      "lat": 47.9984113,
+      "lng": 37.82416
+    },
+    {
+      "code": "osm:node/5527864891",
+      "name": "Медкорд",
+      "countryCode": "UA",
+      "origin": "http://medcord.com.ua",
+      "lat": 47.8391229,
+      "lng": 35.1222443
+    },
+    {
+      "code": "osm:node/5626002679",
+      "name": "Міська клінічна лікарня № 2 імені проф. О.О. Шалімова",
+      "countryCode": "UA",
+      "origin": "https://2lik.city.kh.ua",
+      "lat": 49.976589,
+      "lng": 36.2940046
+    },
+    {
+      "code": "osm:node/5643309625",
+      "name": "Луганський обласний консультативно-діагностичний центр",
+      "countryCode": "UA",
+      "origin": "https://lugokb.com.ua",
+      "lat": 48.9390243,
+      "lng": 38.4842718
+    },
+    {
+      "code": "osm:node/5996393285",
+      "name": "Вік Здоров'я",
+      "countryCode": "UA",
+      "origin": "https://www.vikzdorovia.com.ua",
+      "lat": 49.8289637,
+      "lng": 24.0527118
+    },
+    {
+      "code": "osm:node/6175111191",
+      "name": "Народицька лікарня",
+      "countryCode": "UA",
+      "origin": "https://narodytska.crl.net.ua",
+      "lat": 51.1998831,
+      "lng": 29.0862042
+    },
+    {
+      "code": "osm:node/6442544985",
+      "name": "Онкодиспансер",
+      "countryCode": "UA",
+      "origin": "https://pokod.com.ua",
+      "lat": 49.5796004,
+      "lng": 34.5502174
+    },
+    {
+      "code": "osm:node/6667982281",
+      "name": "Клініка академіка Земскова",
+      "countryCode": "UA",
+      "origin": "http://zemskov.com.ua",
+      "lat": 50.3989525,
+      "lng": 30.5131145
+    },
+    {
+      "code": "osm:node/6706801685",
+      "name": "Харківська міська клінічна багатопрофільна лікарня №17",
+      "countryCode": "UA",
+      "origin": "https://17mkbl.city.kh.ua",
+      "lat": 49.9790195,
+      "lng": 36.2908391
+    },
+    {
+      "code": "osm:node/6870083085",
+      "name": "ВІВА-клініка",
+      "countryCode": "UA",
+      "origin": "https://viva-clinic.com",
+      "lat": 50.2936091,
+      "lng": 26.866493
+    },
+    {
+      "code": "osm:node/6985820998",
+      "name": "МРЦ \"Атлант\"",
+      "countryCode": "UA",
+      "origin": "https://mrcatlant.com",
+      "lat": 46.5608527,
+      "lng": 32.6153152
+    },
+    {
+      "code": "osm:node/7143122387",
+      "name": "Spinex",
+      "countryCode": "UA",
+      "origin": "http://spinex.com.ua",
+      "lat": 49.2147741,
+      "lng": 28.4458714
+    },
+    {
+      "code": "osm:node/7479513974",
+      "name": "Оксфорд Медікал Рівне",
+      "countryCode": "UA",
+      "origin": "https://rivne.oxford-med.com.ua",
+      "lat": 50.6231352,
+      "lng": 26.2491281
+    },
+    {
+      "code": "osm:node/7504937271",
+      "name": "Харківська обласна клінічна травматологічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://oktl.kh.ua",
+      "lat": 49.9876061,
+      "lng": 36.3606516
+    },
+    {
+      "code": "osm:node/7878898988",
+      "name": "Патоморфологічна лабораторія",
+      "countryCode": "UA",
+      "origin": "https://csdclinic.com.ua",
+      "lat": 46.9430204,
+      "lng": 32.0377627
+    },
+    {
+      "code": "osm:node/8111162323",
+      "name": "Mediland",
+      "countryCode": "UA",
+      "origin": "https://mediland.com.ua",
+      "lat": 50.4556605,
+      "lng": 30.4750063
+    },
+    {
+      "code": "osm:node/8210821817",
+      "name": "Медичні огляди",
+      "countryCode": "UA",
+      "origin": "https://www.meddovidki.com.ua",
+      "lat": 50.3269071,
+      "lng": 30.2836343
+    },
+    {
+      "code": "osm:node/8325345803",
+      "name": "Психолог, психотерапевт Анастасія Лебедь",
+      "countryCode": "UA",
+      "origin": "http://xn--c1ajjlbco7a2g3c.com",
+      "lat": 50.518511,
+      "lng": 30.5980566
+    },
+    {
+      "code": "osm:node/8560980738",
+      "name": "Yanko Medical",
+      "countryCode": "UA",
+      "origin": "https://yanko.od.ua",
+      "lat": 46.5814337,
+      "lng": 30.8118497
+    },
+    {
+      "code": "osm:node/8742673417",
+      "name": "Клініка Варта",
+      "countryCode": "UA",
+      "origin": "https://vartaclinic.com.ua",
+      "lat": 50.3896242,
+      "lng": 30.4832194
+    },
+    {
+      "code": "osm:node/8779234617",
+      "name": "Клініка «IQmed»",
+      "countryCode": "UA",
+      "origin": "https://iqmed.com.ua",
+      "lat": 49.8187298,
+      "lng": 24.050661
+    },
+    {
+      "code": "osm:node/8855101617",
+      "name": "Медичний центр Амосової",
+      "countryCode": "UA",
+      "origin": "https://www.amosova.clinic",
+      "lat": 50.5421631,
+      "lng": 30.2660824
+    },
+    {
+      "code": "osm:node/8899367973",
+      "name": "Комунальне некомерційне підприємство Остерської міської ради \"Остерська міська лікарня\"",
+      "countryCode": "UA",
+      "origin": "https://kozadm.cg.gov.ua",
+      "lat": 50.9558025,
+      "lng": 30.8916299
+    },
+    {
+      "code": "osm:node/9365557391",
+      "name": "Кабінет масажу MedWay",
+      "countryCode": "UA",
+      "origin": "https://medway.dn.ua",
+      "lat": 48.4726726,
+      "lng": 37.083276
+    },
+    {
+      "code": "osm:node/9437511397",
+      "name": "Психолог Олексій Шумський",
+      "countryCode": "UA",
+      "origin": "https://shumskyi.pro",
+      "lat": 50.4684067,
+      "lng": 30.5132534
+    },
+    {
+      "code": "osm:node/10161142244",
+      "name": "Центр Экспертной Эндоскопии",
+      "countryCode": "UA",
+      "origin": "https://expert-endoscopy.ru",
+      "lat": 44.9065405,
+      "lng": 34.0798967
+    },
+    {
+      "code": "osm:node/10222738817",
+      "name": "Лормед",
+      "countryCode": "UA",
+      "origin": "https://www.lormed.com.ua",
+      "lat": 47.8383554,
+      "lng": 35.1312717
+    },
+    {
+      "code": "osm:node/10270393510",
+      "name": "Приватна лікарня Добрий прогноз",
+      "countryCode": "UA",
+      "origin": "https://dobro-clinic.com",
+      "lat": 50.4262456,
+      "lng": 30.4181253
+    },
+    {
+      "code": "osm:node/10275183209",
+      "name": "Медичний центр Святої Параскеви",
+      "countryCode": "UA",
+      "origin": "https://medcenter.lviv.ua",
+      "lat": 49.8451773,
+      "lng": 24.007514
+    },
+    {
+      "code": "osm:node/10657272882",
+      "name": "MonoDoctor",
+      "countryCode": "UA",
+      "origin": "https://www.monodoctor.com",
+      "lat": 49.8456218,
+      "lng": 23.9962369
+    },
+    {
+      "code": "osm:node/10743355405",
+      "name": "Evidense сучасна педіатрія",
+      "countryCode": "UA",
+      "origin": "https://evidence.vn.ua",
+      "lat": 49.2350199,
+      "lng": 28.4667922
+    },
+    {
+      "code": "osm:node/10848343462",
+      "name": "DENIS",
+      "countryCode": "UA",
+      "origin": "https://denis.ua",
+      "lat": 50.3864707,
+      "lng": 30.4623446
+    },
+    {
+      "code": "osm:node/11066408918",
+      "name": "Медичний центр \"ІРМЕД\"",
+      "countryCode": "UA",
+      "origin": "https://irmed.com.ua",
+      "lat": 49.4402476,
+      "lng": 32.0695806
+    },
+    {
+      "code": "osm:node/11073239370",
+      "name": "Неврологічне відділення",
+      "countryCode": "UA",
+      "origin": "https://chernigiv-crl.com",
+      "lat": 51.5082156,
+      "lng": 31.3381031
+    },
+    {
+      "code": "osm:node/11073253461",
+      "name": "Терапевтичне відділення",
+      "countryCode": "UA",
+      "origin": "https://chernigiv-crl.com",
+      "lat": 51.5077747,
+      "lng": 31.3373576
+    },
+    {
+      "code": "osm:node/11073255671",
+      "name": "Хірургічне відділення",
+      "countryCode": "UA",
+      "origin": "https://chernigiv-crl.com",
+      "lat": 51.5082557,
+      "lng": 31.3383229
+    },
+    {
+      "code": "osm:node/11073274433",
+      "name": "Поліклінічне відділення",
+      "countryCode": "UA",
+      "origin": "https://chernigiv-crl.com",
+      "lat": 51.5076263,
+      "lng": 31.3381268
+    },
+    {
+      "code": "osm:node/11246034220",
+      "name": "Медичний центр \"Медлайф стаціонар\"",
+      "countryCode": "UA",
+      "origin": "https://medlife.hospital",
+      "lat": 50.5181722,
+      "lng": 30.4881605
+    },
+    {
+      "code": "osm:node/11292740067",
+      "name": "Оберіг",
+      "countryCode": "UA",
+      "origin": "https://oberig.ua",
+      "lat": 50.4585159,
+      "lng": 30.4582577
+    },
+    {
+      "code": "osm:node/11298586380",
+      "name": "Реанімаційне відділення",
+      "countryCode": "UA",
+      "origin": "https://chernigiv-crl.com",
+      "lat": 51.5080532,
+      "lng": 31.3378057
+    },
+    {
+      "code": "osm:node/11298594376",
+      "name": "Лабораторія",
+      "countryCode": "UA",
+      "origin": "https://chernigiv-crl.com",
+      "lat": 51.5080833,
+      "lng": 31.3379103
+    },
+    {
+      "code": "osm:node/11546251686",
+      "name": "PerioDent",
+      "countryCode": "UA",
+      "origin": "https://periodent.in.ua",
+      "lat": 49.7976984,
+      "lng": 30.1142706
+    },
+    {
+      "code": "osm:node/11948445369",
+      "name": "МРТ Медичний центр ультрадіагностики",
+      "countryCode": "UA",
+      "origin": "http://htpp",
+      "lat": 49.4104268,
+      "lng": 27.0009781
+    },
+    {
+      "code": "osm:node/12469619564",
+      "name": "Інститут дерматології та венерології НАМН України",
+      "countryCode": "UA",
+      "origin": "http://idvamnu.com.ua",
+      "lat": 49.9968179,
+      "lng": 36.236188
+    },
+    {
+      "code": "osm:node/12772676503",
+      "name": "РівнеМед",
+      "countryCode": "UA",
+      "origin": "https://rivnemed.rv.ua",
+      "lat": 50.6030589,
+      "lng": 26.2678975
+    },
+    {
+      "code": "osm:node/13049890764",
+      "name": "Центр Сімейної медицини \"MedSun\" (Медсан)",
+      "countryCode": "UA",
+      "origin": "https://vn.medsunclinic.com.ua",
+      "lat": 49.2326429,
+      "lng": 28.4071428
+    },
+    {
+      "code": "osm:node/13261209840",
+      "name": "КНП «Медичний центр міста Києва»",
+      "countryCode": "UA",
+      "origin": "https://mc-kyiv.com.ua",
+      "lat": 50.4772651,
+      "lng": 30.6021293
+    },
+    {
+      "code": "osm:node/13479673672",
+      "name": "Обласний кардiологiчний центр",
+      "countryCode": "UA",
+      "origin": "https://cardiocenter.kharkiv.ua",
+      "lat": 50.0236762,
+      "lng": 36.2411365
+    },
+    {
+      "code": "osm:node/13625923912",
+      "name": "Обласна клінічна наркологічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://oknl.itmed.org",
+      "lat": 49.9856479,
+      "lng": 36.2891388
+    },
+    {
+      "code": "osm:node/13648180522",
+      "name": "Обласний клінічний центр урології і нефрології ім. В. І. Шаповала",
+      "countryCode": "UA",
+      "origin": "https://www.uro-nefro-center.com",
+      "lat": 49.9801611,
+      "lng": 36.2901869
+    },
+    {
+      "code": "osm:node/13731192001",
+      "name": "Оксфорд Медікал",
+      "countryCode": "UA",
+      "origin": "https://oxford-med.com.ua",
+      "lat": 50.432462,
+      "lng": 30.475073
+    },
+    {
+      "code": "osm:node/13801172138",
+      "name": "Міська клінічна лікарня № 30",
+      "countryCode": "UA",
+      "origin": "https://30lik.city.kh.ua",
+      "lat": 50.003026,
+      "lng": 36.2489675
+    },
+    {
+      "code": "osm:node/13850787862",
+      "name": "Луганська обласна дитяча клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://sites.google.com",
+      "lat": 50.0224845,
+      "lng": 32.9725342
+    },
+    {
+      "code": "osm:node/13912899601",
+      "name": "Міська дитяча клінічна лікарня № 24 Стаціонарне відділення",
+      "countryCode": "UA",
+      "origin": "https://24detlik.city.kh.ua",
+      "lat": 49.9864364,
+      "lng": 36.2345962
+    },
+    {
+      "code": "osm:node/13985059228",
+      "name": "СІ ЕМ СІ МЕД",
+      "countryCode": "UA",
+      "origin": "https://cmcmed.clinic",
+      "lat": 50.4273629,
+      "lng": 30.476595
+    },
+    {
+      "code": "osm:node/14026476336",
+      "name": "Центр Легеневого здоров'я",
+      "countryCode": "UA",
+      "origin": "https://lunghealthlviv.com",
+      "lat": 49.782246,
+      "lng": 24.0972407
+    },
+    {
+      "code": "osm:node/14081857344",
+      "name": "Південний медичний центр",
+      "countryCode": "UA",
+      "origin": "https://surgery.mk.ua",
+      "lat": 46.8679624,
+      "lng": 32.0111232
+    },
+    {
+      "code": "osm:node/14124531801",
+      "name": "Лікую",
+      "countryCode": "UA",
+      "origin": "https://likuyu.com",
+      "lat": 50.4291422,
+      "lng": 30.4638941
+    },
+    {
+      "code": "osm:way/25833396",
+      "name": "Лікарня №16",
+      "countryCode": "UA",
+      "origin": "http://uzovka.dn.ua",
+      "lat": 47.9944494,
+      "lng": 37.8960393
+    },
+    {
+      "code": "osm:way/31028553",
+      "name": "Київська клінічна лікарня на залізничному транспорті №3",
+      "countryCode": "UA",
+      "origin": "https://health-2023.kyivcity.gov.ua",
+      "lat": 50.4264364,
+      "lng": 30.6458897
+    },
+    {
+      "code": "osm:way/31246795",
+      "name": "Тернопільська університетська лікарня",
+      "countryCode": "UA",
+      "origin": "http://www.terokl.te.ua",
+      "lat": 49.5546281,
+      "lng": 25.6133009
+    },
+    {
+      "code": "osm:way/34874966",
+      "name": "Харківська обласна клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://rch.kh.gov.ua",
+      "lat": 50.0084686,
+      "lng": 36.2334946
+    },
+    {
+      "code": "osm:way/35380429",
+      "name": "Добробут",
+      "countryCode": "UA",
+      "origin": "https://dobrobut.com",
+      "lat": 50.3956238,
+      "lng": 30.6224956
+    },
+    {
+      "code": "osm:way/46247882",
+      "name": "Міська лікарня №3",
+      "countryCode": "UA",
+      "origin": "https://c2n.info",
+      "lat": 48.0078592,
+      "lng": 37.8314399
+    },
+    {
+      "code": "osm:way/68034886",
+      "name": "Вінницька обласна клінічна лікарня ім. М. І. Пирогова",
+      "countryCode": "UA",
+      "origin": "https://vokl.org",
+      "lat": 49.2298172,
+      "lng": 28.4511303
+    },
+    {
+      "code": "osm:way/71738632",
+      "name": "ГБУЗ РК \"Симферопольская клиническая больница скорой медицинской помощи № 6\"",
+      "countryCode": "UA",
+      "origin": "http://xn--6-8sbc2aomf1e8b.xn--p1ai",
+      "lat": 44.968754,
+      "lng": 34.0933893
+    },
+    {
+      "code": "osm:way/76212323",
+      "name": "Республиканская клиническая больница имени Н. А. Семашко",
+      "countryCode": "UA",
+      "origin": "http://uccrimea.com",
+      "lat": 44.957597,
+      "lng": 34.115704
+    },
+    {
+      "code": "osm:way/79766114",
+      "name": "Діагностичний центр",
+      "countryCode": "UA",
+      "origin": "http://www.omdc.cv.ua",
+      "lat": 48.2707741,
+      "lng": 25.9408689
+    },
+    {
+      "code": "osm:way/84910611",
+      "name": "Міська дитяча клінічна лікарня №16",
+      "countryCode": "UA",
+      "origin": "https://16detlik.city.kh.ua",
+      "lat": 49.9362921,
+      "lng": 36.3622565
+    },
+    {
+      "code": "osm:way/86072347",
+      "name": "Обласний фтизіопульмонологічний центр — Відділення стаціонару",
+      "countryCode": "UA",
+      "origin": "https://khftps.kharkiv.ua",
+      "lat": 50.0784535,
+      "lng": 36.2165973
+    },
+    {
+      "code": "osm:way/87203479",
+      "name": "Харківський обласний центр профілактики і боротьби зі СНIДом",
+      "countryCode": "UA",
+      "origin": "https://www.aids.kharkov.ua",
+      "lat": 49.9710068,
+      "lng": 36.316979
+    },
+    {
+      "code": "osm:way/87535296",
+      "name": "Мікрохірургія ока Ваш Зір",
+      "countryCode": "UA",
+      "origin": "https://www.vashzir.com",
+      "lat": 48.2999865,
+      "lng": 25.9310993
+    },
+    {
+      "code": "osm:way/87676282",
+      "name": "Інститут неврології, психіатрії та наркології ім. П.В. Волошина НАМН України",
+      "countryCode": "UA",
+      "origin": "https://inpn.org.ua",
+      "lat": 49.9863354,
+      "lng": 36.2849691
+    },
+    {
+      "code": "osm:way/89129053",
+      "name": "Поліклініка Дорожньої кліничної лікарні",
+      "countryCode": "UA",
+      "origin": "http://dkbdnepr.dp.ua",
+      "lat": 48.4708074,
+      "lng": 35.0121725
+    },
+    {
+      "code": "osm:way/90151364",
+      "name": "Клініка доктора Медведєва",
+      "countryCode": "UA",
+      "origin": "https://klinika.medvedev.ua",
+      "lat": 48.4642595,
+      "lng": 35.0341021
+    },
+    {
+      "code": "osm:way/90970732",
+      "name": "Центральная городская больница г. Красноперекопска",
+      "countryCode": "UA",
+      "origin": "http://bolnica-krp.ru",
+      "lat": 45.9487443,
+      "lng": 33.8082754
+    },
+    {
+      "code": "osm:way/91268175",
+      "name": "ГБУЗ РК \"Крымский республиканский клинический госпиталь для ветеранов войн\"",
+      "countryCode": "UA",
+      "origin": "http://simfgospital.ru",
+      "lat": 44.9686912,
+      "lng": 34.0956836
+    },
+    {
+      "code": "osm:way/91268179",
+      "name": "ГБУЗ РК \"Симферопольская городская детская клиническая больница\"",
+      "countryCode": "UA",
+      "origin": "https://zdravdeti-simf.ru",
+      "lat": 44.9671115,
+      "lng": 34.0944729
+    },
+    {
+      "code": "osm:way/91268183",
+      "name": "СП Диагностический центр",
+      "countryCode": "UA",
+      "origin": "http://xn----8sbosdicslm4f3a.xn--p1ai",
+      "lat": 44.9667752,
+      "lng": 34.0955894
+    },
+    {
+      "code": "osm:way/91268188",
+      "name": "СП Перинатальный центр",
+      "countryCode": "UA",
+      "origin": "http://xn----8sbosdicslm4f3a.xn--p1ai",
+      "lat": 44.9662144,
+      "lng": 34.0959575
+    },
+    {
+      "code": "osm:way/94975480",
+      "name": "Канівська Багатопрофільна лікарня",
+      "countryCode": "UA",
+      "origin": "https://kaniv.crl.org.ua",
+      "lat": 49.7524671,
+      "lng": 31.4535638
+    },
+    {
+      "code": "osm:way/95857056",
+      "name": "Київська міська клінічна лікарня №10",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.3992465,
+      "lng": 30.5137618
+    },
+    {
+      "code": "osm:way/97153515",
+      "name": "Джанкойская центральная районная больница",
+      "countryCode": "UA",
+      "origin": "https://djankoicrb.ru",
+      "lat": 45.7278647,
+      "lng": 34.3880083
+    },
+    {
+      "code": "osm:way/107432837",
+      "name": "Чугуївська центральна лікарня ім. М.І. Кононенка",
+      "countryCode": "UA",
+      "origin": "https://chuguiv.cl.net.ua",
+      "lat": 49.8306548,
+      "lng": 36.6932283
+    },
+    {
+      "code": "osm:way/108960506",
+      "name": "Київська міська клінічна лікарня №2",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4565717,
+      "lng": 30.6239269
+    },
+    {
+      "code": "osm:way/108960515",
+      "name": "Київська міська курортна бальнеолікарня",
+      "countryCode": "UA",
+      "origin": "https://www.kblua.com",
+      "lat": 50.4560185,
+      "lng": 30.622186
+    },
+    {
+      "code": "osm:way/110279548",
+      "name": "Рівненська центральна міська лікарня",
+      "countryCode": "UA",
+      "origin": "https://cml.rv.ua",
+      "lat": 50.6039516,
+      "lng": 26.2664968
+    },
+    {
+      "code": "osm:way/110384774",
+      "name": "Інститут загальної та невідкладної хірургії ім. В. Т. Зайцева при НАМН України",
+      "countryCode": "UA",
+      "origin": "http://ionh.com.ua",
+      "lat": 50.0399237,
+      "lng": 36.2448055
+    },
+    {
+      "code": "osm:way/110682533",
+      "name": "Київська міська клінічна лікарня №2",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4576427,
+      "lng": 30.6260156
+    },
+    {
+      "code": "osm:way/111855834",
+      "name": "Лікарня з поліклінікою УМВС",
+      "countryCode": "UA",
+      "origin": "https://mia.pl.ua",
+      "lat": 49.5839122,
+      "lng": 34.5205799
+    },
+    {
+      "code": "osm:way/112798682",
+      "name": "Київська міська клінічна лікарня №7",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4704381,
+      "lng": 30.4388256
+    },
+    {
+      "code": "osm:way/118729748",
+      "name": "Обласний шкірвен диспансер",
+      "countryCode": "UA",
+      "origin": "https://shkirvenpoltava.webnode.com.ua",
+      "lat": 49.5859923,
+      "lng": 34.5340453
+    },
+    {
+      "code": "osm:way/122562832",
+      "name": "ККЛПУ «Міський шкірно-венерологічний диспансер №1» м. Донецька",
+      "countryCode": "UA",
+      "origin": "https://gkvd1-donetsk.gorod.dn.ua",
+      "lat": 48.0074163,
+      "lng": 37.8297951
+    },
+    {
+      "code": "osm:way/131225364",
+      "name": "Клініка Меделіт",
+      "countryCode": "UA",
+      "origin": "https://medelit.com.ua",
+      "lat": 47.9337302,
+      "lng": 33.3977883
+    },
+    {
+      "code": "osm:way/133257067",
+      "name": "Детская поликлиника ГБУЗС \"Городская больница №9\"",
+      "countryCode": "UA",
+      "origin": "https://www.sevgb9.ru",
+      "lat": 44.5136798,
+      "lng": 33.5985546
+    },
+    {
+      "code": "osm:way/133257073",
+      "name": "ГБУЗС \"Городская больница №9\"",
+      "countryCode": "UA",
+      "origin": "https://www.sevgb9.ru",
+      "lat": 44.5141443,
+      "lng": 33.5989651
+    },
+    {
+      "code": "osm:way/136577976",
+      "name": "Луганська обласна дитяча клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "http://lodcl.lg.ua",
+      "lat": 48.8618944,
+      "lng": 38.4659552
+    },
+    {
+      "code": "osm:way/139981026",
+      "name": "Бориспільська багатопрофільна лікарня інтенсивного лікування",
+      "countryCode": "UA",
+      "origin": "https://boryspil.crl.net.ua",
+      "lat": 50.3465646,
+      "lng": 30.9472292
+    },
+    {
+      "code": "osm:way/144537985",
+      "name": "Поліклініка №1 4-ої міської лікарні",
+      "countryCode": "UA",
+      "origin": "https://www.clinik4.com.ua",
+      "lat": 49.566863,
+      "lng": 34.4992654
+    },
+    {
+      "code": "osm:way/151214350",
+      "name": "Дитяча клінічна лікарня № 5 Святошинського району",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4619979,
+      "lng": 30.3721405
+    },
+    {
+      "code": "osm:way/151286407",
+      "name": "Комунальна Міська Клінічна Лікарня Швидкої Медичної Допомоги",
+      "countryCode": "UA",
+      "origin": "http://www.emergency-hospital.lviv.ua",
+      "lat": 49.8743455,
+      "lng": 24.0392909
+    },
+    {
+      "code": "osm:way/151504055",
+      "name": "Обласна стоматологічна поліклініка",
+      "countryCode": "UA",
+      "origin": "http://ospdpr.fo.ua",
+      "lat": 48.452192,
+      "lng": 35.0346361
+    },
+    {
+      "code": "osm:way/152196329",
+      "name": "Харківська міська клінічна багатопрофільна лікарня №25",
+      "countryCode": "UA",
+      "origin": "https://25lik.city.kh.ua",
+      "lat": 49.9427732,
+      "lng": 36.363276
+    },
+    {
+      "code": "osm:way/157679288",
+      "name": "Лінкон",
+      "countryCode": "UA",
+      "origin": "https://linkon.com.ua",
+      "lat": 49.8526103,
+      "lng": 24.0214659
+    },
+    {
+      "code": "osm:way/158584972",
+      "name": "Київська міська туберкульозна лікарня №1",
+      "countryCode": "UA",
+      "origin": "http://health.kiev.ua",
+      "lat": 50.4164541,
+      "lng": 30.6641382
+    },
+    {
+      "code": "osm:way/158684193",
+      "name": "Черкаський обласний клінічний госпіталь ветеранів війни",
+      "countryCode": "UA",
+      "origin": "https://hospitalvv.ck.ua",
+      "lat": 49.4799412,
+      "lng": 32.0022654
+    },
+    {
+      "code": "osm:way/158806329",
+      "name": "Міська багатопрофільна лікарня №18",
+      "countryCode": "UA",
+      "origin": "https://18mbl.city.kh.ua",
+      "lat": 49.9788015,
+      "lng": 36.3315668
+    },
+    {
+      "code": "osm:way/159025653",
+      "name": "Київська міська клінічна лікарня №1",
+      "countryCode": "UA",
+      "origin": "https://kmkl1.kiev.ua",
+      "lat": 50.414655,
+      "lng": 30.6648423
+    },
+    {
+      "code": "osm:way/161067110",
+      "name": "Into-Sana",
+      "countryCode": "UA",
+      "origin": "https://into-sana.ua",
+      "lat": 46.431923,
+      "lng": 30.7242208
+    },
+    {
+      "code": "osm:way/166168160",
+      "name": "Обласна станція переливання крові",
+      "countryCode": "UA",
+      "origin": "https://ospk.mk.ua",
+      "lat": 46.9718783,
+      "lng": 31.9701106
+    },
+    {
+      "code": "osm:way/169969760",
+      "name": "Дитяча обласна лікарня",
+      "countryCode": "UA",
+      "origin": "https://kdol.in.ua",
+      "lat": 48.5018096,
+      "lng": 32.2784166
+    },
+    {
+      "code": "osm:way/172520422",
+      "name": "Ялтинская городская больница №1 - хиургический корпус",
+      "countryCode": "UA",
+      "origin": "http://livadiya-hospital.ru",
+      "lat": 44.4679169,
+      "lng": 34.1389139
+    },
+    {
+      "code": "osm:way/177513926",
+      "name": "Поліклініка №24, відділення №2",
+      "countryCode": "UA",
+      "origin": "https://24pol.city.kharkov.ua",
+      "lat": 50.007441,
+      "lng": 36.1997772
+    },
+    {
+      "code": "osm:way/178494968",
+      "name": "Нейроклініка лікаря Григоряна",
+      "countryCode": "UA",
+      "origin": "https://gclinic.ck.ua",
+      "lat": 49.4302695,
+      "lng": 32.0393323
+    },
+    {
+      "code": "osm:way/179348410",
+      "name": "Обласний кардіологічний центр",
+      "countryCode": "UA",
+      "origin": "https://kardiocenter.ck.ua",
+      "lat": 49.4653815,
+      "lng": 32.0049906
+    },
+    {
+      "code": "osm:way/181581942",
+      "name": "Інститут патології хребта та суглобів імені професора М.І.Ситенка",
+      "countryCode": "UA",
+      "origin": "https://sytenko.org.ua",
+      "lat": 50.0035113,
+      "lng": 36.2477945
+    },
+    {
+      "code": "osm:way/181582344",
+      "name": "Міська клінічна лікарня № 27",
+      "countryCode": "UA",
+      "origin": "https://27lik.city.kh.ua",
+      "lat": 49.9989362,
+      "lng": 36.2410029
+    },
+    {
+      "code": "osm:way/181584243",
+      "name": "Міський пологовий будинок № 1",
+      "countryCode": "UA",
+      "origin": "https://1mpb.city.kh.ua",
+      "lat": 50.0256438,
+      "lng": 36.211533
+    },
+    {
+      "code": "osm:way/181604068",
+      "name": "Дитяча обласна клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "http://dokl.poltava.ua",
+      "lat": 49.5833064,
+      "lng": 34.5520296
+    },
+    {
+      "code": "osm:way/181770068",
+      "name": "Неболейка",
+      "countryCode": "UA",
+      "origin": "http://nebolejka.com.ua",
+      "lat": 49.9908888,
+      "lng": 36.2823221
+    },
+    {
+      "code": "osm:way/182418321",
+      "name": "Київська обласна лікарня №2",
+      "countryCode": "UA",
+      "origin": "http://kol2.com.ua",
+      "lat": 50.4866417,
+      "lng": 30.4271489
+    },
+    {
+      "code": "osm:way/182821457",
+      "name": "Міська клінічна лікарня швидкої та невідкладної медичної допомоги ім. проф. О.І. Мещанінова",
+      "countryCode": "UA",
+      "origin": "https://lshmd.city.kh.ua",
+      "lat": 50.0401178,
+      "lng": 36.2483835
+    },
+    {
+      "code": "osm:way/183413254",
+      "name": "Інститут мікробіології та імунології ім. І.І. Мечникова",
+      "countryCode": "UA",
+      "origin": "https://www.imiamn.org.ua",
+      "lat": 49.9930573,
+      "lng": 36.2346021
+    },
+    {
+      "code": "osm:way/184213578",
+      "name": "Амбулаторія \"Гастроенетерологія\"",
+      "countryCode": "UA",
+      "origin": "https://gastro-life.tumblr.com",
+      "lat": 50.5949377,
+      "lng": 32.3814363
+    },
+    {
+      "code": "osm:way/186575005",
+      "name": "Дніпровський медико-хірургічний центр ім. Н.І. Пирогова",
+      "countryCode": "UA",
+      "origin": "https://pirogov-clinic.com.ua",
+      "lat": 48.5298286,
+      "lng": 35.0839492
+    },
+    {
+      "code": "osm:way/187951642",
+      "name": "Міська поліклініка №8",
+      "countryCode": "UA",
+      "origin": "https://8pol.city.kharkov.ua",
+      "lat": 50.0541176,
+      "lng": 36.194577
+    },
+    {
+      "code": "osm:way/193444085",
+      "name": "Одеська обласна клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://oocl.org.ua",
+      "lat": 46.5823007,
+      "lng": 30.78986
+    },
+    {
+      "code": "osm:way/198579428",
+      "name": "МС «Добробут»",
+      "countryCode": "UA",
+      "origin": "http://med.dobrobut.com",
+      "lat": 48.0103953,
+      "lng": 37.8419106
+    },
+    {
+      "code": "osm:way/200568987",
+      "name": "Донецький обласний дитячий клінічний центр нейрореабілітації",
+      "countryCode": "UA",
+      "origin": "http://www.dneuro.org",
+      "lat": 48.0038225,
+      "lng": 37.8577709
+    },
+    {
+      "code": "osm:way/201637142",
+      "name": "Станично-Луганська багатопрофільна лікарня",
+      "countryCode": "UA",
+      "origin": "https://www.facebook.com",
+      "lat": 48.6643527,
+      "lng": 39.5010502
+    },
+    {
+      "code": "osm:way/202794926",
+      "name": "Відділення по вул. Київській Сарненської ЦРЛ (колишня вузлова лікарня)",
+      "countryCode": "UA",
+      "origin": "https://sarny.crl.org.ua",
+      "lat": 51.3421311,
+      "lng": 26.6058141
+    },
+    {
+      "code": "osm:way/204909377",
+      "name": "Міська клінічна лікарня № 14 ім. проф. Л.Л. Гіршмана",
+      "countryCode": "UA",
+      "origin": "https://girshmanclinic.city.kharkiv.ua",
+      "lat": 50.012112,
+      "lng": 36.2461116
+    },
+    {
+      "code": "osm:way/206000823",
+      "name": "Асклепій",
+      "countryCode": "UA",
+      "origin": "https://asklepiy.if.ua",
+      "lat": 48.9268476,
+      "lng": 24.7140312
+    },
+    {
+      "code": "osm:way/208640452",
+      "name": "Українська алергологічна лікарня МОЗ України",
+      "countryCode": "UA",
+      "origin": "https://www.dzual.org",
+      "lat": 47.9649558,
+      "lng": 23.8502758
+    },
+    {
+      "code": "osm:way/217859227",
+      "name": "Харківська міська студентська лікарня",
+      "countryCode": "UA",
+      "origin": "https://studhosp.city.kh.ua",
+      "lat": 49.9974777,
+      "lng": 36.2431844
+    },
+    {
+      "code": "osm:way/221566773",
+      "name": "Військово-медичний клінічний центр Північного регіону",
+      "countryCode": "UA",
+      "origin": "https://vmkc-pnr.mil.gov.ua",
+      "lat": 50.010221,
+      "lng": 36.2359261
+    },
+    {
+      "code": "osm:way/232756717",
+      "name": "КНП \"Солоннянська багатопрофильна лікарня\"",
+      "countryCode": "UA",
+      "origin": "https://solone.lic.org.ua",
+      "lat": 48.2030372,
+      "lng": 34.8792718
+    },
+    {
+      "code": "osm:way/236433983",
+      "name": "Бериславська центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "http://bermed.ks.ua",
+      "lat": 46.8295325,
+      "lng": 33.399985
+    },
+    {
+      "code": "osm:way/236656034",
+      "name": "Міська клінічна лікарня №3, ЦПМСД №4",
+      "countryCode": "UA",
+      "origin": "https://mkl3.vn.ua",
+      "lat": 49.2127102,
+      "lng": 28.469057
+    },
+    {
+      "code": "osm:way/242520323",
+      "name": "Медичний центр Святої Параскеви",
+      "countryCode": "UA",
+      "origin": "https://medcenter.lviv.ua",
+      "lat": 49.8541666,
+      "lng": 24.0289109
+    },
+    {
+      "code": "osm:way/242753122",
+      "name": "Харківський обласний протитуберкульозний диспансер №1",
+      "countryCode": "UA",
+      "origin": "https://khftps.kharkiv.ua",
+      "lat": 49.9410251,
+      "lng": 36.3218578
+    },
+    {
+      "code": "osm:way/248199957",
+      "name": "Гурзуфская больница",
+      "countryCode": "UA",
+      "origin": "http://xn--c1aielkoucj.xn--p1ai",
+      "lat": 44.5469148,
+      "lng": 34.2785021
+    },
+    {
+      "code": "osm:way/256029782",
+      "name": "Комунальна 3-тя міська клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "http://3mkl.lviv.ua",
+      "lat": 49.8390193,
+      "lng": 24.0110919
+    },
+    {
+      "code": "osm:way/263121732",
+      "name": "Наш Дім",
+      "countryCode": "UA",
+      "origin": "https://ourhome.vin.ua",
+      "lat": 48.8614546,
+      "lng": 29.0207145
+    },
+    {
+      "code": "osm:way/267287170",
+      "name": "Терапевтический корпус",
+      "countryCode": "UA",
+      "origin": "http://livadiya-hospital.ru",
+      "lat": 44.4707958,
+      "lng": 34.1396779
+    },
+    {
+      "code": "osm:way/268867919",
+      "name": "Бальнеологічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://zoblkp.com.ua",
+      "lat": 48.6971254,
+      "lng": 32.6834876
+    },
+    {
+      "code": "osm:way/273005995",
+      "name": "Київська міська психоневрологічна лікарня № 2",
+      "countryCode": "UA",
+      "origin": "http://kmpnl2.kiev.ua",
+      "lat": 50.4730701,
+      "lng": 30.6152003
+    },
+    {
+      "code": "osm:way/275276954",
+      "name": "3-я міська клінічна поліклініка",
+      "countryCode": "UA",
+      "origin": "https://cpmsd3.pl.ua",
+      "lat": 49.5728859,
+      "lng": 34.5791016
+    },
+    {
+      "code": "osm:way/279822034",
+      "name": "Міська клінічна лікарня №13",
+      "countryCode": "UA",
+      "origin": "https://13lik.city.kh.ua",
+      "lat": 49.960913,
+      "lng": 36.2606848
+    },
+    {
+      "code": "osm:way/281596930",
+      "name": "Київська міська клінічна лікарня №12",
+      "countryCode": "UA",
+      "origin": "https://kmkl12.kyiv.ua",
+      "lat": 50.4144844,
+      "lng": 30.5423653
+    },
+    {
+      "code": "osm:way/283707334",
+      "name": "Київська міська клінічна лікарня № 17",
+      "countryCode": "UA",
+      "origin": "http://clinic17.health.kiev.ua",
+      "lat": 50.4274995,
+      "lng": 30.5278714
+    },
+    {
+      "code": "osm:way/297040442",
+      "name": "Ялтинская городская больница №1 Поликлиника №3",
+      "countryCode": "UA",
+      "origin": "http://livadiya-hospital.ru",
+      "lat": 44.4131107,
+      "lng": 34.0366647
+    },
+    {
+      "code": "osm:way/299461699",
+      "name": "Міська клінічна лікарня №5",
+      "countryCode": "UA",
+      "origin": "https://smkl5.sumy.ua",
+      "lat": 50.8905505,
+      "lng": 34.8307238
+    },
+    {
+      "code": "osm:way/312042796",
+      "name": "Запорізька міська клінічна лікарня № 10",
+      "countryCode": "UA",
+      "origin": "http://www.health.zp.ua",
+      "lat": 47.8469155,
+      "lng": 35.112845
+    },
+    {
+      "code": "osm:way/326972952",
+      "name": "3-я міська клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://3mklpoltava.itmed.org",
+      "lat": 49.5810465,
+      "lng": 34.5921237
+    },
+    {
+      "code": "osm:way/327756857",
+      "name": "Кременецька районна комунальна лікарня",
+      "countryCode": "UA",
+      "origin": "https://kremcrkl.ucoz.com",
+      "lat": 50.1165316,
+      "lng": 25.6939784
+    },
+    {
+      "code": "osm:way/331412772",
+      "name": "Сокальська центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "http://crl.sokal.lviv.ua",
+      "lat": 50.4662226,
+      "lng": 24.2855858
+    },
+    {
+      "code": "osm:way/332000738",
+      "name": "Тернопільська міська лікарня № 2",
+      "countryCode": "UA",
+      "origin": "https://www.tkml2.te.ua",
+      "lat": 49.5529385,
+      "lng": 25.6446124
+    },
+    {
+      "code": "osm:way/334529094",
+      "name": "Обласна клінічна інфекційна лікарня",
+      "countryCode": "UA",
+      "origin": "http://okil.org.ua",
+      "lat": 48.638074,
+      "lng": 22.2828954
+    },
+    {
+      "code": "osm:way/338162970",
+      "name": "Білопільська міська лікарня",
+      "countryCode": "UA",
+      "origin": "https://bml.org.ua",
+      "lat": 51.1448491,
+      "lng": 34.3279522
+    },
+    {
+      "code": "osm:way/340194891",
+      "name": "Херсонська обласна клінічна лікарня Херсонської обласної ради",
+      "countryCode": "UA",
+      "origin": "https://oblhospital.com.ua",
+      "lat": 46.645348,
+      "lng": 32.6094662
+    },
+    {
+      "code": "osm:way/340195293",
+      "name": "Херсонська дитяча обласна клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "http://bdp.ks.ua",
+      "lat": 46.6501505,
+      "lng": 32.6281767
+    },
+    {
+      "code": "osm:way/346966643",
+      "name": "Центр ендокринної хірургії",
+      "countryCode": "UA",
+      "origin": "http://endocenter.kiev.ua",
+      "lat": 50.4379763,
+      "lng": 30.5402523
+    },
+    {
+      "code": "osm:way/349896023",
+      "name": "Комунальне некомерційне підприємство «Чутівська центральна районна лікарня»",
+      "countryCode": "UA",
+      "origin": "https://crl-chutove.at.ua",
+      "lat": 49.7031215,
+      "lng": 35.1459829
+    },
+    {
+      "code": "osm:way/350304619",
+      "name": "Чёрные воды",
+      "countryCode": "UA",
+      "origin": "https://xn----dtbgba1ckl5d1bf.xn--p1ai",
+      "lat": 44.5606182,
+      "lng": 33.9191965
+    },
+    {
+      "code": "osm:way/356910001",
+      "name": "Оберіг",
+      "countryCode": "UA",
+      "origin": "http://oberig.ua",
+      "lat": 50.4569337,
+      "lng": 30.4581765
+    },
+    {
+      "code": "osm:way/360989888",
+      "name": "Центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "http://bcrl.com.ua",
+      "lat": 50.6443973,
+      "lng": 29.9247587
+    },
+    {
+      "code": "osm:way/361025442",
+      "name": "Військово-медичний клінічний центр західного регіону",
+      "countryCode": "UA",
+      "origin": "http://www.vmkczr.lviv.ua",
+      "lat": 49.8397241,
+      "lng": 24.0437509
+    },
+    {
+      "code": "osm:way/363631703",
+      "name": "Лікувально-діагностичний центр \"Добробут\"",
+      "countryCode": "UA",
+      "origin": "https://dobrobut.com",
+      "lat": 50.4239354,
+      "lng": 30.4557532
+    },
+    {
+      "code": "osm:way/369889258",
+      "name": "Київська міська клінічна лікарня №8",
+      "countryCode": "UA",
+      "origin": "http://health.kiev.ua",
+      "lat": 50.523538,
+      "lng": 30.464568
+    },
+    {
+      "code": "osm:way/374336200",
+      "name": "Центр медичної реабілітації та санаторного лікування",
+      "countryCode": "UA",
+      "origin": "https://puschavodica.com.ua",
+      "lat": 50.5492193,
+      "lng": 30.3444292
+    },
+    {
+      "code": "osm:way/378837615",
+      "name": "Міська лікарня №8",
+      "countryCode": "UA",
+      "origin": "http://health.zp.ua",
+      "lat": 47.8268952,
+      "lng": 35.2199313
+    },
+    {
+      "code": "osm:way/389211329",
+      "name": "Інститут очних хвороб і тканинної терапії імені В. П. Філатова",
+      "countryCode": "UA",
+      "origin": "https://institut-filatova.com.ua",
+      "lat": 46.4547614,
+      "lng": 30.7624239
+    },
+    {
+      "code": "osm:way/389277714",
+      "name": "Одеський обласний медичний центр",
+      "countryCode": "UA",
+      "origin": "http://allmedcenter.com.ua",
+      "lat": 46.4326247,
+      "lng": 30.7403502
+    },
+    {
+      "code": "osm:way/399195499",
+      "name": "Центр матері та дитини",
+      "countryCode": "UA",
+      "origin": "https://www.rod.ck.ua",
+      "lat": 49.4187683,
+      "lng": 32.09339
+    },
+    {
+      "code": "osm:way/402323015",
+      "name": "Симферопольский клинический родильный дом №1",
+      "countryCode": "UA",
+      "origin": "http://skrd1.ru",
+      "lat": 44.9515467,
+      "lng": 34.109328
+    },
+    {
+      "code": "osm:way/406712608",
+      "name": "Госпиталь Черноморского флота Российской федерации",
+      "countryCode": "UA",
+      "origin": "http://1472-wmkg.ru",
+      "lat": 44.6157465,
+      "lng": 33.5366997
+    },
+    {
+      "code": "osm:way/423678765",
+      "name": "Територіальне медичне об’єднання Міністерства внутрішніх справ України",
+      "countryCode": "UA",
+      "origin": "http://tmo-mvs-cherk.com.ua",
+      "lat": 49.4677178,
+      "lng": 32.0145119
+    },
+    {
+      "code": "osm:way/424143976",
+      "name": "Івано-Франківська обласна клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://okl.if.ua",
+      "lat": 48.9391185,
+      "lng": 24.6863254
+    },
+    {
+      "code": "osm:way/428745226",
+      "name": "Київська міська дитяча клінічна інфекційна лікарня",
+      "countryCode": "UA",
+      "origin": "http://kmdkil.ho.ua",
+      "lat": 50.4622725,
+      "lng": 30.4571082
+    },
+    {
+      "code": "osm:way/428890440",
+      "name": "Локачинська лікарня",
+      "countryCode": "UA",
+      "origin": "https://lokachi-crl.at.ua",
+      "lat": 50.741853,
+      "lng": 24.6459034
+    },
+    {
+      "code": "osm:way/433819566",
+      "name": "Київська міська клінічна шкірно-венерологічна лікарня",
+      "countryCode": "UA",
+      "origin": "http://health.kiev.ua",
+      "lat": 50.5454974,
+      "lng": 30.4891382
+    },
+    {
+      "code": "osm:way/433819567",
+      "name": "Київська міська дитяча лікарня №1",
+      "countryCode": "UA",
+      "origin": "http://health.kiev.ua",
+      "lat": 50.5426941,
+      "lng": 30.4897914
+    },
+    {
+      "code": "osm:way/436079698",
+      "name": "Київський міський клінічний госпіталь ветеранів війни",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.5332837,
+      "lng": 30.35946
+    },
+    {
+      "code": "osm:way/438649004",
+      "name": "Київський міський пологовий будинок №1",
+      "countryCode": "UA",
+      "origin": "https://kmpb1.com.ua",
+      "lat": 50.4294608,
+      "lng": 30.5390029
+    },
+    {
+      "code": "osm:way/443764050",
+      "name": "Громадська організація «Київська онкологічна асоціація»",
+      "countryCode": "UA",
+      "origin": "https://onko.com.ua",
+      "lat": 50.4508928,
+      "lng": 30.3614614
+    },
+    {
+      "code": "osm:way/466670266",
+      "name": "Дніпропетровська обласна дитяча клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "http://odkb.co.ua",
+      "lat": 48.4183927,
+      "lng": 35.0548914
+    },
+    {
+      "code": "osm:way/475012708",
+      "name": "Санаторій \"Медичний центр реабілітації залізничників\"",
+      "countryCode": "UA",
+      "origin": "https://medicalcentr.com",
+      "lat": 49.5497603,
+      "lng": 27.9489821
+    },
+    {
+      "code": "osm:way/485842017",
+      "name": "Sana vita",
+      "countryCode": "UA",
+      "origin": "https://sanavita.com.ua",
+      "lat": 46.4645197,
+      "lng": 30.7351816
+    },
+    {
+      "code": "osm:way/508294806",
+      "name": "Калуська центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://kalush-crl.if.ua",
+      "lat": 49.0394494,
+      "lng": 24.4282137
+    },
+    {
+      "code": "osm:way/520540517",
+      "name": "КУ „Бердянський протитуберкульозний диспансер”",
+      "countryCode": "UA",
+      "origin": "http://medicine.berdyansk.net",
+      "lat": 46.7877754,
+      "lng": 36.7817359
+    },
+    {
+      "code": "osm:way/526773002",
+      "name": "Лабсервіс",
+      "countryCode": "UA",
+      "origin": "https://www.lab-service.com.ua",
+      "lat": 48.5110194,
+      "lng": 32.2693916
+    },
+    {
+      "code": "osm:way/527525281",
+      "name": "Лікарня ім. Бертолона Ліннера",
+      "countryCode": "UA",
+      "origin": "https://beregove.crl.net.ua",
+      "lat": 48.201207,
+      "lng": 22.649833
+    },
+    {
+      "code": "osm:way/536978903",
+      "name": "Міська наркологічна лікарня «Соціотерапія»",
+      "countryCode": "UA",
+      "origin": "http://www.sociotherapy.org.ua",
+      "lat": 50.4023423,
+      "lng": 30.5124084
+    },
+    {
+      "code": "osm:way/546073167",
+      "name": "Шкірно-венерологічний диспансер",
+      "countryCode": "UA",
+      "origin": "http://medicine.berdyansk.net",
+      "lat": 46.7604793,
+      "lng": 36.7838096
+    },
+    {
+      "code": "osm:way/546073168",
+      "name": "КУ „Бердянський психоневрологічний диспансер”",
+      "countryCode": "UA",
+      "origin": "http://medicine.berdyansk.net",
+      "lat": 46.7919166,
+      "lng": 36.7860206
+    },
+    {
+      "code": "osm:way/554546827",
+      "name": "Reocell Clinic",
+      "countryCode": "UA",
+      "origin": "https://reocell.com",
+      "lat": 50.4244176,
+      "lng": 30.4993718
+    },
+    {
+      "code": "osm:way/594950526",
+      "name": "Київська міська клінічна лікарня №18",
+      "countryCode": "UA",
+      "origin": "https://kmkl18.kiev.ua",
+      "lat": 50.4434084,
+      "lng": 30.5100721
+    },
+    {
+      "code": "osm:way/596349214",
+      "name": "Центр інфекційних уражень нервової системи",
+      "countryCode": "UA",
+      "origin": "https://duieih.kiev.ua",
+      "lat": 50.5100647,
+      "lng": 30.4399697
+    },
+    {
+      "code": "osm:way/632714272",
+      "name": "Ічнянська центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://ichnya.crl.net.ua",
+      "lat": 50.8666206,
+      "lng": 32.3967303
+    },
+    {
+      "code": "osm:way/654068932",
+      "name": "Територіальне медичне об'єднання \"Фтизіатрія\"",
+      "countryCode": "UA",
+      "origin": "http://www.cgcptd.health.kiev.ua",
+      "lat": 50.3918649,
+      "lng": 30.4870413
+    },
+    {
+      "code": "osm:way/684799980",
+      "name": "Дитяча клінічна лікарня № 6",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4401788,
+      "lng": 30.5143286
+    },
+    {
+      "code": "osm:way/685353966",
+      "name": "Територія Дитячої поліклініки № 2",
+      "countryCode": "UA",
+      "origin": "https://2dp.cn.ua",
+      "lat": 51.5131661,
+      "lng": 31.3186728
+    },
+    {
+      "code": "osm:way/686373650",
+      "name": "Міська лікарня №8",
+      "countryCode": "UA",
+      "origin": "https://krmisto.gov.ua",
+      "lat": 48.07091,
+      "lng": 33.5148844
+    },
+    {
+      "code": "osm:way/693994772",
+      "name": "Республиканская клиническая больница имени Н.А. Семашко",
+      "countryCode": "UA",
+      "origin": "https://rkbrk.ru",
+      "lat": 45.0306549,
+      "lng": 34.0499655
+    },
+    {
+      "code": "osm:way/711662520",
+      "name": "Уманська центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://uman.crl.net.ua",
+      "lat": 48.7777456,
+      "lng": 30.2626638
+    },
+    {
+      "code": "osm:way/715548454",
+      "name": "Київська клінічна лікарня на залізничному транспорті №1",
+      "countryCode": "UA",
+      "origin": "https://uz.gov.ua",
+      "lat": 50.4469763,
+      "lng": 30.5015401
+    },
+    {
+      "code": "osm:way/719258200",
+      "name": "Університетська клініка НМУ ім. О.О. Богомольця",
+      "countryCode": "UA",
+      "origin": "https://nmuclinic.org.ua",
+      "lat": 50.453752,
+      "lng": 30.497796
+    },
+    {
+      "code": "osm:way/724250353",
+      "name": "Пологовий будинок №2",
+      "countryCode": "UA",
+      "origin": "http://www.roddom2.kiev.ua",
+      "lat": 50.4995573,
+      "lng": 30.4445406
+    },
+    {
+      "code": "osm:way/725966120",
+      "name": "Національний інститут фтизіатрії і пульмонології ім. Ф.Г. Яновського",
+      "countryCode": "UA",
+      "origin": "http://ifp.kiev.ua",
+      "lat": 50.4205982,
+      "lng": 30.5013644
+    },
+    {
+      "code": "osm:way/725966127",
+      "name": "Національний Інститут серцево-судинної хірургії ім. М. М. Амосова",
+      "countryCode": "UA",
+      "origin": "https://amosovinstitute.org.ua",
+      "lat": 50.4195614,
+      "lng": 30.4977442
+    },
+    {
+      "code": "osm:way/732302157",
+      "name": "Дитяча клінічна лікарня №7 Печерського району",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4126089,
+      "lng": 30.542705
+    },
+    {
+      "code": "osm:way/732753764",
+      "name": "Дитяча клінічна лікарня № 3 Солом'янського району м. Києва",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4264071,
+      "lng": 30.4502014
+    },
+    {
+      "code": "osm:way/732950652",
+      "name": "Медичний центр МедБуд",
+      "countryCode": "UA",
+      "origin": "https://medbud.kiev.ua",
+      "lat": 50.4233307,
+      "lng": 30.4664069
+    },
+    {
+      "code": "osm:way/736641318",
+      "name": "Лікарня швидкої медичної допомоги",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.472223,
+      "lng": 30.6182522
+    },
+    {
+      "code": "osm:way/739994039",
+      "name": "Науково-практичний центр профілактичної та клінічної медицини",
+      "countryCode": "UA",
+      "origin": "https://clinic.gov.ua",
+      "lat": 50.4229229,
+      "lng": 30.5510382
+    },
+    {
+      "code": "osm:way/741868665",
+      "name": "Інститут геронтології ім. Д.Ф. Чеботарьова",
+      "countryCode": "UA",
+      "origin": "https://www.geront.kiev.ua",
+      "lat": 50.5189686,
+      "lng": 30.4464859
+    },
+    {
+      "code": "osm:way/741868666",
+      "name": "Інститут ендокринології та обміну речовин ім. В.П. Комісаренка",
+      "countryCode": "UA",
+      "origin": "http://iem.net.ua",
+      "lat": 50.5204438,
+      "lng": 30.4469421
+    },
+    {
+      "code": "osm:way/742323496",
+      "name": "Центр інноваційних медичних технологій",
+      "countryCode": "UA",
+      "origin": "https://cimt.com.ua",
+      "lat": 50.4603646,
+      "lng": 30.5064643
+    },
+    {
+      "code": "osm:way/744600877",
+      "name": "Київська міська дитяча клінічна лікарня №2",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4743515,
+      "lng": 30.6031073
+    },
+    {
+      "code": "osm:way/744705614",
+      "name": "Київська міська клінічна лікарня №3",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4774819,
+      "lng": 30.6034503
+    },
+    {
+      "code": "osm:way/746499709",
+      "name": "Клінічна лікарня нафтопереробної промисловості України",
+      "countryCode": "UA",
+      "origin": "http://hospital-mhu.com.ua",
+      "lat": 50.4199239,
+      "lng": 30.4997861
+    },
+    {
+      "code": "osm:way/770591675",
+      "name": "Київська міська дитяча клінічна туберкульозна лікарня",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.5312816,
+      "lng": 30.3686133
+    },
+    {
+      "code": "osm:way/771131039",
+      "name": "Перинатальний центр м.Києва",
+      "countryCode": "UA",
+      "origin": "https://www.perinatalcenter.com.ua",
+      "lat": 50.4270982,
+      "lng": 30.5205343
+    },
+    {
+      "code": "osm:way/785426324",
+      "name": "Березівська центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://berezivska.crl.net.ua",
+      "lat": 47.1999079,
+      "lng": 30.8969431
+    },
+    {
+      "code": "osm:way/792010123",
+      "name": "Центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://mankivska.crl.net.ua",
+      "lat": 48.9665868,
+      "lng": 30.3482637
+    },
+    {
+      "code": "osm:way/806167162",
+      "name": "Шумська ЦРЛ",
+      "countryCode": "UA",
+      "origin": "https://shumsk.crl.net.ua",
+      "lat": 50.1181608,
+      "lng": 26.1204671
+    },
+    {
+      "code": "osm:way/816244375",
+      "name": "Дитяча клінічна лікарня №8",
+      "countryCode": "UA",
+      "origin": "https://med.kyivcity.gov.ua",
+      "lat": 50.4661442,
+      "lng": 30.4756738
+    },
+    {
+      "code": "osm:way/836757051",
+      "name": "Шевченківська центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://shevchenkivska.crl.net.ua",
+      "lat": 49.7016845,
+      "lng": 37.1783181
+    },
+    {
+      "code": "osm:way/856628824",
+      "name": "5-а міська клінічна поліклініка",
+      "countryCode": "UA",
+      "origin": "https://5poliklinika.lviv.ua",
+      "lat": 49.8258035,
+      "lng": 23.9670383
+    },
+    {
+      "code": "osm:way/864495837",
+      "name": "Київський міський клінічний ендокринологічний центр",
+      "countryCode": "UA",
+      "origin": "http://kmkec.com.ua",
+      "lat": 50.4527032,
+      "lng": 30.5106503
+    },
+    {
+      "code": "osm:way/876201536",
+      "name": "Сумська обласна клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://sokl.com.ua",
+      "lat": 50.9455334,
+      "lng": 34.7629235
+    },
+    {
+      "code": "osm:way/885840715",
+      "name": "MedicoMente",
+      "countryCode": "UA",
+      "origin": "https://medicomente.com",
+      "lat": 50.329339,
+      "lng": 30.6389015
+    },
+    {
+      "code": "osm:way/892071735",
+      "name": "Амбулаторія сімейної медицини",
+      "countryCode": "UA",
+      "origin": "https://vs-lazpsm.health.org.ua",
+      "lat": 50.4060465,
+      "lng": 28.8056669
+    },
+    {
+      "code": "osm:way/902686244",
+      "name": "Неврологічне відділення Центральної міської лікарні",
+      "countryCode": "UA",
+      "origin": "https://kz-cml.wixsite.com",
+      "lat": 48.5130081,
+      "lng": 32.2691352
+    },
+    {
+      "code": "osm:way/902686246",
+      "name": "Стаціонар № 2 Центральної міської лікарні",
+      "countryCode": "UA",
+      "origin": "https://kz-cml.wixsite.com",
+      "lat": 48.5098608,
+      "lng": 32.2703977
+    },
+    {
+      "code": "osm:way/931781036",
+      "name": "Лікарня ім. О. С. Лучанського",
+      "countryCode": "UA",
+      "origin": "https://luchanskogo.ks.ua",
+      "lat": 46.6628717,
+      "lng": 32.6503714
+    },
+    {
+      "code": "osm:way/931935127",
+      "name": "Обласний протитуберкульозний диспансер",
+      "countryCode": "UA",
+      "origin": "https://hoptd.ks.ua",
+      "lat": 46.6780279,
+      "lng": 32.5827254
+    },
+    {
+      "code": "osm:way/931935128",
+      "name": "Херсонська обласна інфекційна лікарня ім. Г.І. Горбачевського",
+      "countryCode": "UA",
+      "origin": "https://infhosp.ks.ua",
+      "lat": 46.6797589,
+      "lng": 32.5870799
+    },
+    {
+      "code": "osm:way/931977723",
+      "name": "Міська клінічна Лікарня ім.А. і О.Тропіних",
+      "countryCode": "UA",
+      "origin": "http://www.tropinka.ks.ua",
+      "lat": 46.6467455,
+      "lng": 32.600161
+    },
+    {
+      "code": "osm:way/932328009",
+      "name": "Поліклініка N3",
+      "countryCode": "UA",
+      "origin": "http://www.seaclinic.ks.ua",
+      "lat": 46.6678247,
+      "lng": 32.6099319
+    },
+    {
+      "code": "osm:way/932328013",
+      "name": "Херсонська міська клінічна лікарня ім. Є.Є.Карабелеша",
+      "countryCode": "UA",
+      "origin": "https://www.seaclinic.ks.ua",
+      "lat": 46.6386002,
+      "lng": 32.616645
+    },
+    {
+      "code": "osm:way/970713900",
+      "name": "Криворізька міська лікарня №17",
+      "countryCode": "UA",
+      "origin": "https://krmisto.gov.ua",
+      "lat": 47.6881738,
+      "lng": 33.1507245
+    },
+    {
+      "code": "osm:way/979578032",
+      "name": "Станція Швидкої медичної допомоги",
+      "countryCode": "UA",
+      "origin": "https://103.zt.ua",
+      "lat": 50.2779256,
+      "lng": 28.6626821
+    },
+    {
+      "code": "osm:way/986140853",
+      "name": "Інститут серця МОЗ України",
+      "countryCode": "UA",
+      "origin": "https://heart.kyiv.ua",
+      "lat": 50.4734583,
+      "lng": 30.6177095
+    },
+    {
+      "code": "osm:way/987724394",
+      "name": "Науково-практичний медичний центр «Реабілітація»",
+      "countryCode": "UA",
+      "origin": "http://www.rehab.uzhgorod.ua",
+      "lat": 48.6369729,
+      "lng": 22.2967547
+    },
+    {
+      "code": "osm:way/991994559",
+      "name": "Черкаський обласний протитуберкульозний диспансер",
+      "countryCode": "UA",
+      "origin": "https://cherkaskij-oblasnij-protituberkuloznij-dispaser.webnode.com.ua",
+      "lat": 49.449741,
+      "lng": 31.9185382
+    },
+    {
+      "code": "osm:way/993350183",
+      "name": "Самарівська центральна міська лікарня",
+      "countryCode": "UA",
+      "origin": "https://xn--80ada5abjfibbb8ad8m.xn--j1ab5f.xn--j1amh",
+      "lat": 48.6381431,
+      "lng": 35.2538678
+    },
+    {
+      "code": "osm:way/994847192",
+      "name": "Тячівська районна лікарня",
+      "countryCode": "UA",
+      "origin": "http://xn---1-dlc1byaj9a1d4c.xn--j1amh",
+      "lat": 48.0068036,
+      "lng": 23.5674311
+    },
+    {
+      "code": "osm:way/1002390185",
+      "name": "Савранська лікарня",
+      "countryCode": "UA",
+      "origin": "https://xn--80aaag5brtff4i.xn--k1ajr.xn--j1amh",
+      "lat": 48.1348536,
+      "lng": 30.0822212
+    },
+    {
+      "code": "osm:way/1004878298",
+      "name": "Дергачівська центральна лікарня",
+      "countryCode": "UA",
+      "origin": "https://derg.crl.net.ua",
+      "lat": 50.1101791,
+      "lng": 36.1091912
+    },
+    {
+      "code": "osm:way/1052304759",
+      "name": "Санаторій «Конча-Заспа»",
+      "countryCode": "UA",
+      "origin": "https://www.koncha-zaspa.kiev.ua",
+      "lat": 50.2949619,
+      "lng": 30.5870021
+    },
+    {
+      "code": "osm:way/1056511591",
+      "name": "Клінічний санаторій «Жовтень»",
+      "countryCode": "UA",
+      "origin": "http://www.zhovten.org",
+      "lat": 50.2623119,
+      "lng": 30.6225032
+    },
+    {
+      "code": "osm:way/1056517170",
+      "name": "База відпочинку «Конча-Заспа» Міністерства фінансів України",
+      "countryCode": "UA",
+      "origin": "https://baza-mfu.com.ua",
+      "lat": 50.2536279,
+      "lng": 30.6276072
+    },
+    {
+      "code": "osm:way/1057020827",
+      "name": "Кілійська центральна района лікарня",
+      "countryCode": "UA",
+      "origin": "https://kiliya.crl.net.ua",
+      "lat": 45.4331539,
+      "lng": 29.2785408
+    },
+    {
+      "code": "osm:way/1058997377",
+      "name": "Рахівська районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://www.knp-rakhiv-rl.com.ua",
+      "lat": 48.0539418,
+      "lng": 24.2074668
+    },
+    {
+      "code": "osm:way/1076019803",
+      "name": "Міська багатопрофільна клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "http://uzhgorodska.likarnja.org.ua",
+      "lat": 48.6001277,
+      "lng": 22.2867882
+    },
+    {
+      "code": "osm:way/1082819980",
+      "name": "Територіальне медичне об'єднання МВС",
+      "countryCode": "UA",
+      "origin": "https://km-tmo.mvs.gov.ua",
+      "lat": 49.4256784,
+      "lng": 26.9704092
+    },
+    {
+      "code": "osm:way/1086515805",
+      "name": "Карлівська лікарня ім. Л.В. Радевича",
+      "countryCode": "UA",
+      "origin": "http://karlivka-crl.pl.ua",
+      "lat": 49.4525971,
+      "lng": 35.1362273
+    },
+    {
+      "code": "osm:way/1089571666",
+      "name": "Хорошівська центральна лікарня",
+      "countryCode": "UA",
+      "origin": "https://horoshiv.crl.net.ua",
+      "lat": 50.5968517,
+      "lng": 28.4362945
+    },
+    {
+      "code": "osm:way/1151171704",
+      "name": "Обласний клінічний онкологічний диспансер",
+      "countryCode": "UA",
+      "origin": "https://tokod.te.ua",
+      "lat": 49.5537525,
+      "lng": 25.6406913
+    },
+    {
+      "code": "osm:way/1151185014",
+      "name": "Міська лікарня № 3",
+      "countryCode": "UA",
+      "origin": "https://www.tmkl3.te.ua",
+      "lat": 49.5531663,
+      "lng": 25.5559064
+    },
+    {
+      "code": "osm:way/1168522398",
+      "name": "Центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://gvcityhospital.business.site",
+      "lat": 48.3516824,
+      "lng": 29.8412327
+    },
+    {
+      "code": "osm:way/1181201549",
+      "name": "Хмільницька обласна фізіотерапевтична лікарня",
+      "countryCode": "UA",
+      "origin": "https://obfiztermed.at.ua",
+      "lat": 49.5518914,
+      "lng": 27.9502646
+    },
+    {
+      "code": "osm:way/1212429337",
+      "name": "ДРПЦ им. проф. В.К. Чайки",
+      "countryCode": "UA",
+      "origin": "https://xn--d1aaxhj0b.org",
+      "lat": 47.9539147,
+      "lng": 37.7772542
+    },
+    {
+      "code": "osm:way/1232451900",
+      "name": "Херсонський обласний онкологічний диспансер",
+      "countryCode": "UA",
+      "origin": "http://www.onko.ks.ua",
+      "lat": 46.6728411,
+      "lng": 32.6781942
+    },
+    {
+      "code": "osm:way/1266785028",
+      "name": "Міський пологовий будинок № 1",
+      "countryCode": "UA",
+      "origin": "https://dniprorada.gov.ua",
+      "lat": 48.4707475,
+      "lng": 35.0435021
+    },
+    {
+      "code": "osm:way/1266787483",
+      "name": "Центр кардіології та кардіохірургії",
+      "countryCode": "UA",
+      "origin": "https://rdc.dp.ua",
+      "lat": 48.4709052,
+      "lng": 35.0394055
+    },
+    {
+      "code": "osm:way/1290509644",
+      "name": "КНП «Херсонський обласний кардіологічний центр» ХОР",
+      "countryCode": "UA",
+      "origin": "http://cardiocenter.ks.ua",
+      "lat": 46.6297984,
+      "lng": 32.6078907
+    },
+    {
+      "code": "osm:way/1323555929",
+      "name": "Дніпропетровський обласний медичний центр соціально значущих хвороб",
+      "countryCode": "UA",
+      "origin": "https://www.medcenter-dnepr.pp.ua",
+      "lat": 48.5177634,
+      "lng": 35.0855229
+    },
+    {
+      "code": "osm:way/1337562599",
+      "name": "Тернопільська обласна комунальна клінічна психоневрологічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://tokkpnl.org.ua",
+      "lat": 49.541409,
+      "lng": 25.5490044
+    },
+    {
+      "code": "osm:way/1350378649",
+      "name": "Хмельницька обласна психіатрична лікарня №1",
+      "countryCode": "UA",
+      "origin": "https://hozznpd.itmed.org",
+      "lat": 49.3118503,
+      "lng": 26.9281203
+    },
+    {
+      "code": "osm:way/1363804029",
+      "name": "Монастириська міська лікарня",
+      "countryCode": "UA",
+      "origin": "https://monastr.crl.net.ua",
+      "lat": 49.08843,
+      "lng": 25.1647774
+    },
+    {
+      "code": "osm:way/1389283767",
+      "name": "Клеванська лікарня імені Михайла Вервеги",
+      "countryCode": "UA",
+      "origin": "https://klevancrl.com.ua",
+      "lat": 50.7384864,
+      "lng": 26.0408795
+    },
+    {
+      "code": "osm:way/1468025060",
+      "name": "Обласний наркологічний диспансер",
+      "countryCode": "UA",
+      "origin": "https://narkod-kherson.github.io",
+      "lat": 46.6496285,
+      "lng": 32.588822
+    },
+    {
+      "code": "osm:way/1472944639",
+      "name": "Центр діагностики Херсонської обласної клінічної лікарні",
+      "countryCode": "UA",
+      "origin": "http://www.oblhospital.com.ua",
+      "lat": 46.6436502,
+      "lng": 32.6130514
+    },
+    {
+      "code": "osm:way/1481681737",
+      "name": "Поліклініка № 1 Херсонська міська клінічна лікарня ім. Є.Є.Карабелеша",
+      "countryCode": "UA",
+      "origin": "https://www.seaclinic.ks.ua",
+      "lat": 46.633522,
+      "lng": 32.6168553
+    },
+    {
+      "code": "osm:way/1486404195",
+      "name": "Обласна клінічна психіатрична лікарня №3",
+      "countryCode": "UA",
+      "origin": "https://www.khrcph.com.ua",
+      "lat": 49.9869124,
+      "lng": 36.2877392
+    },
+    {
+      "code": "osm:way/1499579330",
+      "name": "Обласна дитяча клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://odkl.kh.ua",
+      "lat": 50.0487094,
+      "lng": 36.1861744
+    },
+    {
+      "code": "osm:way/1499579331",
+      "name": "Обласна дитяча клінічна лікарня",
+      "countryCode": "UA",
+      "origin": "https://odkl.kh.ua",
+      "lat": 49.9879102,
+      "lng": 36.1926222
+    },
+    {
+      "code": "osm:way/1532796156",
+      "name": "Рогатинська центральна районна лікарня",
+      "countryCode": "UA",
+      "origin": "https://rogatyn.crl.org.ua",
+      "lat": 49.413911,
+      "lng": 24.6028747
+    },
+    {
+      "code": "osm:way/1535643130",
+      "name": "Харківський міський перинатальний центр",
+      "countryCode": "UA",
+      "origin": "https://perynatalnyi.kharkiv.ua",
+      "lat": 49.9891125,
+      "lng": 36.3605513
+    },
+    {
+      "code": "osm:way/1549661548",
+      "name": "Лозівське територіальне медичне об'єднання",
+      "countryCode": "UA",
+      "origin": "https://knpltmo.itmed.org",
+      "lat": 48.8739458,
+      "lng": 36.2972154
+    },
+    {
+      "code": "osm:way/1554222959",
+      "name": "Міська дитяча клінічна лікарня № 19",
+      "countryCode": "UA",
+      "origin": "https://19detlik.city.kh.ua",
+      "lat": 49.9940802,
+      "lng": 36.2126031
+    },
+    {
+      "code": "osm:way/1561087478",
+      "name": "Харківський обласний клінічний перинатальний центр",
+      "countryCode": "UA",
+      "origin": "https://krcpc.org.ua",
+      "lat": 49.9881476,
+      "lng": 36.2129917
+    },
+    {
+      "code": "osm:way/1567437270",
+      "name": "Медичний Центр Ембріотек",
+      "countryCode": "UA",
+      "origin": "http://www.embryotech.com.ua",
+      "lat": 50.4531487,
+      "lng": 30.3293776
+    },
+    {
+      "code": "osm:way/1568228093",
+      "name": "Волочиська багатопрофільна лікарня",
+      "countryCode": "UA",
+      "origin": "https://www.volochyska-licarnia.org",
+      "lat": 49.5370663,
+      "lng": 26.2137116
+    }
+  ]
+}

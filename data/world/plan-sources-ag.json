@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "slug": "kitchen-floor-plan-1",
+      "file": "map/world/auto/ag/kitchen-floor-plan-1.pdf",
+      "url": "https://health.gov.ag/wp-content/uploads/2020/10/Kitchen-Floor-Plan-1.pdf",
+      "sha256": "889cb0c0d6fd5ea3acf0fd3bb7b6ed15003b6f81fb15ae6f8e3ac06cb563d647",
+      "hospitalCode": "osm:node/13790139925",
+      "hospitalName": "Clare Hill Health Center",
+      "countryCode": "AG",
+      "linkText": "Kitchen Floor Plan",
+      "kind": "floor-plan",
+      "approvedAt": "2026-10-22T02:54:32.136Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 970155,
+      "fetchedAt": "2026-10-22T12:50:17.287Z"
+    }
+  ]
+}

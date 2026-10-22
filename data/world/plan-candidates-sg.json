@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-10-22T10:53:21.022Z",
+  "countryCode": "SG",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 2,
+    "botChallenged": 0,
+    "robotsBlocked": 0,
+    "withCandidates": 1,
+    "crawled": 15
+  },
+  "count": 1,
+  "crawled": {
+    "osm:node/13245292326": "ok",
+    "osm:node/5599594021": "ok",
+    "osm:node/5599599523": "ok",
+    "osm:node/6746490215": "ok",
+    "osm:node/9723990867": "ok",
+    "osm:way/117325081": "failed",
+    "osm:way/1286187574": "ok",
+    "osm:way/162644392": "ok",
+    "osm:way/170744577": "ok",
+    "osm:way/172530221": "ok",
+    "osm:way/260549167": "ok",
+    "osm:way/33570275": "ok",
+    "osm:way/41890511": "ok",
+    "osm:way/746034993": "failed",
+    "osm:way/74715098": "ok"
+  },
+  "candidates": [
+    {
+      "hospitalCode": "osm:way/33570275",
+      "hospitalName": "Sengkang General & Community Hospital",
+      "countryCode": "SG",
+      "website": "https://www.skh.com.sg",
+      "url": "https://www.skh.com.sg/content/dam/singhealth-web/skh/patient-services/pdfs/SKH%20Campus%20Digital%20Map%20and%20Wayfinding%20using%20CityGeni%20-%20FAQ.pdf",
+      "linkText": "Frequently Asked Questions",
+      "kind": "site-map",
+      "confidence": "medium",
+      "format": "pdf"
+    }
+  ]
+}

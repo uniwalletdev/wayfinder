@@ -1,0 +1,49 @@
+{
+  "countryCode": "TN",
+  "fetchedAt": "2026-10-21T02:58:59.853Z",
+  "count": 5,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/95199308",
+      "name": "المستشفى العسكري الأصلي للتعليم بتونس",
+      "countryCode": "TN",
+      "origin": "http://www.hopmil.defense.tn",
+      "lat": 36.7859024,
+      "lng": 10.1785617
+    },
+    {
+      "code": "osm:way/101839634",
+      "name": "Polyclinique Les Berges du Lac",
+      "countryCode": "TN",
+      "origin": "https://www.polyclinique-lac.com",
+      "lat": 36.8319366,
+      "lng": 10.2309188
+    },
+    {
+      "code": "osm:way/110471881",
+      "name": "معهد باستور",
+      "countryCode": "TN",
+      "origin": "https://pasteur.tn",
+      "lat": 36.8234552,
+      "lng": 10.1792225
+    },
+    {
+      "code": "osm:way/180268053",
+      "name": "معهد صالح عزيز",
+      "countryCode": "TN",
+      "origin": "https://www.institutsalahazaiez.com",
+      "lat": 36.8071912,
+      "lng": 10.1583476
+    },
+    {
+      "code": "osm:way/790400985",
+      "name": "المركز الطبي ابن خلدون",
+      "countryCode": "TN",
+      "origin": "https://www.cmik.tn",
+      "lat": 35.8455269,
+      "lng": 10.5914183
+    }
+  ]
+}

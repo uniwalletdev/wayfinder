@@ -1,0 +1,793 @@
+{
+  "countryCode": "PT",
+  "fetchedAt": "2026-10-21T02:28:57.322Z",
+  "count": 98,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/462186445",
+      "name": "Casa de Saúde do Telhal",
+      "countryCode": "PT",
+      "origin": "https://www.isjd.pt",
+      "lat": 38.8079068,
+      "lng": -9.3075898
+    },
+    {
+      "code": "osm:node/2041651512",
+      "name": "Hospital da Póvoa de Varzim",
+      "countryCode": "PT",
+      "origin": "https://www.ulspvvc.min-saude.pt",
+      "lat": 41.3829444,
+      "lng": -8.7587715
+    },
+    {
+      "code": "osm:node/4266207293",
+      "name": "Unidade Cuidados Continuados Integrados",
+      "countryCode": "PT",
+      "origin": "https://misericordiamogadouro.pt",
+      "lat": 41.3397228,
+      "lng": -6.7141246
+    },
+    {
+      "code": "osm:node/4376062443",
+      "name": "Urgências",
+      "countryCode": "PT",
+      "origin": "http://ulsne.pt",
+      "lat": 41.3432168,
+      "lng": -6.712261
+    },
+    {
+      "code": "osm:node/4788769526",
+      "name": "Hospital Júlio de Matos",
+      "countryCode": "PT",
+      "origin": "http://www.hjmatos.min-saude.pt",
+      "lat": 38.7570476,
+      "lng": -9.1460979
+    },
+    {
+      "code": "osm:node/9993295965",
+      "name": "Hospital da Luz - Clínica Santa Maria da Feira",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldaluz.pt",
+      "lat": 40.9259523,
+      "lng": -8.5492147
+    },
+    {
+      "code": "osm:node/11061341908",
+      "name": "Hospital CUF Trindade",
+      "countryCode": "PT",
+      "origin": "https://www.cuf.pt",
+      "lat": 41.1515898,
+      "lng": -8.6098672
+    },
+    {
+      "code": "osm:node/11181853712",
+      "name": "Trofa Saúde",
+      "countryCode": "PT",
+      "origin": "https://www.trofasaude.pt",
+      "lat": 40.8876464,
+      "lng": -8.4913292
+    },
+    {
+      "code": "osm:node/11406499421",
+      "name": "Trofa Saúde Gaia",
+      "countryCode": "PT",
+      "origin": "https://www.trofasaude.pt",
+      "lat": 41.1207557,
+      "lng": -8.6179845
+    },
+    {
+      "code": "osm:node/12154135945",
+      "name": "Trofa Saúde - Ovar",
+      "countryCode": "PT",
+      "origin": "https://www.trofasaude.pt",
+      "lat": 40.8765137,
+      "lng": -8.6344003
+    },
+    {
+      "code": "osm:node/12384038202",
+      "name": "Hospital de São José - Consultas Externas",
+      "countryCode": "PT",
+      "origin": "https://www.chlc.min-saude.pt",
+      "lat": 38.7167068,
+      "lng": -9.1375638
+    },
+    {
+      "code": "osm:node/12671029230",
+      "name": "Hospital Lusíadas Santa Maria da Feira",
+      "countryCode": "PT",
+      "origin": "https://www.lusiadas.pt",
+      "lat": 40.9275132,
+      "lng": -8.5721737
+    },
+    {
+      "code": "osm:way/25689164",
+      "name": "Hospital Pedro Hispano",
+      "countryCode": "PT",
+      "origin": "https://www.ulsm.min-saude.pt",
+      "lat": 41.1823134,
+      "lng": -8.6629451
+    },
+    {
+      "code": "osm:way/26120268",
+      "name": "Hospital de Santo António",
+      "countryCode": "PT",
+      "origin": "https://chporto.pt",
+      "lat": 41.1470631,
+      "lng": -8.6190697
+    },
+    {
+      "code": "osm:way/54664695",
+      "name": "Hospital Pulido Valente",
+      "countryCode": "PT",
+      "origin": "http://www.chln.min-saude.pt",
+      "lat": 38.7651353,
+      "lng": -9.160506
+    },
+    {
+      "code": "osm:way/55503878",
+      "name": "Hospital de Magalhães Lemos",
+      "countryCode": "PT",
+      "origin": "https://www.hmlemos.min-saude.pt",
+      "lat": 41.1773936,
+      "lng": -8.6656946
+    },
+    {
+      "code": "osm:way/71507621",
+      "name": "Hospital dos Lusíadas",
+      "countryCode": "PT",
+      "origin": "http://www.hpplusiadas.pt",
+      "lat": 38.7491526,
+      "lng": -9.1778593
+    },
+    {
+      "code": "osm:way/71570486",
+      "name": "Hospital Cruz Vermelha",
+      "countryCode": "PT",
+      "origin": "http://www.hospitalcruzvermelha.pt",
+      "lat": 38.7462111,
+      "lng": -9.1750985
+    },
+    {
+      "code": "osm:way/71571984",
+      "name": "Hospital Santa Maria",
+      "countryCode": "PT",
+      "origin": "http://www.hsm.pt",
+      "lat": 38.7478704,
+      "lng": -9.1609619
+    },
+    {
+      "code": "osm:way/93276413",
+      "name": "Hospital Terras do Infante",
+      "countryCode": "PT",
+      "origin": "https://www.chualgarve.min-saude.pt",
+      "lat": 37.0978853,
+      "lng": -8.6820689
+    },
+    {
+      "code": "osm:way/97821504",
+      "name": "Hospital de Santo António dos Capuchos",
+      "countryCode": "PT",
+      "origin": "https://www.chlc.min-saude.pt",
+      "lat": 38.7221964,
+      "lng": -9.1424343
+    },
+    {
+      "code": "osm:way/97822055",
+      "name": "Hospital de São José",
+      "countryCode": "PT",
+      "origin": "http://www.chlc.min-saude.pt",
+      "lat": 38.7181776,
+      "lng": -9.1380021
+    },
+    {
+      "code": "osm:way/98115214",
+      "name": "Hospital Dona Estefânia",
+      "countryCode": "PT",
+      "origin": "http://www.chlc.min-saude.pt",
+      "lat": 38.728746,
+      "lng": -9.1390683
+    },
+    {
+      "code": "osm:way/103363094",
+      "name": "Casa de Saúde do Montepio Rainha Dona Leonor",
+      "countryCode": "PT",
+      "origin": "http://www.montepio-rdl.pt",
+      "lat": 39.4064058,
+      "lng": -9.1343218
+    },
+    {
+      "code": "osm:way/105067347",
+      "name": "Hospital da Luz - Setúbal",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldaluz.pt",
+      "lat": 38.5333582,
+      "lng": -8.9095143
+    },
+    {
+      "code": "osm:way/107161879",
+      "name": "Unisana Hospitais - Hospital de Almada",
+      "countryCode": "PT",
+      "origin": "https://unisanahospitais.pt",
+      "lat": 38.6735727,
+      "lng": -9.1544786
+    },
+    {
+      "code": "osm:way/108146095",
+      "name": "Hospital António Lopes",
+      "countryCode": "PT",
+      "origin": "https://hospitalantoniolopes.pt",
+      "lat": 41.5738663,
+      "lng": -8.2651918
+    },
+    {
+      "code": "osm:way/115235575",
+      "name": "Hospital São Francisco Xavier",
+      "countryCode": "PT",
+      "origin": "http://www.chlo.min-saude.pt",
+      "lat": 38.7074037,
+      "lng": -9.2176964
+    },
+    {
+      "code": "osm:way/118467672",
+      "name": "Hospital de Famalicão",
+      "countryCode": "PT",
+      "origin": "https://www.chma.pt",
+      "lat": 41.4127683,
+      "lng": -8.5224233
+    },
+    {
+      "code": "osm:way/126366393",
+      "name": "Hospital Padre Américo",
+      "countryCode": "PT",
+      "origin": "http://www.chtamegasousa.pt",
+      "lat": 41.1968749,
+      "lng": -8.3088149
+    },
+    {
+      "code": "osm:way/128233010",
+      "name": "Hospital das Forças Armadas - Polo do Porto",
+      "countryCode": "PT",
+      "origin": "https://www.hfar.pt",
+      "lat": 41.1581986,
+      "lng": -8.6257
+    },
+    {
+      "code": "osm:way/128823402",
+      "name": "Centro Materno Infantil Norte Albino Aroso",
+      "countryCode": "PT",
+      "origin": "https://www.chporto.pt",
+      "lat": 41.151735,
+      "lng": -8.6241024
+    },
+    {
+      "code": "osm:way/128828531",
+      "name": "Hospital da Ordem da Lapa",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldalapa.pt",
+      "lat": 41.1571869,
+      "lng": -8.613396
+    },
+    {
+      "code": "osm:way/131582991",
+      "name": "Hospital de Peniche",
+      "countryCode": "PT",
+      "origin": "https://www.choeste.min-saude.pt",
+      "lat": 39.3635614,
+      "lng": -9.3828245
+    },
+    {
+      "code": "osm:way/133744327",
+      "name": "Hospital Doutor João de Almada",
+      "countryCode": "PT",
+      "origin": "https://www.sesaram.pt",
+      "lat": 32.6679944,
+      "lng": -16.9049295
+    },
+    {
+      "code": "osm:way/134573230",
+      "name": "Hospital da Senhora da Oliveira Guimarães, EPE",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldeguimaraes.min-saude.pt",
+      "lat": 41.4423259,
+      "lng": -8.3055401
+    },
+    {
+      "code": "osm:way/135224439",
+      "name": "Cruz Vermelha Portuguesa - Delegação Marinhas",
+      "countryCode": "PT",
+      "origin": "http://www.cvpmarinhas.org",
+      "lat": 41.5568928,
+      "lng": -8.7830222
+    },
+    {
+      "code": "osm:way/138258185",
+      "name": "Hospital Curry Cabral",
+      "countryCode": "PT",
+      "origin": "http://www.chlc.min-saude.pt",
+      "lat": 38.7410272,
+      "lng": -9.1521028
+    },
+    {
+      "code": "osm:way/146217310",
+      "name": "Hospital Privado Braga",
+      "countryCode": "PT",
+      "origin": "https://www.trofasaude.pt",
+      "lat": 41.5245227,
+      "lng": -8.4134677
+    },
+    {
+      "code": "osm:way/151217626",
+      "name": "Hospital Privado de Alfena",
+      "countryCode": "PT",
+      "origin": "https://www.hospitalprivadodealfena.pt",
+      "lat": 41.227753,
+      "lng": -8.5396729
+    },
+    {
+      "code": "osm:way/155977438",
+      "name": "Hospital de São Sebastião",
+      "countryCode": "PT",
+      "origin": "https://www.ulsedv.min-saude.pt",
+      "lat": 40.930509,
+      "lng": -8.5467828
+    },
+    {
+      "code": "osm:way/165914916",
+      "name": "Hospital dos Marmeleiros",
+      "countryCode": "PT",
+      "origin": "https://www.sesaram.pt",
+      "lat": 32.6713999,
+      "lng": -16.9088081
+    },
+    {
+      "code": "osm:way/166576348",
+      "name": "Hospital de Santo André",
+      "countryCode": "PT",
+      "origin": "https://www.chleiria.pt",
+      "lat": 39.7436123,
+      "lng": -8.7950975
+    },
+    {
+      "code": "osm:way/172436272",
+      "name": "Hospital Lusíadas Albufeira",
+      "countryCode": "PT",
+      "origin": "https://www.lusiadas.pt",
+      "lat": 37.1029751,
+      "lng": -8.2333047
+    },
+    {
+      "code": "osm:way/173078954",
+      "name": "Hospital de Cascais Dr. José de Almeida",
+      "countryCode": "PT",
+      "origin": "http://www.hppcascais.pt",
+      "lat": 38.7300826,
+      "lng": -9.418456
+    },
+    {
+      "code": "osm:way/182571215",
+      "name": "Instituto CUF Porto",
+      "countryCode": "PT",
+      "origin": "https://www.cuf.pt",
+      "lat": 41.1817968,
+      "lng": -8.6508345
+    },
+    {
+      "code": "osm:way/183414003",
+      "name": "Instituto Português Oncologia de Lisboa Francisco Gentil",
+      "countryCode": "PT",
+      "origin": "http://www.ipolisboa.min-saude.pt",
+      "lat": 38.7396026,
+      "lng": -9.1619088
+    },
+    {
+      "code": "osm:way/192544685",
+      "name": "Hospital do Mar",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldomar.pt",
+      "lat": 38.8028322,
+      "lng": -9.09803
+    },
+    {
+      "code": "osm:way/194605869",
+      "name": "Hospital de Santo Espírito da Ilha Terceira",
+      "countryCode": "PT",
+      "origin": "https://www.hseit.pt",
+      "lat": 38.6685749,
+      "lng": -27.2199952
+    },
+    {
+      "code": "osm:way/201509189",
+      "name": "Rui Santiago - Osteopata",
+      "countryCode": "PT",
+      "origin": "https://www.ruisantiago.com",
+      "lat": 41.1276256,
+      "lng": -8.605994
+    },
+    {
+      "code": "osm:way/205638141",
+      "name": "Instituto Português de Oncologia do Porto",
+      "countryCode": "PT",
+      "origin": "https://ipoporto.pt",
+      "lat": 41.1823824,
+      "lng": -8.6063335
+    },
+    {
+      "code": "osm:way/237313827",
+      "name": "Santa Casa da Misericórdia de Arcos de Valdevez",
+      "countryCode": "PT",
+      "origin": "https://www.scmav.pt",
+      "lat": 41.8517313,
+      "lng": -8.4248669
+    },
+    {
+      "code": "osm:way/242346630",
+      "name": "Hospital Saint Louis",
+      "countryCode": "PT",
+      "origin": "https://www.hslouis.pt",
+      "lat": 38.7136239,
+      "lng": -9.1457263
+    },
+    {
+      "code": "osm:way/256925839",
+      "name": "Hospital da Luz Coimbra",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldaluz.pt",
+      "lat": 40.2247805,
+      "lng": -8.4237163
+    },
+    {
+      "code": "osm:way/257662607",
+      "name": "Centro Hospitalar de Nossa Senhora da Conceição",
+      "countryCode": "PT",
+      "origin": "http://www.misericordiabatalha.com",
+      "lat": 39.6381946,
+      "lng": -8.8171181
+    },
+    {
+      "code": "osm:way/263486826",
+      "name": "Serviço de Urgência Básica (SUB)",
+      "countryCode": "PT",
+      "origin": "http://www.hff.min-saude.pt",
+      "lat": 38.7902148,
+      "lng": -9.3518078
+    },
+    {
+      "code": "osm:way/279416921",
+      "name": "Hospital Narciso Ferreira",
+      "countryCode": "PT",
+      "origin": "http://www.hnf.pt",
+      "lat": 41.3914205,
+      "lng": -8.3902327
+    },
+    {
+      "code": "osm:way/287327871",
+      "name": "Trofa Saúde Braga (Centro)",
+      "countryCode": "PT",
+      "origin": "https://www.trofasaude.pt",
+      "lat": 41.5499154,
+      "lng": -8.4187642
+    },
+    {
+      "code": "osm:way/303073810",
+      "name": "Hospital Santa Cecília",
+      "countryCode": "PT",
+      "origin": "https://www.scmalvaiazere.pt",
+      "lat": 39.8208279,
+      "lng": -8.377517
+    },
+    {
+      "code": "osm:way/304166828",
+      "name": "Centro Hospitalar Barreiro-Montijo, EPE - Hospital Distrital do Montijo",
+      "countryCode": "PT",
+      "origin": "http://www.chbm.min-saude.pt",
+      "lat": 38.7074622,
+      "lng": -8.9712369
+    },
+    {
+      "code": "osm:way/304644256",
+      "name": "Maternidade Doutor Alfredo da Costa",
+      "countryCode": "PT",
+      "origin": "https://www.chlc.min-saude.pt",
+      "lat": 38.7326278,
+      "lng": -9.1474537
+    },
+    {
+      "code": "osm:way/307556440",
+      "name": "Hospital de Santo Tirso",
+      "countryCode": "PT",
+      "origin": "https://www.chma.pt",
+      "lat": 41.3418688,
+      "lng": -8.4805699
+    },
+    {
+      "code": "osm:way/309605882",
+      "name": "Hospital de Braga",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldebraga.pt",
+      "lat": 41.5676887,
+      "lng": -8.3993883
+    },
+    {
+      "code": "osm:way/315005175",
+      "name": "Centro de Reabilitação do Norte",
+      "countryCode": "PT",
+      "origin": "https://www.chvnge.min-saude.pt",
+      "lat": 41.0886895,
+      "lng": -8.6549241
+    },
+    {
+      "code": "osm:way/337051098",
+      "name": "Hospital do SAMS",
+      "countryCode": "PT",
+      "origin": "http://pics.sams.pt",
+      "lat": 38.7681874,
+      "lng": -9.1146698
+    },
+    {
+      "code": "osm:way/343515401",
+      "name": "Hospital Privado de Guimarães",
+      "countryCode": "PT",
+      "origin": "https://www.ami.com.pt",
+      "lat": 41.4302972,
+      "lng": -8.3227715
+    },
+    {
+      "code": "osm:way/361068171",
+      "name": "Casa de Saúde Câmara Pestana",
+      "countryCode": "PT",
+      "origin": "https://irmashospitaleiras.pt",
+      "lat": 32.6470402,
+      "lng": -16.8843416
+    },
+    {
+      "code": "osm:way/365905085",
+      "name": "Hospital de Santa Luzia",
+      "countryCode": "PT",
+      "origin": "https://www.cham.min-saude.pt",
+      "lat": 41.6968896,
+      "lng": -8.8328525
+    },
+    {
+      "code": "osm:way/376736007",
+      "name": "Hospital da Prelada",
+      "countryCode": "PT",
+      "origin": "https://portaldasaude.scmp.pt",
+      "lat": 41.1711333,
+      "lng": -8.6294368
+    },
+    {
+      "code": "osm:way/382872779",
+      "name": "Hospital Agostinho Ribeiro",
+      "countryCode": "PT",
+      "origin": "https://hospitalagostinhoribeiro.com",
+      "lat": 41.3704339,
+      "lng": -8.2027601
+    },
+    {
+      "code": "osm:way/383387707",
+      "name": "Hospital das Forças Armadas – Polo de Lisboa",
+      "countryCode": "PT",
+      "origin": "https://www.hfar.pt",
+      "lat": 38.7672131,
+      "lng": -9.1751711
+    },
+    {
+      "code": "osm:way/426369212",
+      "name": "Hospital da Ordem Terceira",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldaordemterceira.pt",
+      "lat": 38.7086568,
+      "lng": -9.141662
+    },
+    {
+      "code": "osm:way/448228652",
+      "name": "Cruz Vermelha",
+      "countryCode": "PT",
+      "origin": "http://terrasbouro.cruzvermelha.pt",
+      "lat": 41.7183359,
+      "lng": -8.311051
+    },
+    {
+      "code": "osm:way/486192612",
+      "name": "Instituto de Oftalmologia Doutor Gama Pinto",
+      "countryCode": "PT",
+      "origin": "http://institutogamapinto.com",
+      "lat": 38.7221773,
+      "lng": -9.1443225
+    },
+    {
+      "code": "osm:way/490137959",
+      "name": "Centro Hospitalar Vila Nova de Gaia/Espinho Santos Silva - Unidade 1",
+      "countryCode": "PT",
+      "origin": "https://www.chvng.pt",
+      "lat": 41.104664,
+      "lng": -8.5924182
+    },
+    {
+      "code": "osm:way/530305896",
+      "name": "Trofa Saúde - Hospital da Trofa",
+      "countryCode": "PT",
+      "origin": "https://www.trofasaude.pt",
+      "lat": 41.3438826,
+      "lng": -8.5489461
+    },
+    {
+      "code": "osm:way/531333731",
+      "name": "Hospital Nossa Senhora da Arrábida",
+      "countryCode": "PT",
+      "origin": "https://www.hnsa.pt",
+      "lat": 38.5468712,
+      "lng": -9.0292484
+    },
+    {
+      "code": "osm:way/531349217",
+      "name": "Hospital Nossa Senhora da Arrábida",
+      "countryCode": "PT",
+      "origin": "https://www.hnsa.pt",
+      "lat": 38.5464844,
+      "lng": -9.0290828
+    },
+    {
+      "code": "osm:way/538207584",
+      "name": "Hospital Doutor Francisco Zagalo",
+      "countryCode": "PT",
+      "origin": "https://www.hovar.min-saude.pt",
+      "lat": 40.8578376,
+      "lng": -8.6312659
+    },
+    {
+      "code": "osm:way/541337245",
+      "name": "Hospital da Luz Aveiro",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldaluz.pt",
+      "lat": 40.6375652,
+      "lng": -8.6362482
+    },
+    {
+      "code": "osm:way/541359025",
+      "name": "Hospital Infante Dom Pedro",
+      "countryCode": "PT",
+      "origin": "https://www.chbv.min-saude.pt",
+      "lat": 40.6345754,
+      "lng": -8.6546984
+    },
+    {
+      "code": "osm:way/651015429",
+      "name": "Hospital Privado de Chaves",
+      "countryCode": "PT",
+      "origin": "https://hpchaves.pt",
+      "lat": 41.7425504,
+      "lng": -7.4813234
+    },
+    {
+      "code": "osm:way/661314822",
+      "name": "Hospital da Luz Lisboa",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldaluz.pt",
+      "lat": 38.7561587,
+      "lng": -9.1924438
+    },
+    {
+      "code": "osm:way/672534143",
+      "name": "Hospital de São Paulo",
+      "countryCode": "PT",
+      "origin": "https://scmserpa.pt",
+      "lat": 37.9442423,
+      "lng": -7.5956153
+    },
+    {
+      "code": "osm:way/800039751",
+      "name": "Centro Hospitalar de São Francisco",
+      "countryCode": "PT",
+      "origin": "https://www.sanfil.pt",
+      "lat": 39.7491259,
+      "lng": -8.8157974
+    },
+    {
+      "code": "osm:way/802212076",
+      "name": "Hospital da Luz - Vila Real",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldaluz.pt",
+      "lat": 41.2958537,
+      "lng": -7.7466962
+    },
+    {
+      "code": "osm:way/805944793",
+      "name": "Unidade Local de Saúde de Trás-os-Montes e Alto Douro",
+      "countryCode": "PT",
+      "origin": "https://www.chtmad.min-saude.pt",
+      "lat": 41.309838,
+      "lng": -7.7605273
+    },
+    {
+      "code": "osm:way/853239952",
+      "name": "Trofa Saúde Hospital Vila Real",
+      "countryCode": "PT",
+      "origin": "https://www.trofasaude.pt",
+      "lat": 41.2962685,
+      "lng": -7.7360666
+    },
+    {
+      "code": "osm:way/940457865",
+      "name": "Hospital de Egas Moniz",
+      "countryCode": "PT",
+      "origin": "http://www.chlo.min-saude.pt",
+      "lat": 38.699528,
+      "lng": -9.1880327
+    },
+    {
+      "code": "osm:way/1012042653",
+      "name": "Hospital Doutor Nélio Mendonça",
+      "countryCode": "PT",
+      "origin": "https://www.sesaram.pt",
+      "lat": 32.6481397,
+      "lng": -16.9244659
+    },
+    {
+      "code": "osm:way/1036597402",
+      "name": "USF Nova Saúde",
+      "countryCode": "PT",
+      "origin": "https://www.facebook.com",
+      "lat": 41.3595956,
+      "lng": -8.3650499
+    },
+    {
+      "code": "osm:way/1144103749",
+      "name": "Hospital Particular do Algarve - Alvor",
+      "countryCode": "PT",
+      "origin": "https://www.grupohpa.com",
+      "lat": 37.1306662,
+      "lng": -8.5821737
+    },
+    {
+      "code": "osm:way/1287637765",
+      "name": "Centro Clínico de Lisboa do SAMS",
+      "countryCode": "PT",
+      "origin": "https://www.sams.pt",
+      "lat": 38.7342357,
+      "lng": -9.1580776
+    },
+    {
+      "code": "osm:way/1288546916",
+      "name": "Hospital de Jesus",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldejesus.pt",
+      "lat": 38.7125908,
+      "lng": -9.1509171
+    },
+    {
+      "code": "osm:way/1341604293",
+      "name": "Casa de Saúde Nossa Senhora da Conceição",
+      "countryCode": "PT",
+      "origin": "https://irmashospitaleiras.pt",
+      "lat": 37.7505206,
+      "lng": -25.6849756
+    },
+    {
+      "code": "osm:way/1442544871",
+      "name": "Hospital da Luz Oeiras",
+      "countryCode": "PT",
+      "origin": "https://www.hospitaldaluz.pt",
+      "lat": 38.7016647,
+      "lng": -9.3051142
+    },
+    {
+      "code": "osm:way/1489470265",
+      "name": "Hospital Trofa Saúde Santo Tirso",
+      "countryCode": "PT",
+      "origin": "https://www.trofasaude.pt",
+      "lat": 41.338196,
+      "lng": -8.481308
+    },
+    {
+      "code": "osm:way/1494644177",
+      "name": "Hospital CUF Arrifana de Sousa - Penafiel",
+      "countryCode": "PT",
+      "origin": "https://www.cuf.pt",
+      "lat": 41.2089933,
+      "lng": -8.2851516
+    }
+  ]
+}

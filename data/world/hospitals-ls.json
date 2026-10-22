@@ -1,0 +1,33 @@
+{
+  "countryCode": "LS",
+  "fetchedAt": "2026-10-21T01:58:17.165Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/147255489",
+      "name": "Maseru District Hospital",
+      "countryCode": "LS",
+      "origin": "https://maserudistricthospital.com",
+      "lat": -29.3158933,
+      "lng": 27.486954
+    },
+    {
+      "code": "osm:way/1394847906",
+      "name": "Villa Private Hospital",
+      "countryCode": "LS",
+      "origin": "https://www.villahospital.co.ls",
+      "lat": -29.3690942,
+      "lng": 27.5240436
+    },
+    {
+      "code": "osm:way/1459158623",
+      "name": "Paray Hospital",
+      "countryCode": "LS",
+      "origin": "https://www.parayhospital.co.ls",
+      "lat": -29.5103513,
+      "lng": 28.5987269
+    }
+  ]
+}

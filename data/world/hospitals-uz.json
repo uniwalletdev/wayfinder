@@ -1,0 +1,337 @@
+{
+  "countryCode": "UZ",
+  "fetchedAt": "2026-10-21T03:06:34.071Z",
+  "count": 41,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1830590597",
+      "name": "BRAVO PHARMA",
+      "countryCode": "UZ",
+      "origin": "https://bravopharma.uz",
+      "lat": 41.3008737,
+      "lng": 69.2696745
+    },
+    {
+      "code": "osm:node/4493216201",
+      "name": "Жэксофт МДЦ",
+      "countryCode": "UZ",
+      "origin": "https://jmds.uz",
+      "lat": 41.2943938,
+      "lng": 69.1734267
+    },
+    {
+      "code": "osm:node/5063236022",
+      "name": "Диасон  медицинский центр",
+      "countryCode": "UZ",
+      "origin": "https://diason.uz",
+      "lat": 41.3511327,
+      "lng": 69.2458081
+    },
+    {
+      "code": "osm:node/5253520665",
+      "name": "ORLMED ЛОР центр",
+      "countryCode": "UZ",
+      "origin": "https://www.orlmed.uz",
+      "lat": 39.6475632,
+      "lng": 66.9192172
+    },
+    {
+      "code": "osm:node/6114660585",
+      "name": "Авиценна",
+      "countryCode": "UZ",
+      "origin": "http://facebook.com",
+      "lat": 40.6058988,
+      "lng": 72.1321046
+    },
+    {
+      "code": "osm:node/6369863385",
+      "name": "Respublika Ixtisoslashtirilgan Nefrologiya va Transplantatsiya Ilmiy Amaliy Markazi",
+      "countryCode": "UZ",
+      "origin": "https://nefro.uz",
+      "lat": 41.3610841,
+      "lng": 69.2981685
+    },
+    {
+      "code": "osm:node/6398247785",
+      "name": "NMS",
+      "countryCode": "UZ",
+      "origin": "https://nms.uz",
+      "lat": 41.3803222,
+      "lng": 69.3184832
+    },
+    {
+      "code": "osm:node/6562271985",
+      "name": "ORLMED-Лор центр филиал",
+      "countryCode": "UZ",
+      "origin": "https://www.orlmed.uz",
+      "lat": 39.6588233,
+      "lng": 66.9517252
+    },
+    {
+      "code": "osm:node/6639772987",
+      "name": "Сам Бехруз Мед Сервис;сам бехруз мед сервис",
+      "countryCode": "UZ",
+      "origin": "http://www.bexruzmed.uz;https",
+      "lat": 39.6662768,
+      "lng": 67.0128684
+    },
+    {
+      "code": "osm:node/8185909917",
+      "name": "Центр медицинской реабилитации \"Прогноз\"",
+      "countryCode": "UZ",
+      "origin": "https://cmr-prognoz.uz",
+      "lat": 41.3224317,
+      "lng": 69.291532
+    },
+    {
+      "code": "osm:node/9105353221",
+      "name": "Центр Понсети",
+      "countryCode": "UZ",
+      "origin": "http://www.ponseti.uz",
+      "lat": 41.367153,
+      "lng": 69.2695515
+    },
+    {
+      "code": "osm:node/10992907342",
+      "name": "Citymed Turk EKU Markazi",
+      "countryCode": "UZ",
+      "origin": "https://citymedeku.uz",
+      "lat": 41.3496421,
+      "lng": 69.1887475
+    },
+    {
+      "code": "osm:node/11672285975",
+      "name": "SHOX MED Педиатрия",
+      "countryCode": "UZ",
+      "origin": "https://shox.hospital",
+      "lat": 41.3586944,
+      "lng": 69.2896766
+    },
+    {
+      "code": "osm:node/11987707315",
+      "name": "RShTYIMBF",
+      "countryCode": "UZ",
+      "origin": "https://www.garantbank.uz",
+      "lat": 39.7696074,
+      "lng": 64.4537239
+    },
+    {
+      "code": "osm:node/12399549354",
+      "name": "Израильский медицинский центр репродуктивной медицины и семейного здоровья",
+      "countryCode": "UZ",
+      "origin": "https://www.ivf.uz",
+      "lat": 41.3182934,
+      "lng": 69.3018517
+    },
+    {
+      "code": "osm:node/14063740382",
+      "name": "Kimyo University Hospital",
+      "countryCode": "UZ",
+      "origin": "https://www.kimyohospital.uz",
+      "lat": 41.2582947,
+      "lng": 69.1909722
+    },
+    {
+      "code": "osm:way/31962773",
+      "name": "клиника имени М.М. Федоровича",
+      "countryCode": "UZ",
+      "origin": "https://www.fedorovich.uz",
+      "lat": 41.3008939,
+      "lng": 69.2826563
+    },
+    {
+      "code": "osm:way/87658715",
+      "name": "Respublika ixtisoslashtirilgan akusherlik va ginekologiya ilmiy-amaliy tibbiyot markazi",
+      "countryCode": "UZ",
+      "origin": "https://www.akusherstvo.uz",
+      "lat": 41.3559203,
+      "lng": 69.3592473
+    },
+    {
+      "code": "osm:way/95933958",
+      "name": "Respublika shoshilinch tibbiy yordam ilmiy markazi (№16)",
+      "countryCode": "UZ",
+      "origin": "http://emerg-centre.uz",
+      "lat": 41.2688058,
+      "lng": 69.2173715
+    },
+    {
+      "code": "osm:way/98680387",
+      "name": "Tashkent International Clinic",
+      "countryCode": "UZ",
+      "origin": "https://www.tashclinic.org",
+      "lat": 41.2719538,
+      "lng": 69.2941533
+    },
+    {
+      "code": "osm:way/98809129",
+      "name": "Больница ГАЖК \"Узбекистон Темир Йуллари\"",
+      "countryCode": "UZ",
+      "origin": "http://uzrailway.uz",
+      "lat": 41.3010841,
+      "lng": 69.3038714
+    },
+    {
+      "code": "osm:way/102548980",
+      "name": "НИИ дерматологии и венерологии",
+      "countryCode": "UZ",
+      "origin": "https://dermatology.uz",
+      "lat": 41.3495449,
+      "lng": 69.1690447
+    },
+    {
+      "code": "osm:way/102776348",
+      "name": "MDS service",
+      "countryCode": "UZ",
+      "origin": "https://mds.uz",
+      "lat": 41.3091275,
+      "lng": 69.3179367
+    },
+    {
+      "code": "osm:way/172681541",
+      "name": "Республиканский Центр социальной адаптации детей",
+      "countryCode": "UZ",
+      "origin": "https://rcsad.uz",
+      "lat": 41.2821208,
+      "lng": 69.258911
+    },
+    {
+      "code": "osm:way/190479502",
+      "name": "РКБ №1 отделение Гемодиализа",
+      "countryCode": "UZ",
+      "origin": "http://rkb.uz",
+      "lat": 41.3017713,
+      "lng": 69.2831681
+    },
+    {
+      "code": "osm:way/191895119",
+      "name": "Respublika Narkologiya Markazi",
+      "countryCode": "UZ",
+      "origin": "http://www.narcocenter.uz",
+      "lat": 41.3906384,
+      "lng": 69.3654202
+    },
+    {
+      "code": "osm:way/203544075",
+      "name": "SamDTU ko‘p tarmoqli klinikasi",
+      "countryCode": "UZ",
+      "origin": "https://klinikasamdtu.uz",
+      "lat": 39.6671749,
+      "lng": 66.9662209
+    },
+    {
+      "code": "osm:way/301044394",
+      "name": "Karim Fayz Medical",
+      "countryCode": "UZ",
+      "origin": "http://www.karimfayz.uz",
+      "lat": 40.1214812,
+      "lng": 67.8381793
+    },
+    {
+      "code": "osm:way/303443518",
+      "name": "\"BIO NUR MED SERVIS\"медицинский центр",
+      "countryCode": "UZ",
+      "origin": "http://www.bionur.uz",
+      "lat": 39.6872956,
+      "lng": 67.0072611
+    },
+    {
+      "code": "osm:way/366826038",
+      "name": "Endokrinologiya dispanseri",
+      "countryCode": "UZ",
+      "origin": "https://resendork.uz",
+      "lat": 42.4617245,
+      "lng": 59.6402175
+    },
+    {
+      "code": "osm:way/375664592",
+      "name": "Viloyat kordiologiya markazi",
+      "countryCode": "UZ",
+      "origin": "https://cardiokhorezm.uz",
+      "lat": 41.5559656,
+      "lng": 60.6896933
+    },
+    {
+      "code": "osm:way/406552830",
+      "name": "Bolalar Milliy Tibbiyot Markazi",
+      "countryCode": "UZ",
+      "origin": "https://bmtm.uz",
+      "lat": 41.3042904,
+      "lng": 69.3390778
+    },
+    {
+      "code": "osm:way/427063438",
+      "name": "Qaraqalpaqstan Respublikası AIJSke qarsı gúresiw orayı",
+      "countryCode": "UZ",
+      "origin": "https://qroits.uz",
+      "lat": 42.4491098,
+      "lng": 59.6252558
+    },
+    {
+      "code": "osm:way/466068748",
+      "name": "Urganch sh Shoshilinch Tez Tibbiy yordam markazi",
+      "countryCode": "UZ",
+      "origin": "http://www.med.uz",
+      "lat": 41.5459206,
+      "lng": 60.6038302
+    },
+    {
+      "code": "osm:way/499869153",
+      "name": "Детская Психоневрологическая больница им У. К. Курбанова",
+      "countryCode": "UZ",
+      "origin": "http://rdpnb.uz",
+      "lat": 41.3222045,
+      "lng": 69.317437
+    },
+    {
+      "code": "osm:way/592032053",
+      "name": "Respublika ihtisoslashtirilgan urologiya markazi",
+      "countryCode": "UZ",
+      "origin": "https://rscu.uz",
+      "lat": 41.355294,
+      "lng": 69.1769927
+    },
+    {
+      "code": "osm:way/596181014",
+      "name": "Eramed",
+      "countryCode": "UZ",
+      "origin": "http://eramedical.uz",
+      "lat": 41.3049628,
+      "lng": 69.3110635
+    },
+    {
+      "code": "osm:way/684911992",
+      "name": "American Hospital",
+      "countryCode": "UZ",
+      "origin": "https://americanhospital.uz",
+      "lat": 41.3735548,
+      "lng": 69.3240847
+    },
+    {
+      "code": "osm:way/718121862",
+      "name": "QR Sanitariya-Epidemologiyalıq tınıshlıq hám jámiyet salamatlıǵı basqarması",
+      "countryCode": "UZ",
+      "origin": "https://qqses.uz",
+      "lat": 42.4590318,
+      "lng": 59.5835916
+    },
+    {
+      "code": "osm:way/1236647706",
+      "name": "Bobur Qishloq Vrachlik Punkti",
+      "countryCode": "UZ",
+      "origin": "https://boburqvp.com",
+      "lat": 39.9290805,
+      "lng": 66.023017
+    },
+    {
+      "code": "osm:way/1563655810",
+      "name": "Chimgan bolalar sanatoriyasi",
+      "countryCode": "UZ",
+      "origin": "https://www.chimganbs.uz",
+      "lat": 41.5563839,
+      "lng": 70.0194943
+    }
+  ]
+}

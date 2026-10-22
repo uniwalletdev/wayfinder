@@ -1,0 +1,41 @@
+{
+  "countryCode": "HT",
+  "fetchedAt": "2026-10-21T01:36:24.535Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/618217217",
+      "name": "Clinic de Reference",
+      "countryCode": "HT",
+      "origin": "http://www.mmex.org",
+      "lat": 19.8332992,
+      "lng": -72.933299
+    },
+    {
+      "code": "osm:node/629205860",
+      "name": "Hopital Lumière Bonne Fin",
+      "countryCode": "HT",
+      "origin": "https://www.harvestcall.org",
+      "lat": 18.3934992,
+      "lng": -73.6115485
+    },
+    {
+      "code": "osm:way/92449608",
+      "name": "Hospital Saint Boniface",
+      "countryCode": "HT",
+      "origin": "https://www.haitihealth.org",
+      "lat": 18.2775318,
+      "lng": -73.1302381
+    },
+    {
+      "code": "osm:way/1012034433",
+      "name": "Hôpital Bernard Mevs",
+      "countryCode": "HT",
+      "origin": "https://www.facebook.com",
+      "lat": 18.5616617,
+      "lng": -72.3186422
+    }
+  ]
+}

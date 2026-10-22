@@ -1,0 +1,17 @@
+{
+  "countryCode": "VC",
+  "fetchedAt": "2026-10-21T03:07:44.680Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/378689552",
+      "name": "Milton Cato Memorial Hospital",
+      "countryCode": "VC",
+      "origin": "https://health.gov.vc",
+      "lat": 13.1585112,
+      "lng": -61.2305594
+    }
+  ]
+}

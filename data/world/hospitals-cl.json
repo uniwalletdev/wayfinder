@@ -1,0 +1,449 @@
+{
+  "countryCode": "CL",
+  "fetchedAt": "2026-10-21T01:04:15.447Z",
+  "count": 55,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/2680414049",
+      "name": "Clínica Puerto Montt",
+      "countryCode": "CL",
+      "origin": "https://clinicapuertomontt.cl",
+      "lat": -41.4587313,
+      "lng": -72.9539987
+    },
+    {
+      "code": "osm:node/4317695389",
+      "name": "Hospital Traumatológico de Concepción",
+      "countryCode": "CL",
+      "origin": "https://www.ssconcepcion.cl",
+      "lat": -36.8239738,
+      "lng": -73.0378313
+    },
+    {
+      "code": "osm:node/7009112985",
+      "name": "Clínica RedSalud Santiago",
+      "countryCode": "CL",
+      "origin": "https://www.redsalud.cl",
+      "lat": -33.457119,
+      "lng": -70.7018142
+    },
+    {
+      "code": "osm:node/13609416801",
+      "name": "SAPU Pablo Hurtado",
+      "countryCode": "CL",
+      "origin": "https://cl.establecimientosdesalud.info",
+      "lat": -41.4749698,
+      "lng": -72.9846177
+    },
+    {
+      "code": "osm:way/23393396",
+      "name": "Hospital Clínico de la Fuerza Aérea de Chile Doctor Raúl Yazigi",
+      "countryCode": "CL",
+      "origin": "https://www.hospitalfach.cl",
+      "lat": -33.3964354,
+      "lng": -70.5471208
+    },
+    {
+      "code": "osm:way/36977066",
+      "name": "Clínica Las Condes",
+      "countryCode": "CL",
+      "origin": "http://www.clc.cl",
+      "lat": -33.3845465,
+      "lng": -70.5305676
+    },
+    {
+      "code": "osm:way/56177886",
+      "name": "Hospital Metropolitano",
+      "countryCode": "CL",
+      "origin": "https://hospitalmetropolitano.minsal.cl",
+      "lat": -33.4188594,
+      "lng": -70.6051128
+    },
+    {
+      "code": "osm:way/98034818",
+      "name": "Hospital San José de Melipilla",
+      "countryCode": "CL",
+      "origin": "https://hospitaldemelipilla.cl",
+      "lat": -33.6796656,
+      "lng": -71.1868565
+    },
+    {
+      "code": "osm:way/99264774",
+      "name": "Clinica de Puerto Varas",
+      "countryCode": "CL",
+      "origin": "https://www.interclinicapuertovaras.cl",
+      "lat": -41.3191834,
+      "lng": -72.9913073
+    },
+    {
+      "code": "osm:way/109908250",
+      "name": "Clínica Biobío",
+      "countryCode": "CL",
+      "origin": "https://www.clinicabiobio.cl",
+      "lat": -36.7889785,
+      "lng": -73.0636592
+    },
+    {
+      "code": "osm:way/121138661",
+      "name": "Hospital Provincial de Arauco Dr. Rafael Avaria Valenzuela",
+      "countryCode": "CL",
+      "origin": "https://hospitaldecuranilahue.cl",
+      "lat": -37.4734792,
+      "lng": -73.3480268
+    },
+    {
+      "code": "osm:way/126614190",
+      "name": "Hospital San José de Coronel",
+      "countryCode": "CL",
+      "origin": "https://hospitaldecoronel.cl",
+      "lat": -37.0286061,
+      "lng": -73.1360454
+    },
+    {
+      "code": "osm:way/135783771",
+      "name": "Hospital San José de Melipilla",
+      "countryCode": "CL",
+      "origin": "https://hospitaldemelipilla.cl",
+      "lat": -33.6955381,
+      "lng": -71.2146726
+    },
+    {
+      "code": "osm:way/144924895",
+      "name": "Hospital Base San Jose de Osorno",
+      "countryCode": "CL",
+      "origin": "http://hospitalbaseosorno.cl",
+      "lat": -40.5879384,
+      "lng": -73.1278727
+    },
+    {
+      "code": "osm:way/145481478",
+      "name": "Hospital Militar del Norte",
+      "countryCode": "CL",
+      "origin": "https://www.hosmildelnorte.cl",
+      "lat": -23.6666163,
+      "lng": -70.4014957
+    },
+    {
+      "code": "osm:way/145488014",
+      "name": "Hospital Clínico Universidad de Antofagasta",
+      "countryCode": "CL",
+      "origin": "https://www.hcua.cl",
+      "lat": -23.6591215,
+      "lng": -70.3956536
+    },
+    {
+      "code": "osm:way/147223050",
+      "name": "Hospital Clínico Herminda Martín",
+      "countryCode": "CL",
+      "origin": "https://www.hospitaldechillan.cl",
+      "lat": -36.6096249,
+      "lng": -72.0912283
+    },
+    {
+      "code": "osm:way/150435042",
+      "name": "Hospital Regional Doctor Franco Ravera Zunino",
+      "countryCode": "CL",
+      "origin": "https://hospitalrancagua.cl",
+      "lat": -34.1548971,
+      "lng": -70.7665584
+    },
+    {
+      "code": "osm:way/154083951",
+      "name": "Hospital Metropolitano El Carmen Doctor Luis Valentín Ferrada",
+      "countryCode": "CL",
+      "origin": "https://www.hospitalelcarmen.cl",
+      "lat": -33.5080114,
+      "lng": -70.7741814
+    },
+    {
+      "code": "osm:way/161789404",
+      "name": "Hospital Santa Isabel de Lebu",
+      "countryCode": "CL",
+      "origin": "http://www.hospitaldelebu.cl",
+      "lat": -37.6102379,
+      "lng": -73.659724
+    },
+    {
+      "code": "osm:way/169402659",
+      "name": "Hospital San Francisco de Pucón",
+      "countryCode": "CL",
+      "origin": "https://www.hospitalsanfranciscodepucon.cl",
+      "lat": -39.2788409,
+      "lng": -71.9742366
+    },
+    {
+      "code": "osm:way/189011024",
+      "name": "Hospital de Santa Cruz",
+      "countryCode": "CL",
+      "origin": "https://www.hospitalsantacruz.cl",
+      "lat": -34.6346188,
+      "lng": -71.3571022
+    },
+    {
+      "code": "osm:way/193760181",
+      "name": "Hospital Padre Hurtado",
+      "countryCode": "CL",
+      "origin": "https://www.hph.cl",
+      "lat": -33.5523314,
+      "lng": -70.6350792
+    },
+    {
+      "code": "osm:way/195667890",
+      "name": "Clínica Bupa Antofagasta",
+      "countryCode": "CL",
+      "origin": "https://www.clinicaantofagasta.cl",
+      "lat": -23.6540209,
+      "lng": -70.4016096
+    },
+    {
+      "code": "osm:way/197800172",
+      "name": "Clínica Dávila",
+      "countryCode": "CL",
+      "origin": "https://www.davila.cl",
+      "lat": -33.4274125,
+      "lng": -70.6481912
+    },
+    {
+      "code": "osm:way/232168181",
+      "name": "Hospital del Salvador",
+      "countryCode": "CL",
+      "origin": "https://www.hsalvador.cl",
+      "lat": -33.4373721,
+      "lng": -70.624016
+    },
+    {
+      "code": "osm:way/234844823",
+      "name": "Hospital Regional de Antofagasta",
+      "countryCode": "CL",
+      "origin": "https://www.hospitalantofagasta.gob.cl",
+      "lat": -23.6165321,
+      "lng": -70.3870759
+    },
+    {
+      "code": "osm:way/245861178",
+      "name": "Hospital Doctor Mario Sánchez Vergara",
+      "countryCode": "CL",
+      "origin": "https://www.ssvq.cl",
+      "lat": -32.7922529,
+      "lng": -71.2048413
+    },
+    {
+      "code": "osm:way/255092699",
+      "name": "Hospital Puerto Montt Dr. Eduardo Schütz Schroeder",
+      "countryCode": "CL",
+      "origin": "https://hospitalpuertomontt.gob.cl",
+      "lat": -41.4474467,
+      "lng": -72.9572347
+    },
+    {
+      "code": "osm:way/262147750",
+      "name": "Fundación Gantz -Hospital de Niños con Fisuras",
+      "countryCode": "CL",
+      "origin": "https://gantz.cl",
+      "lat": -33.4377243,
+      "lng": -70.7480196
+    },
+    {
+      "code": "osm:way/264669448",
+      "name": "Clínica Andes Salud Concepción",
+      "countryCode": "CL",
+      "origin": "https://www.andessaludconcepcion.cl",
+      "lat": -36.8002828,
+      "lng": -73.0713979
+    },
+    {
+      "code": "osm:way/307633936",
+      "name": "Hospital de Niños Calvo Mackenna",
+      "countryCode": "CL",
+      "origin": "https://calvomackenna.cl",
+      "lat": -33.4298475,
+      "lng": -70.6146263
+    },
+    {
+      "code": "osm:way/413771180",
+      "name": "Hospital Clínico Metropolitano de La Florida Doctora Eloísa Díaz Insunza",
+      "countryCode": "CL",
+      "origin": "https://www.hospitallaflorida.cl",
+      "lat": -33.5142061,
+      "lng": -70.5986865
+    },
+    {
+      "code": "osm:way/469810267",
+      "name": "Mutual de seguridad: CCHC",
+      "countryCode": "CL",
+      "origin": "https://www.mutual.cl",
+      "lat": -37.027959,
+      "lng": -73.1416661
+    },
+    {
+      "code": "osm:way/508776163",
+      "name": "Hospital de Lota",
+      "countryCode": "CL",
+      "origin": "http://www.hospitaldelota.cl",
+      "lat": -37.0901943,
+      "lng": -73.1555615
+    },
+    {
+      "code": "osm:way/542166080",
+      "name": "Hospital Dr. Augusto Esmann Burgos",
+      "countryCode": "CL",
+      "origin": "https://hospitalnatales.cl",
+      "lat": -51.7286328,
+      "lng": -72.4803072
+    },
+    {
+      "code": "osm:way/563529534",
+      "name": "Clínica Universidad Catolica de Maule",
+      "countryCode": "CL",
+      "origin": "https://clinicaucm.cl",
+      "lat": -35.4287949,
+      "lng": -71.6551488
+    },
+    {
+      "code": "osm:way/590598721",
+      "name": "Clínica Bupa Santiago",
+      "countryCode": "CL",
+      "origin": "https://www.clinicabupasantiago.cl",
+      "lat": -33.5106,
+      "lng": -70.5976367
+    },
+    {
+      "code": "osm:way/591636172",
+      "name": "Hospital San Juan de Dios de Curicó",
+      "countryCode": "CL",
+      "origin": "https://www.hospitalcurico.gob.cl",
+      "lat": -34.979163,
+      "lng": -71.2125179
+    },
+    {
+      "code": "osm:way/612667568",
+      "name": "Clínica del Sur",
+      "countryCode": "CL",
+      "origin": "https://www.clinicasur.cl",
+      "lat": -36.81363,
+      "lng": -73.031289
+    },
+    {
+      "code": "osm:way/614266669",
+      "name": "Hospital Instituto Nacional de Geriatría",
+      "countryCode": "CL",
+      "origin": "https://www.ingerchile.cl",
+      "lat": -33.4349848,
+      "lng": -70.6218317
+    },
+    {
+      "code": "osm:way/746267440",
+      "name": "Hospital de Urgencia Asistencia Pública",
+      "countryCode": "CL",
+      "origin": "https://huap.redsalud.gob.cl",
+      "lat": -33.4440139,
+      "lng": -70.638097
+    },
+    {
+      "code": "osm:way/750620033",
+      "name": "Hospital de Quellón",
+      "countryCode": "CL",
+      "origin": "https://hospitalquellon.redsalud.gob.cl",
+      "lat": -43.1099235,
+      "lng": -73.6199845
+    },
+    {
+      "code": "osm:way/781911364",
+      "name": "Hospital Alto Hospicio",
+      "countryCode": "CL",
+      "origin": "https://www.hospitaldealtohospicio.cl",
+      "lat": -20.2952492,
+      "lng": -70.0971401
+    },
+    {
+      "code": "osm:way/812380089",
+      "name": "Clínica Tarapacá",
+      "countryCode": "CL",
+      "origin": "https://www.clinicatarapaca.cl",
+      "lat": -20.2227529,
+      "lng": -70.147531
+    },
+    {
+      "code": "osm:way/831654714",
+      "name": "Clínica Bupa Reñaca",
+      "countryCode": "CL",
+      "origin": "https://www.clinicarenaca.cl",
+      "lat": -32.983962,
+      "lng": -71.5329423
+    },
+    {
+      "code": "osm:way/891550778",
+      "name": "Hospital Instituto Nacional del Tórax",
+      "countryCode": "CL",
+      "origin": "https://www.torax.cl",
+      "lat": -33.438228,
+      "lng": -70.6225215
+    },
+    {
+      "code": "osm:way/891550779",
+      "name": "Instituto de Neurocirugía Doctor Alfonso Asenjo",
+      "countryCode": "CL",
+      "origin": "https://www.institutodeneurocirugia.cl",
+      "lat": -33.4368946,
+      "lng": -70.6227598
+    },
+    {
+      "code": "osm:way/1065817262",
+      "name": "Clínica Cumbres del Norte",
+      "countryCode": "CL",
+      "origin": "https://www.clinicacumbres.cl",
+      "lat": -23.6480581,
+      "lng": -70.399515
+    },
+    {
+      "code": "osm:way/1074579642",
+      "name": "FALP",
+      "countryCode": "CL",
+      "origin": "https://www.falp.cl",
+      "lat": -33.4388992,
+      "lng": -70.6223897
+    },
+    {
+      "code": "osm:way/1191300348",
+      "name": "CESFAM Alerce",
+      "countryCode": "CL",
+      "origin": "https://saludpm.cl",
+      "lat": -41.3929503,
+      "lng": -72.9075262
+    },
+    {
+      "code": "osm:way/1233535416",
+      "name": "Clínica La Portada",
+      "countryCode": "CL",
+      "origin": "https://www.clinicaportada.cl",
+      "lat": -23.6455391,
+      "lng": -70.3990786
+    },
+    {
+      "code": "osm:way/1301625352",
+      "name": "Instituto Nacional del Cáncer",
+      "countryCode": "CL",
+      "origin": "https://www.incancer.cl",
+      "lat": -33.4182014,
+      "lng": -70.6523349
+    },
+    {
+      "code": "osm:way/1306434404",
+      "name": "Hospital Josefina Martínez",
+      "countryCode": "CL",
+      "origin": "https://www.hospitaljosefinamartinez.cl",
+      "lat": -33.5695374,
+      "lng": -70.5539208
+    },
+    {
+      "code": "osm:way/1377078670",
+      "name": "ImatecSalud Talagante",
+      "countryCode": "CL",
+      "origin": "https://www.imatecsalud.cl",
+      "lat": -33.6682256,
+      "lng": -70.921474
+    }
+  ]
+}

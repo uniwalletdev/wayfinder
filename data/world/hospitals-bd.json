@@ -1,0 +1,345 @@
+{
+  "countryCode": "BD",
+  "fetchedAt": "2026-10-21T00:49:02.453Z",
+  "count": 42,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1496128734",
+      "name": "আমেরিকান সুপারস্পেসটিটি হাসপাতাল",
+      "countryCode": "BD",
+      "origin": "http://www.americanhospital-bd.com",
+      "lat": 23.8704897,
+      "lng": 90.4035461
+    },
+    {
+      "code": "osm:node/2332686514",
+      "name": "শহীদ তাজউদ্দীন আহমেদ মেডিকেল কলেজ হাসপাতাল",
+      "countryCode": "BD",
+      "origin": "https://stamc.edu.bd",
+      "lat": 23.9925472,
+      "lng": 90.4248042
+    },
+    {
+      "code": "osm:node/2343353784",
+      "name": "Wazipur Upazila Health Complex",
+      "countryCode": "BD",
+      "origin": "http://www.health.wazirpur.barisal.gov.bd",
+      "lat": 22.8274012,
+      "lng": 90.2517148
+    },
+    {
+      "code": "osm:node/2344154059",
+      "name": "ভেদরগঞ্জ উপজিলা হেলথ কমপ্লেক্স",
+      "countryCode": "BD",
+      "origin": "https://health.bhedarganj.shariatpur.gov.bd",
+      "lat": 23.1975301,
+      "lng": 90.4481613
+    },
+    {
+      "code": "osm:node/2697236496",
+      "name": "Uttara Community Hospital",
+      "countryCode": "BD",
+      "origin": "http://ds24editor.wix.com",
+      "lat": 23.8691562,
+      "lng": 90.4041091
+    },
+    {
+      "code": "osm:node/4527964655",
+      "name": "Asgar Ali Hospital",
+      "countryCode": "BD",
+      "origin": "https://asgaralihospital.com",
+      "lat": 23.7078377,
+      "lng": 90.4236155
+    },
+    {
+      "code": "osm:node/4533184589",
+      "name": "Green Life College",
+      "countryCode": "BD",
+      "origin": "https://www.greenlife.edu.bd",
+      "lat": 23.7461412,
+      "lng": 90.3854888
+    },
+    {
+      "code": "osm:node/4557345089",
+      "name": "Khwaja Yunus Ali Medical College and Hospital",
+      "countryCode": "BD",
+      "origin": "https://www.kyamch.org",
+      "lat": 24.2267292,
+      "lng": 89.7034322
+    },
+    {
+      "code": "osm:node/5209803187",
+      "name": "Ibn Sina Hospital (head office)",
+      "countryCode": "BD",
+      "origin": "https://ibnsinatrust.com",
+      "lat": 23.7452371,
+      "lng": 90.3723768
+    },
+    {
+      "code": "osm:node/6900268988",
+      "name": "২৫০ শয্যা বিশিষ্ট যক্ষা হাসপাতাল",
+      "countryCode": "BD",
+      "origin": "http://tbhsd.gov.bd",
+      "lat": 23.77419,
+      "lng": 90.3681746
+    },
+    {
+      "code": "osm:node/7396481533",
+      "name": "DR. RAHIM HOMEOPATHY FOUNDATION",
+      "countryCode": "BD",
+      "origin": "https://www.facebook.com",
+      "lat": 22.8089985,
+      "lng": 89.5559857
+    },
+    {
+      "code": "osm:node/7612901733",
+      "name": "Shibpur Upazila Health Complex",
+      "countryCode": "BD",
+      "origin": "https://dghs.gov.bd",
+      "lat": 24.0372456,
+      "lng": 90.7325735
+    },
+    {
+      "code": "osm:node/8244931863",
+      "name": "Unique Pain & Paralysis Centre",
+      "countryCode": "BD",
+      "origin": "https://www.uppc-bd.org",
+      "lat": 23.8182925,
+      "lng": 90.3657785
+    },
+    {
+      "code": "osm:node/9579204110",
+      "name": "National Heart Foundation Research ন্যাশনাল হার্ট ফাউন্ডেশন হসপিটাল",
+      "countryCode": "BD",
+      "origin": "https://nhf.org.bd",
+      "lat": 23.7887947,
+      "lng": 90.3534827
+    },
+    {
+      "code": "osm:node/9623365111",
+      "name": "Lubana General Hospital & Uttara Cardiac Center",
+      "countryCode": "BD",
+      "origin": "https://www.lubanahospital.com",
+      "lat": 23.8703294,
+      "lng": 90.3906771
+    },
+    {
+      "code": "osm:node/10765482520",
+      "name": "NHN Gulshan Shasthoseba Kendra",
+      "countryCode": "BD",
+      "origin": "https://nhn-dab.org.bd",
+      "lat": 23.7900785,
+      "lng": 90.4197359
+    },
+    {
+      "code": "osm:node/10791276005",
+      "name": "Sylhet Imperial Hospital LTD.",
+      "countryCode": "BD",
+      "origin": "https://www.facebook.com",
+      "lat": 24.8943462,
+      "lng": 91.8783304
+    },
+    {
+      "code": "osm:node/11067361245",
+      "name": "Vision Eye Hospital",
+      "countryCode": "BD",
+      "origin": "https://www.visioneyebd.org",
+      "lat": 23.7471253,
+      "lng": 90.385587
+    },
+    {
+      "code": "osm:node/11328746544",
+      "name": "দৌলতদিয়া গণস্বাস্থ্য কেন্দ্র",
+      "countryCode": "BD",
+      "origin": "https://gonoshasthayakendra.com",
+      "lat": 23.7611397,
+      "lng": 89.7807367
+    },
+    {
+      "code": "osm:node/12056943177",
+      "name": "স্কয়ার হাসপাতাল",
+      "countryCode": "BD",
+      "origin": "http://www.squarehospital.com",
+      "lat": 23.7530278,
+      "lng": 90.3817096
+    },
+    {
+      "code": "osm:node/12809436001",
+      "name": "OGSB HOSPITAL ওজিএসবি হাসপাতাল",
+      "countryCode": "BD",
+      "origin": "https://ogsbh-irch.ac.bd",
+      "lat": 23.808181,
+      "lng": 90.3821496
+    },
+    {
+      "code": "osm:node/13634210501",
+      "name": "সিটি মেডিকেল কলেজ এন্ড হসপিটাল,গাজীপুর",
+      "countryCode": "BD",
+      "origin": "http://cimch.com",
+      "lat": 23.9904266,
+      "lng": 90.3619802
+    },
+    {
+      "code": "osm:node/13798510101",
+      "name": "GUK EYE HOSPITAL",
+      "countryCode": "BD",
+      "origin": "https://gukeyehospital.org",
+      "lat": 23.87369,
+      "lng": 90.388337
+    },
+    {
+      "code": "osm:node/13849726001",
+      "name": "Dhaka Central International Medical College & Hospital (Building 02)",
+      "countryCode": "BD",
+      "origin": "https://dcimch.com",
+      "lat": 23.773921,
+      "lng": 90.3617969
+    },
+    {
+      "code": "osm:node/13954370219",
+      "name": "BRB Hospital",
+      "countryCode": "BD",
+      "origin": "https://brbhospital.com",
+      "lat": 23.7518688,
+      "lng": 90.385745
+    },
+    {
+      "code": "osm:node/13986125001",
+      "name": "Shaheed Monsur Ali medical college and hospital",
+      "countryCode": "BD",
+      "origin": "http://www.smamedicalcollege-bd.com",
+      "lat": 23.8789362,
+      "lng": 90.3926639
+    },
+    {
+      "code": "osm:node/14008236801",
+      "name": "খাজা বদরুদ্দোজা মডার্ণ হাসপাতাল (BHRF)",
+      "countryCode": "BD",
+      "origin": "https://kbmhbd.com",
+      "lat": 24.0267675,
+      "lng": 90.2735652
+    },
+    {
+      "code": "osm:node/14208122401",
+      "name": "বেটার লাইফ হসপিটাল",
+      "countryCode": "BD",
+      "origin": "https://blhlbd.com",
+      "lat": 23.7590444,
+      "lng": 90.4183168
+    },
+    {
+      "code": "osm:node/14208132501",
+      "name": "ইবনে সিনা ডায়াগনস্টিক ও পরামর্শ কেন্দ্র, মালিবাগ",
+      "countryCode": "BD",
+      "origin": "http://www.ibnsinatrust.com",
+      "lat": 23.7511783,
+      "lng": 90.413265
+    },
+    {
+      "code": "osm:node/14301737401",
+      "name": "Continental Hospital",
+      "countryCode": "BD",
+      "origin": "https://continental.health",
+      "lat": 23.8045783,
+      "lng": 90.4156245
+    },
+    {
+      "code": "osm:way/23780888",
+      "name": "কন্টিনেন্টাল হাস্পাতাল",
+      "countryCode": "BD",
+      "origin": "https://continental.health",
+      "lat": 23.804696,
+      "lng": 90.4157346
+    },
+    {
+      "code": "osm:way/262513599",
+      "name": "IBN Sina Diagonistic and Imaging Centre",
+      "countryCode": "BD",
+      "origin": "https://www.ibnsinatrust.com",
+      "lat": 23.745292,
+      "lng": 90.3723976
+    },
+    {
+      "code": "osm:way/299229532",
+      "name": "Comfort Hospital;Comfort Diagnostic Center",
+      "countryCode": "BD",
+      "origin": "http://www.comfortbd.com",
+      "lat": 23.7492008,
+      "lng": 90.3862299
+    },
+    {
+      "code": "osm:way/367202089",
+      "name": "ইউনানি ও আয়ুর্বেদিক মেডিক্যাল কলেজ ও হাসপাতাল",
+      "countryCode": "BD",
+      "origin": "https://www.guamc.edu.bd",
+      "lat": 23.8044657,
+      "lng": 90.3780544
+    },
+    {
+      "code": "osm:way/369712205",
+      "name": "Aalok Diagnostic Center",
+      "countryCode": "BD",
+      "origin": "https://www.aalokbd.com",
+      "lat": 23.8087428,
+      "lng": 90.3683503
+    },
+    {
+      "code": "osm:way/531394127",
+      "name": "Fouad Al-Khateeb Hospital",
+      "countryCode": "BD",
+      "origin": "https://www.fouadhospitalbd.com",
+      "lat": 21.4417207,
+      "lng": 91.9760139
+    },
+    {
+      "code": "osm:way/551374316",
+      "name": "Khulna Medical College Hospital",
+      "countryCode": "BD",
+      "origin": "https://kmc.gov.bd",
+      "lat": 22.8289335,
+      "lng": 89.5374135
+    },
+    {
+      "code": "osm:way/974896494",
+      "name": "Mount Adora Hospital",
+      "countryCode": "BD",
+      "origin": "https://www.mountadora.com",
+      "lat": 24.9095639,
+      "lng": 91.8441261
+    },
+    {
+      "code": "osm:way/1041699316",
+      "name": "Padma Homeo Medicare",
+      "countryCode": "BD",
+      "origin": "https://padmahomoeo.com",
+      "lat": 24.3608826,
+      "lng": 88.6249437
+    },
+    {
+      "code": "osm:way/1221478014",
+      "name": "দৌলতদিয়া গণস্বাস্থ্য কেন্দ্র",
+      "countryCode": "BD",
+      "origin": "https://gonoshasthayakendra.com",
+      "lat": 23.7611191,
+      "lng": 89.7807247
+    },
+    {
+      "code": "osm:way/1321637745",
+      "name": "Southern Medical College Hospital",
+      "countryCode": "BD",
+      "origin": "http://www.smchctgbd.com",
+      "lat": 22.3731754,
+      "lng": 91.8040304
+    },
+    {
+      "code": "osm:way/1352899133",
+      "name": "জালালাবাদ রাগিব-রাবেয়া মেডিকেল কলেজ এন্ড হাসপাতাল",
+      "countryCode": "BD",
+      "origin": "https://jrrmc.edu.bd",
+      "lat": 24.9132782,
+      "lng": 91.8520661
+    }
+  ]
+}

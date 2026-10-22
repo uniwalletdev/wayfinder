@@ -1,0 +1,49 @@
+{
+  "countryCode": "MT",
+  "fetchedAt": "2026-10-21T02:09:21.577Z",
+  "count": 5,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1657800338",
+      "name": "Ċentru tas-Saħħa Il-Gżira",
+      "countryCode": "MT",
+      "origin": "https://deputyprimeminister.gov.mt",
+      "lat": 35.907523,
+      "lng": 14.496204
+    },
+    {
+      "code": "osm:node/14050549301",
+      "name": "DaVinci Health Limited",
+      "countryCode": "MT",
+      "origin": "https://davincihealth.com",
+      "lat": 35.9029478,
+      "lng": 14.4598808
+    },
+    {
+      "code": "osm:way/24063943",
+      "name": "Sptar Mater Dei",
+      "countryCode": "MT",
+      "origin": "https://deputyprimeminister.gov.mt",
+      "lat": 35.9018689,
+      "lng": 14.4765796
+    },
+    {
+      "code": "osm:way/33426681",
+      "name": "Saint James Hospital",
+      "countryCode": "MT",
+      "origin": "https://stjameshospital.com",
+      "lat": 35.9130251,
+      "lng": 14.5032248
+    },
+    {
+      "code": "osm:way/1267697470",
+      "name": "Saint James' International Hospital",
+      "countryCode": "MT",
+      "origin": "https://stjameshospital.com",
+      "lat": 35.8605255,
+      "lng": 14.5196655
+    }
+  ]
+}

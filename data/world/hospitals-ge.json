@@ -1,0 +1,281 @@
+{
+  "countryCode": "GE",
+  "fetchedAt": "2026-10-21T01:26:46.596Z",
+  "count": 34,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/962290544",
+      "name": "Центральная Районная Больница Галского района",
+      "countryCode": "GE",
+      "origin": "http://crb-gal.org",
+      "lat": 42.6231593,
+      "lng": 41.7434926
+    },
+    {
+      "code": "osm:node/3733043027",
+      "name": "კარაპს მედლაინი",
+      "countryCode": "GE",
+      "origin": "https://carapsmedline.ge",
+      "lat": 41.7756286,
+      "lng": 44.7740712
+    },
+    {
+      "code": "osm:node/6602454086",
+      "name": "ევექსი",
+      "countryCode": "GE",
+      "origin": "https://evexhospitals.ge",
+      "lat": 41.6427203,
+      "lng": 41.6289748
+    },
+    {
+      "code": "osm:node/9778679461",
+      "name": "საზღვაო ჰოსპიტალი",
+      "countryCode": "GE",
+      "origin": "http://mh.com.ge",
+      "lat": 41.635592,
+      "lng": 41.6373338
+    },
+    {
+      "code": "osm:way/34992432",
+      "name": "ი. ჟორდანიას სახელობის სამედიცინო ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://zhordaniaclinic.ge",
+      "lat": 41.7285496,
+      "lng": 44.7174059
+    },
+    {
+      "code": "osm:way/38326853",
+      "name": "ჩაჩავას კლინიკა",
+      "countryCode": "GE",
+      "origin": "https://chachava.ge",
+      "lat": 41.7081762,
+      "lng": 44.7849582
+    },
+    {
+      "code": "osm:way/50488314",
+      "name": "National Cancer Center of Georgia",
+      "countryCode": "GE",
+      "origin": "http://www.onc.org.ge",
+      "lat": 41.7366053,
+      "lng": 44.7367926
+    },
+    {
+      "code": "osm:way/152297121",
+      "name": "თსსუ-ის პირველი საუნივერსიტეტო კლინიკა",
+      "countryCode": "GE",
+      "origin": "https://tsmuclinic.ge",
+      "lat": 41.7693493,
+      "lng": 44.7966249
+    },
+    {
+      "code": "osm:way/161866368",
+      "name": "საუნივერსიტეტო ჰოსპიტალი",
+      "countryCode": "GE",
+      "origin": "https://openheart.ge",
+      "lat": 41.7760647,
+      "lng": 44.8061728
+    },
+    {
+      "code": "osm:way/239011086",
+      "name": "Центральный военный госпиталь Министерства обороны Республики Абхазия",
+      "countryCode": "GE",
+      "origin": "http://cvg-mora.org",
+      "lat": 42.9310433,
+      "lng": 41.0922858
+    },
+    {
+      "code": "osm:way/322873995",
+      "name": "მედცენტრი",
+      "countryCode": "GE",
+      "origin": "http://medcenter.ge",
+      "lat": 41.6425312,
+      "lng": 41.6352419
+    },
+    {
+      "code": "osm:way/403652855",
+      "name": "დასავლეთ საქართველოს სამედიცინო ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://evexhospitals.ge",
+      "lat": 42.2684071,
+      "lng": 42.6699155
+    },
+    {
+      "code": "osm:way/403652856",
+      "name": "კრისტინა კილის სახელობის ონკოლოგიის ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://evexhospitals.ge",
+      "lat": 42.2685093,
+      "lng": 42.6672758
+    },
+    {
+      "code": "osm:way/409297905",
+      "name": "ბათუმის რეფერალური საავადმყოფო",
+      "countryCode": "GE",
+      "origin": "https://evexhospitals.ge",
+      "lat": 41.6337892,
+      "lng": 41.6253583
+    },
+    {
+      "code": "osm:way/479934981",
+      "name": "ჯო ენის საუნივერსიტეტო ჰოსპიტალი",
+      "countryCode": "GE",
+      "origin": "https://joann.ge",
+      "lat": 41.7837684,
+      "lng": 44.774681
+    },
+    {
+      "code": "osm:way/632421692",
+      "name": "რუხის რესპუბლიკური საავადმყოფო",
+      "countryCode": "GE",
+      "origin": "https://rukhihospital.ge",
+      "lat": 42.5583165,
+      "lng": 41.8646107
+    },
+    {
+      "code": "osm:way/723348326",
+      "name": "Liv Hospital Radiation Medicine Centre",
+      "countryCode": "GE",
+      "origin": "https://www.livhospital.com",
+      "lat": 41.7371938,
+      "lng": 44.7402994
+    },
+    {
+      "code": "osm:way/753863881",
+      "name": "კურაციო",
+      "countryCode": "GE",
+      "origin": "https://curatio.ge",
+      "lat": 41.7198059,
+      "lng": 44.7421496
+    },
+    {
+      "code": "osm:way/894287678",
+      "name": "გაგუას კლინიკა",
+      "countryCode": "GE",
+      "origin": "https://gaguaclinic.ge",
+      "lat": 41.7736738,
+      "lng": 44.775959
+    },
+    {
+      "code": "osm:way/930572135",
+      "name": "ბორჯომის მრავალპროფილური სამედიცინო ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://gh.ge",
+      "lat": 41.8392941,
+      "lng": 43.3777152
+    },
+    {
+      "code": "osm:way/944105967",
+      "name": "ბაუ საერთაშორისო ჰოსპიტალი",
+      "countryCode": "GE",
+      "origin": "https://bih.ge",
+      "lat": 41.6318302,
+      "lng": 41.6182597
+    },
+    {
+      "code": "osm:way/968686741",
+      "name": "სიმონ ხეჩინაშვილის სახელობის საუნივერსიტეტო კლინიკა",
+      "countryCode": "GE",
+      "origin": "https://khclinic.ge",
+      "lat": 41.7116105,
+      "lng": 44.7619538
+    },
+    {
+      "code": "osm:way/999872827",
+      "name": "წმ.მიქაელ მთავარანგელოზის სახელობის მრავალპროფილიანი კლინიკური საავადმყოფო",
+      "countryCode": "GE",
+      "origin": "https://mikhailovi.ge",
+      "lat": 41.7839588,
+      "lng": 44.7752472
+    },
+    {
+      "code": "osm:way/1041634704",
+      "name": "თბილისის ამერიკული ჰოსპიტალი",
+      "countryCode": "GE",
+      "origin": "https://ahtbilisi.com",
+      "lat": 41.7098185,
+      "lng": 44.7926601
+    },
+    {
+      "code": "osm:way/1044428868",
+      "name": "კავკასიის მედიცინის ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://cmchospital.ge",
+      "lat": 41.7220718,
+      "lng": 44.7314568
+    },
+    {
+      "code": "osm:way/1050516718",
+      "name": "რესპუბლიკური საავადმყოფო",
+      "countryCode": "GE",
+      "origin": "http://respublikuri.ge",
+      "lat": 41.7284238,
+      "lng": 44.7567002
+    },
+    {
+      "code": "osm:way/1132039997",
+      "name": "კენ ვოლკერის სახელობის სამედიცინო რეაბილიტაციის საუნივერსიტეტო კლინიკა",
+      "countryCode": "GE",
+      "origin": "https://kwclinic.ge",
+      "lat": 41.7699871,
+      "lng": 44.7980506
+    },
+    {
+      "code": "osm:way/1134553288",
+      "name": "მალხაზ კაციაშვილის მრავალპროფილური გადაუდებელი დახმარების ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://mkclinic.ge",
+      "lat": 41.7333207,
+      "lng": 44.8234343
+    },
+    {
+      "code": "osm:way/1144407846",
+      "name": "ირის ბორჩაშვილის სახელობის ჯანმრთელობის ცენტრი \"მედინა\"",
+      "countryCode": "GE",
+      "origin": "https://medina.ge",
+      "lat": 41.591965,
+      "lng": 41.6470377
+    },
+    {
+      "code": "osm:way/1180345882",
+      "name": "ვივამედი",
+      "countryCode": "GE",
+      "origin": "http://vivamedi.ge",
+      "lat": 41.8021796,
+      "lng": 44.7695394
+    },
+    {
+      "code": "osm:way/1248301926",
+      "name": "ჩაფიძის გულის ცენტრი",
+      "countryCode": "GE",
+      "origin": "http://www.chapidze.ge",
+      "lat": 41.7746356,
+      "lng": 44.7783558
+    },
+    {
+      "code": "osm:way/1248301927",
+      "name": "კ.ერისთავის სახ. ექსპერიმენტული და კლინიკური ქირურგიის ეროვნული ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://kirurgia.ge",
+      "lat": 41.7742585,
+      "lng": 44.779393
+    },
+    {
+      "code": "osm:way/1249270909",
+      "name": "სს თ. ცერცვაძის სახელობის ინფექციური პათოლოგიის, შიდსისა და კლინიკური იმუნოლოგიის სამეცნიერო-პრაქტიკული ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://www.aidscenter.ge",
+      "lat": 41.7806689,
+      "lng": 44.7743654
+    },
+    {
+      "code": "osm:way/1353494461",
+      "name": "ალ. წულუკიძის სახელობის უროლოგიის ეროვნული ცენტრი",
+      "countryCode": "GE",
+      "origin": "https://www.urologycenter.ge",
+      "lat": 41.6898489,
+      "lng": 44.8285012
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "countryCode": "KW",
+  "fetchedAt": "2026-10-21T01:52:05.633Z",
+  "count": 7,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4699902293",
+      "name": "مستشفى طيبة",
+      "countryCode": "KW",
+      "origin": "https://www.taibahospital.com",
+      "lat": 29.2512174,
+      "lng": 48.0810462
+    },
+    {
+      "code": "osm:node/14166136978",
+      "name": "Dr Hisham Burezq Clinic Med Clinic",
+      "countryCode": "KW",
+      "origin": "https://www.drhishamburezq.com",
+      "lat": 29.3559728,
+      "lng": 48.0254073
+    },
+    {
+      "code": "osm:way/154721786",
+      "name": "Dasman Diabetes Institute",
+      "countryCode": "KW",
+      "origin": "https://www.dasmaninstitute.org",
+      "lat": 29.3897626,
+      "lng": 47.9935378
+    },
+    {
+      "code": "osm:way/164153299",
+      "name": "New Mowasat Hospital",
+      "countryCode": "KW",
+      "origin": "https://www.newmowasat.com",
+      "lat": 29.3440475,
+      "lng": 48.0872283
+    },
+    {
+      "code": "osm:way/164157489",
+      "name": "مستشفى السيف",
+      "countryCode": "KW",
+      "origin": "https://www.alseef-hospital.com",
+      "lat": 29.3331988,
+      "lng": 48.092349
+    },
+    {
+      "code": "osm:way/350096396",
+      "name": "Alia International Hospital",
+      "countryCode": "KW",
+      "origin": "https://www.aliaih.com",
+      "lat": 29.1456538,
+      "lng": 48.1207609
+    },
+    {
+      "code": "osm:way/1075378732",
+      "name": "Kuwait Specialized Eye Center",
+      "countryCode": "KW",
+      "origin": "https://www.kuwaiteyecenter.com",
+      "lat": 29.3551209,
+      "lng": 48.0271143
+    }
+  ]
+}

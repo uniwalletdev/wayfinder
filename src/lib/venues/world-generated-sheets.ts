@@ -69,6 +69,7 @@ import { CAMPUSMAPBACK_US_VENUE } from "./campusmapback-us"
 import { CAMPUSMAPFRONT_US_VENUE } from "./campusmapfront-us"
 import { CAMPUSMAPJODIE2026_US_VENUE } from "./campusmapjodie2026-us"
 import { CAMPUSMAPL_070126_US_VENUE } from "./campusmapl-070126-us"
+import { CAMPUSPLAN_BE_VENUE } from "./campusplan-be"
 import { CANCER_PAVILION_1ST_FLOOR_US_VENUE } from "./cancer-pavilion-1st-floor-us"
 import { CANCER_PAVILION_3RD_FLOOR_US_VENUE } from "./cancer-pavilion-3rd-floor-us"
 import { CANCER_PAVILION_5TH_FLOOR_US_VENUE } from "./cancer-pavilion-5th-floor-us"
@@ -119,6 +120,7 @@ import { FLOOR_PLAN_SPH_CA_VENUE } from "./floor-plan-sph-ca"
 import { FLOOR_PLAN_UCC_CA_VENUE } from "./floor-plan-ucc-ca"
 import { FLOORPLAN_MAP_ALPHABETICAL_8_5X11_092026_FINAL_US_VENUE } from "./floorplan-map-alphabetical-8-5x11-092026-final-us"
 import { FLOWERS_HOSPITAL_MAP_5_10_21_V2_US_VENUE } from "./flowers-hospital-map-5-10-21-v2-us"
+import { FRANKLIN_TYPE_1A_NZ_VENUE } from "./franklin-type-1a-nz"
 import { FRANKLINTON_CAMPUS_MAP_2023_US_VENUE } from "./franklinton-campus-map-2023-us"
 import { FY26_CAROMONT_GASTONIA_MAP_FLYER_0508_US_VENUE } from "./fy26-caromont-gastonia-map-flyer-0508-us"
 import { GAYLORD_CAMPUS_MAP_1_US_VENUE } from "./gaylord-campus-map-1-us"
@@ -340,7 +342,7 @@ import { WSLHD_BLACKTOWN_HOSPITAL_MAP_A4_SIZE_AU_VENUE } from "./wslhd-blacktown
 import { WYONGHOSPITALSITEMAP_AU_VENUE } from "./wyonghospitalsitemap-au"
 import { ZSFG_CAMPUS_MAP_260618_US_VENUE } from "./zsfg-campus-map-260618-us"
 
-// 326 venue(s) built from published hospital site maps.
+// 328 venue(s) built from published hospital site maps.
 export const WORLD_GENERATED_SHEET_VENUES: Venue[] = [
   A4_WAYFINDING_FLYER_24_02_2026_AU_VENUE,
   ABBOTT_NORTHWESTERN_HOSPITAL_CAMPUS_MAP_US_VENUE,
@@ -398,6 +400,7 @@ export const WORLD_GENERATED_SHEET_VENUES: Venue[] = [
   CAMPUSMAPFRONT_US_VENUE,
   CAMPUSMAPJODIE2026_US_VENUE,
   CAMPUSMAPL_070126_US_VENUE,
+  CAMPUSPLAN_BE_VENUE,
   CANCER_PAVILION_1ST_FLOOR_US_VENUE,
   CANCER_PAVILION_3RD_FLOOR_US_VENUE,
   CANCER_PAVILION_5TH_FLOOR_US_VENUE,
@@ -448,6 +451,7 @@ export const WORLD_GENERATED_SHEET_VENUES: Venue[] = [
   FLOOR_PLAN_UCC_CA_VENUE,
   FLOORPLAN_MAP_ALPHABETICAL_8_5X11_092026_FINAL_US_VENUE,
   FLOWERS_HOSPITAL_MAP_5_10_21_V2_US_VENUE,
+  FRANKLIN_TYPE_1A_NZ_VENUE,
   FRANKLINTON_CAMPUS_MAP_2023_US_VENUE,
   FY26_CAROMONT_GASTONIA_MAP_FLYER_0508_US_VENUE,
   GAYLORD_CAMPUS_MAP_1_US_VENUE,

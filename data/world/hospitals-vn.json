@@ -1,0 +1,625 @@
+{
+  "countryCode": "VN",
+  "fetchedAt": "2026-10-21T03:09:41.869Z",
+  "count": 77,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/729405662",
+      "name": "Bệnh viện Hoàn Mỹ Đà Nẵng",
+      "countryCode": "VN",
+      "origin": "https://hoanmy.com",
+      "lat": 16.059401,
+      "lng": 108.2098753
+    },
+    {
+      "code": "osm:node/3752331075",
+      "name": "Paris Miki Vietnam",
+      "countryCode": "VN",
+      "origin": "https://www.paris-miki.vn",
+      "lat": 21.0492003,
+      "lng": 105.8400348
+    },
+    {
+      "code": "osm:node/4742435371",
+      "name": "Bệnh Viện Đa Khoa Quang Khởi",
+      "countryCode": "VN",
+      "origin": "http://quangkhoi.org",
+      "lat": 19.247909,
+      "lng": 105.707136
+    },
+    {
+      "code": "osm:node/5248125133",
+      "name": "Hội Chữ Thập Đỏ Việt Nam Thành Phố Cần Thơ",
+      "countryCode": "VN",
+      "origin": "https://chuthapdocantho.org.vn",
+      "lat": 10.0443305,
+      "lng": 105.7789192
+    },
+    {
+      "code": "osm:node/5808582515",
+      "name": "Phòng khám Đa khoa Quốc tế Hà Nội",
+      "countryCode": "VN",
+      "origin": "https://ytequocte.vn",
+      "lat": 21.0101268,
+      "lng": 105.8382699
+    },
+    {
+      "code": "osm:node/6769858764",
+      "name": "Phòng khám đa khoa quốc tế Nhân Hậu",
+      "countryCode": "VN",
+      "origin": "https://nhanhauclinic.com.vn",
+      "lat": 10.7585783,
+      "lng": 106.6617832
+    },
+    {
+      "code": "osm:node/7541325568",
+      "name": "Thien Nhan Hospital",
+      "countryCode": "VN",
+      "origin": "https://thiennhanhospital.com",
+      "lat": 16.076597,
+      "lng": 108.2158614
+    },
+    {
+      "code": "osm:node/9185956818",
+      "name": "Nhà thuốc Thanh Nhàn",
+      "countryCode": "VN",
+      "origin": "https://facebook.com",
+      "lat": 16.4669155,
+      "lng": 107.5734018
+    },
+    {
+      "code": "osm:node/9419460107",
+      "name": "Nấm Lim Xanh, Sâm Ngọc Linh",
+      "countryCode": "VN",
+      "origin": "https://www.facebook.com",
+      "lat": 15.4856805,
+      "lng": 108.311425
+    },
+    {
+      "code": "osm:node/9658535627",
+      "name": "Thu Cúc TCI Thanh Xuân",
+      "countryCode": "VN",
+      "origin": "https://benhvienthucuc.vn",
+      "lat": 20.9992267,
+      "lng": 105.8141044
+    },
+    {
+      "code": "osm:node/11104405789",
+      "name": "Bệnh viện Quốc tế Dolife",
+      "countryCode": "VN",
+      "origin": "https://dolifehospital.vn",
+      "lat": 21.0334322,
+      "lng": 105.7714164
+    },
+    {
+      "code": "osm:node/11252184737",
+      "name": "Prestige international polyclinic",
+      "countryCode": "VN",
+      "origin": "http://medictinduc.vn",
+      "lat": 12.2522561,
+      "lng": 109.1883141
+    },
+    {
+      "code": "osm:node/11601353636",
+      "name": "Bệnh viện Mắt Kỹ thuật cao Hà Nội",
+      "countryCode": "VN",
+      "origin": "https://benhvienmat.vn",
+      "lat": 21.0168006,
+      "lng": 105.849466
+    },
+    {
+      "code": "osm:node/11625397936",
+      "name": "Bệnh viện Mắt Việt Nhật",
+      "countryCode": "VN",
+      "origin": "https://matvietnhat.com.vn",
+      "lat": 21.0145775,
+      "lng": 105.8502987
+    },
+    {
+      "code": "osm:node/12522128792",
+      "name": "Viện thấm mỹ Bác sĩ Minh",
+      "countryCode": "VN",
+      "origin": "https://thammyvienbacsiminh.vn",
+      "lat": 10.7575935,
+      "lng": 106.6782304
+    },
+    {
+      "code": "osm:node/13136131207",
+      "name": "Bệnh Viện Thẩm Mỹ Siam Thailand",
+      "countryCode": "VN",
+      "origin": "https://benhvienthammysiamthailand.vn",
+      "lat": 10.7605922,
+      "lng": 106.6855655
+    },
+    {
+      "code": "osm:node/13136496646",
+      "name": "Bệnh viện Đa khoa Hà Thành",
+      "countryCode": "VN",
+      "origin": "https://benhvienhathanh.vn",
+      "lat": 21.0266223,
+      "lng": 105.8265892
+    },
+    {
+      "code": "osm:node/13318582571",
+      "name": "Yoga trị liệu l Ci Yoga Therapy CN Celadon",
+      "countryCode": "VN",
+      "origin": "https://yogatherapy.vn",
+      "lat": 10.8054227,
+      "lng": 106.6151358
+    },
+    {
+      "code": "osm:way/125294543",
+      "name": "Bệnh viện Quân y 175",
+      "countryCode": "VN",
+      "origin": "http://www.benhvien175.vn",
+      "lat": 10.8184252,
+      "lng": 106.6808112
+    },
+    {
+      "code": "osm:way/158708608",
+      "name": "Bệnh viện Pháp Việt",
+      "countryCode": "VN",
+      "origin": "https://www.fvhospital.com",
+      "lat": 10.7323638,
+      "lng": 106.7179388
+    },
+    {
+      "code": "osm:way/163764047",
+      "name": "Bệnh viện Phổi Trung ương",
+      "countryCode": "VN",
+      "origin": "https://bvptw.org",
+      "lat": 21.0423434,
+      "lng": 105.8134109
+    },
+    {
+      "code": "osm:way/187895176",
+      "name": "Bệnh viện Nhi đồng 2",
+      "countryCode": "VN",
+      "origin": "http://www.benhviennhi.org.vn",
+      "lat": 10.7814535,
+      "lng": 106.7028174
+    },
+    {
+      "code": "osm:way/189067578",
+      "name": "Bệnh viện Đại học Y Dược Thành phố Hồ Chí Minh",
+      "countryCode": "VN",
+      "origin": "http://www.bvdaihoc.com.vn",
+      "lat": 10.7552707,
+      "lng": 106.6645719
+    },
+    {
+      "code": "osm:way/198047671",
+      "name": "Bệnh viện Thống Nhất",
+      "countryCode": "VN",
+      "origin": "https://bvtn.org.vn",
+      "lat": 10.7910792,
+      "lng": 106.6535424
+    },
+    {
+      "code": "osm:way/199148844",
+      "name": "Bệnh viện Phụ sản Hà Nội",
+      "countryCode": "VN",
+      "origin": "https://benhvienphusanhanoi.vn",
+      "lat": 21.0268213,
+      "lng": 105.8074644
+    },
+    {
+      "code": "osm:way/199148846",
+      "name": "Bệnh viện Nhi Trung ương",
+      "countryCode": "VN",
+      "origin": "https://benhviennhitrunguong.gov.vn",
+      "lat": 21.0249118,
+      "lng": 105.8083673
+    },
+    {
+      "code": "osm:way/217792888",
+      "name": "Bệnh viện Đa khoa Xanh Pôn",
+      "countryCode": "VN",
+      "origin": "http://bvxanhpon.vn",
+      "lat": 21.0312292,
+      "lng": 105.8351549
+    },
+    {
+      "code": "osm:way/218625367",
+      "name": "Bệnh viện Bạch Mai",
+      "countryCode": "VN",
+      "origin": "https://bachmai.gov.vn",
+      "lat": 21.0018102,
+      "lng": 105.8393995
+    },
+    {
+      "code": "osm:way/218631146",
+      "name": "Bệnh viện Trung ương Quân đội 108",
+      "countryCode": "VN",
+      "origin": "https://benhvien108.vn",
+      "lat": 21.0163854,
+      "lng": 105.8606157
+    },
+    {
+      "code": "osm:way/225056511",
+      "name": "Bệnh viện Quốc tế Hạnh Phúc",
+      "countryCode": "VN",
+      "origin": "https://www.hanhphuchospital.com",
+      "lat": 10.8678097,
+      "lng": 106.7142927
+    },
+    {
+      "code": "osm:way/418891949",
+      "name": "Bệnh viện An Sinh",
+      "countryCode": "VN",
+      "origin": "http://www.anhsinh.com.vn",
+      "lat": 10.7913163,
+      "lng": 106.6785309
+    },
+    {
+      "code": "osm:way/513005944",
+      "name": "Bệnh viện Đa khoa Long An",
+      "countryCode": "VN",
+      "origin": "https://bvdkla.longan.gov.vn",
+      "lat": 10.5325994,
+      "lng": 106.4263208
+    },
+    {
+      "code": "osm:way/538534203",
+      "name": "Bệnh viện mắt Tây Nguyên",
+      "countryCode": "VN",
+      "origin": "http://benhvienmattaynguyen.com.vn",
+      "lat": 12.6946426,
+      "lng": 108.0616768
+    },
+    {
+      "code": "osm:way/570573930",
+      "name": "Bệnh viện Giao thông Vận tải",
+      "countryCode": "VN",
+      "origin": "https://giaothonghospital.vn",
+      "lat": 21.0261377,
+      "lng": 105.8025875
+    },
+    {
+      "code": "osm:way/582916859",
+      "name": "Bệnh viện Đa khoa Đồng Nai",
+      "countryCode": "VN",
+      "origin": "https://benhviendakhoadongnai.com",
+      "lat": 10.952243,
+      "lng": 106.8675228
+    },
+    {
+      "code": "osm:way/695770493",
+      "name": "Bệnh viện Quốc tế Trung ương Huế",
+      "countryCode": "VN",
+      "origin": "https://bvtwhue.com.vn",
+      "lat": 16.4607254,
+      "lng": 107.5863483
+    },
+    {
+      "code": "osm:way/700671946",
+      "name": "Bệnh viện Đa khoa Hồng Ngọc",
+      "countryCode": "VN",
+      "origin": "https://hongngochospital.vn",
+      "lat": 21.0424816,
+      "lng": 105.8442985
+    },
+    {
+      "code": "osm:way/703386640",
+      "name": "Bệnh viện Phụ sản Trung ương",
+      "countryCode": "VN",
+      "origin": "http://benhvienphusantrunguong.org.vn",
+      "lat": 21.0266842,
+      "lng": 105.8469248
+    },
+    {
+      "code": "osm:way/703386650",
+      "name": "Bệnh viện K",
+      "countryCode": "VN",
+      "origin": "https://benhvienk.vn",
+      "lat": 21.0268963,
+      "lng": 105.8461355
+    },
+    {
+      "code": "osm:way/703386657",
+      "name": "Bệnh viện Hữu nghị Việt Đức",
+      "countryCode": "VN",
+      "origin": "https://benhvienvietduc.org",
+      "lat": 21.0285801,
+      "lng": 105.8470046
+    },
+    {
+      "code": "osm:way/704147393",
+      "name": "Bệnh viện Mắt Hà Nội (Trụ sở chính)",
+      "countryCode": "VN",
+      "origin": "https://benhvienmathanoi.gov.vn",
+      "lat": 21.0240784,
+      "lng": 105.8503006
+    },
+    {
+      "code": "osm:way/842605269",
+      "name": "Bệnh viện Mắt Trung ương",
+      "countryCode": "VN",
+      "origin": "https://vneh.vn",
+      "lat": 21.0176301,
+      "lng": 105.8495995
+    },
+    {
+      "code": "osm:way/856220237",
+      "name": "Viện Y học cổ truyền Quân đội",
+      "countryCode": "VN",
+      "origin": "http://yhoccotruyenqd.vn",
+      "lat": 20.9727944,
+      "lng": 105.8233726
+    },
+    {
+      "code": "osm:way/857438584",
+      "name": "Bệnh viện Đông Đô",
+      "countryCode": "VN",
+      "origin": "https://benhviendongdo.com.vn",
+      "lat": 21.0093319,
+      "lng": 105.8379891
+    },
+    {
+      "code": "osm:way/863234980",
+      "name": "Bệnh viện Mắt Quốc tế DND",
+      "countryCode": "VN",
+      "origin": "https://matquocte.vn",
+      "lat": 21.0129915,
+      "lng": 105.8496681
+    },
+    {
+      "code": "osm:way/871151846",
+      "name": "Bệnh viện Tim Hà Nội",
+      "countryCode": "VN",
+      "origin": "http://benhvientimhanoi.vn",
+      "lat": 21.0240047,
+      "lng": 105.8439728
+    },
+    {
+      "code": "osm:way/885744682",
+      "name": "Viện Y học phóng xạ và U bướu Quân đội",
+      "countryCode": "VN",
+      "origin": "https://ungthutuyengiap.org",
+      "lat": 20.9809046,
+      "lng": 105.8200629
+    },
+    {
+      "code": "osm:way/951487924",
+      "name": "Bệnh viện Bệnh nhiệt đới Trung ương (cơ sở 2)",
+      "countryCode": "VN",
+      "origin": "https://benhnhietdoi.vn",
+      "lat": 21.1314341,
+      "lng": 105.7743775
+    },
+    {
+      "code": "osm:way/969298463",
+      "name": "Bệnh viện Sản - Nhi Bắc Ninh số 2",
+      "countryCode": "VN",
+      "origin": "https://benhviensannhibacninhso2.vn",
+      "lat": 21.1692762,
+      "lng": 106.067522
+    },
+    {
+      "code": "osm:way/973480708",
+      "name": "Bệnh viện Đa khoa Mê Linh",
+      "countryCode": "VN",
+      "origin": "http://www.bvdkmelinh.vn",
+      "lat": 21.1800717,
+      "lng": 105.6819888
+    },
+    {
+      "code": "osm:way/978035270",
+      "name": "VNVC Thành phố Đồng Nai",
+      "countryCode": "VN",
+      "origin": "https://vnvc.vn",
+      "lat": 10.9468657,
+      "lng": 106.8579378
+    },
+    {
+      "code": "osm:way/985466169",
+      "name": "Trung Tâm Kiểm Soát Bệnh Tật (CDC) Thành phố Bắc Ninh",
+      "countryCode": "VN",
+      "origin": "https://bacninhcdc.vn",
+      "lat": 21.1670374,
+      "lng": 106.0683377
+    },
+    {
+      "code": "osm:way/993011946",
+      "name": "Bệnh viện Bạch Mai - Cơ sở Ninh Bình",
+      "countryCode": "VN",
+      "origin": "https://bachmai.gov.vn",
+      "lat": 20.5357262,
+      "lng": 105.9564055
+    },
+    {
+      "code": "osm:way/1011384362",
+      "name": "Bệnh viện Đa khoa Quốc tế Vinmec Smart City",
+      "countryCode": "VN",
+      "origin": "https://www.vinmec.com",
+      "lat": 21.0078176,
+      "lng": 105.7473049
+    },
+    {
+      "code": "osm:way/1051883527",
+      "name": "Bệnh viện Đa khoa Hồng Phát",
+      "countryCode": "VN",
+      "origin": "https://benhvienhongphat.vn",
+      "lat": 21.0183636,
+      "lng": 105.841644
+    },
+    {
+      "code": "osm:way/1051883528",
+      "name": "Bệnh Viện Đức Phúc",
+      "countryCode": "VN",
+      "origin": "https://benhvienducphuc.com",
+      "lat": 21.014218,
+      "lng": 105.8408994
+    },
+    {
+      "code": "osm:way/1058236270",
+      "name": "Bệnh viện Đa khoa Năm Căn",
+      "countryCode": "VN",
+      "origin": "https://bvdknamcan.vn",
+      "lat": 8.7690116,
+      "lng": 104.9966835
+    },
+    {
+      "code": "osm:way/1058236271",
+      "name": "Bệnh viện Đa khoa Cái Nước",
+      "countryCode": "VN",
+      "origin": "http://cainuochospital.com",
+      "lat": 8.945921,
+      "lng": 105.0130212
+    },
+    {
+      "code": "osm:way/1119367378",
+      "name": "Bệnh viện Đa khoa khu vực Hoà Phú",
+      "countryCode": "VN",
+      "origin": "https://bvhoaphu.vinhlong.gov.vn",
+      "lat": 10.1883992,
+      "lng": 105.9426585
+    },
+    {
+      "code": "osm:way/1155255432",
+      "name": "Bệnh Viện Đa Khoa Quốc Tế Nam Sài Gòn",
+      "countryCode": "VN",
+      "origin": "https://benhviennamsaigon.com.vn",
+      "lat": 10.7361021,
+      "lng": 106.6908392
+    },
+    {
+      "code": "osm:way/1157248742",
+      "name": "Bệnh viện Phương Nam",
+      "countryCode": "VN",
+      "origin": "https://gih.com.vn",
+      "lat": 10.7344138,
+      "lng": 106.7177492
+    },
+    {
+      "code": "osm:way/1158639496",
+      "name": "Bệnh viện Việt Pháp",
+      "countryCode": "VN",
+      "origin": "https://www.hfh.com.vn",
+      "lat": 21.0036321,
+      "lng": 105.8404443
+    },
+    {
+      "code": "osm:way/1168454903",
+      "name": "Phòng Khám Bác Sĩ Gia Đình",
+      "countryCode": "VN",
+      "origin": "https://clinic.huefmc.com",
+      "lat": 16.4582724,
+      "lng": 107.5882713
+    },
+    {
+      "code": "osm:way/1192868591",
+      "name": "Bệnh viện Lão khoa Trung ương",
+      "countryCode": "VN",
+      "origin": "https://benhvienlaokhoa.vn",
+      "lat": 21.0036327,
+      "lng": 105.8395966
+    },
+    {
+      "code": "osm:way/1192868592",
+      "name": "Bệnh viện Da liễu Trung ương",
+      "countryCode": "VN",
+      "origin": "https://dalieu.vn",
+      "lat": 21.003801,
+      "lng": 105.8387631
+    },
+    {
+      "code": "osm:way/1204792344",
+      "name": "Bệnh viện Đa khoa số 3 tỉnh Lào Cai & Bệnh viện Đa khoa Trường Đức",
+      "countryCode": "VN",
+      "origin": "https://www.benhviendakhoaso3tinhlaocai.vn",
+      "lat": 21.61372,
+      "lng": 104.5060811
+    },
+    {
+      "code": "osm:way/1205244304",
+      "name": "Bệnh viện Đa khoa Quốc tế Vinmec Times City",
+      "countryCode": "VN",
+      "origin": "https://www.vinmec.com",
+      "lat": 20.9959685,
+      "lng": 105.8666473
+    },
+    {
+      "code": "osm:way/1208987601",
+      "name": "Bệnh viện Đại học Y Hà Nội - Cơ sở Hoàng Mai",
+      "countryCode": "VN",
+      "origin": "http://benhviendaihocyhanoi.com",
+      "lat": 20.9786327,
+      "lng": 105.8690445
+    },
+    {
+      "code": "osm:way/1226646131",
+      "name": "Bệnh viện Da liễu thành phố Đà Nẵng",
+      "countryCode": "VN",
+      "origin": "https://dalieudanang.com",
+      "lat": 16.0737867,
+      "lng": 108.1762198
+    },
+    {
+      "code": "osm:way/1264135484",
+      "name": "Bệnh viện Phụ sản Trung ương cơ sở 2",
+      "countryCode": "VN",
+      "origin": "http://benhvienphusantrunguong.org.vn",
+      "lat": 20.9988257,
+      "lng": 105.6188931
+    },
+    {
+      "code": "osm:way/1264135485",
+      "name": "Bệnh viện Nhi Trung ương cơ sở 2",
+      "countryCode": "VN",
+      "origin": "https://benhviennhitrunguong.gov.vn",
+      "lat": 20.9989266,
+      "lng": 105.620953
+    },
+    {
+      "code": "osm:way/1339401910",
+      "name": "Bệnh viện KUSUMI",
+      "countryCode": "VN",
+      "origin": "https://kusumihospital.vn",
+      "lat": 20.9635258,
+      "lng": 105.9326261
+    },
+    {
+      "code": "osm:way/1467294941",
+      "name": "Bệnh viện Da liễu Bắc Ninh",
+      "countryCode": "VN",
+      "origin": "https://www.bacninh.gov.vn",
+      "lat": 21.2085335,
+      "lng": 106.0509606
+    },
+    {
+      "code": "osm:way/1524495306",
+      "name": "Bệnh viện Đa khoa Tâm Trí Đà Nẵng",
+      "countryCode": "VN",
+      "origin": "https://bvtamtridanang.com.vn",
+      "lat": 16.0229038,
+      "lng": 108.2142
+    },
+    {
+      "code": "osm:way/1529292326",
+      "name": "Bệnh viện Chấn thương Chỉnh hình",
+      "countryCode": "VN",
+      "origin": "https://www.bvctch.vn",
+      "lat": 10.7541886,
+      "lng": 106.6779143
+    },
+    {
+      "code": "osm:way/1529292331",
+      "name": "Bệnh viện Bệnh Nhiệt đới",
+      "countryCode": "VN",
+      "origin": "https://www.bvbnd.vn",
+      "lat": 10.75321,
+      "lng": 106.6784866
+    },
+    {
+      "code": "osm:way/1552174118",
+      "name": "Bệnh viện Lão khoa Hà Nội (cơ sở 2)",
+      "countryCode": "VN",
+      "origin": "https://benhvienlaokhoahanoi.vn",
+      "lat": 21.0792518,
+      "lng": 105.7862076
+    }
+  ]
+}

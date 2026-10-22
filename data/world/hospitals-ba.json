@@ -1,0 +1,337 @@
+{
+  "countryCode": "BA",
+  "fetchedAt": "2026-10-21T00:47:47.479Z",
+  "count": 41,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1287850568",
+      "name": "Univerzitetska bolnica Foča",
+      "countryCode": "BA",
+      "origin": "http://www.bolnicafoca.com",
+      "lat": 43.5273085,
+      "lng": 18.7822921
+    },
+    {
+      "code": "osm:node/4304194129",
+      "name": "Medical Institute Bayer",
+      "countryCode": "BA",
+      "origin": "https://mib.institute",
+      "lat": 44.5278807,
+      "lng": 18.7066893
+    },
+    {
+      "code": "osm:node/9893459117",
+      "name": "UKC Tuzla - Poliklinika za transfuziologiju",
+      "countryCode": "BA",
+      "origin": "https://www.ukctuzla.ba",
+      "lat": 44.5391064,
+      "lng": 18.6919631
+    },
+    {
+      "code": "osm:node/13469215064",
+      "name": "Ambulance for OST Metadon & Buprenorphine / Suboxone",
+      "countryCode": "BA",
+      "origin": "https://www.zalcnarc.net",
+      "lat": 43.8880103,
+      "lng": 18.4159513
+    },
+    {
+      "code": "osm:node/13860152333",
+      "name": "Галамедика",
+      "countryCode": "BA",
+      "origin": "https://zugalamedica.com",
+      "lat": 44.7718877,
+      "lng": 19.2230514
+    },
+    {
+      "code": "osm:way/27514777",
+      "name": "Dom zdravlja Ilidža",
+      "countryCode": "BA",
+      "origin": "http://www.judzks.ba",
+      "lat": 43.8299113,
+      "lng": 18.3105719
+    },
+    {
+      "code": "osm:way/32228750",
+      "name": "Klinika Jezero",
+      "countryCode": "BA",
+      "origin": "https://www.kcus.ba",
+      "lat": 43.8769377,
+      "lng": 18.4091629
+    },
+    {
+      "code": "osm:way/44780021",
+      "name": "Klinika za plućne bolesti i tuberkulozu \"Podhrastovi\"",
+      "countryCode": "BA",
+      "origin": "https://www.kcus.ba",
+      "lat": 43.8712038,
+      "lng": 18.4247562
+    },
+    {
+      "code": "osm:way/45902268",
+      "name": "Opća bolnica Prim. dr. Abdulah Nakaš",
+      "countryCode": "BA",
+      "origin": "https://www.obs.ba",
+      "lat": 43.8585619,
+      "lng": 18.4074454
+    },
+    {
+      "code": "osm:way/165060333",
+      "name": "Zdravstveni Centar Brčko",
+      "countryCode": "BA",
+      "origin": "http://jzubrcko.com",
+      "lat": 44.8776184,
+      "lng": 18.7956245
+    },
+    {
+      "code": "osm:way/168653925",
+      "name": "Dom zdravlja Tomislavgrad",
+      "countryCode": "BA",
+      "origin": "https://www.dz-tomislavgrad.com",
+      "lat": 43.723598,
+      "lng": 17.2246964
+    },
+    {
+      "code": "osm:way/169183987",
+      "name": "Hrvatska bolnica \"Dr. fra Mato Nikolić\"",
+      "countryCode": "BA",
+      "origin": "https://www.bolnica-novabila.net",
+      "lat": 44.1923263,
+      "lng": 17.745991
+    },
+    {
+      "code": "osm:way/171767433",
+      "name": "Kantonalna bolnica \"Dr. Irfan Ljubijankić\"",
+      "countryCode": "BA",
+      "origin": "https://kbbihac.ba",
+      "lat": 44.8092314,
+      "lng": 15.8551738
+    },
+    {
+      "code": "osm:way/192280087",
+      "name": "Županijska bolnica dr. Mihovil Sučić",
+      "countryCode": "BA",
+      "origin": "http://bolnica-livno.com",
+      "lat": 43.8270596,
+      "lng": 17.0022101
+    },
+    {
+      "code": "osm:way/194614252",
+      "name": "Bolnica Trebinje",
+      "countryCode": "BA",
+      "origin": "http://bolnicatrebinje.com",
+      "lat": 42.7101098,
+      "lng": 18.3520027
+    },
+    {
+      "code": "osm:way/220225359",
+      "name": "Univerzitetski klinički centar Republike Srpske",
+      "countryCode": "BA",
+      "origin": "https://www.kc-bl.com",
+      "lat": 44.7834658,
+      "lng": 17.1773693
+    },
+    {
+      "code": "osm:way/289976793",
+      "name": "Lječilište Gata",
+      "countryCode": "BA",
+      "origin": "https://www.facebook.com",
+      "lat": 44.9300518,
+      "lng": 15.8097641
+    },
+    {
+      "code": "osm:way/317763570",
+      "name": "Opšta bolnica Gradiška",
+      "countryCode": "BA",
+      "origin": "https://www.bolnicagradiska.ba",
+      "lat": 45.145102,
+      "lng": 17.2469436
+    },
+    {
+      "code": "osm:way/374625552",
+      "name": "Kantonalna Bolnica Goražde",
+      "countryCode": "BA",
+      "origin": "http://bolnica-gorazde.ba",
+      "lat": 43.6643265,
+      "lng": 18.9772151
+    },
+    {
+      "code": "osm:way/375862791",
+      "name": "Klinički centar Univerziteta u Sarajevu",
+      "countryCode": "BA",
+      "origin": "https://www.kcus.ba",
+      "lat": 43.8697313,
+      "lng": 18.4159651
+    },
+    {
+      "code": "osm:way/417169657",
+      "name": "JZU Bolnica dr. Mladen Stojanović",
+      "countryCode": "BA",
+      "origin": "https://bolnicaprijedor.com",
+      "lat": 44.983673,
+      "lng": 16.7309471
+    },
+    {
+      "code": "osm:way/424973539",
+      "name": "Opća bolnica Konjic",
+      "countryCode": "BA",
+      "origin": "https://bolnicakonjic.com",
+      "lat": 43.6556479,
+      "lng": 17.9522373
+    },
+    {
+      "code": "osm:way/425062058",
+      "name": "Klinika urgentne medicine",
+      "countryCode": "BA",
+      "origin": "https://www.kcus.ba",
+      "lat": 43.8697963,
+      "lng": 18.4138788
+    },
+    {
+      "code": "osm:way/425062061",
+      "name": "Klinika za infektivne bolesti",
+      "countryCode": "BA",
+      "origin": "https://www.kcus.ba",
+      "lat": 43.8705525,
+      "lng": 18.4141464
+    },
+    {
+      "code": "osm:way/489652014",
+      "name": "Opća bolnica Tešanj",
+      "countryCode": "BA",
+      "origin": "http://bolnicatesanj.ba",
+      "lat": 44.6094273,
+      "lng": 17.9887128
+    },
+    {
+      "code": "osm:way/490998802",
+      "name": "Bolnica \"Sveti Vračevi\" Bijeljina",
+      "countryCode": "BA",
+      "origin": "http://www.bolnicabijeljina.com",
+      "lat": 44.7516187,
+      "lng": 19.2213687
+    },
+    {
+      "code": "osm:way/556334747",
+      "name": "Dom zdravlja Novi Grad",
+      "countryCode": "BA",
+      "origin": "http://www.dzngrad.org",
+      "lat": 45.0472277,
+      "lng": 16.3820408
+    },
+    {
+      "code": "osm:way/558321586",
+      "name": "Bolnica Travnik",
+      "countryCode": "BA",
+      "origin": "http://www.bolnicatravnik.ba",
+      "lat": 44.2293976,
+      "lng": 17.6548066
+    },
+    {
+      "code": "osm:way/558599734",
+      "name": "Psihijatrijska Bolnica Kantona Sarajevo",
+      "countryCode": "BA",
+      "origin": "http://jagomir.ba",
+      "lat": 43.8879679,
+      "lng": 18.4180896
+    },
+    {
+      "code": "osm:way/558599735",
+      "name": "Zavod za forenzičku psihijatriju Sokolac",
+      "countryCode": "BA",
+      "origin": "http://www.zzfps.ba",
+      "lat": 43.9195311,
+      "lng": 18.773634
+    },
+    {
+      "code": "osm:way/630760865",
+      "name": "Sveučilišna Klinička Bolnica Mostar",
+      "countryCode": "BA",
+      "origin": "https://skbm.ba",
+      "lat": 43.3448788,
+      "lng": 17.7891548
+    },
+    {
+      "code": "osm:way/637550199",
+      "name": "JU Zavod za bolesti ovisnosti Kantona Sarajevo",
+      "countryCode": "BA",
+      "origin": "https://www.zalcnarc.net",
+      "lat": 43.888101,
+      "lng": 18.4160098
+    },
+    {
+      "code": "osm:way/644749321",
+      "name": "ZU BOLNICA iz hirurških oblasti LAGANIN",
+      "countryCode": "BA",
+      "origin": "https://www.laganin.com",
+      "lat": 44.7731401,
+      "lng": 17.1837137
+    },
+    {
+      "code": "osm:way/756163063",
+      "name": "Bolnica \"Srbija\" Istočno Sarajevo",
+      "countryCode": "BA",
+      "origin": "https://bolnicasrbija.com",
+      "lat": 43.797904,
+      "lng": 18.3907787
+    },
+    {
+      "code": "osm:way/874359545",
+      "name": "Bolnica S-tetik",
+      "countryCode": "BA",
+      "origin": "https://s-tetik.com",
+      "lat": 44.7605941,
+      "lng": 17.1876549
+    },
+    {
+      "code": "osm:way/886144193",
+      "name": "Bolnica za plućne bolesti i tuberkulozu Travnik",
+      "countryCode": "BA",
+      "origin": "http://jubpbt.com",
+      "lat": 44.2290746,
+      "lng": 17.6583607
+    },
+    {
+      "code": "osm:way/943199137",
+      "name": "Bolnica \"Sveti apostol Luka\"",
+      "countryCode": "BA",
+      "origin": "https://www.bolnicadoboj.com",
+      "lat": 44.7164733,
+      "lng": 18.085844
+    },
+    {
+      "code": "osm:way/1414100991",
+      "name": "Dom zdravlja Bratunac",
+      "countryCode": "BA",
+      "origin": "https://www.facebook.com",
+      "lat": 44.1822291,
+      "lng": 19.3317261
+    },
+    {
+      "code": "osm:way/1421031871",
+      "name": "Gerontološki centar",
+      "countryCode": "BA",
+      "origin": "https://www.jugcbl.rs.ba",
+      "lat": 44.781492,
+      "lng": 17.1868329
+    },
+    {
+      "code": "osm:way/1459107003",
+      "name": "Opća bolnica dr. Mustafa Beganović Gračanica",
+      "countryCode": "BA",
+      "origin": "http://www.obgr.net",
+      "lat": 44.6983049,
+      "lng": 18.3024523
+    },
+    {
+      "code": "osm:way/1468588079",
+      "name": "JU Zavod za bolesti ovisnosti Kantona Sarajevo",
+      "countryCode": "BA",
+      "origin": "https://www.zalcnarc.net",
+      "lat": 43.8882563,
+      "lng": 18.4161007
+    }
+  ]
+}

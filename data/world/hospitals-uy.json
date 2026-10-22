@@ -1,0 +1,121 @@
+{
+  "countryCode": "UY",
+  "fetchedAt": "2026-10-21T03:05:43.790Z",
+  "count": 14,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4558400591",
+      "name": "Centro Médico Pediatrico",
+      "countryCode": "UY",
+      "origin": "https://www.smqs.com.uy",
+      "lat": -31.388844,
+      "lng": -57.9533917
+    },
+    {
+      "code": "osm:node/8567259417",
+      "name": "Clínica Preventiva",
+      "countryCode": "UY",
+      "origin": "https://www.clinicapreventiva.com",
+      "lat": -34.8408603,
+      "lng": -55.994397
+    },
+    {
+      "code": "osm:node/13525728901",
+      "name": "Centro Klinos - Salud Mental e Internación",
+      "countryCode": "UY",
+      "origin": "https://centroklinos.com.uy",
+      "lat": -34.920622,
+      "lng": -56.1623525
+    },
+    {
+      "code": "osm:node/14072191301",
+      "name": "Hospital Británico",
+      "countryCode": "UY",
+      "origin": "https://www.hospitalbritanico.org.uy",
+      "lat": -34.9308418,
+      "lng": -54.9232942
+    },
+    {
+      "code": "osm:way/37514653",
+      "name": "Hospital de Clínicas \"Doctor Manuel Quintela\"",
+      "countryCode": "UY",
+      "origin": "https://www.hc.edu.uy",
+      "lat": -34.8915346,
+      "lng": -56.1521338
+    },
+    {
+      "code": "osm:way/153029522",
+      "name": "Banco de Prótesis",
+      "countryCode": "UY",
+      "origin": "http://bancodeprotesis.com",
+      "lat": -34.8841233,
+      "lng": -56.0903564
+    },
+    {
+      "code": "osm:way/156270380",
+      "name": "Centro Hospitalario Pereira Rossell",
+      "countryCode": "UY",
+      "origin": "http://pereirarossell.gub.uy",
+      "lat": -34.8986503,
+      "lng": -56.1628384
+    },
+    {
+      "code": "osm:way/243502544",
+      "name": "Centro de Salud “Doctor Enrique Claveaux”",
+      "countryCode": "UY",
+      "origin": "http://www.asse.com.uy",
+      "lat": -34.8694624,
+      "lng": -56.1708448
+    },
+    {
+      "code": "osm:way/252213766",
+      "name": "Sanatorio Enrique Cabal",
+      "countryCode": "UY",
+      "origin": "http://asesp.com.uy",
+      "lat": -34.9004257,
+      "lng": -56.1650836
+    },
+    {
+      "code": "osm:way/446943497",
+      "name": "Red de Atención Primaria de Salud",
+      "countryCode": "UY",
+      "origin": "http://www.asse.com.uy",
+      "lat": -30.3951336,
+      "lng": -56.461686
+    },
+    {
+      "code": "osm:way/446943498",
+      "name": "GREMEDA",
+      "countryCode": "UY",
+      "origin": "https://www.gremeda.com.uy",
+      "lat": -30.395297,
+      "lng": -56.4614785
+    },
+    {
+      "code": "osm:way/470907941",
+      "name": "Hospital Escuela del Litoral Galan y Rocha",
+      "countryCode": "UY",
+      "origin": "http://www.asse.com.uy",
+      "lat": -32.3255677,
+      "lng": -58.0806969
+    },
+    {
+      "code": "osm:way/560254541",
+      "name": "NorMédica",
+      "countryCode": "UY",
+      "origin": "http://normedica.placeweb.site",
+      "lat": -30.4055148,
+      "lng": -56.4694108
+    },
+    {
+      "code": "osm:way/905392238",
+      "name": "Hospital Maciel",
+      "countryCode": "UY",
+      "origin": "http://www.hmaciel.gub.uy",
+      "lat": -34.9083467,
+      "lng": -56.2118677
+    }
+  ]
+}

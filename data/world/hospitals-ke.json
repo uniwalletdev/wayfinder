@@ -1,0 +1,385 @@
+{
+  "countryCode": "KE",
+  "fetchedAt": "2026-10-21T01:46:28.752Z",
+  "count": 47,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/3848602473",
+      "name": "Gertrude's Children's Hospital Mombasa",
+      "countryCode": "KE",
+      "origin": "https://www.gerties.org",
+      "lat": -4.0320716,
+      "lng": 39.7116664
+    },
+    {
+      "code": "osm:node/6173489602",
+      "name": "Aga Khan Hospital Komarock",
+      "countryCode": "KE",
+      "origin": "https://www.agakhanhospitals.org",
+      "lat": -1.2676453,
+      "lng": 36.9055678
+    },
+    {
+      "code": "osm:node/8429563117",
+      "name": "Health Gate Hospital",
+      "countryCode": "KE",
+      "origin": "https://healthgatehospital.com",
+      "lat": -1.2796498,
+      "lng": 36.8461108
+    },
+    {
+      "code": "osm:node/9002869889",
+      "name": "The Nairobi South Hospital",
+      "countryCode": "KE",
+      "origin": "https://nairobisouthhospital.org",
+      "lat": -1.3136574,
+      "lng": 36.8283841
+    },
+    {
+      "code": "osm:node/9810458487",
+      "name": "OLJABET HOSPITAL TOWN CLINIC",
+      "countryCode": "KE",
+      "origin": "https://ww.oljabethospital.co.ke",
+      "lat": 0.0370468,
+      "lng": 36.3612465
+    },
+    {
+      "code": "osm:node/10006564971",
+      "name": "Meditrina Hospital",
+      "countryCode": "KE",
+      "origin": "http://www.meditrinahospitalsafrica.com",
+      "lat": -0.487088,
+      "lng": 34.5379846
+    },
+    {
+      "code": "osm:node/10207262846",
+      "name": "Langata Hospital",
+      "countryCode": "KE",
+      "origin": "https://langatahospital.org",
+      "lat": -1.3276957,
+      "lng": 36.7891893
+    },
+    {
+      "code": "osm:node/10865168176",
+      "name": "Saint Elizabeth Lorugum Health Centre",
+      "countryCode": "KE",
+      "origin": "https://dioceseoflodwar.org",
+      "lat": 2.8923531,
+      "lng": 35.2629953
+    },
+    {
+      "code": "osm:node/10865401647",
+      "name": "Nakwamoru Health Centre",
+      "countryCode": "KE",
+      "origin": "https://dioceseoflodwar.org",
+      "lat": 2.0557489,
+      "lng": 35.4313988
+    },
+    {
+      "code": "osm:node/10939199235",
+      "name": "Al-Hakeem Medical Services",
+      "countryCode": "KE",
+      "origin": "https://www.alhakeemclinics.co.ke",
+      "lat": 0.2222316,
+      "lng": 34.0241688
+    },
+    {
+      "code": "osm:node/11399675222",
+      "name": "Vital Rey Hospital",
+      "countryCode": "KE",
+      "origin": "https://vitalray.com",
+      "lat": -1.2633057,
+      "lng": 36.8015213
+    },
+    {
+      "code": "osm:node/13071828602",
+      "name": "BELLEZZA SKIN AESTHETICS",
+      "countryCode": "KE",
+      "origin": "https://www.bellezza.skin",
+      "lat": -1.2667754,
+      "lng": 36.7989299
+    },
+    {
+      "code": "osm:node/13895330327",
+      "name": "Nairobi Women's Hospital",
+      "countryCode": "KE",
+      "origin": "https://nwh.co.ke",
+      "lat": -0.2820004,
+      "lng": 36.0989743
+    },
+    {
+      "code": "osm:way/25473029",
+      "name": "Aga Khan University Hospital",
+      "countryCode": "KE",
+      "origin": "https://hospitals.aku.edu",
+      "lat": -1.2617074,
+      "lng": 36.8238501
+    },
+    {
+      "code": "osm:way/106088780",
+      "name": "MP Shah Hospital",
+      "countryCode": "KE",
+      "origin": "https://mpshahhosp.org",
+      "lat": -1.2635271,
+      "lng": 36.8121089
+    },
+    {
+      "code": "osm:way/138227891",
+      "name": "Nairobi Hospital",
+      "countryCode": "KE",
+      "origin": "https://thenairobihosp.org",
+      "lat": -1.2964484,
+      "lng": 36.8043608
+    },
+    {
+      "code": "osm:way/164582610",
+      "name": "Mama Lucy Kibaki Memorial Hospital",
+      "countryCode": "KE",
+      "origin": "https://mamalucykibakihospital.or.ke",
+      "lat": -1.2744299,
+      "lng": 36.8992342
+    },
+    {
+      "code": "osm:way/178862844",
+      "name": "Embu level 5 Hospital",
+      "countryCode": "KE",
+      "origin": "https://www.embuhospital.go.ke",
+      "lat": -0.52417,
+      "lng": 37.4531222
+    },
+    {
+      "code": "osm:way/238681878",
+      "name": "Gertrude's Children Hospital",
+      "countryCode": "KE",
+      "origin": "http://www.gerties.org",
+      "lat": -1.2560523,
+      "lng": 36.8317759
+    },
+    {
+      "code": "osm:way/241557230",
+      "name": "Nairobi Women's Hospital",
+      "countryCode": "KE",
+      "origin": "https://nwh.co.ke",
+      "lat": -1.2938006,
+      "lng": 36.7964992
+    },
+    {
+      "code": "osm:way/245262898",
+      "name": "Kenyatta National Hospital",
+      "countryCode": "KE",
+      "origin": "https://knh.or.ke",
+      "lat": -1.3011014,
+      "lng": 36.8069052
+    },
+    {
+      "code": "osm:way/389490442",
+      "name": "The Mater Misericordiae Hospital (Mukuru)",
+      "countryCode": "KE",
+      "origin": "https://www.materkenya.com",
+      "lat": -1.3075076,
+      "lng": 36.834685
+    },
+    {
+      "code": "osm:way/460688519",
+      "name": "Cottolengo Hospital",
+      "countryCode": "KE",
+      "origin": "http://chaariahospital.blogspot.co.ke",
+      "lat": -0.0028843,
+      "lng": 37.7664292
+    },
+    {
+      "code": "osm:way/515200237",
+      "name": "Kenyatta University Teaching, Referral & Research Hospital",
+      "countryCode": "KE",
+      "origin": "https://kutrrh.go.ke",
+      "lat": -1.1773891,
+      "lng": 36.915512
+    },
+    {
+      "code": "osm:way/549560459",
+      "name": "Coast General Teaching & Refferal Hospital",
+      "countryCode": "KE",
+      "origin": "https://cgtrh.go.ke",
+      "lat": -4.0482942,
+      "lng": 39.6738217
+    },
+    {
+      "code": "osm:way/670737779",
+      "name": "Dr Rasik Kantaria Jalaram Medical Center",
+      "countryCode": "KE",
+      "origin": "https://rkjms.org",
+      "lat": -1.2582726,
+      "lng": 36.8067138
+    },
+    {
+      "code": "osm:way/731056041",
+      "name": "Mathari National Teaching & Referral Hospital",
+      "countryCode": "KE",
+      "origin": "https://www.mntrh.go.ke",
+      "lat": -1.2603033,
+      "lng": 36.8460973
+    },
+    {
+      "code": "osm:way/797375161",
+      "name": "Emuhaya Sub-county Hospital",
+      "countryCode": "KE",
+      "origin": "https://health.go.ke",
+      "lat": 0.0375851,
+      "lng": 34.6264609
+    },
+    {
+      "code": "osm:way/797393187",
+      "name": "The Nairobi West Hospital",
+      "countryCode": "KE",
+      "origin": "https://nairobiwesthospital.com",
+      "lat": -1.3065045,
+      "lng": 36.8256861
+    },
+    {
+      "code": "osm:way/797395619",
+      "name": "St. Orsola Mission Hospital",
+      "countryCode": "KE",
+      "origin": "https://www.tharakahospital.org",
+      "lat": -0.3162721,
+      "lng": 37.9002206
+    },
+    {
+      "code": "osm:way/798364264",
+      "name": "Jaramogi Oginga Odinga Teaching & Referral Hospital",
+      "countryCode": "KE",
+      "origin": "https://www.jaramogireferral.go.ke",
+      "lat": -0.0886347,
+      "lng": 34.7714063
+    },
+    {
+      "code": "osm:way/798632041",
+      "name": "Kisumu County Referral Hospital",
+      "countryCode": "KE",
+      "origin": "https://health.go.ke",
+      "lat": -0.1012815,
+      "lng": 34.7559838
+    },
+    {
+      "code": "osm:way/1003468531",
+      "name": "Swaminarayan Hospital",
+      "countryCode": "KE",
+      "origin": "https://shreeswaminarayanhospital.com",
+      "lat": -1.3291927,
+      "lng": 36.7983106
+    },
+    {
+      "code": "osm:way/1043448007",
+      "name": "Nyabondo Trauma Hospital",
+      "countryCode": "KE",
+      "origin": "https://health.go.ke",
+      "lat": -0.3812888,
+      "lng": 34.9778328
+    },
+    {
+      "code": "osm:way/1116344655",
+      "name": "The Aga Khan Hospital",
+      "countryCode": "KE",
+      "origin": "https://www.agakhanhospitals.org",
+      "lat": -0.0987133,
+      "lng": 34.7563485
+    },
+    {
+      "code": "osm:way/1118205875",
+      "name": "Migosi Sub-county Hospital",
+      "countryCode": "KE",
+      "origin": "https://www.health.go.ke",
+      "lat": -0.0758896,
+      "lng": 34.7833023
+    },
+    {
+      "code": "osm:way/1133820587",
+      "name": "Kodiaga prison health center",
+      "countryCode": "KE",
+      "origin": "https://www.health.go.ke",
+      "lat": -0.0620734,
+      "lng": 34.7086644
+    },
+    {
+      "code": "osm:way/1191477478",
+      "name": "Gita Subcounty Hospital",
+      "countryCode": "KE",
+      "origin": "https://health.go.ke",
+      "lat": -0.0277233,
+      "lng": 34.7907688
+    },
+    {
+      "code": "osm:way/1196786501",
+      "name": "Kisumu Specialists Hospital",
+      "countryCode": "KE",
+      "origin": "https://kishospital.co.ke",
+      "lat": -0.0361535,
+      "lng": 34.7552718
+    },
+    {
+      "code": "osm:way/1207423977",
+      "name": "Kimilili sub-county hospital",
+      "countryCode": "KE",
+      "origin": "https://health.go.ke",
+      "lat": 0.7890521,
+      "lng": 34.7129023
+    },
+    {
+      "code": "osm:way/1207436492",
+      "name": "Malava sub-county hospital",
+      "countryCode": "KE",
+      "origin": "https://health.go.ke",
+      "lat": 0.4482703,
+      "lng": 34.8536525
+    },
+    {
+      "code": "osm:way/1230749941",
+      "name": "Kombewa District Hospital",
+      "countryCode": "KE",
+      "origin": "https://health.go.ke",
+      "lat": -0.1035788,
+      "lng": 34.5181967
+    },
+    {
+      "code": "osm:way/1524564904",
+      "name": "PCEA Kikuyu hospital",
+      "countryCode": "KE",
+      "origin": "https://www.pceakikuyuhospital.org",
+      "lat": -1.2653913,
+      "lng": 36.6682936
+    },
+    {
+      "code": "osm:way/1524575516",
+      "name": "AGC Tenwek mission hospital",
+      "countryCode": "KE",
+      "origin": "https://tenwekhosp.org",
+      "lat": -0.7438354,
+      "lng": 35.3599853
+    },
+    {
+      "code": "osm:way/1527923053",
+      "name": "Bomu hospital",
+      "countryCode": "KE",
+      "origin": "https://www.bomuhospital.org",
+      "lat": -4.0272154,
+      "lng": 39.617463
+    },
+    {
+      "code": "osm:way/1535623295",
+      "name": "Mwai Kibaki Teaching & Referral Hospital",
+      "countryCode": "KE",
+      "origin": "https://mkrh.go.ke",
+      "lat": -0.5413873,
+      "lng": 36.9417376
+    },
+    {
+      "code": "osm:way/1544750662",
+      "name": "Mbagathi County Referral Hospital",
+      "countryCode": "KE",
+      "origin": "https://mbagathihospital.or.ke",
+      "lat": -1.3091113,
+      "lng": 36.8033266
+    }
+  ]
+}

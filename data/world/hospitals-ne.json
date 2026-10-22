@@ -1,0 +1,17 @@
+{
+  "countryCode": "NE",
+  "fetchedAt": "2026-10-21T02:14:45.756Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/6518603095",
+      "name": "Centre de Recherche Médicale et Sanitaire",
+      "countryCode": "NE",
+      "origin": "https://www.cermes.net",
+      "lat": 13.5284305,
+      "lng": 2.0888117
+    }
+  ]
+}

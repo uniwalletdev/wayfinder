@@ -1,0 +1,1009 @@
+{
+  "countryCode": "TW",
+  "fetchedAt": "2026-10-21T03:02:30.963Z",
+  "count": 125,
+  "droppedNoUsableWebsite": 1,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/2085900124",
+      "name": "宏仁醫院",
+      "countryCode": "TW",
+      "origin": "https://www.hongren.com.tw",
+      "lat": 23.9552726,
+      "lng": 120.5701243
+    },
+    {
+      "code": "osm:node/3049890935",
+      "name": "霧峰澄清醫院",
+      "countryCode": "TW",
+      "origin": "https://www.wfcc.com.tw",
+      "lat": 24.0699232,
+      "lng": 120.6991769
+    },
+    {
+      "code": "osm:node/4229177810",
+      "name": "長安醫院",
+      "countryCode": "TW",
+      "origin": "http://www.everanhospital.com.tw",
+      "lat": 24.1312016,
+      "lng": 120.7196382
+    },
+    {
+      "code": "osm:node/5061686948",
+      "name": "培靈醫院",
+      "countryCode": "TW",
+      "origin": "http://www.peiling.com.tw",
+      "lat": 25.0493566,
+      "lng": 121.5683513
+    },
+    {
+      "code": "osm:node/6024282261",
+      "name": "中英醫院",
+      "countryCode": "TW",
+      "origin": "https://www.choninn.com.tw",
+      "lat": 25.0198152,
+      "lng": 121.4662163
+    },
+    {
+      "code": "osm:way/19792776",
+      "name": "臺北榮民總醫院玉里分院",
+      "countryCode": "TW",
+      "origin": "http://www.vhyl.gov.tw",
+      "lat": 23.3379109,
+      "lng": 121.3107033
+    },
+    {
+      "code": "osm:way/33406780",
+      "name": "高雄醫學大學附設醫院",
+      "countryCode": "TW",
+      "origin": "http://www.kmuh.org.tw",
+      "lat": 22.6459514,
+      "lng": 120.310075
+    },
+    {
+      "code": "osm:way/107503209",
+      "name": "財團法人天主教聖功醫院",
+      "countryCode": "TW",
+      "origin": "http://www.joseph.org.tw",
+      "lat": 22.6336593,
+      "lng": 120.3240234
+    },
+    {
+      "code": "osm:way/126081005",
+      "name": "右昌聯合醫院",
+      "countryCode": "TW",
+      "origin": "https://www.ycuh.com.tw",
+      "lat": 22.7135631,
+      "lng": 120.2909466
+    },
+    {
+      "code": "osm:way/134367376",
+      "name": "衛生福利部花蓮醫院",
+      "countryCode": "TW",
+      "origin": "https://www.hwln.mohw.gov.tw",
+      "lat": 23.9789678,
+      "lng": 121.6119478
+    },
+    {
+      "code": "osm:way/139190767",
+      "name": "仁愛院區",
+      "countryCode": "TW",
+      "origin": "https://tpech.gov.taipei",
+      "lat": 25.0372302,
+      "lng": 121.5451691
+    },
+    {
+      "code": "osm:way/139350160",
+      "name": "中山醫院",
+      "countryCode": "TW",
+      "origin": "https://www.csh.com.tw",
+      "lat": 25.0365374,
+      "lng": 121.5499617
+    },
+    {
+      "code": "osm:way/159315649",
+      "name": "陽明大學附設醫院新民院區",
+      "countryCode": "TW",
+      "origin": "http://www.ymuh.ym.edu.tw",
+      "lat": 24.75804,
+      "lng": 121.7544757
+    },
+    {
+      "code": "osm:way/161621160",
+      "name": "臺灣礦工醫院",
+      "countryCode": "TW",
+      "origin": "http://twmgh.com",
+      "lat": 25.1079869,
+      "lng": 121.7331863
+    },
+    {
+      "code": "osm:way/161621394",
+      "name": "郵政醫院",
+      "countryCode": "TW",
+      "origin": "http://www.postal.com.tw",
+      "lat": 25.0285989,
+      "lng": 121.518826
+    },
+    {
+      "code": "osm:way/165578312",
+      "name": "義大醫院",
+      "countryCode": "TW",
+      "origin": "https://www.edah.org.tw",
+      "lat": 22.765949,
+      "lng": 120.3630096
+    },
+    {
+      "code": "osm:way/173001823",
+      "name": "中國醫藥大學附設醫院臺北分院",
+      "countryCode": "TW",
+      "origin": "http://taipei.cmuh.org.tw",
+      "lat": 25.0821248,
+      "lng": 121.59074
+    },
+    {
+      "code": "osm:way/183553056",
+      "name": "衛生福利部胸腔病院",
+      "countryCode": "TW",
+      "origin": "https://www.ccd.mohw.gov.tw",
+      "lat": 22.9752091,
+      "lng": 120.2418773
+    },
+    {
+      "code": "osm:way/197316116",
+      "name": "臺北市立聯合醫院和平婦幼院區和平院址",
+      "countryCode": "TW",
+      "origin": "http://www.tpech.gov.tw",
+      "lat": 25.0353885,
+      "lng": 121.5070087
+    },
+    {
+      "code": "osm:way/201280863",
+      "name": "臺北市立聯合醫院中興院區",
+      "countryCode": "TW",
+      "origin": "https://tpech.gov.taipei",
+      "lat": 25.0512131,
+      "lng": 121.5091639
+    },
+    {
+      "code": "osm:way/204615988",
+      "name": "臺南市立安南醫院",
+      "countryCode": "TW",
+      "origin": "https://www.tmanh.org.tw",
+      "lat": 23.0651385,
+      "lng": 120.2233746
+    },
+    {
+      "code": "osm:way/205887931",
+      "name": "高雄市立聯合醫院",
+      "countryCode": "TW",
+      "origin": "https://www.kmuh.gov.tw",
+      "lat": 22.6554593,
+      "lng": 120.2910316
+    },
+    {
+      "code": "osm:way/206082005",
+      "name": "高雄長庚紀念醫院",
+      "countryCode": "TW",
+      "origin": "https://cghdpt.cgmh.org.tw",
+      "lat": 22.6489036,
+      "lng": 120.3548465
+    },
+    {
+      "code": "osm:way/206682076",
+      "name": "仁愛醫院",
+      "countryCode": "TW",
+      "origin": "http://www.rah.com.tw",
+      "lat": 24.9870984,
+      "lng": 121.4199454
+    },
+    {
+      "code": "osm:way/222311625",
+      "name": "朴子醫院",
+      "countryCode": "TW",
+      "origin": "https://www.puzih.mohw.gov.tw",
+      "lat": 23.4646412,
+      "lng": 120.2346046
+    },
+    {
+      "code": "osm:way/230012494",
+      "name": "健仁醫院",
+      "countryCode": "TW",
+      "origin": "https://www.jiannren.org.tw",
+      "lat": 22.7238059,
+      "lng": 120.3290731
+    },
+    {
+      "code": "osm:way/231656465",
+      "name": "衛生福利部臺北醫院",
+      "countryCode": "TW",
+      "origin": "https://www.tph.mohw.gov.tw",
+      "lat": 25.0428869,
+      "lng": 121.4588175
+    },
+    {
+      "code": "osm:way/241424548",
+      "name": "亞東醫院",
+      "countryCode": "TW",
+      "origin": "https://www.femh.org.tw",
+      "lat": 24.9973048,
+      "lng": 121.4530666
+    },
+    {
+      "code": "osm:way/241490134",
+      "name": "樂生療養院迴龍院區",
+      "countryCode": "TW",
+      "origin": "http://www.lslp.mohw.gov.tw",
+      "lat": 25.0205038,
+      "lng": 121.4081529
+    },
+    {
+      "code": "osm:way/242465369",
+      "name": "成功大學醫學院附設斗六分院",
+      "countryCode": "TW",
+      "origin": "http://d6www.hosp.ncku.edu.tw",
+      "lat": 23.7021011,
+      "lng": 120.5457317
+    },
+    {
+      "code": "osm:way/244578165",
+      "name": "國軍臺中總醫院",
+      "countryCode": "TW",
+      "origin": "https://803.mnd.gov.tw",
+      "lat": 24.1511287,
+      "lng": 120.7306382
+    },
+    {
+      "code": "osm:way/246401675",
+      "name": "豐原醫院",
+      "countryCode": "TW",
+      "origin": "https://www.fyh.mohw.gov.tw",
+      "lat": 24.2425805,
+      "lng": 120.7249556
+    },
+    {
+      "code": "osm:way/247786518",
+      "name": "新北市立土城醫院",
+      "countryCode": "TW",
+      "origin": "https://www.cgmh.org.tw",
+      "lat": 24.9759184,
+      "lng": 121.4489117
+    },
+    {
+      "code": "osm:way/252752821",
+      "name": "關渡醫院",
+      "countryCode": "TW",
+      "origin": "http://www.gandau.gov.tw",
+      "lat": 25.1204778,
+      "lng": 121.4662021
+    },
+    {
+      "code": "osm:way/253019878",
+      "name": "為恭紀念醫院",
+      "countryCode": "TW",
+      "origin": "http://www.weigong.org.tw",
+      "lat": 24.6870872,
+      "lng": 120.9074859
+    },
+    {
+      "code": "osm:way/254807476",
+      "name": "新竹馬偕醫院",
+      "countryCode": "TW",
+      "origin": "https://www.hc.mmh.org.tw",
+      "lat": 24.8004838,
+      "lng": 120.9906822
+    },
+    {
+      "code": "osm:way/255983133",
+      "name": "忠孝院區",
+      "countryCode": "TW",
+      "origin": "https://tpech.gov.taipei",
+      "lat": 25.0466758,
+      "lng": 121.5862227
+    },
+    {
+      "code": "osm:way/257932535",
+      "name": "南投基督教醫院",
+      "countryCode": "TW",
+      "origin": "http://www2.cch.org.tw",
+      "lat": 23.8988956,
+      "lng": 120.6839664
+    },
+    {
+      "code": "osm:way/259922124",
+      "name": "童綜合醫院梧棲院區",
+      "countryCode": "TW",
+      "origin": "http://zh-tw.sltung.com.tw",
+      "lat": 24.2469933,
+      "lng": 120.5426053
+    },
+    {
+      "code": "osm:way/262848548",
+      "name": "澄清醫院平等院區",
+      "countryCode": "TW",
+      "origin": "http://www.ccgh.com.tw",
+      "lat": 24.1427895,
+      "lng": 120.6816596
+    },
+    {
+      "code": "osm:way/263602002",
+      "name": "聖馬爾定醫院",
+      "countryCode": "TW",
+      "origin": "https://www.stm.org.tw",
+      "lat": 23.4761073,
+      "lng": 120.4677067
+    },
+    {
+      "code": "osm:way/266072625",
+      "name": "馬偕醫院淡水院區",
+      "countryCode": "TW",
+      "origin": "https://www.mmh.org.tw",
+      "lat": 25.1393996,
+      "lng": 121.4615707
+    },
+    {
+      "code": "osm:way/269139429",
+      "name": "大林慈濟醫院",
+      "countryCode": "TW",
+      "origin": "http://dalin.tzuchi.com.tw",
+      "lat": 23.5956627,
+      "lng": 120.4548609
+    },
+    {
+      "code": "osm:way/271956490",
+      "name": "臺中醫院",
+      "countryCode": "TW",
+      "origin": "https://www.taic.mohw.gov.tw",
+      "lat": 24.1403665,
+      "lng": 120.6754462
+    },
+    {
+      "code": "osm:way/277580723",
+      "name": "大安婦幼醫院",
+      "countryCode": "TW",
+      "origin": "https://www.ybl-clinic.com.tw",
+      "lat": 22.9927136,
+      "lng": 120.1928037
+    },
+    {
+      "code": "osm:way/289462283",
+      "name": "基督教門諾會醫院",
+      "countryCode": "TW",
+      "origin": "https://www.mch.org.tw",
+      "lat": 23.9881156,
+      "lng": 121.6266586
+    },
+    {
+      "code": "osm:way/301430357",
+      "name": "恆春基督教醫院",
+      "countryCode": "TW",
+      "origin": "http://www.hcch.org.tw",
+      "lat": 22.0022548,
+      "lng": 120.7414333
+    },
+    {
+      "code": "osm:way/301894560",
+      "name": "關山慈濟醫院",
+      "countryCode": "TW",
+      "origin": "https://kuanshan.tzuchi.com.tw",
+      "lat": 23.0573454,
+      "lng": 121.1666417
+    },
+    {
+      "code": "osm:way/305430655",
+      "name": "馬偕紀念醫院",
+      "countryCode": "TW",
+      "origin": "https://www.mmh.org.tw",
+      "lat": 25.0585791,
+      "lng": 121.5222197
+    },
+    {
+      "code": "osm:way/310490012",
+      "name": "建新醫院",
+      "countryCode": "TW",
+      "origin": "http://www.cshospital.com.tw",
+      "lat": 22.6313155,
+      "lng": 120.2908494
+    },
+    {
+      "code": "osm:way/314430608",
+      "name": "台中榮總埔里分院",
+      "countryCode": "TW",
+      "origin": "http://www.pulivh.gov.tw",
+      "lat": 23.9756052,
+      "lng": 120.9964625
+    },
+    {
+      "code": "osm:way/315102732",
+      "name": "萬華醫院",
+      "countryCode": "TW",
+      "origin": "http://www.wanhwa.org.tw",
+      "lat": 25.0240334,
+      "lng": 121.5097325
+    },
+    {
+      "code": "osm:way/321812755",
+      "name": "臺北榮民總醫院新竹分院",
+      "countryCode": "TW",
+      "origin": "https://www.vhct.gov.tw",
+      "lat": 24.7219744,
+      "lng": 121.1000515
+    },
+    {
+      "code": "osm:way/323413328",
+      "name": "東元綜合醫院",
+      "countryCode": "TW",
+      "origin": "http://w3.tyh.com.tw",
+      "lat": 24.8234834,
+      "lng": 121.0137493
+    },
+    {
+      "code": "osm:way/325023284",
+      "name": "台北榮民總醫院蘇澳分院",
+      "countryCode": "TW",
+      "origin": "http://www.savh.gov.tw",
+      "lat": 24.6139611,
+      "lng": 121.8487918
+    },
+    {
+      "code": "osm:way/333090218",
+      "name": "順安醫院",
+      "countryCode": "TW",
+      "origin": "http://www.leehospital.com.tw",
+      "lat": 24.3437963,
+      "lng": 120.62555
+    },
+    {
+      "code": "osm:way/333944044",
+      "name": "輔英科技大學附設醫院",
+      "countryCode": "TW",
+      "origin": "http://www.fy.org.tw",
+      "lat": 22.4646485,
+      "lng": 120.4531235
+    },
+    {
+      "code": "osm:way/338436726",
+      "name": "恩主公醫院",
+      "countryCode": "TW",
+      "origin": "http://www.eck.org.tw",
+      "lat": 24.9377959,
+      "lng": 121.3627882
+    },
+    {
+      "code": "osm:way/341969366",
+      "name": "臺安醫院雙十分院",
+      "countryCode": "TW",
+      "origin": "https://www.tai-an.com.tw",
+      "lat": 24.1526886,
+      "lng": 120.6885039
+    },
+    {
+      "code": "osm:way/343211959",
+      "name": "聯新醫院",
+      "countryCode": "TW",
+      "origin": "https://www.landseedhospital.com.tw",
+      "lat": 24.9464415,
+      "lng": 121.2054359
+    },
+    {
+      "code": "osm:way/345564146",
+      "name": "中正區健康服務中心",
+      "countryCode": "TW",
+      "origin": "http://www.zzhc.gov.taipei",
+      "lat": 25.0303982,
+      "lng": 121.5158713
+    },
+    {
+      "code": "osm:way/353154415",
+      "name": "台中榮總嘉義分院",
+      "countryCode": "TW",
+      "origin": "http://www.vhcy.gov.tw",
+      "lat": 23.4668373,
+      "lng": 120.423613
+    },
+    {
+      "code": "osm:way/353643452",
+      "name": "安泰醫院",
+      "countryCode": "TW",
+      "origin": "https://www.tsmh.org.tw",
+      "lat": 22.4739366,
+      "lng": 120.4595083
+    },
+    {
+      "code": "osm:way/361501946",
+      "name": "臺中榮民總醫院",
+      "countryCode": "TW",
+      "origin": "https://www.vghtc.gov.tw",
+      "lat": 24.184516,
+      "lng": 120.6052729
+    },
+    {
+      "code": "osm:way/362635274",
+      "name": "協和婦女醫院",
+      "countryCode": "TW",
+      "origin": "https://www.woman.org.tw",
+      "lat": 25.050391,
+      "lng": 121.5339509
+    },
+    {
+      "code": "osm:way/363982002",
+      "name": "禾馨民權婦幼診所",
+      "countryCode": "TW",
+      "origin": "https://www.dianthus.com.tw",
+      "lat": 25.0675618,
+      "lng": 121.5816813
+    },
+    {
+      "code": "osm:way/367812162",
+      "name": "衛生福利部基隆醫院",
+      "countryCode": "TW",
+      "origin": "https://www.kln.mohw.gov.tw",
+      "lat": 25.1305582,
+      "lng": 121.7484418
+    },
+    {
+      "code": "osm:way/368358482",
+      "name": "新昆明醫院",
+      "countryCode": "TW",
+      "origin": "https://skmhosp.webnode.tw",
+      "lat": 25.1332288,
+      "lng": 121.7449275
+    },
+    {
+      "code": "osm:way/368617488",
+      "name": "南光神經精神科醫院",
+      "countryCode": "TW",
+      "origin": "https://www.nk-ph.com",
+      "lat": 25.1385146,
+      "lng": 121.7181772
+    },
+    {
+      "code": "osm:way/373233852",
+      "name": "安泰醫院",
+      "countryCode": "TW",
+      "origin": "https://www.antai.tw",
+      "lat": 22.5651576,
+      "lng": 120.3614421
+    },
+    {
+      "code": "osm:way/375791112",
+      "name": "康寧醫院",
+      "countryCode": "TW",
+      "origin": "https://www.knh.org.tw",
+      "lat": 25.0757992,
+      "lng": 121.6088669
+    },
+    {
+      "code": "osm:way/396909006",
+      "name": "臺北市立聯合醫院松德院區",
+      "countryCode": "TW",
+      "origin": "https://tpech.gov.taipei",
+      "lat": 25.029496,
+      "lng": 121.5743903
+    },
+    {
+      "code": "osm:way/398342051",
+      "name": "高雄市立大同醫院",
+      "countryCode": "TW",
+      "origin": "http://www.kmtth.org.tw",
+      "lat": 22.6271128,
+      "lng": 120.2972949
+    },
+    {
+      "code": "osm:way/398450502",
+      "name": "靜和醫院燕巢分院",
+      "countryCode": "TW",
+      "origin": "https://www.jing-ho.com.tw",
+      "lat": 22.7817901,
+      "lng": 120.4165443
+    },
+    {
+      "code": "osm:way/402274203",
+      "name": "光雄長安醫院",
+      "countryCode": "TW",
+      "origin": "http://www.lksh.com.tw",
+      "lat": 22.7941466,
+      "lng": 120.2961056
+    },
+    {
+      "code": "osm:way/403555136",
+      "name": "西園醫院",
+      "countryCode": "TW",
+      "origin": "https://www.westgarden.com.tw",
+      "lat": 25.0277401,
+      "lng": 121.4943466
+    },
+    {
+      "code": "osm:way/406124212",
+      "name": "國立陽明交通大學附設醫院",
+      "countryCode": "TW",
+      "origin": "https://www.ymuh.ym.edu.tw",
+      "lat": 24.7490319,
+      "lng": 121.758849
+    },
+    {
+      "code": "osm:way/425918633",
+      "name": "國軍桃園總醫院新竹分院",
+      "countryCode": "TW",
+      "origin": "https://813.mnd.gov.tw",
+      "lat": 24.8165727,
+      "lng": 120.9622881
+    },
+    {
+      "code": "osm:way/427242298",
+      "name": "屏東榮民總醫院龍泉分院",
+      "countryCode": "TW",
+      "origin": "https://www.vhlc.gov.tw",
+      "lat": 22.67496,
+      "lng": 120.5986657
+    },
+    {
+      "code": "osm:way/436597797",
+      "name": "衛福部南投醫院",
+      "countryCode": "TW",
+      "origin": "https://www.nant.mohw.gov.tw",
+      "lat": 23.9141267,
+      "lng": 120.6850443
+    },
+    {
+      "code": "osm:way/444264088",
+      "name": "輔大醫院",
+      "countryCode": "TW",
+      "origin": "https://www.hospital.fju.edu.tw",
+      "lat": 25.0402252,
+      "lng": 121.4314358
+    },
+    {
+      "code": "osm:way/444601008",
+      "name": "慈恵醫院",
+      "countryCode": "TW",
+      "origin": "http://thmh.khja.org.tw",
+      "lat": 22.6390936,
+      "lng": 120.3972605
+    },
+    {
+      "code": "osm:way/447854985",
+      "name": "金門醫院",
+      "countryCode": "TW",
+      "origin": "https://www.kmhp.mohw.gov.tw",
+      "lat": 24.4408065,
+      "lng": 118.4180681
+    },
+    {
+      "code": "osm:way/447950993",
+      "name": "永慶尖端醫療園區",
+      "countryCode": "TW",
+      "origin": "https://www1.cgmh.org.tw",
+      "lat": 25.0630194,
+      "lng": 121.3707653
+    },
+    {
+      "code": "osm:way/453772955",
+      "name": "天主教福安醫院",
+      "countryCode": "TW",
+      "origin": "https://www.fah.org.tw",
+      "lat": 23.6787605,
+      "lng": 120.4822069
+    },
+    {
+      "code": "osm:way/495028736",
+      "name": "博仁綜合醫院",
+      "countryCode": "TW",
+      "origin": "https://www.pojengh.com.tw",
+      "lat": 25.0499464,
+      "lng": 121.5574371
+    },
+    {
+      "code": "osm:way/541811749",
+      "name": "連江縣立醫院",
+      "countryCode": "TW",
+      "origin": "https://www.matsuh.gov.tw",
+      "lat": 26.1611141,
+      "lng": 119.9492489
+    },
+    {
+      "code": "osm:way/543000989",
+      "name": "台北秀傳醫院",
+      "countryCode": "TW",
+      "origin": "https://www.tpshow.org.tw",
+      "lat": 25.0431667,
+      "lng": 121.5568796
+    },
+    {
+      "code": "osm:way/544940298",
+      "name": "亞洲大學附屬醫院",
+      "countryCode": "TW",
+      "origin": "https://www.auh.org.tw",
+      "lat": 24.0540326,
+      "lng": 120.6853657
+    },
+    {
+      "code": "osm:way/545642973",
+      "name": "台中榮總灣橋分院",
+      "countryCode": "TW",
+      "origin": "https://www.vhwc.gov.tw",
+      "lat": 23.4901099,
+      "lng": 120.5075185
+    },
+    {
+      "code": "osm:way/546767498",
+      "name": "雲林長庚紀念醫院",
+      "countryCode": "TW",
+      "origin": "https://cghdpt.cgmh.org.tw",
+      "lat": 23.7954761,
+      "lng": 120.2180951
+    },
+    {
+      "code": "osm:way/546942400",
+      "name": "和信治癌中心醫院",
+      "countryCode": "TW",
+      "origin": "https://www.kfsyscc.org",
+      "lat": 25.1283921,
+      "lng": 121.4717562
+    },
+    {
+      "code": "osm:way/550416016",
+      "name": "敏盛醫院",
+      "countryCode": "TW",
+      "origin": "http://www.e-ms.com.tw",
+      "lat": 25.0164514,
+      "lng": 121.3063131
+    },
+    {
+      "code": "osm:way/550805494",
+      "name": "安心醫院",
+      "countryCode": "TW",
+      "origin": "https://www.tjh.com.tw",
+      "lat": 23.4532384,
+      "lng": 120.433436
+    },
+    {
+      "code": "osm:way/601928324",
+      "name": "敏盛醫院 龍潭分院",
+      "countryCode": "TW",
+      "origin": "http://www.e-ms.com.tw",
+      "lat": 24.8755432,
+      "lng": 121.2141606
+    },
+    {
+      "code": "osm:way/607087713",
+      "name": "大安醫院",
+      "countryCode": "TW",
+      "origin": "https://www.daanhosp.com.tw",
+      "lat": 24.834881,
+      "lng": 121.0081563
+    },
+    {
+      "code": "osm:way/636893902",
+      "name": "居善醫院",
+      "countryCode": "TW",
+      "origin": "https://www.jushan.com.tw",
+      "lat": 25.0587386,
+      "lng": 121.1658524
+    },
+    {
+      "code": "osm:way/664061054",
+      "name": "大園敏盛醫院",
+      "countryCode": "TW",
+      "origin": "https://msd.e-ms.com.tw",
+      "lat": 25.0623469,
+      "lng": 121.1960456
+    },
+    {
+      "code": "osm:way/699629555",
+      "name": "臺東醫院",
+      "countryCode": "TW",
+      "origin": "https://www.tait.mohw.gov.tw",
+      "lat": 22.7572951,
+      "lng": 121.1506663
+    },
+    {
+      "code": "osm:way/709816361",
+      "name": "東勢區農會附設農民醫院",
+      "countryCode": "TW",
+      "origin": "http://www.fh.org.tw",
+      "lat": 24.2536198,
+      "lng": 120.8290937
+    },
+    {
+      "code": "osm:way/751264403",
+      "name": "佛教正德醫院",
+      "countryCode": "TW",
+      "origin": "https://www.bch.org.tw",
+      "lat": 24.1432757,
+      "lng": 120.6311694
+    },
+    {
+      "code": "osm:way/781722808",
+      "name": "新泰綜合醫院",
+      "countryCode": "TW",
+      "origin": "https://www.sthosp.com.tw",
+      "lat": 25.0215405,
+      "lng": 121.4343128
+    },
+    {
+      "code": "osm:way/781983613",
+      "name": "通霄光田醫院",
+      "countryCode": "TW",
+      "origin": "https://www.ts.ktgh.com.tw",
+      "lat": 24.489,
+      "lng": 120.6784794
+    },
+    {
+      "code": "osm:way/782032090",
+      "name": "佑民醫院",
+      "countryCode": "TW",
+      "origin": "http://www.yumin.com.tw",
+      "lat": 23.9605225,
+      "lng": 120.681819
+    },
+    {
+      "code": "osm:way/784559368",
+      "name": "邱外科醫院",
+      "countryCode": "TW",
+      "origin": "https://www.chiuhospital.com.tw",
+      "lat": 22.614651,
+      "lng": 120.2972239
+    },
+    {
+      "code": "osm:way/815116505",
+      "name": "南勢醫院",
+      "countryCode": "TW",
+      "origin": "https://www.dachien.com.tw",
+      "lat": 24.5194563,
+      "lng": 120.7883907
+    },
+    {
+      "code": "osm:way/905836620",
+      "name": "阮綜合醫院",
+      "countryCode": "TW",
+      "origin": "https://www.yuanhosp.com.tw",
+      "lat": 22.6155788,
+      "lng": 120.2980328
+    },
+    {
+      "code": "osm:way/924809717",
+      "name": "衛生福利部玉里醫院",
+      "countryCode": "TW",
+      "origin": "https://www.ttyl.mohw.gov.tw",
+      "lat": 23.3470876,
+      "lng": 121.3211761
+    },
+    {
+      "code": "osm:way/941911056",
+      "name": "屏基醫療財團法人屏東基督教醫院",
+      "countryCode": "TW",
+      "origin": "http://www.ptch.org.tw",
+      "lat": 22.6826262,
+      "lng": 120.5025225
+    },
+    {
+      "code": "osm:way/948654566",
+      "name": "新莊仁濟醫院",
+      "countryCode": "TW",
+      "origin": "https://www.tjci-sj.org.tw",
+      "lat": 25.0269521,
+      "lng": 121.4429442
+    },
+    {
+      "code": "osm:way/999820276",
+      "name": "苑裡李綜合醫院",
+      "countryCode": "TW",
+      "origin": "http://www.leehospital.com.tw",
+      "lat": 24.4418843,
+      "lng": 120.65271
+    },
+    {
+      "code": "osm:way/1004862600",
+      "name": "臺北市立聯合醫院和平婦幼院區婦幼院址",
+      "countryCode": "TW",
+      "origin": "https://tpech.gov.taipei",
+      "lat": 25.0290074,
+      "lng": 121.5193103
+    },
+    {
+      "code": "osm:way/1052419632",
+      "name": "國立臺灣大學醫學院附設醫院癌醫中心分院",
+      "countryCode": "TW",
+      "origin": "http://www.ntucc.gov.tw",
+      "lat": 25.0148589,
+      "lng": 121.5442471
+    },
+    {
+      "code": "osm:way/1085396047",
+      "name": "大順醫院",
+      "countryCode": "TW",
+      "origin": "http://www.dashuen.com.tw",
+      "lat": 24.4240419,
+      "lng": 120.8668476
+    },
+    {
+      "code": "osm:way/1143880538",
+      "name": "美德醫院",
+      "countryCode": "TW",
+      "origin": "http://www.leehospital.com.tw",
+      "lat": 24.3861732,
+      "lng": 120.6653862
+    },
+    {
+      "code": "osm:way/1286644895",
+      "name": "高雄秀傳紀念醫院",
+      "countryCode": "TW",
+      "origin": "https://www.ksch.org.tw",
+      "lat": 22.8346952,
+      "lng": 120.2663992
+    },
+    {
+      "code": "osm:way/1310803656",
+      "name": "高雄基督教醫院",
+      "countryCode": "TW",
+      "origin": "https://www.kch.org.tw",
+      "lat": 22.6140361,
+      "lng": 120.2962151
+    },
+    {
+      "code": "osm:way/1310806728",
+      "name": "敦仁醫院",
+      "countryCode": "TW",
+      "origin": "http://www.drh.org.tw",
+      "lat": 23.9513602,
+      "lng": 120.604517
+    },
+    {
+      "code": "osm:way/1334664811",
+      "name": "宏慈療養院",
+      "countryCode": "TW",
+      "origin": "https://huangtzu.pixnet.net",
+      "lat": 24.938628,
+      "lng": 121.4883516
+    },
+    {
+      "code": "osm:way/1382108397",
+      "name": "賢德醫院",
+      "countryCode": "TW",
+      "origin": "http://www.cender.url.tw",
+      "lat": 24.1451549,
+      "lng": 120.7143174
+    },
+    {
+      "code": "osm:way/1409804263",
+      "name": "陽光精神科醫院",
+      "countryCode": "TW",
+      "origin": "http://sunny-mental.myweb.hinet.net",
+      "lat": 24.2811435,
+      "lng": 120.6094116
+    },
+    {
+      "code": "osm:way/1461703303",
+      "name": "敏盛綜合醫院三民院區",
+      "countryCode": "TW",
+      "origin": "http://www.e-ms.com.tw",
+      "lat": 24.9942597,
+      "lng": 121.3054686
+    },
+    {
+      "code": "osm:way/1496000452",
+      "name": "高雄市立岡山醫院",
+      "countryCode": "TW",
+      "origin": "http://www.ks.org.tw",
+      "lat": 22.7968322,
+      "lng": 120.2944994
+    },
+    {
+      "code": "osm:way/1505903491",
+      "name": "林新醫院",
+      "countryCode": "TW",
+      "origin": "http://www.lshosp.com.tw",
+      "lat": 24.1493528,
+      "lng": 120.6402361
+    },
+    {
+      "code": "osm:way/1551538104",
+      "name": "協和醫院",
+      "countryCode": "TW",
+      "origin": "https://www.sheiho.com",
+      "lat": 24.5412641,
+      "lng": 120.8174872
+    }
+  ]
+}

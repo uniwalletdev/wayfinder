@@ -24,11 +24,11 @@ import { extractLabels } from "../maps/extract.mjs"
 import { nameTokens, documentContainment, DOCUMENT_STOPWORDS } from "../nhs/lib/match.mjs"
 import { floorFromSlug, stemWithoutFloor } from "../nhs/lib/floors.mjs"
 import { dataPath, repoPath, readJson, writeJson, log } from "../nhs/lib/paths.mjs"
+import { countriesFromArgs } from "./lib/osm.mjs"
 
 const STAGE = "world-draft-sheets"
 const FORCE = process.argv.includes("--force")
-const countryArg = process.argv.indexOf("--country")
-const COUNTRIES = countryArg > -1 ? [process.argv[countryArg + 1].toUpperCase()] : ["US", "CA", "AU", "IE"]
+const COUNTRIES = countriesFromArgs()
 
 // Same thresholds as NHS — these gate on the PDF's own shape (page aspect,
 // label count), which has nothing to do with which country published it.
@@ -38,8 +38,9 @@ const DEFAULT_SPAN_M = 450
 
 // Must match src/lib/venues/world-hospitals.ts's COUNTRY_NAMES — kept as a
 // separate small copy rather than a shared import across the script/app
-// boundary, which nothing else here crosses.
-const COUNTRY_NAMES = { US: "United States", CA: "Canada", AU: "Australia", IE: "Ireland" }
+// boundary, which nothing else here crosses. Sourced from the same
+// data/world/countries.json the hospital-list fetch stage reads.
+const COUNTRY_NAMES = readJson(dataPath("world", "countries.json"), {})
 
 const tokens = (s) => nameTokens(s, DOCUMENT_STOPWORDS)
 const contains = documentContainment

@@ -1,0 +1,1065 @@
+{
+  "countryCode": "ZA",
+  "fetchedAt": "2026-10-21T07:03:59.468Z",
+  "count": 132,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/29096036",
+      "name": "Bougainville Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.netcarehospitals.co.za",
+      "lat": -25.7175315,
+      "lng": 28.1537079
+    },
+    {
+      "code": "osm:node/2208086093",
+      "name": "Ngwelezana Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www2.kznhealth.gov.za",
+      "lat": -28.7792407,
+      "lng": 31.8648934
+    },
+    {
+      "code": "osm:node/7352636272",
+      "name": "Netcare Christiaan Barnard Memorial Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcarehospitals.co.za",
+      "lat": -33.9178545,
+      "lng": 18.4303698
+    },
+    {
+      "code": "osm:node/7417427675",
+      "name": "Glen Earle Clinic",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -29.7802313,
+      "lng": 30.9791672
+    },
+    {
+      "code": "osm:node/7459014797",
+      "name": "Life Anncron Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.lifehealthcare.co.za",
+      "lat": -26.8409416,
+      "lng": 26.6681219
+    },
+    {
+      "code": "osm:node/9311089379",
+      "name": "Cure Day Clinics Erasmuskloof",
+      "countryCode": "ZA",
+      "origin": "https://curedayclinics.co.za",
+      "lat": -25.8101398,
+      "lng": 28.2638816
+    },
+    {
+      "code": "osm:node/10232837517",
+      "name": "Aurora",
+      "countryCode": "ZA",
+      "origin": "https://aurorasa.co.za",
+      "lat": -33.9698616,
+      "lng": 25.5604539
+    },
+    {
+      "code": "osm:node/11913562555",
+      "name": "Cure Day Hospitals",
+      "countryCode": "ZA",
+      "origin": "https://cure.co.za",
+      "lat": -26.0189807,
+      "lng": 28.0142489
+    },
+    {
+      "code": "osm:node/12084690757",
+      "name": "Medicross Springs",
+      "countryCode": "ZA",
+      "origin": "https://www.netcare.co.za",
+      "lat": -26.2629825,
+      "lng": 28.4397324
+    },
+    {
+      "code": "osm:node/13159481275",
+      "name": "MedCentre Waterkloof",
+      "countryCode": "ZA",
+      "origin": "https://themedcentre.co.za",
+      "lat": -25.7761323,
+      "lng": 28.2363948
+    },
+    {
+      "code": "osm:node/13684416120",
+      "name": "Men Health Clinics",
+      "countryCode": "ZA",
+      "origin": "https://menhealthclinics.co.za",
+      "lat": -26.0580778,
+      "lng": 28.1157072
+    },
+    {
+      "code": "osm:way/4353198",
+      "name": "Red Cross War Memorial Children's Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.westerncape.gov.za",
+      "lat": -33.9542087,
+      "lng": 18.4887086
+    },
+    {
+      "code": "osm:way/23883140",
+      "name": "Groote Schuur Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.gsh.co.za",
+      "lat": -33.9411298,
+      "lng": 18.4625845
+    },
+    {
+      "code": "osm:way/26103725",
+      "name": "Mediclinic Durbanville Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -33.8256102,
+      "lng": 18.6546073
+    },
+    {
+      "code": "osm:way/59530128",
+      "name": "Chris Hani Baragwanath Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.chrishanibaragwanathhospital.co.za",
+      "lat": -26.2623308,
+      "lng": 27.9388867
+    },
+    {
+      "code": "osm:way/61111320",
+      "name": "Vryheid Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -27.7578836,
+      "lng": 30.7974813
+    },
+    {
+      "code": "osm:way/70534422",
+      "name": "Addington Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -29.8619851,
+      "lng": 31.0411465
+    },
+    {
+      "code": "osm:way/87299724",
+      "name": "Greys Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -29.5808866,
+      "lng": 30.362583
+    },
+    {
+      "code": "osm:way/88213144",
+      "name": "Helderberg Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.helderberghospital.co.za",
+      "lat": -34.0757445,
+      "lng": 18.8572391
+    },
+    {
+      "code": "osm:way/90142651",
+      "name": "Rahima Moosa Mother And Child Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.health.gpg.gov.za",
+      "lat": -26.1890974,
+      "lng": 27.9722241
+    },
+    {
+      "code": "osm:way/95192221",
+      "name": "uMnambithi Provincial Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.5575061,
+      "lng": 29.7647992
+    },
+    {
+      "code": "osm:way/106644802",
+      "name": "Cloete Joubert Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.echealth.gov.za",
+      "lat": -30.9682542,
+      "lng": 27.5868822
+    },
+    {
+      "code": "osm:way/121931107",
+      "name": "Mediclinic Pietermaritzburg",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -29.6092041,
+      "lng": 30.3891737
+    },
+    {
+      "code": "osm:way/138119261",
+      "name": "Pretoria Urology Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.urology.co.za",
+      "lat": -25.7440852,
+      "lng": 28.2377822
+    },
+    {
+      "code": "osm:way/153305873",
+      "name": "Mediclinic Limpopo",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -23.9085401,
+      "lng": 29.4641803
+    },
+    {
+      "code": "osm:way/193114413",
+      "name": "Harry Gwala Regional Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -29.648524,
+      "lng": 30.3326716
+    },
+    {
+      "code": "osm:way/214110503",
+      "name": "Medicross Boksburg",
+      "countryCode": "ZA",
+      "origin": "https://www.netcare.co.za",
+      "lat": -26.1781372,
+      "lng": 28.2553458
+    },
+    {
+      "code": "osm:way/219062624",
+      "name": "St. Lucy's Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.echealth.gov.za",
+      "lat": -31.2981461,
+      "lng": 28.6298562
+    },
+    {
+      "code": "osm:way/220545296",
+      "name": "Stikland Psychiatric Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.stiklandhospital.co.za",
+      "lat": -33.8967876,
+      "lng": 18.659206
+    },
+    {
+      "code": "osm:way/225491681",
+      "name": "Midstream Medical Centre",
+      "countryCode": "ZA",
+      "origin": "https://cure.co.za",
+      "lat": -25.9226669,
+      "lng": 28.190688
+    },
+    {
+      "code": "osm:way/227102380",
+      "name": "Heart Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -25.7494251,
+      "lng": 28.206987
+    },
+    {
+      "code": "osm:way/230195885",
+      "name": "Netcare Sunninghill Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcare.co.za",
+      "lat": -26.0377623,
+      "lng": 28.0696784
+    },
+    {
+      "code": "osm:way/237267827",
+      "name": "Mediclinic Morningside",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -26.0945577,
+      "lng": 28.0548136
+    },
+    {
+      "code": "osm:way/256716507",
+      "name": "Eshowe District Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.8902212,
+      "lng": 31.4662189
+    },
+    {
+      "code": "osm:way/263454685",
+      "name": "Ekombe Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.6411502,
+      "lng": 30.8932557
+    },
+    {
+      "code": "osm:way/267992828",
+      "name": "Appelbosch Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -29.3897132,
+      "lng": 30.8430538
+    },
+    {
+      "code": "osm:way/267992829",
+      "name": "Benedictine Provincial Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -27.8934415,
+      "lng": 31.6398498
+    },
+    {
+      "code": "osm:way/267992830",
+      "name": "Bethesda Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -27.5735301,
+      "lng": 32.0819094
+    },
+    {
+      "code": "osm:way/267992831",
+      "name": "Ceza Provincial Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -27.9965777,
+      "lng": 31.3757685
+    },
+    {
+      "code": "osm:way/267992832",
+      "name": "Charles James Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -30.0066651,
+      "lng": 30.9026312
+    },
+    {
+      "code": "osm:way/267992833",
+      "name": "Charles Johnson Memorial Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -28.211045,
+      "lng": 30.6736785
+    },
+    {
+      "code": "osm:way/267992834",
+      "name": "Christ the King Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -30.1623311,
+      "lng": 30.0777238
+    },
+    {
+      "code": "osm:way/267992835",
+      "name": "Church of Scotland Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.7466056,
+      "lng": 30.4506679
+    },
+    {
+      "code": "osm:way/275113724",
+      "name": "Dundee Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.1741674,
+      "lng": 30.2288012
+    },
+    {
+      "code": "osm:way/275113725",
+      "name": "Dunstan Farrell TB Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -30.5354043,
+      "lng": 30.5126166
+    },
+    {
+      "code": "osm:way/275113726",
+      "name": "East Griqualand & Usher Memorial Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -30.5466994,
+      "lng": 29.4146337
+    },
+    {
+      "code": "osm:way/275113727",
+      "name": "Emmaus Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.852309,
+      "lng": 29.3816001
+    },
+    {
+      "code": "osm:way/275113728",
+      "name": "FOSA TB Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -29.7863159,
+      "lng": 30.9690807
+    },
+    {
+      "code": "osm:way/275113729",
+      "name": "Fort Napier Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -29.6124164,
+      "lng": 30.3684278
+    },
+    {
+      "code": "osm:way/275113730",
+      "name": "GJ Crookes Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -30.2891821,
+      "lng": 30.7450674
+    },
+    {
+      "code": "osm:way/275113731",
+      "name": "Greytown Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -29.0665422,
+      "lng": 30.5999355
+    },
+    {
+      "code": "osm:way/275113732",
+      "name": "Hillcrest Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -29.7899825,
+      "lng": 30.7610514
+    },
+    {
+      "code": "osm:way/275113733",
+      "name": "Hlabisa Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.1449869,
+      "lng": 31.8812741
+    },
+    {
+      "code": "osm:way/275113734",
+      "name": "Itshelejuba Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -27.2768974,
+      "lng": 31.3461658
+    },
+    {
+      "code": "osm:way/275113735",
+      "name": "KwaMagwaza Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www2.kznhealth.gov.za",
+      "lat": -28.6303819,
+      "lng": 31.3407735
+    },
+    {
+      "code": "osm:way/275962855",
+      "name": "KwaZulu-Natal Children’s Hospital",
+      "countryCode": "ZA",
+      "origin": "https://kznchildrenshospital.org",
+      "lat": -29.8643939,
+      "lng": 31.0424225
+    },
+    {
+      "code": "osm:way/342986340",
+      "name": "Lydenburg Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.mpuhealth.gov.za",
+      "lat": -25.1087167,
+      "lng": 30.4514585
+    },
+    {
+      "code": "osm:way/404385518",
+      "name": "Mahatma Gandhi Memorial Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -29.7177663,
+      "lng": 31.0289721
+    },
+    {
+      "code": "osm:way/410897258",
+      "name": "Busamed Modderfontein Private Hospital Orthopaedic & Oncology Centre",
+      "countryCode": "ZA",
+      "origin": "https://www.busamed.co.za",
+      "lat": -26.0756745,
+      "lng": 28.1301735
+    },
+    {
+      "code": "osm:way/412983686",
+      "name": "Booth Memorial Hospital",
+      "countryCode": "ZA",
+      "origin": "http://salvationarmy.org.za",
+      "lat": -33.937751,
+      "lng": 18.4146786
+    },
+    {
+      "code": "osm:way/412983690",
+      "name": "Mediclinic Cape Town",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -33.9364883,
+      "lng": 18.4103367
+    },
+    {
+      "code": "osm:way/414723726",
+      "name": "South Rand Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.health.gpg.gov.za",
+      "lat": -26.2530798,
+      "lng": 28.062314
+    },
+    {
+      "code": "osm:way/415837092",
+      "name": "Lehurutshe District Hospital",
+      "countryCode": "ZA",
+      "origin": "https://dohsoc.nwpg.gov.za",
+      "lat": -25.4753466,
+      "lng": 25.9827726
+    },
+    {
+      "code": "osm:way/417117916",
+      "name": "Zithulele Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.zithulele.org",
+      "lat": -32.0496392,
+      "lng": 29.0606932
+    },
+    {
+      "code": "osm:way/425265712",
+      "name": "Life Wilgeheuwel Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.lifehealthcare.co.za",
+      "lat": -26.0993692,
+      "lng": 27.9253564
+    },
+    {
+      "code": "osm:way/431087851",
+      "name": "Netcare Akasia Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.netcarehospitals.co.za",
+      "lat": -25.6730693,
+      "lng": 28.107574
+    },
+    {
+      "code": "osm:way/436673436",
+      "name": "King Dinuzulu Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -29.8215186,
+      "lng": 30.9884465
+    },
+    {
+      "code": "osm:way/449962962",
+      "name": "Melomed Private Hospital Bellville",
+      "countryCode": "ZA",
+      "origin": "https://www.melomed.co.za",
+      "lat": -33.9015376,
+      "lng": 18.6244194
+    },
+    {
+      "code": "osm:way/450241608",
+      "name": "Intercare Medical & Dental Centre",
+      "countryCode": "ZA",
+      "origin": "https://www.intercare.co.za",
+      "lat": -33.8719629,
+      "lng": 18.6368663
+    },
+    {
+      "code": "osm:way/450262906",
+      "name": "Netcare N1 City Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcarehospitals.co.za",
+      "lat": -33.8939711,
+      "lng": 18.5589546
+    },
+    {
+      "code": "osm:way/453709045",
+      "name": "Mediclinic Cape Gate",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -33.8484371,
+      "lng": 18.6967267
+    },
+    {
+      "code": "osm:way/468966258",
+      "name": "H.A. Grove Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.mpg.gov.za",
+      "lat": -25.6962179,
+      "lng": 30.0446059
+    },
+    {
+      "code": "osm:way/469227007",
+      "name": "Busamed Paardevlei Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.busamed.co.za",
+      "lat": -34.0952403,
+      "lng": 18.8170285
+    },
+    {
+      "code": "osm:way/479660686",
+      "name": "Wilmed Park Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.lenmed.co.za",
+      "lat": -26.8304476,
+      "lng": 26.678027
+    },
+    {
+      "code": "osm:way/483630294",
+      "name": "St Francis Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.224286,
+      "lng": 31.4769595
+    },
+    {
+      "code": "osm:way/485744005",
+      "name": "Nkonjeni Provincial Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.kznhealth.gov.za",
+      "lat": -28.2272679,
+      "lng": 31.4159138
+    },
+    {
+      "code": "osm:way/544254972",
+      "name": "Netcare Vaalpark Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcare.co.za",
+      "lat": -26.7729207,
+      "lng": 27.8401053
+    },
+    {
+      "code": "osm:way/551455186",
+      "name": "National Health Laboratory Service",
+      "countryCode": "ZA",
+      "origin": "https://www.nhls.ac.za",
+      "lat": -26.1327128,
+      "lng": 28.1156758
+    },
+    {
+      "code": "osm:way/583676021",
+      "name": "Mediclinic Kloof",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -25.8117529,
+      "lng": 28.2633202
+    },
+    {
+      "code": "osm:way/660902932",
+      "name": "Netcare Pholoso Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcare.co.za",
+      "lat": -23.9022416,
+      "lng": 29.4931563
+    },
+    {
+      "code": "osm:way/679181288",
+      "name": "Louis Pasteur Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://louispasteur.co.za",
+      "lat": -25.7485002,
+      "lng": 28.1962937
+    },
+    {
+      "code": "osm:way/696011963",
+      "name": "Florida Clinic",
+      "countryCode": "ZA",
+      "origin": "https://joburg.org.za",
+      "lat": -26.1715278,
+      "lng": 27.9128034
+    },
+    {
+      "code": "osm:way/698452127",
+      "name": "Femina Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.netcarehospitals.co.za",
+      "lat": -25.7400511,
+      "lng": 28.2001922
+    },
+    {
+      "code": "osm:way/708281068",
+      "name": "City Hospital",
+      "countryCode": "ZA",
+      "origin": "https://jmh.co.za",
+      "lat": -29.8516161,
+      "lng": 31.0149607
+    },
+    {
+      "code": "osm:way/712521483",
+      "name": "Netcare St. Augustine's Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcarehospitals.co.za",
+      "lat": -29.8559675,
+      "lng": 30.9912719
+    },
+    {
+      "code": "osm:way/738307385",
+      "name": "Arwyp Medical Centre",
+      "countryCode": "ZA",
+      "origin": "https://www.arwyp.com",
+      "lat": -26.1067314,
+      "lng": 28.2339683
+    },
+    {
+      "code": "osm:way/738361727",
+      "name": "MediClinic Klein Karoo",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -33.5868108,
+      "lng": 22.1848874
+    },
+    {
+      "code": "osm:way/738363127",
+      "name": "Holy Cross Hospital",
+      "countryCode": "ZA",
+      "origin": "http://www.holycrosshospital.co.za",
+      "lat": -31.1485294,
+      "lng": 29.6754831
+    },
+    {
+      "code": "osm:way/743149769",
+      "name": "Netcare St Anne's Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcare.co.za",
+      "lat": -29.6020464,
+      "lng": 30.3847549
+    },
+    {
+      "code": "osm:way/743150231",
+      "name": "Inkosi Albert Luthuli Central Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.ialch.co.za",
+      "lat": -29.8734212,
+      "lng": 30.9580028
+    },
+    {
+      "code": "osm:way/745534736",
+      "name": "Centurion Day Hospital",
+      "countryCode": "ZA",
+      "origin": "https://centuriondayhospital.co.za",
+      "lat": -25.8329843,
+      "lng": 28.184643
+    },
+    {
+      "code": "osm:way/752327184",
+      "name": "Netcare Cuyler Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcarehospitals.co.za",
+      "lat": -33.7643135,
+      "lng": 25.3911723
+    },
+    {
+      "code": "osm:way/760847778",
+      "name": "Don Mckenzie Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -29.7375166,
+      "lng": 30.739975
+    },
+    {
+      "code": "osm:way/764149171",
+      "name": "Rietvlei Hospital",
+      "countryCode": "ZA",
+      "origin": "http://doctors-hospitals-medical-cape-town-south-africa.blaauwberg.net",
+      "lat": -30.4873351,
+      "lng": 29.8263196
+    },
+    {
+      "code": "osm:way/787077486",
+      "name": "Mediclinic Gynaecological Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -25.7559813,
+      "lng": 28.2055488
+    },
+    {
+      "code": "osm:way/787355675",
+      "name": "Mediclinic Muelmed",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -25.7473114,
+      "lng": 28.2076179
+    },
+    {
+      "code": "osm:way/787446796",
+      "name": "Netcare Blaauwberg Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcare.co.za",
+      "lat": -33.8033943,
+      "lng": 18.4833694
+    },
+    {
+      "code": "osm:way/787482963",
+      "name": "Jakaranda Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcarehospitals.co.za",
+      "lat": -25.760094,
+      "lng": 28.211766
+    },
+    {
+      "code": "osm:way/791723315",
+      "name": "George Provincial Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.georgehospital.co.za",
+      "lat": -33.9531091,
+      "lng": 22.450659
+    },
+    {
+      "code": "osm:way/791847066",
+      "name": "Howick Clinic",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -29.4869256,
+      "lng": 30.2315848
+    },
+    {
+      "code": "osm:way/792054580",
+      "name": "Dr S.K. Matseke Memorial Hospital.",
+      "countryCode": "ZA",
+      "origin": "https://www.clinix.co.za",
+      "lat": -26.2581509,
+      "lng": 27.9361217
+    },
+    {
+      "code": "osm:way/792191600",
+      "name": "MooiMed Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.mooimed.com",
+      "lat": -26.699987,
+      "lng": 27.0970061
+    },
+    {
+      "code": "osm:way/792481543",
+      "name": "Queen Nandi Regional Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.kznhealth.gov.za",
+      "lat": -28.7398654,
+      "lng": 31.8965644
+    },
+    {
+      "code": "osm:way/792541984",
+      "name": "Tonga Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.tongahospital.co.za",
+      "lat": -25.6951671,
+      "lng": 31.788038
+    },
+    {
+      "code": "osm:way/792544668",
+      "name": "Bedford Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.echealth.gov.za",
+      "lat": -32.6762936,
+      "lng": 26.0825939
+    },
+    {
+      "code": "osm:way/792602379",
+      "name": "Netcare Margate Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcare.co.za",
+      "lat": -30.8611551,
+      "lng": 30.3583274
+    },
+    {
+      "code": "osm:way/792922373",
+      "name": "Selby Hospital(Solomon Stix Morewa Memorial)",
+      "countryCode": "ZA",
+      "origin": "https://clinix.co.za",
+      "lat": -26.2215911,
+      "lng": 28.0430641
+    },
+    {
+      "code": "osm:way/794340399",
+      "name": "Eugene Marais Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.lifehealthcare.co.za",
+      "lat": -25.7095662,
+      "lng": 28.1939962
+    },
+    {
+      "code": "osm:way/798218749",
+      "name": "Pretoria Eye Institute",
+      "countryCode": "ZA",
+      "origin": "https://www.eyeinstitute.co.za",
+      "lat": -25.7474148,
+      "lng": 28.2108827
+    },
+    {
+      "code": "osm:way/935812635",
+      "name": "Victoria Itokolle Hospital",
+      "countryCode": "ZA",
+      "origin": "https://clinix.co.za",
+      "lat": -25.8594216,
+      "lng": 25.6413985
+    },
+    {
+      "code": "osm:way/949870871",
+      "name": "Mediclinic Ermelo",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -26.5425059,
+      "lng": 29.9879824
+    },
+    {
+      "code": "osm:way/949874445",
+      "name": "Midlands Medical Centre Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://midlandsmedicalcentre.co.za",
+      "lat": -29.5927587,
+      "lng": 30.3911192
+    },
+    {
+      "code": "osm:way/964701680",
+      "name": "Netcare Ferncrest Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.netcarehospitals.co.za",
+      "lat": -25.6481066,
+      "lng": 27.2138123
+    },
+    {
+      "code": "osm:way/983536199",
+      "name": "Arwyp Medical Centre and Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.arwyp.com",
+      "lat": -26.1069295,
+      "lng": 28.2335287
+    },
+    {
+      "code": "osm:way/1051337287",
+      "name": "eMalahleni Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://emalahlenihospital.co.za",
+      "lat": -25.8750092,
+      "lng": 29.2161491
+    },
+    {
+      "code": "osm:way/1060120456",
+      "name": "James Calata Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.echealth.gov.za",
+      "lat": -31.123746,
+      "lng": 26.8075322
+    },
+    {
+      "code": "osm:way/1062584048",
+      "name": "Melomed Gatesville Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.melomed.co.za",
+      "lat": -33.9704588,
+      "lng": 18.5330588
+    },
+    {
+      "code": "osm:way/1085114438",
+      "name": "Lomo Clinic",
+      "countryCode": "ZA",
+      "origin": "https://www.healthsites.org.za",
+      "lat": -28.2166902,
+      "lng": 31.6345275
+    },
+    {
+      "code": "osm:way/1085919581",
+      "name": "MediClinic Barberton",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -25.7618915,
+      "lng": 31.0514188
+    },
+    {
+      "code": "osm:way/1105406908",
+      "name": "Needs Camp Clinic",
+      "countryCode": "ZA",
+      "origin": "https://www.echealth.gov.za",
+      "lat": -33.0055854,
+      "lng": 27.6469756
+    },
+    {
+      "code": "osm:way/1150119974",
+      "name": "The Ear And Eye Clinic",
+      "countryCode": "ZA",
+      "origin": "https://earandeye.co.za",
+      "lat": -26.2889838,
+      "lng": 28.1009029
+    },
+    {
+      "code": "osm:way/1227116990",
+      "name": "Helderberg Clinic",
+      "countryCode": "ZA",
+      "origin": "https://www.lifepathgroup.co.za",
+      "lat": -34.1128492,
+      "lng": 18.8380244
+    },
+    {
+      "code": "osm:way/1446850332",
+      "name": "The Newhaven",
+      "countryCode": "ZA",
+      "origin": "https://www.newhaven.co.za",
+      "lat": -33.8314188,
+      "lng": 18.6533473
+    },
+    {
+      "code": "osm:way/1474553714",
+      "name": "KwaDukuza Private Hospital",
+      "countryCode": "ZA",
+      "origin": "https://kwadukuzaprivatehospital.co.za",
+      "lat": -29.3470581,
+      "lng": 31.2756259
+    },
+    {
+      "code": "osm:way/1475145107",
+      "name": "Mediclinic Nelspruit Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.mediclinic.co.za",
+      "lat": -25.4943608,
+      "lng": 30.9619822
+    },
+    {
+      "code": "osm:way/1488480310",
+      "name": "Raslouw Sub-Acute Hospital",
+      "countryCode": "ZA",
+      "origin": "https://raslouwsh.co.za",
+      "lat": -25.8595669,
+      "lng": 28.1008965
+    },
+    {
+      "code": "osm:way/1498801518",
+      "name": "Royal Buffalo Specialist Hospital",
+      "countryCode": "ZA",
+      "origin": "https://rbsh.co.za",
+      "lat": -32.9952401,
+      "lng": 27.8888222
+    },
+    {
+      "code": "osm:way/1509763694",
+      "name": "Life Beacon Bay Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.lifehealthcare.co.za",
+      "lat": -32.9489364,
+      "lng": 27.9392747
+    },
+    {
+      "code": "osm:way/1509776350",
+      "name": "Nurture Health Beacon Bay",
+      "countryCode": "ZA",
+      "origin": "https://nurturehealth.net",
+      "lat": -32.9487757,
+      "lng": 27.9414507
+    },
+    {
+      "code": "osm:way/1532354045",
+      "name": "Nurture Care Cure",
+      "countryCode": "ZA",
+      "origin": "https://nurturehealth.net",
+      "lat": -31.9005158,
+      "lng": 26.8604246
+    },
+    {
+      "code": "osm:way/1535864363",
+      "name": "Lenmed La Verna Hospital",
+      "countryCode": "ZA",
+      "origin": "https://www.lenmed.co.za",
+      "lat": -28.5557399,
+      "lng": 29.7791089
+    },
+    {
+      "code": "osm:way/1558072559",
+      "name": "Summerhill Surgical Centre",
+      "countryCode": "ZA",
+      "origin": "https://www.summerhillsurgical.co.za",
+      "lat": -34.1005142,
+      "lng": 18.8728268
+    }
+  ]
+}

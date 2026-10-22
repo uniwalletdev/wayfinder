@@ -1,0 +1,33 @@
+{
+  "countryCode": "BT",
+  "fetchedAt": "2026-10-21T00:56:45.043Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/10918367110",
+      "name": "Department of Dentistry  (Dental Hospital), JDWNRH, Taba",
+      "countryCode": "BT",
+      "origin": "https://www.jdwnrh.gov.bt",
+      "lat": 27.5126684,
+      "lng": 89.6465541
+    },
+    {
+      "code": "osm:way/425635150",
+      "name": "Jigme Dorji Wangchuck National Referral Hospital",
+      "countryCode": "BT",
+      "origin": "https://www.jdwnrh.gov.bt",
+      "lat": 27.4633556,
+      "lng": 89.6385946
+    },
+    {
+      "code": "osm:way/975543449",
+      "name": "Eastern Regional Referral Hospital",
+      "countryCode": "BT",
+      "origin": "https://www.mrrh.gov.bt",
+      "lat": 27.2785981,
+      "lng": 91.2384329
+    }
+  ]
+}

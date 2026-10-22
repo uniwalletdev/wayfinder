@@ -1,0 +1,465 @@
+{
+  "countryCode": "SA",
+  "fetchedAt": "2026-10-21T02:38:16.915Z",
+  "count": 57,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/978265130",
+      "name": "مستشفى أستر سند",
+      "countryCode": "SA",
+      "origin": "http://www.sanadhospital.com",
+      "lat": 24.77919,
+      "lng": 46.7395065
+    },
+    {
+      "code": "osm:node/3631527750",
+      "name": "Dr Soliman Al-Kharashi Medical Center",
+      "countryCode": "SA",
+      "origin": "http://www.drsolimanalkharashi.com.sa",
+      "lat": 24.7513374,
+      "lng": 46.6998881
+    },
+    {
+      "code": "osm:node/4111324991",
+      "name": "مستشفى الأمام عبدالرحمن بن سعود",
+      "countryCode": "SA",
+      "origin": "https://www.ngha.med.sa",
+      "lat": 26.353344,
+      "lng": 50.1738012
+    },
+    {
+      "code": "osm:node/4281349190",
+      "name": "مستشفي الرعايه التخصصيه",
+      "countryCode": "SA",
+      "origin": "http://www.procare.com.sa",
+      "lat": 26.3027861,
+      "lng": 50.1731298
+    },
+    {
+      "code": "osm:node/4301336112",
+      "name": "الهلال الاحمر",
+      "countryCode": "SA",
+      "origin": "https://www.srca.org.sa",
+      "lat": 25.2522577,
+      "lng": 45.8702787
+    },
+    {
+      "code": "osm:node/4328322689",
+      "name": "مستشفى سلوى العام",
+      "countryCode": "SA",
+      "origin": "https://moh.gov.sa",
+      "lat": 24.7571519,
+      "lng": 50.7525014
+    },
+    {
+      "code": "osm:node/4586142389",
+      "name": "مستشفى المعالي",
+      "countryCode": "SA",
+      "origin": "https://www.almaali.sa",
+      "lat": 28.4313066,
+      "lng": 45.9823169
+    },
+    {
+      "code": "osm:node/4843927723",
+      "name": "مجمع عيادات غسان نجيب فرعون لطب الاسنان الطبي المتخصص",
+      "countryCode": "SA",
+      "origin": "https://www.gnp.com.sa",
+      "lat": 24.0028068,
+      "lng": 38.200989
+    },
+    {
+      "code": "osm:node/4856005127",
+      "name": "almazroa health care center",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 25.3387406,
+      "lng": 49.6125532
+    },
+    {
+      "code": "osm:node/4987004621",
+      "name": "مستشفى المواساة بالدمام",
+      "countryCode": "SA",
+      "origin": "https://mouwasat.com",
+      "lat": 26.4105553,
+      "lng": 50.0473984
+    },
+    {
+      "code": "osm:node/7042778985",
+      "name": "مستشفى مغربي للعيون",
+      "countryCode": "SA",
+      "origin": "https://www.magrabi.com.sa",
+      "lat": 21.4739712,
+      "lng": 39.2118219
+    },
+    {
+      "code": "osm:node/8093059683",
+      "name": "NAMAR MEDICAL COMPLEX",
+      "countryCode": "SA",
+      "origin": "https://namarmedicalcomple.wixsite.com",
+      "lat": 24.5600138,
+      "lng": 46.5850458
+    },
+    {
+      "code": "osm:node/9424503870",
+      "name": "مركز صحي الرديفة",
+      "countryCode": "SA",
+      "origin": "https://moh.gov.sa",
+      "lat": 29.8030475,
+      "lng": 39.6878887
+    },
+    {
+      "code": "osm:node/9659395668",
+      "name": "Mouwasat Hospital",
+      "countryCode": "SA",
+      "origin": "https://www.mouwasat.com",
+      "lat": 24.7873592,
+      "lng": 46.7327316
+    },
+    {
+      "code": "osm:node/10264809283",
+      "name": "HAMC",
+      "countryCode": "SA",
+      "origin": "https://www.hamc.com.sa",
+      "lat": 24.7738902,
+      "lng": 46.7849257
+    },
+    {
+      "code": "osm:node/10759289577",
+      "name": "عيادات غوث",
+      "countryCode": "SA",
+      "origin": "https://linktr.ee",
+      "lat": 24.4215293,
+      "lng": 39.6269263
+    },
+    {
+      "code": "osm:node/11721660517",
+      "name": "مستشفى القنفذة العام",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 19.1337365,
+      "lng": 41.0808695
+    },
+    {
+      "code": "osm:node/11793367734",
+      "name": "مجمع الرواد الطبي العام",
+      "countryCode": "SA",
+      "origin": "https://heylink.me",
+      "lat": 21.4505908,
+      "lng": 39.8082788
+    },
+    {
+      "code": "osm:node/12054556416",
+      "name": "المستشفى السعودي الالماني",
+      "countryCode": "SA",
+      "origin": "https://makkah.saudigermanhealth.com",
+      "lat": 21.2824093,
+      "lng": 39.8244284
+    },
+    {
+      "code": "osm:node/13820887601",
+      "name": "مركز صحي النعيم",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 21.617104,
+      "lng": 39.1446257
+    },
+    {
+      "code": "osm:way/53193801",
+      "name": "مدينة الملك فهد الطبية",
+      "countryCode": "SA",
+      "origin": "https://www.kfmc.med.sa",
+      "lat": 24.6876403,
+      "lng": 46.7052808
+    },
+    {
+      "code": "osm:way/53348078",
+      "name": "رعاية الرياض",
+      "countryCode": "SA",
+      "origin": "http://www.riyadhcare.med.sa",
+      "lat": 24.7011332,
+      "lng": 46.7801925
+    },
+    {
+      "code": "osm:way/135797634",
+      "name": "مستشفى المملكة",
+      "countryCode": "SA",
+      "origin": "http://www.khccgroup.com",
+      "lat": 24.8014554,
+      "lng": 46.6546255
+    },
+    {
+      "code": "osm:way/221634208",
+      "name": "المستشفى السعودي الالماني",
+      "countryCode": "SA",
+      "origin": "https://www.sghgroup.com.sa",
+      "lat": 24.8008589,
+      "lng": 46.6284292
+    },
+    {
+      "code": "osm:way/228366067",
+      "name": "مستشفى رابغ العام",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 22.7738475,
+      "lng": 39.033802
+    },
+    {
+      "code": "osm:way/285483832",
+      "name": "مستشفى الملك فيصل التخصصي ومركز الأبحاث-المبنى الرئيسي",
+      "countryCode": "SA",
+      "origin": "https://www.kfshrc.edu.sa",
+      "lat": 21.5588813,
+      "lng": 39.1484736
+    },
+    {
+      "code": "osm:way/327819695",
+      "name": "مركز الملك فهد الوطني لأورام الأطفال",
+      "countryCode": "SA",
+      "origin": "https://www.kfshrc.edu.sa",
+      "lat": 24.828705,
+      "lng": 46.6920647
+    },
+    {
+      "code": "osm:way/331075149",
+      "name": "Medical City",
+      "countryCode": "SA",
+      "origin": "https://ngha.med.sa",
+      "lat": 24.7513959,
+      "lng": 46.8612576
+    },
+    {
+      "code": "osm:way/387072226",
+      "name": "مستشفى قوى الامن",
+      "countryCode": "SA",
+      "origin": "https://www.sfh.med.sa",
+      "lat": 24.679214,
+      "lng": 46.7247709
+    },
+    {
+      "code": "osm:way/436534577",
+      "name": "مستشفى الشبكة الشاملة",
+      "countryCode": "SA",
+      "origin": "https://gnp.com.sa",
+      "lat": 21.5945878,
+      "lng": 39.1435431
+    },
+    {
+      "code": "osm:way/765524561",
+      "name": "مستشفى عفيف العام",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 23.9031558,
+      "lng": 42.9113315
+    },
+    {
+      "code": "osm:way/846703051",
+      "name": "مستشفى الصحة النفسية بالأحساء",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 25.3059765,
+      "lng": 49.5667755
+    },
+    {
+      "code": "osm:way/871929921",
+      "name": "مجمع تداوي الجراحي الطبي العام",
+      "countryCode": "SA",
+      "origin": "https://tadawis.com",
+      "lat": 21.2611228,
+      "lng": 40.4085336
+    },
+    {
+      "code": "osm:way/905544265",
+      "name": "مستشفى القوات المسلحة بالهدا",
+      "countryCode": "SA",
+      "origin": "https://www.pshrc.med.sa",
+      "lat": 21.3561578,
+      "lng": 40.2867798
+    },
+    {
+      "code": "osm:way/952657773",
+      "name": "مستشفي الملك فهد الجامعي",
+      "countryCode": "SA",
+      "origin": "https://www.iau.edu.sa",
+      "lat": 26.2999527,
+      "lng": 50.1902446
+    },
+    {
+      "code": "osm:way/964289382",
+      "name": "مستشفى الملك عبدالله",
+      "countryCode": "SA",
+      "origin": "https://kah-bisha.org",
+      "lat": 20.0345584,
+      "lng": 42.6132018
+    },
+    {
+      "code": "osm:way/974827522",
+      "name": "مستشفى بريدة المركزي",
+      "countryCode": "SA",
+      "origin": "https://qassimedu.gov.sa",
+      "lat": 26.3270646,
+      "lng": 43.9803119
+    },
+    {
+      "code": "osm:way/983316623",
+      "name": "مستشفى الحياة الوطني",
+      "countryCode": "SA",
+      "origin": "https://hayathospitals.com",
+      "lat": 26.0893995,
+      "lng": 43.9394573
+    },
+    {
+      "code": "osm:way/1053590047",
+      "name": "مستشفى عيون الجواء العام",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 26.4762016,
+      "lng": 43.6443546
+    },
+    {
+      "code": "osm:way/1086093256",
+      "name": "مركز مكة الطبي",
+      "countryCode": "SA",
+      "origin": "https://mmc.med.sa",
+      "lat": 21.4951509,
+      "lng": 39.7939449
+    },
+    {
+      "code": "osm:way/1099329099",
+      "name": "مستشفى الملك فهد بالهفوف",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 25.3575444,
+      "lng": 49.5631557
+    },
+    {
+      "code": "osm:way/1102940203",
+      "name": "مستشفى الملك فهد للقوات المسلحة",
+      "countryCode": "SA",
+      "origin": "https://kfafh.med.sa",
+      "lat": 21.5422714,
+      "lng": 39.1261968
+    },
+    {
+      "code": "osm:way/1159257404",
+      "name": "مجمع الياسمين الطبي العام",
+      "countryCode": "SA",
+      "origin": "https://smpmedicalgroup.com",
+      "lat": 21.4498451,
+      "lng": 39.3185474
+    },
+    {
+      "code": "osm:way/1159296888",
+      "name": "مستشفى الأطباء المتحدون",
+      "countryCode": "SA",
+      "origin": "https://udh.sa",
+      "lat": 21.5055859,
+      "lng": 39.1663891
+    },
+    {
+      "code": "osm:way/1159296891",
+      "name": "مستشفى بقشان",
+      "countryCode": "SA",
+      "origin": "https://bugshan.med.sa",
+      "lat": 21.5573364,
+      "lng": 39.1762287
+    },
+    {
+      "code": "osm:way/1159296893",
+      "name": "مجمع العبير الطبي",
+      "countryCode": "SA",
+      "origin": "https://www.abeergroup.com",
+      "lat": 21.6049383,
+      "lng": 39.1697507
+    },
+    {
+      "code": "osm:way/1159298188",
+      "name": "مركز الدكتور سليمان فقيه الطبي",
+      "countryCode": "SA",
+      "origin": "https://en.dsfhjeddah.fakeeh.care",
+      "lat": 21.669432,
+      "lng": 39.121836
+    },
+    {
+      "code": "osm:way/1184809468",
+      "name": "عيادات سكاي التخصصية",
+      "countryCode": "SA",
+      "origin": "https://www.skyclinic.net",
+      "lat": 21.5711187,
+      "lng": 39.1228124
+    },
+    {
+      "code": "osm:way/1190138900",
+      "name": "مستشفى الملك عبدالله الجامعي",
+      "countryCode": "SA",
+      "origin": "https://kaauh.edu.sa",
+      "lat": 24.8365259,
+      "lng": 46.7220996
+    },
+    {
+      "code": "osm:way/1195196003",
+      "name": "الشؤون الصحية بوزارة الحرس الوطني",
+      "countryCode": "SA",
+      "origin": "https://www.ngha.med.sa",
+      "lat": 21.5369506,
+      "lng": 39.2243966
+    },
+    {
+      "code": "osm:way/1210672905",
+      "name": "مستشفى الطوال العام‭",
+      "countryCode": "SA",
+      "origin": "https://www.moh.gov.sa",
+      "lat": 16.5345723,
+      "lng": 42.9477452
+    },
+    {
+      "code": "osm:way/1342718082",
+      "name": "NEOM Hospital",
+      "countryCode": "SA",
+      "origin": "https://hospitalhub.neom.com",
+      "lat": 28.0194855,
+      "lng": 35.2320051
+    },
+    {
+      "code": "osm:way/1381243832",
+      "name": "مستشفى الزهراء",
+      "countryCode": "SA",
+      "origin": "https://alzahraa-hg.com",
+      "lat": 21.58889,
+      "lng": 39.1418013
+    },
+    {
+      "code": "osm:way/1486416393",
+      "name": "Aya Specialist Hospital",
+      "countryCode": "SA",
+      "origin": "https://ayahospital.com.sa",
+      "lat": 21.6605327,
+      "lng": 39.1232171
+    },
+    {
+      "code": "osm:way/1535173779",
+      "name": "مستشفى السلامة",
+      "countryCode": "SA",
+      "origin": "https://alsalamahospital.com",
+      "lat": 21.6225164,
+      "lng": 39.1146595
+    },
+    {
+      "code": "osm:way/1536946633",
+      "name": "مستشفى كينغز كوليدج لندن",
+      "countryCode": "SA",
+      "origin": "https://kch.sa",
+      "lat": 21.5809195,
+      "lng": 39.1260218
+    },
+    {
+      "code": "osm:way/1544621089",
+      "name": "المستشفى السعودي الألماني",
+      "countryCode": "SA",
+      "origin": "https://saudigermanhealth.com",
+      "lat": 26.3775299,
+      "lng": 49.9919491
+    }
+  ]
+}

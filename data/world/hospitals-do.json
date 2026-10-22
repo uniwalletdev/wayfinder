@@ -1,0 +1,113 @@
+{
+  "countryCode": "DO",
+  "fetchedAt": "2026-10-21T01:14:31.947Z",
+  "count": 13,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/3161562579",
+      "name": "Medical Net",
+      "countryCode": "DO",
+      "origin": "http://www.medicalnet.net.do",
+      "lat": 18.471685,
+      "lng": -69.9349479
+    },
+    {
+      "code": "osm:node/4438487356",
+      "name": "Clínica Bahia Azul",
+      "countryCode": "DO",
+      "origin": "https://www.ninosdelasgaleras.org",
+      "lat": 19.2896869,
+      "lng": -69.200373
+    },
+    {
+      "code": "osm:node/5486535022",
+      "name": "Multimagen Diagnóstica - Breast Center",
+      "countryCode": "DO",
+      "origin": "http://www.multimagendianostica.com.do",
+      "lat": 18.4702515,
+      "lng": -69.9240032
+    },
+    {
+      "code": "osm:node/6164112951",
+      "name": "Hospital Dr. Felix Maria Goico",
+      "countryCode": "DO",
+      "origin": "https://hfmg.hospital.do",
+      "lat": 18.4899707,
+      "lng": -69.902278
+    },
+    {
+      "code": "osm:node/6407348185",
+      "name": "International Medical Center",
+      "countryCode": "DO",
+      "origin": "https://internationalmedicalcenter.com",
+      "lat": 18.6887489,
+      "lng": -68.4439395
+    },
+    {
+      "code": "osm:node/6594175585",
+      "name": "International Medical Center TCMS",
+      "countryCode": "DO",
+      "origin": "https://www.internationalmedicalcenter.com",
+      "lat": 18.6895172,
+      "lng": -68.421503
+    },
+    {
+      "code": "osm:node/6594184985",
+      "name": "International Medical Center",
+      "countryCode": "DO",
+      "origin": "https://www.internationalmedicalcenter.com",
+      "lat": 18.4480734,
+      "lng": -69.6111138
+    },
+    {
+      "code": "osm:node/10051742679",
+      "name": "Jose Alonso DDS Dental Office",
+      "countryCode": "DO",
+      "origin": "https://www.josealonsodds.com",
+      "lat": 18.4710988,
+      "lng": -69.9335705
+    },
+    {
+      "code": "osm:way/223357576",
+      "name": "Hospiten",
+      "countryCode": "DO",
+      "origin": "https://www.hospiten.com",
+      "lat": 18.4652658,
+      "lng": -69.9212802
+    },
+    {
+      "code": "osm:way/331402059",
+      "name": "Centro Médico Central Romana",
+      "countryCode": "DO",
+      "origin": "https://centralromana.com.do",
+      "lat": 18.4188883,
+      "lng": -68.9634356
+    },
+    {
+      "code": "osm:way/334778208",
+      "name": "Cigmed",
+      "countryCode": "DO",
+      "origin": "http://www.cigmed.com",
+      "lat": 18.4747676,
+      "lng": -69.925565
+    },
+    {
+      "code": "osm:way/344011718",
+      "name": "Hospital Municipal el Almirante",
+      "countryCode": "DO",
+      "origin": "https://hospitalelalmirante.gob.do",
+      "lat": 18.5199797,
+      "lng": -69.8178183
+    },
+    {
+      "code": "osm:way/345151964",
+      "name": "hospital de la fuerza aeria dr. Ramon de lara",
+      "countryCode": "DO",
+      "origin": "http://www.furazaaerea.do.mil",
+      "lat": 18.519631,
+      "lng": -69.7701833
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "countryCode": "CY",
+  "fetchedAt": "2026-10-21T01:09:13.635Z",
+  "count": 22,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/568392282",
+      "name": "Mediterranean Hospital of Cyprus",
+      "countryCode": "CY",
+      "origin": "https://www.medihospital.com.cy",
+      "lat": 34.7051803,
+      "lng": 33.0282632
+    },
+    {
+      "code": "osm:node/2148323909",
+      "name": "Medicalport Tunççevik Hastanesi",
+      "countryCode": "CY",
+      "origin": "https://www.medicalporttunccevik.com",
+      "lat": 35.3288047,
+      "lng": 33.3363362
+    },
+    {
+      "code": "osm:node/2451664874",
+      "name": "Κυριάκος Δημητριάδης MD Msc",
+      "countryCode": "CY",
+      "origin": "https://www.dkorthosurgery.com",
+      "lat": 35.1651975,
+      "lng": 33.330411
+    },
+    {
+      "code": "osm:node/4349696091",
+      "name": "Lito Private Hospital",
+      "countryCode": "CY",
+      "origin": "https://www.litohospital.org.cy",
+      "lat": 35.0338661,
+      "lng": 33.9771418
+    },
+    {
+      "code": "osm:node/4465418995",
+      "name": "Dr. Suat Günsel Girne Üniversitesi Diş Hastanesi",
+      "countryCode": "CY",
+      "origin": "https://hospital.kyrenia.edu.tr",
+      "lat": 35.3301114,
+      "lng": 33.325833
+    },
+    {
+      "code": "osm:node/5004228821",
+      "name": "KAMİLOĞLU HASTANESİ",
+      "countryCode": "CY",
+      "origin": "https://www.kamilogluhastanesi.com",
+      "lat": 35.3365867,
+      "lng": 33.3103393
+    },
+    {
+      "code": "osm:node/5110579021",
+      "name": "Dr.Suat Günsel Girne Üniversitesi Hastanesi",
+      "countryCode": "CY",
+      "origin": "https://hospital.kyrenia.edu.tr",
+      "lat": 35.335372,
+      "lng": 33.340341
+    },
+    {
+      "code": "osm:node/6002795974",
+      "name": "Περιφερειακό Νοσοκομείο Κυπερούντας",
+      "countryCode": "CY",
+      "origin": "https://www.moh.gov.cy",
+      "lat": 34.9509919,
+      "lng": 32.9524009
+    },
+    {
+      "code": "osm:node/14290948285",
+      "name": "Hadassah Medical Center Cyprus",
+      "countryCode": "CY",
+      "origin": "https://www.hadassahlimassol.com",
+      "lat": 34.7099407,
+      "lng": 33.1338353
+    },
+    {
+      "code": "osm:way/187993517",
+      "name": "Πολυκλινική Υγεία",
+      "countryCode": "CY",
+      "origin": "https://www.ygiapolyclinic.com",
+      "lat": 34.682034,
+      "lng": 33.040201
+    },
+    {
+      "code": "osm:way/189136685",
+      "name": "Aretaieio Hospital",
+      "countryCode": "CY",
+      "origin": "https://www.aretaeio.com",
+      "lat": 35.1392163,
+      "lng": 33.3639752
+    },
+    {
+      "code": "osm:way/189213970",
+      "name": "American Medical Center",
+      "countryCode": "CY",
+      "origin": "http://www.ahi.com.cy",
+      "lat": 35.1214326,
+      "lng": 33.3420554
+    },
+    {
+      "code": "osm:way/202970137",
+      "name": "Απολλωνειο",
+      "countryCode": "CY",
+      "origin": "https://www.apollonion.com",
+      "lat": 35.1483497,
+      "lng": 33.3207149
+    },
+    {
+      "code": "osm:way/202975888",
+      "name": "Ophthalmos Eye and Laser Centre",
+      "countryCode": "CY",
+      "origin": "https://www.ophthalmiccentre.com",
+      "lat": 35.1610908,
+      "lng": 33.3105278
+    },
+    {
+      "code": "osm:way/203178082",
+      "name": "Özel Başkent Hastanesi",
+      "countryCode": "CY",
+      "origin": "https://www.ozelbaskenthastanesi.com",
+      "lat": 35.2000564,
+      "lng": 33.3275868
+    },
+    {
+      "code": "osm:way/203296867",
+      "name": "Dr. Burhan Nalbantoğlu Devlet Hastanesi",
+      "countryCode": "CY",
+      "origin": "http://www.drbndh.com",
+      "lat": 35.2065285,
+      "lng": 33.3307564
+    },
+    {
+      "code": "osm:way/353142964",
+      "name": "Αγιος Γεοργιος",
+      "countryCode": "CY",
+      "origin": "https://www.bluecross.com.cy",
+      "lat": 34.7807662,
+      "lng": 32.4305303
+    },
+    {
+      "code": "osm:way/450944957",
+      "name": "ETİK Hastanesi",
+      "countryCode": "CY",
+      "origin": "https://etikhastanesi.com",
+      "lat": 35.201237,
+      "lng": 33.3299179
+    },
+    {
+      "code": "osm:way/661249013",
+      "name": "St Peter and Paul Private Hospital",
+      "countryCode": "CY",
+      "origin": "https://www.orthopaidikos.com",
+      "lat": 34.6880162,
+      "lng": 33.0342116
+    },
+    {
+      "code": "osm:way/995224963",
+      "name": "Famagusta general hospital",
+      "countryCode": "CY",
+      "origin": "https://shso.org.cy",
+      "lat": 35.0625637,
+      "lng": 33.9722478
+    },
+    {
+      "code": "osm:way/1009080022",
+      "name": "German Oncology Centre",
+      "countryCode": "CY",
+      "origin": "https://www.goc.com.cy",
+      "lat": 34.7295782,
+      "lng": 33.0602594
+    },
+    {
+      "code": "osm:way/1304035958",
+      "name": "Aretaieio Hospital, Annex 1",
+      "countryCode": "CY",
+      "origin": "https://www.aretaeio.com",
+      "lat": 35.1392541,
+      "lng": 33.3659775
+    }
+  ]
+}

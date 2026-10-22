@@ -1,0 +1,3817 @@
+{
+  "countryCode": "PL",
+  "fetchedAt": "2026-10-21T02:27:43.119Z",
+  "count": 476,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 2,
+  "hospitals": [
+    {
+      "code": "osm:node/469985535",
+      "name": "Szpital Zakonu Bonifratrów Świętego Jana Grandego",
+      "countryCode": "PL",
+      "origin": "https://bonifratrzy.pl",
+      "lat": 50.0475227,
+      "lng": 19.9451864
+    },
+    {
+      "code": "osm:node/476214781",
+      "name": "Zespół Opieki Zdrowotnej w Nidzicy",
+      "countryCode": "PL",
+      "origin": "https://zoz.nidzica.pl",
+      "lat": 53.35986,
+      "lng": 20.43298
+    },
+    {
+      "code": "osm:node/1676762731",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Nasielsku",
+      "countryCode": "PL",
+      "origin": "https://zoznasielsk.pl",
+      "lat": 52.5936635,
+      "lng": 20.7979238
+    },
+    {
+      "code": "osm:node/1815416560",
+      "name": "Szpital Miejski w Pionkach - Oddział chorób wewnętrznych i rehabilitacji",
+      "countryCode": "PL",
+      "origin": "https://spzzozpionki.pl",
+      "lat": 51.4668255,
+      "lng": 21.4340924
+    },
+    {
+      "code": "osm:node/1942974189",
+      "name": "Szpital św. Józefa w Mikołowie",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.boromeuszki.org.pl",
+      "lat": 50.1701247,
+      "lng": 18.9084745
+    },
+    {
+      "code": "osm:node/2179899852",
+      "name": "NZOZ Szpital Mazovia",
+      "countryCode": "PL",
+      "origin": "https://szpitalmazovia.pl",
+      "lat": 52.1424549,
+      "lng": 21.0524087
+    },
+    {
+      "code": "osm:node/2363254827",
+      "name": "Wojewódzki Szpital Specjalistyczny im. Kardynała Stefana Wyszyńskiego SPZOZ w Lublinie",
+      "countryCode": "PL",
+      "origin": "https://www.janbozy.pl",
+      "lat": 51.2562523,
+      "lng": 22.5671209
+    },
+    {
+      "code": "osm:node/2391433088",
+      "name": "Szpital Powiatowy",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz-miedzychod.com.pl",
+      "lat": 52.5995069,
+      "lng": 15.8898156
+    },
+    {
+      "code": "osm:node/2915692759",
+      "name": "Szpital Powiatowy w Wyrzysku",
+      "countryCode": "PL",
+      "origin": "https://szpitalwyrzysk.com",
+      "lat": 53.1494205,
+      "lng": 17.2720125
+    },
+    {
+      "code": "osm:node/2959044175",
+      "name": "Szpital Bukowiec",
+      "countryCode": "PL",
+      "origin": "https://www.emc-sa.pl",
+      "lat": 50.8092025,
+      "lng": 15.8385258
+    },
+    {
+      "code": "osm:node/3559448622",
+      "name": "Ibis",
+      "countryCode": "PL",
+      "origin": "https://szpitalibis.pl",
+      "lat": 52.2408885,
+      "lng": 20.9801053
+    },
+    {
+      "code": "osm:node/3814287371",
+      "name": "Szpital Medfemina",
+      "countryCode": "PL",
+      "origin": "https://szpital.medfemina.pl",
+      "lat": 51.0713931,
+      "lng": 17.032975
+    },
+    {
+      "code": "osm:node/4070479995",
+      "name": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej - Szpital Powiatowy w Przysusze",
+      "countryCode": "PL",
+      "origin": "https://www.spzzozprzysucha.pl",
+      "lat": 51.3595177,
+      "lng": 20.6303233
+    },
+    {
+      "code": "osm:node/4222375410",
+      "name": "Specjalistyczny Szpital Wieloprofilowy",
+      "countryCode": "PL",
+      "origin": "https://www.gcm.pl",
+      "lat": 50.2108673,
+      "lng": 18.998486
+    },
+    {
+      "code": "osm:node/4362637512",
+      "name": "Szpital Powiatowy im. św. Faustyny Kowalskiej",
+      "countryCode": "PL",
+      "origin": "https://zozleczyca.pl",
+      "lat": 52.0595254,
+      "lng": 19.1876761
+    },
+    {
+      "code": "osm:node/4894985821",
+      "name": "Beskidzki Zespół Leczniczo-Rehabilitacyjny o. Dzieci i Młodzieży",
+      "countryCode": "PL",
+      "origin": "https://rehabilitacja-jaworze.com.pl",
+      "lat": 49.7897697,
+      "lng": 18.9536427
+    },
+    {
+      "code": "osm:node/5018117860",
+      "name": "Specjalistyczny Szpital Chorób Płuc",
+      "countryCode": "PL",
+      "origin": "https://sanatoria-dolnoslaskie.pl",
+      "lat": 50.7102612,
+      "lng": 16.5483679
+    },
+    {
+      "code": "osm:node/6798205322",
+      "name": "Szpital w Nowym Dworze Gdańskim",
+      "countryCode": "PL",
+      "origin": "http://pcz.net.pl",
+      "lat": 54.2114818,
+      "lng": 19.1195648
+    },
+    {
+      "code": "osm:node/9558849442",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Choszcznie",
+      "countryCode": "PL",
+      "origin": "https://www.spzozchoszczno.pl",
+      "lat": 53.165639,
+      "lng": 15.4123256
+    },
+    {
+      "code": "osm:node/9681452217",
+      "name": "Oddział Psychiatryczny w Siekowie",
+      "countryCode": "PL",
+      "origin": "https://wcn-koscian.pl",
+      "lat": 52.0497978,
+      "lng": 16.3464546
+    },
+    {
+      "code": "osm:node/11417691659",
+      "name": "Szpital Podolany",
+      "countryCode": "PL",
+      "origin": "https://szpitalpodolany.pl",
+      "lat": 52.4587,
+      "lng": 16.8895577
+    },
+    {
+      "code": "osm:node/11747825856",
+      "name": "Szpital Psychiatryczny MindHealth",
+      "countryCode": "PL",
+      "origin": "https://mindhealth.pl",
+      "lat": 52.3067939,
+      "lng": 20.9750218
+    },
+    {
+      "code": "osm:node/12163704523",
+      "name": "Polsko-Amerykańskie Kliniki Serca Centrum Sercowo-Naczyniowe w Augustowie",
+      "countryCode": "PL",
+      "origin": "https://ahop.pl",
+      "lat": 53.8509287,
+      "lng": 22.9955835
+    },
+    {
+      "code": "osm:node/12514172862",
+      "name": "Warszawskie Centrum Opieki Medycznej „Kopernik”",
+      "countryCode": "PL",
+      "origin": "https://wsdz.pl",
+      "lat": 52.3173928,
+      "lng": 21.0278341
+    },
+    {
+      "code": "osm:node/13357102258",
+      "name": "Dziecięcy Szpital Uzdrowiskowy im. dr Markiewicza",
+      "countryCode": "PL",
+      "origin": "https://www.uzdrowiskociechocinek.pl",
+      "lat": 52.884562,
+      "lng": 18.7904223
+    },
+    {
+      "code": "osm:node/13540281024",
+      "name": "Oddział Dzienny Psychiatryczny dla Dzieci i Młodzieży",
+      "countryCode": "PL",
+      "origin": "https://ipin.edu.pl",
+      "lat": 52.1749272,
+      "lng": 21.0647785
+    },
+    {
+      "code": "osm:node/14052253064",
+      "name": "Uniwersyteckie Centrum Kliniczne im. prof. K. Gibińskiego Śląskiego Uniwersytetu Medycznego w Katowicach",
+      "countryCode": "PL",
+      "origin": "https://www.uck.katowice.pl",
+      "lat": 50.2239023,
+      "lng": 18.9544502
+    },
+    {
+      "code": "osm:node/14242298878",
+      "name": "Dr Damian",
+      "countryCode": "PL",
+      "origin": "https://www.drdamian.pl",
+      "lat": 54.3380128,
+      "lng": 18.5654858
+    },
+    {
+      "code": "osm:node/14268087334",
+      "name": "Centralny Szpital Kliniczny Uniwersytetu Medycznego w Łodzi",
+      "countryCode": "PL",
+      "origin": "https://csk.umed.pl",
+      "lat": 51.7744831,
+      "lng": 19.5053247
+    },
+    {
+      "code": "osm:way/23872417",
+      "name": "Uniwersytecki Szpital Kliniczny nr 1 Pomorskiego Uniwersytetu Medycznego",
+      "countryCode": "PL",
+      "origin": "https://usk1.szczecin.pl",
+      "lat": 53.4485772,
+      "lng": 14.5042918
+    },
+    {
+      "code": "osm:way/24377001",
+      "name": "Szpital Miejski Specjalistyczny imienia Gabriela Narutowicza",
+      "countryCode": "PL",
+      "origin": "http://narutowicz.krakow.pl",
+      "lat": 50.0830461,
+      "lng": 19.9392225
+    },
+    {
+      "code": "osm:way/28607116",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej MSWiA w Szczecinie",
+      "countryCode": "PL",
+      "origin": "https://www.gov.pl",
+      "lat": 53.4352621,
+      "lng": 14.5244951
+    },
+    {
+      "code": "osm:way/28797295",
+      "name": "Uniwersyteckie Centrum Kliniczne WUM",
+      "countryCode": "PL",
+      "origin": "https://uckwum.pl",
+      "lat": 52.2084105,
+      "lng": 20.9836493
+    },
+    {
+      "code": "osm:way/30847375",
+      "name": "Szpital Dziecięcy im. Profesora dr. med. Jana Bogdanowicza",
+      "countryCode": "PL",
+      "origin": "http://www.nieklanska.pl",
+      "lat": 52.2344009,
+      "lng": 21.0628707
+    },
+    {
+      "code": "osm:way/31111999",
+      "name": "Dolnośląskie Centrum Onkologii, Pulmonologii i Hematologii",
+      "countryCode": "PL",
+      "origin": "https://dcopih.pl",
+      "lat": 51.0953337,
+      "lng": 17.0176698
+    },
+    {
+      "code": "osm:way/32061581",
+      "name": "Uniwersytecki Szpital Kliniczny nr 2 Pomorskiego Uniwersytetu Medycznego",
+      "countryCode": "PL",
+      "origin": "https://usk2.szczecin.pl",
+      "lat": 53.4080998,
+      "lng": 14.5320178
+    },
+    {
+      "code": "osm:way/32061582",
+      "name": "Samodzielny Publiczny Wojewódzki Szpital Zespolony w Szczecinie",
+      "countryCode": "PL",
+      "origin": "https://www.spwsz.szczecin.pl",
+      "lat": 53.4535591,
+      "lng": 14.5276061
+    },
+    {
+      "code": "osm:way/32089015",
+      "name": "Samodzielny Publiczny Zespół Opieki Zdrowotnej we Włodawie",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz.wlodawa.pl",
+      "lat": 51.5568684,
+      "lng": 23.554764
+    },
+    {
+      "code": "osm:way/32590633",
+      "name": "Samodzielny Publiczny Specjalistyczny Zakład Opieki Zdrowotnej „Zdroje”",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-zdroje.pl",
+      "lat": 53.3708977,
+      "lng": 14.6409799
+    },
+    {
+      "code": "osm:way/35071440",
+      "name": "Wojewódzki Szpital Zakaźny",
+      "countryCode": "PL",
+      "origin": "https://zakazny.pl",
+      "lat": 52.2337821,
+      "lng": 20.9717742
+    },
+    {
+      "code": "osm:way/35604503",
+      "name": "Wojewódzki Szpital Specjalistyczny im. Jerzego Gromkowskiego",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.wroc.pl",
+      "lat": 51.1431209,
+      "lng": 17.0651667
+    },
+    {
+      "code": "osm:way/37628368",
+      "name": "Uniwersytecki Szpital Kliniczny im. Wojskowej Akademii Medycznej",
+      "countryCode": "PL",
+      "origin": "http://www.usk.umed.lodz.pl",
+      "lat": 51.7676647,
+      "lng": 19.4375134
+    },
+    {
+      "code": "osm:way/38351820",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej im. św. Bogumiła w Kole",
+      "countryCode": "PL",
+      "origin": "https://spzozkolo.pl",
+      "lat": 52.1845208,
+      "lng": 18.618611
+    },
+    {
+      "code": "osm:way/39232510",
+      "name": "Łużyckie Centrum Medyczne",
+      "countryCode": "PL",
+      "origin": "http://www.lcm-luban.pl",
+      "lat": 51.1162022,
+      "lng": 15.2710671
+    },
+    {
+      "code": "osm:way/39829907",
+      "name": "Szpital Powiatowy w Wodzisławiu Śląskim Oddział w Rydułtowach",
+      "countryCode": "PL",
+      "origin": "http://www.zozwodzislaw.pl",
+      "lat": 50.0587666,
+      "lng": 18.425129
+    },
+    {
+      "code": "osm:way/40370104",
+      "name": "Centrum Zdrowia Dziecka",
+      "countryCode": "PL",
+      "origin": "https://www.czd.pl",
+      "lat": 52.2060077,
+      "lng": 21.1924085
+    },
+    {
+      "code": "osm:way/44096284",
+      "name": "Wojewódzki Szpital im. Św. Ojca Pio w Przemyślu",
+      "countryCode": "PL",
+      "origin": "https://nowa.wszp.pl",
+      "lat": 49.8093212,
+      "lng": 22.7842739
+    },
+    {
+      "code": "osm:way/44306056",
+      "name": "Szpital Specjalistyczny w Brzozowie - Podkarpacki Ośrodek Onkologiczny im. Księdza Bronisława Markiewicza",
+      "countryCode": "PL",
+      "origin": "https://szpital-brzozow.pl",
+      "lat": 49.6922854,
+      "lng": 22.025901
+    },
+    {
+      "code": "osm:way/47270034",
+      "name": "Zachodniopomorskie Centrum Onkologii",
+      "countryCode": "PL",
+      "origin": "https://onkologia.szczecin.pl",
+      "lat": 53.4691961,
+      "lng": 14.5936516
+    },
+    {
+      "code": "osm:way/65368983",
+      "name": "Szpital Specjalistyczny im. Ludwika Rydygiera w Krakowie",
+      "countryCode": "PL",
+      "origin": "http://www.rydygierkrakow.pl",
+      "lat": 50.093124,
+      "lng": 20.0189461
+    },
+    {
+      "code": "osm:way/66266360",
+      "name": "Państwowy Instytut Medyczny MSWiA",
+      "countryCode": "PL",
+      "origin": "https://www.gov.pl",
+      "lat": 52.1989674,
+      "lng": 20.9972147
+    },
+    {
+      "code": "osm:way/66340028",
+      "name": "Centrum Leczenia Oparzeń",
+      "countryCode": "PL",
+      "origin": "https://clo.com.pl",
+      "lat": 50.3048527,
+      "lng": 19.0294772
+    },
+    {
+      "code": "osm:way/70540116",
+      "name": "Narodowy Instytut Onkologii",
+      "countryCode": "PL",
+      "origin": "https://www.pib-nio.pl",
+      "lat": 52.1465865,
+      "lng": 21.0315273
+    },
+    {
+      "code": "osm:way/83636443",
+      "name": "Szpital Uniwersytecki CM UJ",
+      "countryCode": "PL",
+      "origin": "http://www.su.krakow.pl",
+      "lat": 50.0622587,
+      "lng": 19.9524073
+    },
+    {
+      "code": "osm:way/86338647",
+      "name": "Szpital w Proszowicach",
+      "countryCode": "PL",
+      "origin": "https://spzoz.proszowice.pl",
+      "lat": 50.1856228,
+      "lng": 20.299884
+    },
+    {
+      "code": "osm:way/89815937",
+      "name": "Narodowy Instytut Onkologii im. Marii Skłodowskiej-Curie",
+      "countryCode": "PL",
+      "origin": "http://www.io.gliwice.pl",
+      "lat": 50.3018939,
+      "lng": 18.6645752
+    },
+    {
+      "code": "osm:way/91935125",
+      "name": "Luxmed Onkologia",
+      "countryCode": "PL",
+      "origin": "https://onkologia.luxmed.pl",
+      "lat": 52.2578861,
+      "lng": 20.9602095
+    },
+    {
+      "code": "osm:way/92419313",
+      "name": "Szpital Powiatowy \"Zespół Opieki Zdrowotnej\"",
+      "countryCode": "PL",
+      "origin": "https://www.zoz.net.pl",
+      "lat": 50.3062286,
+      "lng": 18.9159869
+    },
+    {
+      "code": "osm:way/93686740",
+      "name": "Szpital Wielospecjalistyczny im. dr Ludwika Błażka",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalino.pl",
+      "lat": 52.7804073,
+      "lng": 18.2653956
+    },
+    {
+      "code": "osm:way/98455258",
+      "name": "Instytut Matki i Dziecka",
+      "countryCode": "PL",
+      "origin": "https://imid.med.pl",
+      "lat": 52.2266619,
+      "lng": 20.9700012
+    },
+    {
+      "code": "osm:way/98455264",
+      "name": "Szpital Wolski im. doktor Anny Gostyńskiej",
+      "countryCode": "PL",
+      "origin": "https://www.wolski.med.pl",
+      "lat": 52.2260496,
+      "lng": 20.9717152
+    },
+    {
+      "code": "osm:way/100681984",
+      "name": "Szpital Wielospecjalistyczny",
+      "countryCode": "PL",
+      "origin": "https://www.szwg.pl",
+      "lat": 50.2888826,
+      "lng": 18.6607043
+    },
+    {
+      "code": "osm:way/103198301",
+      "name": "Oddział Medycyny Paliatywnej Szpitala Ogólnego im. dr Edmunda Wojtyły w Bielsku-Białej",
+      "countryCode": "PL",
+      "origin": "http://www.szpital.bielsko.pl",
+      "lat": 49.8203146,
+      "lng": 19.0237432
+    },
+    {
+      "code": "osm:way/103876722",
+      "name": "Instytut Centrum Zdrowia Matki Polki",
+      "countryCode": "PL",
+      "origin": "https://www.iczmp.edu.pl",
+      "lat": 51.7066748,
+      "lng": 19.4813053
+    },
+    {
+      "code": "osm:way/104381918",
+      "name": "Szpital Zakonu Bonifratrów św. Jana Bożego",
+      "countryCode": "PL",
+      "origin": "https://bonifratrzy.pl",
+      "lat": 51.7179049,
+      "lng": 19.4705961
+    },
+    {
+      "code": "osm:way/105617790",
+      "name": "Szpital Chirurgii Urazowej",
+      "countryCode": "PL",
+      "origin": "http://www.urazowka.piekary.pl",
+      "lat": 50.3721507,
+      "lng": 18.9456129
+    },
+    {
+      "code": "osm:way/107959659",
+      "name": "Wielospecjalistyczny Szpital Powiatowy im. dr B. Hagera",
+      "countryCode": "PL",
+      "origin": "https://www.wspsa.pl",
+      "lat": 50.4399298,
+      "lng": 18.8061376
+    },
+    {
+      "code": "osm:way/107966519",
+      "name": "Szpital Wojewódzki w Bielsku-Białej",
+      "countryCode": "PL",
+      "origin": "https://www.hospital.com.pl",
+      "lat": 49.7908242,
+      "lng": 19.039633
+    },
+    {
+      "code": "osm:way/108399363",
+      "name": "Szpital Kliniczny im. doktora Józefa Babińskiego SP ZOZ",
+      "countryCode": "PL",
+      "origin": "https://babinski.pl",
+      "lat": 50.003671,
+      "lng": 19.8832499
+    },
+    {
+      "code": "osm:way/110591204",
+      "name": "SZPZOZ im. Dzieci Warszawy w Dziekanowie Leśnym",
+      "countryCode": "PL",
+      "origin": "https://szpitaldziekanow.pl",
+      "lat": 52.3412144,
+      "lng": 20.8501299
+    },
+    {
+      "code": "osm:way/111554521",
+      "name": "Luxmed",
+      "countryCode": "PL",
+      "origin": "https://www.luxmed.pl",
+      "lat": 52.1382633,
+      "lng": 21.0188441
+    },
+    {
+      "code": "osm:way/112319074",
+      "name": "Wojewódzki Szpital Specjalistyczny im. M. Kopernika",
+      "countryCode": "PL",
+      "origin": "https://www.kopernik.lodz.pl",
+      "lat": 51.7313103,
+      "lng": 19.45703
+    },
+    {
+      "code": "osm:way/120932291",
+      "name": "IV Wojskowy Szpital Kliniczny",
+      "countryCode": "PL",
+      "origin": "https://4wsk.pl",
+      "lat": 51.0738271,
+      "lng": 17.0198731
+    },
+    {
+      "code": "osm:way/120932338",
+      "name": "Uniwersytecki Szpital Kliniczny im. Jana Mikulicza-Radeckiego",
+      "countryCode": "PL",
+      "origin": "https://www.usk.wroc.pl",
+      "lat": 51.0740091,
+      "lng": 17.0290866
+    },
+    {
+      "code": "osm:way/121530205",
+      "name": "Szpital Uniwersytecki nr 2 im. dr Jana Biziela",
+      "countryCode": "PL",
+      "origin": "https://www.biziel.pl",
+      "lat": 53.1152919,
+      "lng": 18.0276123
+    },
+    {
+      "code": "osm:way/121708278",
+      "name": "Wojewódzki Szpital Specjalistyczny nr 4",
+      "countryCode": "PL",
+      "origin": "http://www.szpital4.bytom.pl",
+      "lat": 50.3548036,
+      "lng": 18.9126415
+    },
+    {
+      "code": "osm:way/125236040",
+      "name": "Niepubliczny Zakład Opieki Zdrowotnej \"Nowy Szpital\" w Kostrzynie nad Odrą",
+      "countryCode": "PL",
+      "origin": "https://www.nowyszpital.pl",
+      "lat": 52.6072796,
+      "lng": 14.6402609
+    },
+    {
+      "code": "osm:way/125752811",
+      "name": "109 Szpital Wojskowy z Przychodnią SP ZOZ",
+      "countryCode": "PL",
+      "origin": "https://www.109szpital.pl",
+      "lat": 53.4429835,
+      "lng": 14.5409136
+    },
+    {
+      "code": "osm:way/125775622",
+      "name": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej im. Stefana Niewirowicza w Staszowie",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalstaszow.pl",
+      "lat": 50.5606702,
+      "lng": 21.191357
+    },
+    {
+      "code": "osm:way/128461075",
+      "name": "Szpital Uniwersytecki nr 1 im. dr. A. Jurasza",
+      "countryCode": "PL",
+      "origin": "http://jurasza.pl",
+      "lat": 53.1277061,
+      "lng": 18.0328488
+    },
+    {
+      "code": "osm:way/129116394",
+      "name": "Dolnośląskie Centrum Chorób Płuc - Oddział Gruźlicy i Chorób Płuc",
+      "countryCode": "PL",
+      "origin": "https://www.dcchp.pl",
+      "lat": 51.3075018,
+      "lng": 16.8909608
+    },
+    {
+      "code": "osm:way/130538937",
+      "name": "Niepubliczny Zakład Opieki Zdrowotnej Szpital im. Profesora Zbigniewa Religi w Słubicach sp. z o.o.",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalslubice.pl",
+      "lat": 52.3516804,
+      "lng": 14.55672
+    },
+    {
+      "code": "osm:way/133492583",
+      "name": "Szpital Powiatowy w Nowej Dębie",
+      "countryCode": "PL",
+      "origin": "https://zoznowadeba.pl",
+      "lat": 50.420326,
+      "lng": 21.7553939
+    },
+    {
+      "code": "osm:way/133492886",
+      "name": "Szpital Powiatowy - Oddział internistyczny, gruźlicy i chorób płuc",
+      "countryCode": "PL",
+      "origin": "https://zoznowadeba.pl",
+      "lat": 50.4197492,
+      "lng": 21.7518458
+    },
+    {
+      "code": "osm:way/138482970",
+      "name": "Beskidzkie Centrum Onkologii im. Jana Pawła II",
+      "countryCode": "PL",
+      "origin": "https://www.onkologia.bielsko.pl",
+      "lat": 49.8240809,
+      "lng": 19.0581807
+    },
+    {
+      "code": "osm:way/139777818",
+      "name": "Szpital Powiatowy w Otwocku",
+      "countryCode": "PL",
+      "origin": "https://pcz-otwock.pl",
+      "lat": 52.0975949,
+      "lng": 21.2622392
+    },
+    {
+      "code": "osm:way/145475728",
+      "name": "Uniwersyteckie Centrum Kliniczne im. prof. K. Gibińskiego Śląskiego Uniwersytetu Medycznego w Katowicach",
+      "countryCode": "PL",
+      "origin": "http://www.okulistyka.katowice.pl",
+      "lat": 50.244529,
+      "lng": 19.0167527
+    },
+    {
+      "code": "osm:way/152192937",
+      "name": "Samodzielny Szpital Kliniczny im. prof. Witolda Orłowskiego",
+      "countryCode": "PL",
+      "origin": "https://szpital-orlowskiego.pl",
+      "lat": 52.2293528,
+      "lng": 21.0322788
+    },
+    {
+      "code": "osm:way/159811176",
+      "name": "Miejski Szpital Zespolony w Olsztynie",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.olsztyn.pl",
+      "lat": 53.7698945,
+      "lng": 20.4786807
+    },
+    {
+      "code": "osm:way/160604898",
+      "name": "Ośrodek Szkoleniowo Wypoczynkowy WSPR Szczecin",
+      "countryCode": "PL",
+      "origin": "https://www.nocowanie.pl",
+      "lat": 54.1698983,
+      "lng": 15.5532129
+    },
+    {
+      "code": "osm:way/166858058",
+      "name": "NZOZ Zakład Opiekuńczo-Leczniczy i Rehabilitacyjny w Bilczy",
+      "countryCode": "PL",
+      "origin": "http://zolir.pl",
+      "lat": 50.7746331,
+      "lng": 20.6161829
+    },
+    {
+      "code": "osm:way/170287320",
+      "name": "Narodowy Instytut Kardiologii",
+      "countryCode": "PL",
+      "origin": "https://www.ikard.pl",
+      "lat": 52.2178392,
+      "lng": 21.1747806
+    },
+    {
+      "code": "osm:way/170399357",
+      "name": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej - Szpital Miejski im. Lecha i Marii Kaczyńskich – Pary Prezydenckiej w Pionkach",
+      "countryCode": "PL",
+      "origin": "https://spzzozpionki.pl",
+      "lat": 51.4754878,
+      "lng": 21.4451655
+    },
+    {
+      "code": "osm:way/171510835",
+      "name": "Euromedic",
+      "countryCode": "PL",
+      "origin": "https://euromedic.com.pl",
+      "lat": 50.2455595,
+      "lng": 19.0125805
+    },
+    {
+      "code": "osm:way/172456781",
+      "name": "Wojewódzki Szpital dla Nerwowo i Psychicznie Chorych \"Dziekanka\" im. Aleksandra Piotrowskiego",
+      "countryCode": "PL",
+      "origin": "https://dziekanka.net",
+      "lat": 52.5319486,
+      "lng": 17.5773423
+    },
+    {
+      "code": "osm:way/173019432",
+      "name": "Wielospecjalistyczny Szpital Wojewódzki",
+      "countryCode": "PL",
+      "origin": "http://www.szpital.gorzow.pl",
+      "lat": 52.7610879,
+      "lng": 15.2371804
+    },
+    {
+      "code": "osm:way/174799820",
+      "name": "Szpital Wojewódzki im. Prymasa Kardynała Stefana Wyszyńskiego",
+      "countryCode": "PL",
+      "origin": "https://szpitale.lodzkie.pl",
+      "lat": 51.5991478,
+      "lng": 18.7347704
+    },
+    {
+      "code": "osm:way/175108095",
+      "name": "Wielospecjalistyczny Szpital Wojewódzki w Gorzowie Wielkopolskim",
+      "countryCode": "PL",
+      "origin": "http://www.szpital.gorzow.pl",
+      "lat": 52.7541818,
+      "lng": 15.257792
+    },
+    {
+      "code": "osm:way/175506418",
+      "name": "Katowickie Centrum Onkologii",
+      "countryCode": "PL",
+      "origin": "https://www.kco.katowice.pl",
+      "lat": 50.2554,
+      "lng": 19.0048603
+    },
+    {
+      "code": "osm:way/175550443",
+      "name": "Szpital Wojewódzki im. Jana Pawła II w Bełchatowie",
+      "countryCode": "PL",
+      "origin": "https://szpital-belchatow.pl",
+      "lat": 51.3754261,
+      "lng": 19.3520141
+    },
+    {
+      "code": "osm:way/175706191",
+      "name": "Regionalny Szpital Specjalistyczny im. doktora Władysława Biegańskiego",
+      "countryCode": "PL",
+      "origin": "https://bieganski.org",
+      "lat": 53.4527743,
+      "lng": 18.7863223
+    },
+    {
+      "code": "osm:way/176321397",
+      "name": "Szpital Wojewódzki im. Prymasa Kardynała Stefana Wyszyńskiego",
+      "countryCode": "PL",
+      "origin": "https://szpitale.lodzkie.pl",
+      "lat": 51.5817805,
+      "lng": 18.7131457
+    },
+    {
+      "code": "osm:way/179375445",
+      "name": "Zespół Szpitali Miejskich w Chorzowie",
+      "countryCode": "PL",
+      "origin": "https://www.zsm.com.pl",
+      "lat": 50.2919378,
+      "lng": 18.9427293
+    },
+    {
+      "code": "osm:way/179648317",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej Ministerstwa Spraw Wewnętrznych i Administracji",
+      "countryCode": "PL",
+      "origin": "https://www.zozmswlodz.pl",
+      "lat": 51.7816196,
+      "lng": 19.473787
+    },
+    {
+      "code": "osm:way/179661945",
+      "name": "Niepubliczny Zakład Opieki Zdrowotnej - Szpital Specjalistyczny im. Prof. E. Michałowskiego",
+      "countryCode": "PL",
+      "origin": "https://www.urologia.katowice.pl",
+      "lat": 50.2535484,
+      "lng": 19.0062185
+    },
+    {
+      "code": "osm:way/179950828",
+      "name": "Górnośląskie Centrum Zdrowia Dziecka im. Jana Pawła II",
+      "countryCode": "PL",
+      "origin": "https://gczd.katowice.pl",
+      "lat": 50.2235378,
+      "lng": 18.9507165
+    },
+    {
+      "code": "osm:way/179950830",
+      "name": "Okręgowy Szpital Kolejowy",
+      "countryCode": "PL",
+      "origin": "https://www.kolejowy.katowice.pl",
+      "lat": 50.2266678,
+      "lng": 18.9592258
+    },
+    {
+      "code": "osm:way/179950831",
+      "name": "Uniwersyteckie Centrum Kliniczne im. prof. Kornela Gibińskiego Śląskiego Uniwersytetu Medycznego w Katowicach",
+      "countryCode": "PL",
+      "origin": "https://www.uck.katowice.pl",
+      "lat": 50.2237696,
+      "lng": 18.9542283
+    },
+    {
+      "code": "osm:way/180565116",
+      "name": "Wojewódzki Szpital Specjalistyczny im. Marii Skłodowskiej – Curie",
+      "countryCode": "PL",
+      "origin": "https://www.wss.zgierz.pl",
+      "lat": 51.8627272,
+      "lng": 19.3888828
+    },
+    {
+      "code": "osm:way/181713748",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej MSWiA w Koszalinie",
+      "countryCode": "PL",
+      "origin": "https://poliklinika.koszalin.pl",
+      "lat": 54.1871839,
+      "lng": 16.1856251
+    },
+    {
+      "code": "osm:way/182894306",
+      "name": "Wojewódzki Szpital Zespolony im. Ludwika Perzyny",
+      "countryCode": "PL",
+      "origin": "http://www.szpital.kalisz.pl",
+      "lat": 51.7696095,
+      "lng": 18.1013473
+    },
+    {
+      "code": "osm:way/182983561",
+      "name": "Szpital Wojewódzki im. Mikołaja Kopernika w Koszalinie",
+      "countryCode": "PL",
+      "origin": "https://www.swk.med.pl",
+      "lat": 54.1985488,
+      "lng": 16.2145897
+    },
+    {
+      "code": "osm:way/183550939",
+      "name": "Szpital Specjalistyczny Centrum Medycznego MAVIT",
+      "countryCode": "PL",
+      "origin": "https://www.katowice.mavit.pl",
+      "lat": 50.2472623,
+      "lng": 19.0796859
+    },
+    {
+      "code": "osm:way/185661106",
+      "name": "10 Wojskowy Szpital Kliniczny z Polikliniką",
+      "countryCode": "PL",
+      "origin": "https://www.10wsk.mil.pl",
+      "lat": 53.1418348,
+      "lng": 18.0143615
+    },
+    {
+      "code": "osm:way/186254160",
+      "name": "Specjalistyczny Psychiatryczny Zespół Opieki Zdrowotnej im. prof. Antoniego Kępińskiego w Jarosławiu",
+      "countryCode": "PL",
+      "origin": "https://spzozjaroslaw.pl",
+      "lat": 50.018704,
+      "lng": 22.6708788
+    },
+    {
+      "code": "osm:way/186440706",
+      "name": "Szpital Położniczo-Ginekologiczny Medikor",
+      "countryCode": "PL",
+      "origin": "https://medikor.pl",
+      "lat": 49.6190325,
+      "lng": 20.7058811
+    },
+    {
+      "code": "osm:way/189146320",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital Powiatowy im. doktora Kazimierza Hołogi w Nowym Tomyślu",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-nowytomysl.pl",
+      "lat": 52.3160622,
+      "lng": 16.1410846
+    },
+    {
+      "code": "osm:way/191398671",
+      "name": "Uniwersytecki Szpital Kliniczny w Radomsku",
+      "countryCode": "PL",
+      "origin": "http://999.szpital.biz.pl",
+      "lat": 51.0568543,
+      "lng": 19.4601017
+    },
+    {
+      "code": "osm:way/191472511",
+      "name": "Regionalny Ośrodek Rehabilitacyjno-Edukacyjny dla Dzieci i Młodzieży",
+      "countryCode": "PL",
+      "origin": "https://rore.rzeszow.pl",
+      "lat": 50.0350659,
+      "lng": 22.0397446
+    },
+    {
+      "code": "osm:way/195829457",
+      "name": "Szpital im. Zenona Tokarskiego",
+      "countryCode": "PL",
+      "origin": "https://czmz.szpitalzyrardow.pl",
+      "lat": 52.0599837,
+      "lng": 20.4412091
+    },
+    {
+      "code": "osm:way/196954981",
+      "name": "Szpital Miejski",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.piekary.pl",
+      "lat": 50.3746501,
+      "lng": 18.9529693
+    },
+    {
+      "code": "osm:way/197700278",
+      "name": "Wojewódzki Szpital Specjalistyczny Megrez",
+      "countryCode": "PL",
+      "origin": "https://szpitalmegrez.pl",
+      "lat": 50.1131959,
+      "lng": 19.0080667
+    },
+    {
+      "code": "osm:way/197752740",
+      "name": "23. Wojskowy Szpital Uzdrowiskowo-Rehabilitacyjny",
+      "countryCode": "PL",
+      "origin": "http://www.23wszur.pl",
+      "lat": 50.3421814,
+      "lng": 16.890427
+    },
+    {
+      "code": "osm:way/198207143",
+      "name": "Szpital Specjalistyczny nr 2 w Bytomiu",
+      "countryCode": "PL",
+      "origin": "https://www.szpital2.bytom.pl",
+      "lat": 50.3474223,
+      "lng": 18.9086829
+    },
+    {
+      "code": "osm:way/199714853",
+      "name": "Szpital Kliniczny im. Andrzeja Mielęckiego",
+      "countryCode": "PL",
+      "origin": "https://spskm.katowice.pl",
+      "lat": 50.2541525,
+      "lng": 19.0287752
+    },
+    {
+      "code": "osm:way/203731445",
+      "name": "Szpital Wojewódzki Nr 2",
+      "countryCode": "PL",
+      "origin": "https://www.szpital2.rzeszow.pl",
+      "lat": 50.0346496,
+      "lng": 22.0377027
+    },
+    {
+      "code": "osm:way/204539022",
+      "name": "Szpital Śląski",
+      "countryCode": "PL",
+      "origin": "http://szpital.netus.pl",
+      "lat": 49.7448813,
+      "lng": 18.6404511
+    },
+    {
+      "code": "osm:way/204666088",
+      "name": "Szpital Powiatowy im. Marii Skłodowskiej-Curie w Lidzbarku Warmińskim",
+      "countryCode": "PL",
+      "origin": "https://www.zozlw.pl",
+      "lat": 54.1262807,
+      "lng": 20.5914693
+    },
+    {
+      "code": "osm:way/206230055",
+      "name": "Szpital Powiatowy im. Prałata J. Glowatzkiego w Strzelcach Opolskich",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.strzelce-op.pl",
+      "lat": 50.5149097,
+      "lng": 18.2915079
+    },
+    {
+      "code": "osm:way/206736675",
+      "name": "Wojewódzki Szpital Specjalistyczny nr 2",
+      "countryCode": "PL",
+      "origin": "https://www.wss2.pl",
+      "lat": 49.946002,
+      "lng": 18.5835144
+    },
+    {
+      "code": "osm:way/207029769",
+      "name": "Centrum Ginekologii, Położnictwa i Neonatologii w Opolu",
+      "countryCode": "PL",
+      "origin": "https://ginekologia.opole.pl",
+      "lat": 50.6668163,
+      "lng": 17.9282011
+    },
+    {
+      "code": "osm:way/209184640",
+      "name": "Miejski Szpital Zespolony",
+      "countryCode": "PL",
+      "origin": "https://www.zsm.czest.pl",
+      "lat": 50.8128861,
+      "lng": 19.1339808
+    },
+    {
+      "code": "osm:way/209285950",
+      "name": "Wojewódzki Szpital Wielospecjalistyczny im. dr Jana Jonstona w Lesznie",
+      "countryCode": "PL",
+      "origin": "https://wsz.leszno.pl",
+      "lat": 51.8393113,
+      "lng": 16.6070576
+    },
+    {
+      "code": "osm:way/210264902",
+      "name": "Samodzielny Publiczny Szpital Kliniczny im. Prof. Adama Grucy CMKP",
+      "countryCode": "PL",
+      "origin": "https://www.spskgruca.pl",
+      "lat": 52.1211185,
+      "lng": 21.2766309
+    },
+    {
+      "code": "osm:way/217160228",
+      "name": "Szpital Powiatowy w Wodzisławiu Śląskim",
+      "countryCode": "PL",
+      "origin": "https://www.zoz.wodzislaw.pl",
+      "lat": 50.0092214,
+      "lng": 18.4630058
+    },
+    {
+      "code": "osm:way/217911796",
+      "name": "Wojskowy Instytut Medycyny Lotniczej",
+      "countryCode": "PL",
+      "origin": "https://www.wiml.waw.pl",
+      "lat": 52.2619193,
+      "lng": 20.9643259
+    },
+    {
+      "code": "osm:way/219825571",
+      "name": "Samodzielny Szpital Miejski im. PCK",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalpck.pl",
+      "lat": 53.1405803,
+      "lng": 23.1712357
+    },
+    {
+      "code": "osm:way/220544130",
+      "name": "Szpital Świętej Elżbiety",
+      "countryCode": "PL",
+      "origin": "https://szpitalse.pl",
+      "lat": 52.1952478,
+      "lng": 21.0212165
+    },
+    {
+      "code": "osm:way/220940389",
+      "name": "Szpital Uniwersytecki w Zielonej Górze",
+      "countryCode": "PL",
+      "origin": "https://szpital.zgora.pl",
+      "lat": 51.9408352,
+      "lng": 15.5203693
+    },
+    {
+      "code": "osm:way/222608537",
+      "name": "Arion Szpitale - Zespół Opieki Zdrowotnej w Biłgoraju",
+      "countryCode": "PL",
+      "origin": "https://www.arion-szpitale.pl",
+      "lat": 50.5290109,
+      "lng": 22.7130887
+    },
+    {
+      "code": "osm:way/224402671",
+      "name": "Szpital Świętej Rodziny",
+      "countryCode": "PL",
+      "origin": "https://szpitalmadalinskiego.pl",
+      "lat": 52.2040325,
+      "lng": 21.0174787
+    },
+    {
+      "code": "osm:way/225618538",
+      "name": "Szpital w Paczkowie im. Św. Jana Pawła II",
+      "countryCode": "PL",
+      "origin": "http://www.zoznysa.pl",
+      "lat": 50.4629917,
+      "lng": 17.0029529
+    },
+    {
+      "code": "osm:way/225750747",
+      "name": "Szpital Powiatowy",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.starachowice.pl",
+      "lat": 51.0638038,
+      "lng": 21.0738206
+    },
+    {
+      "code": "osm:way/229541950",
+      "name": "Szpital Wojewódzki",
+      "countryCode": "PL",
+      "origin": "https://szpital.opole.pl",
+      "lat": 50.6712783,
+      "lng": 17.9367897
+    },
+    {
+      "code": "osm:way/229600764",
+      "name": "Szpital Kardiologiczny",
+      "countryCode": "PL",
+      "origin": "http://uzdrowisko-rabka.pl",
+      "lat": 49.6069629,
+      "lng": 19.9570407
+    },
+    {
+      "code": "osm:way/230266295",
+      "name": "Wojewódzki Szpital Rehabilitacyjny w Górowie Iławeckim",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalgorowo.pl",
+      "lat": 54.2841825,
+      "lng": 20.4973502
+    },
+    {
+      "code": "osm:way/231854908",
+      "name": "Uniwersytecki Szpital Kliniczny w Opolu",
+      "countryCode": "PL",
+      "origin": "http://www.wcm.opole.pl",
+      "lat": 50.6765982,
+      "lng": 17.9765516
+    },
+    {
+      "code": "osm:way/233092320",
+      "name": "Krakowski Szpital Reumatologii i Rehabilitacji",
+      "countryCode": "PL",
+      "origin": "http://www.dietl.krakow.pl",
+      "lat": 50.0573655,
+      "lng": 19.9139775
+    },
+    {
+      "code": "osm:way/233605828",
+      "name": "Lubuskie Centrum Ortopedii Im. Dr. Lecha Wierusza",
+      "countryCode": "PL",
+      "origin": "https://www.loro.pl",
+      "lat": 52.2506567,
+      "lng": 15.5353978
+    },
+    {
+      "code": "osm:way/234706960",
+      "name": "Krakowski Szpital Specjalistyczny imienia świętego Jana Pawła II",
+      "countryCode": "PL",
+      "origin": "https://www.szpitaljp2.krakow.pl",
+      "lat": 50.0901803,
+      "lng": 19.9356765
+    },
+    {
+      "code": "osm:way/234723781",
+      "name": "5. Wojskowy Szpital Kliniczny z Polikliniką SP ZOZ w Krakowie",
+      "countryCode": "PL",
+      "origin": "https://5wszk.com.pl",
+      "lat": 50.0774119,
+      "lng": 19.9343559
+    },
+    {
+      "code": "osm:way/236524302",
+      "name": "Szpital nr 2",
+      "countryCode": "PL",
+      "origin": "http://www.zoz.glucholazy.pl",
+      "lat": 50.3017033,
+      "lng": 17.3831043
+    },
+    {
+      "code": "osm:way/237147413",
+      "name": "Sanatorium Uzdrowiskowe Zimowit",
+      "countryCode": "PL",
+      "origin": "https://uzdrowisko-rymanow.com.pl",
+      "lat": 49.5425626,
+      "lng": 21.8538101
+    },
+    {
+      "code": "osm:way/237876788",
+      "name": "Samodzielny Publiczny Zespół Opieki Zdrowotnej w Tomaszowie Lubelskim",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-tomaszow.pl",
+      "lat": 50.4423387,
+      "lng": 23.4159302
+    },
+    {
+      "code": "osm:way/238475874",
+      "name": "Wojewódzki Szpital Zespolony im. Ludwika Perzyny",
+      "countryCode": "PL",
+      "origin": "http://www.szpital.kalisz.pl",
+      "lat": 51.7650567,
+      "lng": 18.0664553
+    },
+    {
+      "code": "osm:way/241271412",
+      "name": "SP ZOZ \"Szpital Powiatowy\" w Bochni im Bł. Marty Wieckiej",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-bochnia.pl",
+      "lat": 49.966532,
+      "lng": 20.4211567
+    },
+    {
+      "code": "osm:way/243445981",
+      "name": "Szpital Prywatny Gameta",
+      "countryCode": "PL",
+      "origin": "https://gameta.pl",
+      "lat": 51.6737117,
+      "lng": 19.4789555
+    },
+    {
+      "code": "osm:way/243473662",
+      "name": "Samodzielny Publiczny Szpital dla Nerwowo i Psychicznie Chorych",
+      "countryCode": "PL",
+      "origin": "https://obrzyce.eu",
+      "lat": 52.4488556,
+      "lng": 15.6189858
+    },
+    {
+      "code": "osm:way/243969696",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Siemiatyczach",
+      "countryCode": "PL",
+      "origin": "https://spzozsiemiatycze.pl",
+      "lat": 52.4216083,
+      "lng": 22.8637328
+    },
+    {
+      "code": "osm:way/247604450",
+      "name": "107 Szpital Wojskowy z Przychodnią SPZOZ",
+      "countryCode": "PL",
+      "origin": "https://107sw.pl",
+      "lat": 53.282308,
+      "lng": 16.459366
+    },
+    {
+      "code": "osm:way/249673355",
+      "name": "SPZOZ Szpital im. dr. Z. Patryna",
+      "countryCode": "PL",
+      "origin": "http://www.szpital.powiat.wielun.pl",
+      "lat": 51.2127147,
+      "lng": 18.56528
+    },
+    {
+      "code": "osm:way/254817639",
+      "name": "Zagłębiowski Szpital Kliniczny - Szpital Będzin",
+      "countryCode": "PL",
+      "origin": "https://pzzoz.bedzin.pl",
+      "lat": 50.3243511,
+      "lng": 19.1319031
+    },
+    {
+      "code": "osm:way/255130229",
+      "name": "Nowy Szpital w Szprotawie sp. z o.o.",
+      "countryCode": "PL",
+      "origin": "https://www.nowyszpital.pl",
+      "lat": 51.5673018,
+      "lng": 15.5532847
+    },
+    {
+      "code": "osm:way/256959059",
+      "name": "Szpital Dziecięcy Polanki",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalpolanki.pl",
+      "lat": 54.3952708,
+      "lng": 18.5626194
+    },
+    {
+      "code": "osm:way/257748485",
+      "name": "Pomorskie Centrum Rehabilitacji - Szpital w Dzierżążnie",
+      "countryCode": "PL",
+      "origin": "https://szpital-koscierzyna.pl",
+      "lat": 54.3281243,
+      "lng": 18.2627847
+    },
+    {
+      "code": "osm:way/258138520",
+      "name": "Wielospecjalistyczny Szpital Samodzielny Publiczny Zakład Opieki Zdrowotnej w Nowej Soli",
+      "countryCode": "PL",
+      "origin": "https://szpital-nowasol.pl",
+      "lat": 51.8060897,
+      "lng": 15.6882249
+    },
+    {
+      "code": "osm:way/261582517",
+      "name": "Szpital Powiatowy",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-mikolow.com.pl",
+      "lat": 50.1748129,
+      "lng": 18.9053199
+    },
+    {
+      "code": "osm:way/263936234",
+      "name": "Szpital Zakonu Bonifratów pw. Aniołów Stróżów",
+      "countryCode": "PL",
+      "origin": "https://bcmbonifratrzy.pl",
+      "lat": 50.2687527,
+      "lng": 19.0397916
+    },
+    {
+      "code": "osm:way/267076941",
+      "name": "Szpital Powiatowy",
+      "countryCode": "PL",
+      "origin": "https://www.szpitallubliniec.pl",
+      "lat": 50.6654082,
+      "lng": 18.6809486
+    },
+    {
+      "code": "osm:way/267528815",
+      "name": "Samodzielny Publiczny Zespół Opieki Zdrowotnej - Szpital Specjalistyczny w Sanoku",
+      "countryCode": "PL",
+      "origin": "https://www.zozsanok.pl",
+      "lat": 49.5524031,
+      "lng": 22.1981563
+    },
+    {
+      "code": "osm:way/269065639",
+      "name": "Zachodnie Centrum Medyczne sp. z o.o.",
+      "countryCode": "PL",
+      "origin": "https://szpitalzcm.pl",
+      "lat": 52.0570984,
+      "lng": 15.0984623
+    },
+    {
+      "code": "osm:way/274827646",
+      "name": "Szpital Rehabilitacyjny MSWiA",
+      "countryCode": "PL",
+      "origin": "https://www.rehabilitacjamsw.pl",
+      "lat": 51.8973881,
+      "lng": 16.7855835
+    },
+    {
+      "code": "osm:way/274864382",
+      "name": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej",
+      "countryCode": "PL",
+      "origin": "https://www.zoz.szydlowiec.pl",
+      "lat": 51.2257847,
+      "lng": 20.8629776
+    },
+    {
+      "code": "osm:way/276803150",
+      "name": "Szpital specjalistyczny imienia Stefana Żeromskiego",
+      "countryCode": "PL",
+      "origin": "https://www.zeromski-szpital.pl",
+      "lat": 50.0650019,
+      "lng": 20.0464073
+    },
+    {
+      "code": "osm:way/277070387",
+      "name": "Wojewódzki Ośrodek Profilaktyki i Terapii Uzależnień w Łomży",
+      "countryCode": "PL",
+      "origin": "https://wopitu.pl",
+      "lat": 53.1760491,
+      "lng": 22.0686932
+    },
+    {
+      "code": "osm:way/277435232",
+      "name": "Szpital Chorób Płuc",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalorzesze.pl",
+      "lat": 50.1516312,
+      "lng": 18.7729177
+    },
+    {
+      "code": "osm:way/277829152",
+      "name": "Wielkopolskie Centrum Pulmonologii i Torakochirurgii im. Eugenii i Janusza Zeylandów",
+      "countryCode": "PL",
+      "origin": "https://wcpit.pl",
+      "lat": 52.9831125,
+      "lng": 16.9016708
+    },
+    {
+      "code": "osm:way/278539594",
+      "name": "Pleszewskie Centrum Medyczne",
+      "countryCode": "PL",
+      "origin": "https://szpitalpleszew.pl",
+      "lat": 51.8971916,
+      "lng": 17.7653898
+    },
+    {
+      "code": "osm:way/279578585",
+      "name": "Szpital im. Św. Jadwigi Śląskiej w Trzebnicy",
+      "countryCode": "PL",
+      "origin": "http://www.szpital-trzebnica.pl",
+      "lat": 51.3200547,
+      "lng": 17.0582765
+    },
+    {
+      "code": "osm:way/280451563",
+      "name": "Arion Szpitale - Zakład Opiekuńczo-Leczniczy w Tarnogrodzie",
+      "countryCode": "PL",
+      "origin": "https://www.arion-szpitale.pl",
+      "lat": 50.3600708,
+      "lng": 22.7434563
+    },
+    {
+      "code": "osm:way/281651626",
+      "name": "Zakład Pielęgnacyjno - Opiekuńczy imienia świętego Józefa w Pleszewie",
+      "countryCode": "PL",
+      "origin": "http://sluzebniczki-pleszew.pl",
+      "lat": 51.8984844,
+      "lng": 17.7861109
+    },
+    {
+      "code": "osm:way/283781015",
+      "name": "Szpital Powiatowy w Janowie Lubelskim (SPZZOZ)",
+      "countryCode": "PL",
+      "origin": "https://www.szpitaljanowlubelski.pl",
+      "lat": 50.7025676,
+      "lng": 22.434098
+    },
+    {
+      "code": "osm:way/288012488",
+      "name": "III Szpital Miejski im. dr. Karola Jonschera",
+      "countryCode": "PL",
+      "origin": "https://www.jonscher.pl",
+      "lat": 51.7515331,
+      "lng": 19.4829534
+    },
+    {
+      "code": "osm:way/288082055",
+      "name": "Szpital Powiatowy w Łęcznej (SPZOZ)",
+      "countryCode": "PL",
+      "origin": "http://www.spzoz.powiatleczynski.pl",
+      "lat": 51.2908762,
+      "lng": 22.878202
+    },
+    {
+      "code": "osm:way/288097041",
+      "name": "Uniwersytecki Szpital Dziecięcy",
+      "countryCode": "PL",
+      "origin": "https://www.uszd.lublin.pl",
+      "lat": 51.2592171,
+      "lng": 22.56115
+    },
+    {
+      "code": "osm:way/288098727",
+      "name": "Uniwersytecki Szpital Kliniczny Nr 4 w Lublinie",
+      "countryCode": "PL",
+      "origin": "https://www.usk4.lublin.pl",
+      "lat": 51.2588789,
+      "lng": 22.5649371
+    },
+    {
+      "code": "osm:way/288525189",
+      "name": "Szpital Bielański",
+      "countryCode": "PL",
+      "origin": "https://www.bielanski.med.pl",
+      "lat": 52.2865704,
+      "lng": 20.9503249
+    },
+    {
+      "code": "osm:way/291860294",
+      "name": "Dolnośląski Szpital Specjalistyczny im. T. Marciniaka",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-marciniak.wroclaw.pl",
+      "lat": 51.143664,
+      "lng": 16.908774
+    },
+    {
+      "code": "osm:way/292624060",
+      "name": "Wojewódzki Szpital Specjalistyczny im. Stefana Wyszyńskiego",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.lublin.pl",
+      "lat": 51.2392878,
+      "lng": 22.50414
+    },
+    {
+      "code": "osm:way/294495098",
+      "name": "Szpital Międzyrzecki im. Pięciu Św. Braci Międzyrzeckich sp. z o.o.",
+      "countryCode": "PL",
+      "origin": "http://www.spzoz-miedzyrzecz.pl",
+      "lat": 52.4402785,
+      "lng": 15.5849015
+    },
+    {
+      "code": "osm:way/299052291",
+      "name": "Szpital Świętej Anny w Miechowie",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.miechow.pl",
+      "lat": 50.3532338,
+      "lng": 20.0354823
+    },
+    {
+      "code": "osm:way/301007907",
+      "name": "Uniwersytecki Szpital Kliniczny im. Fryderyka Chopina",
+      "countryCode": "PL",
+      "origin": "http://www.szpital.rzeszow.pl",
+      "lat": 50.0357365,
+      "lng": 22.0077864
+    },
+    {
+      "code": "osm:way/301444884",
+      "name": "Samodzielny Publiczny Specjalistyczny Zakład Opieki Zdrowotnej w Lęborku",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-lebork.com.pl",
+      "lat": 54.5382486,
+      "lng": 17.7515597
+    },
+    {
+      "code": "osm:way/301468466",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Łapach",
+      "countryCode": "PL",
+      "origin": "https://szpitallapy.pl",
+      "lat": 52.9879391,
+      "lng": 22.8676304
+    },
+    {
+      "code": "osm:way/301962103",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej Rypin",
+      "countryCode": "PL",
+      "origin": "http://www.spzozrypin.pl",
+      "lat": 53.0670926,
+      "lng": 19.4163166
+    },
+    {
+      "code": "osm:way/304388622",
+      "name": "Szpital im. dr. n. med. Radzimira Śmigielskiego",
+      "countryCode": "PL",
+      "origin": "https://www.nowyszpital.pl",
+      "lat": 52.5935875,
+      "lng": 15.50613
+    },
+    {
+      "code": "osm:way/308773005",
+      "name": "Żagiel Med Szpital",
+      "countryCode": "PL",
+      "origin": "https://zagielmed.pl",
+      "lat": 51.2258437,
+      "lng": 22.5950685
+    },
+    {
+      "code": "osm:way/309432597",
+      "name": "Dolnośląskie Centrum Chorób Płuc",
+      "countryCode": "PL",
+      "origin": "https://dcopih.pl",
+      "lat": 51.1018316,
+      "lng": 17.0049022
+    },
+    {
+      "code": "osm:way/309445498",
+      "name": "Wojewódzki Szpital Neuropsychiatryczny im. dr Emila Cyrana",
+      "countryCode": "PL",
+      "origin": "https://wsnlc.pl",
+      "lat": 50.6640603,
+      "lng": 18.6774951
+    },
+    {
+      "code": "osm:way/310124453",
+      "name": "Wojewódzki Szpital Specjalistyczny we Wrocławiu",
+      "countryCode": "PL",
+      "origin": "https://wssk.wroc.pl",
+      "lat": 51.1488436,
+      "lng": 17.0451416
+    },
+    {
+      "code": "osm:way/310462545",
+      "name": "Szpital Kliniczny im. E. Warmińskiego Politechniki Bydgoskiej",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.bydgoszcz.pl",
+      "lat": 53.1018548,
+      "lng": 18.0474452
+    },
+    {
+      "code": "osm:way/310504071",
+      "name": "Szpital Powiatowy w Oleśnie",
+      "countryCode": "PL",
+      "origin": "https://szpitalolesno.pl",
+      "lat": 50.8806927,
+      "lng": 18.4123226
+    },
+    {
+      "code": "osm:way/311368771",
+      "name": "Wojewódzki Podkarpacki Szpital Psychiatryczny im. prof. Eugeniusza Brzezickiego",
+      "countryCode": "PL",
+      "origin": "https://www.wpsp.pl",
+      "lat": 49.8259008,
+      "lng": 22.7685099
+    },
+    {
+      "code": "osm:way/312389311",
+      "name": "Szpital Specjalistyczny im. Edmunda Biernackiego",
+      "countryCode": "PL",
+      "origin": "https://szpital.mielec.pl",
+      "lat": 50.2885766,
+      "lng": 21.4383966
+    },
+    {
+      "code": "osm:way/312671958",
+      "name": "Szpital Powiatowy w Chrzanowie",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-chrzanow.pl",
+      "lat": 50.1362661,
+      "lng": 19.4303544
+    },
+    {
+      "code": "osm:way/313818874",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej Nr 1 w Bełżycach",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz1belzyce.pl",
+      "lat": 51.1770178,
+      "lng": 22.2927832
+    },
+    {
+      "code": "osm:way/313908794",
+      "name": "Samodzielne Publiczne Sanatorium Rehabilitacyjne im. Janusza Korczaka",
+      "countryCode": "PL",
+      "origin": "https://sanatorium-krasnobrod.pl",
+      "lat": 50.5501283,
+      "lng": 23.1973341
+    },
+    {
+      "code": "osm:way/314556321",
+      "name": "Szpital MSW",
+      "countryCode": "PL",
+      "origin": "http://www.spzoz-msw.wroclaw.pl",
+      "lat": 51.124088,
+      "lng": 17.036832
+    },
+    {
+      "code": "osm:way/314974470",
+      "name": "Szpital w Szczecinku",
+      "countryCode": "PL",
+      "origin": "https://szpital.szczecinek.pl",
+      "lat": 53.712549,
+      "lng": 16.6786983
+    },
+    {
+      "code": "osm:way/315638845",
+      "name": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej - Szpital Rejonowy w Zwoleniu",
+      "countryCode": "PL",
+      "origin": "https://zoz.zwolen.net",
+      "lat": 51.3548426,
+      "lng": 21.5808499
+    },
+    {
+      "code": "osm:way/316891627",
+      "name": "Uniwersytecki Szpital Dziecięcy",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalzdrowia.pl",
+      "lat": 50.011643,
+      "lng": 20.0015839
+    },
+    {
+      "code": "osm:way/317570420",
+      "name": "Centralny Szpital Kliniczny MON",
+      "countryCode": "PL",
+      "origin": "https://wim.mil.pl",
+      "lat": 52.2522061,
+      "lng": 21.0894062
+    },
+    {
+      "code": "osm:way/317634252",
+      "name": "Powiatowe Centrum Medyczne - Szpital Powiatowy w Wieruszowie",
+      "countryCode": "PL",
+      "origin": "https://www.pcm-nzoz-wieruszow.pl",
+      "lat": 51.2940217,
+      "lng": 18.1647489
+    },
+    {
+      "code": "osm:way/318005289",
+      "name": "Kujawsko-Pomorskie Centrum Pulmonologii w Bydgoszczy",
+      "countryCode": "PL",
+      "origin": "http://www.szpital-pluc.bydgoszcz.pl",
+      "lat": 53.121223,
+      "lng": 17.983246
+    },
+    {
+      "code": "osm:way/318202477",
+      "name": "Szpital Kliniczny im. ks. Anny Mazowieckiej",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalkarowa.pl",
+      "lat": 52.245053,
+      "lng": 21.0218847
+    },
+    {
+      "code": "osm:way/318469763",
+      "name": "Szpital Powiatowy w Lubartowie (SPZOZ)",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz-lubartow.pl",
+      "lat": 51.4563189,
+      "lng": 22.6183883
+    },
+    {
+      "code": "osm:way/318469764",
+      "name": "Szpital Powiatowy w Parczewie (SPZOZ)",
+      "countryCode": "PL",
+      "origin": "https://www.spzozparczew.pl",
+      "lat": 51.6336072,
+      "lng": 22.9128627
+    },
+    {
+      "code": "osm:way/318632055",
+      "name": "Szpital Grochowski",
+      "countryCode": "PL",
+      "origin": "http://grochowski.com.pl",
+      "lat": 52.2423469,
+      "lng": 21.078401
+    },
+    {
+      "code": "osm:way/318996834",
+      "name": "Międzyleski Szpital Specjalistyczny",
+      "countryCode": "PL",
+      "origin": "http://www.mssw.pl",
+      "lat": 52.2038662,
+      "lng": 21.1839925
+    },
+    {
+      "code": "osm:way/319973463",
+      "name": "Szpital św. Antoniego",
+      "countryCode": "PL",
+      "origin": "https://www.emc-sa.pl",
+      "lat": 50.5873767,
+      "lng": 16.8172914
+    },
+    {
+      "code": "osm:way/320003713",
+      "name": "Szpital Kliniczny Nr 7 Górnośląskie Centrum Medyczne",
+      "countryCode": "PL",
+      "origin": "https://www.gcm.pl",
+      "lat": 50.210905,
+      "lng": 19.0011092
+    },
+    {
+      "code": "osm:way/320680049",
+      "name": "Szpital Powiatowy w Wyszkowie",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalwyszkow.pl",
+      "lat": 52.5863733,
+      "lng": 21.4436752
+    },
+    {
+      "code": "osm:way/321091436",
+      "name": "Szpital Specjalistyczny im. H. Klimontowicza",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.gorlice.pl",
+      "lat": 49.6512445,
+      "lng": 21.1637553
+    },
+    {
+      "code": "osm:way/321536211",
+      "name": "Dom Sue Ryder",
+      "countryCode": "PL",
+      "origin": "http://domsueryder.org.pl",
+      "lat": 53.1452911,
+      "lng": 18.1116282
+    },
+    {
+      "code": "osm:way/323311843",
+      "name": "Wielospecjalistyczny Zakład Opieki Zdrowotnej Ministerstwa Spraw Wewnętrznych w Bydgoszczy",
+      "countryCode": "PL",
+      "origin": "http://www.szpital-msw.bydgoszcz.pl",
+      "lat": 53.1261295,
+      "lng": 18.0110862
+    },
+    {
+      "code": "osm:way/326120217",
+      "name": "Szpital Powiatowy im. dr Tytusa Chałubińskiego w Zakopanem",
+      "countryCode": "PL",
+      "origin": "https://szpital-zakopane.pl",
+      "lat": 49.3048176,
+      "lng": 19.9560689
+    },
+    {
+      "code": "osm:way/326299294",
+      "name": "Szpital Powiatowy w Węgorzewie",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalwegorzewo.pl",
+      "lat": 54.2067023,
+      "lng": 21.7360289
+    },
+    {
+      "code": "osm:way/329374398",
+      "name": "Szpital SPZOZ w Bogatynii",
+      "countryCode": "PL",
+      "origin": "http://www.zozbogatynia.pl",
+      "lat": 50.907111,
+      "lng": 14.9704675
+    },
+    {
+      "code": "osm:way/329758518",
+      "name": "Wojewódzki Szpital Specjalistyczny w Białej Podlaskiej",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalbp.pl",
+      "lat": 52.0467254,
+      "lng": 23.1120131
+    },
+    {
+      "code": "osm:way/330387171",
+      "name": "Szpital Matki Bożej Nieustającej Pomocy w Wołominie",
+      "countryCode": "PL",
+      "origin": "https://szpitalwolomin.pl",
+      "lat": 52.3470765,
+      "lng": 21.2209549
+    },
+    {
+      "code": "osm:way/330503595",
+      "name": "Wojewódzkie Centrum Szpitalne Kotliny Jeleniogórskiej",
+      "countryCode": "PL",
+      "origin": "http://www.spzoz.jgora.pl",
+      "lat": 50.9135045,
+      "lng": 15.7647195
+    },
+    {
+      "code": "osm:way/330765780",
+      "name": "Centrum Terapii Nerwic",
+      "countryCode": "PL",
+      "origin": "http://www.ctn-moszna.pl",
+      "lat": 50.4414343,
+      "lng": 17.7720674
+    },
+    {
+      "code": "osm:way/333366005",
+      "name": "Szpital nr 1",
+      "countryCode": "PL",
+      "origin": "http://www.zoz.glucholazy.pl",
+      "lat": 50.3158822,
+      "lng": 17.3854754
+    },
+    {
+      "code": "osm:way/334366211",
+      "name": "Prywatny Szpital Położniczo Ginekologiczny",
+      "countryCode": "PL",
+      "origin": "https://www.narodziny.com.pl",
+      "lat": 50.2060412,
+      "lng": 18.9900689
+    },
+    {
+      "code": "osm:way/334470314",
+      "name": "Szpital św. Rocha",
+      "countryCode": "PL",
+      "origin": "http://ozimek.emc-sa.pl",
+      "lat": 50.6816436,
+      "lng": 18.2199761
+    },
+    {
+      "code": "osm:way/334924030",
+      "name": "Mazowiecki Szpital Bródnowski",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-brodnowski.waw.pl",
+      "lat": 52.2909499,
+      "lng": 21.044339
+    },
+    {
+      "code": "osm:way/336401003",
+      "name": "Milickie Centrum Medyczne",
+      "countryCode": "PL",
+      "origin": "https://www.mcm-milicz.pl",
+      "lat": 51.5174006,
+      "lng": 17.2610185
+    },
+    {
+      "code": "osm:way/338792679",
+      "name": "Krakowskie Centrum Rehabilitacji",
+      "countryCode": "PL",
+      "origin": "https://www.kcr.pl",
+      "lat": 50.0626751,
+      "lng": 19.867343
+    },
+    {
+      "code": "osm:way/339787367",
+      "name": "Zespół Opieki Zdrowotnej - Szpital im. Świętej Elżbiety w Białej",
+      "countryCode": "PL",
+      "origin": "https://szpitalbiala.pl",
+      "lat": 50.3872287,
+      "lng": 17.6621585
+    },
+    {
+      "code": "osm:way/340701118",
+      "name": "Wojewódzki Szpital Zespolony",
+      "countryCode": "PL",
+      "origin": "https://www.wszzkielce.pl",
+      "lat": 50.8733958,
+      "lng": 20.6009035
+    },
+    {
+      "code": "osm:way/343617654",
+      "name": "Wielkopolskie Centrum Pulmonologii i Torakochirurgii im. Eugenii i Janusza Zeylandów",
+      "countryCode": "PL",
+      "origin": "https://wcpit.pl",
+      "lat": 52.4120783,
+      "lng": 16.8874905
+    },
+    {
+      "code": "osm:way/350100588",
+      "name": "Szpital Powiatowy w Gryfinie",
+      "countryCode": "PL",
+      "origin": "https://szpital-gryfino.pl",
+      "lat": 53.2549008,
+      "lng": 14.4911425
+    },
+    {
+      "code": "osm:way/350682942",
+      "name": "Szpital ortopedyczny \"Ortopedicum\"",
+      "countryCode": "PL",
+      "origin": "https://www.ortopedicum.pl",
+      "lat": 50.063819,
+      "lng": 19.8803523
+    },
+    {
+      "code": "osm:way/355354263",
+      "name": "Szpital Powiatowy we Wrześni",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalwrzesnia.home.pl",
+      "lat": 52.3245866,
+      "lng": 17.5724541
+    },
+    {
+      "code": "osm:way/356766973",
+      "name": "Tomaszowskie Centrum Zdrowia",
+      "countryCode": "PL",
+      "origin": "https://szpitalwtomaszowie.pl",
+      "lat": 51.5225443,
+      "lng": 20.0062048
+    },
+    {
+      "code": "osm:way/357199584",
+      "name": "Szpital w Słupcy",
+      "countryCode": "PL",
+      "origin": "https://szpital.slupca.pl",
+      "lat": 52.2927382,
+      "lng": 17.8723065
+    },
+    {
+      "code": "osm:way/360413199",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej MSWiA",
+      "countryCode": "PL",
+      "origin": "http://spzozmswia.opole.pl",
+      "lat": 50.663279,
+      "lng": 17.9251652
+    },
+    {
+      "code": "osm:way/361259806",
+      "name": "Szpital Kliniczny Przemienienia Pańskiego oddział ul. Szamarzewskiego",
+      "countryCode": "PL",
+      "origin": "https://www.skpp.edu.pl",
+      "lat": 52.4134823,
+      "lng": 16.8798092
+    },
+    {
+      "code": "osm:way/361392993",
+      "name": "Szpital Powiatowy im. Jana Pawła II w Kolbuszowej",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.kolbuszowa.pl",
+      "lat": 50.2422185,
+      "lng": 21.7619119
+    },
+    {
+      "code": "osm:way/361596403",
+      "name": "Kutnowski Szpital Samorządowy Sp. z o.o. im. dr Antoniego Troczewskiego",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.kutno.pl",
+      "lat": 52.2386834,
+      "lng": 19.3733995
+    },
+    {
+      "code": "osm:way/364725240",
+      "name": "Wojewódzki Specjalistyczny Szpital im. dr. Władysława Biegańskiego",
+      "countryCode": "PL",
+      "origin": "https://www.bieganski.com.pl",
+      "lat": 51.8007749,
+      "lng": 19.4386809
+    },
+    {
+      "code": "osm:way/366088158",
+      "name": "Szpital miejski w Rabce Zdroju",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalwrabce.pl",
+      "lat": 49.6084502,
+      "lng": 19.9708914
+    },
+    {
+      "code": "osm:way/368210525",
+      "name": "SP ZOZ Szpital Specjalistyczny MSWiA w Głuchołazach im. św. Jana Pawła II",
+      "countryCode": "PL",
+      "origin": "https://szpitalmsw-glucholazy.pl",
+      "lat": 50.3037138,
+      "lng": 17.3859901
+    },
+    {
+      "code": "osm:way/368210526",
+      "name": "Zakład Opiekuńczo-Leczniczy",
+      "countryCode": "PL",
+      "origin": "https://zol-glucholazy.pl",
+      "lat": 50.3058228,
+      "lng": 17.3840098
+    },
+    {
+      "code": "osm:way/369842299",
+      "name": "Ujastek Grupa Neomedic",
+      "countryCode": "PL",
+      "origin": "https://ujastek.pl",
+      "lat": 50.0811771,
+      "lng": 20.0686552
+    },
+    {
+      "code": "osm:way/375718636",
+      "name": "Vratislavia Medica",
+      "countryCode": "PL",
+      "origin": "https://www.vratislavia-medica.pl",
+      "lat": 51.1585887,
+      "lng": 17.0300329
+    },
+    {
+      "code": "osm:way/377435219",
+      "name": "Miejskie Centrum Opieki dla Osób Starszych, Przewlekle Niepełnosprawnych oraz Niesamodzielnych",
+      "countryCode": "PL",
+      "origin": "https://www.mco.krakow.pl",
+      "lat": 50.0092456,
+      "lng": 20.0069577
+    },
+    {
+      "code": "osm:way/379618439",
+      "name": "Samodzielny Publiczny Zespół Opieki Zdrowotnej w Ustrzykach Dolnych",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz-ustrzyki.pl",
+      "lat": 49.4350434,
+      "lng": 22.6036648
+    },
+    {
+      "code": "osm:way/382869915",
+      "name": "Mazowieckie Centrum Neuropsychiatrii",
+      "countryCode": "PL",
+      "origin": "https://centrumzagorze.pl",
+      "lat": 52.1991757,
+      "lng": 21.244241
+    },
+    {
+      "code": "osm:way/382926096",
+      "name": "Szpital Żywiec",
+      "countryCode": "PL",
+      "origin": "https://szpitalzywiec.pl",
+      "lat": 49.6670544,
+      "lng": 19.2244746
+    },
+    {
+      "code": "osm:way/384213436",
+      "name": "SPZZOZ im. Marszałka Józefa Piłsudskiego w Płońsku",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalplonsk.pl",
+      "lat": 52.6303946,
+      "lng": 20.3763182
+    },
+    {
+      "code": "osm:way/386421473",
+      "name": "Szpital Świętej Anny w Piasecznie",
+      "countryCode": "PL",
+      "origin": "https://www.emc-sa.pl",
+      "lat": 52.0623785,
+      "lng": 21.0253259
+    },
+    {
+      "code": "osm:way/388260410",
+      "name": "Samodzielny Publiczny Specjalistyczny Szpital Zachodni im. Jana Pawła II",
+      "countryCode": "PL",
+      "origin": "https://szpitalzachodni.pl",
+      "lat": 52.0951792,
+      "lng": 20.6159736
+    },
+    {
+      "code": "osm:way/390589977",
+      "name": "Szpital im.Sebastiana Petrycego",
+      "countryCode": "PL",
+      "origin": "https://zozdt.pl",
+      "lat": 50.1771533,
+      "lng": 20.9766663
+    },
+    {
+      "code": "osm:way/392208767",
+      "name": "Centrum Medyczne Karpacz",
+      "countryCode": "PL",
+      "origin": "https://www.cmkarpacz.pl",
+      "lat": 50.7808144,
+      "lng": 15.7410394
+    },
+    {
+      "code": "osm:way/393727268",
+      "name": "Wojewódzki Zakład Opieki Psychiatrycznej w Sokołówce",
+      "countryCode": "PL",
+      "origin": "https://sokolowka.pl",
+      "lat": 51.8213312,
+      "lng": 18.307592
+    },
+    {
+      "code": "osm:way/399735317",
+      "name": "Powiatowe Centrum Zdrowia",
+      "countryCode": "PL",
+      "origin": "https://pczlwowek.pl",
+      "lat": 51.1119907,
+      "lng": 15.5858865
+    },
+    {
+      "code": "osm:way/401635543",
+      "name": "Szpital Wielospecjalistyczny im. Stanleya Dudricka",
+      "countryCode": "PL",
+      "origin": "https://szpitalskawina.pl",
+      "lat": 49.978019,
+      "lng": 19.8192692
+    },
+    {
+      "code": "osm:way/401683393",
+      "name": "Szpital Specjalistyczny im. Jędrzeja Śniadeckiego w Nowym Sączu",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalnowysacz.pl",
+      "lat": 49.6198103,
+      "lng": 20.7002435
+    },
+    {
+      "code": "osm:way/402794261",
+      "name": "Szpital Czerniakowski",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalczerniakowski.waw.pl",
+      "lat": 52.2052879,
+      "lng": 21.0370518
+    },
+    {
+      "code": "osm:way/412761310",
+      "name": "Wielospecjalistyczny Szpital TOMMED",
+      "countryCode": "PL",
+      "origin": "https://tommed.pl",
+      "lat": 50.2101608,
+      "lng": 18.9770855
+    },
+    {
+      "code": "osm:way/413546673",
+      "name": "Szpital ESKULAP",
+      "countryCode": "PL",
+      "origin": "https://www.szpitaleskulap.pl",
+      "lat": 53.1775793,
+      "lng": 18.0627331
+    },
+    {
+      "code": "osm:way/418398956",
+      "name": "Szpital Kliniczny im. Karola Jonschera",
+      "countryCode": "PL",
+      "origin": "https://www.skp.ump.edu.pl",
+      "lat": 52.4119623,
+      "lng": 16.8798242
+    },
+    {
+      "code": "osm:way/419232067",
+      "name": "SPZOZ w Kępnie, Oddział Leczniczo-Rehabilitacyjny",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.kepno.pl",
+      "lat": 51.245242,
+      "lng": 17.9717138
+    },
+    {
+      "code": "osm:way/422592251",
+      "name": "Szpital Powiatowy im. Polskiego Czerwonego Krzyża",
+      "countryCode": "PL",
+      "origin": "https://szpital-nisko.pl",
+      "lat": 50.5199436,
+      "lng": 22.1430302
+    },
+    {
+      "code": "osm:way/423985988",
+      "name": "Ginekologiczno-Położniczy Szpital Kliniczny",
+      "countryCode": "PL",
+      "origin": "http://www.gpsk.am.poznan.pl",
+      "lat": 52.4094458,
+      "lng": 16.8965341
+    },
+    {
+      "code": "osm:way/426707688",
+      "name": "Szpital Powiatowy - Samodzielny Publiczny Zespół Opieki Zdrowotnej w Lesku",
+      "countryCode": "PL",
+      "origin": "https://www.spzozlesko.pl",
+      "lat": 49.4739513,
+      "lng": 22.3332955
+    },
+    {
+      "code": "osm:way/428088405",
+      "name": "MedPolonia",
+      "countryCode": "PL",
+      "origin": "https://medpolonia.com.pl",
+      "lat": 52.4481112,
+      "lng": 16.9080821
+    },
+    {
+      "code": "osm:way/429430616",
+      "name": "NTM - Szpital Specjalistyczny im. Świętej Rodziny w Rudnej Małej",
+      "countryCode": "PL",
+      "origin": "https://www.klinika-rzeszow.pl",
+      "lat": 50.1048682,
+      "lng": 21.9792282
+    },
+    {
+      "code": "osm:way/430185016",
+      "name": "Samodzielny Publiczny Zespół Opieki Zdrowotnej",
+      "countryCode": "PL",
+      "origin": "https://www.e-szpital.eu",
+      "lat": 50.3320397,
+      "lng": 18.151289
+    },
+    {
+      "code": "osm:way/433030209",
+      "name": "Mazowieckie Centrum Neuropsychiatrii",
+      "countryCode": "PL",
+      "origin": "http://www.centrumzagorze.pl",
+      "lat": 52.1284187,
+      "lng": 21.2359492
+    },
+    {
+      "code": "osm:way/435268269",
+      "name": "Sanatorium Eskulap",
+      "countryCode": "PL",
+      "origin": "http://uzdrowisko-rymanow.com.pl",
+      "lat": 49.5465384,
+      "lng": 21.8515285
+    },
+    {
+      "code": "osm:way/438294844",
+      "name": "Uniwersytecki Szpital Kliniczny w Poznaniu",
+      "countryCode": "PL",
+      "origin": "https://www.skpp.edu.pl",
+      "lat": 52.403022,
+      "lng": 16.9359251
+    },
+    {
+      "code": "osm:way/438463257",
+      "name": "Beskidzkie Centrum Medyczne",
+      "countryCode": "PL",
+      "origin": "https://www.bcm.bielsko.pl",
+      "lat": 49.7851945,
+      "lng": 19.0316684
+    },
+    {
+      "code": "osm:way/439151707",
+      "name": "Szpital Mrągowski im. Michała Kajki",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-mragowo.pl",
+      "lat": 53.8793087,
+      "lng": 21.3023865
+    },
+    {
+      "code": "osm:way/439906451",
+      "name": "Szpital Kliniczny Przemienienia Pańskiego oddział ul. Długa",
+      "countryCode": "PL",
+      "origin": "https://www.skpp.edu.pl",
+      "lat": 52.403107,
+      "lng": 16.9358215
+    },
+    {
+      "code": "osm:way/440208426",
+      "name": "Uniwersytecki Szpital Kliniczny nr 2 Uniwersytetu Medycznego w Łodzi",
+      "countryCode": "PL",
+      "origin": "http://www.uskwam.umed.lodz.pl",
+      "lat": 51.7596716,
+      "lng": 19.4460762
+    },
+    {
+      "code": "osm:way/442828142",
+      "name": "FILIA 105. Kresowy Szpital Wojskowy z Przychodnią SPZOZ",
+      "countryCode": "PL",
+      "origin": "https://www.105szpital.pl",
+      "lat": 51.6125567,
+      "lng": 15.3318791
+    },
+    {
+      "code": "osm:way/445389013",
+      "name": "Szpital Specjalistyczny im. Antoniego Falkiewicza",
+      "countryCode": "PL",
+      "origin": "https://falkiewicza.pl",
+      "lat": 51.0638012,
+      "lng": 17.0798469
+    },
+    {
+      "code": "osm:way/445466655",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Szamotułach",
+      "countryCode": "PL",
+      "origin": "https://www.szamotuly.med.pl",
+      "lat": 52.6106449,
+      "lng": 16.5815459
+    },
+    {
+      "code": "osm:way/445969395",
+      "name": "Samodzielny Publiczny Zespół Opieki Zdrowotnej - Szpital Latawiec w Świdnicy",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.swidnica.pl",
+      "lat": 50.8312624,
+      "lng": 16.468892
+    },
+    {
+      "code": "osm:way/446303577",
+      "name": "II Szpital Miejski im. dr Ludwika Rydygiera",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalrydygiera.pl",
+      "lat": 51.7774754,
+      "lng": 19.468226
+    },
+    {
+      "code": "osm:way/453439984",
+      "name": "Wojewódzki Szpital im. Zofii z Zamoyskich Tarnowskiej w Tarnobrzegu",
+      "countryCode": "PL",
+      "origin": "https://www.szpitaltbg.pl",
+      "lat": 50.5676852,
+      "lng": 21.671018
+    },
+    {
+      "code": "osm:way/454290321",
+      "name": "Leszczyńskie Centrum Medyczne Ventriculus",
+      "countryCode": "PL",
+      "origin": "https://www.ventriculus.pl",
+      "lat": 51.8423686,
+      "lng": 16.5694259
+    },
+    {
+      "code": "osm:way/455057348",
+      "name": "Szpital im. Juliusza Babińskiego w Sierpcu",
+      "countryCode": "PL",
+      "origin": "https://www.spzzozsierpc.eu",
+      "lat": 52.852446,
+      "lng": 19.6752357
+    },
+    {
+      "code": "osm:way/458932386",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Dąbrowie Białostockiej",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz.home.pl",
+      "lat": 53.6580191,
+      "lng": 23.3497962
+    },
+    {
+      "code": "osm:way/461491834",
+      "name": "Środkowopomorskie Centrum Zdrowia Psychicznego - MEDiSON",
+      "countryCode": "PL",
+      "origin": "https://medison.com.pl",
+      "lat": 54.1714542,
+      "lng": 16.188192
+    },
+    {
+      "code": "osm:way/462845548",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital Specjalistyczny w Puławach",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalpulawy.pl",
+      "lat": 51.4212523,
+      "lng": 21.9733138
+    },
+    {
+      "code": "osm:way/463962493",
+      "name": "Klinika Psychiatrii Pomorskiego Uniwersytetu Medycznego",
+      "countryCode": "PL",
+      "origin": "https://usk1.szczecin.pl",
+      "lat": 53.4543725,
+      "lng": 14.533388
+    },
+    {
+      "code": "osm:way/464257151",
+      "name": "Samodzielny Szpital Wojewódzki im. Mikołaja Kopernika",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-piotrkow.pl",
+      "lat": 51.4003807,
+      "lng": 19.6904147
+    },
+    {
+      "code": "osm:way/466361038",
+      "name": "Wojewódzki Zespół Zakładów Opieki Zdrowotnej – Centrum Leczenia Chorób Płuc i Rehabilitacji im. błogosławionego ojca Rafała Chylińskiego",
+      "countryCode": "PL",
+      "origin": "https://www.centrumpluc.com.pl",
+      "lat": 51.8487356,
+      "lng": 19.4790538
+    },
+    {
+      "code": "osm:way/469775466",
+      "name": "Mazowiecki Szpital Specjalistyczny Sp. z.o.o. w Radomiu",
+      "countryCode": "PL",
+      "origin": "https://www.wss.com.pl",
+      "lat": 51.4374813,
+      "lng": 21.1581863
+    },
+    {
+      "code": "osm:way/470257189",
+      "name": "Radomski Szpital Specjalistyczny im. dr. Tytusa Chałubińskiego",
+      "countryCode": "PL",
+      "origin": "https://szpital.radom.pl",
+      "lat": 51.3987544,
+      "lng": 21.1454535
+    },
+    {
+      "code": "osm:way/474829640",
+      "name": "Szpital Murcki",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalmurcki.pl",
+      "lat": 50.196791,
+      "lng": 19.0406799
+    },
+    {
+      "code": "osm:way/482317554",
+      "name": "Szpital Specjalistyczny im. Stanisława Staszica w Pile",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalpila.pl",
+      "lat": 53.1219301,
+      "lng": 16.7161311
+    },
+    {
+      "code": "osm:way/482725376",
+      "name": "Szpital Powiatowy im. dr Henryka Jordana SPZOZ w Sulęcinie",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-sulecin.pl",
+      "lat": 52.4374969,
+      "lng": 15.1152548
+    },
+    {
+      "code": "osm:way/489165134",
+      "name": "Centrum Medyczne Grupa Zdrowie - Zakład Opiekuńczo Leczniczy dla osób z zaburzeniami psychicznymi",
+      "countryCode": "PL",
+      "origin": "https://grupazdrowie.pl",
+      "lat": 52.818681,
+      "lng": 20.0424937
+    },
+    {
+      "code": "osm:way/497167674",
+      "name": "Szpital Barlinek",
+      "countryCode": "PL",
+      "origin": "http://szpitalbarlinek.pl",
+      "lat": 52.9981882,
+      "lng": 15.2242573
+    },
+    {
+      "code": "osm:way/497390671",
+      "name": "Warszawski Instytut Zdrowia Kobiet",
+      "countryCode": "PL",
+      "origin": "http://www.wizk.pl",
+      "lat": 52.255029,
+      "lng": 20.9911867
+    },
+    {
+      "code": "osm:way/502758363",
+      "name": "Szpital im. Mikołaja Kopernika",
+      "countryCode": "PL",
+      "origin": "https://copernicus.gda.pl",
+      "lat": 54.3507351,
+      "lng": 18.6386183
+    },
+    {
+      "code": "osm:way/507503110",
+      "name": "Powiatowe Centrum Zdrowia S.A.",
+      "countryCode": "PL",
+      "origin": "https://pczszpitalkluczbork.pl",
+      "lat": 50.9673422,
+      "lng": 18.2167247
+    },
+    {
+      "code": "osm:way/507509880",
+      "name": "Szpital Vital Medic",
+      "countryCode": "PL",
+      "origin": "http://www.vitalmedic.pl",
+      "lat": 50.9686946,
+      "lng": 18.2165783
+    },
+    {
+      "code": "osm:way/511098395",
+      "name": "Szpital św. Wojciecha",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalswwojciecha.pl",
+      "lat": 52.3623375,
+      "lng": 16.9919666
+    },
+    {
+      "code": "osm:way/513659759",
+      "name": "Szpital w Kamieniu Pomorskim Sp. z o.o.",
+      "countryCode": "PL",
+      "origin": "https://szpitalkamien.pl",
+      "lat": 53.9690349,
+      "lng": 14.7770365
+    },
+    {
+      "code": "osm:way/516402255",
+      "name": "Zespół Opieki Zdrowotnej w Chełmnie, Szpital Rejonowy im. L. Rydygiera",
+      "countryCode": "PL",
+      "origin": "http://zoz.chelmno.pl",
+      "lat": 53.3447367,
+      "lng": 18.4210516
+    },
+    {
+      "code": "osm:way/519092763",
+      "name": "Szpital Powiatowy w Międzyrzecu Podlaskim",
+      "countryCode": "PL",
+      "origin": "https://spzozmc.pl",
+      "lat": 51.9847199,
+      "lng": 22.787437
+    },
+    {
+      "code": "osm:way/521085102",
+      "name": "Szpital powiatowy w Wągrowcu",
+      "countryCode": "PL",
+      "origin": "https://szpitalwagrowiec.pl",
+      "lat": 52.8179246,
+      "lng": 17.2053655
+    },
+    {
+      "code": "osm:way/531119673",
+      "name": "PJ-Med Rehabilitacja",
+      "countryCode": "PL",
+      "origin": "https://www.rehabilitacja-popielowek.pl",
+      "lat": 50.9746087,
+      "lng": 15.5262701
+    },
+    {
+      "code": "osm:way/534118934",
+      "name": "Szpital Uniwersytecki",
+      "countryCode": "PL",
+      "origin": "https://www.su.krakow.pl",
+      "lat": 50.0081966,
+      "lng": 19.9998672
+    },
+    {
+      "code": "osm:way/540504603",
+      "name": "Szpital im. Edmunda Biernackiego",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz.augustow.pl",
+      "lat": 53.8509199,
+      "lng": 22.9939645
+    },
+    {
+      "code": "osm:way/545532835",
+      "name": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej w Gryficach",
+      "countryCode": "PL",
+      "origin": "http://www.medicam.pl",
+      "lat": 53.923849,
+      "lng": 15.1760837
+    },
+    {
+      "code": "osm:way/546929928",
+      "name": "Regionalne Centrum Medyczne w Białogardzie",
+      "countryCode": "PL",
+      "origin": "http://szpitalbialogard.pl",
+      "lat": 54.0068144,
+      "lng": 16.0078763
+    },
+    {
+      "code": "osm:way/547295108",
+      "name": "Wojewódzki Szpital Zespolony im. L. Rydygiera",
+      "countryCode": "PL",
+      "origin": "https://www.wszz.torun.pl",
+      "lat": 53.0278062,
+      "lng": 18.5817179
+    },
+    {
+      "code": "osm:way/551166297",
+      "name": "Uniwersytecki Szpital Kliniczny nr 1 PUM",
+      "countryCode": "PL",
+      "origin": "https://www.spsk1.szn.pl",
+      "lat": 53.5472068,
+      "lng": 14.5612922
+    },
+    {
+      "code": "osm:way/551461393",
+      "name": "Szpital Powiatowy w Łukowie im. św. Tadeusza (SPZOZ)",
+      "countryCode": "PL",
+      "origin": "https://spzoz.lukow.pl",
+      "lat": 51.924267,
+      "lng": 22.3805134
+    },
+    {
+      "code": "osm:way/560482416",
+      "name": "Szpital Ginekologiczno-Położniczy im. Świętej Rodziny",
+      "countryCode": "PL",
+      "origin": "https://szoz.pl",
+      "lat": 52.3959099,
+      "lng": 16.8946863
+    },
+    {
+      "code": "osm:way/563049861",
+      "name": "Mazowieckie Centrum Rehabilitacji \"Stocer\"",
+      "countryCode": "PL",
+      "origin": "https://www.stocer.pl",
+      "lat": 52.0816734,
+      "lng": 21.1122065
+    },
+    {
+      "code": "osm:way/595172239",
+      "name": "I Wojskowy Szpital Kliniczny z Polikliniką SPZOZ w Lublinie",
+      "countryCode": "PL",
+      "origin": "https://1wszk.pl",
+      "lat": 51.2515004,
+      "lng": 22.5344654
+    },
+    {
+      "code": "osm:way/612104068",
+      "name": "Szpitalne Centrum Medyczne w Goleniowie",
+      "countryCode": "PL",
+      "origin": "https://szpitalgoleniow.pl",
+      "lat": 53.5697335,
+      "lng": 14.8340537
+    },
+    {
+      "code": "osm:way/618994087",
+      "name": "Szpital Rehabilitacyjny Jarcewo",
+      "countryCode": "PL",
+      "origin": "https://www.szpitaljarcewo.pl",
+      "lat": 53.7358805,
+      "lng": 17.5605992
+    },
+    {
+      "code": "osm:way/627358030",
+      "name": "Przyjazny Szpital w Połczynie-Zdroju",
+      "countryCode": "PL",
+      "origin": "https://przyjazny-szpital.pl",
+      "lat": 53.7627305,
+      "lng": 16.0902379
+    },
+    {
+      "code": "osm:way/628687782",
+      "name": "Samodzielny Wojewódzki Publiczny Zespół Zakładów Psychiatrycznej Opieki Zdrowotnej im. dr Barbary Borzym",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalpsychiatryczny.radom.pl",
+      "lat": 51.357407,
+      "lng": 21.0827205
+    },
+    {
+      "code": "osm:way/635049961",
+      "name": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej - Szpital Powiatowy w Żurominie",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-zuromin.pl",
+      "lat": 53.0702275,
+      "lng": 19.9200524
+    },
+    {
+      "code": "osm:way/639634862",
+      "name": "Regionalny Szpital w Kołobrzegu",
+      "countryCode": "PL",
+      "origin": "https://szpital.kolobrzeg.pl",
+      "lat": 54.1741241,
+      "lng": 15.5679225
+    },
+    {
+      "code": "osm:way/640526393",
+      "name": "Szpital Specjalistyczny MSWiA",
+      "countryCode": "PL",
+      "origin": "https://www.zozmswia.pl",
+      "lat": 52.1054061,
+      "lng": 21.2778048
+    },
+    {
+      "code": "osm:way/657434813",
+      "name": "Wielkpolskie Centrum Pediatrii",
+      "countryCode": "PL",
+      "origin": "https://szoz.pl",
+      "lat": 52.4376782,
+      "lng": 16.9060375
+    },
+    {
+      "code": "osm:way/658548041",
+      "name": "Białostockie Centrum Onkologii im. Marii Skłodowskiej - Curie",
+      "countryCode": "PL",
+      "origin": "https://www.onkologia.bialystok.pl",
+      "lat": 53.13472,
+      "lng": 23.169399
+    },
+    {
+      "code": "osm:way/660277657",
+      "name": "Szpital im. Mikołaja Kopernika",
+      "countryCode": "PL",
+      "origin": "https://copernicus.gda.pl",
+      "lat": 54.3519941,
+      "lng": 18.6356627
+    },
+    {
+      "code": "osm:way/669481277",
+      "name": "Szpital Miejski w Tychach",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalmiejskitychy.pl",
+      "lat": 50.1191159,
+      "lng": 18.9825303
+    },
+    {
+      "code": "osm:way/672533093",
+      "name": "NZOZ Szpital Powiatowy",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.dzierzoniow.pl",
+      "lat": 50.6834485,
+      "lng": 16.6095247
+    },
+    {
+      "code": "osm:way/680537671",
+      "name": "Namysłowskie Centrum Zdrowia SA",
+      "countryCode": "PL",
+      "origin": "https://www.zoznamyslow.pl",
+      "lat": 51.0834258,
+      "lng": 17.709108
+    },
+    {
+      "code": "osm:way/681263574",
+      "name": "Regionalne Centrum Medyczne w Białogardzie (stary szpital)",
+      "countryCode": "PL",
+      "origin": "http://szpitalbialogard.pl",
+      "lat": 54.0064543,
+      "lng": 15.9714323
+    },
+    {
+      "code": "osm:way/681983970",
+      "name": "7 Szpital Marynarki Wojennej",
+      "countryCode": "PL",
+      "origin": "https://7szmw.pl",
+      "lat": 54.3928463,
+      "lng": 18.5663543
+    },
+    {
+      "code": "osm:way/682292106",
+      "name": "Szpital Głogowski",
+      "countryCode": "PL",
+      "origin": "https://szpital.glogow.pl",
+      "lat": 51.6552381,
+      "lng": 16.0770343
+    },
+    {
+      "code": "osm:way/684260541",
+      "name": "Radomskie Centrum Onkologii",
+      "countryCode": "PL",
+      "origin": "https://onkologiaradom.pl",
+      "lat": 51.4128399,
+      "lng": 21.1112795
+    },
+    {
+      "code": "osm:way/687526160",
+      "name": "Szpital Powiatowy w Szczytnie",
+      "countryCode": "PL",
+      "origin": "http://szpital.szczytno.pl",
+      "lat": 53.558003,
+      "lng": 20.985237
+    },
+    {
+      "code": "osm:way/692317373",
+      "name": "Szpital Specjalistyczny Ducha Świętego w Sandomierzu",
+      "countryCode": "PL",
+      "origin": "https://sand.pl",
+      "lat": 50.6989374,
+      "lng": 21.7519979
+    },
+    {
+      "code": "osm:way/696599554",
+      "name": "Specjalistyczny Zespół Gruźlicy I Chorób Płuc",
+      "countryCode": "PL",
+      "origin": "https://www.szgichp.med.pl",
+      "lat": 54.1958751,
+      "lng": 16.1756956
+    },
+    {
+      "code": "osm:way/699181777",
+      "name": "Wojewódzki Szpital Chorób Płuc im. dr Alojzego Pawelca",
+      "countryCode": "PL",
+      "origin": "https://www.wscp.wodzislaw.pl",
+      "lat": 49.9972936,
+      "lng": 18.4904695
+    },
+    {
+      "code": "osm:way/712611577",
+      "name": "Szpital Wojskowego Instytutu Medycznego w Legionowie",
+      "countryCode": "PL",
+      "origin": "https://wim.mil.pl",
+      "lat": 52.4033387,
+      "lng": 20.9503335
+    },
+    {
+      "code": "osm:way/712701115",
+      "name": "Wojewódzki Szpital Podkarpacki im. Jana Pawła II w Krośnie",
+      "countryCode": "PL",
+      "origin": "https://www.krosno.med.pl",
+      "lat": 49.7028306,
+      "lng": 21.7837066
+    },
+    {
+      "code": "osm:way/714375036",
+      "name": "SP ZOZ \"Szpital Powiatowy\" w Bochni im Bł. Marty Wieckiej",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-bochnia.pl",
+      "lat": 49.9668474,
+      "lng": 20.4213958
+    },
+    {
+      "code": "osm:way/722452812",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital MSWiA w Lublinie",
+      "countryCode": "PL",
+      "origin": "https://szpitalmsw.pl",
+      "lat": 51.2268427,
+      "lng": 22.6143734
+    },
+    {
+      "code": "osm:way/732093250",
+      "name": "Szpital Powiatowy w Radzyniu Podlaskim (SPZOZ)",
+      "countryCode": "PL",
+      "origin": "https://spzozrp.pl",
+      "lat": 51.7711211,
+      "lng": 22.6074488
+    },
+    {
+      "code": "osm:way/733669826",
+      "name": "Angelius",
+      "countryCode": "PL",
+      "origin": "https://angelius.pl",
+      "lat": 50.216561,
+      "lng": 18.9845938
+    },
+    {
+      "code": "osm:way/738308806",
+      "name": "Ośrodek Kardiologii Inwazyjnej IKARDIA",
+      "countryCode": "PL",
+      "origin": "http://szpital.ikardia.pl",
+      "lat": 51.2843389,
+      "lng": 22.2086101
+    },
+    {
+      "code": "osm:way/749566057",
+      "name": "Szpital Powiatowy im. Jana Mikulicza w Biskupcu",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-biskupiec.pl",
+      "lat": 53.8656694,
+      "lng": 20.9573077
+    },
+    {
+      "code": "osm:way/750503229",
+      "name": "Szpital Powiatowy im. Edmunda Biernackiego w Opocznie",
+      "countryCode": "PL",
+      "origin": "https://szpitalopoczno.pl",
+      "lat": 51.3792059,
+      "lng": 20.2789808
+    },
+    {
+      "code": "osm:way/758340223",
+      "name": "Europejskie Centrum Zdrowia Otwock",
+      "countryCode": "PL",
+      "origin": "https://ecz-otwock.pl",
+      "lat": 52.1218273,
+      "lng": 21.298674
+    },
+    {
+      "code": "osm:way/769667239",
+      "name": "Radomski Szpital Specjalistyczny im. dr. Tytusa Chałubińskiego - Budynek Specjalistyczny",
+      "countryCode": "PL",
+      "origin": "https://szpital.radom.pl",
+      "lat": 51.4005496,
+      "lng": 21.1450932
+    },
+    {
+      "code": "osm:way/771716979",
+      "name": "Wojewódzki Szpital Specjalistyczny nr 5",
+      "countryCode": "PL",
+      "origin": "https://wss5.pl",
+      "lat": 50.3033285,
+      "lng": 19.1233435
+    },
+    {
+      "code": "osm:way/772938977",
+      "name": "Szpital Miejski im. Jana Garduły w Świnoujściu",
+      "countryCode": "PL",
+      "origin": "https://szpital-swinoujscie.pl",
+      "lat": 53.9097341,
+      "lng": 14.2578927
+    },
+    {
+      "code": "osm:way/778473071",
+      "name": "Poliklinika - Szpital MSWiA",
+      "countryCode": "PL",
+      "origin": "http://www.poliklinika.zgora.pl",
+      "lat": 51.9420286,
+      "lng": 15.5206933
+    },
+    {
+      "code": "osm:way/780890987",
+      "name": "Szpital Miejski nr 1 im. Karola Boromeusza",
+      "countryCode": "PL",
+      "origin": "https://mcz.myslowice.pl",
+      "lat": 50.2395367,
+      "lng": 19.1376462
+    },
+    {
+      "code": "osm:way/784505772",
+      "name": "Szpital Powiatowy w Kozienicach",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalkozienice.pl",
+      "lat": 51.5922353,
+      "lng": 21.5272369
+    },
+    {
+      "code": "osm:way/785834736",
+      "name": "Ortopedyczno-Rehabilitacyjny Szpital Kliniczny im. Wiktora Degi",
+      "countryCode": "PL",
+      "origin": "http://www.orsk.ump.edu.pl",
+      "lat": 52.3893858,
+      "lng": 16.9213404
+    },
+    {
+      "code": "osm:way/788308180",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital im. Jana Parnasa",
+      "countryCode": "PL",
+      "origin": "https://spzoz-czluchow.pl",
+      "lat": 53.6592597,
+      "lng": 17.3541885
+    },
+    {
+      "code": "osm:way/789019670",
+      "name": "Opolskie Centrum Rehabilitacji w Korfantowie",
+      "countryCode": "PL",
+      "origin": "https://ocr.pl",
+      "lat": 50.4884199,
+      "lng": 17.592907
+    },
+    {
+      "code": "osm:way/791087087",
+      "name": "Szpital Giżycki",
+      "countryCode": "PL",
+      "origin": "https://zozgiz.pl",
+      "lat": 54.0375217,
+      "lng": 21.7821087
+    },
+    {
+      "code": "osm:way/827582746",
+      "name": "Szpital Specjalistyczny im. Szczeklika",
+      "countryCode": "PL",
+      "origin": "https://www.ssz.tar.pl",
+      "lat": 50.0167406,
+      "lng": 20.9947025
+    },
+    {
+      "code": "osm:way/829991288",
+      "name": "Szpital w Łasku",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalwlasku.pl",
+      "lat": 51.5901984,
+      "lng": 19.1528698
+    },
+    {
+      "code": "osm:way/830682092",
+      "name": "Wielospecjalistyczny Szpital Miejski im. Józefa Strusia",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-strusia.poznan.pl",
+      "lat": 52.3899386,
+      "lng": 16.9968372
+    },
+    {
+      "code": "osm:way/836108772",
+      "name": "Wojewódzki Szpital Podkarpacki im. Jana Pawła II w Krośnie",
+      "countryCode": "PL",
+      "origin": "https://www.krosno.med.pl",
+      "lat": 49.6845606,
+      "lng": 21.7658983
+    },
+    {
+      "code": "osm:way/840422946",
+      "name": "Szpital Polski w Sztumie",
+      "countryCode": "PL",
+      "origin": "http://szpitale-polskie.pl",
+      "lat": 53.9225812,
+      "lng": 19.0264916
+    },
+    {
+      "code": "osm:way/846195218",
+      "name": "Regionalne Centrum Krwiodawstwa i Krwiolecznictwa im. dr Konrada Vietha w Radomiu",
+      "countryCode": "PL",
+      "origin": "https://www.rckik.radom.pl",
+      "lat": 51.3980479,
+      "lng": 21.1373694
+    },
+    {
+      "code": "osm:way/856492492",
+      "name": "Wojewódzki Szpital Specjalistyczny nr 3",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.rybnik.pl",
+      "lat": 50.1111527,
+      "lng": 18.5200954
+    },
+    {
+      "code": "osm:way/857911128",
+      "name": "Zespół Zakładów Opieki Zdrowotnej - Szpital Powiatowy w Czarnkowie",
+      "countryCode": "PL",
+      "origin": "http://zzozczarnkow.x.pl",
+      "lat": 52.8974696,
+      "lng": 16.5570727
+    },
+    {
+      "code": "osm:way/863527290",
+      "name": "Szpital Powiatowy w Pyrzycach",
+      "countryCode": "PL",
+      "origin": "http://szpital.pyrzyce.net.pl",
+      "lat": 53.1467613,
+      "lng": 14.8960814
+    },
+    {
+      "code": "osm:way/865768317",
+      "name": "Szpital Rehabilitacyjny",
+      "countryCode": "PL",
+      "origin": "https://uzdrowisko-konstancin.pl",
+      "lat": 52.0699858,
+      "lng": 21.1218972
+    },
+    {
+      "code": "osm:way/870300894",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital Powiatowy w Węgrowie",
+      "countryCode": "PL",
+      "origin": "https://nowa.spzoz.wegrow.pl",
+      "lat": 52.4058369,
+      "lng": 22.0642217
+    },
+    {
+      "code": "osm:way/871740881",
+      "name": "Szpital Wielospecjalistyczny \"Orthos\"",
+      "countryCode": "PL",
+      "origin": "https://orthos.pl",
+      "lat": 51.0179643,
+      "lng": 17.0012827
+    },
+    {
+      "code": "osm:way/882859608",
+      "name": "Wojewódzki Ośrodek Terapii Uzależnień i Współuzależnienia",
+      "countryCode": "PL",
+      "origin": "http://www.wotuiw.torun.pl",
+      "lat": 52.9823603,
+      "lng": 18.6870118
+    },
+    {
+      "code": "osm:way/886035558",
+      "name": "Szpital Chorób Płuc i Opieka Długoterminowa im. św. Jana Pawła II w Górnie",
+      "countryCode": "PL",
+      "origin": "https://gorno.eu",
+      "lat": 50.2847374,
+      "lng": 22.130463
+    },
+    {
+      "code": "osm:way/888420634",
+      "name": "Szpital Chorób Płuc w Siewierzu",
+      "countryCode": "PL",
+      "origin": "https://szpital-siewierz.pl",
+      "lat": 50.4739166,
+      "lng": 19.2390456
+    },
+    {
+      "code": "osm:way/891309425",
+      "name": "Warszawski Szpital Dla Dzieci",
+      "countryCode": "PL",
+      "origin": "https://wsdz.pl",
+      "lat": 52.237606,
+      "lng": 21.0191934
+    },
+    {
+      "code": "osm:way/894982397",
+      "name": "Wojewódzki Szpital Zespolony – Szpital Psychiatryczny",
+      "countryCode": "PL",
+      "origin": "https://www.wszz.torun.pl",
+      "lat": 53.0122178,
+      "lng": 18.5917184
+    },
+    {
+      "code": "osm:way/904578419",
+      "name": "Szpital Powiatowy",
+      "countryCode": "PL",
+      "origin": "https://pcm.prudnik.pl",
+      "lat": 50.3233523,
+      "lng": 17.5679171
+    },
+    {
+      "code": "osm:way/907079516",
+      "name": "Samodzielny Publiczny Zespół Zakładów Opieki Zdrowotnej - Szpital w Iłży",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalilza.com.pl",
+      "lat": 51.1652182,
+      "lng": 21.2339087
+    },
+    {
+      "code": "osm:way/910484644",
+      "name": "Szpital Miejski",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.sosnowiec.pl",
+      "lat": 50.2982401,
+      "lng": 19.1813755
+    },
+    {
+      "code": "osm:way/912392847",
+      "name": "Szpital Powiatowy",
+      "countryCode": "PL",
+      "origin": "http://www.szpital-drezdenko.pl",
+      "lat": 52.8341661,
+      "lng": 15.8256969
+    },
+    {
+      "code": "osm:way/922505457",
+      "name": "Szpital św. Jana",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-starogard.pl",
+      "lat": 53.9678798,
+      "lng": 18.5075958
+    },
+    {
+      "code": "osm:way/940199237",
+      "name": "Wojewódzki Szpital Zespolony im. Ludwika Rydygiera - Szpital Dziecięcy w Toruniu",
+      "countryCode": "PL",
+      "origin": "https://www.wszz.torun.pl",
+      "lat": 53.0221184,
+      "lng": 18.6926522
+    },
+    {
+      "code": "osm:way/943327550",
+      "name": "NZOZ Szpital pw. Św. Jana Jerozolimskiego w Szczyrzycu",
+      "countryCode": "PL",
+      "origin": "http://szpitalszczyrzyc.pl",
+      "lat": 49.7813788,
+      "lng": 20.1897409
+    },
+    {
+      "code": "osm:way/943488787",
+      "name": "Szpital Nowowiejski",
+      "countryCode": "PL",
+      "origin": "http://www.szpitalnowowiejski.pl",
+      "lat": 52.2193726,
+      "lng": 21.0079106
+    },
+    {
+      "code": "osm:way/956244939",
+      "name": "Szpital Pucki",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalpucki.pl",
+      "lat": 54.721221,
+      "lng": 18.4140297
+    },
+    {
+      "code": "osm:way/960081476",
+      "name": "Samodzielny Publiczny Zespół Opieki Zdrowotnej",
+      "countryCode": "PL",
+      "origin": "https://www.spzozkrasnystaw.pl",
+      "lat": 50.9832298,
+      "lng": 23.1633919
+    },
+    {
+      "code": "osm:way/963741030",
+      "name": "Szpital Świętej Zofii",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalzelazna.pl",
+      "lat": 52.240849,
+      "lng": 20.9869681
+    },
+    {
+      "code": "osm:way/964875717",
+      "name": "Szpital Pediatryczny im. Marii Konopnickiej",
+      "countryCode": "PL",
+      "origin": "https://csk.umed.pl",
+      "lat": 51.786127,
+      "lng": 19.4784857
+    },
+    {
+      "code": "osm:way/965072880",
+      "name": "Szpital Powiatowy im. Marcelego Nenckiego w Krotoszynie",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz.krotoszyn.pl",
+      "lat": 51.6892067,
+      "lng": 17.4376105
+    },
+    {
+      "code": "osm:way/966981945",
+      "name": "Szpital Miejski w Żorach",
+      "countryCode": "PL",
+      "origin": "https://www.mzoz.zory.pl",
+      "lat": 50.0353204,
+      "lng": 18.6834674
+    },
+    {
+      "code": "osm:way/984758453",
+      "name": "Szpital Uzdrowiskowy nr 4 \"Dom Zdrojowy\"",
+      "countryCode": "PL",
+      "origin": "http://uzdrowisko-ciechocinek.pl",
+      "lat": 52.8759363,
+      "lng": 18.8000743
+    },
+    {
+      "code": "osm:way/984859888",
+      "name": "Szpital Uzdrowiskowo-Rehabilitacyjny Polex",
+      "countryCode": "PL",
+      "origin": "https://www.sanatoriumpolex.pl",
+      "lat": 52.8764035,
+      "lng": 18.7943364
+    },
+    {
+      "code": "osm:way/984859893",
+      "name": "Łazienki Uzdrowiskowe nr 1",
+      "countryCode": "PL",
+      "origin": "https://www.uzdrowiskociechocinek.pl",
+      "lat": 52.8776476,
+      "lng": 18.7951319
+    },
+    {
+      "code": "osm:way/985209842",
+      "name": "Mazowieckie Specjalistyczne Centrum Zdrowia im. prof. Jana Mazurkiewicza",
+      "countryCode": "PL",
+      "origin": "https://tworki.eu",
+      "lat": 52.1672003,
+      "lng": 20.8291182
+    },
+    {
+      "code": "osm:way/986010127",
+      "name": "Szpital Kolejowy im. Włodzimierza Roeflera",
+      "countryCode": "PL",
+      "origin": "https://samorzad.gov.pl",
+      "lat": 52.1750632,
+      "lng": 20.8078171
+    },
+    {
+      "code": "osm:way/996672890",
+      "name": "Szpital Miejski im. Franciszka Raszei",
+      "countryCode": "PL",
+      "origin": "https://www.raszeja.poznan.pl",
+      "lat": 52.4132714,
+      "lng": 16.9134564
+    },
+    {
+      "code": "osm:way/998760616",
+      "name": "Krapkowickie Centrum Zdrowia",
+      "countryCode": "PL",
+      "origin": "https://kcz.krapkowice.pl",
+      "lat": 50.4916687,
+      "lng": 17.9717586
+    },
+    {
+      "code": "osm:way/1016942185",
+      "name": "Powiatowe Centrum Zdrowia w Opolu Lubelskim",
+      "countryCode": "PL",
+      "origin": "https://www.pczol.pl",
+      "lat": 51.1517557,
+      "lng": 21.9754138
+    },
+    {
+      "code": "osm:way/1019190595",
+      "name": "Szpital Specjalistyczny Pro-Familia",
+      "countryCode": "PL",
+      "origin": "http://www.rzeszow.pro-familia.pl",
+      "lat": 50.0308759,
+      "lng": 22.0397496
+    },
+    {
+      "code": "osm:way/1022897273",
+      "name": "Centralny Zintegrowany Szpital Kliniczny – centrum medycyny interwencyjnej",
+      "countryCode": "PL",
+      "origin": "https://czsk.edu.pl",
+      "lat": 52.402655,
+      "lng": 16.8843596
+    },
+    {
+      "code": "osm:way/1035749167",
+      "name": "Szpital Powiatowy im. Aleksandra Majkowskiego w Kartuzach",
+      "countryCode": "PL",
+      "origin": "https://www.pczkartuzy.pl",
+      "lat": 54.3368244,
+      "lng": 18.1972013
+    },
+    {
+      "code": "osm:way/1036331167",
+      "name": "Drawskie Centrum Specjalistyczne",
+      "countryCode": "PL",
+      "origin": "https://www.szpitale-polskie.pl",
+      "lat": 53.5252737,
+      "lng": 15.8108971
+    },
+    {
+      "code": "osm:way/1036454744",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Sulechowie",
+      "countryCode": "PL",
+      "origin": "https://www.spzozsulechow.med.pl",
+      "lat": 52.089176,
+      "lng": 15.6226002
+    },
+    {
+      "code": "osm:way/1036539294",
+      "name": "Szpital Powiatowy im. Świętej Jadwigi Królowej w Hrubieszowie",
+      "countryCode": "PL",
+      "origin": "http://www.spzozhrubieszow.pl",
+      "lat": 50.8011901,
+      "lng": 23.8934277
+    },
+    {
+      "code": "osm:way/1036629405",
+      "name": "Orti Szpital Chirurgii Jednego Dnia w Zimnej Wodzie",
+      "countryCode": "PL",
+      "origin": "https://rejestrmedyczny.pl",
+      "lat": 49.7585437,
+      "lng": 21.5593192
+    },
+    {
+      "code": "osm:way/1036631195",
+      "name": "Zespół Opieki Zdrowotnej Nr 2 w Rzeszowie - lZakład Opieki Długoterminowej i Paliacji w Błażowej",
+      "countryCode": "PL",
+      "origin": "https://zoz2.pl",
+      "lat": 49.8832572,
+      "lng": 22.101242
+    },
+    {
+      "code": "osm:way/1036894799",
+      "name": "Szpital Powiatowy - Samodzielny Publiczny Zespół Opieki Zdrowotnej w Leżajsku",
+      "countryCode": "PL",
+      "origin": "https://www.spzoz-lezajsk.pl",
+      "lat": 50.2722399,
+      "lng": 22.4013269
+    },
+    {
+      "code": "osm:way/1036983117",
+      "name": "Szpital Powiatowy w Poniatowej",
+      "countryCode": "PL",
+      "origin": "https://www.pczol.pl",
+      "lat": 51.1739589,
+      "lng": 22.0757611
+    },
+    {
+      "code": "osm:way/1037079329",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital Rejonowy im. Henryka Jankowskiego w Przeworsku",
+      "countryCode": "PL",
+      "origin": "https://spzoz-przeworsk.pl",
+      "lat": 50.0651572,
+      "lng": 22.4774721
+    },
+    {
+      "code": "osm:way/1037817890",
+      "name": "Szpital w Dębnie im. Świętej Matki Teresy z Kalkuty",
+      "countryCode": "PL",
+      "origin": "https://szpital-debno.pl",
+      "lat": 52.731811,
+      "lng": 14.7030115
+    },
+    {
+      "code": "osm:way/1038003002",
+      "name": "Samodzielny Publiczny Wielospecjalistyczny Zakład Opieki Zdrowotnej w Stargardzie",
+      "countryCode": "PL",
+      "origin": "https://zozstargard.pl",
+      "lat": 53.3434105,
+      "lng": 15.0376859
+    },
+    {
+      "code": "osm:way/1040162028",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Łosicach",
+      "countryCode": "PL",
+      "origin": "https://spzozlosice.pl",
+      "lat": 52.2152375,
+      "lng": 22.7076257
+    },
+    {
+      "code": "osm:way/1040321901",
+      "name": "Świętokrzyskie Centrum Psychiatrii w Morawicy",
+      "countryCode": "PL",
+      "origin": "https://www.morawica.com.pl",
+      "lat": 50.7466641,
+      "lng": 20.6246856
+    },
+    {
+      "code": "osm:way/1040507301",
+      "name": "Szpital Powiatowy im. Jana Pawła II we Włoszczowie",
+      "countryCode": "PL",
+      "origin": "https://www.zozwloszczowa.pl",
+      "lat": 50.8466669,
+      "lng": 19.9736705
+    },
+    {
+      "code": "osm:way/1040760815",
+      "name": "Szpital Specjalistyczny św. Łukasza w Końskich",
+      "countryCode": "PL",
+      "origin": "https://www.zoz.konskie.pl",
+      "lat": 51.1901161,
+      "lng": 20.3922673
+    },
+    {
+      "code": "osm:way/1040770056",
+      "name": "Szpital Wojewódzki im. Kardynała Stefana Wyszyńskiego w Łomży",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-lomza.pl",
+      "lat": 53.1591931,
+      "lng": 22.0867176
+    },
+    {
+      "code": "osm:way/1040770426",
+      "name": "Mazowiecki Szpital Specjalistyczny im. dr Józefa Psarskiego w Ostrołęce",
+      "countryCode": "PL",
+      "origin": "http://www.szpital.ostroleka.pl",
+      "lat": 53.0632128,
+      "lng": 21.5918525
+    },
+    {
+      "code": "osm:way/1040803895",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital Powiatowy",
+      "countryCode": "PL",
+      "origin": "https://spzoz-mogilno.pl",
+      "lat": 52.6580551,
+      "lng": 17.9491755
+    },
+    {
+      "code": "osm:way/1040805687",
+      "name": "Wojewódzki Szpital Specjalistyczny im. Janusza Korczaka w Ustce - Oddział Rehabilitacji i Opieki Długoterminowej w Ustce",
+      "countryCode": "PL",
+      "origin": "https://szpital.slupsk.pl",
+      "lat": 54.586369,
+      "lng": 16.8630226
+    },
+    {
+      "code": "osm:way/1040806885",
+      "name": "Silesia-Med S.A - Szpital Specjalistyczny w Grzawie",
+      "countryCode": "PL",
+      "origin": "https://silesia-med.pl",
+      "lat": 49.967498,
+      "lng": 19.0459162
+    },
+    {
+      "code": "osm:way/1040813211",
+      "name": "Centrum Medyczne Olmedica w Olecku",
+      "countryCode": "PL",
+      "origin": "https://www.olmedica.pl",
+      "lat": 54.0422574,
+      "lng": 22.4963334
+    },
+    {
+      "code": "osm:way/1040931948",
+      "name": "Nowy Szpital we Wschowie",
+      "countryCode": "PL",
+      "origin": "https://www.nowyszpital.pl",
+      "lat": 51.8046826,
+      "lng": 16.3222145
+    },
+    {
+      "code": "osm:way/1040932701",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Grodzisku Wielkopolskim",
+      "countryCode": "PL",
+      "origin": "https://spzoz-grodzisk.pl",
+      "lat": 52.2287211,
+      "lng": 16.3663955
+    },
+    {
+      "code": "osm:way/1040933630",
+      "name": "Szpital im. Prof. Stefana Tytusa Dąbrowskiego w Puszczykowie",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalwpuszczykowie.com.pl",
+      "lat": 52.2627622,
+      "lng": 16.8679389
+    },
+    {
+      "code": "osm:way/1041082917",
+      "name": "Nowy Szpital w Nakle i Szubinie",
+      "countryCode": "PL",
+      "origin": "https://www.nowyszpital.pl",
+      "lat": 53.0078707,
+      "lng": 17.7301231
+    },
+    {
+      "code": "osm:way/1041085835",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej w Sokółce",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalsokolka.pl",
+      "lat": 53.4078998,
+      "lng": 23.4842904
+    },
+    {
+      "code": "osm:way/1041090881",
+      "name": "Szpital Powiatowy PCM w Wołowie",
+      "countryCode": "PL",
+      "origin": "https://pcmwolow.pl",
+      "lat": 51.3412366,
+      "lng": 16.6400795
+    },
+    {
+      "code": "osm:way/1041253681",
+      "name": "Szpital Głowno",
+      "countryCode": "PL",
+      "origin": "https://szpitalglowno.pl",
+      "lat": 51.9572185,
+      "lng": 19.7338212
+    },
+    {
+      "code": "osm:way/1053071343",
+      "name": "Oddział Opiekuńczo-Leczniczy Psychiatryczny dla mężczyzn w Owińskach",
+      "countryCode": "PL",
+      "origin": "https://zdrowemyslenie.org",
+      "lat": 52.5100289,
+      "lng": 16.9732624
+    },
+    {
+      "code": "osm:way/1076094906",
+      "name": "6 Szpital Wojskowy z Przychodnią",
+      "countryCode": "PL",
+      "origin": "https://www.szpitaldeblin.pl",
+      "lat": 51.5541044,
+      "lng": 21.8567606
+    },
+    {
+      "code": "osm:way/1083864761",
+      "name": "Szpital Powiatowy w Pruszkowie",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalnawrzesinie.pl",
+      "lat": 52.1596086,
+      "lng": 20.8201583
+    },
+    {
+      "code": "osm:way/1088849134",
+      "name": "NZOZ Poddębickie Centrum Zdrowia",
+      "countryCode": "PL",
+      "origin": "https://nzozpcz.pl",
+      "lat": 51.8888803,
+      "lng": 18.9538938
+    },
+    {
+      "code": "osm:way/1093117846",
+      "name": "Szpital Uzdrowiskowo-Rehabilitacyjny „Excelsior”",
+      "countryCode": "PL",
+      "origin": "https://uzdrowisko-iwonicz.com.pl",
+      "lat": 49.5607736,
+      "lng": 21.7849543
+    },
+    {
+      "code": "osm:way/1105585964",
+      "name": "Szpital Powiatowy w Sławnie",
+      "countryCode": "PL",
+      "origin": "https://www.szpital-slawno.pl",
+      "lat": 54.3690618,
+      "lng": 16.6781496
+    },
+    {
+      "code": "osm:way/1115262377",
+      "name": "Szpital św. Leona w Opatowie",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalopatow.pl",
+      "lat": 50.8049041,
+      "lng": 21.4244668
+    },
+    {
+      "code": "osm:way/1116573384",
+      "name": "Polkowickie Centrum Usług Zdrowotnych",
+      "countryCode": "PL",
+      "origin": "https://pcuz.pl",
+      "lat": 51.5080307,
+      "lng": 16.065224
+    },
+    {
+      "code": "osm:way/1117234872",
+      "name": "Wojewódzki Szpital Specjalistyczny im. Kardynała Stefana Wyszyńskiego SPZOZ w Lublinie",
+      "countryCode": "PL",
+      "origin": "http://janbozy.lublin.pl",
+      "lat": 51.2569013,
+      "lng": 22.5723411
+    },
+    {
+      "code": "osm:way/1135761212",
+      "name": "Wojewódzki Szpital Zespolony im. dr. Romana Ostrzyckiego w Koninie",
+      "countryCode": "PL",
+      "origin": "https://szpital-konin.pl",
+      "lat": 52.1943572,
+      "lng": 18.239725
+    },
+    {
+      "code": "osm:way/1135762011",
+      "name": "Wojewódzki Szpital Zespolony im. dr. Romana Ostrzyckiego",
+      "countryCode": "PL",
+      "origin": "https://szpital-konin.pl",
+      "lat": 52.2262627,
+      "lng": 18.2645663
+    },
+    {
+      "code": "osm:way/1135763247",
+      "name": "Samodzielny Publiczny Zakład Opieki Zdrowotnej - Szpital w Nowym Mieście nad Pilicą",
+      "countryCode": "PL",
+      "origin": "https://zoz-nowemiasto.net",
+      "lat": 51.6160553,
+      "lng": 20.564833
+    },
+    {
+      "code": "osm:way/1150570227",
+      "name": "Szpital Specjalistyczny",
+      "countryCode": "PL",
+      "origin": "https://sredzkie-centrum.pl",
+      "lat": 51.1664286,
+      "lng": 16.5940347
+    },
+    {
+      "code": "osm:way/1157532466",
+      "name": "Oddział Dzienny Psychiatryczny Ogólny Świętokrzyskiego Centrum Psychiatrii w Morawicy",
+      "countryCode": "PL",
+      "origin": "https://morawica.com.pl",
+      "lat": 50.8547695,
+      "lng": 20.5982845
+    },
+    {
+      "code": "osm:way/1171232961",
+      "name": "Samodzielny Publiczny Zespół Opieki Zdrowotnej w Brzesku",
+      "countryCode": "PL",
+      "origin": "https://spzoz-brzesko.pl",
+      "lat": 49.9692847,
+      "lng": 20.5908401
+    },
+    {
+      "code": "osm:way/1190485070",
+      "name": "Powiatowe Centrum Medyczne w Grójcu",
+      "countryCode": "PL",
+      "origin": "https://pcmg.pl",
+      "lat": 51.8682437,
+      "lng": 20.8687109
+    },
+    {
+      "code": "osm:way/1194850128",
+      "name": "Szpital Uniwersytecki CM UJ",
+      "countryCode": "PL",
+      "origin": "http://www.su.krakow.pl",
+      "lat": 50.0646823,
+      "lng": 19.9559578
+    },
+    {
+      "code": "osm:way/1199998347",
+      "name": "Szpital Powiatowy im. Doktora Edwarda Rittlera w Sejnach",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.sejny.pl",
+      "lat": 54.114685,
+      "lng": 23.3515481
+    },
+    {
+      "code": "osm:way/1231359736",
+      "name": "Szpital Salus",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalsalus.pl",
+      "lat": 54.4535179,
+      "lng": 17.0288486
+    },
+    {
+      "code": "osm:way/1245649637",
+      "name": "Szpital Powiatowy im. Zbigniewa Koprowskiego",
+      "countryCode": "PL",
+      "origin": "https://spzozsokolow.pl",
+      "lat": 52.4035885,
+      "lng": 22.2418486
+    },
+    {
+      "code": "osm:way/1248161083",
+      "name": "Bielskie Centrum Psychiatrii - Olszówka w Bielsku-Białej",
+      "countryCode": "PL",
+      "origin": "https://psychiatria.bielsko.pl",
+      "lat": 49.7833707,
+      "lng": 19.03547
+    },
+    {
+      "code": "osm:way/1263939240",
+      "name": "Szpital Jednodniowy im. dr. Michała Pawlaka",
+      "countryCode": "PL",
+      "origin": "https://ncm.com.pl",
+      "lat": 54.3470051,
+      "lng": 18.5097784
+    },
+    {
+      "code": "osm:way/1266287476",
+      "name": "115 Szpital Wojskowy",
+      "countryCode": "PL",
+      "origin": "https://www.szpitalhel.pl",
+      "lat": 54.6116235,
+      "lng": 18.7990895
+    },
+    {
+      "code": "osm:way/1275562627",
+      "name": "Szpital Powiatowy w Obornikach",
+      "countryCode": "PL",
+      "origin": "https://szpital.oborniki.info",
+      "lat": 52.653531,
+      "lng": 16.8168007
+    },
+    {
+      "code": "osm:way/1281390542",
+      "name": "Penta Hospitals Szpital Poznań",
+      "countryCode": "PL",
+      "origin": "https://certus.med.pl",
+      "lat": 52.3926316,
+      "lng": 16.8598648
+    },
+    {
+      "code": "osm:way/1283051752",
+      "name": "Uniwersytecki Szpital Kliniczny nr 1 w Lublinie",
+      "countryCode": "PL",
+      "origin": "https://www.spsk1.lublin.pl",
+      "lat": 51.251364,
+      "lng": 22.5637305
+    },
+    {
+      "code": "osm:way/1316522081",
+      "name": "Szpital Powiatowy w Kłodzku",
+      "countryCode": "PL",
+      "origin": "https://www.zoz.klodzko.pl",
+      "lat": 50.4557829,
+      "lng": 16.6613447
+    },
+    {
+      "code": "osm:way/1325161731",
+      "name": "Mazowiecki Szpital Wojewódzki Drewnica",
+      "countryCode": "PL",
+      "origin": "http://drewnica.pl",
+      "lat": 52.2990461,
+      "lng": 21.1118069
+    },
+    {
+      "code": "osm:way/1331715967",
+      "name": "Szpital Specjalistyczny w Kościerzynie",
+      "countryCode": "PL",
+      "origin": "https://szpital-koscierzyna.pl",
+      "lat": 54.1218643,
+      "lng": 17.9500474
+    },
+    {
+      "code": "osm:way/1341051712",
+      "name": "Szpital Powiatowy im. Jana Pawła II w Kolbuszowej",
+      "countryCode": "PL",
+      "origin": "https://www.szpital.kolbuszowa.pl",
+      "lat": 50.2441346,
+      "lng": 21.7799895
+    },
+    {
+      "code": "osm:way/1370991313",
+      "name": "Szpital Powiatowy im. Jana Pawła II w Trzciance",
+      "countryCode": "PL",
+      "origin": "https://szpital-trzcianka.pl",
+      "lat": 53.0396017,
+      "lng": 16.4642366
+    },
+    {
+      "code": "osm:way/1388310338",
+      "name": "Szpital Powiatowy w Mińsku Mazowieckim",
+      "countryCode": "PL",
+      "origin": "https://www.spzozmm.pl",
+      "lat": 52.1733398,
+      "lng": 21.5777975
+    },
+    {
+      "code": "osm:way/1418380591",
+      "name": "Centrum Zdrowia Psychicznego w Słupsku",
+      "countryCode": "PL",
+      "origin": "http://psychiatria-slupsk.pl",
+      "lat": 54.4681731,
+      "lng": 17.0443641
+    },
+    {
+      "code": "osm:way/1463907035",
+      "name": "Wojewódzki Szpital Specjalistyczny im. Janusza Korczaka",
+      "countryCode": "PL",
+      "origin": "https://szpital.slupsk.pl",
+      "lat": 54.4512516,
+      "lng": 17.0639303
+    },
+    {
+      "code": "osm:way/1472493283",
+      "name": "Samodzielny Publiczny Kliniczny Szpital Okulistyczny w Warszawie",
+      "countryCode": "PL",
+      "origin": "https://www.spkso.waw.pl",
+      "lat": 52.2512112,
+      "lng": 21.0295966
+    },
+    {
+      "code": "osm:way/1501150504",
+      "name": "Mazowiecki Szpital Wojewódzki w Siedlcach",
+      "countryCode": "PL",
+      "origin": "https://szpital.siedlce.pl",
+      "lat": 52.1768372,
+      "lng": 22.2925256
+    },
+    {
+      "code": "osm:way/1535879986",
+      "name": "Szpital Specjalistyczny Sanus",
+      "countryCode": "PL",
+      "origin": "https://sanus.med.pl",
+      "lat": 50.5754597,
+      "lng": 22.0554321
+    },
+    {
+      "code": "osm:way/1566856750",
+      "name": "Szpital Uzdrowiskowy - Centrum rehabilitacji Accessmedica",
+      "countryCode": "PL",
+      "origin": "https://lidzbark.accessmedica.pl",
+      "lat": 54.1151342,
+      "lng": 20.5811529
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "countryCode": "LI",
+  "fetchedAt": "2026-10-21T01:56:02.730Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/486420157",
+      "name": "Liechtensteinisches Landesspital",
+      "countryCode": "LI",
+      "origin": "https://www.landesspital.li",
+      "lat": 47.1346464,
+      "lng": 9.5226891
+    }
+  ]
+}

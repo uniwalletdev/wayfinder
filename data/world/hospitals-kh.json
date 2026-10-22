@@ -1,0 +1,105 @@
+{
+  "countryCode": "KH",
+  "fetchedAt": "2026-10-21T01:47:41.849Z",
+  "count": 12,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4118322389",
+      "name": "Praram 9 Hospital Cambodia Office",
+      "countryCode": "KH",
+      "origin": "http://www.balegacorp.com",
+      "lat": 11.5832373,
+      "lng": 104.9167705
+    },
+    {
+      "code": "osm:node/4367951293",
+      "name": "Leng Chhay Clinic",
+      "countryCode": "KH",
+      "origin": "http://www.lengchhayclinic.com",
+      "lat": 11.5958359,
+      "lng": 104.9182879
+    },
+    {
+      "code": "osm:node/4472294392",
+      "name": "GANO EXCEL HQ",
+      "countryCode": "KH",
+      "origin": "https://www.ganoexcelcambodia.com",
+      "lat": 11.5748301,
+      "lng": 104.8944704
+    },
+    {
+      "code": "osm:node/4790957124",
+      "name": "Sovann Polyclinic",
+      "countryCode": "KH",
+      "origin": "https://www.sovannclinic.com",
+      "lat": 13.0987143,
+      "lng": 103.1955577
+    },
+    {
+      "code": "osm:node/8001656167",
+      "name": "GANO EXCEL CLINIC",
+      "countryCode": "KH",
+      "origin": "https://www.ganoexcelcambodiaclinic.com",
+      "lat": 11.6404128,
+      "lng": 104.9182348
+    },
+    {
+      "code": "osm:node/11601341969",
+      "name": "Neak Tep Hospital",
+      "countryCode": "KH",
+      "origin": "https://www.neaktephospital.com",
+      "lat": 13.3472768,
+      "lng": 103.8707382
+    },
+    {
+      "code": "osm:way/190538951",
+      "name": "Angkor Hospital for Children",
+      "countryCode": "KH",
+      "origin": "http://angkorhospital.org",
+      "lat": 13.3584856,
+      "lng": 103.856246
+    },
+    {
+      "code": "osm:way/295124083",
+      "name": "Institut Pasteur du Cambodge",
+      "countryCode": "KH",
+      "origin": "https://www.pasteur-kh.org",
+      "lat": 11.5806,
+      "lng": 104.9157838
+    },
+    {
+      "code": "osm:way/376041075",
+      "name": "Sonja Kill Memorial Hospital",
+      "countryCode": "KH",
+      "origin": "https://skmh.org",
+      "lat": 10.5709659,
+      "lng": 104.1315601
+    },
+    {
+      "code": "osm:way/432206240",
+      "name": "Royal Angkor International Hospital",
+      "countryCode": "KH",
+      "origin": "http://www.royalangkorhospital.com",
+      "lat": 13.3818289,
+      "lng": 103.8285768
+    },
+    {
+      "code": "osm:way/561746525",
+      "name": "Sunrise Japan Hospital Phnom Penh",
+      "countryCode": "KH",
+      "origin": "https://www.sunrise-hs.com",
+      "lat": 11.5812076,
+      "lng": 104.9311356
+    },
+    {
+      "code": "osm:way/1009545224",
+      "name": "Angkorchey Referral Hospital",
+      "countryCode": "KH",
+      "origin": "https://business.facebook.com",
+      "lat": 10.7730852,
+      "lng": 104.6600153
+    }
+  ]
+}

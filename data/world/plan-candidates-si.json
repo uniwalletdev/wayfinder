@@ -1,0 +1,57 @@
+{
+  "generatedAt": "2026-10-22T10:59:24.542Z",
+  "countryCode": "SI",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 2,
+    "botChallenged": 0,
+    "robotsBlocked": 0,
+    "withCandidates": 2,
+    "crawled": 17
+  },
+  "count": 2,
+  "crawled": {
+    "osm:node/12976724483": "failed",
+    "osm:node/2752665314": "ok",
+    "osm:node/9587549931": "ok",
+    "osm:way/130658791": "ok",
+    "osm:way/1417503246": "ok",
+    "osm:way/144117786": "ok",
+    "osm:way/169960595": "ok",
+    "osm:way/170879494": "ok",
+    "osm:way/24765159": "failed",
+    "osm:way/24765163": "ok",
+    "osm:way/266910831": "ok",
+    "osm:way/320009354": "ok",
+    "osm:way/351223720": "ok",
+    "osm:way/433235088": "ok",
+    "osm:way/520596987": "ok",
+    "osm:way/718465968": "ok",
+    "osm:way/951492721": "ok"
+  },
+  "candidates": [
+    {
+      "hospitalCode": "osm:way/130658791",
+      "hospitalName": "Splošna bolnišnica Murska Sobota",
+      "countryCode": "SI",
+      "website": "https://www.sb-ms.si",
+      "url": "https://www.sb-ms.si/images/map/sb-ms_zemljevid_bolnisnice.pdf?v2",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low",
+      "format": "pdf"
+    },
+    {
+      "hospitalCode": "osm:way/170879494",
+      "hospitalName": "Univerzitetni klinični center Maribor",
+      "countryCode": "SI",
+      "website": "https://www.ukc-mb.si",
+      "url": "https://www.ukc-mb.si/assets/theme/map/vhodi/1.jpg",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low",
+      "format": "image"
+    }
+  ]
+}

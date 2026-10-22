@@ -1,0 +1,705 @@
+{
+  "countryCode": "RS",
+  "fetchedAt": "2026-10-21T02:36:02.560Z",
+  "count": 87,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1141976101",
+      "name": "Klinika Medicor",
+      "countryCode": "RS",
+      "origin": "https://medicor.rs",
+      "lat": 44.8197777,
+      "lng": 20.4163375
+    },
+    {
+      "code": "osm:node/3298233264",
+      "name": "Jugolab Bečej",
+      "countryCode": "RS",
+      "origin": "https://www.jugolab.rs",
+      "lat": 45.6155679,
+      "lng": 20.0454989
+    },
+    {
+      "code": "osm:node/3298275622",
+      "name": "Jugolab Subotica",
+      "countryCode": "RS",
+      "origin": "https://www.jugolab.rs",
+      "lat": 46.0873878,
+      "lng": 19.6682771
+    },
+    {
+      "code": "osm:node/3473286363",
+      "name": "Специјална болница за плућне болести",
+      "countryCode": "RS",
+      "origin": "https://www.sbpsurdulica.rs",
+      "lat": 42.679994,
+      "lng": 22.1673817
+    },
+    {
+      "code": "osm:node/4730183389",
+      "name": "ОРС",
+      "countryCode": "RS",
+      "origin": "https://www.orshospital.rs",
+      "lat": 44.7920114,
+      "lng": 20.4682619
+    },
+    {
+      "code": "osm:node/4820164422",
+      "name": "Bel Medic",
+      "countryCode": "RS",
+      "origin": "https://www.belmedic.rs",
+      "lat": 44.7774238,
+      "lng": 20.4722174
+    },
+    {
+      "code": "osm:node/8640005785",
+      "name": "Bel Medic",
+      "countryCode": "RS",
+      "origin": "https://www.belmedic.rs",
+      "lat": 44.7784946,
+      "lng": 20.4702488
+    },
+    {
+      "code": "osm:node/9487882397",
+      "name": "Дом здравља „Еуромедик”",
+      "countryCode": "RS",
+      "origin": "https://euromedic.rs",
+      "lat": 44.8031319,
+      "lng": 20.3848921
+    },
+    {
+      "code": "osm:node/11543668090",
+      "name": "Општа Болница „Аурора”",
+      "countryCode": "RS",
+      "origin": "https://aurorabolnica.rs",
+      "lat": 44.7991682,
+      "lng": 20.4553435
+    },
+    {
+      "code": "osm:node/13344628352",
+      "name": "Opšta bolnica Avala",
+      "countryCode": "RS",
+      "origin": "https://www.bolnicaavala.rs",
+      "lat": 44.8118674,
+      "lng": 20.4011749
+    },
+    {
+      "code": "osm:way/43320082",
+      "name": "Универзитетски клинички центар Војводине",
+      "countryCode": "RS",
+      "origin": "https://www.kcv.rs",
+      "lat": 45.2517417,
+      "lng": 19.8219668
+    },
+    {
+      "code": "osm:way/43646607",
+      "name": "Специјална болница за реуматске болести",
+      "countryCode": "RS",
+      "origin": "https://sbreum.co.rs",
+      "lat": 45.2498649,
+      "lng": 19.8288157
+    },
+    {
+      "code": "osm:way/55942888",
+      "name": "Клиничко-болнички центар „Звездара”",
+      "countryCode": "RS",
+      "origin": "https://www.kbczvezdara.rs",
+      "lat": 44.8005887,
+      "lng": 20.5007647
+    },
+    {
+      "code": "osm:way/61563661",
+      "name": "Општа болница",
+      "countryCode": "RS",
+      "origin": "https://hospitalsenta.rs",
+      "lat": 45.9166156,
+      "lng": 20.093526
+    },
+    {
+      "code": "osm:way/91039935",
+      "name": "Дом здравља Бујановац",
+      "countryCode": "RS",
+      "origin": "http://www.dzbujanovac.org.rs",
+      "lat": 42.4646154,
+      "lng": 21.7736941
+    },
+    {
+      "code": "osm:way/92713301",
+      "name": "Клинички центар Крагујевац",
+      "countryCode": "RS",
+      "origin": "http://www.kc-kg.rs",
+      "lat": 44.0201299,
+      "lng": 20.9149597
+    },
+    {
+      "code": "osm:way/107007016",
+      "name": "Jugolab Senta",
+      "countryCode": "RS",
+      "origin": "https://www.jugolab.rs",
+      "lat": 45.9214877,
+      "lng": 20.0915281
+    },
+    {
+      "code": "osm:way/149904147",
+      "name": "Општа болница Пожаревац",
+      "countryCode": "RS",
+      "origin": "http://www.obp.rs",
+      "lat": 44.6330294,
+      "lng": 21.1852625
+    },
+    {
+      "code": "osm:way/172228755",
+      "name": "Општа болница „Ужице”",
+      "countryCode": "RS",
+      "origin": "https://www.zcue.rs",
+      "lat": 43.8516091,
+      "lng": 19.8590103
+    },
+    {
+      "code": "osm:way/183357414",
+      "name": "МедиГруп",
+      "countryCode": "RS",
+      "origin": "https://www.medigroup.rs",
+      "lat": 44.8070668,
+      "lng": 20.4212187
+    },
+    {
+      "code": "osm:way/188650345",
+      "name": "Специјална болница за психијатријске болести „др Славољуб Бакаловић”",
+      "countryCode": "RS",
+      "origin": "https://www.spbvrsac.org.rs",
+      "lat": 45.1243322,
+      "lng": 21.3142552
+    },
+    {
+      "code": "osm:way/201878936",
+      "name": "Универзитетски клинички центар Србије",
+      "countryCode": "RS",
+      "origin": "http://www.kcs.ac.rs",
+      "lat": 44.7980576,
+      "lng": 20.4588244
+    },
+    {
+      "code": "osm:way/202745160",
+      "name": "Еуромедик општа болница",
+      "countryCode": "RS",
+      "origin": "https://euromedic.rs",
+      "lat": 44.8146414,
+      "lng": 20.4116986
+    },
+    {
+      "code": "osm:way/236100845",
+      "name": "Дом здравља „Евелина Хаверфилд” Бајина Башта",
+      "countryCode": "RS",
+      "origin": "http://www.zcue.rs",
+      "lat": 43.9746439,
+      "lng": 19.559953
+    },
+    {
+      "code": "osm:way/240898362",
+      "name": "Завод за јавно здравље Пожаревац",
+      "countryCode": "RS",
+      "origin": "https://www.zzjzpo.rs",
+      "lat": 44.6206847,
+      "lng": 21.1892095
+    },
+    {
+      "code": "osm:way/266928424",
+      "name": "Дом здравља",
+      "countryCode": "RS",
+      "origin": "http://www.dzapatin.co.rs",
+      "lat": 45.6730361,
+      "lng": 18.9800144
+    },
+    {
+      "code": "osm:way/288855942",
+      "name": "Општа болница Параћин",
+      "countryCode": "RS",
+      "origin": "http://www.obparacin.rs",
+      "lat": 43.8637399,
+      "lng": 21.4143536
+    },
+    {
+      "code": "osm:way/293236499",
+      "name": "Војна болница Ниш",
+      "countryCode": "RS",
+      "origin": "http://www.vbnis.mod.gov.rs",
+      "lat": 43.3126592,
+      "lng": 21.9215132
+    },
+    {
+      "code": "osm:way/301672513",
+      "name": "Општа болница Ћуприја",
+      "countryCode": "RS",
+      "origin": "https://bolnicacuprija.com",
+      "lat": 43.941351,
+      "lng": 21.3767271
+    },
+    {
+      "code": "osm:way/301837951",
+      "name": "Клиничко-болнички центар „Бежанијска коса”",
+      "countryCode": "RS",
+      "origin": "https://bkosa.rs",
+      "lat": 44.831305,
+      "lng": 20.3828786
+    },
+    {
+      "code": "osm:way/301844418",
+      "name": "Институт за здравствену заштиту мајке и детета Србије „Др Вукан Чупић”",
+      "countryCode": "RS",
+      "origin": "https://www.imd.org.rs",
+      "lat": 44.8318134,
+      "lng": 20.4029161
+    },
+    {
+      "code": "osm:way/301914810",
+      "name": "Општа болница Ваљево",
+      "countryCode": "RS",
+      "origin": "http://www.obvaljevo.rs",
+      "lat": 44.2769565,
+      "lng": 19.8912629
+    },
+    {
+      "code": "osm:way/344087235",
+      "name": "Завод за јавно здравље Ваљево",
+      "countryCode": "RS",
+      "origin": "https://www.zzjzvaljevo.org.rs",
+      "lat": 44.2744018,
+      "lng": 19.8822724
+    },
+    {
+      "code": "osm:way/392174276",
+      "name": "Институт за ортопедско-хируршке болести „Бањица”",
+      "countryCode": "RS",
+      "origin": "https://www.iohbb.edu.rs",
+      "lat": 44.7666439,
+      "lng": 20.4607091
+    },
+    {
+      "code": "osm:way/392346776",
+      "name": "Специјална болница за церебралну парализу и развојну неурологију",
+      "countryCode": "RS",
+      "origin": "https://www.sbcprn.com",
+      "lat": 44.7790828,
+      "lng": 20.4611443
+    },
+    {
+      "code": "osm:way/397302874",
+      "name": "Дом здравља Свилајнац",
+      "countryCode": "RS",
+      "origin": "https://dzsvilajnac.com",
+      "lat": 44.228919,
+      "lng": 21.1965967
+    },
+    {
+      "code": "osm:way/403077221",
+      "name": "Клиничко-болнички центар Земун",
+      "countryCode": "RS",
+      "origin": "http://www.kbczemun.rs",
+      "lat": 44.8418571,
+      "lng": 20.4069553
+    },
+    {
+      "code": "osm:way/403574430",
+      "name": "Општа болница „УНА”",
+      "countryCode": "RS",
+      "origin": "http://www.unaklinika.rs",
+      "lat": 44.7830877,
+      "lng": 20.4798551
+    },
+    {
+      "code": "osm:way/410758899",
+      "name": "Болница за пластичну, реконструктивну и естетску хирургију „др Цолић”",
+      "countryCode": "RS",
+      "origin": "https://www.dr-colic.com",
+      "lat": 44.7898539,
+      "lng": 20.4655902
+    },
+    {
+      "code": "osm:way/418275689",
+      "name": "Општа болница „Ђорђе Јоановић”",
+      "countryCode": "RS",
+      "origin": "https://bolnica.org.rs",
+      "lat": 45.3741247,
+      "lng": 20.3786101
+    },
+    {
+      "code": "osm:way/427036137",
+      "name": "Општа болница Лесковац",
+      "countryCode": "RS",
+      "origin": "https://www.bolnicaleskovac.org",
+      "lat": 42.9953163,
+      "lng": 21.9382879
+    },
+    {
+      "code": "osm:way/446828606",
+      "name": "Специјална болница за рехабилитацију „Рибарска Бања”",
+      "countryCode": "RS",
+      "origin": "https://www.ribarskabanja.rs",
+      "lat": 43.4248132,
+      "lng": 21.507558
+    },
+    {
+      "code": "osm:way/447508747",
+      "name": "Општа болница Бор",
+      "countryCode": "RS",
+      "origin": "https://www.borbolnica.org.rs",
+      "lat": 44.0799429,
+      "lng": 22.09158
+    },
+    {
+      "code": "osm:way/448983985",
+      "name": "Здравствени центар Зајечар",
+      "countryCode": "RS",
+      "origin": "https://www.zczajecar.com",
+      "lat": 43.8917888,
+      "lng": 22.2908453
+    },
+    {
+      "code": "osm:way/501658499",
+      "name": "Општа болница Крушевац",
+      "countryCode": "RS",
+      "origin": "http://bolnicakrusevac.org.rs",
+      "lat": 43.5804695,
+      "lng": 21.3209571
+    },
+    {
+      "code": "osm:way/509614830",
+      "name": "Општа болница „Др Лаза К. Лазаревић” Шабац",
+      "countryCode": "RS",
+      "origin": "https://bolnica015.org.rs",
+      "lat": 44.7509882,
+      "lng": 19.6935041
+    },
+    {
+      "code": "osm:way/527415279",
+      "name": "Општа болница Горњи Милановац",
+      "countryCode": "RS",
+      "origin": "https://www.bolnica-gm.org",
+      "lat": 44.0195699,
+      "lng": 20.458983
+    },
+    {
+      "code": "osm:way/537912280",
+      "name": "Општа болница „Свети Лука”",
+      "countryCode": "RS",
+      "origin": "https://www.obsmederevo.rs",
+      "lat": 44.6606872,
+      "lng": 20.92432
+    },
+    {
+      "code": "osm:way/548963282",
+      "name": "Општа болница „Др Алекса Савић”",
+      "countryCode": "RS",
+      "origin": "https://www.bolnicaprokuplje.com",
+      "lat": 43.227387,
+      "lng": 21.5905103
+    },
+    {
+      "code": "osm:way/549923685",
+      "name": "Општа болница Панчево",
+      "countryCode": "RS",
+      "origin": "https://www.bolnicapancevo.rs",
+      "lat": 44.8679995,
+      "lng": 20.6532953
+    },
+    {
+      "code": "osm:way/562705303",
+      "name": "Општа болница „Алексинац”",
+      "countryCode": "RS",
+      "origin": "https://obaleksinac.rs",
+      "lat": 43.5402997,
+      "lng": 21.7015714
+    },
+    {
+      "code": "osm:way/587673546",
+      "name": "Здравствени центар Врање",
+      "countryCode": "RS",
+      "origin": "https://www.zcvranje.com",
+      "lat": 42.5509323,
+      "lng": 21.9037283
+    },
+    {
+      "code": "osm:way/604650292",
+      "name": "Општа Болница „Стефан Високи”",
+      "countryCode": "RS",
+      "origin": "https://www.bolnica-palanka.co.rs",
+      "lat": 44.364274,
+      "lng": 20.9692393
+    },
+    {
+      "code": "osm:way/609561091",
+      "name": "Завод за плућне болести и туберкулозу Ниш",
+      "countryCode": "RS",
+      "origin": "https://zavodtb.org.rs",
+      "lat": 43.3153036,
+      "lng": 21.9173723
+    },
+    {
+      "code": "osm:way/613020406",
+      "name": "Дом здравља Рашка",
+      "countryCode": "RS",
+      "origin": "https://www.dzraska.rs",
+      "lat": 43.2855931,
+      "lng": 20.6151263
+    },
+    {
+      "code": "osm:way/617373007",
+      "name": "Општа болница Пирот",
+      "countryCode": "RS",
+      "origin": "https://www.pibolnica.rs",
+      "lat": 43.1595406,
+      "lng": 22.5649819
+    },
+    {
+      "code": "osm:way/618449058",
+      "name": "Завод за јавно здравље Пирот",
+      "countryCode": "RS",
+      "origin": "https://www.zzjzpirot.org.rs",
+      "lat": 43.1579536,
+      "lng": 22.589456
+    },
+    {
+      "code": "osm:way/632569136",
+      "name": "Specijalna bolnica za rehabilitaciju „Gamzigrad”",
+      "countryCode": "RS",
+      "origin": "https://www.gamzigradskabanja.org.rs",
+      "lat": 43.9236444,
+      "lng": 22.1735327
+    },
+    {
+      "code": "osm:way/645437413",
+      "name": "Дом здравља Др Хаџи Јанош",
+      "countryCode": "RS",
+      "origin": "http://www.dzbt.co.rs",
+      "lat": 45.8222294,
+      "lng": 19.6331559
+    },
+    {
+      "code": "osm:way/675719077",
+      "name": "Специјална болница за психијатријске болести „Ковин”",
+      "countryCode": "RS",
+      "origin": "http://www.sbpb.kovin.info",
+      "lat": 44.7584058,
+      "lng": 20.9821085
+    },
+    {
+      "code": "osm:way/692205941",
+      "name": "Специјална болница др Боривоје Гњатић - Стари Сланкамен",
+      "countryCode": "RS",
+      "origin": "https://www.bolnicaslankamen.co.rs",
+      "lat": 45.1391915,
+      "lng": 20.2597568
+    },
+    {
+      "code": "osm:way/693385485",
+      "name": "Дом здравља Трговиште",
+      "countryCode": "RS",
+      "origin": "http://www.domzdravljatrgoviste.rs",
+      "lat": 42.3643105,
+      "lng": 22.0809347
+    },
+    {
+      "code": "osm:way/699410117",
+      "name": "Дом здравља Рума",
+      "countryCode": "RS",
+      "origin": "https://www.dzruma.rs",
+      "lat": 45.0139515,
+      "lng": 19.8211481
+    },
+    {
+      "code": "osm:way/700567961",
+      "name": "Здравствени центар Књажевац",
+      "countryCode": "RS",
+      "origin": "https://www.zcknjazevac.rs",
+      "lat": 43.5640592,
+      "lng": 22.2472306
+    },
+    {
+      "code": "osm:way/739542193",
+      "name": "Дом здравља „Др Ђорђе Ковачевић”",
+      "countryCode": "RS",
+      "origin": "https://dzlazarevac.rs",
+      "lat": 44.3820126,
+      "lng": 20.2758271
+    },
+    {
+      "code": "osm:way/793066998",
+      "name": "Општа болница Јагодина",
+      "countryCode": "RS",
+      "origin": "http://bolnicajagodina.rs",
+      "lat": 43.9784506,
+      "lng": 21.255465
+    },
+    {
+      "code": "osm:way/820849793",
+      "name": "Здравствени центар др Драгиша Мишовић Чачак",
+      "countryCode": "RS",
+      "origin": "https://www.zccacak.rs",
+      "lat": 43.8730072,
+      "lng": 20.366307
+    },
+    {
+      "code": "osm:way/835766475",
+      "name": "Специјална болница за рехабилитацију Ивањица",
+      "countryCode": "RS",
+      "origin": "https://sbivanjica.rs",
+      "lat": 43.5888324,
+      "lng": 20.2285282
+    },
+    {
+      "code": "osm:way/868660666",
+      "name": "Општа болница Пријепоље",
+      "countryCode": "RS",
+      "origin": "http://www.zcue.rs",
+      "lat": 43.3892764,
+      "lng": 19.6627472
+    },
+    {
+      "code": "osm:way/870280812",
+      "name": "Општа болница „Пожега”",
+      "countryCode": "RS",
+      "origin": "http://www.zcue.rs",
+      "lat": 43.8455061,
+      "lng": 20.0305079
+    },
+    {
+      "code": "osm:way/892627831",
+      "name": "Општа болница Кикинда",
+      "countryCode": "RS",
+      "origin": "https://obki.rs",
+      "lat": 45.8331398,
+      "lng": 20.4789819
+    },
+    {
+      "code": "osm:way/909006124",
+      "name": "Дом здравља Владичин Хан",
+      "countryCode": "RS",
+      "origin": "https://www.dzvladicinhan.rs",
+      "lat": 42.7056479,
+      "lng": 22.0647485
+    },
+    {
+      "code": "osm:way/923063572",
+      "name": "Здравствени центар Кладово",
+      "countryCode": "RS",
+      "origin": "http://www.zckladovo.co.rs",
+      "lat": 44.6117112,
+      "lng": 22.611539
+    },
+    {
+      "code": "osm:way/947778441",
+      "name": "Специјална болница Гејзер",
+      "countryCode": "RS",
+      "origin": "https://gejzer.rs",
+      "lat": 42.7772363,
+      "lng": 21.6024157
+    },
+    {
+      "code": "osm:way/988744889",
+      "name": "Градски завод за плућне болести и туберкулозу",
+      "countryCode": "RS",
+      "origin": "http://bolestipluca.org.rs",
+      "lat": 44.7991459,
+      "lng": 20.4980214
+    },
+    {
+      "code": "osm:way/990216095",
+      "name": "Институт за кардиоваскуларне болести Војводине - Сремска Каменица",
+      "countryCode": "RS",
+      "origin": "https://www.ikvbv.ns.ac.rs",
+      "lat": 45.2178737,
+      "lng": 19.8562291
+    },
+    {
+      "code": "osm:way/1025547066",
+      "name": "Општа болница Сремска Митровица",
+      "countryCode": "RS",
+      "origin": "http://www.obsm.rs",
+      "lat": 44.9735172,
+      "lng": 19.6048901
+    },
+    {
+      "code": "osm:way/1027696267",
+      "name": "Општа болница Лозница",
+      "countryCode": "RS",
+      "origin": "https://www.bolnicaloznica.rs",
+      "lat": 44.5363697,
+      "lng": 19.2296
+    },
+    {
+      "code": "osm:way/1027878395",
+      "name": "Здравствени центар Неготин",
+      "countryCode": "RS",
+      "origin": "https://zcnegotin.rs",
+      "lat": 44.2327195,
+      "lng": 22.5281784
+    },
+    {
+      "code": "osm:way/1030354166",
+      "name": "Специјална болница за рехабилитацију „Термал” Врдник",
+      "countryCode": "RS",
+      "origin": "https://www.termal-vrdnik.com",
+      "lat": 45.135624,
+      "lng": 19.79266
+    },
+    {
+      "code": "osm:way/1035084438",
+      "name": "Дом здравља Куршумлија",
+      "countryCode": "RS",
+      "origin": "https://www.dzkursumlija.org.rs",
+      "lat": 43.1414655,
+      "lng": 21.2738163
+    },
+    {
+      "code": "osm:way/1037128145",
+      "name": "Бања Кањижа",
+      "countryCode": "RS",
+      "origin": "https://www.banja-kanjiza.rs",
+      "lat": 46.0605963,
+      "lng": 20.0630407
+    },
+    {
+      "code": "osm:way/1039350379",
+      "name": "Дом здравља Сурдулица",
+      "countryCode": "RS",
+      "origin": "https://zcsurdulica.rs",
+      "lat": 42.6841697,
+      "lng": 22.1686672
+    },
+    {
+      "code": "osm:way/1227995987",
+      "name": "Специјална болница за плућне болести „Будислав Бабић”",
+      "countryCode": "RS",
+      "origin": "https://www.spbbelacrkva.org",
+      "lat": 44.9053152,
+      "lng": 21.4190256
+    },
+    {
+      "code": "osm:way/1347465356",
+      "name": "Специјална болница за психијатријске болести Горња Топоница",
+      "countryCode": "RS",
+      "origin": "https://spbtoponica.rs",
+      "lat": 43.3981345,
+      "lng": 21.8036983
+    },
+    {
+      "code": "osm:way/1395942996",
+      "name": "Дом здравља „Др Никола Џамић”",
+      "countryCode": "RS",
+      "origin": "https://www.dzvbanja.org.rs",
+      "lat": 43.6210512,
+      "lng": 20.8893771
+    },
+    {
+      "code": "osm:way/1565450368",
+      "name": "Војномедицинска академија",
+      "countryCode": "RS",
+      "origin": "http://www.vma.mod.gov.rs",
+      "lat": 44.7638788,
+      "lng": 20.4683783
+    }
+  ]
+}

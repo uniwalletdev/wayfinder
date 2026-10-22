@@ -1,0 +1,49 @@
+{
+  "countryCode": "SN",
+  "fetchedAt": "2026-10-21T02:48:37.197Z",
+  "count": 5,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/5238216585",
+      "name": "Hôpital Militaire de Ouakam",
+      "countryCode": "SN",
+      "origin": "https://www.hopitalmilitaireouakam.sn",
+      "lat": 14.7151889,
+      "lng": -17.4816358
+    },
+    {
+      "code": "osm:way/213114764",
+      "name": "Hôpital des Enfants de Diamniadio",
+      "countryCode": "SN",
+      "origin": "https://hed.sn",
+      "lat": 14.7272055,
+      "lng": -17.1641207
+    },
+    {
+      "code": "osm:way/806024481",
+      "name": "Polyclinique Louis Pasteur ''La Référence''",
+      "countryCode": "SN",
+      "origin": "http://www.pasteur.sn",
+      "lat": 14.711646,
+      "lng": -17.270406
+    },
+    {
+      "code": "osm:way/806779326",
+      "name": "Centre Hospitalier National Psychiatrique de Thiaroye",
+      "countryCode": "SN",
+      "origin": "https://hopitalthiaroye.com",
+      "lat": 14.742132,
+      "lng": -17.3531758
+    },
+    {
+      "code": "osm:way/948540122",
+      "name": "EPS (Etablissement Publique de Santé) niveau 1 de Kaffrine",
+      "countryCode": "SN",
+      "origin": "https://www.sante.gouv.sn",
+      "lat": 14.0989168,
+      "lng": -15.5569385
+    }
+  ]
+}

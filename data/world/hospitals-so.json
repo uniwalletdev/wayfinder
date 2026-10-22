@@ -1,0 +1,17 @@
+{
+  "countryCode": "SO",
+  "fetchedAt": "2026-10-21T02:49:13.594Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/791242083",
+      "name": "Dhakhtarka Adna مستشفى أدنا آدن",
+      "countryCode": "SO",
+      "origin": "https://www.ednahospital.org",
+      "lat": 9.5510557,
+      "lng": 44.0668418
+    }
+  ]
+}

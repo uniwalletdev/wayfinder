@@ -1,0 +1,73 @@
+{
+  "countryCode": "MN",
+  "fetchedAt": "2026-10-21T02:07:22.307Z",
+  "count": 8,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/3887084830",
+      "name": "ХӨСҮТ",
+      "countryCode": "MN",
+      "origin": "https://www.nccd.gov.mn",
+      "lat": 47.9136116,
+      "lng": 106.947421
+    },
+    {
+      "code": "osm:way/219638421",
+      "name": "Баянгол эмнэлэг",
+      "countryCode": "MN",
+      "origin": "http://bayangolhospital.mn",
+      "lat": 47.9246113,
+      "lng": 106.8893846
+    },
+    {
+      "code": "osm:way/223217724",
+      "name": "Гурван гал эмнэлэг",
+      "countryCode": "MN",
+      "origin": "https://ggh.mn",
+      "lat": 47.924774,
+      "lng": 106.8900066
+    },
+    {
+      "code": "osm:way/862127992",
+      "name": "Улаанбаатар Мед эмнэлэг",
+      "countryCode": "MN",
+      "origin": "https://ubmed.mn",
+      "lat": 47.9213854,
+      "lng": 106.9361044
+    },
+    {
+      "code": "osm:way/952080972",
+      "name": "Зоонозын өвчин судлалын үндэсний төв",
+      "countryCode": "MN",
+      "origin": "https://nczd.gov.mn",
+      "lat": 47.8999783,
+      "lng": 106.7837697
+    },
+    {
+      "code": "osm:way/972441327",
+      "name": "Интермед эмнэлэг",
+      "countryCode": "MN",
+      "origin": "https://www.intermed.mn",
+      "lat": 47.8982477,
+      "lng": 106.9056248
+    },
+    {
+      "code": "osm:way/1055087881",
+      "name": "Монос",
+      "countryCode": "MN",
+      "origin": "https://www.monos.mn",
+      "lat": 49.0262095,
+      "lng": 104.0268454
+    },
+    {
+      "code": "osm:way/1317637592",
+      "name": "Эх, нярай, эмэгтэйчүүдийн үндэсний төв",
+      "countryCode": "MN",
+      "origin": "https://eneut.moh.gov.mn",
+      "lat": 47.8439238,
+      "lng": 106.789439
+    }
+  ]
+}

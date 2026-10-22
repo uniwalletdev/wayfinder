@@ -1,0 +1,49 @@
+{
+  "countryCode": "SL",
+  "fetchedAt": "2026-10-21T02:47:25.419Z",
+  "count": 5,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/302974128",
+      "name": "Panguma Hospital",
+      "countryCode": "SL",
+      "origin": "http://www.pangumahospital.org",
+      "lat": 8.1852268,
+      "lng": -11.1375361
+    },
+    {
+      "code": "osm:way/306912779",
+      "name": "Choithram Memorial Hospital",
+      "countryCode": "SL",
+      "origin": "https://cmhfreetown.com",
+      "lat": 8.453081,
+      "lng": -13.2470789
+    },
+    {
+      "code": "osm:way/772435576",
+      "name": "Masanga Hospital",
+      "countryCode": "SL",
+      "origin": "https://www.masangahospital.org",
+      "lat": 8.7507497,
+      "lng": -11.836847
+    },
+    {
+      "code": "osm:way/1059802054",
+      "name": "Hangha Maternal and Children Hospital",
+      "countryCode": "SL",
+      "origin": "https://www.msf.org",
+      "lat": 7.9470751,
+      "lng": -11.1414044
+    },
+    {
+      "code": "osm:way/1341622350",
+      "name": "Paul E. Farmer Maternal Center of Excellence",
+      "countryCode": "SL",
+      "origin": "https://www.pih.org",
+      "lat": 8.648017,
+      "lng": -10.9653079
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "countryCode": "AF",
+  "fetchedAt": "2026-10-21T00:35:55.916Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/6041393995",
+      "name": "DK - German Medical Diagnostic Centre",
+      "countryCode": "AF",
+      "origin": "https://www.medical-kabul.com",
+      "lat": 34.5350271,
+      "lng": 69.1635342
+    },
+    {
+      "code": "osm:way/611222192",
+      "name": "امیری روغتون",
+      "countryCode": "AF",
+      "origin": "https://www.amc.com.af",
+      "lat": 34.5342842,
+      "lng": 69.1036688
+    },
+    {
+      "code": "osm:way/991171093",
+      "name": "شفاخانه فرانسوی برای اطفال",
+      "countryCode": "AF",
+      "origin": "https://fmic.org.af",
+      "lat": 34.5202531,
+      "lng": 69.1334499
+    }
+  ]
+}

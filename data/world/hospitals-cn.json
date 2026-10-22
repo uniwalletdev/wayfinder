@@ -1,0 +1,2265 @@
+{
+  "countryCode": "CN",
+  "fetchedAt": "2026-10-21T01:05:46.955Z",
+  "count": 282,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/600265656",
+      "name": "北京莱佛士医院",
+      "countryCode": "CN",
+      "origin": "https://www.rafflesmedicalgroup.com",
+      "lat": 39.9469421,
+      "lng": 116.4439109
+    },
+    {
+      "code": "osm:node/627757065",
+      "name": "Red Cross Hospital",
+      "countryCode": "CN",
+      "origin": "https://qhrch.com",
+      "lat": 36.6133678,
+      "lng": 101.780727
+    },
+    {
+      "code": "osm:node/4794353921",
+      "name": "上海国宾医疗中心",
+      "countryCode": "CN",
+      "origin": "https://www.ikang.com",
+      "lat": 31.2317825,
+      "lng": 121.4462509
+    },
+    {
+      "code": "osm:node/5604091499",
+      "name": "Beijing Antai Jiayuan Maternity Hospital",
+      "countryCode": "CN",
+      "origin": "http://www.bjatfck.com",
+      "lat": 39.8365181,
+      "lng": 116.3589763
+    },
+    {
+      "code": "osm:node/6282670487",
+      "name": "良乡医院",
+      "countryCode": "CN",
+      "origin": "http://www.bjfslxyy.com",
+      "lat": 39.73524,
+      "lng": 116.1348045
+    },
+    {
+      "code": "osm:node/6598494656",
+      "name": "长葛市人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.cgsrmyy.cn",
+      "lat": 34.2241887,
+      "lng": 113.766381
+    },
+    {
+      "code": "osm:node/6661695274",
+      "name": "广州医科大学附属脑科医院（荔湾院区）",
+      "countryCode": "CN",
+      "origin": "https://www.gzbrain.cn",
+      "lat": 23.1295264,
+      "lng": 113.2369302
+    },
+    {
+      "code": "osm:node/6743929888",
+      "name": "荆门市人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.jmey.com.cn",
+      "lat": 31.0435244,
+      "lng": 112.193002
+    },
+    {
+      "code": "osm:node/6968128385",
+      "name": "天津医科大学中新生态城医院",
+      "countryCode": "CN",
+      "origin": "http://tjstcyy.com.cn",
+      "lat": 39.1205358,
+      "lng": 117.7491235
+    },
+    {
+      "code": "osm:node/8144017768",
+      "name": "旺苍县人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.wangcang120.com",
+      "lat": 32.2305621,
+      "lng": 106.2829771
+    },
+    {
+      "code": "osm:node/9009732212",
+      "name": "宿迁瑞慈体检中心",
+      "countryCode": "CN",
+      "origin": "https://www.rich-healthcare.com",
+      "lat": 33.9593482,
+      "lng": 118.2497106
+    },
+    {
+      "code": "osm:node/9169725363",
+      "name": "新疆生产建设兵团第四师医院",
+      "countryCode": "CN",
+      "origin": "https://www.nssyy.cn",
+      "lat": 43.9121986,
+      "lng": 81.3127171
+    },
+    {
+      "code": "osm:node/9444653800",
+      "name": "兰州辅仁医院",
+      "countryCode": "CN",
+      "origin": "https://lzfryy.com",
+      "lat": 36.4955061,
+      "lng": 103.682764
+    },
+    {
+      "code": "osm:node/9860726615",
+      "name": "武汉京都结石医院",
+      "countryCode": "CN",
+      "origin": "http://www.hbjieshi.com",
+      "lat": 30.5960435,
+      "lng": 114.3406523
+    },
+    {
+      "code": "osm:node/10127208276",
+      "name": "首都医科大学附属复兴医院",
+      "countryCode": "CN",
+      "origin": "https://www.bj-fxh.com",
+      "lat": 39.9038297,
+      "lng": 116.333966
+    },
+    {
+      "code": "osm:node/11563961847",
+      "name": "濮阳风湿病医院",
+      "countryCode": "CN",
+      "origin": "http://www.pyfsbyy.com",
+      "lat": 35.7770647,
+      "lng": 114.9937862
+    },
+    {
+      "code": "osm:node/11992214006",
+      "name": "苏州大学医院",
+      "countryCode": "CN",
+      "origin": "https://szdxyy.suda.edu.cn",
+      "lat": 31.3057197,
+      "lng": 120.6408131
+    },
+    {
+      "code": "osm:node/12311551928",
+      "name": "金氏调衡中医诊所",
+      "countryCode": "CN",
+      "origin": "https://garmoniy.com",
+      "lat": 18.2248637,
+      "lng": 109.5172135
+    },
+    {
+      "code": "osm:node/12629851732",
+      "name": "天域中医馆",
+      "countryCode": "CN",
+      "origin": "https://t.me",
+      "lat": 18.2248606,
+      "lng": 109.522996
+    },
+    {
+      "code": "osm:way/101460515",
+      "name": "博愛醫院 Pok Oi Hospital",
+      "countryCode": "CN",
+      "origin": "http://www.ha.org.hk",
+      "lat": 22.4453643,
+      "lng": 114.0415767
+    },
+    {
+      "code": "osm:way/103642342",
+      "name": "武汉大学医院",
+      "countryCode": "CN",
+      "origin": "https://hospital.whu.edu.cn",
+      "lat": 30.5358227,
+      "lng": 114.358517
+    },
+    {
+      "code": "osm:way/132646537",
+      "name": "武汉市汉阳医院",
+      "countryCode": "CN",
+      "origin": "https://www.whhyyy.com",
+      "lat": 30.5510756,
+      "lng": 114.240368
+    },
+    {
+      "code": "osm:way/154328376",
+      "name": "青岛市市立医院",
+      "countryCode": "CN",
+      "origin": "https://www.qdslyy.cn",
+      "lat": 36.0733829,
+      "lng": 120.3216857
+    },
+    {
+      "code": "osm:way/176710996",
+      "name": "荃灣港安醫院 Tsuen Wan Adventist Hospital",
+      "countryCode": "CN",
+      "origin": "https://www.twah.org.hk",
+      "lat": 22.3768586,
+      "lng": 114.1045803
+    },
+    {
+      "code": "osm:way/192206043",
+      "name": "新华医院",
+      "countryCode": "CN",
+      "origin": "https://www.xinhuamed.com.cn",
+      "lat": 31.275066,
+      "lng": 121.5131889
+    },
+    {
+      "code": "osm:way/206105290",
+      "name": "鏡湖醫院氹仔醫療中心 Centro Médico da Taipa do Hospital Kiang Wu",
+      "countryCode": "CN",
+      "origin": "https://www.kwh.org.mo",
+      "lat": 22.1515311,
+      "lng": 113.554247
+    },
+    {
+      "code": "osm:way/216874872",
+      "name": "天津医科大学总医院",
+      "countryCode": "CN",
+      "origin": "https://www.tjmugh.com.cn",
+      "lat": 39.1164238,
+      "lng": 117.1782974
+    },
+    {
+      "code": "osm:way/240148921",
+      "name": "北京爱育华妇儿医院",
+      "countryCode": "CN",
+      "origin": "http://www.aiyuhua.com",
+      "lat": 39.7717668,
+      "lng": 116.5163935
+    },
+    {
+      "code": "osm:way/241094443",
+      "name": "青岛大学附属医院",
+      "countryCode": "CN",
+      "origin": "https://www.qduh.cn",
+      "lat": 36.0675117,
+      "lng": 120.3219763
+    },
+    {
+      "code": "osm:way/242831571",
+      "name": "香港兒童醫院 Hong Kong Children's Hospital",
+      "countryCode": "CN",
+      "origin": "https://www31.ha.org.hk",
+      "lat": 22.3157481,
+      "lng": 114.2088657
+    },
+    {
+      "code": "osm:way/254624004",
+      "name": "湘雅萍矿合作医院",
+      "countryCode": "CN",
+      "origin": "http://11xypk.ganqi.net",
+      "lat": 27.6312373,
+      "lng": 113.8397638
+    },
+    {
+      "code": "osm:way/255869559",
+      "name": "西安高新医院",
+      "countryCode": "CN",
+      "origin": "http://www.gxyy.net",
+      "lat": 34.2317654,
+      "lng": 108.8748141
+    },
+    {
+      "code": "osm:way/256453433",
+      "name": "北京四惠西区医院",
+      "countryCode": "CN",
+      "origin": "https://www.tianjian120.com",
+      "lat": 39.9561255,
+      "lng": 116.3432985
+    },
+    {
+      "code": "osm:way/264303319",
+      "name": "九江市中医院南院",
+      "countryCode": "CN",
+      "origin": "https://www.jjzyy.cn",
+      "lat": 29.6931559,
+      "lng": 116.0018307
+    },
+    {
+      "code": "osm:way/266293714",
+      "name": "首都医科大学附属北京世纪坛医院",
+      "countryCode": "CN",
+      "origin": "https://www.bjsjth.cn",
+      "lat": 39.8976157,
+      "lng": 116.3128657
+    },
+    {
+      "code": "osm:way/267331224",
+      "name": "惠州市第二妇幼保健院",
+      "countryCode": "CN",
+      "origin": "https://www.hzsbjy.com",
+      "lat": 23.0780166,
+      "lng": 114.3846193
+    },
+    {
+      "code": "osm:way/292823213",
+      "name": "伊利沙伯醫院 Queen Elizabeth Hospital",
+      "countryCode": "CN",
+      "origin": "http://www3.ha.org.hk",
+      "lat": 22.3089129,
+      "lng": 114.1743156
+    },
+    {
+      "code": "osm:way/293754282",
+      "name": "香港浸信會醫院 Hong Kong Baptist Hospital",
+      "countryCode": "CN",
+      "origin": "https://www.hkbh.org.hk",
+      "lat": 22.3396393,
+      "lng": 114.1799159
+    },
+    {
+      "code": "osm:way/294548697",
+      "name": "广东省人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.gdghospital.org.cn",
+      "lat": 23.1270916,
+      "lng": 113.2828323
+    },
+    {
+      "code": "osm:way/294618092",
+      "name": "广州市皮肤病医院",
+      "countryCode": "CN",
+      "origin": "https://www.gzpfs.com",
+      "lat": 23.1459487,
+      "lng": 113.278783
+    },
+    {
+      "code": "osm:way/294618094",
+      "name": "广东省第二中医院",
+      "countryCode": "CN",
+      "origin": "https://www.gdzy5413.com",
+      "lat": 23.1457132,
+      "lng": 113.2797515
+    },
+    {
+      "code": "osm:way/294625595",
+      "name": "复旦大学附属中山医院",
+      "countryCode": "CN",
+      "origin": "https://www.zs-hospital.sh.cn",
+      "lat": 31.1997162,
+      "lng": 121.4507354
+    },
+    {
+      "code": "osm:way/294677943",
+      "name": "中山大学附属肿瘤医院",
+      "countryCode": "CN",
+      "origin": "https://www.sysucc.org.cn",
+      "lat": 23.1341287,
+      "lng": 113.2845564
+    },
+    {
+      "code": "osm:way/296606768",
+      "name": "中山大学附属第一医院",
+      "countryCode": "CN",
+      "origin": "http://www.gzsums.net",
+      "lat": 23.1292745,
+      "lng": 113.2855723
+    },
+    {
+      "code": "osm:way/296703489",
+      "name": "中山大学附属口腔医院",
+      "countryCode": "CN",
+      "origin": "https://www.zdkqyy.com",
+      "lat": 23.1326075,
+      "lng": 113.2779274
+    },
+    {
+      "code": "osm:way/297687894",
+      "name": "长春市中心医院",
+      "countryCode": "CN",
+      "origin": "https://www.ccszxyy.cn",
+      "lat": 43.8898722,
+      "lng": 125.3198049
+    },
+    {
+      "code": "osm:way/298794141",
+      "name": "正骨医院",
+      "countryCode": "CN",
+      "origin": "http://www.gzzgyy.com",
+      "lat": 23.134033,
+      "lng": 113.2672978
+    },
+    {
+      "code": "osm:way/298798031",
+      "name": "广州市第一人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.gzhosp.cn",
+      "lat": 23.133973,
+      "lng": 113.2511865
+    },
+    {
+      "code": "osm:way/304174735",
+      "name": "长春市口腔医院",
+      "countryCode": "CN",
+      "origin": "http://www.ccskqyy.com",
+      "lat": 43.8770639,
+      "lng": 125.3391635
+    },
+    {
+      "code": "osm:way/304174736",
+      "name": "长春爱尔眼科医院",
+      "countryCode": "CN",
+      "origin": "https://www.aier0431.com",
+      "lat": 43.8784506,
+      "lng": 125.3376894
+    },
+    {
+      "code": "osm:way/305160770",
+      "name": "广州医科大学附属肿瘤医院",
+      "countryCode": "CN",
+      "origin": "https://www.gzcancer.com.cn",
+      "lat": 23.1499525,
+      "lng": 113.2878063
+    },
+    {
+      "code": "osm:way/305160771",
+      "name": "广州市胸科医院",
+      "countryCode": "CN",
+      "origin": "https://www.xkyy.com.cn",
+      "lat": 23.1501746,
+      "lng": 113.28332
+    },
+    {
+      "code": "osm:way/309171960",
+      "name": "中南大学湘雅二医院",
+      "countryCode": "CN",
+      "origin": "http://www.xyeyy.com",
+      "lat": 28.1913859,
+      "lng": 112.9881539
+    },
+    {
+      "code": "osm:way/312713956",
+      "name": "中国人民解放军南部战区总医院",
+      "countryCode": "CN",
+      "origin": "https://www.gzzyy.com",
+      "lat": 23.1454245,
+      "lng": 113.2492868
+    },
+    {
+      "code": "osm:way/318485858",
+      "name": "深圳市龙华区人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.lhrmyy.cn",
+      "lat": 22.658136,
+      "lng": 114.0276676
+    },
+    {
+      "code": "osm:way/322631273",
+      "name": "香港大学深圳医院",
+      "countryCode": "CN",
+      "origin": "https://www.hku-szh.org",
+      "lat": 22.5281447,
+      "lng": 113.9911201
+    },
+    {
+      "code": "osm:way/328093138",
+      "name": "枞阳县人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.zyxyy.com",
+      "lat": 30.7075461,
+      "lng": 117.2398297
+    },
+    {
+      "code": "osm:way/338090948",
+      "name": "溧阳市人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.lyrmyy.com",
+      "lat": 31.4263506,
+      "lng": 119.4552214
+    },
+    {
+      "code": "osm:way/346833196",
+      "name": "上海市嘉定区中心医院",
+      "countryCode": "CN",
+      "origin": "https://www.jdhospital.com",
+      "lat": 31.3896526,
+      "lng": 121.2350345
+    },
+    {
+      "code": "osm:way/365476148",
+      "name": "遵义医科大学附属医院",
+      "countryCode": "CN",
+      "origin": "https://htts",
+      "lat": 27.7099628,
+      "lng": 106.9412964
+    },
+    {
+      "code": "osm:way/375948932",
+      "name": "小欖醫院 Siu Lam Hospital",
+      "countryCode": "CN",
+      "origin": "http://www.ha.org.hk",
+      "lat": 22.4099627,
+      "lng": 113.9747424
+    },
+    {
+      "code": "osm:way/387282841",
+      "name": "𦘦庆市第一人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.zqts.com",
+      "lat": 23.0998738,
+      "lng": 112.5036988
+    },
+    {
+      "code": "osm:way/392918025",
+      "name": "广州白云心理医院",
+      "countryCode": "CN",
+      "origin": "http://www.gzbyyy.com",
+      "lat": 23.2575816,
+      "lng": 113.3162287
+    },
+    {
+      "code": "osm:way/395069442",
+      "name": "广州医科大学附属脑科医院（芳村总院）",
+      "countryCode": "CN",
+      "origin": "https://www.gzbrain.cn",
+      "lat": 23.1012694,
+      "lng": 113.2349344
+    },
+    {
+      "code": "osm:way/398701514",
+      "name": "南华大学附属南华医院",
+      "countryCode": "CN",
+      "origin": "https://www.hnnhyy.com",
+      "lat": 26.8723913,
+      "lng": 112.6514266
+    },
+    {
+      "code": "osm:way/403617504",
+      "name": "中山大学附属第三医院岭南医院",
+      "countryCode": "CN",
+      "origin": "https://lnyy.zssy.com.cn",
+      "lat": 23.1733824,
+      "lng": 113.4665014
+    },
+    {
+      "code": "osm:way/410882454",
+      "name": "兰州市第一人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.lzdyyy.com",
+      "lat": 36.0763558,
+      "lng": 103.7695355
+    },
+    {
+      "code": "osm:way/413054275",
+      "name": "重庆医科大学附属儿童医院（渝中院区）",
+      "countryCode": "CN",
+      "origin": "https://www.chcmu.com",
+      "lat": 29.5590391,
+      "lng": 106.550953
+    },
+    {
+      "code": "osm:way/416160114",
+      "name": "甘肃省人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.gsyy.cn",
+      "lat": 36.0488613,
+      "lng": 103.8645904
+    },
+    {
+      "code": "osm:way/422620832",
+      "name": "孙逸仙纪念医院",
+      "countryCode": "CN",
+      "origin": "http://www.syshospital.com",
+      "lat": 23.1123852,
+      "lng": 113.2506738
+    },
+    {
+      "code": "osm:way/424710652",
+      "name": "广州中医药大学金沙洲医院",
+      "countryCode": "CN",
+      "origin": "https://www.jsz120.com",
+      "lat": 23.1636252,
+      "lng": 113.2004813
+    },
+    {
+      "code": "osm:way/424863449",
+      "name": "广州医科大学附属第三医院",
+      "countryCode": "CN",
+      "origin": "http://www.gy3y.com",
+      "lat": 23.1205162,
+      "lng": 113.2288362
+    },
+    {
+      "code": "osm:way/425568288",
+      "name": "甘肃玛利亚妇科医院",
+      "countryCode": "CN",
+      "origin": "http://www.lzmly.com",
+      "lat": 36.0549713,
+      "lng": 103.8343943
+    },
+    {
+      "code": "osm:way/425730570",
+      "name": "广州中医药大学第一附属医院",
+      "countryCode": "CN",
+      "origin": "https://www.gztcm.com.cn",
+      "lat": 23.1599195,
+      "lng": 113.2592972
+    },
+    {
+      "code": "osm:way/434768936",
+      "name": "兰州大学第一医院",
+      "countryCode": "CN",
+      "origin": "https://www.lzdxdyyy.com",
+      "lat": 36.0459867,
+      "lng": 103.8673708
+    },
+    {
+      "code": "osm:way/435873404",
+      "name": "唐山职业技术学院附属医院 唐山市口腔医院",
+      "countryCode": "CN",
+      "origin": "http://www.tsxhyy.org",
+      "lat": 39.6232769,
+      "lng": 118.1428441
+    },
+    {
+      "code": "osm:way/436643267",
+      "name": "唐山市人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.tsrmyy.cn",
+      "lat": 39.6181668,
+      "lng": 118.2064098
+    },
+    {
+      "code": "osm:way/446472484",
+      "name": "首都医科大学附属北京潞河医院",
+      "countryCode": "CN",
+      "origin": "https://www.luhehospital.com",
+      "lat": 39.9000928,
+      "lng": 116.6539473
+    },
+    {
+      "code": "osm:way/450698359",
+      "name": "青岛大学附属医院(西海岸院区)",
+      "countryCode": "CN",
+      "origin": "https://www.qduh.cn",
+      "lat": 35.9872265,
+      "lng": 120.1513015
+    },
+    {
+      "code": "osm:way/453319885",
+      "name": "香港中文大學醫院 CUHK Medical Centre",
+      "countryCode": "CN",
+      "origin": "https://www.cuhkmc.hk",
+      "lat": 22.4135189,
+      "lng": 114.2113872
+    },
+    {
+      "code": "osm:way/456825812",
+      "name": "南山区人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.sznsyy.net",
+      "lat": 22.5337132,
+      "lng": 113.9178378
+    },
+    {
+      "code": "osm:way/463987918",
+      "name": "北京同仁医院亦庄分院",
+      "countryCode": "CN",
+      "origin": "https://www.trhos.com",
+      "lat": 39.773791,
+      "lng": 116.5139119
+    },
+    {
+      "code": "osm:way/467592276",
+      "name": "甘肃九州中西医结合医院",
+      "countryCode": "CN",
+      "origin": "http://gsgkyy.com",
+      "lat": 36.0320086,
+      "lng": 103.8650728
+    },
+    {
+      "code": "osm:way/468639215",
+      "name": "天津市口腔医院",
+      "countryCode": "CN",
+      "origin": "http://www.tjskq.com",
+      "lat": 39.1269359,
+      "lng": 117.1998723
+    },
+    {
+      "code": "osm:way/470200969",
+      "name": "湖北省肿瘤医院",
+      "countryCode": "CN",
+      "origin": "https://www.hbch.com.cn",
+      "lat": 30.5024362,
+      "lng": 114.3591778
+    },
+    {
+      "code": "osm:way/476290540",
+      "name": "中国人民解放军第四五五医院",
+      "countryCode": "CN",
+      "origin": "http://www.455hospital.cn",
+      "lat": 31.2023097,
+      "lng": 121.4232172
+    },
+    {
+      "code": "osm:way/483729643",
+      "name": "相城人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.xcrmyy.com",
+      "lat": 31.3756249,
+      "lng": 120.6197906
+    },
+    {
+      "code": "osm:way/493114482",
+      "name": "深圳市第二人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.szrch.com",
+      "lat": 22.5598191,
+      "lng": 114.0805713
+    },
+    {
+      "code": "osm:way/506772775",
+      "name": "兰州华夏医院",
+      "countryCode": "CN",
+      "origin": "http://www.lzhxyy.com",
+      "lat": 36.0529138,
+      "lng": 103.8446655
+    },
+    {
+      "code": "osm:way/513502377",
+      "name": "前海蛇口自贸区医院",
+      "countryCode": "CN",
+      "origin": "https://www.skhosp.cn",
+      "lat": 22.4995707,
+      "lng": 113.9168588
+    },
+    {
+      "code": "osm:way/517295321",
+      "name": "广州市儿童医院",
+      "countryCode": "CN",
+      "origin": "https://www.gzfezx.com",
+      "lat": 23.1221042,
+      "lng": 113.2484802
+    },
+    {
+      "code": "osm:way/518660571",
+      "name": "唐山中心医院",
+      "countryCode": "CN",
+      "origin": "http://www.tszxhosp.com",
+      "lat": 39.6680659,
+      "lng": 118.1318557
+    },
+    {
+      "code": "osm:way/526922852",
+      "name": "天津医科大学第二医院",
+      "countryCode": "CN",
+      "origin": "http://www.tjmush.com.cn",
+      "lat": 39.0817746,
+      "lng": 117.2142073
+    },
+    {
+      "code": "osm:way/533912106",
+      "name": "阜外医院深圳医院",
+      "countryCode": "CN",
+      "origin": "https://www.fuwaisz.cn",
+      "lat": 22.559812,
+      "lng": 113.9427457
+    },
+    {
+      "code": "osm:way/541930929",
+      "name": "城阳区人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.qdcyyy.com",
+      "lat": 36.3006713,
+      "lng": 120.3953315
+    },
+    {
+      "code": "osm:way/543052131",
+      "name": "成都市温江区人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.wj120.com.cn",
+      "lat": 30.7175583,
+      "lng": 103.8962294
+    },
+    {
+      "code": "osm:way/543831900",
+      "name": "北京大学第三医院",
+      "countryCode": "CN",
+      "origin": "https://www.puh3.net.cn",
+      "lat": 39.981363,
+      "lng": 116.3538051
+    },
+    {
+      "code": "osm:way/543831903",
+      "name": "北京大学第六医院",
+      "countryCode": "CN",
+      "origin": "https://www.pkuh6.cn",
+      "lat": 39.9809118,
+      "lng": 116.3511677
+    },
+    {
+      "code": "osm:way/543838500",
+      "name": "首都医科大学附属北京佑安医院",
+      "countryCode": "CN",
+      "origin": "https://www.bjyah.com",
+      "lat": 39.8652864,
+      "lng": 116.3496477
+    },
+    {
+      "code": "osm:way/543852365",
+      "name": "首都医科大学附属北京儿童医院",
+      "countryCode": "CN",
+      "origin": "https://www.bch.com.cn",
+      "lat": 39.9110944,
+      "lng": 116.3483686
+    },
+    {
+      "code": "osm:way/545450209",
+      "name": "三亚市中医院",
+      "countryCode": "CN",
+      "origin": "https://hospital-tkm.ru",
+      "lat": 18.2579201,
+      "lng": 109.5179122
+    },
+    {
+      "code": "osm:way/545627636",
+      "name": "中山大学附属第三医院",
+      "countryCode": "CN",
+      "origin": "https://www.zssy.com.cn",
+      "lat": 23.136523,
+      "lng": 113.3359962
+    },
+    {
+      "code": "osm:way/550229901",
+      "name": "烟台毓璜顶医院",
+      "countryCode": "CN",
+      "origin": "https://www.ytyhdyy.com",
+      "lat": 37.534623,
+      "lng": 121.3843591
+    },
+    {
+      "code": "osm:way/552514580",
+      "name": "广州医科大学附属第二医院番禺院区",
+      "countryCode": "CN",
+      "origin": "https://www.gyey.com",
+      "lat": 22.9458296,
+      "lng": 113.4828392
+    },
+    {
+      "code": "osm:way/552769969",
+      "name": "山东大学齐鲁医院青岛院区",
+      "countryCode": "CN",
+      "origin": "https://www.qlyyqd.com",
+      "lat": 36.112357,
+      "lng": 120.4158653
+    },
+    {
+      "code": "osm:way/556207353",
+      "name": "青岛心血管病医院",
+      "countryCode": "CN",
+      "origin": "https://www.qdfw.com",
+      "lat": 36.0898914,
+      "lng": 120.3813911
+    },
+    {
+      "code": "osm:way/558970490",
+      "name": "青岛大学附属医院",
+      "countryCode": "CN",
+      "origin": "https://www.qduh.cn",
+      "lat": 36.101093,
+      "lng": 120.4490043
+    },
+    {
+      "code": "osm:way/560851710",
+      "name": "广州市妇女儿童医疗中心",
+      "countryCode": "CN",
+      "origin": "https://www.gzfezx.com",
+      "lat": 23.1275001,
+      "lng": 113.3148516
+    },
+    {
+      "code": "osm:way/575829352",
+      "name": "北京怡德医院",
+      "countryCode": "CN",
+      "origin": "https://www.edencare.com.cn",
+      "lat": 39.9491867,
+      "lng": 116.2742558
+    },
+    {
+      "code": "osm:way/611548358",
+      "name": "临沂市第四人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.lyjsws.com",
+      "lat": 35.0953379,
+      "lng": 118.3104599
+    },
+    {
+      "code": "osm:way/617822172",
+      "name": "金堂县第一人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.jintangyy.com",
+      "lat": 30.8782528,
+      "lng": 104.4151995
+    },
+    {
+      "code": "osm:way/618204391",
+      "name": "金堂县中医医院",
+      "countryCode": "CN",
+      "origin": "http://www.jtxzyyy.com",
+      "lat": 30.8537057,
+      "lng": 104.395827
+    },
+    {
+      "code": "osm:way/645949374",
+      "name": "中国医科大学附属第一医院",
+      "countryCode": "CN",
+      "origin": "https://www.cmu1h.com",
+      "lat": 41.7927802,
+      "lng": 123.4054486
+    },
+    {
+      "code": "osm:way/646911636",
+      "name": "桂林市中西医结合医院",
+      "countryCode": "CN",
+      "origin": "https://www.glwyy.org.cn",
+      "lat": 25.2630086,
+      "lng": 110.3194003
+    },
+    {
+      "code": "osm:way/657177578",
+      "name": "中山大学附属第八医院",
+      "countryCode": "CN",
+      "origin": "http://www.sysu8h.com.cn",
+      "lat": 22.5411804,
+      "lng": 114.074294
+    },
+    {
+      "code": "osm:way/662503951",
+      "name": "南方医科大学中西医结合医院",
+      "countryCode": "CN",
+      "origin": "https://www.nfzxy.com",
+      "lat": 23.0933966,
+      "lng": 113.3323875
+    },
+    {
+      "code": "osm:way/666565277",
+      "name": "濮阳市人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.hnpysrmyy.com",
+      "lat": 35.7672627,
+      "lng": 115.0217863
+    },
+    {
+      "code": "osm:way/670193435",
+      "name": "中山大学附属第三医院粤东医院",
+      "countryCode": "CN",
+      "origin": "http://www.zssyydyy.cn",
+      "lat": 24.283716,
+      "lng": 116.0647082
+    },
+    {
+      "code": "osm:way/671353180",
+      "name": "首都医科大学附属北京朝阳医院",
+      "countryCode": "CN",
+      "origin": "https://www.bjcyh.com.cn",
+      "lat": 39.9240307,
+      "lng": 116.4471942
+    },
+    {
+      "code": "osm:way/671792165",
+      "name": "中国康复研究中心（北京博爱医院）",
+      "countryCode": "CN",
+      "origin": "https://www.crrc.com.cn",
+      "lat": 39.847853,
+      "lng": 116.3721575
+    },
+    {
+      "code": "osm:way/675733279",
+      "name": "哈尔滨工程大学医院",
+      "countryCode": "CN",
+      "origin": "https://hospital.hrbeu.edu.cn",
+      "lat": 45.7692373,
+      "lng": 126.6754087
+    },
+    {
+      "code": "osm:way/676443430",
+      "name": "广州医科大学附属脑科医院（江村院区）",
+      "countryCode": "CN",
+      "origin": "https://www.gzbrain.cn",
+      "lat": 23.2775592,
+      "lng": 113.2412357
+    },
+    {
+      "code": "osm:way/677007472",
+      "name": "惠州市第二人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.hzey.net",
+      "lat": 23.1056069,
+      "lng": 114.383846
+    },
+    {
+      "code": "osm:way/677411918",
+      "name": "桂林市第二人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.gleyy.com",
+      "lat": 25.2904886,
+      "lng": 110.2978213
+    },
+    {
+      "code": "osm:way/679031351",
+      "name": "含山县中医院",
+      "countryCode": "CN",
+      "origin": "http://www.ahhszyy.com",
+      "lat": 31.710056,
+      "lng": 118.0978054
+    },
+    {
+      "code": "osm:way/682666715",
+      "name": "桂林市人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.glrmyy.com",
+      "lat": 25.2720441,
+      "lng": 110.290309
+    },
+    {
+      "code": "osm:way/682678657",
+      "name": "广西壮族自治区南溪山医院",
+      "countryCode": "CN",
+      "origin": "http://www.nxsyy.com",
+      "lat": 25.250078,
+      "lng": 110.284549
+    },
+    {
+      "code": "osm:way/682678661",
+      "name": "桂林市中医医院",
+      "countryCode": "CN",
+      "origin": "http://www.glzyy.org.cn",
+      "lat": 25.2751075,
+      "lng": 110.28611
+    },
+    {
+      "code": "osm:way/683732266",
+      "name": "本溪市中心医院",
+      "countryCode": "CN",
+      "origin": "https://www.bxszxyy.com",
+      "lat": 41.2996579,
+      "lng": 123.7649277
+    },
+    {
+      "code": "osm:way/683807387",
+      "name": "本钢总医院",
+      "countryCode": "CN",
+      "origin": "http://www.bgzyy.com",
+      "lat": 41.2938716,
+      "lng": 123.7598759
+    },
+    {
+      "code": "osm:way/683807388",
+      "name": "本溪市中医院",
+      "countryCode": "CN",
+      "origin": "https://www.bxzyy.com",
+      "lat": 41.294073,
+      "lng": 123.758465
+    },
+    {
+      "code": "osm:way/685890119",
+      "name": "葫芦岛市中心医院",
+      "countryCode": "CN",
+      "origin": "http://www.hldszxyy.com",
+      "lat": 40.758836,
+      "lng": 120.8554791
+    },
+    {
+      "code": "osm:way/688648357",
+      "name": "定西市人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.dxsrmyy.com",
+      "lat": 35.5977562,
+      "lng": 104.6082383
+    },
+    {
+      "code": "osm:way/689444267",
+      "name": "恩施市中心医院",
+      "countryCode": "CN",
+      "origin": "http://www.essyy.com",
+      "lat": 30.2947561,
+      "lng": 109.4749812
+    },
+    {
+      "code": "osm:way/690674886",
+      "name": "武汉协和医院",
+      "countryCode": "CN",
+      "origin": "https://www.whuh.com",
+      "lat": 30.5866493,
+      "lng": 114.2692584
+    },
+    {
+      "code": "osm:way/690674920",
+      "name": "武汉同济医院",
+      "countryCode": "CN",
+      "origin": "https://www.tjh.com.cn",
+      "lat": 30.582095,
+      "lng": 114.2543508
+    },
+    {
+      "code": "osm:way/691162575",
+      "name": "深圳市妇幼保健院",
+      "countryCode": "CN",
+      "origin": "http://www.szmch.net.cn",
+      "lat": 22.5523881,
+      "lng": 114.0891596
+    },
+    {
+      "code": "osm:way/693996291",
+      "name": "葫芦岛市中心医院龙湾院区",
+      "countryCode": "CN",
+      "origin": "http://www.hldszxyy.com",
+      "lat": 40.7102907,
+      "lng": 120.8378598
+    },
+    {
+      "code": "osm:way/695845448",
+      "name": "甘肃省妇幼保健院",
+      "countryCode": "CN",
+      "origin": "http://www.gsfybjy.com",
+      "lat": 36.0706663,
+      "lng": 103.7748665
+    },
+    {
+      "code": "osm:way/699348650",
+      "name": "中山大学附属眼科医院",
+      "countryCode": "CN",
+      "origin": "https://www.gzzoc.com",
+      "lat": 23.1359258,
+      "lng": 113.2874929
+    },
+    {
+      "code": "osm:way/699668727",
+      "name": "和睦家医院",
+      "countryCode": "CN",
+      "origin": "https://guangzhou.ufh.com.cn",
+      "lat": 23.1053454,
+      "lng": 113.3330606
+    },
+    {
+      "code": "osm:way/757804239",
+      "name": "宁波市妇女儿童医院南部院区",
+      "countryCode": "CN",
+      "origin": "http://www.nbfeyy.com",
+      "lat": 29.8686096,
+      "lng": 121.5304515
+    },
+    {
+      "code": "osm:way/759789521",
+      "name": "郑州市第六人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.zz6y.cn",
+      "lat": 34.7131333,
+      "lng": 113.6525224
+    },
+    {
+      "code": "osm:way/765144388",
+      "name": "深圳市第三人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.szdsyy.com",
+      "lat": 22.638245,
+      "lng": 114.1215051
+    },
+    {
+      "code": "osm:way/765267933",
+      "name": "武汉市金银潭医院",
+      "countryCode": "CN",
+      "origin": "http://www.whyljz.com.cn",
+      "lat": 30.6688132,
+      "lng": 114.2797453
+    },
+    {
+      "code": "osm:way/765575028",
+      "name": "河源市人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.hyrmyy.com",
+      "lat": 23.7766933,
+      "lng": 114.7100012
+    },
+    {
+      "code": "osm:way/765588066",
+      "name": "东莞市人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.dgphospital.com",
+      "lat": 23.0278221,
+      "lng": 113.6951566
+    },
+    {
+      "code": "osm:way/765635550",
+      "name": "云浮市人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.yfsrmyy.cn",
+      "lat": 22.9558811,
+      "lng": 112.0696381
+    },
+    {
+      "code": "osm:way/768560034",
+      "name": "本溪市金山医院",
+      "countryCode": "CN",
+      "origin": "https://www.bxjsyy.com",
+      "lat": 41.2990511,
+      "lng": 123.7752135
+    },
+    {
+      "code": "osm:way/772699190",
+      "name": "阜新市中心医院",
+      "countryCode": "CN",
+      "origin": "http://www.fxzxyy.com",
+      "lat": 42.0135196,
+      "lng": 121.6548312
+    },
+    {
+      "code": "osm:way/772700144",
+      "name": "阜新矿总医院",
+      "countryCode": "CN",
+      "origin": "http://www.fx-hospital.com",
+      "lat": 42.0062596,
+      "lng": 121.6459177
+    },
+    {
+      "code": "osm:way/772717083",
+      "name": "阜新市第二人民医院(妇产医院)",
+      "countryCode": "CN",
+      "origin": "http://www.fx2yy.com",
+      "lat": 41.9955512,
+      "lng": 121.6216898
+    },
+    {
+      "code": "osm:way/778406380",
+      "name": "深圳口岸医院",
+      "countryCode": "CN",
+      "origin": "http://www.szkah.com",
+      "lat": 22.5307837,
+      "lng": 114.0745303
+    },
+    {
+      "code": "osm:way/788772884",
+      "name": "雅安市第四人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.yasdsrmyy.com",
+      "lat": 30.0024519,
+      "lng": 103.0570445
+    },
+    {
+      "code": "osm:way/814527871",
+      "name": "梅州市中医医院",
+      "countryCode": "CN",
+      "origin": "https://www.mzhtcm.com",
+      "lat": 24.2807827,
+      "lng": 116.1153292
+    },
+    {
+      "code": "osm:way/815631455",
+      "name": "梅州市第二中医医院",
+      "countryCode": "CN",
+      "origin": "http://www.mzszyyy2.com",
+      "lat": 24.3208507,
+      "lng": 116.1160991
+    },
+    {
+      "code": "osm:way/815631467",
+      "name": "梅州市人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.mzrmyy.com",
+      "lat": 24.3149827,
+      "lng": 116.0944293
+    },
+    {
+      "code": "osm:way/819148982",
+      "name": "深圳市萨米国际医疗中心（深圳市第四人民医院）",
+      "countryCode": "CN",
+      "origin": "http://www.ssmc-sz.com",
+      "lat": 22.7071109,
+      "lng": 114.3733953
+    },
+    {
+      "code": "osm:way/827798341",
+      "name": "成都市第三人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.cd3hospital.com",
+      "lat": 30.6712329,
+      "lng": 104.0601262
+    },
+    {
+      "code": "osm:way/827798348",
+      "name": "通用医疗三六三医院（武侯院区）",
+      "countryCode": "CN",
+      "origin": "https://www.363120.com",
+      "lat": 30.6519068,
+      "lng": 104.0522161
+    },
+    {
+      "code": "osm:way/842067327",
+      "name": "宿迁中西医结合医院",
+      "countryCode": "CN",
+      "origin": "https://www.sqrmyy.com",
+      "lat": 33.969234,
+      "lng": 118.2946036
+    },
+    {
+      "code": "osm:way/842327819",
+      "name": "中日友好医院本部",
+      "countryCode": "CN",
+      "origin": "https://www.zryhyy.com.cn",
+      "lat": 39.9726779,
+      "lng": 116.420699
+    },
+    {
+      "code": "osm:way/854447881",
+      "name": "唐山市中医医院新院区",
+      "countryCode": "CN",
+      "origin": "http://www.tszyyw.com",
+      "lat": 39.6521685,
+      "lng": 118.0947249
+    },
+    {
+      "code": "osm:way/857415809",
+      "name": "通用医疗三六三医院（犀浦院区）",
+      "countryCode": "CN",
+      "origin": "https://www.363120.com",
+      "lat": 30.7466135,
+      "lng": 103.9929033
+    },
+    {
+      "code": "osm:way/861038692",
+      "name": "首都医科大学附属北京地坛医院",
+      "countryCode": "CN",
+      "origin": "https://www.bjdth.com",
+      "lat": 40.0219631,
+      "lng": 116.5201075
+    },
+    {
+      "code": "osm:way/866482416",
+      "name": "天津中医药大学第二附属医院",
+      "countryCode": "CN",
+      "origin": "https://www.tjzyefy.com",
+      "lat": 39.1564683,
+      "lng": 117.2311323
+    },
+    {
+      "code": "osm:way/875501552",
+      "name": "南昌大学第一附属医院",
+      "countryCode": "CN",
+      "origin": "https://www.cdyfy.com",
+      "lat": 28.6898701,
+      "lng": 115.9055686
+    },
+    {
+      "code": "osm:way/878639277",
+      "name": "锦州市中心医院",
+      "countryCode": "CN",
+      "origin": "http://www.jzszxyy.com",
+      "lat": 41.118632,
+      "lng": 121.1197703
+    },
+    {
+      "code": "osm:way/878639278",
+      "name": "锦州医科大学附属第一医院",
+      "countryCode": "CN",
+      "origin": "https://www.jzmu1h.com",
+      "lat": 41.1328668,
+      "lng": 121.1244094
+    },
+    {
+      "code": "osm:way/891244297",
+      "name": "柳钢医院",
+      "countryCode": "CN",
+      "origin": "https://www.lzlgyy.com",
+      "lat": 24.3739018,
+      "lng": 109.4032185
+    },
+    {
+      "code": "osm:way/891519354",
+      "name": "良乡医院",
+      "countryCode": "CN",
+      "origin": "https://fslxyy.com",
+      "lat": 39.7355739,
+      "lng": 116.1337272
+    },
+    {
+      "code": "osm:way/891739616",
+      "name": "北京市海淀区妇幼保健院东南院区",
+      "countryCode": "CN",
+      "origin": "https://hdfybjy.com",
+      "lat": 39.9711128,
+      "lng": 116.2999376
+    },
+    {
+      "code": "osm:way/893697016",
+      "name": "温州医科大学附属眼视光医院",
+      "countryCode": "CN",
+      "origin": "https://www.wzeye.cn",
+      "lat": 28.0106233,
+      "lng": 120.6679175
+    },
+    {
+      "code": "osm:way/893902500",
+      "name": "宁波大学附属第一医院（月湖院区）",
+      "countryCode": "CN",
+      "origin": "http://www.nbdyyy.com",
+      "lat": 29.8700185,
+      "lng": 121.5427282
+    },
+    {
+      "code": "osm:way/894452083",
+      "name": "青岛中心医院",
+      "countryCode": "CN",
+      "origin": "http://www.qdzxyy.com",
+      "lat": 36.1395335,
+      "lng": 120.37182
+    },
+    {
+      "code": "osm:way/899087333",
+      "name": "安阳市人民医院(东院区)",
+      "countryCode": "CN",
+      "origin": "https://www.no1ayyy.com",
+      "lat": 36.0770046,
+      "lng": 114.4057346
+    },
+    {
+      "code": "osm:way/906950769",
+      "name": "惠州市第一妇幼保健院",
+      "countryCode": "CN",
+      "origin": "https://www.hz3861.gd.cn",
+      "lat": 23.0519063,
+      "lng": 114.4166972
+    },
+    {
+      "code": "osm:way/909516932",
+      "name": "天津市中西医结合医院（南开医院）",
+      "countryCode": "CN",
+      "origin": "https://www.tjnkh.com.cn",
+      "lat": 39.1252458,
+      "lng": 117.1639554
+    },
+    {
+      "code": "osm:way/909673539",
+      "name": "天津医院",
+      "countryCode": "CN",
+      "origin": "https://www.tjorthop.org",
+      "lat": 39.0921422,
+      "lng": 117.2244074
+    },
+    {
+      "code": "osm:way/925024595",
+      "name": "首都医科大学附属北京安定医院",
+      "countryCode": "CN",
+      "origin": "https://www.bjad.com.cn",
+      "lat": 39.9513927,
+      "lng": 116.3702036
+    },
+    {
+      "code": "osm:way/929842141",
+      "name": "深圳市肿瘤医院",
+      "countryCode": "CN",
+      "origin": "http://www.szch-cn.com",
+      "lat": 22.6971111,
+      "lng": 114.2460109
+    },
+    {
+      "code": "osm:way/935521879",
+      "name": "新泰市第三人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.xtsanyuan.com",
+      "lat": 35.8646185,
+      "lng": 117.3008745
+    },
+    {
+      "code": "osm:way/936152713",
+      "name": "广东省人民医院肿瘤医院",
+      "countryCode": "CN",
+      "origin": "https://www.gdghospital.org.cn",
+      "lat": 23.1234039,
+      "lng": 113.2525277
+    },
+    {
+      "code": "osm:way/951337780",
+      "name": "首都医科大学附属北京妇产医院（东院）",
+      "countryCode": "CN",
+      "origin": "http://www.bjogh.com.cn",
+      "lat": 39.9297639,
+      "lng": 116.464809
+    },
+    {
+      "code": "osm:way/959801254",
+      "name": "北京中仁中医医院",
+      "countryCode": "CN",
+      "origin": "http://www.zrzyyy.com",
+      "lat": 39.956857,
+      "lng": 116.3544472
+    },
+    {
+      "code": "osm:way/961888448",
+      "name": "北京华信医院（清华大学第一附属医院）",
+      "countryCode": "CN",
+      "origin": "https://www.scm.tsinghua.edu.cn",
+      "lat": 39.9646816,
+      "lng": 116.4898516
+    },
+    {
+      "code": "osm:way/963121236",
+      "name": "宁波市第九医院",
+      "countryCode": "CN",
+      "origin": "https://www.nbsdjyy.com",
+      "lat": 29.9192446,
+      "lng": 121.5110631
+    },
+    {
+      "code": "osm:way/968958220",
+      "name": "洛阳市妇幼保健院",
+      "countryCode": "CN",
+      "origin": "https://www.lyfybj.net.cn",
+      "lat": 34.5988265,
+      "lng": 112.4554596
+    },
+    {
+      "code": "osm:way/969535338",
+      "name": "惠州华康医院",
+      "countryCode": "CN",
+      "origin": "http://www.hzhkgsyy.com",
+      "lat": 23.0424363,
+      "lng": 114.4178491
+    },
+    {
+      "code": "osm:way/971183855",
+      "name": "惠州市第六人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.hzsdlrmyy.com",
+      "lat": 22.7823826,
+      "lng": 114.4746477
+    },
+    {
+      "code": "osm:way/976108430",
+      "name": "甘谷县人民医院（新院区）",
+      "countryCode": "CN",
+      "origin": "http://www.ggxrmyy.com",
+      "lat": 34.7582249,
+      "lng": 105.3085041
+    },
+    {
+      "code": "osm:way/985504738",
+      "name": "首都医科大学附属北京康复医院",
+      "countryCode": "CN",
+      "origin": "https://www.bjkfyy.com.cn",
+      "lat": 39.9435707,
+      "lng": 116.189273
+    },
+    {
+      "code": "osm:way/990214782",
+      "name": "南海区人民医院（新院区）",
+      "countryCode": "CN",
+      "origin": "https://www.nhrmyy.com",
+      "lat": 23.0862689,
+      "lng": 112.9935876
+    },
+    {
+      "code": "osm:way/997372002",
+      "name": "梅州客都骨科医院",
+      "countryCode": "CN",
+      "origin": "https://www.mzkdgkyy.com",
+      "lat": 24.3220059,
+      "lng": 116.1176364
+    },
+    {
+      "code": "osm:way/1002868413",
+      "name": "利康教育矫治所",
+      "countryCode": "CN",
+      "origin": "http://jyj.beijing.gov.cn",
+      "lat": 39.6644233,
+      "lng": 116.3222612
+    },
+    {
+      "code": "osm:way/1004181697",
+      "name": "梅县区妇幼保健院",
+      "countryCode": "CN",
+      "origin": "http://www.mxqfby.com",
+      "lat": 24.2954594,
+      "lng": 116.1035929
+    },
+    {
+      "code": "osm:way/1008404732",
+      "name": "怀远长久医院",
+      "countryCode": "CN",
+      "origin": "http://www.hyxrmyyxyq.com",
+      "lat": 32.9846268,
+      "lng": 117.1595308
+    },
+    {
+      "code": "osm:way/1020268562",
+      "name": "东方医院",
+      "countryCode": "CN",
+      "origin": "https://www.dongfangyy.com.cn",
+      "lat": 39.8626946,
+      "lng": 116.4262375
+    },
+    {
+      "code": "osm:way/1021405871",
+      "name": "紫合梅州医院",
+      "countryCode": "CN",
+      "origin": "http://www.zhmzmed.com",
+      "lat": 24.2528619,
+      "lng": 116.1078076
+    },
+    {
+      "code": "osm:way/1029699276",
+      "name": "杭州富春中医骨伤医院",
+      "countryCode": "CN",
+      "origin": "https://www.fczygsyy.com",
+      "lat": 30.3510247,
+      "lng": 120.2169883
+    },
+    {
+      "code": "osm:way/1034172052",
+      "name": "保定市惠泽医院",
+      "countryCode": "CN",
+      "origin": "http://huizeyiyuan.cn",
+      "lat": 38.5800668,
+      "lng": 115.4184811
+    },
+    {
+      "code": "osm:way/1047442797",
+      "name": "依安县人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.yaxrmyy.org.cn",
+      "lat": 47.9052223,
+      "lng": 125.307346
+    },
+    {
+      "code": "osm:way/1053252002",
+      "name": "广州中医药大学惠州医院（惠州市中医医院）东江新城院区",
+      "countryCode": "CN",
+      "origin": "https://www.hzszyyy.com",
+      "lat": 23.0801756,
+      "lng": 114.4499251
+    },
+    {
+      "code": "osm:way/1053842498",
+      "name": "惠州市第三人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.hzdsrmyy.com",
+      "lat": 23.091594,
+      "lng": 114.4185744
+    },
+    {
+      "code": "osm:way/1054378461",
+      "name": "惠州卫生职业技术学院附属医院",
+      "countryCode": "CN",
+      "origin": "https://www.wzyfsyy.net",
+      "lat": 23.1149764,
+      "lng": 114.4539971
+    },
+    {
+      "code": "osm:way/1055070207",
+      "name": "首都医科大学附属北京妇产医院（西院区）",
+      "countryCode": "CN",
+      "origin": "http://www.bjogh.com.cn",
+      "lat": 39.919263,
+      "lng": 116.3980261
+    },
+    {
+      "code": "osm:way/1056261493",
+      "name": "惠州市惠城区中医医院",
+      "countryCode": "CN",
+      "origin": "http://www.hcqzyyy.com",
+      "lat": 23.0722133,
+      "lng": 114.4017482
+    },
+    {
+      "code": "osm:way/1061792967",
+      "name": "中信惠州医院",
+      "countryCode": "CN",
+      "origin": "https://citic120.com",
+      "lat": 23.0305998,
+      "lng": 114.3552267
+    },
+    {
+      "code": "osm:way/1062579518",
+      "name": "首都医科大学三博脑科医院（北京三博脑科医院）",
+      "countryCode": "CN",
+      "origin": "https://www.sbnk.cn",
+      "lat": 39.9910357,
+      "lng": 116.2020846
+    },
+    {
+      "code": "osm:way/1066690676",
+      "name": "家恩德运医院",
+      "countryCode": "CN",
+      "origin": "https://www.jiaenhospital.com",
+      "lat": 39.9769467,
+      "lng": 116.3358427
+    },
+    {
+      "code": "osm:way/1071284399",
+      "name": "惠州市惠阳区妇幼保健院新院区",
+      "countryCode": "CN",
+      "origin": "http://www.hybjy.com",
+      "lat": 22.8415044,
+      "lng": 114.4584686
+    },
+    {
+      "code": "osm:way/1077662230",
+      "name": "武汉市第九医院",
+      "countryCode": "CN",
+      "origin": "https://wh9yy.cn",
+      "lat": 30.6258101,
+      "lng": 114.3745043
+    },
+    {
+      "code": "osm:way/1077761978",
+      "name": "大理州人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.dlzrmyy.com",
+      "lat": 25.5817645,
+      "lng": 100.2205773
+    },
+    {
+      "code": "osm:way/1077876225",
+      "name": "北海市第二人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.bheyy.com",
+      "lat": 21.4567221,
+      "lng": 109.1495525
+    },
+    {
+      "code": "osm:way/1078913421",
+      "name": "黄陂区人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.hprmyy.cn",
+      "lat": 30.8900187,
+      "lng": 114.3651228
+    },
+    {
+      "code": "osm:way/1079040718",
+      "name": "长江航运总医院",
+      "countryCode": "CN",
+      "origin": "https://www.chzyy.com.cn",
+      "lat": 30.6090418,
+      "lng": 114.2818852
+    },
+    {
+      "code": "osm:way/1079859462",
+      "name": "昆山市第二人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.ksrmyy.org",
+      "lat": 31.3838716,
+      "lng": 120.9568969
+    },
+    {
+      "code": "osm:way/1082655415",
+      "name": "黄石市精神病医院",
+      "countryCode": "CN",
+      "origin": "http://www.hssjsbyy.com",
+      "lat": 30.1945308,
+      "lng": 114.9953503
+    },
+    {
+      "code": "osm:way/1087280428",
+      "name": "博罗港立（妇产）医院",
+      "countryCode": "CN",
+      "origin": "http://www.glyd120.com",
+      "lat": 23.1789782,
+      "lng": 114.2961794
+    },
+    {
+      "code": "osm:way/1087469497",
+      "name": "惠州市第三人民医院东院区",
+      "countryCode": "CN",
+      "origin": "https://www.hzdsrmyy.com",
+      "lat": 23.0916286,
+      "lng": 114.4388121
+    },
+    {
+      "code": "osm:way/1090148197",
+      "name": "国药东风总医院",
+      "countryCode": "CN",
+      "origin": "https://www.dfmhp.com.cn",
+      "lat": 32.6583568,
+      "lng": 110.7659023
+    },
+    {
+      "code": "osm:way/1101812169",
+      "name": "广东省中医院珠海医院",
+      "countryCode": "CN",
+      "origin": "https://www.gdhtcm.com",
+      "lat": 22.2552567,
+      "lng": 113.5736219
+    },
+    {
+      "code": "osm:way/1106609247",
+      "name": "山东医药大学烟台附属医院",
+      "countryCode": "CN",
+      "origin": "https://www.byytfy.com",
+      "lat": 37.4110606,
+      "lng": 121.5823513
+    },
+    {
+      "code": "osm:way/1120789380",
+      "name": "烟台市烟台山医院(北院区)",
+      "countryCode": "CN",
+      "origin": "https://www.ytsytsyy.cn",
+      "lat": 37.5424378,
+      "lng": 121.3992147
+    },
+    {
+      "code": "osm:way/1123242949",
+      "name": "舟山市中医院",
+      "countryCode": "CN",
+      "origin": "https://www.zjzsszyy.com",
+      "lat": 30.0184781,
+      "lng": 122.120476
+    },
+    {
+      "code": "osm:way/1128184020",
+      "name": "烟台业达医院",
+      "countryCode": "CN",
+      "origin": "https://www.yedayy.com",
+      "lat": 37.5678054,
+      "lng": 121.2661993
+    },
+    {
+      "code": "osm:way/1133115897",
+      "name": "深圳市龙华区妇幼保健院",
+      "countryCode": "CN",
+      "origin": "https://www.sz.gov.cn",
+      "lat": 22.6749925,
+      "lng": 113.9878341
+    },
+    {
+      "code": "osm:way/1144577825",
+      "name": "首都医科大学附属复兴医院",
+      "countryCode": "CN",
+      "origin": "https://www.bj-fxh.com",
+      "lat": 39.9043104,
+      "lng": 116.334187
+    },
+    {
+      "code": "osm:way/1144581471",
+      "name": "首都医科大学附属北京胸科医院",
+      "countryCode": "CN",
+      "origin": "https://www.bjxkyy.cn",
+      "lat": 39.9227369,
+      "lng": 116.6469263
+    },
+    {
+      "code": "osm:way/1144585864",
+      "name": "首都医科大学附属北京地坛医院（顺义院区）",
+      "countryCode": "CN",
+      "origin": "https://www.bjdth.com",
+      "lat": 40.0991049,
+      "lng": 116.751514
+    },
+    {
+      "code": "osm:way/1145479543",
+      "name": "首都医科大学附属北京口腔医院（天坛院区）",
+      "countryCode": "CN",
+      "origin": "https://www.ccmu.edu.cn",
+      "lat": 39.8765581,
+      "lng": 116.3964907
+    },
+    {
+      "code": "osm:way/1145537436",
+      "name": "清华大学玉泉医院（清华大学中西医结合医院）",
+      "countryCode": "CN",
+      "origin": "http://www.yuquanhosp.com",
+      "lat": 39.9073541,
+      "lng": 116.2404341
+    },
+    {
+      "code": "osm:way/1146151810",
+      "name": "首都医科大学附属北京中医医院",
+      "countryCode": "CN",
+      "origin": "https://www.bjzhongyi.com",
+      "lat": 39.9304403,
+      "lng": 116.4013624
+    },
+    {
+      "code": "osm:way/1147267779",
+      "name": "首都医科大学附属北京潞河医院（郎府院区）",
+      "countryCode": "CN",
+      "origin": "https://www.luhehospital.com",
+      "lat": 39.7991856,
+      "lng": 116.8272717
+    },
+    {
+      "code": "osm:way/1147272529",
+      "name": "北京市疾病预防控制中心",
+      "countryCode": "CN",
+      "origin": "https://www.bjcdc.org",
+      "lat": 39.9547583,
+      "lng": 116.4052536
+    },
+    {
+      "code": "osm:way/1148108030",
+      "name": "滨州医学院附属医院",
+      "countryCode": "CN",
+      "origin": "https://www.byfy.cn",
+      "lat": 37.3709645,
+      "lng": 118.0059049
+    },
+    {
+      "code": "osm:way/1149649778",
+      "name": "惠州市中心人民医院（仲恺院区）",
+      "countryCode": "CN",
+      "origin": "https://www.hzch.gd.cn",
+      "lat": 23.0267689,
+      "lng": 114.2988644
+    },
+    {
+      "code": "osm:way/1157912133",
+      "name": "雅安市第二人民医院(南三路院区)",
+      "countryCode": "CN",
+      "origin": "https://www.yaeyy.com",
+      "lat": 29.9934214,
+      "lng": 103.0011161
+    },
+    {
+      "code": "osm:way/1159206753",
+      "name": "雅安市中医医院",
+      "countryCode": "CN",
+      "origin": "https://scsyaszyyy.com",
+      "lat": 29.9897147,
+      "lng": 102.9930708
+    },
+    {
+      "code": "osm:way/1180395723",
+      "name": "衡阳华程医院",
+      "countryCode": "CN",
+      "origin": "http://www.hyhcyy.com",
+      "lat": 26.9075173,
+      "lng": 112.6058721
+    },
+    {
+      "code": "osm:way/1180896129",
+      "name": "南华大学附属第二医院",
+      "countryCode": "CN",
+      "origin": "http://nh2h.com",
+      "lat": 26.9008856,
+      "lng": 112.6059368
+    },
+    {
+      "code": "osm:way/1181846891",
+      "name": "南华大学附属第一医院",
+      "countryCode": "CN",
+      "origin": "https://www.nhfyyy.com",
+      "lat": 26.9048918,
+      "lng": 112.5962499
+    },
+    {
+      "code": "osm:way/1185720850",
+      "name": "青岛市第八人民医院(东院区)",
+      "countryCode": "CN",
+      "origin": "https://www.qdby.com",
+      "lat": 36.1769256,
+      "lng": 120.4742207
+    },
+    {
+      "code": "osm:way/1197759057",
+      "name": "衡阳市妇幼保健院/衡阳市儿童医院",
+      "countryCode": "CN",
+      "origin": "https://www.hyfybj.com",
+      "lat": 26.8994582,
+      "lng": 112.602873
+    },
+    {
+      "code": "osm:way/1211162266",
+      "name": "第三师总医院",
+      "countryCode": "CN",
+      "origin": "http://113.200.81.47:1102",
+      "lat": 39.8593526,
+      "lng": 79.0495039
+    },
+    {
+      "code": "osm:way/1215967812",
+      "name": "天津市第二人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.tj2rm.com",
+      "lat": 39.1126971,
+      "lng": 117.1453848
+    },
+    {
+      "code": "osm:way/1224667858",
+      "name": "武汉市武昌医院(西区)",
+      "countryCode": "CN",
+      "origin": "https://www.whwcyy.com",
+      "lat": 30.604838,
+      "lng": 114.3359315
+    },
+    {
+      "code": "osm:way/1225890763",
+      "name": "西北大学第一医院",
+      "countryCode": "CN",
+      "origin": "http://www.sxdsyy.com",
+      "lat": 34.251643,
+      "lng": 109.0128529
+    },
+    {
+      "code": "osm:way/1237533333",
+      "name": "博兴县人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.bxxhospital.com",
+      "lat": 37.1265292,
+      "lng": 118.1249179
+    },
+    {
+      "code": "osm:way/1245469357",
+      "name": "龙岗区耳鼻咽喉医院",
+      "countryCode": "CN",
+      "origin": "https://wjw.sz.gov.cn",
+      "lat": 22.7243364,
+      "lng": 114.2145248
+    },
+    {
+      "code": "osm:way/1272169037",
+      "name": "成都八一骨科医院",
+      "countryCode": "CN",
+      "origin": "https://www.cdbygk.cn",
+      "lat": 30.6810102,
+      "lng": 104.0666313
+    },
+    {
+      "code": "osm:way/1287310637",
+      "name": "韶关市第一人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.sgsyy.com",
+      "lat": 24.8085175,
+      "lng": 113.5954632
+    },
+    {
+      "code": "osm:way/1292377838",
+      "name": "湘潭市第五人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.xtswyy.cn",
+      "lat": 27.8893176,
+      "lng": 112.8894485
+    },
+    {
+      "code": "osm:way/1297358145",
+      "name": "广州医科大学附属第五医院",
+      "countryCode": "CN",
+      "origin": "https://www.gyfwyy.com",
+      "lat": 23.10925,
+      "lng": 113.4404624
+    },
+    {
+      "code": "osm:way/1298911273",
+      "name": "宁波明州医院",
+      "countryCode": "CN",
+      "origin": "https://www.nbmzyy.com",
+      "lat": 29.8087995,
+      "lng": 121.5337582
+    },
+    {
+      "code": "osm:way/1313497394",
+      "name": "武汉市第七医院",
+      "countryCode": "CN",
+      "origin": "http://www.hospital7.com",
+      "lat": 30.5444176,
+      "lng": 114.3264354
+    },
+    {
+      "code": "osm:way/1338004071",
+      "name": "武汉市第三医院光谷院区",
+      "countryCode": "CN",
+      "origin": "https://www.whsyy.net",
+      "lat": 30.5013704,
+      "lng": 114.4051695
+    },
+    {
+      "code": "osm:way/1342742074",
+      "name": "雅安市第二人民医院(金沙院区)",
+      "countryCode": "CN",
+      "origin": "https://www.yaeyy.com",
+      "lat": 29.9622871,
+      "lng": 103.0870261
+    },
+    {
+      "code": "osm:way/1350211602",
+      "name": "圣丹福广州现代肿瘤医院",
+      "countryCode": "CN",
+      "origin": "https://www.moderncancerhospital.co.id",
+      "lat": 23.1629653,
+      "lng": 113.3010127
+    },
+    {
+      "code": "osm:way/1363640664",
+      "name": "宁波市康复医院",
+      "countryCode": "CN",
+      "origin": "https://www.nbkfzx.com",
+      "lat": 29.869375,
+      "lng": 121.5845561
+    },
+    {
+      "code": "osm:way/1366689914",
+      "name": "四川省精神医学中心",
+      "countryCode": "CN",
+      "origin": "https://www.scsjsyxzx.com",
+      "lat": 30.716767,
+      "lng": 103.8967723
+    },
+    {
+      "code": "osm:way/1378285142",
+      "name": "宜兴市人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.yxph.com",
+      "lat": 31.3363851,
+      "lng": 119.7928395
+    },
+    {
+      "code": "osm:way/1386024941",
+      "name": "新疆维吾尔自治区人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.xjrmyy.com",
+      "lat": 43.782623,
+      "lng": 87.6111963
+    },
+    {
+      "code": "osm:way/1390591019",
+      "name": "武汉大学口腔医院",
+      "countryCode": "CN",
+      "origin": "https://www.whuss.com",
+      "lat": 30.5244401,
+      "lng": 114.3606233
+    },
+    {
+      "code": "osm:way/1390591022",
+      "name": "武汉中西医结合骨科医院",
+      "countryCode": "CN",
+      "origin": "https://www.hbgkyy.com.cn",
+      "lat": 30.5234646,
+      "lng": 114.3614865
+    },
+    {
+      "code": "osm:way/1390591030",
+      "name": "武汉大学中南医院",
+      "countryCode": "CN",
+      "origin": "https://www.znhospital.cn",
+      "lat": 30.5557823,
+      "lng": 114.3472793
+    },
+    {
+      "code": "osm:way/1395528339",
+      "name": "宁波大学附属康宁医院",
+      "countryCode": "CN",
+      "origin": "https://www.nbknyy.com",
+      "lat": 29.9376629,
+      "lng": 121.6175822
+    },
+    {
+      "code": "osm:way/1419195180",
+      "name": "吉林市化工医院",
+      "countryCode": "CN",
+      "origin": "https://jhyy.gfhealthcare.com",
+      "lat": 43.9088954,
+      "lng": 126.5515657
+    },
+    {
+      "code": "osm:way/1420454815",
+      "name": "中国人民解放军九〇三医院",
+      "countryCode": "CN",
+      "origin": "https://www.903yy.com.cn",
+      "lat": 31.7655934,
+      "lng": 104.7299179
+    },
+    {
+      "code": "osm:way/1426455639",
+      "name": "天水四零七医院",
+      "countryCode": "CN",
+      "origin": "http://www.ts407yy.cn",
+      "lat": 34.5752382,
+      "lng": 105.7113147
+    },
+    {
+      "code": "osm:way/1429138217",
+      "name": "阳泉市第一人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.yqsdyrmyy.com",
+      "lat": 37.8541797,
+      "lng": 113.5841041
+    },
+    {
+      "code": "osm:way/1455968741",
+      "name": "成都市新都区第二人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.xdqdermyy.com",
+      "lat": 30.8911621,
+      "lng": 104.0089879
+    },
+    {
+      "code": "osm:way/1469410466",
+      "name": "烟台大学校医院",
+      "countryCode": "CN",
+      "origin": "https://hospital.ytu.edu.cn",
+      "lat": 37.4799457,
+      "lng": 121.4487387
+    },
+    {
+      "code": "osm:way/1471907241",
+      "name": "雅安市人民医院(第二院区)",
+      "countryCode": "CN",
+      "origin": "https://www.yasyy.com",
+      "lat": 30.0056645,
+      "lng": 103.0522356
+    },
+    {
+      "code": "osm:way/1494098613",
+      "name": "武汉市东湖医院",
+      "countryCode": "CN",
+      "origin": "https://www.whsdhyy.com",
+      "lat": 30.5369989,
+      "lng": 114.3927762
+    },
+    {
+      "code": "osm:way/1496396710",
+      "name": "祁阳市人民医院",
+      "countryCode": "CN",
+      "origin": "http://www.qyxrmyy.net",
+      "lat": 26.5918906,
+      "lng": 111.8582174
+    },
+    {
+      "code": "osm:way/1497320675",
+      "name": "成都市妇女儿童中心医院东城根院区",
+      "countryCode": "CN",
+      "origin": "https://www.wcch.cn",
+      "lat": 30.6722756,
+      "lng": 104.0581172
+    },
+    {
+      "code": "osm:way/1510233892",
+      "name": "青岛内分泌糖尿病医院",
+      "countryCode": "CN",
+      "origin": "https://www.diabeteschina.com",
+      "lat": 36.1134819,
+      "lng": 120.4177839
+    },
+    {
+      "code": "osm:way/1521335665",
+      "name": "粤北人民医院市区分院",
+      "countryCode": "CN",
+      "origin": "https://www.ybrmyy.org.cn",
+      "lat": 24.8133797,
+      "lng": 113.5914962
+    },
+    {
+      "code": "osm:way/1540764813",
+      "name": "彭水县人民医院",
+      "countryCode": "CN",
+      "origin": "https://www.psxyy.org.cn",
+      "lat": 29.3017787,
+      "lng": 108.1636262
+    },
+    {
+      "code": "osm:way/1551965532",
+      "name": "青岛眼科医院",
+      "countryCode": "CN",
+      "origin": "https://www.sdeyei-h.edu",
+      "lat": 36.0615365,
+      "lng": 120.3949052
+    },
+    {
+      "code": "osm:way/1560316691",
+      "name": "滨州市中医医院",
+      "countryCode": "CN",
+      "origin": "http://www.bzszyy.com",
+      "lat": 37.4255173,
+      "lng": 117.9767478
+    }
+  ]
+}

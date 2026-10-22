@@ -1,0 +1,33 @@
+{
+  "countryCode": "BJ",
+  "fetchedAt": "2026-10-21T00:52:50.334Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/8930337217",
+      "name": "Centre de santé d'Oumako",
+      "countryCode": "BJ",
+      "origin": "https://yahoo.fr",
+      "lat": 6.4344167,
+      "lng": 1.8421733
+    },
+    {
+      "code": "osm:node/9730704017",
+      "name": "Agence Nationale de la Transfusion Sanguine (ANTS)",
+      "countryCode": "BJ",
+      "origin": "https://www.antsbenin.org",
+      "lat": 9.3398155,
+      "lng": 2.6408262
+    },
+    {
+      "code": "osm:way/815171204",
+      "name": "Centre Hospitalier International de Calavi",
+      "countryCode": "BJ",
+      "origin": "https://www.chichopital.bj",
+      "lat": 6.4702697,
+      "lng": 2.34132
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "countryCode": "AE",
+  "fetchedAt": "2026-10-21T00:35:06.799Z",
+  "count": 43,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/1357692409",
+      "name": "Sahara Medical Centre",
+      "countryCode": "AE",
+      "origin": "https://saharamedicalcentre.ae",
+      "lat": 25.3014024,
+      "lng": 55.3751321
+    },
+    {
+      "code": "osm:node/1876498389",
+      "name": "Burjeel MHPC",
+      "countryCode": "AE",
+      "origin": "http://www.marinahpc.com",
+      "lat": 24.4735767,
+      "lng": 54.3188383
+    },
+    {
+      "code": "osm:node/2485941511",
+      "name": "Aster Medical Centre",
+      "countryCode": "AE",
+      "origin": "http://www.astermedicalcentre.com",
+      "lat": 25.2600165,
+      "lng": 55.2938072
+    },
+    {
+      "code": "osm:node/2499040284",
+      "name": "Dubai Herbal And Treatment Centre",
+      "countryCode": "AE",
+      "origin": "https://www.dubaihtc.com",
+      "lat": 25.21074,
+      "lng": 55.3115743
+    },
+    {
+      "code": "osm:node/2690813035",
+      "name": "Smilecare Medical Center LLC 042855066",
+      "countryCode": "AE",
+      "origin": "https://www.smilecaredubai.com",
+      "lat": 25.2347853,
+      "lng": 55.4364185
+    },
+    {
+      "code": "osm:node/2719215767",
+      "name": "مستشفى الإمارات",
+      "countryCode": "AE",
+      "origin": "https://www.emirateshospital.ae",
+      "lat": 25.085336,
+      "lng": 55.1417994
+    },
+    {
+      "code": "osm:node/3478788984",
+      "name": "American British Surgical & Medical Centre",
+      "countryCode": "AE",
+      "origin": "https://www.absamc.com",
+      "lat": 25.2653833,
+      "lng": 55.3298837
+    },
+    {
+      "code": "osm:node/4122500690",
+      "name": "LLH Hospital",
+      "countryCode": "AE",
+      "origin": "https://www.llhhospital.com",
+      "lat": 24.487681,
+      "lng": 54.364913
+    },
+    {
+      "code": "osm:node/4166686891",
+      "name": "Beauty Trick Medical Centre",
+      "countryCode": "AE",
+      "origin": "http://www.beautytrick.ae",
+      "lat": 24.4590859,
+      "lng": 54.3733245
+    },
+    {
+      "code": "osm:node/4166814589",
+      "name": "Life Line Hospital",
+      "countryCode": "AE",
+      "origin": "https://www.llhhospital.com",
+      "lat": 24.487668,
+      "lng": 54.3649336
+    },
+    {
+      "code": "osm:node/4412993593",
+      "name": "جي ايم سي",
+      "countryCode": "AE",
+      "origin": "https://thumbayhospital.com",
+      "lat": 25.3820448,
+      "lng": 55.4624537
+    },
+    {
+      "code": "osm:node/4706631790",
+      "name": "Thumbay Hospital ajman",
+      "countryCode": "AE",
+      "origin": "https://www.thumbayhospitals.com",
+      "lat": 25.381029,
+      "lng": 55.462351
+    },
+    {
+      "code": "osm:node/4741454634",
+      "name": "Medeor 24x7 Hospital",
+      "countryCode": "AE",
+      "origin": "https://www.medeor247dubai.com",
+      "lat": 25.2574151,
+      "lng": 55.306581
+    },
+    {
+      "code": "osm:node/4874626521",
+      "name": "helth care",
+      "countryCode": "AE",
+      "origin": "https://www.seha.ae",
+      "lat": 24.4022648,
+      "lng": 54.5042097
+    },
+    {
+      "code": "osm:node/5215492321",
+      "name": "Imperial College London Diabetes Center",
+      "countryCode": "AE",
+      "origin": "https://www.icldc.ae",
+      "lat": 24.1922707,
+      "lng": 55.6467537
+    },
+    {
+      "code": "osm:node/6064375612",
+      "name": "Osteopathy Health Centre",
+      "countryCode": "AE",
+      "origin": "https://osteopathydubai.com",
+      "lat": 25.1483438,
+      "lng": 55.2112593
+    },
+    {
+      "code": "osm:node/7404885064",
+      "name": "American",
+      "countryCode": "AE",
+      "origin": "https://www.ahdubai.com",
+      "lat": 25.0995266,
+      "lng": 55.2004475
+    },
+    {
+      "code": "osm:node/7414566560",
+      "name": "American",
+      "countryCode": "AE",
+      "origin": "https://www.ahdubai.com",
+      "lat": 25.099551,
+      "lng": 55.200764
+    },
+    {
+      "code": "osm:node/7760496209",
+      "name": "Shifa International Hospitals DWC",
+      "countryCode": "AE",
+      "origin": "https://www.shifa.com.pk",
+      "lat": 24.908941,
+      "lng": 55.1185477
+    },
+    {
+      "code": "osm:node/9155997899",
+      "name": "Zulekha Hosptial",
+      "countryCode": "AE",
+      "origin": "https://www.zulekhahospitals.com",
+      "lat": 25.2915405,
+      "lng": 55.3841973
+    },
+    {
+      "code": "osm:node/9212268131",
+      "name": "Bella Roma Specialty Hospital",
+      "countryCode": "AE",
+      "origin": "https://bellaroma.ae",
+      "lat": 25.1578056,
+      "lng": 55.218666
+    },
+    {
+      "code": "osm:node/10781435731",
+      "name": "HOPE Rehabilitation",
+      "countryCode": "AE",
+      "origin": "https://hoperehabs.com",
+      "lat": 25.3905616,
+      "lng": 55.4658526
+    },
+    {
+      "code": "osm:node/11185679169",
+      "name": "Alma Polyclinic",
+      "countryCode": "AE",
+      "origin": "https://almapolyclinic.com",
+      "lat": 25.1439349,
+      "lng": 55.207794
+    },
+    {
+      "code": "osm:node/11505821512",
+      "name": "Nexx Home Healthcare Services",
+      "countryCode": "AE",
+      "origin": "https://nexx.ae",
+      "lat": 25.1843712,
+      "lng": 55.2596551
+    },
+    {
+      "code": "osm:node/12048812455",
+      "name": "Getchecked Clinic",
+      "countryCode": "AE",
+      "origin": "https://getcheckedclinic.com",
+      "lat": 25.1404426,
+      "lng": 55.1918492
+    },
+    {
+      "code": "osm:node/12789620579",
+      "name": "Mediclinic Springs",
+      "countryCode": "AE",
+      "origin": "https://www.mediclinic.ae",
+      "lat": 25.0545023,
+      "lng": 55.1705534
+    },
+    {
+      "code": "osm:node/13164397343",
+      "name": "Perfect Doctors Clinic",
+      "countryCode": "AE",
+      "origin": "https://www.perfectdrs.com",
+      "lat": 25.1536739,
+      "lng": 55.2153502
+    },
+    {
+      "code": "osm:node/13325985077",
+      "name": "Ishaq Bin Omran Medical Center",
+      "countryCode": "AE",
+      "origin": "https://www.ibo.ae",
+      "lat": 25.3004065,
+      "lng": 55.5390507
+    },
+    {
+      "code": "osm:node/13534016579",
+      "name": "BIOS CLINIC",
+      "countryCode": "AE",
+      "origin": "https://biosplasticsurgery.com",
+      "lat": 25.1909224,
+      "lng": 55.2910801
+    },
+    {
+      "code": "osm:node/13691083165",
+      "name": "Invisible Braces Dental And Skin Polyclinic",
+      "countryCode": "AE",
+      "origin": "https://ibclinic.ae",
+      "lat": 25.2226628,
+      "lng": 55.2819263
+    },
+    {
+      "code": "osm:node/14072519694",
+      "name": "Lux Aeterna Clinic",
+      "countryCode": "AE",
+      "origin": "https://luxaeterna.ae",
+      "lat": 25.0771988,
+      "lng": 55.1550003
+    },
+    {
+      "code": "osm:way/39681764",
+      "name": "Al Shoala Building",
+      "countryCode": "AE",
+      "origin": "https://drnazeerdentalclinic.com",
+      "lat": 25.2564222,
+      "lng": 55.33137
+    },
+    {
+      "code": "osm:way/91392694",
+      "name": "المستشفى الأهلي",
+      "countryCode": "AE",
+      "origin": "https://ahaliagroup.com",
+      "lat": 24.4878736,
+      "lng": 54.359936
+    },
+    {
+      "code": "osm:way/206674922",
+      "name": "Belhoul Speciality Hospital",
+      "countryCode": "AE",
+      "origin": "http://www.belhoulspeciality.com",
+      "lat": 25.2803868,
+      "lng": 55.3131131
+    },
+    {
+      "code": "osm:way/230629140",
+      "name": "Iranian Hospital Dubai",
+      "countryCode": "AE",
+      "origin": "https://www.ihd.ae",
+      "lat": 25.2302763,
+      "lng": 55.2694156
+    },
+    {
+      "code": "osm:way/244376544",
+      "name": "المستشفى الأمريكي",
+      "countryCode": "AE",
+      "origin": "https://www.ahdubai.com",
+      "lat": 25.2355475,
+      "lng": 55.3130808
+    },
+    {
+      "code": "osm:way/251383938",
+      "name": "Madinat Khalifa Healthcare Center",
+      "countryCode": "AE",
+      "origin": "https://www.seha.ae",
+      "lat": 24.4276753,
+      "lng": 54.5650441
+    },
+    {
+      "code": "osm:way/364840330",
+      "name": "Fakeeh University Hospital",
+      "countryCode": "AE",
+      "origin": "https://www.fuh.care",
+      "lat": 25.1216536,
+      "lng": 55.3872469
+    },
+    {
+      "code": "osm:way/391953154",
+      "name": "Al Sila Hospital",
+      "countryCode": "AE",
+      "origin": "https://aldhafra.seha.ae",
+      "lat": 24.0436587,
+      "lng": 51.7585877
+    },
+    {
+      "code": "osm:way/399957507",
+      "name": "مستشفى الجراحة العصبية والعمود الفقري",
+      "countryCode": "AE",
+      "origin": "https://nshdubai.com",
+      "lat": 25.1972097,
+      "lng": 55.2377179
+    },
+    {
+      "code": "osm:way/992683668",
+      "name": "مستشفى الزهراء",
+      "countryCode": "AE",
+      "origin": "https://azhd.ae",
+      "lat": 25.1055103,
+      "lng": 55.1804939
+    },
+    {
+      "code": "osm:way/1113618183",
+      "name": "مدينة صحارى الطبية",
+      "countryCode": "AE",
+      "origin": "https://www.saharahealthcarecity.com",
+      "lat": 25.2977598,
+      "lng": 55.3697411
+    },
+    {
+      "code": "osm:way/1233252311",
+      "name": "مركز الخليج الدولي للأورام",
+      "countryCode": "AE",
+      "origin": "https://www.gulficc.com",
+      "lat": 24.5024528,
+      "lng": 54.6520384
+    }
+  ]
+}

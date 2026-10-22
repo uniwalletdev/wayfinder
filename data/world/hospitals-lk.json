@@ -1,0 +1,217 @@
+{
+  "countryCode": "LK",
+  "fetchedAt": "2026-10-21T01:57:07.513Z",
+  "count": 26,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1994920168",
+      "name": "Ratnapura Teaching Hospital",
+      "countryCode": "LK",
+      "origin": "http://thratnapura.health.gov.lk",
+      "lat": 6.6871447,
+      "lng": 80.3924992
+    },
+    {
+      "code": "osm:node/2708944796",
+      "name": "Sachitra Hospital",
+      "countryCode": "LK",
+      "origin": "http://www.sachitrahospitals.com",
+      "lat": 6.7111418,
+      "lng": 79.9106933
+    },
+    {
+      "code": "osm:node/2901418998",
+      "name": "Singhe Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.singhehospital.com",
+      "lat": 6.6909091,
+      "lng": 80.3944372
+    },
+    {
+      "code": "osm:node/4704694322",
+      "name": "Vasan Eye Care",
+      "countryCode": "LK",
+      "origin": "https://www.vasanhealthcare.lk",
+      "lat": 6.9017271,
+      "lng": 79.8530752
+    },
+    {
+      "code": "osm:node/10218912917",
+      "name": "Lak suwa sahana",
+      "countryCode": "LK",
+      "origin": "http://www.laksuwasahana.lk",
+      "lat": 6.956163,
+      "lng": 79.9151086
+    },
+    {
+      "code": "osm:node/12344094402",
+      "name": "IMC MED Hospital-Hikkaduwa",
+      "countryCode": "LK",
+      "origin": "https://imcsrilanka.com",
+      "lat": 6.1241201,
+      "lng": 80.1114252
+    },
+    {
+      "code": "osm:node/13647227601",
+      "name": "Medihelp Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.medihelp.lk",
+      "lat": 6.5248546,
+      "lng": 80.1158032
+    },
+    {
+      "code": "osm:way/102650989",
+      "name": "Lanka Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.lankahospitals.com",
+      "lat": 6.8896785,
+      "lng": 79.8757779
+    },
+    {
+      "code": "osm:way/204505887",
+      "name": "Lady Ridgeway Hospital",
+      "countryCode": "LK",
+      "origin": "https://lrh.health.gov.lk",
+      "lat": 6.9177465,
+      "lng": 79.8761049
+    },
+    {
+      "code": "osm:way/239289194",
+      "name": "Asiri Hospital",
+      "countryCode": "LK",
+      "origin": "https://asirihealth.com",
+      "lat": 6.8933059,
+      "lng": 79.8743796
+    },
+    {
+      "code": "osm:way/260647545",
+      "name": "Divisonal Hospital - Veravil",
+      "countryCode": "LK",
+      "origin": "http://www.panoramio.com",
+      "lat": 9.3510462,
+      "lng": 80.0788855
+    },
+    {
+      "code": "osm:way/304200805",
+      "name": "Ruhunu Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.ruhunuhospital.lk",
+      "lat": 6.0693537,
+      "lng": 80.2271794
+    },
+    {
+      "code": "osm:way/327539755",
+      "name": "Durdans Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.durdans.com",
+      "lat": 6.9022576,
+      "lng": 79.8533673
+    },
+    {
+      "code": "osm:way/355252669",
+      "name": "National Hospital of Sri Lanka",
+      "countryCode": "LK",
+      "origin": "http://nhsl.health.gov.lk",
+      "lat": 6.9185223,
+      "lng": 79.8680628
+    },
+    {
+      "code": "osm:way/389071653",
+      "name": "Asiri Central Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.asirihealth.com",
+      "lat": 6.9203562,
+      "lng": 79.8657198
+    },
+    {
+      "code": "osm:way/513773173",
+      "name": "Nawaloka Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.nawaloka.com",
+      "lat": 6.9207023,
+      "lng": 79.8535747
+    },
+    {
+      "code": "osm:way/539024557",
+      "name": "Northern Central Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.nchjaffna.com",
+      "lat": 9.6813133,
+      "lng": 80.0246206
+    },
+    {
+      "code": "osm:way/572962990",
+      "name": "The National Hospital Kandy",
+      "countryCode": "LK",
+      "origin": "http://www.kandy-hospital.health.gov.lk",
+      "lat": 7.2865161,
+      "lng": 80.631418
+    },
+    {
+      "code": "osm:way/699018543",
+      "name": "Vavuniya General Hospital",
+      "countryCode": "LK",
+      "origin": "http://www.generalhospitalvavuniya.lk",
+      "lat": 8.7615064,
+      "lng": 80.4993482
+    },
+    {
+      "code": "osm:way/792744612",
+      "name": "National STD / AIDS Control Programme (NSACP)",
+      "countryCode": "LK",
+      "origin": "https://www.aidscontrol.gov.lk",
+      "lat": 6.9197399,
+      "lng": 79.8657712
+    },
+    {
+      "code": "osm:way/856252503",
+      "name": "Hemas Hospital",
+      "countryCode": "LK",
+      "origin": "https://hemashospitals.com",
+      "lat": 6.8784297,
+      "lng": 79.9354936
+    },
+    {
+      "code": "osm:way/915331141",
+      "name": "Ninewells Hospital",
+      "countryCode": "LK",
+      "origin": "https://ninewellshospital.lk",
+      "lat": 6.8950795,
+      "lng": 79.8826042
+    },
+    {
+      "code": "osm:way/1171931307",
+      "name": "Royal Hospital",
+      "countryCode": "LK",
+      "origin": "http://www.royalhospitals.com",
+      "lat": 6.8760196,
+      "lng": 79.8638305
+    },
+    {
+      "code": "osm:way/1229701727",
+      "name": "Provincial General Hospital",
+      "countryCode": "LK",
+      "origin": "https://thbadulla.health.gov.lk",
+      "lat": 6.9915793,
+      "lng": 81.0520184
+    },
+    {
+      "code": "osm:way/1232957081",
+      "name": "University Hospital KDU",
+      "countryCode": "LK",
+      "origin": "https://fom.kdu.ac.lk",
+      "lat": 6.8251645,
+      "lng": 79.9073723
+    },
+    {
+      "code": "osm:way/1556595419",
+      "name": "Central Hospital",
+      "countryCode": "LK",
+      "origin": "https://www.centralhospitalbadulla.org",
+      "lat": 6.9898064,
+      "lng": 81.0515298
+    }
+  ]
+}

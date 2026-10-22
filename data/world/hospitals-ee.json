@@ -1,0 +1,169 @@
+{
+  "countryCode": "EE",
+  "fetchedAt": "2026-10-21T01:17:29.385Z",
+  "count": 20,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 2,
+  "hospitals": [
+    {
+      "code": "osm:node/1643245026",
+      "name": "Ahtme Haigla SA",
+      "countryCode": "EE",
+      "origin": "https://ahtmehaigla.ee",
+      "lat": 59.3118134,
+      "lng": 27.453361
+    },
+    {
+      "code": "osm:way/30235809",
+      "name": "Elite",
+      "countryCode": "EE",
+      "origin": "https://www.elitekliinik.ee",
+      "lat": 58.3702285,
+      "lng": 26.6844335
+    },
+    {
+      "code": "osm:way/255042703",
+      "name": "Jämejala Psühhiaatriakliinik",
+      "countryCode": "EE",
+      "origin": "https://vmh.ee",
+      "lat": 58.3876062,
+      "lng": 25.5843765
+    },
+    {
+      "code": "osm:way/427539132",
+      "name": "Tallinna Lastehaigla",
+      "countryCode": "EE",
+      "origin": "https://www.lastehaigla.ee",
+      "lat": 59.3971114,
+      "lng": 24.7028641
+    },
+    {
+      "code": "osm:way/737896741",
+      "name": "Narva Haigla Polikliinik",
+      "countryCode": "EE",
+      "origin": "https://narvahaigla.ee",
+      "lat": 59.3802597,
+      "lng": 28.1943742
+    },
+    {
+      "code": "osm:way/781329842",
+      "name": "Hiiumaa Haigla",
+      "countryCode": "EE",
+      "origin": "https://haigla.hiiumaa.ee",
+      "lat": 58.998745,
+      "lng": 22.7550287
+    },
+    {
+      "code": "osm:way/782833340",
+      "name": "Ida-Tallinna Keskhaigla Järve üksus",
+      "countryCode": "EE",
+      "origin": "https://www.itk.ee",
+      "lat": 59.3957305,
+      "lng": 24.7140706
+    },
+    {
+      "code": "osm:way/810780801",
+      "name": "Wismari Haigla",
+      "countryCode": "EE",
+      "origin": "http://www.wh.ee",
+      "lat": 59.4320959,
+      "lng": 24.7322703
+    },
+    {
+      "code": "osm:way/868368898",
+      "name": "Tallinna Diakooniahaigla",
+      "countryCode": "EE",
+      "origin": "https://www.diakooniahaigla.ee",
+      "lat": 59.3726605,
+      "lng": 24.6796687
+    },
+    {
+      "code": "osm:way/953574590",
+      "name": "Rakvere haigla",
+      "countryCode": "EE",
+      "origin": "https://www.rh.ee",
+      "lat": 59.3357029,
+      "lng": 26.3765052
+    },
+    {
+      "code": "osm:way/971167230",
+      "name": "Viljandi Tervikum",
+      "countryCode": "EE",
+      "origin": "https://www.viljandihaigla.ee",
+      "lat": 58.366647,
+      "lng": 25.5949517
+    },
+    {
+      "code": "osm:way/1086077657",
+      "name": "Narva Haigla",
+      "countryCode": "EE",
+      "origin": "https://narvahaigla.ee",
+      "lat": 59.3623831,
+      "lng": 28.1916047
+    },
+    {
+      "code": "osm:way/1168985329",
+      "name": "Elora Hiiu Haigla",
+      "countryCode": "EE",
+      "origin": "https://elora.ee",
+      "lat": 59.3795893,
+      "lng": 24.6642027
+    },
+    {
+      "code": "osm:way/1423471897",
+      "name": "Ida-Viru Keskhaigla",
+      "countryCode": "EE",
+      "origin": "https://www.ivkh.ee",
+      "lat": 59.3286757,
+      "lng": 27.408596
+    },
+    {
+      "code": "osm:way/1508127642",
+      "name": "Põltsamaa haigla",
+      "countryCode": "EE",
+      "origin": "https://www.poltsamaatervis.ee",
+      "lat": 58.6472849,
+      "lng": 25.9782182
+    },
+    {
+      "code": "osm:way/1508129801",
+      "name": "Jõgeva Haigla",
+      "countryCode": "EE",
+      "origin": "https://www.jogevahaigla.ee",
+      "lat": 58.7473238,
+      "lng": 26.3824852
+    },
+    {
+      "code": "osm:way/1508162415",
+      "name": "Valga Haigla",
+      "countryCode": "EE",
+      "origin": "https://valgahaigla.ee",
+      "lat": 57.7803923,
+      "lng": 26.0546473
+    },
+    {
+      "code": "osm:way/1508189151",
+      "name": "Elva haigla",
+      "countryCode": "EE",
+      "origin": "https://ehaigla.ee",
+      "lat": 58.230108,
+      "lng": 26.4099788
+    },
+    {
+      "code": "osm:way/1508206385",
+      "name": "Põlva haigla",
+      "countryCode": "EE",
+      "origin": "https://www.polvahgl.ee",
+      "lat": 58.0548965,
+      "lng": 27.0476627
+    },
+    {
+      "code": "osm:way/1508209972",
+      "name": "Lõuna-Eesti Haigla",
+      "countryCode": "EE",
+      "origin": "https://www.leh.ee",
+      "lat": 57.8090319,
+      "lng": 26.9967268
+    }
+  ]
+}

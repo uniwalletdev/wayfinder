@@ -14,7 +14,8 @@ if (!data) {
   process.exit(1)
 }
 
-const esc = (s) => String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"')
+const esc = (s) =>
+  String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t")
 
 const sites = [...data.sites].sort(
   (a, b) => a.countryCode.localeCompare(b.countryCode) || a.name.localeCompare(b.name, "en")

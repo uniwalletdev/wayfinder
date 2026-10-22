@@ -61,6 +61,11 @@
 /data/previews/
 /data/prev*/
 
+# Run logs from scripts/world's discover/ingest pipeline (stdout/stderr
+# redirected there when run in the background). Scratch output, not input —
+# unlike data/world/countries.json, nothing downstream reads these back.
+/data/world/*.log
+
 # debug
 npm-debug.log*
 yarn-debug.log*

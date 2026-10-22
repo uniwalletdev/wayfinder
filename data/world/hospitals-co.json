@@ -1,0 +1,745 @@
+{
+  "countryCode": "CO",
+  "fetchedAt": "2026-10-21T01:06:26.650Z",
+  "count": 92,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/318898690",
+      "name": "Clínica del Parque",
+      "countryCode": "CO",
+      "origin": "http://clinicadelparque.com.co",
+      "lat": 4.5446278,
+      "lng": -75.6629953
+    },
+    {
+      "code": "osm:node/723623423",
+      "name": "Clínica Los Remansos",
+      "countryCode": "CO",
+      "origin": "https://masquemedicos.co",
+      "lat": 4.4368514,
+      "lng": -75.2197028
+    },
+    {
+      "code": "osm:node/1394801528",
+      "name": "Nueva EPS",
+      "countryCode": "CO",
+      "origin": "https://nuevaeps.com.co",
+      "lat": 4.5452383,
+      "lng": -75.6629231
+    },
+    {
+      "code": "osm:node/1419658572",
+      "name": "Nueva EPS",
+      "countryCode": "CO",
+      "origin": "https://www.nuevaeps.com.co",
+      "lat": 4.4355209,
+      "lng": -75.2121608
+    },
+    {
+      "code": "osm:node/2636163411",
+      "name": "E.S.E Maria Auxiliadora",
+      "countryCode": "CO",
+      "origin": "http://www.esegarzon-huila.gov.co",
+      "lat": 2.191282,
+      "lng": -75.6236059
+    },
+    {
+      "code": "osm:node/2898246153",
+      "name": "Gestion Salud Ips",
+      "countryCode": "CO",
+      "origin": "http://gestionsaludips.com",
+      "lat": 10.4091282,
+      "lng": -75.5180375
+    },
+    {
+      "code": "osm:node/3952399432",
+      "name": "E.S.E. Hospital Manuel Elkin Patarroyo",
+      "countryCode": "CO",
+      "origin": "http://esemanuelelkinpatarroyo.gov.co",
+      "lat": 7.968241,
+      "lng": -74.0470229
+    },
+    {
+      "code": "osm:node/4110728492",
+      "name": "ESE Hospital Regional Centro",
+      "countryCode": "CO",
+      "origin": "https://www.esecentronds.com",
+      "lat": 7.8992708,
+      "lng": -72.4972233
+    },
+    {
+      "code": "osm:node/4549462999",
+      "name": "Hospital San Francisco de Asís",
+      "countryCode": "CO",
+      "origin": "http://www.esehospitaldesanfrancisco-antioquia.gov.co",
+      "lat": 5.9641087,
+      "lng": -75.1016321
+    },
+    {
+      "code": "osm:node/4591962763",
+      "name": "IPS ESE Hospital Santamaría",
+      "countryCode": "CO",
+      "origin": "https://www.hopitalsantamaria.gov.co",
+      "lat": 5.871354,
+      "lng": -75.564832
+    },
+    {
+      "code": "osm:node/4595518903",
+      "name": "IPS Comfama SURA",
+      "countryCode": "CO",
+      "origin": "https://www.comfama.com",
+      "lat": 6.2456545,
+      "lng": -75.5645554
+    },
+    {
+      "code": "osm:node/4600670845",
+      "name": "Hospital San Pio X",
+      "countryCode": "CO",
+      "origin": "https://www.esesanpioxcaracoli.gov.co",
+      "lat": 6.411658,
+      "lng": -74.7561946
+    },
+    {
+      "code": "osm:node/4613284083",
+      "name": "Hospital María Auxiliadora",
+      "countryCode": "CO",
+      "origin": "https://www.hospitalma.chigorodo-antioquia.gov.co",
+      "lat": 7.6728011,
+      "lng": -76.6876513
+    },
+    {
+      "code": "osm:node/4643419171",
+      "name": "Hospital San Rafael",
+      "countryCode": "CO",
+      "origin": "https://www.hospitalebejico.gov.co",
+      "lat": 6.3220104,
+      "lng": -75.7662761
+    },
+    {
+      "code": "osm:node/4757205391",
+      "name": "ESE Hospital San Antonio",
+      "countryCode": "CO",
+      "origin": "http://www.esesanantonio-betania-antioquia.gov.co",
+      "lat": 5.7487992,
+      "lng": -75.9802063
+    },
+    {
+      "code": "osm:node/4757205412",
+      "name": "Hospital San Rafael",
+      "countryCode": "CO",
+      "origin": "http://hospitalgirardota.com",
+      "lat": 6.375113,
+      "lng": -75.449558
+    },
+    {
+      "code": "osm:node/4789273025",
+      "name": "Hospital centenario sevilla",
+      "countryCode": "CO",
+      "origin": "http://www.hdcentenario.gov.co",
+      "lat": 4.26886,
+      "lng": -75.928151
+    },
+    {
+      "code": "osm:node/5340914323",
+      "name": "Hospital Del Sur",
+      "countryCode": "CO",
+      "origin": "https://www.hospitaldelsur.gov.co",
+      "lat": 6.1649458,
+      "lng": -75.6220566
+    },
+    {
+      "code": "osm:node/9598712460",
+      "name": "Cruz Roja Colombiana - Seccional Cundinamarca Y Bogota",
+      "countryCode": "CO",
+      "origin": "https://www.cruzrojabogota.org.co",
+      "lat": 4.663999,
+      "lng": -74.0659824
+    },
+    {
+      "code": "osm:node/9816013420",
+      "name": "Hospital San Francisco",
+      "countryCode": "CO",
+      "origin": "http://www.hospitalsanfranciscoslg.gov.co",
+      "lat": 4.8193973,
+      "lng": -73.1696755
+    },
+    {
+      "code": "osm:node/10782655735",
+      "name": "Unidad intermedia Centro ESE Salud Pereira",
+      "countryCode": "CO",
+      "origin": "http://saludpereira.gov.co",
+      "lat": 4.8171735,
+      "lng": -75.7123001
+    },
+    {
+      "code": "osm:node/11492917172",
+      "name": "Hospital Regional de Moniquirá Sede Centro",
+      "countryCode": "CO",
+      "origin": "https://hrm.gov.co",
+      "lat": 5.8784251,
+      "lng": -73.5710914
+    },
+    {
+      "code": "osm:node/12726162073",
+      "name": "Unidad de Atención San Sebastián",
+      "countryCode": "CO",
+      "origin": "http://www.esesurorientecauca.gov.co",
+      "lat": 1.8389733,
+      "lng": -76.7668225
+    },
+    {
+      "code": "osm:way/31958686",
+      "name": "Federico Lleras Acosta",
+      "countryCode": "CO",
+      "origin": "https://www.hflleras.gov.co",
+      "lat": 4.4332685,
+      "lng": -75.2191925
+    },
+    {
+      "code": "osm:way/59482562",
+      "name": "Oncomedic Sede Salud@rte",
+      "countryCode": "CO",
+      "origin": "http://servimedicdecolombia.com",
+      "lat": 4.4379678,
+      "lng": -75.2190375
+    },
+    {
+      "code": "osm:way/59484223",
+      "name": "Medigen",
+      "countryCode": "CO",
+      "origin": "https://www.medigen.com.co",
+      "lat": 4.4380044,
+      "lng": -75.218294
+    },
+    {
+      "code": "osm:way/88750470",
+      "name": "Centro Hospital 1D Santa Mónica",
+      "countryCode": "CO",
+      "origin": "https://pastosaludese.gov.co",
+      "lat": 1.2047476,
+      "lng": -77.2540181
+    },
+    {
+      "code": "osm:way/108231663",
+      "name": "IPS Municipal de Cartago",
+      "countryCode": "CO",
+      "origin": "http://www.ipscartago.gov.co",
+      "lat": 4.7519309,
+      "lng": -75.9024071
+    },
+    {
+      "code": "osm:way/134646950",
+      "name": "Hospital Venancio Díaz Díaz",
+      "countryCode": "CO",
+      "origin": "http://www.esevenanciodiaz-sabaneta-antioquia.gov.co",
+      "lat": 6.147996,
+      "lng": -75.6218066
+    },
+    {
+      "code": "osm:way/153013655",
+      "name": "Hospital San Vicente de paul",
+      "countryCode": "CO",
+      "origin": "https://www.esesanvicentedepauldelorica.gov.co",
+      "lat": 9.2383363,
+      "lng": -75.8118438
+    },
+    {
+      "code": "osm:way/179221628",
+      "name": "Hospital Pablo Tobón Uribe",
+      "countryCode": "CO",
+      "origin": "https://www.hptu.org.co",
+      "lat": 6.2773157,
+      "lng": -75.5797119
+    },
+    {
+      "code": "osm:way/204837487",
+      "name": "Hospital Regional de Vélez",
+      "countryCode": "CO",
+      "origin": "http://hospitalregionalvelez.gov.co",
+      "lat": 6.0156661,
+      "lng": -73.6738314
+    },
+    {
+      "code": "osm:way/225050224",
+      "name": "Fundación Clínica Shaio",
+      "countryCode": "CO",
+      "origin": "https://www.shaio.org",
+      "lat": 4.6980792,
+      "lng": -74.0728533
+    },
+    {
+      "code": "osm:way/236348512",
+      "name": "Clinica Nuestra",
+      "countryCode": "CO",
+      "origin": "https://clinicanuestra.com",
+      "lat": 4.4304612,
+      "lng": -75.2000392
+    },
+    {
+      "code": "osm:way/278632061",
+      "name": "Centro de Salud Lorenzo",
+      "countryCode": "CO",
+      "origin": "https://pastosaludese.gov.co",
+      "lat": 1.1980512,
+      "lng": -77.264383
+    },
+    {
+      "code": "osm:way/289465365",
+      "name": "E.S.E. Hospital Universitario Julio Méndez Barreneche",
+      "countryCode": "CO",
+      "origin": "https://www.hujmb.gov.co",
+      "lat": 11.2362805,
+      "lng": -74.2019413
+    },
+    {
+      "code": "osm:way/294740282",
+      "name": "Clínica las Americas del Sur",
+      "countryCode": "CO",
+      "origin": "https://clinicalasamericas.lasamericas.com.co",
+      "lat": 6.1785787,
+      "lng": -75.5834448
+    },
+    {
+      "code": "osm:way/303404567",
+      "name": "Nueva Sede E.P.S. Sanitas",
+      "countryCode": "CO",
+      "origin": "https://portal.colsanitas.com",
+      "lat": 7.8897252,
+      "lng": -72.4965418
+    },
+    {
+      "code": "osm:way/324606442",
+      "name": "Centro de Salud Balcones",
+      "countryCode": "CO",
+      "origin": "http://hospitalcalarca.gov.co",
+      "lat": 4.5169049,
+      "lng": -75.6546362
+    },
+    {
+      "code": "osm:way/356112630",
+      "name": "Clínica colombia",
+      "countryCode": "CO",
+      "origin": "https://christussinergia.com",
+      "lat": 3.4149057,
+      "lng": -76.5380919
+    },
+    {
+      "code": "osm:way/375836599",
+      "name": "Santa Teresita",
+      "countryCode": "CO",
+      "origin": "http://www.hospitaldepacora.gov.co",
+      "lat": 5.5301476,
+      "lng": -75.4590876
+    },
+    {
+      "code": "osm:way/409804333",
+      "name": "Clínica General del Norte",
+      "countryCode": "CO",
+      "origin": "https://clinicageneraldelnorte.com",
+      "lat": 10.9952289,
+      "lng": -74.8028896
+    },
+    {
+      "code": "osm:way/412302958",
+      "name": "Hospital San Juan de Dios",
+      "countryCode": "CO",
+      "origin": "https://www.hospitalyarumal.gov.co",
+      "lat": 6.9565543,
+      "lng": -75.4136149
+    },
+    {
+      "code": "osm:way/427844798",
+      "name": "Oncomedic sede II",
+      "countryCode": "CO",
+      "origin": "http://oncomedic.com",
+      "lat": 4.4379678,
+      "lng": -75.2190375
+    },
+    {
+      "code": "osm:way/427844820",
+      "name": "Oncomedic",
+      "countryCode": "CO",
+      "origin": "http://oncomedic.com",
+      "lat": 4.4369114,
+      "lng": -75.2209267
+    },
+    {
+      "code": "osm:way/428949942",
+      "name": "Cafesalud",
+      "countryCode": "CO",
+      "origin": "https://www.cafesalud.com.co",
+      "lat": 4.4354461,
+      "lng": -75.2188542
+    },
+    {
+      "code": "osm:way/429093932",
+      "name": "Clínica Medicadiz",
+      "countryCode": "CO",
+      "origin": "https://www.medicaidz.com.co",
+      "lat": 4.4385469,
+      "lng": -75.2198738
+    },
+    {
+      "code": "osm:way/429098582",
+      "name": "Clínica de ojos del Tolima",
+      "countryCode": "CO",
+      "origin": "https://www.ccibague.org",
+      "lat": 4.4371892,
+      "lng": -75.2216121
+    },
+    {
+      "code": "osm:way/429099892",
+      "name": "ColMEDICA",
+      "countryCode": "CO",
+      "origin": "https://www.paginasamarillas.com.co",
+      "lat": 4.4372941,
+      "lng": -75.2200945
+    },
+    {
+      "code": "osm:way/429100545",
+      "name": "Sia Salud",
+      "countryCode": "CO",
+      "origin": "http://www.misterempresa.com",
+      "lat": 4.437008,
+      "lng": -75.2192088
+    },
+    {
+      "code": "osm:way/435205181",
+      "name": "Clínica El Rosario",
+      "countryCode": "CO",
+      "origin": "https://www.clinicaelrosario.com",
+      "lat": 6.1938575,
+      "lng": -75.5575023
+    },
+    {
+      "code": "osm:way/444013563",
+      "name": "Hospital San Juan de Dios de Abejorral",
+      "countryCode": "CO",
+      "origin": "https://www.esehospitalabejorral.gov.co",
+      "lat": 5.7880611,
+      "lng": -75.4260046
+    },
+    {
+      "code": "osm:way/448084382",
+      "name": "Hospital Regional César Uribe Piedrahíta",
+      "countryCode": "CO",
+      "origin": "https://www.hcup.gov.co",
+      "lat": 7.968483,
+      "lng": -75.2010387
+    },
+    {
+      "code": "osm:way/452120647",
+      "name": "Hospital San Rafael",
+      "countryCode": "CO",
+      "origin": "https://www.esehospitalsanrafael.andes-antioquia.gov.co",
+      "lat": 5.6610991,
+      "lng": -75.8765387
+    },
+    {
+      "code": "osm:way/461653204",
+      "name": "Hospital San Pablo",
+      "countryCode": "CO",
+      "origin": "https://www.esehospitaltarso.com",
+      "lat": 5.8660815,
+      "lng": -75.820577
+    },
+    {
+      "code": "osm:way/462861394",
+      "name": "San Juan de Dios",
+      "countryCode": "CO",
+      "origin": "https://hospitaldeconcordia.gov.co",
+      "lat": 6.0454518,
+      "lng": -75.9045486
+    },
+    {
+      "code": "osm:way/464453921",
+      "name": "Hospital municipal",
+      "countryCode": "CO",
+      "origin": "https://www.hospitalmunicipalsanroque.gov.co",
+      "lat": 6.488063,
+      "lng": -75.0180765
+    },
+    {
+      "code": "osm:way/464577587",
+      "name": "Hospital San Juan del Suroeste",
+      "countryCode": "CO",
+      "origin": "https://www.hospitalhispania.gov.co",
+      "lat": 5.8001694,
+      "lng": -75.9049387
+    },
+    {
+      "code": "osm:way/464849956",
+      "name": "Hospital Marco A. Cardona",
+      "countryCode": "CO",
+      "origin": "https://www.saludate.com",
+      "lat": 6.5562721,
+      "lng": -74.7884332
+    },
+    {
+      "code": "osm:way/481482654",
+      "name": "Clinica Avidanti Ciudad Verde",
+      "countryCode": "CO",
+      "origin": "https://www.avidanti.com",
+      "lat": 4.6072828,
+      "lng": -74.2173227
+    },
+    {
+      "code": "osm:way/494402703",
+      "name": "Jaibaná IPS",
+      "countryCode": "CO",
+      "origin": "https://www.jaibanaips.com",
+      "lat": 5.0504453,
+      "lng": -75.4838976
+    },
+    {
+      "code": "osm:way/494802050",
+      "name": "Hospital Horacio Muñoz Suescún",
+      "countryCode": "CO",
+      "origin": "http://www.sopetran-antioquia.gov.co",
+      "lat": 6.5042416,
+      "lng": -75.7428427
+    },
+    {
+      "code": "osm:way/531067341",
+      "name": "Hospital San Juan de Dios",
+      "countryCode": "CO",
+      "origin": "http://esevaldivia.blogsport.com",
+      "lat": 7.1638473,
+      "lng": -75.4388999
+    },
+    {
+      "code": "osm:way/547468808",
+      "name": "Hospital La Ceja",
+      "countryCode": "CO",
+      "origin": "https://www.laceja-antioquia.gov.co",
+      "lat": 6.0281999,
+      "lng": -75.4313866
+    },
+    {
+      "code": "osm:way/561634810",
+      "name": "Clínica La Misericordia",
+      "countryCode": "CO",
+      "origin": "https://clinicalamisericordia.com",
+      "lat": 11.0139994,
+      "lng": -74.7960681
+    },
+    {
+      "code": "osm:way/563930287",
+      "name": "Hospital San Rafael",
+      "countryCode": "CO",
+      "origin": "http://esehospitalsanrafael.angostura-antioquia.gov.co",
+      "lat": 6.8903698,
+      "lng": -75.333956
+    },
+    {
+      "code": "osm:way/627425426",
+      "name": "Hospital San Juan de Dios",
+      "countryCode": "CO",
+      "origin": "https://www.hospitalsonson-antioquia.gov.co",
+      "lat": 5.7176605,
+      "lng": -75.3101859
+    },
+    {
+      "code": "osm:way/643196495",
+      "name": "Hospital San Juan de Dios",
+      "countryCode": "CO",
+      "origin": "https://www.facebook.com",
+      "lat": 6.0560349,
+      "lng": -75.5036228
+    },
+    {
+      "code": "osm:way/680251591",
+      "name": "ESE Sanatorio de Contratación",
+      "countryCode": "CO",
+      "origin": "https://sanatoriocontratacion.gov.co",
+      "lat": 6.2889504,
+      "lng": -73.4735475
+    },
+    {
+      "code": "osm:way/682788559",
+      "name": "Urgencias Hospital Alma Máter (antigua Clínica León XIII)",
+      "countryCode": "CO",
+      "origin": "https://almamater.hospital",
+      "lat": 6.2668359,
+      "lng": -75.5654957
+    },
+    {
+      "code": "osm:way/697510761",
+      "name": "Hospital Sagrado Corazón",
+      "countryCode": "CO",
+      "origin": "http://www.esehospitalsagradocorazon-norcasia-caldas.gov.co",
+      "lat": 5.5739817,
+      "lng": -74.8873768
+    },
+    {
+      "code": "osm:way/704036511",
+      "name": "Méderi Hospital Universitario Mayor",
+      "countryCode": "CO",
+      "origin": "https://www.mederi.com.co",
+      "lat": 4.6233213,
+      "lng": -74.0826462
+    },
+    {
+      "code": "osm:way/779101310",
+      "name": "Clínica Jaller (Alta Complejidad)",
+      "countryCode": "CO",
+      "origin": "http://www.clinicajaller.com",
+      "lat": 10.9938503,
+      "lng": -74.794771
+    },
+    {
+      "code": "osm:way/818452374",
+      "name": "Hospital San José de Guavatá",
+      "countryCode": "CO",
+      "origin": "https://esesanjosedeguavata.gov.co",
+      "lat": 5.953593,
+      "lng": -73.7000121
+    },
+    {
+      "code": "osm:way/821247262",
+      "name": "Hospital Divino Niño Jesús",
+      "countryCode": "CO",
+      "origin": "https://www.esedivinoninojesus-chipata-santander.gov.co",
+      "lat": 6.0623019,
+      "lng": -73.6379422
+    },
+    {
+      "code": "osm:way/830145081",
+      "name": "Hospital San Martín",
+      "countryCode": "CO",
+      "origin": "http://www.esehospitalsanmartin-labelleza-santander.gov.co",
+      "lat": 5.8602465,
+      "lng": -73.9671823
+    },
+    {
+      "code": "osm:way/870983702",
+      "name": "Hospital Baudilio Acero",
+      "countryCode": "CO",
+      "origin": "https://www.hospitalturmeque.gov.co",
+      "lat": 5.3264268,
+      "lng": -73.4915356
+    },
+    {
+      "code": "osm:way/1078675260",
+      "name": "Cis La Estrella Edificio Fuente Clara",
+      "countryCode": "CO",
+      "origin": "https://www.comfama.com",
+      "lat": 6.1568026,
+      "lng": -75.6428646
+    },
+    {
+      "code": "osm:way/1078676037",
+      "name": "CIS Comfama La Estrella",
+      "countryCode": "CO",
+      "origin": "https://www.comfama.com",
+      "lat": 6.1558575,
+      "lng": -75.643098
+    },
+    {
+      "code": "osm:way/1090462518",
+      "name": "Instituto Neurológico de Colombia",
+      "countryCode": "CO",
+      "origin": "https://institutoneurologico.org",
+      "lat": 6.2525186,
+      "lng": -75.5634342
+    },
+    {
+      "code": "osm:way/1150308239",
+      "name": "E.S.E. Hospital Divino Niño",
+      "countryCode": "CO",
+      "origin": "https://esehospitaldivinoninor.gov.co",
+      "lat": 2.779589,
+      "lng": -75.2605343
+    },
+    {
+      "code": "osm:way/1285764096",
+      "name": "E.S.E. Centro de Salud Santana",
+      "countryCode": "CO",
+      "origin": "http://www.ese-santana-boyaca.gov.co",
+      "lat": 6.0522041,
+      "lng": -73.4871457
+    },
+    {
+      "code": "osm:way/1352238101",
+      "name": "Clinica Medilaser",
+      "countryCode": "CO",
+      "origin": "https://clinicamedifaca.co",
+      "lat": 4.8193503,
+      "lng": -74.3578788
+    },
+    {
+      "code": "osm:way/1354709835",
+      "name": "Hospital San Roque de El Copey",
+      "countryCode": "CO",
+      "origin": "https://hosanroque.gov.co",
+      "lat": 10.1531488,
+      "lng": -73.9673446
+    },
+    {
+      "code": "osm:way/1354778275",
+      "name": "Hospital Regional de San Gil",
+      "countryCode": "CO",
+      "origin": "https://www.hregionalsangil.gov.co",
+      "lat": 6.5573589,
+      "lng": -73.1291118
+    },
+    {
+      "code": "osm:way/1374193526",
+      "name": "Hospital Regional de Moniquirá",
+      "countryCode": "CO",
+      "origin": "https://hrm.gov.co",
+      "lat": 5.866875,
+      "lng": -73.5759738
+    },
+    {
+      "code": "osm:way/1385190505",
+      "name": "Clínica Universitaria Medicina Integral CUMI",
+      "countryCode": "CO",
+      "origin": "https://cumi.com.co",
+      "lat": 8.7601263,
+      "lng": -75.871699
+    },
+    {
+      "code": "osm:way/1415734346",
+      "name": "Centro de Salud Puerto Parra",
+      "countryCode": "CO",
+      "origin": "http://www.esepuertoparra.gov.co",
+      "lat": 6.6502565,
+      "lng": -74.054303
+    },
+    {
+      "code": "osm:way/1441489251",
+      "name": "Centro de Salud Tamasagra",
+      "countryCode": "CO",
+      "origin": "https://pastosaludese.gov.co",
+      "lat": 1.1997181,
+      "lng": -77.2928372
+    },
+    {
+      "code": "osm:way/1467192027",
+      "name": "Centro Radio Oncológico Del Caribe",
+      "countryCode": "CO",
+      "origin": "https://www.crocsas.com",
+      "lat": 10.4055095,
+      "lng": -75.5080392
+    },
+    {
+      "code": "osm:way/1495161683",
+      "name": "Hospital Universitario de Barrios Unidos",
+      "countryCode": "CO",
+      "origin": "https://www.mederi.com.co",
+      "lat": 4.6635905,
+      "lng": -74.0800567
+    },
+    {
+      "code": "osm:way/1569295625",
+      "name": "Hospital Alonso María Giraldo",
+      "countryCode": "CO",
+      "origin": "https://www.esepresbiteroalonso-sanrafael.gov.co",
+      "lat": 6.2942535,
+      "lng": -75.0262891
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "countryCode": "NZ",
+  "fetchedAt": "2026-10-21T02:21:58.721Z",
+  "count": 45,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/281145522",
+      "name": "Accident and Urgent Medical Centre",
+      "countryCode": "NZ",
+      "origin": "https://www.wamc.co.nz",
+      "lat": -41.3019041,
+      "lng": 174.7798775
+    },
+    {
+      "code": "osm:node/2172305323",
+      "name": "Leeston Medical Centre",
+      "countryCode": "NZ",
+      "origin": "http://www.leestonmc.co.nz",
+      "lat": -43.7612697,
+      "lng": 172.2992923
+    },
+    {
+      "code": "osm:node/3683343758",
+      "name": "Juilan Lofts and Zachary Moaveni Plastic Surgeons",
+      "countryCode": "NZ",
+      "origin": "https://plasticsurgeon.co.nz",
+      "lat": -36.8814718,
+      "lng": 174.7998924
+    },
+    {
+      "code": "osm:node/4852747857",
+      "name": "24 Hour Surgery",
+      "countryCode": "NZ",
+      "origin": "https://www.24hoursurgery.co.nz",
+      "lat": -43.5216188,
+      "lng": 172.6415322
+    },
+    {
+      "code": "osm:node/5608333692",
+      "name": "Bay Radiology",
+      "countryCode": "NZ",
+      "origin": "https://bayradiology.co.nz",
+      "lat": -37.742462,
+      "lng": 176.1370835
+    },
+    {
+      "code": "osm:node/7700945429",
+      "name": "Christchurch Public Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.cdhb.health.nz",
+      "lat": -43.5343328,
+      "lng": 172.6254892
+    },
+    {
+      "code": "osm:way/32868818",
+      "name": "Auckland City Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.adhb.health.nz",
+      "lat": -36.8597388,
+      "lng": 174.770482
+    },
+    {
+      "code": "osm:way/45101020",
+      "name": "Waitākere Hospital",
+      "countryCode": "NZ",
+      "origin": "https://info.health.nz",
+      "lat": -36.8695778,
+      "lng": 174.6306851
+    },
+    {
+      "code": "osm:way/57766322",
+      "name": "Tauranga Hospital",
+      "countryCode": "NZ",
+      "origin": "https://info.health.nz",
+      "lat": -37.7078277,
+      "lng": 176.1477798
+    },
+    {
+      "code": "osm:way/58379525",
+      "name": "North Shore Hospital",
+      "countryCode": "NZ",
+      "origin": "https://info.health.nz",
+      "lat": -36.781904,
+      "lng": 174.7567765
+    },
+    {
+      "code": "osm:way/72437397",
+      "name": "Wellington Regional Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.ccdhb.org.nz",
+      "lat": -41.3089205,
+      "lng": 174.7804116
+    },
+    {
+      "code": "osm:way/87217449",
+      "name": "Auckland Spinal Rehabilitation Unit",
+      "countryCode": "NZ",
+      "origin": "https://nzspinaltrust.org.nz",
+      "lat": -36.9567658,
+      "lng": 174.8553017
+    },
+    {
+      "code": "osm:way/103749476",
+      "name": "Dunedin Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.southernhealth.nz",
+      "lat": -45.8694516,
+      "lng": 170.5087246
+    },
+    {
+      "code": "osm:way/105451540",
+      "name": "Hawkes Bay Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.ourhealthhb.nz",
+      "lat": -39.6285691,
+      "lng": 176.8253602
+    },
+    {
+      "code": "osm:way/135350074",
+      "name": "Pukekohe Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.healthpoint.co.nz",
+      "lat": -37.2175179,
+      "lng": 174.9043133
+    },
+    {
+      "code": "osm:way/138365990",
+      "name": "Bay of Islands Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.northlanddhb.org.nz",
+      "lat": -35.3862941,
+      "lng": 174.0692556
+    },
+    {
+      "code": "osm:way/168851007",
+      "name": "Kaikoura Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.cdhb.health.nz",
+      "lat": -42.404705,
+      "lng": 173.6816237
+    },
+    {
+      "code": "osm:way/172472211",
+      "name": "Palmerston North Regional Hospital",
+      "countryCode": "NZ",
+      "origin": "https://info.health.nz",
+      "lat": -40.3387997,
+      "lng": 175.619826
+    },
+    {
+      "code": "osm:way/189508478",
+      "name": "Greenlane Clinical Centre",
+      "countryCode": "NZ",
+      "origin": "https://www.adhb.health.nz",
+      "lat": -36.8949049,
+      "lng": 174.7800168
+    },
+    {
+      "code": "osm:way/203229384",
+      "name": "Hutt Hospital",
+      "countryCode": "NZ",
+      "origin": "https://info.health.nz",
+      "lat": -41.2047854,
+      "lng": 174.9242982
+    },
+    {
+      "code": "osm:way/204906049",
+      "name": "Te Mana Care Centre",
+      "countryCode": "NZ",
+      "origin": "https://oceaniahealthcare.co.nz",
+      "lat": -36.8042582,
+      "lng": 174.7016337
+    },
+    {
+      "code": "osm:way/210198746",
+      "name": "Wairau Hospital",
+      "countryCode": "NZ",
+      "origin": "https://info.health.nz",
+      "lat": -41.535975,
+      "lng": 173.9437678
+    },
+    {
+      "code": "osm:way/221801422",
+      "name": "Southern Cross Wellington Hospital",
+      "countryCode": "NZ",
+      "origin": "https://healthcare.southerncross.co.nz",
+      "lat": -41.3094343,
+      "lng": 174.7755353
+    },
+    {
+      "code": "osm:way/274200236",
+      "name": "Forte Health",
+      "countryCode": "NZ",
+      "origin": "https://www.fortehealth.co.nz",
+      "lat": -43.5262676,
+      "lng": 172.6377908
+    },
+    {
+      "code": "osm:way/290778536",
+      "name": "Southern Cross Hamilton Hospital",
+      "countryCode": "NZ",
+      "origin": "https://healthcare.southerncross.co.nz",
+      "lat": -37.7891503,
+      "lng": 175.2903703
+    },
+    {
+      "code": "osm:way/302887250",
+      "name": "Hāwera Hospital",
+      "countryCode": "NZ",
+      "origin": "https://info.health.nz",
+      "lat": -39.5872716,
+      "lng": 174.2662623
+    },
+    {
+      "code": "osm:way/309033277",
+      "name": "Alexandra Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.nmdhb.govt.nz",
+      "lat": -41.3406519,
+      "lng": 173.1997335
+    },
+    {
+      "code": "osm:way/330887042",
+      "name": "Shorecare Urgent Care Northcross",
+      "countryCode": "NZ",
+      "origin": "http://carehq.co.nz",
+      "lat": -36.7309038,
+      "lng": 174.7241134
+    },
+    {
+      "code": "osm:way/331023383",
+      "name": "Howick Baptist Home and Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.hbh.org.nz",
+      "lat": -36.9016179,
+      "lng": 174.9204507
+    },
+    {
+      "code": "osm:way/334266629",
+      "name": "Radius Kensington Resthome & Hospital",
+      "countryCode": "NZ",
+      "origin": "http://www.radiuscare.net.nz",
+      "lat": -37.7756522,
+      "lng": 175.2596947
+    },
+    {
+      "code": "osm:way/370526067",
+      "name": "Taihape Health Centre",
+      "countryCode": "NZ",
+      "origin": "https://www.wrhn.org.nz",
+      "lat": -39.6805753,
+      "lng": 175.7950824
+    },
+    {
+      "code": "osm:way/386911308",
+      "name": "Wanaka Lakes Health Centre",
+      "countryCode": "NZ",
+      "origin": "https://wanakahealthcentre.co.nz",
+      "lat": -44.7095785,
+      "lng": 169.1374593
+    },
+    {
+      "code": "osm:way/494633277",
+      "name": "Christchurch Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.cdhb.health.nz",
+      "lat": -43.533748,
+      "lng": 172.6252379
+    },
+    {
+      "code": "osm:way/497997407",
+      "name": "Braemar Hospital",
+      "countryCode": "NZ",
+      "origin": "https://braemarhospital.co.nz",
+      "lat": -37.807901,
+      "lng": 175.2789843
+    },
+    {
+      "code": "osm:way/742369005",
+      "name": "Ormiston Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.ormistonhospital.co.nz",
+      "lat": -36.9647296,
+      "lng": 174.9047767
+    },
+    {
+      "code": "osm:way/788089644",
+      "name": "Child Development Service",
+      "countryCode": "NZ",
+      "origin": "https://cdhb.health.nz",
+      "lat": -43.521313,
+      "lng": 172.6310687
+    },
+    {
+      "code": "osm:way/901479297",
+      "name": "Mercy Hospice Auckland",
+      "countryCode": "NZ",
+      "origin": "https://mercyhospice.org.nz",
+      "lat": -36.8473843,
+      "lng": 174.7473293
+    },
+    {
+      "code": "osm:way/958819778",
+      "name": "Southern Cross Nelson Hospital",
+      "countryCode": "NZ",
+      "origin": "https://manukastreet.org.nz",
+      "lat": -41.2787846,
+      "lng": 173.2904675
+    },
+    {
+      "code": "osm:way/987022812",
+      "name": "Golden Bay Community Health",
+      "countryCode": "NZ",
+      "origin": "https://www.gbhealth.org.nz",
+      "lat": -40.8783789,
+      "lng": 172.8170305
+    },
+    {
+      "code": "osm:way/997799414",
+      "name": "Manor Park Private Hospital",
+      "countryCode": "NZ",
+      "origin": "https://www.eldernet.co.nz",
+      "lat": -41.1587758,
+      "lng": 174.9770209
+    },
+    {
+      "code": "osm:way/1025115110",
+      "name": "Southern Cross Hospital",
+      "countryCode": "NZ",
+      "origin": "https://healthcare.southerncross.co.nz",
+      "lat": -43.5200217,
+      "lng": 172.6346514
+    },
+    {
+      "code": "osm:way/1029234582",
+      "name": "Laura Fergusson Brain Injury Trust",
+      "countryCode": "NZ",
+      "origin": "https://www.lfbit.co.nz",
+      "lat": -43.5101591,
+      "lng": 172.5816141
+    },
+    {
+      "code": "osm:way/1137939571",
+      "name": "Canterbury Charity Hospital",
+      "countryCode": "NZ",
+      "origin": "https://charityhospital.org.nz",
+      "lat": -43.4863286,
+      "lng": 172.5832218
+    },
+    {
+      "code": "osm:way/1211075006",
+      "name": "Crest Hospital",
+      "countryCode": "NZ",
+      "origin": "https://cresthospital.co.nz",
+      "lat": -40.3489587,
+      "lng": 175.6118998
+    },
+    {
+      "code": "osm:way/1211533940",
+      "name": "Napier Health Centre",
+      "countryCode": "NZ",
+      "origin": "https://www.ourhealthhb.nz",
+      "lat": -39.4955085,
+      "lng": 176.9132646
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "countryCode": "IS",
+  "fetchedAt": "2026-10-21T01:42:03.590Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/12989677602",
+      "name": "Heilsugæslusel Flateyrar",
+      "countryCode": "IS",
+      "origin": "https://hvest.is",
+      "lat": 66.0467747,
+      "lng": -23.5123113
+    },
+    {
+      "code": "osm:way/29027438",
+      "name": "Sjúkrahúsið og Heilsugæslan á Akranesi",
+      "countryCode": "IS",
+      "origin": "https://www.sha.is",
+      "lat": 64.3196911,
+      "lng": -22.0818347
+    },
+    {
+      "code": "osm:way/64047767",
+      "name": "Landspítali",
+      "countryCode": "IS",
+      "origin": "https://www.landspitali.is",
+      "lat": 64.1380995,
+      "lng": -21.9295996
+    },
+    {
+      "code": "osm:way/372399924",
+      "name": "Barna- og unglingageðdeild Landspítalans",
+      "countryCode": "IS",
+      "origin": "https://www.landspitali.is",
+      "lat": 64.1486017,
+      "lng": -21.8764202
+    }
+  ]
+}

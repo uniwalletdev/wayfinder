@@ -1,0 +1,129 @@
+{
+  "countryCode": "MM",
+  "fetchedAt": "2026-10-21T02:06:46.748Z",
+  "count": 15,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/3229472154",
+      "name": "ဇီဝိတဒါန သံဃာ့ဆေးရုံကြီး",
+      "countryCode": "MM",
+      "origin": "https://www.jivitahospital.org",
+      "lat": 16.8033222,
+      "lng": 96.1560965
+    },
+    {
+      "code": "osm:node/5434863595",
+      "name": "အရိုးရောဂါကုဆေးရုံကြီး",
+      "countryCode": "MM",
+      "origin": "http://www.facebook.com",
+      "lat": 16.8194156,
+      "lng": 96.122525
+    },
+    {
+      "code": "osm:node/5960594986",
+      "name": "MyintMyat Specialist Hospital",
+      "countryCode": "MM",
+      "origin": "https://www.facebook.com",
+      "lat": 17.6507249,
+      "lng": 95.438658
+    },
+    {
+      "code": "osm:way/264409325",
+      "name": "မြို့တော်ဆေးရုံ",
+      "countryCode": "MM",
+      "origin": "https://www.cityhospitalmandalay.com",
+      "lat": 21.9523262,
+      "lng": 96.1057655
+    },
+    {
+      "code": "osm:way/317875384",
+      "name": "အောင်ရတနာ ဆေးရုံ",
+      "countryCode": "MM",
+      "origin": "https://www.aungyadana.com",
+      "lat": 16.8325342,
+      "lng": 96.17943
+    },
+    {
+      "code": "osm:way/389277331",
+      "name": "ပင်လုံဆေးရုံ",
+      "countryCode": "MM",
+      "origin": "http://pinlongroupofhospitals.com",
+      "lat": 16.8609137,
+      "lng": 96.2086406
+    },
+    {
+      "code": "osm:way/446877996",
+      "name": "ကျောရိုးခွဲစ်ကုသဆောင်",
+      "countryCode": "MM",
+      "origin": "http://www.facebook.com",
+      "lat": 16.8195329,
+      "lng": 96.1224639
+    },
+    {
+      "code": "osm:way/564027026",
+      "name": "KAN THAR YAR International Specialist Hospital",
+      "countryCode": "MM",
+      "origin": "http://ktyhospital.com",
+      "lat": 16.8416318,
+      "lng": 96.1369033
+    },
+    {
+      "code": "osm:way/785615164",
+      "name": "ဗဟိုရ်စည်ဆေးရုံ",
+      "countryCode": "MM",
+      "origin": "https://www.bahosihospital.com",
+      "lat": 16.779241,
+      "lng": 96.1409162
+    },
+    {
+      "code": "osm:way/985097173",
+      "name": "ဝိတိုရိယ ဆေးရုံ",
+      "countryCode": "MM",
+      "origin": "https://victoriahospitalmyanmar.com",
+      "lat": 16.8776548,
+      "lng": 96.1299058
+    },
+    {
+      "code": "osm:way/1378653147",
+      "name": "ကျောရိုးခွဲစ်ကုသဆောင်",
+      "countryCode": "MM",
+      "origin": "http://www.facebook.com",
+      "lat": 16.8183231,
+      "lng": 96.1240413
+    },
+    {
+      "code": "osm:way/1378653148",
+      "name": "ကျောရိုးခွဲစ်ကုသဆောင်",
+      "countryCode": "MM",
+      "origin": "http://www.facebook.com",
+      "lat": 16.8183801,
+      "lng": 96.1239319
+    },
+    {
+      "code": "osm:way/1378653149",
+      "name": "ကျောရိုးခွဲစ်ကုသဆောင်",
+      "countryCode": "MM",
+      "origin": "http://www.facebook.com",
+      "lat": 16.8185778,
+      "lng": 96.1237053
+    },
+    {
+      "code": "osm:way/1378653150",
+      "name": "ကျောရိုးခွဲစ်ကုသဆောင်",
+      "countryCode": "MM",
+      "origin": "http://www.facebook.com",
+      "lat": 16.8189549,
+      "lng": 96.1233345
+    },
+    {
+      "code": "osm:way/1527717494",
+      "name": "အာယုအင်တာနေရှင်နယ်ဆေးရုံကြီး",
+      "countryCode": "MM",
+      "origin": "https://aryuhospital.com",
+      "lat": 16.8130381,
+      "lng": 96.1759009
+    }
+  ]
+}

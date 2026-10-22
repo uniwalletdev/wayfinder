@@ -1,0 +1,897 @@
+{
+  "countryCode": "KR",
+  "fetchedAt": "2026-10-21T01:51:29.514Z",
+  "count": 111,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/368740921",
+      "name": "사랑의병원",
+      "countryCode": "KR",
+      "origin": "http://saranghospital.net",
+      "lat": 37.4795861,
+      "lng": 126.9564377
+    },
+    {
+      "code": "osm:node/368743119",
+      "name": "시원한내과 의원",
+      "countryCode": "KR",
+      "origin": "http://www.coolmedical.co.kr",
+      "lat": 35.1875943,
+      "lng": 129.0832466
+    },
+    {
+      "code": "osm:node/368751075",
+      "name": "해성아리즈웰병원",
+      "countryCode": "KR",
+      "origin": "http://aliswell.kr",
+      "lat": 35.8550731,
+      "lng": 128.5027638
+    },
+    {
+      "code": "osm:node/368756364",
+      "name": "더나은365의원",
+      "countryCode": "KR",
+      "origin": "https://deonaeun365.modoo.at",
+      "lat": 37.469956,
+      "lng": 126.688828
+    },
+    {
+      "code": "osm:node/368760992",
+      "name": "호남요양병원",
+      "countryCode": "KR",
+      "origin": "https://www.honamyoyang.com",
+      "lat": 35.1627083,
+      "lng": 126.8086201
+    },
+    {
+      "code": "osm:node/368796097",
+      "name": "순천향대학교 부천병원",
+      "countryCode": "KR",
+      "origin": "http://www.schmc.ac.kr",
+      "lat": 37.4985581,
+      "lng": 126.7629914
+    },
+    {
+      "code": "osm:node/368798967",
+      "name": "정내과의원",
+      "countryCode": "KR",
+      "origin": "http://www.medicalpower.co.kr",
+      "lat": 37.4966729,
+      "lng": 126.761718
+    },
+    {
+      "code": "osm:node/368799023",
+      "name": "연세봄 내과소아청소년과",
+      "countryCode": "KR",
+      "origin": "http://ysbom.co.kr",
+      "lat": 37.4913663,
+      "lng": 126.7533031
+    },
+    {
+      "code": "osm:node/368803207",
+      "name": "하남시보건소",
+      "countryCode": "KR",
+      "origin": "https://www.hanam.go.kr",
+      "lat": 37.5390823,
+      "lng": 127.2155299
+    },
+    {
+      "code": "osm:node/368844346",
+      "name": "경남도립김해노인전문병원",
+      "countryCode": "KR",
+      "origin": "http://gimhaenoin.co.kr",
+      "lat": 35.2616051,
+      "lng": 128.861049
+    },
+    {
+      "code": "osm:node/368854938",
+      "name": "의료법인 석천재단고창병원",
+      "countryCode": "KR",
+      "origin": "https://www.gchospital.net",
+      "lat": 35.4363833,
+      "lng": 126.693414
+    },
+    {
+      "code": "osm:node/368854956",
+      "name": "이진홍내과의원",
+      "countryCode": "KR",
+      "origin": "https://www.leemed.com",
+      "lat": 35.4349259,
+      "lng": 126.7005861
+    },
+    {
+      "code": "osm:node/368855100",
+      "name": "담양군보건소",
+      "countryCode": "KR",
+      "origin": "http://health.damyang.go.kr",
+      "lat": 35.3250336,
+      "lng": 126.981317
+    },
+    {
+      "code": "osm:node/368855385",
+      "name": "이왕치과",
+      "countryCode": "KR",
+      "origin": "https://xn--vb0br49buyaw5r.com",
+      "lat": 35.64369,
+      "lng": 128.742724
+    },
+    {
+      "code": "osm:node/368855918",
+      "name": "메디팜클리닉의원",
+      "countryCode": "KR",
+      "origin": "http://www.medifarmclinic.co.kr",
+      "lat": 35.0103767,
+      "lng": 127.0336493
+    },
+    {
+      "code": "osm:node/1222765710",
+      "name": "항도외과",
+      "countryCode": "KR",
+      "origin": "http://www.ihangdo.com",
+      "lat": 35.9642262,
+      "lng": 126.7141521
+    },
+    {
+      "code": "osm:node/2104058788",
+      "name": "방배제일병원",
+      "countryCode": "KR",
+      "origin": "https://www.jeil-hospital.co.kr",
+      "lat": 37.4879071,
+      "lng": 126.9951082
+    },
+    {
+      "code": "osm:node/2621074176",
+      "name": "한양내과, 류마티스클리닉-Hanyang Clinic",
+      "countryCode": "KR",
+      "origin": "https://www.rheumalee.co.kr",
+      "lat": 37.3496617,
+      "lng": 127.1095827
+    },
+    {
+      "code": "osm:node/4324778505",
+      "name": "대찬병원",
+      "countryCode": "KR",
+      "origin": "http://daechanhospital.com",
+      "lat": 37.4497162,
+      "lng": 126.7025439
+    },
+    {
+      "code": "osm:node/4357349349",
+      "name": "맑은이빈인후과의원 판교점",
+      "countryCode": "KR",
+      "origin": "http://www.yonsei-ent.co.kr",
+      "lat": 37.3884716,
+      "lng": 127.1154761
+    },
+    {
+      "code": "osm:node/4357349352",
+      "name": "판교연세피부과",
+      "countryCode": "KR",
+      "origin": "http://yonseiskin.co.kr",
+      "lat": 37.3884184,
+      "lng": 127.1150953
+    },
+    {
+      "code": "osm:node/4599398433",
+      "name": "좋은이웃요양병원",
+      "countryCode": "KR",
+      "origin": "http://www.jhospital.co.kr",
+      "lat": 37.3873061,
+      "lng": 127.1234654
+    },
+    {
+      "code": "osm:node/4599735456",
+      "name": "분당제일여성병원",
+      "countryCode": "KR",
+      "origin": "http://www.bundangcheil.com",
+      "lat": 37.3869019,
+      "lng": 127.1217713
+    },
+    {
+      "code": "osm:node/4603353959",
+      "name": "서울나우병원",
+      "countryCode": "KR",
+      "origin": "https://www.nowmed.co.kr",
+      "lat": 37.3839793,
+      "lng": 127.1201511
+    },
+    {
+      "code": "osm:node/4637166525",
+      "name": "명지춘혜병원",
+      "countryCode": "KR",
+      "origin": "http://www.mjchoonhey.co.kr",
+      "lat": 37.5006404,
+      "lng": 126.8971162
+    },
+    {
+      "code": "osm:node/4666782189",
+      "name": "동국대학교 분당한방병원",
+      "countryCode": "KR",
+      "origin": "http://www.dumc.or.kr",
+      "lat": 37.3672765,
+      "lng": 127.1280254
+    },
+    {
+      "code": "osm:node/5000804121",
+      "name": "Himchan Hospital Busan",
+      "countryCode": "KR",
+      "origin": "http://www.himchanhospital.com",
+      "lat": 35.2013067,
+      "lng": 129.0876332
+    },
+    {
+      "code": "osm:node/5249993428",
+      "name": "21세기한일병원",
+      "countryCode": "KR",
+      "origin": "http://www.21c-hanil.co.kr",
+      "lat": 34.9016477,
+      "lng": 128.5207774
+    },
+    {
+      "code": "osm:node/6313796669",
+      "name": "나무정원여성병원",
+      "countryCode": "KR",
+      "origin": "https://www.namujungwon.com",
+      "lat": 37.8227888,
+      "lng": 127.0485457
+    },
+    {
+      "code": "osm:node/6678177909",
+      "name": "에이치아이여성의원",
+      "countryCode": "KR",
+      "origin": "http://821052081368.blogspot.com",
+      "lat": 37.5668483,
+      "lng": 126.8405844
+    },
+    {
+      "code": "osm:node/7501768239",
+      "name": "선수촌병원",
+      "countryCode": "KR",
+      "origin": "http://www.sunsoochon.com",
+      "lat": 37.5115194,
+      "lng": 127.0792142
+    },
+    {
+      "code": "osm:node/7657744445",
+      "name": "아산충무병원",
+      "countryCode": "KR",
+      "origin": "http://www.asancm.co.kr",
+      "lat": 36.7790705,
+      "lng": 127.0201286
+    },
+    {
+      "code": "osm:node/8852180528",
+      "name": "닥터이레이저피부과-기미레이저",
+      "countryCode": "KR",
+      "origin": "https://www.drelaser.co.kr",
+      "lat": 37.5261068,
+      "lng": 127.0405199
+    },
+    {
+      "code": "osm:node/9852039617",
+      "name": "한마음병원",
+      "countryCode": "KR",
+      "origin": "http://www.hanheart.co.kr",
+      "lat": 35.2377801,
+      "lng": 128.698896
+    },
+    {
+      "code": "osm:node/11013813777",
+      "name": "화순군립요양병원",
+      "countryCode": "KR",
+      "origin": "http://cnuhgh.com",
+      "lat": 35.0618537,
+      "lng": 127.0025388
+    },
+    {
+      "code": "osm:node/11893002380",
+      "name": "핑크힐병원",
+      "countryCode": "KR",
+      "origin": "http://www.pinkheal.co.kr",
+      "lat": 37.5493092,
+      "lng": 126.8748433
+    },
+    {
+      "code": "osm:node/12466280179",
+      "name": "화천군보건의료원",
+      "countryCode": "KR",
+      "origin": "http://www.ihc.go.kr",
+      "lat": 38.1072753,
+      "lng": 127.7090784
+    },
+    {
+      "code": "osm:node/12492135946",
+      "name": "솔담한방병원",
+      "countryCode": "KR",
+      "origin": "http://www.soldamclinic.com",
+      "lat": 33.4590435,
+      "lng": 126.4845726
+    },
+    {
+      "code": "osm:node/12557456781",
+      "name": "디지털헬스케어센터",
+      "countryCode": "KR",
+      "origin": "https://dhc.severance.healthcare",
+      "lat": 37.5633949,
+      "lng": 126.9402026
+    },
+    {
+      "code": "osm:node/13000199615",
+      "name": "노원삼성정형외과별관",
+      "countryCode": "KR",
+      "origin": "http://nowonsamsungos.com",
+      "lat": 37.6540248,
+      "lng": 127.057995
+    },
+    {
+      "code": "osm:node/13489284595",
+      "name": "광덕안정한의원 부산남포동점",
+      "countryCode": "KR",
+      "origin": "https://gdaj.co.kr",
+      "lat": 35.0982836,
+      "lng": 129.0254771
+    },
+    {
+      "code": "osm:node/13545122982",
+      "name": "속초정요양병원",
+      "countryCode": "KR",
+      "origin": "http://jeongmedi.kr",
+      "lat": 38.1899097,
+      "lng": 128.5877757
+    },
+    {
+      "code": "osm:node/13805350201",
+      "name": "인구보건복지협회 가족보건의원 대전충남지회",
+      "countryCode": "KR",
+      "origin": "https://clinic.ppfk.or.kr",
+      "lat": 36.3289437,
+      "lng": 127.4026372
+    },
+    {
+      "code": "osm:node/13924611681",
+      "name": "본척척재활의학과의원",
+      "countryCode": "KR",
+      "origin": "https://xn--vb0b361axyhuja83sa697mf2b.com",
+      "lat": 37.4115392,
+      "lng": 127.1297986
+    },
+    {
+      "code": "osm:node/14069539735",
+      "name": "Bonjung Korean Medicine Clinic",
+      "countryCode": "KR",
+      "origin": "https://bonjungclinic.linkstory.co.kr",
+      "lat": 37.5726025,
+      "lng": 126.9850624
+    },
+    {
+      "code": "osm:node/14295684413",
+      "name": "하남시 미사보건센터",
+      "countryCode": "KR",
+      "origin": "https://www.hanam.go.kr",
+      "lat": 37.567674,
+      "lng": 127.1856508
+    },
+    {
+      "code": "osm:way/151686683",
+      "name": "충북대학교병원",
+      "countryCode": "KR",
+      "origin": "https://www.cbnuh.or.kr",
+      "lat": 36.623193,
+      "lng": 127.4618418
+    },
+    {
+      "code": "osm:way/223434840",
+      "name": "서울대학교병원",
+      "countryCode": "KR",
+      "origin": "http://www.snuh.org",
+      "lat": 37.5788702,
+      "lng": 126.9993692
+    },
+    {
+      "code": "osm:way/253631453",
+      "name": "양산성모병원",
+      "countryCode": "KR",
+      "origin": "http://www.ujmc.co.kr",
+      "lat": 35.4063406,
+      "lng": 129.1644662
+    },
+    {
+      "code": "osm:way/266512478",
+      "name": "세종병원 (Sejongh Hospital)",
+      "countryCode": "KR",
+      "origin": "https://www.sejongh.co.kr",
+      "lat": 37.4809779,
+      "lng": 126.791269
+    },
+    {
+      "code": "osm:way/297874790",
+      "name": "아주대학교병원",
+      "countryCode": "KR",
+      "origin": "http://hosp.ajoumc.or.kr",
+      "lat": 37.2794595,
+      "lng": 127.0478823
+    },
+    {
+      "code": "osm:way/350913033",
+      "name": "서울특별시 어린이병원",
+      "countryCode": "KR",
+      "origin": "http://childhosp.seoul.go.kr",
+      "lat": 37.4557709,
+      "lng": 127.0690325
+    },
+    {
+      "code": "osm:way/369559505",
+      "name": "세브란스병원",
+      "countryCode": "KR",
+      "origin": "http://sev.iseverance.com",
+      "lat": 37.5622957,
+      "lng": 126.940493
+    },
+    {
+      "code": "osm:way/369681533",
+      "name": "제주대학교병원",
+      "countryCode": "KR",
+      "origin": "https://www.jejunuh.co.kr",
+      "lat": 33.4668927,
+      "lng": 126.5454125
+    },
+    {
+      "code": "osm:way/370371010",
+      "name": "제주특별자치도제주의료원",
+      "countryCode": "KR",
+      "origin": "http://www.jejumed.com",
+      "lat": 33.4451188,
+      "lng": 126.560344
+    },
+    {
+      "code": "osm:way/370378985",
+      "name": "서귀포의료원",
+      "countryCode": "KR",
+      "origin": "http://www.smed.or.kr",
+      "lat": 33.2555238,
+      "lng": 126.5637268
+    },
+    {
+      "code": "osm:way/371635505",
+      "name": "제주한라병원",
+      "countryCode": "KR",
+      "origin": "http://www.hallahosp.co.kr",
+      "lat": 33.4900581,
+      "lng": 126.485124
+    },
+    {
+      "code": "osm:way/380178577",
+      "name": "가톨릭관동대학교 국제성모병원",
+      "countryCode": "KR",
+      "origin": "https://www.ish.or.kr",
+      "lat": 37.5423971,
+      "lng": 126.6835958
+    },
+    {
+      "code": "osm:way/382880032",
+      "name": "인천연세병원",
+      "countryCode": "KR",
+      "origin": "https://icys.kr",
+      "lat": 37.5502934,
+      "lng": 126.6743994
+    },
+    {
+      "code": "osm:way/385228660",
+      "name": "가톨릭대학교 여의도성모병원",
+      "countryCode": "KR",
+      "origin": "https://www.cmcsungmo.or.kr",
+      "lat": 37.5181706,
+      "lng": 126.9365228
+    },
+    {
+      "code": "osm:way/412970177",
+      "name": "가톨릭대학교 서울성모병원",
+      "countryCode": "KR",
+      "origin": "https://www.cmcseoul.or.kr",
+      "lat": 37.5002731,
+      "lng": 127.0054461
+    },
+    {
+      "code": "osm:way/416586666",
+      "name": "삼육의료원 서울병원",
+      "countryCode": "KR",
+      "origin": "https://www.symcs.co.kr",
+      "lat": 37.5875276,
+      "lng": 127.0646751
+    },
+    {
+      "code": "osm:way/417994820",
+      "name": "삼성서울병원",
+      "countryCode": "KR",
+      "origin": "http://www.samsunghospital.com",
+      "lat": 37.4886049,
+      "lng": 127.0862913
+    },
+    {
+      "code": "osm:way/447744762",
+      "name": "한림대동탄성심병원",
+      "countryCode": "KR",
+      "origin": "http://dongtan.hallym.or.kr",
+      "lat": 37.216567,
+      "lng": 127.0800742
+    },
+    {
+      "code": "osm:way/463187627",
+      "name": "강북삼성병원",
+      "countryCode": "KR",
+      "origin": "https://www.kbsmc.co.kr",
+      "lat": 37.5682288,
+      "lng": 126.9677993
+    },
+    {
+      "code": "osm:way/468641312",
+      "name": "대구광역시립희망원",
+      "countryCode": "KR",
+      "origin": "http://www.ehope.or.kr",
+      "lat": 35.8048623,
+      "lng": 128.5098238
+    },
+    {
+      "code": "osm:way/469308344",
+      "name": "성남시의료원",
+      "countryCode": "KR",
+      "origin": "https://www.scmc.kr",
+      "lat": 37.4447915,
+      "lng": 127.1390541
+    },
+    {
+      "code": "osm:way/469693615",
+      "name": "미즈메디병원 (Miz Medi Hospital)",
+      "countryCode": "KR",
+      "origin": "https://www.mizmedi.com",
+      "lat": 37.552093,
+      "lng": 126.8359006
+    },
+    {
+      "code": "osm:way/469716617",
+      "name": "천안충무병원",
+      "countryCode": "KR",
+      "origin": "http://www.cmhos.co.kr",
+      "lat": 36.7973691,
+      "lng": 127.1312123
+    },
+    {
+      "code": "osm:way/469952644",
+      "name": "원주세브란스기독병원",
+      "countryCode": "KR",
+      "origin": "https://www.ywmc.or.kr",
+      "lat": 37.3482975,
+      "lng": 127.945478
+    },
+    {
+      "code": "osm:way/472033206",
+      "name": "보바스기념병원",
+      "countryCode": "KR",
+      "origin": "https://www.lottebobath.net",
+      "lat": 37.3559447,
+      "lng": 127.0983485
+    },
+    {
+      "code": "osm:way/472296333",
+      "name": "울산대학교병원(University of Ulsan Hospital)",
+      "countryCode": "KR",
+      "origin": "https://www.uuh.ulsan.kr",
+      "lat": 35.5194002,
+      "lng": 129.4287791
+    },
+    {
+      "code": "osm:way/472492628",
+      "name": "동신병원",
+      "countryCode": "KR",
+      "origin": "https://dshospital.co.kr",
+      "lat": 37.5814246,
+      "lng": 126.9365355
+    },
+    {
+      "code": "osm:way/474206577",
+      "name": "고려대학교안산병원",
+      "countryCode": "KR",
+      "origin": "http://ansan.kumc.or.kr",
+      "lat": 37.3194467,
+      "lng": 126.8250681
+    },
+    {
+      "code": "osm:way/475554558",
+      "name": "익산병원",
+      "countryCode": "KR",
+      "origin": "http://www.iksanhp.com",
+      "lat": 35.9619108,
+      "lng": 126.9668154
+    },
+    {
+      "code": "osm:way/478278338",
+      "name": "광주기독병원",
+      "countryCode": "KR",
+      "origin": "https://www.kch.or.kr",
+      "lat": 35.1366053,
+      "lng": 126.9121488
+    },
+    {
+      "code": "osm:way/483685292",
+      "name": "전남대학교병원",
+      "countryCode": "KR",
+      "origin": "https://www.cnuh.com",
+      "lat": 35.1416152,
+      "lng": 126.9222345
+    },
+    {
+      "code": "osm:way/498534077",
+      "name": "원주의료원",
+      "countryCode": "KR",
+      "origin": "http://www.kwmc.or.kr",
+      "lat": 37.3328121,
+      "lng": 127.9489372
+    },
+    {
+      "code": "osm:way/503505209",
+      "name": "서울아산병원",
+      "countryCode": "KR",
+      "origin": "http://www.amc.seoul.kr",
+      "lat": 37.5264755,
+      "lng": 127.1096056
+    },
+    {
+      "code": "osm:way/504118791",
+      "name": "대전을지대학교병원",
+      "countryCode": "KR",
+      "origin": "https://www.emc.ac.kr",
+      "lat": 36.3550824,
+      "lng": 127.3819722
+    },
+    {
+      "code": "osm:way/546101375",
+      "name": "평택성모병원",
+      "countryCode": "KR",
+      "origin": "http://www.ptsm.co.kr",
+      "lat": 37.0085528,
+      "lng": 127.0739362
+    },
+    {
+      "code": "osm:way/551588568",
+      "name": "건국대학교병원",
+      "countryCode": "KR",
+      "origin": "http://www.kuh.ac.kr",
+      "lat": 37.54069,
+      "lng": 127.0722244
+    },
+    {
+      "code": "osm:way/552025577",
+      "name": "원광대학교병원",
+      "countryCode": "KR",
+      "origin": "https://www.wkuh.org",
+      "lat": 35.964778,
+      "lng": 126.9610101
+    },
+    {
+      "code": "osm:way/553036222",
+      "name": "명지성모병원",
+      "countryCode": "KR",
+      "origin": "https://www.myongji-sm.co.kr",
+      "lat": 37.4938211,
+      "lng": 126.8993172
+    },
+    {
+      "code": "osm:way/554382684",
+      "name": "순천향대학교 서울병원",
+      "countryCode": "KR",
+      "origin": "http://www.schmc.ac.kr",
+      "lat": 37.534058,
+      "lng": 127.0045559
+    },
+    {
+      "code": "osm:way/598480319",
+      "name": "경기도의료원 안성병원",
+      "countryCode": "KR",
+      "origin": "https://www.medical.or.kr",
+      "lat": 37.0170722,
+      "lng": 127.2600408
+    },
+    {
+      "code": "osm:way/609069652",
+      "name": "서울적십자병원",
+      "countryCode": "KR",
+      "origin": "https://www.rch.or.kr",
+      "lat": 37.5673917,
+      "lng": 126.9668955
+    },
+    {
+      "code": "osm:way/614507243",
+      "name": "강남세브란스병원",
+      "countryCode": "KR",
+      "origin": "https://gs.iseverance.com",
+      "lat": 37.4926108,
+      "lng": 127.046498
+    },
+    {
+      "code": "osm:way/631222765",
+      "name": "계명대학교 대구동산병원",
+      "countryCode": "KR",
+      "origin": "http://eng.dsmc.or.kr",
+      "lat": 35.8686437,
+      "lng": 128.5833815
+    },
+    {
+      "code": "osm:way/653032870",
+      "name": "Jinju Silver Care Medical",
+      "countryCode": "KR",
+      "origin": "https://www.jinjuhospital.net",
+      "lat": 35.1534455,
+      "lng": 128.1757603
+    },
+    {
+      "code": "osm:way/659267542",
+      "name": "완주군보건소",
+      "countryCode": "KR",
+      "origin": "https://health.wanju.go.kr",
+      "lat": 35.921241,
+      "lng": 127.0926679
+    },
+    {
+      "code": "osm:way/659640114",
+      "name": "양산부산대학교병원",
+      "countryCode": "KR",
+      "origin": "https://www.pnuyh.co.kr",
+      "lat": 35.3266966,
+      "lng": 129.0072816
+    },
+    {
+      "code": "osm:way/662012260",
+      "name": "포항성모병원",
+      "countryCode": "KR",
+      "origin": "https://www.pohangsmh.co.kr",
+      "lat": 36.0161139,
+      "lng": 129.3392496
+    },
+    {
+      "code": "osm:way/670857634",
+      "name": "영광종합병원",
+      "countryCode": "KR",
+      "origin": "https://www.ygmc.co.kr",
+      "lat": 35.2844954,
+      "lng": 126.4990184
+    },
+    {
+      "code": "osm:way/670857639",
+      "name": "영광기독신하병원",
+      "countryCode": "KR",
+      "origin": "https://www.ygchs.co.kr",
+      "lat": 35.2683695,
+      "lng": 126.493062
+    },
+    {
+      "code": "osm:way/674189829",
+      "name": "나무정원여성병원",
+      "countryCode": "KR",
+      "origin": "https://www.namujungwon.com",
+      "lat": 37.822789,
+      "lng": 127.0485586
+    },
+    {
+      "code": "osm:way/709121339",
+      "name": "경기도의료원의정부병원;경기도의료원 의정부병원",
+      "countryCode": "KR",
+      "origin": "https://www.medical.or.kr",
+      "lat": 37.7411322,
+      "lng": 127.0425014
+    },
+    {
+      "code": "osm:way/714789754",
+      "name": "광주동림병원",
+      "countryCode": "KR",
+      "origin": "https://www.gjdl.kr",
+      "lat": 35.1715305,
+      "lng": 126.8676073
+    },
+    {
+      "code": "osm:way/768952288",
+      "name": "제일병원",
+      "countryCode": "KR",
+      "origin": "https://www.cheilmc.co.kr",
+      "lat": 37.5613644,
+      "lng": 126.9996376
+    },
+    {
+      "code": "osm:way/816857604",
+      "name": "천안우리병원",
+      "countryCode": "KR",
+      "origin": "http://www.spinewoori.com",
+      "lat": 36.7807526,
+      "lng": 127.1557863
+    },
+    {
+      "code": "osm:way/819829734",
+      "name": "백제종합병원",
+      "countryCode": "KR",
+      "origin": "http://www.bjhosp.co.kr",
+      "lat": 36.1923848,
+      "lng": 127.0943688
+    },
+    {
+      "code": "osm:way/820180285",
+      "name": "대전보훈병원",
+      "countryCode": "KR",
+      "origin": "https://daejeon.bohun.or.kr",
+      "lat": 36.4470216,
+      "lng": 127.4395737
+    },
+    {
+      "code": "osm:way/824252727",
+      "name": "조은금강병원",
+      "countryCode": "KR",
+      "origin": "https://www.ggmc.or.kr",
+      "lat": 35.2623228,
+      "lng": 128.8615575
+    },
+    {
+      "code": "osm:way/826104634",
+      "name": "경북대학교병원",
+      "countryCode": "KR",
+      "origin": "https://www.knuh.kr",
+      "lat": 35.8662769,
+      "lng": 128.6048018
+    },
+    {
+      "code": "osm:way/874465087",
+      "name": "충청남도 서산의료원",
+      "countryCode": "KR",
+      "origin": "https://seosanmc.or.kr",
+      "lat": 36.7754942,
+      "lng": 126.4655849
+    },
+    {
+      "code": "osm:way/971516075",
+      "name": "대구 파티마병원",
+      "countryCode": "KR",
+      "origin": "https://www.fatima.or.kr",
+      "lat": 35.8843227,
+      "lng": 128.6241483
+    },
+    {
+      "code": "osm:way/1005873384",
+      "name": "에스포항병원",
+      "countryCode": "KR",
+      "origin": "https://pssh.kr",
+      "lat": 36.0349354,
+      "lng": 129.3315666
+    },
+    {
+      "code": "osm:way/1013429690",
+      "name": "고려대련요양병원",
+      "countryCode": "KR",
+      "origin": "http://www.goryomcc.com",
+      "lat": 36.0460021,
+      "lng": 129.3308457
+    },
+    {
+      "code": "osm:way/1019931528",
+      "name": "분당제생병원",
+      "countryCode": "KR",
+      "origin": "https://www.dmc.or.kr",
+      "lat": 37.3880779,
+      "lng": 127.1215877
+    },
+    {
+      "code": "osm:way/1292816547",
+      "name": "봉생힐링병원",
+      "countryCode": "KR",
+      "origin": "http://bshh.or.kr",
+      "lat": 35.1186904,
+      "lng": 129.0838831
+    },
+    {
+      "code": "osm:way/1306639372",
+      "name": "금강메디컬의원",
+      "countryCode": "KR",
+      "origin": "http://kkhosp.com",
+      "lat": 37.283909,
+      "lng": 127.4476308
+    }
+  ]
+}

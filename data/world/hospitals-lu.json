@@ -1,0 +1,41 @@
+{
+  "countryCode": "LU",
+  "fetchedAt": "2026-10-21T01:59:21.120Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/41407070",
+      "name": "Centre Hospitalier de Luxembourg",
+      "countryCode": "LU",
+      "origin": "https://www.chl.lu",
+      "lat": 49.6178599,
+      "lng": 6.1013896
+    },
+    {
+      "code": "osm:way/189452987",
+      "name": "CHL Eich",
+      "countryCode": "LU",
+      "origin": "https://eich.chl.lu",
+      "lat": 49.6315715,
+      "lng": 6.1355549
+    },
+    {
+      "code": "osm:way/426571994",
+      "name": "Centre de réhabilitation",
+      "countryCode": "LU",
+      "origin": "https://www.rehabilitation.lu",
+      "lat": 49.7591265,
+      "lng": 5.8253207
+    },
+    {
+      "code": "osm:way/884212046",
+      "name": "Centre Hospitalier du Nord",
+      "countryCode": "LU",
+      "origin": "http://www.chdn.lu",
+      "lat": 49.8537244,
+      "lng": 6.095601
+    }
+  ]
+}

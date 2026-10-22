@@ -1,0 +1,41 @@
+{
+  "countryCode": "PG",
+  "fetchedAt": "2026-10-21T02:24:40.869Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/2266566023",
+      "name": "Nazarene General Hospital",
+      "countryCode": "PG",
+      "origin": "http://nazpng.org",
+      "lat": -5.846106,
+      "lng": 144.5819154
+    },
+    {
+      "code": "osm:way/898529997",
+      "name": "Pacific International Hospital",
+      "countryCode": "PG",
+      "origin": "https://www.pihpng.com",
+      "lat": -9.477401,
+      "lng": 147.1909783
+    },
+    {
+      "code": "osm:way/1346723869",
+      "name": "Kapuna Hospital",
+      "countryCode": "PG",
+      "origin": "https://gcspng.org",
+      "lat": -7.5768985,
+      "lng": 144.9641231
+    },
+    {
+      "code": "osm:way/1456156571",
+      "name": "Paradise Private Hospital",
+      "countryCode": "PG",
+      "origin": "https://pahgrp.com",
+      "lat": -9.472885,
+      "lng": 147.1936127
+    }
+  ]
+}

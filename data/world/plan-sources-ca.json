@@ -13,7 +13,7 @@
       "approvedAt": "2026-10-19T08:30:51.443Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 137445,
-      "fetchedAt": "2026-10-19T08:31:38.303Z"
+      "fetchedAt": "2026-10-22T13:40:14.024Z"
     },
     {
       "slug": "inpatientbuilding-map",
@@ -28,7 +28,7 @@
       "approvedAt": "2026-10-19T08:30:51.444Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 4129533,
-      "fetchedAt": "2026-10-19T08:31:39.727Z"
+      "fetchedAt": "2026-10-22T13:40:15.668Z"
     },
     {
       "slug": "floor-plan-hgh",
@@ -43,7 +43,7 @@
       "approvedAt": "2026-10-19T08:30:51.444Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 321642,
-      "fetchedAt": "2026-10-19T08:31:39.891Z"
+      "fetchedAt": "2026-10-22T13:40:16.522Z"
     },
     {
       "slug": "floor-plan-jhcc",
@@ -58,7 +58,7 @@
       "approvedAt": "2026-10-19T08:30:51.445Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 973860,
-      "fetchedAt": "2026-10-19T08:31:40.113Z"
+      "fetchedAt": "2026-10-22T13:40:17.311Z"
     },
     {
       "slug": "floor-plan-mumc-mch",
@@ -73,7 +73,7 @@
       "approvedAt": "2026-10-19T08:30:51.446Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 243540,
-      "fetchedAt": "2026-10-19T08:31:40.170Z"
+      "fetchedAt": "2026-10-22T13:40:17.890Z"
     },
     {
       "slug": "ron-joyce-childrens-health-centre",
@@ -88,7 +88,7 @@
       "approvedAt": "2026-10-19T08:30:51.446Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 765727,
-      "fetchedAt": "2026-10-19T08:31:40.249Z"
+      "fetchedAt": "2026-10-22T13:40:18.615Z"
     },
     {
       "slug": "floor-plan-sph",
@@ -103,7 +103,7 @@
       "approvedAt": "2026-10-19T08:30:51.446Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 365976,
-      "fetchedAt": "2026-10-19T08:31:40.301Z"
+      "fetchedAt": "2026-10-22T13:40:19.203Z"
     },
     {
       "slug": "floor-plan-ucc",
@@ -118,7 +118,7 @@
       "approvedAt": "2026-10-19T08:30:51.446Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 182617,
-      "fetchedAt": "2026-10-19T08:31:40.341Z"
+      "fetchedAt": "2026-10-22T13:40:19.716Z"
     },
     {
       "slug": "wlmhnew-level1-floorplan",
@@ -133,7 +133,7 @@
       "approvedAt": "2026-10-19T08:30:51.447Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 1086464,
-      "fetchedAt": "2026-10-19T08:31:40.460Z"
+      "fetchedAt": "2026-10-22T13:40:20.530Z"
     },
     {
       "slug": "mhc-main-map-2026",
@@ -148,7 +148,7 @@
       "approvedAt": "2026-10-19T08:30:51.447Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 987844,
-      "fetchedAt": "2026-10-19T08:31:40.687Z"
+      "fetchedAt": "2026-10-22T13:40:21.362Z"
     },
     {
       "slug": "lakeside-floor-map",
@@ -163,7 +163,7 @@
       "approvedAt": "2026-10-19T08:30:51.447Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 849510,
-      "fetchedAt": "2026-10-19T08:31:42.039Z"
+      "fetchedAt": "2026-10-22T13:40:22.863Z"
     },
     {
       "slug": "pmh-map-floor2",
@@ -178,7 +178,7 @@
       "approvedAt": "2026-10-19T08:30:51.447Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 295249,
-      "fetchedAt": "2026-10-19T08:31:42.938Z"
+      "fetchedAt": "2026-10-22T13:40:23.751Z"
     },
     {
       "slug": "tr-lyndhurst-floor-map",
@@ -193,7 +193,7 @@
       "approvedAt": "2026-10-19T08:30:51.447Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 1305782,
-      "fetchedAt": "2026-10-19T08:31:44.253Z"
+      "fetchedAt": "2026-10-22T13:40:25.035Z"
     },
     {
       "slug": "tr-rumsey-cardiac-floor-map",
@@ -208,7 +208,7 @@
       "approvedAt": "2026-10-19T08:30:51.448Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 4362030,
-      "fetchedAt": "2026-10-19T08:31:48.196Z"
+      "fetchedAt": "2026-10-22T13:40:28.994Z"
     },
     {
       "slug": "tr-uc-floor-map",
@@ -223,7 +223,7 @@
       "approvedAt": "2026-10-19T08:30:51.448Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 1757984,
-      "fetchedAt": "2026-10-19T08:31:49.911Z"
+      "fetchedAt": "2026-10-22T13:40:30.772Z"
     },
     {
       "slug": "twh-floor-map",
@@ -238,7 +238,7 @@
       "approvedAt": "2026-10-19T08:30:51.448Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 1019630,
-      "fetchedAt": "2026-10-19T08:31:50.974Z"
+      "fetchedAt": "2026-10-22T13:40:31.923Z"
     },
     {
       "slug": "directional-maps-2026r-print-1",
@@ -253,7 +253,7 @@
       "approvedAt": "2026-10-19T08:30:51.448Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 3354624,
-      "fetchedAt": "2026-10-19T08:31:51.323Z"
+      "fetchedAt": "2026-10-22T13:40:32.436Z"
     },
     {
       "slug": "wayfinding-brochures-digital-july-13",
@@ -268,7 +268,7 @@
       "approvedAt": "2026-10-19T08:30:51.448Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 874306,
-      "fetchedAt": "2026-10-19T08:31:52.356Z"
+      "fetchedAt": "2026-10-22T13:40:33.404Z"
     },
     {
       "slug": "wayfinding-map-june-2026",
@@ -283,7 +283,7 @@
       "approvedAt": "2026-10-19T08:30:51.448Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 353977,
-      "fetchedAt": "2026-10-19T08:31:53.066Z"
+      "fetchedAt": "2026-10-22T13:40:34.191Z"
     },
     {
       "slug": "hospital-map",
@@ -311,7 +311,7 @@
       "approvedAt": "2026-10-19T08:30:51.448Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 899285,
-      "fetchedAt": "2026-10-19T08:31:56.916Z"
+      "fetchedAt": "2026-10-22T13:40:37.927Z"
     },
     {
       "slug": "if-pmap-foothills-medical-centre",
@@ -326,7 +326,7 @@
       "approvedAt": "2026-10-19T08:30:51.449Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 2035829,
-      "fetchedAt": "2026-10-19T08:32:01.099Z"
+      "fetchedAt": "2026-10-22T13:40:41.911Z"
     },
     {
       "slug": "site-2017-rvh-campus-map-barrier-free-parking",
@@ -341,7 +341,7 @@
       "approvedAt": "2026-10-19T08:30:51.449Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 1769569,
-      "fetchedAt": "2026-10-19T08:32:02.330Z"
+      "fetchedAt": "2026-10-22T13:40:43.331Z"
     },
     {
       "slug": "charlton-campus-june-2025-v1-updated-for-gim-4-bd-surge-space",
@@ -356,7 +356,7 @@
       "approvedAt": "2026-10-19T08:30:51.449Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 876606,
-      "fetchedAt": "2026-10-19T08:32:02.535Z"
+      "fetchedAt": "2026-10-22T13:40:43.588Z"
     },
     {
       "slug": "west-5th-campus-map-and-directory-march-26-2015-web",
@@ -371,7 +371,7 @@
       "approvedAt": "2026-10-19T08:30:51.449Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 1312349,
-      "fetchedAt": "2026-10-19T08:32:02.797Z"
+      "fetchedAt": "2026-10-22T13:40:43.851Z"
     },
     {
       "slug": "sjhh-west-5th-campus-map-and-directory-jan-2020-1",
@@ -386,7 +386,7 @@
       "approvedAt": "2026-10-19T08:30:51.449Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 1239551,
-      "fetchedAt": "2026-10-19T08:32:02.916Z"
+      "fetchedAt": "2026-10-22T13:40:43.959Z"
     },
     {
       "slug": "hospital-map-2",
@@ -401,7 +401,7 @@
       "approvedAt": "2026-10-19T08:30:51.449Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 480878,
-      "fetchedAt": "2026-10-19T08:32:02.970Z"
+      "fetchedAt": "2026-10-22T13:40:44.009Z"
     },
     {
       "slug": "stjohnscampus-map-2017",
@@ -416,7 +416,7 @@
       "approvedAt": "2026-10-19T08:30:51.450Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 182092,
-      "fetchedAt": "2026-10-19T08:32:03.107Z"
+      "fetchedAt": "2026-10-22T13:40:44.669Z"
     },
     {
       "slug": "sunnybrook-bayview-campus-map",
@@ -431,7 +431,7 @@
       "approvedAt": "2026-10-19T08:30:51.450Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 217699,
-      "fetchedAt": "2026-10-19T08:32:03.247Z"
+      "fetchedAt": "2026-10-22T13:40:45.313Z"
     },
     {
       "slug": "lhsc-vh-site-map-parking-transit-emergency-cycling-infrastructure-letter",
@@ -446,7 +446,7 @@
       "approvedAt": "2026-10-19T08:30:51.450Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 522667,
-      "fetchedAt": "2026-10-19T08:32:04.120Z"
+      "fetchedAt": "2026-10-22T13:40:46.572Z"
     },
     {
       "slug": "lhsc-uh-site-map-parking-transit-emergency-cycling-infrastructure-letter",
@@ -461,7 +461,7 @@
       "approvedAt": "2026-10-19T08:30:51.451Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 313903,
-      "fetchedAt": "2026-10-19T08:32:04.880Z"
+      "fetchedAt": "2026-10-22T13:40:47.334Z"
     },
     {
       "slug": "site-2018-waypoint-parking-map",
@@ -476,7 +476,7 @@
       "approvedAt": "2026-10-19T08:30:51.451Z",
       "approvedBy": "auto:high-confidence-official-domain",
       "bytes": 626779,
-      "fetchedAt": "2026-10-19T08:32:05.048Z"
+      "fetchedAt": "2026-10-22T13:40:47.574Z"
     }
   ]
 }

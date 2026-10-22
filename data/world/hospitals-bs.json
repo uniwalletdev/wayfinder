@@ -1,0 +1,33 @@
+{
+  "countryCode": "BS",
+  "fetchedAt": "2026-10-21T00:56:15.886Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/200480762",
+      "name": "Rand Memorial Hospital",
+      "countryCode": "BS",
+      "origin": "http://www.gbhs.phabahamas.org",
+      "lat": 26.532668,
+      "lng": -78.6925682
+    },
+    {
+      "code": "osm:way/301893671",
+      "name": "Sandilands Rehabilitation Centre (SRC)",
+      "countryCode": "BS",
+      "origin": "https://www.phabahamas.org",
+      "lat": 25.0316574,
+      "lng": -77.2912561
+    },
+    {
+      "code": "osm:way/370132354",
+      "name": "Bahamas Medical Center",
+      "countryCode": "BS",
+      "origin": "https://bahamasmedicalcenter.com",
+      "lat": 25.0634839,
+      "lng": -77.4509941
+    }
+  ]
+}

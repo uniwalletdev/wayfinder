@@ -1,0 +1,745 @@
+{
+  "countryCode": "SK",
+  "fetchedAt": "2026-10-21T02:46:45.993Z",
+  "count": 92,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/36154600",
+      "name": "Nemocnica s Poliklinikou Hlohovec, s. r. o.",
+      "countryCode": "SK",
+      "origin": "http://www.nsphlohovec.sk",
+      "lat": 48.4247805,
+      "lng": 17.7890282
+    },
+    {
+      "code": "osm:node/98957863",
+      "name": "Nemocnica Modra n.o.",
+      "countryCode": "SK",
+      "origin": "https://nemocnicamodra.sk",
+      "lat": 48.3334989,
+      "lng": 17.3065452
+    },
+    {
+      "code": "osm:node/206222183",
+      "name": "Snina, s.r.o.",
+      "countryCode": "SK",
+      "origin": "http://www.nemocnicasnina.sk",
+      "lat": 48.9839065,
+      "lng": 22.1485439
+    },
+    {
+      "code": "osm:node/420312252",
+      "name": "Nemocnica s poliklinikou, Nové Mesto nad Váhom, n. o.",
+      "countryCode": "SK",
+      "origin": "http://www.nspnm.sk",
+      "lat": 48.7535855,
+      "lng": 17.8311453
+    },
+    {
+      "code": "osm:node/433724049",
+      "name": "Nemocnica Dr. Vojtecha Alexandra v Kežmarku n. o.",
+      "countryCode": "SK",
+      "origin": "https://www.nemocnicakezmarok.sk",
+      "lat": 49.131849,
+      "lng": 20.4216464
+    },
+    {
+      "code": "osm:node/750643435",
+      "name": "Vranovská nemocnica, a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 48.8870228,
+      "lng": 21.691423
+    },
+    {
+      "code": "osm:node/1332528258",
+      "name": "Diabetologické centrum",
+      "countryCode": "SK",
+      "origin": "https://nedu.sk",
+      "lat": 49.1192141,
+      "lng": 19.1660011
+    },
+    {
+      "code": "osm:node/1701709192",
+      "name": "Všeobecná nemocnica Banská Štiavnica",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 48.4542665,
+      "lng": 18.9174654
+    },
+    {
+      "code": "osm:node/2201442487",
+      "name": "Všeobecná nemocnica s poliklinikou Levoča, a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.nemocnicalevoca.sk",
+      "lat": 49.0250038,
+      "lng": 20.5937047
+    },
+    {
+      "code": "osm:node/4332524295",
+      "name": "Endokrinologické centrum",
+      "countryCode": "SK",
+      "origin": "https://nedu.sk",
+      "lat": 49.1199423,
+      "lng": 19.1677725
+    },
+    {
+      "code": "osm:node/6893755203",
+      "name": "Psychiatrická nemocnica Prof. Matulaya",
+      "countryCode": "SK",
+      "origin": "http://www.pnkca.sk",
+      "lat": 48.6964772,
+      "lng": 18.9284992
+    },
+    {
+      "code": "osm:node/7271545103",
+      "name": "TETIS s.r.o.",
+      "countryCode": "SK",
+      "origin": "https://www.tetis.sk",
+      "lat": 48.0814986,
+      "lng": 17.2685193
+    },
+    {
+      "code": "osm:node/8223048144",
+      "name": "Mammacentrum sv. Agáty",
+      "countryCode": "SK",
+      "origin": "https://mammacentrum.agel.sk",
+      "lat": 48.7336947,
+      "lng": 19.133766
+    },
+    {
+      "code": "osm:node/12303087918",
+      "name": "Nemocnica Alexandra Wintera, n.o.",
+      "countryCode": "SK",
+      "origin": "http://www.naw.sk",
+      "lat": 48.5881438,
+      "lng": 17.8381122
+    },
+    {
+      "code": "osm:node/12840723312",
+      "name": "AGEL Chronicare",
+      "countryCode": "SK",
+      "origin": "https://chronicare.agel.sk",
+      "lat": 48.1551676,
+      "lng": 17.1553002
+    },
+    {
+      "code": "osm:way/7952104",
+      "name": "Všeobecná nemocnica Komárno",
+      "countryCode": "SK",
+      "origin": "https://www.nemocnicakomarno.sk",
+      "lat": 47.7651506,
+      "lng": 18.1286021
+    },
+    {
+      "code": "osm:way/7988461",
+      "name": "Všeobecná nemocnica s poliklinikou Lučenec, n.o.",
+      "countryCode": "SK",
+      "origin": "https://www.lcnsp.sk",
+      "lat": 48.3277069,
+      "lng": 19.6597503
+    },
+    {
+      "code": "osm:way/10158372",
+      "name": "Univerzitná nemocnica Bratislava - Nemocnica Staré Mesto",
+      "countryCode": "SK",
+      "origin": "https://www.unb.sk",
+      "lat": 48.1511364,
+      "lng": 17.1167314
+    },
+    {
+      "code": "osm:way/23963145",
+      "name": "Národný onkologický ústav",
+      "countryCode": "SK",
+      "origin": "https://www.nou.sk",
+      "lat": 48.1718238,
+      "lng": 17.0894766
+    },
+    {
+      "code": "osm:way/24863329",
+      "name": "Fakultná nemocnica s poliklinikou F.D. Roosevelta",
+      "countryCode": "SK",
+      "origin": "https://www.fnspfdr.sk",
+      "lat": 48.7435095,
+      "lng": 19.1167046
+    },
+    {
+      "code": "osm:way/27371683",
+      "name": "Fakultná nemocnica Trenčín",
+      "countryCode": "SK",
+      "origin": "https://www.fntn.sk",
+      "lat": 48.8841239,
+      "lng": 18.0301762
+    },
+    {
+      "code": "osm:way/51752085",
+      "name": "Vysokošpecializovaný odborný ústav geriatrický sv. Lukáša v Košiciach n. o.",
+      "countryCode": "SK",
+      "origin": "https://www.gckosice.sk",
+      "lat": 48.7270642,
+      "lng": 21.2499632
+    },
+    {
+      "code": "osm:way/66056963",
+      "name": "Zelený Sen",
+      "countryCode": "SK",
+      "origin": "https://www.zelenysen.sk",
+      "lat": 48.7411962,
+      "lng": 19.1635163
+    },
+    {
+      "code": "osm:way/66056970",
+      "name": "Stredoslovenský ústav srdcových a cievnych chorôb, a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.suscch.eu",
+      "lat": 48.7421248,
+      "lng": 19.1609839
+    },
+    {
+      "code": "osm:way/74762908",
+      "name": "Nemocnica Bánovce - 3. súkromná nemocnica, s.r.o.",
+      "countryCode": "SK",
+      "origin": "https://www.nemocnicabanovce.sk",
+      "lat": 48.7202291,
+      "lng": 18.258189
+    },
+    {
+      "code": "osm:way/101350714",
+      "name": "Fakultná nemocnica Nitra",
+      "countryCode": "SK",
+      "origin": "https://fnnitra.sk",
+      "lat": 48.3007219,
+      "lng": 18.0853843
+    },
+    {
+      "code": "osm:way/151614377",
+      "name": "Fakultná nemocnica s poliklinikou Žilina",
+      "countryCode": "SK",
+      "origin": "https://www.fnspza.sk",
+      "lat": 49.2169741,
+      "lng": 18.7492928
+    },
+    {
+      "code": "osm:way/168739947",
+      "name": "Univerzitná nemocnica L. Pasteura",
+      "countryCode": "SK",
+      "origin": "https://www.unlp.sk",
+      "lat": 48.7072394,
+      "lng": 21.2548525
+    },
+    {
+      "code": "osm:way/173089104",
+      "name": "Nemocnica s poliklinikou Považská Bystrica",
+      "countryCode": "SK",
+      "origin": "http://www.nemocnicapb.sk",
+      "lat": 49.1052898,
+      "lng": 18.4591452
+    },
+    {
+      "code": "osm:way/182419147",
+      "name": "Kysucká nemocnica s poliklinikou Čadca",
+      "countryCode": "SK",
+      "origin": "https://www.kysuckanemocnica.sk",
+      "lat": 49.4383135,
+      "lng": 18.7722437
+    },
+    {
+      "code": "osm:way/213199082",
+      "name": "Univerzitná nemocnica - Nemocnica sv. Michala, pracovisko Košice",
+      "countryCode": "SK",
+      "origin": "https://nsmas.sk",
+      "lat": 48.7175865,
+      "lng": 21.255736
+    },
+    {
+      "code": "osm:way/227786875",
+      "name": "Nemocnica Krompachy spol. s r.o.",
+      "countryCode": "SK",
+      "origin": "https://www.nemocnicakrompachy.sk",
+      "lat": 48.9042177,
+      "lng": 20.8716248
+    },
+    {
+      "code": "osm:way/229254706",
+      "name": "Psychiatrická nemocnica Hronovce",
+      "countryCode": "SK",
+      "origin": "https://pnh.sk",
+      "lat": 48.0018647,
+      "lng": 18.6592864
+    },
+    {
+      "code": "osm:way/232533668",
+      "name": "Nemocnica s poliklinikou Ilava",
+      "countryCode": "SK",
+      "origin": "http://www.nspilava.sk",
+      "lat": 48.9941359,
+      "lng": 18.232636
+    },
+    {
+      "code": "osm:way/236814894",
+      "name": "Medissimo",
+      "countryCode": "SK",
+      "origin": "https://pentahospitals.sk",
+      "lat": 48.1021344,
+      "lng": 17.1100059
+    },
+    {
+      "code": "osm:way/236814895",
+      "name": "Univerzitná nemocnica Bratislava - Nemocnica sv. Cyrila a Metoda",
+      "countryCode": "SK",
+      "origin": "https://www.unb.sk",
+      "lat": 48.1022873,
+      "lng": 17.1182968
+    },
+    {
+      "code": "osm:way/238002309",
+      "name": "Nemocnica s poliklinikou Prievidza so sídlom v Bojniciach",
+      "countryCode": "SK",
+      "origin": "https://www.hospital-bojnice.sk",
+      "lat": 48.7856289,
+      "lng": 18.5898686
+    },
+    {
+      "code": "osm:way/240187809",
+      "name": "Fakultná nemocnica s poliklinikou Nové Zámky",
+      "countryCode": "SK",
+      "origin": "https://www.nspnz.sk",
+      "lat": 47.989903,
+      "lng": 18.1520205
+    },
+    {
+      "code": "osm:way/253114479",
+      "name": "Univerzitná nemocnica Bratislava – Špecializovaná geriatrická nemocnica",
+      "countryCode": "SK",
+      "origin": "https://www.unb.sk",
+      "lat": 48.1249286,
+      "lng": 17.2082355
+    },
+    {
+      "code": "osm:way/254175654",
+      "name": "Psychiatrická nemocnica Veľké Zálužie",
+      "countryCode": "SK",
+      "origin": "http://www.pnvz.sk",
+      "lat": 48.3020815,
+      "lng": 17.9416515
+    },
+    {
+      "code": "osm:way/261625775",
+      "name": "Nemocnica s poliklinikou Dunajská Streda",
+      "countryCode": "SK",
+      "origin": "https://pentahospitals.sk",
+      "lat": 47.9981554,
+      "lng": 17.6088523
+    },
+    {
+      "code": "osm:way/268763965",
+      "name": "Nemocnica AGEL Levice",
+      "countryCode": "SK",
+      "origin": "https://nemocnicalevice.agel.sk",
+      "lat": 48.2222517,
+      "lng": 18.6138051
+    },
+    {
+      "code": "osm:way/270240190",
+      "name": "Univerzitná nemocnica - Nemocnica svätého Michala, a.s.,",
+      "countryCode": "SK",
+      "origin": "https://nsmas.sk",
+      "lat": 48.1463582,
+      "lng": 17.1181298
+    },
+    {
+      "code": "osm:way/281397462",
+      "name": "Špecializovaná nemocnica sv. Svorada",
+      "countryCode": "SK",
+      "origin": "https://www.snzobor.sk",
+      "lat": 48.345224,
+      "lng": 18.0917036
+    },
+    {
+      "code": "osm:way/281700438",
+      "name": "Detská fakultná nemocnica s poliklinikou Banská Bystrica",
+      "countryCode": "SK",
+      "origin": "http://www.dfnbb.sk",
+      "lat": 48.7429495,
+      "lng": 19.1184629
+    },
+    {
+      "code": "osm:way/282346978",
+      "name": "Liptovská nemocnica s poliklinikou MUDr. Ivana Stodolu",
+      "countryCode": "SK",
+      "origin": "http://nemocnica2.skyweb.sk",
+      "lat": 49.0836652,
+      "lng": 19.5982551
+    },
+    {
+      "code": "osm:way/302730968",
+      "name": "Nemocnica arm. generála L. Svobodu Svidník, a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 49.3128253,
+      "lng": 21.5703151
+    },
+    {
+      "code": "osm:way/311290795",
+      "name": "Ústredná vojenská nemocnica SNP Ružomberok - FN",
+      "countryCode": "SK",
+      "origin": "https://www.uvn.sk",
+      "lat": 49.0861061,
+      "lng": 19.3003718
+    },
+    {
+      "code": "osm:way/311290796",
+      "name": "Ústredná vojenská nemocnica SNP Ružomberok - FN",
+      "countryCode": "SK",
+      "origin": "https://www.uvn.sk",
+      "lat": 49.0743222,
+      "lng": 19.311257
+    },
+    {
+      "code": "osm:way/311630163",
+      "name": "Nemocnica s poliklinikou Štefana Kukuru Michalovce, a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 48.7535432,
+      "lng": 21.9156069
+    },
+    {
+      "code": "osm:way/316133976",
+      "name": "Liečebňa pre dlhodobo chorých Štiavnička",
+      "countryCode": "SK",
+      "origin": "https://www.ldch.sk",
+      "lat": 49.0742094,
+      "lng": 19.3437032
+    },
+    {
+      "code": "osm:way/322766720",
+      "name": "Univerzitná nemocnica Bratislava - Nemocnica akademika L. Dérera - Kramáre",
+      "countryCode": "SK",
+      "origin": "https://www.unb.sk",
+      "lat": 48.1661122,
+      "lng": 17.0861615
+    },
+    {
+      "code": "osm:way/330575866",
+      "name": "Univerzitná nemocnica s poliklinikou Milosrdní bratia",
+      "countryCode": "SK",
+      "origin": "https://www.milosrdni.eu",
+      "lat": 48.1459662,
+      "lng": 17.1110814
+    },
+    {
+      "code": "osm:way/334609220",
+      "name": "Detská fakultná nemocnica Košice",
+      "countryCode": "SK",
+      "origin": "http://www.dfnkosice.sk",
+      "lat": 48.7215341,
+      "lng": 21.239457
+    },
+    {
+      "code": "osm:way/354393704",
+      "name": "Univerzitná nemocnica Bratislava – Nemocnica Ružinov",
+      "countryCode": "SK",
+      "origin": "https://www.unb.sk",
+      "lat": 48.1548236,
+      "lng": 17.1517175
+    },
+    {
+      "code": "osm:way/365980828",
+      "name": "Nemocnica Malacky",
+      "countryCode": "SK",
+      "origin": "http://www.nemocnicamalacky.sk",
+      "lat": 48.4402774,
+      "lng": 17.0337553
+    },
+    {
+      "code": "osm:way/378561750",
+      "name": "Onkologický ústav sv. Alžbety, s.r.o.",
+      "countryCode": "SK",
+      "origin": "http://www.ousa.sk",
+      "lat": 48.1466452,
+      "lng": 17.1130925
+    },
+    {
+      "code": "osm:way/381857394",
+      "name": "Nemocnica s poliklinikou Brezno, n.o.",
+      "countryCode": "SK",
+      "origin": "https://www.nspbr.sk",
+      "lat": 48.808736,
+      "lng": 19.6232059
+    },
+    {
+      "code": "osm:way/404460130",
+      "name": "Pro Vitae",
+      "countryCode": "SK",
+      "origin": "https://nemocnica-gelnica.sk",
+      "lat": 48.85639,
+      "lng": 20.9337258
+    },
+    {
+      "code": "osm:way/424867957",
+      "name": "Nemocnica Zvolen a. s.",
+      "countryCode": "SK",
+      "origin": "https://www.nemocnicazvolen.sk",
+      "lat": 48.5810419,
+      "lng": 19.132934
+    },
+    {
+      "code": "osm:way/440099003",
+      "name": "Univerzitná nemocnica Martin",
+      "countryCode": "SK",
+      "origin": "https://www.unm.sk",
+      "lat": 49.0601248,
+      "lng": 18.9170159
+    },
+    {
+      "code": "osm:way/496487381",
+      "name": "Nemocnica s poliklinikou Sv. Lukáša Galanta",
+      "countryCode": "SK",
+      "origin": "https://pentahospitals.sk",
+      "lat": 48.1956826,
+      "lng": 17.7212536
+    },
+    {
+      "code": "osm:way/497366521",
+      "name": "Nemocnica s poliklinikou Trebišov, a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 48.6180128,
+      "lng": 21.7154511
+    },
+    {
+      "code": "osm:way/559538521",
+      "name": "Železničná nemocnica AGEL Košice",
+      "countryCode": "SK",
+      "origin": "https://nkz.agel.sk",
+      "lat": 48.7275781,
+      "lng": 21.2598139
+    },
+    {
+      "code": "osm:way/560540521",
+      "name": "Fakultná nemocnica AGEL Košice-Šaca",
+      "countryCode": "SK",
+      "origin": "https://nemocnicakosicesaca.agel.sk",
+      "lat": 48.6422582,
+      "lng": 21.1731688
+    },
+    {
+      "code": "osm:way/561084192",
+      "name": "Univerzitná nemocnica Louisa Pasteura",
+      "countryCode": "SK",
+      "origin": "https://www.unlp.sk",
+      "lat": 48.7222948,
+      "lng": 21.2387488
+    },
+    {
+      "code": "osm:way/620792524",
+      "name": "Dolnooravská nemocnica s poliklinikou MUDr. L. N. Jégého Dolný Kubín",
+      "countryCode": "SK",
+      "origin": "http://www.donsp.sk",
+      "lat": 49.2137367,
+      "lng": 19.3020271
+    },
+    {
+      "code": "osm:way/662662405",
+      "name": "Nemocnica Bory",
+      "countryCode": "SK",
+      "origin": "https://nemocnica-bory.sk",
+      "lat": 48.2081862,
+      "lng": 17.031438
+    },
+    {
+      "code": "osm:way/671195769",
+      "name": "Národný ústav tuberkulózy, pľúcnych chorôb a hrudníkovej chirurgie Vyšné Hágy",
+      "countryCode": "SK",
+      "origin": "https://www.hagy.sk",
+      "lat": 49.1212205,
+      "lng": 20.1251767
+    },
+    {
+      "code": "osm:way/680586049",
+      "name": "Národný ústav detských chorôb",
+      "countryCode": "SK",
+      "origin": "http://www.dfnsp.sk",
+      "lat": 48.1666836,
+      "lng": 17.0907623
+    },
+    {
+      "code": "osm:way/684329554",
+      "name": "Nemocnica AGEL Handlová s.r.o.",
+      "countryCode": "SK",
+      "origin": "https://nemocnicahandlova.agel.sk",
+      "lat": 48.7291315,
+      "lng": 18.7572775
+    },
+    {
+      "code": "osm:way/687580301",
+      "name": "Svet zdravia Nemocnica Topoľčany, a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 48.5520538,
+      "lng": 18.1677753
+    },
+    {
+      "code": "osm:way/694128269",
+      "name": "Nemocnica Zlaté Moravce a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.nemocnicamoravce.sk",
+      "lat": 48.3832077,
+      "lng": 18.3988177
+    },
+    {
+      "code": "osm:way/719990348",
+      "name": "Nemocnica Stropkov",
+      "countryCode": "SK",
+      "origin": "https://pentahospitals.sk",
+      "lat": 49.1985408,
+      "lng": 21.6550512
+    },
+    {
+      "code": "osm:way/775327111",
+      "name": "Fakultná nemocnica Agel Skalica",
+      "countryCode": "SK",
+      "origin": "https://www.nspskalica.sk",
+      "lat": 48.8435085,
+      "lng": 17.2283092
+    },
+    {
+      "code": "osm:way/776921694",
+      "name": "Ľubovnianska nemocnica, n.o.",
+      "countryCode": "SK",
+      "origin": "https://lubovnianskanemocnica.sk",
+      "lat": 49.2964709,
+      "lng": 20.6887196
+    },
+    {
+      "code": "osm:way/778234456",
+      "name": "Nemocnica Poprad, a. s.",
+      "countryCode": "SK",
+      "origin": "https://www.nemocnicapp.sk",
+      "lat": 49.0517861,
+      "lng": 20.3024942
+    },
+    {
+      "code": "osm:way/778525250",
+      "name": "Nemocnica s poliklinikou Sv. Jakuba, n.o., Bardejov",
+      "countryCode": "SK",
+      "origin": "http://www.nsp-bardejov.sk",
+      "lat": 49.2864217,
+      "lng": 21.272752
+    },
+    {
+      "code": "osm:way/778564760",
+      "name": "Psychiatrická nemocnica Philippa Pinela Pezinok",
+      "countryCode": "SK",
+      "origin": "https://www.pnpp.sk",
+      "lat": 48.3159308,
+      "lng": 17.2523591
+    },
+    {
+      "code": "osm:way/780288994",
+      "name": "Špecializovaná nemocnica pre ortopedickú protetiku Bratislava, n. o.",
+      "countryCode": "SK",
+      "origin": "https://www.snop.sk",
+      "lat": 48.1537806,
+      "lng": 17.1299833
+    },
+    {
+      "code": "osm:way/784771028",
+      "name": "Nemocnica Partizánske",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 48.6342598,
+      "lng": 18.4042078
+    },
+    {
+      "code": "osm:way/839513783",
+      "name": "Regionálna nemocnica Sobrance, n.o.",
+      "countryCode": "SK",
+      "origin": "http://www.rn-sobrance.sk",
+      "lat": 48.7450606,
+      "lng": 22.1857523
+    },
+    {
+      "code": "osm:way/904714667",
+      "name": "Nemocnica A. Leňa Humenné, a.s.",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 48.9337704,
+      "lng": 21.8977353
+    },
+    {
+      "code": "osm:way/954578097",
+      "name": "Nemocnica s poliklinikou Myjava",
+      "countryCode": "SK",
+      "origin": "http://www.nspmyjava.sk",
+      "lat": 48.7629178,
+      "lng": 17.5614109
+    },
+    {
+      "code": "osm:way/1011527409",
+      "name": "Psychiatrická nemocnica Michalovce, n.o.",
+      "countryCode": "SK",
+      "origin": "http://www.pnmi.sk",
+      "lat": 48.7551381,
+      "lng": 21.9398846
+    },
+    {
+      "code": "osm:way/1080467968",
+      "name": "Špecializovaná nemocnica Oáza",
+      "countryCode": "SK",
+      "origin": "https://www.oazapresov.sk",
+      "lat": 48.9988151,
+      "lng": 21.2204174
+    },
+    {
+      "code": "osm:way/1085288717",
+      "name": "Poliklinika ProCare Sekčov",
+      "countryCode": "SK",
+      "origin": "https://www.procare.sk",
+      "lat": 48.9944793,
+      "lng": 21.2672081
+    },
+    {
+      "code": "osm:way/1086462416",
+      "name": "Detská psychiatrická liečebňa n.o. Hraň",
+      "countryCode": "SK",
+      "origin": "https://www.dplhran.sk",
+      "lat": 48.532125,
+      "lng": 21.7809132
+    },
+    {
+      "code": "osm:way/1187364582",
+      "name": "Nemocnica s poliklinikou n.o. Kráľovský Chlmec",
+      "countryCode": "SK",
+      "origin": "https://www.nspkch.sk",
+      "lat": 48.4187838,
+      "lng": 21.9774205
+    },
+    {
+      "code": "osm:way/1362854701",
+      "name": "Nemocnica Agel Žiari nad Hronom",
+      "countryCode": "SK",
+      "origin": "https://nemocnicaziarnadhronom.agel.sk",
+      "lat": 48.5905966,
+      "lng": 18.8429931
+    },
+    {
+      "code": "osm:way/1388708089",
+      "name": "Nemocnica AGEL",
+      "countryCode": "SK",
+      "origin": "https://nemocnicabratislava.agel.sk",
+      "lat": 48.1697649,
+      "lng": 17.0806567
+    },
+    {
+      "code": "osm:way/1531437706",
+      "name": "Ústredná vojenská nemocnica SNP Ružomberok - FN",
+      "countryCode": "SK",
+      "origin": "https://www.uvn.sk",
+      "lat": 49.0855134,
+      "lng": 19.2992602
+    }
+  ]
+}

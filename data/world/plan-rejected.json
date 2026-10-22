@@ -1,6 +1,14 @@
 {
   "rejections": [
     {
+      "slug": "plattegrond-fz-nl",
+      "url": "https://www.flevoziekenhuis.nl/media/xualbubq/plattegrond-fz.pdf",
+      "hospitalName": "Flevoziekenhuis",
+      "countryCode": "NL",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
       "slug": "wayfinding1floor-us",
       "url": "https://www.mercyonenorthiowaaffiliates.org/hchs/_assets/documents/hancock/wayfinding1floor.pdf",
       "hospitalName": "Franklin General Hospital",
@@ -929,76 +937,140 @@
       "detail": "0 < 8"
     },
     {
-      "slug": "inpatientbuilding-map-ca",
-      "url": "https://www.hoteldieushaver.org/files/InpatientBuilding-Map.pdf",
-      "hospitalName": "Hotel Dieu Shaver Health and Rehabilitation Centre",
-      "countryCode": "CA",
+      "slug": "site-map-uhg-ie",
+      "url": "https://saolta.ie/sites/default/files/publications/Site%20map%20UHG.pdf",
+      "hospitalName": "Mayo University Hospital",
+      "countryCode": "IE",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country IE"
+    },
+    {
+      "slug": "hospital-map-leaflet-ie",
+      "url": "https://www.tuh.ie/Adult-Services/Hospital-Map-Leaflet.pdf",
+      "hospitalName": "Tallaght University Hospital",
+      "countryCode": "IE",
       "reason": "too-few-labels",
       "detail": "0 < 8"
     },
     {
-      "slug": "floor-plan-jhcc-ca",
-      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/05/Floor_Plan_JHCC.pdf",
-      "hospitalName": "Juravinski Hospital",
-      "countryCode": "CA",
+      "slug": "hospital-map-ie",
+      "url": "https://www.tuh.ie/Patient-Visitor-Services/How-to-Find-Us-/Hospital-Map-.pdf",
+      "hospitalName": "Tallaght University Hospital",
+      "countryCode": "IE",
+      "reason": "not-downloaded",
+      "detail": "run node scripts/world/fetch-plans.mjs --country IE"
+    },
+    {
+      "slug": "foundation-course-schedule-1st-prof-mbbs-batch-2026-0-in",
+      "url": "https://gmch.gov.in/sites/default/files/documents/Foundation%20Course%20Schedule%201st%20Prof%20MBBS%20Batch-2026_0.pdf",
+      "hospitalName": "GMCH SECTOR 32",
+      "countryCode": "IN",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "med-fes-2026-floormap-jp",
+      "url": "https://iwaki-city-medical-center.jp/hospital/pdf/med-fes-2026_floormap.pdf",
+      "hospitalName": "いわき市医療センター",
+      "countryCode": "JP",
       "reason": "too-few-labels",
       "detail": "6 < 8"
     },
     {
-      "slug": "ron-joyce-childrens-health-centre-ca",
-      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/03/Ron_Joyce_Childrens_Health_Centre.pdf",
-      "hospitalName": "Juravinski Hospital",
-      "countryCode": "CA",
-      "reason": "too-few-labels",
-      "detail": "7 < 8"
-    },
-    {
-      "slug": "wlmhnew-level1-floorplan-ca",
-      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/05/WLMHnew-Level1-FloorPlan.pdf",
-      "hospitalName": "Juravinski Hospital",
-      "countryCode": "CA",
-      "reason": "too-few-labels",
-      "detail": "5 < 8"
-    },
-    {
-      "slug": "mhc-main-map-2026-ca",
-      "url": "https://misericordia.mb.ca/wp-content/uploads/MHC-Main-Map-2026.pdf",
-      "hospitalName": "Misericordia Health Centre",
-      "countryCode": "CA",
-      "reason": "too-few-labels",
-      "detail": "5 < 8"
-    },
-    {
-      "slug": "hospital-map-ca",
-      "url": "https://horizonnb.ca/media/1109091/hospital_map.pdf",
-      "hospitalName": "Moncton Hospital",
-      "countryCode": "CA",
+      "slug": "floor-map-2026-jp",
+      "url": "https://shinzen.jp/media/floor-map-2026.pdf",
+      "hospitalName": "国際親善総合病院",
+      "countryCode": "JP",
       "reason": "not-downloaded",
-      "detail": "run node scripts/world/fetch-plans.mjs --country CA"
+      "detail": "run node scripts/world/fetch-plans.mjs --country JP"
     },
     {
-      "slug": "ajec-site-map-ca",
-      "url": "https://www.albertahealthservices.ca/assets/hospitals/ajec/ajec-site-map.pdf",
-      "hospitalName": "Peter Lougheed Centre",
-      "countryCode": "CA",
+      "slug": "floormap-01-jp",
+      "url": "http://www.gifu-med.jrc.or.jp/file/floormap_01.pdf",
+      "hospitalName": "岐阜赤十字病院",
+      "countryCode": "JP",
+      "reason": "too-few-labels",
+      "detail": "3 < 8"
+    },
+    {
+      "slug": "floormap-02-jp",
+      "url": "http://www.gifu-med.jrc.or.jp/file/floormap_02.pdf",
+      "hospitalName": "岐阜赤十字病院",
+      "countryCode": "JP",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "floormap-03-jp",
+      "url": "http://www.gifu-med.jrc.or.jp/file/floormap_03.pdf",
+      "hospitalName": "岐阜赤十字病院",
+      "countryCode": "JP",
+      "reason": "too-few-labels",
+      "detail": "2 < 8"
+    },
+    {
+      "slug": "floormap-jp",
+      "url": "https://www.hiratsuka-city-hospital.jp/cms/wp-content/uploads/2025/07/floormap.pdf",
+      "hospitalName": "平塚市民病院",
+      "countryCode": "JP",
       "reason": "too-few-labels",
       "detail": "0 < 8"
     },
     {
-      "slug": "west-5th-campus-map-and-directory-march-26-2015-web-ca",
-      "url": "https://www.stjoes.ca/patients-visitors/your-visit-or-stay/maps-and-directions/west-5th-campus-map-and-directory_march-26-2015-web.pdf",
-      "hospitalName": "St. Joseph's Healthcare Hamilton",
-      "countryCode": "CA",
+      "slug": "floormap-2-jp",
+      "url": "https://twmu-amc.jp/pageimg/floormap.pdf",
+      "hospitalName": "東京女子医科大学附属足立医療センター",
+      "countryCode": "JP",
       "reason": "too-few-labels",
       "detail": "0 < 8"
     },
     {
-      "slug": "sjhh-west-5th-campus-map-and-directory-jan-2020-1-ca",
-      "url": "https://www.stjoes.ca/contact/sjhh_west-5th-campus-map-and-directory_jan-2020-1-.pdf",
-      "hospitalName": "St. Joseph's Healthcare Hamilton",
-      "countryCode": "CA",
-      "reason": "not-a-site-plan",
-      "detail": "aspect 2.24 — too tall"
+      "slug": "floor-map-jp",
+      "url": "https://www.tokyo-hospital.com/data/floor-map.pdf",
+      "hospitalName": "総合東京病院",
+      "countryCode": "JP",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "floormap-3-jp",
+      "url": "https://www.kmu.ac.jp/library/documents/floormap.pdf",
+      "hospitalName": "関西医科大学附属病院",
+      "countryCode": "JP",
+      "reason": "too-few-labels",
+      "detail": "2 < 8"
+    },
+    {
+      "slug": "hospitalmap-jp",
+      "url": "http://www.gifu-med.jrc.or.jp/file/hospitalmap.pdf",
+      "hospitalName": "岐阜赤十字病院",
+      "countryCode": "JP",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "info-20260216-jp",
+      "url": "http://www.takinomiya-hp.com/sitemap/info/info_20260216.pdf",
+      "hospitalName": "滝宮総合病院",
+      "countryCode": "JP",
+      "reason": "too-few-labels",
+      "detail": "1 < 8"
+    },
+    {
+      "slug": "campusmap-jp",
+      "url": "https://www.kmu.ac.jp/en/corporaion/o1mt7t00000002x5-att/campusmap.pdf",
+      "hospitalName": "関西医科大学附属病院",
+      "countryCode": "JP",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "kitchen-floor-plan-1-ag",
+      "url": "https://health.gov.ag/wp-content/uploads/2020/10/Kitchen-Floor-Plan-1.pdf",
+      "hospitalName": "Clare Hill Health Center",
+      "countryCode": "AG",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
     },
     {
       "slug": "bendigo-hospital-site-map-2025-26-au",
@@ -1089,29 +1161,85 @@
       "detail": "0 < 8"
     },
     {
-      "slug": "site-map-uhg-ie",
-      "url": "https://saolta.ie/sites/default/files/publications/Site%20map%20UHG.pdf",
-      "hospitalName": "Mayo University Hospital",
-      "countryCode": "IE",
-      "reason": "not-downloaded",
-      "detail": "run node scripts/world/fetch-plans.mjs --country IE"
-    },
-    {
-      "slug": "hospital-map-leaflet-ie",
-      "url": "https://www.tuh.ie/Adult-Services/Hospital-Map-Leaflet.pdf",
-      "hospitalName": "Tallaght University Hospital",
-      "countryCode": "IE",
+      "slug": "inpatientbuilding-map-ca",
+      "url": "https://www.hoteldieushaver.org/files/InpatientBuilding-Map.pdf",
+      "hospitalName": "Hotel Dieu Shaver Health and Rehabilitation Centre",
+      "countryCode": "CA",
       "reason": "too-few-labels",
       "detail": "0 < 8"
     },
     {
-      "slug": "hospital-map-ie",
-      "url": "https://www.tuh.ie/Patient-Visitor-Services/How-to-Find-Us-/Hospital-Map-.pdf",
-      "hospitalName": "Tallaght University Hospital",
-      "countryCode": "IE",
+      "slug": "floor-plan-jhcc-ca",
+      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/05/Floor_Plan_JHCC.pdf",
+      "hospitalName": "Juravinski Hospital",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "6 < 8"
+    },
+    {
+      "slug": "ron-joyce-childrens-health-centre-ca",
+      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/03/Ron_Joyce_Childrens_Health_Centre.pdf",
+      "hospitalName": "Juravinski Hospital",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "7 < 8"
+    },
+    {
+      "slug": "wlmhnew-level1-floorplan-ca",
+      "url": "https://www.hamiltonhealthsciences.ca/wp-content/uploads/2019/05/WLMHnew-Level1-FloorPlan.pdf",
+      "hospitalName": "Juravinski Hospital",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "mhc-main-map-2026-ca",
+      "url": "https://misericordia.mb.ca/wp-content/uploads/MHC-Main-Map-2026.pdf",
+      "hospitalName": "Misericordia Health Centre",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "5 < 8"
+    },
+    {
+      "slug": "hospital-map-ca",
+      "url": "https://horizonnb.ca/media/1109091/hospital_map.pdf",
+      "hospitalName": "Moncton Hospital",
+      "countryCode": "CA",
       "reason": "not-downloaded",
-      "detail": "run node scripts/world/fetch-plans.mjs --country IE"
+      "detail": "run node scripts/world/fetch-plans.mjs --country CA"
+    },
+    {
+      "slug": "ajec-site-map-ca",
+      "url": "https://www.albertahealthservices.ca/assets/hospitals/ajec/ajec-site-map.pdf",
+      "hospitalName": "Peter Lougheed Centre",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "west-5th-campus-map-and-directory-march-26-2015-web-ca",
+      "url": "https://www.stjoes.ca/patients-visitors/your-visit-or-stay/maps-and-directions/west-5th-campus-map-and-directory_march-26-2015-web.pdf",
+      "hospitalName": "St. Joseph's Healthcare Hamilton",
+      "countryCode": "CA",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
+    },
+    {
+      "slug": "sjhh-west-5th-campus-map-and-directory-jan-2020-1-ca",
+      "url": "https://www.stjoes.ca/contact/sjhh_west-5th-campus-map-and-directory_jan-2020-1-.pdf",
+      "hospitalName": "St. Joseph's Healthcare Hamilton",
+      "countryCode": "CA",
+      "reason": "not-a-site-plan",
+      "detail": "aspect 2.24 — too tall"
+    },
+    {
+      "slug": "oys-aluekartta-2940x1640mm-verkko-elo2026-fi",
+      "url": "https://oys.fi/wp-content/uploads/2025/10/Oys_Aluekartta_2940x1640mm_verkko_elo2026.pdf",
+      "hospitalName": "Oulun yliopistollinen sairaala",
+      "countryCode": "FI",
+      "reason": "too-few-labels",
+      "detail": "0 < 8"
     }
   ],
-  "generatedAt": "2026-10-20T21:09:43.256Z"
+  "generatedAt": "2026-10-22T14:29:44.718Z"
 }

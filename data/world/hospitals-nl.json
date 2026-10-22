@@ -1,0 +1,961 @@
+{
+  "countryCode": "NL",
+  "fetchedAt": "2026-10-21T02:17:19.180Z",
+  "count": 119,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/70940028",
+      "name": "Elkerliek Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.elkerliek.nl",
+      "lat": 51.4818128,
+      "lng": 5.6424049
+    },
+    {
+      "code": "osm:node/495216888",
+      "name": "Meander Medisch Centrum Baarn",
+      "countryCode": "NL",
+      "origin": "https://www.meandermc.nl",
+      "lat": 52.2181017,
+      "lng": 5.3019067
+    },
+    {
+      "code": "osm:node/656208042",
+      "name": "ZGT Almelo",
+      "countryCode": "NL",
+      "origin": "https://www.zgt.nl",
+      "lat": 52.337155,
+      "lng": 6.6408034
+    },
+    {
+      "code": "osm:node/936545461",
+      "name": "Noordwest Ziekenhuisgroep",
+      "countryCode": "NL",
+      "origin": "https://www.nwz.nl",
+      "lat": 52.6691587,
+      "lng": 4.8229305
+    },
+    {
+      "code": "osm:node/1724006039",
+      "name": "Admiraal De Ruyter Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.adrz.nl",
+      "lat": 51.6564016,
+      "lng": 3.9283516
+    },
+    {
+      "code": "osm:node/1885940730",
+      "name": "Sint Jans Gasthuis",
+      "countryCode": "NL",
+      "origin": "https://sjgweert.nl",
+      "lat": 51.2546458,
+      "lng": 5.7132511
+    },
+    {
+      "code": "osm:node/2610218009",
+      "name": "Het Oogziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.oogziekenhuis.nl",
+      "lat": 51.9150315,
+      "lng": 4.4800328
+    },
+    {
+      "code": "osm:node/2610265873",
+      "name": "De Gezichtskliniek",
+      "countryCode": "NL",
+      "origin": "https://www.degezichtskliniek.nl",
+      "lat": 51.9132038,
+      "lng": 4.4850171
+    },
+    {
+      "code": "osm:node/2669934328",
+      "name": "Slingeland Ziekenhuis Locatie Gezellenlaan",
+      "countryCode": "NL",
+      "origin": "https://dermatologie.slingeland.nl",
+      "lat": 51.9543817,
+      "lng": 6.3012531
+    },
+    {
+      "code": "osm:node/2724262973",
+      "name": "HMC Westeinde",
+      "countryCode": "NL",
+      "origin": "https://www.haaglandenmc.nl",
+      "lat": 52.0740015,
+      "lng": 4.2997871
+    },
+    {
+      "code": "osm:node/2756476089",
+      "name": "Van Weel-Bethesda Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.vanweelbethesda.nl",
+      "lat": 51.7501404,
+      "lng": 4.1020443
+    },
+    {
+      "code": "osm:node/2759426666",
+      "name": "Maasziekenhuis Pantein",
+      "countryCode": "NL",
+      "origin": "https://www.maasziekenhuispantein.nl",
+      "lat": 51.6635586,
+      "lng": 5.9403546
+    },
+    {
+      "code": "osm:node/2762731809",
+      "name": "Antonius",
+      "countryCode": "NL",
+      "origin": "https://www.zorgsaam.org",
+      "lat": 51.3249615,
+      "lng": 3.4815907
+    },
+    {
+      "code": "osm:node/2787590369",
+      "name": "De Lupine",
+      "countryCode": "NL",
+      "origin": "https://youz.nl",
+      "lat": 51.9339483,
+      "lng": 4.5714827
+    },
+    {
+      "code": "osm:node/2804749340",
+      "name": "Polikliniek Kralingen",
+      "countryCode": "NL",
+      "origin": "https://www.ysl.nl",
+      "lat": 51.9247844,
+      "lng": 4.5156421
+    },
+    {
+      "code": "osm:node/2842146436",
+      "name": "Kliniek Somatische zorg en Ouderenpsychiatrie Zuidlaren",
+      "countryCode": "NL",
+      "origin": "https://www.lentis.nl",
+      "lat": 53.0872466,
+      "lng": 6.6718947
+    },
+    {
+      "code": "osm:node/2872252674",
+      "name": "Anna Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.annaziekenhuis.nl",
+      "lat": 51.4198514,
+      "lng": 5.5585586
+    },
+    {
+      "code": "osm:node/2874986712",
+      "name": "Regionaal Medisch Centrum Blaricum",
+      "countryCode": "NL",
+      "origin": "https://www.tergooi.nl",
+      "lat": 52.267705,
+      "lng": 5.2061113
+    },
+    {
+      "code": "osm:node/2895408123",
+      "name": "Zaans Medisch Centrum",
+      "countryCode": "NL",
+      "origin": "https://www.zaansmedischcentrum.nl",
+      "lat": 52.4533015,
+      "lng": 4.8256885
+    },
+    {
+      "code": "osm:node/3042024357",
+      "name": "Wilhelmina Kinderziekenhuis (WKZ)",
+      "countryCode": "NL",
+      "origin": "https://www.hetwkz.nl",
+      "lat": 52.0894645,
+      "lng": 5.1811818
+    },
+    {
+      "code": "osm:node/3439388393",
+      "name": "HagaZiekenhuis Zoetermeer",
+      "countryCode": "NL",
+      "origin": "https://www.hagaziekenhuis.nl",
+      "lat": 52.0688894,
+      "lng": 4.4995963
+    },
+    {
+      "code": "osm:node/4383774829",
+      "name": "IJsselland Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.ysl.nl",
+      "lat": 51.9386642,
+      "lng": 4.5626815
+    },
+    {
+      "code": "osm:node/5000957380",
+      "name": "Elkerliek Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.elkerliek.nl",
+      "lat": 51.4682183,
+      "lng": 5.7904601
+    },
+    {
+      "code": "osm:node/5040243923",
+      "name": "Medish Centrum Maastricht Annadal",
+      "countryCode": "NL",
+      "origin": "https://www.mumc.nl",
+      "lat": 50.8482578,
+      "lng": 5.6687388
+    },
+    {
+      "code": "osm:node/5155337374",
+      "name": "Groene Hart Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.ghz.nl",
+      "lat": 52.0880478,
+      "lng": 4.7487232
+    },
+    {
+      "code": "osm:node/5897386132",
+      "name": "Van der Hoeven Kliniek (De Wierde)",
+      "countryCode": "NL",
+      "origin": "https://hoevenkliniek.nl",
+      "lat": 52.1054922,
+      "lng": 5.1132559
+    },
+    {
+      "code": "osm:node/7197108613",
+      "name": "HagaZiekenhuis Juliana Kinderziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.julianakinderziekenhuis.nl",
+      "lat": 52.0551394,
+      "lng": 4.2640317
+    },
+    {
+      "code": "osm:node/7259150115",
+      "name": "Annadal Kliniek",
+      "countryCode": "NL",
+      "origin": "https://www.annadal-kliniek.nl",
+      "lat": 50.8479188,
+      "lng": 5.6688266
+    },
+    {
+      "code": "osm:node/8518607207",
+      "name": "Tergooi MC",
+      "countryCode": "NL",
+      "origin": "https://www.tergooi.nl",
+      "lat": 52.2147001,
+      "lng": 5.2008018
+    },
+    {
+      "code": "osm:node/9084170794",
+      "name": "Gelre Diagnostisch Centrum",
+      "countryCode": "NL",
+      "origin": "https://www.gelreziekenhuizen.nl",
+      "lat": 52.2113314,
+      "lng": 5.933973
+    },
+    {
+      "code": "osm:node/12046391071",
+      "name": "Sint Maartenskliniek Nijmegen",
+      "countryCode": "NL",
+      "origin": "https://www.maartenskliniek.nl",
+      "lat": 51.8335599,
+      "lng": 5.8995536
+    },
+    {
+      "code": "osm:node/12136143674",
+      "name": "Franciscus Maassluis",
+      "countryCode": "NL",
+      "origin": "https://www.franciscus.nl",
+      "lat": 51.9304045,
+      "lng": 4.2425499
+    },
+    {
+      "code": "osm:node/12254048395",
+      "name": "HMC Bronovo",
+      "countryCode": "NL",
+      "origin": "https://www.haaglandenmc.nl",
+      "lat": 52.1015891,
+      "lng": 4.3180829
+    },
+    {
+      "code": "osm:node/13317433553",
+      "name": "Rode Kruis Ziekenhuis, Buitenpolikliniek Heemskerk",
+      "countryCode": "NL",
+      "origin": "https://www.rkz.nl",
+      "lat": 52.5189991,
+      "lng": 4.6760573
+    },
+    {
+      "code": "osm:node/13516683239",
+      "name": "Amphia",
+      "countryCode": "NL",
+      "origin": "https://www.amphia.nl",
+      "lat": 51.6476721,
+      "lng": 4.8701594
+    },
+    {
+      "code": "osm:node/13726951369",
+      "name": "Van der Hoeven Kliniek",
+      "countryCode": "NL",
+      "origin": "https://hoevenkliniek.nl",
+      "lat": 52.1042763,
+      "lng": 5.1111264
+    },
+    {
+      "code": "osm:node/14183639300",
+      "name": "Calamiteitenhospitaal",
+      "countryCode": "NL",
+      "origin": "https://calamiteitenhospitaal.umcutrecht.nl",
+      "lat": 52.087233,
+      "lng": 5.1809093
+    },
+    {
+      "code": "osm:way/25711528",
+      "name": "Antoni van Leeuwenhoek",
+      "countryCode": "NL",
+      "origin": "https://www.avl.nl",
+      "lat": 52.3502898,
+      "lng": 4.8257571
+    },
+    {
+      "code": "osm:way/25723907",
+      "name": "Amsterdam UMC",
+      "countryCode": "NL",
+      "origin": "https://www.vumc.nl",
+      "lat": 52.3345352,
+      "lng": 4.8599263
+    },
+    {
+      "code": "osm:way/26989989",
+      "name": "OLVG, locatie Oost",
+      "countryCode": "NL",
+      "origin": "https://www.olvg.nl",
+      "lat": 52.3581509,
+      "lng": 4.915322
+    },
+    {
+      "code": "osm:way/52587917",
+      "name": "Isala",
+      "countryCode": "NL",
+      "origin": "https://www.isala.nl",
+      "lat": 52.5124366,
+      "lng": 6.1241579
+    },
+    {
+      "code": "osm:way/57863245",
+      "name": "Reade (JBI)",
+      "countryCode": "NL",
+      "origin": "https://reade.nl",
+      "lat": 52.3706314,
+      "lng": 4.8444902
+    },
+    {
+      "code": "osm:way/95690334",
+      "name": "PsyQ",
+      "countryCode": "NL",
+      "origin": "https://www.psyq.nl",
+      "lat": 52.0741924,
+      "lng": 4.2987107
+    },
+    {
+      "code": "osm:way/96036440",
+      "name": "Ommelander Ziekenhuis Groningen",
+      "countryCode": "NL",
+      "origin": "https://www.ommelanderziekenhuis.nl",
+      "lat": 53.1834244,
+      "lng": 6.9591074
+    },
+    {
+      "code": "osm:way/122547923",
+      "name": "Spaarne Gasthuis Zuid",
+      "countryCode": "NL",
+      "origin": "https://spaarnegasthuis.nl",
+      "lat": 52.3662484,
+      "lng": 4.6514514
+    },
+    {
+      "code": "osm:way/122547925",
+      "name": "Spaarne Gasthuis Hoofddorp",
+      "countryCode": "NL",
+      "origin": "https://spaarnegasthuis.nl",
+      "lat": 52.3239971,
+      "lng": 4.6534264
+    },
+    {
+      "code": "osm:way/126621912",
+      "name": "Amphia Breda",
+      "countryCode": "NL",
+      "origin": "https://www.amphia.nl",
+      "lat": 51.5818941,
+      "lng": 4.7969227
+    },
+    {
+      "code": "osm:way/132258761",
+      "name": "Beatrixziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.rivas.nl",
+      "lat": 51.8393157,
+      "lng": 4.9572145
+    },
+    {
+      "code": "osm:way/138423359",
+      "name": "GGD Haaglanden",
+      "countryCode": "NL",
+      "origin": "https://www.denhaag.nl",
+      "lat": 52.075294,
+      "lng": 4.3015067
+    },
+    {
+      "code": "osm:way/151233702",
+      "name": "Leids Universitair Medisch Centrum",
+      "countryCode": "NL",
+      "origin": "https://www.lumc.nl",
+      "lat": 52.1662122,
+      "lng": 4.4772586
+    },
+    {
+      "code": "osm:way/189346308",
+      "name": "Spaarne Gasthuis Haarlem-Noord",
+      "countryCode": "NL",
+      "origin": "https://spaarnegasthuis.nl",
+      "lat": 52.4225378,
+      "lng": 4.6505914
+    },
+    {
+      "code": "osm:way/273494884",
+      "name": "Catharina Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.catharinaziekenhuis.nl",
+      "lat": 51.4657273,
+      "lng": 5.4721327
+    },
+    {
+      "code": "osm:way/366767483",
+      "name": "Fundashon Mariadal",
+      "countryCode": "NL",
+      "origin": "https://www.fundashonmariadal.com",
+      "lat": 12.1538406,
+      "lng": -68.2746977
+    },
+    {
+      "code": "osm:way/374346013",
+      "name": "Alrijne Ziekenhuis Leiden",
+      "countryCode": "NL",
+      "origin": "https://www.alrijne.nl",
+      "lat": 52.1737437,
+      "lng": 4.4829986
+    },
+    {
+      "code": "osm:way/381315360",
+      "name": "U-center",
+      "countryCode": "NL",
+      "origin": "https://www.u-center.nl",
+      "lat": 50.7728643,
+      "lng": 5.8984972
+    },
+    {
+      "code": "osm:way/387975180",
+      "name": "Curaçao Medical Center",
+      "countryCode": "NL",
+      "origin": "https://cmc.cw",
+      "lat": 12.1101754,
+      "lng": -68.9418483
+    },
+    {
+      "code": "osm:way/391072829",
+      "name": "Mondriaan",
+      "countryCode": "NL",
+      "origin": "https://www.mondriaan.eu",
+      "lat": 50.867866,
+      "lng": 5.9721974
+    },
+    {
+      "code": "osm:way/391076196",
+      "name": "Zuyderland",
+      "countryCode": "NL",
+      "origin": "https://www.zuyderland.nl",
+      "lat": 50.8702694,
+      "lng": 5.9763214
+    },
+    {
+      "code": "osm:way/403286686",
+      "name": "Basalt revalidatie Den Haag",
+      "countryCode": "NL",
+      "origin": "https://www.basaltrevalidatie.nl",
+      "lat": 52.0412191,
+      "lng": 4.2676011
+    },
+    {
+      "code": "osm:way/404317973",
+      "name": "Erasmus Medisch Centrum",
+      "countryCode": "NL",
+      "origin": "https://www.erasmusmc.nl",
+      "lat": 51.911287,
+      "lng": 4.4681099
+    },
+    {
+      "code": "osm:way/432075134",
+      "name": "De Honte",
+      "countryCode": "NL",
+      "origin": "https://www.zorgsaam.org",
+      "lat": 51.3089566,
+      "lng": 3.8605887
+    },
+    {
+      "code": "osm:way/445796853",
+      "name": "Medisch Spectrum Twente",
+      "countryCode": "NL",
+      "origin": "https://www.mst.nl",
+      "lat": 52.2159404,
+      "lng": 6.8918776
+    },
+    {
+      "code": "osm:way/447968948",
+      "name": "Martini Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.martiniziekenhuis.nl",
+      "lat": 53.1916387,
+      "lng": 6.5510832
+    },
+    {
+      "code": "osm:way/454408600",
+      "name": "Dr. Horacio Oduber Hospital",
+      "countryCode": "NL",
+      "origin": "https://www.arubahospital.com",
+      "lat": 12.5425038,
+      "lng": -70.0586024
+    },
+    {
+      "code": "osm:way/548981716",
+      "name": "Ikazia Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.ikazia.nl",
+      "lat": 51.8860021,
+      "lng": 4.4935804
+    },
+    {
+      "code": "osm:way/559427289",
+      "name": "Gelre Zutphen",
+      "countryCode": "NL",
+      "origin": "https://www.gelreziekenhuizen.nl",
+      "lat": 52.1230667,
+      "lng": 6.2175382
+    },
+    {
+      "code": "osm:way/585340828",
+      "name": "Frisius Medisch Centrum Leeuwarden",
+      "countryCode": "NL",
+      "origin": "https://www.frisiusmc.nl",
+      "lat": 53.1889707,
+      "lng": 5.8045599
+    },
+    {
+      "code": "osm:way/622739060",
+      "name": "Sint Antonius Ziekenhuis Utrecht",
+      "countryCode": "NL",
+      "origin": "https://www.antoniusziekenhuis.nl",
+      "lat": 52.1032211,
+      "lng": 5.0576653
+    },
+    {
+      "code": "osm:way/628544354",
+      "name": "Saxenburgh Medisch Centrum",
+      "countryCode": "NL",
+      "origin": "https://www.saxenburgh.nl",
+      "lat": 52.5721448,
+      "lng": 6.6325555
+    },
+    {
+      "code": "osm:way/660693635",
+      "name": "Ziekenhuis Rivierenland",
+      "countryCode": "NL",
+      "origin": "https://www.ziekenhuisrivierenland.nl",
+      "lat": 51.8900366,
+      "lng": 5.4152151
+    },
+    {
+      "code": "osm:way/660699519",
+      "name": "Flevoziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.flevoziekenhuis.nl",
+      "lat": 52.3691123,
+      "lng": 5.2234343
+    },
+    {
+      "code": "osm:way/660704251",
+      "name": "Sint Antonius Ziekenhuis Nieuwegein",
+      "countryCode": "NL",
+      "origin": "https://www.antoniusziekenhuis.nl",
+      "lat": 52.0251901,
+      "lng": 5.0816627
+    },
+    {
+      "code": "osm:way/666953046",
+      "name": "Maasstad Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.maasstadziekenhuis.nl",
+      "lat": 51.8794823,
+      "lng": 4.5354446
+    },
+    {
+      "code": "osm:way/673001166",
+      "name": "Ziekenhuis Amstelland",
+      "countryCode": "NL",
+      "origin": "https://www.ziekenhuisamstelland.nl",
+      "lat": 52.2939938,
+      "lng": 4.8740027
+    },
+    {
+      "code": "osm:way/682496173",
+      "name": "Scheper Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.treant.nl",
+      "lat": 52.7859076,
+      "lng": 6.9132515
+    },
+    {
+      "code": "osm:way/745644054",
+      "name": "Universitair Medisch Centrum Utrecht",
+      "countryCode": "NL",
+      "origin": "https://www.umcutrecht.nl",
+      "lat": 52.0869845,
+      "lng": 5.1802515
+    },
+    {
+      "code": "osm:way/745654427",
+      "name": "Maastricht UMC+",
+      "countryCode": "NL",
+      "origin": "https://www.mumc.nl",
+      "lat": 50.8345956,
+      "lng": 5.7127878
+    },
+    {
+      "code": "osm:way/750679819",
+      "name": "Canisius Wilhelmina Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.cwz.nl",
+      "lat": 51.8175938,
+      "lng": 5.8307846
+    },
+    {
+      "code": "osm:way/750688257",
+      "name": "Deventer Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.dz.nl",
+      "lat": 52.2613123,
+      "lng": 6.1916563
+    },
+    {
+      "code": "osm:way/750692679",
+      "name": "ETZ TweeSteden ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.etz.nl",
+      "lat": 51.5775147,
+      "lng": 5.0597832
+    },
+    {
+      "code": "osm:way/750694495",
+      "name": "Franciscus Gasthuis",
+      "countryCode": "NL",
+      "origin": "https://www.franciscus.nl",
+      "lat": 51.9418705,
+      "lng": 4.4636766
+    },
+    {
+      "code": "osm:way/750698656",
+      "name": "Gelre ziekenhuizen",
+      "countryCode": "NL",
+      "origin": "https://www.gelreziekenhuizen.nl",
+      "lat": 52.1812395,
+      "lng": 5.9471608
+    },
+    {
+      "code": "osm:way/750704582",
+      "name": "HagaZiekenhuis locatie Leyweg",
+      "countryCode": "NL",
+      "origin": "https://www.hagaziekenhuis.nl",
+      "lat": 52.055525,
+      "lng": 4.2633686
+    },
+    {
+      "code": "osm:way/750733938",
+      "name": "Meander Medisch Centrum Amersfoort",
+      "countryCode": "NL",
+      "origin": "https://www.meandermc.nl",
+      "lat": 52.1711022,
+      "lng": 5.3692444
+    },
+    {
+      "code": "osm:way/750745530",
+      "name": "OLVG West",
+      "countryCode": "NL",
+      "origin": "https://www.olvg.nl",
+      "lat": 52.3710107,
+      "lng": 4.839731
+    },
+    {
+      "code": "osm:way/750751237",
+      "name": "Rijnstate Arnhem",
+      "countryCode": "NL",
+      "origin": "https://www.rijnstate.nl",
+      "lat": 52.0004002,
+      "lng": 5.9095791
+    },
+    {
+      "code": "osm:way/750754140",
+      "name": "Rijnstate Ziekenhuis Zevenaar",
+      "countryCode": "NL",
+      "origin": "https://www.rijnstate.nl",
+      "lat": 51.9425469,
+      "lng": 6.0701997
+    },
+    {
+      "code": "osm:way/750873352",
+      "name": "Reinier de Graaf Gasthuis",
+      "countryCode": "NL",
+      "origin": "https://reinierdegraaf.nl",
+      "lat": 51.9972565,
+      "lng": 4.3371639
+    },
+    {
+      "code": "osm:way/751012327",
+      "name": "Jeroen Bosch Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://jbz.nl",
+      "lat": 51.6851328,
+      "lng": 5.2761141
+    },
+    {
+      "code": "osm:way/802107910",
+      "name": "Bravis Ziekenhuis locatie Roosendaal",
+      "countryCode": "NL",
+      "origin": "https://www.bravisziekenhuis.nl",
+      "lat": 51.5281491,
+      "lng": 4.4386899
+    },
+    {
+      "code": "osm:way/868689668",
+      "name": "Máxima Medisch Centrum",
+      "countryCode": "NL",
+      "origin": "https://www.mmc.nl",
+      "lat": 51.4057368,
+      "lng": 5.4196351
+    },
+    {
+      "code": "osm:way/903949261",
+      "name": "Alrijne Alphen aan den Rijn",
+      "countryCode": "NL",
+      "origin": "https://www.alrijne.nl",
+      "lat": 52.1427949,
+      "lng": 4.6611025
+    },
+    {
+      "code": "osm:way/971189737",
+      "name": "Laurentius Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.laurentiusziekenhuisroermond.nl",
+      "lat": 51.1917488,
+      "lng": 6.0002361
+    },
+    {
+      "code": "osm:way/973087311",
+      "name": "Ziekenhuis Gelderse Vallei",
+      "countryCode": "NL",
+      "origin": "https://www.geldersevallei.nl",
+      "lat": 52.0220318,
+      "lng": 5.6455246
+    },
+    {
+      "code": "osm:way/990976406",
+      "name": "Antonius Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.mijnantonius.nl",
+      "lat": 53.0350521,
+      "lng": 5.6424475
+    },
+    {
+      "code": "osm:way/991333180",
+      "name": "Frisius Medisch Centrum Harlingen",
+      "countryCode": "NL",
+      "origin": "https://www.mcl.nl",
+      "lat": 53.1621423,
+      "lng": 5.4301144
+    },
+    {
+      "code": "osm:way/1064956642",
+      "name": "Franciscus Vlietland",
+      "countryCode": "NL",
+      "origin": "https://www.franciscus.nl",
+      "lat": 51.9223074,
+      "lng": 4.3802914
+    },
+    {
+      "code": "osm:way/1064956643",
+      "name": "Diakonessenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.diakonessenhuis.nl",
+      "lat": 52.0816147,
+      "lng": 5.1384681
+    },
+    {
+      "code": "osm:way/1064956644",
+      "name": "Isala Meppel",
+      "countryCode": "NL",
+      "origin": "https://www.isala.nl",
+      "lat": 52.6903095,
+      "lng": 6.2130998
+    },
+    {
+      "code": "osm:way/1064956645",
+      "name": "Ziekenhuis Bethesda",
+      "countryCode": "NL",
+      "origin": "https://www.treant.nl",
+      "lat": 52.7271644,
+      "lng": 6.4608595
+    },
+    {
+      "code": "osm:way/1065942235",
+      "name": "Sint Jansdal",
+      "countryCode": "NL",
+      "origin": "https://www.stjansdal.nl",
+      "lat": 52.3423401,
+      "lng": 5.6165443
+    },
+    {
+      "code": "osm:way/1065947131",
+      "name": "Spijkenisse Medisch Centrum",
+      "countryCode": "NL",
+      "origin": "https://www.spijkenissemc.nl",
+      "lat": 51.8464685,
+      "lng": 4.3379614
+    },
+    {
+      "code": "osm:way/1065952247",
+      "name": "Slingeland Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.slingeland.nl",
+      "lat": 51.976078,
+      "lng": 6.2851991
+    },
+    {
+      "code": "osm:way/1066808911",
+      "name": "Groene Hart Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.ghz.nl",
+      "lat": 52.0218405,
+      "lng": 4.7059108
+    },
+    {
+      "code": "osm:way/1066812180",
+      "name": "Treant Refaja Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.treant.nl",
+      "lat": 53.0018931,
+      "lng": 6.9366391
+    },
+    {
+      "code": "osm:way/1066814482",
+      "name": "Radboud Universitair Medisch Centrum",
+      "countryCode": "NL",
+      "origin": "https://www.radboudumc.nl",
+      "lat": 51.8229649,
+      "lng": 5.8622849
+    },
+    {
+      "code": "osm:way/1073411909",
+      "name": "Noordwest Ziekenhuisgroep Den Helder",
+      "countryCode": "NL",
+      "origin": "https://www.nwz.nl",
+      "lat": 52.9579934,
+      "lng": 4.7445656
+    },
+    {
+      "code": "osm:way/1208732662",
+      "name": "Dijklander Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.dijklander.nl",
+      "lat": 52.5003157,
+      "lng": 4.9621083
+    },
+    {
+      "code": "osm:way/1218862507",
+      "name": "Ipse de Bruggen - SGLVG+",
+      "countryCode": "NL",
+      "origin": "https://www.ipsedebruggen.nl",
+      "lat": 51.8467456,
+      "lng": 4.3868006
+    },
+    {
+      "code": "osm:way/1218882004",
+      "name": "Langdurige Forensisch Psychiatrische Zorg Zeeland",
+      "countryCode": "NL",
+      "origin": "https://www.pompestichting.nl",
+      "lat": 51.6826882,
+      "lng": 5.659114
+    },
+    {
+      "code": "osm:way/1233179271",
+      "name": "Dijklander Ziekenhuis",
+      "countryCode": "NL",
+      "origin": "https://www.dijklander.nl",
+      "lat": 52.6478591,
+      "lng": 5.0540186
+    },
+    {
+      "code": "osm:way/1282036195",
+      "name": "Stadskliniek Utrecht",
+      "countryCode": "NL",
+      "origin": "http://www.stadskliniekutrecht.nl",
+      "lat": 52.0953041,
+      "lng": 5.1348063
+    },
+    {
+      "code": "osm:way/1282905830",
+      "name": "Frisius Medisch Centrum Heerenveen",
+      "countryCode": "NL",
+      "origin": "https://www.tjongerschans.nl",
+      "lat": 52.9660061,
+      "lng": 5.9175949
+    },
+    {
+      "code": "osm:way/1299806696",
+      "name": "HMC Antoniushove",
+      "countryCode": "NL",
+      "origin": "https://www.haaglandenmc.nl",
+      "lat": 52.093071,
+      "lng": 4.3836918
+    },
+    {
+      "code": "osm:way/1319973416",
+      "name": "Gezondheidscentrum De Grote Beek",
+      "countryCode": "NL",
+      "origin": "https://www.ggze.nl",
+      "lat": 51.4680743,
+      "lng": 5.4417108
+    },
+    {
+      "code": "osm:way/1326050497",
+      "name": "Tergooi MC",
+      "countryCode": "NL",
+      "origin": "https://www.tergooi.nl",
+      "lat": 52.215716,
+      "lng": 5.2015579
+    },
+    {
+      "code": "osm:way/1362550255",
+      "name": "Rijnstate Elst",
+      "countryCode": "NL",
+      "origin": "https://www.rijnstate.nl",
+      "lat": 51.9171893,
+      "lng": 5.8564508
+    },
+    {
+      "code": "osm:way/1380333739",
+      "name": "Adrz",
+      "countryCode": "NL",
+      "origin": "https://www.adrz.nl",
+      "lat": 51.4847167,
+      "lng": 3.9075065
+    },
+    {
+      "code": "osm:way/1570114925",
+      "name": "Diakonessenhuis locatie Zeist",
+      "countryCode": "NL",
+      "origin": "https://www.diakonessenhuis.nl",
+      "lat": 52.0914303,
+      "lng": 5.2618909
+    }
+  ]
+}

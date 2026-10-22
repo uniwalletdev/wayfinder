@@ -1,0 +1,529 @@
+{
+  "countryCode": "MY",
+  "fetchedAt": "2026-10-21T02:12:39.268Z",
+  "count": 65,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4511513789",
+      "name": "HOSPITAL PASIR MAS, LATI",
+      "countryCode": "MY",
+      "origin": "https://hmas.moh.gov.my",
+      "lat": 6.0129717,
+      "lng": 102.1186083
+    },
+    {
+      "code": "osm:node/4520788690",
+      "name": "QHC Medical Center",
+      "countryCode": "MY",
+      "origin": "http://qhcmedical.com",
+      "lat": 3.047626,
+      "lng": 101.5873808
+    },
+    {
+      "code": "osm:node/4740267123",
+      "name": "Kiara Medical Centre",
+      "countryCode": "MY",
+      "origin": "https://www.lourdes.com.my",
+      "lat": 3.173035,
+      "lng": 101.6912418
+    },
+    {
+      "code": "osm:node/5418179021",
+      "name": "Global Doctors Hospital",
+      "countryCode": "MY",
+      "origin": "https://globaldoctorshospital.com",
+      "lat": 3.1684525,
+      "lng": 101.6487594
+    },
+    {
+      "code": "osm:node/5674560621",
+      "name": "Hospital Umra",
+      "countryCode": "MY",
+      "origin": "https://umra.com.my",
+      "lat": 3.0829651,
+      "lng": 101.5398981
+    },
+    {
+      "code": "osm:node/6724595475",
+      "name": "Century Orthopaedic Specialist Clinic",
+      "countryCode": "MY",
+      "origin": "https://century-orthopaedic-physio.business.site",
+      "lat": 1.4805663,
+      "lng": 103.763189
+    },
+    {
+      "code": "osm:node/7587051900",
+      "name": "Infapro",
+      "countryCode": "MY",
+      "origin": "https://www.bikeandtours.com",
+      "lat": 4.9801692,
+      "lng": 117.8572761
+    },
+    {
+      "code": "osm:node/7848627102",
+      "name": "Hospital Kunak",
+      "countryCode": "MY",
+      "origin": "http://hospital.com.my",
+      "lat": 4.6774978,
+      "lng": 118.2320334
+    },
+    {
+      "code": "osm:node/9555874026",
+      "name": "Shi Yi Tang International Sdn Bhd",
+      "countryCode": "MY",
+      "origin": "https://www.facebook.com",
+      "lat": 3.2000568,
+      "lng": 101.6710201
+    },
+    {
+      "code": "osm:node/10581850699",
+      "name": "Ancient Gardens Ayurvedic Centre",
+      "countryCode": "MY",
+      "origin": "https://ancientgardens.com.my",
+      "lat": 2.7190411,
+      "lng": 101.9513063
+    },
+    {
+      "code": "osm:node/10584097750",
+      "name": "KLINIK AZFA",
+      "countryCode": "MY",
+      "origin": "https://myhighst.com.my",
+      "lat": 2.4465799,
+      "lng": 101.8600995
+    },
+    {
+      "code": "osm:node/13088688113",
+      "name": "Central Dermatology Specialist Clinic",
+      "countryCode": "MY",
+      "origin": "https://centraldermatology.com.my",
+      "lat": 3.1097245,
+      "lng": 101.6653397
+    },
+    {
+      "code": "osm:node/13247609202",
+      "name": "BP Healthcare",
+      "countryCode": "MY",
+      "origin": "https://bphealthcare.com",
+      "lat": 3.1589756,
+      "lng": 101.6981582
+    },
+    {
+      "code": "osm:node/13724493002",
+      "name": "Hospital Tanah Merah (Blok Lama)",
+      "countryCode": "MY",
+      "origin": "http://jknkelantan.moh.gov.my",
+      "lat": 5.809958,
+      "lng": 102.152529
+    },
+    {
+      "code": "osm:way/23798504",
+      "name": "SALAM Shah Alam Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://www.salam.com.my",
+      "lat": 3.0491344,
+      "lng": 101.535174
+    },
+    {
+      "code": "osm:way/122640056",
+      "name": "Gleneagles Pulau Pinang",
+      "countryCode": "MY",
+      "origin": "https://www.gleneagles.com.my",
+      "lat": 5.4268203,
+      "lng": 100.3199443
+    },
+    {
+      "code": "osm:way/149160360",
+      "name": "Hospital Canselor Tuanku Muhriz UKM",
+      "countryCode": "MY",
+      "origin": "https://hctm.ukm.my",
+      "lat": 3.0984244,
+      "lng": 101.7256917
+    },
+    {
+      "code": "osm:way/156925594",
+      "name": "Pusat Pakar Loh Guan Lye",
+      "countryCode": "MY",
+      "origin": "https://www.lohguanlye.com",
+      "lat": 5.4201998,
+      "lng": 100.3179828
+    },
+    {
+      "code": "osm:way/180134061",
+      "name": "KMI Taman Desa Medical Centre",
+      "countryCode": "MY",
+      "origin": "http://www.tdmc.com.my",
+      "lat": 3.0960749,
+      "lng": 101.6778549
+    },
+    {
+      "code": "osm:way/261475956",
+      "name": "Hospital Pantai Pulau Pinang",
+      "countryCode": "MY",
+      "origin": "https://www.pantai.com.my",
+      "lat": 5.3211772,
+      "lng": 100.2822678
+    },
+    {
+      "code": "osm:way/262797501",
+      "name": "Columbia Asia Hospital Miri",
+      "countryCode": "MY",
+      "origin": "https://www.columbiaasia.com",
+      "lat": 4.4113847,
+      "lng": 114.0019106
+    },
+    {
+      "code": "osm:way/262974858",
+      "name": "Hospital Lam Wah Ee",
+      "countryCode": "MY",
+      "origin": "http://www.hlwe.com.my",
+      "lat": 5.3911917,
+      "lng": 100.3042286
+    },
+    {
+      "code": "osm:way/262977704",
+      "name": "Hospital Pakar Georgetown",
+      "countryCode": "MY",
+      "origin": "https://georgetownspecialist.com",
+      "lat": 5.4025526,
+      "lng": 100.3035505
+    },
+    {
+      "code": "osm:way/290678736",
+      "name": "Hospital Banting",
+      "countryCode": "MY",
+      "origin": "https://jknselangor.moh.gov.my",
+      "lat": 2.803344,
+      "lng": 101.4924685
+    },
+    {
+      "code": "osm:way/313062659",
+      "name": "Hospital Teluk Intan",
+      "countryCode": "MY",
+      "origin": "https://jknperak.moh.gov.my",
+      "lat": 4.0029648,
+      "lng": 101.0389349
+    },
+    {
+      "code": "osm:way/314969034",
+      "name": "Thomson Hospital Kota Damansara",
+      "countryCode": "MY",
+      "origin": "https://thomsonhospitals.com",
+      "lat": 3.1488787,
+      "lng": 101.5784962
+    },
+    {
+      "code": "osm:way/323215441",
+      "name": "Sungai Long Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://www.sglonghospital.com",
+      "lat": 3.0396484,
+      "lng": 101.7951178
+    },
+    {
+      "code": "osm:way/324185283",
+      "name": "Prince Court Medical Centre",
+      "countryCode": "MY",
+      "origin": "https://princecourt.com",
+      "lat": 3.1491465,
+      "lng": 101.7213053
+    },
+    {
+      "code": "osm:way/359507933",
+      "name": "Hospital Sultanah Nur Zahirah",
+      "countryCode": "MY",
+      "origin": "https://hsnzkt.moh.gov.my",
+      "lat": 5.3261977,
+      "lng": 103.1505461
+    },
+    {
+      "code": "osm:way/366074474",
+      "name": "Pusat Perubatan Pakar Sri Kota",
+      "countryCode": "MY",
+      "origin": "https://www.srikotamedical.com",
+      "lat": 3.0404579,
+      "lng": 101.445576
+    },
+    {
+      "code": "osm:way/388812049",
+      "name": "Bagan Specialist Centre",
+      "countryCode": "MY",
+      "origin": "https://www.bagan.com.my",
+      "lat": 5.4097128,
+      "lng": 100.3863592
+    },
+    {
+      "code": "osm:way/466428174",
+      "name": "Avisena Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://shahalam.avisena.com.my",
+      "lat": 3.0713819,
+      "lng": 101.5237207
+    },
+    {
+      "code": "osm:way/499135894",
+      "name": "CMH Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://cmhspecialist.com.my",
+      "lat": 2.7376217,
+      "lng": 101.9311355
+    },
+    {
+      "code": "osm:way/534842508",
+      "name": "Hospital Kuala Kubu Bharu",
+      "countryCode": "MY",
+      "origin": "https://jknselangor.moh.gov.my",
+      "lat": 3.5653297,
+      "lng": 101.6528409
+    },
+    {
+      "code": "osm:way/535297446",
+      "name": "Hospital Dungun",
+      "countryCode": "MY",
+      "origin": "https://jknterengganu.moh.gov.my",
+      "lat": 4.7522616,
+      "lng": 103.4142463
+    },
+    {
+      "code": "osm:way/539788248",
+      "name": "Hospital Sungai Siput",
+      "countryCode": "MY",
+      "origin": "https://jknperak.moh.gov.my",
+      "lat": 4.8284594,
+      "lng": 101.0559293
+    },
+    {
+      "code": "osm:way/577340077",
+      "name": "KPJ Johor Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://www.kpjjohor.com",
+      "lat": 1.4759938,
+      "lng": 103.7411178
+    },
+    {
+      "code": "osm:way/591140428",
+      "name": "KPJ Klang Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://www.kpjklang.com",
+      "lat": 3.062437,
+      "lng": 101.4633344
+    },
+    {
+      "code": "osm:way/625263447",
+      "name": "Hospital Kemaman",
+      "countryCode": "MY",
+      "origin": "https://jknterengganu.moh.gov.my",
+      "lat": 4.2317898,
+      "lng": 103.4201015
+    },
+    {
+      "code": "osm:way/628482834",
+      "name": "MSU Medical Centre",
+      "countryCode": "MY",
+      "origin": "https://www.msumedicalcentre.com",
+      "lat": 3.076747,
+      "lng": 101.5530889
+    },
+    {
+      "code": "osm:way/644303119",
+      "name": "Pantai Hospital Batu Pahat",
+      "countryCode": "MY",
+      "origin": "https://www.pantai.com.my",
+      "lat": 1.8611731,
+      "lng": 102.9508618
+    },
+    {
+      "code": "osm:way/702672055",
+      "name": "Hospital UTAR",
+      "countryCode": "MY",
+      "origin": "https://hospital.utar.edu.my",
+      "lat": 4.3357503,
+      "lng": 101.1337144
+    },
+    {
+      "code": "osm:way/756327423",
+      "name": "Hospital Bahagia Ulu Kinta",
+      "countryCode": "MY",
+      "origin": "https://jknperak.moh.gov.my",
+      "lat": 4.6804231,
+      "lng": 101.1499239
+    },
+    {
+      "code": "osm:way/761737517",
+      "name": "Aurelius Hospital Negeri Sembilan",
+      "countryCode": "MY",
+      "origin": "https://www.aureliushealth.com",
+      "lat": 2.8118862,
+      "lng": 101.7735578
+    },
+    {
+      "code": "osm:way/871879907",
+      "name": "Hospital Baling",
+      "countryCode": "MY",
+      "origin": "https://hbaling.moh.gov.my",
+      "lat": 5.678418,
+      "lng": 100.9262616
+    },
+    {
+      "code": "osm:way/918104646",
+      "name": "Putra Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://www.psh-group.com",
+      "lat": 2.2020196,
+      "lng": 102.2523309
+    },
+    {
+      "code": "osm:way/919064703",
+      "name": "Institut Jantung Negara",
+      "countryCode": "MY",
+      "origin": "https://www.ijn.com.my",
+      "lat": 3.1702942,
+      "lng": 101.7092032
+    },
+    {
+      "code": "osm:way/973133222",
+      "name": "KPJ Miri Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://www.kpjhealth.com.my",
+      "lat": 4.4476832,
+      "lng": 114.0339365
+    },
+    {
+      "code": "osm:way/995983164",
+      "name": "UM Specialist Centre",
+      "countryCode": "MY",
+      "origin": "https://umsc.my",
+      "lat": 3.1166037,
+      "lng": 101.6507453
+    },
+    {
+      "code": "osm:way/1030583398",
+      "name": "Sunway Medical Centre Damansara",
+      "countryCode": "MY",
+      "origin": "https://www.sunwaymedicaldamansara.com.my",
+      "lat": 3.1501761,
+      "lng": 101.5964178
+    },
+    {
+      "code": "osm:way/1032000271",
+      "name": "Mount Miriam Cancer Hospital",
+      "countryCode": "MY",
+      "origin": "https://mountmiriam.com",
+      "lat": 5.4588668,
+      "lng": 100.3005772
+    },
+    {
+      "code": "osm:way/1057923243",
+      "name": "Hospital Kebajikan Kek Lok Si",
+      "countryCode": "MY",
+      "origin": "https://www.klsch.my",
+      "lat": 5.401832,
+      "lng": 100.275549
+    },
+    {
+      "code": "osm:way/1079102020",
+      "name": "Hospital Al-Sultan Abdullah UiTM",
+      "countryCode": "MY",
+      "origin": "https://hospital.uitm.edu.my",
+      "lat": 3.2095731,
+      "lng": 101.4511332
+    },
+    {
+      "code": "osm:way/1079722928",
+      "name": "Hospital Sultan Idris Shah Serdang",
+      "countryCode": "MY",
+      "origin": "https://jknselangor.moh.gov.my",
+      "lat": 2.976926,
+      "lng": 101.7206156
+    },
+    {
+      "code": "osm:way/1079722932",
+      "name": "Hospital Sultan Abdul Aziz Shah",
+      "countryCode": "MY",
+      "origin": "https://hsaas.upm.edu.my",
+      "lat": 2.9801457,
+      "lng": 101.7180573
+    },
+    {
+      "code": "osm:way/1165387002",
+      "name": "MAHSA Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://www.mahsahospital.com",
+      "lat": 2.9532938,
+      "lng": 101.57735
+    },
+    {
+      "code": "osm:way/1230135078",
+      "name": "Sunway Medical Centre Velocity",
+      "countryCode": "MY",
+      "origin": "https://sunwaymedical.com",
+      "lat": 3.1282475,
+      "lng": 101.7219685
+    },
+    {
+      "code": "osm:way/1246299791",
+      "name": "Borneo Medical Centre Miri",
+      "countryCode": "MY",
+      "origin": "https://www.bmcmiri.com",
+      "lat": 4.3806317,
+      "lng": 113.9851469
+    },
+    {
+      "code": "osm:way/1251234894",
+      "name": "Ara Damansara Medical Centre",
+      "countryCode": "MY",
+      "origin": "https://aradamansaramedicalcentre.com",
+      "lat": 3.1145643,
+      "lng": 101.5649987
+    },
+    {
+      "code": "osm:way/1287100806",
+      "name": "Hospital Tawau",
+      "countryCode": "MY",
+      "origin": "https://jknsabah.moh.gov.my",
+      "lat": 4.2496396,
+      "lng": 117.8805285
+    },
+    {
+      "code": "osm:way/1293786289",
+      "name": "Miri City Medical Centre",
+      "countryCode": "MY",
+      "origin": "https://www.mcmcmiri.com",
+      "lat": 4.3945836,
+      "lng": 113.9904757
+    },
+    {
+      "code": "osm:way/1305046384",
+      "name": "Hospital Raub",
+      "countryCode": "MY",
+      "origin": "https://www.facebook.com",
+      "lat": 3.8090508,
+      "lng": 101.8515732
+    },
+    {
+      "code": "osm:way/1365552411",
+      "name": "Pusrawi",
+      "countryCode": "MY",
+      "origin": "https://pusrawi.com.my",
+      "lat": 3.1713906,
+      "lng": 101.7101209
+    },
+    {
+      "code": "osm:way/1395320615",
+      "name": "KPJ Seremban Specialist Hospital",
+      "countryCode": "MY",
+      "origin": "https://www.kpjseremban.com",
+      "lat": 2.7183221,
+      "lng": 101.9216722
+    },
+    {
+      "code": "osm:way/1487103893",
+      "name": "Columbia Asia Hospital Bukit Rimau",
+      "countryCode": "MY",
+      "origin": "https://www.columbiaasia.com",
+      "lat": 2.9971272,
+      "lng": 101.5287737
+    }
+  ]
+}

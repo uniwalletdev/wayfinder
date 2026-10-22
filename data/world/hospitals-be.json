@@ -1,0 +1,1337 @@
+{
+  "countryCode": "BE",
+  "fetchedAt": "2026-10-21T00:49:38.402Z",
+  "count": 166,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/493193906",
+      "name": "Hôpital Universitaire des Enfants Reine Fabiola - Universitair Kinderziekenhuis Koningin Fabiola",
+      "countryCode": "BE",
+      "origin": "https://www.huderf.be",
+      "lat": 50.8885403,
+      "lng": 4.3288842
+    },
+    {
+      "code": "osm:node/3115488534",
+      "name": "Psychosociaal Centrum Leuven",
+      "countryCode": "BE",
+      "origin": "http://www.psc-leuven.be",
+      "lat": 50.8827276,
+      "lng": 4.6986005
+    },
+    {
+      "code": "osm:node/5426217922",
+      "name": "Nationaal MS Centrum",
+      "countryCode": "BE",
+      "origin": "https://mscenter.be",
+      "lat": 50.9183283,
+      "lng": 4.4788636
+    },
+    {
+      "code": "osm:node/5951563120",
+      "name": "ZNA Psychiatrisch Ziekenhuis Stuivenberg",
+      "countryCode": "BE",
+      "origin": "https://www.zna.be",
+      "lat": 51.2246303,
+      "lng": 4.436463
+    },
+    {
+      "code": "osm:node/5958024086",
+      "name": "ZAS Koningin Paola Kinderziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://www.zas.be",
+      "lat": 51.1810989,
+      "lng": 4.4214925
+    },
+    {
+      "code": "osm:node/5977651594",
+      "name": "ZAS Universitaire Kinder- en Jeugdpsychiatrie Antwerpen",
+      "countryCode": "BE",
+      "origin": "https://www.zas.be",
+      "lat": 51.1798398,
+      "lng": 4.4204369
+    },
+    {
+      "code": "osm:node/12794925852",
+      "name": "ISoSL Services Les Pléiades",
+      "countryCode": "BE",
+      "origin": "https://www.isosl.be",
+      "lat": 50.6478537,
+      "lng": 5.5698971
+    },
+    {
+      "code": "osm:node/13891303820",
+      "name": "Parhélie - Site d'Uccle",
+      "countryCode": "BE",
+      "origin": "https://parhelie.be",
+      "lat": 50.7863166,
+      "lng": 4.3671327
+    },
+    {
+      "code": "osm:way/4382283",
+      "name": "ZAS Middelheim",
+      "countryCode": "BE",
+      "origin": "https://www.zas.be",
+      "lat": 51.181412,
+      "lng": 4.4210597
+    },
+    {
+      "code": "osm:way/9715814",
+      "name": "ZAS Vincentius",
+      "countryCode": "BE",
+      "origin": "https://www.zas.be",
+      "lat": 51.2057959,
+      "lng": 4.4123442
+    },
+    {
+      "code": "osm:way/10660224",
+      "name": "voormalig ZNA Sint-Erasmus",
+      "countryCode": "BE",
+      "origin": "https://www.zna.be",
+      "lat": 51.2075855,
+      "lng": 4.4463148
+    },
+    {
+      "code": "osm:way/23379006",
+      "name": "Universitair Ziekenhuis Gent",
+      "countryCode": "BE",
+      "origin": "https://uzgent.be",
+      "lat": 51.0234795,
+      "lng": 3.7273949
+    },
+    {
+      "code": "osm:way/23886080",
+      "name": "Centre Hospitalier du Bois de l'Abbaye",
+      "countryCode": "BE",
+      "origin": "https://www.chba.be",
+      "lat": 50.5810583,
+      "lng": 5.4936102
+    },
+    {
+      "code": "osm:way/24924235",
+      "name": "CHU Brugmann - UVC Brugmann",
+      "countryCode": "BE",
+      "origin": "https://www.chu-brugmann.be",
+      "lat": 50.8875345,
+      "lng": 4.3314313
+    },
+    {
+      "code": "osm:way/25497069",
+      "name": "AZ Vesalius - Campus Tongeren",
+      "countryCode": "BE",
+      "origin": "https://www.azvesalius.be",
+      "lat": 50.7892667,
+      "lng": 5.4832431
+    },
+    {
+      "code": "osm:way/26258220",
+      "name": "AZORG Campus Asse",
+      "countryCode": "BE",
+      "origin": "https://www.azorg.be",
+      "lat": 50.9098608,
+      "lng": 4.1962445
+    },
+    {
+      "code": "osm:way/30537682",
+      "name": "Joseph Bracops",
+      "countryCode": "BE",
+      "origin": "http://www.his-izz.be",
+      "lat": 50.8338884,
+      "lng": 4.293468
+    },
+    {
+      "code": "osm:way/30578966",
+      "name": "Clinique Sainte-Anne Saint-Remi - Sint-Anna Sint-Remi Kliniek",
+      "countryCode": "BE",
+      "origin": "https://chirec.be",
+      "lat": 50.8453846,
+      "lng": 4.3168646
+    },
+    {
+      "code": "osm:way/31444460",
+      "name": "Centre hospitalier Etterbeek-Ixelles - Ziekenhuizencentrum Etterbeek-Elsene",
+      "countryCode": "BE",
+      "origin": "https://www.his-izz.be",
+      "lat": 50.824736,
+      "lng": 4.3784764
+    },
+    {
+      "code": "osm:way/31774109",
+      "name": "Universitair Psychiatrisch Centrum KU Leuven",
+      "countryCode": "BE",
+      "origin": "https://www.upckuleuven.be",
+      "lat": 50.8914171,
+      "lng": 4.5511289
+    },
+    {
+      "code": "osm:way/38911546",
+      "name": "AZ Sint-Maria Halle",
+      "countryCode": "BE",
+      "origin": "https://sintmaria.be",
+      "lat": 50.7363283,
+      "lng": 4.2258205
+    },
+    {
+      "code": "osm:way/40619794",
+      "name": "Psychiatrisch Ziekenhuis Sint-Alexius",
+      "countryCode": "BE",
+      "origin": "https://www.alexiusgrimbergen.be",
+      "lat": 50.9198388,
+      "lng": 4.3596784
+    },
+    {
+      "code": "osm:way/45497265",
+      "name": "AZ Monica",
+      "countryCode": "BE",
+      "origin": "https://azmonica.be",
+      "lat": 51.206655,
+      "lng": 4.4703631
+    },
+    {
+      "code": "osm:way/48747081",
+      "name": "A.Z. Sint-Lucas campus Sint-Lucas",
+      "countryCode": "BE",
+      "origin": "https://www.azstlucas.be",
+      "lat": 51.0625942,
+      "lng": 3.7207671
+    },
+    {
+      "code": "osm:way/53542721",
+      "name": "Clinique CHC MontLégia",
+      "countryCode": "BE",
+      "origin": "https://www.chc.be",
+      "lat": 50.6482944,
+      "lng": 5.5345694
+    },
+    {
+      "code": "osm:way/71917861",
+      "name": "Valida",
+      "countryCode": "BE",
+      "origin": "https://www.valida.be",
+      "lat": 50.8672881,
+      "lng": 4.3063845
+    },
+    {
+      "code": "osm:way/78610843",
+      "name": "Regionaal ziekenhuis Heilig Hart Leuven",
+      "countryCode": "BE",
+      "origin": "https://www.hhleuven.be",
+      "lat": 50.8723644,
+      "lng": 4.7009651
+    },
+    {
+      "code": "osm:way/87660373",
+      "name": "AZ Oostende - Campus Hendrik Serruys",
+      "countryCode": "BE",
+      "origin": "https://www.azoostende.be",
+      "lat": 51.2227766,
+      "lng": 2.9143346
+    },
+    {
+      "code": "osm:way/89514184",
+      "name": "Clinique Notre-Dame de Grâce",
+      "countryCode": "BE",
+      "origin": "https://www.cndg.be",
+      "lat": 50.4750558,
+      "lng": 4.4272505
+    },
+    {
+      "code": "osm:way/89536258",
+      "name": "Clinique universitaire de Mont-Godinne",
+      "countryCode": "BE",
+      "origin": "https://www.chuuclnamur.be",
+      "lat": 50.3584661,
+      "lng": 4.8825405
+    },
+    {
+      "code": "osm:way/96236568",
+      "name": "Hôpital de Marche",
+      "countryCode": "BE",
+      "origin": "https://www.vivalia.be",
+      "lat": 50.2276995,
+      "lng": 5.3234407
+    },
+    {
+      "code": "osm:way/104311835",
+      "name": "AZORG Campus Aalst - Merestraat",
+      "countryCode": "BE",
+      "origin": "https://www.azorg.be",
+      "lat": 50.9352619,
+      "lng": 4.0184618
+    },
+    {
+      "code": "osm:way/104314226",
+      "name": "EpiCURA Hôpital de Baudour",
+      "countryCode": "BE",
+      "origin": "https://www.epicura.be",
+      "lat": 50.469721,
+      "lng": 3.8402297
+    },
+    {
+      "code": "osm:way/104410687",
+      "name": "AZORG Campus Aalst Moorselbaan",
+      "countryCode": "BE",
+      "origin": "https://www.azorg.be",
+      "lat": 50.9438641,
+      "lng": 4.055134
+    },
+    {
+      "code": "osm:way/104424640",
+      "name": "Centre Hospitalier de Wallonie picarde - site IMC",
+      "countryCode": "BE",
+      "origin": "https://www.chwapi.be",
+      "lat": 50.5931199,
+      "lng": 3.4026664
+    },
+    {
+      "code": "osm:way/105073789",
+      "name": "Clinique Sainte-Élisabeth",
+      "countryCode": "BE",
+      "origin": "https://www.cmsenamur.be",
+      "lat": 50.46015,
+      "lng": 4.8446545
+    },
+    {
+      "code": "osm:way/106183724",
+      "name": "Centre Hospitalier Régional de Huy",
+      "countryCode": "BE",
+      "origin": "https://www.chrh.be",
+      "lat": 50.5142503,
+      "lng": 5.2402453
+    },
+    {
+      "code": "osm:way/113082874",
+      "name": "Hôpital Pèrî",
+      "countryCode": "BE",
+      "origin": "https://www.isosl.be",
+      "lat": 50.6492335,
+      "lng": 5.570498
+    },
+    {
+      "code": "osm:way/116406882",
+      "name": "AZ Oostende - Damiaan",
+      "countryCode": "BE",
+      "origin": "https://www.azoostende.be",
+      "lat": 51.2187073,
+      "lng": 2.9336565
+    },
+    {
+      "code": "osm:way/117519002",
+      "name": "Hôpital de Mons - Site Kennedy",
+      "countryCode": "BE",
+      "origin": "https://www.jolimont.be",
+      "lat": 50.4572163,
+      "lng": 3.9633846
+    },
+    {
+      "code": "osm:way/125004971",
+      "name": "AZ Maria Middelares",
+      "countryCode": "BE",
+      "origin": "https://www.mariamiddelares.be",
+      "lat": 51.0256796,
+      "lng": 3.7009849
+    },
+    {
+      "code": "osm:way/129440776",
+      "name": "AZ Turnhout Campus Sint-Elizabeth",
+      "countryCode": "BE",
+      "origin": "https://www.azturnhout.be",
+      "lat": 51.3140865,
+      "lng": 4.941688
+    },
+    {
+      "code": "osm:way/129721065",
+      "name": "AZORG Campus Wetteren",
+      "countryCode": "BE",
+      "origin": "https://www.azorg.be",
+      "lat": 51.0107232,
+      "lng": 3.8979533
+    },
+    {
+      "code": "osm:way/129751453",
+      "name": "Clinique André Renard",
+      "countryCode": "BE",
+      "origin": "https://www.cliniqueandrerenard.be",
+      "lat": 50.6747213,
+      "lng": 5.6333237
+    },
+    {
+      "code": "osm:way/132470409",
+      "name": "Hôpital de Warquignies",
+      "countryCode": "BE",
+      "origin": "https://www.jolimont.be",
+      "lat": 50.4177751,
+      "lng": 3.8060763
+    },
+    {
+      "code": "osm:way/132706952",
+      "name": "Clinique Saint-Pierre",
+      "countryCode": "BE",
+      "origin": "https://www.cspo.be",
+      "lat": 50.6674696,
+      "lng": 4.56037
+    },
+    {
+      "code": "osm:way/140104129",
+      "name": "AZ Delta campus Brugsesteenweg",
+      "countryCode": "BE",
+      "origin": "https://www.azdelta.be",
+      "lat": 50.9537832,
+      "lng": 3.1233502
+    },
+    {
+      "code": "osm:way/148699497",
+      "name": "Centre Hospitalier de la Haute Senne - site Saint Vincent",
+      "countryCode": "BE",
+      "origin": "https://chrhautesenne.be",
+      "lat": 50.5766463,
+      "lng": 4.0671968
+    },
+    {
+      "code": "osm:way/150811125",
+      "name": "ZAS Jan Palfijn",
+      "countryCode": "BE",
+      "origin": "https://www.zas.be",
+      "lat": 51.2589507,
+      "lng": 4.4512893
+    },
+    {
+      "code": "osm:way/166974231",
+      "name": "AZ Alma campus Ringlaan",
+      "countryCode": "BE",
+      "origin": "https://www.azalma.be",
+      "lat": 51.1909535,
+      "lng": 3.5325307
+    },
+    {
+      "code": "osm:way/168564535",
+      "name": "Hôpital de jour La Clé",
+      "countryCode": "BE",
+      "origin": "https://www.hjulacle.be",
+      "lat": 50.6458504,
+      "lng": 5.5926456
+    },
+    {
+      "code": "osm:way/169321551",
+      "name": "Psychiatrisch Centrum Gent-Sleidinge",
+      "countryCode": "BE",
+      "origin": "https://www.pcgs.be",
+      "lat": 51.1252647,
+      "lng": 3.6677017
+    },
+    {
+      "code": "osm:way/171215353",
+      "name": "Centre Hospitalier de Wallonie Picarde - CHwapi",
+      "countryCode": "BE",
+      "origin": "https://chwapi.be",
+      "lat": 50.5997055,
+      "lng": 3.3852965
+    },
+    {
+      "code": "osm:way/172129840",
+      "name": "AZ Maria Middelares campus Sint-Jozef",
+      "countryCode": "BE",
+      "origin": "https://www.huisartsenwachtposten.be",
+      "lat": 51.0424308,
+      "lng": 3.7566732
+    },
+    {
+      "code": "osm:way/176907762",
+      "name": "Clinique CHC Waremme",
+      "countryCode": "BE",
+      "origin": "https://www.chc.be",
+      "lat": 50.6910333,
+      "lng": 5.2437036
+    },
+    {
+      "code": "osm:way/184453956",
+      "name": "AZ Glorieux",
+      "countryCode": "BE",
+      "origin": "https://azglorieux.be",
+      "lat": 50.7555685,
+      "lng": 3.6027512
+    },
+    {
+      "code": "osm:way/189198584",
+      "name": "AZ Sint-Elisabeth Zottegem",
+      "countryCode": "BE",
+      "origin": "https://sezz.be",
+      "lat": 50.8636705,
+      "lng": 3.8173426
+    },
+    {
+      "code": "osm:way/190634946",
+      "name": "Psychiatrisch Ziekenhuis Frapello - Campus Zottegem",
+      "countryCode": "BE",
+      "origin": "https://gpn-ggz-vlaamseardennen.gpn.be",
+      "lat": 50.8810442,
+      "lng": 3.781616
+    },
+    {
+      "code": "osm:way/191757126",
+      "name": "AZ Oudenaarde",
+      "countryCode": "BE",
+      "origin": "https://www.azoudenaarde.be",
+      "lat": 50.8432883,
+      "lng": 3.601979
+    },
+    {
+      "code": "osm:way/200274608",
+      "name": "Psychiatrisch Ziekenhuis Frapello - Campus Oosterzele",
+      "countryCode": "BE",
+      "origin": "https://gpn-ggz-vlaamseardennen.gpn.be",
+      "lat": 50.9419114,
+      "lng": 3.7874833
+    },
+    {
+      "code": "osm:way/201177070",
+      "name": "Ziekenhuis Geel",
+      "countryCode": "BE",
+      "origin": "https://www.ziekenhuisgeel.be",
+      "lat": 51.1593127,
+      "lng": 5.001468
+    },
+    {
+      "code": "osm:way/217737517",
+      "name": "Myna Psychiatrisch ziekenhuis Campus Stad",
+      "countryCode": "BE",
+      "origin": "https://www.zorggroepmyna.be",
+      "lat": 50.8120921,
+      "lng": 5.1760678
+    },
+    {
+      "code": "osm:way/217844890",
+      "name": "Regionaal Ziekenhuis Sint-Trudo",
+      "countryCode": "BE",
+      "origin": "https://www.sint-trudo.be",
+      "lat": 50.8235633,
+      "lng": 5.1852874
+    },
+    {
+      "code": "osm:way/222193048",
+      "name": "AZ Sint-Maarten",
+      "countryCode": "BE",
+      "origin": "https://www.azsintmaarten.be",
+      "lat": 51.0515025,
+      "lng": 4.4764609
+    },
+    {
+      "code": "osm:way/228558387",
+      "name": "ZAS Sint-Augustinus",
+      "countryCode": "BE",
+      "origin": "https://www.zas.be",
+      "lat": 51.1744129,
+      "lng": 4.4185044
+    },
+    {
+      "code": "osm:way/230106127",
+      "name": "Jessa Ziekenhuis, campus Salvator",
+      "countryCode": "BE",
+      "origin": "https://www.jessazh.be",
+      "lat": 50.910657,
+      "lng": 5.3434473
+    },
+    {
+      "code": "osm:way/232657765",
+      "name": "Sint-Franciscus ziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://www.sfz.be",
+      "lat": 51.0467369,
+      "lng": 5.3161791
+    },
+    {
+      "code": "osm:way/233489527",
+      "name": "Clinique Saint-Michel - Sint-Michiels Ziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://www.europaziekenhuizen.be",
+      "lat": 50.8428758,
+      "lng": 4.3995811
+    },
+    {
+      "code": "osm:way/235789154",
+      "name": "AZ Sint-Lucas",
+      "countryCode": "BE",
+      "origin": "https://www.stlucas.be",
+      "lat": 51.1851051,
+      "lng": 3.2486251
+    },
+    {
+      "code": "osm:way/236059845",
+      "name": "Heilig Hart Ziekenhuis Mol",
+      "countryCode": "BE",
+      "origin": "https://www.azmol.be",
+      "lat": 51.1874602,
+      "lng": 5.1142659
+    },
+    {
+      "code": "osm:way/239214541",
+      "name": "RZ Tienen - Campus Mariëndal",
+      "countryCode": "BE",
+      "origin": "https://www.rztienen.be",
+      "lat": 50.8108722,
+      "lng": 4.9333821
+    },
+    {
+      "code": "osm:way/239427901",
+      "name": "Hôpital de Mons - Site Constantinople",
+      "countryCode": "BE",
+      "origin": "https://www.helora.be",
+      "lat": 50.4545841,
+      "lng": 3.9599648
+    },
+    {
+      "code": "osm:way/260905076",
+      "name": "Psychiatrisch Centrum Gent-Sleidinge Campus Gent",
+      "countryCode": "BE",
+      "origin": "https://www.pcgs.be",
+      "lat": 51.0631381,
+      "lng": 3.7230641
+    },
+    {
+      "code": "osm:way/272897102",
+      "name": "AZ Voorkempen",
+      "countryCode": "BE",
+      "origin": "https://www.azvoorkempen.be",
+      "lat": 51.274558,
+      "lng": 4.6448996
+    },
+    {
+      "code": "osm:way/278115204",
+      "name": "Sint-Jozefskliniek Izegem",
+      "countryCode": "BE",
+      "origin": "https://www.sint-jozefskliniek-izegem.be",
+      "lat": 50.9172663,
+      "lng": 3.2106798
+    },
+    {
+      "code": "osm:way/294342529",
+      "name": "AZ West",
+      "countryCode": "BE",
+      "origin": "https://www.azwest.be",
+      "lat": 51.0622292,
+      "lng": 2.6688732
+    },
+    {
+      "code": "osm:way/296423433",
+      "name": "ZAS Cadix",
+      "countryCode": "BE",
+      "origin": "https://www.zas.be",
+      "lat": 51.2313116,
+      "lng": 4.415753
+    },
+    {
+      "code": "osm:way/300709408",
+      "name": "OPZ Geel",
+      "countryCode": "BE",
+      "origin": "https://www.opzgeel.be",
+      "lat": 51.1520362,
+      "lng": 4.9792289
+    },
+    {
+      "code": "osm:way/300835466",
+      "name": "Klinik St Josef",
+      "countryCode": "BE",
+      "origin": "https://www.klinik.be",
+      "lat": 50.2771125,
+      "lng": 6.1273549
+    },
+    {
+      "code": "osm:way/318931162",
+      "name": "Kliniek Sint-Jozef",
+      "countryCode": "BE",
+      "origin": "https://www.sintjozefpittem.be",
+      "lat": 50.9834365,
+      "lng": 3.2492782
+    },
+    {
+      "code": "osm:way/326171112",
+      "name": "Hôpital Delta - Delta Ziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://chirec.be",
+      "lat": 50.8164544,
+      "lng": 4.4008415
+    },
+    {
+      "code": "osm:way/327800428",
+      "name": "Psychiatrisch Centrum Ariadne",
+      "countryCode": "BE",
+      "origin": "https://pcariadne.be",
+      "lat": 50.9681466,
+      "lng": 3.970567
+    },
+    {
+      "code": "osm:way/336001617",
+      "name": "Myna Psychiatrisch Ziekenhuis Campus Melveren",
+      "countryCode": "BE",
+      "origin": "https://www.zorggroepmyna.be",
+      "lat": 50.8383834,
+      "lng": 5.1954683
+    },
+    {
+      "code": "osm:way/336815271",
+      "name": "Centre Hospitalier Spécialisé l'Accueil",
+      "countryCode": "BE",
+      "origin": "https://www.isosl.be",
+      "lat": 50.2871853,
+      "lng": 5.7883333
+    },
+    {
+      "code": "osm:way/338498294",
+      "name": "Clinique Saint-Jean - Kliniek Sint-Jan",
+      "countryCode": "BE",
+      "origin": "https://www.clstjean.be",
+      "lat": 50.8539227,
+      "lng": 4.3600917
+    },
+    {
+      "code": "osm:way/346067711",
+      "name": "AZ Zeno campus Knokke-Heist",
+      "countryCode": "BE",
+      "origin": "https://www.azzeno.be",
+      "lat": 51.3267977,
+      "lng": 3.292352
+    },
+    {
+      "code": "osm:way/370308034",
+      "name": "CHU Esneux Polyclinique",
+      "countryCode": "BE",
+      "origin": "https://www.chuliege.be",
+      "lat": 50.532282,
+      "lng": 5.5778416
+    },
+    {
+      "code": "osm:way/370308037",
+      "name": "CHU Esneux Polyclinique",
+      "countryCode": "BE",
+      "origin": "https://www.chuliege.be",
+      "lat": 50.5321127,
+      "lng": 5.5761336
+    },
+    {
+      "code": "osm:way/388284431",
+      "name": "Centre Medical Mosan",
+      "countryCode": "BE",
+      "origin": "https://www.centre-medical-mosan.be",
+      "lat": 50.675792,
+      "lng": 5.542146
+    },
+    {
+      "code": "osm:way/393226536",
+      "name": "Hôpital Saint-Vincent",
+      "countryCode": "BE",
+      "origin": "https://www.chdinant.be",
+      "lat": 50.2645719,
+      "lng": 4.9450597
+    },
+    {
+      "code": "osm:way/408938897",
+      "name": "Chirec - Hôpital de Braine-Waterloo",
+      "countryCode": "BE",
+      "origin": "https://chirec.be",
+      "lat": 50.6845302,
+      "lng": 4.367786
+    },
+    {
+      "code": "osm:way/410063046",
+      "name": "Sint-Andriesziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://sintandriestielt.be",
+      "lat": 51.0020003,
+      "lng": 3.3229359
+    },
+    {
+      "code": "osm:way/412156655",
+      "name": "Epicura Ath",
+      "countryCode": "BE",
+      "origin": "http://epicura.org",
+      "lat": 50.6346133,
+      "lng": 3.7766057
+    },
+    {
+      "code": "osm:way/421620053",
+      "name": "Hôpital d'Arlon",
+      "countryCode": "BE",
+      "origin": "https://www.vivalia.be",
+      "lat": 49.6773701,
+      "lng": 5.820493
+    },
+    {
+      "code": "osm:way/437315419",
+      "name": "Hôpital de la Citadelle (CHR)",
+      "countryCode": "BE",
+      "origin": "https://www.citadelle.be",
+      "lat": 50.6521225,
+      "lng": 5.5780945
+    },
+    {
+      "code": "osm:way/437406240",
+      "name": "AZ Sint-Jan - Campus Sint-Jan",
+      "countryCode": "BE",
+      "origin": "https://www.azsintjan.be",
+      "lat": 51.2207623,
+      "lng": 3.1932539
+    },
+    {
+      "code": "osm:way/456761573",
+      "name": "Hôpital de Libramont",
+      "countryCode": "BE",
+      "origin": "https://www.vivalia.be",
+      "lat": 49.9251593,
+      "lng": 5.3798595
+    },
+    {
+      "code": "osm:way/469447798",
+      "name": "ZAS Sint-Jozef",
+      "countryCode": "BE",
+      "origin": "https://www.zas.be",
+      "lat": 51.1645355,
+      "lng": 4.4607463
+    },
+    {
+      "code": "osm:way/495654114",
+      "name": "Imelda Ziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://www.imelda.be",
+      "lat": 51.0174746,
+      "lng": 4.5586291
+    },
+    {
+      "code": "osm:way/535225807",
+      "name": "Sint-Franciscus Xaverius-Ziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://www.azsintjan.be",
+      "lat": 51.2127569,
+      "lng": 3.2256089
+    },
+    {
+      "code": "osm:way/542296619",
+      "name": "Zeepreventorium",
+      "countryCode": "BE",
+      "origin": "https://www.zeepreventorium.be",
+      "lat": 51.2729398,
+      "lng": 3.0206232
+    },
+    {
+      "code": "osm:way/576749773",
+      "name": "VITAZ Hamme",
+      "countryCode": "BE",
+      "origin": "https://vitaz.be",
+      "lat": 51.0929415,
+      "lng": 4.1390088
+    },
+    {
+      "code": "osm:way/612913703",
+      "name": "Psychiatrisch Centrum Sint-Hiëronymus",
+      "countryCode": "BE",
+      "origin": "https://www.hieronymus.be",
+      "lat": 51.1628416,
+      "lng": 4.1335499
+    },
+    {
+      "code": "osm:way/645280125",
+      "name": "Clinique Peltzer (CHR)",
+      "countryCode": "BE",
+      "origin": "https://www.chrverviers.be",
+      "lat": 50.5838611,
+      "lng": 5.8545597
+    },
+    {
+      "code": "osm:way/672970173",
+      "name": "Psychiatrisch Ziekenhuis Sint-Jan-Baptist",
+      "countryCode": "BE",
+      "origin": "https://www.pcsintjanbaptist.be",
+      "lat": 51.1878741,
+      "lng": 3.8067429
+    },
+    {
+      "code": "osm:way/675628459",
+      "name": "CHR Verviers | La Tourelle",
+      "countryCode": "BE",
+      "origin": "https://www.chrverviers.be",
+      "lat": 50.582221,
+      "lng": 5.8593447
+    },
+    {
+      "code": "osm:way/675629328",
+      "name": "Clinique CHC Heusy",
+      "countryCode": "BE",
+      "origin": "https://www.chc.be",
+      "lat": 50.5778076,
+      "lng": 5.8625434
+    },
+    {
+      "code": "osm:way/695691361",
+      "name": "Instituut voor Tropische Geneeskunde",
+      "countryCode": "BE",
+      "origin": "https://www.itg.be",
+      "lat": 51.212316,
+      "lng": 4.3983004
+    },
+    {
+      "code": "osm:way/696235209",
+      "name": "Urgences La Tourelle",
+      "countryCode": "BE",
+      "origin": "https://www.chrverviers.be",
+      "lat": 50.5819755,
+      "lng": 5.8580317
+    },
+    {
+      "code": "osm:way/708289021",
+      "name": "Psychiatrisch Ziekenhuis Zorggroep Annendael Diest",
+      "countryCode": "BE",
+      "origin": "https://annendael.be",
+      "lat": 50.9870698,
+      "lng": 5.0597421
+    },
+    {
+      "code": "osm:way/753236326",
+      "name": "Centre Hospitalier Spécialisé Notre-Dame des Anges",
+      "countryCode": "BE",
+      "origin": "https://www.cnda.be",
+      "lat": 50.6469425,
+      "lng": 5.5450429
+    },
+    {
+      "code": "osm:way/778539987",
+      "name": "Revalidatiecentrum Pulderbos",
+      "countryCode": "BE",
+      "origin": "https://www.revapulderbos.be",
+      "lat": 51.2395896,
+      "lng": 4.7258587
+    },
+    {
+      "code": "osm:way/782660184",
+      "name": "AZ Groeninge - campus Kennedylaan",
+      "countryCode": "BE",
+      "origin": "https://www.azgroeninge.be",
+      "lat": 50.8016097,
+      "lng": 3.2648837
+    },
+    {
+      "code": "osm:way/783100218",
+      "name": "ZNA Sint-Elisabeth",
+      "countryCode": "BE",
+      "origin": "https://www.zna.be",
+      "lat": 51.2133553,
+      "lng": 4.406218
+    },
+    {
+      "code": "osm:way/785907726",
+      "name": "Sankt Nikolaus-Hospital",
+      "countryCode": "BE",
+      "origin": "http://www.hospital-eupen.be",
+      "lat": 50.6282961,
+      "lng": 6.0293532
+    },
+    {
+      "code": "osm:way/810195284",
+      "name": "Institut Jules Bordet - Jules Bordet Instituut",
+      "countryCode": "BE",
+      "origin": "https://www.bordet.be",
+      "lat": 50.8123739,
+      "lng": 4.2625889
+    },
+    {
+      "code": "osm:way/815754487",
+      "name": "AZ Delta campus Rumbeke",
+      "countryCode": "BE",
+      "origin": "https://www.azdelta.be",
+      "lat": 50.9184812,
+      "lng": 3.1681792
+    },
+    {
+      "code": "osm:way/823163832",
+      "name": "ZNA Medisch Centrum Kaai 142",
+      "countryCode": "BE",
+      "origin": "https://www.zna.be",
+      "lat": 51.2567125,
+      "lng": 4.4156351
+    },
+    {
+      "code": "osm:way/828033502",
+      "name": "AZ Rivierenland campus Rumst",
+      "countryCode": "BE",
+      "origin": "https://www.azrivierenland.be",
+      "lat": 51.1063345,
+      "lng": 4.3718481
+    },
+    {
+      "code": "osm:way/833598998",
+      "name": "Jan Yperman Ziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://yperman.net",
+      "lat": 50.8650843,
+      "lng": 2.897026
+    },
+    {
+      "code": "osm:way/839728369",
+      "name": "Centre Psychothérapeutique de jour Charles-Albert Frère",
+      "countryCode": "BE",
+      "origin": "http://centrepsycho.be",
+      "lat": 50.3676136,
+      "lng": 4.4337418
+    },
+    {
+      "code": "osm:way/840460472",
+      "name": "Hôpital de Bastogne",
+      "countryCode": "BE",
+      "origin": "https://www.vivalia.be",
+      "lat": 50.0121708,
+      "lng": 5.7222804
+    },
+    {
+      "code": "osm:way/864643061",
+      "name": "AZ Delta Campus Menen",
+      "countryCode": "BE",
+      "origin": "https://www.azdelta.be",
+      "lat": 50.7929051,
+      "lng": 3.1224163
+    },
+    {
+      "code": "osm:way/878188019",
+      "name": "Kinder Psychiatrisch Centrum",
+      "countryCode": "BE",
+      "origin": "https://kpc-genk.be",
+      "lat": 50.9551378,
+      "lng": 5.5190189
+    },
+    {
+      "code": "osm:way/885800704",
+      "name": "AZ Rivierenland campus Bornem",
+      "countryCode": "BE",
+      "origin": "https://www.azrivierenland.be",
+      "lat": 51.0996282,
+      "lng": 4.2317726
+    },
+    {
+      "code": "osm:way/898489741",
+      "name": "OPZ Geel",
+      "countryCode": "BE",
+      "origin": "https://www.opzgeel.be",
+      "lat": 51.1545247,
+      "lng": 4.9833259
+    },
+    {
+      "code": "osm:way/909952413",
+      "name": "AZ Klina",
+      "countryCode": "BE",
+      "origin": "https://www.azklina.be",
+      "lat": 51.2987014,
+      "lng": 4.4905387
+    },
+    {
+      "code": "osm:way/938427577",
+      "name": "AZ Rivierenland campus Willebroek",
+      "countryCode": "BE",
+      "origin": "https://www.azrivierenland.be",
+      "lat": 51.0543556,
+      "lng": 4.3587488
+    },
+    {
+      "code": "osm:way/961585690",
+      "name": "Clinique CHC Hermalle",
+      "countryCode": "BE",
+      "origin": "https://www.chc.be",
+      "lat": 50.7316463,
+      "lng": 5.6876828
+    },
+    {
+      "code": "osm:way/982840306",
+      "name": "ZNA Hoge Beuken",
+      "countryCode": "BE",
+      "origin": "https://www.zna.be",
+      "lat": 51.1842757,
+      "lng": 4.3533165
+    },
+    {
+      "code": "osm:way/994895777",
+      "name": "CHU de Liège - Sart-Tilman",
+      "countryCode": "BE",
+      "origin": "https://www.chuliege.be",
+      "lat": 50.5729209,
+      "lng": 5.5686029
+    },
+    {
+      "code": "osm:way/997401073",
+      "name": "Campus De Mick",
+      "countryCode": "BE",
+      "origin": "https://demick.be",
+      "lat": 51.3073643,
+      "lng": 4.5445374
+    },
+    {
+      "code": "osm:way/1038246799",
+      "name": "AZORG Campus Geraardsbergen",
+      "countryCode": "BE",
+      "origin": "https://www.azorg.be",
+      "lat": 50.7704739,
+      "lng": 3.8775695
+    },
+    {
+      "code": "osm:way/1061623907",
+      "name": "Citadelle  Site Laveu",
+      "countryCode": "BE",
+      "origin": "https://www.citadelle.be",
+      "lat": 50.6303196,
+      "lng": 5.5561673
+    },
+    {
+      "code": "osm:way/1063940675",
+      "name": "Centre Hospitalier de Mouscron - Ziekenhuis Moeskroen",
+      "countryCode": "BE",
+      "origin": "https://www.chmouscron.be",
+      "lat": 50.7483496,
+      "lng": 3.2200275
+    },
+    {
+      "code": "osm:way/1096888525",
+      "name": "CHU Charleroi-Chimay - Marie Curie (Lodelinsart)",
+      "countryCode": "BE",
+      "origin": "https://www.chu-charleroi.be",
+      "lat": 50.4310358,
+      "lng": 4.4379449
+    },
+    {
+      "code": "osm:way/1112240872",
+      "name": "AZ Jan Portaels",
+      "countryCode": "BE",
+      "origin": "https://www.azjanportaels.be",
+      "lat": 50.9275605,
+      "lng": 4.4181883
+    },
+    {
+      "code": "osm:way/1128028235",
+      "name": "Algemeen Ziekenhuis Sint-Blasius",
+      "countryCode": "BE",
+      "origin": "https://www.azsintblasius.be",
+      "lat": 51.0264285,
+      "lng": 4.1139752
+    },
+    {
+      "code": "osm:way/1157884770",
+      "name": "IMS Hornu",
+      "countryCode": "BE",
+      "origin": "https://ims-hornu.be",
+      "lat": 50.4391617,
+      "lng": 3.8368072
+    },
+    {
+      "code": "osm:way/1160931471",
+      "name": "Hôpital Molière-Longchamp - Ziekenhuis Molière-Longchamp",
+      "countryCode": "BE",
+      "origin": "https://www.his-izz.be",
+      "lat": 50.8164273,
+      "lng": 4.3423404
+    },
+    {
+      "code": "osm:way/1182518679",
+      "name": "CHU Helora - Hôpital de La Louvière - Site Jolimont",
+      "countryCode": "BE",
+      "origin": "https://www.helora.be",
+      "lat": 50.4774874,
+      "lng": 4.2150789
+    },
+    {
+      "code": "osm:way/1218298644",
+      "name": "UZ Leuven campus Gasthuisberg",
+      "countryCode": "BE",
+      "origin": "https://www.uzleuven.be",
+      "lat": 50.8799163,
+      "lng": 4.6729937
+    },
+    {
+      "code": "osm:way/1224726949",
+      "name": "AZ Herentals",
+      "countryCode": "BE",
+      "origin": "https://www.azherentals.be",
+      "lat": 51.184669,
+      "lng": 4.8360189
+    },
+    {
+      "code": "osm:way/1236559765",
+      "name": "UPC Duffel geestelijke gezondheidszorg emmaüs",
+      "countryCode": "BE",
+      "origin": "https://www.upcduffel.be",
+      "lat": 51.0936126,
+      "lng": 4.4953156
+    },
+    {
+      "code": "osm:way/1254840996",
+      "name": "ZNA Joostens",
+      "countryCode": "BE",
+      "origin": "https://www.zna.be",
+      "lat": 51.2602248,
+      "lng": 4.6257176
+    },
+    {
+      "code": "osm:way/1272097787",
+      "name": "Universitair Ziekenhuis Brussel",
+      "countryCode": "BE",
+      "origin": "https://www.uzbrussel.be",
+      "lat": 50.8877351,
+      "lng": 4.3084742
+    },
+    {
+      "code": "osm:way/1274890182",
+      "name": "Hôpital Agora ISoSL",
+      "countryCode": "BE",
+      "origin": "https://www.isosl.be",
+      "lat": 50.6481293,
+      "lng": 5.5707995
+    },
+    {
+      "code": "osm:way/1281130758",
+      "name": "CHU Tivoli",
+      "countryCode": "BE",
+      "origin": "https://www.chu-tivoli.be",
+      "lat": 50.4777782,
+      "lng": 4.2072832
+    },
+    {
+      "code": "osm:way/1298876879",
+      "name": "Revales",
+      "countryCode": "BE",
+      "origin": "https://zorgband.be",
+      "lat": 50.9966287,
+      "lng": 3.7704033
+    },
+    {
+      "code": "osm:way/1307677613",
+      "name": "Grand Hopital De Charleroi - Notre-Dame",
+      "countryCode": "BE",
+      "origin": "https://www.ghdc.be",
+      "lat": 50.417596,
+      "lng": 4.4546389
+    },
+    {
+      "code": "osm:way/1316736234",
+      "name": "Grand Hôpital de Charleroi – Site Les Viviers",
+      "countryCode": "BE",
+      "origin": "https://www.ghdc.be",
+      "lat": 50.4197137,
+      "lng": 4.491321
+    },
+    {
+      "code": "osm:way/1319852395",
+      "name": "Hôpital de Nivelles",
+      "countryCode": "BE",
+      "origin": "https://www.jolimont.be",
+      "lat": 50.5950833,
+      "lng": 4.3171263
+    },
+    {
+      "code": "osm:way/1319860689",
+      "name": "CHR Haute Senne - Site Le Tilleriau",
+      "countryCode": "BE",
+      "origin": "https://chrhautesenne.be",
+      "lat": 50.5813401,
+      "lng": 4.0804897
+    },
+    {
+      "code": "osm:way/1324143088",
+      "name": "Centre Louis Hillier",
+      "countryCode": "BE",
+      "origin": "https://www.isosl.be",
+      "lat": 50.6322823,
+      "lng": 5.5496996
+    },
+    {
+      "code": "osm:way/1324167559",
+      "name": "AZ Zeno campus Blankenberge",
+      "countryCode": "BE",
+      "origin": "https://www.azzeno.be",
+      "lat": 51.3077038,
+      "lng": 3.1251489
+    },
+    {
+      "code": "osm:way/1324957107",
+      "name": "Noorderhart Mariaziekenhuis",
+      "countryCode": "BE",
+      "origin": "https://www.noorderhart.be",
+      "lat": 51.2123355,
+      "lng": 5.4156016
+    },
+    {
+      "code": "osm:way/1328883579",
+      "name": "CHU Saint-Pierre (César de Paepe) - UMC Sint-Pieter (César de Paepe)",
+      "countryCode": "BE",
+      "origin": "https://www.stpierre-bru.be",
+      "lat": 50.8432784,
+      "lng": 4.3494582
+    },
+    {
+      "code": "osm:way/1329620889",
+      "name": "Centre de santé des Fagnes",
+      "countryCode": "BE",
+      "origin": "https://csf.be",
+      "lat": 50.0448356,
+      "lng": 4.3098053
+    },
+    {
+      "code": "osm:way/1335921409",
+      "name": "Universitair Ziekenhuis Antwerpen",
+      "countryCode": "BE",
+      "origin": "https://www.uza.be",
+      "lat": 51.1569755,
+      "lng": 4.4124612
+    },
+    {
+      "code": "osm:way/1374430031",
+      "name": "CHR Sambre & Meuse - Site Meuse",
+      "countryCode": "BE",
+      "origin": "https://meuse.chrsm.be",
+      "lat": 50.467608,
+      "lng": 4.8866879
+    },
+    {
+      "code": "osm:way/1374432980",
+      "name": "Clinique Saint-Luc Bouge",
+      "countryCode": "BE",
+      "origin": "https://slbo.be",
+      "lat": 50.4772401,
+      "lng": 4.8803688
+    },
+    {
+      "code": "osm:way/1378104639",
+      "name": "Hôpital Vincent Van Gogh",
+      "countryCode": "BE",
+      "origin": "https://www.humani.be",
+      "lat": 50.4044242,
+      "lng": 4.4011684
+    },
+    {
+      "code": "osm:way/1386809413",
+      "name": "PVT Andreas campus Lubbeek",
+      "countryCode": "BE",
+      "origin": "https://www.zorgkuleuven.be",
+      "lat": 50.8807916,
+      "lng": 4.8440746
+    },
+    {
+      "code": "osm:way/1457004914",
+      "name": "Ziekenhuis Maas en Kempen",
+      "countryCode": "BE",
+      "origin": "https://www.zol.be",
+      "lat": 51.1018844,
+      "lng": 5.7683739
+    },
+    {
+      "code": "osm:way/1469173912",
+      "name": "Hôpital le Valdor",
+      "countryCode": "BE",
+      "origin": "https://www.isosl.be",
+      "lat": 50.6337291,
+      "lng": 5.5892725
+    },
+    {
+      "code": "osm:way/1567097758",
+      "name": "Centre Hospitalier Neurologique William Lennox",
+      "countryCode": "BE",
+      "origin": "https://www.chnwl.be",
+      "lat": 50.6789115,
+      "lng": 4.5919973
+    }
+  ]
+}

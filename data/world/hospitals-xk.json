@@ -1,0 +1,89 @@
+{
+  "countryCode": "XK",
+  "fetchedAt": "2026-10-21T03:11:35.233Z",
+  "count": 10,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4491316638",
+      "name": "Spitali Fati im",
+      "countryCode": "XK",
+      "origin": "http://www.fati-im.com",
+      "lat": 42.3706195,
+      "lng": 20.4291145
+    },
+    {
+      "code": "osm:node/4985701221",
+      "name": "MIM SPITALI",
+      "countryCode": "XK",
+      "origin": "https://www.mim-ks.com",
+      "lat": 42.3667545,
+      "lng": 20.4638878
+    },
+    {
+      "code": "osm:node/5030492321",
+      "name": "Gjinekologjia Jeta",
+      "countryCode": "XK",
+      "origin": "http://www.gjinekologjia-jeta.com",
+      "lat": 42.3224702,
+      "lng": 21.3538964
+    },
+    {
+      "code": "osm:node/5302792221",
+      "name": "Emergjenca",
+      "countryCode": "XK",
+      "origin": "http://shskuk.org",
+      "lat": 42.4580966,
+      "lng": 21.4629153
+    },
+    {
+      "code": "osm:node/5302971722",
+      "name": "Otrila Hospital",
+      "countryCode": "XK",
+      "origin": "http://www.spitaliotrila.com",
+      "lat": 42.6094499,
+      "lng": 21.1358487
+    },
+    {
+      "code": "osm:node/5819844395",
+      "name": "Spitali Aloka",
+      "countryCode": "XK",
+      "origin": "https://www.spitalialoka.com",
+      "lat": 42.6294691,
+      "lng": 21.1489558
+    },
+    {
+      "code": "osm:node/6207525485",
+      "name": "Spitali Lindja",
+      "countryCode": "XK",
+      "origin": "http://www.spitalilindja.com",
+      "lat": 42.6290464,
+      "lng": 21.1565998
+    },
+    {
+      "code": "osm:node/8278383917",
+      "name": "Spitali FATI IM",
+      "countryCode": "XK",
+      "origin": "https://fatiim.com",
+      "lat": 42.6117869,
+      "lng": 21.141905
+    },
+    {
+      "code": "osm:node/8941089261",
+      "name": "Spitali Royal Medical",
+      "countryCode": "XK",
+      "origin": "https://www.spitaliortopedik.com",
+      "lat": 42.5994001,
+      "lng": 21.1302668
+    },
+    {
+      "code": "osm:node/11688916453",
+      "name": "Dr. Kushtrim Shala - Kardiokirurg",
+      "countryCode": "XK",
+      "origin": "https://www.kardiokirurg.com",
+      "lat": 42.6427785,
+      "lng": 21.1578909
+    }
+  ]
+}

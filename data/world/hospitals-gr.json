@@ -1,0 +1,905 @@
+{
+  "countryCode": "GR",
+  "fetchedAt": "2026-10-21T01:32:12.101Z",
+  "count": 112,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/618030790",
+      "name": "Ιατρικό Παλαιού Φαλήρου",
+      "countryCode": "GR",
+      "origin": "http://www.iatrikofalirou.gr",
+      "lat": 37.9251747,
+      "lng": 23.6997435
+    },
+    {
+      "code": "osm:node/747740417",
+      "name": "Βιοκλινική Αθήνας",
+      "countryCode": "GR",
+      "origin": "https://bioclinic.gr",
+      "lat": 37.9947939,
+      "lng": 23.765146
+    },
+    {
+      "code": "osm:node/1008013053",
+      "name": "Δρομοκαΐτειο",
+      "countryCode": "GR",
+      "origin": "https://www.dromokaiteio.gr",
+      "lat": 38.0002412,
+      "lng": 23.6626908
+    },
+    {
+      "code": "osm:node/1039907394",
+      "name": "Γενικό Νοσοκομείο Νάξου",
+      "countryCode": "GR",
+      "origin": "https://naxoshospital.gov.gr",
+      "lat": 37.1024747,
+      "lng": 25.3806279
+    },
+    {
+      "code": "osm:node/1157762615",
+      "name": "Παλιό Νοσοκομείο Λευκάδας",
+      "countryCode": "GR",
+      "origin": "http://www.lefkada-hospital.gr",
+      "lat": 38.8320665,
+      "lng": 20.7037298
+    },
+    {
+      "code": "osm:node/1433984831",
+      "name": "Κέντρο Υγειας Φιλιατών",
+      "countryCode": "GR",
+      "origin": "http://www.gnfiliaton.gr",
+      "lat": 39.5987213,
+      "lng": 20.3147365
+    },
+    {
+      "code": "osm:node/1759913837",
+      "name": "Γενικό Νοσοκομείο Γρεβενών",
+      "countryCode": "GR",
+      "origin": "https://www.nosgrevenon.gr",
+      "lat": 40.0882799,
+      "lng": 21.4370084
+    },
+    {
+      "code": "osm:node/2575675107",
+      "name": "Metropolitan General",
+      "countryCode": "GR",
+      "origin": "https://www.metropolitan-general.gr",
+      "lat": 38.006145,
+      "lng": 23.798663
+    },
+    {
+      "code": "osm:node/2620920475",
+      "name": "Κλινική Σινούρη",
+      "countryCode": "GR",
+      "origin": "https://www.sinouri.gr",
+      "lat": 38.0873509,
+      "lng": 23.8100874
+    },
+    {
+      "code": "osm:node/3039360978",
+      "name": "Ίδρυμα Θεομήτωρ",
+      "countryCode": "GR",
+      "origin": "https://www.kkppva.gr",
+      "lat": 39.0870446,
+      "lng": 26.3697076
+    },
+    {
+      "code": "osm:node/3080015732",
+      "name": "Creta InterClinic",
+      "countryCode": "GR",
+      "origin": "https://cic.gr",
+      "lat": 35.3351427,
+      "lng": 25.1206462
+    },
+    {
+      "code": "osm:node/4464612064",
+      "name": "Γεν. Νοσ. \"Αλεξάνδρα\" (Εξωτερικά Ιατρεία)",
+      "countryCode": "GR",
+      "origin": "https://hosp-alexandra.gr",
+      "lat": 37.9810314,
+      "lng": 23.7562692
+    },
+    {
+      "code": "osm:node/4979964822",
+      "name": "ΚΕΝΤΡΟ ΥΓΕΙΑΣ Μοίρες",
+      "countryCode": "GR",
+      "origin": "https://www.lentas-online.com",
+      "lat": 35.0536511,
+      "lng": 24.8779725
+    },
+    {
+      "code": "osm:node/6503541805",
+      "name": "Κέντρο Υγείας Σαλαμίνας",
+      "countryCode": "GR",
+      "origin": "https://www.nikaia-hosp.gr",
+      "lat": 37.9678497,
+      "lng": 23.4790821
+    },
+    {
+      "code": "osm:node/6882721543",
+      "name": "Δαβανέλος Κωνσταντίνος",
+      "countryCode": "GR",
+      "origin": "http://davaneloskonstantinos.blogspot.com",
+      "lat": 38.0942552,
+      "lng": 23.8029209
+    },
+    {
+      "code": "osm:node/7836789764",
+      "name": "Branch Health Clinic Souda Bay",
+      "countryCode": "GR",
+      "origin": "https://www.cnic.navy.mil",
+      "lat": 35.5348087,
+      "lng": 24.1579461
+    },
+    {
+      "code": "osm:node/8119006758",
+      "name": "Skintopia Dermatology Center - Κριτσωτάκη Ελευθερία",
+      "countryCode": "GR",
+      "origin": "https://www.skintopia.gr",
+      "lat": 38.0365601,
+      "lng": 23.6938297
+    },
+    {
+      "code": "osm:node/9054473606",
+      "name": "Santorini Medlife Clinic",
+      "countryCode": "GR",
+      "origin": "https://www.santorinimedlifeclinic.gr",
+      "lat": 36.3987,
+      "lng": 25.4506297
+    },
+    {
+      "code": "osm:node/9122784217",
+      "name": "Affidea Ηρακλείου Κρήτης",
+      "countryCode": "GR",
+      "origin": "https://affidea.gr",
+      "lat": 35.3369131,
+      "lng": 25.1360705
+    },
+    {
+      "code": "osm:node/10743634911",
+      "name": "Νοσοκομείο Κομοτηνής",
+      "countryCode": "GR",
+      "origin": "https://komotini-hospital.gr",
+      "lat": 41.1137921,
+      "lng": 25.31685
+    },
+    {
+      "code": "osm:node/12125089901",
+      "name": "Aegean Medical Centre",
+      "countryCode": "GR",
+      "origin": "https://www.aegeanmedical.gr",
+      "lat": 40.092039,
+      "lng": 23.7871982
+    },
+    {
+      "code": "osm:way/21894810",
+      "name": "Κλινική Θέρμη",
+      "countryCode": "GR",
+      "origin": "https://www.klinikithermi.gr",
+      "lat": 40.5287753,
+      "lng": 23.0108575
+    },
+    {
+      "code": "osm:way/23180353",
+      "name": "Ωνάσειο Νοσοκομείο",
+      "countryCode": "GR",
+      "origin": "https://www.onasseio.gr",
+      "lat": 37.9426134,
+      "lng": 23.6974335
+    },
+    {
+      "code": "osm:way/32297119",
+      "name": "ΝΙΜΤΣ - Νοσηλευτικό Ίδρυμα Μετοχικού Ταμείου Στρατού 417",
+      "countryCode": "GR",
+      "origin": "http://www.nimts.gr",
+      "lat": 37.9794725,
+      "lng": 23.7513507
+    },
+    {
+      "code": "osm:way/33650893",
+      "name": "Γενικό Νοσοκομείο Νίκαιας \"Αγ. Παντελεήμων\"",
+      "countryCode": "GR",
+      "origin": "https://www.nikaia-hosp.gr",
+      "lat": 37.9720132,
+      "lng": 23.6628353
+    },
+    {
+      "code": "osm:way/113980089",
+      "name": "Γενικό Νοσοκομείο Πρέβεζας",
+      "countryCode": "GR",
+      "origin": "https://www.prevezahospital.gr",
+      "lat": 38.9653206,
+      "lng": 20.7538176
+    },
+    {
+      "code": "osm:way/119788131",
+      "name": "Γενικό Νοσοκομείο Πύργου «Ανδρέας Παπανδρέου»",
+      "countryCode": "GR",
+      "origin": "https://nosokomeiopyrgoy.gr",
+      "lat": 37.6833013,
+      "lng": 21.4236309
+    },
+    {
+      "code": "osm:way/121785298",
+      "name": "Γενικό Νομαρχιακό Νοσοκομείο Καλαμάτας",
+      "countryCode": "GR",
+      "origin": "https://www.nosokomeiokalamatas.gr",
+      "lat": 37.0681072,
+      "lng": 22.0612078
+    },
+    {
+      "code": "osm:way/132620005",
+      "name": "Γενικό Νοσοκομείο Αθηνών \"Ευαγγελισμός\"",
+      "countryCode": "GR",
+      "origin": "http://www.evaggelismos-hosp.gr",
+      "lat": 37.9777601,
+      "lng": 23.7477793
+    },
+    {
+      "code": "osm:way/132748278",
+      "name": "Γενικό Νοσοκομείο Αθηνών \"Αλεξάνδρα\"",
+      "countryCode": "GR",
+      "origin": "http://www.hosp-alexandra.gr",
+      "lat": 37.9801307,
+      "lng": 23.7552795
+    },
+    {
+      "code": "osm:way/132748295",
+      "name": "Αρεταίειο Νοσοκομείο",
+      "countryCode": "GR",
+      "origin": "http://www.aretaieio.uoa.gr",
+      "lat": 37.979506,
+      "lng": 23.7548038
+    },
+    {
+      "code": "osm:way/132756187",
+      "name": "Νοσοκομείο Αφροδισίων & Δερματικών Νόσων «Ανδρέας Συγγρός»",
+      "countryCode": "GR",
+      "origin": "http://www.syggros-hosp.gr",
+      "lat": 37.9734795,
+      "lng": 23.7523067
+    },
+    {
+      "code": "osm:way/132777126",
+      "name": "Περιφερειακό Γενικό Νοσοκομείο - Μαιευτήριο \"Έλενα Βενιζέλου\"",
+      "countryCode": "GR",
+      "origin": "http://www.hospital-elena.gr",
+      "lat": 37.9849567,
+      "lng": 23.7558979
+    },
+    {
+      "code": "osm:way/132795203",
+      "name": "Γενικό Νοσοκομείο Αθηνών \"Ιπποκράτειο\"",
+      "countryCode": "GR",
+      "origin": "http://www.hippocratio.gr",
+      "lat": 37.9836922,
+      "lng": 23.7597588
+    },
+    {
+      "code": "osm:way/132926954",
+      "name": "Γενικό Νοσοκομέιο Άμφισσας",
+      "countryCode": "GR",
+      "origin": "https://www.gnamfissas.gr",
+      "lat": 38.5209818,
+      "lng": 22.3758945
+    },
+    {
+      "code": "osm:way/140757110",
+      "name": "Γενικό Νοσοκομείο Αθηνών \"Η Ελπίς\"",
+      "countryCode": "GR",
+      "origin": "https://elpis.gr",
+      "lat": 37.9899876,
+      "lng": 23.7553889
+    },
+    {
+      "code": "osm:way/142786289",
+      "name": "Central Clinic of Santorini",
+      "countryCode": "GR",
+      "origin": "https://santorinicentralclinic.gr",
+      "lat": 36.4191731,
+      "lng": 25.4341815
+    },
+    {
+      "code": "osm:way/148221730",
+      "name": "Γενικό Νοσοκομείο Ελευσίνας «Θριάσιο»",
+      "countryCode": "GR",
+      "origin": "https://thriassio-hosp.gr",
+      "lat": 38.0717255,
+      "lng": 23.5326127
+    },
+    {
+      "code": "osm:way/148318150",
+      "name": "Πανεπιστημιακό Γενικό Νοσοκομείο Αλεξανδρούπολης",
+      "countryCode": "GR",
+      "origin": "https://www.pgna.gr",
+      "lat": 40.8617394,
+      "lng": 25.8025168
+    },
+    {
+      "code": "osm:way/158366125",
+      "name": "Ευρωκλινική Αθηνών",
+      "countryCode": "GR",
+      "origin": "http://www.euroclinic.gr",
+      "lat": 37.986366,
+      "lng": 23.7584584
+    },
+    {
+      "code": "osm:way/159957343",
+      "name": "Τζάνειο Γενικό Νοσοκομείο Πειραιά",
+      "countryCode": "GR",
+      "origin": "http://www.tzaneio.gr",
+      "lat": 37.9341662,
+      "lng": 23.6459011
+    },
+    {
+      "code": "osm:way/160843871",
+      "name": "Γενικό Νοσοκομείο Κιλκίς",
+      "countryCode": "GR",
+      "origin": "https://ghkilkis.gr",
+      "lat": 40.9901585,
+      "lng": 22.8661983
+    },
+    {
+      "code": "osm:way/161024401",
+      "name": "Metropolitan Hospital",
+      "countryCode": "GR",
+      "origin": "https://www.metropolitan-hospital.gr",
+      "lat": 37.9451516,
+      "lng": 23.6698915
+    },
+    {
+      "code": "osm:way/162505355",
+      "name": "Αρωγή",
+      "countryCode": "GR",
+      "origin": "https://euromedica-arogi.gr",
+      "lat": 40.6044826,
+      "lng": 23.001646
+    },
+    {
+      "code": "osm:way/162505984",
+      "name": "Γένεσις",
+      "countryCode": "GR",
+      "origin": "https://genesishospital.gr",
+      "lat": 40.6050082,
+      "lng": 23.0037849
+    },
+    {
+      "code": "osm:way/169296315",
+      "name": "Γενικό Νοσοκομείο Αθηνών \"Λαϊκό\"",
+      "countryCode": "GR",
+      "origin": "http://www.laiko.gr",
+      "lat": 37.9840353,
+      "lng": 23.7652256
+    },
+    {
+      "code": "osm:way/197927701",
+      "name": "Μαμάτσειο Νοσοκομείο",
+      "countryCode": "GR",
+      "origin": "https://www.mamatsio.gr",
+      "lat": 40.3070653,
+      "lng": 21.7861303
+    },
+    {
+      "code": "osm:way/205119137",
+      "name": "Γενικό Αντικαρκινικό Νοσοκομείο Πειραιά Μεταξά",
+      "countryCode": "GR",
+      "origin": "https://www.metaxa-hospital.gov.gr",
+      "lat": 37.9296283,
+      "lng": 23.6439395
+    },
+    {
+      "code": "osm:way/207894345",
+      "name": "Γενικό Νοσοκομείο Άρτας",
+      "countryCode": "GR",
+      "origin": "https://www.gnartas.gov.gr",
+      "lat": 39.1477385,
+      "lng": 20.9946301
+    },
+    {
+      "code": "osm:way/208978514",
+      "name": "Γενικό Νοσοκομείο Αθηνών \"Γιώργος Γεννηματάς\"",
+      "countryCode": "GR",
+      "origin": "https://www.gna-gennimatas.gr",
+      "lat": 37.9967836,
+      "lng": 23.7838188
+    },
+    {
+      "code": "osm:way/209859488",
+      "name": "Κωνσταντοπούλειο Συγκρότημα - Γενικό Νοσοκομείο Νέας Ιωνίας «Η Αγία Όλγα»",
+      "countryCode": "GR",
+      "origin": "http://www.konstantopouleio.gr",
+      "lat": 38.037891,
+      "lng": 23.7580076
+    },
+    {
+      "code": "osm:way/235508188",
+      "name": "Γενικό Νοσοκομείο Λαμίας",
+      "countryCode": "GR",
+      "origin": "https://www.hosplam.gr",
+      "lat": 38.9286331,
+      "lng": 22.4234608
+    },
+    {
+      "code": "osm:way/238968359",
+      "name": "Νομαρχιακό Γενικό Ογκολογικό Νοσοκομείο Κηφισιάς, Άγιοι Ανάργυροι",
+      "countryCode": "GR",
+      "origin": "https://gonkhosp.gr",
+      "lat": 38.0797886,
+      "lng": 23.7708049
+    },
+    {
+      "code": "osm:way/243482382",
+      "name": "Πανεπιστημιακό Γενικό Νοσοκομείο Ηρακλείου",
+      "countryCode": "GR",
+      "origin": "https://www.pagni.gr",
+      "lat": 35.3038972,
+      "lng": 25.0834082
+    },
+    {
+      "code": "osm:way/255490483",
+      "name": "Γενικό Νοσοκομείο Κορίνθου",
+      "countryCode": "GR",
+      "origin": "https://www.hospkorinthos.gr",
+      "lat": 37.9401588,
+      "lng": 22.9493713
+    },
+    {
+      "code": "osm:way/274565872",
+      "name": "Γενικό Νοσοκομείο Ζακύνθου \"Άγιος Διονύσιος\"",
+      "countryCode": "GR",
+      "origin": "https://www.zante-hospital.gr",
+      "lat": 37.7843903,
+      "lng": 20.8758425
+    },
+    {
+      "code": "osm:way/280904477",
+      "name": "Γενικό Νοσοκομείο Αγίου Νικολάου",
+      "countryCode": "GR",
+      "origin": "https://www.agnhosp.gr",
+      "lat": 35.1943438,
+      "lng": 25.7135571
+    },
+    {
+      "code": "osm:way/285774722",
+      "name": "Παθολογικό Νοσοκομείο Αθηνών - Σπηλιοπούλειο \"Η Αγία Ελένη\"",
+      "countryCode": "GR",
+      "origin": "http://www.spiliopoulio.gr",
+      "lat": 37.9841947,
+      "lng": 23.7564695
+    },
+    {
+      "code": "osm:way/286296118",
+      "name": "Αιγινήτειο Νοσοκομείο",
+      "countryCode": "GR",
+      "origin": "http://www.eginitio.gr",
+      "lat": 37.9790614,
+      "lng": 23.7541448
+    },
+    {
+      "code": "osm:way/286715157",
+      "name": "Γενικό Νοσοκομείο Αττικής \"ΚΑΤ\"",
+      "countryCode": "GR",
+      "origin": "https://kat-hosp.gr",
+      "lat": 38.0659166,
+      "lng": 23.8073664
+    },
+    {
+      "code": "osm:way/295135916",
+      "name": "Γενικό Νοσοκομείο Χανίων - Άγιος Γεώργιος",
+      "countryCode": "GR",
+      "origin": "https://chaniahospital.gr",
+      "lat": 35.478925,
+      "lng": 24.0163543
+    },
+    {
+      "code": "osm:way/306701923",
+      "name": "Πανεπιστημιακό Γενικό Νοσοκομείο \"Αττικόν\"",
+      "countryCode": "GR",
+      "origin": "http://www.attikonhospital.gr",
+      "lat": 38.0171104,
+      "lng": 23.6671478
+    },
+    {
+      "code": "osm:way/308434127",
+      "name": "Ιατρικό Διαβαλκανικό Θεσσαλονίκης",
+      "countryCode": "GR",
+      "origin": "https://www.iatriko.gr",
+      "lat": 40.5474946,
+      "lng": 22.9876052
+    },
+    {
+      "code": "osm:way/312662535",
+      "name": "Γενικό Νοσοκομείο Λακωνίας - Νοσηλευτική Μονάδα Μολάων",
+      "countryCode": "GR",
+      "origin": "http://www.hosplak.gr",
+      "lat": 36.8009393,
+      "lng": 22.8556377
+    },
+    {
+      "code": "osm:way/316732250",
+      "name": "Γενικό Νοσοκομείο Νοσημάτων Θώρακος \"Η Σωτηρία\"",
+      "countryCode": "GR",
+      "origin": "https://www.sotiria.gr",
+      "lat": 37.993798,
+      "lng": 23.7835
+    },
+    {
+      "code": "osm:way/318340397",
+      "name": "Μητέρα",
+      "countryCode": "GR",
+      "origin": "https://www.mitera.gr",
+      "lat": 38.0290157,
+      "lng": 23.789122
+    },
+    {
+      "code": "osm:way/318340398",
+      "name": "Υγεία",
+      "countryCode": "GR",
+      "origin": "https://www.hygeia.gr",
+      "lat": 38.0286629,
+      "lng": 23.7902029
+    },
+    {
+      "code": "osm:way/333112701",
+      "name": "Γενικό Παναρκαδικό Νοσοκομείο Τρίπολης \"Η Ευαγγελίστρια\"",
+      "countryCode": "GR",
+      "origin": "https://www.panarkadiko.eu",
+      "lat": 37.512143,
+      "lng": 22.3629533
+    },
+    {
+      "code": "osm:way/355166857",
+      "name": "Βενιζέλειο Νοσοκομείο",
+      "countryCode": "GR",
+      "origin": "https://www.venizeleio.gr",
+      "lat": 35.3061272,
+      "lng": 25.15603
+    },
+    {
+      "code": "osm:way/377010632",
+      "name": "Γενικό Νοσοκομείο Ρεθύμνου",
+      "countryCode": "GR",
+      "origin": "https://www.rethymnohospital.gr",
+      "lat": 35.3651226,
+      "lng": 24.4714494
+    },
+    {
+      "code": "osm:way/425619269",
+      "name": "Αμαλία Φλέμινγκ Πτέρυγα Μπόμπολα",
+      "countryCode": "GR",
+      "origin": "https://www.flemig-hospital.gr",
+      "lat": 38.0552845,
+      "lng": 23.8414038
+    },
+    {
+      "code": "osm:way/433816870",
+      "name": "Γενικό Νοσοκομείο Άργους",
+      "countryCode": "GR",
+      "origin": "https://gna.gr",
+      "lat": 37.6435069,
+      "lng": 22.7280538
+    },
+    {
+      "code": "osm:way/442035264",
+      "name": "Αμαλία Φλέμιγκ",
+      "countryCode": "GR",
+      "origin": "https://flemig-hospital.gr",
+      "lat": 38.0544313,
+      "lng": 23.834985
+    },
+    {
+      "code": "osm:way/444316200",
+      "name": "Ιατρικό Ψυχικού",
+      "countryCode": "GR",
+      "origin": "https://iatriko.gr",
+      "lat": 37.9964969,
+      "lng": 23.7696048
+    },
+    {
+      "code": "osm:way/452831636",
+      "name": "Ευγενίδειο Θεραπευτήριο",
+      "countryCode": "GR",
+      "origin": "https://eugenideio.uoa.gr",
+      "lat": 37.9785231,
+      "lng": 23.7548543
+    },
+    {
+      "code": "osm:way/502870991",
+      "name": "Γενικό Νοσοκομείο Ρόδου",
+      "countryCode": "GR",
+      "origin": "http://www.rhodes-hospital.gr",
+      "lat": 36.4182562,
+      "lng": 28.1920059
+    },
+    {
+      "code": "osm:way/505569755",
+      "name": "Παμμακάριστος",
+      "countryCode": "GR",
+      "origin": "https://pammakaristos-hosp.gr",
+      "lat": 38.0142613,
+      "lng": 23.7315822
+    },
+    {
+      "code": "osm:way/511513465",
+      "name": "Euromedica",
+      "countryCode": "GR",
+      "origin": "https://www.euromedica-rhodes.gr",
+      "lat": 36.3852318,
+      "lng": 28.2006132
+    },
+    {
+      "code": "osm:way/517007894",
+      "name": "Γενικό Νοσοκομείο Ιεράπετρας - Κέντρο Υγείας Ιεράπετρας",
+      "countryCode": "GR",
+      "origin": "https://www.ierapetrahospital.gr",
+      "lat": 35.0134265,
+      "lng": 25.7420104
+    },
+    {
+      "code": "osm:way/529286480",
+      "name": "Γενικό Νομαρχειακό Νοσοκομείο Καρδίτσας",
+      "countryCode": "GR",
+      "origin": "https://www.noskard.gr",
+      "lat": 39.3516964,
+      "lng": 21.9052935
+    },
+    {
+      "code": "osm:way/636624436",
+      "name": "ΑΝΑΔΡΑΣΗ - Κέντρο Ψυχοσωματικής Υγείας",
+      "countryCode": "GR",
+      "origin": "https://www.relax-now.gr",
+      "lat": 39.3368423,
+      "lng": 23.0469757
+    },
+    {
+      "code": "osm:way/656340708",
+      "name": "Οι Άγιοι Ανάργυροι",
+      "countryCode": "GR",
+      "origin": "https://www.oiagioianargyroi.gr",
+      "lat": 38.0283266,
+      "lng": 23.7193001
+    },
+    {
+      "code": "osm:way/659235406",
+      "name": "Γενικό Νοσοκομείο Κυπαρισσίας",
+      "countryCode": "GR",
+      "origin": "https://kyparissiahospital.gr",
+      "lat": 37.249461,
+      "lng": 21.6672335
+    },
+    {
+      "code": "osm:way/669746894",
+      "name": "Εθνικό Κέντρο Αποκατάστασης",
+      "countryCode": "GR",
+      "origin": "https://ekahosp.wordpress.com",
+      "lat": 38.0496153,
+      "lng": 23.717697
+    },
+    {
+      "code": "osm:way/679843380",
+      "name": "Γενικό Νοσοκομείο Νάουσας",
+      "countryCode": "GR",
+      "origin": "https://www.gnnaousas.gr",
+      "lat": 40.6279603,
+      "lng": 22.0736897
+    },
+    {
+      "code": "osm:way/692730975",
+      "name": "Κέντρο Υγείας Σαλαμίνας",
+      "countryCode": "GR",
+      "origin": "https://www.nikaia-hosp.gr",
+      "lat": 37.9679946,
+      "lng": 23.4791059
+    },
+    {
+      "code": "osm:way/717721751",
+      "name": "Γενικό Νοσοκομείο Σάμου",
+      "countryCode": "GR",
+      "origin": "https://www.nosokomeiosamou.gov.gr",
+      "lat": 37.7617808,
+      "lng": 26.9697963
+    },
+    {
+      "code": "osm:way/717755431",
+      "name": "Νοσοκομείο Αγρινίου",
+      "countryCode": "GR",
+      "origin": "https://hospital-agrinio.gr",
+      "lat": 38.5900364,
+      "lng": 21.4173312
+    },
+    {
+      "code": "osm:way/731931540",
+      "name": "Γενικό Νοσοκομείο Πτολεμαΐδας \"Μποδοσάκειο\"",
+      "countryCode": "GR",
+      "origin": "https://mpodosakeio.gr",
+      "lat": 40.5441619,
+      "lng": 21.6560631
+    },
+    {
+      "code": "osm:way/738147681",
+      "name": "Άγιος Λουκάς",
+      "countryCode": "GR",
+      "origin": "https://www.klinikiagiosloukas.gr",
+      "lat": 40.5939128,
+      "lng": 23.0148242
+    },
+    {
+      "code": "osm:way/750259015",
+      "name": "Γενικό Νοσοκομείο Κυθήρων \"Τριφύλλειο\"",
+      "countryCode": "GR",
+      "origin": "https://www.gnk.gov.gr",
+      "lat": 36.2771536,
+      "lng": 22.965068
+    },
+    {
+      "code": "osm:way/755673309",
+      "name": "Γενικό Νοσοκομείο Κρεστένων",
+      "countryCode": "GR",
+      "origin": "http://nosokomeiokrestenon.gr",
+      "lat": 37.5905533,
+      "lng": 21.6144342
+    },
+    {
+      "code": "osm:way/809838114",
+      "name": "Γενικό Νοσοκομείο Ναυπλίου",
+      "countryCode": "GR",
+      "origin": "https://www.gnn.gov.gr",
+      "lat": 37.5661405,
+      "lng": 22.8083203
+    },
+    {
+      "code": "osm:way/824239777",
+      "name": "Γενικό Νοσοκομείο Διδυμοτείχου",
+      "countryCode": "GR",
+      "origin": "https://did-hosp.gr",
+      "lat": 41.3523505,
+      "lng": 26.5037206
+    },
+    {
+      "code": "osm:way/865159836",
+      "name": "Νέο Γενικό Νοσοκομείο Χαλκίδας",
+      "countryCode": "GR",
+      "origin": "https://chalkidahospital.gr",
+      "lat": 38.4601566,
+      "lng": 23.6169458
+    },
+    {
+      "code": "osm:way/931610742",
+      "name": "Νοσηλευτική Μονάδα Καλαβρύτων",
+      "countryCode": "GR",
+      "origin": "http://www.gnaigio.gr",
+      "lat": 38.0326454,
+      "lng": 22.1083753
+    },
+    {
+      "code": "osm:way/937820063",
+      "name": "Κέντρο Υγείας Γκούρας",
+      "countryCode": "GR",
+      "origin": "https://www.hospkorinthos.gr",
+      "lat": 37.9327671,
+      "lng": 22.3431774
+    },
+    {
+      "code": "osm:way/988501737",
+      "name": "Γενικό Νοσοκομείο Χίου \"Σκυλίτσειο\"",
+      "countryCode": "GR",
+      "origin": "https://xioshosp.gr",
+      "lat": 38.3840479,
+      "lng": 26.1376531
+    },
+    {
+      "code": "osm:way/988506148",
+      "name": "Γενικό Νοσοκομείο Ξάνθης",
+      "countryCode": "GR",
+      "origin": "https://www.hosp-xanthi.gr",
+      "lat": 41.1237703,
+      "lng": 24.8679856
+    },
+    {
+      "code": "osm:way/1016744477",
+      "name": "Γενικό Νοσοκομείο Φλώρινας",
+      "countryCode": "GR",
+      "origin": "https://florinahospital.gr",
+      "lat": 40.7851704,
+      "lng": 21.4093282
+    },
+    {
+      "code": "osm:way/1017763696",
+      "name": "Γενικό Νοσοκομείο Κέρκυρας",
+      "countryCode": "GR",
+      "origin": "https://gnkerkyras.gr",
+      "lat": 39.6436277,
+      "lng": 19.8508036
+    },
+    {
+      "code": "osm:way/1077890511",
+      "name": "Γενικό Νοσοκομείο Νεάπολης - \"Διαλυνάκειο\"",
+      "countryCode": "GR",
+      "origin": "https://www.dialynakeio.com",
+      "lat": 35.2547733,
+      "lng": 25.6086254
+    },
+    {
+      "code": "osm:way/1078117375",
+      "name": "Γενικό Νοσοκομείο Λακωνίας",
+      "countryCode": "GR",
+      "origin": "https://www.hosplak.gr",
+      "lat": 37.0872682,
+      "lng": 22.4198277
+    },
+    {
+      "code": "osm:way/1078752399",
+      "name": "Γενικόν Νοσοκομείον Κύμης",
+      "countryCode": "GR",
+      "origin": "https://www.ghkymis.gr",
+      "lat": 38.6377745,
+      "lng": 24.109079
+    },
+    {
+      "code": "osm:way/1116371587",
+      "name": "Κέντρο Υγείας Αλιάρτου",
+      "countryCode": "GR",
+      "origin": "https://www.dypethessaly.gr",
+      "lat": 38.373054,
+      "lng": 23.1027894
+    },
+    {
+      "code": "osm:way/1163572266",
+      "name": "Euromedica Ζωοδόχος Πηγή",
+      "countryCode": "GR",
+      "origin": "https://euromedica-kozani.gr",
+      "lat": 40.3023029,
+      "lng": 21.7956373
+    },
+    {
+      "code": "osm:way/1235108544",
+      "name": "Μεσογειακό Κέντρο Αποκατάστασης",
+      "countryCode": "GR",
+      "origin": "https://www.meska.gr",
+      "lat": 37.9502159,
+      "lng": 22.9994556
+    },
+    {
+      "code": "osm:way/1238027631",
+      "name": "Γενικό Νοσοκομείο Παπαγεωργίου",
+      "countryCode": "GR",
+      "origin": "https://www.papageorgiou-hospital.gr",
+      "lat": 40.6759526,
+      "lng": 22.9630121
+    },
+    {
+      "code": "osm:way/1251108565",
+      "name": "ΠΕΡΙΦΕΡΕΙΑΚΟ ΙΑΤΡΕΙΟ ΔΟΜΒΡΑΙΝΑΣ",
+      "countryCode": "GR",
+      "origin": "https://www.dypethessaly.gr",
+      "lat": 38.2536014,
+      "lng": 22.980741
+    },
+    {
+      "code": "osm:way/1424816573",
+      "name": "Mediterraneo Hospital",
+      "countryCode": "GR",
+      "origin": "https://mediterraneohospital.gr",
+      "lat": 37.885689,
+      "lng": 23.7469032
+    },
+    {
+      "code": "osm:way/1441568927",
+      "name": "Santorini Hospital",
+      "countryCode": "GR",
+      "origin": "https://www.santorini-hospital.gr",
+      "lat": 36.4078985,
+      "lng": 25.4414763
+    },
+    {
+      "code": "osm:way/1442026179",
+      "name": "Ολύμπιον - Μονάδα Χρόνιας Αιμοκάθαρσης",
+      "countryCode": "GR",
+      "origin": "https://www.olympionmxa.gr",
+      "lat": 37.8082388,
+      "lng": 21.3373331
+    }
+  ]
+}

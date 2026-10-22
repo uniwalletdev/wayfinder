@@ -1,0 +1,33 @@
+{
+  "countryCode": "QA",
+  "fetchedAt": "2026-10-21T02:34:56.036Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/3771999577",
+      "name": "Qatari Czech Therapy Center",
+      "countryCode": "QA",
+      "origin": "https://www.qczech.com",
+      "lat": 25.402391,
+      "lng": 51.4333253
+    },
+    {
+      "code": "osm:node/4810824327",
+      "name": "Naufar",
+      "countryCode": "QA",
+      "origin": "https://www.naufar.com",
+      "lat": 25.2070712,
+      "lng": 51.5253657
+    },
+    {
+      "code": "osm:way/156179245",
+      "name": "Al Khor Hospital",
+      "countryCode": "QA",
+      "origin": "http://www.hmc.org.qa",
+      "lat": 25.715409,
+      "lng": 51.5152954
+    }
+  ]
+}

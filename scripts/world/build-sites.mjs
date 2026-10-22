@@ -16,9 +16,10 @@ import { readMappedVenues } from "../nhs/lib/mapped.mjs"
 import { metresBetween } from "../nhs/lib/sites.mjs"
 import { nameTokens, tokenOverlap } from "../nhs/lib/match.mjs"
 import { dataPath, readJson, writeJson, updateManifest, log } from "../nhs/lib/paths.mjs"
+import { countriesFromArgs } from "./lib/osm.mjs"
 
 const STAGE = "world-build-sites"
-const COUNTRIES = ["US", "CA", "AU", "IE"]
+const COUNTRIES = countriesFromArgs()
 // Same radius NHS's build-sites.mjs uses. Distance alone is what makes this
 // safe against false positives: a US "St Mary's Hospital" sharing a name with
 // the UK's mapped one is thousands of kilometres away, so it only has to be

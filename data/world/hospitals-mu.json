@@ -1,0 +1,17 @@
+{
+  "countryCode": "MU",
+  "fetchedAt": "2026-10-21T02:10:08.885Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/13853107038",
+      "name": "Artemis Cascavelle Hospital",
+      "countryCode": "MU",
+      "origin": "https://artemismauritius.mu",
+      "lat": -20.276775,
+      "lng": 57.4038405
+    }
+  ]
+}

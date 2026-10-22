@@ -1,0 +1,233 @@
+{
+  "countryCode": "AZ",
+  "fetchedAt": "2026-10-21T07:02:07.943Z",
+  "count": 28,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/3247360369",
+      "name": "AMT-klinika",
+      "countryCode": "AZ",
+      "origin": "https://amt-klinika.com",
+      "lat": 40.3835058,
+      "lng": 49.8352417
+    },
+    {
+      "code": "osm:node/4170034992",
+      "name": "MediClub Polyclinic",
+      "countryCode": "AZ",
+      "origin": "https://www.mediclub.az",
+      "lat": 40.376112,
+      "lng": 49.8561556
+    },
+    {
+      "code": "osm:node/4573206200",
+      "name": "DOKTOR DAVUD Klinikasi",
+      "countryCode": "AZ",
+      "origin": "http://www.doktordavud.com",
+      "lat": 40.3820678,
+      "lng": 49.8045769
+    },
+    {
+      "code": "osm:node/4697593889",
+      "name": "WorldMed Elmlər",
+      "countryCode": "AZ",
+      "origin": "https://www.worldmed.az",
+      "lat": 40.3802412,
+      "lng": 49.8170251
+    },
+    {
+      "code": "osm:node/4713138399",
+      "name": "Azerturkmed hospital",
+      "countryCode": "AZ",
+      "origin": "http://azer-turkmed.az",
+      "lat": 40.4005254,
+      "lng": 49.8335365
+    },
+    {
+      "code": "osm:node/5030505426",
+      "name": "Medika Hospital",
+      "countryCode": "AZ",
+      "origin": "http://medika.az",
+      "lat": 40.3689063,
+      "lng": 49.9625768
+    },
+    {
+      "code": "osm:node/5214807021",
+      "name": "Qabaqçöl Xəstəxanası",
+      "countryCode": "AZ",
+      "origin": "https://www.instagram.com",
+      "lat": 41.7128224,
+      "lng": 46.2604229
+    },
+    {
+      "code": "osm:node/5273233921",
+      "name": "MediStyle Hospital",
+      "countryCode": "AZ",
+      "origin": "https://www.msh.az",
+      "lat": 40.4069489,
+      "lng": 49.8632586
+    },
+    {
+      "code": "osm:node/5327311921",
+      "name": "HB Güvən Klinikası",
+      "countryCode": "AZ",
+      "origin": "http://guvenklinik.com",
+      "lat": 40.4168567,
+      "lng": 49.844475
+    },
+    {
+      "code": "osm:node/5346653622",
+      "name": "Sağlam Ailə UltraLab",
+      "countryCode": "AZ",
+      "origin": "http://ultralab.az",
+      "lat": 40.5886977,
+      "lng": 50.0574071
+    },
+    {
+      "code": "osm:node/5550958569",
+      "name": "Xəstəxana \\ Çanaqçı",
+      "countryCode": "AZ",
+      "origin": "http://www.gedebey-ih.gov.az",
+      "lat": 40.6888971,
+      "lng": 45.7620346
+    },
+    {
+      "code": "osm:node/5584265633",
+      "name": "Gədəbəy Mərkəzi Rayon Xəstəxanası",
+      "countryCode": "AZ",
+      "origin": "http://www.gedebey-ih.gov.az",
+      "lat": 40.5786855,
+      "lng": 45.8134469
+    },
+    {
+      "code": "osm:node/5639145721",
+      "name": "Dr Şikar Hüseynov Dermatoloji Klinika",
+      "countryCode": "AZ",
+      "origin": "http://drshikarhuseynov.az",
+      "lat": 40.3899019,
+      "lng": 49.8399464
+    },
+    {
+      "code": "osm:node/5685787308",
+      "name": "Mayomed Medical",
+      "countryCode": "AZ",
+      "origin": "http://www.mayomed.az",
+      "lat": 40.4130324,
+      "lng": 49.8603976
+    },
+    {
+      "code": "osm:node/6029142585",
+      "name": "Alliance Clinic",
+      "countryCode": "AZ",
+      "origin": "http://www.alliance-clinic.az",
+      "lat": 40.3972411,
+      "lng": 49.838759
+    },
+    {
+      "code": "osm:node/6077416206",
+      "name": "Tibb Məntəqəsi \\ Xarxar",
+      "countryCode": "AZ",
+      "origin": "http://www.gedebey-ih.gov.az",
+      "lat": 40.7052919,
+      "lng": 45.834722
+    },
+    {
+      "code": "osm:node/6863184356",
+      "name": "Naftalan Otel;Naftalan Diaqnostika və Müalicə Mərkəzi",
+      "countryCode": "AZ",
+      "origin": "https://www.naftalan.biz",
+      "lat": 40.4985262,
+      "lng": 46.8205038
+    },
+    {
+      "code": "osm:node/8806899258",
+      "name": "Pro İmplant klinikası (Estetik stomatologiya, implantologiya və ağız cərrahiyəsi)",
+      "countryCode": "AZ",
+      "origin": "https://proimplant.az",
+      "lat": 40.3919754,
+      "lng": 49.8584254
+    },
+    {
+      "code": "osm:node/8946978217",
+      "name": "Məlhəm Beynəlxalq Hospital",
+      "countryCode": "AZ",
+      "origin": "https://www.melhemhospital.com",
+      "lat": 40.4076816,
+      "lng": 49.9548734
+    },
+    {
+      "code": "osm:node/9774529930",
+      "name": "Neomed Klinika \\ Masazır Dairəsi",
+      "countryCode": "AZ",
+      "origin": "https://neomed.az",
+      "lat": 40.4569805,
+      "lng": 49.7570474
+    },
+    {
+      "code": "osm:node/10173262440",
+      "name": "Slavyanka kənd xəstəxanası",
+      "countryCode": "AZ",
+      "origin": "http://www.gedebey-ih.gov.az",
+      "lat": 40.6645439,
+      "lng": 45.8180921
+    },
+    {
+      "code": "osm:node/11810449277",
+      "name": "Lux İnternational Hospital",
+      "countryCode": "AZ",
+      "origin": "https://luxhospital.az",
+      "lat": 40.4056571,
+      "lng": 49.8728313
+    },
+    {
+      "code": "osm:node/13922358029",
+      "name": "SwissDent Klinikası",
+      "countryCode": "AZ",
+      "origin": "https://www.aqsgroup.az",
+      "lat": 40.3745013,
+      "lng": 49.8054591
+    },
+    {
+      "code": "osm:way/205782473",
+      "name": "Mərkəzi klinik xəstəxana",
+      "countryCode": "AZ",
+      "origin": "http://www.merkeziklinika.az",
+      "lat": 40.361534,
+      "lng": 49.8245305
+    },
+    {
+      "code": "osm:way/219973450",
+      "name": "Mərkəzi Gömrük Hospitalı",
+      "countryCode": "AZ",
+      "origin": "https://www.customshospital.az",
+      "lat": 40.3782725,
+      "lng": 49.8188287
+    },
+    {
+      "code": "osm:way/302903175",
+      "name": "Leyla Şıxlinskaya Klinikası",
+      "countryCode": "AZ",
+      "origin": "https://www.leylamc.az",
+      "lat": 40.38199,
+      "lng": 49.8632322
+    },
+    {
+      "code": "osm:way/378440447",
+      "name": "Nuclear Medicine Centre",
+      "countryCode": "AZ",
+      "origin": "http://ntm.az",
+      "lat": 40.4008599,
+      "lng": 49.7984332
+    },
+    {
+      "code": "osm:way/447503456",
+      "name": "Sağlam Ailə",
+      "countryCode": "AZ",
+      "origin": "https://saglamaile.az",
+      "lat": 40.4094263,
+      "lng": 49.8618572
+    }
+  ]
+}

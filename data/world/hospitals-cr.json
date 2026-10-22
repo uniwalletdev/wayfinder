@@ -1,0 +1,49 @@
+{
+  "countryCode": "CR",
+  "fetchedAt": "2026-10-21T01:07:15.141Z",
+  "count": 5,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/10769214227",
+      "name": "Clínica Denta Orto Norte",
+      "countryCode": "CR",
+      "origin": "https://www.facebook.com",
+      "lat": 10.3461963,
+      "lng": -84.4290403
+    },
+    {
+      "code": "osm:node/13477053615",
+      "name": "MEDCARE Centro Medico Especializado",
+      "countryCode": "CR",
+      "origin": "https://www.medcare.cr",
+      "lat": 9.9377994,
+      "lng": -84.0961397
+    },
+    {
+      "code": "osm:way/68251594",
+      "name": "Hospital del Trauma",
+      "countryCode": "CR",
+      "origin": "http://portal.ins-cr.com",
+      "lat": 9.9507255,
+      "lng": -84.1172036
+    },
+    {
+      "code": "osm:way/379843423",
+      "name": "Clínica UNIBE",
+      "countryCode": "CR",
+      "origin": "https://www.clinicaunibe.com",
+      "lat": 9.9614174,
+      "lng": -84.0648714
+    },
+    {
+      "code": "osm:way/396075909",
+      "name": "Hospital Las Américas",
+      "countryCode": "CR",
+      "origin": "https://www.hospitallasamericas.com",
+      "lat": 9.3697309,
+      "lng": -83.7041775
+    }
+  ]
+}

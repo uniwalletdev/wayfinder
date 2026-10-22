@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-10-22T13:36:14.947Z",
+  "countryCode": "UY",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 2,
+    "botChallenged": 0,
+    "robotsBlocked": 0,
+    "withCandidates": 0,
+    "crawled": 14
+  },
+  "count": 0,
+  "crawled": {
+    "osm:node/13525728901": "ok",
+    "osm:node/14072191301": "ok",
+    "osm:node/4558400591": "failed",
+    "osm:node/8567259417": "ok",
+    "osm:way/153029522": "ok",
+    "osm:way/156270380": "ok",
+    "osm:way/243502544": "ok",
+    "osm:way/252213766": "ok",
+    "osm:way/37514653": "ok",
+    "osm:way/446943497": "ok",
+    "osm:way/446943498": "ok",
+    "osm:way/470907941": "ok",
+    "osm:way/560254541": "ok",
+    "osm:way/905392238": "failed"
+  },
+  "candidates": []
+}

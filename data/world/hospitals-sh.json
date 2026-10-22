@@ -1,0 +1,17 @@
+{
+  "countryCode": "SH",
+  "fetchedAt": "2026-10-21T02:45:07.549Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/1231084281",
+      "name": "General Hospital",
+      "countryCode": "SH",
+      "origin": "https://www.sainthelena.gov.sh",
+      "lat": -15.9341156,
+      "lng": -5.7113437
+    }
+  ]
+}

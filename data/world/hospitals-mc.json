@@ -1,0 +1,25 @@
+{
+  "countryCode": "MC",
+  "fetchedAt": "2026-10-21T02:01:55.358Z",
+  "count": 2,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/49209406",
+      "name": "Centre hospitalier Princesse Grace (CHPG)",
+      "countryCode": "MC",
+      "origin": "https://www.chpg.mc",
+      "lat": 43.7302878,
+      "lng": 7.4111358
+    },
+    {
+      "code": "osm:way/628293464",
+      "name": "Nouveau Centre Hospitalier Princesse Grace (NCHPG)",
+      "countryCode": "MC",
+      "origin": "https://www.chpg.mc",
+      "lat": 43.7302332,
+      "lng": 7.4119444
+    }
+  ]
+}

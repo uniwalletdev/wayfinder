@@ -1,0 +1,1017 @@
+{
+  "countryCode": "MX",
+  "fetchedAt": "2026-10-21T02:11:58.162Z",
+  "count": 126,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/307148439",
+      "name": "Hospital de la Mujer",
+      "countryCode": "MX",
+      "origin": "http://hdelamujer.salud.gob.mx",
+      "lat": 16.7329086,
+      "lng": -92.6368794
+    },
+    {
+      "code": "osm:node/739036171",
+      "name": "Instituto Nacional de Pediatria",
+      "countryCode": "MX",
+      "origin": "https://www.pediatria.gob.mx",
+      "lat": 19.30613,
+      "lng": -99.1851961
+    },
+    {
+      "code": "osm:node/1616820205",
+      "name": "Sanatorio Alcocer Pozo",
+      "countryCode": "MX",
+      "origin": "https://www.sanatorioalcocer.com",
+      "lat": 20.5908442,
+      "lng": -100.389971
+    },
+    {
+      "code": "osm:node/1921579432",
+      "name": "IMSS UMF 36 Humaya",
+      "countryCode": "MX",
+      "origin": "https://clinicasimss.com",
+      "lat": 24.8204556,
+      "lng": -107.4172229
+    },
+    {
+      "code": "osm:node/2402097198",
+      "name": "Hospital Comunitario de San Juan Ixcaquixtla",
+      "countryCode": "MX",
+      "origin": "http://www.sanjuanixcaquixtla.com",
+      "lat": 18.4511686,
+      "lng": -97.832892
+    },
+    {
+      "code": "osm:node/2482978381",
+      "name": "Clínica de Especialidades \"Churubusco\"",
+      "countryCode": "MX",
+      "origin": "https://issstecitasgob.com.mx",
+      "lat": 19.3455142,
+      "lng": -99.1451247
+    },
+    {
+      "code": "osm:node/2632432737",
+      "name": "Perfection",
+      "countryCode": "MX",
+      "origin": "https://www.perfection.com.mx",
+      "lat": 21.14277,
+      "lng": -86.8270125
+    },
+    {
+      "code": "osm:node/2700651256",
+      "name": "Hospital Angeles",
+      "countryCode": "MX",
+      "origin": "https://hospitalesangeles.com",
+      "lat": 21.1573813,
+      "lng": -101.7010313
+    },
+    {
+      "code": "osm:node/2766178382",
+      "name": "Artrimed - Quita de juanetes",
+      "countryCode": "MX",
+      "origin": "https://www.artrimed.com",
+      "lat": 21.9119212,
+      "lng": -102.311608
+    },
+    {
+      "code": "osm:node/3031658790",
+      "name": "Ayuda Psicológica en Línea",
+      "countryCode": "MX",
+      "origin": "https://ayuda-psicologica-en-linea.com",
+      "lat": 18.9769202,
+      "lng": -98.2141845
+    },
+    {
+      "code": "osm:node/3261245511",
+      "name": "Hospital General San Fernando",
+      "countryCode": "MX",
+      "origin": "https://sanfernando.gob.mx",
+      "lat": 24.8529788,
+      "lng": -98.1523885
+    },
+    {
+      "code": "osm:node/3483127047",
+      "name": "Hospital Cruz Azul de Durango",
+      "countryCode": "MX",
+      "origin": "https://hospitalcruzazuldgo.com.mx",
+      "lat": 24.024996,
+      "lng": -104.651347
+    },
+    {
+      "code": "osm:node/4275009187",
+      "name": "Hospital General Galeana",
+      "countryCode": "MX",
+      "origin": "http://www.saludnl.gob.mx",
+      "lat": 24.8194777,
+      "lng": -100.0727468
+    },
+    {
+      "code": "osm:node/4397675457",
+      "name": "Instituto Jalisciense de Cirugía Reconstructiva",
+      "countryCode": "MX",
+      "origin": "https://simposioguerrerosantos.com.mx",
+      "lat": 20.707747,
+      "lng": -103.355064
+    },
+    {
+      "code": "osm:node/4431642390",
+      "name": "Hospital Infantil",
+      "countryCode": "MX",
+      "origin": "http://hospitalinfantiltamaulipas.gob.mx",
+      "lat": 23.7217384,
+      "lng": -99.1636235
+    },
+    {
+      "code": "osm:node/4512745790",
+      "name": "Hospital San Lucas",
+      "countryCode": "MX",
+      "origin": "https://www.hospitalsanlucas.com",
+      "lat": 17.0755019,
+      "lng": -96.7182349
+    },
+    {
+      "code": "osm:node/4635137190",
+      "name": "Saint Lukes Hospital Medical Center",
+      "countryCode": "MX",
+      "origin": "https://saintlukeshospitals.com",
+      "lat": 23.0633734,
+      "lng": -109.7018989
+    },
+    {
+      "code": "osm:node/4724288962",
+      "name": "ISSEMYM",
+      "countryCode": "MX",
+      "origin": "https://www.issemym.gob.mx",
+      "lat": 19.2902327,
+      "lng": -99.6628423
+    },
+    {
+      "code": "osm:node/4749209739",
+      "name": "ISEM: Secretaria e Instituto de Salud del Estado de México",
+      "countryCode": "MX",
+      "origin": "https://salud.edomexico.gob.mx",
+      "lat": 19.2924157,
+      "lng": -99.6424007
+    },
+    {
+      "code": "osm:node/4793330422",
+      "name": "SUMEDIC ambulancias",
+      "countryCode": "MX",
+      "origin": "https://sumedicambulancias.com",
+      "lat": 19.2869541,
+      "lng": -99.2361104
+    },
+    {
+      "code": "osm:node/4886317427",
+      "name": "OPTIMA POLICLÍNICA",
+      "countryCode": "MX",
+      "origin": "http://www.policlinicateziutlan.com",
+      "lat": 19.8065242,
+      "lng": -97.3668528
+    },
+    {
+      "code": "osm:node/5037169921",
+      "name": "Hospital Clínica Nova",
+      "countryCode": "MX",
+      "origin": "https://www.novaservicios.com.mx",
+      "lat": 25.7323396,
+      "lng": -100.300608
+    },
+    {
+      "code": "osm:node/5203520921",
+      "name": "Hospital Christus Muguerza Upaep",
+      "countryCode": "MX",
+      "origin": "https://www.christusmuguerza.com.mx",
+      "lat": 19.0453004,
+      "lng": -98.2049457
+    },
+    {
+      "code": "osm:node/5355524244",
+      "name": "Centro de Salud Cañon Del Sainz",
+      "countryCode": "MX",
+      "origin": "https://saludbc.gob.mx",
+      "lat": 32.422134,
+      "lng": -116.9601153
+    },
+    {
+      "code": "osm:node/5758241889",
+      "name": "Hospital Civil Nuevo Laredo",
+      "countryCode": "MX",
+      "origin": "https://www.tamaulipas.gob.mx",
+      "lat": 27.4929212,
+      "lng": -99.531616
+    },
+    {
+      "code": "osm:node/5758617321",
+      "name": "Servicios de Salud de Tamaulipas Hospital General de Nuevo Laredo",
+      "countryCode": "MX",
+      "origin": "https://www.tamaulipas.gob.mx",
+      "lat": 27.4856665,
+      "lng": -99.5043165
+    },
+    {
+      "code": "osm:node/6005181647",
+      "name": "Centro Médico La Salud",
+      "countryCode": "MX",
+      "origin": "https://centromedicolasalud.com",
+      "lat": 21.8672128,
+      "lng": -102.2834671
+    },
+    {
+      "code": "osm:node/6104391154",
+      "name": "C. Narvaez Hospital",
+      "countryCode": "MX",
+      "origin": "https://www.facebook.com",
+      "lat": 29.319297,
+      "lng": -100.9323728
+    },
+    {
+      "code": "osm:node/6594185188",
+      "name": "International Medical Center TCMS",
+      "countryCode": "MX",
+      "origin": "https://www.internationalmedicalcenter.com",
+      "lat": 21.091316,
+      "lng": -86.7702169
+    },
+    {
+      "code": "osm:node/6594189487",
+      "name": "International Medical Center TCMS",
+      "countryCode": "MX",
+      "origin": "https://www.internationalmedicalcenter.com",
+      "lat": 20.6206413,
+      "lng": -87.0784142
+    },
+    {
+      "code": "osm:node/7287976745",
+      "name": "Hospital D'Maria",
+      "countryCode": "MX",
+      "origin": "https://hospitaldemaria.com.mx",
+      "lat": 19.1845308,
+      "lng": -96.1317031
+    },
+    {
+      "code": "osm:node/8236926529",
+      "name": "SALME",
+      "countryCode": "MX",
+      "origin": "https://salme.jalisco.gob.mx",
+      "lat": 20.7180093,
+      "lng": -103.3713352
+    },
+    {
+      "code": "osm:node/8653477620",
+      "name": "ISSSTELEON",
+      "countryCode": "MX",
+      "origin": "http://isssteleon.gob.mx",
+      "lat": 25.6711434,
+      "lng": -100.319447
+    },
+    {
+      "code": "osm:node/8863776045",
+      "name": "FISIUM VERACRUZ",
+      "countryCode": "MX",
+      "origin": "http://www.fisiumclinicas.com",
+      "lat": 19.1947476,
+      "lng": -96.1317876
+    },
+    {
+      "code": "osm:node/9219031143",
+      "name": "Hospital H+",
+      "countryCode": "MX",
+      "origin": "https://hmasqueretaro.mx",
+      "lat": 20.5840734,
+      "lng": -100.4002547
+    },
+    {
+      "code": "osm:node/9275748313",
+      "name": "San Ángel Hospital",
+      "countryCode": "MX",
+      "origin": "https://sanangelhospital.com",
+      "lat": 27.4701036,
+      "lng": -99.511182
+    },
+    {
+      "code": "osm:node/9275748316",
+      "name": "Hospital de Especialidades",
+      "countryCode": "MX",
+      "origin": "https://hospitalespecialidades.com",
+      "lat": 27.4690151,
+      "lng": -99.5121645
+    },
+    {
+      "code": "osm:node/9786714028",
+      "name": "AS Medical Group",
+      "countryCode": "MX",
+      "origin": "https://asmedicalgroup.com",
+      "lat": 19.0205015,
+      "lng": -98.2647201
+    },
+    {
+      "code": "osm:node/10128663728",
+      "name": "Laboratorio Santa Fé",
+      "countryCode": "MX",
+      "origin": "https://sites.google.com",
+      "lat": 19.954451,
+      "lng": -99.5471114
+    },
+    {
+      "code": "osm:node/10790945283",
+      "name": "Hospital Santa Martha",
+      "countryCode": "MX",
+      "origin": "https://hospitalsantamartha.com",
+      "lat": 20.6797944,
+      "lng": -103.3111135
+    },
+    {
+      "code": "osm:node/10975558242",
+      "name": "AUDIOSFERA, Centro de Bienestar Auditivo.",
+      "countryCode": "MX",
+      "origin": "https://facebook.com",
+      "lat": 20.9955513,
+      "lng": -89.6440211
+    },
+    {
+      "code": "osm:node/11057241344",
+      "name": "Hair In Mexico",
+      "countryCode": "MX",
+      "origin": "https://hairinmexico.com",
+      "lat": 21.1177289,
+      "lng": -86.8459079
+    },
+    {
+      "code": "osm:node/11235046379",
+      "name": "Vidatox",
+      "countryCode": "MX",
+      "origin": "https://www.vidatox.com.mx",
+      "lat": 19.4541351,
+      "lng": -99.1403548
+    },
+    {
+      "code": "osm:node/12132796101",
+      "name": "Sanatorio San Nicolás de Bari",
+      "countryCode": "MX",
+      "origin": "http://sanatoriosannicolasdebari.com",
+      "lat": 20.7308992,
+      "lng": -103.3503861
+    },
+    {
+      "code": "osm:node/12426019404",
+      "name": "Costamed",
+      "countryCode": "MX",
+      "origin": "https://www.costamed.com.mx",
+      "lat": 20.215448,
+      "lng": -87.4504223
+    },
+    {
+      "code": "osm:node/12463995248",
+      "name": "Servicios De Salud Del Estado De Oaxaca",
+      "countryCode": "MX",
+      "origin": "https://www.salud.oaxaca.gob.mx",
+      "lat": 17.0802785,
+      "lng": -96.7160463
+    },
+    {
+      "code": "osm:node/12464195199",
+      "name": "Hospital Regional De Alta Especialidad De Oaxaca",
+      "countryCode": "MX",
+      "origin": "https://www.hraeoaxaca.salud.gob.mx",
+      "lat": 16.9477684,
+      "lng": -96.7117158
+    },
+    {
+      "code": "osm:node/12466296848",
+      "name": "Medica 2002",
+      "countryCode": "MX",
+      "origin": "https://www.medica2002.com",
+      "lat": 17.0782384,
+      "lng": -96.7166758
+    },
+    {
+      "code": "osm:node/12470448171",
+      "name": "Fucam",
+      "countryCode": "MX",
+      "origin": "https://www.fucam.org.mx",
+      "lat": 16.992594,
+      "lng": -96.7559282
+    },
+    {
+      "code": "osm:node/12517336609",
+      "name": "Sanatorio Florencia",
+      "countryCode": "MX",
+      "origin": "https://www.sanatorioflorencia.com.mx",
+      "lat": 19.284393,
+      "lng": -99.6740527
+    },
+    {
+      "code": "osm:node/12522245363",
+      "name": "Serme Metepec",
+      "countryCode": "MX",
+      "origin": "https://www.serme.com.mx",
+      "lat": 19.2668341,
+      "lng": -99.6365201
+    },
+    {
+      "code": "osm:node/12542715075",
+      "name": "Hospital Para El Niño",
+      "countryCode": "MX",
+      "origin": "https://salud.edomex.gob.mximiem",
+      "lat": 19.2713901,
+      "lng": -99.6603912
+    },
+    {
+      "code": "osm:node/12544975713",
+      "name": "Vista Diagnostica",
+      "countryCode": "MX",
+      "origin": "https://www.checkespcenter.com",
+      "lat": 19.3591631,
+      "lng": -99.2746158
+    },
+    {
+      "code": "osm:node/12545611239",
+      "name": "Sanatorio Venecia de Toluca",
+      "countryCode": "MX",
+      "origin": "https://sanatoriovenecia.com",
+      "lat": 19.2724867,
+      "lng": -99.6525751
+    },
+    {
+      "code": "osm:node/12545754767",
+      "name": "Reina Madre Clinicas De La Mujer Toluca",
+      "countryCode": "MX",
+      "origin": "https://www.reinamadre.mx",
+      "lat": 19.2733037,
+      "lng": -99.6615113
+    },
+    {
+      "code": "osm:node/12547390588",
+      "name": "Reina Madre Metepec",
+      "countryCode": "MX",
+      "origin": "https://www.reinamadre.mx",
+      "lat": 19.277655,
+      "lng": -99.5558579
+    },
+    {
+      "code": "osm:node/12547950486",
+      "name": "Hospital Materno Perinatal Mónica Pretelini Sáenz",
+      "countryCode": "MX",
+      "origin": "https://salud.edomex.gob.mx",
+      "lat": 19.2723493,
+      "lng": -99.656894
+    },
+    {
+      "code": "osm:node/12554741368",
+      "name": "Torre Genesis",
+      "countryCode": "MX",
+      "origin": "https://www.torregenesis.com",
+      "lat": 19.2950499,
+      "lng": -99.6626104
+    },
+    {
+      "code": "osm:node/12560402801",
+      "name": "Noor Clinic",
+      "countryCode": "MX",
+      "origin": "https://www.noorclinic.mx",
+      "lat": 19.4309949,
+      "lng": -99.2820695
+    },
+    {
+      "code": "osm:node/12578916100",
+      "name": "Centro Oncológico Estatal Issemym",
+      "countryCode": "MX",
+      "origin": "https://www.issemym.gob.mx",
+      "lat": 19.2684525,
+      "lng": -99.6523073
+    },
+    {
+      "code": "osm:node/13176681476",
+      "name": "CanMex Health Urgent & Primary Care Clinic",
+      "countryCode": "MX",
+      "origin": "https://canmexhealth.com",
+      "lat": 20.6023437,
+      "lng": -105.2324032
+    },
+    {
+      "code": "osm:node/13580817643",
+      "name": "Laboratorio Clinico Roma",
+      "countryCode": "MX",
+      "origin": "https://www.laboratorioclinicoroma.com",
+      "lat": 24.0140878,
+      "lng": -104.6785538
+    },
+    {
+      "code": "osm:node/13618132427",
+      "name": "US Mexico Stem Cell Institute",
+      "countryCode": "MX",
+      "origin": "https://usmexicostemcellinstitute.com",
+      "lat": 32.5237304,
+      "lng": -117.0113772
+    },
+    {
+      "code": "osm:node/13731129901",
+      "name": "Urgencias ortopedicas INR-LGII",
+      "countryCode": "MX",
+      "origin": "https://www.inr.gob.mx",
+      "lat": 19.2888964,
+      "lng": -99.1477531
+    },
+    {
+      "code": "osm:node/13853760239",
+      "name": "Clínica Transitoria de Salud Mental Adulam",
+      "countryCode": "MX",
+      "origin": "https://clinicaadulam.com",
+      "lat": 19.3723437,
+      "lng": -102.0489105
+    },
+    {
+      "code": "osm:node/14060352762",
+      "name": "AmeriMed Hospital Playa del Carmen",
+      "countryCode": "MX",
+      "origin": "https://amerimedplaya.com",
+      "lat": 20.6325203,
+      "lng": -87.0803825
+    },
+    {
+      "code": "osm:way/27804337",
+      "name": "Centro Médico ABC",
+      "countryCode": "MX",
+      "origin": "https://centromedicoabc.com",
+      "lat": 19.4002123,
+      "lng": -99.2039979
+    },
+    {
+      "code": "osm:way/30965126",
+      "name": "Centro Médico ABC",
+      "countryCode": "MX",
+      "origin": "https://centromedicoabc.com",
+      "lat": 19.3563214,
+      "lng": -99.2823418
+    },
+    {
+      "code": "osm:way/149595979",
+      "name": "Hospital General Balbuena",
+      "countryCode": "MX",
+      "origin": "http://data.salud.cdmx.gob.mx",
+      "lat": 19.4241375,
+      "lng": -99.1153992
+    },
+    {
+      "code": "osm:way/150941444",
+      "name": "ISSEMYM",
+      "countryCode": "MX",
+      "origin": "https://www.issemym.gob.mx",
+      "lat": 19.507823,
+      "lng": -98.8841554
+    },
+    {
+      "code": "osm:way/188831164",
+      "name": "Hospital Regional Universitario de Colima",
+      "countryCode": "MX",
+      "origin": "https://saludcolima.gob.mx",
+      "lat": 19.2572661,
+      "lng": -103.6898951
+    },
+    {
+      "code": "osm:way/194043379",
+      "name": "Hospital General de Mexicali",
+      "countryCode": "MX",
+      "origin": "https://www.issste.gob.mx",
+      "lat": 32.6446432,
+      "lng": -115.4755772
+    },
+    {
+      "code": "osm:way/205403528",
+      "name": "Centro Médico de Toluca",
+      "countryCode": "MX",
+      "origin": "https://www.centromedicodetoluca.com.mx",
+      "lat": 19.2559217,
+      "lng": -99.6141442
+    },
+    {
+      "code": "osm:way/217015183",
+      "name": "Instituto Nacional de Medicina Genómica",
+      "countryCode": "MX",
+      "origin": "https://www.inmegen.gob.mx",
+      "lat": 19.2860898,
+      "lng": -99.1506705
+    },
+    {
+      "code": "osm:way/241944362",
+      "name": "ISSSTE Clínica Hospital Tuxtepec",
+      "countryCode": "MX",
+      "origin": "http://www.issste.gob.mx",
+      "lat": 18.0823484,
+      "lng": -96.1518326
+    },
+    {
+      "code": "osm:way/244312010",
+      "name": "Centro Regional de Alta Especialidad Ciudad Salud",
+      "countryCode": "MX",
+      "origin": "https://www.gob.mx",
+      "lat": 14.8080915,
+      "lng": -92.3446469
+    },
+    {
+      "code": "osm:way/245220242",
+      "name": "ISSSTE Mazatlán",
+      "countryCode": "MX",
+      "origin": "https://www.gob.mx",
+      "lat": 23.2528491,
+      "lng": -106.4187228
+    },
+    {
+      "code": "osm:way/254904655",
+      "name": "Hospital Vivo Jardín Bicentenario",
+      "countryCode": "MX",
+      "origin": "https://www.starmedica.com",
+      "lat": 19.4273063,
+      "lng": -99.0251298
+    },
+    {
+      "code": "osm:way/258805184",
+      "name": "Hospital de Tulum",
+      "countryCode": "MX",
+      "origin": "https://www.hospitaldetulum.com",
+      "lat": 20.2099323,
+      "lng": -87.4677135
+    },
+    {
+      "code": "osm:way/258998349",
+      "name": "Hospital San Jose Tec de Monterrey",
+      "countryCode": "MX",
+      "origin": "https://www.hsj.com.mx",
+      "lat": 25.6682129,
+      "lng": -100.3514843
+    },
+    {
+      "code": "osm:way/284840877",
+      "name": "Hospital Materno Perinatal Mónica Pretelini Sáenz",
+      "countryCode": "MX",
+      "origin": "https://salud.edomex.gob.mx",
+      "lat": 19.2720748,
+      "lng": -99.657208
+    },
+    {
+      "code": "osm:way/298618013",
+      "name": "Real San José",
+      "countryCode": "MX",
+      "origin": "https://www.hrsj.com.mx",
+      "lat": 20.6725773,
+      "lng": -103.4092279
+    },
+    {
+      "code": "osm:way/299515969",
+      "name": "Hospiten Riviera Maya",
+      "countryCode": "MX",
+      "origin": "https://hospiten.com",
+      "lat": 20.6164546,
+      "lng": -87.0949835
+    },
+    {
+      "code": "osm:way/307099775",
+      "name": "Hospital de la Niñez Oaxaqueña",
+      "countryCode": "MX",
+      "origin": "https://www.salud.oaxaca.gob.mx",
+      "lat": 16.9465385,
+      "lng": -96.7110525
+    },
+    {
+      "code": "osm:way/320073442",
+      "name": "Cruz Roja Mexicana",
+      "countryCode": "MX",
+      "origin": "http://oaxaca.cruzrojamexicana.org.mx",
+      "lat": 17.055822,
+      "lng": -96.7250485
+    },
+    {
+      "code": "osm:way/321074326",
+      "name": "Clinica Salvati",
+      "countryCode": "MX",
+      "origin": "https://salvati.org.mx",
+      "lat": 19.3849913,
+      "lng": -99.1834497
+    },
+    {
+      "code": "osm:way/347305905",
+      "name": "Hospital Central",
+      "countryCode": "MX",
+      "origin": "https://cmacve.org",
+      "lat": 28.6438471,
+      "lng": -106.0644979
+    },
+    {
+      "code": "osm:way/358423857",
+      "name": "Centro Médico San Lucas (Otorrino, Pediatría)",
+      "countryCode": "MX",
+      "origin": "https://medsanlucas.com",
+      "lat": 20.7003955,
+      "lng": -88.2225831
+    },
+    {
+      "code": "osm:way/376535300",
+      "name": "Centro Médico Chiapas Nos Une \"Dr. Jesús Gilberto Gómez Maza\"",
+      "countryCode": "MX",
+      "origin": "https://salud.chiapas.gob.mx",
+      "lat": 16.7487103,
+      "lng": -93.072802
+    },
+    {
+      "code": "osm:way/377422842",
+      "name": "Amerimed",
+      "countryCode": "MX",
+      "origin": "https://drjoyaofficial.com",
+      "lat": 20.6719792,
+      "lng": -105.2493219
+    },
+    {
+      "code": "osm:way/392811177",
+      "name": "Hospital General de Valladolid",
+      "countryCode": "MX",
+      "origin": "http://salud.yucatan.gob.mx",
+      "lat": 20.7088804,
+      "lng": -88.1895987
+    },
+    {
+      "code": "osm:way/404849773",
+      "name": "Hospital Comunitario Cortazar",
+      "countryCode": "MX",
+      "origin": "http://seguropopular.guanajuato.gob.mx",
+      "lat": 20.4747467,
+      "lng": -100.9558706
+    },
+    {
+      "code": "osm:way/424129770",
+      "name": "Unidad De Medicina Familiar Con Unidad Medica De Atencion Ambulatoria Numero 231 Del Instituto Mexicano Del Seguro Social",
+      "countryCode": "MX",
+      "origin": "https://www.imss.com.mx",
+      "lat": 19.2589585,
+      "lng": -99.5958356
+    },
+    {
+      "code": "osm:way/485923987",
+      "name": "CLINICA REHABILITA SUR la rioja",
+      "countryCode": "MX",
+      "origin": "https://drhernanflores.com",
+      "lat": 25.5799556,
+      "lng": -100.2489992
+    },
+    {
+      "code": "osm:way/508763026",
+      "name": "Cruz Roja Mexicana",
+      "countryCode": "MX",
+      "origin": "https://www.cruzrojamexicana.org.mx",
+      "lat": 22.1400381,
+      "lng": -100.9729388
+    },
+    {
+      "code": "osm:way/554991865",
+      "name": "Centro de Salud Cañon Del Sainz",
+      "countryCode": "MX",
+      "origin": "https://saludbc.gob.mx",
+      "lat": 32.4222662,
+      "lng": -116.9601368
+    },
+    {
+      "code": "osm:way/558313303",
+      "name": "Hospital General \"Dr. Raul A. Carrillo\" San Jose del Cabo B.C.S",
+      "countryCode": "MX",
+      "origin": "https://mexicoo.mx",
+      "lat": 23.0614191,
+      "lng": -109.7082956
+    },
+    {
+      "code": "osm:way/624765474",
+      "name": "Centro Medico Los Angeles",
+      "countryCode": "MX",
+      "origin": "http://cmla.com.mx",
+      "lat": 25.6991733,
+      "lng": -100.3380825
+    },
+    {
+      "code": "osm:way/658248838",
+      "name": "Hospital Santo Tomas",
+      "countryCode": "MX",
+      "origin": "https://www.hospitalsantotomas.com",
+      "lat": 20.6267796,
+      "lng": -100.4617236
+    },
+    {
+      "code": "osm:way/667589253",
+      "name": "Hospital General Regional de León",
+      "countryCode": "MX",
+      "origin": "https://salud.guanajuato.gob.mx",
+      "lat": 21.1327086,
+      "lng": -101.6801656
+    },
+    {
+      "code": "osm:way/689229769",
+      "name": "Cimigen",
+      "countryCode": "MX",
+      "origin": "https://www.cimigen.org.mx",
+      "lat": 19.3219126,
+      "lng": -99.0917065
+    },
+    {
+      "code": "osm:way/717377289",
+      "name": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+      "countryCode": "MX",
+      "origin": "https://www.gob.mx",
+      "lat": 20.6465454,
+      "lng": -105.2205943
+    },
+    {
+      "code": "osm:way/878069086",
+      "name": "Cruz Roja Mexicana",
+      "countryCode": "MX",
+      "origin": "https://cruzrojamexicana.org.mx",
+      "lat": 19.6156984,
+      "lng": -98.1224368
+    },
+    {
+      "code": "osm:way/878098273",
+      "name": "Hospital Comunitario Ojocaliente",
+      "countryCode": "MX",
+      "origin": "https://hospitalesmexico.com",
+      "lat": 22.5848406,
+      "lng": -102.2393925
+    },
+    {
+      "code": "osm:way/882204512",
+      "name": "Hospital ISSSTE",
+      "countryCode": "MX",
+      "origin": "https://www.gob.mx",
+      "lat": 27.4844214,
+      "lng": -99.5052351
+    },
+    {
+      "code": "osm:way/883832110",
+      "name": "Hospital San Javier",
+      "countryCode": "MX",
+      "origin": "https://www.sanjavier.com.mx",
+      "lat": 20.6879591,
+      "lng": -103.3896237
+    },
+    {
+      "code": "osm:way/885410120",
+      "name": "Hospital Puerta de Hierro Colima",
+      "countryCode": "MX",
+      "origin": "https://hospitalespuertadehierro.com",
+      "lat": 19.2601271,
+      "lng": -103.7071893
+    },
+    {
+      "code": "osm:way/886964801",
+      "name": "Hospital Traumatología y Ortopedia",
+      "countryCode": "MX",
+      "origin": "http://ss.pue.gob.mx",
+      "lat": 19.0866739,
+      "lng": -98.1986299
+    },
+    {
+      "code": "osm:way/887801518",
+      "name": "Hospital CAMI",
+      "countryCode": "MX",
+      "origin": "https://camihospital.com.mx",
+      "lat": 19.4239068,
+      "lng": -99.1050215
+    },
+    {
+      "code": "osm:way/942641769",
+      "name": "Saint Luke's Hospitals",
+      "countryCode": "MX",
+      "origin": "https://www.saintlukeshospitals.com",
+      "lat": 23.0615819,
+      "lng": -109.6727489
+    },
+    {
+      "code": "osm:way/957374416",
+      "name": "ISSSTE",
+      "countryCode": "MX",
+      "origin": "https://www.gob.mx",
+      "lat": 21.0122002,
+      "lng": -89.6570946
+    },
+    {
+      "code": "osm:way/983415680",
+      "name": "Hospital Colima",
+      "countryCode": "MX",
+      "origin": "https://hospitalcolima.com",
+      "lat": 19.2612581,
+      "lng": -103.7064058
+    },
+    {
+      "code": "osm:way/1046547127",
+      "name": "ANGEL DEL MAR",
+      "countryCode": "MX",
+      "origin": "https://www.angeldelmar.com.mx",
+      "lat": 15.8677224,
+      "lng": -97.0693403
+    },
+    {
+      "code": "osm:way/1109165792",
+      "name": "Clinica Medica San Angel",
+      "countryCode": "MX",
+      "origin": "https://www.clinicamedicasanangelsadecv.com",
+      "lat": 19.182803,
+      "lng": -99.4677143
+    },
+    {
+      "code": "osm:way/1138120784",
+      "name": "Hospitaria",
+      "countryCode": "MX",
+      "origin": "https://www.hospitaria.com",
+      "lat": 25.7666015,
+      "lng": -100.3074015
+    },
+    {
+      "code": "osm:way/1232524195",
+      "name": "Hospital San Ángel Inn Chapultepec",
+      "countryCode": "MX",
+      "origin": "https://www.hospitalsanangelinn.mx",
+      "lat": 19.4218977,
+      "lng": -99.1729447
+    },
+    {
+      "code": "osm:way/1288174181",
+      "name": "Hospital General De Zona No. 252 IMSS",
+      "countryCode": "MX",
+      "origin": "http://www.imss.gob.mx",
+      "lat": 19.7833118,
+      "lng": -99.875332
+    },
+    {
+      "code": "osm:way/1311565952",
+      "name": "Hospital Zaragoza",
+      "countryCode": "MX",
+      "origin": "https://www.hospitalzaragoza.com",
+      "lat": 31.6490392,
+      "lng": -106.3563938
+    },
+    {
+      "code": "osm:way/1371383529",
+      "name": "Clínica Mexicana de Autismo y Alteraciones del Desarrollo",
+      "countryCode": "MX",
+      "origin": "https://www.clima.org.mx",
+      "lat": 19.3787395,
+      "lng": -99.1911842
+    },
+    {
+      "code": "osm:way/1387118128",
+      "name": "Hospital de la Luz",
+      "countryCode": "MX",
+      "origin": "https://hospitaldelaluz.org",
+      "lat": 19.4349687,
+      "lng": -99.1569588
+    },
+    {
+      "code": "osm:way/1389919265",
+      "name": "Hospiten Cancún",
+      "countryCode": "MX",
+      "origin": "https://hospiten.com",
+      "lat": 21.1383201,
+      "lng": -86.8231947
+    },
+    {
+      "code": "osm:way/1421204350",
+      "name": "Hospital Angeles Clinica Londres",
+      "countryCode": "MX",
+      "origin": "https://hospitalesangeles.com",
+      "lat": 19.4216466,
+      "lng": -99.1569296
+    },
+    {
+      "code": "osm:way/1433883120",
+      "name": "Hospital Vistas del Sol",
+      "countryCode": "MX",
+      "origin": "https://www.hospitalvistasdelsol.com",
+      "lat": 28.1795213,
+      "lng": -105.4747505
+    },
+    {
+      "code": "osm:way/1491296871",
+      "name": "Hospital del Sol",
+      "countryCode": "MX",
+      "origin": "http://www.hospitaldelsol.com.mx",
+      "lat": 31.7496541,
+      "lng": -106.4583641
+    },
+    {
+      "code": "osm:way/1532059675",
+      "name": "Instituto Nacional de Psiquiatría \"Ramón de la Fuente Muñiz\"",
+      "countryCode": "MX",
+      "origin": "https://inprf.gob.mx",
+      "lat": 19.2926967,
+      "lng": -99.1524212
+    },
+    {
+      "code": "osm:way/1563649483",
+      "name": "Hospital Médica MIA",
+      "countryCode": "MX",
+      "origin": "https://medicamia.com.mx",
+      "lat": 19.2927306,
+      "lng": -99.5558522
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "countryCode": "AL",
+  "fetchedAt": "2026-10-21T00:37:41.460Z",
+  "count": 15,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/11494114569",
+      "name": "Your Medical Clinic",
+      "countryCode": "AL",
+      "origin": "https://yourmedicalclinic.al",
+      "lat": 41.3423825,
+      "lng": 19.8334855
+    },
+    {
+      "code": "osm:way/269906354",
+      "name": "Spitali Gjerman",
+      "countryCode": "AL",
+      "origin": "https://www.spitaligjerman.com",
+      "lat": 41.3263577,
+      "lng": 19.8062561
+    },
+    {
+      "code": "osm:way/356922410",
+      "name": "Qendra Spitalore Universitare \"Nënë Teresa\"",
+      "countryCode": "AL",
+      "origin": "https://www.qsut.gov.al",
+      "lat": 41.3403651,
+      "lng": 19.8330444
+    },
+    {
+      "code": "osm:way/378657446",
+      "name": "Spitali Rajonal Shkoder",
+      "countryCode": "AL",
+      "origin": "http://srsh.gov.al",
+      "lat": 42.0740665,
+      "lng": 19.524826
+    },
+    {
+      "code": "osm:way/457216792",
+      "name": "Spitali Amerikan 2",
+      "countryCode": "AL",
+      "origin": "https://spitaliamerikan.com",
+      "lat": 41.3421069,
+      "lng": 19.8324628
+    },
+    {
+      "code": "osm:way/459674859",
+      "name": "Spitali Gjerman 2",
+      "countryCode": "AL",
+      "origin": "https://spitaligjerman.com",
+      "lat": 41.3370881,
+      "lng": 19.8318623
+    },
+    {
+      "code": "osm:way/463111180",
+      "name": "Spitali Universitar i Traumës (SUT)",
+      "countryCode": "AL",
+      "origin": "https://sut.gov.al",
+      "lat": 41.3431709,
+      "lng": 19.7953117
+    },
+    {
+      "code": "osm:way/471788937",
+      "name": "Spitali Universitar Obstetrik-Gjinekologjik \"Mbretëresha Geraldinë\"",
+      "countryCode": "AL",
+      "origin": "https://www.suogjgeraldine.gov.al",
+      "lat": 41.3346811,
+      "lng": 19.8173994
+    },
+    {
+      "code": "osm:way/484682743",
+      "name": "Spitali Shkodër",
+      "countryCode": "AL",
+      "origin": "http://srsh.gov.al",
+      "lat": 42.0736812,
+      "lng": 19.5233319
+    },
+    {
+      "code": "osm:way/548098442",
+      "name": "Spitali Amavita",
+      "countryCode": "AL",
+      "origin": "https://www.spitaliamavita.al",
+      "lat": 41.3213854,
+      "lng": 19.8295549
+    },
+    {
+      "code": "osm:way/748648347",
+      "name": "Salus",
+      "countryCode": "AL",
+      "origin": "https://www.salus.al",
+      "lat": 41.344375,
+      "lng": 19.7621716
+    },
+    {
+      "code": "osm:way/920549049",
+      "name": "Spitali Rajonal Memorial Fier",
+      "countryCode": "AL",
+      "origin": "https://srmemorial-fier.al",
+      "lat": 40.7470084,
+      "lng": 19.5546907
+    },
+    {
+      "code": "osm:way/1230008819",
+      "name": "Spitali Amerikan 3",
+      "countryCode": "AL",
+      "origin": "https://spitaliamerikan.com",
+      "lat": 41.3207584,
+      "lng": 19.7843001
+    },
+    {
+      "code": "osm:way/1268266144",
+      "name": "Hygeia Hospital",
+      "countryCode": "AL",
+      "origin": "https://hygeia.al",
+      "lat": 41.3444895,
+      "lng": 19.7743087
+    },
+    {
+      "code": "osm:way/1311278935",
+      "name": "Spitali Continental",
+      "countryCode": "AL",
+      "origin": "https://spitalicontinental.com",
+      "lat": 41.331659,
+      "lng": 19.8485802
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "countryCode": "MV",
+  "fetchedAt": "2026-10-21T02:10:42.481Z",
+  "count": 5,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/5574309273",
+      "name": "Faafu Atoll Hospital",
+      "countryCode": "MV",
+      "origin": "http://www.fah.gov.mv",
+      "lat": 3.0560067,
+      "lng": 72.8894855
+    },
+    {
+      "code": "osm:node/9951513836",
+      "name": "Senahiya Military Hospital",
+      "countryCode": "MV",
+      "origin": "https://senahiya.business.site",
+      "lat": 4.1716899,
+      "lng": 73.516507
+    },
+    {
+      "code": "osm:node/10861839404",
+      "name": "L.Isdhoo Health Centre (IHC)",
+      "countryCode": "MV",
+      "origin": "https://www.facebook.com",
+      "lat": 2.1177793,
+      "lng": 73.5695037
+    },
+    {
+      "code": "osm:way/383751026",
+      "name": "ހުޅުމާލެ ހޮސްޕިޓަލް",
+      "countryCode": "MV",
+      "origin": "https://hmh.gov.mv",
+      "lat": 4.2157382,
+      "lng": 73.5431478
+    },
+    {
+      "code": "osm:way/1167904137",
+      "name": "L.Isdhoo Health Centre (IHC)",
+      "countryCode": "MV",
+      "origin": "https://www.facebook.com",
+      "lat": 2.117849,
+      "lng": 73.569273
+    }
+  ]
+}

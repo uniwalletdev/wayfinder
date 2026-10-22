@@ -1,0 +1,41 @@
+{
+  "countryCode": "OM",
+  "fetchedAt": "2026-10-21T02:22:37.229Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1012451802",
+      "name": "مجمع ياس الطبي",
+      "countryCode": "OM",
+      "origin": "https://www.yas.med.om",
+      "lat": 24.2592656,
+      "lng": 55.7727013
+    },
+    {
+      "code": "osm:node/4364338393",
+      "name": "مركز مقنيات الصحى",
+      "countryCode": "OM",
+      "origin": "https://www.moh.gov.om",
+      "lat": 23.3782835,
+      "lng": 56.8702654
+    },
+    {
+      "code": "osm:way/1046083772",
+      "name": "مركز العوينات الصحي",
+      "countryCode": "OM",
+      "origin": "https://www.moh.gov.om",
+      "lat": 24.2653504,
+      "lng": 56.8067133
+    },
+    {
+      "code": "osm:way/1375028582",
+      "name": "مركز السلطان قابوس المتكامل لعلاج وبحوث أمراض السرطان",
+      "countryCode": "OM",
+      "origin": "https://cccrc.gov.om",
+      "lat": 23.5813939,
+      "lng": 58.1772886
+    }
+  ]
+}

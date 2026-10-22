@@ -1,0 +1,633 @@
+{
+  "countryCode": "HR",
+  "fetchedAt": "2026-10-21T01:35:50.433Z",
+  "count": 78,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/858926388",
+      "name": "Daruvarske toplice specijalna bolnica za medicinsku rehabilitaciju",
+      "countryCode": "HR",
+      "origin": "https://www.daruvarske-toplice.hr",
+      "lat": 45.5973152,
+      "lng": 17.2270514
+    },
+    {
+      "code": "osm:node/2111154012",
+      "name": "Specijalna bolnica dr. Nemec",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-nemec.hr",
+      "lat": 45.3640563,
+      "lng": 14.3134832
+    },
+    {
+      "code": "osm:node/2624410045",
+      "name": "Specijalna bolnica za plućne bolesti",
+      "countryCode": "HR",
+      "origin": "https://pulmologija.hr",
+      "lat": 45.8421942,
+      "lng": 15.9715482
+    },
+    {
+      "code": "osm:node/4781063323",
+      "name": "Klinika Magdalena",
+      "countryCode": "HR",
+      "origin": "https://magdalena.hr",
+      "lat": 46.0941872,
+      "lng": 15.8371297
+    },
+    {
+      "code": "osm:node/10006164916",
+      "name": "Specijalna bolnica Primamed",
+      "countryCode": "HR",
+      "origin": "https://primamed.hr",
+      "lat": 45.8000303,
+      "lng": 16.0081796
+    },
+    {
+      "code": "osm:node/10699812393",
+      "name": "Specijalna bolnica Sveta Katarina",
+      "countryCode": "HR",
+      "origin": "https://www.svkatarina.hr",
+      "lat": 45.8092967,
+      "lng": 16.0025755
+    },
+    {
+      "code": "osm:node/11766237763",
+      "name": "Specijalna bolnica Biokovka",
+      "countryCode": "HR",
+      "origin": "https://www.biokovka.hr",
+      "lat": 43.3038723,
+      "lng": 17.0076438
+    },
+    {
+      "code": "osm:node/11771120266",
+      "name": "Lječilište Bizovačke toplice",
+      "countryCode": "HR",
+      "origin": "https://www.ljeciliste-bizovacke.hr",
+      "lat": 45.5809818,
+      "lng": 18.4599822
+    },
+    {
+      "code": "osm:way/29258328",
+      "name": "Klinički bolnički centar Zagreb",
+      "countryCode": "HR",
+      "origin": "https://www.kbc-zagreb.hr",
+      "lat": 45.8245772,
+      "lng": 16.0062981
+    },
+    {
+      "code": "osm:way/29273986",
+      "name": "Klinička bolnica Sveti Duh",
+      "countryCode": "HR",
+      "origin": "https://www.kbsd.hr",
+      "lat": 45.8204226,
+      "lng": 15.9393017
+    },
+    {
+      "code": "osm:way/41733363",
+      "name": "Zavod za fizikalnu medicinu i rehabilitaciju",
+      "countryCode": "HR",
+      "origin": "https://www.kbco.hr",
+      "lat": 45.5826252,
+      "lng": 18.4619379
+    },
+    {
+      "code": "osm:way/53271331",
+      "name": "Klinički bolnički centar Rijeka, lokacija Sušak",
+      "countryCode": "HR",
+      "origin": "https://kbc-rijeka.hr",
+      "lat": 45.3262407,
+      "lng": 14.4700462
+    },
+    {
+      "code": "osm:way/53399551",
+      "name": "Opća bolnica dr. Anđelko Višić Bjelovar",
+      "countryCode": "HR",
+      "origin": "https://www.obbj.hr",
+      "lat": 45.9020675,
+      "lng": 16.8481207
+    },
+    {
+      "code": "osm:way/61690492",
+      "name": "Psihijatrijska bolnica Ugljan",
+      "countryCode": "HR",
+      "origin": "https://www.pbu.hr",
+      "lat": 44.1108941,
+      "lng": 15.09905
+    },
+    {
+      "code": "osm:way/77199285",
+      "name": "Klinički bolnički centar Osijek",
+      "countryCode": "HR",
+      "origin": "https://www.kbco.hr",
+      "lat": 45.5587417,
+      "lng": 18.713346
+    },
+    {
+      "code": "osm:way/77485340",
+      "name": "Klinika za psihijatriju Vrapče",
+      "countryCode": "HR",
+      "origin": "https://bolnica-vrapce.hr",
+      "lat": 45.8168285,
+      "lng": 15.897714
+    },
+    {
+      "code": "osm:way/77937975",
+      "name": "Klinika za dječje bolesti",
+      "countryCode": "HR",
+      "origin": "https://www.kdb.hr",
+      "lat": 45.8098095,
+      "lng": 15.9647245
+    },
+    {
+      "code": "osm:way/78326996",
+      "name": "Klinička bolnica Dubrava",
+      "countryCode": "HR",
+      "origin": "https://www.kbd.hr",
+      "lat": 45.834625,
+      "lng": 16.0354094
+    },
+    {
+      "code": "osm:way/80201371",
+      "name": "Klinički bolnički centar Sestre milosrdnice - Vinogradska",
+      "countryCode": "HR",
+      "origin": "https://www.kbcsm.hr",
+      "lat": 45.8160096,
+      "lng": 15.9515401
+    },
+    {
+      "code": "osm:way/82900662",
+      "name": "Klinika za plućne bolesti",
+      "countryCode": "HR",
+      "origin": "https://www.kbc-zagreb.hr",
+      "lat": 45.8257388,
+      "lng": 16.0034202
+    },
+    {
+      "code": "osm:way/82905246",
+      "name": "Klinika za infektivne bolesti Dr. Fran Mihaljević",
+      "countryCode": "HR",
+      "origin": "https://bfm.hr",
+      "lat": 45.830291,
+      "lng": 15.9813783
+    },
+    {
+      "code": "osm:way/98007394",
+      "name": "Opća županijska bolnica Vinkovci",
+      "countryCode": "HR",
+      "origin": "http://www.obvk.hr",
+      "lat": 45.2926541,
+      "lng": 18.8190231
+    },
+    {
+      "code": "osm:way/104277970",
+      "name": "Županijska bolnica Čakovec",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-cakovec.hr",
+      "lat": 46.3936219,
+      "lng": 16.4338506
+    },
+    {
+      "code": "osm:way/116796477",
+      "name": "Klinika za ortopediju Lovran",
+      "countryCode": "HR",
+      "origin": "http://www.orto-lovran.hr",
+      "lat": 45.2990138,
+      "lng": 14.2783319
+    },
+    {
+      "code": "osm:way/116927077",
+      "name": "KBC Split - Križine",
+      "countryCode": "HR",
+      "origin": "https://www.kbsplit.hr",
+      "lat": 43.5054827,
+      "lng": 16.4690302
+    },
+    {
+      "code": "osm:way/131470836",
+      "name": "Klinički bolnički centar Rijeka",
+      "countryCode": "HR",
+      "origin": "https://kbc-rijeka.hr",
+      "lat": 45.3323592,
+      "lng": 14.4274398
+    },
+    {
+      "code": "osm:way/136874356",
+      "name": "Opća bolnica dr. Ivo Pedišić",
+      "countryCode": "HR",
+      "origin": "https://obs.hr",
+      "lat": 45.476428,
+      "lng": 16.3695055
+    },
+    {
+      "code": "osm:way/142955090",
+      "name": "Klinički bolnički centar Split - Firule",
+      "countryCode": "HR",
+      "origin": "https://www.kbsplit.hr",
+      "lat": 43.5040602,
+      "lng": 16.4591932
+    },
+    {
+      "code": "osm:way/171840875",
+      "name": "Klinika za traumatologiju",
+      "countryCode": "HR",
+      "origin": "https://www.kbcsm.hr",
+      "lat": 45.810375,
+      "lng": 15.9844984
+    },
+    {
+      "code": "osm:way/184487118",
+      "name": "Opća bolnica Dr. Josip Benčević Slavonski Brod",
+      "countryCode": "HR",
+      "origin": "https://www.bolnicasb.hr",
+      "lat": 45.1554294,
+      "lng": 18.0255409
+    },
+    {
+      "code": "osm:way/219786475",
+      "name": "Klinika za tumore",
+      "countryCode": "HR",
+      "origin": "https://www.kbcsm.hr",
+      "lat": 45.8123702,
+      "lng": 15.9440731
+    },
+    {
+      "code": "osm:way/258800709",
+      "name": "Opća županijska bolnica Pakrac i bolnica hrvatskih veterana",
+      "countryCode": "HR",
+      "origin": "https://ozbpakrac-bhv.hr",
+      "lat": 45.429932,
+      "lng": 17.1882569
+    },
+    {
+      "code": "osm:way/277802187",
+      "name": "Opća bolnica Varaždin",
+      "countryCode": "HR",
+      "origin": "https://www.obv.hr",
+      "lat": 46.3029924,
+      "lng": 16.3267377
+    },
+    {
+      "code": "osm:way/295117843",
+      "name": "Nacionalna memorijalna bolnica \"Dr. Juraj Njavro\" Vukovar",
+      "countryCode": "HR",
+      "origin": "https://ob-vukovar.hr",
+      "lat": 45.3577198,
+      "lng": 18.9932325
+    },
+    {
+      "code": "osm:way/302315754",
+      "name": "Županijska specijalna bolnica Insula",
+      "countryCode": "HR",
+      "origin": "https://www.bolnicarab.hr",
+      "lat": 44.779586,
+      "lng": 14.7201499
+    },
+    {
+      "code": "osm:way/316774268",
+      "name": "Služba za produženo liječenje i palijativnu skrb Novi Marof",
+      "countryCode": "HR",
+      "origin": "https://www.obv.hr",
+      "lat": 46.1661426,
+      "lng": 16.3375048
+    },
+    {
+      "code": "osm:way/316779182",
+      "name": "Specijalna bolnica za medicinsku rehabilitaciju Varaždinske Toplice",
+      "countryCode": "HR",
+      "origin": "https://www.minerva.hr",
+      "lat": 46.2105137,
+      "lng": 16.4211018
+    },
+    {
+      "code": "osm:way/331346640",
+      "name": "Opća bolnica Karlovac",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-karlovac.hr",
+      "lat": 45.4775565,
+      "lng": 15.537911
+    },
+    {
+      "code": "osm:way/363356122",
+      "name": "Opća bolnica Zadar",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-zadar.hr",
+      "lat": 44.1074667,
+      "lng": 15.2346765
+    },
+    {
+      "code": "osm:way/402908007",
+      "name": "Zatvorska bolnica",
+      "countryCode": "HR",
+      "origin": "https://pravosudje.gov.hr",
+      "lat": 45.8398872,
+      "lng": 16.0276519
+    },
+    {
+      "code": "osm:way/406935223",
+      "name": "Opća bolnica Virovitica",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-virovitica.hr",
+      "lat": 45.8286552,
+      "lng": 17.3893633
+    },
+    {
+      "code": "osm:way/417002399",
+      "name": "Klinika za ženske bolesti i porode",
+      "countryCode": "HR",
+      "origin": "https://www.kbc-zagreb.hr",
+      "lat": 45.8159178,
+      "lng": 15.9928688
+    },
+    {
+      "code": "osm:way/428336702",
+      "name": "Opća bolnica Dubrovnik",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-du.hr",
+      "lat": 42.6489182,
+      "lng": 18.0767131
+    },
+    {
+      "code": "osm:way/432817548",
+      "name": "Specijalna bolnica za ortopediju",
+      "countryCode": "HR",
+      "origin": "https://www.ortopedija-biograd.hr",
+      "lat": 43.9476557,
+      "lng": 15.4472319
+    },
+    {
+      "code": "osm:way/485330722",
+      "name": "Specijalna bolnica za medicinsku rehabilitaciju Krapinske Toplice",
+      "countryCode": "HR",
+      "origin": "https://www.sbkt.hr",
+      "lat": 46.093434,
+      "lng": 15.8380196
+    },
+    {
+      "code": "osm:way/490952487",
+      "name": "Opća bolnica Šibensko-kninske županije",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-sibenik.hr",
+      "lat": 43.7324068,
+      "lng": 15.9001496
+    },
+    {
+      "code": "osm:way/494147177",
+      "name": "Bolnica za ortopediju i rehabilitaciju Martin Horvat Rovinj",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-rovinj.hr",
+      "lat": 45.098603,
+      "lng": 13.6337405
+    },
+    {
+      "code": "osm:way/522455976",
+      "name": "Neuropsihijatrijska bolnica dr. Ivan Barbot Popovača",
+      "countryCode": "HR",
+      "origin": "https://npbp.hr",
+      "lat": 45.5741824,
+      "lng": 16.6386838
+    },
+    {
+      "code": "osm:way/577069958",
+      "name": "Specijalna bolnica za medicinsku rehabilitaciju Stubičke Toplice",
+      "countryCode": "HR",
+      "origin": "https://sbst.hr",
+      "lat": 45.9775056,
+      "lng": 15.9355344
+    },
+    {
+      "code": "osm:way/588797571",
+      "name": "Opća bolnica Nova Gradiška",
+      "countryCode": "HR",
+      "origin": "https://www.bolnicang.hr",
+      "lat": 45.2614836,
+      "lng": 17.3902254
+    },
+    {
+      "code": "osm:way/588799889",
+      "name": "Opća bolnica Zabok i bolnica hrvatskih veterana",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-zabok.hr",
+      "lat": 46.017755,
+      "lng": 15.9406952
+    },
+    {
+      "code": "osm:way/589021801",
+      "name": "Klinička bolnica Merkur",
+      "countryCode": "HR",
+      "origin": "https://www.kb-merkur.hr",
+      "lat": 45.8204417,
+      "lng": 15.9970194
+    },
+    {
+      "code": "osm:way/607981525",
+      "name": "Opća bolnica Pula",
+      "countryCode": "HR",
+      "origin": "https://www.obpula.hr",
+      "lat": 44.8665023,
+      "lng": 13.8565738
+    },
+    {
+      "code": "osm:way/761316970",
+      "name": "Toplice Lipik - Specijalna bolnica za medicinsku rehabilitaciju",
+      "countryCode": "HR",
+      "origin": "https://toplice-lipik.hr",
+      "lat": 45.4136156,
+      "lng": 17.1610265
+    },
+    {
+      "code": "osm:way/804602582",
+      "name": "Specijalna bolnica za zaštitu djece s neurorazvojnim i motoričkim smetnjama",
+      "countryCode": "HR",
+      "origin": "https://www.sbgoljak.hr",
+      "lat": 45.8191337,
+      "lng": 15.9642426
+    },
+    {
+      "code": "osm:way/808102949",
+      "name": "Thalassotherapia Crikvenica",
+      "countryCode": "HR",
+      "origin": "https://thalasso-ck.hr",
+      "lat": 45.1860427,
+      "lng": 14.6769583
+    },
+    {
+      "code": "osm:way/816454228",
+      "name": "Thalassotherapia Opatija",
+      "countryCode": "HR",
+      "origin": "https://www.thalassotherapia-opatija.hr",
+      "lat": 45.3289567,
+      "lng": 14.3000432
+    },
+    {
+      "code": "osm:way/870263817",
+      "name": "Specijalna bolnica za kronične bolesti dječje dobi Gornja Bistra",
+      "countryCode": "HR",
+      "origin": "https://www.bolnica-bistra.hr",
+      "lat": 45.9170371,
+      "lng": 15.9041522
+    },
+    {
+      "code": "osm:way/898576918",
+      "name": "Psihijatrijska bolnica za djecu i mladež",
+      "countryCode": "HR",
+      "origin": "https://djecja-psihijatrija.hr",
+      "lat": 45.8149201,
+      "lng": 15.9630461
+    },
+    {
+      "code": "osm:way/1036382324",
+      "name": "Specijalna bolnica za zaštitu djece s neurorazvojnim i motoričkim smetnjama",
+      "countryCode": "HR",
+      "origin": "https://www.sbgoljak.hr",
+      "lat": 45.8255912,
+      "lng": 15.9658573
+    },
+    {
+      "code": "osm:way/1093821592",
+      "name": "Opća županijska bolnica Našice",
+      "countryCode": "HR",
+      "origin": "https://www.obnasice.hr",
+      "lat": 45.4887692,
+      "lng": 18.0977073
+    },
+    {
+      "code": "osm:way/1253297761",
+      "name": "Akromion",
+      "countryCode": "HR",
+      "origin": "https://www.akromion.hr",
+      "lat": 45.7604884,
+      "lng": 15.9940061
+    },
+    {
+      "code": "osm:way/1263186209",
+      "name": "Dječja bolnica Srebrnjak",
+      "countryCode": "HR",
+      "origin": "http://www.bolnica-srebrnjak.hr",
+      "lat": 45.8253625,
+      "lng": 15.993638
+    },
+    {
+      "code": "osm:way/1266645732",
+      "name": "Opća bolnica i bolnica branitelja domovinskog rata Ogulin",
+      "countryCode": "HR",
+      "origin": "https://bolnica-ogulin.hr",
+      "lat": 45.2573699,
+      "lng": 15.2313454
+    },
+    {
+      "code": "osm:way/1266646804",
+      "name": "Služba za plućne bolesti i TBC Klenovnik",
+      "countryCode": "HR",
+      "origin": "https://obv.hr",
+      "lat": 46.2727883,
+      "lng": 16.0765235
+    },
+    {
+      "code": "osm:way/1266764557",
+      "name": "Opća bolnica \" Dr. Tomislav Bardek\" Koprivnica",
+      "countryCode": "HR",
+      "origin": "https://www.obkoprivnica.hr",
+      "lat": 46.1632422,
+      "lng": 16.8372732
+    },
+    {
+      "code": "osm:way/1266766673",
+      "name": "Opća bolnica Gospić",
+      "countryCode": "HR",
+      "origin": "https://www.obgospic.hr",
+      "lat": 44.5434961,
+      "lng": 15.3621417
+    },
+    {
+      "code": "osm:way/1266770327",
+      "name": "Opća i veteranska bolnica Hrvatski Ponos Knin",
+      "countryCode": "HR",
+      "origin": "https://www.obhpknin.hr",
+      "lat": 44.0522624,
+      "lng": 16.2152186
+    },
+    {
+      "code": "osm:way/1266784564",
+      "name": "Naftalan, specijalna bolnica za medicinsku rehabilitaciju",
+      "countryCode": "HR",
+      "origin": "https://naftalan.hr",
+      "lat": 45.7067065,
+      "lng": 16.3856278
+    },
+    {
+      "code": "osm:way/1266786023",
+      "name": "Specijalna bolnica za produženo liječenje Duga Resa",
+      "countryCode": "HR",
+      "origin": "http://www.bolnica-dugaresa.hr",
+      "lat": 45.4534219,
+      "lng": 15.4997876
+    },
+    {
+      "code": "osm:way/1266792453",
+      "name": "Specijalna bolnica za medicinsku rehabilitaciju Kalos",
+      "countryCode": "HR",
+      "origin": "https://kalos.hr",
+      "lat": 42.9681958,
+      "lng": 16.7128997
+    },
+    {
+      "code": "osm:way/1266793001",
+      "name": "Psihijatrijska bolnica Lopača",
+      "countryCode": "HR",
+      "origin": "https://www.pbl.hr",
+      "lat": 45.3783302,
+      "lng": 14.4412666
+    },
+    {
+      "code": "osm:way/1266794241",
+      "name": "Lječilište Topusko",
+      "countryCode": "HR",
+      "origin": "https://www.ljeciliste-topusko.hr",
+      "lat": 45.2945016,
+      "lng": 15.9724681
+    },
+    {
+      "code": "osm:way/1268366581",
+      "name": "Dom zdravlja Korčula",
+      "countryCode": "HR",
+      "origin": "https://dom-zdravlja-korcula.hr",
+      "lat": 42.9493956,
+      "lng": 17.1363207
+    },
+    {
+      "code": "osm:way/1272687460",
+      "name": "Lječilište Veli Lošinj",
+      "countryCode": "HR",
+      "origin": "https://www.ljeciliste-veli-losinj.hr",
+      "lat": 44.5164968,
+      "lng": 14.5013651
+    },
+    {
+      "code": "osm:way/1273081746",
+      "name": "Opća bolnica dr. Ivo Pedišić, odjel u Petrinji",
+      "countryCode": "HR",
+      "origin": "https://obs.hr",
+      "lat": 45.4235105,
+      "lng": 16.2768312
+    },
+    {
+      "code": "osm:way/1273087514",
+      "name": "Opća bolnica dr. Ivo Pedišić, odjeli za pulmologiju i palijativu",
+      "countryCode": "HR",
+      "origin": "https://obs.hr",
+      "lat": 45.4402944,
+      "lng": 16.3447014
+    },
+    {
+      "code": "osm:way/1567049084",
+      "name": "Specijalna bolnica „Zelendur”",
+      "countryCode": "HR",
+      "origin": "https://zelendur.hr",
+      "lat": 45.8093775,
+      "lng": 15.7174685
+    }
+  ]
+}

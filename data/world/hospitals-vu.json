@@ -1,0 +1,17 @@
+{
+  "countryCode": "VU",
+  "fetchedAt": "2026-10-21T03:10:10.796Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/13911395783",
+      "name": "Vanua Medical Clinic & Lab",
+      "countryCode": "VU",
+      "origin": "https://vanuamedical.com",
+      "lat": -17.7430881,
+      "lng": 168.3142531
+    }
+  ]
+}

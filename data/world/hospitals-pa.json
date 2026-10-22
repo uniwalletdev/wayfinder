@@ -1,0 +1,41 @@
+{
+  "countryCode": "PA",
+  "fetchedAt": "2026-10-21T02:23:20.052Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/6453774585",
+      "name": "Centro de Salud Penonomé",
+      "countryCode": "PA",
+      "origin": "https://help.unhcr.org",
+      "lat": 8.5126526,
+      "lng": -80.3553812
+    },
+    {
+      "code": "osm:way/382719450",
+      "name": "Hospital Santa Fe",
+      "countryCode": "PA",
+      "origin": "https://hospitalsantafepanama.com",
+      "lat": 8.9760905,
+      "lng": -79.5383694
+    },
+    {
+      "code": "osm:way/1284460069",
+      "name": "Policentro de Salud Luis H. Moreno",
+      "countryCode": "PA",
+      "origin": "https://www.minsa.gob.pa",
+      "lat": 9.0221173,
+      "lng": -79.4873549
+    },
+    {
+      "code": "osm:way/1553065143",
+      "name": "The Panama Clinic",
+      "countryCode": "PA",
+      "origin": "https://thepanamaclinic.com",
+      "lat": 8.9785228,
+      "lng": -79.511463
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "countryCode": "CI",
+  "fetchedAt": "2026-10-21T01:02:42.056Z",
+  "count": 7,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/13208372320",
+      "name": "centre accueil psychiatrique",
+      "countryCode": "CI",
+      "origin": "https://victorhouali.com",
+      "lat": 7.2081,
+      "lng": -7.61461
+    },
+    {
+      "code": "osm:way/91274323",
+      "name": "Centre Hospitalier Universitaire de Treichville",
+      "countryCode": "CI",
+      "origin": "https://www.chu-treichville.com",
+      "lat": 5.2915831,
+      "lng": -4.0035691
+    },
+    {
+      "code": "osm:way/326163566",
+      "name": "Polyclinique Internationale Sainte Anne-Marie (PISAM)",
+      "countryCode": "CI",
+      "origin": "http://www.pisam.ci",
+      "lat": 5.3368409,
+      "lng": -4.0133515
+    },
+    {
+      "code": "osm:way/447285101",
+      "name": "Nouvelle Clinique Farah",
+      "countryCode": "CI",
+      "origin": "http://www.cliniquefarah.com",
+      "lat": 5.3106638,
+      "lng": -3.9864502
+    },
+    {
+      "code": "osm:way/533143498",
+      "name": "Hôpital Mère-Enfant de Bingerville",
+      "countryCode": "CI",
+      "origin": "https://hmebingerville.ci",
+      "lat": 5.3619104,
+      "lng": -3.8839265
+    },
+    {
+      "code": "osm:way/785870625",
+      "name": "Polyclinique de l'Indenié",
+      "countryCode": "CI",
+      "origin": "http://www.polycliniqueindenie.ci",
+      "lat": 5.3383835,
+      "lng": -4.019068
+    },
+    {
+      "code": "osm:way/1455019372",
+      "name": "Centre De Sante Masroor",
+      "countryCode": "CI",
+      "origin": "https://masroorhealthcare.org",
+      "lat": 5.3703642,
+      "lng": -4.1155007
+    }
+  ]
+}

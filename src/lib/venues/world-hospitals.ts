@@ -1,5 +1,6 @@
 import { Venue } from "../types"
 import { WORLD_HOSPITAL_SITES, WORLD_DATA_GENERATED_AT } from "./world-hospitals-data"
+import { COUNTRY_NAMES } from "../data/country-names"
 
 // The world hospital directory: every hospital OpenStreetMap volunteers have
 // tagged amenity=hospital (with a website) outside NHS England, added as a
@@ -12,13 +13,6 @@ import { WORLD_HOSPITAL_SITES, WORLD_DATA_GENERATED_AT } from "./world-hospitals
 // in scope here publishes the equivalent of NHS ORD. That means coverage is a
 // floor, not a census — whatever volunteers have mapped, not every hospital
 // that exists.
-
-const COUNTRY_NAMES: Record<string, string> = {
-  US: "United States",
-  CA: "Canada",
-  AU: "Australia",
-  IE: "Ireland",
-}
 
 function slugify(name: string): string {
   return name

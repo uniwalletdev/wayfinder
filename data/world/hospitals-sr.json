@@ -1,0 +1,17 @@
+{
+  "countryCode": "SR",
+  "fetchedAt": "2026-10-21T02:49:50.390Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/93272289",
+      "name": "Dr. L. Mungra Streekziekenhuis Nickerie - S.Z.N.",
+      "countryCode": "SR",
+      "origin": "https://www.szn.sr",
+      "lat": 5.9406373,
+      "lng": -56.986996
+    }
+  ]
+}

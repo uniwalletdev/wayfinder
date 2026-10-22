@@ -1,0 +1,7457 @@
+{
+  "countryCode": "JP",
+  "fetchedAt": "2026-10-21T01:45:43.540Z",
+  "count": 931,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 2,
+  "hospitals": [
+    {
+      "code": "osm:node/288129746",
+      "name": "中央林間病院 (Chuo-Rinkan Hospital)",
+      "countryCode": "JP",
+      "origin": "https://www.hospital-crg.net",
+      "lat": 35.5083216,
+      "lng": 139.4461061
+    },
+    {
+      "code": "osm:node/442881837",
+      "name": "クラーク病院",
+      "countryCode": "JP",
+      "origin": "https://www.sansoukai.or.jp",
+      "lat": 43.079931,
+      "lng": 141.3900292
+    },
+    {
+      "code": "osm:node/443161055",
+      "name": "愛知県赤十字血液センター",
+      "countryCode": "JP",
+      "origin": "http://www.aichi.bc.jrc.or.jp",
+      "lat": 35.1913261,
+      "lng": 137.0884398
+    },
+    {
+      "code": "osm:node/474597217",
+      "name": "函館五稜郭病院",
+      "countryCode": "JP",
+      "origin": "http://www.gobyou.com",
+      "lat": 41.792466,
+      "lng": 140.7556116
+    },
+    {
+      "code": "osm:node/519656254",
+      "name": "島村トータル・ケア・クリニック",
+      "countryCode": "JP",
+      "origin": "http://www.stcc.jp",
+      "lat": 35.7777884,
+      "lng": 139.9133806
+    },
+    {
+      "code": "osm:node/693190001",
+      "name": "国際医療福祉大学市川メディカルセンター",
+      "countryCode": "JP",
+      "origin": "https://ichikawa.iuhw.ac.jp",
+      "lat": 35.7575789,
+      "lng": 139.9017504
+    },
+    {
+      "code": "osm:node/775446579",
+      "name": "札幌心臓血管クリニック",
+      "countryCode": "JP",
+      "origin": "https://scvc.jp",
+      "lat": 43.1227051,
+      "lng": 141.3654488
+    },
+    {
+      "code": "osm:node/982125436",
+      "name": "森本内科クリニック",
+      "countryCode": "JP",
+      "origin": "https://joji-morimoto.jp",
+      "lat": 35.7039486,
+      "lng": 139.5771482
+    },
+    {
+      "code": "osm:node/1068010532",
+      "name": "嶺井リハビリ病院",
+      "countryCode": "JP",
+      "origin": "https://ohirakai.or.jp",
+      "lat": 26.2600882,
+      "lng": 127.7276135
+    },
+    {
+      "code": "osm:node/1068029052",
+      "name": "中部協同病院",
+      "countryCode": "JP",
+      "origin": "http://chu-kyo.jp",
+      "lat": 26.342329,
+      "lng": 127.816848
+    },
+    {
+      "code": "osm:node/1200232906",
+      "name": "NTT東日本札幌病院",
+      "countryCode": "JP",
+      "origin": "https://nmcs.ntt-east.co.jp",
+      "lat": 43.0558424,
+      "lng": 141.3344281
+    },
+    {
+      "code": "osm:node/1200233095",
+      "name": "札幌もいわ徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://moiwa.tokushukai.or.jp",
+      "lat": 43.0273988,
+      "lng": 141.3379402
+    },
+    {
+      "code": "osm:node/1200233236",
+      "name": "川西内科胃腸科病院",
+      "countryCode": "JP",
+      "origin": "http://kawanishihp.or.jp",
+      "lat": 43.0449707,
+      "lng": 141.3474346
+    },
+    {
+      "code": "osm:node/1200233300",
+      "name": "札幌南一条病院",
+      "countryCode": "JP",
+      "origin": "http://www.h-keiaikai.or.jp",
+      "lat": 43.0566949,
+      "lng": 141.3377528
+    },
+    {
+      "code": "osm:node/1200233318",
+      "name": "北海道循環器病院",
+      "countryCode": "JP",
+      "origin": "https://www.hokujun.or.jp",
+      "lat": 43.0236714,
+      "lng": 141.342567
+    },
+    {
+      "code": "osm:node/1200237154",
+      "name": "藤花会 江別谷藤病院",
+      "countryCode": "JP",
+      "origin": "http://www.tokakai.jp",
+      "lat": 43.1008665,
+      "lng": 141.5354387
+    },
+    {
+      "code": "osm:node/1200246194",
+      "name": "由利組合総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.yuri-hospital.honjo.akita.jp",
+      "lat": 39.4046526,
+      "lng": 140.0611256
+    },
+    {
+      "code": "osm:node/1420179857",
+      "name": "新座志木中央総合病院",
+      "countryCode": "JP",
+      "origin": "https://niizashiki-hp.jp",
+      "lat": 35.8200424,
+      "lng": 139.5711432
+    },
+    {
+      "code": "osm:node/1420186148",
+      "name": "靖和会 飯能靖和病院",
+      "countryCode": "JP",
+      "origin": "https://www.hannouseiwa.or.jp",
+      "lat": 35.865565,
+      "lng": 139.335072
+    },
+    {
+      "code": "osm:node/1420198480",
+      "name": "わらび北町病院",
+      "countryCode": "JP",
+      "origin": "https://www.warabikita-hosp.com",
+      "lat": 35.830299,
+      "lng": 139.681296
+    },
+    {
+      "code": "osm:node/1420205025",
+      "name": "飯能老年病センター",
+      "countryCode": "JP",
+      "origin": "https://www.h-g-c.jp",
+      "lat": 35.864874,
+      "lng": 139.33427
+    },
+    {
+      "code": "osm:node/1420711220",
+      "name": "慶友会慶友整形外科クリニック",
+      "countryCode": "JP",
+      "origin": "https://www.ku-kai.or.jp",
+      "lat": 36.233664,
+      "lng": 139.553125
+    },
+    {
+      "code": "osm:node/1420722909",
+      "name": "ますお会第２北総病院",
+      "countryCode": "JP",
+      "origin": "http://www.dainihokuso.jp",
+      "lat": 35.777713,
+      "lng": 140.021107
+    },
+    {
+      "code": "osm:node/1420723735",
+      "name": "セコメディック病院",
+      "countryCode": "JP",
+      "origin": "https://secomedic.gr.jp",
+      "lat": 35.76339,
+      "lng": 140.074953
+    },
+    {
+      "code": "osm:node/1420723991",
+      "name": "一心会初富保健病院",
+      "countryCode": "JP",
+      "origin": "https://www.hatsutomi.or.jp",
+      "lat": 35.784757,
+      "lng": 139.986049
+    },
+    {
+      "code": "osm:node/1420724109",
+      "name": "三省会本多病院",
+      "countryCode": "JP",
+      "origin": "http://www.sanseikai.or.jp",
+      "lat": 35.8534833,
+      "lng": 140.5835549
+    },
+    {
+      "code": "osm:node/1420725806",
+      "name": "船橋北病院",
+      "countryCode": "JP",
+      "origin": "http://www.kenjin.or.jp",
+      "lat": 35.757045,
+      "lng": 140.062897
+    },
+    {
+      "code": "osm:node/1420727064",
+      "name": "塩田病院",
+      "countryCode": "JP",
+      "origin": "https://www.shioda.or.jp",
+      "lat": 35.151064,
+      "lng": 140.317758
+    },
+    {
+      "code": "osm:node/1420729140",
+      "name": "船橋二和病院",
+      "countryCode": "JP",
+      "origin": "http://www.futawa-hp.jp",
+      "lat": 35.751258,
+      "lng": 140.020669
+    },
+    {
+      "code": "osm:node/1420729859",
+      "name": "滝不動病院",
+      "countryCode": "JP",
+      "origin": "https://www.takifudo.jp",
+      "lat": 35.737094,
+      "lng": 140.027299
+    },
+    {
+      "code": "osm:node/1420730657",
+      "name": "鈴木病院",
+      "countryCode": "JP",
+      "origin": "https://www.suzuki-hospital.com",
+      "lat": 35.30679,
+      "lng": 139.95487
+    },
+    {
+      "code": "osm:node/1420730950",
+      "name": "国保八日市場市民総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.sosa-hp.jp",
+      "lat": 35.704725,
+      "lng": 140.535553
+    },
+    {
+      "code": "osm:node/1420732199",
+      "name": "大島記念嬉泉病院",
+      "countryCode": "JP",
+      "origin": "http://ohshimakisen.heteml.jp",
+      "lat": 35.752218,
+      "lng": 140.033842
+    },
+    {
+      "code": "osm:node/1420732240",
+      "name": "安房地域医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.awairyo.jp",
+      "lat": 35.000037,
+      "lng": 139.891771
+    },
+    {
+      "code": "osm:node/1420732527",
+      "name": "南房総市立富山国保病院",
+      "countryCode": "JP",
+      "origin": "http://www.tomiyamakokuho.com",
+      "lat": 35.0967821,
+      "lng": 139.9141038
+    },
+    {
+      "code": "osm:node/1420739346",
+      "name": "板倉病院",
+      "countryCode": "JP",
+      "origin": "https://www.itakura.or.jp",
+      "lat": 35.697455,
+      "lng": 139.982507
+    },
+    {
+      "code": "osm:node/1420739359",
+      "name": "総武病院",
+      "countryCode": "JP",
+      "origin": "http://www.soubu-hp.or.jp",
+      "lat": 35.701515,
+      "lng": 139.997524
+    },
+    {
+      "code": "osm:node/1420739382",
+      "name": "高根台病院",
+      "countryCode": "JP",
+      "origin": "https://www.aino-ie.jp",
+      "lat": 35.731409,
+      "lng": 140.035358
+    },
+    {
+      "code": "osm:node/1420739400",
+      "name": "青山病院",
+      "countryCode": "JP",
+      "origin": "http://aoyamahp.or.jp",
+      "lat": 35.704255,
+      "lng": 139.998889
+    },
+    {
+      "code": "osm:node/1420739403",
+      "name": "山口病院",
+      "countryCode": "JP",
+      "origin": "https://www.ywh.or.jp",
+      "lat": 35.709979,
+      "lng": 139.955581
+    },
+    {
+      "code": "osm:node/1420739713",
+      "name": "玄々堂君津病院",
+      "countryCode": "JP",
+      "origin": "https://www.gengendo.jp",
+      "lat": 35.336209,
+      "lng": 139.8964035
+    },
+    {
+      "code": "osm:node/1420740405",
+      "name": "下総病院",
+      "countryCode": "JP",
+      "origin": "http://www.yoshieikai.com",
+      "lat": 35.710837,
+      "lng": 140.033551
+    },
+    {
+      "code": "osm:node/1420740420",
+      "name": "東船橋病院",
+      "countryCode": "JP",
+      "origin": "https://www.hfhp.gr.jp",
+      "lat": 35.73068,
+      "lng": 140.041186
+    },
+    {
+      "code": "osm:node/1420740426",
+      "name": "東邦鎌谷病院",
+      "countryCode": "JP",
+      "origin": "https://www.tohokamagaya.com",
+      "lat": 35.790229,
+      "lng": 140.001048
+    },
+    {
+      "code": "osm:node/1420740980",
+      "name": "梨香会秋元病院",
+      "countryCode": "JP",
+      "origin": "https://www.akimoto-hospital.com",
+      "lat": 35.778841,
+      "lng": 140.015547
+    },
+    {
+      "code": "osm:node/1420741150",
+      "name": "浦安中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.urayasucentral.com",
+      "lat": 35.6467156,
+      "lng": 139.8938784
+    },
+    {
+      "code": "osm:node/1420741283",
+      "name": "あしたの風クリニック",
+      "countryCode": "JP",
+      "origin": "http://www.sofu.or.jp",
+      "lat": 35.721628,
+      "lng": 139.9993
+    },
+    {
+      "code": "osm:node/1420742620",
+      "name": "船橋市立医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.mmc.funabashi.chiba.jp",
+      "lat": 35.723848,
+      "lng": 139.998492
+    },
+    {
+      "code": "osm:node/1420742682",
+      "name": "船橋整形外科病院",
+      "countryCode": "JP",
+      "origin": "http://www.fff.or.jp",
+      "lat": 35.708725,
+      "lng": 140.011351
+    },
+    {
+      "code": "osm:node/1420742926",
+      "name": "共立習志野台病院",
+      "countryCode": "JP",
+      "origin": "https://www.kyoritsunarasinodai.or.jp",
+      "lat": 35.7184616,
+      "lng": 140.0452547
+    },
+    {
+      "code": "osm:node/1420763804",
+      "name": "あけぼの病院",
+      "countryCode": "JP",
+      "origin": "https://www.akebono-hospital.jp",
+      "lat": 35.5497035,
+      "lng": 139.4455981
+    },
+    {
+      "code": "osm:node/1420765600",
+      "name": "三秀会 青梅三慶病院",
+      "countryCode": "JP",
+      "origin": "https://omesankeihp.jp",
+      "lat": 35.784902,
+      "lng": 139.252314
+    },
+    {
+      "code": "osm:node/1420766921",
+      "name": "伊藤病院",
+      "countryCode": "JP",
+      "origin": "https://www.ito-hospital.jp",
+      "lat": 35.666294,
+      "lng": 139.7106453
+    },
+    {
+      "code": "osm:node/1420767848",
+      "name": "公立福生病院",
+      "countryCode": "JP",
+      "origin": "https://www.fussahp.jp",
+      "lat": 35.747067,
+      "lng": 139.3266803
+    },
+    {
+      "code": "osm:node/1420770930",
+      "name": "西多摩病院",
+      "countryCode": "JP",
+      "origin": "https://www.aoikai.jp",
+      "lat": 35.760193,
+      "lng": 139.335249
+    },
+    {
+      "code": "osm:node/1420771301",
+      "name": "おくさわ脳卒中リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://okusawa-stroke-rh.jp",
+      "lat": 35.603339,
+      "lng": 139.67257
+    },
+    {
+      "code": "osm:node/1420771563",
+      "name": "回心会 ロイヤル病院",
+      "countryCode": "JP",
+      "origin": "https://royal.mck.or.jp",
+      "lat": 35.670346,
+      "lng": 139.628001
+    },
+    {
+      "code": "osm:node/1420774629",
+      "name": "天誠会武蔵境病院",
+      "countryCode": "JP",
+      "origin": "http://www.tenseikai.or.jp",
+      "lat": 35.703507,
+      "lng": 139.547312
+    },
+    {
+      "code": "osm:node/1420780207",
+      "name": "徳静会横畠外科胃腸科病院",
+      "countryCode": "JP",
+      "origin": "https://www.yokohata.or.jp",
+      "lat": 35.7129693,
+      "lng": 139.6660386
+    },
+    {
+      "code": "osm:node/1420780296",
+      "name": "目白第二病院",
+      "countryCode": "JP",
+      "origin": "https://www.mejiro2-hp.jp",
+      "lat": 35.7493043,
+      "lng": 139.3375046
+    },
+    {
+      "code": "osm:node/1420780363",
+      "name": "総合東京病院",
+      "countryCode": "JP",
+      "origin": "https://www.tokyo-hospital.com",
+      "lat": 35.7280952,
+      "lng": 139.6639545
+    },
+    {
+      "code": "osm:node/1420781366",
+      "name": "明理会東京大和病院",
+      "countryCode": "JP",
+      "origin": "https://tokyoyamato-hp.com",
+      "lat": 35.761724,
+      "lng": 139.706185
+    },
+    {
+      "code": "osm:node/1420781411",
+      "name": "昭和医科大学病院",
+      "countryCode": "JP",
+      "origin": "https://www.showa-u.ac.jp",
+      "lat": 35.6077885,
+      "lng": 139.7035784
+    },
+    {
+      "code": "osm:node/1420781413",
+      "name": "昭和大学附属烏山病院",
+      "countryCode": "JP",
+      "origin": "https://www.showa-u.ac.jp",
+      "lat": 35.672306,
+      "lng": 139.5959166
+    },
+    {
+      "code": "osm:node/1420785348",
+      "name": "東京都島しょ保健所八丈出張所",
+      "countryCode": "JP",
+      "origin": "https://www.fukushihoken.metro.tokyo.jp",
+      "lat": 33.112323,
+      "lng": 139.793845
+    },
+    {
+      "code": "osm:node/1420786182",
+      "name": "奥沢病院",
+      "countryCode": "JP",
+      "origin": "https://www.okusawahp.jp",
+      "lat": 35.605045,
+      "lng": 139.672121
+    },
+    {
+      "code": "osm:node/1420787246",
+      "name": "永生会永生病院",
+      "countryCode": "JP",
+      "origin": "http://hospital.eisei.or.jp",
+      "lat": 35.639619,
+      "lng": 139.304918
+    },
+    {
+      "code": "osm:node/1420787896",
+      "name": "中野江古田病院",
+      "countryCode": "JP",
+      "origin": "http://nakanoegotahp.server-shared.com",
+      "lat": 35.727229,
+      "lng": 139.662884
+    },
+    {
+      "code": "osm:node/1420788263",
+      "name": "浴風会病院",
+      "countryCode": "JP",
+      "origin": "https://www.yokufu-hp.jp",
+      "lat": 35.680372,
+      "lng": 139.6089481
+    },
+    {
+      "code": "osm:node/1420788810",
+      "name": "北青山病院",
+      "countryCode": "JP",
+      "origin": "http://www.tfd.metro.tokyo.jp",
+      "lat": 35.664821,
+      "lng": 139.71005
+    },
+    {
+      "code": "osm:node/1420791092",
+      "name": "JCHO 東京山手メディカルセンター",
+      "countryCode": "JP",
+      "origin": "https://yamate.jcho.go.jp",
+      "lat": 35.704733,
+      "lng": 139.699049
+    },
+    {
+      "code": "osm:node/1420795950",
+      "name": "大森赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://omori.jrc.or.jp",
+      "lat": 35.5788614,
+      "lng": 139.7173421
+    },
+    {
+      "code": "osm:node/1420796550",
+      "name": "日野駅前病院",
+      "countryCode": "JP",
+      "origin": "https://hinoekimae-hp.com",
+      "lat": 35.6791607,
+      "lng": 139.3955213
+    },
+    {
+      "code": "osm:node/1420797393",
+      "name": "虎の門病院",
+      "countryCode": "JP",
+      "origin": "http://www.toranomon.gr.jp",
+      "lat": 35.6687404,
+      "lng": 139.7450297
+    },
+    {
+      "code": "osm:node/1420800484",
+      "name": "高野病院",
+      "countryCode": "JP",
+      "origin": "https://takanohosp.jp",
+      "lat": 35.55278,
+      "lng": 139.741191
+    },
+    {
+      "code": "osm:node/1420813520",
+      "name": "三喜会鶴巻温泉病院",
+      "countryCode": "JP",
+      "origin": "https://www.sankikai.or.jp",
+      "lat": 35.3828966,
+      "lng": 139.2792768
+    },
+    {
+      "code": "osm:node/1420814760",
+      "name": "公仁会大和成和病院",
+      "countryCode": "JP",
+      "origin": "http://www.seiwa.or.jp",
+      "lat": 35.4950798,
+      "lng": 139.4352943
+    },
+    {
+      "code": "osm:node/1420814996",
+      "name": "秦野厚生病院",
+      "countryCode": "JP",
+      "origin": "http://hatanokousei.jp",
+      "lat": 35.369935,
+      "lng": 139.272039
+    },
+    {
+      "code": "osm:node/1420822429",
+      "name": "徳洲会大和徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://www.yth.or.jp",
+      "lat": 35.4689,
+      "lng": 139.458189
+    },
+    {
+      "code": "osm:node/1420822524",
+      "name": "愛育会愛育病院",
+      "countryCode": "JP",
+      "origin": "https://www.aiiku-hos.or.jp",
+      "lat": 35.496638,
+      "lng": 139.444548
+    },
+    {
+      "code": "osm:node/1420822533",
+      "name": "慈広会矢崎胃腸科外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.jikoukai.com",
+      "lat": 35.420533,
+      "lng": 139.444366
+    },
+    {
+      "code": "osm:node/1420822718",
+      "name": "新都市医療研究会君津会 南大和病院",
+      "countryCode": "JP",
+      "origin": "http://www.minamiyamato-hosp.or.jp",
+      "lat": 35.4330831,
+      "lng": 139.4695505
+    },
+    {
+      "code": "osm:node/1420823041",
+      "name": "八木病院",
+      "countryCode": "JP",
+      "origin": "https://kyourinkai-yagi.com",
+      "lat": 35.372072,
+      "lng": 139.226292
+    },
+    {
+      "code": "osm:node/1420825218",
+      "name": "横浜市立市民病院",
+      "countryCode": "JP",
+      "origin": "https://yokohama-shiminhosp.jp",
+      "lat": 35.468863,
+      "lng": 139.604943
+    },
+    {
+      "code": "osm:node/1420826020",
+      "name": "大和病院",
+      "countryCode": "JP",
+      "origin": "https://www.yamato-hospital.or.jp",
+      "lat": 35.478925,
+      "lng": 139.45755
+    },
+    {
+      "code": "osm:node/1420829524",
+      "name": "横浜中央病院",
+      "countryCode": "JP",
+      "origin": "https://yokohama.jcho.go.jp",
+      "lat": 35.4408703,
+      "lng": 139.6438722
+    },
+    {
+      "code": "osm:node/1420834198",
+      "name": "みくるべ病院",
+      "countryCode": "JP",
+      "origin": "http://www.bmk.or.jp",
+      "lat": 35.403816,
+      "lng": 139.156965
+    },
+    {
+      "code": "osm:node/1420928215",
+      "name": "芳珠記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.houju.or.jp",
+      "lat": 36.442013,
+      "lng": 136.535972
+    },
+    {
+      "code": "osm:node/1420928327",
+      "name": "能美市立病院",
+      "countryCode": "JP",
+      "origin": "https://nomihsp.com",
+      "lat": 36.455299,
+      "lng": 136.460193
+    },
+    {
+      "code": "osm:node/1420976726",
+      "name": "主体会病院",
+      "countryCode": "JP",
+      "origin": "http://www.syutaikai.jp",
+      "lat": 34.965217,
+      "lng": 136.611025
+    },
+    {
+      "code": "osm:node/1420982192",
+      "name": "桑名東医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.kuwanacmc.or.jp",
+      "lat": 35.065929,
+      "lng": 136.687183
+    },
+    {
+      "code": "osm:node/1420999637",
+      "name": "総合病院中津川市民病院",
+      "countryCode": "JP",
+      "origin": "https://nakatsugawa-hp.jp",
+      "lat": 35.4893295,
+      "lng": 137.4794193
+    },
+    {
+      "code": "osm:node/1421001629",
+      "name": "太田メディカルクリニック",
+      "countryCode": "JP",
+      "origin": "https://www.ohta-hospital.jp",
+      "lat": 35.4402546,
+      "lng": 137.0145655
+    },
+    {
+      "code": "osm:node/1422940246",
+      "name": "仁生会甲南病院",
+      "countryCode": "JP",
+      "origin": "https://www.kohnan-shiga.or.jp",
+      "lat": 34.929018,
+      "lng": 136.175653
+    },
+    {
+      "code": "osm:node/1422941021",
+      "name": "南草津病院",
+      "countryCode": "JP",
+      "origin": "https://www.373932hp.jp",
+      "lat": 35.002063,
+      "lng": 135.951589
+    },
+    {
+      "code": "osm:node/1422944167",
+      "name": "地域医療機能推進機構 滋賀病院",
+      "countryCode": "JP",
+      "origin": "https://shiga.jcho.go.jp",
+      "lat": 34.985591,
+      "lng": 135.885013
+    },
+    {
+      "code": "osm:node/1422962341",
+      "name": "医誠会京都ルネス病院",
+      "countryCode": "JP",
+      "origin": "http://www.renaiss.jp",
+      "lat": 35.2982516,
+      "lng": 135.1168319
+    },
+    {
+      "code": "osm:node/1422962971",
+      "name": "宮津武田病院",
+      "countryCode": "JP",
+      "origin": "https://www.takedahp.or.jp",
+      "lat": 35.536409,
+      "lng": 135.198202
+    },
+    {
+      "code": "osm:node/1422982865",
+      "name": "ガラシア病院",
+      "countryCode": "JP",
+      "origin": "http://www.gratia.or.jp",
+      "lat": 34.8507074,
+      "lng": 135.5076587
+    },
+    {
+      "code": "osm:node/1422983552",
+      "name": "フジタ病院",
+      "countryCode": "JP",
+      "origin": "http://www1.odn.ne.jp",
+      "lat": 34.6920374,
+      "lng": 135.475325
+    },
+    {
+      "code": "osm:node/1422983765",
+      "name": "南港病院",
+      "countryCode": "JP",
+      "origin": "https://www.nanko-hp.com",
+      "lat": 34.621318,
+      "lng": 135.476389
+    },
+    {
+      "code": "osm:node/1422988586",
+      "name": "大阪医科薬科大学病院",
+      "countryCode": "JP",
+      "origin": "https://hospital.ompu.ac.jp",
+      "lat": 34.851711,
+      "lng": 135.624398
+    },
+    {
+      "code": "osm:node/1423000595",
+      "name": "星光病院",
+      "countryCode": "JP",
+      "origin": "https://seiko-hp.com",
+      "lat": 34.7666583,
+      "lng": 135.6273319
+    },
+    {
+      "code": "osm:node/1423054458",
+      "name": "兼誠会杉安病院",
+      "countryCode": "JP",
+      "origin": "http://www.kensei-kai-sugiyasu.jp",
+      "lat": 34.7381106,
+      "lng": 135.4166745
+    },
+    {
+      "code": "osm:node/1423055472",
+      "name": "白浜はまゆう病院",
+      "countryCode": "JP",
+      "origin": "https://www.hamayu-hp.or.jp",
+      "lat": 33.6820357,
+      "lng": 135.3482888
+    },
+    {
+      "code": "osm:node/1423061162",
+      "name": "尼崎厚生会立花病院",
+      "countryCode": "JP",
+      "origin": "http://tachibana-hp.net",
+      "lat": 34.740219,
+      "lng": 135.398421
+    },
+    {
+      "code": "osm:node/1423067358",
+      "name": "弘秀会米田病院",
+      "countryCode": "JP",
+      "origin": "https://www.yoneda-hospital.com",
+      "lat": 34.906117,
+      "lng": 134.848889
+    },
+    {
+      "code": "osm:node/1423074211",
+      "name": "小国病院",
+      "countryCode": "JP",
+      "origin": "http://www.oguni-hp.com",
+      "lat": 34.8101527,
+      "lng": 134.6917836
+    },
+    {
+      "code": "osm:node/1423092916",
+      "name": "関西労災病院",
+      "countryCode": "JP",
+      "origin": "https://www.kanrou.net",
+      "lat": 34.735941,
+      "lng": 135.385894
+    },
+    {
+      "code": "osm:node/1423093270",
+      "name": "医療福祉センター のぎく",
+      "countryCode": "JP",
+      "origin": "https://youtokukai.com",
+      "lat": 35.07479,
+      "lng": 134.931568
+    },
+    {
+      "code": "osm:node/1423608958",
+      "name": "倉敷紀念病院",
+      "countryCode": "JP",
+      "origin": "http://seiwakai-net.or.jp",
+      "lat": 34.5791572,
+      "lng": 133.7396107
+    },
+    {
+      "code": "osm:node/1423609046",
+      "name": "光生病院",
+      "countryCode": "JP",
+      "origin": "https://kousei-hp.or.jp",
+      "lat": 34.6557855,
+      "lng": 133.9112105
+    },
+    {
+      "code": "osm:node/1423609216",
+      "name": "創和会しげい病院",
+      "countryCode": "JP",
+      "origin": "https://www.shigei.or.jp",
+      "lat": 34.6035031,
+      "lng": 133.7734514
+    },
+    {
+      "code": "osm:node/1423609364",
+      "name": "吉備会中谷外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.nakatani-hosp.jp",
+      "lat": 34.5150314,
+      "lng": 133.9454852
+    },
+    {
+      "code": "osm:node/1423610845",
+      "name": "岡山済生会外来センター病院",
+      "countryCode": "JP",
+      "origin": "https://www.okayamasaiseikai.or.jp",
+      "lat": 34.6706617,
+      "lng": 133.9172745
+    },
+    {
+      "code": "osm:node/1423611331",
+      "name": "岡山赤十字病院玉野分院",
+      "countryCode": "JP",
+      "origin": "http://www.kct.ne.jp",
+      "lat": 34.4989617,
+      "lng": 133.9585365
+    },
+    {
+      "code": "osm:node/1423615584",
+      "name": "志清会岡山紀念病院",
+      "countryCode": "JP",
+      "origin": "https://www.okayamakinen.or.jp",
+      "lat": 34.651764,
+      "lng": 133.9263185
+    },
+    {
+      "code": "osm:node/1423615592",
+      "name": "恵誠会大西病院",
+      "countryCode": "JP",
+      "origin": "https://www.onishihp.or.jp",
+      "lat": 34.5158958,
+      "lng": 133.9460144
+    },
+    {
+      "code": "osm:node/1423616201",
+      "name": "林病院",
+      "countryCode": "JP",
+      "origin": "https://hayashi-hsp.com",
+      "lat": 34.655734,
+      "lng": 134.026968
+    },
+    {
+      "code": "osm:node/1423616637",
+      "name": "河島外科胃腸科病院",
+      "countryCode": "JP",
+      "origin": "http://plus.harenet.ne.jp",
+      "lat": 34.6552494,
+      "lng": 133.9385489
+    },
+    {
+      "code": "osm:node/1423616653",
+      "name": "洋友会中島病院",
+      "countryCode": "JP",
+      "origin": "https://www.nakashima-hp.or.jp",
+      "lat": 34.61554,
+      "lng": 133.872818
+    },
+    {
+      "code": "osm:node/1423617058",
+      "name": "玉野中央病院",
+      "countryCode": "JP",
+      "origin": "https://tamanoch.jp",
+      "lat": 34.4939611,
+      "lng": 133.9495866
+    },
+    {
+      "code": "osm:node/1423619928",
+      "name": "鷲風会下津井病院",
+      "countryCode": "JP",
+      "origin": "http://www.shimotsui-hp.jp",
+      "lat": 34.4411904,
+      "lng": 133.800122
+    },
+    {
+      "code": "osm:node/1423626784",
+      "name": "医療法人たかまさ会山崎病院",
+      "countryCode": "JP",
+      "origin": "https://takamasa.or.jp",
+      "lat": 34.421659,
+      "lng": 132.512392
+    },
+    {
+      "code": "osm:node/1423629725",
+      "name": "呉市医師会病院",
+      "countryCode": "JP",
+      "origin": "http://www.kure.hiroshima.med.or.jp",
+      "lat": 34.251679,
+      "lng": 132.574639
+    },
+    {
+      "code": "osm:node/1423635319",
+      "name": "広島医療生活協同組合 広島共立病院",
+      "countryCode": "JP",
+      "origin": "https://hiroshimairyo.or.jp",
+      "lat": 34.4608534,
+      "lng": 132.4746391
+    },
+    {
+      "code": "osm:node/1423654193",
+      "name": "健生石井病院",
+      "countryCode": "JP",
+      "origin": "http://kensei.betoku.jp",
+      "lat": 34.081308,
+      "lng": 134.446467
+    },
+    {
+      "code": "osm:node/1423659934",
+      "name": "町立半田病院",
+      "countryCode": "JP",
+      "origin": "https://www.handa-hospital.jp",
+      "lat": 34.0396904,
+      "lng": 134.0370688
+    },
+    {
+      "code": "osm:node/1423661204",
+      "name": "長寿会秦眼科",
+      "countryCode": "JP",
+      "origin": "https://hataganka.org",
+      "lat": 34.06639,
+      "lng": 134.164216
+    },
+    {
+      "code": "osm:node/1423737440",
+      "name": "弘友会加戸病院",
+      "countryCode": "JP",
+      "origin": "https://kato-hp.jp",
+      "lat": 33.5462643,
+      "lng": 132.6469649
+    },
+    {
+      "code": "osm:node/1423744208",
+      "name": "讃陽堂松原病院",
+      "countryCode": "JP",
+      "origin": "http://www.sanyodo-hp.jp",
+      "lat": 34.2747129,
+      "lng": 134.1209089
+    },
+    {
+      "code": "osm:node/1423754872",
+      "name": "及川病院",
+      "countryCode": "JP",
+      "origin": "https://www.oikawahp.or.jp",
+      "lat": 33.5732474,
+      "lng": 130.402211
+    },
+    {
+      "code": "osm:node/1423757691",
+      "name": "友田病院",
+      "countryCode": "JP",
+      "origin": "https://yuaikai-tomoda.or.jp",
+      "lat": 33.5585583,
+      "lng": 130.4473776
+    },
+    {
+      "code": "osm:node/1423758609",
+      "name": "小富士病院",
+      "countryCode": "JP",
+      "origin": "https://kofuji-hospital.com",
+      "lat": 33.563675,
+      "lng": 130.140026
+    },
+    {
+      "code": "osm:node/1423760842",
+      "name": "恵真会渡辺整形外科病院",
+      "countryCode": "JP",
+      "origin": "http://www.keishin.or.jp",
+      "lat": 33.558293,
+      "lng": 130.189522
+    },
+    {
+      "code": "osm:node/1423776901",
+      "name": "三野原病院",
+      "countryCode": "JP",
+      "origin": "https://minkodo-minohara.com",
+      "lat": 33.6240921,
+      "lng": 130.5371922
+    },
+    {
+      "code": "osm:node/1423778424",
+      "name": "白寿会苅田病院",
+      "countryCode": "JP",
+      "origin": "https://www.hakujukai-med.org",
+      "lat": 33.748728,
+      "lng": 130.927984
+    },
+    {
+      "code": "osm:node/1423782331",
+      "name": "金隈病院",
+      "countryCode": "JP",
+      "origin": "https://kanenokuma-hp.jp",
+      "lat": 33.556453,
+      "lng": 130.481238
+    },
+    {
+      "code": "osm:node/1423783307",
+      "name": "親仁会米の山病院",
+      "countryCode": "JP",
+      "origin": "http://www.kome-net.or.jp",
+      "lat": 33.0361507,
+      "lng": 130.4823164
+    },
+    {
+      "code": "osm:node/1423783526",
+      "name": "貝塚病院",
+      "countryCode": "JP",
+      "origin": "https://kaizuka-hosp.or.jp",
+      "lat": 33.635869,
+      "lng": 130.424945
+    },
+    {
+      "code": "osm:node/1423804629",
+      "name": "医療法人恵仁会  いまむらウィミンズクリニック",
+      "countryCode": "JP",
+      "origin": "http://www.imamura-byoin.com",
+      "lat": 32.7379784,
+      "lng": 129.8710302
+    },
+    {
+      "code": "osm:node/1423806893",
+      "name": "栄寿会真珠園療養所",
+      "countryCode": "JP",
+      "origin": "https://www.sinjyuen.com",
+      "lat": 33.015084,
+      "lng": 129.732323
+    },
+    {
+      "code": "osm:node/1423811219",
+      "name": "白十字会佐世保中央病院",
+      "countryCode": "JP",
+      "origin": "https://hakujyujikai.or.jp",
+      "lat": 33.15746,
+      "lng": 129.749318
+    },
+    {
+      "code": "osm:node/1423817677",
+      "name": "岸病院",
+      "countryCode": "JP",
+      "origin": "https://kishihp.com",
+      "lat": 32.925542,
+      "lng": 130.773187
+    },
+    {
+      "code": "osm:node/1423820684",
+      "name": "長崎原爆病院",
+      "countryCode": "JP",
+      "origin": "https://www.nagasaki-med.jrc.or.jp",
+      "lat": 32.7649863,
+      "lng": 129.862484
+    },
+    {
+      "code": "osm:node/1423821672",
+      "name": "長崎みなとメディカルセンター",
+      "countryCode": "JP",
+      "origin": "http://shibyo.nmh.jp",
+      "lat": 32.7401582,
+      "lng": 129.8727751
+    },
+    {
+      "code": "osm:node/1423930971",
+      "name": "森産婦人科",
+      "countryCode": "JP",
+      "origin": "http://mori-hospital.com",
+      "lat": 31.2706266,
+      "lng": 130.2971061
+    },
+    {
+      "code": "osm:node/1423947163",
+      "name": "ブラザー記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.brother-kinen-hp.jp",
+      "lat": 35.118041,
+      "lng": 136.921018
+    },
+    {
+      "code": "osm:node/1423948080",
+      "name": "重工記念病院",
+      "countryCode": "JP",
+      "origin": "http://inf1nasw.mhi.co.jp:2090",
+      "lat": 35.1365516,
+      "lng": 136.9064147
+    },
+    {
+      "code": "osm:node/1423950183",
+      "name": "名古屋大学医学部附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.med.nagoya-u.ac.jp",
+      "lat": 35.1573568,
+      "lng": 136.9212989
+    },
+    {
+      "code": "osm:node/1423950716",
+      "name": "城西病院",
+      "countryCode": "JP",
+      "origin": "https://www.kaikou.or.jp",
+      "lat": 35.1585487,
+      "lng": 136.8653811
+    },
+    {
+      "code": "osm:node/1423950725",
+      "name": "医療法人いつき会 守山いつき病院",
+      "countryCode": "JP",
+      "origin": "http://www.moriyama-hosp.city.nagoya.jp",
+      "lat": 35.200921,
+      "lng": 136.960373
+    },
+    {
+      "code": "osm:node/1423951306",
+      "name": "和光会川島病院",
+      "countryCode": "JP",
+      "origin": "https://www.kawashima-hp.jp",
+      "lat": 35.194923,
+      "lng": 137.028977
+    },
+    {
+      "code": "osm:node/1423951393",
+      "name": "国立病院機構東名古屋病院",
+      "countryCode": "JP",
+      "origin": "http://www.hosp.go.jp",
+      "lat": 35.140152,
+      "lng": 137.017453
+    },
+    {
+      "code": "osm:node/1423979617",
+      "name": "尾張温泉リハビリかにえ病院",
+      "countryCode": "JP",
+      "origin": "http://www.kanie-hp.com",
+      "lat": 35.136063,
+      "lng": 136.776643
+    },
+    {
+      "code": "osm:node/1423980004",
+      "name": "岩田病院",
+      "countryCode": "JP",
+      "origin": "http://www.iwatahp.org",
+      "lat": 35.1736198,
+      "lng": 136.8787265
+    },
+    {
+      "code": "osm:node/1423986063",
+      "name": "愛知県済生会リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "http://www.aichi.saiseikai.or.jp",
+      "lat": 35.1865842,
+      "lng": 136.8787086
+    },
+    {
+      "code": "osm:node/1423987426",
+      "name": "熱田リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.kyoenkai.or.jp",
+      "lat": 35.1262624,
+      "lng": 136.8891228
+    },
+    {
+      "code": "osm:node/1423988436",
+      "name": "東海病院",
+      "countryCode": "JP",
+      "origin": "https://www.toukaihosp.jp",
+      "lat": 35.1865529,
+      "lng": 136.966587
+    },
+    {
+      "code": "osm:node/1423989467",
+      "name": "横山記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.yokoyama-hospital.or.jp",
+      "lat": 35.155397,
+      "lng": 136.915712
+    },
+    {
+      "code": "osm:node/1423994956",
+      "name": "神谷メディカルクリニック",
+      "countryCode": "JP",
+      "origin": "http://www.wa.commufa.jp",
+      "lat": 35.1432088,
+      "lng": 136.9033354
+    },
+    {
+      "code": "osm:node/1423996586",
+      "name": "聖霊病院",
+      "countryCode": "JP",
+      "origin": "https://seirei-hospital.org",
+      "lat": 35.1447581,
+      "lng": 136.9556338
+    },
+    {
+      "code": "osm:node/1423997282",
+      "name": "藤田医科大学ばんたね病院",
+      "countryCode": "JP",
+      "origin": "https://bantane.fujita-hu.ac.jp",
+      "lat": 35.1445586,
+      "lng": 136.8909637
+    },
+    {
+      "code": "osm:node/1423997429",
+      "name": "衆済会増子記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.syusaikai.com",
+      "lat": 35.1683409,
+      "lng": 136.8737727
+    },
+    {
+      "code": "osm:node/1424002850",
+      "name": "野垣クリニック",
+      "countryCode": "JP",
+      "origin": "https://www.nogaki.or.jp",
+      "lat": 35.1665767,
+      "lng": 136.896268
+    },
+    {
+      "code": "osm:node/1424005632",
+      "name": "名古屋セントラル病院",
+      "countryCode": "JP",
+      "origin": "https://nagoya-central-hospital.com",
+      "lat": 35.1656653,
+      "lng": 136.8796009
+    },
+    {
+      "code": "osm:node/1633799168",
+      "name": "洛和会音羽病院",
+      "countryCode": "JP",
+      "origin": "https://www.rakuwa.or.jp",
+      "lat": 34.9875791,
+      "lng": 135.8295389
+    },
+    {
+      "code": "osm:node/1655909426",
+      "name": "大聖病院",
+      "countryCode": "JP",
+      "origin": "https://www.taisei-hospital.jp",
+      "lat": 35.7425805,
+      "lng": 139.3306745
+    },
+    {
+      "code": "osm:node/1655928858",
+      "name": "青梅市在宅介護支援センターうめぞの",
+      "countryCode": "JP",
+      "origin": "https://www.wafukai.or.jp",
+      "lat": 35.781407,
+      "lng": 139.251668
+    },
+    {
+      "code": "osm:node/1772705584",
+      "name": "五輪橋産科婦人科小児科病院",
+      "countryCode": "JP",
+      "origin": "http://www.gorinbashi.com",
+      "lat": 42.9986918,
+      "lng": 141.3386284
+    },
+    {
+      "code": "osm:node/1779938585",
+      "name": "新浦安虎の門クリニック",
+      "countryCode": "JP",
+      "origin": "https://shintora.gr.jp",
+      "lat": 35.6492096,
+      "lng": 139.9220115
+    },
+    {
+      "code": "osm:node/1827182302",
+      "name": "友愛記念病院",
+      "countryCode": "JP",
+      "origin": "https://yuaikinen.or.jp",
+      "lat": 43.1085621,
+      "lng": 141.5120227
+    },
+    {
+      "code": "osm:node/1924540375",
+      "name": "松前町立松前病院",
+      "countryCode": "JP",
+      "origin": "http://matsumae-hospital.com",
+      "lat": 41.4274036,
+      "lng": 140.096358
+    },
+    {
+      "code": "osm:node/2026427461",
+      "name": "市立札幌病院",
+      "countryCode": "JP",
+      "origin": "https://www.city.sapporo.jp",
+      "lat": 43.0711065,
+      "lng": 141.3344855
+    },
+    {
+      "code": "osm:node/2034744986",
+      "name": "北海道大学病院",
+      "countryCode": "JP",
+      "origin": "http://www-mhp.med.hokudai.ac.jp",
+      "lat": 43.0776492,
+      "lng": 141.3450063
+    },
+    {
+      "code": "osm:node/2045693349",
+      "name": "松下レディースクリニック",
+      "countryCode": "JP",
+      "origin": "http://www.matsushita-lc.com",
+      "lat": 35.2164792,
+      "lng": 137.03805
+    },
+    {
+      "code": "osm:node/2052220157",
+      "name": "高月整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.hakutokai.jp",
+      "lat": 35.7114197,
+      "lng": 139.321167
+    },
+    {
+      "code": "osm:node/2080740903",
+      "name": "萬田記念病院",
+      "countryCode": "JP",
+      "origin": "http://www.manda.or.jp",
+      "lat": 43.0587621,
+      "lng": 141.357027
+    },
+    {
+      "code": "osm:node/2089784617",
+      "name": "いとう整形外科病院",
+      "countryCode": "JP",
+      "origin": "http://www.ito-seikei.or.jp",
+      "lat": 43.0566472,
+      "lng": 141.3422944
+    },
+    {
+      "code": "osm:node/2090462836",
+      "name": "共立美容外科 大分",
+      "countryCode": "JP",
+      "origin": "https://kyoritsu-oita.com",
+      "lat": 33.234022,
+      "lng": 131.6060563
+    },
+    {
+      "code": "osm:node/2111842439",
+      "name": "大島医療センター",
+      "countryCode": "JP",
+      "origin": "http://www.clinic-jp.org",
+      "lat": 34.7492879,
+      "lng": 139.35707
+    },
+    {
+      "code": "osm:node/2120274433",
+      "name": "飯田市立病院 介護老人保健施設ゆうゆう 高松診療所",
+      "countryCode": "JP",
+      "origin": "https://www.imh.jp",
+      "lat": 35.5179064,
+      "lng": 137.8402795
+    },
+    {
+      "code": "osm:node/2192340130",
+      "name": "中村記念病院",
+      "countryCode": "JP",
+      "origin": "http://www.nmh.or.jp",
+      "lat": 43.0564523,
+      "lng": 141.3363863
+    },
+    {
+      "code": "osm:node/2192340132",
+      "name": "札幌医科大学附属病院",
+      "countryCode": "JP",
+      "origin": "https://web.sapmed.ac.jp",
+      "lat": 43.0551535,
+      "lng": 141.3335321
+    },
+    {
+      "code": "osm:node/2199482975",
+      "name": "静清リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.seiseiriha.com",
+      "lat": 34.9791742,
+      "lng": 138.403639
+    },
+    {
+      "code": "osm:node/2243374644",
+      "name": "創成東病院",
+      "countryCode": "JP",
+      "origin": "https://www.siseikai.or.jp",
+      "lat": 43.0580844,
+      "lng": 141.3616918
+    },
+    {
+      "code": "osm:node/2272476387",
+      "name": "荏原病院",
+      "countryCode": "JP",
+      "origin": "http://www.ebara-hp.ota.tokyo.jp",
+      "lat": 35.5940161,
+      "lng": 139.6926193
+    },
+    {
+      "code": "osm:node/2273307736",
+      "name": "札幌厚生病院",
+      "countryCode": "JP",
+      "origin": "https://www.dou-kouseiren.com",
+      "lat": 43.0675302,
+      "lng": 141.3691925
+    },
+    {
+      "code": "osm:node/2283118250",
+      "name": "石巻ロイヤル病院",
+      "countryCode": "JP",
+      "origin": "http://wam-town.jp",
+      "lat": 38.471921,
+      "lng": 141.213262
+    },
+    {
+      "code": "osm:node/2331362639",
+      "name": "札幌循環器病院",
+      "countryCode": "JP",
+      "origin": "https://s-junkanki.or.jp",
+      "lat": 43.0734037,
+      "lng": 141.3334157
+    },
+    {
+      "code": "osm:node/2377550911",
+      "name": "南札幌病院",
+      "countryCode": "JP",
+      "origin": "https://www.minamisapporo.or.jp",
+      "lat": 43.0482401,
+      "lng": 141.3483096
+    },
+    {
+      "code": "osm:node/2380742171",
+      "name": "同交会病院",
+      "countryCode": "JP",
+      "origin": "https://www.dohkohkai.or.jp",
+      "lat": 43.0548397,
+      "lng": 141.3279978
+    },
+    {
+      "code": "osm:node/2469783899",
+      "name": "清明会 静岡リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "http://rehabili.godream.ne.jp",
+      "lat": 35.0228936,
+      "lng": 138.2564893
+    },
+    {
+      "code": "osm:node/2516879991",
+      "name": "ごとう内科胃腸科",
+      "countryCode": "JP",
+      "origin": "http://www.gotonaika.com",
+      "lat": 41.782738,
+      "lng": 140.7798739
+    },
+    {
+      "code": "osm:node/2590654116",
+      "name": "昭和医科大学横浜市北部病院",
+      "countryCode": "JP",
+      "origin": "https://www.showa-u.ac.jp",
+      "lat": 35.5466427,
+      "lng": 139.5698888
+    },
+    {
+      "code": "osm:node/2639203659",
+      "name": "慶友整形外科病院　駐車場",
+      "countryCode": "JP",
+      "origin": "https://www.ku-kai.or.jp",
+      "lat": 36.2334361,
+      "lng": 139.5520247
+    },
+    {
+      "code": "osm:node/2664637686",
+      "name": "中島内科循環器科メンタルクリニック",
+      "countryCode": "JP",
+      "origin": "https://nakajima-naika.jp",
+      "lat": 41.7694252,
+      "lng": 140.7353675
+    },
+    {
+      "code": "osm:node/2666377852",
+      "name": "産婦人科白鳥クリニック",
+      "countryCode": "JP",
+      "origin": "https://www1.ncv.ne.jp",
+      "lat": 41.7954124,
+      "lng": 140.7460312
+    },
+    {
+      "code": "osm:node/2666540314",
+      "name": "佐藤皮膚科・ 循環器内科医院",
+      "countryCode": "JP",
+      "origin": "https://satoh-hifukajyunkankinaika.com",
+      "lat": 41.7947842,
+      "lng": 140.7517291
+    },
+    {
+      "code": "osm:node/2699524345",
+      "name": "太田西ノ内病院",
+      "countryCode": "JP",
+      "origin": "https://www.ohta-hp.or.jp",
+      "lat": 37.4070811,
+      "lng": 140.3662939
+    },
+    {
+      "code": "osm:node/2722750098",
+      "name": "守谷慶友病院",
+      "countryCode": "JP",
+      "origin": "https://keiyu.or.jp",
+      "lat": 35.9532901,
+      "lng": 139.9787576
+    },
+    {
+      "code": "osm:node/2728916082",
+      "name": "山本医院",
+      "countryCode": "JP",
+      "origin": "http://www.eonet.ne.jp",
+      "lat": 35.0137461,
+      "lng": 135.7767123
+    },
+    {
+      "code": "osm:node/2785061744",
+      "name": "澤田医院",
+      "countryCode": "JP",
+      "origin": "https://www.sawada-clinic.org",
+      "lat": 35.4748156,
+      "lng": 135.3911487
+    },
+    {
+      "code": "osm:node/2844358617",
+      "name": "横山内科",
+      "countryCode": "JP",
+      "origin": "http://website2.infomity.net",
+      "lat": 34.7621772,
+      "lng": 137.3904165
+    },
+    {
+      "code": "osm:node/2950961979",
+      "name": "千葉徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://www.chibatoku.or.jp",
+      "lat": 35.7316405,
+      "lng": 140.0329738
+    },
+    {
+      "code": "osm:node/3031129005",
+      "name": "島村記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.shimamura-hosp.com",
+      "lat": 35.723241,
+      "lng": 139.5739571
+    },
+    {
+      "code": "osm:node/3058771918",
+      "name": "こばやし内科小児科クリニック",
+      "countryCode": "JP",
+      "origin": "https://kobayashi-naika-shounika-clinic.com",
+      "lat": 35.7388101,
+      "lng": 139.3103288
+    },
+    {
+      "code": "osm:node/3104863329",
+      "name": "千歳桂病院",
+      "countryCode": "JP",
+      "origin": "http://www.chitose-katsura.or.jp",
+      "lat": 42.813343,
+      "lng": 141.5916
+    },
+    {
+      "code": "osm:node/3104863343",
+      "name": "三石国保病院",
+      "countryCode": "JP",
+      "origin": "https://www.shinhidaka-hokkaido.jp",
+      "lat": 42.2482484,
+      "lng": 142.5616107
+    },
+    {
+      "code": "osm:node/3174709241",
+      "name": "湘南メディカル記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.sbc-hospital.jp",
+      "lat": 35.6955722,
+      "lng": 139.7924394
+    },
+    {
+      "code": "osm:node/3180256451",
+      "name": "仙波整形外科",
+      "countryCode": "JP",
+      "origin": "https://senbaseikei.com",
+      "lat": 33.2155728,
+      "lng": 131.5945401
+    },
+    {
+      "code": "osm:node/3180257567",
+      "name": "曽根崎産婦人科",
+      "countryCode": "JP",
+      "origin": "https://sonezaki-clinic.com",
+      "lat": 33.2157954,
+      "lng": 131.5946277
+    },
+    {
+      "code": "osm:node/3195044675",
+      "name": "岡山ハートクリニック",
+      "countryCode": "JP",
+      "origin": "http://www.okayama-heart.com",
+      "lat": 34.6813953,
+      "lng": 133.9394384
+    },
+    {
+      "code": "osm:node/3223025217",
+      "name": "奈良県西和医療センター",
+      "countryCode": "JP",
+      "origin": "https://seiwa-mc.jp",
+      "lat": 34.6011774,
+      "lng": 135.7103797
+    },
+    {
+      "code": "osm:node/3372959693",
+      "name": "桑園病院",
+      "countryCode": "JP",
+      "origin": "https://www.soen-hosp.com",
+      "lat": 43.072826,
+      "lng": 141.3301263
+    },
+    {
+      "code": "osm:node/3372962673",
+      "name": "桑園中央病院",
+      "countryCode": "JP",
+      "origin": "https://sch-hospital.com",
+      "lat": 43.0684818,
+      "lng": 141.3303801
+    },
+    {
+      "code": "osm:node/3494262100",
+      "name": "札幌円山整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.maruyama-seikeigeka.com",
+      "lat": 43.0650199,
+      "lng": 141.3146986
+    },
+    {
+      "code": "osm:node/3642243196",
+      "name": "羽村相互診療所",
+      "countryCode": "JP",
+      "origin": "https://www.t-kenseikai.jp",
+      "lat": 35.7529243,
+      "lng": 139.3206258
+    },
+    {
+      "code": "osm:node/3694520620",
+      "name": "宮の森病院",
+      "countryCode": "JP",
+      "origin": "http://www.miyanomori-hp.or.jp",
+      "lat": 43.0562611,
+      "lng": 141.2920273
+    },
+    {
+      "code": "osm:node/3737637147",
+      "name": "水海道さくら病院",
+      "countryCode": "JP",
+      "origin": "http://www.msakura-hsp.com",
+      "lat": 36.0335285,
+      "lng": 139.9903944
+    },
+    {
+      "code": "osm:node/3801709173",
+      "name": "札幌明日佳病院",
+      "countryCode": "JP",
+      "origin": "https://www.asuka-gp.or.jp",
+      "lat": 43.0430315,
+      "lng": 141.2933728
+    },
+    {
+      "code": "osm:node/3810706657",
+      "name": "札幌西円山病院",
+      "countryCode": "JP",
+      "origin": "https://keijinkai.com",
+      "lat": 43.0402283,
+      "lng": 141.3034923
+    },
+    {
+      "code": "osm:node/3810906242",
+      "name": "旭山病院",
+      "countryCode": "JP",
+      "origin": "http://www.hokujin.or.jp",
+      "lat": 43.0414066,
+      "lng": 141.3120331
+    },
+    {
+      "code": "osm:node/3851695361",
+      "name": "九段坂病院",
+      "countryCode": "JP",
+      "origin": "http://www.kudanzaka.com",
+      "lat": 35.6938447,
+      "lng": 139.7522986
+    },
+    {
+      "code": "osm:node/3866629821",
+      "name": "慈恵会病院",
+      "countryCode": "JP",
+      "origin": "https://www.sapporojikeikai.or.jp",
+      "lat": 43.0364071,
+      "lng": 141.3229481
+    },
+    {
+      "code": "osm:node/3874159018",
+      "name": "いしせ脳神経外科クリニック",
+      "countryCode": "JP",
+      "origin": "https://ishise.com",
+      "lat": 35.673237,
+      "lng": 139.780372
+    },
+    {
+      "code": "osm:node/3893498314",
+      "name": "札幌中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.sc-h.or.jp",
+      "lat": 43.047538,
+      "lng": 141.3433844
+    },
+    {
+      "code": "osm:node/3924659707",
+      "name": "心和病院",
+      "countryCode": "JP",
+      "origin": "http://www.shinwahp.jp",
+      "lat": 43.0415833,
+      "lng": 141.3292249
+    },
+    {
+      "code": "osm:node/3924884292",
+      "name": "札幌いしやま病院",
+      "countryCode": "JP",
+      "origin": "http://www.ishiyamahp.jp",
+      "lat": 43.0394303,
+      "lng": 141.34418
+    },
+    {
+      "code": "osm:node/3937059079",
+      "name": "土田病院",
+      "countryCode": "JP",
+      "origin": "https://tsuchida.or.jp",
+      "lat": 43.0312546,
+      "lng": 141.3475879
+    },
+    {
+      "code": "osm:node/3949372840",
+      "name": "特定医療法人 社団慈藻会 平松記念病院",
+      "countryCode": "JP",
+      "origin": "https://hiramatu-mhp.or.jp",
+      "lat": 43.029919,
+      "lng": 141.3390521
+    },
+    {
+      "code": "osm:node/3978867720",
+      "name": "札幌南整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://minamiseikei.or.jp",
+      "lat": 43.0138026,
+      "lng": 141.3454226
+    },
+    {
+      "code": "osm:node/4045858290",
+      "name": "自衛隊札幌病院",
+      "countryCode": "JP",
+      "origin": "https://www.mod.go.jp",
+      "lat": 43.0060692,
+      "lng": 141.3536387
+    },
+    {
+      "code": "osm:node/4055740244",
+      "name": "与那国町立診療所",
+      "countryCode": "JP",
+      "origin": "https://yonaguni.jadecom.or.jp",
+      "lat": 24.4681149,
+      "lng": 123.0040759
+    },
+    {
+      "code": "osm:node/4080772269",
+      "name": "平岸外科整形外科医院",
+      "countryCode": "JP",
+      "origin": "https://spmed.jp",
+      "lat": 43.021189,
+      "lng": 141.3669358
+    },
+    {
+      "code": "osm:node/4103949369",
+      "name": "北海道整形外科記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.hokkaido-seikei-kinen.jp",
+      "lat": 43.0248978,
+      "lng": 141.3818268
+    },
+    {
+      "code": "osm:node/4115974402",
+      "name": "クリニックぎのわん",
+      "countryCode": "JP",
+      "origin": "https://www.tougou.jp",
+      "lat": 26.2875259,
+      "lng": 127.7453819
+    },
+    {
+      "code": "osm:node/4115974415",
+      "name": "まつしまクリニック",
+      "countryCode": "JP",
+      "origin": "http://hosp.pref.okinawa.jp",
+      "lat": 26.4249725,
+      "lng": 127.7307257
+    },
+    {
+      "code": "osm:node/4117856673",
+      "name": "林下病院",
+      "countryCode": "JP",
+      "origin": "https://hayashishita.jp",
+      "lat": 43.0112347,
+      "lng": 141.3674601
+    },
+    {
+      "code": "osm:node/4188578975",
+      "name": "小笠原クリニック札幌病院",
+      "countryCode": "JP",
+      "origin": "http://www.ogasawara-hp.or.jp",
+      "lat": 42.9943367,
+      "lng": 141.3489891
+    },
+    {
+      "code": "osm:node/4197196194",
+      "name": "埼玉縣越谷紅山町5丁目10號18號",
+      "countryCode": "JP",
+      "origin": "https://www.jyu-zen-byouin.jp",
+      "lat": 35.8841609,
+      "lng": 139.7841866
+    },
+    {
+      "code": "osm:node/4239268090",
+      "name": "越谷ハートフルクリニック",
+      "countryCode": "JP",
+      "origin": "http://k-hc.jp",
+      "lat": 35.862912,
+      "lng": 139.8129165
+    },
+    {
+      "code": "osm:node/4244097039",
+      "name": "百町整形外科内科呼吸器内科",
+      "countryCode": "JP",
+      "origin": "https://hyakumachi.com",
+      "lat": 42.9711338,
+      "lng": 141.3394068
+    },
+    {
+      "code": "osm:node/4248384189",
+      "name": "札幌麻生脳神経外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.azabunougeka.or.jp",
+      "lat": 43.0882625,
+      "lng": 141.3499039
+    },
+    {
+      "code": "osm:node/4259727587",
+      "name": "芸術の森泌尿器科",
+      "countryCode": "JP",
+      "origin": "http://www.apurology.or.jp",
+      "lat": 42.966747,
+      "lng": 141.3423352
+    },
+    {
+      "code": "osm:node/4268817396",
+      "name": "片岡内科医院",
+      "countryCode": "JP",
+      "origin": "https://kataoka-naikaiin.com",
+      "lat": 34.6538828,
+      "lng": 133.9242188
+    },
+    {
+      "code": "osm:node/4272454196",
+      "name": "札幌南病院",
+      "countryCode": "JP",
+      "origin": "http://www.zion-g.jp",
+      "lat": 42.9544239,
+      "lng": 141.3438746
+    },
+    {
+      "code": "osm:node/4281391462",
+      "name": "ときわ病院",
+      "countryCode": "JP",
+      "origin": "https://www.tokiwahp.jp",
+      "lat": 42.9438073,
+      "lng": 141.3446082
+    },
+    {
+      "code": "osm:node/4284239289",
+      "name": "伊藤内科医院",
+      "countryCode": "JP",
+      "origin": "http://www7b.biglobe.ne.jp",
+      "lat": 34.4071007,
+      "lng": 132.4686852
+    },
+    {
+      "code": "osm:node/4304267966",
+      "name": "アネックス湊川ホスピタル",
+      "countryCode": "JP",
+      "origin": "https://www.annex-minatogawa.jp",
+      "lat": 34.7058056,
+      "lng": 135.1131905
+    },
+    {
+      "code": "osm:node/4328754237",
+      "name": "五輪橋整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.gorinbashi-seikei.com",
+      "lat": 42.9989444,
+      "lng": 141.3381886
+    },
+    {
+      "code": "osm:node/4328754261",
+      "name": "札幌共立五輪橋病院",
+      "countryCode": "JP",
+      "origin": "http://www.gorinbashi.or.jp",
+      "lat": 42.9983858,
+      "lng": 141.3386022
+    },
+    {
+      "code": "osm:node/4333206913",
+      "name": "中村記念南病院",
+      "countryCode": "JP",
+      "origin": "http://www.nmh.or.jp",
+      "lat": 42.9976183,
+      "lng": 141.3355168
+    },
+    {
+      "code": "osm:node/4343795643",
+      "name": "北ノ沢病院",
+      "countryCode": "JP",
+      "origin": "https://www.spmed.jp",
+      "lat": 43.0075665,
+      "lng": 141.3139607
+    },
+    {
+      "code": "osm:node/4347286192",
+      "name": "下奥多摩病院",
+      "countryCode": "JP",
+      "origin": "http://www.shimookutama-iin.jp",
+      "lat": 35.781855,
+      "lng": 139.2721544
+    },
+    {
+      "code": "osm:node/4375033205",
+      "name": "南札幌脳神経外科",
+      "countryCode": "JP",
+      "origin": "http://msnsc.jp",
+      "lat": 43.0001395,
+      "lng": 141.3312329
+    },
+    {
+      "code": "osm:node/4386496749",
+      "name": "もなみクリニック",
+      "countryCode": "JP",
+      "origin": "http://monami-cl.com",
+      "lat": 42.9925741,
+      "lng": 141.3315992
+    },
+    {
+      "code": "osm:node/4395820882",
+      "name": "晴生会さっぽろ南病院",
+      "countryCode": "JP",
+      "origin": "http://www.aoikai.jp",
+      "lat": 42.9765907,
+      "lng": 141.337227
+    },
+    {
+      "code": "osm:node/4396888136",
+      "name": "愛全病院",
+      "countryCode": "JP",
+      "origin": "http://www.aizenkai.or.jp",
+      "lat": 42.9794397,
+      "lng": 141.3334955
+    },
+    {
+      "code": "osm:node/4405145716",
+      "name": "定山渓病院",
+      "countryCode": "JP",
+      "origin": "https://www.keijinkai.com",
+      "lat": 42.9685017,
+      "lng": 141.1645715
+    },
+    {
+      "code": "osm:node/4440500184",
+      "name": "行徳総合病院",
+      "countryCode": "JP",
+      "origin": "https://gyo-toku.jp",
+      "lat": 35.6796598,
+      "lng": 139.9313083
+    },
+    {
+      "code": "osm:node/4467231249",
+      "name": "札幌ライラック病院",
+      "countryCode": "JP",
+      "origin": "http://www.lilac.or.jp",
+      "lat": 43.0466787,
+      "lng": 141.3723727
+    },
+    {
+      "code": "osm:node/4472086396",
+      "name": "三浦内科循環器クリニック",
+      "countryCode": "JP",
+      "origin": "https://www.spmed.jp",
+      "lat": 43.0510455,
+      "lng": 141.365324
+    },
+    {
+      "code": "osm:node/4478961289",
+      "name": "県北医療センター高萩協同病院",
+      "countryCode": "JP",
+      "origin": "https://www.takahagi-kyodo-hp.jp",
+      "lat": 36.732726,
+      "lng": 140.6842803
+    },
+    {
+      "code": "osm:node/4483180723",
+      "name": "華岡青洲記念 心臓血管クリニック",
+      "countryCode": "JP",
+      "origin": "https://hanaokaseishu.com",
+      "lat": 43.0414247,
+      "lng": 141.3870922
+    },
+    {
+      "code": "osm:node/4484756137",
+      "name": "恵仁会佐々木内科病院",
+      "countryCode": "JP",
+      "origin": "https://www.sasakinaika.info",
+      "lat": 43.0350077,
+      "lng": 141.3890617
+    },
+    {
+      "code": "osm:node/4496104696",
+      "name": "NTT東日本関東病院",
+      "countryCode": "JP",
+      "origin": "https://www.nmct.ntt-east.co.jp",
+      "lat": 35.6312558,
+      "lng": 139.7256288
+    },
+    {
+      "code": "osm:node/4500295704",
+      "name": "仙塩総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.sen-en.jp",
+      "lat": 38.2913912,
+      "lng": 141.0151102
+    },
+    {
+      "code": "osm:node/4502277691",
+      "name": "赤石病院",
+      "countryCode": "JP",
+      "origin": "http://www.akaishi-h.or.jp",
+      "lat": 38.3070391,
+      "lng": 141.0187606
+    },
+    {
+      "code": "osm:node/4508693387",
+      "name": "北海道消化器科病院",
+      "countryCode": "JP",
+      "origin": "https://www.hgh.or.jp",
+      "lat": 43.0803631,
+      "lng": 141.3786246
+    },
+    {
+      "code": "osm:node/4511434097",
+      "name": "札幌道都病院",
+      "countryCode": "JP",
+      "origin": "http://www.doto.org",
+      "lat": 43.0846861,
+      "lng": 141.3715246
+    },
+    {
+      "code": "osm:node/4511434098",
+      "name": "札幌東豊病院",
+      "countryCode": "JP",
+      "origin": "http://www.toho-hosp.or.jp",
+      "lat": 43.0847987,
+      "lng": 141.3726898
+    },
+    {
+      "code": "osm:node/4511609437",
+      "name": "誠心眼科病院",
+      "countryCode": "JP",
+      "origin": "http://www.seishin-ganka.or.jp",
+      "lat": 43.0833509,
+      "lng": 141.3790154
+    },
+    {
+      "code": "osm:node/4516898491",
+      "name": "長町病院",
+      "countryCode": "JP",
+      "origin": "https://www.m-kousei.com",
+      "lat": 38.2297648,
+      "lng": 140.8839673
+    },
+    {
+      "code": "osm:node/4528233990",
+      "name": "緑ヶ丘病院",
+      "countryCode": "JP",
+      "origin": "http://www.midorigaoka-shiogama.com",
+      "lat": 38.3102303,
+      "lng": 141.0017028
+    },
+    {
+      "code": "osm:node/4535529001",
+      "name": "さっぽろ神経内科病院",
+      "countryCode": "JP",
+      "origin": "http://www.ceres21.jp",
+      "lat": 43.0907486,
+      "lng": 141.3832835
+    },
+    {
+      "code": "osm:node/4547995790",
+      "name": "愛心メモリアル病院",
+      "countryCode": "JP",
+      "origin": "https://aishinmemorial-hp.or.jp",
+      "lat": 43.0944003,
+      "lng": 141.3475313
+    },
+    {
+      "code": "osm:node/4568256726",
+      "name": "北光記念病院",
+      "countryCode": "JP",
+      "origin": "http://www.hokko.or.jp",
+      "lat": 43.0966615,
+      "lng": 141.3608809
+    },
+    {
+      "code": "osm:node/4571190705",
+      "name": "札幌東徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://www.higashi-tokushukai.or.jp",
+      "lat": 43.1035612,
+      "lng": 141.3659298
+    },
+    {
+      "code": "osm:node/4574968799",
+      "name": "富谷中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.cl-meiyo.org",
+      "lat": 38.3625229,
+      "lng": 140.8795275
+    },
+    {
+      "code": "osm:node/4577315694",
+      "name": "中頭病院",
+      "countryCode": "JP",
+      "origin": "https://nakagami.or.jp",
+      "lat": 26.3665319,
+      "lng": 127.8259156
+    },
+    {
+      "code": "osm:node/4586673490",
+      "name": "国民健康保険 川崎病院",
+      "countryCode": "JP",
+      "origin": "https://www.town.kawasaki.miyagi.jp",
+      "lat": 38.1823346,
+      "lng": 140.6301
+    },
+    {
+      "code": "osm:node/4593889190",
+      "name": "札幌東和病院",
+      "countryCode": "JP",
+      "origin": "https://sapporo-towa-hp.sakura.ne.jp",
+      "lat": 43.1010405,
+      "lng": 141.3768289
+    },
+    {
+      "code": "osm:node/4594043518",
+      "name": "啓生会病院",
+      "countryCode": "JP",
+      "origin": "https://keiseikai-hsp.com",
+      "lat": 43.0996282,
+      "lng": 141.3816432
+    },
+    {
+      "code": "osm:node/4608816796",
+      "name": "耳鼻咽喉科麻生病院",
+      "countryCode": "JP",
+      "origin": "https://www.jibiazabu.or.jp",
+      "lat": 43.1079816,
+      "lng": 141.344555
+    },
+    {
+      "code": "osm:node/4608816810",
+      "name": "北海道泌尿器科記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.hokkaido-hinyoukika.or.jp",
+      "lat": 43.1095458,
+      "lng": 141.3448599
+    },
+    {
+      "code": "osm:node/4652773007",
+      "name": "東栄病院",
+      "countryCode": "JP",
+      "origin": "https://www.touei.or.jp",
+      "lat": 43.1127377,
+      "lng": 141.3676843
+    },
+    {
+      "code": "osm:node/4656247397",
+      "name": "仙石病院",
+      "countryCode": "JP",
+      "origin": "https://senseki.com",
+      "lat": 38.43148,
+      "lng": 141.2580272
+    },
+    {
+      "code": "osm:node/4663011700",
+      "name": "こだまホスピタル",
+      "countryCode": "JP",
+      "origin": "https://kodama-hp.com",
+      "lat": 38.4298451,
+      "lng": 141.2920637
+    },
+    {
+      "code": "osm:node/4671693692",
+      "name": "栗原市立栗駒病院",
+      "countryCode": "JP",
+      "origin": "https://www.kurikoma-hp.jp",
+      "lat": 38.8269333,
+      "lng": 140.9907264
+    },
+    {
+      "code": "osm:node/4686586889",
+      "name": "宮城中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.miyachu-hp.or.jp",
+      "lat": 38.2711888,
+      "lng": 140.8713783
+    },
+    {
+      "code": "osm:node/4739115993",
+      "name": "桜ヶ丘病院",
+      "countryCode": "JP",
+      "origin": "https://www.cherry-hill.or.jp",
+      "lat": 34.0857372,
+      "lng": 135.1235024
+    },
+    {
+      "code": "osm:node/4754131826",
+      "name": "あさひの丘病院",
+      "countryCode": "JP",
+      "origin": "https://www.seisinkai.jp",
+      "lat": 35.492674,
+      "lng": 139.5069143
+    },
+    {
+      "code": "osm:node/4774467784",
+      "name": "JR東京総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.jreast.co.jp",
+      "lat": 35.685692,
+      "lng": 139.6999138
+    },
+    {
+      "code": "osm:node/4791785889",
+      "name": "札幌百合の会病院",
+      "countryCode": "JP",
+      "origin": "http://www.yurinokai.jp",
+      "lat": 43.1317654,
+      "lng": 141.3674998
+    },
+    {
+      "code": "osm:node/4826284738",
+      "name": "札幌佐藤病院",
+      "countryCode": "JP",
+      "origin": "http://www.s-sato-hp.jp",
+      "lat": 43.0829204,
+      "lng": 141.3920313
+    },
+    {
+      "code": "osm:node/4827098185",
+      "name": "整形外科北新東病院",
+      "countryCode": "JP",
+      "origin": "https://www.srh.or.jp",
+      "lat": 43.0883255,
+      "lng": 141.391728
+    },
+    {
+      "code": "osm:node/4839907316",
+      "name": "東苗穂病院",
+      "countryCode": "JP",
+      "origin": "https://www.houseikai.or.jp",
+      "lat": 43.0881622,
+      "lng": 141.3993661
+    },
+    {
+      "code": "osm:node/4850911703",
+      "name": "勤医協中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.kin-ikyo-chuo.jp",
+      "lat": 43.09143,
+      "lng": 141.4031022
+    },
+    {
+      "code": "osm:node/4858688868",
+      "name": "札苗病院",
+      "countryCode": "JP",
+      "origin": "http://satsunae-hp.jp",
+      "lat": 43.0949616,
+      "lng": 141.4122926
+    },
+    {
+      "code": "osm:node/4863918221",
+      "name": "花川病院",
+      "countryCode": "JP",
+      "origin": "https://kyouseikai.jp",
+      "lat": 43.1403683,
+      "lng": 141.2929602
+    },
+    {
+      "code": "osm:node/4881072566",
+      "name": "斗南病院",
+      "countryCode": "JP",
+      "origin": "https://www.tonan.kkr.or.jp",
+      "lat": 43.0652109,
+      "lng": 141.345511
+    },
+    {
+      "code": "osm:node/4943307121",
+      "name": "さとう整骨院",
+      "countryCode": "JP",
+      "origin": "http://xn--p8j3a7cx803apexcsmf.com",
+      "lat": 43.090818,
+      "lng": 141.3580934
+    },
+    {
+      "code": "osm:node/4962958436",
+      "name": "札幌渓仁会リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.keijinkai.com",
+      "lat": 43.0704164,
+      "lng": 141.3280168
+    },
+    {
+      "code": "osm:node/4978372495",
+      "name": "太黒胃腸内科病院",
+      "countryCode": "JP",
+      "origin": "https://www.oguro-hp.jp",
+      "lat": 43.0740806,
+      "lng": 141.3491136
+    },
+    {
+      "code": "osm:node/4978500422",
+      "name": "札幌マタニティ・ウイメンズホスピタル",
+      "countryCode": "JP",
+      "origin": "https://www.smwh.or.jp",
+      "lat": 43.0766937,
+      "lng": 141.3472812
+    },
+    {
+      "code": "osm:node/4981242614",
+      "name": "大塚眼科病院",
+      "countryCode": "JP",
+      "origin": "http://www.ohtsuka-eye.com",
+      "lat": 43.0800926,
+      "lng": 141.3458705
+    },
+    {
+      "code": "osm:node/4991398864",
+      "name": "松田整形外科記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.matsuda-oh.com",
+      "lat": 43.081997,
+      "lng": 141.3459737
+    },
+    {
+      "code": "osm:node/5008555623",
+      "name": "中江病院",
+      "countryCode": "JP",
+      "origin": "https://www.shinyukai-r.or.jp",
+      "lat": 43.0876627,
+      "lng": 141.3397367
+    },
+    {
+      "code": "osm:node/5031322707",
+      "name": "長生会病院",
+      "countryCode": "JP",
+      "origin": "https://choseikai.com",
+      "lat": 43.0913016,
+      "lng": 141.3242491
+    },
+    {
+      "code": "osm:node/5047159734",
+      "name": "開成病院",
+      "countryCode": "JP",
+      "origin": "http://www.h-kaisei-hosp.com",
+      "lat": 43.0999957,
+      "lng": 141.3385856
+    },
+    {
+      "code": "osm:node/5047586876",
+      "name": "中部徳洲会病院",
+      "countryCode": "JP",
+      "origin": "http://www.cyutoku.or.jp",
+      "lat": 26.3169429,
+      "lng": 127.7970112
+    },
+    {
+      "code": "osm:node/5059931321",
+      "name": "名取熊野堂病院",
+      "countryCode": "JP",
+      "origin": "https://natori-kumanodo.jp",
+      "lat": 38.1978022,
+      "lng": 140.8499376
+    },
+    {
+      "code": "osm:node/5061227596",
+      "name": "北札幌病院",
+      "countryCode": "JP",
+      "origin": "https://kitasatsu.or.jp",
+      "lat": 43.1127852,
+      "lng": 141.3371999
+    },
+    {
+      "code": "osm:node/5072544141",
+      "name": "新川新道整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://shinkawashindo.com",
+      "lat": 43.1029055,
+      "lng": 141.3209904
+    },
+    {
+      "code": "osm:node/5084874562",
+      "name": "石金病院",
+      "countryCode": "JP",
+      "origin": "https://www.ishikane-hospital.or.jp",
+      "lat": 43.1200025,
+      "lng": 141.2987938
+    },
+    {
+      "code": "osm:node/5084885431",
+      "name": "北成病院",
+      "countryCode": "JP",
+      "origin": "https://hokusei-hp.or.jp",
+      "lat": 43.1243085,
+      "lng": 141.2874162
+    },
+    {
+      "code": "osm:node/5087480762",
+      "name": "札幌鈴木病院",
+      "countryCode": "JP",
+      "origin": "https://www.sapporo-suzuki-hospital.jp",
+      "lat": 43.1047478,
+      "lng": 141.3302071
+    },
+    {
+      "code": "osm:node/5087571841",
+      "name": "牧田病院",
+      "countryCode": "JP",
+      "origin": "https://www.makita-hp.com",
+      "lat": 43.1032189,
+      "lng": 141.3252588
+    },
+    {
+      "code": "osm:node/5096664862",
+      "name": "麻生整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://asabuseikei.or.jp",
+      "lat": 43.1128279,
+      "lng": 141.3326381
+    },
+    {
+      "code": "osm:node/5132733222",
+      "name": "仙台循環器病センター",
+      "countryCode": "JP",
+      "origin": "https://www.mygsji.or.jp",
+      "lat": 38.324927,
+      "lng": 140.8811122
+    },
+    {
+      "code": "osm:node/5170391786",
+      "name": "小原病院",
+      "countryCode": "JP",
+      "origin": "https://www.spmed.jp",
+      "lat": 43.1444078,
+      "lng": 141.3169371
+    },
+    {
+      "code": "osm:node/5201071639",
+      "name": "札幌しらかば台病院",
+      "countryCode": "JP",
+      "origin": "https://www.kouwakai.or.jp",
+      "lat": 43.0178558,
+      "lng": 141.4211156
+    },
+    {
+      "code": "osm:node/5207894530",
+      "name": "仙台リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.sendai-reha.or.jp",
+      "lat": 38.3665584,
+      "lng": 140.891106
+    },
+    {
+      "code": "osm:node/5243568304",
+      "name": "荒木病院",
+      "countryCode": "JP",
+      "origin": "https://www.araki-hospital.jp",
+      "lat": 43.1451575,
+      "lng": 141.3540924
+    },
+    {
+      "code": "osm:node/5251690494",
+      "name": "札幌優翔館病院",
+      "countryCode": "JP",
+      "origin": "http://www.shoureikan.jp",
+      "lat": 43.1646299,
+      "lng": 141.357912
+    },
+    {
+      "code": "osm:node/5400358022",
+      "name": "参宮橋脊椎外科病院",
+      "countryCode": "JP",
+      "origin": "https://sangubashi-spine-surgery-hospital.com",
+      "lat": 35.680797,
+      "lng": 139.6968215
+    },
+    {
+      "code": "osm:node/5435254901",
+      "name": "北海道がんセンター",
+      "countryCode": "JP",
+      "origin": "http://www.sap-cc.org",
+      "lat": 43.0581812,
+      "lng": 141.3744454
+    },
+    {
+      "code": "osm:node/5455320523",
+      "name": "大原綜合病院",
+      "countryCode": "JP",
+      "origin": "https://www.ohara-hp.or.jp",
+      "lat": 37.753048,
+      "lng": 140.4689879
+    },
+    {
+      "code": "osm:node/5515879525",
+      "name": "北海道医療大学病院",
+      "countryCode": "JP",
+      "origin": "http://hospital.hoku-iryo-u.ac.jp",
+      "lat": 43.1591804,
+      "lng": 141.3977532
+    },
+    {
+      "code": "osm:node/5562140691",
+      "name": "海老名総合病院",
+      "countryCode": "JP",
+      "origin": "https://ebina.jinai.jp",
+      "lat": 35.4472237,
+      "lng": 139.3850266
+    },
+    {
+      "code": "osm:node/5617546329",
+      "name": "千歳第一病院",
+      "countryCode": "JP",
+      "origin": "https://www.dojinkai-group.com",
+      "lat": 42.8204718,
+      "lng": 141.6479736
+    },
+    {
+      "code": "osm:node/5646986774",
+      "name": "湘陽かしわ台病院",
+      "countryCode": "JP",
+      "origin": "https://syokashi-hp.or.jp",
+      "lat": 35.4644717,
+      "lng": 139.4154153
+    },
+    {
+      "code": "osm:node/5666923943",
+      "name": "千歳病院",
+      "countryCode": "JP",
+      "origin": "https://www.siseikai.or.jp",
+      "lat": 42.8198279,
+      "lng": 141.6242526
+    },
+    {
+      "code": "osm:node/5673960321",
+      "name": "なごみ皮ふ科",
+      "countryCode": "JP",
+      "origin": "https://yonemoto.mdja.jp",
+      "lat": 35.4504549,
+      "lng": 139.3886495
+    },
+    {
+      "code": "osm:node/5682203860",
+      "name": "千歳豊友会病院",
+      "countryCode": "JP",
+      "origin": "https://www.foryou-hp.or.jp",
+      "lat": 42.8353748,
+      "lng": 141.644159
+    },
+    {
+      "code": "osm:node/5692355621",
+      "name": "健生病院",
+      "countryCode": "JP",
+      "origin": "https://www.kensei-hp.jp",
+      "lat": 40.5866571,
+      "lng": 140.5013172
+    },
+    {
+      "code": "osm:node/5760902699",
+      "name": "北星病院",
+      "countryCode": "JP",
+      "origin": "https://www.hokusei.or.jp",
+      "lat": 42.8423195,
+      "lng": 141.6582725
+    },
+    {
+      "code": "osm:node/5784354811",
+      "name": "市立千歳市民病院",
+      "countryCode": "JP",
+      "origin": "https://chitose-shimin-hospital.jp",
+      "lat": 42.8439574,
+      "lng": 141.6398748
+    },
+    {
+      "code": "osm:node/5803738643",
+      "name": "高田病院",
+      "countryCode": "JP",
+      "origin": "http://www.takata-hp.com",
+      "lat": 39.0254486,
+      "lng": 141.6419225
+    },
+    {
+      "code": "osm:node/5818166889",
+      "name": "向陽台病院",
+      "countryCode": "JP",
+      "origin": "https://www.dojinkai-group.com",
+      "lat": 42.7997261,
+      "lng": 141.6063128
+    },
+    {
+      "code": "osm:node/5852828529",
+      "name": "姫路市休日夜間急病センター",
+      "countryCode": "JP",
+      "origin": "https://www.himeji99iryo.or.jp",
+      "lat": 34.8407595,
+      "lng": 134.6610358
+    },
+    {
+      "code": "osm:node/5885017090",
+      "name": "沖縄県立宮古病院",
+      "countryCode": "JP",
+      "origin": "http://hosp.pref.okinawa.jp",
+      "lat": 24.7993361,
+      "lng": 125.2763354
+    },
+    {
+      "code": "osm:node/5886798991",
+      "name": "山内眼科医院",
+      "countryCode": "JP",
+      "origin": "http://www.eye-sophy.com",
+      "lat": 35.8615196,
+      "lng": 139.8575199
+    },
+    {
+      "code": "osm:node/5886804089",
+      "name": "埼友草加病院",
+      "countryCode": "JP",
+      "origin": "https://www.saiyusoka.jp",
+      "lat": 35.8416507,
+      "lng": 139.8007674
+    },
+    {
+      "code": "osm:node/5925170676",
+      "name": "札幌ススキノ病院",
+      "countryCode": "JP",
+      "origin": "http://www.zion-g.jp",
+      "lat": 43.0526124,
+      "lng": 141.3466277
+    },
+    {
+      "code": "osm:node/6254210003",
+      "name": "練馬総合病院",
+      "countryCode": "JP",
+      "origin": "https://nerima-hosp.or.jp",
+      "lat": 35.7335453,
+      "lng": 139.6770763
+    },
+    {
+      "code": "osm:node/6277967710",
+      "name": "錦織病院",
+      "countryCode": "JP",
+      "origin": "https://nishigori.jp",
+      "lat": 34.5121748,
+      "lng": 135.8010178
+    },
+    {
+      "code": "osm:node/6363714320",
+      "name": "宮の森記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.miyanomori.or.jp",
+      "lat": 43.0622405,
+      "lng": 141.3028886
+    },
+    {
+      "code": "osm:node/6704316585",
+      "name": "女満別中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.sousinkai.jp",
+      "lat": 43.9094976,
+      "lng": 144.1714622
+    },
+    {
+      "code": "osm:node/6705148185",
+      "name": "福島県立医科大学附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.fmu.ac.jp",
+      "lat": 37.6898224,
+      "lng": 140.4715216
+    },
+    {
+      "code": "osm:node/6833831803",
+      "name": "春日療養園",
+      "countryCode": "JP",
+      "origin": "http://kasuga.la.coocan.jp",
+      "lat": 38.1962583,
+      "lng": 140.8857923
+    },
+    {
+      "code": "osm:node/6954040285",
+      "name": "濱井眼科",
+      "countryCode": "JP",
+      "origin": "https://www.yamagatashi-ishikai.or.jp",
+      "lat": 38.2353668,
+      "lng": 140.3404935
+    },
+    {
+      "code": "osm:node/7014396083",
+      "name": "北広島病院",
+      "countryCode": "JP",
+      "origin": "https://sokujinkai.or.jp",
+      "lat": 42.9797432,
+      "lng": 141.5643722
+    },
+    {
+      "code": "osm:node/7222623462",
+      "name": "平成会病院",
+      "countryCode": "JP",
+      "origin": "http://www.heisei-hospital.jp",
+      "lat": 43.0587676,
+      "lng": 141.3291791
+    },
+    {
+      "code": "osm:node/7266336049",
+      "name": "北海道脳神経内科病院",
+      "countryCode": "JP",
+      "origin": "https://www.hokuyukai-neurological-hosp.jp",
+      "lat": 43.0745729,
+      "lng": 141.3143337
+    },
+    {
+      "code": "osm:node/7274237419",
+      "name": "ふかざわ病院",
+      "countryCode": "JP",
+      "origin": "http://www.fukazawa-hp.jp",
+      "lat": 43.0714611,
+      "lng": 141.3120153
+    },
+    {
+      "code": "osm:node/7274237420",
+      "name": "さっぽろ二十四軒病院",
+      "countryCode": "JP",
+      "origin": "https://sapporo24.aldebaran.or.jp",
+      "lat": 43.0724075,
+      "lng": 141.3118329
+    },
+    {
+      "code": "osm:node/7434652386",
+      "name": "小児科西町クリニック",
+      "countryCode": "JP",
+      "origin": "http://www.npc-shounika.com",
+      "lat": 43.0764329,
+      "lng": 141.2882186
+    },
+    {
+      "code": "osm:node/7555004577",
+      "name": "我汝会きたひろしま整形外科",
+      "countryCode": "JP",
+      "origin": "https://www.wajo-kitahiro.com",
+      "lat": 42.9872686,
+      "lng": 141.5701987
+    },
+    {
+      "code": "osm:node/7634750788",
+      "name": "鹿島記念病院",
+      "countryCode": "JP",
+      "origin": "https://kashima-m-h.com",
+      "lat": 38.4724911,
+      "lng": 141.1972454
+    },
+    {
+      "code": "osm:node/7906694485",
+      "name": "東邦大学医療センター 大橋病院",
+      "countryCode": "JP",
+      "origin": "https://www.ohashi.med.toho-u.ac.jp",
+      "lat": 35.6523474,
+      "lng": 139.6835936
+    },
+    {
+      "code": "osm:node/7962575085",
+      "name": "加賀市医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.kagacityhp.jp",
+      "lat": 36.3172543,
+      "lng": 136.3517862
+    },
+    {
+      "code": "osm:node/7977573190",
+      "name": "整形外科 北新病院",
+      "countryCode": "JP",
+      "origin": "https://www.hokushin-hp.or.jp",
+      "lat": 43.0723071,
+      "lng": 141.3600044
+    },
+    {
+      "code": "osm:node/8213428517",
+      "name": "公立刈田綜合病院",
+      "countryCode": "JP",
+      "origin": "https://www.katta-hosp.jp",
+      "lat": 38.0117771,
+      "lng": 140.6094082
+    },
+    {
+      "code": "osm:node/8360297248",
+      "name": "東都春日部病院",
+      "countryCode": "JP",
+      "origin": "https://www.touto-kasukabe-hp.com",
+      "lat": 35.9429357,
+      "lng": 139.7680328
+    },
+    {
+      "code": "osm:node/8542882200",
+      "name": "我汝会 さっぽろ病院",
+      "countryCode": "JP",
+      "origin": "https://www.sapporo-hosp.com",
+      "lat": 43.0700259,
+      "lng": 141.3723318
+    },
+    {
+      "code": "osm:node/8646069179",
+      "name": "三峰病院",
+      "countryCode": "JP",
+      "origin": "https://mitsumine-hp.com",
+      "lat": 38.8763216,
+      "lng": 141.5513005
+    },
+    {
+      "code": "osm:node/8930157814",
+      "name": "札幌清田整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.kiyotaseikei.or.jp",
+      "lat": 42.999405,
+      "lng": 141.4402389
+    },
+    {
+      "code": "osm:node/9401721905",
+      "name": "森の病院",
+      "countryCode": "JP",
+      "origin": "https://www.harmonichearts.or.jp",
+      "lat": 35.7383267,
+      "lng": 140.381088
+    },
+    {
+      "code": "osm:node/9857072609",
+      "name": "村上総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.mgh.jp",
+      "lat": 38.2185475,
+      "lng": 139.461396
+    },
+    {
+      "code": "osm:node/9871781103",
+      "name": "サンライズファミリークリニック",
+      "countryCode": "JP",
+      "origin": "http://unimedico.jp",
+      "lat": 35.2275288,
+      "lng": 139.6511387
+    },
+    {
+      "code": "osm:node/9894278420",
+      "name": "静和記念病院",
+      "countryCode": "JP",
+      "origin": "http://seiwa-mh.jp",
+      "lat": 43.0813731,
+      "lng": 141.3224701
+    },
+    {
+      "code": "osm:node/9897028589",
+      "name": "イムス札幌消化器中央総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.ims.gr.jp",
+      "lat": 43.0829771,
+      "lng": 141.3101283
+    },
+    {
+      "code": "osm:node/9922104837",
+      "name": "九十九里病院",
+      "countryCode": "JP",
+      "origin": "https://kujyukuri-hp.or.jp",
+      "lat": 35.5342103,
+      "lng": 140.4372594
+    },
+    {
+      "code": "osm:node/9927181559",
+      "name": "札幌第一病院",
+      "countryCode": "JP",
+      "origin": "http://www.sapporo-daiichi.com",
+      "lat": 43.0763216,
+      "lng": 141.307267
+    },
+    {
+      "code": "osm:node/9934874211",
+      "name": "北海道内科リウマチ科病院",
+      "countryCode": "JP",
+      "origin": "https://ra-hp.jp",
+      "lat": 43.0773959,
+      "lng": 141.3068358
+    },
+    {
+      "code": "osm:node/9949199584",
+      "name": "坂泌尿器科病院",
+      "countryCode": "JP",
+      "origin": "https://saka-uro.or.jp",
+      "lat": 43.0855345,
+      "lng": 141.306071
+    },
+    {
+      "code": "osm:node/9982759047",
+      "name": "札幌琴似整形外科",
+      "countryCode": "JP",
+      "origin": "https://kotoni-seikeigeka.jp",
+      "lat": 43.0791194,
+      "lng": 141.2990581
+    },
+    {
+      "code": "osm:node/9994361088",
+      "name": "真栄病院",
+      "countryCode": "JP",
+      "origin": "http://www.syoujinkai.or.jp",
+      "lat": 42.9785718,
+      "lng": 141.4436643
+    },
+    {
+      "code": "osm:node/9996576410",
+      "name": "さっぽろ香雪病院",
+      "countryCode": "JP",
+      "origin": "http://www.sapporo-kohsetsu.or.jp",
+      "lat": 42.9769898,
+      "lng": 141.4449007
+    },
+    {
+      "code": "osm:node/10036581388",
+      "name": "札幌宮の沢病院",
+      "countryCode": "JP",
+      "origin": "https://www.tanakamedical.net",
+      "lat": 43.1074765,
+      "lng": 141.2634037
+    },
+    {
+      "code": "osm:node/10039032886",
+      "name": "札幌秀友会病院",
+      "countryCode": "JP",
+      "origin": "https://www.shuyukai.or.jp",
+      "lat": 43.1168209,
+      "lng": 141.2684298
+    },
+    {
+      "code": "osm:node/10046226891",
+      "name": "手稲渓仁会病院",
+      "countryCode": "JP",
+      "origin": "https://www.keijinkai.com",
+      "lat": 43.1221097,
+      "lng": 141.2431078
+    },
+    {
+      "code": "osm:node/10246148109",
+      "name": "三愛会総合病院",
+      "countryCode": "JP",
+      "origin": "http://ims.gr.jp",
+      "lat": 35.8530898,
+      "lng": 139.8512136
+    },
+    {
+      "code": "osm:node/10285357474",
+      "name": "石井病院",
+      "countryCode": "JP",
+      "origin": "http://www.ishii-hp.jp",
+      "lat": 42.3501339,
+      "lng": 142.3640806
+    },
+    {
+      "code": "osm:node/10285438238",
+      "name": "日高徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://hidakatokushukai.com",
+      "lat": 42.344613,
+      "lng": 142.3748416
+    },
+    {
+      "code": "osm:node/10294393778",
+      "name": "イムス札幌内科リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://ims.gr.jp",
+      "lat": 43.122877,
+      "lng": 141.1985532
+    },
+    {
+      "code": "osm:node/10564068322",
+      "name": "浦河赤十字病院",
+      "countryCode": "JP",
+      "origin": "http://www.urakawa.jrc.or.jp",
+      "lat": 42.1592804,
+      "lng": 142.7879424
+    },
+    {
+      "code": "osm:node/10582579567",
+      "name": "JR仙台病院",
+      "countryCode": "JP",
+      "origin": "https://jrsendai-hospital.jp",
+      "lat": 38.2556252,
+      "lng": 140.8809752
+    },
+    {
+      "code": "osm:node/10996137199",
+      "name": "中濵クリニック",
+      "countryCode": "JP",
+      "origin": "https://www.nakahama-clinic.com",
+      "lat": 35.6127617,
+      "lng": 139.3455785
+    },
+    {
+      "code": "osm:node/12090052056",
+      "name": "愛知クリニック",
+      "countryCode": "JP",
+      "origin": "https://www.aichi-clinic.jp",
+      "lat": 26.2704022,
+      "lng": 127.7687322
+    },
+    {
+      "code": "osm:node/12148799610",
+      "name": "京葉病院",
+      "countryCode": "JP",
+      "origin": "https://www.keiyo-hp.jp",
+      "lat": 35.7026924,
+      "lng": 139.8757459
+    },
+    {
+      "code": "osm:node/12182223648",
+      "name": "名古屋市立大学病院",
+      "countryCode": "JP",
+      "origin": "https://w3hosp.med.nagoya-cu.ac.jp",
+      "lat": 35.1394101,
+      "lng": 136.9358602
+    },
+    {
+      "code": "osm:node/12243112328",
+      "name": "岡山県精神科医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.popmc.jp",
+      "lat": 34.6508561,
+      "lng": 133.9159355
+    },
+    {
+      "code": "osm:node/12823531715",
+      "name": "平和リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://heiwariha-hp-edit.jimdofree.com",
+      "lat": 43.0561711,
+      "lng": 141.2425769
+    },
+    {
+      "code": "osm:node/12876588321",
+      "name": "医療法人社団欅会 田無南口クリニック",
+      "countryCode": "JP",
+      "origin": "https://tanashi-cl.com",
+      "lat": 35.7265297,
+      "lng": 139.5360688
+    },
+    {
+      "code": "osm:node/12898490302",
+      "name": "玉川スマイルクリニック",
+      "countryCode": "JP",
+      "origin": "https://tamagawasmile.com",
+      "lat": 34.9957682,
+      "lng": 135.9500206
+    },
+    {
+      "code": "osm:node/12946614340",
+      "name": "渡辺病院",
+      "countryCode": "JP",
+      "origin": "https://watanabe-hp.net",
+      "lat": 35.5516157,
+      "lng": 139.741037
+    },
+    {
+      "code": "osm:node/12970536901",
+      "name": "おおみや診療所",
+      "countryCode": "JP",
+      "origin": "https://www.w-iryoseikyo.com",
+      "lat": 34.2550791,
+      "lng": 135.3157764
+    },
+    {
+      "code": "osm:node/13001568303",
+      "name": "プライムホスピタル 玉島",
+      "countryCode": "JP",
+      "origin": "https://www.primehospital.or.jp",
+      "lat": 34.5496578,
+      "lng": 133.6860705
+    },
+    {
+      "code": "osm:node/13012915214",
+      "name": "堀永産婦人科医院",
+      "countryCode": "JP",
+      "origin": "https://www.horinaga.net",
+      "lat": 33.2368648,
+      "lng": 131.6108567
+    },
+    {
+      "code": "osm:node/13068151091",
+      "name": "渡辺病院",
+      "countryCode": "JP",
+      "origin": "https://www.watanabe-byouin.or.jp",
+      "lat": 34.994542,
+      "lng": 133.4455015
+    },
+    {
+      "code": "osm:node/13124334136",
+      "name": "岡山リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.okayama-reha-hp.or.jp",
+      "lat": 34.6298625,
+      "lng": 133.9582998
+    },
+    {
+      "code": "osm:node/13124354028",
+      "name": "医療法人 医清会 山本医院",
+      "countryCode": "JP",
+      "origin": "https://www.isto.or.jp",
+      "lat": 34.6259743,
+      "lng": 133.9064595
+    },
+    {
+      "code": "osm:node/13205179002",
+      "name": "白藤耳鼻咽喉科",
+      "countryCode": "JP",
+      "origin": "https://shirafuji-jibika.com",
+      "lat": 32.751164,
+      "lng": 130.6751407
+    },
+    {
+      "code": "osm:node/13403631117",
+      "name": "しもざとクリニック",
+      "countryCode": "JP",
+      "origin": "https://shimozato-cl.jp",
+      "lat": 35.0918947,
+      "lng": 136.9674079
+    },
+    {
+      "code": "osm:node/13594320301",
+      "name": "済生会新潟県央基幹病院",
+      "countryCode": "JP",
+      "origin": "https://www.kenoh.saiseikai.or.jp",
+      "lat": 37.6453609,
+      "lng": 138.934017
+    },
+    {
+      "code": "osm:node/13833692222",
+      "name": "老健はなさと",
+      "countryCode": "JP",
+      "origin": "http://www.takayama.jrc.or.jp",
+      "lat": 36.136432,
+      "lng": 137.2525513
+    },
+    {
+      "code": "osm:node/13864408097",
+      "name": "猪苗代町立猪苗代病院",
+      "countryCode": "JP",
+      "origin": "https://www.onchikai.jp",
+      "lat": 37.5554297,
+      "lng": 140.1121357
+    },
+    {
+      "code": "osm:node/13981849390",
+      "name": "プラタナス産婦人科クリニックながつた",
+      "countryCode": "JP",
+      "origin": "https://platanus-clinic.jp",
+      "lat": 35.5245065,
+      "lng": 139.4943919
+    },
+    {
+      "code": "osm:node/14113911314",
+      "name": "湘南健康管理クリニック",
+      "countryCode": "JP",
+      "origin": "https://www.fureai-g.or.jp",
+      "lat": 35.3343877,
+      "lng": 139.4062355
+    },
+    {
+      "code": "osm:way/39470493",
+      "name": "函館協会病院",
+      "countryCode": "JP",
+      "origin": "https://www.hakodatekyokaihp.com",
+      "lat": 41.7845241,
+      "lng": 140.7707966
+    },
+    {
+      "code": "osm:way/51870847",
+      "name": "桑名西医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.kuwanacmc.or.jp",
+      "lat": 35.0717073,
+      "lng": 136.6735657
+    },
+    {
+      "code": "osm:way/52054726",
+      "name": "公立つるぎ病院",
+      "countryCode": "JP",
+      "origin": "http://www.tsurugihp.jp",
+      "lat": 36.4473096,
+      "lng": 136.6234855
+    },
+    {
+      "code": "osm:way/52138997",
+      "name": "市立ひらかた病院",
+      "countryCode": "JP",
+      "origin": "https://hirakatacity-hp.osaka.jp",
+      "lat": 34.8202308,
+      "lng": 135.6578124
+    },
+    {
+      "code": "osm:way/53334920",
+      "name": "兵庫県立西播磨総合リハビリテーションセンター",
+      "countryCode": "JP",
+      "origin": "https://www.hwc.or.jp",
+      "lat": 34.9512241,
+      "lng": 134.4378119
+    },
+    {
+      "code": "osm:way/53334933",
+      "name": "兵庫県立粒子線医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.hibmc.shingu.hyogo.jp",
+      "lat": 34.9514063,
+      "lng": 134.4415752
+    },
+    {
+      "code": "osm:way/59384682",
+      "name": "東京衛生アドベンチスト病院",
+      "countryCode": "JP",
+      "origin": "https://www.tokyoeisei.com",
+      "lat": 35.7084851,
+      "lng": 139.6193903
+    },
+    {
+      "code": "osm:way/60632345",
+      "name": "日本医科大学武蔵小杉病院",
+      "countryCode": "JP",
+      "origin": "https://www.nms.ac.jp",
+      "lat": 35.5805571,
+      "lng": 139.6580064
+    },
+    {
+      "code": "osm:way/70142003",
+      "name": "兵庫県立西宮総合医療センター",
+      "countryCode": "JP",
+      "origin": "https://nishinomiya-gmc.hyogo.jp",
+      "lat": 34.737796,
+      "lng": 135.3560435
+    },
+    {
+      "code": "osm:way/103825812",
+      "name": "仙台オープン病院",
+      "countryCode": "JP",
+      "origin": "https://www.openhp.or.jp",
+      "lat": 38.2942953,
+      "lng": 140.9170033
+    },
+    {
+      "code": "osm:way/104356080",
+      "name": "東海病院",
+      "countryCode": "JP",
+      "origin": "https://www.tokai-hp.jp",
+      "lat": 36.4585807,
+      "lng": 140.5742696
+    },
+    {
+      "code": "osm:way/104379098",
+      "name": "北茨城市民病院",
+      "countryCode": "JP",
+      "origin": "http://kitaibaraki.info",
+      "lat": 36.843596,
+      "lng": 140.7708986
+    },
+    {
+      "code": "osm:way/109838385",
+      "name": "名古屋記念財団 名古屋記念病院",
+      "countryCode": "JP",
+      "origin": "http://www.hospy.or.jp",
+      "lat": 35.1218632,
+      "lng": 137.0064184
+    },
+    {
+      "code": "osm:way/113716796",
+      "name": "みどり野リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "http://www.midorino-hp.jp",
+      "lat": 35.5022884,
+      "lng": 139.4455601
+    },
+    {
+      "code": "osm:way/114924618",
+      "name": "白石産科婦人科病院",
+      "countryCode": "JP",
+      "origin": "https://www.shiroishi.or.jp",
+      "lat": 43.0481814,
+      "lng": 141.3983905
+    },
+    {
+      "code": "osm:way/114924999",
+      "name": "札幌北楡病院",
+      "countryCode": "JP",
+      "origin": "https://www.hokuyu-aoth.org",
+      "lat": 43.0492041,
+      "lng": 141.3990965
+    },
+    {
+      "code": "osm:way/122740692",
+      "name": "中国電力株式会社中電病院",
+      "countryCode": "JP",
+      "origin": "https://www.energia.co.jp",
+      "lat": 34.3883674,
+      "lng": 132.4526814
+    },
+    {
+      "code": "osm:way/131190508",
+      "name": "武蔵村山病院",
+      "countryCode": "JP",
+      "origin": "https://www.yamatokai.or.jp",
+      "lat": 35.7438482,
+      "lng": 139.3876914
+    },
+    {
+      "code": "osm:way/138948258",
+      "name": "名古屋第一赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.nagoya-1st.jrc.or.jp",
+      "lat": 35.1716614,
+      "lng": 136.8620173
+    },
+    {
+      "code": "osm:way/141030886",
+      "name": "島内科医院",
+      "countryCode": "JP",
+      "origin": "https://www.shimagekanaika.jp",
+      "lat": 34.3947924,
+      "lng": 132.4548022
+    },
+    {
+      "code": "osm:way/141598381",
+      "name": "浜脇整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.hamawaki.or.jp",
+      "lat": 34.3851643,
+      "lng": 132.4530039
+    },
+    {
+      "code": "osm:way/141714165",
+      "name": "名古屋掖済会病院",
+      "countryCode": "JP",
+      "origin": "http://www.nagoya-ekisaikaihosp.jp",
+      "lat": 35.1196606,
+      "lng": 136.8732733
+    },
+    {
+      "code": "osm:way/151816174",
+      "name": "大阪みなと中央病院",
+      "countryCode": "JP",
+      "origin": "https://minato.jcho.go.jp",
+      "lat": 34.6539092,
+      "lng": 135.4356649
+    },
+    {
+      "code": "osm:way/153891034",
+      "name": "武蔵野赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.musashino.jrc.or.jp",
+      "lat": 35.6965515,
+      "lng": 139.5479141
+    },
+    {
+      "code": "osm:way/161029148",
+      "name": "飯山赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.iiyama.jrc.or.jp",
+      "lat": 36.8445241,
+      "lng": 138.3618518
+    },
+    {
+      "code": "osm:way/162124002",
+      "name": "春日部市立医療センター",
+      "countryCode": "JP",
+      "origin": "http://www.kasukabe-cityhp.jp",
+      "lat": 35.97462,
+      "lng": 139.751547
+    },
+    {
+      "code": "osm:way/162158341",
+      "name": "大阪中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.osaka-centralhp.jp",
+      "lat": 34.6991109,
+      "lng": 135.4912306
+    },
+    {
+      "code": "osm:way/168524736",
+      "name": "平和病院",
+      "countryCode": "JP",
+      "origin": "https://www.seiwa-kai.or.jp",
+      "lat": 43.0567659,
+      "lng": 141.2438646
+    },
+    {
+      "code": "osm:way/169226104",
+      "name": "沖縄県立南部医療センター・こども医療センター",
+      "countryCode": "JP",
+      "origin": "http://www.hosp.pref.okinawa.jp",
+      "lat": 26.2058928,
+      "lng": 127.7236824
+    },
+    {
+      "code": "osm:way/170540006",
+      "name": "東都文京病院",
+      "countryCode": "JP",
+      "origin": "https://www.tohtobunkyo-hp.com",
+      "lat": 35.7041916,
+      "lng": 139.7678953
+    },
+    {
+      "code": "osm:way/170568845",
+      "name": "清水さくら病院",
+      "countryCode": "JP",
+      "origin": "https://sakuragaoka.jcho.go.jp",
+      "lat": 35.02432,
+      "lng": 138.4898555
+    },
+    {
+      "code": "osm:way/170997251",
+      "name": "渓和会 江別病院",
+      "countryCode": "JP",
+      "origin": "https://www.keiwakai-ebetsu.or.jp",
+      "lat": 43.0931438,
+      "lng": 141.519404
+    },
+    {
+      "code": "osm:way/172233596",
+      "name": "大阪公立大学医学部附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.hosp.omu.ac.jp",
+      "lat": 34.6467778,
+      "lng": 135.5089282
+    },
+    {
+      "code": "osm:way/173144424",
+      "name": "平塚市民病院",
+      "countryCode": "JP",
+      "origin": "https://www.hiratsuka-city-hospital.jp",
+      "lat": 35.3364986,
+      "lng": 139.3256439
+    },
+    {
+      "code": "osm:way/178300116",
+      "name": "伊勢赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.ise.jrc.or.jp",
+      "lat": 34.5026315,
+      "lng": 136.71203
+    },
+    {
+      "code": "osm:way/180015577",
+      "name": "大場整形外科",
+      "countryCode": "JP",
+      "origin": "https://www.ohba-clinic.jp",
+      "lat": 33.2266648,
+      "lng": 131.6526521
+    },
+    {
+      "code": "osm:way/180739946",
+      "name": "岩佐病院",
+      "countryCode": "JP",
+      "origin": "http://www.iwasa.or.jp",
+      "lat": 34.1911629,
+      "lng": 133.824652
+    },
+    {
+      "code": "osm:way/181212621",
+      "name": "国立国際医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.hosp.jihs.go.jp",
+      "lat": 35.7029293,
+      "lng": 139.716287
+    },
+    {
+      "code": "osm:way/186744282",
+      "name": "筑波学園病院",
+      "countryCode": "JP",
+      "origin": "https://gakuen-hospital.or.jp",
+      "lat": 36.0385057,
+      "lng": 140.0980986
+    },
+    {
+      "code": "osm:way/186846679",
+      "name": "尼崎新都心病院",
+      "countryCode": "JP",
+      "origin": "http://amagasakinth.or.jp",
+      "lat": 34.7344877,
+      "lng": 135.4315795
+    },
+    {
+      "code": "osm:way/193164156",
+      "name": "明野中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.coara.or.jp",
+      "lat": 33.2204817,
+      "lng": 131.6574647
+    },
+    {
+      "code": "osm:way/194051691",
+      "name": "関西電力病院",
+      "countryCode": "JP",
+      "origin": "https://kanden-hsp.jp",
+      "lat": 34.6930154,
+      "lng": 135.4872797
+    },
+    {
+      "code": "osm:way/195302611",
+      "name": "中川クリニック",
+      "countryCode": "JP",
+      "origin": "http://www.shirakabakai.jp",
+      "lat": 42.9028681,
+      "lng": 140.746714
+    },
+    {
+      "code": "osm:way/196416662",
+      "name": "くとさん外科胃腸科",
+      "countryCode": "JP",
+      "origin": "https://www.kutosan-geka.com",
+      "lat": 42.9044432,
+      "lng": 140.7479
+    },
+    {
+      "code": "osm:way/196520031",
+      "name": "名古屋第二赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.nagoya2.jrc.or.jp",
+      "lat": 35.1453825,
+      "lng": 136.9657198
+    },
+    {
+      "code": "osm:way/197667107",
+      "name": "野木病院",
+      "countryCode": "JP",
+      "origin": "https://www.nogi-hospital.or.jp",
+      "lat": 34.6996509,
+      "lng": 134.9132217
+    },
+    {
+      "code": "osm:way/197978582",
+      "name": "平塚共済病院",
+      "countryCode": "JP",
+      "origin": "https://hrt.kkr.or.jp",
+      "lat": 35.338134,
+      "lng": 139.3380956
+    },
+    {
+      "code": "osm:way/198983745",
+      "name": "大川産婦人科病院",
+      "countryCode": "JP",
+      "origin": "http://www.okawa-hosp.com",
+      "lat": 33.2355824,
+      "lng": 131.6032672
+    },
+    {
+      "code": "osm:way/198997729",
+      "name": "広島市立舟入病院 (Hiroshima City Funairi Hospital)",
+      "countryCode": "JP",
+      "origin": "https://funairi-hospital.jp",
+      "lat": 34.3857486,
+      "lng": 132.4395609
+    },
+    {
+      "code": "osm:way/204412561",
+      "name": "えとう眼科",
+      "countryCode": "JP",
+      "origin": "https://eto-eyeclinic.com",
+      "lat": 33.226113,
+      "lng": 131.652209
+    },
+    {
+      "code": "osm:way/204412563",
+      "name": "なんば消火器・肛門科",
+      "countryCode": "JP",
+      "origin": "http://www5.ocn.ne.jp",
+      "lat": 33.227209,
+      "lng": 131.6524779
+    },
+    {
+      "code": "osm:way/204412581",
+      "name": "大分スポーツリハビリテーションセンター",
+      "countryCode": "JP",
+      "origin": "https://www.ohba-clinic.jp",
+      "lat": 33.2269328,
+      "lng": 131.6526413
+    },
+    {
+      "code": "osm:way/206374371",
+      "name": "平鹿総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.hiraka-hp.yokote.akita.jp",
+      "lat": 39.3122154,
+      "lng": 140.5493858
+    },
+    {
+      "code": "osm:way/206771857",
+      "name": "一条会病院",
+      "countryCode": "JP",
+      "origin": "https://www.ichijyokai.or.jp",
+      "lat": 35.7661387,
+      "lng": 139.9092725
+    },
+    {
+      "code": "osm:way/208975151",
+      "name": "札幌南三条病院",
+      "countryCode": "JP",
+      "origin": "https://www.minamisanjyo-hp.jp",
+      "lat": 43.0559114,
+      "lng": 141.3494427
+    },
+    {
+      "code": "osm:way/209178145",
+      "name": "奈良西部病院",
+      "countryCode": "JP",
+      "origin": "https://naraseibu-hp.com",
+      "lat": 34.6875504,
+      "lng": 135.7213071
+    },
+    {
+      "code": "osm:way/209460315",
+      "name": "仁明会斉藤病院",
+      "countryCode": "JP",
+      "origin": "http://www.jinmei.or.jp",
+      "lat": 38.4321963,
+      "lng": 141.2935799
+    },
+    {
+      "code": "osm:way/213778162",
+      "name": "横浜市立脳卒中・神経脊椎センター",
+      "countryCode": "JP",
+      "origin": "https://www.city.yokohama.lg.jp",
+      "lat": 35.4222332,
+      "lng": 139.6182685
+    },
+    {
+      "code": "osm:way/218715617",
+      "name": "関西医科大学附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.kmu.ac.jp",
+      "lat": 34.8175055,
+      "lng": 135.6451846
+    },
+    {
+      "code": "osm:way/219877271",
+      "name": "日本大学病院",
+      "countryCode": "JP",
+      "origin": "https://www.nihon-u.ac.jp",
+      "lat": 35.6973593,
+      "lng": 139.7626696
+    },
+    {
+      "code": "osm:way/227888497",
+      "name": "近畿大学奈良病院",
+      "countryCode": "JP",
+      "origin": "https://www.med.kindai.ac.jp",
+      "lat": 34.6506719,
+      "lng": 135.7158311
+    },
+    {
+      "code": "osm:way/229896072",
+      "name": "大阪精神医療センター",
+      "countryCode": "JP",
+      "origin": "https://pmc.opho.jp",
+      "lat": 34.8138584,
+      "lng": 135.6620282
+    },
+    {
+      "code": "osm:way/230830793",
+      "name": "沖縄協同病院",
+      "countryCode": "JP",
+      "origin": "https://oki-kyo.jp",
+      "lat": 26.1959558,
+      "lng": 127.6900846
+    },
+    {
+      "code": "osm:way/241577197",
+      "name": "南三陸病院",
+      "countryCode": "JP",
+      "origin": "http://www.minamisanriku-hp.jp",
+      "lat": 38.678922,
+      "lng": 141.4628113
+    },
+    {
+      "code": "osm:way/242978437",
+      "name": "山口歯科診療室",
+      "countryCode": "JP",
+      "origin": "http://y-do.info",
+      "lat": 43.3351025,
+      "lng": 145.5835515
+    },
+    {
+      "code": "osm:way/243014670",
+      "name": "市立根室病院",
+      "countryCode": "JP",
+      "origin": "http://www.city.nemuro.hokkaido.jp",
+      "lat": 43.3339701,
+      "lng": 145.5867414
+    },
+    {
+      "code": "osm:way/244944407",
+      "name": "日本海総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.nihonkai-hos.jp",
+      "lat": 38.8905255,
+      "lng": 139.8544038
+    },
+    {
+      "code": "osm:way/246595525",
+      "name": "昭和医科大学病院附属東病院",
+      "countryCode": "JP",
+      "origin": "https://www.showa-u.ac.jp",
+      "lat": 35.6096157,
+      "lng": 139.7055797
+    },
+    {
+      "code": "osm:way/249499509",
+      "name": "奈良春日病院",
+      "countryCode": "JP",
+      "origin": "https://narakasuga-hospital.or.jp",
+      "lat": 34.6644081,
+      "lng": 135.8535337
+    },
+    {
+      "code": "osm:way/254308407",
+      "name": "新百合ヶ丘総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.shinyuri-hospital.com",
+      "lat": 35.6042852,
+      "lng": 139.4990684
+    },
+    {
+      "code": "osm:way/255789085",
+      "name": "大阪鉄道病院",
+      "countryCode": "JP",
+      "origin": "https://www.jrosakahosp.jp",
+      "lat": 34.6451025,
+      "lng": 135.517313
+    },
+    {
+      "code": "osm:way/257195557",
+      "name": "なにわ生野病院",
+      "countryCode": "JP",
+      "origin": "https://www.koudoukai.or.jp",
+      "lat": 34.6526968,
+      "lng": 135.4971551
+    },
+    {
+      "code": "osm:way/258587479",
+      "name": "慶友整形外科クリニック",
+      "countryCode": "JP",
+      "origin": "https://www.ku-kai.or.jp",
+      "lat": 36.2337974,
+      "lng": 139.553111
+    },
+    {
+      "code": "osm:way/260223485",
+      "name": "医療法人社団聖ルカ会 パシフィックホスピタル",
+      "countryCode": "JP",
+      "origin": "http://www.pacific-hospital.jp",
+      "lat": 35.2117194,
+      "lng": 139.7117687
+    },
+    {
+      "code": "osm:way/260223490",
+      "name": "独立行政法人国立病院機構 久里浜医療センター",
+      "countryCode": "JP",
+      "origin": "https://kurihama.hosp.go.jp",
+      "lat": 35.2116563,
+      "lng": 139.7033108
+    },
+    {
+      "code": "osm:way/260876839",
+      "name": "共愛会病院",
+      "countryCode": "JP",
+      "origin": "https://www.kyoaikai-hosp.com",
+      "lat": 41.785425,
+      "lng": 140.7403508
+    },
+    {
+      "code": "osm:way/261020510",
+      "name": "函館赤十字病院",
+      "countryCode": "JP",
+      "origin": "http://www.hakodate.jrc.or.jp",
+      "lat": 41.7784713,
+      "lng": 140.7408883
+    },
+    {
+      "code": "osm:way/261032583",
+      "name": "こが整形外科クリニック",
+      "countryCode": "JP",
+      "origin": "https://h-maneki.net",
+      "lat": 41.7811322,
+      "lng": 140.7541778
+    },
+    {
+      "code": "osm:way/261034014",
+      "name": "はぎさわ小児クリニック",
+      "countryCode": "JP",
+      "origin": "http://sv01.e-junban.com",
+      "lat": 41.7810571,
+      "lng": 140.7544328
+    },
+    {
+      "code": "osm:way/261176478",
+      "name": "函館おおてまちクリニック",
+      "countryCode": "JP",
+      "origin": "http://www.yushinkai.jp",
+      "lat": 41.7664694,
+      "lng": 140.724448
+    },
+    {
+      "code": "osm:way/261177032",
+      "name": "国立病院機構函館医療センター",
+      "countryCode": "JP",
+      "origin": "https://hnh-hosp.jp",
+      "lat": 41.7894028,
+      "lng": 140.7734357
+    },
+    {
+      "code": "osm:way/261185610",
+      "name": "飯田內科クリニック",
+      "countryCode": "JP",
+      "origin": "http://www.iidanaikagroup.com",
+      "lat": 41.7880834,
+      "lng": 140.7678411
+    },
+    {
+      "code": "osm:way/261185913",
+      "name": "たき整形外科",
+      "countryCode": "JP",
+      "origin": "http://www.dosanko-c.com",
+      "lat": 41.7870588,
+      "lng": 140.7708018
+    },
+    {
+      "code": "osm:way/265271442",
+      "name": "平和台病院",
+      "countryCode": "JP",
+      "origin": "https://www.medicalplaza.or.jp",
+      "lat": 35.863548,
+      "lng": 140.1160127
+    },
+    {
+      "code": "osm:way/270280426",
+      "name": "興和会 右田病院",
+      "countryCode": "JP",
+      "origin": "https://www.migitahosp.or.jp",
+      "lat": 35.6688962,
+      "lng": 139.3406801
+    },
+    {
+      "code": "osm:way/270820862",
+      "name": "公立甲賀病院",
+      "countryCode": "JP",
+      "origin": "https://www.kohka-hp.or.jp",
+      "lat": 34.982001,
+      "lng": 136.1787859
+    },
+    {
+      "code": "osm:way/272784029",
+      "name": "市立釧路国民健康保険阿寒診療所",
+      "countryCode": "JP",
+      "origin": "https://www.city.kushiro.lg.jp",
+      "lat": 43.1124095,
+      "lng": 144.1224236
+    },
+    {
+      "code": "osm:way/273163919",
+      "name": "更別村国民健康保険診療所",
+      "countryCode": "JP",
+      "origin": "http://sarabetsuvillage-clinic.blogspot.com",
+      "lat": 42.6462767,
+      "lng": 143.1936549
+    },
+    {
+      "code": "osm:way/274211632",
+      "name": "倉敷中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.kchnet.or.jp",
+      "lat": 34.6020893,
+      "lng": 133.7755393
+    },
+    {
+      "code": "osm:way/276254111",
+      "name": "倉敷成人病センター",
+      "countryCode": "JP",
+      "origin": "https://www.fkmc.or.jp",
+      "lat": 34.5882042,
+      "lng": 133.7651308
+    },
+    {
+      "code": "osm:way/279721874",
+      "name": "水和会倉敷リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "http://www.kurareha.com",
+      "lat": 34.572094,
+      "lng": 133.7611222
+    },
+    {
+      "code": "osm:way/281483720",
+      "name": "北条田仲病院",
+      "countryCode": "JP",
+      "origin": "http://tanaka-gr.wixsite.com",
+      "lat": 34.9322556,
+      "lng": 134.8254597
+    },
+    {
+      "code": "osm:way/282854603",
+      "name": "第一病院",
+      "countryCode": "JP",
+      "origin": "https://www.osaka-daiichi-hosp.org",
+      "lat": 34.7192135,
+      "lng": 135.4546914
+    },
+    {
+      "code": "osm:way/293161423",
+      "name": "近江草津徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://www.oumi-kusatsu-hp.jp",
+      "lat": 35.0013695,
+      "lng": 135.9571713
+    },
+    {
+      "code": "osm:way/295683768",
+      "name": "新東京病院",
+      "countryCode": "JP",
+      "origin": "https://www.shin-tokyohospital.or.jp",
+      "lat": 35.7766525,
+      "lng": 139.920678
+    },
+    {
+      "code": "osm:way/304779141",
+      "name": "兵庫県立加古川医療センター",
+      "countryCode": "JP",
+      "origin": "https://kenkako.jp",
+      "lat": 34.774295,
+      "lng": 134.881888
+    },
+    {
+      "code": "osm:way/305286202",
+      "name": "安藤病院",
+      "countryCode": "JP",
+      "origin": "https://chiseikai.com",
+      "lat": 34.722302,
+      "lng": 135.4157758
+    },
+    {
+      "code": "osm:way/306220703",
+      "name": "森山病院",
+      "countryCode": "JP",
+      "origin": "http://www.moriyama.or.jp",
+      "lat": 43.7740223,
+      "lng": 142.3614837
+    },
+    {
+      "code": "osm:way/316169845",
+      "name": "横浜市立大学附属市民総合医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.yokohama-cu.ac.jp",
+      "lat": 35.4336374,
+      "lng": 139.6251105
+    },
+    {
+      "code": "osm:way/319397536",
+      "name": "徳島赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.tokushima-med.jrc.or.jp",
+      "lat": 34.012093,
+      "lng": 134.5831162
+    },
+    {
+      "code": "osm:way/319402149",
+      "name": "国立病院機構徳島病院",
+      "countryCode": "JP",
+      "origin": "http://www.hosp.go.jp",
+      "lat": 34.0554533,
+      "lng": 134.3384433
+    },
+    {
+      "code": "osm:way/320613776",
+      "name": "群馬大学医学部附属病院",
+      "countryCode": "JP",
+      "origin": "https://hospital.med.gunma-u.ac.jp",
+      "lat": 36.4078541,
+      "lng": 139.0636315
+    },
+    {
+      "code": "osm:way/320910828",
+      "name": "益田赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://masuda.jrc.or.jp",
+      "lat": 34.6836064,
+      "lng": 131.841073
+    },
+    {
+      "code": "osm:way/323853757",
+      "name": "済生会下関総合病院",
+      "countryCode": "JP",
+      "origin": "http://www.simo.saiseikai.or.jp",
+      "lat": 34.031592,
+      "lng": 130.931974
+    },
+    {
+      "code": "osm:way/325867762",
+      "name": "昭和医科大学江東豊洲病院",
+      "countryCode": "JP",
+      "origin": "https://www.showa-u.ac.jp",
+      "lat": 35.650452,
+      "lng": 139.7962058
+    },
+    {
+      "code": "osm:way/326154753",
+      "name": "医療法人社団　にれの杜クリニック",
+      "countryCode": "JP",
+      "origin": "https://nirenomori.jp",
+      "lat": 43.0655999,
+      "lng": 141.3930004
+    },
+    {
+      "code": "osm:way/326302350",
+      "name": "今泉産婦人科医院",
+      "countryCode": "JP",
+      "origin": "http://www5.ocn.ne.jp",
+      "lat": 34.7576404,
+      "lng": 137.4136802
+    },
+    {
+      "code": "osm:way/327551355",
+      "name": "札幌北辰病院",
+      "countryCode": "JP",
+      "origin": "https://hokushin.jcho.go.jp",
+      "lat": 43.0418126,
+      "lng": 141.4739247
+    },
+    {
+      "code": "osm:way/329586825",
+      "name": "溝口病院",
+      "countryCode": "JP",
+      "origin": "https://www.mizoguchi-hp.jp",
+      "lat": 33.5944889,
+      "lng": 130.3995181
+    },
+    {
+      "code": "osm:way/338586387",
+      "name": "鶴岡市立荘内病院",
+      "countryCode": "JP",
+      "origin": "https://www.shonai-hos.jp",
+      "lat": 38.7319279,
+      "lng": 139.8299414
+    },
+    {
+      "code": "osm:way/346920202",
+      "name": "兵庫県立尼崎総合医療センター",
+      "countryCode": "JP",
+      "origin": "http://agmc.hyogo.jp",
+      "lat": 34.7300433,
+      "lng": 135.4134123
+    },
+    {
+      "code": "osm:way/347967036",
+      "name": "つかさヘルスケアホスピタル",
+      "countryCode": "JP",
+      "origin": "https://thch.jp",
+      "lat": 31.5543496,
+      "lng": 130.5074357
+    },
+    {
+      "code": "osm:way/354251869",
+      "name": "新潟県立がんセンター新潟病院",
+      "countryCode": "JP",
+      "origin": "https://www.niigata-cc.jp",
+      "lat": 37.9106632,
+      "lng": 139.02916
+    },
+    {
+      "code": "osm:way/359847857",
+      "name": "倉敷中央病院付属予防医療プラザ",
+      "countryCode": "JP",
+      "origin": "https://www.kchnet.or.jp",
+      "lat": 34.6012827,
+      "lng": 133.7737435
+    },
+    {
+      "code": "osm:way/361138046",
+      "name": "堺市こども急病診療センター",
+      "countryCode": "JP",
+      "origin": "http://sakai99.or.jp",
+      "lat": 34.5390396,
+      "lng": 135.4709828
+    },
+    {
+      "code": "osm:way/361138047",
+      "name": "堺市立総合医療センター",
+      "countryCode": "JP",
+      "origin": "http://www.sakai-city-hospital.jp",
+      "lat": 34.5396162,
+      "lng": 135.4712569
+    },
+    {
+      "code": "osm:way/366536217",
+      "name": "藤田病院",
+      "countryCode": "JP",
+      "origin": "http://www.fujita-hp.com",
+      "lat": 34.8944963,
+      "lng": 136.9279079
+    },
+    {
+      "code": "osm:way/368314839",
+      "name": "国立病院機構神戸医療センター",
+      "countryCode": "JP",
+      "origin": "http://www.kobemc.go.jp",
+      "lat": 34.6803361,
+      "lng": 135.0845059
+    },
+    {
+      "code": "osm:way/369203380",
+      "name": "地域医療機能推進機構 うつのみや病院",
+      "countryCode": "JP",
+      "origin": "https://utsunomiya.jcho.go.jp",
+      "lat": 36.4827716,
+      "lng": 139.8711143
+    },
+    {
+      "code": "osm:way/373733997",
+      "name": "福島労災病院",
+      "countryCode": "JP",
+      "origin": "https://www.fukushimah.johas.go.jp",
+      "lat": 37.0392509,
+      "lng": 140.8646415
+    },
+    {
+      "code": "osm:way/373733998",
+      "name": "いわき市医療センター",
+      "countryCode": "JP",
+      "origin": "https://iwaki-city-medical-center.jp",
+      "lat": 37.0422455,
+      "lng": 140.8684206
+    },
+    {
+      "code": "osm:way/377850017",
+      "name": "国立病院機構西新潟中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.masa.go.jp",
+      "lat": 37.8903251,
+      "lng": 138.985133
+    },
+    {
+      "code": "osm:way/387342188",
+      "name": "山陰労災病院",
+      "countryCode": "JP",
+      "origin": "http://www.saninh.rofuku.go.jp",
+      "lat": 35.4516245,
+      "lng": 133.3644929
+    },
+    {
+      "code": "osm:way/388514465",
+      "name": "済生会新潟第二病院",
+      "countryCode": "JP",
+      "origin": "https://ngt.saiseikai.or.jp",
+      "lat": 37.8790148,
+      "lng": 139.0048288
+    },
+    {
+      "code": "osm:way/390806655",
+      "name": "群馬県立がんセンター",
+      "countryCode": "JP",
+      "origin": "https://www.gunma-cc.jp",
+      "lat": 36.256818,
+      "lng": 139.3648918
+    },
+    {
+      "code": "osm:way/392794845",
+      "name": "豊栄病院",
+      "countryCode": "JP",
+      "origin": "https://www.toyosaka-hospital.jp",
+      "lat": 37.9223878,
+      "lng": 139.2138054
+    },
+    {
+      "code": "osm:way/392926864",
+      "name": "あかさかクリニック (Akasaka Clinic)",
+      "countryCode": "JP",
+      "origin": "http://www.akasaka-clinic.jp",
+      "lat": 34.8594473,
+      "lng": 137.3116046
+    },
+    {
+      "code": "osm:way/397094627",
+      "name": "かんな病院",
+      "countryCode": "JP",
+      "origin": "http://okinawa-kanna.or.jp",
+      "lat": 26.4750286,
+      "lng": 127.9626794
+    },
+    {
+      "code": "osm:way/397405178",
+      "name": "鳥取医療生活協同組合 鹿野温泉病院",
+      "countryCode": "JP",
+      "origin": "https://shikano.mcoop-tottori.jp",
+      "lat": 35.4622133,
+      "lng": 134.0499431
+    },
+    {
+      "code": "osm:way/397586174",
+      "name": "佐渡総合病院",
+      "countryCode": "JP",
+      "origin": "https://sadosogo-hp.jp",
+      "lat": 38.0198189,
+      "lng": 138.3662027
+    },
+    {
+      "code": "osm:way/404674822",
+      "name": "恵佑会第2病院",
+      "countryCode": "JP",
+      "origin": "https://www.keiyukai2.jp",
+      "lat": 43.0412145,
+      "lng": 141.4266126
+    },
+    {
+      "code": "osm:way/405833570",
+      "name": "庄内余目病院",
+      "countryCode": "JP",
+      "origin": "https://www.amarume-hp.jp",
+      "lat": 38.8519741,
+      "lng": 139.8963539
+    },
+    {
+      "code": "osm:way/406775391",
+      "name": "三川病院",
+      "countryCode": "JP",
+      "origin": "https://www.aiyoukai-mikawahp.com",
+      "lat": 38.7873411,
+      "lng": 139.8518516
+    },
+    {
+      "code": "osm:way/409216094",
+      "name": "公立豊岡病院",
+      "countryCode": "JP",
+      "origin": "https://www.toyookahp-kumiai.or.jp",
+      "lat": 35.5269155,
+      "lng": 134.8064183
+    },
+    {
+      "code": "osm:way/410884494",
+      "name": "医療法人讃生会網走記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.sanseikai-med.jp",
+      "lat": 43.992021,
+      "lng": 144.2671964
+    },
+    {
+      "code": "osm:way/412710838",
+      "name": "帯広中央病院",
+      "countryCode": "JP",
+      "origin": "https://obihiro.keiwakai.jp",
+      "lat": 42.9226686,
+      "lng": 143.193945
+    },
+    {
+      "code": "osm:way/413468201",
+      "name": "公立香住総合病院",
+      "countryCode": "JP",
+      "origin": "http://www2.nkansai.ne.jp",
+      "lat": 35.6434572,
+      "lng": 134.6341225
+    },
+    {
+      "code": "osm:way/415002852",
+      "name": "宮原病院",
+      "countryCode": "JP",
+      "origin": "https://www.miyahara-hp.jp",
+      "lat": 38.7212944,
+      "lng": 139.8295528
+    },
+    {
+      "code": "osm:way/415383907",
+      "name": "星ヶ丘医療センター",
+      "countryCode": "JP",
+      "origin": "https://hoshigaoka.jcho.go.jp",
+      "lat": 34.8108757,
+      "lng": 135.6677548
+    },
+    {
+      "code": "osm:way/422951699",
+      "name": "新潟臨港病院",
+      "countryCode": "JP",
+      "origin": "http://www.rinko-hp.com",
+      "lat": 37.9458351,
+      "lng": 139.0764386
+    },
+    {
+      "code": "osm:way/422985765",
+      "name": "河渡病院",
+      "countryCode": "JP",
+      "origin": "https://www.kohdo-hp.or.jp",
+      "lat": 37.937771,
+      "lng": 139.1070754
+    },
+    {
+      "code": "osm:way/428137496",
+      "name": "桜ヶ丘中央病院",
+      "countryCode": "JP",
+      "origin": "https://sakura-hp.or.jp",
+      "lat": 35.4514204,
+      "lng": 139.4647746
+    },
+    {
+      "code": "osm:way/428368433",
+      "name": "石橋総合病院",
+      "countryCode": "JP",
+      "origin": "https://ishibashi-hp.jp",
+      "lat": 36.4421288,
+      "lng": 139.8554692
+    },
+    {
+      "code": "osm:way/430138636",
+      "name": "羊ヶ丘病院",
+      "countryCode": "JP",
+      "origin": "http://www.hitsujigaoka.com",
+      "lat": 43.035302,
+      "lng": 141.4750912
+    },
+    {
+      "code": "osm:way/434354744",
+      "name": "国際親善総合病院",
+      "countryCode": "JP",
+      "origin": "https://shinzen.jp",
+      "lat": 35.424845,
+      "lng": 139.5102195
+    },
+    {
+      "code": "osm:way/435706545",
+      "name": "みよし市民病院",
+      "countryCode": "JP",
+      "origin": "https://hospital-miyoshi.jp",
+      "lat": 35.078994,
+      "lng": 137.0777431
+    },
+    {
+      "code": "osm:way/436329441",
+      "name": "星ヶ丘病院",
+      "countryCode": "JP",
+      "origin": "http://www.hoshipital.or.jp",
+      "lat": 37.4346742,
+      "lng": 140.3199456
+    },
+    {
+      "code": "osm:way/436537814",
+      "name": "中部労災病院",
+      "countryCode": "JP",
+      "origin": "http://www.chubuh.rofuku.go.jp",
+      "lat": 35.1081188,
+      "lng": 136.8897646
+    },
+    {
+      "code": "osm:way/437552529",
+      "name": "町立中標津病院",
+      "countryCode": "JP",
+      "origin": "https://nakashibetsu-hospital.com",
+      "lat": 43.5359383,
+      "lng": 144.9726604
+    },
+    {
+      "code": "osm:way/440453422",
+      "name": "獨協医科大学病院",
+      "countryCode": "JP",
+      "origin": "https://www.dokkyomed.ac.jp",
+      "lat": 36.4728373,
+      "lng": 139.8254995
+    },
+    {
+      "code": "osm:way/441355867",
+      "name": "神奈川歯科大学附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.kdu.ac.jp",
+      "lat": 35.2833286,
+      "lng": 139.6694736
+    },
+    {
+      "code": "osm:way/444736945",
+      "name": "国民健康保険 町立八丈病院",
+      "countryCode": "JP",
+      "origin": "http://hachijo-byouin.jp",
+      "lat": 33.1129908,
+      "lng": 139.7917655
+    },
+    {
+      "code": "osm:way/451323830",
+      "name": "医療法人美脳　札幌美しが丘脳神経外科病院",
+      "countryCode": "JP",
+      "origin": "https://sapporo-binoh.or.jp",
+      "lat": 42.9826723,
+      "lng": 141.4493537
+    },
+    {
+      "code": "osm:way/461525868",
+      "name": "秋田県立循環器・脳脊髄センター",
+      "countryCode": "JP",
+      "origin": "https://www.akita-noken.jp",
+      "lat": 39.7203468,
+      "lng": 140.1269904
+    },
+    {
+      "code": "osm:way/465843045",
+      "name": "水戸赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://mito.jrc.or.jp",
+      "lat": 36.3714582,
+      "lng": 140.4864003
+    },
+    {
+      "code": "osm:way/466909677",
+      "name": "尾鷲総合病院",
+      "countryCode": "JP",
+      "origin": "https://owasehp.jp",
+      "lat": 34.069894,
+      "lng": 136.1886177
+    },
+    {
+      "code": "osm:way/467680892",
+      "name": "新潟リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.niigata-reha.jp",
+      "lat": 37.9314812,
+      "lng": 139.1738954
+    },
+    {
+      "code": "osm:way/469666369",
+      "name": "済生会千里病院",
+      "countryCode": "JP",
+      "origin": "https://www.senri.saiseikai.or.jp",
+      "lat": 34.7949371,
+      "lng": 135.5100888
+    },
+    {
+      "code": "osm:way/472992517",
+      "name": "藤井会 香芝生喜病院",
+      "countryCode": "JP",
+      "origin": "https://www.kashibaseiki.fujiikai.jp",
+      "lat": 34.5448154,
+      "lng": 135.6727202
+    },
+    {
+      "code": "osm:way/473845630",
+      "name": "常呂厚生病院",
+      "countryCode": "JP",
+      "origin": "https://www.dou-kouseiren.com",
+      "lat": 44.1174312,
+      "lng": 144.0656037
+    },
+    {
+      "code": "osm:way/474847378",
+      "name": "道東の森総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.mei-doutou.jp",
+      "lat": 43.8267319,
+      "lng": 143.8835874
+    },
+    {
+      "code": "osm:way/483451816",
+      "name": "美幌町立国民健康保険病院",
+      "countryCode": "JP",
+      "origin": "https://www.town.bihoro.hokkaido.jp",
+      "lat": 43.8324159,
+      "lng": 144.106852
+    },
+    {
+      "code": "osm:way/483629373",
+      "name": "岩手県立千厩病院",
+      "countryCode": "JP",
+      "origin": "https://www.senmaya-hospital.jp",
+      "lat": 38.9282773,
+      "lng": 141.3430302
+    },
+    {
+      "code": "osm:way/490618988",
+      "name": "千曲中央病院",
+      "countryCode": "JP",
+      "origin": "https://chikuma-chp.com",
+      "lat": 36.5303195,
+      "lng": 138.1228012
+    },
+    {
+      "code": "osm:way/490803178",
+      "name": "あずみ病院",
+      "countryCode": "JP",
+      "origin": "https://www.azumi-ghp.jp",
+      "lat": 36.421183,
+      "lng": 137.8730951
+    },
+    {
+      "code": "osm:way/492264019",
+      "name": "長崎県上対馬病院",
+      "countryCode": "JP",
+      "origin": "https://kamibyo.jp",
+      "lat": 34.6567534,
+      "lng": 129.4576917
+    },
+    {
+      "code": "osm:way/492930711",
+      "name": "横浜新都市脳神経外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.yokohama-shintoshi.jp",
+      "lat": 35.560182,
+      "lng": 139.5589495
+    },
+    {
+      "code": "osm:way/492940890",
+      "name": "江田記念病院",
+      "countryCode": "JP",
+      "origin": "https://ims.gr.jp",
+      "lat": 35.5595227,
+      "lng": 139.5530194
+    },
+    {
+      "code": "osm:way/507865071",
+      "name": "名古屋市立大学医学部附属みどり市民病院",
+      "countryCode": "JP",
+      "origin": "https://w3hosp.med.nagoya-cu.ac.jp",
+      "lat": 35.0824329,
+      "lng": 136.9595769
+    },
+    {
+      "code": "osm:way/509241418",
+      "name": "慶應義塾大学病院",
+      "countryCode": "JP",
+      "origin": "https://www.hosp.keio.ac.jp",
+      "lat": 35.6821048,
+      "lng": 139.7180962
+    },
+    {
+      "code": "osm:way/516927933",
+      "name": "社会保険中京病院",
+      "countryCode": "JP",
+      "origin": "http://www.chukyo-hosp.jp",
+      "lat": 35.1092523,
+      "lng": 136.9017408
+    },
+    {
+      "code": "osm:way/521170858",
+      "name": "鶴見大学歯学部附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.tsurumi-u.ac.jp",
+      "lat": 35.5055265,
+      "lng": 139.674324
+    },
+    {
+      "code": "osm:way/521390061",
+      "name": "赤枝会赤枝病院",
+      "countryCode": "JP",
+      "origin": "http://www.akaedakai.com",
+      "lat": 35.5014534,
+      "lng": 139.5000376
+    },
+    {
+      "code": "osm:way/529919267",
+      "name": "大和市立病院",
+      "countryCode": "JP",
+      "origin": "https://www.yamatocity-mh.jp",
+      "lat": 35.4866926,
+      "lng": 139.4586259
+    },
+    {
+      "code": "osm:way/530040081",
+      "name": "八代北部地域医療センター",
+      "countryCode": "JP",
+      "origin": "https://ygmahp.ec-net.jp",
+      "lat": 32.5512512,
+      "lng": 130.6775241
+    },
+    {
+      "code": "osm:way/530473016",
+      "name": "中央会尼崎中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.chuoukai.or.jp",
+      "lat": 34.7338035,
+      "lng": 135.4341089
+    },
+    {
+      "code": "osm:way/531131351",
+      "name": "南町田病院",
+      "countryCode": "JP",
+      "origin": "https://www.mmhp.jp",
+      "lat": 35.5070847,
+      "lng": 139.4709633
+    },
+    {
+      "code": "osm:way/534038521",
+      "name": "秋田県立医療療育センター",
+      "countryCode": "JP",
+      "origin": "http://www.airc.or.jp",
+      "lat": 39.6899529,
+      "lng": 140.1583134
+    },
+    {
+      "code": "osm:way/541344359",
+      "name": "那覇市立病院",
+      "countryCode": "JP",
+      "origin": "https://www.nahacity-hospital.jp",
+      "lat": 26.226842,
+      "lng": 127.7098553
+    },
+    {
+      "code": "osm:way/541370609",
+      "name": "釧路優心病院",
+      "countryCode": "JP",
+      "origin": "https://www.kushiro-yushin.jp",
+      "lat": 43.0094624,
+      "lng": 144.2736009
+    },
+    {
+      "code": "osm:way/541923874",
+      "name": "星が浦病院",
+      "countryCode": "JP",
+      "origin": "http://www.kojinkai.or.jp",
+      "lat": 43.0160192,
+      "lng": 144.3162653
+    },
+    {
+      "code": "osm:way/542261646",
+      "name": "昭和医科大学藤が丘病院",
+      "countryCode": "JP",
+      "origin": "https://www.showa-u.ac.jp",
+      "lat": 35.5447943,
+      "lng": 139.5293973
+    },
+    {
+      "code": "osm:way/543739833",
+      "name": "県立十日町病院",
+      "countryCode": "JP",
+      "origin": "https://www.tokamachi-hosp-niigata.jp",
+      "lat": 37.1308494,
+      "lng": 138.7521208
+    },
+    {
+      "code": "osm:way/544890195",
+      "name": "中条病院",
+      "countryCode": "JP",
+      "origin": "http://www.niigata-kouseiren.jp",
+      "lat": 37.1766942,
+      "lng": 138.7758837
+    },
+    {
+      "code": "osm:way/546779933",
+      "name": "岡村一心堂病院",
+      "countryCode": "JP",
+      "origin": "https://www.isshin.or.jp",
+      "lat": 34.6521248,
+      "lng": 134.0325395
+    },
+    {
+      "code": "osm:way/549256872",
+      "name": "秦野赤十字病院",
+      "countryCode": "JP",
+      "origin": "http://hadano-jrc.jp",
+      "lat": 35.3608159,
+      "lng": 139.2295342
+    },
+    {
+      "code": "osm:way/555595679",
+      "name": "苫小牧市立病院",
+      "countryCode": "JP",
+      "origin": "https://www.city.tomakomai.hokkaido.jp",
+      "lat": 42.6521941,
+      "lng": 141.6033501
+    },
+    {
+      "code": "osm:way/560065788",
+      "name": "市立吹田市民病院",
+      "countryCode": "JP",
+      "origin": "https://www.suitamhp.osaka.jp",
+      "lat": 34.7767375,
+      "lng": 135.538009
+    },
+    {
+      "code": "osm:way/562086574",
+      "name": "音更病院",
+      "countryCode": "JP",
+      "origin": "https://www.zhi.or.jp",
+      "lat": 42.9638362,
+      "lng": 143.1986442
+    },
+    {
+      "code": "osm:way/563003369",
+      "name": "さんむ医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.sanmu-mc.jp",
+      "lat": 35.6008122,
+      "lng": 140.4111137
+    },
+    {
+      "code": "osm:way/564115809",
+      "name": "大道中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.youshinkai.com",
+      "lat": 26.2193644,
+      "lng": 127.692734
+    },
+    {
+      "code": "osm:way/564671883",
+      "name": "伊東市民病院",
+      "countryCode": "JP",
+      "origin": "https://ito-shimin-hp.jp",
+      "lat": 34.9605342,
+      "lng": 139.0879044
+    },
+    {
+      "code": "osm:way/565842498",
+      "name": "小田原市立総合医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.city.odawara.kanagawa.jp",
+      "lat": 35.2676131,
+      "lng": 139.151843
+    },
+    {
+      "code": "osm:way/572350004",
+      "name": "みたき総合病院",
+      "countryCode": "JP",
+      "origin": "https://mitaki.or.jp",
+      "lat": 34.9800014,
+      "lng": 136.6033829
+    },
+    {
+      "code": "osm:way/574223476",
+      "name": "昭和医科大学藤が丘リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.showa-u.ac.jp",
+      "lat": 35.5446348,
+      "lng": 139.5267397
+    },
+    {
+      "code": "osm:way/577877061",
+      "name": "大田市立病院",
+      "countryCode": "JP",
+      "origin": "https://www.ohda-hp.ohda.shimane.jp",
+      "lat": 35.1810055,
+      "lng": 132.5027326
+    },
+    {
+      "code": "osm:way/583805451",
+      "name": "医療法人 平野同仁会  総合病院 津山第一病院",
+      "countryCode": "JP",
+      "origin": "https://www.tsuyama-1sthp.jp",
+      "lat": 35.0536579,
+      "lng": 133.9668026
+    },
+    {
+      "code": "osm:way/586976665",
+      "name": "岡山博愛会病院分院",
+      "countryCode": "JP",
+      "origin": "https://www.okayama-hakuaikai.or.jp",
+      "lat": 34.6534834,
+      "lng": 133.9348783
+    },
+    {
+      "code": "osm:way/586987062",
+      "name": "総合病院岡山協立病院",
+      "countryCode": "JP",
+      "origin": "http://www.okayama-kyoritsu.jp",
+      "lat": 34.6509685,
+      "lng": 133.9374423
+    },
+    {
+      "code": "osm:way/591416310",
+      "name": "横手興生病院",
+      "countryCode": "JP",
+      "origin": "https://www.kohseikai.com",
+      "lat": 39.3177352,
+      "lng": 140.5697536
+    },
+    {
+      "code": "osm:way/591416311",
+      "name": "市立横手病院",
+      "countryCode": "JP",
+      "origin": "https://www.yokote-mhp.jp",
+      "lat": 39.3184896,
+      "lng": 140.5691262
+    },
+    {
+      "code": "osm:way/594393682",
+      "name": "総合病院玉野市民病院",
+      "countryCode": "JP",
+      "origin": "http://tamanohp.jp",
+      "lat": 34.4917505,
+      "lng": 133.9428552
+    },
+    {
+      "code": "osm:way/595970475",
+      "name": "KKR札幌医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.kkr-smc.com",
+      "lat": 43.0365116,
+      "lng": 141.3668882
+    },
+    {
+      "code": "osm:way/601064363",
+      "name": "ピュアレディースクリニック",
+      "countryCode": "JP",
+      "origin": "http://www.pureladiesclinic.jp",
+      "lat": 34.6980582,
+      "lng": 137.6505315
+    },
+    {
+      "code": "osm:way/601069511",
+      "name": "福岡脳神経外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.fukuokanh.jp",
+      "lat": 33.5366809,
+      "lng": 130.4308023
+    },
+    {
+      "code": "osm:way/607355495",
+      "name": "喜多医師会病院",
+      "countryCode": "JP",
+      "origin": "http://www.kitaishikai.jp",
+      "lat": 33.5324205,
+      "lng": 132.5720225
+    },
+    {
+      "code": "osm:way/612716189",
+      "name": "湘南藤沢徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://fujisawatokushukai.jp",
+      "lat": 35.3413447,
+      "lng": 139.4450627
+    },
+    {
+      "code": "osm:way/621721927",
+      "name": "極濃湯麺　キントン",
+      "countryCode": "JP",
+      "origin": "https://www.ota-hosp.or.jp",
+      "lat": 36.2984424,
+      "lng": 139.3606848
+    },
+    {
+      "code": "osm:way/624392430",
+      "name": "立川綜合病院",
+      "countryCode": "JP",
+      "origin": "https://www.tatikawa.or.jp",
+      "lat": 37.4223141,
+      "lng": 138.8586384
+    },
+    {
+      "code": "osm:way/624790864",
+      "name": "長岡中央綜合病院",
+      "countryCode": "JP",
+      "origin": "https://www.nagachu.jp",
+      "lat": 37.4512175,
+      "lng": 138.8784049
+    },
+    {
+      "code": "osm:way/625039632",
+      "name": "長岡赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.nagaoka.jrc.or.jp",
+      "lat": 37.4600275,
+      "lng": 138.829415
+    },
+    {
+      "code": "osm:way/625954476",
+      "name": "日本医科大学附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.nms.ac.jp",
+      "lat": 35.7211509,
+      "lng": 139.7595735
+    },
+    {
+      "code": "osm:way/627201765",
+      "name": "幸町記念病院",
+      "countryCode": "JP",
+      "origin": "https://saiwaichokinen.com",
+      "lat": 34.6473455,
+      "lng": 133.9118682
+    },
+    {
+      "code": "osm:way/627598155",
+      "name": "追分菊池病院",
+      "countryCode": "JP",
+      "origin": "https://www.akai-himawari.or.jp",
+      "lat": 42.8771535,
+      "lng": 141.8120562
+    },
+    {
+      "code": "osm:way/632329442",
+      "name": "製鉄記念室蘭病院",
+      "countryCode": "JP",
+      "origin": "https://www.nshp-muroran.or.jp",
+      "lat": 42.3573187,
+      "lng": 141.0171603
+    },
+    {
+      "code": "osm:way/637696233",
+      "name": "自由会岡山光南病院",
+      "countryCode": "JP",
+      "origin": "https://www.kounan-hp.jp",
+      "lat": 34.6049415,
+      "lng": 133.8811615
+    },
+    {
+      "code": "osm:way/638645979",
+      "name": "君津山の手病院",
+      "countryCode": "JP",
+      "origin": "https://www.yamanote-hp.jp",
+      "lat": 35.3174822,
+      "lng": 139.9227856
+    },
+    {
+      "code": "osm:way/638697259",
+      "name": "聖麗メモリアル病院",
+      "countryCode": "JP",
+      "origin": "https://www.seirei-memorial.com",
+      "lat": 36.5026299,
+      "lng": 140.5944689
+    },
+    {
+      "code": "osm:way/641722661",
+      "name": "津山慈風会津山中央病院",
+      "countryCode": "JP",
+      "origin": "https://tch.or.jp",
+      "lat": 35.0657364,
+      "lng": 134.0396645
+    },
+    {
+      "code": "osm:way/646980690",
+      "name": "シャローム病院",
+      "countryCode": "JP",
+      "origin": "http://shalorm.or.jp",
+      "lat": 36.0520889,
+      "lng": 139.414462
+    },
+    {
+      "code": "osm:way/650423701",
+      "name": "同樹会 苫小牧病院",
+      "countryCode": "JP",
+      "origin": "https://doukikai-tomakomai-hp.jp",
+      "lat": 42.6423472,
+      "lng": 141.6099176
+    },
+    {
+      "code": "osm:way/654188027",
+      "name": "黒埼病院",
+      "countryCode": "JP",
+      "origin": "https://www.kurosaki-hp.jp",
+      "lat": 37.8415352,
+      "lng": 138.9855783
+    },
+    {
+      "code": "osm:way/656904652",
+      "name": "佐潟荘",
+      "countryCode": "JP",
+      "origin": "http://www.sagatasou.com",
+      "lat": 37.8200119,
+      "lng": 138.8765217
+    },
+    {
+      "code": "osm:way/657399306",
+      "name": "さぬき市民病院",
+      "countryCode": "JP",
+      "origin": "https://www.city.sanuki.kagawa.jp",
+      "lat": 34.2670075,
+      "lng": 134.2020064
+    },
+    {
+      "code": "osm:way/660100210",
+      "name": "長岡西病院",
+      "countryCode": "JP",
+      "origin": "https://www.sutokukai.or.jp",
+      "lat": 37.4501944,
+      "lng": 138.8158871
+    },
+    {
+      "code": "osm:way/662525687",
+      "name": "斜里町国民健康保険病院",
+      "countryCode": "JP",
+      "origin": "https://www.shari-kokuho.jp",
+      "lat": 43.9052301,
+      "lng": 144.6637174
+    },
+    {
+      "code": "osm:way/662773048",
+      "name": "小清水赤十字病院",
+      "countryCode": "JP",
+      "origin": "http://www.phoenix-c.or.jp",
+      "lat": 43.8556548,
+      "lng": 144.4599647
+    },
+    {
+      "code": "osm:way/664582526",
+      "name": "甲南医療センター",
+      "countryCode": "JP",
+      "origin": "https://kohnan.or.jp",
+      "lat": 34.7288594,
+      "lng": 135.2516254
+    },
+    {
+      "code": "osm:way/668169541",
+      "name": "足利中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.ashikaga-central-hp.or.jp",
+      "lat": 36.3017409,
+      "lng": 139.4755202
+    },
+    {
+      "code": "osm:way/668415271",
+      "name": "AOI名古屋病院",
+      "countryCode": "JP",
+      "origin": "https://www.aoikai.jp",
+      "lat": 35.1783417,
+      "lng": 136.9157553
+    },
+    {
+      "code": "osm:way/669466715",
+      "name": "尼崎だいもつ病院",
+      "countryCode": "JP",
+      "origin": "http://amagasakidaimotsu.aijinkai.or.jp",
+      "lat": 34.7174077,
+      "lng": 135.4279886
+    },
+    {
+      "code": "osm:way/670743597",
+      "name": "日野病院組合 日野病院",
+      "countryCode": "JP",
+      "origin": "https://www.hinohp.com",
+      "lat": 35.23617,
+      "lng": 133.4358942
+    },
+    {
+      "code": "osm:way/675422844",
+      "name": "名古屋市立大学医学部附属東部医療センター",
+      "countryCode": "JP",
+      "origin": "https://w3hosp.med.nagoya-cu.ac.jp",
+      "lat": 35.17412,
+      "lng": 136.9435908
+    },
+    {
+      "code": "osm:way/681517601",
+      "name": "下川クリニック",
+      "countryCode": "JP",
+      "origin": "https://shimokawa-clinic.jp",
+      "lat": 31.6396997,
+      "lng": 130.5676665
+    },
+    {
+      "code": "osm:way/681605126",
+      "name": "春日部中央総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.ims.gr.jp",
+      "lat": 35.9653133,
+      "lng": 139.771248
+    },
+    {
+      "code": "osm:way/682108035",
+      "name": "田尻ヶ丘病院",
+      "countryCode": "JP",
+      "origin": "https://www.tajirigaoka.or.jp",
+      "lat": 36.6270005,
+      "lng": 140.6720532
+    },
+    {
+      "code": "osm:way/682872500",
+      "name": "愛知県がんセンター",
+      "countryCode": "JP",
+      "origin": "https://www.pref.aichi.jp",
+      "lat": 35.1764654,
+      "lng": 136.9721526
+    },
+    {
+      "code": "osm:way/683318188",
+      "name": "外ヶ浜中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.town.sotogahama.lg.jp",
+      "lat": 41.0420606,
+      "lng": 140.6396612
+    },
+    {
+      "code": "osm:way/683480253",
+      "name": "慈誠会練馬高野台病院",
+      "countryCode": "JP",
+      "origin": "https://www.nerimatakanodai-hp.jp",
+      "lat": 35.743822,
+      "lng": 139.612465
+    },
+    {
+      "code": "osm:way/687737008",
+      "name": "東京女子医科大学附属足立医療センター",
+      "countryCode": "JP",
+      "origin": "https://twmu-amc.jp",
+      "lat": 35.7738668,
+      "lng": 139.7666195
+    },
+    {
+      "code": "osm:way/689116631",
+      "name": "JCHO大阪病院",
+      "countryCode": "JP",
+      "origin": "https://osaka.jcho.go.jp",
+      "lat": 34.6919806,
+      "lng": 135.4830224
+    },
+    {
+      "code": "osm:way/691596372",
+      "name": "伊勢原協同病院",
+      "countryCode": "JP",
+      "origin": "https://www.iseharahp.com",
+      "lat": 35.4030458,
+      "lng": 139.3165535
+    },
+    {
+      "code": "osm:way/693921463",
+      "name": "順天堂大学医学部附属 練馬病院",
+      "countryCode": "JP",
+      "origin": "https://www.juntendo.ac.jp",
+      "lat": 35.7422269,
+      "lng": 139.6150174
+    },
+    {
+      "code": "osm:way/699215816",
+      "name": "戸塚共立リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.tkr-hospital.com",
+      "lat": 35.4223011,
+      "lng": 139.5007725
+    },
+    {
+      "code": "osm:way/702651109",
+      "name": "福岡ハートネット病院",
+      "countryCode": "JP",
+      "origin": "https://heartnet-hp.jp",
+      "lat": 33.5872059,
+      "lng": 130.3316661
+    },
+    {
+      "code": "osm:way/710502674",
+      "name": "東札幌病院",
+      "countryCode": "JP",
+      "origin": "https://www.hsh.or.jp",
+      "lat": 43.0504545,
+      "lng": 141.3879209
+    },
+    {
+      "code": "osm:way/714621565",
+      "name": "葵会 仙台病院",
+      "countryCode": "JP",
+      "origin": "https://www.aoikai.jp",
+      "lat": 38.2404529,
+      "lng": 140.9494404
+    },
+    {
+      "code": "osm:way/719053957",
+      "name": "新冠町立国民健康保険診療所",
+      "countryCode": "JP",
+      "origin": "https://www.niikappu.jp",
+      "lat": 42.363165,
+      "lng": 142.3132127
+    },
+    {
+      "code": "osm:way/723954950",
+      "name": "仙台市立病院",
+      "countryCode": "JP",
+      "origin": "https://hospital.city.sendai.jp",
+      "lat": 38.2319986,
+      "lng": 140.8887371
+    },
+    {
+      "code": "osm:way/730460434",
+      "name": "宮城県立がんセンター",
+      "countryCode": "JP",
+      "origin": "https://www.miyagi-pho.jp",
+      "lat": 38.1667428,
+      "lng": 140.8616309
+    },
+    {
+      "code": "osm:way/736928982",
+      "name": "岐阜清流病院",
+      "countryCode": "JP",
+      "origin": "https://www.skhosp.or.jp",
+      "lat": 35.4357248,
+      "lng": 136.7079395
+    },
+    {
+      "code": "osm:way/738467427",
+      "name": "井之頭病院",
+      "countryCode": "JP",
+      "origin": "https://inokashira-hp.or.jp",
+      "lat": 35.6975961,
+      "lng": 139.5575184
+    },
+    {
+      "code": "osm:way/742071596",
+      "name": "ふたば医療センター附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.pref.fukushima.lg.jp",
+      "lat": 37.3466798,
+      "lng": 141.007035
+    },
+    {
+      "code": "osm:way/744297472",
+      "name": "国立病院機構いわき病院",
+      "countryCode": "JP",
+      "origin": "https://iwaki.hosp.go.jp",
+      "lat": 36.9817617,
+      "lng": 140.8808227
+    },
+    {
+      "code": "osm:way/746529415",
+      "name": "仙台赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.sendai.jrc.or.jp",
+      "lat": 38.2366263,
+      "lng": 140.8399458
+    },
+    {
+      "code": "osm:way/750335644",
+      "name": "東庄町国民健康保険東庄病院",
+      "countryCode": "JP",
+      "origin": "https://www.town.tohnosho.chiba.jp",
+      "lat": 35.8203427,
+      "lng": 140.6975848
+    },
+    {
+      "code": "osm:way/751203832",
+      "name": "大分赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.oitasekijyuji.jp",
+      "lat": 33.2438636,
+      "lng": 131.6044695
+    },
+    {
+      "code": "osm:way/751214779",
+      "name": "いちはら病院",
+      "countryCode": "JP",
+      "origin": "https://www.ichihara-hospital.or.jp",
+      "lat": 36.138753,
+      "lng": 140.0803037
+    },
+    {
+      "code": "osm:way/753688550",
+      "name": "岩手県立二戸病院",
+      "countryCode": "JP",
+      "origin": "https://www.ninohe-hp.net",
+      "lat": 40.299351,
+      "lng": 141.3060062
+    },
+    {
+      "code": "osm:way/756790103",
+      "name": "堀胃腸外科",
+      "countryCode": "JP",
+      "origin": "https://www.hori-ichokageka.com",
+      "lat": 34.7522389,
+      "lng": 134.8494457
+    },
+    {
+      "code": "osm:way/761241989",
+      "name": "気仙沼市立病院",
+      "countryCode": "JP",
+      "origin": "https://www.kesennuma-hospital.jp",
+      "lat": 38.8875165,
+      "lng": 141.5660296
+    },
+    {
+      "code": "osm:way/762974550",
+      "name": "京都府立洛南病院",
+      "countryCode": "JP",
+      "origin": "https://www.rakunan-hosp.jp",
+      "lat": 34.9158489,
+      "lng": 135.8089547
+    },
+    {
+      "code": "osm:way/771007533",
+      "name": "公立阿伎留医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.akiru-med.jp",
+      "lat": 35.7321891,
+      "lng": 139.2723084
+    },
+    {
+      "code": "osm:way/772906357",
+      "name": "ふくやま病院",
+      "countryCode": "JP",
+      "origin": "https://fukuyama-hp.jp",
+      "lat": 34.6498996,
+      "lng": 134.9794888
+    },
+    {
+      "code": "osm:way/775810012",
+      "name": "国立病院機構神奈川病院",
+      "countryCode": "JP",
+      "origin": "https://kanagawa.hosp.go.jp",
+      "lat": 35.3856496,
+      "lng": 139.229753
+    },
+    {
+      "code": "osm:way/776529173",
+      "name": "市立大曲病院",
+      "countryCode": "JP",
+      "origin": "https://omagari-hospital.sakura.ne.jp",
+      "lat": 39.4412484,
+      "lng": 140.4836378
+    },
+    {
+      "code": "osm:way/776912958",
+      "name": "北海道立羽幌病院",
+      "countryCode": "JP",
+      "origin": "https://haboro.hospital.pref.hokkaido.lg.jp",
+      "lat": 44.3545939,
+      "lng": 141.6947209
+    },
+    {
+      "code": "osm:way/785024665",
+      "name": "北福島医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.jinsenkai.or.jp",
+      "lat": 37.8182852,
+      "lng": 140.5210839
+    },
+    {
+      "code": "osm:way/787323036",
+      "name": "岡山県健康づくり財団付属病院",
+      "countryCode": "JP",
+      "origin": "https://www.okakenko.jp",
+      "lat": 34.6356382,
+      "lng": 133.8818485
+    },
+    {
+      "code": "osm:way/788082014",
+      "name": "滋賀県立精神医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.pref.shiga.lg.jp",
+      "lat": 34.9747751,
+      "lng": 135.9581293
+    },
+    {
+      "code": "osm:way/788082025",
+      "name": "びわこ学園医療福祉センター草津",
+      "countryCode": "JP",
+      "origin": "http://www.biwakogakuen.or.jp",
+      "lat": 34.9770976,
+      "lng": 135.9592089
+    },
+    {
+      "code": "osm:way/788107179",
+      "name": "びわこ学園医療福祉センター野洲",
+      "countryCode": "JP",
+      "origin": "http://www.biwakogakuen.or.jp",
+      "lat": 35.0484281,
+      "lng": 136.0474348
+    },
+    {
+      "code": "osm:way/788146150",
+      "name": "広南病院",
+      "countryCode": "JP",
+      "origin": "https://www.kohnan-sendai.or.jp",
+      "lat": 38.2197227,
+      "lng": 140.8718554
+    },
+    {
+      "code": "osm:way/788353356",
+      "name": "川湯の森病院",
+      "countryCode": "JP",
+      "origin": "https://kawayu.tomoni-ikirukai.jp",
+      "lat": 43.6426724,
+      "lng": 144.4384755
+    },
+    {
+      "code": "osm:way/788373820",
+      "name": "済生会湘南平塚病院",
+      "countryCode": "JP",
+      "origin": "https://www.hiratsuka.saiseikai.or.jp",
+      "lat": 35.33746,
+      "lng": 139.3532002
+    },
+    {
+      "code": "osm:way/788382957",
+      "name": "十勝の杜病院",
+      "countryCode": "JP",
+      "origin": "http://www.shoureikan.jp",
+      "lat": 42.9160803,
+      "lng": 143.2716994
+    },
+    {
+      "code": "osm:way/794245592",
+      "name": "町立長沼病院",
+      "countryCode": "JP",
+      "origin": "https://www2.maoi-net.jp",
+      "lat": 43.0076138,
+      "lng": 141.6934634
+    },
+    {
+      "code": "osm:way/795084230",
+      "name": "神戸博愛病院",
+      "countryCode": "JP",
+      "origin": "http://www.kobehakuai-togen.com",
+      "lat": 34.6833758,
+      "lng": 135.1790958
+    },
+    {
+      "code": "osm:way/810240411",
+      "name": "本荘第一病院",
+      "countryCode": "JP",
+      "origin": "http://www.honjodaiichihp.com",
+      "lat": 39.3926714,
+      "lng": 140.0516722
+    },
+    {
+      "code": "osm:way/810497529",
+      "name": "国保多古中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.takochu.tako.chiba.jp",
+      "lat": 35.7380221,
+      "lng": 140.472061
+    },
+    {
+      "code": "osm:way/810905415",
+      "name": "三愛病院",
+      "countryCode": "JP",
+      "origin": "http://www.sanai-hospital.or.jp",
+      "lat": 42.4645357,
+      "lng": 141.1681062
+    },
+    {
+      "code": "osm:way/827162309",
+      "name": "三樹病院",
+      "countryCode": "JP",
+      "origin": "http://miki-hosp.gr.jp",
+      "lat": 33.3202817,
+      "lng": 130.4250662
+    },
+    {
+      "code": "osm:way/833568290",
+      "name": "国際医療福祉大学成田病院",
+      "countryCode": "JP",
+      "origin": "https://naritahospital.iuhw.ac.jp",
+      "lat": 35.7602897,
+      "lng": 140.3504784
+    },
+    {
+      "code": "osm:way/840742948",
+      "name": "恵庭第一病院",
+      "countryCode": "JP",
+      "origin": "https://eniwa-daiichi.or.jp",
+      "lat": 42.8870156,
+      "lng": 141.5793337
+    },
+    {
+      "code": "osm:way/842489212",
+      "name": "珠洲市総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.city.suzu.lg.jp",
+      "lat": 37.4434903,
+      "lng": 137.2710151
+    },
+    {
+      "code": "osm:way/843048340",
+      "name": "粟津神経サナトリウム",
+      "countryCode": "JP",
+      "origin": "http://choureikai.jp",
+      "lat": 36.3509091,
+      "lng": 136.4231745
+    },
+    {
+      "code": "osm:way/844745931",
+      "name": "森田病院",
+      "countryCode": "JP",
+      "origin": "https://morita-hospital.jp",
+      "lat": 36.4080639,
+      "lng": 136.4602704
+    },
+    {
+      "code": "osm:way/846367273",
+      "name": "心臓病センター榊原病院",
+      "countryCode": "JP",
+      "origin": "https://www.sakakibara-hp.com",
+      "lat": 34.6820607,
+      "lng": 133.9319823
+    },
+    {
+      "code": "osm:way/858589496",
+      "name": "東千葉メディカルセンター",
+      "countryCode": "JP",
+      "origin": "https://www.tkmedical.jp",
+      "lat": 35.558071,
+      "lng": 140.3077871
+    },
+    {
+      "code": "osm:way/888621456",
+      "name": "北星記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.nouge.gr.jp",
+      "lat": 43.8032223,
+      "lng": 143.8514011
+    },
+    {
+      "code": "osm:way/893387474",
+      "name": "弘愛会病院",
+      "countryCode": "JP",
+      "origin": "http://www.kouaikai.com",
+      "lat": 40.6151295,
+      "lng": 140.4851153
+    },
+    {
+      "code": "osm:way/904670829",
+      "name": "石川県済生会金沢病院",
+      "countryCode": "JP",
+      "origin": "https://saiseikaikanazawa.jp",
+      "lat": 36.5825094,
+      "lng": 136.595382
+    },
+    {
+      "code": "osm:way/906989908",
+      "name": "石巻市立病院",
+      "countryCode": "JP",
+      "origin": "https://ishinomaki-city-hospital.jp",
+      "lat": 38.4349412,
+      "lng": 141.3015302
+    },
+    {
+      "code": "osm:way/915472128",
+      "name": "小池病院",
+      "countryCode": "JP",
+      "origin": "http://www.koike-hospital.jp",
+      "lat": 36.5677952,
+      "lng": 136.6641333
+    },
+    {
+      "code": "osm:way/920721376",
+      "name": "香川労災病院",
+      "countryCode": "JP",
+      "origin": "https://www.kagawah.johas.go.jp",
+      "lat": 34.2882411,
+      "lng": 133.8055658
+    },
+    {
+      "code": "osm:way/927783099",
+      "name": "国民健康保険 天草市立河浦病院",
+      "countryCode": "JP",
+      "origin": "https://kawaura-hp.jp",
+      "lat": 32.3170089,
+      "lng": 130.082775
+    },
+    {
+      "code": "osm:way/931474155",
+      "name": "天草慈恵病院",
+      "countryCode": "JP",
+      "origin": "https://www.inahokai.com",
+      "lat": 32.5168093,
+      "lng": 130.0677429
+    },
+    {
+      "code": "osm:way/932241598",
+      "name": "倶知安厚生病院",
+      "countryCode": "JP",
+      "origin": "https://www.dou-kouseiren.com",
+      "lat": 42.9047839,
+      "lng": 140.7544168
+    },
+    {
+      "code": "osm:way/934542156",
+      "name": "北海道立緑ヶ丘病院",
+      "countryCode": "JP",
+      "origin": "https://www.pref.hokkaido.lg.jp",
+      "lat": 42.9845947,
+      "lng": 143.1953623
+    },
+    {
+      "code": "osm:way/936679080",
+      "name": "はちや整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://hachiya.or.jp",
+      "lat": 35.166749,
+      "lng": 136.9560368
+    },
+    {
+      "code": "osm:way/939291079",
+      "name": "北海道立子ども総合医療・療育センター",
+      "countryCode": "JP",
+      "origin": "https://kodomo.hospital.pref.hokkaido.lg.jp",
+      "lat": 43.1287342,
+      "lng": 141.2110125
+    },
+    {
+      "code": "osm:way/947052379",
+      "name": "長野赤十字病院",
+      "countryCode": "JP",
+      "origin": "http://www.nagano-med.jrc.or.jp",
+      "lat": 36.6272922,
+      "lng": 138.1903562
+    },
+    {
+      "code": "osm:way/949345213",
+      "name": "竹重病院",
+      "countryCode": "JP",
+      "origin": "https://takeshige-hosp.com",
+      "lat": 36.6546307,
+      "lng": 138.1973202
+    },
+    {
+      "code": "osm:way/949607914",
+      "name": "小島病院",
+      "countryCode": "JP",
+      "origin": "https://kojima-hosp.or.jp",
+      "lat": 36.6279075,
+      "lng": 138.1854025
+    },
+    {
+      "code": "osm:way/949976572",
+      "name": "南長野医療センター篠ノ井総合病院",
+      "countryCode": "JP",
+      "origin": "https://shinonoi-ghp.jp",
+      "lat": 36.5745645,
+      "lng": 138.1496131
+    },
+    {
+      "code": "osm:way/971035821",
+      "name": "遠軽厚生病院",
+      "countryCode": "JP",
+      "origin": "https://www.dou-kouseiren.com",
+      "lat": 44.0624543,
+      "lng": 143.5240885
+    },
+    {
+      "code": "osm:way/972715787",
+      "name": "兵庫県立丹波医療センター",
+      "countryCode": "JP",
+      "origin": "https://tmc.hyogo.jp",
+      "lat": 35.1466819,
+      "lng": 135.0554037
+    },
+    {
+      "code": "osm:way/980006075",
+      "name": "JCHO仙台病院",
+      "countryCode": "JP",
+      "origin": "https://sendai.jcho.go.jp",
+      "lat": 38.3457625,
+      "lng": 140.8324626
+    },
+    {
+      "code": "osm:way/984204839",
+      "name": "JCHO東京新宿メディカルセンター",
+      "countryCode": "JP",
+      "origin": "https://shinjuku.jcho.go.jp",
+      "lat": 35.7035709,
+      "lng": 139.7422318
+    },
+    {
+      "code": "osm:way/984503103",
+      "name": "沖縄赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.okinawa-med.jrc.or.jp",
+      "lat": 26.2066726,
+      "lng": 127.6926697
+    },
+    {
+      "code": "osm:way/986310282",
+      "name": "札幌花園病院",
+      "countryCode": "JP",
+      "origin": "http://www.hanazono-hp.or.jp",
+      "lat": 43.0395537,
+      "lng": 141.3355427
+    },
+    {
+      "code": "osm:way/995821780",
+      "name": "高尾保養院東京高尾病院",
+      "countryCode": "JP",
+      "origin": "https://tt-hospital.jp",
+      "lat": 35.6305681,
+      "lng": 139.2612551
+    },
+    {
+      "code": "osm:way/1018950286",
+      "name": "国立療養所菊池恵楓園",
+      "countryCode": "JP",
+      "origin": "https://www.mhlw.go.jp",
+      "lat": 32.8816844,
+      "lng": 130.7551782
+    },
+    {
+      "code": "osm:way/1023519549",
+      "name": "たむら記念病院",
+      "countryCode": "JP",
+      "origin": "http://misakikai.tskk.biz",
+      "lat": 35.7121755,
+      "lng": 140.7895395
+    },
+    {
+      "code": "osm:way/1025714001",
+      "name": "滝宮総合病院",
+      "countryCode": "JP",
+      "origin": "http://www.takinomiya-hp.com",
+      "lat": 34.2484619,
+      "lng": 133.9242172
+    },
+    {
+      "code": "osm:way/1029955321",
+      "name": "喜晴会野田中央病院",
+      "countryCode": "JP",
+      "origin": "http://www.noda-chuo.or.jp",
+      "lat": 35.9349597,
+      "lng": 139.9004762
+    },
+    {
+      "code": "osm:way/1034370624",
+      "name": "京都久野病院",
+      "countryCode": "JP",
+      "origin": "https://www.kuno-hospital.or.jp",
+      "lat": 34.9709835,
+      "lng": 135.7705945
+    },
+    {
+      "code": "osm:way/1038983547",
+      "name": "青梅慶友病院",
+      "countryCode": "JP",
+      "origin": "https://www.keiyu-hp.or.jp",
+      "lat": 35.7989708,
+      "lng": 139.2871656
+    },
+    {
+      "code": "osm:way/1040812457",
+      "name": "南海医療センター",
+      "countryCode": "JP",
+      "origin": "https://nankai.jcho.go.jp",
+      "lat": 32.9649403,
+      "lng": 131.9005146
+    },
+    {
+      "code": "osm:way/1043684825",
+      "name": "仙台厚生病院",
+      "countryCode": "JP",
+      "origin": "https://www.sendai-kousei-hospital.jp",
+      "lat": 38.2763652,
+      "lng": 140.8702577
+    },
+    {
+      "code": "osm:way/1047015946",
+      "name": "筑波メディカルセンター病院",
+      "countryCode": "JP",
+      "origin": "http://www.tmch.or.jp",
+      "lat": 36.0921335,
+      "lng": 140.1065809
+    },
+    {
+      "code": "osm:way/1049328697",
+      "name": "医療法人社団竜山会金沢古府記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.kkm-hp.jp",
+      "lat": 36.5639334,
+      "lng": 136.6075389
+    },
+    {
+      "code": "osm:way/1051292053",
+      "name": "すずかけセントラル病院",
+      "countryCode": "JP",
+      "origin": "https://www.suzukake.or.jp",
+      "lat": 34.6808819,
+      "lng": 137.7258891
+    },
+    {
+      "code": "osm:way/1056779876",
+      "name": "大泉記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.ooizumi.or.jp",
+      "lat": 38.0390656,
+      "lng": 140.6441455
+    },
+    {
+      "code": "osm:way/1063090555",
+      "name": "長野県立阿南病院",
+      "countryCode": "JP",
+      "origin": "https://anan-hosp.jp",
+      "lat": 35.3340579,
+      "lng": 137.834975
+    },
+    {
+      "code": "osm:way/1065398531",
+      "name": "札幌禎心会病院",
+      "countryCode": "JP",
+      "origin": "https://www.teishinkai.jp",
+      "lat": 43.1008501,
+      "lng": 141.346425
+    },
+    {
+      "code": "osm:way/1066702937",
+      "name": "済生会小樽病院",
+      "countryCode": "JP",
+      "origin": "https://www.saiseikai-otaru.jp",
+      "lat": 43.184178,
+      "lng": 141.0190159
+    },
+    {
+      "code": "osm:way/1075191396",
+      "name": "仁成会 高木病院",
+      "countryCode": "JP",
+      "origin": "https://www.takagi-hp.or.jp",
+      "lat": 35.7937133,
+      "lng": 139.305555
+    },
+    {
+      "code": "osm:way/1076244660",
+      "name": "幌東病院",
+      "countryCode": "JP",
+      "origin": "https://kotohp.or.jp",
+      "lat": 43.0420036,
+      "lng": 141.4129784
+    },
+    {
+      "code": "osm:way/1079155718",
+      "name": "仁楡会札幌病院",
+      "countryCode": "JP",
+      "origin": "https://www.jinyukai.or.jp",
+      "lat": 43.0269716,
+      "lng": 141.3585976
+    },
+    {
+      "code": "osm:way/1079370828",
+      "name": "JCHO北海道病院",
+      "countryCode": "JP",
+      "origin": "https://hokkaido.jcho.go.jp",
+      "lat": 43.0253635,
+      "lng": 141.3562582
+    },
+    {
+      "code": "osm:way/1079653516",
+      "name": "三木眼科",
+      "countryCode": "JP",
+      "origin": "http://mikiganka-tsu.hp4u.jp",
+      "lat": 34.7087588,
+      "lng": 136.5069888
+    },
+    {
+      "code": "osm:way/1081287649",
+      "name": "総合病院岡山赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.okayama-med.jrc.or.jp",
+      "lat": 34.635237,
+      "lng": 133.9227265
+    },
+    {
+      "code": "osm:way/1084082991",
+      "name": "浦添総合病院",
+      "countryCode": "JP",
+      "origin": "https://jin-aikai.com",
+      "lat": 26.2403858,
+      "lng": 127.7378494
+    },
+    {
+      "code": "osm:way/1087419031",
+      "name": "岡本病院",
+      "countryCode": "JP",
+      "origin": "http://www.okamoto-hp.com",
+      "lat": 43.0656495,
+      "lng": 141.3162501
+    },
+    {
+      "code": "osm:way/1095840982",
+      "name": "西仙台病院",
+      "countryCode": "JP",
+      "origin": "https://ims-tohoku.com",
+      "lat": 38.275491,
+      "lng": 140.7431481
+    },
+    {
+      "code": "osm:way/1104707173",
+      "name": "医療法人勤誠会 米子病院",
+      "countryCode": "JP",
+      "origin": "https://www.yonago-hospital.jp",
+      "lat": 35.4099234,
+      "lng": 133.3574342
+    },
+    {
+      "code": "osm:way/1109981339",
+      "name": "米子東病院",
+      "countryCode": "JP",
+      "origin": "https://www.med-wel.jp",
+      "lat": 35.4521564,
+      "lng": 133.3953666
+    },
+    {
+      "code": "osm:way/1112148440",
+      "name": "錦海リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://www.kinkai-rehab.jp",
+      "lat": 35.4186542,
+      "lng": 133.3199102
+    },
+    {
+      "code": "osm:way/1115011720",
+      "name": "医療法人友紘会 皆生温泉病院",
+      "countryCode": "JP",
+      "origin": "http://www.yukoukai.com",
+      "lat": 35.4546598,
+      "lng": 133.3684599
+    },
+    {
+      "code": "osm:way/1120572064",
+      "name": "医療法人養和会 養和病院",
+      "countryCode": "JP",
+      "origin": "https://www.yowakai.com",
+      "lat": 35.4480902,
+      "lng": 133.3181576
+    },
+    {
+      "code": "osm:way/1121046231",
+      "name": "医療法人育生会 高島病院",
+      "countryCode": "JP",
+      "origin": "https://www.takashima-hp.or.jp",
+      "lat": 35.4300262,
+      "lng": 133.3280097
+    },
+    {
+      "code": "osm:way/1123354158",
+      "name": "総合高津中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.takatsuhosp.or.jp",
+      "lat": 35.600924,
+      "lng": 139.6132761
+    },
+    {
+      "code": "osm:way/1125384248",
+      "name": "沖縄県立八重山病院",
+      "countryCode": "JP",
+      "origin": "https://yaeyamaweb.hosp.pref.okinawa.jp",
+      "lat": 24.3430379,
+      "lng": 124.1834822
+    },
+    {
+      "code": "osm:way/1125817146",
+      "name": "国立療養所沖縄愛楽園",
+      "countryCode": "JP",
+      "origin": "https://www.mhlw.go.jp",
+      "lat": 26.6765259,
+      "lng": 128.0181826
+    },
+    {
+      "code": "osm:way/1125842950",
+      "name": "盛翔会 浜松北病院",
+      "countryCode": "JP",
+      "origin": "https://www.hamamatsu-kb.or.jp",
+      "lat": 34.7634985,
+      "lng": 137.7714282
+    },
+    {
+      "code": "osm:way/1132353369",
+      "name": "真誠会",
+      "countryCode": "JP",
+      "origin": "http://www.hospitown.or.jp",
+      "lat": 35.4577482,
+      "lng": 133.3107784
+    },
+    {
+      "code": "osm:way/1134769078",
+      "name": "総合病院国保旭中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.hospital.asahi.chiba.jp",
+      "lat": 35.7174016,
+      "lng": 140.6638317
+    },
+    {
+      "code": "osm:way/1136658357",
+      "name": "仙台徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://sendai.tokushukai.jp",
+      "lat": 38.3163301,
+      "lng": 140.8952197
+    },
+    {
+      "code": "osm:way/1136717663",
+      "name": "札幌整形循環器病院",
+      "countryCode": "JP",
+      "origin": "https://ssj-h.com",
+      "lat": 43.0068801,
+      "lng": 141.4312961
+    },
+    {
+      "code": "osm:way/1143789362",
+      "name": "横芝光町立 東陽病院",
+      "countryCode": "JP",
+      "origin": "https://hospital.town.yokoshibahikari.chiba.jp",
+      "lat": 35.6581928,
+      "lng": 140.5030258
+    },
+    {
+      "code": "osm:way/1147535608",
+      "name": "神戸百年記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.kobe-century-mh.or.jp",
+      "lat": 34.6589975,
+      "lng": 135.1688686
+    },
+    {
+      "code": "osm:way/1150937517",
+      "name": "大阪市立総合医療センター",
+      "countryCode": "JP",
+      "origin": "https://www.osakacity-hp.or.jp",
+      "lat": 34.7076735,
+      "lng": 135.5239689
+    },
+    {
+      "code": "osm:way/1151200234",
+      "name": "西岡第一病院",
+      "countryCode": "JP",
+      "origin": "https://nishiokadaiichi.or.jp",
+      "lat": 43.0130534,
+      "lng": 141.3869269
+    },
+    {
+      "code": "osm:way/1157166091",
+      "name": "順天病院",
+      "countryCode": "JP",
+      "origin": "http://www.junten.jp",
+      "lat": 43.0052076,
+      "lng": 141.4925621
+    },
+    {
+      "code": "osm:way/1160102609",
+      "name": "JR札幌病院",
+      "countryCode": "JP",
+      "origin": "https://hospital.jrhokkaido.co.jp",
+      "lat": 43.065793,
+      "lng": 141.3569955
+    },
+    {
+      "code": "osm:way/1162303816",
+      "name": "野幌病院",
+      "countryCode": "JP",
+      "origin": "http://www.nopporo.or.jp",
+      "lat": 43.0923924,
+      "lng": 141.5272523
+    },
+    {
+      "code": "osm:way/1163348982",
+      "name": "札幌南徳洲会病院",
+      "countryCode": "JP",
+      "origin": "https://sapporominami.com",
+      "lat": 43.0085118,
+      "lng": 141.451436
+    },
+    {
+      "code": "osm:way/1165080620",
+      "name": "厚仁病院",
+      "countryCode": "JP",
+      "origin": "https://koujinkai-kagawa.net",
+      "lat": 34.2916666,
+      "lng": 133.7967938
+    },
+    {
+      "code": "osm:way/1167724900",
+      "name": "香川県立丸亀病院",
+      "countryCode": "JP",
+      "origin": "https://www.pref.kagawa.lg.jp",
+      "lat": 34.3010094,
+      "lng": 133.8084102
+    },
+    {
+      "code": "osm:way/1171908313",
+      "name": "阪南中央病院",
+      "countryCode": "JP",
+      "origin": "https://hannan-chuo-hsp.or.jp",
+      "lat": 34.574263,
+      "lng": 135.5362583
+    },
+    {
+      "code": "osm:way/1172107017",
+      "name": "坂出市立病院",
+      "countryCode": "JP",
+      "origin": "https://www.city.sakaide.lg.jp",
+      "lat": 34.3171341,
+      "lng": 133.849753
+    },
+    {
+      "code": "osm:way/1172355087",
+      "name": "坂出聖マルチン病院",
+      "countryCode": "JP",
+      "origin": "https://sakaide-martinhp.jp",
+      "lat": 34.3114635,
+      "lng": 133.8602967
+    },
+    {
+      "code": "osm:way/1180373594",
+      "name": "名鉄病院",
+      "countryCode": "JP",
+      "origin": "https://www.meitetsu-hospital.jp",
+      "lat": 35.1853974,
+      "lng": 136.8716723
+    },
+    {
+      "code": "osm:way/1189815204",
+      "name": "公立学校共済組合四国中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.shikoku-ctr-hsp.jp",
+      "lat": 34.0109907,
+      "lng": 133.581186
+    },
+    {
+      "code": "osm:way/1193168068",
+      "name": "唐津市民病院きたはた",
+      "countryCode": "JP",
+      "origin": "https://www.city.karatsu.lg.jp",
+      "lat": 33.3743349,
+      "lng": 129.9460689
+    },
+    {
+      "code": "osm:way/1208305602",
+      "name": "玉越病院",
+      "countryCode": "JP",
+      "origin": "http://www.takumikai.jp",
+      "lat": 43.7933337,
+      "lng": 143.8708611
+    },
+    {
+      "code": "osm:way/1213773434",
+      "name": "松浦中央病院",
+      "countryCode": "JP",
+      "origin": "https://matsuura.jcho.go.jp",
+      "lat": 33.3421584,
+      "lng": 129.7089866
+    },
+    {
+      "code": "osm:way/1216199544",
+      "name": "伊万里有田共立病院",
+      "countryCode": "JP",
+      "origin": "https://www.imari-arita-hp.or.jp",
+      "lat": 33.2391171,
+      "lng": 129.851387
+    },
+    {
+      "code": "osm:way/1224683312",
+      "name": "宇多津病院",
+      "countryCode": "JP",
+      "origin": "http://www.utz.or.jp",
+      "lat": 34.304265,
+      "lng": 133.8106052
+    },
+    {
+      "code": "osm:way/1224922452",
+      "name": "まるがめ医療センター",
+      "countryCode": "JP",
+      "origin": "https://jyujin-mmc.jp",
+      "lat": 34.2769734,
+      "lng": 133.794783
+    },
+    {
+      "code": "osm:way/1227528175",
+      "name": "茎崎あおい病院",
+      "countryCode": "JP",
+      "origin": "https://www.kenseikai.or.jp",
+      "lat": 35.9867739,
+      "lng": 140.1240982
+    },
+    {
+      "code": "osm:way/1228368643",
+      "name": "つくば双愛病院",
+      "countryCode": "JP",
+      "origin": "http://www.tsukuba-soai.com",
+      "lat": 36.0038445,
+      "lng": 140.1157319
+    },
+    {
+      "code": "osm:way/1238265317",
+      "name": "東北医科薬科大学病院",
+      "countryCode": "JP",
+      "origin": "https://www.hosp.tohoku-mpu.ac.jp",
+      "lat": 38.2689984,
+      "lng": 140.9665025
+    },
+    {
+      "code": "osm:way/1242181766",
+      "name": "松島病院",
+      "countryCode": "JP",
+      "origin": "https://www.matsushima-hp.or.jp",
+      "lat": 35.4549394,
+      "lng": 139.620862
+    },
+    {
+      "code": "osm:way/1242832468",
+      "name": "筑波胃腸病院",
+      "countryCode": "JP",
+      "origin": "https://www.tsukubaichou.com",
+      "lat": 35.9873135,
+      "lng": 140.1387949
+    },
+    {
+      "code": "osm:way/1249064557",
+      "name": "西成病院",
+      "countryCode": "JP",
+      "origin": "https://www.nissei-hp.com",
+      "lat": 43.1268064,
+      "lng": 141.2373667
+    },
+    {
+      "code": "osm:way/1249420911",
+      "name": "中嶋病院",
+      "countryCode": "JP",
+      "origin": "https://www.nakajima-hs.or.jp",
+      "lat": 38.272428,
+      "lng": 140.9067462
+    },
+    {
+      "code": "osm:way/1254307698",
+      "name": "石巻赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.ishinomaki.jrc.or.jp",
+      "lat": 38.4590723,
+      "lng": 141.2798165
+    },
+    {
+      "code": "osm:way/1254550732",
+      "name": "仙台医療センター",
+      "countryCode": "JP",
+      "origin": "https://nsmc.hosp.go.jp",
+      "lat": 38.2597141,
+      "lng": 140.9063403
+    },
+    {
+      "code": "osm:way/1256807944",
+      "name": "都立墨東病院",
+      "countryCode": "JP",
+      "origin": "https://www.tmhp.jp",
+      "lat": 35.694798,
+      "lng": 139.8186774
+    },
+    {
+      "code": "osm:way/1259542718",
+      "name": "あそか病院",
+      "countryCode": "JP",
+      "origin": "https://hp.asokakai.or.jp",
+      "lat": 35.6899722,
+      "lng": 139.8120657
+    },
+    {
+      "code": "osm:way/1266719255",
+      "name": "杜都千愛病院",
+      "countryCode": "JP",
+      "origin": "http://www.midorijuji.or.jp",
+      "lat": 38.2151705,
+      "lng": 140.8015015
+    },
+    {
+      "code": "osm:way/1272165452",
+      "name": "仙台市急患センター",
+      "countryCode": "JP",
+      "origin": "http://www.sendai-emsf.jp",
+      "lat": 38.2424805,
+      "lng": 140.8866329
+    },
+    {
+      "code": "osm:way/1292274224",
+      "name": "中部国際医療センター",
+      "countryCode": "JP",
+      "origin": "https://cjimc-hp.jp",
+      "lat": 35.4578152,
+      "lng": 137.0165614
+    },
+    {
+      "code": "osm:way/1292625665",
+      "name": "敬誠会合志病院",
+      "countryCode": "JP",
+      "origin": "https://gohshi.or.jp",
+      "lat": 34.7271863,
+      "lng": 135.4293824
+    },
+    {
+      "code": "osm:way/1293034096",
+      "name": "北海道脳神経外科記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.hnsmhp.or.jp",
+      "lat": 43.0852041,
+      "lng": 141.3261105
+    },
+    {
+      "code": "osm:way/1297587633",
+      "name": "総合病院南生協病院",
+      "countryCode": "JP",
+      "origin": "https://www.minami-hp.jp",
+      "lat": 35.0559933,
+      "lng": 136.9462836
+    },
+    {
+      "code": "osm:way/1298254657",
+      "name": "岡山ひだまりの里病院",
+      "countryCode": "JP",
+      "origin": "https://hidamari.hayashi-dorin.or.jp",
+      "lat": 34.5904555,
+      "lng": 133.9693812
+    },
+    {
+      "code": "osm:way/1298274496",
+      "name": "山和会山口病院",
+      "countryCode": "JP",
+      "origin": "https://www.yamaguchihp-nagoya.com",
+      "lat": 35.091806,
+      "lng": 136.9132549
+    },
+    {
+      "code": "osm:way/1310827142",
+      "name": "前田病院",
+      "countryCode": "JP",
+      "origin": "https://www.maeda-hosp.com",
+      "lat": 34.3203544,
+      "lng": 134.0387336
+    },
+    {
+      "code": "osm:way/1312018222",
+      "name": "秦野病院",
+      "countryCode": "JP",
+      "origin": "https://www.hatanohp.or.jp",
+      "lat": 35.3856215,
+      "lng": 139.1943038
+    },
+    {
+      "code": "osm:way/1312510748",
+      "name": "恵和会石東病院",
+      "countryCode": "JP",
+      "origin": "https://keiwakai-ohda.jp",
+      "lat": 35.2000058,
+      "lng": 132.5056611
+    },
+    {
+      "code": "osm:way/1312772451",
+      "name": "丹沢病院",
+      "countryCode": "JP",
+      "origin": "https://www.tanzawahp.or.jp",
+      "lat": 35.3909281,
+      "lng": 139.1830149
+    },
+    {
+      "code": "osm:way/1317391044",
+      "name": "MIRAI病院",
+      "countryCode": "JP",
+      "origin": "https://www.mirai-hospital.com",
+      "lat": 34.3077488,
+      "lng": 133.9100674
+    },
+    {
+      "code": "osm:way/1326500763",
+      "name": "島脳神経外科整形外科医院",
+      "countryCode": "JP",
+      "origin": "https://www.shima-clinic.com",
+      "lat": 35.5673379,
+      "lng": 139.6443271
+    },
+    {
+      "code": "osm:way/1327184257",
+      "name": "岡山療護センター",
+      "countryCode": "JP",
+      "origin": "http://www.okaryougo.jp",
+      "lat": 34.6462165,
+      "lng": 133.9079201
+    },
+    {
+      "code": "osm:way/1327390497",
+      "name": "天声会おおもと病院",
+      "countryCode": "JP",
+      "origin": "https://oomotohosp.jp",
+      "lat": 34.6470779,
+      "lng": 133.9041759
+    },
+    {
+      "code": "osm:way/1328079144",
+      "name": "国保野上厚生総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.nokami-hospital.jp",
+      "lat": 34.1636453,
+      "lng": 135.2960324
+    },
+    {
+      "code": "osm:way/1328137228",
+      "name": "おやま内科クリニック",
+      "countryCode": "JP",
+      "origin": "http://oyama-naika.jp",
+      "lat": 35.5911574,
+      "lng": 139.3870875
+    },
+    {
+      "code": "osm:way/1338616939",
+      "name": "国立病院機構 名古屋医療センター",
+      "countryCode": "JP",
+      "origin": "https://nagoya.hosp.go.jp",
+      "lat": 35.1837576,
+      "lng": 136.9061769
+    },
+    {
+      "code": "osm:way/1341751357",
+      "name": "国立病院機構東京病院",
+      "countryCode": "JP",
+      "origin": "https://tokyo-hp.hosp.go.jp",
+      "lat": 35.7678872,
+      "lng": 139.5055508
+    },
+    {
+      "code": "osm:way/1343773726",
+      "name": "琉球大学病院",
+      "countryCode": "JP",
+      "origin": "https://www.hosp.u-ryukyu.ac.jp",
+      "lat": 26.2902501,
+      "lng": 127.7670289
+    },
+    {
+      "code": "osm:way/1346315940",
+      "name": "苫小牧澄川病院",
+      "countryCode": "JP",
+      "origin": "https://www.sumikawa-hp.com",
+      "lat": 42.623803,
+      "lng": 141.5142703
+    },
+    {
+      "code": "osm:way/1346579702",
+      "name": "服部病院",
+      "countryCode": "JP",
+      "origin": "https://www.hattori-hospital.com",
+      "lat": 34.7993904,
+      "lng": 134.9996331
+    },
+    {
+      "code": "osm:way/1347766605",
+      "name": "光洋いきいきクリニック",
+      "countryCode": "JP",
+      "origin": "http://www.ikiikikai.com",
+      "lat": 42.6229479,
+      "lng": 141.5625639
+    },
+    {
+      "code": "osm:way/1347795034",
+      "name": "とまこまい脳神経外科",
+      "countryCode": "JP",
+      "origin": "http://tomanouge.jp",
+      "lat": 42.6240123,
+      "lng": 141.5674461
+    },
+    {
+      "code": "osm:way/1349716845",
+      "name": "仁慈会安田病院",
+      "countryCode": "JP",
+      "origin": "http://yasudabyouin.com",
+      "lat": 34.3525729,
+      "lng": 132.9002716
+    },
+    {
+      "code": "osm:way/1350603753",
+      "name": "喜早眼科",
+      "countryCode": "JP",
+      "origin": "https://www.kisoh-ganka.com",
+      "lat": 42.6273026,
+      "lng": 141.5497801
+    },
+    {
+      "code": "osm:way/1351038457",
+      "name": "至仁会 圏央所沢病院",
+      "countryCode": "JP",
+      "origin": "https://sijinkai-ken-o.com",
+      "lat": 35.810704,
+      "lng": 139.4277919
+    },
+    {
+      "code": "osm:way/1351572373",
+      "name": "置戸赤十字病院",
+      "countryCode": "JP",
+      "origin": "http://oketo.jrc.or.jp",
+      "lat": 43.6778104,
+      "lng": 143.5882589
+    },
+    {
+      "code": "osm:way/1352338212",
+      "name": "苫小牧泌尿器科・循環器内科",
+      "countryCode": "JP",
+      "origin": "https://www.tomakomai.or.jp",
+      "lat": 42.6551481,
+      "lng": 141.6323448
+    },
+    {
+      "code": "osm:way/1357863327",
+      "name": "寿都診療所",
+      "countryCode": "JP",
+      "origin": "https://suttu.hcfm.jp",
+      "lat": 42.7926806,
+      "lng": 140.2304861
+    },
+    {
+      "code": "osm:way/1359534690",
+      "name": "富士見台病院",
+      "countryCode": "JP",
+      "origin": "https://www.fujimidai-hospital.jp",
+      "lat": 35.3476594,
+      "lng": 139.2740276
+    },
+    {
+      "code": "osm:way/1362855228",
+      "name": "広域紋別病院",
+      "countryCode": "JP",
+      "origin": "https://www.mombetsu-hospital.jp",
+      "lat": 44.3616273,
+      "lng": 143.3465395
+    },
+    {
+      "code": "osm:way/1363016010",
+      "name": "北病院",
+      "countryCode": "JP",
+      "origin": "https://kita-coop.jp",
+      "lat": 35.2030957,
+      "lng": 136.9326176
+    },
+    {
+      "code": "osm:way/1363504775",
+      "name": "門別国民健康保険病院",
+      "countryCode": "JP",
+      "origin": "https://www.town.hidaka.hokkaido.jp",
+      "lat": 42.4800206,
+      "lng": 142.0702521
+    },
+    {
+      "code": "osm:way/1363804381",
+      "name": "南和広域医療企業団五條病院",
+      "countryCode": "JP",
+      "origin": "https://nanwairyou.jp",
+      "lat": 34.3412989,
+      "lng": 135.6991784
+    },
+    {
+      "code": "osm:way/1364285552",
+      "name": "留萌市立病院",
+      "countryCode": "JP",
+      "origin": "https://rumoi-hp.jp",
+      "lat": 43.931451,
+      "lng": 141.6772813
+    },
+    {
+      "code": "osm:way/1364925864",
+      "name": "平取町国民健康保険病院",
+      "countryCode": "JP",
+      "origin": "https://www.town.biratori.hokkaido.jp",
+      "lat": 42.588351,
+      "lng": 142.1378234
+    },
+    {
+      "code": "osm:way/1368759703",
+      "name": "彦根中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.hikone.or.jp",
+      "lat": 35.248674,
+      "lng": 136.2412065
+    },
+    {
+      "code": "osm:way/1376666892",
+      "name": "聖マリアンナ医科大学病院",
+      "countryCode": "JP",
+      "origin": "https://www.marianna-u.ac.jp",
+      "lat": 35.600378,
+      "lng": 139.5496522
+    },
+    {
+      "code": "osm:way/1377204075",
+      "name": "宮城利府掖済会病院",
+      "countryCode": "JP",
+      "origin": "https://www.rifuekisaikai.com",
+      "lat": 38.3351965,
+      "lng": 140.987551
+    },
+    {
+      "code": "osm:way/1377351018",
+      "name": "片倉病院",
+      "countryCode": "JP",
+      "origin": "http://katakura-hospital.com",
+      "lat": 38.577993,
+      "lng": 140.9575041
+    },
+    {
+      "code": "osm:way/1379103968",
+      "name": "昭和医科大学歯科病院",
+      "countryCode": "JP",
+      "origin": "https://www.showa-u.ac.jp",
+      "lat": 35.609062,
+      "lng": 139.6938094
+    },
+    {
+      "code": "osm:way/1379644171",
+      "name": "中国中央病院",
+      "countryCode": "JP",
+      "origin": "https://www.kouritu-cch.jp",
+      "lat": 34.5478205,
+      "lng": 133.3486685
+    },
+    {
+      "code": "osm:way/1379955451",
+      "name": "楠本病院",
+      "countryCode": "JP",
+      "origin": "https://kusumoto.or.jp",
+      "lat": 34.4703014,
+      "lng": 133.3970542
+    },
+    {
+      "code": "osm:way/1380011622",
+      "name": "福山医療センター",
+      "countryCode": "JP",
+      "origin": "https://fukuyama.hosp.go.jp",
+      "lat": 34.4705654,
+      "lng": 133.3706032
+    },
+    {
+      "code": "osm:way/1380011632",
+      "name": "福山循環器病院",
+      "countryCode": "JP",
+      "origin": "http://www.fchmed.jp",
+      "lat": 34.475925,
+      "lng": 133.374398
+    },
+    {
+      "code": "osm:way/1380594819",
+      "name": "日本鋼管福山病院",
+      "countryCode": "JP",
+      "origin": "https://www.nkfh.or.jp",
+      "lat": 34.4880864,
+      "lng": 133.4333961
+    },
+    {
+      "code": "osm:way/1380796882",
+      "name": "福山市市民病院",
+      "countryCode": "JP",
+      "origin": "https://www.fc-hosp.jp",
+      "lat": 34.5109572,
+      "lng": 133.398056
+    },
+    {
+      "code": "osm:way/1380796885",
+      "name": "福山第一病院",
+      "countryCode": "JP",
+      "origin": "https://www.jojokai.or.jp",
+      "lat": 34.5038224,
+      "lng": 133.4024485
+    },
+    {
+      "code": "osm:way/1382020328",
+      "name": "神原病院",
+      "countryCode": "JP",
+      "origin": "https://kambara-hp.sakura.ne.jp",
+      "lat": 34.471874,
+      "lng": 133.3026453
+    },
+    {
+      "code": "osm:way/1392509947",
+      "name": "勤医協余市診療所",
+      "countryCode": "JP",
+      "origin": "https://kin-ikyo.or.jp",
+      "lat": 43.186985,
+      "lng": 140.7983028
+    },
+    {
+      "code": "osm:way/1392748728",
+      "name": "中村病院",
+      "countryCode": "JP",
+      "origin": "https://nakamura-med.or.jp",
+      "lat": 33.275916,
+      "lng": 131.5009923
+    },
+    {
+      "code": "osm:way/1396573857",
+      "name": "森山病院",
+      "countryCode": "JP",
+      "origin": "https://www.moriyama.or.jp",
+      "lat": 43.7599985,
+      "lng": 142.36259
+    },
+    {
+      "code": "osm:way/1410558736",
+      "name": "江村精神科内科病院",
+      "countryCode": "JP",
+      "origin": "http://emura-hospital.com",
+      "lat": 43.3330421,
+      "lng": 145.5899318
+    },
+    {
+      "code": "osm:way/1412660339",
+      "name": "天使病院",
+      "countryCode": "JP",
+      "origin": "https://www.tenshi.or.jp",
+      "lat": 43.0765495,
+      "lng": 141.3574484
+    },
+    {
+      "code": "osm:way/1416398847",
+      "name": "博慈会内田病院",
+      "countryCode": "JP",
+      "origin": "https://uchida-hp.jp",
+      "lat": 33.2735267,
+      "lng": 131.5028999
+    },
+    {
+      "code": "osm:way/1416902551",
+      "name": "川添記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.kawazoe.or.jp",
+      "lat": 33.6159472,
+      "lng": 130.2292192
+    },
+    {
+      "code": "osm:way/1416902554",
+      "name": "シーサイド病院",
+      "countryCode": "JP",
+      "origin": "https://www.seaside-hp.or.jp",
+      "lat": 33.6117412,
+      "lng": 130.2292741
+    },
+    {
+      "code": "osm:way/1416976603",
+      "name": "伊都の丘病院",
+      "countryCode": "JP",
+      "origin": "https://ito.hospital",
+      "lat": 33.573499,
+      "lng": 130.2557684
+    },
+    {
+      "code": "osm:way/1416979194",
+      "name": "西福岡病院",
+      "countryCode": "JP",
+      "origin": "https://nishifukuhp.or.jp",
+      "lat": 33.5767907,
+      "lng": 130.2967928
+    },
+    {
+      "code": "osm:way/1416984739",
+      "name": "村上華林堂病院",
+      "countryCode": "JP",
+      "origin": "https://www.karindoh.or.jp",
+      "lat": 33.5542299,
+      "lng": 130.3156614
+    },
+    {
+      "code": "osm:way/1416984746",
+      "name": "拾六町病院",
+      "countryCode": "JP",
+      "origin": "https://www.sanyu-kai.jp",
+      "lat": 33.5638304,
+      "lng": 130.3103808
+    },
+    {
+      "code": "osm:way/1418340592",
+      "name": "松尾内科病院",
+      "countryCode": "JP",
+      "origin": "https://matsuohosp.kisyoukai.jp",
+      "lat": 33.5777321,
+      "lng": 130.3055354
+    },
+    {
+      "code": "osm:way/1418575548",
+      "name": "広橋病院",
+      "countryCode": "JP",
+      "origin": "https://www.rakutendo-g.com",
+      "lat": 33.518677,
+      "lng": 130.3333705
+    },
+    {
+      "code": "osm:way/1418813729",
+      "name": "福西会病院",
+      "countryCode": "JP",
+      "origin": "https://fukuseikai-hp.com",
+      "lat": 33.5482644,
+      "lng": 130.3480779
+    },
+    {
+      "code": "osm:way/1418813761",
+      "name": "倉重病院",
+      "countryCode": "JP",
+      "origin": "https://kurashige-hp.sakura.ne.jp",
+      "lat": 33.5617953,
+      "lng": 130.3371113
+    },
+    {
+      "code": "osm:way/1418833519",
+      "name": "原口病院循環器科内科",
+      "countryCode": "JP",
+      "origin": "https://haraguchi-hp.com",
+      "lat": 33.570591,
+      "lng": 130.3282511
+    },
+    {
+      "code": "osm:way/1418936513",
+      "name": "福岡山王病院",
+      "countryCode": "JP",
+      "origin": "https://f-sanno.kouhoukai.or.jp",
+      "lat": 33.5910305,
+      "lng": 130.3503594
+    },
+    {
+      "code": "osm:way/1418943354",
+      "name": "福岡大学西新病院",
+      "countryCode": "JP",
+      "origin": "https://www.nishijin.fukuoka-u.ac.jp",
+      "lat": 33.5800695,
+      "lng": 130.3568118
+    },
+    {
+      "code": "osm:way/1418943355",
+      "name": "吉村病院",
+      "countryCode": "JP",
+      "origin": "https://hosp-yoshimura.com",
+      "lat": 33.5843784,
+      "lng": 130.3577155
+    },
+    {
+      "code": "osm:way/1419070996",
+      "name": "晴明病院",
+      "countryCode": "JP",
+      "origin": "https://www.seimei-hp.jp",
+      "lat": 33.546165,
+      "lng": 130.3633954
+    },
+    {
+      "code": "osm:way/1419079803",
+      "name": "福岡鳥飼病院",
+      "countryCode": "JP",
+      "origin": "https://www.kouikai.jp",
+      "lat": 33.5761745,
+      "lng": 130.368855
+    },
+    {
+      "code": "osm:way/1420004022",
+      "name": "浜脇記念病院",
+      "countryCode": "JP",
+      "origin": "https://hamawakimhp.com",
+      "lat": 33.2694882,
+      "lng": 131.5104194
+    },
+    {
+      "code": "osm:way/1423872791",
+      "name": "葛城病院",
+      "countryCode": "JP",
+      "origin": "https://www.katsuragi-hosp.or.jp",
+      "lat": 34.4468199,
+      "lng": 135.3801418
+    },
+    {
+      "code": "osm:way/1425702993",
+      "name": "市立備前病院",
+      "countryCode": "JP",
+      "origin": "https://www.city.bizen.okayama.jp",
+      "lat": 34.7390392,
+      "lng": 134.1555072
+    },
+    {
+      "code": "osm:way/1426336447",
+      "name": "那珂川病院",
+      "countryCode": "JP",
+      "origin": "https://www.nakagawa-hp.com",
+      "lat": 33.5390031,
+      "lng": 130.4282263
+    },
+    {
+      "code": "osm:way/1426341888",
+      "name": "福岡保養院",
+      "countryCode": "JP",
+      "origin": "https://www.f-hoyouin.com",
+      "lat": 33.5603515,
+      "lng": 130.4353302
+    },
+    {
+      "code": "osm:way/1427029960",
+      "name": "井口野間病院",
+      "countryCode": "JP",
+      "origin": "https://inokuchinoma.com",
+      "lat": 33.5553095,
+      "lng": 130.404914
+    },
+    {
+      "code": "osm:way/1427029962",
+      "name": "同信会福岡整形外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.fukuokaseikei.com",
+      "lat": 33.5491288,
+      "lng": 130.4050822
+    },
+    {
+      "code": "osm:way/1429454706",
+      "name": "えりも町国保診療所",
+      "countryCode": "JP",
+      "origin": "https://www.town.erimo.lg.jp",
+      "lat": 42.0161496,
+      "lng": 143.1492947
+    },
+    {
+      "code": "osm:way/1429733142",
+      "name": "岡病院",
+      "countryCode": "JP",
+      "origin": "https://sanuki-oka-hosp.sakura.ne.jp",
+      "lat": 34.3200708,
+      "lng": 134.1951844
+    },
+    {
+      "code": "osm:way/1431440399",
+      "name": "県立広島病院",
+      "countryCode": "JP",
+      "origin": "https://hiroshima.hpho.jp",
+      "lat": 34.3669963,
+      "lng": 132.4667304
+    },
+    {
+      "code": "osm:way/1433515650",
+      "name": "祥風会甘木病院",
+      "countryCode": "JP",
+      "origin": "https://amagi-hospital.or.jp",
+      "lat": 33.3981028,
+      "lng": 130.6705303
+    },
+    {
+      "code": "osm:way/1436414333",
+      "name": "平尾病院",
+      "countryCode": "JP",
+      "origin": "https://www.hirao-hp.jp",
+      "lat": 33.5689741,
+      "lng": 130.395539
+    },
+    {
+      "code": "osm:way/1436414339",
+      "name": "博愛会病院",
+      "countryCode": "JP",
+      "origin": "https://www.hakuaikai.or.jp",
+      "lat": 33.5638047,
+      "lng": 130.3775916
+    },
+    {
+      "code": "osm:way/1441623188",
+      "name": "佐田病院",
+      "countryCode": "JP",
+      "origin": "https://www.sada.or.jp",
+      "lat": 33.582437,
+      "lng": 130.4030235
+    },
+    {
+      "code": "osm:way/1441623189",
+      "name": "桜十字福岡病院",
+      "countryCode": "JP",
+      "origin": "https://sj-fukuoka.or.jp",
+      "lat": 33.585344,
+      "lng": 130.4045673
+    },
+    {
+      "code": "osm:way/1441628247",
+      "name": "浜の町病院",
+      "countryCode": "JP",
+      "origin": "https://hamanomachi.kkr.or.jp",
+      "lat": 33.5963329,
+      "lng": 130.3936352
+    },
+    {
+      "code": "osm:way/1442294560",
+      "name": "苫小牧消化器外科",
+      "countryCode": "JP",
+      "origin": "https://www.tgs-cl.jp",
+      "lat": 42.6744547,
+      "lng": 141.6857756
+    },
+    {
+      "code": "osm:way/1444276799",
+      "name": "和歌山県立医科大学附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.wakayama-med.ac.jp",
+      "lat": 34.1876997,
+      "lng": 135.1819162
+    },
+    {
+      "code": "osm:way/1446632557",
+      "name": "AOI広島病院",
+      "countryCode": "JP",
+      "origin": "https://www.aoikai.jp",
+      "lat": 34.4437776,
+      "lng": 132.8711463
+    },
+    {
+      "code": "osm:way/1446708977",
+      "name": "博愛会病院",
+      "countryCode": "JP",
+      "origin": "http://www.hakuaikai.jp",
+      "lat": 35.3734052,
+      "lng": 136.5377413
+    },
+    {
+      "code": "osm:way/1448321012",
+      "name": "耳鼻咽喉科麻生北見病院",
+      "countryCode": "JP",
+      "origin": "https://www.jibiazabu.or.jp",
+      "lat": 43.7996889,
+      "lng": 143.857597
+    },
+    {
+      "code": "osm:way/1456621823",
+      "name": "伊勢ひかり病院",
+      "countryCode": "JP",
+      "origin": "https://ise-hikari.com",
+      "lat": 34.5000072,
+      "lng": 136.6981669
+    },
+    {
+      "code": "osm:way/1459047836",
+      "name": "富田浜病院",
+      "countryCode": "JP",
+      "origin": "https://tomidahama.jp",
+      "lat": 34.9978775,
+      "lng": 136.6520905
+    },
+    {
+      "code": "osm:way/1459258498",
+      "name": "山中胃腸科病院",
+      "countryCode": "JP",
+      "origin": "https://yamanaka-hsp.or.jp",
+      "lat": 34.926332,
+      "lng": 136.5873575
+    },
+    {
+      "code": "osm:way/1459291871",
+      "name": "四日市消化器病センター",
+      "countryCode": "JP",
+      "origin": "https://www.yokkaichi-shoukaki.com",
+      "lat": 35.0209404,
+      "lng": 136.5761331
+    },
+    {
+      "code": "osm:way/1460650758",
+      "name": "所沢美原総合病院",
+      "countryCode": "JP",
+      "origin": "https://tmgh.jp",
+      "lat": 35.8109606,
+      "lng": 139.4611023
+    },
+    {
+      "code": "osm:way/1465220510",
+      "name": "太田病院",
+      "countryCode": "JP",
+      "origin": "https://www.ohta-hospital.jp",
+      "lat": 35.4398628,
+      "lng": 137.0147912
+    },
+    {
+      "code": "osm:way/1466925417",
+      "name": "中部脳リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "https://cnrh.jp",
+      "lat": 35.4408381,
+      "lng": 137.0234645
+    },
+    {
+      "code": "osm:way/1466964906",
+      "name": "のぞみの丘ホスピタル",
+      "countryCode": "JP",
+      "origin": "https://www.minokamo.or.jp",
+      "lat": 35.4543674,
+      "lng": 137.0137281
+    },
+    {
+      "code": "osm:way/1467711426",
+      "name": "国立障害者リハビリテーションセンター 秩父学園",
+      "countryCode": "JP",
+      "origin": "https://www.rehab.go.jp",
+      "lat": 35.8053839,
+      "lng": 139.4834881
+    },
+    {
+      "code": "osm:way/1485913531",
+      "name": "さく病院",
+      "countryCode": "JP",
+      "origin": "http://www.saku.or.jp",
+      "lat": 33.5692903,
+      "lng": 130.4326198
+    },
+    {
+      "code": "osm:way/1485920616",
+      "name": "博腎会病院",
+      "countryCode": "JP",
+      "origin": "https://www.hakujinkai-hosp.or.jp",
+      "lat": 33.585725,
+      "lng": 130.4101184
+    },
+    {
+      "code": "osm:way/1485931851",
+      "name": "原三信病院",
+      "countryCode": "JP",
+      "origin": "https://www.harasanshin.or.jp",
+      "lat": 33.6017926,
+      "lng": 130.4055982
+    },
+    {
+      "code": "osm:way/1485931853",
+      "name": "古森病院",
+      "countryCode": "JP",
+      "origin": "https://komori-hp.cloud-line.com",
+      "lat": 33.6000242,
+      "lng": 130.4019337
+    },
+    {
+      "code": "osm:way/1485950188",
+      "name": "木村病院",
+      "countryCode": "JP",
+      "origin": "https://www.kimura-hosp.or.jp",
+      "lat": 33.6009441,
+      "lng": 130.4149035
+    },
+    {
+      "code": "osm:way/1485989297",
+      "name": "筥松病院",
+      "countryCode": "JP",
+      "origin": "http://hakomatsu-hp.com",
+      "lat": 33.6152961,
+      "lng": 130.4315356
+    },
+    {
+      "code": "osm:way/1486045108",
+      "name": "千早病院",
+      "countryCode": "JP",
+      "origin": "https://chihaya-hp.kkr.or.jp",
+      "lat": 33.6485429,
+      "lng": 130.4341896
+    },
+    {
+      "code": "osm:way/1486045109",
+      "name": "河野名島病院",
+      "countryCode": "JP",
+      "origin": "https://www.kawano-hp.com",
+      "lat": 33.6403627,
+      "lng": 130.4310923
+    },
+    {
+      "code": "osm:way/1486065374",
+      "name": "香椎原病院",
+      "countryCode": "JP",
+      "origin": "https://www.kashiihara.or.jp",
+      "lat": 33.657119,
+      "lng": 130.4513839
+    },
+    {
+      "code": "osm:way/1486065379",
+      "name": "疋田病院",
+      "countryCode": "JP",
+      "origin": "https://www.hikita-hp.com",
+      "lat": 33.6563116,
+      "lng": 130.4499442
+    },
+    {
+      "code": "osm:way/1486229197",
+      "name": "香椎丘リハビリテーション病院",
+      "countryCode": "JP",
+      "origin": "http://www.kashii-rh.net",
+      "lat": 33.6707783,
+      "lng": 130.4601775
+    },
+    {
+      "code": "osm:way/1486229210",
+      "name": "三善病院",
+      "countryCode": "JP",
+      "origin": "https://sanzenhp.jp",
+      "lat": 33.6796202,
+      "lng": 130.4403171
+    },
+    {
+      "code": "osm:way/1486235145",
+      "name": "雁の巣病院",
+      "countryCode": "JP",
+      "origin": "https://www.gannosu.org",
+      "lat": 33.6854534,
+      "lng": 130.4051828
+    },
+    {
+      "code": "osm:way/1486243166",
+      "name": "福岡和白病院",
+      "countryCode": "JP",
+      "origin": "https://www.f-wajirohp.jp",
+      "lat": 33.6923775,
+      "lng": 130.4332655
+    },
+    {
+      "code": "osm:way/1488807849",
+      "name": "桜ケ丘記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.swfsakura.or.jp",
+      "lat": 35.6473339,
+      "lng": 139.4579173
+    },
+    {
+      "code": "osm:way/1489041248",
+      "name": "南浜中央病院",
+      "countryCode": "JP",
+      "origin": "https://minamihama.or.jp",
+      "lat": 38.0836228,
+      "lng": 140.9186442
+    },
+    {
+      "code": "osm:way/1503586748",
+      "name": "河村病院",
+      "countryCode": "JP",
+      "origin": "https://kawamuramedical.or.jp",
+      "lat": 35.4385752,
+      "lng": 136.8436666
+    },
+    {
+      "code": "osm:way/1503586769",
+      "name": "みどり病院",
+      "countryCode": "JP",
+      "origin": "https://gifu-min.jp",
+      "lat": 35.4583837,
+      "lng": 136.8534299
+    },
+    {
+      "code": "osm:way/1505092707",
+      "name": "澤田病院",
+      "countryCode": "JP",
+      "origin": "https://www.sawada-hp.or.jp",
+      "lat": 35.4172923,
+      "lng": 136.8052903
+    },
+    {
+      "code": "osm:way/1505744347",
+      "name": "岩砂病院・岩砂マタニティ",
+      "countryCode": "JP",
+      "origin": "https://iwasa-gifu.or.jp",
+      "lat": 35.4582367,
+      "lng": 136.7739738
+    },
+    {
+      "code": "osm:way/1506897918",
+      "name": "岐阜赤十字病院",
+      "countryCode": "JP",
+      "origin": "https://www.gifu-med.jrc.or.jp",
+      "lat": 35.4337975,
+      "lng": 136.755815
+    },
+    {
+      "code": "osm:way/1506897920",
+      "name": "近石病院",
+      "countryCode": "JP",
+      "origin": "https://touhoukai.or.jp",
+      "lat": 35.4352158,
+      "lng": 136.7480625
+    },
+    {
+      "code": "osm:way/1506935201",
+      "name": "笠松病院",
+      "countryCode": "JP",
+      "origin": "https://www.seiyuukai.or.jp",
+      "lat": 35.3835679,
+      "lng": 136.7344397
+    },
+    {
+      "code": "osm:way/1509422323",
+      "name": "山内ホスピタル",
+      "countryCode": "JP",
+      "origin": "https://www.kanamekai.com",
+      "lat": 35.3989679,
+      "lng": 136.725111
+    },
+    {
+      "code": "osm:way/1509422324",
+      "name": "安江病院",
+      "countryCode": "JP",
+      "origin": "https://yasue-hospital.jp",
+      "lat": 35.4092727,
+      "lng": 136.716477
+    },
+    {
+      "code": "osm:way/1509431483",
+      "name": "早徳病院",
+      "countryCode": "JP",
+      "origin": "https://www.hayatoku.jp",
+      "lat": 35.396793,
+      "lng": 136.7350754
+    },
+    {
+      "code": "osm:way/1510180400",
+      "name": "山近記念総合病院",
+      "countryCode": "JP",
+      "origin": "https://www.yamachika-hp.jp",
+      "lat": 35.2765186,
+      "lng": 139.2038217
+    },
+    {
+      "code": "osm:way/1510267567",
+      "name": "己斐ヶ丘病院",
+      "countryCode": "JP",
+      "origin": "https://www.koigaoka.jp",
+      "lat": 34.4275331,
+      "lng": 132.4258877
+    },
+    {
+      "code": "osm:way/1518364681",
+      "name": "広島記念病院",
+      "countryCode": "JP",
+      "origin": "https://www.kkrhiroshimakinen-hp.org",
+      "lat": 34.3956593,
+      "lng": 132.4494423
+    },
+    {
+      "code": "osm:way/1534983157",
+      "name": "大阪暁明館病院",
+      "countryCode": "JP",
+      "origin": "http://gyomeikan.or.jp",
+      "lat": 34.6842664,
+      "lng": 135.4650727
+    },
+    {
+      "code": "osm:way/1551220864",
+      "name": "南京都病院",
+      "countryCode": "JP",
+      "origin": "https://minamikyoto.hosp.go.jp",
+      "lat": 34.831387,
+      "lng": 135.8135502
+    },
+    {
+      "code": "osm:way/1551298220",
+      "name": "岡山市立金川病院",
+      "countryCode": "JP",
+      "origin": "https://okayama.hosp.go.jp",
+      "lat": 34.7961151,
+      "lng": 133.9325412
+    },
+    {
+      "code": "osm:way/1552768859",
+      "name": "岡山東部脳神経外科病院",
+      "countryCode": "JP",
+      "origin": "https://www.oenc.or.jp",
+      "lat": 34.7258311,
+      "lng": 133.9832141
+    },
+    {
+      "code": "osm:way/1560141934",
+      "name": "重井医学研究所附属病院",
+      "countryCode": "JP",
+      "origin": "https://www.shigei.or.jp",
+      "lat": 34.620344,
+      "lng": 133.8488554
+    }
+  ]
+}

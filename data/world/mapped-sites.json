@@ -13045,6 +13045,86 @@
         "sourceUrl": "https://www.easternhealth.org.au/images/locations/BHH_Building_A_floor_by_floor_Consumer_map.pdf",
         "draftedAt": "2026-10-20T21:10:16.762Z"
       }
+    },
+    {
+      "slug": "campusplan-be",
+      "id": "campusplan-be-venue",
+      "floorOf": null,
+      "stem": "campusplan",
+      "hospitalCode": "osm:way/23379006",
+      "countryCode": "BE",
+      "name": "Universitair Ziekenhuis Gent",
+      "subtitle": "Hospital — Belgium",
+      "file": "map/world/auto/be/campusplan.pdf",
+      "page": 1,
+      "center": [
+        51.0234795,
+        3.7273949
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Steenakker",
+        "26c 26 25",
+        "27 26b",
+        "LEGENDE",
+        "Aanmelden en inschrijven"
+      ],
+      "notes": "Site map published by the hospital. Placement is derived automatically (centre from OpenStreetMap, scale estimated — no building footprint on file for this hospital yet) and has not been checked by eye.",
+      "auto": {
+        "hospitalCode": "osm:way/23379006",
+        "spanSource": "default",
+        "labels": 26,
+        "aspect": 0.71,
+        "echoesSiteName": false,
+        "sourceUrl": "https://www.uzgent.be/sites/default/files/2020-10/campusplan.pdf",
+        "draftedAt": "2026-10-22T03:47:20.234Z"
+      }
+    },
+    {
+      "slug": "franklin-type-1a-nz",
+      "id": "franklin-type-1a-nz-venue",
+      "floorOf": null,
+      "stem": "franklin type 1a",
+      "hospitalCode": "osm:way/204906049",
+      "countryCode": "NZ",
+      "name": "Te Mana Care Centre",
+      "subtitle": "Hospital — New Zealand",
+      "file": "map/world/auto/nz/franklin-type-1a.pdf",
+      "page": 1,
+      "center": [
+        -36.8042582,
+        174.7016337
+      ],
+      "spanM": 450,
+      "plan": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "quick": [
+        "Two Bedroom",
+        "PATIO",
+        "13 m²",
+        "4m x 3.2m",
+        "SEVICE YARD"
+      ],
+      "notes": "Site map published by the hospital. Placement is derived automatically (centre from OpenStreetMap, scale estimated — no building footprint on file for this hospital yet) and has not been checked by eye.",
+      "auto": {
+        "hospitalCode": "osm:way/204906049",
+        "spanSource": "default",
+        "labels": 41,
+        "aspect": 0.72,
+        "echoesSiteName": false,
+        "sourceUrl": "https://franklin.oceaniahealthcare.co.nz/hubfs/Franklin%20Type%201A.pdf?hsLang=en-nz",
+        "draftedAt": "2026-10-22T06:23:57.621Z"
+      }
     }
   ]
 }

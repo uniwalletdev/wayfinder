@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "slug": "campusplan",
+      "file": "map/world/auto/be/campusplan.pdf",
+      "url": "https://www.uzgent.be/sites/default/files/2020-10/campusplan.pdf",
+      "sha256": "e6db6c88acddb9160e55adc2fea3e42e50d08428c0a0a6fa1a0d9e6daf4131b9",
+      "hospitalCode": "osm:way/23379006",
+      "hospitalName": "Universitair Ziekenhuis Gent",
+      "countryCode": "BE",
+      "linkText": "The campus map (2.23 MB) \"pdf\"",
+      "kind": "site-map",
+      "approvedAt": "2026-10-22T02:54:32.411Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 2334149,
+      "fetchedAt": "2026-10-22T13:14:33.664Z"
+    }
+  ]
+}

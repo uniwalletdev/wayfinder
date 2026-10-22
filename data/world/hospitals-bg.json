@@ -1,0 +1,1185 @@
+{
+  "countryCode": "BG",
+  "fetchedAt": "2026-10-21T00:50:47.222Z",
+  "count": 147,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/254336347",
+      "name": "Национален център по физикално лечение и рехабилитация",
+      "countryCode": "BG",
+      "origin": "http://www.rehabilitacia-ovchakupel.com",
+      "lat": 42.676759,
+      "lng": 23.2699979
+    },
+    {
+      "code": "osm:node/254336406",
+      "name": "ЦПЗ „Проф. Никола Шипковенски“",
+      "countryCode": "BG",
+      "origin": "https://cpz-ns.com",
+      "lat": 42.7007202,
+      "lng": 23.3272293
+    },
+    {
+      "code": "osm:node/254336408",
+      "name": "Втора САГБАЛ „Шейново“",
+      "countryCode": "BG",
+      "origin": "https://sheynovo-ag.eu",
+      "lat": 42.6926447,
+      "lng": 23.3400561
+    },
+    {
+      "code": "osm:node/254336434",
+      "name": "СБАЛХЗ",
+      "countryCode": "BG",
+      "origin": "https://www.hematology.bg",
+      "lat": 42.6604855,
+      "lng": 23.3593598
+    },
+    {
+      "code": "osm:node/254336447",
+      "name": "УСБАЛО „Проф. Бойчо Бойчев“",
+      "countryCode": "BG",
+      "origin": "https://www.usbalortho.com",
+      "lat": 42.6744574,
+      "lng": 23.2473008
+    },
+    {
+      "code": "osm:node/254336452",
+      "name": "Четвърта МБАЛ",
+      "countryCode": "BG",
+      "origin": "https://4mbal.bg;https",
+      "lat": 42.6931112,
+      "lng": 23.311373
+    },
+    {
+      "code": "osm:node/254336554",
+      "name": "МБАЛ \"Вита\" ЕООД",
+      "countryCode": "BG",
+      "origin": "https://www.vita.bg",
+      "lat": 42.6960164,
+      "lng": 23.3543932
+    },
+    {
+      "code": "osm:node/1697418905",
+      "name": "МБАЛ „Полимед“",
+      "countryCode": "BG",
+      "origin": "https://polimedad.com",
+      "lat": 42.7000775,
+      "lng": 23.3070298
+    },
+    {
+      "code": "osm:node/1699496559",
+      "name": "СБАЛГАР „Д-р Малинов“",
+      "countryCode": "BG",
+      "origin": "https://malinov-clinic.com",
+      "lat": 42.6752407,
+      "lng": 23.2894741
+    },
+    {
+      "code": "osm:node/1800456593",
+      "name": "СОБАЛ „Акад. Пашев“",
+      "countryCode": "BG",
+      "origin": "https://sobalpashev.com",
+      "lat": 42.7019048,
+      "lng": 23.3695513
+    },
+    {
+      "code": "osm:node/2115928333",
+      "name": "Хирургическа Болница Проф. Темелков",
+      "countryCode": "BG",
+      "origin": "http://www.temelkov.com",
+      "lat": 43.2109401,
+      "lng": 27.9070448
+    },
+    {
+      "code": "osm:node/2178166704",
+      "name": "МЦ Св. Богородица - Възвестителка",
+      "countryCode": "BG",
+      "origin": "https://mc-svbogorodica.com",
+      "lat": 42.6328989,
+      "lng": 23.3118535
+    },
+    {
+      "code": "osm:node/4055525630",
+      "name": "Профилакториум БМБ",
+      "countryCode": "BG",
+      "origin": "http://www.profibmb.fitnesvili.com",
+      "lat": 42.610103,
+      "lng": 27.3898414
+    },
+    {
+      "code": "osm:node/4063679090",
+      "name": "МБАЛ „Здравето“",
+      "countryCode": "BG",
+      "origin": "https://zdraveto.com",
+      "lat": 42.681331,
+      "lng": 23.27076
+    },
+    {
+      "code": "osm:node/4712368875",
+      "name": "ВИТА",
+      "countryCode": "BG",
+      "origin": "https://vita-velingrad.com",
+      "lat": 42.0313634,
+      "lng": 23.9848039
+    },
+    {
+      "code": "osm:node/4794897129",
+      "name": "Държавна психиатрична болница - Ловеч",
+      "countryCode": "BG",
+      "origin": "https://www.dpb-lovech.eu",
+      "lat": 43.1315213,
+      "lng": 24.7101242
+    },
+    {
+      "code": "osm:node/4800621262",
+      "name": "Многопрофилна болница за активно лечение Проф. Д-р. Параскев Стоянов - Ловеч",
+      "countryCode": "BG",
+      "origin": "http://www.mbal-lovech.com",
+      "lat": 43.1326475,
+      "lng": 24.7063141
+    },
+    {
+      "code": "osm:node/5648238478",
+      "name": "СБАЛТОСМ „Проф. д-р Димитър Шойлев“",
+      "countryCode": "BG",
+      "origin": "https://www.sbaltosm.com",
+      "lat": 42.6644386,
+      "lng": 23.344287
+    },
+    {
+      "code": "osm:node/5881565230",
+      "name": "Ортодонт Д-р Стоянка Ангелова",
+      "countryCode": "BG",
+      "origin": "http://zdravenportal.com",
+      "lat": 42.1867177,
+      "lng": 24.3242836
+    },
+    {
+      "code": "osm:node/5918705717",
+      "name": "Дежурен кабинет | Д-р Митко Желязков",
+      "countryCode": "BG",
+      "origin": "https://emergency-care-physician-36.business.site",
+      "lat": 42.4301721,
+      "lng": 25.6266084
+    },
+    {
+      "code": "osm:node/5940102946",
+      "name": "Психолог Даниела Кръстева",
+      "countryCode": "BG",
+      "origin": "https://psihologbg.eu",
+      "lat": 43.4006568,
+      "lng": 24.6088739
+    },
+    {
+      "code": "osm:node/6011835066",
+      "name": "Педиатър - Златинка Радева",
+      "countryCode": "BG",
+      "origin": "https://pediatrician-586.business.site",
+      "lat": 42.5151863,
+      "lng": 27.4654395
+    },
+    {
+      "code": "osm:node/6077113601",
+      "name": "Очна клиника \"Св. Петка\"",
+      "countryCode": "BG",
+      "origin": "https://st-petka-eyeclinic.bg",
+      "lat": 43.2262847,
+      "lng": 27.9333361
+    },
+    {
+      "code": "osm:node/6230516485",
+      "name": "Служба по трудова медицина - ВАЛЖАН",
+      "countryCode": "BG",
+      "origin": "http://valzhan.com",
+      "lat": 42.4233933,
+      "lng": 25.6227432
+    },
+    {
+      "code": "osm:node/6293188370",
+      "name": "Раредис",
+      "countryCode": "BG",
+      "origin": "https://medical.raredis.org",
+      "lat": 42.1299421,
+      "lng": 24.7811222
+    },
+    {
+      "code": "osm:node/6402592091",
+      "name": "МЦ \"Димед\"",
+      "countryCode": "BG",
+      "origin": "http://www.dimed.org",
+      "lat": 42.1343719,
+      "lng": 24.7925109
+    },
+    {
+      "code": "osm:node/6404105350",
+      "name": "Therapeutic community \"Phoenix\"",
+      "countryCode": "BG",
+      "origin": "https://phoenixhouse.bg",
+      "lat": 43.0602668,
+      "lng": 23.1567585
+    },
+    {
+      "code": "osm:node/6576018347",
+      "name": "МБАЛ Сердика",
+      "countryCode": "BG",
+      "origin": "https://www.mbalserdika.com",
+      "lat": 42.6818754,
+      "lng": 23.2453939
+    },
+    {
+      "code": "osm:node/6615742030",
+      "name": "Д-р Юрий Асенов - Пластичен Хирург",
+      "countryCode": "BG",
+      "origin": "https://dr-asenov.business.site",
+      "lat": 42.150767,
+      "lng": 24.7432498
+    },
+    {
+      "code": "osm:node/6669995690",
+      "name": "ДКЦ “Д-р Грийнберг”",
+      "countryCode": "BG",
+      "origin": "https://greenberg.bg",
+      "lat": 42.6511328,
+      "lng": 23.4049477
+    },
+    {
+      "code": "osm:node/6833815718",
+      "name": "ТИЙМКОД",
+      "countryCode": "BG",
+      "origin": "https://www.team-code.org",
+      "lat": 42.6394103,
+      "lng": 23.398605
+    },
+    {
+      "code": "osm:node/6945916659",
+      "name": "Първа частна МБАЛ - Враца",
+      "countryCode": "BG",
+      "origin": "https://orthopedic-clinic-vr.com",
+      "lat": 43.1937141,
+      "lng": 23.5700619
+    },
+    {
+      "code": "osm:node/6991746245",
+      "name": "Д-р Тотка Чукалова",
+      "countryCode": "BG",
+      "origin": "https://dr-chukalova.business.site",
+      "lat": 42.6215535,
+      "lng": 25.3875371
+    },
+    {
+      "code": "osm:node/6992088249",
+      "name": "СБАЛОБ „Ден“",
+      "countryCode": "BG",
+      "origin": "https://www.eyeclinic-den.com",
+      "lat": 42.700581,
+      "lng": 23.333764
+    },
+    {
+      "code": "osm:node/8611192501",
+      "name": "МБАЛ „Европа“",
+      "countryCode": "BG",
+      "origin": "https://bolnicaevropa.bg",
+      "lat": 42.6894873,
+      "lng": 23.3068602
+    },
+    {
+      "code": "osm:node/8779692927",
+      "name": "Солна къща",
+      "countryCode": "BG",
+      "origin": "https://salthouse.bg",
+      "lat": 42.6576512,
+      "lng": 23.2764912
+    },
+    {
+      "code": "osm:node/10219177017",
+      "name": "СБАЛОБ „Зора“",
+      "countryCode": "BG",
+      "origin": "https://bolnica-zora.com",
+      "lat": 42.6624822,
+      "lng": 23.3803513
+    },
+    {
+      "code": "osm:node/11528611964",
+      "name": "УМБАЛ „Св. Иван Рилски“",
+      "countryCode": "BG",
+      "origin": "https://rilski.com",
+      "lat": 42.6824181,
+      "lng": 23.302159
+    },
+    {
+      "code": "osm:node/12400103768",
+      "name": "Medical Center Salvebis",
+      "countryCode": "BG",
+      "origin": "https://www.salvebis.bg",
+      "lat": 42.6770682,
+      "lng": 23.3325593
+    },
+    {
+      "code": "osm:node/13944509649",
+      "name": "МБПЛР „Сердика“",
+      "countryCode": "BG",
+      "origin": "https://serdika.com",
+      "lat": 42.680513,
+      "lng": 23.2514808
+    },
+    {
+      "code": "osm:node/14041072876",
+      "name": "СБАЛОЗ „Проф. д-р Марин Мушмов“",
+      "countryCode": "BG",
+      "origin": "https://sbalozsofia.com",
+      "lat": 42.6555753,
+      "lng": 23.3714055
+    },
+    {
+      "code": "osm:node/14045317407",
+      "name": "Военномедицинска академия",
+      "countryCode": "BG",
+      "origin": "https://www.vma.bg",
+      "lat": 42.6843463,
+      "lng": 23.3037259
+    },
+    {
+      "code": "osm:node/14067132963",
+      "name": "УСБАЛЕ „Акад. Иван Пенчев“",
+      "countryCode": "BG",
+      "origin": "https://usbale.org",
+      "lat": 42.6840121,
+      "lng": 23.3118039
+    },
+    {
+      "code": "osm:node/14067874123",
+      "name": "СБАЛАГ „Майчин дом“",
+      "countryCode": "BG",
+      "origin": "https://maichindom.com",
+      "lat": 42.6834728,
+      "lng": 23.3117601
+    },
+    {
+      "code": "osm:node/14098727791",
+      "name": "УМБАЛ „Пълмед“",
+      "countryCode": "BG",
+      "origin": "https://www.hospitalpulmed.bg",
+      "lat": 42.1378405,
+      "lng": 24.7176484
+    },
+    {
+      "code": "osm:node/14098772711",
+      "name": "МБАЛ „Сердикамед“",
+      "countryCode": "BG",
+      "origin": "https://www.hospitalserdikamed.bg",
+      "lat": 42.6967915,
+      "lng": 23.3140467
+    },
+    {
+      "code": "osm:node/14109332543",
+      "name": "СБАЛОБ „Вижън“",
+      "countryCode": "BG",
+      "origin": "https://visionclinic.bg",
+      "lat": 42.6580764,
+      "lng": 23.3928253
+    },
+    {
+      "code": "osm:node/14109474217",
+      "name": "МБАЛ „Света София“",
+      "countryCode": "BG",
+      "origin": "https://www.mbal-sofia.com",
+      "lat": 42.6594849,
+      "lng": 23.2843138
+    },
+    {
+      "code": "osm:node/14109563211",
+      "name": "СБАЛОТ „Витоша“",
+      "countryCode": "BG",
+      "origin": "https://vitosha-ortopedia.com",
+      "lat": 42.6423253,
+      "lng": 23.3342287
+    },
+    {
+      "code": "osm:node/14110318410",
+      "name": "Държавна психиатрична болница - Пазарджик",
+      "countryCode": "BG",
+      "origin": "https://dpb-pazardjik.org",
+      "lat": 42.1848778,
+      "lng": 24.3402167
+    },
+    {
+      "code": "osm:node/14110387884",
+      "name": "СБАЛ „Гръбначен център“",
+      "countryCode": "BG",
+      "origin": "https://www.spine-center.bg",
+      "lat": 42.7133704,
+      "lng": 23.3116832
+    },
+    {
+      "code": "osm:node/14110983117",
+      "name": "МБАЛ Пирдоп",
+      "countryCode": "BG",
+      "origin": "https://mbal-pirdop.com",
+      "lat": 42.7021152,
+      "lng": 24.1693361
+    },
+    {
+      "code": "osm:node/14113203851",
+      "name": "МБАЛ „Люлин“",
+      "countryCode": "BG",
+      "origin": "https://lyulinhospital.com",
+      "lat": 42.7083563,
+      "lng": 23.2492512
+    },
+    {
+      "code": "osm:node/14125509019",
+      "name": "СОБАЛ „Визус“",
+      "countryCode": "BG",
+      "origin": "https://visusbg.com",
+      "lat": 42.6704189,
+      "lng": 23.2512157
+    },
+    {
+      "code": "osm:node/14188689401",
+      "name": "Международен медицински център АУРА",
+      "countryCode": "BG",
+      "origin": "https://www.auraclinics.com",
+      "lat": 43.2170355,
+      "lng": 27.9536302
+    },
+    {
+      "code": "osm:node/14208403901",
+      "name": "Медицински център Хейлан Кеър",
+      "countryCode": "BG",
+      "origin": "http://haelan.bg",
+      "lat": 43.2205376,
+      "lng": 27.8789873
+    },
+    {
+      "code": "osm:way/27017959",
+      "name": "МБАЛ \"Света Петка\"",
+      "countryCode": "BG",
+      "origin": "https://www.mbal-vidin.com",
+      "lat": 43.9972553,
+      "lng": 22.8770065
+    },
+    {
+      "code": "osm:way/148564150",
+      "name": "ДКЦ 3",
+      "countryCode": "BG",
+      "origin": "http://dkc3.com",
+      "lat": 43.2481131,
+      "lng": 27.8468956
+    },
+    {
+      "code": "osm:way/157689966",
+      "name": "УМБАЛСМ Пирогов",
+      "countryCode": "BG",
+      "origin": "https://pirogov.eu",
+      "lat": 42.6903165,
+      "lng": 23.3083609
+    },
+    {
+      "code": "osm:way/157690138",
+      "name": "СБАЛДБ „Проф. Иван Митев“",
+      "countryCode": "BG",
+      "origin": "https://usbaldb.com",
+      "lat": 42.6839818,
+      "lng": 23.3020244
+    },
+    {
+      "code": "osm:way/161464854",
+      "name": "СБАЛАГРМ „София“",
+      "countryCode": "BG",
+      "origin": "https://www.ivf.bg",
+      "lat": 42.6574867,
+      "lng": 23.3528216
+    },
+    {
+      "code": "osm:way/161904614",
+      "name": "Медицински център \"Св. Иван Рилски\"",
+      "countryCode": "BG",
+      "origin": "https://invitro-tutrakan.bg",
+      "lat": 44.0456533,
+      "lng": 26.6000636
+    },
+    {
+      "code": "osm:way/162698434",
+      "name": "Medline",
+      "countryCode": "BG",
+      "origin": "http://sindbad-bg.com",
+      "lat": 42.1384119,
+      "lng": 24.7399756
+    },
+    {
+      "code": "osm:way/162941613",
+      "name": "Viva Clinic",
+      "countryCode": "BG",
+      "origin": "https://www.vivaclinic.bg",
+      "lat": 42.697088,
+      "lng": 27.7048884
+    },
+    {
+      "code": "osm:way/166109663",
+      "name": "МБАЛ „Св. Панталеймон“",
+      "countryCode": "BG",
+      "origin": "https://sphospital.bg",
+      "lat": 42.644491,
+      "lng": 23.3752622
+    },
+    {
+      "code": "osm:way/166217042",
+      "name": "СБАЛ „Св. Лазар“",
+      "countryCode": "BG",
+      "origin": "https://lazar-hospital.com",
+      "lat": 42.6594085,
+      "lng": 23.3363618
+    },
+    {
+      "code": "osm:way/166217634",
+      "name": "МБАЛ „Св. Богородица“",
+      "countryCode": "BG",
+      "origin": "https://www.hospitalbg.com",
+      "lat": 42.698765,
+      "lng": 23.3437901
+    },
+    {
+      "code": "osm:way/167325078",
+      "name": "СБРДЦП „Св. София“",
+      "countryCode": "BG",
+      "origin": "https://www.cpcentresof-bg.com",
+      "lat": 42.6939615,
+      "lng": 23.2924763
+    },
+    {
+      "code": "osm:way/206805281",
+      "name": "МБАЛ Самоков",
+      "countryCode": "BG",
+      "origin": "https://mbal-samokov.com",
+      "lat": 42.3358923,
+      "lng": 23.5520668
+    },
+    {
+      "code": "osm:way/223530562",
+      "name": "Аджибадем Сити Клиник УМБАЛ Младост",
+      "countryCode": "BG",
+      "origin": "https://acibademcityclinic.bg",
+      "lat": 42.65521,
+      "lng": 23.3855704
+    },
+    {
+      "code": "osm:way/237010981",
+      "name": "Специализирана болница за рехабилитация Мари",
+      "countryCode": "BG",
+      "origin": "https://www.sbr-mari.com",
+      "lat": 42.6532823,
+      "lng": 27.6927367
+    },
+    {
+      "code": "osm:way/244863624",
+      "name": "Държавна психиатрична болница „Д-р Георги Кисьов“",
+      "countryCode": "BG",
+      "origin": "https://www.2dom.org",
+      "lat": 42.2861088,
+      "lng": 25.9228991
+    },
+    {
+      "code": "osm:way/257534018",
+      "name": "Аджибадем Сити Клиник УМБАЛ Ортопедия",
+      "countryCode": "BG",
+      "origin": "https://acibademcityclinic.bg",
+      "lat": 42.6400443,
+      "lng": 23.3181043
+    },
+    {
+      "code": "osm:way/258837058",
+      "name": "Втора МБАЛ",
+      "countryCode": "BG",
+      "origin": "https://www.vtorambal.com",
+      "lat": 42.7061114,
+      "lng": 23.3185894
+    },
+    {
+      "code": "osm:way/275123280",
+      "name": "МБАЛ \"Уни Хоспитал\"",
+      "countryCode": "BG",
+      "origin": "https://www.unihospitalbg.com",
+      "lat": 42.4934623,
+      "lng": 24.185424
+    },
+    {
+      "code": "osm:way/275303594",
+      "name": "МБАЛ „Проф. Димитър Ранев“",
+      "countryCode": "BG",
+      "origin": "http://www.hospitalpeshtera.bg",
+      "lat": 42.038547,
+      "lng": 24.3108451
+    },
+    {
+      "code": "osm:way/305129848",
+      "name": "Медицински институт на МВР",
+      "countryCode": "BG",
+      "origin": "http://www.mi.mvr.bg",
+      "lat": 42.6935871,
+      "lng": 23.3086154
+    },
+    {
+      "code": "osm:way/305866533",
+      "name": "MБАЛНП „Св. Наум“",
+      "countryCode": "BG",
+      "origin": "https://svnaum.com",
+      "lat": 42.6671731,
+      "lng": 23.3622021
+    },
+    {
+      "code": "osm:way/305958057",
+      "name": "УМБАЛ „Софиямед“",
+      "countryCode": "BG",
+      "origin": "https://www.hospitalsofiamed.bg",
+      "lat": 42.6671683,
+      "lng": 23.3639234
+    },
+    {
+      "code": "osm:way/308144802",
+      "name": "УМБАЛ „Царица Йоанна - ИСУЛ“",
+      "countryCode": "BG",
+      "origin": "https://isul.eu",
+      "lat": 42.7008855,
+      "lng": 23.3397379
+    },
+    {
+      "code": "osm:way/309193540",
+      "name": "МБАЛ - Троян ЕООД",
+      "countryCode": "BG",
+      "origin": "https://mbal-troyan.bg",
+      "lat": 42.8910729,
+      "lng": 24.7075542
+    },
+    {
+      "code": "osm:way/312351030",
+      "name": "Първа САГБАЛ „Света София“",
+      "countryCode": "BG",
+      "origin": "http://www.1agb.com",
+      "lat": 42.6991497,
+      "lng": 23.2891044
+    },
+    {
+      "code": "osm:way/312947519",
+      "name": "МБАЛ „Надежда“",
+      "countryCode": "BG",
+      "origin": "https://nadezhdahospital.com",
+      "lat": 42.688802,
+      "lng": 23.2744877
+    },
+    {
+      "code": "osm:way/313106011",
+      "name": "МБАЛ-Шумен",
+      "countryCode": "BG",
+      "origin": "https://mbal-shumen.com",
+      "lat": 43.2755702,
+      "lng": 26.9165915
+    },
+    {
+      "code": "osm:way/313886020",
+      "name": "УМБАЛ „Св. Анна“",
+      "countryCode": "BG",
+      "origin": "https://www.sveta-anna.eu",
+      "lat": 42.6603077,
+      "lng": 23.3719287
+    },
+    {
+      "code": "osm:way/315473055",
+      "name": "УСБАЛО „Проф. Иван Черноземски“",
+      "countryCode": "BG",
+      "origin": "https://www.sbaloncology.bg",
+      "lat": 42.6601017,
+      "lng": 23.3605727
+    },
+    {
+      "code": "osm:way/316519210",
+      "name": "МБАЛ „Национална кардиологична болница“",
+      "countryCode": "BG",
+      "origin": "https://hearthospital.bg",
+      "lat": 42.7058959,
+      "lng": 23.2877307
+    },
+    {
+      "code": "osm:way/316654560",
+      "name": "Национален център по хематология и трансфузиология",
+      "countryCode": "BG",
+      "origin": "https://ncth.bg",
+      "lat": 42.7086016,
+      "lng": 23.3199953
+    },
+    {
+      "code": "osm:way/329160048",
+      "name": "СБАЛ Св. Панталеймон",
+      "countryCode": "BG",
+      "origin": "https://svetipantaleimon.com",
+      "lat": 43.4022222,
+      "lng": 24.6428453
+    },
+    {
+      "code": "osm:way/330687480",
+      "name": "Лайф Хоспитал",
+      "countryCode": "BG",
+      "origin": "https://www.lifehospitalbg.com",
+      "lat": 42.5275291,
+      "lng": 27.4680125
+    },
+    {
+      "code": "osm:way/331131950",
+      "name": "Аджибадем Сити Клиник УМБАЛ Токуда",
+      "countryCode": "BG",
+      "origin": "https://www.acibademcityclinic.bg",
+      "lat": 42.6647698,
+      "lng": 23.3251494
+    },
+    {
+      "code": "osm:way/335163646",
+      "name": "МБАЛ Дева Мария",
+      "countryCode": "BG",
+      "origin": "https://www.devamaria.com",
+      "lat": 42.6059159,
+      "lng": 27.3857904
+    },
+    {
+      "code": "osm:way/335394232",
+      "name": "ДПБ за лечение на наркомании и алкохолизъм",
+      "countryCode": "BG",
+      "origin": "https://dpblna.org",
+      "lat": 42.6729151,
+      "lng": 23.1860157
+    },
+    {
+      "code": "osm:way/397105360",
+      "name": "МБАЛ Елин Пелин",
+      "countryCode": "BG",
+      "origin": "https://mbal-elinpelin.com",
+      "lat": 42.6640623,
+      "lng": 23.60063
+    },
+    {
+      "code": "osm:way/406078581",
+      "name": "МЦ “УниХоспитал”",
+      "countryCode": "BG",
+      "origin": "https://www.unihospitalbg.bg",
+      "lat": 42.6522829,
+      "lng": 23.2878759
+    },
+    {
+      "code": "osm:way/425745458",
+      "name": "ДПБ „Св. Иван Рилски“",
+      "countryCode": "BG",
+      "origin": "https://www.dpbivanrilski.com",
+      "lat": 42.8274528,
+      "lng": 23.3688372
+    },
+    {
+      "code": "osm:way/442118559",
+      "name": "МБАЛ „Св. Пантелеймон“",
+      "countryCode": "BG",
+      "origin": "https://mbal-yambol.net",
+      "lat": 42.4878372,
+      "lng": 26.5166011
+    },
+    {
+      "code": "osm:way/442118563",
+      "name": "СБАЛ по кардиология",
+      "countryCode": "BG",
+      "origin": "https://cardiacinstitute.bg",
+      "lat": 42.4869046,
+      "lng": 26.5173794
+    },
+    {
+      "code": "osm:way/443101576",
+      "name": "МБАЛ „Доверие“",
+      "countryCode": "BG",
+      "origin": "https://mbal.doverie.bg",
+      "lat": 42.6848375,
+      "lng": 23.2461155
+    },
+    {
+      "code": "osm:way/451469556",
+      "name": "МБАЛ Своге",
+      "countryCode": "BG",
+      "origin": "https://www.mbal-svoge.com",
+      "lat": 42.9641781,
+      "lng": 23.3401317
+    },
+    {
+      "code": "osm:way/460912728",
+      "name": "МБАЛ Хасково",
+      "countryCode": "BG",
+      "origin": "https://www.mbalhaskovo.com",
+      "lat": 41.9332325,
+      "lng": 25.5664758
+    },
+    {
+      "code": "osm:way/460915693",
+      "name": "МБАЛ \"Д-р Братан Шукеров\"",
+      "countryCode": "BG",
+      "origin": "http://www.mbal-smolyan.com",
+      "lat": 41.573571,
+      "lng": 24.7188143
+    },
+    {
+      "code": "osm:way/469440742",
+      "name": "СБАЛ по Белодробни Болести- Габрово-ПАРАХОДА",
+      "countryCode": "BG",
+      "origin": "https://sbalbbgabrovo.eu",
+      "lat": 42.8438637,
+      "lng": 25.314653
+    },
+    {
+      "code": "osm:way/469440743",
+      "name": "МБАЛ \"Д-р Тота Венкова\"",
+      "countryCode": "BG",
+      "origin": "https://www.mbalgabrovo.com",
+      "lat": 42.8712531,
+      "lng": 25.3072341
+    },
+    {
+      "code": "osm:way/493673876",
+      "name": "Държавна психиатрична болница - Карвуна",
+      "countryCode": "BG",
+      "origin": "https://dpbkarvuna.com",
+      "lat": 43.4726206,
+      "lng": 28.0203992
+    },
+    {
+      "code": "osm:way/498249017",
+      "name": "МБАЛ Ботевград",
+      "countryCode": "BG",
+      "origin": "https://mbalbotevgrad.com",
+      "lat": 42.9079756,
+      "lng": 23.8018715
+    },
+    {
+      "code": "osm:way/501659205",
+      "name": "Еврохоспитал Пловдив",
+      "countryCode": "BG",
+      "origin": "http://www.eurohospital.bg",
+      "lat": 42.0997554,
+      "lng": 24.7616214
+    },
+    {
+      "code": "osm:way/509191670",
+      "name": "МБАЛ „Рахила Ангелова“",
+      "countryCode": "BG",
+      "origin": "https://bolnicapernik.com",
+      "lat": 42.6112317,
+      "lng": 23.0363262
+    },
+    {
+      "code": "osm:way/549288802",
+      "name": "МБАЛ „Скин Системс” Доганово",
+      "countryCode": "BG",
+      "origin": "https://skinsystems.bg",
+      "lat": 42.6321804,
+      "lng": 23.6890537
+    },
+    {
+      "code": "osm:way/550712774",
+      "name": "МБАЛ „Христо Ботев\"",
+      "countryCode": "BG",
+      "origin": "https://mbalvratsa.bg",
+      "lat": 43.1962521,
+      "lng": 23.5586046
+    },
+    {
+      "code": "osm:way/552183246",
+      "name": "МБАЛ „Бургасмед“",
+      "countryCode": "BG",
+      "origin": "https://hospitalburgasmed.bg",
+      "lat": 42.4633517,
+      "lng": 27.420723
+    },
+    {
+      "code": "osm:way/563285121",
+      "name": "МБАЛ „Вита“",
+      "countryCode": "BG",
+      "origin": "https://vita.bg",
+      "lat": 42.6562873,
+      "lng": 23.3205444
+    },
+    {
+      "code": "osm:way/567521593",
+      "name": "МЦ \"Екзакта Медика\"",
+      "countryCode": "BG",
+      "origin": "https://www.exacta-medica.com",
+      "lat": 43.410207,
+      "lng": 24.6309903
+    },
+    {
+      "code": "osm:way/600342981",
+      "name": "МБАЛ ПРОФ.Д-Р КОНСТАНТИН ЧИЛОВ",
+      "countryCode": "BG",
+      "origin": "https://mbalmadan.com",
+      "lat": 41.4985932,
+      "lng": 24.9432678
+    },
+    {
+      "code": "osm:way/609925532",
+      "name": "МБАЛ Мездра",
+      "countryCode": "BG",
+      "origin": "https://mbal-mezdra.com",
+      "lat": 43.1479598,
+      "lng": 23.7089036
+    },
+    {
+      "code": "osm:way/665030004",
+      "name": "МБАЛ „Пулс“",
+      "countryCode": "BG",
+      "origin": "https://bolnicapuls.com",
+      "lat": 42.0234246,
+      "lng": 23.0895848
+    },
+    {
+      "code": "osm:way/715322907",
+      "name": "МБАЛ \"Д-р Сергей Ростовцев\"",
+      "countryCode": "BG",
+      "origin": "https://www.momchilgrad.bg",
+      "lat": 41.5306383,
+      "lng": 25.4123614
+    },
+    {
+      "code": "osm:way/723262702",
+      "name": "Аджибадем Сити Клиник",
+      "countryCode": "BG",
+      "origin": "https://acibademcityclinic.bg",
+      "lat": 43.2173783,
+      "lng": 27.9160266
+    },
+    {
+      "code": "osm:way/781363836",
+      "name": "Specialized private eye clinic for active treatment Ralchovski EOOD",
+      "countryCode": "BG",
+      "origin": "https://www.rating.hapche.bg",
+      "lat": 43.1955237,
+      "lng": 23.5621729
+    },
+    {
+      "code": "osm:way/788191352",
+      "name": "СБАЛПФЗ Благоевград",
+      "countryCode": "BG",
+      "origin": "http://sbalpfz-blg.com",
+      "lat": 42.0260806,
+      "lng": 23.0992105
+    },
+    {
+      "code": "osm:way/962781588",
+      "name": "МБАЛ \"Св. Иван Рилски 2003\", Дупница",
+      "countryCode": "BG",
+      "origin": "https://www.mbal2003.com",
+      "lat": 42.2674449,
+      "lng": 23.1146569
+    },
+    {
+      "code": "osm:way/962782355",
+      "name": "МБАЛ \"Св. Иван Рилски\"",
+      "countryCode": "BG",
+      "origin": "http://mbal-kozloduy.info",
+      "lat": 43.7719995,
+      "lng": 23.7262867
+    },
+    {
+      "code": "osm:way/962784623",
+      "name": "Първа УМБАЛ „Св. Йоан Кръстител“",
+      "countryCode": "BG",
+      "origin": "https://www.1mbal.com",
+      "lat": 42.6882934,
+      "lng": 23.3225577
+    },
+    {
+      "code": "osm:way/962785274",
+      "name": "МБАЛ-Първомай",
+      "countryCode": "BG",
+      "origin": "https://mbal-parvomay.com",
+      "lat": 42.0916692,
+      "lng": 25.2145708
+    },
+    {
+      "code": "osm:way/962785785",
+      "name": "МБАЛ-Харманли",
+      "countryCode": "BG",
+      "origin": "https://www.mbal-harmanli.org",
+      "lat": 41.9230748,
+      "lng": 25.9004005
+    },
+    {
+      "code": "osm:way/962789858",
+      "name": "МБАЛ Омуртаг",
+      "countryCode": "BG",
+      "origin": "https://mbal-omurtag.com",
+      "lat": 43.1002064,
+      "lng": 26.4162047
+    },
+    {
+      "code": "osm:way/962790645",
+      "name": "МБАЛ Попово",
+      "countryCode": "BG",
+      "origin": "https://www.mbal-popovo.com",
+      "lat": 43.3415966,
+      "lng": 26.216586
+    },
+    {
+      "code": "osm:way/962797645",
+      "name": "МБАЛ Силистра",
+      "countryCode": "BG",
+      "origin": "https://new.mbal-silistra.bg",
+      "lat": 44.1105098,
+      "lng": 27.2636093
+    },
+    {
+      "code": "osm:way/962798836",
+      "name": "МБАЛ „Велимед“",
+      "countryCode": "BG",
+      "origin": "https://www.hospitalvelingrad.bg",
+      "lat": 42.0195068,
+      "lng": 23.9882081
+    },
+    {
+      "code": "osm:way/962799840",
+      "name": "МБАЛ Ихтиман",
+      "countryCode": "BG",
+      "origin": "https://www.mbalihtiman.com",
+      "lat": 42.4336109,
+      "lng": 23.8249565
+    },
+    {
+      "code": "osm:way/1001043638",
+      "name": "УМБАЛ „Александровска“",
+      "countryCode": "BG",
+      "origin": "https://alexandrovska.com",
+      "lat": 42.684208,
+      "lng": 23.3098554
+    },
+    {
+      "code": "osm:way/1018169472",
+      "name": "САГБАЛ „Д-р Щерев“",
+      "countryCode": "BG",
+      "origin": "https://shterevhospital.com",
+      "lat": 42.7000688,
+      "lng": 23.2876135
+    },
+    {
+      "code": "osm:way/1020385387",
+      "name": "МБАЛ „Княгиня Клементина“",
+      "countryCode": "BG",
+      "origin": "https://mbalklementina.com",
+      "lat": 42.7131429,
+      "lng": 23.3120971
+    },
+    {
+      "code": "osm:way/1044576314",
+      "name": "МБАЛ \"Свети Иван Рилски\" – Габрово",
+      "countryCode": "BG",
+      "origin": "https://mbal-ivanrilski.com",
+      "lat": 42.8514349,
+      "lng": 25.3226848
+    },
+    {
+      "code": "osm:way/1047076004",
+      "name": "УСБАЛИПБ „Проф. Иван Киров“",
+      "countryCode": "BG",
+      "origin": "https://neu.sbalipb.bg",
+      "lat": 42.6812989,
+      "lng": 23.3030726
+    },
+    {
+      "code": "osm:way/1173968434",
+      "name": "ДКЦ 1",
+      "countryCode": "BG",
+      "origin": "https://www.dkc1-pleven.bg",
+      "lat": 43.4167173,
+      "lng": 24.609329
+    },
+    {
+      "code": "osm:way/1214792383",
+      "name": "Държавна психиатрична болница - Церова Кория",
+      "countryCode": "BG",
+      "origin": "https://dpb-zcoria.com",
+      "lat": 43.0394412,
+      "lng": 25.7434846
+    },
+    {
+      "code": "osm:way/1329696252",
+      "name": "Национална онкологична болница \"Дева Мария\"",
+      "countryCode": "BG",
+      "origin": "https://www.devamaria.com",
+      "lat": 42.606146,
+      "lng": 27.3855524
+    },
+    {
+      "code": "osm:way/1336871991",
+      "name": "МБАЛ „Тетевен д-р Ангел Пешев“",
+      "countryCode": "BG",
+      "origin": "https://mbal-teteven.com",
+      "lat": 42.9200536,
+      "lng": 24.2551546
+    },
+    {
+      "code": "osm:way/1390044765",
+      "name": "Аджибадем Сити Клиник УМБАЛ Витоша",
+      "countryCode": "BG",
+      "origin": "https://acibademcityclinic.bg",
+      "lat": 42.6385359,
+      "lng": 23.317487
+    },
+    {
+      "code": "osm:way/1424602120",
+      "name": "УМБАЛ „Тракия“",
+      "countryCode": "BG",
+      "origin": "https://trakiahospital.com",
+      "lat": 42.4361466,
+      "lng": 25.6128439
+    },
+    {
+      "code": "osm:way/1430673579",
+      "name": "МБАЛ Гулянци",
+      "countryCode": "BG",
+      "origin": "https://mbal-gulyantsi.com",
+      "lat": 43.6395871,
+      "lng": 24.6957041
+    },
+    {
+      "code": "osm:way/1473928422",
+      "name": "Първа Частна МБАЛ-Враца",
+      "countryCode": "BG",
+      "origin": "https://orthopedic-clinic-vr.com",
+      "lat": 43.1967383,
+      "lng": 23.5627318
+    },
+    {
+      "code": "osm:way/1546698565",
+      "name": "УМБАЛ „Св. Екатерина“",
+      "countryCode": "BG",
+      "origin": "https://svetaekaterina.eu",
+      "lat": 42.6848705,
+      "lng": 23.3118181
+    },
+    {
+      "code": "osm:way/1551269977",
+      "name": "Държавна психиатрична болница - Бяла",
+      "countryCode": "BG",
+      "origin": "https://dpb-byala.org",
+      "lat": 43.4669785,
+      "lng": 25.7206817
+    },
+    {
+      "code": "osm:way/1551331918",
+      "name": "Държавна психиатрична болница - Царев брод",
+      "countryCode": "BG",
+      "origin": "https://tzarevbrod.com",
+      "lat": 43.325812,
+      "lng": 27.0163623
+    },
+    {
+      "code": "osm:way/1551339903",
+      "name": "Държавна психиатрична болница - Кърджали",
+      "countryCode": "BG",
+      "origin": "https://www.dpb-kardjali.bg",
+      "lat": 41.6513654,
+      "lng": 25.3771748
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "countryCode": "TZ",
+  "fetchedAt": "2026-10-21T03:03:17.351Z",
+  "count": 19,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/3320900795",
+      "name": "Health Center",
+      "countryCode": "TZ",
+      "origin": "https://africaaminialama.com",
+      "lat": -3.2137005,
+      "lng": 36.8617018
+    },
+    {
+      "code": "osm:node/9490546190",
+      "name": "Regency Medical Center",
+      "countryCode": "TZ",
+      "origin": "https://www.regencymedicalcentre.com",
+      "lat": -6.8130782,
+      "lng": 39.2791291
+    },
+    {
+      "code": "osm:node/11356329741",
+      "name": "Mwanza Hospital",
+      "countryCode": "TZ",
+      "origin": "https://mwanzahospital.co.tz",
+      "lat": -2.5187157,
+      "lng": 32.9075414
+    },
+    {
+      "code": "osm:node/12107404143",
+      "name": "Kariakoo Dispensary",
+      "countryCode": "TZ",
+      "origin": "https://kariakoodispensary.com",
+      "lat": -6.8208839,
+      "lng": 39.2755962
+    },
+    {
+      "code": "osm:node/12860783142",
+      "name": "Dr. Agarwals Eye Hospital",
+      "countryCode": "TZ",
+      "origin": "https://www.dragarwal.com",
+      "lat": -2.5357227,
+      "lng": 32.9032224
+    },
+    {
+      "code": "osm:node/13784437384",
+      "name": "Kariakoo Dispensary Kinondoni branch",
+      "countryCode": "TZ",
+      "origin": "https://https",
+      "lat": -6.7980933,
+      "lng": 39.2608547
+    },
+    {
+      "code": "osm:node/14279269115",
+      "name": "Royal Zonal Referral Hospital",
+      "countryCode": "TZ",
+      "origin": "https://www.instagram.com",
+      "lat": -2.4958258,
+      "lng": 32.9036917
+    },
+    {
+      "code": "osm:way/205050029",
+      "name": "Itete Lutheran Hospital",
+      "countryCode": "TZ",
+      "origin": "http://itetehospital.com",
+      "lat": -9.3024645,
+      "lng": 33.8476881
+    },
+    {
+      "code": "osm:way/271087661",
+      "name": "AAR Clinic",
+      "countryCode": "TZ",
+      "origin": "http://www.aarhealth.com",
+      "lat": -3.3676668,
+      "lng": 36.7070906
+    },
+    {
+      "code": "osm:way/304008262",
+      "name": "Consolata Hospital Ikonda",
+      "countryCode": "TZ",
+      "origin": "https://www.ikondahospital.org",
+      "lat": -9.3696968,
+      "lng": 34.2389716
+    },
+    {
+      "code": "osm:way/304054489",
+      "name": "Sali International Hospital",
+      "countryCode": "TZ",
+      "origin": "http://www.salihospital.com",
+      "lat": -6.742321,
+      "lng": 39.2770943
+    },
+    {
+      "code": "osm:way/355564682",
+      "name": "Tasakhataa Global Hospital",
+      "countryCode": "TZ",
+      "origin": "https://www.tasakhtaahospital.co.tz",
+      "lat": -6.1662112,
+      "lng": 39.190694
+    },
+    {
+      "code": "osm:way/361545879",
+      "name": "CCBRT Hospital",
+      "countryCode": "TZ",
+      "origin": "https://www.ccbrt.or.tz",
+      "lat": -6.7671438,
+      "lng": 39.2705972
+    },
+    {
+      "code": "osm:way/385121360",
+      "name": "Bulongwa Lutheran Hospital",
+      "countryCode": "TZ",
+      "origin": "http://health.elct.org",
+      "lat": -9.326391,
+      "lng": 34.0400427
+    },
+    {
+      "code": "osm:way/463843580",
+      "name": "The Aga Khan Hospital",
+      "countryCode": "TZ",
+      "origin": "https://www.agakhanhospitals.org",
+      "lat": -6.8039506,
+      "lng": 39.2879315
+    },
+    {
+      "code": "osm:way/495427646",
+      "name": "Ilembula Lutheran Hospital",
+      "countryCode": "TZ",
+      "origin": "http://health.elct.org",
+      "lat": -8.8992744,
+      "lng": 34.5785492
+    },
+    {
+      "code": "osm:way/671238371",
+      "name": "Hospitali ya Taifa Muhimbili (Mloganzila)",
+      "countryCode": "TZ",
+      "origin": "https://www.mloganzila.or.tz",
+      "lat": -6.8155883,
+      "lng": 39.0583406
+    },
+    {
+      "code": "osm:way/1364924901",
+      "name": "Magunga Korogwe Town Hospital",
+      "countryCode": "TZ",
+      "origin": "http://korogwedh.go.tz",
+      "lat": -5.1353876,
+      "lng": 38.4548124
+    },
+    {
+      "code": "osm:way/1552509782",
+      "name": "Aga Khan Hospital",
+      "countryCode": "TZ",
+      "origin": "https://agakhanhospitals.org",
+      "lat": -2.5234904,
+      "lng": 32.9046444
+    }
+  ]
+}

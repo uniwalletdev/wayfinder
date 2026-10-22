@@ -18,7 +18,7 @@ const R = 111320 // metres per degree latitude
 function slugify(s) {
   return s.toLowerCase().replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "wp"
 }
-const esc = (s) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
+const esc = (s) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t")
 const r6 = (n) => Number(n.toFixed(6))
 
 async function placeFloor(v, floor, usedIds) {

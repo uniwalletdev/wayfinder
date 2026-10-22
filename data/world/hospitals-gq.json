@@ -1,0 +1,25 @@
+{
+  "countryCode": "GQ",
+  "fetchedAt": "2026-10-21T01:31:31.415Z",
+  "count": 2,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/272208994",
+      "name": "La Paz Medical Center",
+      "countryCode": "GQ",
+      "origin": "https://lapazmalabo.org",
+      "lat": 3.762197,
+      "lng": 8.8773027
+    },
+    {
+      "code": "osm:way/499521969",
+      "name": "Centro Médico La Paz",
+      "countryCode": "GQ",
+      "origin": "http://www.lapazge.org",
+      "lat": 1.8407167,
+      "lng": 9.8025875
+    }
+  ]
+}

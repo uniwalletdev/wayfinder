@@ -1,0 +1,57 @@
+{
+  "countryCode": "TT",
+  "fetchedAt": "2026-10-21T03:01:12.250Z",
+  "count": 6,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/458745056",
+      "name": "St. Augustine Medical Laboratory (MIKAL)",
+      "countryCode": "TT",
+      "origin": "http://www.staugmedlab.com",
+      "lat": 10.6453506,
+      "lng": -61.3962492
+    },
+    {
+      "code": "osm:node/5188874721",
+      "name": "Acropolis Medical Centre",
+      "countryCode": "TT",
+      "origin": "https://acropolismedical.com",
+      "lat": 10.2824549,
+      "lng": -61.4526702
+    },
+    {
+      "code": "osm:node/10940084105",
+      "name": "Sangre Grande Hospital",
+      "countryCode": "TT",
+      "origin": "https://health.gov.tt",
+      "lat": 10.5965019,
+      "lng": -61.1318776
+    },
+    {
+      "code": "osm:way/391100051",
+      "name": "San Fernando Teaching Hospital",
+      "countryCode": "TT",
+      "origin": "https://www.swrha.co.tt",
+      "lat": 10.2811471,
+      "lng": -61.4671218
+    },
+    {
+      "code": "osm:way/440240126",
+      "name": "Cross Crossing Medical Centre",
+      "countryCode": "TT",
+      "origin": "https://ccmctt.com",
+      "lat": 10.2622237,
+      "lng": -61.4624491
+    },
+    {
+      "code": "osm:way/745222014",
+      "name": "San Fernando General Hospital",
+      "countryCode": "TT",
+      "origin": "https://www.swrha.co.tt",
+      "lat": 10.2788967,
+      "lng": -61.4688056
+    }
+  ]
+}

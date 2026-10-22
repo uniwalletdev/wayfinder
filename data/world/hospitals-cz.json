@@ -1,0 +1,985 @@
+{
+  "countryCode": "CZ",
+  "fetchedAt": "2026-10-21T01:10:05.418Z",
+  "count": 122,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 2,
+  "hospitals": [
+    {
+      "code": "osm:node/296788406",
+      "name": "Ústav leteckého zdravotnictví Praha",
+      "countryCode": "CZ",
+      "origin": "https://www.ulc.cz",
+      "lat": 50.0980038,
+      "lng": 14.3940382
+    },
+    {
+      "code": "osm:node/478745210",
+      "name": "Stodská nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://stod.nemocnicepk.cz",
+      "lat": 49.6363793,
+      "lng": 13.1550448
+    },
+    {
+      "code": "osm:node/886450355",
+      "name": "Nemocnice Jablonec nad Nisou",
+      "countryCode": "CZ",
+      "origin": "https://www.nemjbc.cz",
+      "lat": 50.7298146,
+      "lng": 15.15903
+    },
+    {
+      "code": "osm:node/920067909",
+      "name": "Nemocnice na Žižkově",
+      "countryCode": "CZ",
+      "origin": "https://www.nskz.cz",
+      "lat": 50.0817424,
+      "lng": 14.4478868
+    },
+    {
+      "code": "osm:node/1366848089",
+      "name": "Nemocnice Na Podolí",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnice-melnik.cz",
+      "lat": 50.3570385,
+      "lng": 14.475532
+    },
+    {
+      "code": "osm:node/1558937713",
+      "name": "REHOS Nejdek",
+      "countryCode": "CZ",
+      "origin": "https://rehos-nejdek.cz",
+      "lat": 50.3290788,
+      "lng": 12.7413515
+    },
+    {
+      "code": "osm:node/1811024410",
+      "name": "Léčebna dlouhodobě nemocných",
+      "countryCode": "CZ",
+      "origin": "https://ldnopocno.cz",
+      "lat": 50.2698185,
+      "lng": 16.1123794
+    },
+    {
+      "code": "osm:node/2146319647",
+      "name": "Moravskoslezská nemocnice Krnov",
+      "countryCode": "CZ",
+      "origin": "https://www.szzkrnov.cz",
+      "lat": 50.0959538,
+      "lng": 17.6880418
+    },
+    {
+      "code": "osm:node/2468466403",
+      "name": "Nemocnice Roztoky",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocniceroztoky.cz",
+      "lat": 50.1574822,
+      "lng": 14.3949422
+    },
+    {
+      "code": "osm:node/3530005157",
+      "name": "Hospic v Mostě",
+      "countryCode": "CZ",
+      "origin": "https://www.hospic-most.cz",
+      "lat": 50.5088942,
+      "lng": 13.6228219
+    },
+    {
+      "code": "osm:node/3667623172",
+      "name": "Karvinská hornická nemocnice a.s.",
+      "countryCode": "CZ",
+      "origin": "https://www.khn.cz",
+      "lat": 49.8694377,
+      "lng": 18.540292
+    },
+    {
+      "code": "osm:node/12561278943",
+      "name": "Rescue point",
+      "countryCode": "CZ",
+      "origin": "https://zs-rr.cz",
+      "lat": 49.7425716,
+      "lng": 12.4100745
+    },
+    {
+      "code": "osm:node/12806164214",
+      "name": "Psychiatrická léčebna Lnáře",
+      "countryCode": "CZ",
+      "origin": "https://www.pllnare.cz",
+      "lat": 49.4523272,
+      "lng": 13.796473
+    },
+    {
+      "code": "osm:node/13274425855",
+      "name": "Centrum nukleární medicíny",
+      "countryCode": "CZ",
+      "origin": "https://www.nuklearnimedicina.cz",
+      "lat": 50.1079567,
+      "lng": 14.4953524
+    },
+    {
+      "code": "osm:node/13342850301",
+      "name": "Dětské oční ambulance",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicekolin.cz",
+      "lat": 50.0199497,
+      "lng": 15.1939084
+    },
+    {
+      "code": "osm:node/13342853802",
+      "name": "Všeobecné oční ambulance",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicekolin.cz",
+      "lat": 50.0199208,
+      "lng": 15.1938432
+    },
+    {
+      "code": "osm:way/4645713",
+      "name": "Fakultní nemocnice Olomouc",
+      "countryCode": "CZ",
+      "origin": "https://www.fnol.cz",
+      "lat": 49.583792,
+      "lng": 17.2346015
+    },
+    {
+      "code": "osm:way/23093458",
+      "name": "IKEM",
+      "countryCode": "CZ",
+      "origin": "https://www.ikem.cz",
+      "lat": 50.0231513,
+      "lng": 14.4636778
+    },
+    {
+      "code": "osm:way/24376651",
+      "name": "Ústav pro péči o matku a dítě",
+      "countryCode": "CZ",
+      "origin": "https://www.upmd.cz",
+      "lat": 50.0623041,
+      "lng": 14.4197353
+    },
+    {
+      "code": "osm:way/26277142",
+      "name": "Nemocnice Ivančice",
+      "countryCode": "CZ",
+      "origin": "https://www.nspiv.cz",
+      "lat": 49.1024853,
+      "lng": 16.3728196
+    },
+    {
+      "code": "osm:way/27463082",
+      "name": "Fakultní nemocnice Plzeň",
+      "countryCode": "CZ",
+      "origin": "https://www.fnplzen.cz",
+      "lat": 49.7330281,
+      "lng": 13.3757955
+    },
+    {
+      "code": "osm:way/27471099",
+      "name": "Pardubická krajská nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.nempk.cz",
+      "lat": 50.028965,
+      "lng": 15.7878801
+    },
+    {
+      "code": "osm:way/28922217",
+      "name": "Fakultní nemocnice Hradec Králové",
+      "countryCode": "CZ",
+      "origin": "https://www.fnhk.cz",
+      "lat": 50.197654,
+      "lng": 15.8266611
+    },
+    {
+      "code": "osm:way/31990951",
+      "name": "Nemocnice Třebíč",
+      "countryCode": "CZ",
+      "origin": "https://www.nem-tr.cz",
+      "lat": 49.2124584,
+      "lng": 15.8923438
+    },
+    {
+      "code": "osm:way/33830251",
+      "name": "Městská nemocnice následné péče",
+      "countryCode": "CZ",
+      "origin": "https://www.mnnp.cz",
+      "lat": 50.1075442,
+      "lng": 14.4950603
+    },
+    {
+      "code": "osm:way/38585515",
+      "name": "Fakultní nemocnice Královské Vinohrady",
+      "countryCode": "CZ",
+      "origin": "http://www.fnkv.cz",
+      "lat": 50.074638,
+      "lng": 14.4789249
+    },
+    {
+      "code": "osm:way/42090978",
+      "name": "Oblastní nemocnice Kladno",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicekladno.cz",
+      "lat": 50.141022,
+      "lng": 14.0882833
+    },
+    {
+      "code": "osm:way/43760950",
+      "name": "Mulačova nemocnice",
+      "countryCode": "CZ",
+      "origin": "http://www.mulacovanemocnice.cz",
+      "lat": 49.7273607,
+      "lng": 13.369865
+    },
+    {
+      "code": "osm:way/48138209",
+      "name": "Krajská nemocnice Liberec",
+      "countryCode": "CZ",
+      "origin": "https://www.nemlib.cz",
+      "lat": 50.7699676,
+      "lng": 15.0647613
+    },
+    {
+      "code": "osm:way/50563531",
+      "name": "Masarykův onkologický ústav",
+      "countryCode": "CZ",
+      "origin": "https://www.mou.cz",
+      "lat": 49.1944794,
+      "lng": 16.5891261
+    },
+    {
+      "code": "osm:way/51382414",
+      "name": "Uherskohradišťská nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.nemuh.cz",
+      "lat": 49.0632461,
+      "lng": 17.4534407
+    },
+    {
+      "code": "osm:way/52572249",
+      "name": "Moravskoslezská nemocnice Opava",
+      "countryCode": "CZ",
+      "origin": "https://msnopava.cz",
+      "lat": 49.9348093,
+      "lng": 17.8783017
+    },
+    {
+      "code": "osm:way/56043862",
+      "name": "Vojenská nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.vnbrno.cz",
+      "lat": 49.2026197,
+      "lng": 16.6309649
+    },
+    {
+      "code": "osm:way/56630820",
+      "name": "Moravskoslezská nemocnice Třinec",
+      "countryCode": "CZ",
+      "origin": "https://www.nemtr.cz",
+      "lat": 49.674736,
+      "lng": 18.6907109
+    },
+    {
+      "code": "osm:way/59113930",
+      "name": "Chrudimská nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://chrudim.nempk.cz",
+      "lat": 49.9415714,
+      "lng": 15.808059
+    },
+    {
+      "code": "osm:way/69583884",
+      "name": "Nemocnice Český Těšín",
+      "countryCode": "CZ",
+      "origin": "https://nemocniceceskytesin.agel.cz",
+      "lat": 49.7459501,
+      "lng": 18.6104896
+    },
+    {
+      "code": "osm:way/70652457",
+      "name": "Rehabilitační ústav Hrabyně. Pracoviště Chuchelná",
+      "countryCode": "CZ",
+      "origin": "https://www.ruhrabyne.cz",
+      "lat": 49.9888531,
+      "lng": 18.1163772
+    },
+    {
+      "code": "osm:way/74093893",
+      "name": "Nemocnice s poliklinikou Kadaň",
+      "countryCode": "CZ",
+      "origin": "https://www.nemkadan.cz",
+      "lat": 50.3914447,
+      "lng": 13.2699185
+    },
+    {
+      "code": "osm:way/74709956",
+      "name": "Nemocnice Varnsdorf",
+      "countryCode": "CZ",
+      "origin": "http://nemvdf.cz",
+      "lat": 50.8936054,
+      "lng": 14.611524
+    },
+    {
+      "code": "osm:way/78232386",
+      "name": "Fakultní nemocnice Ostrava",
+      "countryCode": "CZ",
+      "origin": "https://www.fno.cz",
+      "lat": 49.828373,
+      "lng": 18.1577031
+    },
+    {
+      "code": "osm:way/88681927",
+      "name": "Městská nemocnice s poliklinikou Uh. Brod, s.r.o.",
+      "countryCode": "CZ",
+      "origin": "https://www.nemub.cz",
+      "lat": 49.0290919,
+      "lng": 17.652692
+    },
+    {
+      "code": "osm:way/90961617",
+      "name": "Nemocnice Agel Jeseník",
+      "countryCode": "CZ",
+      "origin": "https://nemocnicejesenik.agel.cz",
+      "lat": 50.228171,
+      "lng": 17.1977657
+    },
+    {
+      "code": "osm:way/93553199",
+      "name": "Nemocnice Břeclav",
+      "countryCode": "CZ",
+      "origin": "https://www.nembv.cz",
+      "lat": 48.752519,
+      "lng": 16.8792676
+    },
+    {
+      "code": "osm:way/115804752",
+      "name": "Nemocnice Český Krumlov",
+      "countryCode": "CZ",
+      "origin": "http://www.nemckr.cz",
+      "lat": 48.8120905,
+      "lng": 14.3255627
+    },
+    {
+      "code": "osm:way/115973658",
+      "name": "Nemocnice Na Strahově",
+      "countryCode": "CZ",
+      "origin": "http://www.dialyza-strahov.cz",
+      "lat": 50.0791993,
+      "lng": 14.3913534
+    },
+    {
+      "code": "osm:way/130803719",
+      "name": "Masarykova nemocnice",
+      "countryCode": "CZ",
+      "origin": "http://www.kzcr.eu",
+      "lat": 50.6802512,
+      "lng": 14.019645
+    },
+    {
+      "code": "osm:way/143621965",
+      "name": "Nemocnice Prostějov",
+      "countryCode": "CZ",
+      "origin": "https://nemocniceprostejov.agel.cz",
+      "lat": 49.4759086,
+      "lng": 17.086042
+    },
+    {
+      "code": "osm:way/151341343",
+      "name": "Hornická nemocnice s poliklinikou",
+      "countryCode": "CZ",
+      "origin": "https://www.hnsp.cz",
+      "lat": 50.5411385,
+      "lng": 13.7844593
+    },
+    {
+      "code": "osm:way/153992023",
+      "name": "Nemocnice Chomutov",
+      "countryCode": "CZ",
+      "origin": "https://www.kzcr.eu",
+      "lat": 50.4533062,
+      "lng": 13.4098192
+    },
+    {
+      "code": "osm:way/157081379",
+      "name": "Ústav chirurgie ruky a plastické chirurgie Vysoké nad Jizerou",
+      "countryCode": "CZ",
+      "origin": "https://www.ruka-kosmetika.cz",
+      "lat": 50.6824135,
+      "lng": 15.4046966
+    },
+    {
+      "code": "osm:way/177229918",
+      "name": "Nemocnice Dačice",
+      "countryCode": "CZ",
+      "origin": "http://www.nemdac.cz",
+      "lat": 49.0759184,
+      "lng": 15.4307814
+    },
+    {
+      "code": "osm:way/177532970",
+      "name": "Svitavská nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://svitavy.nempk.cz",
+      "lat": 49.7529573,
+      "lng": 16.4696293
+    },
+    {
+      "code": "osm:way/186903334",
+      "name": "Oblastní nemocnice Příbram - areál II",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicepribram.cz",
+      "lat": 49.6739853,
+      "lng": 13.9886721
+    },
+    {
+      "code": "osm:way/187949574",
+      "name": "Oblastní nemocnice Příbram - areál I",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicepribram.cz",
+      "lat": 49.6925924,
+      "lng": 14.0117629
+    },
+    {
+      "code": "osm:way/192761533",
+      "name": "Psychiatrická nemocnice Horní Beřkovice",
+      "countryCode": "CZ",
+      "origin": "https://pnhberkovice.cz",
+      "lat": 50.3588812,
+      "lng": 14.3512118
+    },
+    {
+      "code": "osm:way/193380752",
+      "name": "Nemocnice Hořovice",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnice-horovice.cz",
+      "lat": 49.8403394,
+      "lng": 13.9162009
+    },
+    {
+      "code": "osm:way/196680217",
+      "name": "Rehabilitační Nemocnice Beroun",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnice-beroun.cz",
+      "lat": 49.9652318,
+      "lng": 14.096887
+    },
+    {
+      "code": "osm:way/198360381",
+      "name": "Nemocnice Nymburk",
+      "countryCode": "CZ",
+      "origin": "http://www.nemnbk.cz",
+      "lat": 50.1870469,
+      "lng": 15.0370807
+    },
+    {
+      "code": "osm:way/208066241",
+      "name": "Moravskoslezská nemocnice Frýdek-Místek",
+      "countryCode": "CZ",
+      "origin": "http://www.nemfm.cz",
+      "lat": 49.690967,
+      "lng": 18.353975
+    },
+    {
+      "code": "osm:way/232880308",
+      "name": "Psychiatrická nemocnice Jihlava",
+      "countryCode": "CZ",
+      "origin": "https://www.pnj.cz",
+      "lat": 49.3947731,
+      "lng": 15.6030833
+    },
+    {
+      "code": "osm:way/236789226",
+      "name": "Léčebna TRN Janov",
+      "countryCode": "CZ",
+      "origin": "https://www.janov.cz",
+      "lat": 49.705884,
+      "lng": 13.6659656
+    },
+    {
+      "code": "osm:way/237548044",
+      "name": "Nemocnice Tábor, a.s.",
+      "countryCode": "CZ",
+      "origin": "https://www.nemta.cz",
+      "lat": 49.4166253,
+      "lng": 14.6531779
+    },
+    {
+      "code": "osm:way/237746873",
+      "name": "Nemocnice Na Pleši",
+      "countryCode": "CZ",
+      "origin": "https://www.naplesi.cz",
+      "lat": 49.8339137,
+      "lng": 14.2866606
+    },
+    {
+      "code": "osm:way/242634456",
+      "name": "Thomayerova nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.ftn.cz",
+      "lat": 50.0281002,
+      "lng": 14.4594847
+    },
+    {
+      "code": "osm:way/256708896",
+      "name": "Psychiatrická nemocnice v Dobřanech",
+      "countryCode": "CZ",
+      "origin": "https://www.pnvd.cz",
+      "lat": 49.6443991,
+      "lng": 13.2855826
+    },
+    {
+      "code": "osm:way/266896224",
+      "name": "Nemocnice následné péče Svatá Anna",
+      "countryCode": "CZ",
+      "origin": "http://www.nnp.cz",
+      "lat": 49.8797245,
+      "lng": 12.7219381
+    },
+    {
+      "code": "osm:way/272536909",
+      "name": "Nemocnice Milosrdných bratří",
+      "countryCode": "CZ",
+      "origin": "http://www.nmbbrno.cz",
+      "lat": 49.1853805,
+      "lng": 16.596969
+    },
+    {
+      "code": "osm:way/279905914",
+      "name": "Nemocnice Prachatice",
+      "countryCode": "CZ",
+      "origin": "https://www.nempt.cz",
+      "lat": 49.0068493,
+      "lng": 14.011867
+    },
+    {
+      "code": "osm:way/319062309",
+      "name": "Psychiatrická nemocnice Bohnice",
+      "countryCode": "CZ",
+      "origin": "http://www.plbohnice.cz",
+      "lat": 50.1362797,
+      "lng": 14.4217757
+    },
+    {
+      "code": "osm:way/333349195",
+      "name": "Masarykova nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.nemorako.cz",
+      "lat": 50.108052,
+      "lng": 13.7162123
+    },
+    {
+      "code": "osm:way/370775641",
+      "name": "Nemocnice Vsetín",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnice-vs.cz",
+      "lat": 49.3319647,
+      "lng": 17.9986579
+    },
+    {
+      "code": "osm:way/380764824",
+      "name": "FN u sv. Anny",
+      "countryCode": "CZ",
+      "origin": "https://www.fnusa.cz",
+      "lat": 49.1887732,
+      "lng": 16.6015597
+    },
+    {
+      "code": "osm:way/388451091",
+      "name": "Nemocnice Písek, a.s.",
+      "countryCode": "CZ",
+      "origin": "https://www.nemopisek.cz",
+      "lat": 49.3021476,
+      "lng": 14.1576698
+    },
+    {
+      "code": "osm:way/398926478",
+      "name": "Sušická nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.susnem.cz",
+      "lat": 49.2300099,
+      "lng": 13.525994
+    },
+    {
+      "code": "osm:way/410706697",
+      "name": "Panochova nemocnice Turnov",
+      "countryCode": "CZ",
+      "origin": "https://www.nemlib.cz",
+      "lat": 50.5890662,
+      "lng": 15.1698601
+    },
+    {
+      "code": "osm:way/410784886",
+      "name": "Klaudiánova nemocnice",
+      "countryCode": "CZ",
+      "origin": "http://klaudianovanemocnice.cz",
+      "lat": 50.4181519,
+      "lng": 14.909588
+    },
+    {
+      "code": "osm:way/427635896",
+      "name": "Litomyšlská nemocnice",
+      "countryCode": "CZ",
+      "origin": "http://litomysl.nempk.cz",
+      "lat": 49.8643282,
+      "lng": 16.3134754
+    },
+    {
+      "code": "osm:way/466038773",
+      "name": "Moravskoslezská nemocnice Karviná - Ráj",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicekarvina.cz",
+      "lat": 49.8473584,
+      "lng": 18.550568
+    },
+    {
+      "code": "osm:way/476073804",
+      "name": "Ústav hematologie a krevní transfuze",
+      "countryCode": "CZ",
+      "origin": "https://www.uhkt.cz",
+      "lat": 50.0744806,
+      "lng": 14.4211421
+    },
+    {
+      "code": "osm:way/501252881",
+      "name": "Nemocnice Semily",
+      "countryCode": "CZ",
+      "origin": "https://www.nemjil.cz",
+      "lat": 50.5978279,
+      "lng": 15.3530164
+    },
+    {
+      "code": "osm:way/503468117",
+      "name": "Nemocnice Rokycany",
+      "countryCode": "CZ",
+      "origin": "http://www.nemocnice-ro.cz",
+      "lat": 49.748712,
+      "lng": 13.6044714
+    },
+    {
+      "code": "osm:way/503966101",
+      "name": "Nemocnice Domažlice",
+      "countryCode": "CZ",
+      "origin": "http://www.donem.cz",
+      "lat": 49.4379913,
+      "lng": 12.9080969
+    },
+    {
+      "code": "osm:way/504408838",
+      "name": "Nemocnice Přerov",
+      "countryCode": "CZ",
+      "origin": "https://nemocniceprerov.agel.cz",
+      "lat": 49.4573843,
+      "lng": 17.4738018
+    },
+    {
+      "code": "osm:way/515097041",
+      "name": "Psychiatrická nemocnice Kosmonosy",
+      "countryCode": "CZ",
+      "origin": "http://www.plkosmonosy.cz",
+      "lat": 50.4436333,
+      "lng": 14.9265332
+    },
+    {
+      "code": "osm:way/546989456",
+      "name": "Nemocnice Kutná Hora",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicekutnahora.cz",
+      "lat": 49.9461636,
+      "lng": 15.2534596
+    },
+    {
+      "code": "osm:way/548557138",
+      "name": "Lečební ústav Červená Voda",
+      "countryCode": "CZ",
+      "origin": "https://www.aeskulap.cz",
+      "lat": 50.0442742,
+      "lng": 16.7359876
+    },
+    {
+      "code": "osm:way/598170218",
+      "name": "Vojenská nemocnice - chirurgie",
+      "countryCode": "CZ",
+      "origin": "https://www.vnol.cz",
+      "lat": 49.5990606,
+      "lng": 17.2698746
+    },
+    {
+      "code": "osm:way/601101551",
+      "name": "Nemocnice Rudolfa a Stefanie Benešov",
+      "countryCode": "CZ",
+      "origin": "https://www.hospital-bn.cz",
+      "lat": 49.7878862,
+      "lng": 14.6798418
+    },
+    {
+      "code": "osm:way/612561610",
+      "name": "Nemocnice Vrchlabí",
+      "countryCode": "CZ",
+      "origin": "https://www.pentahospitals.cz",
+      "lat": 50.6219106,
+      "lng": 15.6072572
+    },
+    {
+      "code": "osm:way/656180764",
+      "name": "Sanus",
+      "countryCode": "CZ",
+      "origin": "https://www.sanus.cz",
+      "lat": 50.2043183,
+      "lng": 15.8230965
+    },
+    {
+      "code": "osm:way/680693653",
+      "name": "Nemocnice Brandýs nad Labem",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicebrandys.cz",
+      "lat": 50.1876788,
+      "lng": 14.6519974
+    },
+    {
+      "code": "osm:way/690638235",
+      "name": "Šumperská nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicesumperk.cz",
+      "lat": 49.9589588,
+      "lng": 16.9655489
+    },
+    {
+      "code": "osm:way/691742214",
+      "name": "Psychiatrická léčebna Červený Dvůr",
+      "countryCode": "CZ",
+      "origin": "https://cervenydvur.cz",
+      "lat": 48.84633,
+      "lng": 14.2299573
+    },
+    {
+      "code": "osm:way/700652229",
+      "name": "Nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.nem-cb.cz",
+      "lat": 50.0723299,
+      "lng": 14.8516152
+    },
+    {
+      "code": "osm:way/704250469",
+      "name": "Moravskoslezská nemocnice Havířov",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicehavirov.cz",
+      "lat": 49.7841349,
+      "lng": 18.4394236
+    },
+    {
+      "code": "osm:way/732481752",
+      "name": "Nemocnice Slaný",
+      "countryCode": "CZ",
+      "origin": "http://www.nemsl.cz",
+      "lat": 50.2346037,
+      "lng": 14.083387
+    },
+    {
+      "code": "osm:way/778013541",
+      "name": "Poliklinika Poděbrady",
+      "countryCode": "CZ",
+      "origin": "https://poliklinikapodebrady.cz",
+      "lat": 50.1451438,
+      "lng": 15.1299562
+    },
+    {
+      "code": "osm:way/781068854",
+      "name": "Dětská léčebna Dr. Filipa",
+      "countryCode": "CZ",
+      "origin": "https://www.lazne-podebrady.cz",
+      "lat": 50.1469592,
+      "lng": 15.1196212
+    },
+    {
+      "code": "osm:way/796366413",
+      "name": "Nemocnice Říčany",
+      "countryCode": "CZ",
+      "origin": "https://nemocnicericany.agel.cz",
+      "lat": 49.9955879,
+      "lng": 14.6756255
+    },
+    {
+      "code": "osm:way/809062582",
+      "name": "Městská nemocnice Neratovice",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnice-neratovice.cz",
+      "lat": 50.2586847,
+      "lng": 14.5106411
+    },
+    {
+      "code": "osm:way/825130450",
+      "name": "Nemocnice Tomáše Garrigue Masaryka Hodonín",
+      "countryCode": "CZ",
+      "origin": "https://www.nemho.cz",
+      "lat": 48.8641942,
+      "lng": 17.1456228
+    },
+    {
+      "code": "osm:way/850446593",
+      "name": "Nemocnice Na Františku",
+      "countryCode": "CZ",
+      "origin": "https://www.nnfp.cz",
+      "lat": 50.0924002,
+      "lng": 14.4212035
+    },
+    {
+      "code": "osm:way/929376022",
+      "name": "Litoměřická nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://www.kzcr.eu",
+      "lat": 50.5408598,
+      "lng": 14.1442514
+    },
+    {
+      "code": "osm:way/931776662",
+      "name": "Nemocnice Svaté Zdislavy",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnice-mostiste.cz",
+      "lat": 49.3916591,
+      "lng": 16.0083054
+    },
+    {
+      "code": "osm:way/946068307",
+      "name": "Oblastní nemocnice Kolín",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicekolin.cz",
+      "lat": 50.0193658,
+      "lng": 15.1937709
+    },
+    {
+      "code": "osm:way/953141958",
+      "name": "Fakultní nemocnice Plzeň",
+      "countryCode": "CZ",
+      "origin": "https://www.fnplzen.cz",
+      "lat": 49.7618521,
+      "lng": 13.3808228
+    },
+    {
+      "code": "osm:way/967811297",
+      "name": "Nemocnice Valašské Meziříčí",
+      "countryCode": "CZ",
+      "origin": "https://nemocnicevalasskemezirici.agel.cz",
+      "lat": 49.4624163,
+      "lng": 17.9769208
+    },
+    {
+      "code": "osm:way/974964384",
+      "name": "Nemocnice Nové Město na Moravě",
+      "countryCode": "CZ",
+      "origin": "https://www.nnm.cz",
+      "lat": 49.5605151,
+      "lng": 16.0641363
+    },
+    {
+      "code": "osm:way/1001841396",
+      "name": "Nemocnice Broumov",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicenachod.cz",
+      "lat": 50.5811175,
+      "lng": 16.3341992
+    },
+    {
+      "code": "osm:way/1014232003",
+      "name": "Nemocnice Sokolov",
+      "countryCode": "CZ",
+      "origin": "https://www.pentahospitals.cz",
+      "lat": 50.1776985,
+      "lng": 12.6514559
+    },
+    {
+      "code": "osm:way/1014232172",
+      "name": "Nemocnice Roudnice nad Labem",
+      "countryCode": "CZ",
+      "origin": "https://www.pentahospitals.cz",
+      "lat": 50.422325,
+      "lng": 14.2482698
+    },
+    {
+      "code": "osm:way/1014547392",
+      "name": "Podhorská nemocnice",
+      "countryCode": "CZ",
+      "origin": "https://nemocnicepodhorska.agel.cz",
+      "lat": 49.9946633,
+      "lng": 17.4702474
+    },
+    {
+      "code": "osm:way/1017845225",
+      "name": "Nemocnice Milosrdných sester sv. Karla Boromejského v Praze",
+      "countryCode": "CZ",
+      "origin": "https://www.nmskb.cz",
+      "lat": 50.0868882,
+      "lng": 14.3955826
+    },
+    {
+      "code": "osm:way/1072923970",
+      "name": "Nemocnice Kralupy",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicekralupy.cz",
+      "lat": 50.2428838,
+      "lng": 14.3124065
+    },
+    {
+      "code": "osm:way/1174575416",
+      "name": "Nemocnice svaté Alžběty",
+      "countryCode": "CZ",
+      "origin": "https://www.alzbeta.cz",
+      "lat": 50.0692895,
+      "lng": 14.4215384
+    },
+    {
+      "code": "osm:way/1249881472",
+      "name": "Nemocnice Ostrov",
+      "countryCode": "CZ",
+      "origin": "https://www.pentahospitals.cz",
+      "lat": 50.312589,
+      "lng": 12.9641472
+    },
+    {
+      "code": "osm:way/1365783572",
+      "name": "Psychiatrická léčebna Petrohrad",
+      "countryCode": "CZ",
+      "origin": "https://www.plpetrohrad.cz",
+      "lat": 50.1256471,
+      "lng": 13.4427271
+    },
+    {
+      "code": "osm:way/1384139212",
+      "name": "Nemocnice Jindřichův Hradec",
+      "countryCode": "CZ",
+      "origin": "https://nemjh.cz",
+      "lat": 49.1395801,
+      "lng": 15.0050762
+    },
+    {
+      "code": "osm:way/1418857123",
+      "name": "Léčebna dlouhodobě nemocných",
+      "countryCode": "CZ",
+      "origin": "https://www.ldnhk.cz",
+      "lat": 50.2120199,
+      "lng": 15.8400853
+    },
+    {
+      "code": "osm:way/1454099255",
+      "name": "Léčebna dlouhodobě nemocných Rybitví",
+      "countryCode": "CZ",
+      "origin": "https://www.ldn-rybitvi.cz",
+      "lat": 50.0590469,
+      "lng": 15.7025446
+    },
+    {
+      "code": "osm:way/1462099130",
+      "name": "Psychiatrická nemocnice v Kroměříži",
+      "countryCode": "CZ",
+      "origin": "http://www.pnkm.cz",
+      "lat": 49.2945981,
+      "lng": 17.3765768
+    },
+    {
+      "code": "osm:way/1509919159",
+      "name": "Nemocnice Vimperk a.s.",
+      "countryCode": "CZ",
+      "origin": "https://www.nemocnicevimperk.cz",
+      "lat": 49.0566028,
+      "lng": 13.7649354
+    }
+  ]
+}

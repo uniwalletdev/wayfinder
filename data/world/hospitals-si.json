@@ -1,0 +1,145 @@
+{
+  "countryCode": "SI",
+  "fetchedAt": "2026-10-21T02:45:55.197Z",
+  "count": 17,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/2752665314",
+      "name": "Zdravstveni dom Slovenska Bistrica",
+      "countryCode": "SI",
+      "origin": "http://www.zd-sb.si",
+      "lat": 46.3955377,
+      "lng": 15.5622837
+    },
+    {
+      "code": "osm:node/9587549931",
+      "name": "Zdravstveni dom Cerknica",
+      "countryCode": "SI",
+      "origin": "https://zd-cerknica.si",
+      "lat": 45.7912743,
+      "lng": 14.365674
+    },
+    {
+      "code": "osm:node/12976724483",
+      "name": "Urgenca",
+      "countryCode": "SI",
+      "origin": "https://www.kclj.si",
+      "lat": 46.0546351,
+      "lng": 14.5200892
+    },
+    {
+      "code": "osm:way/24765159",
+      "name": "Univerzitetni klinični center Ljubljana",
+      "countryCode": "SI",
+      "origin": "https://www.kclj.si",
+      "lat": 46.0540659,
+      "lng": 14.5211339
+    },
+    {
+      "code": "osm:way/24765163",
+      "name": "Leonišče - ginekološka klinika",
+      "countryCode": "SI",
+      "origin": "https://leonisce.si",
+      "lat": 46.0533358,
+      "lng": 14.523705
+    },
+    {
+      "code": "osm:way/130658791",
+      "name": "Splošna bolnišnica Murska Sobota",
+      "countryCode": "SI",
+      "origin": "https://www.sb-ms.si",
+      "lat": 46.6497057,
+      "lng": 16.1887502
+    },
+    {
+      "code": "osm:way/144117786",
+      "name": "Zdravstveni dom Sevnica",
+      "countryCode": "SI",
+      "origin": "https://www.zd-sevnica.si",
+      "lat": 46.0104764,
+      "lng": 15.3025188
+    },
+    {
+      "code": "osm:way/169960595",
+      "name": "Bolnišnica Sežana",
+      "countryCode": "SI",
+      "origin": "https://www.bolnisnica-sezana.si",
+      "lat": 45.7094034,
+      "lng": 13.8673676
+    },
+    {
+      "code": "osm:way/170879494",
+      "name": "Univerzitetni klinični center Maribor",
+      "countryCode": "SI",
+      "origin": "https://www.ukc-mb.si",
+      "lat": 46.5527755,
+      "lng": 15.6483495
+    },
+    {
+      "code": "osm:way/266910831",
+      "name": "Zdravstveni dom Škofja Loka",
+      "countryCode": "SI",
+      "origin": "https://www.zd-loka.si",
+      "lat": 46.1660844,
+      "lng": 14.3131208
+    },
+    {
+      "code": "osm:way/320009354",
+      "name": "IATROS",
+      "countryCode": "SI",
+      "origin": "https://iatros.si",
+      "lat": 46.0645173,
+      "lng": 14.502536
+    },
+    {
+      "code": "osm:way/351223720",
+      "name": "Bolnica za ženske bolezni in porodnišnica",
+      "countryCode": "SI",
+      "origin": "https://www.bolnisnica-po.si",
+      "lat": 45.7715867,
+      "lng": 14.2102332
+    },
+    {
+      "code": "osm:way/433235088",
+      "name": "Bolnišnica za ginekologijo in porodništvo Kranj",
+      "countryCode": "SI",
+      "origin": "https://www.bolnisnica-kranj.si",
+      "lat": 46.248719,
+      "lng": 14.3540743
+    },
+    {
+      "code": "osm:way/520596987",
+      "name": "Valdoltra Ortopedska Bolnišnica / Ospedale ortopedico Valdoltra",
+      "countryCode": "SI",
+      "origin": "https://www.ob-valdoltra.si",
+      "lat": 45.5809788,
+      "lng": 13.72782
+    },
+    {
+      "code": "osm:way/718465968",
+      "name": "Splošna bolnišnica »Dr. Franca Derganca« Nova Gorica",
+      "countryCode": "SI",
+      "origin": "https://www.bolnisnica-go.si",
+      "lat": 45.9314886,
+      "lng": 13.6415612
+    },
+    {
+      "code": "osm:way/951492721",
+      "name": "Bolnišnica za otroke Šentvid pri Stični",
+      "countryCode": "SI",
+      "origin": "https://www.bos-sentvid.si",
+      "lat": 45.9538689,
+      "lng": 14.8353717
+    },
+    {
+      "code": "osm:way/1417503246",
+      "name": "Psihiatrična Bolnišnica Idrija",
+      "countryCode": "SI",
+      "origin": "https://pb-idrija.si",
+      "lat": 46.0062538,
+      "lng": 14.0208325
+    }
+  ]
+}

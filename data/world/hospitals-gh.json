@@ -1,0 +1,185 @@
+{
+  "countryCode": "GH",
+  "fetchedAt": "2026-10-21T01:27:57.179Z",
+  "count": 22,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/7812008490",
+      "name": "Mother-Love Hospital",
+      "countryCode": "GH",
+      "origin": "https://motherlovehospital.com",
+      "lat": 5.7165452,
+      "lng": -0.1663593
+    },
+    {
+      "code": "osm:node/7958938806",
+      "name": "Medifem Multi-Specialist Hospital & Fertility Centre",
+      "countryCode": "GH",
+      "origin": "https://medifemhospital.com",
+      "lat": 5.6585279,
+      "lng": -0.2060705
+    },
+    {
+      "code": "osm:node/10833790628",
+      "name": "St. Andrew Catholic Hospital",
+      "countryCode": "GH",
+      "origin": "https://standrewchk.org",
+      "lat": 5.9244617,
+      "lng": 0.0176784
+    },
+    {
+      "code": "osm:node/10891372645",
+      "name": "Alpha and Omega Chiropractic Health Care",
+      "countryCode": "GH",
+      "origin": "https://www.nkawkawcity.com",
+      "lat": 5.6478002,
+      "lng": -0.0733104
+    },
+    {
+      "code": "osm:node/12556609497",
+      "name": "Kwadaso S.D.A Hospital",
+      "countryCode": "GH",
+      "origin": "https://kwadasosdahospital.com",
+      "lat": 6.6996795,
+      "lng": -1.6585978
+    },
+    {
+      "code": "osm:node/13812882311",
+      "name": "Medimoses Clinic and Prostate Center",
+      "countryCode": "GH",
+      "origin": "https://medimoses.com.gh",
+      "lat": 5.7104424,
+      "lng": -0.1730917
+    },
+    {
+      "code": "osm:way/213212229",
+      "name": "Margret Marquart Catholic Hospital",
+      "countryCode": "GH",
+      "origin": "http://mmcatholichospital.com",
+      "lat": 6.9993371,
+      "lng": 0.3034363
+    },
+    {
+      "code": "osm:way/464683570",
+      "name": "University of Ghana Medical Center Limited",
+      "countryCode": "GH",
+      "origin": "https://ugmedicalcentre.org",
+      "lat": 5.6318638,
+      "lng": -0.1859247
+    },
+    {
+      "code": "osm:way/478696524",
+      "name": "Eastern Regional Hospital",
+      "countryCode": "GH",
+      "origin": "https://erhk.org",
+      "lat": 6.0977648,
+      "lng": -0.2569788
+    },
+    {
+      "code": "osm:way/556253601",
+      "name": "Komfo Anokye Teaching Hospital",
+      "countryCode": "GH",
+      "origin": "http://www.kathhsp.org",
+      "lat": 6.6967953,
+      "lng": -1.6297951
+    },
+    {
+      "code": "osm:way/786182448",
+      "name": "Cape Coast Teaching Hospital",
+      "countryCode": "GH",
+      "origin": "https://www.ccthghana.org",
+      "lat": 5.1340712,
+      "lng": -1.2660169
+    },
+    {
+      "code": "osm:way/786216093",
+      "name": "Pantang Hospital",
+      "countryCode": "GH",
+      "origin": "https://mhaghana.com",
+      "lat": 5.717441,
+      "lng": -0.1907869
+    },
+    {
+      "code": "osm:way/786560555",
+      "name": "C&J Medicare Hospital and Diagnostic Center",
+      "countryCode": "GH",
+      "origin": "https://candjhospital.org",
+      "lat": 5.6243654,
+      "lng": -0.0695604
+    },
+    {
+      "code": "osm:way/787180230",
+      "name": "St. Anthony's Hospital",
+      "countryCode": "GH",
+      "origin": "http://stanthonyshospitalgh.com",
+      "lat": 6.2407055,
+      "lng": 0.9890357
+    },
+    {
+      "code": "osm:way/787379775",
+      "name": "Ghana Atomic Energy Commission Hospital",
+      "countryCode": "GH",
+      "origin": "https://hospital.gaecgh.org",
+      "lat": 5.6685831,
+      "lng": -0.2315705
+    },
+    {
+      "code": "osm:way/787397299",
+      "name": "International Medical & Dental Clinic",
+      "countryCode": "GH",
+      "origin": "http://www.imd-clinic.com",
+      "lat": 5.6371824,
+      "lng": -0.1646518
+    },
+    {
+      "code": "osm:way/881084468",
+      "name": "Accra Medical Centre",
+      "countryCode": "GH",
+      "origin": "https://accramed.com",
+      "lat": 5.5694068,
+      "lng": -0.1864111
+    },
+    {
+      "code": "osm:way/1341313793",
+      "name": "SDA Hospital, Wiamoase",
+      "countryCode": "GH",
+      "origin": "https://sdahospitalwiamoase.com",
+      "lat": 7.0531896,
+      "lng": -1.5095641
+    },
+    {
+      "code": "osm:way/1363157092",
+      "name": "St. Martin's Memorial Hospital",
+      "countryCode": "GH",
+      "origin": "https://www.stmartinsmemorialhospital.com",
+      "lat": 5.5793621,
+      "lng": -0.2733738
+    },
+    {
+      "code": "osm:way/1498831897",
+      "name": "M & D Medical Center",
+      "countryCode": "GH",
+      "origin": "https://www.mndmedicalcentre.com",
+      "lat": 5.7560647,
+      "lng": -0.3339818
+    },
+    {
+      "code": "osm:way/1501202764",
+      "name": "St. Dominic Catholic Hospital",
+      "countryCode": "GH",
+      "origin": "https://sdhakwatia.org",
+      "lat": 6.0488099,
+      "lng": -0.7991441
+    },
+    {
+      "code": "osm:way/1538450519",
+      "name": "Essam Government Hospital",
+      "countryCode": "GH",
+      "origin": "https://www.ghana.gov.gh",
+      "lat": 6.671959,
+      "lng": -3.1053258
+    }
+  ]
+}

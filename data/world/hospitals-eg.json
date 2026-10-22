@@ -1,0 +1,281 @@
+{
+  "countryCode": "EG",
+  "fetchedAt": "2026-10-21T01:18:13.839Z",
+  "count": 34,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/3118523495",
+      "name": "مستشفى الجزيرة الدولى - السلاب",
+      "countryCode": "EG",
+      "origin": "https://www.elsallabhospital.org",
+      "lat": 31.0453946,
+      "lng": 31.3656479
+    },
+    {
+      "code": "osm:node/3966621670",
+      "name": "مركز عناية العيون",
+      "countryCode": "EG",
+      "origin": "https://www.eyecare-center.com",
+      "lat": 29.9636467,
+      "lng": 31.2602375
+    },
+    {
+      "code": "osm:node/5762503853",
+      "name": "Royal Hospital",
+      "countryCode": "EG",
+      "origin": "https://royalhospital-eg.com",
+      "lat": 27.2239526,
+      "lng": 33.8263382
+    },
+    {
+      "code": "osm:node/6586989894",
+      "name": "مستشفى البتول",
+      "countryCode": "EG",
+      "origin": "http://elbatolhospital.com",
+      "lat": 30.0947545,
+      "lng": 31.2490967
+    },
+    {
+      "code": "osm:node/8378236702",
+      "name": "مركز الثقافة العمالية بكفر الدوار",
+      "countryCode": "EG",
+      "origin": "https://www.facebook.com",
+      "lat": 31.1388502,
+      "lng": 30.1223348
+    },
+    {
+      "code": "osm:node/9697106717",
+      "name": "مستشفى الصفوة",
+      "countryCode": "EG",
+      "origin": "https://www.alsafwahospital.net",
+      "lat": 30.0926606,
+      "lng": 31.2459649
+    },
+    {
+      "code": "osm:node/12959320901",
+      "name": "Dar El Oyun Hospitals",
+      "countryCode": "EG",
+      "origin": "https://dareloyoun.org",
+      "lat": 30.0385996,
+      "lng": 31.2050636
+    },
+    {
+      "code": "osm:node/13333741524",
+      "name": "مستشفى المحور",
+      "countryCode": "EG",
+      "origin": "https://almehwarhospital.com",
+      "lat": 30.0092376,
+      "lng": 30.9963025
+    },
+    {
+      "code": "osm:node/13901950594",
+      "name": "مستشفى المشفى",
+      "countryCode": "EG",
+      "origin": "https://almashfa.com.eg",
+      "lat": 30.1982578,
+      "lng": 31.6553532
+    },
+    {
+      "code": "osm:node/13907321984",
+      "name": "مستسفى المطار للصحة النفسية وعلاج الإدمان",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 30.1216524,
+      "lng": 31.3959786
+    },
+    {
+      "code": "osm:node/13907396658",
+      "name": "مستشفى بورسعيد للصحة النفسية وعلاج الإدمان",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 31.2513116,
+      "lng": 32.2619335
+    },
+    {
+      "code": "osm:node/13907606661",
+      "name": "مستشفى بنها للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 30.4653806,
+      "lng": 31.1869958
+    },
+    {
+      "code": "osm:node/13911388944",
+      "name": "مستشفى العزازى للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 30.5855264,
+      "lng": 31.7200975
+    },
+    {
+      "code": "osm:node/13911411002",
+      "name": "مستشفى شبين الكوم للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 30.5447953,
+      "lng": 31.0479924
+    },
+    {
+      "code": "osm:node/13914231401",
+      "name": "مستشفى طنطا للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 30.8004467,
+      "lng": 30.9957852
+    },
+    {
+      "code": "osm:node/13914650873",
+      "name": "مستشفى بنى سويف للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 29.0650409,
+      "lng": 31.1033106
+    },
+    {
+      "code": "osm:node/13914651256",
+      "name": "مستشفى المنيا للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 28.0793904,
+      "lng": 30.8070199
+    },
+    {
+      "code": "osm:node/13914672017",
+      "name": "مستشفى دميرة للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 31.1347354,
+      "lng": 31.379427
+    },
+    {
+      "code": "osm:node/13914690138",
+      "name": "مستشفى سوهاج للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 26.5610934,
+      "lng": 31.6925676
+    },
+    {
+      "code": "osm:node/13914699982",
+      "name": "مستشفى أسوان للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 23.9784018,
+      "lng": 32.9002444
+    },
+    {
+      "code": "osm:node/14138007838",
+      "name": "مستشفى المعمورة للطب النفسي وعلاج الادمان",
+      "countryCode": "EG",
+      "origin": "http://mamoura.org",
+      "lat": 31.270139,
+      "lng": 30.0257108
+    },
+    {
+      "code": "osm:way/28828990",
+      "name": "مستشفى العباسية للصحة النفسية",
+      "countryCode": "EG",
+      "origin": "https://mentalhealth.mohp.gov.eg",
+      "lat": 30.0680958,
+      "lng": 31.2965076
+    },
+    {
+      "code": "osm:way/53330987",
+      "name": "مستشفى الزهيرى",
+      "countryCode": "EG",
+      "origin": "https://www.zohairyhospital.com",
+      "lat": 30.0136688,
+      "lng": 31.2234988
+    },
+    {
+      "code": "osm:way/59622137",
+      "name": "مستشفي دار الحكمة",
+      "countryCode": "EG",
+      "origin": "http://www.daralhekma-hospital.com",
+      "lat": 30.0658436,
+      "lng": 31.3380511
+    },
+    {
+      "code": "osm:way/94592273",
+      "name": "مستشفى دار الفؤاد",
+      "countryCode": "EG",
+      "origin": "https://daralfouad.org",
+      "lat": 29.9974921,
+      "lng": 30.9676311
+    },
+    {
+      "code": "osm:way/97252486",
+      "name": "المركز الطبى العالمى",
+      "countryCode": "EG",
+      "origin": "https://www.imc.org.eg",
+      "lat": 30.1941847,
+      "lng": 31.6566636
+    },
+    {
+      "code": "osm:way/454976417",
+      "name": "Port Ghalib Hospital",
+      "countryCode": "EG",
+      "origin": "http://www.portghalibhospital.com",
+      "lat": 25.539053,
+      "lng": 34.6166277
+    },
+    {
+      "code": "osm:way/769964776",
+      "name": "مستشفى السلام الدولى",
+      "countryCode": "EG",
+      "origin": "https://assalammaadi.alameda-hc.com",
+      "lat": 29.9848384,
+      "lng": 31.2306064
+    },
+    {
+      "code": "osm:way/769992225",
+      "name": "المستشفى السعودي الألماني",
+      "countryCode": "EG",
+      "origin": "https://sghcairo.net",
+      "lat": 30.1331622,
+      "lng": 31.3842683
+    },
+    {
+      "code": "osm:way/900302929",
+      "name": "مستشفى بهمان",
+      "countryCode": "EG",
+      "origin": "https://behman.com",
+      "lat": 29.8549887,
+      "lng": 31.3390935
+    },
+    {
+      "code": "osm:way/1102478857",
+      "name": "جريفولز ايجيبت ( المشروع القومي لمشتقات البلازما )",
+      "countryCode": "EG",
+      "origin": "https://www.grifolsegyptplasma.com",
+      "lat": 29.971538,
+      "lng": 30.9466464
+    },
+    {
+      "code": "osm:way/1134882634",
+      "name": "National Cancer Institute",
+      "countryCode": "EG",
+      "origin": "http://www.nci.cu.edu.eg",
+      "lat": 30.0240962,
+      "lng": 31.2309756
+    },
+    {
+      "code": "osm:way/1427682320",
+      "name": "مستشفى بهية",
+      "countryCode": "EG",
+      "origin": "https://baheya.org",
+      "lat": 30.0365629,
+      "lng": 31.0109318
+    },
+    {
+      "code": "osm:way/1559340217",
+      "name": "مستشفى جراحات اليوم الواحد",
+      "countryCode": "EG",
+      "origin": "https://www.smc.gov.eg",
+      "lat": 30.1421932,
+      "lng": 31.337248
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "countryCode": "ZW",
+  "fetchedAt": "2026-10-21T03:20:41.900Z",
+  "count": 8,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4603765491",
+      "name": "Borrowdale Trauma Centre",
+      "countryCode": "ZW",
+      "origin": "https://traumazim.com",
+      "lat": -17.7628099,
+      "lng": 31.0919691
+    },
+    {
+      "code": "osm:node/10846696083",
+      "name": "Gweru Specialist Children’s Hospital",
+      "countryCode": "ZW",
+      "origin": "https://gsch.co.zw",
+      "lat": -19.4583361,
+      "lng": 29.8126958
+    },
+    {
+      "code": "osm:node/10875909468",
+      "name": "PSMI West End Hospital",
+      "countryCode": "ZW",
+      "origin": "http://www.westendclinic.co.zw",
+      "lat": -17.8208808,
+      "lng": 31.0395749
+    },
+    {
+      "code": "osm:node/12239238402",
+      "name": "St. Luke's Mission Hospital",
+      "countryCode": "ZW",
+      "origin": "http://www.afrikaprojekt-shales.de",
+      "lat": -19.1100929,
+      "lng": 27.9696291
+    },
+    {
+      "code": "osm:node/13745028469",
+      "name": "DNA Hub Africa",
+      "countryCode": "ZW",
+      "origin": "https://www.dnahubafrica.com",
+      "lat": -17.8274308,
+      "lng": 31.0549712
+    },
+    {
+      "code": "osm:way/367494131",
+      "name": "United Bulawayo Hospitals",
+      "countryCode": "ZW",
+      "origin": "https://www.ubh.org.zw",
+      "lat": -20.1661656,
+      "lng": 28.6170325
+    },
+    {
+      "code": "osm:way/442818451",
+      "name": "Midlands Private Hospital",
+      "countryCode": "ZW",
+      "origin": "https://www.themph.co.zw",
+      "lat": -19.4612215,
+      "lng": 29.8099762
+    },
+    {
+      "code": "osm:way/1376646111",
+      "name": "Ingutsheni Central Hospital",
+      "countryCode": "ZW",
+      "origin": "http://www.ingutshenihospital.org.zw",
+      "lat": -20.1826427,
+      "lng": 28.5762686
+    }
+  ]
+}

@@ -1,0 +1,1433 @@
+{
+  "countryCode": "RO",
+  "fetchedAt": "2026-10-21T02:35:29.111Z",
+  "count": 178,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 2,
+  "hospitals": [
+    {
+      "code": "osm:node/338144308",
+      "name": "Spitalul Județean De Urgență Buzău",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulbuzau.ro",
+      "lat": 45.150578,
+      "lng": 26.8011952
+    },
+    {
+      "code": "osm:node/613551256",
+      "name": "Spitalul Județean Tudor Vladimirescu",
+      "countryCode": "RO",
+      "origin": "https://www.spitalgorj.ro",
+      "lat": 45.0401597,
+      "lng": 23.2745341
+    },
+    {
+      "code": "osm:node/1170044778",
+      "name": "Spitalul Clinic Sfânta Maria",
+      "countryCode": "RO",
+      "origin": "https://spitalsfmaria.ro",
+      "lat": 44.4564896,
+      "lng": 26.0790405
+    },
+    {
+      "code": "osm:node/1260283828",
+      "name": "Centrul Alma Medical",
+      "countryCode": "RO",
+      "origin": "http://www.almamedical.ro",
+      "lat": 46.5395291,
+      "lng": 24.5771923
+    },
+    {
+      "code": "osm:node/1293352460",
+      "name": "Spitalul Județean de Urgență - Vâlcea",
+      "countryCode": "RO",
+      "origin": "http://www.sjv.ro",
+      "lat": 45.1185439,
+      "lng": 24.3625832
+    },
+    {
+      "code": "osm:node/1620319218",
+      "name": "\"MEDO\" international medical center - 24/24",
+      "countryCode": "RO",
+      "origin": "https://www.medo.ro",
+      "lat": 45.6622252,
+      "lng": 25.5955503
+    },
+    {
+      "code": "osm:node/1889891432",
+      "name": "Biomedica",
+      "countryCode": "RO",
+      "origin": "https://www.centrulmedicalbiomedica.ro",
+      "lat": 44.9163076,
+      "lng": 25.4717221
+    },
+    {
+      "code": "osm:node/2172183417",
+      "name": "Baraolt Town Hospital",
+      "countryCode": "RO",
+      "origin": "https://www.spitbar.ro",
+      "lat": 46.0727043,
+      "lng": 25.5915544
+    },
+    {
+      "code": "osm:node/2302258509",
+      "name": "Centrul Medical Laser System",
+      "countryCode": "RO",
+      "origin": "https://www.lasersystem.ro",
+      "lat": 46.180955,
+      "lng": 21.3084991
+    },
+    {
+      "code": "osm:node/2639477755",
+      "name": "Spital Clinicco",
+      "countryCode": "RO",
+      "origin": "https://www.clinicco.ro",
+      "lat": 45.6573522,
+      "lng": 25.585149
+    },
+    {
+      "code": "osm:node/2780836923",
+      "name": "Spitalul Municipal Toplița",
+      "countryCode": "RO",
+      "origin": "https://www.spitaltoplita.ro",
+      "lat": 46.9224615,
+      "lng": 25.3560293
+    },
+    {
+      "code": "osm:node/3304343258",
+      "name": "Spitalul SanConfind Câmpina",
+      "countryCode": "RO",
+      "origin": "https://www.sanconfind.ro",
+      "lat": 45.1288142,
+      "lng": 25.7110303
+    },
+    {
+      "code": "osm:node/3379335114",
+      "name": "Spitalul de Pneumoftiziologie Izvoru",
+      "countryCode": "RO",
+      "origin": "https://www.spital-izvoru.ro",
+      "lat": 44.5122921,
+      "lng": 25.5370402
+    },
+    {
+      "code": "osm:node/3773823666",
+      "name": "Centrul de Îngrijiri Paliative „Sfânta Irina”",
+      "countryCode": "RO",
+      "origin": "http://www.sfantairina.ro",
+      "lat": 44.497301,
+      "lng": 26.1754403
+    },
+    {
+      "code": "osm:node/6505906993",
+      "name": "FizioLife - Recuperare",
+      "countryCode": "RO",
+      "origin": "https://www.fiziolife-recuperare.ro",
+      "lat": 45.7253284,
+      "lng": 27.1247917
+    },
+    {
+      "code": "osm:node/8093408330",
+      "name": "Spitalul Municipal Dorohoi",
+      "countryCode": "RO",
+      "origin": "https://spitaldorohoi.ro",
+      "lat": 47.9462032,
+      "lng": 26.4040035
+    },
+    {
+      "code": "osm:node/8398341618",
+      "name": "Spitalul Municipal Săcele",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulmunicipalsacele.ro",
+      "lat": 45.6108675,
+      "lng": 25.7173654
+    },
+    {
+      "code": "osm:node/9552968095",
+      "name": "UMF - Centrul de Imagistică",
+      "countryCode": "RO",
+      "origin": "https://www.umfcv.ro",
+      "lat": 44.3049118,
+      "lng": 23.7944514
+    },
+    {
+      "code": "osm:node/10033317593",
+      "name": "Spitalul Orășenesc Turceni",
+      "countryCode": "RO",
+      "origin": "http://www.spitalturceni.ro",
+      "lat": 44.681059,
+      "lng": 23.3702138
+    },
+    {
+      "code": "osm:node/10864744574",
+      "name": "Maison Des Dents",
+      "countryCode": "RO",
+      "origin": "https://www.maisondesdents.ro",
+      "lat": 44.4399941,
+      "lng": 26.1253709
+    },
+    {
+      "code": "osm:node/11242784767",
+      "name": "Spitalul de Pneumoftiziologie Bisericani",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulbisericani.ro",
+      "lat": 46.9582431,
+      "lng": 26.2389043
+    },
+    {
+      "code": "osm:node/11708205083",
+      "name": "Centrul Medical Promed",
+      "countryCode": "RO",
+      "origin": "https://cmpromed.ro",
+      "lat": 45.8690084,
+      "lng": 22.9133918
+    },
+    {
+      "code": "osm:node/12770057765",
+      "name": "Centrul de Ortopedie Pediatrică BUNești",
+      "countryCode": "RO",
+      "origin": "https://www.ortopedpediatru.ro",
+      "lat": 45.0189937,
+      "lng": 24.7687354
+    },
+    {
+      "code": "osm:node/13002876253",
+      "name": "Spitalul de Urgenta Prof. Dr. Agrippa Ionescu",
+      "countryCode": "RO",
+      "origin": "https://spitalulagrippaionescu.ro",
+      "lat": 44.4585985,
+      "lng": 26.0795859
+    },
+    {
+      "code": "osm:node/13184574295",
+      "name": "Dispensarul Stroiești",
+      "countryCode": "RO",
+      "origin": "https://icd.ro",
+      "lat": 47.6147806,
+      "lng": 26.1311258
+    },
+    {
+      "code": "osm:node/13748217501",
+      "name": "Spitalul MedLife Genesys Arad",
+      "countryCode": "RO",
+      "origin": "https://www.medlife.ro",
+      "lat": 46.1745149,
+      "lng": 21.3462837
+    },
+    {
+      "code": "osm:node/13946434401",
+      "name": "Clinica de Dermato-venerologie Timisoara - Policlinica nr. 3",
+      "countryCode": "RO",
+      "origin": "https://www.spitalul-municipal-timisoara.ro",
+      "lat": 45.7516946,
+      "lng": 21.2416272
+    },
+    {
+      "code": "osm:node/14135580502",
+      "name": "Spitalul Orășenesc Uricani",
+      "countryCode": "RO",
+      "origin": "https://cnipturicani.ro",
+      "lat": 45.3320243,
+      "lng": 23.1220245
+    },
+    {
+      "code": "osm:way/23610101",
+      "name": "Spitalul Universitar de Urgență Militar Central „Dr. Carol Davila”",
+      "countryCode": "RO",
+      "origin": "https://www.scumc.ro",
+      "lat": 44.4429665,
+      "lng": 26.0749299
+    },
+    {
+      "code": "osm:way/23610940",
+      "name": "Spitalul Filantropia",
+      "countryCode": "RO",
+      "origin": "https://spitalulfilantropia.ro",
+      "lat": 44.4535043,
+      "lng": 26.0819245
+    },
+    {
+      "code": "osm:way/23650332",
+      "name": "Spitalul de Pneumoftiziologie Marius Nasta",
+      "countryCode": "RO",
+      "origin": "https://marius-nasta.ro",
+      "lat": 44.4060346,
+      "lng": 26.0905305
+    },
+    {
+      "code": "osm:way/23737371",
+      "name": "Spitalul Fundeni",
+      "countryCode": "RO",
+      "origin": "https://www.icfundeni.ro",
+      "lat": 44.4647593,
+      "lng": 26.1551711
+    },
+    {
+      "code": "osm:way/23937033",
+      "name": "Spitalul Vișeu",
+      "countryCode": "RO",
+      "origin": "https://www.spitalviseu.ro",
+      "lat": 47.7086958,
+      "lng": 24.4246538
+    },
+    {
+      "code": "osm:way/24565502",
+      "name": "Spitalul Clinic Județean de Urgență Pius Brînzeu",
+      "countryCode": "RO",
+      "origin": "https://www.hosptm.ro",
+      "lat": 45.7367742,
+      "lng": 21.2420337
+    },
+    {
+      "code": "osm:way/27637276",
+      "name": "Spitalul Clinic de Urgență Prof. Dr. Agrippa Ionescu",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulagrippaionescu.ro",
+      "lat": 44.6460682,
+      "lng": 26.1201508
+    },
+    {
+      "code": "osm:way/29706402",
+      "name": "Institutul de Endocrinologie \"C I Parhon\"",
+      "countryCode": "RO",
+      "origin": "https://parhon.ro",
+      "lat": 44.4603487,
+      "lng": 26.0874915
+    },
+    {
+      "code": "osm:way/42828753",
+      "name": "Spitalul clinic de urgență pentru copii „Sfânta Maria”",
+      "countryCode": "RO",
+      "origin": "https://www.sfmaria-iasi.ro",
+      "lat": 47.1592638,
+      "lng": 27.6073911
+    },
+    {
+      "code": "osm:way/48370548",
+      "name": "Spitalul Providența",
+      "countryCode": "RO",
+      "origin": "https://providentamedical.ro",
+      "lat": 47.1255285,
+      "lng": 27.5695587
+    },
+    {
+      "code": "osm:way/78389945",
+      "name": "Spitalul Clinic de Urgență \"Prof. Dr. Nicolae Oblu\"",
+      "countryCode": "RO",
+      "origin": "https://neuroiasi.ro",
+      "lat": 47.1611903,
+      "lng": 27.6063691
+    },
+    {
+      "code": "osm:way/83998825",
+      "name": "Spitalul Județean de Urgență Ploiești",
+      "countryCode": "RO",
+      "origin": "https://www.sjup.ro",
+      "lat": 44.9627262,
+      "lng": 26.0093939
+    },
+    {
+      "code": "osm:way/86553885",
+      "name": "Spitalul Clinic \"Doctor Ioan Cantacuzino\"",
+      "countryCode": "RO",
+      "origin": "https://www.spitalul-cantacuzino.ro",
+      "lat": 44.4445815,
+      "lng": 26.1097721
+    },
+    {
+      "code": "osm:way/87792762",
+      "name": "Clinica de Psihiatrie",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5560682,
+      "lng": 24.5840581
+    },
+    {
+      "code": "osm:way/87792767",
+      "name": "Clinica de Pediatrie",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5552051,
+      "lng": 24.5828244
+    },
+    {
+      "code": "osm:way/87819754",
+      "name": "Clinica de Ortopedie-Traumatologie",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5517045,
+      "lng": 24.5738944
+    },
+    {
+      "code": "osm:way/89656776",
+      "name": "Nova Vita",
+      "countryCode": "RO",
+      "origin": "https://nova-vita.ro",
+      "lat": 46.5367188,
+      "lng": 24.5535002
+    },
+    {
+      "code": "osm:way/90608640",
+      "name": "Clinica de Boli Infecțioase 1",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5304694,
+      "lng": 24.5500708
+    },
+    {
+      "code": "osm:way/90967362",
+      "name": "Clinica de Neuropsihiatrie Infantilă",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5371793,
+      "lng": 24.5650928
+    },
+    {
+      "code": "osm:way/91852568",
+      "name": "Spitalul Clinic de Psihiatrie Socola",
+      "countryCode": "RO",
+      "origin": "https://socola.eu",
+      "lat": 47.1285323,
+      "lng": 27.6128917
+    },
+    {
+      "code": "osm:way/105662729",
+      "name": "Policlinica nr. 2",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5389249,
+      "lng": 24.5607944
+    },
+    {
+      "code": "osm:way/108378991",
+      "name": "Spitalul Municipal Calafat",
+      "countryCode": "RO",
+      "origin": "https://spitalcalafat.ro",
+      "lat": 43.9941324,
+      "lng": 22.9439848
+    },
+    {
+      "code": "osm:way/110337444",
+      "name": "Clinica de Neonatologie-Prematuri",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5329993,
+      "lng": 24.5578109
+    },
+    {
+      "code": "osm:way/110337469",
+      "name": "Clinica de Boli Infecțioase 2",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5283185,
+      "lng": 24.5464715
+    },
+    {
+      "code": "osm:way/110337484",
+      "name": "Clinica de Dermato-Venerologie",
+      "countryCode": "RO",
+      "origin": "https://www.spitaljudeteanmures.ro",
+      "lat": 46.5385541,
+      "lng": 24.5576662
+    },
+    {
+      "code": "osm:way/110413635",
+      "name": "Policlinica \"Paltinul\"",
+      "countryCode": "RO",
+      "origin": "https://www.clinicapaltinul.ro",
+      "lat": 45.7811714,
+      "lng": 24.1598764
+    },
+    {
+      "code": "osm:way/114357216",
+      "name": "Spitalul Municipal Ploiești (Schuller)",
+      "countryCode": "RO",
+      "origin": "https://spitalulmunicipalploiesti.ro",
+      "lat": 44.9313506,
+      "lng": 26.020256
+    },
+    {
+      "code": "osm:way/114359379",
+      "name": "Spitalul Boldescu",
+      "countryCode": "RO",
+      "origin": "https://www.sjup.ro",
+      "lat": 44.9498034,
+      "lng": 26.0247518
+    },
+    {
+      "code": "osm:way/149491092",
+      "name": "Spitalul Clinic de Chirurgie Oro-Maxilo-Facială \"Prof. Dr. Dan Theodorescu\"",
+      "countryCode": "RO",
+      "origin": "https://spitalomf.ro",
+      "lat": 44.4355968,
+      "lng": 26.0854739
+    },
+    {
+      "code": "osm:way/163650282",
+      "name": "Spitalul Wellborn",
+      "countryCode": "RO",
+      "origin": "https://www.wellborn.ro",
+      "lat": 44.4381818,
+      "lng": 26.0228719
+    },
+    {
+      "code": "osm:way/163805569",
+      "name": "Polisano",
+      "countryCode": "RO",
+      "origin": "http://polisano.ro",
+      "lat": 45.7983035,
+      "lng": 24.1570485
+    },
+    {
+      "code": "osm:way/167599659",
+      "name": "Spitalul Orășenesc Deta",
+      "countryCode": "RO",
+      "origin": "https://www.spitaldeta.ro",
+      "lat": 45.3903851,
+      "lng": 21.2227353
+    },
+    {
+      "code": "osm:way/171469878",
+      "name": "Spitalul Municipal Odorheiu Secuiesc",
+      "countryCode": "RO",
+      "origin": "http://hospital-odorhei.ro",
+      "lat": 46.3076478,
+      "lng": 25.3013522
+    },
+    {
+      "code": "osm:way/171749635",
+      "name": "Central Plaza",
+      "countryCode": "RO",
+      "origin": "https://www.centralplaza.eu",
+      "lat": 46.5556891,
+      "lng": 26.9169356
+    },
+    {
+      "code": "osm:way/171868102",
+      "name": "Spitalul Orășenesc Vălenii de Munte",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulvaleni.ro",
+      "lat": 45.1759952,
+      "lng": 26.0354046
+    },
+    {
+      "code": "osm:way/173765844",
+      "name": "Spitalul Orășenesc Nehoiu",
+      "countryCode": "RO",
+      "origin": "https://spitalnehoiu.com",
+      "lat": 45.4201001,
+      "lng": 26.300989
+    },
+    {
+      "code": "osm:way/200248751",
+      "name": "Spitalul Clinic Sanador",
+      "countryCode": "RO",
+      "origin": "https://www.sanador.ro",
+      "lat": 44.4497991,
+      "lng": 26.08425
+    },
+    {
+      "code": "osm:way/209223217",
+      "name": "Monza Metropolitan Hospital",
+      "countryCode": "RO",
+      "origin": "https://monzametropolitan.ro",
+      "lat": 44.4191769,
+      "lng": 26.1021294
+    },
+    {
+      "code": "osm:way/211162214",
+      "name": "Spitalul Clinic de Obstetrică-Ginecologie „Cuza Vodă” Iași",
+      "countryCode": "RO",
+      "origin": "https://www.spitalcuzavodaiasi.ro",
+      "lat": 47.1631043,
+      "lng": 27.5867485
+    },
+    {
+      "code": "osm:way/211163499",
+      "name": "Spitalul Clinic Județean de Urgențe \"Sf. Spiridon\"",
+      "countryCode": "RO",
+      "origin": "https://www.spitalspiridon.ro",
+      "lat": 47.1687878,
+      "lng": 27.5826783
+    },
+    {
+      "code": "osm:way/211165765",
+      "name": "Spitalul Clinic de Pneumoftiziologie Iași",
+      "countryCode": "RO",
+      "origin": "https://pneumo-iasi.ro",
+      "lat": 47.1696,
+      "lng": 27.5846717
+    },
+    {
+      "code": "osm:way/211184958",
+      "name": "Spitalul Clinic Militar de Urgență „Dr. I. Czihac”",
+      "countryCode": "RO",
+      "origin": "https://www.smuis.ro",
+      "lat": 47.1729189,
+      "lng": 27.5756489
+    },
+    {
+      "code": "osm:way/211184960",
+      "name": "Spitalul Clinic Dr. C.I. Parhon",
+      "countryCode": "RO",
+      "origin": "http://parhoniasi.ro",
+      "lat": 47.1807927,
+      "lng": 27.5686843
+    },
+    {
+      "code": "osm:way/211324304",
+      "name": "Spitalul Clinic de Recuperare Iasi",
+      "countryCode": "RO",
+      "origin": "https://scr.ro",
+      "lat": 47.1490388,
+      "lng": 27.5739029
+    },
+    {
+      "code": "osm:way/212721058",
+      "name": "Spitalul Clinic de Boli Infecțioase “Sfânta Parascheva”",
+      "countryCode": "RO",
+      "origin": "https://www.infectioase.ro",
+      "lat": 47.1703752,
+      "lng": 27.5843863
+    },
+    {
+      "code": "osm:way/217711436",
+      "name": "Spitalul Municipal Sighetul Marmației",
+      "countryCode": "RO",
+      "origin": "https://www.spitalsighet.ro",
+      "lat": 47.9285038,
+      "lng": 23.8754532
+    },
+    {
+      "code": "osm:way/219326549",
+      "name": "Arcadia Hospital",
+      "countryCode": "RO",
+      "origin": "https://arcadiamedical.ro",
+      "lat": 47.1580723,
+      "lng": 27.5619353
+    },
+    {
+      "code": "osm:way/235728194",
+      "name": "Spitalul Clinic de Pneumoftiziologie Brașov - Pavilionul I",
+      "countryCode": "RO",
+      "origin": "https://www.pneumologie.ro",
+      "lat": 45.6430099,
+      "lng": 25.5738039
+    },
+    {
+      "code": "osm:way/242479478",
+      "name": "Spitalul Clinic Colentina",
+      "countryCode": "RO",
+      "origin": "http://spitalulcolentina.ro",
+      "lat": 44.4538871,
+      "lng": 26.1135237
+    },
+    {
+      "code": "osm:way/243278055",
+      "name": "Spitalul Clinic de Urgență Militar \"Dr. Ștefan Odobleja\"",
+      "countryCode": "RO",
+      "origin": "http://www.smucraiova.ro",
+      "lat": 44.301531,
+      "lng": 23.818022
+    },
+    {
+      "code": "osm:way/257143230",
+      "name": "Spitalului Municipal Oltenița",
+      "countryCode": "RO",
+      "origin": "https://spitaloltenita.ro",
+      "lat": 44.0799089,
+      "lng": 26.6336764
+    },
+    {
+      "code": "osm:way/258880010",
+      "name": "Secția Oto-Rino-Laringologie, Secția Recuperare, Medicină Fizică și Balneologie",
+      "countryCode": "RO",
+      "origin": "http://www.spitalmciuc.ro",
+      "lat": 46.3550699,
+      "lng": 25.8044905
+    },
+    {
+      "code": "osm:way/271183479",
+      "name": "Spitalul Sfântul Constantin",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulsfconstantin.ro",
+      "lat": 45.6509555,
+      "lng": 25.60649
+    },
+    {
+      "code": "osm:way/275451246",
+      "name": "Spitalul Mavromati",
+      "countryCode": "RO",
+      "origin": "https://www.spitjudbotosani.ro",
+      "lat": 47.7410349,
+      "lng": 26.6610334
+    },
+    {
+      "code": "osm:way/275456070",
+      "name": "Spitalul de Obstetrică și Ginecologie",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulmavromati.ro",
+      "lat": 47.7403781,
+      "lng": 26.6554218
+    },
+    {
+      "code": "osm:way/285184972",
+      "name": "ProfDIAGNOSIS",
+      "countryCode": "RO",
+      "origin": "http://www.profdiagnosis.ro",
+      "lat": 44.711134,
+      "lng": 26.638006
+    },
+    {
+      "code": "osm:way/286075602",
+      "name": "Smile Dental Spa",
+      "countryCode": "RO",
+      "origin": "https://smiledentalspa.ro",
+      "lat": 44.408963,
+      "lng": 26.0950881
+    },
+    {
+      "code": "osm:way/286114546",
+      "name": "Spitalul Județean de Urgență",
+      "countryCode": "RO",
+      "origin": "https://spitjudseverin.ro",
+      "lat": 44.6434026,
+      "lng": 22.6527155
+    },
+    {
+      "code": "osm:way/288823913",
+      "name": "Spital de ortopedie si traumatologie Azuga",
+      "countryCode": "RO",
+      "origin": "http://www.ortopedieazuga.ro",
+      "lat": 45.4265631,
+      "lng": 25.5543775
+    },
+    {
+      "code": "osm:way/292801570",
+      "name": "Spitalul Clinic de Neuropsihiatrie",
+      "countryCode": "RO",
+      "origin": "https://scnpc.ro",
+      "lat": 44.3176558,
+      "lng": 23.8163887
+    },
+    {
+      "code": "osm:way/304047196",
+      "name": "Armonia Hospital",
+      "countryCode": "RO",
+      "origin": "https://armoniahospital.ro",
+      "lat": 44.1823183,
+      "lng": 28.6512963
+    },
+    {
+      "code": "osm:way/307618098",
+      "name": "Spitalul Municipal Curtea de Argeș",
+      "countryCode": "RO",
+      "origin": "https://www.smca.ro",
+      "lat": 45.1490935,
+      "lng": 24.6787793
+    },
+    {
+      "code": "osm:way/317148336",
+      "name": "Spitalul de Pneumoftiziologie",
+      "countryCode": "RO",
+      "origin": "https://www.pneumobt.ro",
+      "lat": 47.7344591,
+      "lng": 26.6639843
+    },
+    {
+      "code": "osm:way/317148337",
+      "name": "Spitalul de Psihiatrie",
+      "countryCode": "RO",
+      "origin": "http://www.spitalpsihiatriebotosani.ro",
+      "lat": 47.7338683,
+      "lng": 26.6907079
+    },
+    {
+      "code": "osm:way/347982103",
+      "name": "Spitalul Municipal Onești Sfântul Ierarh Doctor Luca",
+      "countryCode": "RO",
+      "origin": "https://spitalonesti.ro",
+      "lat": 46.2545083,
+      "lng": 26.764315
+    },
+    {
+      "code": "osm:way/359379147",
+      "name": "Spitalul Orășenesc Hârlău",
+      "countryCode": "RO",
+      "origin": "https://spitaluloraseneschirlau.ro",
+      "lat": 47.4308733,
+      "lng": 26.8983617
+    },
+    {
+      "code": "osm:way/408912553",
+      "name": "Centrul de dializă Fresenius Nephrocare Câmpulung-Muscel",
+      "countryCode": "RO",
+      "origin": "https://www.nephrocare.ro",
+      "lat": 45.2731381,
+      "lng": 25.0525138
+    },
+    {
+      "code": "osm:way/413559318",
+      "name": "Spitalul Municipal Moreni",
+      "countryCode": "RO",
+      "origin": "https://www.spitalmoreni.ro",
+      "lat": 44.9776555,
+      "lng": 25.6466609
+    },
+    {
+      "code": "osm:way/420847587",
+      "name": "Spitalul Militar de Urgențe “Dr. Alexandru Augustin” Sibiu",
+      "countryCode": "RO",
+      "origin": "https://spitalmilitarsb.ro",
+      "lat": 45.7850329,
+      "lng": 24.1386968
+    },
+    {
+      "code": "osm:way/428627454",
+      "name": "Spitalul Clinic de Boli Infecțioase și Pneumoftiziologie Dr. Victor Babeș",
+      "countryCode": "RO",
+      "origin": "http://www.spitalul-vbabes-tm.ro",
+      "lat": 45.7680853,
+      "lng": 21.2591209
+    },
+    {
+      "code": "osm:way/428633670",
+      "name": "Institutul de Boli Cardiovasculare",
+      "countryCode": "RO",
+      "origin": "https://www.cardiologie.ro",
+      "lat": 45.7691679,
+      "lng": 21.2589768
+    },
+    {
+      "code": "osm:way/434864886",
+      "name": "Spitalul Clinic de Urgență \"Bagdasar-Arseni\"",
+      "countryCode": "RO",
+      "origin": "https://www.bagdasar-arseni.ro",
+      "lat": 44.3853828,
+      "lng": 26.1279087
+    },
+    {
+      "code": "osm:way/434875137",
+      "name": "Spitalul Clinic Județean - Clinica de Pediatrie",
+      "countryCode": "RO",
+      "origin": "https://www.pediatriesibiu.ro",
+      "lat": 45.7953103,
+      "lng": 24.1554348
+    },
+    {
+      "code": "osm:way/436650618",
+      "name": "Spitalul Pelican",
+      "countryCode": "RO",
+      "origin": "https://www.spitalpelican.ro",
+      "lat": 47.0759891,
+      "lng": 21.9162861
+    },
+    {
+      "code": "osm:way/441135041",
+      "name": "Joyvet - Cabinet Veterinar",
+      "countryCode": "RO",
+      "origin": "http://gmail.com",
+      "lat": 44.4204077,
+      "lng": 26.1179104
+    },
+    {
+      "code": "osm:way/444048463",
+      "name": "Spitalul de Psihiatrie Tulgheș",
+      "countryCode": "RO",
+      "origin": "https://www.psihiatrietulghes.ro",
+      "lat": 46.9593912,
+      "lng": 25.7596598
+    },
+    {
+      "code": "osm:way/450886506",
+      "name": "Spitalul de Psihiatrie Poiana Mare",
+      "countryCode": "RO",
+      "origin": "http://www.spitalpoianamare.ro",
+      "lat": 43.9338955,
+      "lng": 23.0701965
+    },
+    {
+      "code": "osm:way/464500792",
+      "name": "Spitalul Clinic Căi Ferate",
+      "countryCode": "RO",
+      "origin": "https://www.spitalcftm.ro",
+      "lat": 45.7493272,
+      "lng": 21.2184882
+    },
+    {
+      "code": "osm:way/472284148",
+      "name": "Spitalul Clinic de Urgență Arad",
+      "countryCode": "RO",
+      "origin": "https://www.scjarad.ro",
+      "lat": 46.1830871,
+      "lng": 21.3081299
+    },
+    {
+      "code": "osm:way/472304587",
+      "name": "Spitalul Orășenesc Hațeg",
+      "countryCode": "RO",
+      "origin": "https://www.spitalhateg.ro",
+      "lat": 45.6113754,
+      "lng": 22.9512619
+    },
+    {
+      "code": "osm:way/491288867",
+      "name": "Spitalul Județean de Urgență - Vâlcea",
+      "countryCode": "RO",
+      "origin": "https://www.sjv.ro",
+      "lat": 45.1187887,
+      "lng": 24.3619468
+    },
+    {
+      "code": "osm:way/522338061",
+      "name": "Spitalul Municipal Turda",
+      "countryCode": "RO",
+      "origin": "https://spitalturda.ro",
+      "lat": 46.5789227,
+      "lng": 23.7769408
+    },
+    {
+      "code": "osm:way/542219939",
+      "name": "Secția externă Săveni",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulmavromati.ro",
+      "lat": 47.9587124,
+      "lng": 26.8604718
+    },
+    {
+      "code": "osm:way/544430801",
+      "name": "Spitalul Orășenesc Găești",
+      "countryCode": "RO",
+      "origin": "https://www.spitalgaesti.ro",
+      "lat": 44.7144313,
+      "lng": 25.3384493
+    },
+    {
+      "code": "osm:way/555910503",
+      "name": "Spitalul de Pneumoftiziologie Galați, TBC",
+      "countryCode": "RO",
+      "origin": "https://pneumogalati.ro",
+      "lat": 45.4557564,
+      "lng": 28.0452483
+    },
+    {
+      "code": "osm:way/598413780",
+      "name": "Polimed",
+      "countryCode": "RO",
+      "origin": "https://spitalulpolimed.ro",
+      "lat": 46.1999881,
+      "lng": 27.3846556
+    },
+    {
+      "code": "osm:way/636536049",
+      "name": "Spitalul de Obstetrică și Ginecologie Ploiești",
+      "countryCode": "RO",
+      "origin": "https://sjup.ro",
+      "lat": 44.9390061,
+      "lng": 26.0391928
+    },
+    {
+      "code": "osm:way/647519724",
+      "name": "Spitalul de Psihiatrie Cronici Schitu Greci",
+      "countryCode": "RO",
+      "origin": "https://www.spitalul-schitu.ro",
+      "lat": 44.3193932,
+      "lng": 24.5440783
+    },
+    {
+      "code": "osm:way/677497758",
+      "name": "Servicii Geriatrie și Asistență Medicală ”Sf. Sava și Teodosie cel Mare”",
+      "countryCode": "RO",
+      "origin": "https://www.romedic.ro",
+      "lat": 44.4569186,
+      "lng": 26.2819187
+    },
+    {
+      "code": "osm:way/685795750",
+      "name": "Spitalul Clinic de Obstetrică și Ginecologie „Elena Doamna”",
+      "countryCode": "RO",
+      "origin": "https://www.spitalelenadoamna.ro",
+      "lat": 47.1605464,
+      "lng": 27.5981056
+    },
+    {
+      "code": "osm:way/713589565",
+      "name": "Spitalul de Psihiatrie Sânpetru",
+      "countryCode": "RO",
+      "origin": "https://centrulmaria.ro",
+      "lat": 45.7286814,
+      "lng": 25.6261694
+    },
+    {
+      "code": "osm:way/753659225",
+      "name": "Spitalul Municipal Filantropia",
+      "countryCode": "RO",
+      "origin": "https://filantropia.ro",
+      "lat": 44.313386,
+      "lng": 23.825172
+    },
+    {
+      "code": "osm:way/785295563",
+      "name": "Spitalul de Boli Cronice și Geriatrie Sfântul Luca",
+      "countryCode": "RO",
+      "origin": "https://spitalulsfluca.ro",
+      "lat": 44.3837954,
+      "lng": 26.1291522
+    },
+    {
+      "code": "osm:way/786399276",
+      "name": "Serviciul de Ambulanță Județean Prahova",
+      "countryCode": "RO",
+      "origin": "http://www.ambulantaprahova.ro",
+      "lat": 44.9417573,
+      "lng": 25.9925582
+    },
+    {
+      "code": "osm:way/816475842",
+      "name": "Spital Orasenesc",
+      "countryCode": "RO",
+      "origin": "https://www.spitalnegrestioas.ro",
+      "lat": 47.8719793,
+      "lng": 23.4284468
+    },
+    {
+      "code": "osm:way/846625765",
+      "name": "SJU M-Ciuc: Secțiile Dermatovenerologie, Psihiatrie, Oftalmologie",
+      "countryCode": "RO",
+      "origin": "http://www.spitalmciuc.ro",
+      "lat": 46.3566466,
+      "lng": 25.8015296
+    },
+    {
+      "code": "osm:way/846630130",
+      "name": "SJU M-Ciuc: Secțiile Boli Infecțioase, Pneumologie",
+      "countryCode": "RO",
+      "origin": "http://www.spitalmciuc.ro",
+      "lat": 46.3776909,
+      "lng": 25.823548
+    },
+    {
+      "code": "osm:way/860332987",
+      "name": "Spitalul Clinic CF nr. 2",
+      "countryCode": "RO",
+      "origin": "https://www.spcf2.ro",
+      "lat": 44.47391,
+      "lng": 26.0693723
+    },
+    {
+      "code": "osm:way/866445341",
+      "name": "Digenio - Centrul de Excelență în Afecțiuni Digestive",
+      "countryCode": "RO",
+      "origin": "https://digenio.ro",
+      "lat": 46.7896907,
+      "lng": 23.6062329
+    },
+    {
+      "code": "osm:way/879372559",
+      "name": "Spitalul General C.F. Ploiești",
+      "countryCode": "RO",
+      "origin": "https://www.spitalcfploiesti.ro",
+      "lat": 44.9265872,
+      "lng": 25.9971193
+    },
+    {
+      "code": "osm:way/879894324",
+      "name": "Spitalul Lotus",
+      "countryCode": "RO",
+      "origin": "https://spital-lotus.ro",
+      "lat": 44.9392685,
+      "lng": 26.0166405
+    },
+    {
+      "code": "osm:way/880365936",
+      "name": "Sfânta Sofia Hospital Med Bălțești",
+      "countryCode": "RO",
+      "origin": "http://sfantasofia.ro",
+      "lat": 45.1117101,
+      "lng": 26.1369411
+    },
+    {
+      "code": "osm:way/881766870",
+      "name": "Spitalul Buna Vestire",
+      "countryCode": "RO",
+      "origin": "https://www.sjup.ro",
+      "lat": 44.9389605,
+      "lng": 26.0312717
+    },
+    {
+      "code": "osm:way/883338808",
+      "name": "Policlinica Praga",
+      "countryCode": "RO",
+      "origin": "https://www.laboratorpraga.ro",
+      "lat": 44.9426328,
+      "lng": 26.0308354
+    },
+    {
+      "code": "osm:way/884123776",
+      "name": "Spitalul Municipal Ploiești (Schuller)",
+      "countryCode": "RO",
+      "origin": "https://spitalulmunicipalploiesti.ro",
+      "lat": 44.9302401,
+      "lng": 26.0215516
+    },
+    {
+      "code": "osm:way/884223783",
+      "name": "Spitalul de Pediatrie Ploieşti",
+      "countryCode": "RO",
+      "origin": "https://www.spitalpediatrie.ro",
+      "lat": 44.9319565,
+      "lng": 26.0264982
+    },
+    {
+      "code": "osm:way/885304509",
+      "name": "Spitalul Sfântul Anton",
+      "countryCode": "RO",
+      "origin": "https://www.mediurg.ro",
+      "lat": 44.9942478,
+      "lng": 25.9806005
+    },
+    {
+      "code": "osm:way/892758554",
+      "name": "Spitalul Orășenesc Băicoi",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulorasenescbaicoi.ro",
+      "lat": 45.0293734,
+      "lng": 25.8373678
+    },
+    {
+      "code": "osm:way/914029659",
+      "name": "Spitalul Feroviar",
+      "countryCode": "RO",
+      "origin": "https://www.spitalgeneralcfgalati.ro",
+      "lat": 45.1436128,
+      "lng": 26.8370404
+    },
+    {
+      "code": "osm:way/915452715",
+      "name": "Spitalul de Psihiatrie Voila",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulvoila.ro",
+      "lat": 45.15902,
+      "lng": 25.7510404
+    },
+    {
+      "code": "osm:way/915455900",
+      "name": "Spitalul Orăşenesc Urlați",
+      "countryCode": "RO",
+      "origin": "http://spitalulurlati.ro",
+      "lat": 44.9907202,
+      "lng": 26.2404628
+    },
+    {
+      "code": "osm:way/917996709",
+      "name": "Spitalul Ana Aslan",
+      "countryCode": "RO",
+      "origin": "https://ana-aslan.ro",
+      "lat": 44.5775369,
+      "lng": 26.0656004
+    },
+    {
+      "code": "osm:way/947917073",
+      "name": "Spitalul Municipal „Anton Cincu”",
+      "countryCode": "RO",
+      "origin": "https://spital-tecuci.blogspot.com",
+      "lat": 45.8473331,
+      "lng": 27.4379722
+    },
+    {
+      "code": "osm:way/949974033",
+      "name": "Spitalul Clinic Municipal Cluj-Napoca",
+      "countryCode": "RO",
+      "origin": "https://spitalclujana.ro",
+      "lat": 46.7892534,
+      "lng": 23.60681
+    },
+    {
+      "code": "osm:way/962647927",
+      "name": "Spitalul Transilvania",
+      "countryCode": "RO",
+      "origin": "https://www.spitalultransilvania.ro",
+      "lat": 46.7571647,
+      "lng": 23.5931489
+    },
+    {
+      "code": "osm:way/982279608",
+      "name": "Spitalul Clinic de Urgență Sfântul Pantelimon",
+      "countryCode": "RO",
+      "origin": "https://urgentapantelimon.ro",
+      "lat": 44.4412468,
+      "lng": 26.1729565
+    },
+    {
+      "code": "osm:way/1018444704",
+      "name": "Spitalul General C.F.Brasov",
+      "countryCode": "RO",
+      "origin": "https://spcfbv.ro",
+      "lat": 45.649016,
+      "lng": 25.6063561
+    },
+    {
+      "code": "osm:way/1021984541",
+      "name": "Centru De Excelență Clinică Fundația Baylor",
+      "countryCode": "RO",
+      "origin": "https://www.baylor.ro",
+      "lat": 44.1495929,
+      "lng": 28.6237288
+    },
+    {
+      "code": "osm:way/1033836722",
+      "name": "Clinica Medstar 2000",
+      "countryCode": "RO",
+      "origin": "https://www.medstar2000.ro",
+      "lat": 44.1808573,
+      "lng": 28.6446268
+    },
+    {
+      "code": "osm:way/1042923724",
+      "name": "Spitalul Medicover",
+      "countryCode": "RO",
+      "origin": "https://www.medicover.ro",
+      "lat": 46.7945967,
+      "lng": 23.483564
+    },
+    {
+      "code": "osm:way/1051089766",
+      "name": "Spitalul Județean de Urgență \"Dr. Fogolyán Kristóf\"",
+      "countryCode": "RO",
+      "origin": "https://spitfog.ro",
+      "lat": 45.8643312,
+      "lng": 25.7809555
+    },
+    {
+      "code": "osm:way/1061339953",
+      "name": "Spitalul Municipal Câmpulung Muscel",
+      "countryCode": "RO",
+      "origin": "http://www.smcampulung.ro",
+      "lat": 45.2663576,
+      "lng": 25.0375929
+    },
+    {
+      "code": "osm:way/1082362912",
+      "name": "Siptalul Mioveni",
+      "countryCode": "RO",
+      "origin": "https://spitalmioveni.ro",
+      "lat": 44.9684815,
+      "lng": 24.9613438
+    },
+    {
+      "code": "osm:way/1092509009",
+      "name": "Sanatoriul de nevroze",
+      "countryCode": "RO",
+      "origin": "https://www.nevroze-predeal.ro",
+      "lat": 45.4976411,
+      "lng": 25.5373934
+    },
+    {
+      "code": "osm:way/1103816287",
+      "name": "Spitalul Orășenesc Făurei",
+      "countryCode": "RO",
+      "origin": "http://spitalfaurei.ro",
+      "lat": 45.0851025,
+      "lng": 27.2743469
+    },
+    {
+      "code": "osm:way/1105322344",
+      "name": "Spitalul Municipal Dr. Eugen Nicoară",
+      "countryCode": "RO",
+      "origin": "https://www.spitalreghin.ro",
+      "lat": 46.7830363,
+      "lng": 24.6957912
+    },
+    {
+      "code": "osm:way/1113375239",
+      "name": "Spital Orășenesc Beclean",
+      "countryCode": "RO",
+      "origin": "https://www.spitalbeclean.ro",
+      "lat": 47.1839369,
+      "lng": 24.1854619
+    },
+    {
+      "code": "osm:way/1114867159",
+      "name": "Dora Optics",
+      "countryCode": "RO",
+      "origin": "https://doraoptics.ro",
+      "lat": 46.5306413,
+      "lng": 24.5451425
+    },
+    {
+      "code": "osm:way/1142037362",
+      "name": "Spitalul de recuperare Borșa",
+      "countryCode": "RO",
+      "origin": "https://www.spitalrecuperare.ro",
+      "lat": 47.6542222,
+      "lng": 24.6666204
+    },
+    {
+      "code": "osm:way/1154464107",
+      "name": "Ovidius Clinical Hospital",
+      "countryCode": "RO",
+      "origin": "https://ovidius-ch.ro",
+      "lat": 44.2320679,
+      "lng": 28.5824568
+    },
+    {
+      "code": "osm:way/1157412629",
+      "name": "Spitalul Universitar de Urgență Elias",
+      "countryCode": "RO",
+      "origin": "http://www.spitalul-elias.ro",
+      "lat": 44.4659572,
+      "lng": 26.0740855
+    },
+    {
+      "code": "osm:way/1172968544",
+      "name": "Spitalul de Pneumoftiziologie Sfântul Ștefan",
+      "countryCode": "RO",
+      "origin": "https://pneumosfstefan.ro",
+      "lat": 44.4536805,
+      "lng": 26.1054838
+    },
+    {
+      "code": "osm:way/1213767568",
+      "name": "Spitalul de Pneumoftiziologie Sibiu",
+      "countryCode": "RO",
+      "origin": "https://spital-tbc.ro",
+      "lat": 45.7950982,
+      "lng": 24.1435651
+    },
+    {
+      "code": "osm:way/1213769776",
+      "name": "Cămin – Spital „Dr. Carl Wolff”",
+      "countryCode": "RO",
+      "origin": "https://carlwolff.ro",
+      "lat": 45.7977479,
+      "lng": 24.1398905
+    },
+    {
+      "code": "osm:way/1227378285",
+      "name": "Spital Premiere",
+      "countryCode": "RO",
+      "origin": "https://www.spitalpremiere.ro",
+      "lat": 45.7792232,
+      "lng": 21.2192955
+    },
+    {
+      "code": "osm:way/1227559971",
+      "name": "Spitalul Clinic de Urgență București",
+      "countryCode": "RO",
+      "origin": "http://www.urgentafloreasca.ro",
+      "lat": 44.45388,
+      "lng": 26.101545
+    },
+    {
+      "code": "osm:way/1305997323",
+      "name": "Spitalul Băneasa Regina Maria",
+      "countryCode": "RO",
+      "origin": "https://www.reginamaria.ro",
+      "lat": 44.4960281,
+      "lng": 26.0720731
+    },
+    {
+      "code": "osm:way/1329353804",
+      "name": "Spitalul Universitar de Urgență București",
+      "countryCode": "RO",
+      "origin": "https://www.suub.ro",
+      "lat": 44.4360553,
+      "lng": 26.0719302
+    },
+    {
+      "code": "osm:way/1331108681",
+      "name": "Spitalul Polizu",
+      "countryCode": "RO",
+      "origin": "https://www.insmc.ro",
+      "lat": 44.4472576,
+      "lng": 26.0811162
+    },
+    {
+      "code": "osm:way/1365294359",
+      "name": "Royal Hospital",
+      "countryCode": "RO",
+      "origin": "https://www.royalhospital.ro",
+      "lat": 44.4057416,
+      "lng": 26.1370296
+    },
+    {
+      "code": "osm:way/1377900099",
+      "name": "Spitalul Clinic de Urgenta pentru copii Maria Sklodowska Curie",
+      "countryCode": "RO",
+      "origin": "https://www.mscurie.ro",
+      "lat": 44.3894516,
+      "lng": 26.108544
+    },
+    {
+      "code": "osm:way/1447796370",
+      "name": "Spitalul Municipal Câmpina",
+      "countryCode": "RO",
+      "origin": "https://www.spitalcampina.ro",
+      "lat": 45.1279933,
+      "lng": 25.7323155
+    },
+    {
+      "code": "osm:way/1454209024",
+      "name": "Spitalul Județean de Urgență \"Sfântul Apostol Andrei\"",
+      "countryCode": "RO",
+      "origin": "https://www.spitalulurgentagalati.ro",
+      "lat": 45.4187293,
+      "lng": 28.0196327
+    },
+    {
+      "code": "osm:way/1459856487",
+      "name": "Spitalul Clinic Județean de Urgență Bistrița",
+      "countryCode": "RO",
+      "origin": "https://sjub.ro",
+      "lat": 47.1398742,
+      "lng": 24.5057545
+    },
+    {
+      "code": "osm:way/1467986579",
+      "name": "Spitalul Județean de Urgență Pitești",
+      "countryCode": "RO",
+      "origin": "http://www.sjupitesti.ro",
+      "lat": 44.8708232,
+      "lng": 24.8475013
+    },
+    {
+      "code": "osm:way/1481565668",
+      "name": "Spitalul Clinic Județean de Urgență Brașov",
+      "countryCode": "RO",
+      "origin": "https://www.hospbv.ro",
+      "lat": 45.6484567,
+      "lng": 25.6207447
+    },
+    {
+      "code": "osm:way/1487760078",
+      "name": "Spitalul Județean Suceava",
+      "countryCode": "RO",
+      "origin": "https://spitaluljudeteansuceava.ro",
+      "lat": 47.6391198,
+      "lng": 26.2404995
+    },
+    {
+      "code": "osm:way/1509466101",
+      "name": "Spitalul de Pneumoftiziologie Bacău",
+      "countryCode": "RO",
+      "origin": "https://www.pneumobacau.ro",
+      "lat": 46.5644968,
+      "lng": 26.8995895
+    },
+    {
+      "code": "osm:way/1552519956",
+      "name": "Clinica ONIX Adunații-Copăceni",
+      "countryCode": "RO",
+      "origin": "https://onixmedical.ro",
+      "lat": 44.2546853,
+      "lng": 26.0480194
+    },
+    {
+      "code": "osm:way/1568900744",
+      "name": "Spitalul Orasenesc Panciu",
+      "countryCode": "RO",
+      "origin": "https://spitalpanciu.ro",
+      "lat": 45.9091619,
+      "lng": 27.086225
+    }
+  ]
+}

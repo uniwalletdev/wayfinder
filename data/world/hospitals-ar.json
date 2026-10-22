@@ -1,0 +1,1913 @@
+{
+  "countryCode": "AR",
+  "fetchedAt": "2026-10-21T00:39:25.424Z",
+  "count": 238,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/723185196",
+      "name": "Clínica Fatima",
+      "countryCode": "AR",
+      "origin": "https://clinicafatimaescobar.com.ar",
+      "lat": -34.3514037,
+      "lng": -58.7967416
+    },
+    {
+      "code": "osm:node/791743847",
+      "name": "Sanatorio Allende",
+      "countryCode": "AR",
+      "origin": "https://www.sanatorioallende.com",
+      "lat": -31.4246194,
+      "lng": -64.1873361
+    },
+    {
+      "code": "osm:node/909830274",
+      "name": "Policlinica Asmel",
+      "countryCode": "AR",
+      "origin": "http://www.asmel.com",
+      "lat": -34.522066,
+      "lng": -58.507804
+    },
+    {
+      "code": "osm:node/1119491743",
+      "name": "Sanatorio De La Providencia",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriodelaprovidencia.com",
+      "lat": -34.6019496,
+      "lng": -58.3936574
+    },
+    {
+      "code": "osm:node/1402832207",
+      "name": "Clinica Los Cedros",
+      "countryCode": "AR",
+      "origin": "https://www.cercanooeste.com",
+      "lat": -34.699352,
+      "lng": -58.503861
+    },
+    {
+      "code": "osm:node/1701286722",
+      "name": "Instituto Cardiovascular Lezica",
+      "countryCode": "AR",
+      "origin": "https://www.lezicacardio.com",
+      "lat": -34.4943013,
+      "lng": -58.5466622
+    },
+    {
+      "code": "osm:node/1877668628",
+      "name": "INEDI - Instituto de Neurociencias del Desarrollo Integral",
+      "countryCode": "AR",
+      "origin": "https://www.institutoinedi.com",
+      "lat": -32.4090704,
+      "lng": -63.2424013
+    },
+    {
+      "code": "osm:node/2037066690",
+      "name": "Clinica Sanatorio Fueguino Del Bicentenario",
+      "countryCode": "AR",
+      "origin": "https://sanatoriofueguino.com",
+      "lat": -53.7707137,
+      "lng": -67.7099186
+    },
+    {
+      "code": "osm:node/2076566414",
+      "name": "Centro Médico Talar",
+      "countryCode": "AR",
+      "origin": "http://www.centromedicotalar.com",
+      "lat": -34.4758814,
+      "lng": -58.6639099
+    },
+    {
+      "code": "osm:node/2305213110",
+      "name": "Grupo Médico Lomas de San Isidro",
+      "countryCode": "AR",
+      "origin": "https://www.gmlsi.com",
+      "lat": -34.495638,
+      "lng": -58.5460011
+    },
+    {
+      "code": "osm:node/2351737713",
+      "name": "Fundacion Creciendo con los Angeles",
+      "countryCode": "AR",
+      "origin": "https://www.cre-angeles.org.ar",
+      "lat": -34.5199942,
+      "lng": -58.5420066
+    },
+    {
+      "code": "osm:node/2539558971",
+      "name": "Sanatorio Modelo Estrella",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriomodeloestrella.com",
+      "lat": -34.8033184,
+      "lng": -58.4662571
+    },
+    {
+      "code": "osm:node/2868769842",
+      "name": "Clínica de Especialidades Médicas (CEM)",
+      "countryCode": "AR",
+      "origin": "https://plus.google.com",
+      "lat": -30.9466718,
+      "lng": -61.564266
+    },
+    {
+      "code": "osm:node/3054199347",
+      "name": "Clinica Privada Constituyentes",
+      "countryCode": "AR",
+      "origin": "http://www.clinicaconstituyentes.com",
+      "lat": -34.6454479,
+      "lng": -58.6181245
+    },
+    {
+      "code": "osm:node/3067751226",
+      "name": "Clinica del Valle",
+      "countryCode": "AR",
+      "origin": "https://www.clinicadelvalle.com.ar",
+      "lat": -45.8640138,
+      "lng": -67.4945067
+    },
+    {
+      "code": "osm:node/3091631566",
+      "name": "Sanatorio Otamendi y Miroli",
+      "countryCode": "AR",
+      "origin": "https://www.otamendi.com.ar",
+      "lat": -34.5984717,
+      "lng": -58.400946
+    },
+    {
+      "code": "osm:node/3274972361",
+      "name": "Camara Hiperbarica",
+      "countryCode": "AR",
+      "origin": "https://www.oxisaludargentina.com",
+      "lat": -34.4517105,
+      "lng": -58.7911329
+    },
+    {
+      "code": "osm:node/3361872368",
+      "name": "Hospital Fermin Salaberry",
+      "countryCode": "AR",
+      "origin": "https://entrerios.gov.ar",
+      "lat": -32.6289888,
+      "lng": -60.1529123
+    },
+    {
+      "code": "osm:node/3595450770",
+      "name": "Maternidad Santa Rosa",
+      "countryCode": "AR",
+      "origin": "https://www.vicentelopez.gov.ar",
+      "lat": -34.5440457,
+      "lng": -58.5124267
+    },
+    {
+      "code": "osm:node/3784156257",
+      "name": "Hospital Zonal de Odontología y Ortodoncia \"Dr. Juan U. Carrea\"",
+      "countryCode": "AR",
+      "origin": "https://www.gba.gob.ar",
+      "lat": -34.513353,
+      "lng": -58.4910849
+    },
+    {
+      "code": "osm:node/4038595489",
+      "name": "Sanatorio del Norte",
+      "countryCode": "AR",
+      "origin": "https://traumatologiadelnorte.com",
+      "lat": -26.8219065,
+      "lng": -65.2053752
+    },
+    {
+      "code": "osm:node/4092510412",
+      "name": "Hospital Doctor Armando Parodi",
+      "countryCode": "AR",
+      "origin": "http://www.lapampa.gov.ar",
+      "lat": -35.1478666,
+      "lng": -64.504484
+    },
+    {
+      "code": "osm:node/4099875280",
+      "name": "Sala de Primeros Auxilios",
+      "countryCode": "AR",
+      "origin": "https://www.sacanta.gob.ar",
+      "lat": -31.6674041,
+      "lng": -63.0457815
+    },
+    {
+      "code": "osm:node/4241901589",
+      "name": "Clínica Bessone",
+      "countryCode": "AR",
+      "origin": "https://www.bessone.com.ar",
+      "lat": -34.5408627,
+      "lng": -58.7124152
+    },
+    {
+      "code": "osm:node/4331302210",
+      "name": "Clínica Modelo de Morón",
+      "countryCode": "AR",
+      "origin": "https://cmm.com.ar",
+      "lat": -34.6508661,
+      "lng": -58.617231
+    },
+    {
+      "code": "osm:node/4527038030",
+      "name": "Sanatorio Mapaci",
+      "countryCode": "AR",
+      "origin": "http://www.mapaci.com.ar",
+      "lat": -32.951738,
+      "lng": -60.6556471
+    },
+    {
+      "code": "osm:node/5025878525",
+      "name": "Hospital Privado Tres Cerrito",
+      "countryCode": "AR",
+      "origin": "https://hp3c.com.ar",
+      "lat": -24.7657953,
+      "lng": -65.4029334
+    },
+    {
+      "code": "osm:node/5102366840",
+      "name": "Hospital Nuestra Señora de Nieva",
+      "countryCode": "AR",
+      "origin": "https://www.facebook.com",
+      "lat": -31.4632074,
+      "lng": -64.3544829
+    },
+    {
+      "code": "osm:node/5135199111",
+      "name": "Ambulancias La Plata",
+      "countryCode": "AR",
+      "origin": "https://www.ambulanciaslaplata.com",
+      "lat": -34.9130417,
+      "lng": -57.9699792
+    },
+    {
+      "code": "osm:node/5204271821",
+      "name": "ANEXO MITRE - Centro Médico",
+      "countryCode": "AR",
+      "origin": "http://www.anexomitre.com.ar",
+      "lat": -27.7893599,
+      "lng": -64.2542018
+    },
+    {
+      "code": "osm:node/5546510017",
+      "name": "Hospital Municipal de Pila",
+      "countryCode": "AR",
+      "origin": "https://pila.gob.ar",
+      "lat": -36.0032336,
+      "lng": -58.1414018
+    },
+    {
+      "code": "osm:node/5619996479",
+      "name": "Clinica La Pequeña Familia",
+      "countryCode": "AR",
+      "origin": "https://grupolpf.com.ar",
+      "lat": -34.5735521,
+      "lng": -60.9715174
+    },
+    {
+      "code": "osm:node/5629636636",
+      "name": "Hospital Dr. Pablo Lecumberri",
+      "countryCode": "AR",
+      "origin": "http://www.lapampa.gov.ar",
+      "lat": -36.4674531,
+      "lng": -63.6239515
+    },
+    {
+      "code": "osm:node/5629696442",
+      "name": "Hospital Dr. Antonio Olaiz",
+      "countryCode": "AR",
+      "origin": "http://www.lapampa.gov.ar",
+      "lat": -36.8545052,
+      "lng": -63.6868937
+    },
+    {
+      "code": "osm:node/5631390509",
+      "name": "Hospital Dr. Atilio Calandri",
+      "countryCode": "AR",
+      "origin": "http://www.lapampa.gov.ar",
+      "lat": -36.0575361,
+      "lng": -63.5668855
+    },
+    {
+      "code": "osm:node/5730782854",
+      "name": "Unidad Sanitaria",
+      "countryCode": "AR",
+      "origin": "http://baigorritacentenaria.blogspot.com",
+      "lat": -34.7478238,
+      "lng": -60.9863959
+    },
+    {
+      "code": "osm:node/5830992756",
+      "name": "Hospital Sagrado Corazón de Jesús",
+      "countryCode": "AR",
+      "origin": "https://www.generallavalle.gob.ar",
+      "lat": -36.4062032,
+      "lng": -56.9419573
+    },
+    {
+      "code": "osm:node/5866226737",
+      "name": "Clínica de Cuyo - Consultorios Externos",
+      "countryCode": "AR",
+      "origin": "https://www.clinicadecuyosa.com.ar",
+      "lat": -32.8960632,
+      "lng": -68.8407076
+    },
+    {
+      "code": "osm:node/6152770845",
+      "name": "Centro Medico Ambulatorio",
+      "countryCode": "AR",
+      "origin": "http://www.hospinotti.mendoza.gov.ar",
+      "lat": -32.8970337,
+      "lng": -68.8030627
+    },
+    {
+      "code": "osm:node/6414713523",
+      "name": "Alfa Laboratorio de  Análisis Clínicos",
+      "countryCode": "AR",
+      "origin": "https://www.alfalaboratorio.com.ar",
+      "lat": -38.7119113,
+      "lng": -62.2709999
+    },
+    {
+      "code": "osm:node/7341462783",
+      "name": "Hospital de El Soberbio",
+      "countryCode": "AR",
+      "origin": "https://www.elsoberbio.gob.ar",
+      "lat": -27.302679,
+      "lng": -54.2001193
+    },
+    {
+      "code": "osm:node/7472559078",
+      "name": "Instituto Privado Santa Maria",
+      "countryCode": "AR",
+      "origin": "http://www.isantamaria.com.ar",
+      "lat": -26.7911565,
+      "lng": -60.4427765
+    },
+    {
+      "code": "osm:node/7501332137",
+      "name": "Sanatorio Norte",
+      "countryCode": "AR",
+      "origin": "https://sanatorionorte.com.ar",
+      "lat": -32.9004344,
+      "lng": -60.6912714
+    },
+    {
+      "code": "osm:node/7501407729",
+      "name": "Imgo Instituto Modelo Privado De Ginecologia Y Obstetricia Sa",
+      "countryCode": "AR",
+      "origin": "https://www.imgo.com.ar",
+      "lat": -31.4141928,
+      "lng": -64.192265
+    },
+    {
+      "code": "osm:node/7502113748",
+      "name": "Sanatorio Moreno",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriomoreno.com.ar",
+      "lat": -31.2514195,
+      "lng": -61.4939831
+    },
+    {
+      "code": "osm:node/7502315726",
+      "name": "Clinica de la Familia I",
+      "countryCode": "AR",
+      "origin": "https://clinicasdelafamilia.com.ar",
+      "lat": -31.4160869,
+      "lng": -64.1708579
+    },
+    {
+      "code": "osm:node/7504290710",
+      "name": "Clinica Quirúrgica Oeste",
+      "countryCode": "AR",
+      "origin": "https://clinicaquirurgicaoeste.com.ar",
+      "lat": -34.6434649,
+      "lng": -58.5861025
+    },
+    {
+      "code": "osm:node/7509457605",
+      "name": "Hospital Municipal Tomás Ponsone",
+      "countryCode": "AR",
+      "origin": "http://www.cmoldes.com.ar",
+      "lat": -33.6180856,
+      "lng": -64.6015435
+    },
+    {
+      "code": "osm:node/7516317176",
+      "name": "Clinica Privada Del Prado",
+      "countryCode": "AR",
+      "origin": "https://clinicadelprado.com.ar",
+      "lat": -31.4112451,
+      "lng": -64.1997672
+    },
+    {
+      "code": "osm:node/7528070884",
+      "name": "Clinica Privada Caraffa",
+      "countryCode": "AR",
+      "origin": "http://www.clinica-caraffa.com.ar",
+      "lat": -31.3875786,
+      "lng": -64.2130395
+    },
+    {
+      "code": "osm:node/7529976979",
+      "name": "Los Almendros Torcuato",
+      "countryCode": "AR",
+      "origin": "https://www.clinicalosalmendros.com.ar",
+      "lat": -34.4885143,
+      "lng": -58.6205771
+    },
+    {
+      "code": "osm:node/7529976980",
+      "name": "Clínica Los Almendros",
+      "countryCode": "AR",
+      "origin": "https://www.clinicalosalmendros.com.ar",
+      "lat": -34.4673845,
+      "lng": -58.9075208
+    },
+    {
+      "code": "osm:node/7530330452",
+      "name": "Sanatorio Parque",
+      "countryCode": "AR",
+      "origin": "https://www.parquesrl.com",
+      "lat": -27.5732326,
+      "lng": -60.710633
+    },
+    {
+      "code": "osm:node/7576376351",
+      "name": "Sanatorio San Roque",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriosanroque.com.ar",
+      "lat": -30.7039178,
+      "lng": -62.0051719
+    },
+    {
+      "code": "osm:node/8423554082",
+      "name": "Hospital Regional Aurelio Crespo",
+      "countryCode": "AR",
+      "origin": "https://facebook.com",
+      "lat": -30.7436655,
+      "lng": -64.7873973
+    },
+    {
+      "code": "osm:node/8758372069",
+      "name": "Centro Provincial de Salud Infantil",
+      "countryCode": "AR",
+      "origin": "http://www.cepsi.gob.ar",
+      "lat": -27.7792666,
+      "lng": -64.2733716
+    },
+    {
+      "code": "osm:node/8826075544",
+      "name": "CI.LAP Obesidad",
+      "countryCode": "AR",
+      "origin": "http://cilap.com.ar",
+      "lat": -38.0015428,
+      "lng": -57.5530589
+    },
+    {
+      "code": "osm:node/8870722745",
+      "name": "Sanatorio Garcés",
+      "countryCode": "AR",
+      "origin": "http://sanatoriogarces.com.ar",
+      "lat": -31.8741966,
+      "lng": -62.7240616
+    },
+    {
+      "code": "osm:node/9530690538",
+      "name": "Hospital José Ramón Vidal",
+      "countryCode": "AR",
+      "origin": "http://www.hospitalvidal.com.ar",
+      "lat": -27.4794771,
+      "lng": -58.8389959
+    },
+    {
+      "code": "osm:node/9585339581",
+      "name": "Fundación Médica Hemocentro Mar del Plata",
+      "countryCode": "AR",
+      "origin": "https://www.hemocentromdp.org.ar",
+      "lat": -38.0114542,
+      "lng": -57.5595922
+    },
+    {
+      "code": "osm:node/9927674417",
+      "name": "Hospital Odontológico de Tigre",
+      "countryCode": "AR",
+      "origin": "https://www.tigre.gob.ar",
+      "lat": -34.4630254,
+      "lng": -58.6390436
+    },
+    {
+      "code": "osm:node/10170407717",
+      "name": "Hospital Odontológico Universitario",
+      "countryCode": "AR",
+      "origin": "https://odontologia.uba.ar",
+      "lat": -34.5975671,
+      "lng": -58.3981417
+    },
+    {
+      "code": "osm:node/10314150174",
+      "name": "Instituto GUILLERMO ROSSI",
+      "countryCode": "AR",
+      "origin": "https://www.institutorossi.com.ar",
+      "lat": -34.7989108,
+      "lng": -58.3890061
+    },
+    {
+      "code": "osm:node/10919430936",
+      "name": "Sanatorio Americano",
+      "countryCode": "AR",
+      "origin": "https://sanatorioamericano.com.ar",
+      "lat": -31.6328824,
+      "lng": -60.7082549
+    },
+    {
+      "code": "osm:node/11522518690",
+      "name": "Centro Integral de Salud de la Banda Hospital",
+      "countryCode": "AR",
+      "origin": "https://cisb.gob.ar",
+      "lat": -27.7330947,
+      "lng": -64.2375817
+    },
+    {
+      "code": "osm:node/12244158781",
+      "name": "Hospital Doctor Guillermo Rawson",
+      "countryCode": "AR",
+      "origin": "https://hospitalrawson.sanjuan.gob.ar",
+      "lat": -31.5394128,
+      "lng": -68.5132342
+    },
+    {
+      "code": "osm:node/12246403981",
+      "name": "Laboratorios Nogueiras",
+      "countryCode": "AR",
+      "origin": "https://gustavonogueiras.com.ar",
+      "lat": -34.4179348,
+      "lng": -58.7264141
+    },
+    {
+      "code": "osm:node/12246405367",
+      "name": "Laboratorios Nogueiras",
+      "countryCode": "AR",
+      "origin": "https://www.gustavonogueiras.com.ar",
+      "lat": -34.3911454,
+      "lng": -58.7426144
+    },
+    {
+      "code": "osm:node/12288781236",
+      "name": "Sanatorio Privado del Interior",
+      "countryCode": "AR",
+      "origin": "http://spinterior.com.ar",
+      "lat": -31.1763335,
+      "lng": -64.3062999
+    },
+    {
+      "code": "osm:node/13037786783",
+      "name": "Alianza Médica",
+      "countryCode": "AR",
+      "origin": "http://www.alianzamedica.com.ar",
+      "lat": -30.7409289,
+      "lng": -59.6416704
+    },
+    {
+      "code": "osm:node/13085017736",
+      "name": "Ctro. Salud Nº3 - Dr Raul Alfonsin",
+      "countryCode": "AR",
+      "origin": "https://coloniatirolesa.gov.ar",
+      "lat": -31.1437625,
+      "lng": -64.0420235
+    },
+    {
+      "code": "osm:node/13087382325",
+      "name": "Hospital De San Pedro",
+      "countryCode": "AR",
+      "origin": "https://www.sanpedro.net.ar",
+      "lat": -33.6843577,
+      "lng": -59.6722457
+    },
+    {
+      "code": "osm:node/13151554394",
+      "name": "Centro de Emergencias Regional",
+      "countryCode": "AR",
+      "origin": "https://www.sanatorioparque.com.ar",
+      "lat": -32.9440716,
+      "lng": -60.6545666
+    },
+    {
+      "code": "osm:node/13239949566",
+      "name": "Clinica Saint Michel",
+      "countryCode": "AR",
+      "origin": "https://www.saintmichelsrl.com.ar",
+      "lat": -31.3942342,
+      "lng": -64.2342061
+    },
+    {
+      "code": "osm:node/13355185201",
+      "name": "Sanatorio Privado San Roque",
+      "countryCode": "AR",
+      "origin": "https://sanatoriosanroquemj.com",
+      "lat": -32.6963846,
+      "lng": -62.1085229
+    },
+    {
+      "code": "osm:node/14024314049",
+      "name": "Hospital de día Reencuentro - Anexo",
+      "countryCode": "AR",
+      "origin": "https://www.ms.gba.gov.ar",
+      "lat": -34.9227912,
+      "lng": -57.9356251
+    },
+    {
+      "code": "osm:way/20422037",
+      "name": "Hospital Rivadavia",
+      "countryCode": "AR",
+      "origin": "https://buenosaires.gob.ar",
+      "lat": -34.5849697,
+      "lng": -58.4017858
+    },
+    {
+      "code": "osm:way/21064930",
+      "name": "Hospital de Niños Ricardo Gutiérrez",
+      "countryCode": "AR",
+      "origin": "http://guti.gob.ar",
+      "lat": -34.5942546,
+      "lng": -58.4114718
+    },
+    {
+      "code": "osm:way/21832417",
+      "name": "Hospital Neruropsiquiátrico Braulio A. Moyano",
+      "countryCode": "AR",
+      "origin": "http://www.hospitalmoyano.org.ar",
+      "lat": -34.6407402,
+      "lng": -58.3838605
+    },
+    {
+      "code": "osm:way/23619767",
+      "name": "Hospital Alemán",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalaleman.com.ar",
+      "lat": -34.5917792,
+      "lng": -58.4019483
+    },
+    {
+      "code": "osm:way/23634964",
+      "name": "Hospital General de Agudos Doctor Carlos G. Durand",
+      "countryCode": "AR",
+      "origin": "https://www.buenosaires.gob.ar",
+      "lat": -34.6100299,
+      "lng": -58.437764
+    },
+    {
+      "code": "osm:way/23651694",
+      "name": "Maternidad Ramón Sardá",
+      "countryCode": "AR",
+      "origin": "https://www.sarda.org.ar",
+      "lat": -34.6346289,
+      "lng": -58.4031437
+    },
+    {
+      "code": "osm:way/23651718",
+      "name": "Hospital de Pediatría \"Profesor Doctor Juan Pedro Garrahan\"",
+      "countryCode": "AR",
+      "origin": "http://www.garrahan.gob.ar",
+      "lat": -34.6310807,
+      "lng": -58.3937509
+    },
+    {
+      "code": "osm:way/26591589",
+      "name": "Hospital Doctor Pedro Fiorito",
+      "countryCode": "AR",
+      "origin": "https://www.mda.gob.ar",
+      "lat": -34.6667089,
+      "lng": -58.3658937
+    },
+    {
+      "code": "osm:way/26684425",
+      "name": "Policlínica Bancaria 9 de Julio - OSBA",
+      "countryCode": "AR",
+      "origin": "https://www.policlinicabancaria.com.ar",
+      "lat": -34.6123231,
+      "lng": -58.4588557
+    },
+    {
+      "code": "osm:way/28631185",
+      "name": "Sanatorio de la Trinidad Palermo",
+      "countryCode": "AR",
+      "origin": "http://www.trinidadpalermo.com.ar",
+      "lat": -34.5753459,
+      "lng": -58.4241928
+    },
+    {
+      "code": "osm:way/28641286",
+      "name": "Hospital Interzonal General Agudos Luisa C. de Gandulfo",
+      "countryCode": "AR",
+      "origin": "http://higagandulfo.com.ar",
+      "lat": -34.7622877,
+      "lng": -58.3930576
+    },
+    {
+      "code": "osm:way/28815133",
+      "name": "Hospital Interzonal General de Agudos “Dr. José Penna”",
+      "countryCode": "AR",
+      "origin": "http://www.hospitalpenna.com.ar",
+      "lat": -38.7311013,
+      "lng": -62.2280685
+    },
+    {
+      "code": "osm:way/31234209",
+      "name": "Instituto de Oncología Ángel H. Roffo",
+      "countryCode": "AR",
+      "origin": "http://www.institutoroffo.com.ar",
+      "lat": -34.596053,
+      "lng": -58.4949246
+    },
+    {
+      "code": "osm:way/51229315",
+      "name": "Hospital Italiano de La Plata",
+      "countryCode": "AR",
+      "origin": "http://www.italianolaplata.com.ar",
+      "lat": -34.9361339,
+      "lng": -57.9724995
+    },
+    {
+      "code": "osm:way/52134817",
+      "name": "Instituto de Hemoterapia de La Plata",
+      "countryCode": "AR",
+      "origin": "https://www.ms.gba.gov.ar",
+      "lat": -34.9330838,
+      "lng": -57.9431005
+    },
+    {
+      "code": "osm:way/89483111",
+      "name": "Delicia Concepción Masvernat",
+      "countryCode": "AR",
+      "origin": "http://www.hdcm.gov.ar",
+      "lat": -31.3641883,
+      "lng": -58.0176718
+    },
+    {
+      "code": "osm:way/95999705",
+      "name": "Hospital Pediátrico \"Doctor Humberto Notti\"",
+      "countryCode": "AR",
+      "origin": "http://www.hospinotti.mendoza.gov.ar",
+      "lat": -32.8981833,
+      "lng": -68.8044639
+    },
+    {
+      "code": "osm:way/107056870",
+      "name": "Hospital Colonia Juan Maria Obarrio",
+      "countryCode": "AR",
+      "origin": "https://m.facebook.com",
+      "lat": -26.8034381,
+      "lng": -65.2208199
+    },
+    {
+      "code": "osm:way/113519911",
+      "name": "Sanatorio Allende Cerro",
+      "countryCode": "AR",
+      "origin": "https://www.sanatorioallende.com",
+      "lat": -31.3580567,
+      "lng": -64.2424275
+    },
+    {
+      "code": "osm:way/121747670",
+      "name": "Italiano Regional del Sur",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalitalianobb.com.ar",
+      "lat": -38.7333019,
+      "lng": -62.2338939
+    },
+    {
+      "code": "osm:way/129016380",
+      "name": "Hospital Universitario",
+      "countryCode": "AR",
+      "origin": "http://www.hospital.uncu.edu.ar",
+      "lat": -32.8677088,
+      "lng": -68.8542138
+    },
+    {
+      "code": "osm:way/129016386",
+      "name": "Hospital Luis C. Lagomaggiore",
+      "countryCode": "AR",
+      "origin": "http://www.hospitallagomaggiore.com",
+      "lat": -32.8722449,
+      "lng": -68.8648538
+    },
+    {
+      "code": "osm:way/145444523",
+      "name": "Sanatorio Güemes",
+      "countryCode": "AR",
+      "origin": "http://guemesace.com.ar",
+      "lat": -27.4476755,
+      "lng": -58.9812287
+    },
+    {
+      "code": "osm:way/148523278",
+      "name": "Sanatorio Julio Méndez",
+      "countryCode": "AR",
+      "origin": "https://www.obsba.org.ar",
+      "lat": -34.6140394,
+      "lng": -58.438907
+    },
+    {
+      "code": "osm:way/155097266",
+      "name": "Sanatorio Juncal",
+      "countryCode": "AR",
+      "origin": "http://sjuncal.com.ar",
+      "lat": -34.7699148,
+      "lng": -58.3967689
+    },
+    {
+      "code": "osm:way/158807370",
+      "name": "Hospital SAMIC Presidente Néstor Kirchner",
+      "countryCode": "AR",
+      "origin": "https://samicnestorkirchner.org",
+      "lat": -34.7307462,
+      "lng": -58.6002409
+    },
+    {
+      "code": "osm:way/158966573",
+      "name": "Centro Regional de Hemoterapia",
+      "countryCode": "AR",
+      "origin": "https://www.crhmendoza.com.ar",
+      "lat": -32.8915271,
+      "lng": -68.8318762
+    },
+    {
+      "code": "osm:way/158966705",
+      "name": "Fundación Escuela Medicina Nuclear (FUESMEN)",
+      "countryCode": "AR",
+      "origin": "https://www.fuesmen.edu.ar",
+      "lat": -32.8914659,
+      "lng": -68.8328249
+    },
+    {
+      "code": "osm:way/174694723",
+      "name": "Hospital Nacional Doctor Baldomero Sommer",
+      "countryCode": "AR",
+      "origin": "http://www.sommer.gov.ar",
+      "lat": -34.7168512,
+      "lng": -59.0567935
+    },
+    {
+      "code": "osm:way/175643125",
+      "name": "Clínica I.M.A. SA",
+      "countryCode": "AR",
+      "origin": "https://www.clinicaima.com",
+      "lat": -34.8008375,
+      "lng": -58.3982936
+    },
+    {
+      "code": "osm:way/178480585",
+      "name": "Hospital de Área Programa Plottier",
+      "countryCode": "AR",
+      "origin": "https://www.saludneuquen.gob.ar",
+      "lat": -38.94928,
+      "lng": -68.2283179
+    },
+    {
+      "code": "osm:way/184692506",
+      "name": "Hospital de San Luis",
+      "countryCode": "AR",
+      "origin": "http://www.hospital.sanluis.gov.ar",
+      "lat": -33.2966417,
+      "lng": -66.3192899
+    },
+    {
+      "code": "osm:way/188596806",
+      "name": "Sanatorio Physical",
+      "countryCode": "AR",
+      "origin": "http://physical.com.ar",
+      "lat": -32.9570062,
+      "lng": -60.6445245
+    },
+    {
+      "code": "osm:way/199094458",
+      "name": "FLENI",
+      "countryCode": "AR",
+      "origin": "https://www.fleni.org.ar",
+      "lat": -34.5549566,
+      "lng": -58.4504436
+    },
+    {
+      "code": "osm:way/200179898",
+      "name": "Clínica Santa Clara",
+      "countryCode": "AR",
+      "origin": "https://www.redsantaclara.com.ar",
+      "lat": -32.9158306,
+      "lng": -68.8456798
+    },
+    {
+      "code": "osm:way/203831807",
+      "name": "CEMIC - Hospital Universitario Sede Saavedra",
+      "countryCode": "AR",
+      "origin": "https://www.cemic.edu.ar",
+      "lat": -34.5573226,
+      "lng": -58.4955774
+    },
+    {
+      "code": "osm:way/205037220",
+      "name": "Hospital General de Agudos Doctor Enrique Tornú",
+      "countryCode": "AR",
+      "origin": "https://www.buenosaires.gob.ar",
+      "lat": -34.5864636,
+      "lng": -58.4728175
+    },
+    {
+      "code": "osm:way/205275235",
+      "name": "Sanatorio de los Arcos",
+      "countryCode": "AR",
+      "origin": "http://www.sanatoriodelosarcos.com.ar",
+      "lat": -34.5810218,
+      "lng": -58.4299476
+    },
+    {
+      "code": "osm:way/210440366",
+      "name": "Fundación Favaloro",
+      "countryCode": "AR",
+      "origin": "https://www.fundacionfavaloro.org",
+      "lat": -34.614339,
+      "lng": -58.3911624
+    },
+    {
+      "code": "osm:way/210687196",
+      "name": "Instituto Modelo de Cardiología",
+      "countryCode": "AR",
+      "origin": "https://www.imcnet.com.ar",
+      "lat": -31.3956858,
+      "lng": -64.2356885
+    },
+    {
+      "code": "osm:way/211067381",
+      "name": "Hospital Pedro de Elizalde",
+      "countryCode": "AR",
+      "origin": "http://www.elizalde.gov.ar",
+      "lat": -34.6291471,
+      "lng": -58.3764271
+    },
+    {
+      "code": "osm:way/211960170",
+      "name": "Sanatorio de la Trinidad - Fleming",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriosdelatrinidad.com.ar",
+      "lat": -34.4876567,
+      "lng": -58.524415
+    },
+    {
+      "code": "osm:way/222084507",
+      "name": "Hospital San Juan de Dios",
+      "countryCode": "AR",
+      "origin": "http://www.hsjd.org",
+      "lat": -34.638858,
+      "lng": -58.555385
+    },
+    {
+      "code": "osm:way/225195626",
+      "name": "Hospital General De Agudos Dalmacio Velez Sarsfield",
+      "countryCode": "AR",
+      "origin": "https://www.buenosaires.gob.ar",
+      "lat": -34.6254872,
+      "lng": -58.5078105
+    },
+    {
+      "code": "osm:way/233414824",
+      "name": "Hospital Zonal Especializado \"Dr. Noel H. Sbarra\"",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalsbarra.com.ar",
+      "lat": -34.9276799,
+      "lng": -57.93517
+    },
+    {
+      "code": "osm:way/236787213",
+      "name": "Hospital de Área Programa Cervantes",
+      "countryCode": "AR",
+      "origin": "https://salud.rionegro.gov.ar",
+      "lat": -39.0536018,
+      "lng": -67.3960451
+    },
+    {
+      "code": "osm:way/238810336",
+      "name": "Hospital Militar Regional Córdoba",
+      "countryCode": "AR",
+      "origin": "https://hmcba.com.ar",
+      "lat": -31.4408321,
+      "lng": -64.1801666
+    },
+    {
+      "code": "osm:way/242972677",
+      "name": "Centro de Rehabilitacion San Juan De Dios",
+      "countryCode": "AR",
+      "origin": "http://www.hsjd.org",
+      "lat": -34.5895226,
+      "lng": -58.6676093
+    },
+    {
+      "code": "osm:way/243364448",
+      "name": "Hospital Zonal de Agudos Magdalena V. de Martínez",
+      "countryCode": "AR",
+      "origin": "https://www.gba.gob.ar",
+      "lat": -34.4568996,
+      "lng": -58.6381406
+    },
+    {
+      "code": "osm:way/246793901",
+      "name": "Hospital Regional Antonio J. Scaravelli",
+      "countryCode": "AR",
+      "origin": "http://www.hospital-scaravelli.mendoza.gov.ar",
+      "lat": -33.5756509,
+      "lng": -69.0098553
+    },
+    {
+      "code": "osm:way/251733486",
+      "name": "Sanatorio Colegiales",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriocolegiales.com.ar",
+      "lat": -34.5769048,
+      "lng": -58.4510283
+    },
+    {
+      "code": "osm:way/255713841",
+      "name": "Clínica de Cuyo",
+      "countryCode": "AR",
+      "origin": "https://www.clinicadecuyosa.com.ar",
+      "lat": -32.8953485,
+      "lng": -68.8399114
+    },
+    {
+      "code": "osm:way/255977249",
+      "name": "Hospital Italiano de Buenos Aires",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalitaliano.org.ar",
+      "lat": -34.6066069,
+      "lng": -58.4261237
+    },
+    {
+      "code": "osm:way/262912556",
+      "name": "Hospital San Jose",
+      "countryCode": "AR",
+      "origin": "http://hospitalsanjose.org.ar",
+      "lat": -29.7117674,
+      "lng": -57.1057148
+    },
+    {
+      "code": "osm:way/270021862",
+      "name": "Hospital Dr Abel Zubizarreta",
+      "countryCode": "AR",
+      "origin": "https://buenosaires.gob.ar",
+      "lat": -34.6001697,
+      "lng": -58.5108343
+    },
+    {
+      "code": "osm:way/283275105",
+      "name": "Hospital Saturnino E. Unzué",
+      "countryCode": "AR",
+      "origin": "https://hospitalunzue.com.ar",
+      "lat": -35.423996,
+      "lng": -60.1588162
+    },
+    {
+      "code": "osm:way/286698638",
+      "name": "Policlinico Policial",
+      "countryCode": "AR",
+      "origin": "https://www.policiacordoba.gov.ar",
+      "lat": -31.4252238,
+      "lng": -64.2246681
+    },
+    {
+      "code": "osm:way/292194016",
+      "name": "Hospital Español",
+      "countryCode": "AR",
+      "origin": "http://www.hospital-espanol.com.ar",
+      "lat": -34.6143973,
+      "lng": -58.4079405
+    },
+    {
+      "code": "osm:way/292194018",
+      "name": "Centro Gallego",
+      "countryCode": "AR",
+      "origin": "http://www.centrogallegoba.com.ar",
+      "lat": -34.613576,
+      "lng": -58.3969879
+    },
+    {
+      "code": "osm:way/292967095",
+      "name": "Hospital de Niños Víctor J. Vilela",
+      "countryCode": "AR",
+      "origin": "http://www.fundacionvilela.org",
+      "lat": -32.968649,
+      "lng": -60.6546008
+    },
+    {
+      "code": "osm:way/294458792",
+      "name": "Hospital Raúl Ángel Ferreyra",
+      "countryCode": "AR",
+      "origin": "https://www.apross.gov.ar",
+      "lat": -31.4360188,
+      "lng": -64.1765043
+    },
+    {
+      "code": "osm:way/297407589",
+      "name": "Hospital General de Agudos Doctor Teodoro Alvarez",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalalvarez.org",
+      "lat": -34.6238277,
+      "lng": -58.4696261
+    },
+    {
+      "code": "osm:way/312362989",
+      "name": "Hospital Pirovano",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalpirovano.org",
+      "lat": -34.5642269,
+      "lng": -58.4717996
+    },
+    {
+      "code": "osm:way/313465156",
+      "name": "Hospital de Área Programa El Chocón",
+      "countryCode": "AR",
+      "origin": "https://www.saludneuquen.gob.ar",
+      "lat": -39.2603325,
+      "lng": -68.7770312
+    },
+    {
+      "code": "osm:way/317687409",
+      "name": "Hospital de Área Programa El Cholar",
+      "countryCode": "AR",
+      "origin": "https://www.saludneuquen.gob.ar",
+      "lat": -37.4410293,
+      "lng": -70.6457726
+    },
+    {
+      "code": "osm:way/327180486",
+      "name": "Hospital Italiano",
+      "countryCode": "AR",
+      "origin": "https://www.hospital-italiano.org.ar",
+      "lat": -31.4092557,
+      "lng": -64.1642969
+    },
+    {
+      "code": "osm:way/331255722",
+      "name": "Hospital de Ezeiza \"Dr. Alberto Eurnekian\"",
+      "countryCode": "AR",
+      "origin": "http://www.hospitaleurnekian.com.ar",
+      "lat": -34.8664176,
+      "lng": -58.534292
+    },
+    {
+      "code": "osm:way/337783980",
+      "name": "Sanatorio AMTA",
+      "countryCode": "AR",
+      "origin": "http://www.amta.com.ar",
+      "lat": -34.6384958,
+      "lng": -58.5358803
+    },
+    {
+      "code": "osm:way/337823855",
+      "name": "Hospital Zonal General de Agudos Dr. Enrique Erill",
+      "countryCode": "AR",
+      "origin": "https://www.ms.gba.gov.ar",
+      "lat": -34.3431708,
+      "lng": -58.7906837
+    },
+    {
+      "code": "osm:way/338641759",
+      "name": "Hospital Zonal General de Agudos \"Petrona V. de Cordero\"",
+      "countryCode": "AR",
+      "origin": "https://www.ms.gba.gov.ar",
+      "lat": -34.4487049,
+      "lng": -58.5524538
+    },
+    {
+      "code": "osm:way/358697198",
+      "name": "Hospital Doctor Marcial Vicente Quiroga",
+      "countryCode": "AR",
+      "origin": "http://hospitalmarcialquiroga.sanjuan.gob.ar",
+      "lat": -31.5299839,
+      "lng": -68.5967783
+    },
+    {
+      "code": "osm:way/362854400",
+      "name": "Policlínico PAMI II",
+      "countryCode": "AR",
+      "origin": "http://institucional.pami.org.ar",
+      "lat": -32.9134069,
+      "lng": -60.6797886
+    },
+    {
+      "code": "osm:way/368640817",
+      "name": "Sanatorio de La Trinidad Ramos Mejía",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriosdelatrinidad.com.ar",
+      "lat": -34.6402894,
+      "lng": -58.5537589
+    },
+    {
+      "code": "osm:way/375753828",
+      "name": "Clínica Independencia",
+      "countryCode": "AR",
+      "origin": "https://cpisalud.com.ar",
+      "lat": -34.5391345,
+      "lng": -58.533192
+    },
+    {
+      "code": "osm:way/378303458",
+      "name": "Hospital Naval Buenos Aires Cirujano Mayor Doctor Pedro Mallo",
+      "countryCode": "AR",
+      "origin": "http://www.hnpm.mil.ar",
+      "lat": -34.6049885,
+      "lng": -58.4333163
+    },
+    {
+      "code": "osm:way/389064009",
+      "name": "CEMA Centro de Especialidades Médicas Ambulatorias",
+      "countryCode": "AR",
+      "origin": "https://www.mardelplata.gob.ar",
+      "lat": -38.0143535,
+      "lng": -57.5817945
+    },
+    {
+      "code": "osm:way/395634049",
+      "name": "Hospital Ramos Mejía",
+      "countryCode": "AR",
+      "origin": "http://www.hospitalramosmejia.info",
+      "lat": -34.6178168,
+      "lng": -58.4101675
+    },
+    {
+      "code": "osm:way/397516929",
+      "name": "Sanatorio Güemes",
+      "countryCode": "AR",
+      "origin": "https://www.sg.com.ar",
+      "lat": -34.5972086,
+      "lng": -58.4220346
+    },
+    {
+      "code": "osm:way/401652867",
+      "name": "GO Sanatorio Funes",
+      "countryCode": "AR",
+      "origin": "https://www.gosanatoriofunes.com.ar",
+      "lat": -32.9203442,
+      "lng": -60.8208779
+    },
+    {
+      "code": "osm:way/414243785",
+      "name": "Hospital Italiano Garibaldi",
+      "countryCode": "AR",
+      "origin": "http://www.iunir.edu.ar",
+      "lat": -32.9700951,
+      "lng": -60.6463028
+    },
+    {
+      "code": "osm:way/414243786",
+      "name": "Hospital Italiano Garibaldi",
+      "countryCode": "AR",
+      "origin": "http://www.iunir.edu.ar",
+      "lat": -32.9697252,
+      "lng": -60.6473192
+    },
+    {
+      "code": "osm:way/432034326",
+      "name": "Clínica Adventista Belgrano",
+      "countryCode": "AR",
+      "origin": "https://clinicaadventista.org",
+      "lat": -34.5744452,
+      "lng": -58.4685408
+    },
+    {
+      "code": "osm:way/434815659",
+      "name": "Hospital Municipal Materno Infantil Doctor Carlos A. Gianantonio",
+      "countryCode": "AR",
+      "origin": "https://www.sanisidro.gob.ar",
+      "lat": -34.4736947,
+      "lng": -58.5231086
+    },
+    {
+      "code": "osm:way/436773333",
+      "name": "Hospital Doctor Anselmo P. Gammen",
+      "countryCode": "AR",
+      "origin": "http://hospitalgamen.org",
+      "lat": -33.02373,
+      "lng": -60.6310767
+    },
+    {
+      "code": "osm:way/448579762",
+      "name": "Hospital Privado de Comunidad (HPC)",
+      "countryCode": "AR",
+      "origin": "https://www.hpc.org.ar",
+      "lat": -38.0217837,
+      "lng": -57.5655763
+    },
+    {
+      "code": "osm:way/450677210",
+      "name": "Clinica Bazterrica",
+      "countryCode": "AR",
+      "origin": "https://www.bazterrica.com.ar",
+      "lat": -34.5873133,
+      "lng": -58.4078016
+    },
+    {
+      "code": "osm:way/462593246",
+      "name": "Centro Diagnóstico Mon",
+      "countryCode": "AR",
+      "origin": "https://www.diagnosticomon.com.ar",
+      "lat": -34.9230881,
+      "lng": -57.9383797
+    },
+    {
+      "code": "osm:way/465267314",
+      "name": "Hospital Británico de Buenos Aires",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalbritanico.org.ar",
+      "lat": -34.6342755,
+      "lng": -58.3875853
+    },
+    {
+      "code": "osm:way/466971969",
+      "name": "Sanatorio Santa Sofia",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriosantasofia.com.ar",
+      "lat": -34.5260768,
+      "lng": -58.5492973
+    },
+    {
+      "code": "osm:way/467223264",
+      "name": "Hospital Municipal Ciudad de Boulogne",
+      "countryCode": "AR",
+      "origin": "https://www.sanisidro.gob.ar",
+      "lat": -34.5014538,
+      "lng": -58.5588056
+    },
+    {
+      "code": "osm:way/468790553",
+      "name": "Hospital Municipal De Diagnostico Inmediato Don Torcuato",
+      "countryCode": "AR",
+      "origin": "https://www.tigre.gob.ar",
+      "lat": -34.4854987,
+      "lng": -58.618728
+    },
+    {
+      "code": "osm:way/471353914",
+      "name": "Clínica Olivos",
+      "countryCode": "AR",
+      "origin": "https://www.swissmedical.com.ar",
+      "lat": -34.5227383,
+      "lng": -58.4848713
+    },
+    {
+      "code": "osm:way/472728924",
+      "name": "Hospital Privado Modelo",
+      "countryCode": "AR",
+      "origin": "http://hospitalprivadomodelo.com.ar",
+      "lat": -34.5284714,
+      "lng": -58.4860245
+    },
+    {
+      "code": "osm:way/472810919",
+      "name": "Sanatorio Vicente López",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriovtelopez.com.ar",
+      "lat": -34.5280524,
+      "lng": -58.4915675
+    },
+    {
+      "code": "osm:way/474427888",
+      "name": "Sanatorio San Lucas",
+      "countryCode": "AR",
+      "origin": "https://www.sanlucas.com.ar",
+      "lat": -34.4698231,
+      "lng": -58.5104187
+    },
+    {
+      "code": "osm:way/474917552",
+      "name": "Sanatorio Las Lomas",
+      "countryCode": "AR",
+      "origin": "https://www.laslomas.com.ar",
+      "lat": -34.4962911,
+      "lng": -58.5451228
+    },
+    {
+      "code": "osm:way/474918808",
+      "name": "Clinica Angelus",
+      "countryCode": "AR",
+      "origin": "https://www.laslomas.com.ar",
+      "lat": -34.4968466,
+      "lng": -58.5456438
+    },
+    {
+      "code": "osm:way/476370276",
+      "name": "Sanatorio Finochietto",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriofinochietto.com",
+      "lat": -34.5984087,
+      "lng": -58.4053086
+    },
+    {
+      "code": "osm:way/477776222",
+      "name": "Sanatorio Dupuytren",
+      "countryCode": "AR",
+      "origin": "https://www.e-galeno.com.ar",
+      "lat": -34.6158136,
+      "lng": -58.4145327
+    },
+    {
+      "code": "osm:way/486651564",
+      "name": "Hospital Santa Isabel de Hungría",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalsantaisabel.com.ar",
+      "lat": -32.8945057,
+      "lng": -68.7997904
+    },
+    {
+      "code": "osm:way/489312342",
+      "name": "Sanatorio San Carlos",
+      "countryCode": "AR",
+      "origin": "http://sanatoriosancarlos.com.ar",
+      "lat": -34.4106187,
+      "lng": -58.7721922
+    },
+    {
+      "code": "osm:way/489463349",
+      "name": "Hospital Privado de Rosario",
+      "countryCode": "AR",
+      "origin": "https://grupogamma.com",
+      "lat": -32.9645988,
+      "lng": -60.6505573
+    },
+    {
+      "code": "osm:way/516498577",
+      "name": "Clínica San Camilo",
+      "countryCode": "AR",
+      "origin": "https://clinicasancamilo.org.ar",
+      "lat": -34.6059033,
+      "lng": -58.4427082
+    },
+    {
+      "code": "osm:way/516880609",
+      "name": "Hospital Municipal Profesor Doctor Bernardo Houssay",
+      "countryCode": "AR",
+      "origin": "https://www.vicentelopez.gov.ar",
+      "lat": -34.5222218,
+      "lng": -58.4896265
+    },
+    {
+      "code": "osm:way/533806449",
+      "name": "Hospital Gregorio Rivas",
+      "countryCode": "AR",
+      "origin": "https://hospitaljuanakoslay.blogspot.com",
+      "lat": -33.2690827,
+      "lng": -66.2319423
+    },
+    {
+      "code": "osm:way/535855703",
+      "name": "Hospital Miraflores",
+      "countryCode": "AR",
+      "origin": "https://www.miraflores.gob.ar",
+      "lat": -25.6495453,
+      "lng": -60.9254182
+    },
+    {
+      "code": "osm:way/537245237",
+      "name": "ICBA",
+      "countryCode": "AR",
+      "origin": "https://www.icba.com.ar",
+      "lat": -34.5539542,
+      "lng": -58.4509288
+    },
+    {
+      "code": "osm:way/543689432",
+      "name": "Instituto Medico Aguero",
+      "countryCode": "AR",
+      "origin": "https://imasalud.com.ar",
+      "lat": -34.6701536,
+      "lng": -58.6120824
+    },
+    {
+      "code": "osm:way/546891919",
+      "name": "Clinica Passo",
+      "countryCode": "AR",
+      "origin": "https://clinicapasso.com.ar",
+      "lat": -34.761331,
+      "lng": -58.3606788
+    },
+    {
+      "code": "osm:way/555862421",
+      "name": "Clinica y Maternidad Del Sol",
+      "countryCode": "AR",
+      "origin": "https://www.clinicadelsol.com.ar",
+      "lat": -31.4258242,
+      "lng": -64.1833765
+    },
+    {
+      "code": "osm:way/587354359",
+      "name": "Hospital Municipal Ostaciana Bravo de Lavignolle",
+      "countryCode": "AR",
+      "origin": "http://www.moron.gov.ar",
+      "lat": -34.658992,
+      "lng": -58.6100288
+    },
+    {
+      "code": "osm:way/653510997",
+      "name": "UPA Lezama",
+      "countryCode": "AR",
+      "origin": "https://www.ms.gba.gov.ar",
+      "lat": -35.8863421,
+      "lng": -57.8899772
+    },
+    {
+      "code": "osm:way/666433925",
+      "name": "Sanatorio San Carlos",
+      "countryCode": "AR",
+      "origin": "http://www.ssancarlos.com.ar",
+      "lat": -41.1415269,
+      "lng": -71.3132071
+    },
+    {
+      "code": "osm:way/673509081",
+      "name": "Centro de Medicina Nuclear y Radioterapia de la Patagonia Austral",
+      "countryCode": "AR",
+      "origin": "https://www.cemnpa.org.ar",
+      "lat": -51.6475275,
+      "lng": -69.2146303
+    },
+    {
+      "code": "osm:way/675954580",
+      "name": "Ospaña",
+      "countryCode": "AR",
+      "origin": "https://www.ospana.com.ar",
+      "lat": -34.6145922,
+      "lng": -58.3823577
+    },
+    {
+      "code": "osm:way/676304446",
+      "name": "Clínica Los Tilos",
+      "countryCode": "AR",
+      "origin": "https://www.clinicalostilos.com",
+      "lat": -32.8630582,
+      "lng": -68.7721885
+    },
+    {
+      "code": "osm:way/689042966",
+      "name": "Sanatorio Anchorena San Martín",
+      "countryCode": "AR",
+      "origin": "https://www.sasm.com.ar",
+      "lat": -34.5831919,
+      "lng": -58.5367028
+    },
+    {
+      "code": "osm:way/722609938",
+      "name": "Sanatorio San Pablo",
+      "countryCode": "AR",
+      "origin": "https://sanatoriosanpablo.com.ar",
+      "lat": -34.4387894,
+      "lng": -58.5635559
+    },
+    {
+      "code": "osm:way/767905818",
+      "name": "Hospital Interzonal General de Agudos \"Dr. Oscar E. Alende\"",
+      "countryCode": "AR",
+      "origin": "https://www.gba.gob.ar",
+      "lat": -37.9945601,
+      "lng": -57.6018098
+    },
+    {
+      "code": "osm:way/785367291",
+      "name": "Fundación Hospitalaria",
+      "countryCode": "AR",
+      "origin": "https://fh.org.ar",
+      "lat": -34.5423435,
+      "lng": -58.4774139
+    },
+    {
+      "code": "osm:way/789643196",
+      "name": "Instituto Médico de Obstetricia",
+      "countryCode": "AR",
+      "origin": "http://www.imoobstetricia.com.ar",
+      "lat": -34.607058,
+      "lng": -58.3989133
+    },
+    {
+      "code": "osm:way/790211368",
+      "name": "Hospital Pediátrico Alexander Fleming",
+      "countryCode": "AR",
+      "origin": "https://osepmendoza.com.ar",
+      "lat": -32.8935033,
+      "lng": -68.8465158
+    },
+    {
+      "code": "osm:way/802030680",
+      "name": "Sanatorio Nosti",
+      "countryCode": "AR",
+      "origin": "https://www.sanatorionosti.com.ar",
+      "lat": -31.2533234,
+      "lng": -61.4824615
+    },
+    {
+      "code": "osm:way/802168038",
+      "name": "Clínica San Jerónimo",
+      "countryCode": "AR",
+      "origin": "https://www.clinicasanjeronimo.com.ar",
+      "lat": -34.6028851,
+      "lng": -58.4131905
+    },
+    {
+      "code": "osm:way/804810730",
+      "name": "Sanatorio Privado del Noreste",
+      "countryCode": "AR",
+      "origin": "http://sanatoriodelnoreste.com.ar",
+      "lat": -31.3842775,
+      "lng": -64.1359247
+    },
+    {
+      "code": "osm:way/846604864",
+      "name": "Sanatorio Paquini",
+      "countryCode": "AR",
+      "origin": "https://sanatoriopasquini.com.ar",
+      "lat": -26.8310962,
+      "lng": -65.1997376
+    },
+    {
+      "code": "osm:way/928886875",
+      "name": "Sanatorio Laprida",
+      "countryCode": "AR",
+      "origin": "http://www.sanatoriolaprida.com.ar",
+      "lat": -32.9505375,
+      "lng": -60.6352153
+    },
+    {
+      "code": "osm:way/1029899777",
+      "name": "Hospital Centenario",
+      "countryCode": "AR",
+      "origin": "http://www.hospitalcentenario.com.ar",
+      "lat": -33.0102699,
+      "lng": -58.5330156
+    },
+    {
+      "code": "osm:way/1046104562",
+      "name": "Instituto Medico Mater Dei",
+      "countryCode": "AR",
+      "origin": "http://www.materdeisa.com.ar",
+      "lat": -34.91744,
+      "lng": -57.9608285
+    },
+    {
+      "code": "osm:way/1046110760",
+      "name": "Clinica Suizo Argentina",
+      "countryCode": "AR",
+      "origin": "http://www.cymsa.com.ar",
+      "lat": -34.5937993,
+      "lng": -58.40177
+    },
+    {
+      "code": "osm:way/1046400448",
+      "name": "Sanatorio Parque",
+      "countryCode": "AR",
+      "origin": "https://sanatorioparque.com",
+      "lat": -31.4235519,
+      "lng": -64.1439769
+    },
+    {
+      "code": "osm:way/1046496247",
+      "name": "Sanatorio Argentino",
+      "countryCode": "AR",
+      "origin": "http://www.sanargen.com.ar",
+      "lat": -34.9231083,
+      "lng": -57.9509913
+    },
+    {
+      "code": "osm:way/1046778854",
+      "name": "Instituto Médico Quirúrgico Garat",
+      "countryCode": "AR",
+      "origin": "http://www.institutogarat.com",
+      "lat": -31.3949512,
+      "lng": -58.0279187
+    },
+    {
+      "code": "osm:way/1046778968",
+      "name": "Centro Médico Privado San Andres",
+      "countryCode": "AR",
+      "origin": "https://centromedicosanandres.com",
+      "lat": -31.4071804,
+      "lng": -64.1937794
+    },
+    {
+      "code": "osm:way/1046798898",
+      "name": "Aconcagua Sanatorio Privado",
+      "countryCode": "AR",
+      "origin": "https://sanatorioaconcagua.com",
+      "lat": -31.4235512,
+      "lng": -64.1806514
+    },
+    {
+      "code": "osm:way/1046825020",
+      "name": "Instituto Médico Platense",
+      "countryCode": "AR",
+      "origin": "https://www.institutomedicoplatense.com",
+      "lat": -34.9097103,
+      "lng": -57.9439112
+    },
+    {
+      "code": "osm:way/1047119471",
+      "name": "Instituto Médico Río Cuarto",
+      "countryCode": "AR",
+      "origin": "https://www.imrc.com.ar",
+      "lat": -33.127405,
+      "lng": -64.347655
+    },
+    {
+      "code": "osm:way/1047776164",
+      "name": "Clinica De Especialidades Medicas Privada (cemep)",
+      "countryCode": "AR",
+      "origin": "https://cemep.com.ar",
+      "lat": -53.7661205,
+      "lng": -67.7127957
+    },
+    {
+      "code": "osm:way/1118146003",
+      "name": "Hospital Provincial Neuquén \"Doctor Eduardo Castro Rendón\"",
+      "countryCode": "AR",
+      "origin": "https://www.hospitalneuquen.org.ar",
+      "lat": -38.9502222,
+      "lng": -68.0569068
+    },
+    {
+      "code": "osm:way/1122964281",
+      "name": "Hospital de Área Programa Neuquén \"Bouquet Roldán\"",
+      "countryCode": "AR",
+      "origin": "https://www.saludneuquen.gob.ar",
+      "lat": -38.9583979,
+      "lng": -68.0859225
+    },
+    {
+      "code": "osm:way/1146872999",
+      "name": "Corporación Medica de General San Martín",
+      "countryCode": "AR",
+      "origin": "https://www.webcorporacion.com.ar",
+      "lat": -34.5776477,
+      "lng": -58.5418727
+    },
+    {
+      "code": "osm:way/1149030741",
+      "name": "Hospital Interzonal Zapala \"Doctor Jorge Juan Pose\"",
+      "countryCode": "AR",
+      "origin": "https://hospitalzapala.org",
+      "lat": -38.9020111,
+      "lng": -70.0650394
+    },
+    {
+      "code": "osm:way/1184530047",
+      "name": "Hospital de Área Programa Picún Leufú \"Doctora Nancy Ferrari\"",
+      "countryCode": "AR",
+      "origin": "https://www.saludneuquen.gob.ar",
+      "lat": -39.5165346,
+      "lng": -69.2907254
+    },
+    {
+      "code": "osm:way/1194822892",
+      "name": "Hospital de Área Programa Las Lajas \"Doctor José Venier\"",
+      "countryCode": "AR",
+      "origin": "https://www.saludneuquen.gob.ar",
+      "lat": -38.5227423,
+      "lng": -70.3623899
+    },
+    {
+      "code": "osm:way/1200690659",
+      "name": "Sanatorio de la Mujer",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriodelamujer.com.ar",
+      "lat": -32.9459042,
+      "lng": -60.6578675
+    },
+    {
+      "code": "osm:way/1212903639",
+      "name": "Hospital Privado Nuestra Señora de La Merced",
+      "countryCode": "AR",
+      "origin": "https://www.hospitallamerced.com.ar",
+      "lat": -34.583591,
+      "lng": -58.5871622
+    },
+    {
+      "code": "osm:way/1216232996",
+      "name": "Sanatorio Modelo",
+      "countryCode": "AR",
+      "origin": "https://www.sanatoriomodelosa.com.ar",
+      "lat": -26.8236776,
+      "lng": -65.2022074
+    },
+    {
+      "code": "osm:way/1233187375",
+      "name": "Hospital de Área Programa El Huecú",
+      "countryCode": "AR",
+      "origin": "https://www.saludneuquen.gob.ar",
+      "lat": -37.6464075,
+      "lng": -70.5795612
+    },
+    {
+      "code": "osm:way/1245662164",
+      "name": "Instituto de Cardiología de Corrientes",
+      "countryCode": "AR",
+      "origin": "https://www.icc.org.ar",
+      "lat": -27.4715446,
+      "lng": -58.8343514
+    },
+    {
+      "code": "osm:way/1267315766",
+      "name": "Instituto Médico de la Comunidad",
+      "countryCode": "AR",
+      "origin": "https://www.imc-institutomedico.com",
+      "lat": -28.4610394,
+      "lng": -65.7774092
+    },
+    {
+      "code": "osm:way/1270142997",
+      "name": "Sanatorio Británico",
+      "countryCode": "AR",
+      "origin": "https://sanatoriobritanico.com.ar",
+      "lat": -32.9368454,
+      "lng": -60.6419859
+    },
+    {
+      "code": "osm:way/1281306479",
+      "name": "Sanatorio Junín",
+      "countryCode": "AR",
+      "origin": "https://sanatoriojunin.com.ar",
+      "lat": -28.4654712,
+      "lng": -65.7832658
+    },
+    {
+      "code": "osm:way/1287928077",
+      "name": "Clinica Santa Maria",
+      "countryCode": "AR",
+      "origin": "http://clinicasantamariavb.com.ar",
+      "lat": -34.5562496,
+      "lng": -58.5478503
+    },
+    {
+      "code": "osm:way/1318005713",
+      "name": "Centro de Salud Intercultural Raguiñ Kien",
+      "countryCode": "AR",
+      "origin": "https://salud.neuquen.gob.ar",
+      "lat": -39.1980112,
+      "lng": -71.0469956
+    },
+    {
+      "code": "osm:way/1347200229",
+      "name": "Cordis",
+      "countryCode": "AR",
+      "origin": "https://institutocordis.ar",
+      "lat": -27.4473693,
+      "lng": -58.9792171
+    },
+    {
+      "code": "osm:way/1352269419",
+      "name": "Hospital Zonal San Martín de los Andes \"Doctor Ramón Carrillo\"",
+      "countryCode": "AR",
+      "origin": "https://salud.neuquen.gob.ar",
+      "lat": -40.1478561,
+      "lng": -71.3288566
+    },
+    {
+      "code": "osm:way/1418685118",
+      "name": "Centro de Salud Nº4 - Zacarías Núñez",
+      "countryCode": "AR",
+      "origin": "https://coloniatirolesa.gov.ar",
+      "lat": -31.2600547,
+      "lng": -64.0978765
+    },
+    {
+      "code": "osm:way/1426401355",
+      "name": "PREMELAB",
+      "countryCode": "AR",
+      "origin": "https://www.premelab.com.ar",
+      "lat": -34.6025893,
+      "lng": -58.5604277
+    },
+    {
+      "code": "osm:way/1530659472",
+      "name": "Sanatorio Anchorena",
+      "countryCode": "AR",
+      "origin": "http://www.sanatorio-anchorena.com.ar",
+      "lat": -34.5891064,
+      "lng": -58.4002915
+    },
+    {
+      "code": "osm:way/1550059075",
+      "name": "GO Centro Médico San Nicolás Zona Sur",
+      "countryCode": "AR",
+      "origin": "https://gosannicolas.com.ar",
+      "lat": -33.3574781,
+      "lng": -60.1912758
+    },
+    {
+      "code": "osm:way/1561069354",
+      "name": "Hospital General De Agudos Doctor Juan A. Fernández",
+      "countryCode": "AR",
+      "origin": "https://buenosaires.gob.ar",
+      "lat": -34.5814106,
+      "lng": -58.4069664
+    },
+    {
+      "code": "osm:way/1565840459",
+      "name": "Hospital de Clínicas José de San Martín",
+      "countryCode": "AR",
+      "origin": "http://www.hospitaldeclinicas.uba.ar",
+      "lat": -34.5988313,
+      "lng": -58.4000492
+    }
+  ]
+}

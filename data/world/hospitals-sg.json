@@ -1,0 +1,129 @@
+{
+  "countryCode": "SG",
+  "fetchedAt": "2026-10-21T02:44:38.130Z",
+  "count": 15,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/5599594021",
+      "name": "Singapore Advanced Medicine Proton Therapy",
+      "countryCode": "SG",
+      "origin": "https://www.proton.sg",
+      "lat": 1.3010276,
+      "lng": 103.7931057
+    },
+    {
+      "code": "osm:node/5599599523",
+      "name": "National Cancer Centre Singapore Proton Therapy Centre",
+      "countryCode": "SG",
+      "origin": "https://www.nccs.com.sg",
+      "lat": 1.2813333,
+      "lng": 103.8380544
+    },
+    {
+      "code": "osm:node/6746490215",
+      "name": "Farrer Park Hospital",
+      "countryCode": "SG",
+      "origin": "https://www.farrerpark.com",
+      "lat": 1.3126,
+      "lng": 103.854
+    },
+    {
+      "code": "osm:node/9723990867",
+      "name": "StarMed Specialist Centre",
+      "countryCode": "SG",
+      "origin": "https://starmedspecialist.com",
+      "lat": 1.3122814,
+      "lng": 103.8546429
+    },
+    {
+      "code": "osm:node/13245292326",
+      "name": "New Life Coach Doctor",
+      "countryCode": "SG",
+      "origin": "https://newlifecoachdr.com",
+      "lat": 1.3063204,
+      "lng": 103.820416
+    },
+    {
+      "code": "osm:way/33570275",
+      "name": "Sengkang General & Community Hospital",
+      "countryCode": "SG",
+      "origin": "https://www.skh.com.sg",
+      "lat": 1.3952091,
+      "lng": 103.8925269
+    },
+    {
+      "code": "osm:way/41890511",
+      "name": "Gleneagles Hospital",
+      "countryCode": "SG",
+      "origin": "https://www.gleneagles.com.sg",
+      "lat": 1.3073675,
+      "lng": 103.8198296
+    },
+    {
+      "code": "osm:way/74715098",
+      "name": "Mount Alvernia Hospital",
+      "countryCode": "SG",
+      "origin": "https://mtalvernia.sg",
+      "lat": 1.342202,
+      "lng": 103.8379314
+    },
+    {
+      "code": "osm:way/117325081",
+      "name": "Bright Vision Hospital",
+      "countryCode": "SG",
+      "origin": "http://www.bvh.org.sg",
+      "lat": 1.3720577,
+      "lng": 103.8780282
+    },
+    {
+      "code": "osm:way/162644392",
+      "name": "St Luke’s Hospital",
+      "countryCode": "SG",
+      "origin": "https://www.slh.org.sg",
+      "lat": 1.3494673,
+      "lng": 103.7421088
+    },
+    {
+      "code": "osm:way/170744577",
+      "name": "Saint Andrew's Community Hospital",
+      "countryCode": "SG",
+      "origin": "https://www.sach.org.sg",
+      "lat": 1.3416535,
+      "lng": 103.9488264
+    },
+    {
+      "code": "osm:way/172530221",
+      "name": "Ren Ci Community Hospital",
+      "countryCode": "SG",
+      "origin": "https://www.renci.org.sg",
+      "lat": 1.3228173,
+      "lng": 103.8459864
+    },
+    {
+      "code": "osm:way/260549167",
+      "name": "Mount Elizabeth Novena Hospital",
+      "countryCode": "SG",
+      "origin": "https://www.mountelizabeth.com.sg",
+      "lat": 1.3220014,
+      "lng": 103.8445055
+    },
+    {
+      "code": "osm:way/746034993",
+      "name": "Khoo Teck Puat Hospital",
+      "countryCode": "SG",
+      "origin": "https://www.ktph.com.sg",
+      "lat": 1.4242698,
+      "lng": 103.8386476
+    },
+    {
+      "code": "osm:way/1286187574",
+      "name": "National Kidney Foundation Dialysis Centre",
+      "countryCode": "SG",
+      "origin": "https://www.nkfs.org",
+      "lat": 1.3266442,
+      "lng": 103.8545912
+    }
+  ]
+}

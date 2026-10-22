@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "slug": "foundation-course-schedule-1st-prof-mbbs-batch-2026-0",
+      "file": "map/world/auto/in/foundation-course-schedule-1st-prof-mbbs-batch-2026-0.pdf",
+      "url": "https://gmch.gov.in/sites/default/files/documents/Foundation%20Course%20Schedule%201st%20Prof%20MBBS%20Batch-2026_0.pdf",
+      "sha256": "ccdfe87cd8c0ae5c99075cf581aac5a478940a715e423cec050dd7b911689e10",
+      "hospitalCode": "osm:way/129453616",
+      "hospitalName": "GMCH SECTOR 32",
+      "countryCode": "IN",
+      "linkText": "MBBS Batch 2026 Classes commence form 15th September 2026 All students to report at 9:00 a.m. Lecture Theatre 1, Ground Floor, E Block, GMCH-32, Chandigarh",
+      "kind": "floor-plan",
+      "approvedAt": "2026-10-22T02:54:32.779Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 2129569,
+      "fetchedAt": "2026-10-22T10:39:01.971Z"
+    }
+  ]
+}

@@ -1,0 +1,737 @@
+{
+  "countryCode": "PH",
+  "fetchedAt": "2026-10-21T02:25:41.430Z",
+  "count": 91,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/5248090621",
+      "name": "Accumed Diagnostic Center",
+      "countryCode": "PH",
+      "origin": "https://www.accumeddiagnostic.com",
+      "lat": 15.1413759,
+      "lng": 120.5954238
+    },
+    {
+      "code": "osm:node/5922177189",
+      "name": "Palanan Station Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.provinceofisabela.ph",
+      "lat": 17.0650898,
+      "lng": 122.4253879
+    },
+    {
+      "code": "osm:node/6036095585",
+      "name": "Fatima University Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.fumc.com.ph",
+      "lat": 14.6192564,
+      "lng": 121.1522667
+    },
+    {
+      "code": "osm:node/7357770986",
+      "name": "M. V. Santiago Medical & Diagnostic Center",
+      "countryCode": "PH",
+      "origin": "https://www.mvsantiago.com",
+      "lat": 14.1968822,
+      "lng": 120.8768073
+    },
+    {
+      "code": "osm:node/10091588055",
+      "name": "Feliz Tooth District Dental Clinic",
+      "countryCode": "PH",
+      "origin": "http://www.facebook.com",
+      "lat": 15.2095938,
+      "lng": 120.5791382
+    },
+    {
+      "code": "osm:way/23378990",
+      "name": "Asian Hospital and Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.asianhospital.com",
+      "lat": 14.4132052,
+      "lng": 121.0436117
+    },
+    {
+      "code": "osm:way/25795096",
+      "name": "National Kidney and Transplant Institute",
+      "countryCode": "PH",
+      "origin": "https://www.nkti.gov.ph",
+      "lat": 14.647247,
+      "lng": 121.0472489
+    },
+    {
+      "code": "osm:way/49333995",
+      "name": "Makati Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.makatimed.net.ph",
+      "lat": 14.5592839,
+      "lng": 121.0148788
+    },
+    {
+      "code": "osm:way/53057234",
+      "name": "Los Baños Doctors Hospital and Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.lbdhmc.com",
+      "lat": 14.1707796,
+      "lng": 121.2432128
+    },
+    {
+      "code": "osm:way/55333229",
+      "name": "Dr. Arturo P. Pingoy Medical Center",
+      "countryCode": "PH",
+      "origin": "http://dappmc.com",
+      "lat": 6.5052577,
+      "lng": 124.8369627
+    },
+    {
+      "code": "osm:way/76344014",
+      "name": "Rizal Medical Center",
+      "countryCode": "PH",
+      "origin": "http://www.rmc.doh.gov.ph",
+      "lat": 14.5639477,
+      "lng": 121.0661219
+    },
+    {
+      "code": "osm:way/82707121",
+      "name": "Victor R. Potenciano Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.vrp.com.ph",
+      "lat": 14.5769481,
+      "lng": 121.0499839
+    },
+    {
+      "code": "osm:way/83534531",
+      "name": "Las Piñas General Hospital & Satellite Trauma Center",
+      "countryCode": "PH",
+      "origin": "https://lpghstc.doh.gov.ph",
+      "lat": 14.4716361,
+      "lng": 120.9738077
+    },
+    {
+      "code": "osm:way/84272189",
+      "name": "Adventist Medical Center Manila",
+      "countryCode": "PH",
+      "origin": "https://amcmanila.org",
+      "lat": 14.5559964,
+      "lng": 120.995281
+    },
+    {
+      "code": "osm:way/87741356",
+      "name": "Medical Center Manila",
+      "countryCode": "PH",
+      "origin": "https://www.manilamed.com.ph",
+      "lat": 14.5824342,
+      "lng": 120.9854605
+    },
+    {
+      "code": "osm:way/89908337",
+      "name": "Santa Rosa Hospital & Medical Center",
+      "countryCode": "PH",
+      "origin": "http://srhmc.com.ph",
+      "lat": 14.2869793,
+      "lng": 121.0956403
+    },
+    {
+      "code": "osm:way/90316401",
+      "name": "Philippine General Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.pgh.gov.ph",
+      "lat": 14.5777703,
+      "lng": 120.9856636
+    },
+    {
+      "code": "osm:way/91187868",
+      "name": "East Avenue Medical Center",
+      "countryCode": "PH",
+      "origin": "https://eamc.gov.ph",
+      "lat": 14.6419117,
+      "lng": 121.0479244
+    },
+    {
+      "code": "osm:way/93806644",
+      "name": "Veterans Memorial Medical Center",
+      "countryCode": "PH",
+      "origin": "https://vmmc.gov.ph",
+      "lat": 14.6565115,
+      "lng": 121.0400526
+    },
+    {
+      "code": "osm:way/97073768",
+      "name": "Philippine Orthopedic Hospital",
+      "countryCode": "PH",
+      "origin": "https://poc.doh.gov.ph",
+      "lat": 14.6278001,
+      "lng": 121.0033546
+    },
+    {
+      "code": "osm:way/102682002",
+      "name": "Fe Del Mundo Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.fedelmundo.com.ph",
+      "lat": 14.6205993,
+      "lng": 121.0092169
+    },
+    {
+      "code": "osm:way/107268359",
+      "name": "Mariano Marcos Memorial Hospital and Medical Center",
+      "countryCode": "PH",
+      "origin": "http://mmmhmc.doh.gov.ph",
+      "lat": 18.0606153,
+      "lng": 120.5595488
+    },
+    {
+      "code": "osm:way/108870904",
+      "name": "Bataan General Hospital and Medical Center",
+      "countryCode": "PH",
+      "origin": "https://bataangeneralhospital.doh.gov.ph",
+      "lat": 14.6787082,
+      "lng": 120.5303575
+    },
+    {
+      "code": "osm:way/110617667",
+      "name": "Calamba Doctors Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.calambadoctorshospital.com",
+      "lat": 14.2171388,
+      "lng": 121.1419485
+    },
+    {
+      "code": "osm:way/110702706",
+      "name": "Las Piñas Doctors Hospital",
+      "countryCode": "PH",
+      "origin": "http://www.laspinasdoctorshospitalinc.com",
+      "lat": 14.4556192,
+      "lng": 120.9938879
+    },
+    {
+      "code": "osm:way/112176621",
+      "name": "Medical Center Parañaque",
+      "countryCode": "PH",
+      "origin": "https://www.medicalcenterparanaque.com",
+      "lat": 14.4583565,
+      "lng": 121.0334534
+    },
+    {
+      "code": "osm:way/115065012",
+      "name": "Davao Doctors Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.ddh.com.ph",
+      "lat": 7.0704561,
+      "lng": 125.6038438
+    },
+    {
+      "code": "osm:way/115222320",
+      "name": "Jose R. Reyes Memorial Medical Center",
+      "countryCode": "PH",
+      "origin": "https://jrrmmc.gov.ph",
+      "lat": 14.614115,
+      "lng": 120.9819216
+    },
+    {
+      "code": "osm:way/116385558",
+      "name": "Dr. Paulino J. Garcia Memorial Research and Medical Center",
+      "countryCode": "PH",
+      "origin": "http://drpjgmrmc.doh.gov.ph",
+      "lat": 15.4894821,
+      "lng": 120.9727886
+    },
+    {
+      "code": "osm:way/117483864",
+      "name": "Premiere Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.premieremedcenter.com",
+      "lat": 15.5078378,
+      "lng": 120.9671419
+    },
+    {
+      "code": "osm:way/118806480",
+      "name": "Jose B. Lingad Memorial Regional Hospital",
+      "countryCode": "PH",
+      "origin": "https://jblmgh.doh.gov.ph",
+      "lat": 15.0344824,
+      "lng": 120.6846553
+    },
+    {
+      "code": "osm:way/151363159",
+      "name": "Southern Philippines Medical Center",
+      "countryCode": "PH",
+      "origin": "https://spmc.doh.gov.ph",
+      "lat": 7.0995105,
+      "lng": 125.6193887
+    },
+    {
+      "code": "osm:way/151363652",
+      "name": "Riverside Medical Center",
+      "countryCode": "PH",
+      "origin": "https://rivermedcenter.net",
+      "lat": 10.6831354,
+      "lng": 122.9580276
+    },
+    {
+      "code": "osm:way/155380641",
+      "name": "Mary Mediatrix Medical Center",
+      "countryCode": "PH",
+      "origin": "https://marymediatrixmedcenter.com.ph",
+      "lat": 13.9436866,
+      "lng": 121.152099
+    },
+    {
+      "code": "osm:way/156274043",
+      "name": "Saint Vincent's General Hospital",
+      "countryCode": "PH",
+      "origin": "http://www.svgh.ph",
+      "lat": 10.3020272,
+      "lng": 123.8948173
+    },
+    {
+      "code": "osm:way/159676038",
+      "name": "Adventist Medical Center - Valencia City",
+      "countryCode": "PH",
+      "origin": "https://amcvalencia.org",
+      "lat": 7.9123116,
+      "lng": 125.0922995
+    },
+    {
+      "code": "osm:way/164720318",
+      "name": "Region 1 Medical Center",
+      "countryCode": "PH",
+      "origin": "https://r1mc.doh.gov.ph",
+      "lat": 16.0485461,
+      "lng": 120.3409865
+    },
+    {
+      "code": "osm:way/227736934",
+      "name": "Manuel J. Santos Hospital",
+      "countryCode": "PH",
+      "origin": "https://mjsantos.com.ph",
+      "lat": 8.9470167,
+      "lng": 125.5410567
+    },
+    {
+      "code": "osm:way/228087526",
+      "name": "Gentri Medical Center and Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.gentrimed.com",
+      "lat": 14.2891158,
+      "lng": 120.9068199
+    },
+    {
+      "code": "osm:way/231404558",
+      "name": "Philippine Children's Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.pcmc.gov.ph",
+      "lat": 14.6475865,
+      "lng": 121.0414436
+    },
+    {
+      "code": "osm:way/242462031",
+      "name": "Ilocos Training and Regional Medical Center",
+      "countryCode": "PH",
+      "origin": "http://itrmc.doh.gov.ph",
+      "lat": 16.5913663,
+      "lng": 120.3182825
+    },
+    {
+      "code": "osm:way/256675440",
+      "name": "Ramiro Community Hospital",
+      "countryCode": "PH",
+      "origin": "https://ramiromedical.org",
+      "lat": 9.6443514,
+      "lng": 123.8527458
+    },
+    {
+      "code": "osm:way/265574761",
+      "name": "Manila Central University Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.mcuhospital.org",
+      "lat": 14.6577421,
+      "lng": 120.9870998
+    },
+    {
+      "code": "osm:way/275365519",
+      "name": "Tebow Cure Hospital",
+      "countryCode": "PH",
+      "origin": "https://philippines.cure.org",
+      "lat": 7.0993399,
+      "lng": 125.6272243
+    },
+    {
+      "code": "osm:way/291642917",
+      "name": "Hospital of the Infant Jesus Medical Center",
+      "countryCode": "PH",
+      "origin": "http://hijmc.com",
+      "lat": 14.6140317,
+      "lng": 120.9892758
+    },
+    {
+      "code": "osm:way/300448295",
+      "name": "Sacred Heart Hospital of Malolos",
+      "countryCode": "PH",
+      "origin": "http://sacredheartmalolos.com",
+      "lat": 14.8520039,
+      "lng": 120.8174779
+    },
+    {
+      "code": "osm:way/300448296",
+      "name": "Sacred Heart Hospital of Malolos",
+      "countryCode": "PH",
+      "origin": "http://sacredheartmalolos.com",
+      "lat": 14.8521692,
+      "lng": 120.817713
+    },
+    {
+      "code": "osm:way/321475703",
+      "name": "Unihealth Southwoods Hospital and Medical Center",
+      "countryCode": "PH",
+      "origin": "https://unihealthsouthwoodshospital.com",
+      "lat": 14.3316503,
+      "lng": 121.0475878
+    },
+    {
+      "code": "osm:way/324713282",
+      "name": "QualiMed Hospital",
+      "countryCode": "PH",
+      "origin": "http://qualimed.com.ph",
+      "lat": 10.7063917,
+      "lng": 122.5478323
+    },
+    {
+      "code": "osm:way/329787503",
+      "name": "Karmelli Hospital",
+      "countryCode": "PH",
+      "origin": "https://karmellihospital.wordpress.com",
+      "lat": 18.1917637,
+      "lng": 120.6105352
+    },
+    {
+      "code": "osm:way/360857250",
+      "name": "The Medical City Iloilo",
+      "countryCode": "PH",
+      "origin": "http://themedicalcityiloilo.com",
+      "lat": 10.6991492,
+      "lng": 122.5430164
+    },
+    {
+      "code": "osm:way/387469528",
+      "name": "Bicol Regional Hospital and Medical Center",
+      "countryCode": "PH",
+      "origin": "https://brhmc.doh.gov.ph",
+      "lat": 13.146863,
+      "lng": 123.7244055
+    },
+    {
+      "code": "osm:way/397725310",
+      "name": "Binangonan Lakeview Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.ourblh.com",
+      "lat": 14.502496,
+      "lng": 121.1699891
+    },
+    {
+      "code": "osm:way/403828078",
+      "name": "Casiguran District Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.facebook.com",
+      "lat": 16.2747288,
+      "lng": 122.1173228
+    },
+    {
+      "code": "osm:way/412858742",
+      "name": "The Health Centrum Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.thehealthcentrum.com.ph",
+      "lat": 11.5813393,
+      "lng": 122.7678715
+    },
+    {
+      "code": "osm:way/420997083",
+      "name": "M. V. Santiago Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.mvsantiago.com",
+      "lat": 14.2941694,
+      "lng": 120.8661829
+    },
+    {
+      "code": "osm:way/452880349",
+      "name": "Asia Pacific Medical Center - Iloilo",
+      "countryCode": "PH",
+      "origin": "https://apmc-iloilo.com",
+      "lat": 10.7439238,
+      "lng": 122.5403177
+    },
+    {
+      "code": "osm:way/479055979",
+      "name": "Global Care Medical Center of Bay",
+      "countryCode": "PH",
+      "origin": "https://www.facebook.com",
+      "lat": 14.1771349,
+      "lng": 121.2727587
+    },
+    {
+      "code": "osm:way/508042958",
+      "name": "Batangas Medical Center",
+      "countryCode": "PH",
+      "origin": "http://batmc.doh.gov.ph",
+      "lat": 13.7670242,
+      "lng": 121.0667734
+    },
+    {
+      "code": "osm:way/525405920",
+      "name": "Dr. Montano G. Ramos General Hospital",
+      "countryCode": "PH",
+      "origin": "https://web.facebook.com",
+      "lat": 14.659386,
+      "lng": 121.0235972
+    },
+    {
+      "code": "osm:way/530432230",
+      "name": "Healthway QualiMed Hospital - Sta. Rosa",
+      "countryCode": "PH",
+      "origin": "https://qualimed.com.ph",
+      "lat": 14.2321867,
+      "lng": 121.0528976
+    },
+    {
+      "code": "osm:way/610106337",
+      "name": "Chong Hua Hospital Mandaue",
+      "countryCode": "PH",
+      "origin": "http://www.chonghuahospital.org",
+      "lat": 10.3227685,
+      "lng": 123.9316302
+    },
+    {
+      "code": "osm:way/625643038",
+      "name": "Batanes General Hospital & Medical Center",
+      "countryCode": "PH",
+      "origin": "https://batanesgeneralhospital.doh.gov.ph",
+      "lat": 20.4503996,
+      "lng": 121.9704815
+    },
+    {
+      "code": "osm:way/653024869",
+      "name": "Pampanga Premier Medical Center",
+      "countryCode": "PH",
+      "origin": "https://ppmc.com.ph",
+      "lat": 14.9602462,
+      "lng": 120.7594673
+    },
+    {
+      "code": "osm:way/655521963",
+      "name": "La Union Medical Center",
+      "countryCode": "PH",
+      "origin": "https://lumc.gov.ph",
+      "lat": 16.3468541,
+      "lng": 120.364464
+    },
+    {
+      "code": "osm:way/658684225",
+      "name": "Allied Care Experts Medical Center Valenzuela",
+      "countryCode": "PH",
+      "origin": "https://acemcvalenzuela.com.ph",
+      "lat": 14.7152551,
+      "lng": 120.9573336
+    },
+    {
+      "code": "osm:way/663531516",
+      "name": "Basilan Medical Center",
+      "countryCode": "PH",
+      "origin": "https://bgh.doh.gov.ph",
+      "lat": 6.7000883,
+      "lng": 121.9880313
+    },
+    {
+      "code": "osm:way/768842150",
+      "name": "Villanueva Clinical Laboratory",
+      "countryCode": "PH",
+      "origin": "https://villanueva-lab.com",
+      "lat": 10.6804648,
+      "lng": 122.9542333
+    },
+    {
+      "code": "osm:way/772568984",
+      "name": "Our Lady of Mt. Carmel Medical Center Clark",
+      "countryCode": "PH",
+      "origin": "https://olmcmc.com",
+      "lat": 15.1823057,
+      "lng": 120.5299772
+    },
+    {
+      "code": "osm:way/775561027",
+      "name": "Cagayan Valley Medical Center",
+      "countryCode": "PH",
+      "origin": "http://cvmc.doh.gov.ph",
+      "lat": 17.6565835,
+      "lng": 121.747123
+    },
+    {
+      "code": "osm:way/784480740",
+      "name": "Christ the King Medical Center",
+      "countryCode": "PH",
+      "origin": "https://christthekingmed.wixsite.com",
+      "lat": 14.459047,
+      "lng": 120.9699894
+    },
+    {
+      "code": "osm:way/784510441",
+      "name": "Salubris Medical Center",
+      "countryCode": "PH",
+      "origin": "https://the-salubris-medical-center.business.site",
+      "lat": 16.5220033,
+      "lng": 121.1934969
+    },
+    {
+      "code": "osm:way/785699280",
+      "name": "Christ the Saviour General Hospital Inc.",
+      "countryCode": "PH",
+      "origin": "https://christ-the-saviour-general-hospital-inc.business.site",
+      "lat": 13.845898,
+      "lng": 121.2094445
+    },
+    {
+      "code": "osm:way/791925491",
+      "name": "Panay Healthcare Multipurpose Cooperative Hospital",
+      "countryCode": "PH",
+      "origin": "https://panayhealthcare.ph",
+      "lat": 11.6916159,
+      "lng": 122.3680475
+    },
+    {
+      "code": "osm:way/836960349",
+      "name": "St. Luke's Medical Center",
+      "countryCode": "PH",
+      "origin": "https://www.stlukes.com.ph",
+      "lat": 14.6228823,
+      "lng": 121.023504
+    },
+    {
+      "code": "osm:way/898099403",
+      "name": "Eversley Child Sanitarium and General Hospital",
+      "countryCode": "PH",
+      "origin": "http://ecs.doh.gov.ph",
+      "lat": 10.3658363,
+      "lng": 123.95416
+    },
+    {
+      "code": "osm:way/942774164",
+      "name": "N. L. Villa Memorial Medical Center",
+      "countryCode": "PH",
+      "origin": "https://villahospital.com",
+      "lat": 13.9386131,
+      "lng": 121.1657076
+    },
+    {
+      "code": "osm:way/953864533",
+      "name": "Talon General Hospital",
+      "countryCode": "PH",
+      "origin": "http://talonemi.com",
+      "lat": 15.4909449,
+      "lng": 120.5914983
+    },
+    {
+      "code": "osm:way/1021380907",
+      "name": "Gapan District Hospital",
+      "countryCode": "PH",
+      "origin": "https://www.facebook.com",
+      "lat": 15.2911585,
+      "lng": 120.9510603
+    },
+    {
+      "code": "osm:way/1044383918",
+      "name": "ACE Medical Center",
+      "countryCode": "PH",
+      "origin": "http://www.ace-mc-bohol.com",
+      "lat": 9.6343914,
+      "lng": 123.8692153
+    },
+    {
+      "code": "osm:way/1080855994",
+      "name": "Saint Pio's Medical Center, Inc.",
+      "countryCode": "PH",
+      "origin": "http://www.saintpiomedical.com",
+      "lat": 15.3261251,
+      "lng": 119.98858
+    },
+    {
+      "code": "osm:way/1122933582",
+      "name": "Sacred Heart Hospital of Malolos",
+      "countryCode": "PH",
+      "origin": "http://sacredheartmalolos.com",
+      "lat": 14.8517095,
+      "lng": 120.8177625
+    },
+    {
+      "code": "osm:way/1184370155",
+      "name": "Tagum Global Medical Center",
+      "countryCode": "PH",
+      "origin": "https://tagumglobalmedicalcenterinc.com",
+      "lat": 7.429019,
+      "lng": 125.7940321
+    },
+    {
+      "code": "osm:way/1357718378",
+      "name": "APMC-Aklan",
+      "countryCode": "PH",
+      "origin": "https://ampcaklan.com",
+      "lat": 11.6983165,
+      "lng": 122.3742733
+    },
+    {
+      "code": "osm:way/1412978433",
+      "name": "ACE Medical Center - Tacloban",
+      "countryCode": "PH",
+      "origin": "https://acemctacloban.com",
+      "lat": 11.2046613,
+      "lng": 125.0071959
+    },
+    {
+      "code": "osm:way/1418853452",
+      "name": "VisayasMed Hospital",
+      "countryCode": "PH",
+      "origin": "https://visayasmed.com.ph",
+      "lat": 10.3064587,
+      "lng": 123.8951101
+    },
+    {
+      "code": "osm:way/1435976373",
+      "name": "The Medical City",
+      "countryCode": "PH",
+      "origin": "https://themedicalcity.com",
+      "lat": 14.5899507,
+      "lng": 121.069306
+    },
+    {
+      "code": "osm:way/1436870313",
+      "name": "Alied Care Experts Medical Center Baliuag",
+      "countryCode": "PH",
+      "origin": "https://alliedcarebaliwag.com",
+      "lat": 14.9528532,
+      "lng": 120.8843461
+    },
+    {
+      "code": "osm:way/1533865010",
+      "name": "R. T. Lim Family Hospital",
+      "countryCode": "PH",
+      "origin": "https://rtlimfamilyhospital.com",
+      "lat": 7.6517178,
+      "lng": 122.4662712
+    },
+    {
+      "code": "osm:way/1537832135",
+      "name": "ACE Medical Center Mandaluyong",
+      "countryCode": "PH",
+      "origin": "https://acemandaluyong.com.ph",
+      "lat": 14.5952091,
+      "lng": 121.0266964
+    },
+    {
+      "code": "osm:way/1559237180",
+      "name": "Providers Multipurpose Cooperative Medical Center",
+      "countryCode": "PH",
+      "origin": "https://pmc.providersmpc.coop",
+      "lat": 17.0454898,
+      "lng": 121.8556474
+    }
+  ]
+}

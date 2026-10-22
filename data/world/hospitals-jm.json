@@ -1,0 +1,41 @@
+{
+  "countryCode": "JM",
+  "fetchedAt": "2026-10-21T01:44:38.608Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/2576174707",
+      "name": "Kingston Open MRI",
+      "countryCode": "JM",
+      "origin": "http://www.kingstonopenmri.com",
+      "lat": 18.0220026,
+      "lng": -76.7959453
+    },
+    {
+      "code": "osm:node/13326155119",
+      "name": "Hospiten Montego Bay",
+      "countryCode": "JM",
+      "origin": "https://hospiten.com",
+      "lat": 18.5210417,
+      "lng": -77.8530852
+    },
+    {
+      "code": "osm:way/374593273",
+      "name": "Spanish Town Hospital",
+      "countryCode": "JM",
+      "origin": "https://www.serha.gov.jm",
+      "lat": 17.9917741,
+      "lng": -76.9471434
+    },
+    {
+      "code": "osm:way/461643085",
+      "name": "University Hospital Of The West Indies",
+      "countryCode": "JM",
+      "origin": "https://uhwi.gov.jm",
+      "lat": 18.0110185,
+      "lng": -76.7445204
+    }
+  ]
+}

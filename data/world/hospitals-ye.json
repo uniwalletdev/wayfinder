@@ -1,0 +1,33 @@
+{
+  "countryCode": "YE",
+  "fetchedAt": "2026-10-21T03:12:18.088Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/450157266",
+      "name": "مستشفى أنا وطفلي التخصصي",
+      "countryCode": "YE",
+      "origin": "https://www.mamch.com",
+      "lat": 15.341499,
+      "lng": 44.1798029
+    },
+    {
+      "code": "osm:node/4720866090",
+      "name": "مستشفى دار الشفاء",
+      "countryCode": "YE",
+      "origin": "http://facebook.com",
+      "lat": 14.5417792,
+      "lng": 44.398536
+    },
+    {
+      "code": "osm:way/237755721",
+      "name": "مستشفى ابن سينا",
+      "countryCode": "YE",
+      "origin": "http://ibnsina-hospital.com",
+      "lat": 15.3409984,
+      "lng": 44.1686678
+    }
+  ]
+}

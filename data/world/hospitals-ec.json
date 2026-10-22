@@ -1,0 +1,257 @@
+{
+  "countryCode": "EC",
+  "fetchedAt": "2026-10-21T01:15:57.509Z",
+  "count": 31,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/921048633",
+      "name": "Ansuz Centro Psicoterapeutico",
+      "countryCode": "EC",
+      "origin": "https://ansuz.ec",
+      "lat": -0.1746028,
+      "lng": -78.4804417
+    },
+    {
+      "code": "osm:node/3323290476",
+      "name": "Fundación vista para todos",
+      "countryCode": "EC",
+      "origin": "https://fundacionvistaparatodos.com",
+      "lat": -0.207984,
+      "lng": -78.4832426
+    },
+    {
+      "code": "osm:node/4150085080",
+      "name": "Hospital Universitario Motupe",
+      "countryCode": "EC",
+      "origin": "https://www.unl.edu.ec",
+      "lat": -3.9453006,
+      "lng": -79.2234136
+    },
+    {
+      "code": "osm:node/4354962292",
+      "name": "Orthe Clínica Odontologica",
+      "countryCode": "EC",
+      "origin": "https://www.orthedontic.com",
+      "lat": -0.1695516,
+      "lng": -78.4851412
+    },
+    {
+      "code": "osm:node/4368419094",
+      "name": "Dispensario del IESS",
+      "countryCode": "EC",
+      "origin": "https://www.iess.gob.ec",
+      "lat": -1.8692107,
+      "lng": -79.9771948
+    },
+    {
+      "code": "osm:node/4378437891",
+      "name": "Dispensario Medico Letamendi",
+      "countryCode": "EC",
+      "origin": "http://iess.gov.ec",
+      "lat": -2.2063659,
+      "lng": -79.8889569
+    },
+    {
+      "code": "osm:node/5181873339",
+      "name": "Laboratorio Cíclico Delta",
+      "countryCode": "EC",
+      "origin": "https://www.facebook.com",
+      "lat": -1.0597264,
+      "lng": -80.4463658
+    },
+    {
+      "code": "osm:node/6266314291",
+      "name": "Centro de Salud Tipo A - Yunganza",
+      "countryCode": "EC",
+      "origin": "https://www.salud.gob.ec",
+      "lat": -2.8643984,
+      "lng": -78.3714176
+    },
+    {
+      "code": "osm:node/6800772527",
+      "name": "GUAGUAPLAY",
+      "countryCode": "EC",
+      "origin": "https://www.guaguaplay.com",
+      "lat": -3.2513423,
+      "lng": -79.9728965
+    },
+    {
+      "code": "osm:node/6892910385",
+      "name": "INSPI",
+      "countryCode": "EC",
+      "origin": "https://www.investigacionsalud.gob.ec",
+      "lat": -2.9072052,
+      "lng": -78.9949375
+    },
+    {
+      "code": "osm:node/9624810222",
+      "name": "Sonrisas Alborada",
+      "countryCode": "EC",
+      "origin": "https://www.sonrisasec.com",
+      "lat": -2.1335727,
+      "lng": -79.9044014
+    },
+    {
+      "code": "osm:node/10938614786",
+      "name": "Hospital del Día - IESS Jipijapa",
+      "countryCode": "EC",
+      "origin": "https://www.iess.gob.ec",
+      "lat": -1.3527354,
+      "lng": -80.5847658
+    },
+    {
+      "code": "osm:way/35557152",
+      "name": "Hospital de Especialidades Guayaquil \"Dr. Abel Gilbert Pontón\"",
+      "countryCode": "EC",
+      "origin": "https://www.hagp.gob.ec",
+      "lat": -2.2123708,
+      "lng": -79.9303172
+    },
+    {
+      "code": "osm:way/43405123",
+      "name": "Hospital Verdi Cevallos Balda",
+      "countryCode": "EC",
+      "origin": "http://hpvc.gob.ec",
+      "lat": -1.058608,
+      "lng": -80.4447091
+    },
+    {
+      "code": "osm:way/75312313",
+      "name": "Hospital Padre Carollo",
+      "countryCode": "EC",
+      "origin": "https://hospitalpadrecarollo.wordpress.com",
+      "lat": -0.2871725,
+      "lng": -78.5503705
+    },
+    {
+      "code": "osm:way/125225465",
+      "name": "Centro Ambulatorio del IESS",
+      "countryCode": "EC",
+      "origin": "https://iess.gob.ec",
+      "lat": -0.2479156,
+      "lng": -79.1569217
+    },
+    {
+      "code": "osm:way/172099094",
+      "name": "Hospital General IESS Santo Domingo",
+      "countryCode": "EC",
+      "origin": "https://www.iess.gob.ec",
+      "lat": -0.2544162,
+      "lng": -79.1540907
+    },
+    {
+      "code": "osm:way/258766800",
+      "name": "Clinica San Agustín",
+      "countryCode": "EC",
+      "origin": "https://www.hospitalclinicasanagustin.com",
+      "lat": -4.0001771,
+      "lng": -79.2034281
+    },
+    {
+      "code": "osm:way/260058629",
+      "name": "Centro Clínico Quirúrgico Ambulatorio Hospital del Día El Tena",
+      "countryCode": "EC",
+      "origin": "https://www.iess.gob.ec",
+      "lat": -1.0114527,
+      "lng": -77.8097294
+    },
+    {
+      "code": "osm:way/282178652",
+      "name": "Hospital General Puyo",
+      "countryCode": "EC",
+      "origin": "http://www.hgp.gob.ec",
+      "lat": -1.5017408,
+      "lng": -78.0030347
+    },
+    {
+      "code": "osm:way/354208141",
+      "name": "Hospital de los Valles",
+      "countryCode": "EC",
+      "origin": "https://hospitaldelosvalles.com",
+      "lat": -0.2083764,
+      "lng": -78.4244195
+    },
+    {
+      "code": "osm:way/423497305",
+      "name": "North Hospital",
+      "countryCode": "EC",
+      "origin": "http://www.northospital.ec",
+      "lat": -0.1295491,
+      "lng": -78.493588
+    },
+    {
+      "code": "osm:way/430872952",
+      "name": "Hospital Clínica Panamericana",
+      "countryCode": "EC",
+      "origin": "https://clinicapanamericana.med.ec",
+      "lat": -2.188918,
+      "lng": -79.8796088
+    },
+    {
+      "code": "osm:way/431239212",
+      "name": "Clínica Internacional de la Visión de Ecuador",
+      "countryCode": "EC",
+      "origin": "https://cive.ec",
+      "lat": -2.0484157,
+      "lng": -79.8906523
+    },
+    {
+      "code": "osm:way/447248869",
+      "name": "Hospital Vozandes",
+      "countryCode": "EC",
+      "origin": "https://www.hospitalvozandes.com",
+      "lat": -0.1727992,
+      "lng": -78.4894556
+    },
+    {
+      "code": "osm:way/485957457",
+      "name": "Hospital General del Norte de Guayaquil IESS Los Ceibos",
+      "countryCode": "EC",
+      "origin": "https://mobile.twitter.com",
+      "lat": -2.175966,
+      "lng": -79.9402718
+    },
+    {
+      "code": "osm:way/1014173047",
+      "name": "Fundación Virgen de la Merced",
+      "countryCode": "EC",
+      "origin": "https://www.virgendelamerced.org",
+      "lat": -0.3154449,
+      "lng": -78.4516431
+    },
+    {
+      "code": "osm:way/1017247623",
+      "name": "Centro Oncológico VILLA HOGAR LA ESPERANZA",
+      "countryCode": "EC",
+      "origin": "https://www.nexdu.com",
+      "lat": -0.3153563,
+      "lng": -78.4541821
+    },
+    {
+      "code": "osm:way/1098466851",
+      "name": "Red Salud Total",
+      "countryCode": "EC",
+      "origin": "http://redsaludtotal.com",
+      "lat": -0.2524873,
+      "lng": -79.1768584
+    },
+    {
+      "code": "osm:way/1099981750",
+      "name": "Hospital Gineco Obstétrico de Nueva Aurora \"Luz Elena Arismendi\" (Maternidad del Sur)",
+      "countryCode": "EC",
+      "origin": "http://hgona.gob.ec",
+      "lat": -0.3149668,
+      "lng": -78.5546044
+    },
+    {
+      "code": "osm:way/1463529992",
+      "name": "Centro de Salud Tipo A Chontapunta",
+      "countryCode": "EC",
+      "origin": "https://www.salud.gob.ec",
+      "lat": -0.9188175,
+      "lng": -77.3605415
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "slug": "oys-aluekartta-2940x1640mm-verkko-elo2026",
+      "file": "map/world/auto/fi/oys-aluekartta-2940x1640mm-verkko-elo2026.pdf",
+      "url": "https://oys.fi/wp-content/uploads/2025/10/Oys_Aluekartta_2940x1640mm_verkko_elo2026.pdf",
+      "sha256": "18ed8e0ebd1047ffaef81e6c46c110279b64f173ce154397e36e3463885318ed",
+      "hospitalCode": "osm:way/50123447",
+      "hospitalName": "Oulun yliopistollinen sairaala",
+      "countryCode": "FI",
+      "linkText": "Printable OYS Campus Map",
+      "kind": "site-map",
+      "approvedAt": "2026-10-22T02:54:32.643Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 5082243,
+      "fetchedAt": "2026-10-22T14:15:14.430Z"
+    }
+  ]
+}

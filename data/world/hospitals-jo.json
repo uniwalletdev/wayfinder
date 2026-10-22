@@ -1,0 +1,33 @@
+{
+  "countryCode": "JO",
+  "fetchedAt": "2026-10-21T01:44:58.480Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1923534186",
+      "name": "مستشفى العيون التخصصي أمي",
+      "countryCode": "JO",
+      "origin": "https://www.ibn-alhaytham-hospital.com",
+      "lat": 31.9975442,
+      "lng": 35.8723782
+    },
+    {
+      "code": "osm:way/200921049",
+      "name": "مستشفى الأردن",
+      "countryCode": "JO",
+      "origin": "http://www.jordan-hospital.com",
+      "lat": 31.9605509,
+      "lng": 35.8997313
+    },
+    {
+      "code": "osm:way/612832217",
+      "name": "Specialty Hospital",
+      "countryCode": "JO",
+      "origin": "https://www.specialty-hospital.com",
+      "lat": 31.9787447,
+      "lng": 35.9004159
+    }
+  ]
+}

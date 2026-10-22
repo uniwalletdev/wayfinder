@@ -1,0 +1,113 @@
+{
+  "countryCode": "CU",
+  "fetchedAt": "2026-10-21T01:07:59.993Z",
+  "count": 13,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/5501781323",
+      "name": "Instituto Nacional de Oncología y Radiobiología",
+      "countryCode": "CU",
+      "origin": "http://www.info.inor.sld.cu",
+      "lat": 23.1324842,
+      "lng": -82.3866183
+    },
+    {
+      "code": "osm:node/7943056085",
+      "name": "Hospital Psiquiátrico Dr. Galigarcía",
+      "countryCode": "CU",
+      "origin": "https://instituciones.sld.cu",
+      "lat": 23.0566546,
+      "lng": -82.3896513
+    },
+    {
+      "code": "osm:way/291374260",
+      "name": "Instituto Nacional de Oncología y Radiobiología",
+      "countryCode": "CU",
+      "origin": "http://www.info.inor.sld.cu",
+      "lat": 23.1309138,
+      "lng": -82.387365
+    },
+    {
+      "code": "osm:way/366986503",
+      "name": "Hospital Psiquiátrico de La Habana",
+      "countryCode": "CU",
+      "origin": "http://www.psiquiatricohph.sld.cu",
+      "lat": 23.0129325,
+      "lng": -82.3996825
+    },
+    {
+      "code": "osm:way/371451043",
+      "name": "Hospital Provincial Docente Clínico Quirúrgico Lucía Íñiguez Landín",
+      "countryCode": "CU",
+      "origin": "http://www.hcqho.sld.cu",
+      "lat": 20.8701842,
+      "lng": -76.2371229
+    },
+    {
+      "code": "osm:way/391178727",
+      "name": "Hospital Provincial Pediátrico Octavio de la Concepción y la Pedraja",
+      "countryCode": "CU",
+      "origin": "https://www.hpuh.hlg.sld.cu",
+      "lat": 20.8877935,
+      "lng": -76.2488899
+    },
+    {
+      "code": "osm:way/413030713",
+      "name": "Hospital Pediátrico de Centro Habana",
+      "countryCode": "CU",
+      "origin": "https://instituciones.sld.cu",
+      "lat": 23.1259605,
+      "lng": -82.3772656
+    },
+    {
+      "code": "osm:way/432141130",
+      "name": "Hospital Militar Clínico Quirúrgico Docente Cdte. Manuel «Piti» Fajardo Rivero",
+      "countryCode": "CU",
+      "origin": "https://conocecuba.com",
+      "lat": 22.4109769,
+      "lng": -79.9739673
+    },
+    {
+      "code": "osm:way/434688810",
+      "name": "Hospital Provincial General Docente Martín Chang Puga",
+      "countryCode": "CU",
+      "origin": "https://conocecuba.com",
+      "lat": 21.5353918,
+      "lng": -77.2745834
+    },
+    {
+      "code": "osm:way/499187540",
+      "name": "Hospital Armando Cardoso",
+      "countryCode": "CU",
+      "origin": "https://conocecuba.com",
+      "lat": 21.0568561,
+      "lng": -77.355674
+    },
+    {
+      "code": "osm:way/683470204",
+      "name": "Hospital Oncológico Dr. Celestino Hernández Robau",
+      "countryCode": "CU",
+      "origin": "https://conocecuba.com",
+      "lat": 22.3966302,
+      "lng": -79.9621454
+    },
+    {
+      "code": "osm:way/1255629235",
+      "name": "Cardiocentro Ernesto «Che» Guevara",
+      "countryCode": "CU",
+      "origin": "https://conocecuba.com",
+      "lat": 22.3953315,
+      "lng": -79.9615098
+    },
+    {
+      "code": "osm:way/1484145417",
+      "name": "Centro Nacional de Cirugía de Mínimo Acceso",
+      "countryCode": "CU",
+      "origin": "http://www.cce.sld.cu",
+      "lat": 23.0922225,
+      "lng": -82.3651159
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "countryCode": "ME",
+  "fetchedAt": "2026-10-21T02:03:31.149Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/183791595",
+      "name": "Dom zdravlja",
+      "countryCode": "ME",
+      "origin": "https://www.dzbudva.me",
+      "lat": 42.2896995,
+      "lng": 18.8402364
+    },
+    {
+      "code": "osm:way/235874252",
+      "name": "Brezovik",
+      "countryCode": "ME",
+      "origin": "http://www.brezovik.me",
+      "lat": 42.8190647,
+      "lng": 18.924178
+    },
+    {
+      "code": "osm:way/284063423",
+      "name": "CODRA",
+      "countryCode": "ME",
+      "origin": "http://www.codrahospital.com",
+      "lat": 42.4292989,
+      "lng": 19.2544768
+    }
+  ]
+}

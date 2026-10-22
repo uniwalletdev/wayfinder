@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-10-22T08:41:46.136Z",
+  "countryCode": "MC",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 0,
+    "botChallenged": 0,
+    "robotsBlocked": 0,
+    "withCandidates": 1,
+    "crawled": 2
+  },
+  "count": 2,
+  "crawled": {
+    "osm:way/49209406": "ok",
+    "osm:way/628293464": "ok"
+  },
+  "candidates": [
+    {
+      "hospitalCode": "osm:way/49209406",
+      "hospitalName": "Centre hospitalier Princesse Grace (CHPG)",
+      "countryCode": "MC",
+      "website": "https://www.chpg.mc",
+      "url": "https://www.chpg.mc/wp-content/uploads/2016/11/marker-map.png",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low",
+      "format": "image"
+    },
+    {
+      "hospitalCode": "osm:way/49209406",
+      "hospitalName": "Centre hospitalier Princesse Grace (CHPG)",
+      "countryCode": "MC",
+      "website": "https://www.chpg.mc",
+      "url": "https://www.chpg.mc/wp-content/uploads/2016/11/map.png",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low",
+      "format": "image"
+    }
+  ]
+}

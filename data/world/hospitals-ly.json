@@ -1,0 +1,57 @@
+{
+  "countryCode": "LY",
+  "fetchedAt": "2026-10-21T02:00:26.853Z",
+  "count": 6,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/95248345",
+      "name": "مستشفى طرابلس المركزي",
+      "countryCode": "LY",
+      "origin": "https://www.facebook.com",
+      "lat": 32.8802922,
+      "lng": 13.1901265
+    },
+    {
+      "code": "osm:way/764390634",
+      "name": "مستشفى الظهرة التخصصي للنساء و الولادة",
+      "countryCode": "LY",
+      "origin": "https://www.facebook.com",
+      "lat": 31.7436362,
+      "lng": 13.9787107
+    },
+    {
+      "code": "osm:way/789920485",
+      "name": "مستشفى الخليل التخصصي",
+      "countryCode": "LY",
+      "origin": "http://www.alkhalil.ly",
+      "lat": 32.8793305,
+      "lng": 13.1894185
+    },
+    {
+      "code": "osm:way/791674400",
+      "name": "مركز تكركيبة الطبي;مركز تكركيبة الصحي",
+      "countryCode": "LY",
+      "origin": "https://www.facebook.com",
+      "lat": 26.5581822,
+      "lng": 13.2476072
+    },
+    {
+      "code": "osm:way/791676800",
+      "name": "المستشفى الليبي الألماني",
+      "countryCode": "LY",
+      "origin": "http://www.libyan-german-hospital.com",
+      "lat": 32.0910565,
+      "lng": 20.1005612
+    },
+    {
+      "code": "osm:way/791770517",
+      "name": "عيادة الأمل للعلاج والتأهيل النفسي;عيادة الأمل للعلاج والتأهيل",
+      "countryCode": "LY",
+      "origin": "https://www.facebook.com",
+      "lat": 32.1064308,
+      "lng": 20.1048592
+    }
+  ]
+}

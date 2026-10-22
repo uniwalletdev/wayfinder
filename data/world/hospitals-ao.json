@@ -1,0 +1,89 @@
+{
+  "countryCode": "AO",
+  "fetchedAt": "2026-10-21T00:38:49.684Z",
+  "count": 10,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/7683838576",
+      "name": "Clínica Sagrada Esperança Lubango (CFM/CSE)",
+      "countryCode": "AO",
+      "origin": "https://clinicasagradaesperanca.co.ao",
+      "lat": -14.9158382,
+      "lng": 13.4882357
+    },
+    {
+      "code": "osm:way/284185200",
+      "name": "Clínica Girassol",
+      "countryCode": "AO",
+      "origin": "https://www.xn--clnicagirassol-1lb.co.ao",
+      "lat": -8.8373447,
+      "lng": 13.2309635
+    },
+    {
+      "code": "osm:way/443826596",
+      "name": "Centro Médico Corpo & Mente",
+      "countryCode": "AO",
+      "origin": "https://www.unioneafrica.com",
+      "lat": -14.9182413,
+      "lng": 13.5002454
+    },
+    {
+      "code": "osm:way/823816669",
+      "name": "Centro Médico do Caminho de Ferro de Moçâmedes (CFM)",
+      "countryCode": "AO",
+      "origin": "https://clinicasagradaesperanca.co.ao",
+      "lat": -14.9158783,
+      "lng": 13.4879926
+    },
+    {
+      "code": "osm:way/827918552",
+      "name": "Hospital do Chiulo",
+      "countryCode": "AO",
+      "origin": "https://www.caritasprovitaegradu.ch",
+      "lat": -16.5348169,
+      "lng": 14.8655929
+    },
+    {
+      "code": "osm:way/1088455010",
+      "name": "Centro Ortopédico do Lubango",
+      "countryCode": "AO",
+      "origin": "https://www.facebook.com",
+      "lat": -14.9051353,
+      "lng": 13.6744461
+    },
+    {
+      "code": "osm:way/1214750370",
+      "name": "Hospital Sanatório do Huambo",
+      "countryCode": "AO",
+      "origin": "https://www.hshbo.org",
+      "lat": -12.7767056,
+      "lng": 15.7448909
+    },
+    {
+      "code": "osm:way/1214877500",
+      "name": "Centro de Medicina e Reabilitação Física Princesa Diana",
+      "countryCode": "AO",
+      "origin": "https://cmrfpd.ao",
+      "lat": -12.7597484,
+      "lng": 15.7832405
+    },
+    {
+      "code": "osm:way/1324953393",
+      "name": "Centro Médico do Soyo",
+      "countryCode": "AO",
+      "origin": "https://clinicasagradaesperanca.co.ao",
+      "lat": -6.1325975,
+      "lng": 12.3736386
+    },
+    {
+      "code": "osm:way/1326531484",
+      "name": "Hospital Geral do Uíge",
+      "countryCode": "AO",
+      "origin": "https://hospitalgeraldouige.ao",
+      "lat": -7.6135204,
+      "lng": 15.0497438
+    }
+  ]
+}

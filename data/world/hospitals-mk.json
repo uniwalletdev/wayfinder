@@ -1,0 +1,153 @@
+{
+  "countryCode": "MK",
+  "fetchedAt": "2026-10-21T02:05:33.739Z",
+  "count": 18,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/2411245246",
+      "name": "Негорски Бањи",
+      "countryCode": "MK",
+      "origin": "https://www.negorskibanji.com.mk",
+      "lat": 41.1717857,
+      "lng": 22.4907252
+    },
+    {
+      "code": "osm:node/4885047822",
+      "name": "ONE Hospital - Tetovo",
+      "countryCode": "MK",
+      "origin": "https://www.onehospital.mk",
+      "lat": 42.0030792,
+      "lng": 20.9773702
+    },
+    {
+      "code": "osm:node/5969332187",
+      "name": "St. Erasmus Hospital",
+      "countryCode": "MK",
+      "origin": "https://traortoh.com.mk",
+      "lat": 41.1348192,
+      "lng": 20.7631403
+    },
+    {
+      "code": "osm:way/28212201",
+      "name": "ГОБ 8-ми Септември",
+      "countryCode": "MK",
+      "origin": "https://bolnica.org.mk",
+      "lat": 42.0057642,
+      "lng": 21.4037835
+    },
+    {
+      "code": "osm:way/32658092",
+      "name": "ЈЗУ Психијатриска болница „Скопје“",
+      "countryCode": "MK",
+      "origin": "https://pbskopje.org.mk",
+      "lat": 42.0193191,
+      "lng": 21.3722859
+    },
+    {
+      "code": "osm:way/38317780",
+      "name": "Здравствен дом Др. Хаим Абраванел",
+      "countryCode": "MK",
+      "origin": "https://zdbitola.org.mk",
+      "lat": 41.0328619,
+      "lng": 21.3353636
+    },
+    {
+      "code": "osm:way/175293043",
+      "name": "РеМедика",
+      "countryCode": "MK",
+      "origin": "https://remedika.com.mk",
+      "lat": 42.008302,
+      "lng": 21.4596514
+    },
+    {
+      "code": "osm:way/176156176",
+      "name": "Acibadem Sistina Hospital",
+      "countryCode": "MK",
+      "origin": "https://www.acibademsistina.mk",
+      "lat": 42.0140243,
+      "lng": 21.4039776
+    },
+    {
+      "code": "osm:way/176950874",
+      "name": "Центар за медицинска рехабилитација Катлановска Бања",
+      "countryCode": "MK",
+      "origin": "https://www.katlanovskaspa.com",
+      "lat": 41.897801,
+      "lng": 21.6936415
+    },
+    {
+      "code": "osm:way/179747888",
+      "name": "Центар за Јавно Здравје Скопје - Пролет",
+      "countryCode": "MK",
+      "origin": "https://www.cph.mk",
+      "lat": 41.9874929,
+      "lng": 21.4414639
+    },
+    {
+      "code": "osm:way/185635120",
+      "name": "Специјална Болница за белодробни заболувања и туберкулоза Јасеново“",
+      "countryCode": "MK",
+      "origin": "https://zk.mk",
+      "lat": 41.5159891,
+      "lng": 21.7218657
+    },
+    {
+      "code": "osm:way/408840915",
+      "name": "Клиничла Болница Жан Митрев",
+      "countryCode": "MK",
+      "origin": "https://zmc.mk",
+      "lat": 42.0041317,
+      "lng": 21.4034577
+    },
+    {
+      "code": "osm:way/422688582",
+      "name": "Болница „Аџибадем Систина“",
+      "countryCode": "MK",
+      "origin": "https://www.acibademsistina.mk",
+      "lat": 42.014502,
+      "lng": 21.4038348
+    },
+    {
+      "code": "osm:way/956043144",
+      "name": "Санте Плус",
+      "countryCode": "MK",
+      "origin": "https://www.santeplusgroup.com",
+      "lat": 42.0045372,
+      "lng": 21.3441586
+    },
+    {
+      "code": "osm:way/956044200",
+      "name": "Европска очна болница",
+      "countryCode": "MK",
+      "origin": "https://www.eeh.com.mk",
+      "lat": 42.0043249,
+      "lng": 21.3451458
+    },
+    {
+      "code": "osm:way/1359255133",
+      "name": "Завод за превенција, лекување и рехабилитација",
+      "countryCode": "MK",
+      "origin": "https://jzubolnicaoteshevo.com.mk",
+      "lat": 40.9775874,
+      "lng": 20.9141357
+    },
+    {
+      "code": "osm:way/1454442566",
+      "name": "Здравствен дом",
+      "countryCode": "MK",
+      "origin": "https://zdnegotino.gov.mk",
+      "lat": 41.4791854,
+      "lng": 22.0826924
+    },
+    {
+      "code": "osm:way/1562960901",
+      "name": "Детска болница Козле",
+      "countryCode": "MK",
+      "origin": "https://www.ukrzdkozle.mk",
+      "lat": 41.9903149,
+      "lng": 21.4049156
+    }
+  ]
+}

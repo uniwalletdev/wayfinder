@@ -1,0 +1,17 @@
+{
+  "countryCode": "TG",
+  "fetchedAt": "2026-10-21T02:55:02.873Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/800950310",
+      "name": "Centre médical Puits de Jacob",
+      "countryCode": "TG",
+      "origin": "https://centremedicalpuitsdejacob.com",
+      "lat": 9.014628,
+      "lng": 1.1379769
+    }
+  ]
+}

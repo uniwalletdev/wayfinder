@@ -1,0 +1,217 @@
+{
+  "countryCode": "MD",
+  "fetchedAt": "2026-10-21T02:02:36.867Z",
+  "count": 26,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/619321575",
+      "name": "Comisia medicală a conducătorilor mijloacelor de transport",
+      "countryCode": "MD",
+      "origin": "https://www.comisieauto.md",
+      "lat": 47.0180662,
+      "lng": 28.8484489
+    },
+    {
+      "code": "osm:node/5571196291",
+      "name": "Centrul Medical „Neurogen”",
+      "countryCode": "MD",
+      "origin": "https://www.neurogen.md",
+      "lat": 47.0401086,
+      "lng": 28.8891076
+    },
+    {
+      "code": "osm:node/14201738406",
+      "name": "SAMU Edineț",
+      "countryCode": "MD",
+      "origin": "https://ambulanta.md",
+      "lat": 48.1726749,
+      "lng": 27.3154254
+    },
+    {
+      "code": "osm:way/36090644",
+      "name": "Centrul Republican de Diagnostică Medicală / Institutul de Pneumologie „Chiril Draganiuc”",
+      "countryCode": "MD",
+      "origin": "http://crdm.ms.md",
+      "lat": 46.9967617,
+      "lng": 28.8322032
+    },
+    {
+      "code": "osm:way/38591265",
+      "name": "Spitalul Clinic al Ministerului Sănătății (Clinica nr. 2 / Secția Consultativ-Diagnostică nr. 2 / Centrul de Recuperare Sanatorială)",
+      "countryCode": "MD",
+      "origin": "https://scms.md",
+      "lat": 47.0017324,
+      "lng": 28.8305564
+    },
+    {
+      "code": "osm:way/38690601",
+      "name": "Institutul de Medicină Urgentă",
+      "countryCode": "MD",
+      "origin": "https://www.urgenta.md",
+      "lat": 47.0292571,
+      "lng": 28.8185251
+    },
+    {
+      "code": "osm:way/39247165",
+      "name": "Centrul Național de Transfuzie a Sângelui (CNTS)",
+      "countryCode": "MD",
+      "origin": "https://cnts.md",
+      "lat": 47.0033764,
+      "lng": 28.8133772
+    },
+    {
+      "code": "osm:way/44354661",
+      "name": "Spitalul Raional Strășeni",
+      "countryCode": "MD",
+      "origin": "https://imspsrstraseni.md",
+      "lat": 47.1415914,
+      "lng": 28.6198046
+    },
+    {
+      "code": "osm:way/52171507",
+      "name": "Spitalul Clinic Municipal nr. 2 „Sfântul Arhanghel Mihail”",
+      "countryCode": "MD",
+      "origin": "https://www.spital.arhanghelmihail.md",
+      "lat": 47.0330579,
+      "lng": 28.8416863
+    },
+    {
+      "code": "osm:way/80933071",
+      "name": "Spitalul de Dermatologie și Maladii Comunicabile",
+      "countryCode": "MD",
+      "origin": "https://sdmc.md",
+      "lat": 46.9505527,
+      "lng": 28.8326558
+    },
+    {
+      "code": "osm:way/136035326",
+      "name": "Днестровская городская больница",
+      "countryCode": "MD",
+      "origin": "https://minzdrav.gospmr.org",
+      "lat": 46.6254494,
+      "lng": 29.9054356
+    },
+    {
+      "code": "osm:way/165281039",
+      "name": "Госпиталь инвалидов ВОВ",
+      "countryCode": "MD",
+      "origin": "https://minzdrav.gospmr.org",
+      "lat": 46.8352347,
+      "lng": 29.669483
+    },
+    {
+      "code": "osm:way/181040072",
+      "name": "Рыбницкая центральная районная больница",
+      "countryCode": "MD",
+      "origin": "http://rcrb.idknet.com",
+      "lat": 47.7712917,
+      "lng": 28.9980575
+    },
+    {
+      "code": "osm:way/184483676",
+      "name": "Каменская центраьная районная больница",
+      "countryCode": "MD",
+      "origin": "https://minzdrav.gospmr.org",
+      "lat": 48.0342797,
+      "lng": 28.705292
+    },
+    {
+      "code": "osm:way/225034753",
+      "name": "Медицинский центр «Медин»",
+      "countryCode": "MD",
+      "origin": "http://www.medin.md",
+      "lat": 46.8421795,
+      "lng": 29.5600729
+    },
+    {
+      "code": "osm:way/238385135",
+      "name": "Слободзейская центральная районная больница",
+      "countryCode": "MD",
+      "origin": "https://minzdrav.gospmr.org",
+      "lat": 46.7172027,
+      "lng": 29.7218726
+    },
+    {
+      "code": "osm:way/238814253",
+      "name": "Григориопольская центральная районная больница",
+      "countryCode": "MD",
+      "origin": "https://minzdrav.gospmr.org",
+      "lat": 47.1579037,
+      "lng": 29.3000684
+    },
+    {
+      "code": "osm:way/421335882",
+      "name": "Centrul Sănătății Familiei „Galaxia”",
+      "countryCode": "MD",
+      "origin": "https://galaxia.md",
+      "lat": 47.7504981,
+      "lng": 28.9731381
+    },
+    {
+      "code": "osm:way/426567453",
+      "name": "Республиканская клиническая больница",
+      "countryCode": "MD",
+      "origin": "http://rkb-pmr.ru",
+      "lat": 46.8340708,
+      "lng": 29.6458846
+    },
+    {
+      "code": "osm:way/943260273",
+      "name": "Instituția Medico-Sanitară Publică Asociația Medicală Teritorială Buiucani",
+      "countryCode": "MD",
+      "origin": "https://amtbuiucani.md",
+      "lat": 47.0351387,
+      "lng": 28.7891435
+    },
+    {
+      "code": "osm:way/1002916630",
+      "name": "Centrul de Sănătate Publică, Raionul Ialoveni",
+      "countryCode": "MD",
+      "origin": "https://ansp.md",
+      "lat": 46.9483923,
+      "lng": 28.774897
+    },
+    {
+      "code": "osm:way/1007366243",
+      "name": "IMSP Spitalul Clinic de Psihiatrie",
+      "countryCode": "MD",
+      "origin": "http://scp.md",
+      "lat": 46.9542935,
+      "lng": 28.8342854
+    },
+    {
+      "code": "osm:way/1091511514",
+      "name": "Sanatoriul Nufărul Alb",
+      "countryCode": "MD",
+      "origin": "https://nufarul.md",
+      "lat": 45.9023906,
+      "lng": 28.2045483
+    },
+    {
+      "code": "osm:way/1333740050",
+      "name": "Spitalul Raional Orhei",
+      "countryCode": "MD",
+      "origin": "http://srorhei.md",
+      "lat": 47.3867559,
+      "lng": 28.8224678
+    },
+    {
+      "code": "osm:way/1333740060",
+      "name": "Centrul de Sănătate Nr. 1 Orhei",
+      "countryCode": "MD",
+      "origin": "https://cs1orhei.md",
+      "lat": 47.3871671,
+      "lng": 28.8239524
+    },
+    {
+      "code": "osm:way/1467077238",
+      "name": "Centrul de Sănătate Bubuieci",
+      "countryCode": "MD",
+      "origin": "https://csbubuieci.md",
+      "lat": 46.9804928,
+      "lng": 28.9352328
+    }
+  ]
+}

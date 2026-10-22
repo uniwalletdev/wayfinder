@@ -1,0 +1,1473 @@
+{
+  "countryCode": "BY",
+  "fetchedAt": "2026-10-21T00:58:07.791Z",
+  "count": 183,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/305677756",
+      "name": "Наркалагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "http://www.narcolog.by",
+      "lat": 53.9159429,
+      "lng": 27.5279941
+    },
+    {
+      "code": "osm:node/320409572",
+      "name": "Кардыядыспансер",
+      "countryCode": "BY",
+      "origin": "https://cardio.grodno.by",
+      "lat": 53.6914363,
+      "lng": 23.7963535
+    },
+    {
+      "code": "osm:node/452523952",
+      "name": "Гомельская абласная інфекцыйная клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://uzgoikb.by",
+      "lat": 52.4885063,
+      "lng": 30.9858913
+    },
+    {
+      "code": "osm:node/522479443",
+      "name": "Дзіцячая паліклініка",
+      "countryCode": "BY",
+      "origin": "http://detskaya.polmed.by",
+      "lat": 55.4916304,
+      "lng": 28.7691219
+    },
+    {
+      "code": "osm:node/540986601",
+      "name": "Гомельскі абласны клінічны скурна-венералагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "https://gomelkvd.by",
+      "lat": 52.3949047,
+      "lng": 30.8981592
+    },
+    {
+      "code": "osm:node/2569882200",
+      "name": "Тубдыспансэр",
+      "countryCode": "BY",
+      "origin": "http://grodnotub.chat.ru",
+      "lat": 53.6971997,
+      "lng": 23.7927501
+    },
+    {
+      "code": "osm:node/2932443729",
+      "name": "Абласны дыспансер спартыўнай медыцыны",
+      "countryCode": "BY",
+      "origin": "https://odsm.by",
+      "lat": 53.688239,
+      "lng": 23.8248718
+    },
+    {
+      "code": "osm:node/3133892056",
+      "name": "Гінекалагічнае аддзяленне",
+      "countryCode": "BY",
+      "origin": "http://polmed.by",
+      "lat": 55.4761613,
+      "lng": 28.7420435
+    },
+    {
+      "code": "osm:node/3133892057",
+      "name": "Анкалагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "http://polmed.by",
+      "lat": 55.4762416,
+      "lng": 28.7407259
+    },
+    {
+      "code": "osm:node/4207697935",
+      "name": "Беларускі дзіцячы хоспіс (новы будынак)",
+      "countryCode": "BY",
+      "origin": "https://hospice.by",
+      "lat": 53.9967445,
+      "lng": 27.6997318
+    },
+    {
+      "code": "osm:node/4226572537",
+      "name": "Баранавіцкі занальны ЦГЭ",
+      "countryCode": "BY",
+      "origin": "http://gigienabar.by",
+      "lat": 53.1141209,
+      "lng": 26.0286899
+    },
+    {
+      "code": "osm:node/4226689990",
+      "name": "Баранавіцкая дзіцячая гарадская бальніца",
+      "countryCode": "BY",
+      "origin": "http://pediatr.brest.by",
+      "lat": 53.12706,
+      "lng": 26.0059999
+    },
+    {
+      "code": "osm:node/5786025955",
+      "name": "Бакштанская амбулаторыя агульнай практыкі",
+      "countryCode": "BY",
+      "origin": "http://www.i-crb.by",
+      "lat": 53.9384269,
+      "lng": 26.1852975
+    },
+    {
+      "code": "osm:node/7193063876",
+      "name": "Медыцынскі цэнтр пластычнай хірургіі «Ліямед»",
+      "countryCode": "BY",
+      "origin": "http://liamed.by",
+      "lat": 53.0825882,
+      "lng": 29.2437191
+    },
+    {
+      "code": "osm:node/7278940485",
+      "name": "ЭлМед",
+      "countryCode": "BY",
+      "origin": "http://www.elmed.by",
+      "lat": 52.4100255,
+      "lng": 30.9179366
+    },
+    {
+      "code": "osm:node/8556326502",
+      "name": "Медыцынскі цэнтр «Парацэльс»",
+      "countryCode": "BY",
+      "origin": "https://narkolog.by",
+      "lat": 53.8607767,
+      "lng": 27.5755763
+    },
+    {
+      "code": "osm:node/9197018817",
+      "name": "Абласны кардыялагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "https://bel-cardio.by",
+      "lat": 52.1064903,
+      "lng": 23.8124775
+    },
+    {
+      "code": "osm:node/10681449105",
+      "name": "Цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.volrb.by",
+      "lat": 53.1618141,
+      "lng": 24.4393845
+    },
+    {
+      "code": "osm:node/11547476380",
+      "name": "Люксден",
+      "countryCode": "BY",
+      "origin": "https://luxden.by",
+      "lat": 53.9049416,
+      "lng": 30.3438266
+    },
+    {
+      "code": "osm:node/13192029301",
+      "name": "Центр зрения «Оптимед»",
+      "countryCode": "BY",
+      "origin": "https://optimed.by",
+      "lat": 53.9267494,
+      "lng": 27.6613034
+    },
+    {
+      "code": "osm:way/25300797",
+      "name": "Гарадскі наркалагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "https://gknd.by",
+      "lat": 53.9185059,
+      "lng": 27.5287767
+    },
+    {
+      "code": "osm:way/25322826",
+      "name": "Бальніца паліятыўнага догляду «Хоспіс»",
+      "countryCode": "BY",
+      "origin": "https://mhospice.of.by",
+      "lat": 53.8875691,
+      "lng": 27.6086189
+    },
+    {
+      "code": "osm:way/25323165",
+      "name": "Дыспансер спартыўнай медыцыны",
+      "countryCode": "BY",
+      "origin": "http://mkcpf.by",
+      "lat": 53.933636,
+      "lng": 27.599147
+    },
+    {
+      "code": "osm:way/26390424",
+      "name": "1-я гарадская клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "http://1gkb.by",
+      "lat": 53.9185098,
+      "lng": 27.5965651
+    },
+    {
+      "code": "osm:way/27896623",
+      "name": "Віцебская гарадская клінічная бальніца № 1",
+      "countryCode": "BY",
+      "origin": "http://uzvgkb1.vitebsk.by",
+      "lat": 55.2001539,
+      "lng": 30.2099934
+    },
+    {
+      "code": "osm:way/27896640",
+      "name": "Віцебскі абласны клінічны кардыялагічны цэнтр",
+      "countryCode": "BY",
+      "origin": "http://www.cardio.vitebsk.by",
+      "lat": 55.2017434,
+      "lng": 30.2180577
+    },
+    {
+      "code": "osm:way/27896684",
+      "name": "Віцебскі абласны клінічны спецыялізаваны цэнтр",
+      "countryCode": "BY",
+      "origin": "https://www.voksc.by",
+      "lat": 55.1714136,
+      "lng": 30.1448631
+    },
+    {
+      "code": "osm:way/29125143",
+      "name": "Медыцынскі цэнтр прыгажосці і здароўя",
+      "countryCode": "BY",
+      "origin": "http://krasota-grodno.by",
+      "lat": 53.6776623,
+      "lng": 23.8381811
+    },
+    {
+      "code": "osm:way/29125358",
+      "name": "1134 ваенны клінічны медыцынскі цэнтр",
+      "countryCode": "BY",
+      "origin": "https://1134.by",
+      "lat": 53.6900254,
+      "lng": 23.8371368
+    },
+    {
+      "code": "osm:way/35809931",
+      "name": "Віцебская абласная клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "http://vokb.vitebsk.by",
+      "lat": 55.1579662,
+      "lng": 30.2261033
+    },
+    {
+      "code": "osm:way/37724918",
+      "name": "Рэспубліканскі клінічны шпіталь інвалідаў ВАВ",
+      "countryCode": "BY",
+      "origin": "http://www.giv.by",
+      "lat": 53.9998894,
+      "lng": 27.6872016
+    },
+    {
+      "code": "osm:way/37724921",
+      "name": "Мінская абласная дзіцячая клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "http://modkb.by",
+      "lat": 53.9972025,
+      "lng": 27.6843701
+    },
+    {
+      "code": "osm:way/37724925",
+      "name": "Цэнтр дзіцячай анкалогіі, гематалогіі і імуналогіі",
+      "countryCode": "BY",
+      "origin": "https://www.oncology.by",
+      "lat": 53.9969692,
+      "lng": 27.6898422
+    },
+    {
+      "code": "osm:way/40843491",
+      "name": "Мінская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://mcrb.by",
+      "lat": 53.9964902,
+      "lng": 27.6785905
+    },
+    {
+      "code": "osm:way/45404638",
+      "name": "Гомельская абласная спецыялізаваная клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://goskb.by",
+      "lat": 52.3961374,
+      "lng": 30.9019761
+    },
+    {
+      "code": "osm:way/55729040",
+      "name": "Радзільня № 2",
+      "countryCode": "BY",
+      "origin": "http://vgkr2.by",
+      "lat": 55.1560757,
+      "lng": 30.2174723
+    },
+    {
+      "code": "osm:way/59854904",
+      "name": "Лідская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://crb.lida.by",
+      "lat": 53.8949959,
+      "lng": 25.2842312
+    },
+    {
+      "code": "osm:way/68390045",
+      "name": "Цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://svetlogorskcrb.partnerinfo.by",
+      "lat": 52.6375695,
+      "lng": 29.7332428
+    },
+    {
+      "code": "osm:way/75642928",
+      "name": "3-я гарадская клінічная бальніца імя Клумава",
+      "countryCode": "BY",
+      "origin": "https://3gkb.by",
+      "lat": 53.8961856,
+      "lng": 27.5635782
+    },
+    {
+      "code": "osm:way/76132102",
+      "name": "4-я гарадская клінічная бальніца імя М.Я.Саўчанкі",
+      "countryCode": "BY",
+      "origin": "https://4gkb.by",
+      "lat": 53.8924642,
+      "lng": 27.5168712
+    },
+    {
+      "code": "osm:way/77229680",
+      "name": "Віцебскі абласны клінічны цэнтр псіхіатрыі і наркалогіі",
+      "countryCode": "BY",
+      "origin": "http://www.vit.pnd.vitebsk.by",
+      "lat": 55.2462692,
+      "lng": 30.3239908
+    },
+    {
+      "code": "osm:way/77346478",
+      "name": "бальніца хуткай медыцынскай дапамогі",
+      "countryCode": "BY",
+      "origin": "http://www.bsmp.by",
+      "lat": 53.8518437,
+      "lng": 27.5353057
+    },
+    {
+      "code": "osm:way/77458267",
+      "name": "5-я гарадская клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.5gkb.by",
+      "lat": 53.8701219,
+      "lng": 27.6339063
+    },
+    {
+      "code": "osm:way/80427935",
+      "name": "Гарадская дзіцячая інфекцыйная клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.gdikb.by",
+      "lat": 53.8933706,
+      "lng": 27.4563268
+    },
+    {
+      "code": "osm:way/80431217",
+      "name": "Галоўны ваенны клінічны медыцынскі цэнтр",
+      "countryCode": "BY",
+      "origin": "http://www.432.by",
+      "lat": 53.917468,
+      "lng": 27.5685092
+    },
+    {
+      "code": "osm:way/80431219",
+      "name": "Гарадская клінічная інфекцыйная бальніца",
+      "countryCode": "BY",
+      "origin": "https://gkib.by",
+      "lat": 53.9211984,
+      "lng": 27.559816
+    },
+    {
+      "code": "osm:way/80616815",
+      "name": "6-я гарадская клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.6gkb.by",
+      "lat": 53.9015342,
+      "lng": 27.6092065
+    },
+    {
+      "code": "osm:way/101535604",
+      "name": "Барысаўская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.borisov-crb.by",
+      "lat": 54.2329405,
+      "lng": 28.4936814
+    },
+    {
+      "code": "osm:way/103485534",
+      "name": "Віцебскі абласны дзіцячы клінічны цэнтр",
+      "countryCode": "BY",
+      "origin": "http://www.vdokb.by",
+      "lat": 55.1848224,
+      "lng": 30.21081
+    },
+    {
+      "code": "osm:way/103891748",
+      "name": "Гарадская клінічная бальніца хуткай мед. дапамогі",
+      "countryCode": "BY",
+      "origin": "http://www.bsmp.vitebsk.by",
+      "lat": 55.1936739,
+      "lng": 30.2417071
+    },
+    {
+      "code": "osm:way/108880347",
+      "name": "Рэабілітацыйны цэнтр «Зялёны бор»",
+      "countryCode": "BY",
+      "origin": "http://deti-speleo.by",
+      "lat": 52.7217084,
+      "lng": 27.4956004
+    },
+    {
+      "code": "osm:way/109932365",
+      "name": "Віцебскі абласны цэнтр медыка-сацыяльнай дапамогі",
+      "countryCode": "BY",
+      "origin": "http://palliative-vitebsk.by",
+      "lat": 55.1918714,
+      "lng": 30.1756046
+    },
+    {
+      "code": "osm:way/117980688",
+      "name": "Інфекцыйная бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.vokib.vitebsk.by",
+      "lat": 55.1945881,
+      "lng": 30.2455549
+    },
+    {
+      "code": "osm:way/121940863",
+      "name": "Рэспубліканская дзіцячая бальніца медыцынскай рэабілітацыі",
+      "countryCode": "BY",
+      "origin": "https://www.rdbmr.by",
+      "lat": 54.0658878,
+      "lng": 27.6891432
+    },
+    {
+      "code": "osm:way/122727858",
+      "name": "Рэспубліканская бальніца спелеалячэння",
+      "countryCode": "BY",
+      "origin": "http://speleo.by",
+      "lat": 52.7687318,
+      "lng": 27.5299939
+    },
+    {
+      "code": "osm:way/123432731",
+      "name": "ГУАЗ «Абласны дзіцячы цэнтр медыцынскай рэабілітацыі «Пухавічы»",
+      "countryCode": "BY",
+      "origin": "https://odcmr.by",
+      "lat": 53.524388,
+      "lng": 28.1398611
+    },
+    {
+      "code": "osm:way/128716915",
+      "name": "Цэнтральная гарадская бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.ncgb.by",
+      "lat": 55.5417766,
+      "lng": 28.6203143
+    },
+    {
+      "code": "osm:way/132917675",
+      "name": "11-я гарадская клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://11gkb.by",
+      "lat": 53.8456062,
+      "lng": 27.4976936
+    },
+    {
+      "code": "osm:way/135461818",
+      "name": "Магілёўская абласная дзіцячая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.modb.by",
+      "lat": 53.9177441,
+      "lng": 30.2788595
+    },
+    {
+      "code": "osm:way/135509949",
+      "name": "Цэнтр рэабілітацыі для інвалідаў",
+      "countryCode": "BY",
+      "origin": "http://vokcmri.by",
+      "lat": 55.1987738,
+      "lng": 30.2626185
+    },
+    {
+      "code": "osm:way/136729217",
+      "name": "Магілёўская гарадская бальніца хуткай медыцынскай дапамогі",
+      "countryCode": "BY",
+      "origin": "https://mgbsmp.by",
+      "lat": 53.8977972,
+      "lng": 30.3439573
+    },
+    {
+      "code": "osm:way/136851542",
+      "name": "Абласны супрацьсухотны дыспансер",
+      "countryCode": "BY",
+      "origin": "http://www.moptd.by",
+      "lat": 53.8717635,
+      "lng": 30.4028384
+    },
+    {
+      "code": "osm:way/136851543",
+      "name": "Магілёўская бальніца №1",
+      "countryCode": "BY",
+      "origin": "http://mb1.by",
+      "lat": 53.8652228,
+      "lng": 30.386455
+    },
+    {
+      "code": "osm:way/142411550",
+      "name": "Медыка-санітарная частка ААТ «Гродна Азот»",
+      "countryCode": "BY",
+      "origin": "https://azot.by",
+      "lat": 53.6760296,
+      "lng": 23.8950404
+    },
+    {
+      "code": "osm:way/147730122",
+      "name": "Магілёўскі абласны анкалагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "http://mood.by",
+      "lat": 53.8631416,
+      "lng": 30.3818343
+    },
+    {
+      "code": "osm:way/152361064",
+      "name": "Наркалагічны дыспансер аддзяленне 5",
+      "countryCode": "BY",
+      "origin": "https://gknd.by",
+      "lat": 53.9262519,
+      "lng": 27.4905953
+    },
+    {
+      "code": "osm:way/160191164",
+      "name": "бальніца № 3",
+      "countryCode": "BY",
+      "origin": "http://orshamed.by",
+      "lat": 54.4800481,
+      "lng": 30.3083893
+    },
+    {
+      "code": "osm:way/160523160",
+      "name": "Мінскі абласны супрацьсухотны дыспансер",
+      "countryCode": "BY",
+      "origin": "https://mopd.by",
+      "lat": 54.0072737,
+      "lng": 27.7117765
+    },
+    {
+      "code": "osm:way/161947692",
+      "name": "Відзаўская ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "https://braslcrb.by",
+      "lat": 55.3946243,
+      "lng": 26.6275548
+    },
+    {
+      "code": "osm:way/167491528",
+      "name": "Ваенны шпіталь",
+      "countryCode": "BY",
+      "origin": "https://www.mil.by",
+      "lat": 54.2371964,
+      "lng": 28.4752768
+    },
+    {
+      "code": "osm:way/178006609",
+      "name": "Аддзяленне сястрынскага догляду № 2 УАЗ «Гарадскі клінічны цэнтр паліятыўнай медыцынскай дапамогі»",
+      "countryCode": "BY",
+      "origin": "https://mhospice.of.by",
+      "lat": 53.7692158,
+      "lng": 27.3905102
+    },
+    {
+      "code": "osm:way/192123635",
+      "name": "Супрацьтуберкулёзны дыспансэр",
+      "countryCode": "BY",
+      "origin": "http://tubdispvit.vitebsk.by",
+      "lat": 55.1947754,
+      "lng": 30.248244
+    },
+    {
+      "code": "osm:way/197149961",
+      "name": "Цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.volrb.by",
+      "lat": 53.1610011,
+      "lng": 24.4400868
+    },
+    {
+      "code": "osm:way/205746459",
+      "name": "НПЦ хірургіі, транспланталогіі і гематалогіі",
+      "countryCode": "BY",
+      "origin": "https://msth.by",
+      "lat": 53.8606234,
+      "lng": 27.4945333
+    },
+    {
+      "code": "osm:way/207009760",
+      "name": "4-я гарадская дзіцячая клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.4gdkb.by",
+      "lat": 53.8607074,
+      "lng": 27.6328726
+    },
+    {
+      "code": "osm:way/209183894",
+      "name": "Крычаўская цэтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://krichev-crb.by",
+      "lat": 53.6897235,
+      "lng": 31.7099305
+    },
+    {
+      "code": "osm:way/217326495",
+      "name": "Гарадская бальніца №1 імя Сямашкі",
+      "countryCode": "BY",
+      "origin": "http://orshamed.by",
+      "lat": 54.5111653,
+      "lng": 30.4214951
+    },
+    {
+      "code": "osm:way/233223801",
+      "name": "Мсціслаўская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://mstislavl.mogilev-region.by",
+      "lat": 54.0113896,
+      "lng": 31.7424683
+    },
+    {
+      "code": "osm:way/239788303",
+      "name": "Станцыя хуткай медыцынскай дапамогі",
+      "countryCode": "BY",
+      "origin": "http://www.med.rechitsa.by",
+      "lat": 52.3715549,
+      "lng": 30.377591
+    },
+    {
+      "code": "osm:way/239788305",
+      "name": "Скурна-Венералагічны Дыспансер",
+      "countryCode": "BY",
+      "origin": "http://www.med.rechitsa.by",
+      "lat": 52.3711969,
+      "lng": 30.3780856
+    },
+    {
+      "code": "osm:way/239796280",
+      "name": "Радзільны дом",
+      "countryCode": "BY",
+      "origin": "http://www.med.rechitsa.by",
+      "lat": 52.3839198,
+      "lng": 30.3460451
+    },
+    {
+      "code": "osm:way/239796281",
+      "name": "Псіханаркалагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "http://www.med.rechitsa.by",
+      "lat": 52.3832748,
+      "lng": 30.3511934
+    },
+    {
+      "code": "osm:way/239796286",
+      "name": "Рэчыцкая Цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.med.rechitsa.by",
+      "lat": 52.3830455,
+      "lng": 30.348494
+    },
+    {
+      "code": "osm:way/241234634",
+      "name": "Цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.braslcrb.by",
+      "lat": 55.6415658,
+      "lng": 27.0227133
+    },
+    {
+      "code": "osm:way/243012808",
+      "name": "Абласны раддом",
+      "countryCode": "BY",
+      "origin": "http://www.vokrd.by",
+      "lat": 55.1751732,
+      "lng": 30.1972675
+    },
+    {
+      "code": "osm:way/243600667",
+      "name": "Полацкая цэнтральная гарадская бальніца",
+      "countryCode": "BY",
+      "origin": "http://polmed.by",
+      "lat": 55.4756567,
+      "lng": 28.7416079
+    },
+    {
+      "code": "osm:way/243641289",
+      "name": "Свіслацкая Цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://sviscrb.by",
+      "lat": 53.0339412,
+      "lng": 24.0933231
+    },
+    {
+      "code": "osm:way/254647354",
+      "name": "Гомельскі абласны наркалагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "http://narcology.by",
+      "lat": 52.4416076,
+      "lng": 30.9773379
+    },
+    {
+      "code": "osm:way/273536363",
+      "name": "Чырвонаслабодская гарадская бальніца",
+      "countryCode": "BY",
+      "origin": "https://soligorskcrb.by",
+      "lat": 52.8622842,
+      "lng": 27.1574044
+    },
+    {
+      "code": "osm:way/273727389",
+      "name": "Бешанковіцкая цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://beshenkovichicrb.by",
+      "lat": 55.0504854,
+      "lng": 29.4786571
+    },
+    {
+      "code": "osm:way/273929572",
+      "name": "Жабинковская центральная районная больница",
+      "countryCode": "BY",
+      "origin": "https://httpa",
+      "lat": 52.1888993,
+      "lng": 24.0302377
+    },
+    {
+      "code": "osm:way/274897531",
+      "name": "Бальніца хуткай медыцынскай дапамогі",
+      "countryCode": "BY",
+      "origin": "http://bgbsmp.by",
+      "lat": 53.1446505,
+      "lng": 29.2170026
+    },
+    {
+      "code": "osm:way/275510034",
+      "name": "Глыбоцкая цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://crb-glubokoe.by",
+      "lat": 55.1690718,
+      "lng": 27.6783291
+    },
+    {
+      "code": "osm:way/275731178",
+      "name": "Смілавіцкая гарадская бальніца",
+      "countryCode": "BY",
+      "origin": "http://chervenmed.by",
+      "lat": 53.7550781,
+      "lng": 28.0100179
+    },
+    {
+      "code": "osm:way/276264852",
+      "name": "Петрыкаўская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://petrikovcrb.by",
+      "lat": 52.1325874,
+      "lng": 28.4854302
+    },
+    {
+      "code": "osm:way/277735468",
+      "name": "Рэспубліканскі сухотны шпіталь «Сасноўка»",
+      "countryCode": "BY",
+      "origin": "http://www.sosnovka.by",
+      "lat": 55.0899378,
+      "lng": 30.1740863
+    },
+    {
+      "code": "osm:way/277829876",
+      "name": "Бабруйская цэнтральная бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.bcb.mogilev.by",
+      "lat": 53.1749736,
+      "lng": 29.1835392
+    },
+    {
+      "code": "osm:way/281610584",
+      "name": "Гарадскі клінічны радзільны дом №2",
+      "countryCode": "BY",
+      "origin": "https://gor-roddom2.by",
+      "lat": 53.8962116,
+      "lng": 27.4793651
+    },
+    {
+      "code": "osm:way/283869367",
+      "name": "Гродзенская абласная клінічная бальніца медыцынскай рэабілітацыі",
+      "countryCode": "BY",
+      "origin": "http://gokbmr.by",
+      "lat": 53.6872178,
+      "lng": 23.826128
+    },
+    {
+      "code": "osm:way/289723212",
+      "name": "Бальніца хуткай медыцынскай дапамогі",
+      "countryCode": "BY",
+      "origin": "https://bsmpgrodno.by",
+      "lat": 53.6736519,
+      "lng": 23.7979367
+    },
+    {
+      "code": "osm:way/293710627",
+      "name": "Рэспубліканскі навукова-практычны цэнтр «Маці і дзіця»",
+      "countryCode": "BY",
+      "origin": "https://medcenter.by",
+      "lat": 53.9311393,
+      "lng": 27.5354298
+    },
+    {
+      "code": "osm:way/301777617",
+      "name": "Гродзенская абласная дзіцячая клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "http://grodkb.by",
+      "lat": 53.6915471,
+      "lng": 23.8331351
+    },
+    {
+      "code": "osm:way/311108060",
+      "name": "Лоеўская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://loevcrb.by",
+      "lat": 51.9483743,
+      "lng": 30.7979912
+    },
+    {
+      "code": "osm:way/320163098",
+      "name": "Абласны кардыядыспансер",
+      "countryCode": "BY",
+      "origin": "https://www.cardiod.103.by",
+      "lat": 53.691411,
+      "lng": 23.7969548
+    },
+    {
+      "code": "osm:way/321884752",
+      "name": "Гродзенскі абласны цэнтр трансфузіялогіі",
+      "countryCode": "BY",
+      "origin": "https://donor.grodno.by",
+      "lat": 53.646061,
+      "lng": 23.8570664
+    },
+    {
+      "code": "osm:way/330465884",
+      "name": "Чэрыкаўская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://cherikovcrb.by",
+      "lat": 53.5752967,
+      "lng": 31.3908623
+    },
+    {
+      "code": "osm:way/330855548",
+      "name": "УАЗ «10 гарадская клінічная бальніца»",
+      "countryCode": "BY",
+      "origin": "http://www.10gkb.by",
+      "lat": 53.8381272,
+      "lng": 27.6564704
+    },
+    {
+      "code": "osm:way/334184022",
+      "name": "Полацкая гарадская бальніца №1",
+      "countryCode": "BY",
+      "origin": "https://polmed.by",
+      "lat": 55.4752335,
+      "lng": 28.8501752
+    },
+    {
+      "code": "osm:way/338891282",
+      "name": "Рэспубліканскі навукова-практычны цэнтр пульманалогіі і фтызіятрыі",
+      "countryCode": "BY",
+      "origin": "http://rnpcpf.by",
+      "lat": 53.9619432,
+      "lng": 27.5264618
+    },
+    {
+      "code": "osm:way/341667987",
+      "name": "РНПЦ неўралогіі і нейрахірургіі",
+      "countryCode": "BY",
+      "origin": "http://www.neuro.by",
+      "lat": 53.9230567,
+      "lng": 27.6773838
+    },
+    {
+      "code": "osm:way/344166453",
+      "name": "Лагойская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.polyclinic.by",
+      "lat": 54.2061609,
+      "lng": 27.8510576
+    },
+    {
+      "code": "osm:way/344303797",
+      "name": "11-я гарадская клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://11gkb.by",
+      "lat": 53.8768579,
+      "lng": 27.5220158
+    },
+    {
+      "code": "osm:way/352995572",
+      "name": "2-я гарадская дзіцячая клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.2gdkb.by",
+      "lat": 53.9325226,
+      "lng": 27.4820176
+    },
+    {
+      "code": "osm:way/358391180",
+      "name": "Мінскі гарадскі сацыяльны пансіянат Вяча",
+      "countryCode": "BY",
+      "origin": "http://vyacha.by",
+      "lat": 54.0713697,
+      "lng": 27.6688543
+    },
+    {
+      "code": "osm:way/361010705",
+      "name": "Рэспубліканскі рэабілітацыйны цэнтр для дзяцей-інвалідаў",
+      "countryCode": "BY",
+      "origin": "https://reacenter.by",
+      "lat": 53.9391972,
+      "lng": 27.6220005
+    },
+    {
+      "code": "osm:way/363335207",
+      "name": "Дрыбінская ЦРБ",
+      "countryCode": "BY",
+      "origin": "https://dribincrb.by",
+      "lat": 54.1166597,
+      "lng": 31.1153117
+    },
+    {
+      "code": "osm:way/363568053",
+      "name": "Шумілінская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://www.shumcrb.by",
+      "lat": 55.2929714,
+      "lng": 29.63133
+    },
+    {
+      "code": "osm:way/364165122",
+      "name": "Слуцкая Раённая Цэнтральная бальніца",
+      "countryCode": "BY",
+      "origin": "https://slcrb.by",
+      "lat": 53.0160973,
+      "lng": 27.5570556
+    },
+    {
+      "code": "osm:way/369846570",
+      "name": "Верхнядзвінская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://vdvinskmed.by",
+      "lat": 55.7983799,
+      "lng": 27.9569638
+    },
+    {
+      "code": "osm:way/372470978",
+      "name": "Бялыніцкая цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://clinic-belynichi.by",
+      "lat": 54.0005068,
+      "lng": 29.7145001
+    },
+    {
+      "code": "osm:way/373370618",
+      "name": "Гарадскі клінічны скурна-венералагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "https://kvd.by",
+      "lat": 53.8833188,
+      "lng": 27.4965665
+    },
+    {
+      "code": "osm:way/374403057",
+      "name": "Ашмянская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://oshmcrb.grodno.by",
+      "lat": 54.4244413,
+      "lng": 25.9603013
+    },
+    {
+      "code": "osm:way/374714799",
+      "name": "Камайская ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.postcrb.by",
+      "lat": 55.0585541,
+      "lng": 26.6055945
+    },
+    {
+      "code": "osm:way/374728200",
+      "name": "Пастаўская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://postcrb.by",
+      "lat": 55.1020873,
+      "lng": 26.8369424
+    },
+    {
+      "code": "osm:way/377997744",
+      "name": "Дзятлаўская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://dtcrb.by",
+      "lat": 53.462299,
+      "lng": 25.395086
+    },
+    {
+      "code": "osm:way/378334611",
+      "name": "Клецкая цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.klcrb.by",
+      "lat": 53.0702565,
+      "lng": 26.6316835
+    },
+    {
+      "code": "osm:way/383342574",
+      "name": "Рэспубліканскі навукова-практычны цэнтр анкалогіі і медыцынскай радыялогіі ім. Н.М.Аляксандрава",
+      "countryCode": "BY",
+      "origin": "https://omr.by",
+      "lat": 54.007193,
+      "lng": 27.6972919
+    },
+    {
+      "code": "osm:way/383476558",
+      "name": "Беларускі пратэзна-артапедычны аднаўленчы цэнтр",
+      "countryCode": "BY",
+      "origin": "https://bpovc.by",
+      "lat": 53.9062684,
+      "lng": 27.5093208
+    },
+    {
+      "code": "osm:way/383668477",
+      "name": "Мінскі гарадскі клінічны анкалагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "http://www.mgkod.by",
+      "lat": 53.9182816,
+      "lng": 27.5983981
+    },
+    {
+      "code": "osm:way/391522168",
+      "name": "Гродзенскі абласны перынатальны центр",
+      "countryCode": "BY",
+      "origin": "http://www.roddom.by",
+      "lat": 53.7004236,
+      "lng": 23.8216624
+    },
+    {
+      "code": "osm:way/426839081",
+      "name": "Абласны радзільны дом",
+      "countryCode": "BY",
+      "origin": "https://krdmo.by",
+      "lat": 53.9222652,
+      "lng": 27.6712276
+    },
+    {
+      "code": "osm:way/450254620",
+      "name": "Касцюковіцкая ЦРБ",
+      "countryCode": "BY",
+      "origin": "https://kostcrb.by",
+      "lat": 53.3563733,
+      "lng": 32.041542
+    },
+    {
+      "code": "osm:way/457984850",
+      "name": "РНПЦ Псіхічнага здароўя",
+      "countryCode": "BY",
+      "origin": "https://www.mentalhealth.by",
+      "lat": 53.9548805,
+      "lng": 27.5429689
+    },
+    {
+      "code": "osm:way/458862018",
+      "name": "Сенненская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://sennomed.by",
+      "lat": 54.8041894,
+      "lng": 29.6854475
+    },
+    {
+      "code": "osm:way/460790284",
+      "name": "УЗ Дубровенская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://dubrtmo.by",
+      "lat": 54.5693308,
+      "lng": 30.6674955
+    },
+    {
+      "code": "osm:way/462797295",
+      "name": "РНПЦ Отарыналарынгалогіі",
+      "countryCode": "BY",
+      "origin": "https://www.lor.by",
+      "lat": 53.9036808,
+      "lng": 27.537107
+    },
+    {
+      "code": "osm:way/463277627",
+      "name": "РНПЦ Кардыялогія",
+      "countryCode": "BY",
+      "origin": "https://www.cardio.by",
+      "lat": 53.8913728,
+      "lng": 27.5158971
+    },
+    {
+      "code": "osm:way/470927632",
+      "name": "Мінскі гарадскі цэнтр медыцынскай рэабілітацыі дзяцей з псіханеўралагічнымі захворваннямі",
+      "countryCode": "BY",
+      "origin": "https://firststep.by",
+      "lat": 53.8995233,
+      "lng": 27.550581
+    },
+    {
+      "code": "osm:way/474883530",
+      "name": "Гродзенская універсітэцкая клініка",
+      "countryCode": "BY",
+      "origin": "https://gocb.by",
+      "lat": 53.6938995,
+      "lng": 23.7922352
+    },
+    {
+      "code": "osm:way/474885533",
+      "name": "Гродзенская абласная інфекцыйная клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "http://goicb.by",
+      "lat": 53.6977591,
+      "lng": 23.7898749
+    },
+    {
+      "code": "osm:way/474890093",
+      "name": "Гарадская клінічная бальніца № 3",
+      "countryCode": "BY",
+      "origin": "http://www.grodno-gkb3.by",
+      "lat": 53.6999718,
+      "lng": 23.7900142
+    },
+    {
+      "code": "osm:way/474956690",
+      "name": "Бярозаўская ЦРБ імя Э.Э.Вяржбіцкага",
+      "countryCode": "BY",
+      "origin": "https://www.crbbrz.by",
+      "lat": 52.5380278,
+      "lng": 24.99744
+    },
+    {
+      "code": "osm:way/478923160",
+      "name": "Зарубская вясковая ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.dubrovno.by",
+      "lat": 54.5208499,
+      "lng": 30.9345161
+    },
+    {
+      "code": "osm:way/480948239",
+      "name": "Горацкая цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://gorkicrb.by",
+      "lat": 54.2877707,
+      "lng": 30.9976724
+    },
+    {
+      "code": "osm:way/524067972",
+      "name": "Сялецкая ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.crbbrz.by",
+      "lat": 52.5791404,
+      "lng": 24.8584181
+    },
+    {
+      "code": "osm:way/530867446",
+      "name": "УАЗ «Стаўбцоўская цэнтральная раённая бальніца»",
+      "countryCode": "BY",
+      "origin": "https://scrb.by",
+      "lat": 53.4873356,
+      "lng": 26.7498172
+    },
+    {
+      "code": "osm:way/539482625",
+      "name": "Бальніца №4",
+      "countryCode": "BY",
+      "origin": "https://www.gyzggb4.by",
+      "lat": 52.5331146,
+      "lng": 30.911716
+    },
+    {
+      "code": "osm:way/539775100",
+      "name": "Астравецкая цэнтральная раённая клінічная бальніца",
+      "countryCode": "BY",
+      "origin": "https://oscrkb.by",
+      "lat": 54.6069729,
+      "lng": 25.9811512
+    },
+    {
+      "code": "osm:way/543085057",
+      "name": "Лепельская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://lepelcrb.by",
+      "lat": 54.8945199,
+      "lng": 28.7154748
+    },
+    {
+      "code": "osm:way/545485613",
+      "name": "Навагрудская ЦРБ",
+      "countryCode": "BY",
+      "origin": "http://novcrb.by",
+      "lat": 53.5947558,
+      "lng": 25.8099053
+    },
+    {
+      "code": "osm:way/546659455",
+      "name": "Бераставіцкая цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://bercrb.by",
+      "lat": 53.1966841,
+      "lng": 24.0188015
+    },
+    {
+      "code": "osm:way/549692876",
+      "name": "Талачынская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://tcrb.by",
+      "lat": 54.4152701,
+      "lng": 29.6905706
+    },
+    {
+      "code": "osm:way/591379382",
+      "name": "Лёзненская ЦРБ",
+      "countryCode": "BY",
+      "origin": "http://liozrtmo.vitebsk.by",
+      "lat": 55.0330137,
+      "lng": 30.7972225
+    },
+    {
+      "code": "osm:way/593873877",
+      "name": "Наваельнянская гарадская бальніца",
+      "countryCode": "BY",
+      "origin": "https://dtcrb.by",
+      "lat": 53.458784,
+      "lng": 25.5766778
+    },
+    {
+      "code": "osm:way/626427889",
+      "name": "Сігневіцкая ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.crbbrz.by",
+      "lat": 52.422972,
+      "lng": 24.8940821
+    },
+    {
+      "code": "osm:way/654484887",
+      "name": "Малецкая ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "http://www.crbbrz.by",
+      "lat": 52.4887697,
+      "lng": 24.7155392
+    },
+    {
+      "code": "osm:way/658443156",
+      "name": "Івацэвіцкая цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://ivacemed.by",
+      "lat": 52.7191064,
+      "lng": 25.3504331
+    },
+    {
+      "code": "osm:way/675135984",
+      "name": "Шаркаўшчынская бальніца",
+      "countryCode": "BY",
+      "origin": "https://shcrb.by",
+      "lat": 55.367748,
+      "lng": 27.4577807
+    },
+    {
+      "code": "osm:way/687416601",
+      "name": "Іўеўская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://i-crb.by",
+      "lat": 53.9358735,
+      "lng": 25.7896373
+    },
+    {
+      "code": "osm:way/691216221",
+      "name": "Брэсцкая дзіцячая абласная бальніца",
+      "countryCode": "BY",
+      "origin": "http://bdob.brest.by",
+      "lat": 52.0910305,
+      "lng": 23.7073824
+    },
+    {
+      "code": "osm:way/724265542",
+      "name": "Косаўская ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "https://ivacemed.by",
+      "lat": 52.7573625,
+      "lng": 25.1512829
+    },
+    {
+      "code": "osm:way/728034049",
+      "name": "Расонская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "https://rcrb.by",
+      "lat": 55.9023205,
+      "lng": 28.8089407
+    },
+    {
+      "code": "osm:way/785774439",
+      "name": "Слонімскі цэнтральны раённы шпіталь",
+      "countryCode": "BY",
+      "origin": "http://slncrb.by",
+      "lat": 53.0758188,
+      "lng": 25.3862957
+    },
+    {
+      "code": "osm:way/822867519",
+      "name": "Прыёмнае аддзяленне",
+      "countryCode": "BY",
+      "origin": "http://krichev-crb.by",
+      "lat": 53.6894573,
+      "lng": 31.7097556
+    },
+    {
+      "code": "osm:way/856897523",
+      "name": "Скурна-венералагічны дыспансер",
+      "countryCode": "BY",
+      "origin": "https://gokvd.grodno.by",
+      "lat": 53.6753822,
+      "lng": 23.8382046
+    },
+    {
+      "code": "osm:way/886326338",
+      "name": "Дзіцячы шпіталь №3",
+      "countryCode": "BY",
+      "origin": "https://3gdkb.by",
+      "lat": 53.849794,
+      "lng": 27.5342681
+    },
+    {
+      "code": "osm:way/891692233",
+      "name": "Магілёўская абласная бальніца медыцынскай рэабілітацыі",
+      "countryCode": "BY",
+      "origin": "http://mbmr.by",
+      "lat": 53.9421288,
+      "lng": 30.443584
+    },
+    {
+      "code": "osm:way/907737012",
+      "name": "Рэспубліканская сухотная бальніца «Наваельня»",
+      "countryCode": "BY",
+      "origin": "http://rtbnov.by",
+      "lat": 53.4635391,
+      "lng": 25.5659074
+    },
+    {
+      "code": "osm:way/960620321",
+      "name": "Шпіталь ІВАВ «Юрцава»",
+      "countryCode": "BY",
+      "origin": "http://gospital-yurcevo.by",
+      "lat": 54.6038018,
+      "lng": 30.3721843
+    },
+    {
+      "code": "osm:way/1046901633",
+      "name": "Зэльвенская цэнтральная раённая бальніца",
+      "countryCode": "BY",
+      "origin": "http://zelva-crb.by",
+      "lat": 53.1482295,
+      "lng": 24.8249665
+    },
+    {
+      "code": "osm:way/1056708550",
+      "name": "Баранавіцкі радзільны дом",
+      "countryCode": "BY",
+      "origin": "http://roddom-mama.by",
+      "lat": 53.1342814,
+      "lng": 26.0106133
+    },
+    {
+      "code": "osm:way/1066581235",
+      "name": "Хорастаўская амбулаторыя",
+      "countryCode": "BY",
+      "origin": "https://soligorskcrb.by",
+      "lat": 52.4973997,
+      "lng": 27.2761711
+    },
+    {
+      "code": "osm:way/1074876854",
+      "name": "Рэспубліканская клінічная бальніца медыцынскай рэабілітацыі Аксакаўшчына",
+      "countryCode": "BY",
+      "origin": "https://aksakovschina.by",
+      "lat": 53.9519866,
+      "lng": 27.0981626
+    },
+    {
+      "code": "osm:way/1193428879",
+      "name": "Дабрынёўская медычная амбулаторыя",
+      "countryCode": "BY",
+      "origin": "https://dzcrb.by",
+      "lat": 53.6332154,
+      "lng": 27.3742452
+    },
+    {
+      "code": "osm:way/1210319136",
+      "name": "Радзільня",
+      "countryCode": "BY",
+      "origin": "https://www.uzbrd.by",
+      "lat": 53.1503466,
+      "lng": 29.2372574
+    },
+    {
+      "code": "osm:way/1211919706",
+      "name": "Баркавіцкая ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "https://vdvinskmed.by",
+      "lat": 55.6721869,
+      "lng": 28.3331114
+    },
+    {
+      "code": "osm:way/1279662457",
+      "name": "Pediatric pathology department",
+      "countryCode": "BY",
+      "origin": "https://gkpbminsk.by",
+      "lat": 53.8499985,
+      "lng": 27.5317649
+    },
+    {
+      "code": "osm:way/1330108973",
+      "name": "Ісернская бальніца сястрынскага догляду",
+      "countryCode": "BY",
+      "origin": "https://slcrb.by",
+      "lat": 52.9113569,
+      "lng": 27.6289546
+    },
+    {
+      "code": "osm:way/1346554760",
+      "name": "Бальніца сястрынскага догляду з амбулаторыяй",
+      "countryCode": "BY",
+      "origin": "https://soligorskcrb.by",
+      "lat": 52.6176786,
+      "lng": 27.5668044
+    },
+    {
+      "code": "osm:way/1352261700",
+      "name": "Старобінская гарадская бальніца",
+      "countryCode": "BY",
+      "origin": "https://soligorskcrb.by",
+      "lat": 52.7279009,
+      "lng": 27.4531893
+    },
+    {
+      "code": "osm:way/1377813715",
+      "name": "Шчыткавіцкая ўчастковая бальніца",
+      "countryCode": "BY",
+      "origin": "https://starcrb.by",
+      "lat": 53.2202722,
+      "lng": 27.9859152
+    },
+    {
+      "code": "osm:way/1418778784",
+      "name": "Сястронкаўская бальніца",
+      "countryCode": "BY",
+      "origin": "https://polmed.by",
+      "lat": 55.672605,
+      "lng": 28.8375932
+    },
+    {
+      "code": "osm:way/1433916148",
+      "name": "Казлоўшчынcкая гарадская бальніца",
+      "countryCode": "BY",
+      "origin": "https://dtcrb.by",
+      "lat": 53.3294406,
+      "lng": 25.3110134
+    }
+  ]
+}

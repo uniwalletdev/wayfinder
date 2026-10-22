@@ -1,0 +1,33 @@
+{
+  "countryCode": "LA",
+  "fetchedAt": "2026-10-21T01:53:59.451Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/571496537",
+      "name": "Lao Friends Hospital for Children (LFHC)",
+      "countryCode": "LA",
+      "origin": "https://www.fwablaos.org",
+      "lat": 19.8636153,
+      "lng": 102.1190382
+    },
+    {
+      "code": "osm:way/978703845",
+      "name": "LAO Asean Hospital",
+      "countryCode": "LA",
+      "origin": "http://www.lms.la",
+      "lat": 17.9338207,
+      "lng": 102.6486139
+    },
+    {
+      "code": "osm:way/1016510257",
+      "name": "Kasēmrāt",
+      "countryCode": "LA",
+      "origin": "https://www.kasemradvientiane.com",
+      "lat": 17.938909,
+      "lng": 102.6428044
+    }
+  ]
+}

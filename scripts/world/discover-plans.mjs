@@ -14,7 +14,7 @@ import { isAllowed, crawlDelayFor } from "../nhs/lib/robots.mjs"
 import { classifyDocument, rankPages, decodeEntities, canonicalUrl, CRAWLER_VERSION } from "../nhs/lib/discovery-match.mjs"
 import { fetchSitemapUrls } from "../nhs/lib/sitemap.mjs"
 import { dataPath, readJson, writeJson, updateManifest, log } from "../nhs/lib/paths.mjs"
-import { loadOrFetchHospitals } from "./lib/osm.mjs"
+import { loadOrFetchHospitals, countriesFromArgs } from "./lib/osm.mjs"
 
 const STAGE = "world-discover"
 
@@ -42,8 +42,7 @@ const SITE_CONCURRENCY = 6
 // crash (see above) or external interruption throws away.
 const CHECKPOINT_EVERY = 3
 
-const countryArg = process.argv.indexOf("--country")
-const COUNTRIES = countryArg > -1 ? [process.argv[countryArg + 1].toUpperCase()] : ["US", "CA", "AU", "IE"]
+const COUNTRIES = countriesFromArgs()
 const limitArg = process.argv.indexOf("--limit")
 const LIMIT = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity
 const RESTART = process.argv.includes("--restart")

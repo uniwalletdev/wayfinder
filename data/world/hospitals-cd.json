@@ -1,0 +1,97 @@
+{
+  "countryCode": "CD",
+  "fetchedAt": "2026-10-21T00:59:21.577Z",
+  "count": 11,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/11572264269",
+      "name": "Centre Médical DGDA",
+      "countryCode": "CD",
+      "origin": "https://douane.gouv.cd",
+      "lat": -4.3102647,
+      "lng": 15.3243381
+    },
+    {
+      "code": "osm:way/102422512",
+      "name": "Hôpital du Cinquantenaire",
+      "countryCode": "CD",
+      "origin": "http://padiyathmedicitykinshasa.com",
+      "lat": -4.3419047,
+      "lng": 15.2963058
+    },
+    {
+      "code": "osm:way/195742803",
+      "name": "Hôpital Heal Africa",
+      "countryCode": "CD",
+      "origin": "https://www.healafrica.org",
+      "lat": -1.689032,
+      "lng": 29.2356161
+    },
+    {
+      "code": "osm:way/343895226",
+      "name": "Hôpital général de référence de Kikwit",
+      "countryCode": "CD",
+      "origin": "https://www.azv.be",
+      "lat": -5.0402184,
+      "lng": 18.8165095
+    },
+    {
+      "code": "osm:way/611782852",
+      "name": "Clinique Ngaliema",
+      "countryCode": "CD",
+      "origin": "https://www.cliniquengaliema.org",
+      "lat": -4.3143676,
+      "lng": 15.2711378
+    },
+    {
+      "code": "osm:way/698887816",
+      "name": "Hôpital Saint Luc de Kisantu",
+      "countryCode": "CD",
+      "origin": "https://www.facebook.com",
+      "lat": -5.1363796,
+      "lng": 15.0832752
+    },
+    {
+      "code": "osm:way/975271522",
+      "name": "Médecins sans frontières",
+      "countryCode": "CD",
+      "origin": "https://www.msf.fr",
+      "lat": -4.3268208,
+      "lng": 15.2691578
+    },
+    {
+      "code": "osm:way/997137696",
+      "name": "HJ Hospitals Limete",
+      "countryCode": "CD",
+      "origin": "https://www.hjhospitals.org",
+      "lat": -4.3405769,
+      "lng": 15.3298394
+    },
+    {
+      "code": "osm:way/1181983805",
+      "name": "UNICHIR",
+      "countryCode": "CD",
+      "origin": "https://www.unichir.africa",
+      "lat": 0.4935979,
+      "lng": 29.443053
+    },
+    {
+      "code": "osm:way/1359060275",
+      "name": "Centre Hospitalier Initiative Plus",
+      "countryCode": "CD",
+      "origin": "https://www.chip.cd",
+      "lat": -4.348082,
+      "lng": 15.4982456
+    },
+    {
+      "code": "osm:way/1412629980",
+      "name": "Desmet Hospital of Kinsuka",
+      "countryCode": "CD",
+      "origin": "https://desmethospitalofkinsuka.org",
+      "lat": -4.3451324,
+      "lng": 15.2185015
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "countryCode": "GA",
+  "fetchedAt": "2026-10-21T01:25:40.167Z",
+  "count": 2,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/10250724753",
+      "name": "Hôpital départemental de NTOUM",
+      "countryCode": "GA",
+      "origin": "https://www.sante.gouv.ga",
+      "lat": 0.392268,
+      "lng": 9.7493798
+    },
+    {
+      "code": "osm:way/1134349739",
+      "name": "Hôpital de Bongolo",
+      "countryCode": "GA",
+      "origin": "https://www.bongolohospital.org",
+      "lat": -2.2362394,
+      "lng": 11.4640859
+    }
+  ]
+}

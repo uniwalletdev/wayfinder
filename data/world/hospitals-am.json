@@ -1,0 +1,201 @@
+{
+  "countryCode": "AM",
+  "fetchedAt": "2026-10-21T00:38:12.477Z",
+  "count": 24,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/1742696430",
+      "name": "Սուրբ Աստվածամայր բժշկական կենտրոն",
+      "countryCode": "AM",
+      "origin": "http://www.sourbastvatsamayr.com",
+      "lat": 40.1524467,
+      "lng": 44.4738686
+    },
+    {
+      "code": "osm:node/1748382498",
+      "name": "Ararat",
+      "countryCode": "AM",
+      "origin": "https://ararathosp.am",
+      "lat": 39.8532531,
+      "lng": 44.6909338
+    },
+    {
+      "code": "osm:node/2007034833",
+      "name": "ՎիտրոՄեդ",
+      "countryCode": "AM",
+      "origin": "https://vitromed.am",
+      "lat": 40.1868975,
+      "lng": 44.5347044
+    },
+    {
+      "code": "osm:node/2186911252",
+      "name": "Unison NGO",
+      "countryCode": "AM",
+      "origin": "http://www.unison.am",
+      "lat": 40.1878979,
+      "lng": 44.5071205
+    },
+    {
+      "code": "osm:node/2269137836",
+      "name": "«Նյու-Մեդ» Ուրոլոգիայի կենտրոն",
+      "countryCode": "AM",
+      "origin": "https://www.newmed.am",
+      "lat": 40.1896532,
+      "lng": 44.526399
+    },
+    {
+      "code": "osm:node/4089957318",
+      "name": "Աստղիկ Բժշկական Կենտրոն",
+      "countryCode": "AM",
+      "origin": "http://astghikmc.am",
+      "lat": 40.1722724,
+      "lng": 44.4649125
+    },
+    {
+      "code": "osm:node/4292277289",
+      "name": "Տաշիրի բժշկական կենտրոն",
+      "countryCode": "AM",
+      "origin": "https://tashir-bk.fosite.ru",
+      "lat": 41.1278866,
+      "lng": 44.2880431
+    },
+    {
+      "code": "osm:node/4310721089",
+      "name": "Մեդլայն",
+      "countryCode": "AM",
+      "origin": "https://www.medline.am",
+      "lat": 40.1847695,
+      "lng": 44.5088833
+    },
+    {
+      "code": "osm:node/4379335009",
+      "name": "Allergology&Immunology Center",
+      "countryCode": "AM",
+      "origin": "https://cmg.am",
+      "lat": 40.1851908,
+      "lng": 44.521599
+    },
+    {
+      "code": "osm:node/4737053233",
+      "name": "Էլիտ-Մեդ",
+      "countryCode": "AM",
+      "origin": "http://elit-med.am",
+      "lat": 40.2015041,
+      "lng": 44.4902124
+    },
+    {
+      "code": "osm:node/4845419370",
+      "name": "«ՕՆ ԿԼԻՆԻՔ - ԱՆԻ» ՄԻՋԱԶԳԱՅԻՆ ԲԺՇԿԱԿԱՆ ԿԵՆՏՐՈՆ",
+      "countryCode": "AM",
+      "origin": "http://www.onclinic.am",
+      "lat": 40.1502317,
+      "lng": 44.4751706
+    },
+    {
+      "code": "osm:node/4882148342",
+      "name": "Izmirlian Medical Center",
+      "countryCode": "AM",
+      "origin": "http://www.izmirlianmedicalcenter.com",
+      "lat": 40.205368,
+      "lng": 44.5346365
+    },
+    {
+      "code": "osm:node/4908812035",
+      "name": "Ռուբիկ Հարությունյանի անվան Աբովյանի բժշկական կենտրոն",
+      "countryCode": "AM",
+      "origin": "http://www.abovyanmedicalcenter.am",
+      "lat": 40.2733812,
+      "lng": 44.6389094
+    },
+    {
+      "code": "osm:node/5300375917",
+      "name": "Գյումրու Մոր և Մանկան Ավստրիական Հիվանդանոց",
+      "countryCode": "AM",
+      "origin": "http://www.oks.am",
+      "lat": 40.8036228,
+      "lng": 43.8487296
+    },
+    {
+      "code": "osm:node/5458995021",
+      "name": "Ավա Մեդ",
+      "countryCode": "AM",
+      "origin": "https://hospice.am",
+      "lat": 40.2133562,
+      "lng": 44.5366248
+    },
+    {
+      "code": "osm:node/6933845687",
+      "name": "Յոլյանի անվան արյունաբանական կենտրոն",
+      "countryCode": "AM",
+      "origin": "https://blood.am",
+      "lat": 40.2051963,
+      "lng": 44.5313536
+    },
+    {
+      "code": "osm:node/10544188209",
+      "name": "Ave Med Medical Center",
+      "countryCode": "AM",
+      "origin": "https://www.facebook.com",
+      "lat": 40.220325,
+      "lng": 44.5305711
+    },
+    {
+      "code": "osm:way/49835033",
+      "name": "\"Արմենիա\" հանրապետական բժշկական կենտրոն",
+      "countryCode": "AM",
+      "origin": "https://www.armeniamedicalcenter.am",
+      "lat": 40.2074148,
+      "lng": 44.4784592
+    },
+    {
+      "code": "osm:way/49835035",
+      "name": "«Դիագնոստիկա» բժշկական կենտրոն",
+      "countryCode": "AM",
+      "origin": "https://www.dmc.am",
+      "lat": 40.2075589,
+      "lng": 44.4777291
+    },
+    {
+      "code": "osm:way/49835038",
+      "name": "ՎԵՐԱՐՏԱԴՐՈՂԱԿԱՆ ԱՌՈՂՋՈՒԹՅԱՆ, ՊԵՐԻՆԱՏՈԼՈԳԻԱՅԻ, ՄԱՆԿԱԲԱՐՁՈՒԹՅԱՆ ԵՎ ԳԻՆԵԿՈԼՈԳԻԱՅԻ ՀԱՆՐԱՊԵՏԱԿԱՆ ԻՆՍՏԻՏՈՒՏ",
+      "countryCode": "AM",
+      "origin": "https://www.pog.am",
+      "lat": 40.209452,
+      "lng": 44.4793617
+    },
+    {
+      "code": "osm:way/49841582",
+      "name": "Ս.Վ. Մալայանի անվան ակնաբուժական կենտրոն",
+      "countryCode": "AM",
+      "origin": "https://www.eyecenter.am",
+      "lat": 40.2103309,
+      "lng": 44.4772231
+    },
+    {
+      "code": "osm:way/366911766",
+      "name": "ԱԼԱՎԵՐԴՈՒ ԲԺՇԿԱԿԱՆ ԿԵՆՏՐՈՆ",
+      "countryCode": "AM",
+      "origin": "http://www.mcoalaverdi.am",
+      "lat": 41.0962173,
+      "lng": 44.6446686
+    },
+    {
+      "code": "osm:way/496463334",
+      "name": "Նորք-Մարաշ բժշկական կենտրոն",
+      "countryCode": "AM",
+      "origin": "https://www.nmmc.am",
+      "lat": 40.1840103,
+      "lng": 44.5376671
+    },
+    {
+      "code": "osm:way/1145591928",
+      "name": "Vanadzor Medical Center",
+      "countryCode": "AM",
+      "origin": "https://vanmc.am",
+      "lat": 40.8045811,
+      "lng": 44.482939
+    }
+  ]
+}

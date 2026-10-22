@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-10-22T08:41:46.079Z",
+  "countryCode": "KY",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 0,
+    "botChallenged": 0,
+    "robotsBlocked": 0,
+    "withCandidates": 1,
+    "crawled": 2
+  },
+  "count": 1,
+  "crawled": {
+    "osm:way/1025320987": "ok",
+    "osm:way/903468892": "ok"
+  },
+  "candidates": [
+    {
+      "hospitalCode": "osm:way/1025320987",
+      "hospitalName": "Faith Hospital",
+      "countryCode": "KY",
+      "website": "https://www.hsa.ky",
+      "url": "https://hsa-cayman.imgix.net/images/HSACampusMap_MASTER_Aug2025.pdf",
+      "linkText": "Expand to View Full Map",
+      "kind": "unknown",
+      "confidence": "low",
+      "format": "pdf"
+    }
+  ]
+}

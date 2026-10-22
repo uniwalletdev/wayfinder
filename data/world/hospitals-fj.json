@@ -1,0 +1,17 @@
+{
+  "countryCode": "FJ",
+  "fetchedAt": "2026-10-21T01:22:17.985Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/400051208",
+      "name": "Veseisei Sai Health Centre",
+      "countryCode": "FJ",
+      "origin": "https://www.viseiseihealth.org",
+      "lat": -17.6864527,
+      "lng": 177.4104066
+    }
+  ]
+}

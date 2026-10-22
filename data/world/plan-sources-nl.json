@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "slug": "plattegrond-fz",
+      "file": "map/world/auto/nl/plattegrond-fz.pdf",
+      "url": "https://www.flevoziekenhuis.nl/media/xualbubq/plattegrond-fz.pdf",
+      "sha256": "16a216662513df279b5dab11b34c9b525188b6bcd3e077cf723bbbda8de59553",
+      "hospitalCode": "osm:way/660699519",
+      "hospitalName": "Flevoziekenhuis",
+      "countryCode": "NL",
+      "linkText": "floorplan",
+      "kind": "floor-plan",
+      "approvedAt": "2026-10-22T02:54:33.048Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 597934,
+      "fetchedAt": "2026-10-22T06:18:04.035Z"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-10-22T08:41:45.730Z",
+  "countryCode": "BM",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 0,
+    "botChallenged": 0,
+    "robotsBlocked": 0,
+    "withCandidates": 1,
+    "crawled": 2
+  },
+  "count": 2,
+  "crawled": {
+    "osm:way/326975395": "ok",
+    "osm:way/911970741": "ok"
+  },
+  "candidates": [
+    {
+      "hospitalCode": "osm:way/911970741",
+      "hospitalName": "Mid-Atlantic Wellness Institute",
+      "countryCode": "BM",
+      "website": "https://bermudahospitals.bm",
+      "url": "http://bdahospitals.wpengine.com/wp-content/uploads/2019/08/King-Edward-VII-Memorial-Hospital-Site-Map-2019.pdf",
+      "linkText": "",
+      "kind": "site-map",
+      "confidence": "high",
+      "format": "pdf"
+    },
+    {
+      "hospitalCode": "osm:way/911970741",
+      "hospitalName": "Mid-Atlantic Wellness Institute",
+      "countryCode": "BM",
+      "website": "https://bermudahospitals.bm",
+      "url": "http://bdahospitals.wpengine.com/wp-content/uploads/2016/10/KEMH_ACW_Floor_Maps-1.pdf",
+      "linkText": "",
+      "kind": "unknown",
+      "confidence": "low",
+      "format": "pdf"
+    }
+  ]
+}

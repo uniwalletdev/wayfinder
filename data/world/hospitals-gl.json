@@ -1,0 +1,41 @@
+{
+  "countryCode": "GL",
+  "fetchedAt": "2026-10-21T01:29:13.915Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1358271054",
+      "name": "Ilulissat Hospital",
+      "countryCode": "GL",
+      "origin": "https://peqqik.gl",
+      "lat": 69.2211443,
+      "lng": -51.110139
+    },
+    {
+      "code": "osm:node/7734526385",
+      "name": "Uummannami Peqqissaavik",
+      "countryCode": "GL",
+      "origin": "https://peqqik.gl",
+      "lat": 70.6760069,
+      "lng": -52.1209859
+    },
+    {
+      "code": "osm:way/85628069",
+      "name": "Dronning Ingridip Napparsimmavissua / Dronning Ingrids Hospital",
+      "countryCode": "GL",
+      "origin": "https://peqqik.gl",
+      "lat": 64.1693337,
+      "lng": -51.7379344
+    },
+    {
+      "code": "osm:way/189061173",
+      "name": "Maniitsup Peqqissaavia",
+      "countryCode": "GL",
+      "origin": "https://peqqik.gl",
+      "lat": 65.4157601,
+      "lng": -52.8978933
+    }
+  ]
+}

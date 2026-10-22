@@ -1,0 +1,401 @@
+{
+  "countryCode": "DK",
+  "fetchedAt": "2026-10-21T01:13:10.595Z",
+  "count": 49,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/320694047",
+      "name": "Brørup Sygehus",
+      "countryCode": "DK",
+      "origin": "https://esbjerggrindstedsygehus.dk",
+      "lat": 55.480881,
+      "lng": 9.0218779
+    },
+    {
+      "code": "osm:node/453061061",
+      "name": "Nakskov Sundhedscenter",
+      "countryCode": "DK",
+      "origin": "https://www.regionsjaelland.dk",
+      "lat": 54.8334082,
+      "lng": 11.1458464
+    },
+    {
+      "code": "osm:node/2381056950",
+      "name": "Københavns Privathospital",
+      "countryCode": "DK",
+      "origin": "http://www.kbhprivat.dk",
+      "lat": 55.7645027,
+      "lng": 12.519366
+    },
+    {
+      "code": "osm:node/3868044286",
+      "name": "Privathospital Varde",
+      "countryCode": "DK",
+      "origin": "http://phvarde.com",
+      "lat": 55.6038782,
+      "lng": 8.4840822
+    },
+    {
+      "code": "osm:node/3948154469",
+      "name": "My Life Care Skodsborg",
+      "countryCode": "DK",
+      "origin": "http://www.mylife-skodsborg.dk",
+      "lat": 55.818613,
+      "lng": 12.57428
+    },
+    {
+      "code": "osm:node/4139144557",
+      "name": "Lokalpsykiatri Esbjerg",
+      "countryCode": "DK",
+      "origin": "https://esbjerggrindstedsygehus.dk",
+      "lat": 55.4670734,
+      "lng": 8.4565099
+    },
+    {
+      "code": "osm:node/5304718025",
+      "name": "Capio CFR Lyngby",
+      "countryCode": "DK",
+      "origin": "http://www.capiocfr.dk",
+      "lat": 55.764734,
+      "lng": 12.519646
+    },
+    {
+      "code": "osm:node/5910431078",
+      "name": "Vejle Sygehus",
+      "countryCode": "DK",
+      "origin": "http://vejlesygehus.dk",
+      "lat": 55.7147435,
+      "lng": 9.5380602
+    },
+    {
+      "code": "osm:node/6727540432",
+      "name": "Veneklinikken - Sydvestjysk Sygehus Brørup",
+      "countryCode": "DK",
+      "origin": "https://sydvestjysksygehus.dk",
+      "lat": 55.4811513,
+      "lng": 9.0219378
+    },
+    {
+      "code": "osm:node/8170192823",
+      "name": "Respirationscenter Syd",
+      "countryCode": "DK",
+      "origin": "https://ouh.dk",
+      "lat": 55.384673,
+      "lng": 10.369726
+    },
+    {
+      "code": "osm:node/9549470536",
+      "name": "Vordingborg Sundhedscenter",
+      "countryCode": "DK",
+      "origin": "https://www.vordingborg.dk",
+      "lat": 55.017452,
+      "lng": 11.9075342
+    },
+    {
+      "code": "osm:node/10269364779",
+      "name": "Helsingør Sundhedshus",
+      "countryCode": "DK",
+      "origin": "https://sundhedshus.helsingor.dk",
+      "lat": 56.0193339,
+      "lng": 12.5687885
+    },
+    {
+      "code": "osm:node/11119159881",
+      "name": "Aleris København",
+      "countryCode": "DK",
+      "origin": "https://www.aleris.dk",
+      "lat": 55.7271743,
+      "lng": 12.4754101
+    },
+    {
+      "code": "osm:node/11365728415",
+      "name": "Aleris Aarhus",
+      "countryCode": "DK",
+      "origin": "https://www.aleris.dk",
+      "lat": 56.1894577,
+      "lng": 10.1808069
+    },
+    {
+      "code": "osm:node/11365728610",
+      "name": "Aleris Aalborg",
+      "countryCode": "DK",
+      "origin": "https://www.aleris.dk",
+      "lat": 57.0176285,
+      "lng": 9.8765866
+    },
+    {
+      "code": "osm:node/13340929906",
+      "name": "Roskilde Privathospital",
+      "countryCode": "DK",
+      "origin": "https://roskildeprivathospital.dk",
+      "lat": 55.6387855,
+      "lng": 12.0762854
+    },
+    {
+      "code": "osm:node/13654150701",
+      "name": "Mølholm Privathospital",
+      "countryCode": "DK",
+      "origin": "https://www.molholm.dk",
+      "lat": 55.6800528,
+      "lng": 12.5564088
+    },
+    {
+      "code": "osm:node/13685600533",
+      "name": "Aleris",
+      "countryCode": "DK",
+      "origin": "https://www.aleris.dk",
+      "lat": 55.4630058,
+      "lng": 8.4543965
+    },
+    {
+      "code": "osm:node/13899930807",
+      "name": "CPH Privathospital",
+      "countryCode": "DK",
+      "origin": "https://cph-privathospital.dk",
+      "lat": 55.8147525,
+      "lng": 12.3773157
+    },
+    {
+      "code": "osm:node/13952482801",
+      "name": "Sikringsafdelingen",
+      "countryCode": "DK",
+      "origin": "https://www.mvhospital.dk",
+      "lat": 55.3982325,
+      "lng": 11.3747169
+    },
+    {
+      "code": "osm:node/13952482802",
+      "name": "Psykiatrisk Akutmodtagelse - Slagelse",
+      "countryCode": "DK",
+      "origin": "https://www.mvhospital.dk",
+      "lat": 55.398367,
+      "lng": 11.3713619
+    },
+    {
+      "code": "osm:way/4333570",
+      "name": "Roskilde Sygehus",
+      "countryCode": "DK",
+      "origin": "https://www.regionsjaelland.dk",
+      "lat": 55.6360784,
+      "lng": 12.0912937
+    },
+    {
+      "code": "osm:way/25465962",
+      "name": "Bispebjerg Hospital",
+      "countryCode": "DK",
+      "origin": "https://www.bispebjerghospital.dk",
+      "lat": 55.714435,
+      "lng": 12.5404246
+    },
+    {
+      "code": "osm:way/26665689",
+      "name": "Næstved Sygehus",
+      "countryCode": "DK",
+      "origin": "https://www.regionsjaelland.dk",
+      "lat": 55.2371423,
+      "lng": 11.7590571
+    },
+    {
+      "code": "osm:way/26756360",
+      "name": "Rigshospitalet",
+      "countryCode": "DK",
+      "origin": "https://www.rigshospitalet.dk",
+      "lat": 55.6970223,
+      "lng": 12.5662334
+    },
+    {
+      "code": "osm:way/42984016",
+      "name": "Aarhus Universitetshospital",
+      "countryCode": "DK",
+      "origin": "https://www.auh.dk",
+      "lat": 56.1908197,
+      "lng": 10.1705612
+    },
+    {
+      "code": "osm:way/98227030",
+      "name": "Skive Sundhedshus",
+      "countryCode": "DK",
+      "origin": "https://www.skivesundhedshus.dk",
+      "lat": 56.5726808,
+      "lng": 9.0289181
+    },
+    {
+      "code": "osm:way/104849116",
+      "name": "Nordsjællands Hospital – Frederikssund",
+      "countryCode": "DK",
+      "origin": "https://www.nordsjaellandshospital.dk",
+      "lat": 55.8483715,
+      "lng": 12.0850638
+    },
+    {
+      "code": "osm:way/178321550",
+      "name": "Aleris-Hamlet Herning",
+      "countryCode": "DK",
+      "origin": "https://www.aleris.dk",
+      "lat": 56.1321909,
+      "lng": 8.9856098
+    },
+    {
+      "code": "osm:way/205327457",
+      "name": "Bornholms Hospital",
+      "countryCode": "DK",
+      "origin": "https://www.bornholmshospital.dk",
+      "lat": 55.0918025,
+      "lng": 14.7076702
+    },
+    {
+      "code": "osm:way/248662608",
+      "name": "Nordsjællands Hospital - Hillerød",
+      "countryCode": "DK",
+      "origin": "https://www.nordsjaellandshospital.dk",
+      "lat": 55.9318842,
+      "lng": 12.3267314
+    },
+    {
+      "code": "osm:way/248811583",
+      "name": "Herlev Hospital",
+      "countryCode": "DK",
+      "origin": "https://www.herlevhospital.dk",
+      "lat": 55.730926,
+      "lng": 12.4422095
+    },
+    {
+      "code": "osm:way/254784023",
+      "name": "Odense Universitetshospital",
+      "countryCode": "DK",
+      "origin": "https://ouh.dk",
+      "lat": 55.3855372,
+      "lng": 10.3649677
+    },
+    {
+      "code": "osm:way/255894927",
+      "name": "Regionshospitalet Silkeborg",
+      "countryCode": "DK",
+      "origin": "http://www.hospitalsenhedmidt.dk",
+      "lat": 56.1705739,
+      "lng": 9.5589574
+    },
+    {
+      "code": "osm:way/296551321",
+      "name": "Nyt Aalborg Universitetshospital (NAU)",
+      "countryCode": "DK",
+      "origin": "https://aalborguh.rn.dk",
+      "lat": 57.010742,
+      "lng": 9.9995581
+    },
+    {
+      "code": "osm:way/330883009",
+      "name": "Kollund Privathospital",
+      "countryCode": "DK",
+      "origin": "https://www.privathospitaletkollund.com",
+      "lat": 55.4627934,
+      "lng": 8.455391
+    },
+    {
+      "code": "osm:way/365563221",
+      "name": "Frederiksberg Hospital",
+      "countryCode": "DK",
+      "origin": "https://www.frederiksberghospital.dk",
+      "lat": 55.6864293,
+      "lng": 12.5227142
+    },
+    {
+      "code": "osm:way/386856286",
+      "name": "Regionshospitalet Horsens",
+      "countryCode": "DK",
+      "origin": "https://www.regionshospitalet-horsens.dk",
+      "lat": 55.8628993,
+      "lng": 9.8737079
+    },
+    {
+      "code": "osm:way/395560972",
+      "name": "Esbjerg Sygehus - Syddansk Universitetshospital",
+      "countryCode": "DK",
+      "origin": "https://esbjerggrindstedsygehus.dk",
+      "lat": 55.4737241,
+      "lng": 8.4580361
+    },
+    {
+      "code": "osm:way/414914819",
+      "name": "Aalborg Universitetshospital Thisted",
+      "countryCode": "DK",
+      "origin": "https://aalborguh.rn.dk",
+      "lat": 56.9584222,
+      "lng": 8.6974506
+    },
+    {
+      "code": "osm:way/430375739",
+      "name": "Regionshospital Nordjylland",
+      "countryCode": "DK",
+      "origin": "https://rhnordjylland.rn.dk",
+      "lat": 57.4510706,
+      "lng": 9.9991316
+    },
+    {
+      "code": "osm:way/444380585",
+      "name": "Aalborg Universitetshospital, Hobro",
+      "countryCode": "DK",
+      "origin": "https://aalborguh.rn.dk",
+      "lat": 56.6334003,
+      "lng": 9.7982955
+    },
+    {
+      "code": "osm:way/477164991",
+      "name": "Mølholm",
+      "countryCode": "DK",
+      "origin": "https://www.molholm.dk",
+      "lat": 56.1181814,
+      "lng": 10.1905366
+    },
+    {
+      "code": "osm:way/693741240",
+      "name": "Almenpsykiatrisk Afdeling, Nord",
+      "countryCode": "DK",
+      "origin": "https://aalborguh.rn.dk",
+      "lat": 57.2877734,
+      "lng": 9.978052
+    },
+    {
+      "code": "osm:way/1031628621",
+      "name": "Middelfart Nærhospital",
+      "countryCode": "DK",
+      "origin": "https://sygehuslillebaelt.dk",
+      "lat": 55.4967603,
+      "lng": 9.7395597
+    },
+    {
+      "code": "osm:way/1190521857",
+      "name": "Sano Skælskør",
+      "countryCode": "DK",
+      "origin": "https://sanocenter.dk",
+      "lat": 55.260363,
+      "lng": 11.2824668
+    },
+    {
+      "code": "osm:way/1221529050",
+      "name": "Grindsted Sygehus",
+      "countryCode": "DK",
+      "origin": "https://esbjerggrindstedsygehus.dk",
+      "lat": 55.7551764,
+      "lng": 8.9285391
+    },
+    {
+      "code": "osm:way/1450104612",
+      "name": "Psykiatrien i Slagelse",
+      "countryCode": "DK",
+      "origin": "https://www.mvhospital.dk",
+      "lat": 55.3980031,
+      "lng": 11.3705931
+    },
+    {
+      "code": "osm:way/1454337585",
+      "name": "Regionspsykiatrien Randers",
+      "countryCode": "DK",
+      "origin": "https://www.regionshospitalet-randers.dk",
+      "lat": 56.4724165,
+      "lng": 10.0472659
+    }
+  ]
+}

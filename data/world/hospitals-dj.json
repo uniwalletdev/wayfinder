@@ -1,0 +1,17 @@
+{
+  "countryCode": "DJ",
+  "fetchedAt": "2026-10-21T01:12:18.265Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/711138844",
+      "name": "Hôpital Al-Rahma مستشفى الرحمة",
+      "countryCode": "DJ",
+      "origin": "http://www.alrahmadj.com",
+      "lat": 11.5584359,
+      "lng": 43.0954413
+    }
+  ]
+}

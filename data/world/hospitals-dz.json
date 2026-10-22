@@ -1,0 +1,113 @@
+{
+  "countryCode": "DZ",
+  "fetchedAt": "2026-10-21T01:15:15.858Z",
+  "count": 13,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/2816973274",
+      "name": "Clinique du Cœur;مصحة القلب",
+      "countryCode": "DZ",
+      "origin": "https://clinique-du-coeur.com",
+      "lat": 36.1913467,
+      "lng": 5.3863455
+    },
+    {
+      "code": "osm:node/8390829217",
+      "name": "Hôpital Mixte Tati-Argali المستشفى المختلط تاتي ارغالي",
+      "countryCode": "DZ",
+      "origin": "http://sante.dz",
+      "lat": 21.3266163,
+      "lng": 0.9659421
+    },
+    {
+      "code": "osm:node/13149137101",
+      "name": "Clinique du Val عيادة الوادي",
+      "countryCode": "DZ",
+      "origin": "https://clinique-du-val.com",
+      "lat": 36.7583064,
+      "lng": 3.0253798
+    },
+    {
+      "code": "osm:way/26456258",
+      "name": "CHU Mohamed Lamine Debaghine",
+      "countryCode": "DZ",
+      "origin": "https://www.chubabeloued.com",
+      "lat": 36.794844,
+      "lng": 3.0488178
+    },
+    {
+      "code": "osm:way/55035272",
+      "name": "EPH Djillali Belkhenchir - El Biar",
+      "countryCode": "DZ",
+      "origin": "https://ephelbiar.com",
+      "lat": 36.7737258,
+      "lng": 3.0404437
+    },
+    {
+      "code": "osm:way/156237500",
+      "name": "Hôpital Khelil Amrane",
+      "countryCode": "DZ",
+      "origin": "http://www.chubejaia.dz",
+      "lat": 36.7544322,
+      "lng": 5.0498111
+    },
+    {
+      "code": "osm:way/156238581",
+      "name": "Hôpital Frantz Fanon",
+      "countryCode": "DZ",
+      "origin": "http://www.chubejaia.dz",
+      "lat": 36.7564211,
+      "lng": 5.0835519
+    },
+    {
+      "code": "osm:way/320728587",
+      "name": "EPH Timimoun - Hachemi M'hamed;المؤسسة العمومية الاستشفائية تيميمون",
+      "countryCode": "DZ",
+      "origin": "https://www.sante.gov.dz",
+      "lat": 29.2560185,
+      "lng": 0.2340467
+    },
+    {
+      "code": "osm:way/342137734",
+      "name": "EPSP Sidi Aich",
+      "countryCode": "DZ",
+      "origin": "http://www.epsp-sidiaich.dz",
+      "lat": 36.6136141,
+      "lng": 4.6883612
+    },
+    {
+      "code": "osm:way/360172031",
+      "name": "Hôpital Dr Tidjani Damerdji",
+      "countryCode": "DZ",
+      "origin": "https://www.chu-tlemcen.dz",
+      "lat": 34.8755872,
+      "lng": -1.3272164
+    },
+    {
+      "code": "osm:way/393042095",
+      "name": "Hôpital Ibn Sina",
+      "countryCode": "DZ",
+      "origin": "http://sante.dz",
+      "lat": 27.8709705,
+      "lng": -0.279275
+    },
+    {
+      "code": "osm:way/457242757",
+      "name": "Hopital Dr. Benzardjeb Benaouda",
+      "countryCode": "DZ",
+      "origin": "http://www.eph-sebdou.dz",
+      "lat": 34.6439728,
+      "lng": -1.3241357
+    },
+    {
+      "code": "osm:way/1231875802",
+      "name": "Centre d'imagerie scintigraphique",
+      "countryCode": "DZ",
+      "origin": "http://www.scintigraphies.com",
+      "lat": 36.4881356,
+      "lng": 2.7889304
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "countryCode": "BH",
+  "fetchedAt": "2026-10-21T00:51:14.338Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/10874154901",
+      "name": "Evexia Hospital",
+      "countryCode": "BH",
+      "origin": "https://www.evexiadaysurgery.com",
+      "lat": 26.2147643,
+      "lng": 50.5626468
+    },
+    {
+      "code": "osm:way/175987262",
+      "name": "مستشفى الملك حمد الجامعي",
+      "countryCode": "BH",
+      "origin": "http://www.khuh.org.bh",
+      "lat": 26.2621053,
+      "lng": 50.6006621
+    },
+    {
+      "code": "osm:way/350373165",
+      "name": "مستشفى البحرين الدولي",
+      "countryCode": "BH",
+      "origin": "http://www.ihb.net",
+      "lat": 26.2194553,
+      "lng": 50.5261646
+    },
+    {
+      "code": "osm:way/1565709249",
+      "name": "مركز محمد بن خليفة بن سلمان اَل خليفة التخصصي للقلب",
+      "countryCode": "BH",
+      "origin": "https://www.mkcc.bh",
+      "lat": 26.0916734,
+      "lng": 50.5507504
+    }
+  ]
+}

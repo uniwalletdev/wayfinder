@@ -1,0 +1,217 @@
+{
+  "countryCode": "UG",
+  "fetchedAt": "2026-10-21T03:04:52.693Z",
+  "count": 26,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/582857059",
+      "name": "Kololo Hospital Kampala Ltd.",
+      "countryCode": "UG",
+      "origin": "http://www.facebook.com",
+      "lat": 0.333829,
+      "lng": 32.5891586
+    },
+    {
+      "code": "osm:node/4025872533",
+      "name": "Kisiizi Hospital",
+      "countryCode": "UG",
+      "origin": "http://www.kisiizihospital.org.ug",
+      "lat": -0.9979585,
+      "lng": 29.9439616
+    },
+    {
+      "code": "osm:node/7942780419",
+      "name": "Barry PHARMACY and MEDICAL CENTRE",
+      "countryCode": "UG",
+      "origin": "https://barry.co.ug",
+      "lat": 2.4610842,
+      "lng": 31.4953614
+    },
+    {
+      "code": "osm:node/8789292619",
+      "name": "MAKULA HEALTH CARE",
+      "countryCode": "UG",
+      "origin": "https://makula-health-care.netlify.app",
+      "lat": 0.3811505,
+      "lng": 32.5596889
+    },
+    {
+      "code": "osm:node/11007308973",
+      "name": "HOLY INNOCENT CHILDREN'S HOSPITAL",
+      "countryCode": "UG",
+      "origin": "http://www.holyinnocentsuganda.com",
+      "lat": -0.6232312,
+      "lng": 30.6467288
+    },
+    {
+      "code": "osm:node/11007308985",
+      "name": "RUHARO MISSION HOSPITAL",
+      "countryCode": "UG",
+      "origin": "https://www.rmh.org.ug",
+      "lat": -0.6120698,
+      "lng": 30.6310422
+    },
+    {
+      "code": "osm:node/13115164001",
+      "name": "Paed Medical Center",
+      "countryCode": "UG",
+      "origin": "https://paedmedicalcentre.com",
+      "lat": 0.3595476,
+      "lng": 32.5848381
+    },
+    {
+      "code": "osm:node/13234094864",
+      "name": "Wanda Hospital Matugga",
+      "countryCode": "UG",
+      "origin": "https://wanda.ug",
+      "lat": 0.4658949,
+      "lng": 32.5173318
+    },
+    {
+      "code": "osm:node/13260945705",
+      "name": "Wanda Matugga Hospital",
+      "countryCode": "UG",
+      "origin": "https://wanda.ug",
+      "lat": 0.4657288,
+      "lng": 32.5172106
+    },
+    {
+      "code": "osm:way/45353329",
+      "name": "Mulago National Referal Hospital",
+      "countryCode": "UG",
+      "origin": "https://www.mulago.or.ug",
+      "lat": 0.3389522,
+      "lng": 32.5768538
+    },
+    {
+      "code": "osm:way/161585595",
+      "name": "Hospice Africa Uganda",
+      "countryCode": "UG",
+      "origin": "http://www.hospiceafrica.or.ug",
+      "lat": 0.282716,
+      "lng": 32.5835261
+    },
+    {
+      "code": "osm:way/176115151",
+      "name": "St Joseph's Hospital",
+      "countryCode": "UG",
+      "origin": "https://www.sjhkitgum.org",
+      "lat": 3.3022454,
+      "lng": 32.8930175
+    },
+    {
+      "code": "osm:way/235799764",
+      "name": "St. Kizito Hospital",
+      "countryCode": "UG",
+      "origin": "https://www.matanyhospital.org",
+      "lat": 2.442494,
+      "lng": 34.3954149
+    },
+    {
+      "code": "osm:way/307433460",
+      "name": "Kiwoko Hospital",
+      "countryCode": "UG",
+      "origin": "https://www.kiwokohospital.org",
+      "lat": 0.8396564,
+      "lng": 32.3603492
+    },
+    {
+      "code": "osm:way/375025426",
+      "name": "Kabarole Hospital",
+      "countryCode": "UG",
+      "origin": "http://kabarolehospital.org",
+      "lat": 0.6488761,
+      "lng": 30.2717473
+    },
+    {
+      "code": "osm:way/377083812",
+      "name": "Case Hospital",
+      "countryCode": "UG",
+      "origin": "http://www.casemedcare.org",
+      "lat": 0.324692,
+      "lng": 32.5752403
+    },
+    {
+      "code": "osm:way/381364899",
+      "name": "Ishaka Adventist Hospital",
+      "countryCode": "UG",
+      "origin": "http://iah.co.ug",
+      "lat": -0.5439892,
+      "lng": 30.1376525
+    },
+    {
+      "code": "osm:way/456184877",
+      "name": "Kagando Hospital",
+      "countryCode": "UG",
+      "origin": "https://kagandohospital.org",
+      "lat": 0.0634948,
+      "lng": 29.8978482
+    },
+    {
+      "code": "osm:way/462394980",
+      "name": "Whisper Hospital",
+      "countryCode": "UG",
+      "origin": "https://www.whisperhealth.org",
+      "lat": 0.4368031,
+      "lng": 33.2087579
+    },
+    {
+      "code": "osm:way/508200546",
+      "name": "MASINDI KITARA MEDICAL CENTER",
+      "countryCode": "UG",
+      "origin": "https://oneworldhealth.com",
+      "lat": 1.6887006,
+      "lng": 31.7089358
+    },
+    {
+      "code": "osm:way/721721703",
+      "name": "Nyakibale Hospital",
+      "countryCode": "UG",
+      "origin": "http://www.nyakibalehospitalug.com",
+      "lat": -0.8047335,
+      "lng": 29.9317161
+    },
+    {
+      "code": "osm:way/798428772",
+      "name": "International Hospital Kampala",
+      "countryCode": "UG",
+      "origin": "https://ihk.img.co.ug",
+      "lat": 0.3051484,
+      "lng": 32.6106013
+    },
+    {
+      "code": "osm:way/800997929",
+      "name": "Nakasero Hospital",
+      "countryCode": "UG",
+      "origin": "https://www.nakaserohospital.com",
+      "lat": 0.3268891,
+      "lng": 32.5794746
+    },
+    {
+      "code": "osm:way/801657042",
+      "name": "St. Luke's Hospital",
+      "countryCode": "UG",
+      "origin": "https://www.angal.org",
+      "lat": 2.4087088,
+      "lng": 31.1939151
+    },
+    {
+      "code": "osm:way/802434045",
+      "name": "DOUBLE CURE MEDICAL CENTRE",
+      "countryCode": "UG",
+      "origin": "http://www.doublecuremc.org",
+      "lat": 0.2141424,
+      "lng": 32.3229626
+    },
+    {
+      "code": "osm:way/1425988272",
+      "name": "Whisper Hospital",
+      "countryCode": "UG",
+      "origin": "https://www.whisperhealth.org",
+      "lat": 0.3964543,
+      "lng": 32.5931539
+    }
+  ]
+}

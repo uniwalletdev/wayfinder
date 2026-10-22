@@ -1,0 +1,49 @@
+{
+  "countryCode": "SY",
+  "fetchedAt": "2026-10-21T02:52:24.994Z",
+  "count": 5,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/8615761617",
+      "name": "مستشفى إدلب الجامعي",
+      "countryCode": "SY",
+      "origin": "https://idlib.university",
+      "lat": 35.9298207,
+      "lng": 36.6277731
+    },
+    {
+      "code": "osm:way/30285235",
+      "name": "المستشفى الوطني الجامعي",
+      "countryCode": "SY",
+      "origin": "http://auhd.edu.sy",
+      "lat": 33.5056828,
+      "lng": 36.2697062
+    },
+    {
+      "code": "osm:way/104251978",
+      "name": "مستشفى الزهراوي",
+      "countryCode": "SY",
+      "origin": "http://www.alzahrawi.edu.sy",
+      "lat": 33.520761,
+      "lng": 36.3169233
+    },
+    {
+      "code": "osm:way/374883934",
+      "name": "مستشفى المواساة الجامعي",
+      "countryCode": "SY",
+      "origin": "https://almouwasat.sy",
+      "lat": 33.5126349,
+      "lng": 36.2631427
+    },
+    {
+      "code": "osm:way/1346085504",
+      "name": "مستشفى دمشق لأمراض وجراحة القلب",
+      "countryCode": "SY",
+      "origin": "http://www.bhisyria.sy",
+      "lat": 33.5259399,
+      "lng": 36.2306842
+    }
+  ]
+}

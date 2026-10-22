@@ -1,0 +1,137 @@
+{
+  "countryCode": "LV",
+  "fetchedAt": "2026-10-21T01:59:55.901Z",
+  "count": 16,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/87575798",
+      "name": "Tiesu psihiatrisko ekspertīžu un piespiedu ārstēšanas centrs",
+      "countryCode": "LV",
+      "origin": "https://rpnc.lv",
+      "lat": 56.9798148,
+      "lng": 24.1417638
+    },
+    {
+      "code": "osm:way/97530121",
+      "name": "Rīgas 1. slimnīca",
+      "countryCode": "LV",
+      "origin": "https://www.1slimnica.lv",
+      "lat": 56.9614858,
+      "lng": 24.1255288
+    },
+    {
+      "code": "osm:way/103311272",
+      "name": "Traumatoloģijas un ortopēdijas slimnīca",
+      "countryCode": "LV",
+      "origin": "http://www.tos.lv",
+      "lat": 56.9827641,
+      "lng": 24.1391467
+    },
+    {
+      "code": "osm:way/106060885",
+      "name": "Rīgas dzemdību nams",
+      "countryCode": "LV",
+      "origin": "https://rdn.lv",
+      "lat": 56.9669367,
+      "lng": 24.1323887
+    },
+    {
+      "code": "osm:way/114403939",
+      "name": "LJMC Vecmīlgrāvja slimnīca un Ziemeļu diagnostikas centrs",
+      "countryCode": "LV",
+      "origin": "https://ljmc.lv",
+      "lat": 57.0328113,
+      "lng": 24.1117633
+    },
+    {
+      "code": "osm:way/114778103",
+      "name": "Nacionālais psihiskās veselības centrs",
+      "countryCode": "LV",
+      "origin": "https://rpnc.lv",
+      "lat": 56.99529,
+      "lng": 24.1220641
+    },
+    {
+      "code": "osm:way/148481616",
+      "name": "Liepājas Reģionālā slimnīca",
+      "countryCode": "LV",
+      "origin": "https://www.liepajasslimnica.lv",
+      "lat": 56.5529125,
+      "lng": 21.1002363
+    },
+    {
+      "code": "osm:way/159994912",
+      "name": "Veselības centrs OlainMed",
+      "countryCode": "LV",
+      "origin": "http://olainmed.lv",
+      "lat": 56.7856186,
+      "lng": 23.9344089
+    },
+    {
+      "code": "osm:way/236782574",
+      "name": "Kuldīgas slimnīca",
+      "countryCode": "LV",
+      "origin": "https://www.kuldigasslimnica.lv",
+      "lat": 56.9614326,
+      "lng": 21.9538817
+    },
+    {
+      "code": "osm:way/248378129",
+      "name": "Dobeles slimnīca",
+      "countryCode": "LV",
+      "origin": "https://www.dobelesslimnica.lv",
+      "lat": 56.6220672,
+      "lng": 23.2693711
+    },
+    {
+      "code": "osm:way/484683114",
+      "name": "Daugavpils psihoneiroloģiskā slimnīca",
+      "countryCode": "LV",
+      "origin": "https://dpns.gov.lv",
+      "lat": 55.8764039,
+      "lng": 26.561714
+    },
+    {
+      "code": "osm:way/497705326",
+      "name": "LJMC Centrāla slimnīca",
+      "countryCode": "LV",
+      "origin": "https://ljmc.lv",
+      "lat": 56.9894514,
+      "lng": 24.1366694
+    },
+    {
+      "code": "osm:way/1037802652",
+      "name": "Plaušu slimību un tuberkulozes centrs",
+      "countryCode": "LV",
+      "origin": "https://slimnica.daugavpils.lv",
+      "lat": 55.8923197,
+      "lng": 26.5910193
+    },
+    {
+      "code": "osm:way/1152365715",
+      "name": "Daugavpils Reģionālā slimnīca",
+      "countryCode": "LV",
+      "origin": "https://slimnica.daugavpils.lv",
+      "lat": 55.8982951,
+      "lng": 26.592199
+    },
+    {
+      "code": "osm:way/1326457468",
+      "name": "SIA \"Rīgas veselības centrs\" filiāle \"Ziepniekkalns\"",
+      "countryCode": "LV",
+      "origin": "https://rigasveseliba.lv",
+      "lat": 56.9024697,
+      "lng": 24.0898821
+    },
+    {
+      "code": "osm:way/1435696177",
+      "name": "Rēzeknes slimnīca",
+      "countryCode": "LV",
+      "origin": "https://rslimnica.lv",
+      "lat": 56.5085924,
+      "lng": 27.3439088
+    }
+  ]
+}

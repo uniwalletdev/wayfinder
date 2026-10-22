@@ -1,0 +1,97 @@
+{
+  "countryCode": "CM",
+  "fetchedAt": "2026-10-21T01:05:02.728Z",
+  "count": 11,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/5695789322",
+      "name": "GT labo",
+      "countryCode": "CM",
+      "origin": "https://www.gtlabo.net",
+      "lat": 3.8636288,
+      "lng": 11.4992709
+    },
+    {
+      "code": "osm:node/11457489769",
+      "name": "Hôpital de district de Lomié",
+      "countryCode": "CM",
+      "origin": "http://www.hdlomie.cm",
+      "lat": 3.1651498,
+      "lng": 13.6232321
+    },
+    {
+      "code": "osm:way/219157317",
+      "name": "Centre national de réhabilitation des personnes handicapées",
+      "countryCode": "CM",
+      "origin": "https://www.cnrh.info",
+      "lat": 3.8506339,
+      "lng": 11.4780986
+    },
+    {
+      "code": "osm:way/270067162",
+      "name": "Hôpital St Luc",
+      "countryCode": "CM",
+      "origin": "https://www.facebook.com",
+      "lat": 3.5278802,
+      "lng": 11.504366
+    },
+    {
+      "code": "osm:way/366479393",
+      "name": "Banso Baptist Hospital",
+      "countryCode": "CM",
+      "origin": "https://www.cbchealthservices.org",
+      "lat": 6.2136466,
+      "lng": 10.6894924
+    },
+    {
+      "code": "osm:way/375109987",
+      "name": "Hôpital Gynéco-Obstétrique et Pédiatrique de Douala",
+      "countryCode": "CM",
+      "origin": "https://www.hgoped.cm",
+      "lat": 3.9894601,
+      "lng": 9.7972578
+    },
+    {
+      "code": "osm:way/386522027",
+      "name": "Baptist Hospital Mutengene",
+      "countryCode": "CM",
+      "origin": "https://www.cbchealthservices.org",
+      "lat": 4.0887837,
+      "lng": 9.3116172
+    },
+    {
+      "code": "osm:way/455175975",
+      "name": "Hôpital Général de Douala",
+      "countryCode": "CM",
+      "origin": "https://www.hgdcam.com",
+      "lat": 4.0647935,
+      "lng": 9.7584833
+    },
+    {
+      "code": "osm:way/557011332",
+      "name": "Baptist Hospital Banyo",
+      "countryCode": "CM",
+      "origin": "https://www.cbchealthservices.org",
+      "lat": 6.7499593,
+      "lng": 11.8305643
+    },
+    {
+      "code": "osm:way/557816045",
+      "name": "Mbingo Baptist Hospital",
+      "countryCode": "CM",
+      "origin": "https://www.cbchealthservices.org",
+      "lat": 6.1641111,
+      "lng": 10.2906811
+    },
+    {
+      "code": "osm:way/686395372",
+      "name": "Hôpital ad Lucem",
+      "countryCode": "CM",
+      "origin": "https://fondationadlucem-cm.org",
+      "lat": 3.7455713,
+      "lng": 10.0189504
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "countryCode": "IQ",
+  "fetchedAt": "2026-10-21T01:40:58.728Z",
+  "count": 36,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/3368090884",
+      "name": "نەخۆشخانەی نێودەوڵەتی ژین",
+      "countryCode": "IQ",
+      "origin": "https://www.zheen-hospital.com",
+      "lat": 36.1944524,
+      "lng": 44.044492
+    },
+    {
+      "code": "osm:node/4537313691",
+      "name": "کومەلگەها ڤین یا نوژداری",
+      "countryCode": "IQ",
+      "origin": "http://www.vinmedlab.com",
+      "lat": 36.8597542,
+      "lng": 42.9524884
+    },
+    {
+      "code": "osm:node/4750383522",
+      "name": "نەخوشخانا تایبه‌تمه‌ند یا سۆتنێ و نه‌شته‌رگه‌رییا جوانکاری",
+      "countryCode": "IQ",
+      "origin": "http://gmail.com",
+      "lat": 36.8509248,
+      "lng": 43.0119102
+    },
+    {
+      "code": "osm:node/4823386521",
+      "name": "mala Ali kalak",
+      "countryCode": "IQ",
+      "origin": "https://m.facebook.com",
+      "lat": 36.2670779,
+      "lng": 43.6338576
+    },
+    {
+      "code": "osm:node/4916372123",
+      "name": "مركز الفرات الاوسط للاورام",
+      "countryCode": "IQ",
+      "origin": "https://alnajafhealth.gov.iq",
+      "lat": 32.0426859,
+      "lng": 44.3653635
+    },
+    {
+      "code": "osm:node/4940187721",
+      "name": "مستشفى الهلال الأحمر",
+      "countryCode": "IQ",
+      "origin": "https://en.ircs.org.iq",
+      "lat": 32.4997199,
+      "lng": 45.8214849
+    },
+    {
+      "code": "osm:node/5063843121",
+      "name": "نەخۆشخانەی تایبەتی سۆما",
+      "countryCode": "IQ",
+      "origin": "https://www.facebook.com",
+      "lat": 35.5574195,
+      "lng": 45.4490889
+    },
+    {
+      "code": "osm:node/5840625985",
+      "name": "Westeye Hospital",
+      "countryCode": "IQ",
+      "origin": "http://westeyehospitals.com",
+      "lat": 36.1701698,
+      "lng": 44.0244718
+    },
+    {
+      "code": "osm:node/6049082685",
+      "name": "صيدلية",
+      "countryCode": "IQ",
+      "origin": "http://gmail.com",
+      "lat": 33.3049834,
+      "lng": 44.481522
+    },
+    {
+      "code": "osm:node/6533338285",
+      "name": "Ashti Health Center",
+      "countryCode": "IQ",
+      "origin": "http://www.facebook.com",
+      "lat": 36.2476394,
+      "lng": 44.0775569
+    },
+    {
+      "code": "osm:node/6833793783",
+      "name": "العيادة الجراحية الدكتور احمد سليم",
+      "countryCode": "IQ",
+      "origin": "https://www.facebook.com",
+      "lat": 34.6010386,
+      "lng": 43.6788398
+    },
+    {
+      "code": "osm:node/7271504926",
+      "name": "مستشفى الازهر الاهلي",
+      "countryCode": "IQ",
+      "origin": "https://www.alazharhospital.com",
+      "lat": 31.0351329,
+      "lng": 46.2340006
+    },
+    {
+      "code": "osm:node/9062207382",
+      "name": "Lausanne Medical and Beauty Center",
+      "countryCode": "IQ",
+      "origin": "https://www.facebook.com",
+      "lat": 36.2333682,
+      "lng": 43.9973205
+    },
+    {
+      "code": "osm:node/9170317717",
+      "name": "مجمع الرسول الاعظم الطبي التخصصي",
+      "countryCode": "IQ",
+      "origin": "https://www.facebook.com",
+      "lat": 32.4941824,
+      "lng": 44.4187723
+    },
+    {
+      "code": "osm:node/9453485217",
+      "name": "نەخۆشخانەی مێدیکاڵ هێڵپ",
+      "countryCode": "IQ",
+      "origin": "http://www.medicalhelphospital.net",
+      "lat": 36.2071764,
+      "lng": 44.0250779
+    },
+    {
+      "code": "osm:node/9467771339",
+      "name": "مستشفى الكفيل التخصصي",
+      "countryCode": "IQ",
+      "origin": "https://www.kh.iq",
+      "lat": 32.5911701,
+      "lng": 44.0412282
+    },
+    {
+      "code": "osm:node/9791404217",
+      "name": "مستشفى پیشمەرگە",
+      "countryCode": "IQ",
+      "origin": "http://peshmargahospital.com",
+      "lat": 36.3196277,
+      "lng": 44.0773848
+    },
+    {
+      "code": "osm:node/9823095183",
+      "name": "Semel General Hospital",
+      "countryCode": "IQ",
+      "origin": "http://www.semel-hospital.com",
+      "lat": 36.8606958,
+      "lng": 42.8369617
+    },
+    {
+      "code": "osm:node/9913054123",
+      "name": "amez private hospital",
+      "countryCode": "IQ",
+      "origin": "https://www.amezhospital.com",
+      "lat": 35.1926004,
+      "lng": 45.972936
+    },
+    {
+      "code": "osm:node/9960518217",
+      "name": "نەخۆشخانەی مەریەمانە",
+      "countryCode": "IQ",
+      "origin": "https://maryamanahospital.com",
+      "lat": 36.2276888,
+      "lng": 43.9915332
+    },
+    {
+      "code": "osm:node/9964630717",
+      "name": "مستشفى الولادة زاخو",
+      "countryCode": "IQ",
+      "origin": "http://www.zakhohealth.org",
+      "lat": 37.1480088,
+      "lng": 42.6796323
+    },
+    {
+      "code": "osm:node/10750914064",
+      "name": "مستشفى المودة التخصصي",
+      "countryCode": "IQ",
+      "origin": "https://www.facebook.com",
+      "lat": 30.4997742,
+      "lng": 47.801212
+    },
+    {
+      "code": "osm:node/10990031705",
+      "name": "تاقیگەی پزیشکی پیرمام",
+      "countryCode": "IQ",
+      "origin": "http://gmail.com",
+      "lat": 36.3909553,
+      "lng": 44.1889854
+    },
+    {
+      "code": "osm:node/12137666339",
+      "name": "PAKY HOSPITAL | نەخۆشخانەی پاکی",
+      "countryCode": "IQ",
+      "origin": "https://www.pakyhospital.com",
+      "lat": 36.1706849,
+      "lng": 43.9789833
+    },
+    {
+      "code": "osm:node/13020748301",
+      "name": "Ibn Al-Haytham Medical Complex",
+      "countryCode": "IQ",
+      "origin": "https://www.facebook.com",
+      "lat": 35.4748183,
+      "lng": 44.38432
+    },
+    {
+      "code": "osm:node/13648688001",
+      "name": "المستشفى التخصصي لامراض الجهاز الهضمي والكبد",
+      "countryCode": "IQ",
+      "origin": "https://h-sp.com",
+      "lat": 32.0098153,
+      "lng": 44.3445923
+    },
+    {
+      "code": "osm:node/14185188101",
+      "name": "مجمع بخشين الطبي كركوك",
+      "countryCode": "IQ",
+      "origin": "https://www.facebook.com",
+      "lat": 35.4628682,
+      "lng": 44.4083658
+    },
+    {
+      "code": "osm:way/367981123",
+      "name": "Emergency Management Centre",
+      "countryCode": "IQ",
+      "origin": "https://emc-hospitals.org",
+      "lat": 36.2000364,
+      "lng": 43.9973717
+    },
+    {
+      "code": "osm:way/367992204",
+      "name": "نەخۆشخانەی سویدیی تایبەت",
+      "countryCode": "IQ",
+      "origin": "http://www.swedish-hospital.com",
+      "lat": 36.2221908,
+      "lng": 44.0070289
+    },
+    {
+      "code": "osm:way/632422167",
+      "name": "نەخۆشخانا ئافرەت و زارۆک بوونێ ل زاخۆ",
+      "countryCode": "IQ",
+      "origin": "http://www.zakhohealth.org",
+      "lat": 37.1480278,
+      "lng": 42.6796311
+    },
+    {
+      "code": "osm:way/715371627",
+      "name": "شاری پزیشکیی فارووق",
+      "countryCode": "IQ",
+      "origin": "https://www.farukmedicalcity.com",
+      "lat": 35.5495524,
+      "lng": 45.4657271
+    },
+    {
+      "code": "osm:way/781112660",
+      "name": "Swedish Rehab Center - Pink Line",
+      "countryCode": "IQ",
+      "origin": "https://swerehcen.business.site",
+      "lat": 36.196231,
+      "lng": 44.0013634
+    },
+    {
+      "code": "osm:way/991883258",
+      "name": "نەخۆشخانەی CMC",
+      "countryCode": "IQ",
+      "origin": "https://www.cmcph.net",
+      "lat": 36.1999965,
+      "lng": 44.0808895
+    },
+    {
+      "code": "osm:way/1012523870",
+      "name": "مستشفى الحجة الخيري",
+      "countryCode": "IQ",
+      "origin": "https://karbalahospital.org",
+      "lat": 32.5974492,
+      "lng": 44.0077704
+    },
+    {
+      "code": "osm:way/1103229290",
+      "name": "نەخۆشخانەی سەنتەری دڵ-هەولێر",
+      "countryCode": "IQ",
+      "origin": "https://erbilcardiaccenter.org",
+      "lat": 36.1535978,
+      "lng": 44.0171455
+    },
+    {
+      "code": "osm:way/1299380281",
+      "name": "Art Dent",
+      "countryCode": "IQ",
+      "origin": "https://www.artdent.dental",
+      "lat": 36.1974671,
+      "lng": 44.0645306
+    }
+  ]
+}

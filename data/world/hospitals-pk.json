@@ -1,0 +1,409 @@
+{
+  "countryCode": "PK",
+  "fetchedAt": "2026-10-21T02:26:19.900Z",
+  "count": 50,
+  "droppedNoUsableWebsite": 1,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/1357561220",
+      "name": "Dr Muhammad Arsalan Butt - Iqra Medical Complex Johar Town",
+      "countryCode": "PK",
+      "origin": "https://share.google",
+      "lat": 31.4678948,
+      "lng": 74.3055729
+    },
+    {
+      "code": "osm:node/2606410068",
+      "name": "Brain Surgery Hospital",
+      "countryCode": "PK",
+      "origin": "https://brainsurgeryhospital.com",
+      "lat": 33.6365733,
+      "lng": 73.077516
+    },
+    {
+      "code": "osm:node/2913762181",
+      "name": "Faisalabad Institute of Cardiology",
+      "countryCode": "PK",
+      "origin": "http://www.fic.gop.pk",
+      "lat": 31.4226762,
+      "lng": 73.0865772
+    },
+    {
+      "code": "osm:node/4218549289",
+      "name": "Independent University Hospital",
+      "countryCode": "PK",
+      "origin": "https://indmedcol.com",
+      "lat": 31.4421405,
+      "lng": 73.0314347
+    },
+    {
+      "code": "osm:node/4537102691",
+      "name": "دیہی مرکز صحت کالیکی منڈی",
+      "countryCode": "PK",
+      "origin": "http://www.rhckaleke.com",
+      "lat": 31.9769094,
+      "lng": 73.5900629
+    },
+    {
+      "code": "osm:node/4537142489",
+      "name": "RHC, Sukheke",
+      "countryCode": "PK",
+      "origin": "http://www.rhcsukheke.com",
+      "lat": 31.8698098,
+      "lng": 73.4849574
+    },
+    {
+      "code": "osm:node/4762117190",
+      "name": "Liaquat National Hospital & Medical College",
+      "countryCode": "PK",
+      "origin": "https://lnh.edu.pk",
+      "lat": 24.8904754,
+      "lng": 67.0676323
+    },
+    {
+      "code": "osm:node/4780400904",
+      "name": "Rescue 1122",
+      "countryCode": "PK",
+      "origin": "https://www.facebook.com",
+      "lat": 32.9752205,
+      "lng": 73.6870826
+    },
+    {
+      "code": "osm:node/4793485622",
+      "name": "Prime Care Hospital",
+      "countryCode": "PK",
+      "origin": "https://www.primecarehospital.com",
+      "lat": 31.4270802,
+      "lng": 73.1273911
+    },
+    {
+      "code": "osm:node/5180636021",
+      "name": "KAM PEDIATRICS",
+      "countryCode": "PK",
+      "origin": "http://kampediatrics.com",
+      "lat": 30.0289639,
+      "lng": 72.3124066
+    },
+    {
+      "code": "osm:node/5213730433",
+      "name": "Zia Hospital",
+      "countryCode": "PK",
+      "origin": "https://www.ziahospital.com",
+      "lat": 31.4361716,
+      "lng": 74.35572
+    },
+    {
+      "code": "osm:node/5252215014",
+      "name": "Aga Khan Maternal & Child Care Centre",
+      "countryCode": "PK",
+      "origin": "https://www.agakhanhospitals.org",
+      "lat": 25.4126808,
+      "lng": 68.3540431
+    },
+    {
+      "code": "osm:node/5453851921",
+      "name": "Pak Red Crescent Medical and Dental College",
+      "countryCode": "PK",
+      "origin": "http://prcmdc.com",
+      "lat": 31.2463109,
+      "lng": 74.006988
+    },
+    {
+      "code": "osm:node/5606565821",
+      "name": "Rahila Research & Reference Lab Larkana",
+      "countryCode": "PK",
+      "origin": "https://rahilalabs.com",
+      "lat": 27.5578624,
+      "lng": 68.2093243
+    },
+    {
+      "code": "osm:node/6732207987",
+      "name": "LRBT Rashidabad Eye Hospital",
+      "countryCode": "PK",
+      "origin": "https://www.lrbt.org.pk",
+      "lat": 25.4592991,
+      "lng": 68.6745851
+    },
+    {
+      "code": "osm:node/7079980076",
+      "name": "Laser City Hair Transplant, Aesthetic & Cosmetic Surgery Centre",
+      "countryCode": "PK",
+      "origin": "https://www.lasercity.pk",
+      "lat": 24.8157674,
+      "lng": 67.0216563
+    },
+    {
+      "code": "osm:node/7165556234",
+      "name": "Dental Experts Johar Town Lahore",
+      "countryCode": "PK",
+      "origin": "https://dentalexperts.pk",
+      "lat": 31.4715382,
+      "lng": 74.2694031
+    },
+    {
+      "code": "osm:node/7230243994",
+      "name": "Twin City Diagnostics",
+      "countryCode": "PK",
+      "origin": "https://twincitylab.com",
+      "lat": 33.640755,
+      "lng": 73.0788445
+    },
+    {
+      "code": "osm:node/8099603618",
+      "name": "PPHI",
+      "countryCode": "PK",
+      "origin": "http://www.pphi.sindh.com",
+      "lat": 25.3837854,
+      "lng": 68.3165275
+    },
+    {
+      "code": "osm:node/8205628886",
+      "name": "Shazia Zahid Medical Centre",
+      "countryCode": "PK",
+      "origin": "https://shazia-zahid-medical-centre.business.site",
+      "lat": 31.473733,
+      "lng": 74.2956775
+    },
+    {
+      "code": "osm:node/9501618144",
+      "name": "شفاء ہیلتھ کئیر ہسپتال",
+      "countryCode": "PK",
+      "origin": "https://shifa-health-care-hospital.business.site",
+      "lat": 33.6917797,
+      "lng": 72.944307
+    },
+    {
+      "code": "osm:node/10209424928",
+      "name": "Family Diagnostic and Digital Xray center Mianwali",
+      "countryCode": "PK",
+      "origin": "https://web.facebook.com",
+      "lat": 32.5772865,
+      "lng": 71.5437215
+    },
+    {
+      "code": "osm:node/10747761252",
+      "name": "Dia Scient Medical Complex",
+      "countryCode": "PK",
+      "origin": "https://diascient.com",
+      "lat": 31.4432093,
+      "lng": 73.1007696
+    },
+    {
+      "code": "osm:node/12141510721",
+      "name": "Uzma Medical Centre (Previously known as Uzma Maternity Home UMH)",
+      "countryCode": "PK",
+      "origin": "http://www.uzmamedicalcentre.com",
+      "lat": 24.9039692,
+      "lng": 67.0750355
+    },
+    {
+      "code": "osm:node/12155978396",
+      "name": "Abdus Samad Memorial Hospital",
+      "countryCode": "PK",
+      "origin": "https://aas.org.pk",
+      "lat": 24.9090098,
+      "lng": 67.0485471
+    },
+    {
+      "code": "osm:node/12161785545",
+      "name": "Baqai Medical University · Rheumatology Unit",
+      "countryCode": "PK",
+      "origin": "https://www.bideonline.com",
+      "lat": 24.9077436,
+      "lng": 67.0348621
+    },
+    {
+      "code": "osm:node/12161786967",
+      "name": "Baqai Foot Care Clinic",
+      "countryCode": "PK",
+      "origin": "https://www.bideonline.com",
+      "lat": 24.9077772,
+      "lng": 67.0357418
+    },
+    {
+      "code": "osm:node/12162751022",
+      "name": "Alkhidmat Virology & Genetic Lab",
+      "countryCode": "PK",
+      "origin": "https://alkhidmat.com",
+      "lat": 24.9048096,
+      "lng": 67.0318703
+    },
+    {
+      "code": "osm:node/12162762044",
+      "name": "Al-Khidmat Hospital",
+      "countryCode": "PK",
+      "origin": "https://www.alkhidmat.com",
+      "lat": 24.905573,
+      "lng": 67.031915
+    },
+    {
+      "code": "osm:node/12179905875",
+      "name": "Advance emergency center",
+      "countryCode": "PK",
+      "origin": "http://www.sindhhealth.gov.pk",
+      "lat": 24.9115344,
+      "lng": 67.0507649
+    },
+    {
+      "code": "osm:node/12184130182",
+      "name": "Hemophilia Welfare Society Karachi",
+      "countryCode": "PK",
+      "origin": "https://www.hwsk.org.pk",
+      "lat": 24.9183376,
+      "lng": 67.0327951
+    },
+    {
+      "code": "osm:node/12184233855",
+      "name": "A.O. HOSPITAL",
+      "countryCode": "PK",
+      "origin": "https://aohospital.com.pk",
+      "lat": 24.9179128,
+      "lng": 67.032076
+    },
+    {
+      "code": "osm:node/12208458988",
+      "name": "PurrCure Pet Clinic Gujranwala (Animal Hospital)",
+      "countryCode": "PK",
+      "origin": "https://purrcurepetclinic.blogspot.com",
+      "lat": 32.1906439,
+      "lng": 74.2102186
+    },
+    {
+      "code": "osm:node/12754325901",
+      "name": "Elaaj International Hospital Islamabad",
+      "countryCode": "PK",
+      "origin": "https://elaajinternationalhospital.com",
+      "lat": 33.630284,
+      "lng": 73.1149925
+    },
+    {
+      "code": "osm:node/13240932685",
+      "name": "IDC",
+      "countryCode": "PK",
+      "origin": "https://idc.net.pk",
+      "lat": 33.5979608,
+      "lng": 73.04565
+    },
+    {
+      "code": "osm:node/13426375201",
+      "name": "Hanif Medical Complex - Faisal Town, Islamabad",
+      "countryCode": "PK",
+      "origin": "https://hanifmedical.com",
+      "lat": 33.6080157,
+      "lng": 72.8673256
+    },
+    {
+      "code": "osm:node/13426380801",
+      "name": "Hanif Medical Complex - Faisal Town, Islamabad",
+      "countryCode": "PK",
+      "origin": "https://hanifmedical.com",
+      "lat": 33.6094003,
+      "lng": 72.8660711
+    },
+    {
+      "code": "osm:node/13599717342",
+      "name": "Naseem Maternity Hospital",
+      "countryCode": "PK",
+      "origin": "https://naseem-maternity-hospital.localo.site",
+      "lat": 24.8373902,
+      "lng": 67.0779738
+    },
+    {
+      "code": "osm:node/13751426385",
+      "name": "Smile Dental Clinic & Implant Centre",
+      "countryCode": "PK",
+      "origin": "https://smiledental.pk",
+      "lat": 30.245233,
+      "lng": 71.4809429
+    },
+    {
+      "code": "osm:node/14003822851",
+      "name": "Pak Hospital",
+      "countryCode": "PK",
+      "origin": "https://pakhospital.com.pk",
+      "lat": 31.5319925,
+      "lng": 74.3245994
+    },
+    {
+      "code": "osm:node/14007471801",
+      "name": "پاک ہسپتال",
+      "countryCode": "PK",
+      "origin": "https://pakhospital.com.pk",
+      "lat": 31.5317452,
+      "lng": 74.3234228
+    },
+    {
+      "code": "osm:node/14244848925",
+      "name": "OMC skin & laser clinic",
+      "countryCode": "PK",
+      "origin": "https://omcskinclinicrabwah.com",
+      "lat": 31.7504837,
+      "lng": 72.9136457
+    },
+    {
+      "code": "osm:way/23040333",
+      "name": "Shifa International Hospital",
+      "countryCode": "PK",
+      "origin": "https://www.shifa.com.pk",
+      "lat": 33.6759211,
+      "lng": 73.0667951
+    },
+    {
+      "code": "osm:way/152214521",
+      "name": "Doctors Hospital",
+      "countryCode": "PK",
+      "origin": "https://doctorshospital.com.pk",
+      "lat": 31.4794521,
+      "lng": 74.2800878
+    },
+    {
+      "code": "osm:way/434728517",
+      "name": "Tabba Heart Institute",
+      "countryCode": "PK",
+      "origin": "https://tabbaheart.org",
+      "lat": 24.9187467,
+      "lng": 67.0636557
+    },
+    {
+      "code": "osm:way/491615106",
+      "name": "Aga Khan Maternal & Child Care Centre",
+      "countryCode": "PK",
+      "origin": "https://www.agakhanhospitals.org",
+      "lat": 25.4128445,
+      "lng": 68.3544433
+    },
+    {
+      "code": "osm:way/733437358",
+      "name": "Zia Dental Care & Aesthetics",
+      "countryCode": "PK",
+      "origin": "https://ziadentalcare.pk",
+      "lat": 24.8399511,
+      "lng": 67.0321244
+    },
+    {
+      "code": "osm:way/874930240",
+      "name": "Karachi Institute of Radiotherapy and Nuclear Medicine",
+      "countryCode": "PK",
+      "origin": "https://kpws.org",
+      "lat": 24.9477474,
+      "lng": 67.1438494
+    },
+    {
+      "code": "osm:way/993569855",
+      "name": "ضیاء الدین ہسپتال",
+      "countryCode": "PK",
+      "origin": "https://www.ziauddinhospital.com",
+      "lat": 24.8175287,
+      "lng": 67.0074082
+    },
+    {
+      "code": "osm:way/1564503959",
+      "name": "Cavalry Hospital",
+      "countryCode": "PK",
+      "origin": "https://cavalryhospital.com",
+      "lat": 31.5019271,
+      "lng": 74.3627794
+    }
+  ]
+}

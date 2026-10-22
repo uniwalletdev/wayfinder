@@ -1,0 +1,3793 @@
+{
+  "countryCode": "TR",
+  "fetchedAt": "2026-10-21T03:00:17.537Z",
+  "count": 473,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/1740708127",
+      "name": "Florence Nightingale",
+      "countryCode": "TR",
+      "origin": "https://www.florence.com.tr",
+      "lat": 41.0632063,
+      "lng": 29.0042388
+    },
+    {
+      "code": "osm:node/2260090099",
+      "name": "Çevre Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.cevrehastanesi.com.tr",
+      "lat": 41.0672214,
+      "lng": 29.0013232
+    },
+    {
+      "code": "osm:node/3729705449",
+      "name": "Anadolu hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.anatoliahospital.com",
+      "lat": 36.6143708,
+      "lng": 30.5556965
+    },
+    {
+      "code": "osm:node/4142446089",
+      "name": "Özel EntoKBB Cerrahi Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.entokbb.com",
+      "lat": 38.4499935,
+      "lng": 27.2036447
+    },
+    {
+      "code": "osm:node/4459098190",
+      "name": "Koç Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.kuh.ku.edu.tr",
+      "lat": 41.0241414,
+      "lng": 28.9166504
+    },
+    {
+      "code": "osm:node/5065584156",
+      "name": "Medisun Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://medisunhastanesi.com",
+      "lat": 39.8908191,
+      "lng": 32.7105063
+    },
+    {
+      "code": "osm:node/5081274091",
+      "name": "Özel Fatih Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.ozelfatihhastanesi.com",
+      "lat": 41.0156766,
+      "lng": 28.9507717
+    },
+    {
+      "code": "osm:node/5112704523",
+      "name": "Özel Selçuklu Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.selcuklu.com.tr",
+      "lat": 37.8778385,
+      "lng": 32.489078
+    },
+    {
+      "code": "osm:node/5243806749",
+      "name": "Diş Hekimliği Fakültesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.dicle.edu.tr",
+      "lat": 37.9194513,
+      "lng": 40.2687925
+    },
+    {
+      "code": "osm:node/5724461734",
+      "name": "İstanbul Eğitim ve Araştırma Hastanesi Osmaniye Semt Poliklinği",
+      "countryCode": "TR",
+      "origin": "https://istanbuleah.saglik.gov.tr",
+      "lat": 40.9920204,
+      "lng": 28.8813608
+    },
+    {
+      "code": "osm:node/6400675261",
+      "name": "Özel Pendik Şifa Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.pendiksifa.com.tr",
+      "lat": 40.88302,
+      "lng": 29.2361908
+    },
+    {
+      "code": "osm:node/6445014889",
+      "name": "Dűnyagöz",
+      "countryCode": "TR",
+      "origin": "https://dunyagoz.com",
+      "lat": 41.0824606,
+      "lng": 29.0370934
+    },
+    {
+      "code": "osm:node/6508582507",
+      "name": "Dünya Göz Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.dunyagoz.com",
+      "lat": 40.8788432,
+      "lng": 29.2362843
+    },
+    {
+      "code": "osm:node/7369176307",
+      "name": "Bezmialem Vakıf Üniversitesi Tıp Fakültesi Acil Tıp",
+      "countryCode": "TR",
+      "origin": "http://acil.bezmialemhastanesi.com",
+      "lat": 41.0199922,
+      "lng": 28.9348553
+    },
+    {
+      "code": "osm:node/7740545302",
+      "name": "Medient",
+      "countryCode": "TR",
+      "origin": "https://www.medient.com.tr",
+      "lat": 40.9826508,
+      "lng": 29.0927519
+    },
+    {
+      "code": "osm:node/8049914970",
+      "name": "Özel Dentkemer Ağız ve Diş Sağlığı Polikliniği",
+      "countryCode": "TR",
+      "origin": "https://www.dentkemer.com",
+      "lat": 36.5963037,
+      "lng": 30.5490564
+    },
+    {
+      "code": "osm:node/8509142417",
+      "name": "ÖZEL DENGE TIP MERKEZİ",
+      "countryCode": "TR",
+      "origin": "http://www.dengetipmerkezi.com",
+      "lat": 40.7664244,
+      "lng": 29.9659599
+    },
+    {
+      "code": "osm:node/8640269417",
+      "name": "Denipol Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://denipolhastanesi.com",
+      "lat": 37.7779559,
+      "lng": 29.0567611
+    },
+    {
+      "code": "osm:node/9054272093",
+      "name": "Özel Asya Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://asyahastanesi.com",
+      "lat": 41.073873,
+      "lng": 28.9038241
+    },
+    {
+      "code": "osm:node/9662588906",
+      "name": "NGY Med Dental Clinic",
+      "countryCode": "TR",
+      "origin": "https://ngymed.com",
+      "lat": 41.0025741,
+      "lng": 28.6261789
+    },
+    {
+      "code": "osm:node/9824778153",
+      "name": "Metropol Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://metropolsaglik.com",
+      "lat": 38.3981513,
+      "lng": 27.0953477
+    },
+    {
+      "code": "osm:node/10612631170",
+      "name": "Üsküdar Üniversitesi Diş Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://uskudardishastanesi.com",
+      "lat": 41.0276144,
+      "lng": 29.1157001
+    },
+    {
+      "code": "osm:node/10669076897",
+      "name": "Estepalace Clinic",
+      "countryCode": "TR",
+      "origin": "https://estepalace.com",
+      "lat": 41.064592,
+      "lng": 28.9782466
+    },
+    {
+      "code": "osm:node/10711833155",
+      "name": "Özel Medipoint Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.medipoint.com.tr",
+      "lat": 40.9823877,
+      "lng": 29.0713318
+    },
+    {
+      "code": "osm:node/10914275739",
+      "name": "Yedigün Tıp Merkezi Çamdibi Şubesi",
+      "countryCode": "TR",
+      "origin": "https://yediguntipcamdibi.com",
+      "lat": 38.4349213,
+      "lng": 27.1923771
+    },
+    {
+      "code": "osm:node/11016683005",
+      "name": "Yeniçağa Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.yenicaga.gov.tr",
+      "lat": 40.7706148,
+      "lng": 32.0323983
+    },
+    {
+      "code": "osm:node/11143750760",
+      "name": "Cure Plus Medical Clinic",
+      "countryCode": "TR",
+      "origin": "https://www.cureplus.clinic",
+      "lat": 36.6533943,
+      "lng": 31.6816726
+    },
+    {
+      "code": "osm:node/11207881817",
+      "name": "Özel Dermancan Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://dermancan.com.tr",
+      "lat": 37.0462959,
+      "lng": 35.2994832
+    },
+    {
+      "code": "osm:node/11429261991",
+      "name": "Bayındır Levent Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.bayindirhastanesi.com.tr",
+      "lat": 41.0730408,
+      "lng": 29.0179686
+    },
+    {
+      "code": "osm:node/11429261999",
+      "name": "Özel Etiler Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.etilerhastanesi.com.tr",
+      "lat": 41.0726109,
+      "lng": 29.0183816
+    },
+    {
+      "code": "osm:node/11811931087",
+      "name": "Aşır Aksu Ek Hizmet Binası",
+      "countryCode": "TR",
+      "origin": "https://antalyaataturkdh.saglik.gov.tr",
+      "lat": 36.9493437,
+      "lng": 30.627863
+    },
+    {
+      "code": "osm:node/11903829163",
+      "name": "Marmara Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.marmaratip.com.tr",
+      "lat": 40.9840765,
+      "lng": 29.0584553
+    },
+    {
+      "code": "osm:node/12230718101",
+      "name": "Merkez Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.merkezhastanesi.com.tr",
+      "lat": 40.8010206,
+      "lng": 29.4317337
+    },
+    {
+      "code": "osm:node/12308352301",
+      "name": "Özel Oksijen Sağlık Kabini",
+      "countryCode": "TR",
+      "origin": "https://www.oksijensaglik.com",
+      "lat": 38.4679306,
+      "lng": 27.2199246
+    },
+    {
+      "code": "osm:node/12431461409",
+      "name": "Sivas ÇAGEM",
+      "countryCode": "TR",
+      "origin": "https://sivasnumunedh.saglik.gov.tr",
+      "lat": 39.7392707,
+      "lng": 37.0373628
+    },
+    {
+      "code": "osm:node/12478685701",
+      "name": "Özel Level Hospital",
+      "countryCode": "TR",
+      "origin": "https://www.levelhospital.com",
+      "lat": 41.4494876,
+      "lng": 31.7816897
+    },
+    {
+      "code": "osm:node/12550940601",
+      "name": "Uzman Diş Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.uzmandent.com.tr",
+      "lat": 38.7131866,
+      "lng": 35.4901439
+    },
+    {
+      "code": "osm:node/13006734570",
+      "name": "Özel Lilyum Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.lilyumtipmerkezi.com.tr",
+      "lat": 41.1577165,
+      "lng": 28.6273395
+    },
+    {
+      "code": "osm:node/13275999994",
+      "name": "Adana Karşıyaka Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://adanakarsiyakadh.saglik.gov.tr",
+      "lat": 36.9833554,
+      "lng": 35.3376462
+    },
+    {
+      "code": "osm:node/13307127620",
+      "name": "cinsel saglık hattı merkezi",
+      "countryCode": "TR",
+      "origin": "https://cinselsaglikhatti.com.tr",
+      "lat": 36.8592558,
+      "lng": 30.7888781
+    },
+    {
+      "code": "osm:node/13428216401",
+      "name": "Tekirdağ Namık Kemal Üniversitesi Tıp Fakültesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hastane.nku.edu.tr",
+      "lat": 40.997756,
+      "lng": 27.5868712
+    },
+    {
+      "code": "osm:node/13543712718",
+      "name": "Urla Devlet Hastanesi Güzelbahçe Polikliniği",
+      "countryCode": "TR",
+      "origin": "https://www.guzelbahce.gov.tr",
+      "lat": 38.3758642,
+      "lng": 26.8921625
+    },
+    {
+      "code": "osm:node/13640519195",
+      "name": "Özel Sondurak Ümran Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.sondurakumrantip.com",
+      "lat": 41.0245523,
+      "lng": 29.0999874
+    },
+    {
+      "code": "osm:node/13906936801",
+      "name": "Dr. Ersin Arslan Eğitim ve Araştırma Hastanesi Mücahitler Ek Binası",
+      "countryCode": "TR",
+      "origin": "https://drersinarslaneah.saglik.gov.tr",
+      "lat": 37.076332,
+      "lng": 37.36961
+    },
+    {
+      "code": "osm:node/14075585769",
+      "name": "Özel Trakya Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.ozeltrakyahastanesi.com.tr",
+      "lat": 41.6757489,
+      "lng": 26.5577895
+    },
+    {
+      "code": "osm:node/14290948286",
+      "name": "Yaşampark Evde Sağlık ve Bakım Hizmetleri",
+      "countryCode": "TR",
+      "origin": "https://yasamparksaglik.com",
+      "lat": 41.0560193,
+      "lng": 28.9084953
+    },
+    {
+      "code": "osm:way/25554942",
+      "name": "Şişli Hamidiye Etfal Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sislietfaleah.saglik.gov.tr",
+      "lat": 41.0375952,
+      "lng": 28.9900615
+    },
+    {
+      "code": "osm:way/37190471",
+      "name": "Ege Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://hastane.ege.edu.tr",
+      "lat": 38.4554655,
+      "lng": 27.2110809
+    },
+    {
+      "code": "osm:way/37372194",
+      "name": "Eşrefpaşa Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://esrefpasahastanesi.izmir.bel.tr",
+      "lat": 38.4242833,
+      "lng": 27.160391
+    },
+    {
+      "code": "osm:way/56697022",
+      "name": "Ankara Üniversitesi Tıp Fakültesi Cebeci Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://ankaratiphastaneleri.medicine.ankara.edu.tr",
+      "lat": 39.9333314,
+      "lng": 32.8836893
+    },
+    {
+      "code": "osm:way/129523004",
+      "name": "Kapadokya Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.kapadokyahastanesi.com.tr",
+      "lat": 38.644561,
+      "lng": 34.7329454
+    },
+    {
+      "code": "osm:way/129523005",
+      "name": "Versa Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.versahastanesi.com.tr",
+      "lat": 38.630945,
+      "lng": 34.7379428
+    },
+    {
+      "code": "osm:way/131075639",
+      "name": "Bozok Üniversitesi Araştırma ve Uygulama Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hastane.bozok.edu.tr",
+      "lat": 39.8179422,
+      "lng": 34.7961459
+    },
+    {
+      "code": "osm:way/145788829",
+      "name": "İstanbul Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.istanbuleah.saglik.gov.tr",
+      "lat": 41.0032476,
+      "lng": 28.9380519
+    },
+    {
+      "code": "osm:way/148460526",
+      "name": "SBÜ Sultan Abdülhamid Han Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sultanabdulhamidhaneah.saglik.gov.tr",
+      "lat": 41.0011021,
+      "lng": 29.0207146
+    },
+    {
+      "code": "osm:way/148461658",
+      "name": "Şişli Etfal Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.sislietfal.gov.tr",
+      "lat": 41.0578908,
+      "lng": 28.9906883
+    },
+    {
+      "code": "osm:way/148462025",
+      "name": "Haydarpaşa Numune Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.haydarpasanumune.gov.tr",
+      "lat": 41.004774,
+      "lng": 29.0229597
+    },
+    {
+      "code": "osm:way/148463842",
+      "name": "Dr. Lütfi Kırdar Kartal Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.sbkeah.gov.tr",
+      "lat": 40.9151429,
+      "lng": 29.1739112
+    },
+    {
+      "code": "osm:way/148469373",
+      "name": "Okmeydanı Profesör Doktor Cemil Taşçıoğlu Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://cemiltascioglush.saglik.gov.tr",
+      "lat": 41.0645108,
+      "lng": 28.9749829
+    },
+    {
+      "code": "osm:way/148469927",
+      "name": "Göztepe Prof. Dr. Süleyman Yalçın Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://suleymanyalcinsh.saglik.gov.tr",
+      "lat": 40.9867224,
+      "lng": 29.0570969
+    },
+    {
+      "code": "osm:way/148472314",
+      "name": "İzmir Atatürk Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.iaeh.gov.tr",
+      "lat": 38.3971847,
+      "lng": 27.1038006
+    },
+    {
+      "code": "osm:way/163811039",
+      "name": "Acıbadem International Hospital",
+      "countryCode": "TR",
+      "origin": "https://www.internationalhospital.com.tr",
+      "lat": 40.9589216,
+      "lng": 28.8355416
+    },
+    {
+      "code": "osm:way/164368990",
+      "name": "Fransız Lape Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.fransizlape.com",
+      "lat": 41.0619103,
+      "lng": 28.9905843
+    },
+    {
+      "code": "osm:way/168868383",
+      "name": "Buca Kadın Doğum ve Çocuk Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://bucakdch.saglik.gov.tr",
+      "lat": 38.3759344,
+      "lng": 27.1810268
+    },
+    {
+      "code": "osm:way/177433772",
+      "name": "Fatih Sultan Mehmet Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://fsmeah.saglik.gov.tr",
+      "lat": 40.9710632,
+      "lng": 29.1048837
+    },
+    {
+      "code": "osm:way/177433773",
+      "name": "Yeditepe Üniversitesi Kozyatağı Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.yeditepehastanesi.com.tr",
+      "lat": 40.968911,
+      "lng": 29.103692
+    },
+    {
+      "code": "osm:way/180928082",
+      "name": "Zara Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://zaradh.saglik.gov.tr",
+      "lat": 39.8925816,
+      "lng": 37.7487738
+    },
+    {
+      "code": "osm:way/187794147",
+      "name": "Erenköy Ruh ve Sinir Hastalıkları Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://erenkoyruhsinireah.saglik.gov.tr",
+      "lat": 40.9750143,
+      "lng": 29.0887494
+    },
+    {
+      "code": "osm:way/192463972",
+      "name": "Susehri Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.susehri-dh.gov.tr",
+      "lat": 40.1694943,
+      "lng": 38.0820052
+    },
+    {
+      "code": "osm:way/197993628",
+      "name": "Emsey Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.emseyhospital.com.tr",
+      "lat": 40.9237898,
+      "lng": 29.2888718
+    },
+    {
+      "code": "osm:way/199748600",
+      "name": "Seyhan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://seyhandh.saglik.gov.tr",
+      "lat": 37.0198591,
+      "lng": 35.3188718
+    },
+    {
+      "code": "osm:way/224447190",
+      "name": "Özel Zilan Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.zilanhastanesi.com",
+      "lat": 37.8964878,
+      "lng": 41.1265326
+    },
+    {
+      "code": "osm:way/224709511",
+      "name": "Dünya Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.batmandunyahastanesi.com",
+      "lat": 37.9023306,
+      "lng": 41.143035
+    },
+    {
+      "code": "osm:way/225311211",
+      "name": "Düzce Atatürk Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://duzceadh.saglik.gov.tr",
+      "lat": 40.8114249,
+      "lng": 31.2406907
+    },
+    {
+      "code": "osm:way/225315706",
+      "name": "Özel Çağsu Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.hsh.com.tr",
+      "lat": 40.8324383,
+      "lng": 31.1827712
+    },
+    {
+      "code": "osm:way/226285546",
+      "name": "HC International Clinic",
+      "countryCode": "TR",
+      "origin": "https://hcintclinic.com",
+      "lat": 39.8875893,
+      "lng": 32.847334
+    },
+    {
+      "code": "osm:way/226448950",
+      "name": "Kocaeli Derince Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.kdeah.gov.tr",
+      "lat": 40.7613303,
+      "lng": 29.8122265
+    },
+    {
+      "code": "osm:way/226607341",
+      "name": "Körfez Ağız Ve Diş Sağlığı Merkezi",
+      "countryCode": "TR",
+      "origin": "http://www.korfezadsm.gov.tr",
+      "lat": 40.7663706,
+      "lng": 29.775939
+    },
+    {
+      "code": "osm:way/227682432",
+      "name": "Kocaeli Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.kocaelidh.gov.tr",
+      "lat": 40.7672684,
+      "lng": 29.938919
+    },
+    {
+      "code": "osm:way/227705401",
+      "name": "Anadolu Sağlık Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.anadolusaglik.org",
+      "lat": 40.8180298,
+      "lng": 29.3528761
+    },
+    {
+      "code": "osm:way/228299256",
+      "name": "SEKA Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.sekadh.gov.tr",
+      "lat": 40.763831,
+      "lng": 29.9000962
+    },
+    {
+      "code": "osm:way/231810385",
+      "name": "Medikal Point Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.medicalpoint.com.tr",
+      "lat": 37.8881439,
+      "lng": 41.1281389
+    },
+    {
+      "code": "osm:way/233586280",
+      "name": "Nevşehir Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://nevsehirdh.saglik.gov.tr",
+      "lat": 38.6554852,
+      "lng": 34.7272825
+    },
+    {
+      "code": "osm:way/235463554",
+      "name": "Florence Nightingale Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.florence.com.tr",
+      "lat": 40.9816285,
+      "lng": 29.0417135
+    },
+    {
+      "code": "osm:way/237176270",
+      "name": "Erenköy Fizik Tedavi ve Rehabilitasyon Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://erenkoyftr.saglik.gov.tr",
+      "lat": 40.9748394,
+      "lng": 29.083684
+    },
+    {
+      "code": "osm:way/237686526",
+      "name": "Dr. Siyami Ersek Göğüs Kalp ve Damar Cerrahisi Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://siyamiersekeah.saglik.gov.tr",
+      "lat": 41.0039903,
+      "lng": 29.0243116
+    },
+    {
+      "code": "osm:way/237914844",
+      "name": "Erenköy Fizik Tedavi ve Reahabilitasyon Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://erenkoyftr.saglik.gov.tr",
+      "lat": 40.9860653,
+      "lng": 29.0656466
+    },
+    {
+      "code": "osm:way/237946576",
+      "name": "Acıbadem Kadıköy Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 41.0072126,
+      "lng": 29.0430345
+    },
+    {
+      "code": "osm:way/237949321",
+      "name": "Medipol",
+      "countryCode": "TR",
+      "origin": "https://medipol.com.tr",
+      "lat": 41.0048953,
+      "lng": 29.0340722
+    },
+    {
+      "code": "osm:way/239828607",
+      "name": "Özel Intermed Çiftehavuzlar Polikliniği",
+      "countryCode": "TR",
+      "origin": "https://www.intermed.gen.tr",
+      "lat": 40.9692906,
+      "lng": 29.053565
+    },
+    {
+      "code": "osm:way/246883311",
+      "name": "İtalyan Hastanesi - Giovanni Alberto Agnelli",
+      "countryCode": "TR",
+      "origin": "https://uhgl-gh.com",
+      "lat": 41.028438,
+      "lng": 28.98111
+    },
+    {
+      "code": "osm:way/250815602",
+      "name": "Balıkesir Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://balikesirdh.saglik.gov.tr",
+      "lat": 39.6539222,
+      "lng": 27.8920989
+    },
+    {
+      "code": "osm:way/256941501",
+      "name": "Memorial Hastanesi Kayseri",
+      "countryCode": "TR",
+      "origin": "https://www.memorial.com.tr",
+      "lat": 38.7287674,
+      "lng": 35.4795029
+    },
+    {
+      "code": "osm:way/257588551",
+      "name": "Polatlı Duatepe SSK Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.polatlidevlethastanesi.gov.tr",
+      "lat": 39.5616294,
+      "lng": 32.1428649
+    },
+    {
+      "code": "osm:way/259349832",
+      "name": "Tekden Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.tekdenhastaneleri.com",
+      "lat": 38.7226801,
+      "lng": 35.4825714
+    },
+    {
+      "code": "osm:way/259352268",
+      "name": "Acıbadem Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 38.7157342,
+      "lng": 35.4994868
+    },
+    {
+      "code": "osm:way/259410571",
+      "name": "Kızılay Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.kizilaysaglikgrubu.com",
+      "lat": 38.7134013,
+      "lng": 35.4931903
+    },
+    {
+      "code": "osm:way/259413468",
+      "name": "Ibni Sina Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ibnisinahastanesi.com",
+      "lat": 38.7187089,
+      "lng": 35.4927012
+    },
+    {
+      "code": "osm:way/259415536",
+      "name": "Medical Palace",
+      "countryCode": "TR",
+      "origin": "https://www.medicalpalace.com.tr",
+      "lat": 38.7311873,
+      "lng": 35.5259398
+    },
+    {
+      "code": "osm:way/259416923",
+      "name": "Özel Hüma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.humahastanesi.com.tr",
+      "lat": 38.7134308,
+      "lng": 35.4952143
+    },
+    {
+      "code": "osm:way/259418282",
+      "name": "Kayserigöz Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.kayserigoz.com",
+      "lat": 38.7125554,
+      "lng": 35.4906814
+    },
+    {
+      "code": "osm:way/260615279",
+      "name": "Medihaus Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.medihaus.com.tr",
+      "lat": 41.0133707,
+      "lng": 28.6569108
+    },
+    {
+      "code": "osm:way/263129307",
+      "name": "Başakşehir Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://basaksehirtipmerkezi.com",
+      "lat": 41.1055494,
+      "lng": 28.7934497
+    },
+    {
+      "code": "osm:way/264414100",
+      "name": "Akademi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.akademihastanesi.com",
+      "lat": 37.8657582,
+      "lng": 32.4911954
+    },
+    {
+      "code": "osm:way/265714060",
+      "name": "Adnan Menderes Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hastane.adu.edu.tr",
+      "lat": 37.8482449,
+      "lng": 27.8348285
+    },
+    {
+      "code": "osm:way/272120824",
+      "name": "Trakya Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://tuh.trakya.edu.tr",
+      "lat": 41.6388721,
+      "lng": 26.6150063
+    },
+    {
+      "code": "osm:way/276177527",
+      "name": "Acıbadem Eskişehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 39.7849702,
+      "lng": 30.4951481
+    },
+    {
+      "code": "osm:way/276239719",
+      "name": "Yunus Emre Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://yunusemredh.saglik.gov.tr",
+      "lat": 39.7856768,
+      "lng": 30.4890123
+    },
+    {
+      "code": "osm:way/280193623",
+      "name": "Pendik Devlet Hastanesi Kurtköy Semt Polikliniği",
+      "countryCode": "TR",
+      "origin": "https://pendikdh.saglik.gov.tr",
+      "lat": 40.9253697,
+      "lng": 29.3078803
+    },
+    {
+      "code": "osm:way/280239178",
+      "name": "Ankara Gazi Mustafa Kemal Mesleki ve Çevresel Hastalıklar Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://gazimeslekdh.saglik.gov.tr",
+      "lat": 39.9450353,
+      "lng": 32.8240136
+    },
+    {
+      "code": "osm:way/287831116",
+      "name": "Medline Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://akademimeramhastanesi.com",
+      "lat": 37.8794857,
+      "lng": 32.4487051
+    },
+    {
+      "code": "osm:way/287878732",
+      "name": "Batman İluh Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://batmankdch.saglik.gov.tr",
+      "lat": 37.8896671,
+      "lng": 41.1254596
+    },
+    {
+      "code": "osm:way/288292172",
+      "name": "Meram Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://meramdh.saglik.gov.tr",
+      "lat": 37.8609877,
+      "lng": 32.4458551
+    },
+    {
+      "code": "osm:way/297727263",
+      "name": "Özel Eskişehir Anadolu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ozelanadoluhastanesi.com",
+      "lat": 39.7672478,
+      "lng": 30.5139267
+    },
+    {
+      "code": "osm:way/299257216",
+      "name": "Yaşam Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://batmanyasam.com.tr",
+      "lat": 37.8946586,
+      "lng": 41.1286555
+    },
+    {
+      "code": "osm:way/302549670",
+      "name": "Dörtçelik Çocuk Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.bch.gov.tr",
+      "lat": 40.2185237,
+      "lng": 28.9207083
+    },
+    {
+      "code": "osm:way/302890956",
+      "name": "Giresun Prof. Dr. A. İlhan Özdemir Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://giresundh.saglik.gov.tr",
+      "lat": 40.9087356,
+      "lng": 38.3485053
+    },
+    {
+      "code": "osm:way/303662691",
+      "name": "Çankırı Özel Karatekin Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karatekinhastanesi.com",
+      "lat": 40.600507,
+      "lng": 33.6153211
+    },
+    {
+      "code": "osm:way/305826780",
+      "name": "Marmara Üniversitesi Pendik Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://marmaraeah.saglik.gov.tr",
+      "lat": 40.8867609,
+      "lng": 29.2626952
+    },
+    {
+      "code": "osm:way/305839875",
+      "name": "Ümraniye Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://umraniyeah.saglik.gov.tr",
+      "lat": 41.0323464,
+      "lng": 29.1012718
+    },
+    {
+      "code": "osm:way/308062099",
+      "name": "Özel Pedmer Çocuk Sağlığı Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.pedmer.com.tr",
+      "lat": 40.2213534,
+      "lng": 28.9598904
+    },
+    {
+      "code": "osm:way/308065253",
+      "name": "Acıbadem Bursa Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 40.2128212,
+      "lng": 28.976127
+    },
+    {
+      "code": "osm:way/309899656",
+      "name": "Karaman Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karamandh.saglik.gov.tr",
+      "lat": 37.1659713,
+      "lng": 33.2569414
+    },
+    {
+      "code": "osm:way/312898728",
+      "name": "Hacıbektaş İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hacibektasieh.saglik.gov.tr",
+      "lat": 38.9381162,
+      "lng": 34.5555014
+    },
+    {
+      "code": "osm:way/313527798",
+      "name": "Adıyaman Üniversitesi Eğitim Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.adiyamaneah.gov.tr",
+      "lat": 37.76705,
+      "lng": 38.3232174
+    },
+    {
+      "code": "osm:way/314811573",
+      "name": "Özel Alanya Anadolu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.anatoliahospital.com",
+      "lat": 36.5557169,
+      "lng": 31.9905617
+    },
+    {
+      "code": "osm:way/315715372",
+      "name": "Memorial Bahçelievler Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.memorial.com.tr",
+      "lat": 40.993276,
+      "lng": 28.8527432
+    },
+    {
+      "code": "osm:way/316524218",
+      "name": "Yenimahalle Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://yenimahalleeah.saglik.gov.tr",
+      "lat": 39.9703698,
+      "lng": 32.6946613
+    },
+    {
+      "code": "osm:way/316650279",
+      "name": "Mehmet Akif Ersoy Göğüs Kalp Ve Damar Cerrahisi Eğitim Ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.imaeh.gov.tr",
+      "lat": 41.0333764,
+      "lng": 28.7770266
+    },
+    {
+      "code": "osm:way/316666736",
+      "name": "Kanuni Sultan Süleyman Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://kanunieah.gov.tr",
+      "lat": 41.0546445,
+      "lng": 28.7595701
+    },
+    {
+      "code": "osm:way/317021355",
+      "name": "KSBÜ Evliya Çelebi Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ecd.saglik.gov.tr",
+      "lat": 39.4243355,
+      "lng": 29.9632961
+    },
+    {
+      "code": "osm:way/317021618",
+      "name": "DPÜ Kütahya Evliya Çelebi Eğitim ve Araştırma Hastanesi Ek Bina",
+      "countryCode": "TR",
+      "origin": "https://ecd.saglik.gov.tr",
+      "lat": 39.4175,
+      "lng": 29.9900814
+    },
+    {
+      "code": "osm:way/323456968",
+      "name": "Memorial Diyarbakır Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.memorial.com.tr",
+      "lat": 37.9361283,
+      "lng": 40.1877815
+    },
+    {
+      "code": "osm:way/326541873",
+      "name": "Diyarlife Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://diyarlifehastanesi.com.tr",
+      "lat": 37.9164897,
+      "lng": 40.233809
+    },
+    {
+      "code": "osm:way/328620462",
+      "name": "Kışla Başkent Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.baskent-adn.edu.tr",
+      "lat": 37.0126106,
+      "lng": 35.3440248
+    },
+    {
+      "code": "osm:way/329073681",
+      "name": "Genesis Hospital",
+      "countryCode": "TR",
+      "origin": "https://www.genesishospital.com.tr",
+      "lat": 37.9361727,
+      "lng": 40.2040942
+    },
+    {
+      "code": "osm:way/329093428",
+      "name": "Özel Sultan Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.sultanhastanesi.com",
+      "lat": 37.931206,
+      "lng": 40.2044145
+    },
+    {
+      "code": "osm:way/354880338",
+      "name": "Özel Ofm Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.ofmantalya.com",
+      "lat": 36.9142545,
+      "lng": 30.6911761
+    },
+    {
+      "code": "osm:way/363316258",
+      "name": "Özel Avrasya Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.avrasyahospital.com.tr",
+      "lat": 41.0032497,
+      "lng": 28.9066589
+    },
+    {
+      "code": "osm:way/365299035",
+      "name": "Anıt Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://anithastanesi.com.tr",
+      "lat": 37.8664849,
+      "lng": 32.4874272
+    },
+    {
+      "code": "osm:way/365987204",
+      "name": "Taşkent İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://konyaism.saglik.gov.tr",
+      "lat": 36.9280055,
+      "lng": 32.4963652
+    },
+    {
+      "code": "osm:way/366450675",
+      "name": "Konya Hospital",
+      "countryCode": "TR",
+      "origin": "http://www.konyahospital.com",
+      "lat": 37.877009,
+      "lng": 32.4943172
+    },
+    {
+      "code": "osm:way/367597704",
+      "name": "Özel Yaşam Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.yasamhastaneleri.com",
+      "lat": 36.5476894,
+      "lng": 32.0016983
+    },
+    {
+      "code": "osm:way/368116831",
+      "name": "Özel Side Anadolu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.anatoliahospital.com",
+      "lat": 36.7865435,
+      "lng": 31.3958033
+    },
+    {
+      "code": "osm:way/368408060",
+      "name": "Özel Olimpos Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.olimposhastanesi.com.tr",
+      "lat": 36.8709376,
+      "lng": 30.6342607
+    },
+    {
+      "code": "osm:way/368453329",
+      "name": "Özel Antalya Anadolu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://anatoliahospital.com",
+      "lat": 36.8870711,
+      "lng": 30.7189547
+    },
+    {
+      "code": "osm:way/368454342",
+      "name": "Özel Rich Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.richhospital.com.tr",
+      "lat": 36.8882047,
+      "lng": 30.7331264
+    },
+    {
+      "code": "osm:way/368463411",
+      "name": "Özel Yaşam Hastanesi, Antalya (Life Hospital)",
+      "countryCode": "TR",
+      "origin": "https://www.yasamhastaneleri.com",
+      "lat": 36.8628732,
+      "lng": 30.7307663
+    },
+    {
+      "code": "osm:way/368767879",
+      "name": "Özel Ortopedia Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.ortopedia.com.tr",
+      "lat": 36.9954337,
+      "lng": 35.3154441
+    },
+    {
+      "code": "osm:way/368894042",
+      "name": "Dr. Ekrem Tok Ruh Sağlığı Hastalıkları Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ekremtokrsh.saglik.gov.tr",
+      "lat": 37.0522703,
+      "lng": 35.2625041
+    },
+    {
+      "code": "osm:way/368911469",
+      "name": "Özel Avrupa Hospital Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://adana.avrupahospital.com",
+      "lat": 37.0355501,
+      "lng": 35.3065857
+    },
+    {
+      "code": "osm:way/368930430",
+      "name": "Özel Ortadoğu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ortadoguhastanesi.com.tr",
+      "lat": 37.0140304,
+      "lng": 35.3255556
+    },
+    {
+      "code": "osm:way/368939566",
+      "name": "Adana Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.adanadh.gov.tr",
+      "lat": 37.0196361,
+      "lng": 35.322034
+    },
+    {
+      "code": "osm:way/369233478",
+      "name": "Özel Ahu Hetman Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ahuhastanesi.com",
+      "lat": 36.8480579,
+      "lng": 28.2555799
+    },
+    {
+      "code": "osm:way/369234532",
+      "name": "Özel Marmaris Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.omh.com.tr",
+      "lat": 36.85136,
+      "lng": 28.2570559
+    },
+    {
+      "code": "osm:way/371474926",
+      "name": "Şile Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://siledevlet.gov.tr",
+      "lat": 41.1745399,
+      "lng": 29.6169256
+    },
+    {
+      "code": "osm:way/372319700",
+      "name": "Adıyaman Kadın Doğum ve Çocuk Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.adiyamaneah.gov.tr",
+      "lat": 37.7629106,
+      "lng": 38.3003501
+    },
+    {
+      "code": "osm:way/375108990",
+      "name": "Zeynep Kamil Kadın Ve Çocuk Hastalıkları Eğitim Ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://zeynepkamil.gov.tr",
+      "lat": 41.0151264,
+      "lng": 29.0262798
+    },
+    {
+      "code": "osm:way/376031174",
+      "name": "Acıbadem Kozyatağı Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 40.9766927,
+      "lng": 29.0931138
+    },
+    {
+      "code": "osm:way/376490041",
+      "name": "Tarsus Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.tarsusdh.gov.tr",
+      "lat": 36.9141278,
+      "lng": 34.905326
+    },
+    {
+      "code": "osm:way/377134810",
+      "name": "Mardin Park Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.mardinpark.com.tr",
+      "lat": 37.325513,
+      "lng": 40.7208754
+    },
+    {
+      "code": "osm:way/377255558",
+      "name": "Özel Kızıltepe İpekyolu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ozelipekyoluhastanesi.com",
+      "lat": 37.1858549,
+      "lng": 40.598062
+    },
+    {
+      "code": "osm:way/377348295",
+      "name": "Özel Asema Hospital",
+      "countryCode": "TR",
+      "origin": "http://asemahospital.com",
+      "lat": 37.9358855,
+      "lng": 41.9387451
+    },
+    {
+      "code": "osm:way/377354922",
+      "name": "Sivas Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sivasdh.saglik.gov.tr",
+      "lat": 39.744538,
+      "lng": 37.0118565
+    },
+    {
+      "code": "osm:way/377499066",
+      "name": "Rize Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://rizedh.saglik.gov.tr",
+      "lat": 41.0284014,
+      "lng": 40.5144839
+    },
+    {
+      "code": "osm:way/378252804",
+      "name": "Necati Hepkon Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://seferihisardh.saglik.gov.tr",
+      "lat": 38.1977948,
+      "lng": 26.8456512
+    },
+    {
+      "code": "osm:way/378597516",
+      "name": "Sadıka Sabancı Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sadikasabancidh.saglik.gov.tr",
+      "lat": 40.7075824,
+      "lng": 30.3796622
+    },
+    {
+      "code": "osm:way/378603508",
+      "name": "Sakarya Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sakaryaeah.saglik.gov.tr",
+      "lat": 40.757102,
+      "lng": 30.3897019
+    },
+    {
+      "code": "osm:way/379086903",
+      "name": "Özel Medi Bafra Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://medibafra.com.tr",
+      "lat": 41.5622068,
+      "lng": 35.9147162
+    },
+    {
+      "code": "osm:way/382475113",
+      "name": "Bayındır Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.bayindirhastanesi.com.tr",
+      "lat": 39.9106628,
+      "lng": 32.8112279
+    },
+    {
+      "code": "osm:way/382843570",
+      "name": "Memorial Şişli Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.memorial.com.tr",
+      "lat": 41.0616543,
+      "lng": 28.9727332
+    },
+    {
+      "code": "osm:way/383752386",
+      "name": "Özel Kemal Bayındır Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.ozelkemalbayindir.com",
+      "lat": 37.0477664,
+      "lng": 37.3321458
+    },
+    {
+      "code": "osm:way/387155972",
+      "name": "Konya Numune Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://konyanumunedh.saglik.gov.tr",
+      "lat": 37.8794309,
+      "lng": 32.4901026
+    },
+    {
+      "code": "osm:way/387217824",
+      "name": "Ankara Eğitim Ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ankaraeah.saglik.gov.tr",
+      "lat": 39.9368769,
+      "lng": 32.8758314
+    },
+    {
+      "code": "osm:way/387478850",
+      "name": "Güven Çayyolu Sağlık Kampüsü",
+      "countryCode": "TR",
+      "origin": "http://www.guvencayyolu.com.tr",
+      "lat": 39.8660218,
+      "lng": 32.6852028
+    },
+    {
+      "code": "osm:way/390256751",
+      "name": "Bezmialem Üniversitesi Dragos Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bezmialem.com.tr",
+      "lat": 40.9099953,
+      "lng": 29.1379765
+    },
+    {
+      "code": "osm:way/390963265",
+      "name": "Salihli Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://salihlidh.saglik.gov.tr",
+      "lat": 38.4781772,
+      "lng": 28.1408997
+    },
+    {
+      "code": "osm:way/394179526",
+      "name": "Özel Adıyaman Park Hospital",
+      "countryCode": "TR",
+      "origin": "https://adiyamanparkhospital.com.tr",
+      "lat": 37.7520056,
+      "lng": 38.2437047
+    },
+    {
+      "code": "osm:way/396126731",
+      "name": "Özel Mersin Ortadoğu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://mersinortadogu.com.tr",
+      "lat": 36.7639215,
+      "lng": 34.5482397
+    },
+    {
+      "code": "osm:way/396126747",
+      "name": "Forum Yaşam Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://forumyasamhastanesi.com.tr",
+      "lat": 36.7895534,
+      "lng": 34.5877471
+    },
+    {
+      "code": "osm:way/401013538",
+      "name": "Özel Algomed Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://algomed.com.tr",
+      "lat": 36.9898742,
+      "lng": 35.3445144
+    },
+    {
+      "code": "osm:way/401014244",
+      "name": "Özel EPC Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.epc.com.tr",
+      "lat": 37.0478768,
+      "lng": 35.2503421
+    },
+    {
+      "code": "osm:way/401016429",
+      "name": "Özel Güney Adana Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.guneyadanahastanesi.com",
+      "lat": 36.970286,
+      "lng": 35.3085123
+    },
+    {
+      "code": "osm:way/401148657",
+      "name": "Özel Metro Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.metrohastanesi.com",
+      "lat": 37.0046706,
+      "lng": 35.3154826
+    },
+    {
+      "code": "osm:way/401149826",
+      "name": "Ç.Ü. Hastane Balcalı",
+      "countryCode": "TR",
+      "origin": "https://balcali.cu.edu.tr",
+      "lat": 37.0557613,
+      "lng": 35.3624747
+    },
+    {
+      "code": "osm:way/401150819",
+      "name": "Başkent Üniversitesi Adana Uygulama ve Araştırma Merkezi",
+      "countryCode": "TR",
+      "origin": "http://www.baskent-adn.edu.tr",
+      "lat": 37.0078298,
+      "lng": 35.3235978
+    },
+    {
+      "code": "osm:way/401152646",
+      "name": "Yüreğir Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://yuregirdh.saglik.gov.tr",
+      "lat": 37.0106972,
+      "lng": 35.3543679
+    },
+    {
+      "code": "osm:way/401186801",
+      "name": "Eskişehir Osmangazi Üniversitesi Tıp Fakültesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hastane.ogu.edu.tr",
+      "lat": 39.7513001,
+      "lng": 30.4905079
+    },
+    {
+      "code": "osm:way/403552357",
+      "name": "Liv Hospital Ulus",
+      "countryCode": "TR",
+      "origin": "https://www.livhospital.com",
+      "lat": 41.0608579,
+      "lng": 29.0284965
+    },
+    {
+      "code": "osm:way/404081531",
+      "name": "Ankara Hastane Acil Girişi",
+      "countryCode": "TR",
+      "origin": "https://hastane.ankara.edu.tr",
+      "lat": 39.9321765,
+      "lng": 32.8589656
+    },
+    {
+      "code": "osm:way/404401512",
+      "name": "Özel Karataş Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.karatashastanesi.com",
+      "lat": 38.4113337,
+      "lng": 27.1229546
+    },
+    {
+      "code": "osm:way/405101792",
+      "name": "Yüksekova Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://yuksekovadh.saglik.gov.tr",
+      "lat": 37.5679696,
+      "lng": 44.2277365
+    },
+    {
+      "code": "osm:way/405601395",
+      "name": "Ankara Uluslararası Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://uluslararasihastanesi.com",
+      "lat": 40.002211,
+      "lng": 32.8735609
+    },
+    {
+      "code": "osm:way/408535672",
+      "name": "Medical Park Ankara İncek Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.medicalpark.com.tr",
+      "lat": 39.828945,
+      "lng": 32.7292518
+    },
+    {
+      "code": "osm:way/411659382",
+      "name": "VM Medical Park",
+      "countryCode": "TR",
+      "origin": "https://www.medicalpark.com.tr",
+      "lat": 40.1935077,
+      "lng": 29.0604788
+    },
+    {
+      "code": "osm:way/411756429",
+      "name": "Melikgazi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.melikgazihastanesi.com.tr",
+      "lat": 38.7249245,
+      "lng": 35.5149563
+    },
+    {
+      "code": "osm:way/415605988",
+      "name": "Saray Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://saraydh.saglik.gov.tr",
+      "lat": 41.4378511,
+      "lng": 27.9303648
+    },
+    {
+      "code": "osm:way/417579027",
+      "name": "LÖSANTE Çocuk ve Yetişkin Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.losante.com.tr",
+      "lat": 39.8327075,
+      "lng": 32.719379
+    },
+    {
+      "code": "osm:way/419164018",
+      "name": "Üsküdar Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://uskudardh.saglik.gov.tr",
+      "lat": 41.0157709,
+      "lng": 29.0389618
+    },
+    {
+      "code": "osm:way/419244222",
+      "name": "Gazi Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hastane.gazi.edu.tr",
+      "lat": 39.9338421,
+      "lng": 32.8231193
+    },
+    {
+      "code": "osm:way/422223198",
+      "name": "Medicana Ankara",
+      "countryCode": "TR",
+      "origin": "https://www.medicanainternational.com",
+      "lat": 39.9101306,
+      "lng": 32.7996409
+    },
+    {
+      "code": "osm:way/429350599",
+      "name": "Özel Güngören Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.gungorenhastanesi.com.tr",
+      "lat": 41.0268791,
+      "lng": 28.8717621
+    },
+    {
+      "code": "osm:way/430591538",
+      "name": "Havran İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://havrandh.saglik.gov.tr",
+      "lat": 39.5517858,
+      "lng": 27.0970224
+    },
+    {
+      "code": "osm:way/437417504",
+      "name": "Acıbadem Fulya Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 41.0557869,
+      "lng": 28.9995664
+    },
+    {
+      "code": "osm:way/438276345",
+      "name": "Fırat Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://ftm.firat.edu.tr",
+      "lat": 38.6813899,
+      "lng": 39.2053095
+    },
+    {
+      "code": "osm:way/438880564",
+      "name": "Bilgi Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.bilgihospital.com.tr",
+      "lat": 36.7851234,
+      "lng": 31.4129501
+    },
+    {
+      "code": "osm:way/451822397",
+      "name": "Ankara Etlik Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://etliksehir.saglik.gov.tr",
+      "lat": 39.9636744,
+      "lng": 32.8277855
+    },
+    {
+      "code": "osm:way/453830877",
+      "name": "Özel Manavgat Eslem Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.eslemhospital.com",
+      "lat": 36.7938575,
+      "lng": 31.4147504
+    },
+    {
+      "code": "osm:way/460382594",
+      "name": "Avicenna Umut Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.umuthastanesi.com",
+      "lat": 40.8907056,
+      "lng": 29.1776524
+    },
+    {
+      "code": "osm:way/461114154",
+      "name": "Or-Ayahim Özel Balat Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://balathastanesi.com.tr",
+      "lat": 41.038504,
+      "lng": 28.9456088
+    },
+    {
+      "code": "osm:way/461154239",
+      "name": "Özel Echomar Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.eregliechomar.com",
+      "lat": 41.2734574,
+      "lng": 31.4313973
+    },
+    {
+      "code": "osm:way/462361867",
+      "name": "Özel Batı Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://batihastanesi.com",
+      "lat": 37.9458366,
+      "lng": 40.176597
+    },
+    {
+      "code": "osm:way/462845183",
+      "name": "Veni Vidi Göz",
+      "countryCode": "TR",
+      "origin": "https://venividigoz.com",
+      "lat": 40.9701598,
+      "lng": 29.0630206
+    },
+    {
+      "code": "osm:way/464881829",
+      "name": "Özel Çamlık Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.camlikhastanesi.com.tr",
+      "lat": 40.9893869,
+      "lng": 28.8700885
+    },
+    {
+      "code": "osm:way/466354357",
+      "name": "Özel Ümit Vişnelik Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://umithastanesi.com.tr",
+      "lat": 39.7623821,
+      "lng": 30.499622
+    },
+    {
+      "code": "osm:way/469996529",
+      "name": "Medical Park Göztepe",
+      "countryCode": "TR",
+      "origin": "https://www.medicalpark.com.tr",
+      "lat": 40.9900002,
+      "lng": 29.0773176
+    },
+    {
+      "code": "osm:way/471137376",
+      "name": "Memorial Ankara Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.memorial.com.tr",
+      "lat": 39.9036739,
+      "lng": 32.8152018
+    },
+    {
+      "code": "osm:way/475275100",
+      "name": "Mardin Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://mardineah.saglik.gov.tr",
+      "lat": 37.3372685,
+      "lng": 40.706476
+    },
+    {
+      "code": "osm:way/475832644",
+      "name": "Özel Eryaman Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.eryamanhastanesi.com.tr",
+      "lat": 39.9718079,
+      "lng": 32.6524364
+    },
+    {
+      "code": "osm:way/478253484",
+      "name": "PARKHAYAT Afyon Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://parkhayat.com",
+      "lat": 38.7734107,
+      "lng": 30.5087575
+    },
+    {
+      "code": "osm:way/485688870",
+      "name": "Liv Hospital",
+      "countryCode": "TR",
+      "origin": "https://www.livhospital.com",
+      "lat": 41.0607957,
+      "lng": 29.0284425
+    },
+    {
+      "code": "osm:way/490936023",
+      "name": "Terme Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://termedh.saglik.gov.tr",
+      "lat": 41.2138719,
+      "lng": 36.9558907
+    },
+    {
+      "code": "osm:way/492573913",
+      "name": "Siverek Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://siverekdh.saglik.gov.tr",
+      "lat": 37.6974173,
+      "lng": 39.269475
+    },
+    {
+      "code": "osm:way/492950964",
+      "name": "Özel Sevgi Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.ozelsevgihastanesi.com",
+      "lat": 39.6652945,
+      "lng": 27.9090939
+    },
+    {
+      "code": "osm:way/495124232",
+      "name": "ALKÜ Alanya Eğitim Araştırma Hastahanesi",
+      "countryCode": "TR",
+      "origin": "https://alanyaeah.saglik.gov.tr",
+      "lat": 36.5408276,
+      "lng": 32.0439375
+    },
+    {
+      "code": "osm:way/497876577",
+      "name": "Büyük Anadolu Hastanesi Çiftlik Şubesi",
+      "countryCode": "TR",
+      "origin": "https://www.buyukanadoluhastanesi.com",
+      "lat": 41.2872052,
+      "lng": 36.3316571
+    },
+    {
+      "code": "osm:way/498170611",
+      "name": "Özel Dünyapark Doğum Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://dunyapark.com.tr",
+      "lat": 37.9167685,
+      "lng": 40.2331727
+    },
+    {
+      "code": "osm:way/500364330",
+      "name": "Acıbadem Altunizade Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 41.0190219,
+      "lng": 29.0463398
+    },
+    {
+      "code": "osm:way/503312889",
+      "name": "Yeni Karapınar Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karapinardh.saglik.gov.tr",
+      "lat": 37.7135006,
+      "lng": 33.5663541
+    },
+    {
+      "code": "osm:way/504133284",
+      "name": "Medical Park Ankara Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.medicalpark.com.tr",
+      "lat": 39.9665566,
+      "lng": 32.7094978
+    },
+    {
+      "code": "osm:way/515502038",
+      "name": "Çorum Özel Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.corumozelhastanesi.com.tr",
+      "lat": 40.5722766,
+      "lng": 34.9622667
+    },
+    {
+      "code": "osm:way/524892365",
+      "name": "Academic Hospital",
+      "countryCode": "TR",
+      "origin": "https://www.academichospital.com.tr",
+      "lat": 41.0197099,
+      "lng": 29.0350121
+    },
+    {
+      "code": "osm:way/534830576",
+      "name": "Cerrahpaşa Tıp Fakültesi",
+      "countryCode": "TR",
+      "origin": "https://hastanecerrahpasa.iuc.edu.tr",
+      "lat": 41.0040192,
+      "lng": 28.9415822
+    },
+    {
+      "code": "osm:way/540601527",
+      "name": "Pendik Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://pendikdh.saglik.gov.tr",
+      "lat": 40.8771069,
+      "lng": 29.2295481
+    },
+    {
+      "code": "osm:way/542205536",
+      "name": "Medicana Kadıköy",
+      "countryCode": "TR",
+      "origin": "https://www.medicana.com.tr",
+      "lat": 40.98532,
+      "lng": 29.0381654
+    },
+    {
+      "code": "osm:way/545292024",
+      "name": "Özel Pendik Bölge Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.bolgehastanesi.com",
+      "lat": 40.8827896,
+      "lng": 29.2458524
+    },
+    {
+      "code": "osm:way/545292027",
+      "name": "Pendik Hospital",
+      "countryCode": "TR",
+      "origin": "http://www.pendikhospital.com.tr",
+      "lat": 40.8835693,
+      "lng": 29.2443562
+    },
+    {
+      "code": "osm:way/547635354",
+      "name": "Kars Harakani Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://harakanidh.saglik.gov.tr",
+      "lat": 40.5733294,
+      "lng": 43.0913499
+    },
+    {
+      "code": "osm:way/552198295",
+      "name": "İstanbul Gaziosmanpaşa Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://gopeah.saglik.gov.tr",
+      "lat": 41.0864654,
+      "lng": 28.8980769
+    },
+    {
+      "code": "osm:way/552985982",
+      "name": "Balıkesir Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://balikesirataturkdh.saglik.gov.tr",
+      "lat": 39.6113857,
+      "lng": 27.8899002
+    },
+    {
+      "code": "osm:way/554508420",
+      "name": "Liv Hospital Samsun",
+      "countryCode": "TR",
+      "origin": "https://www.livhospital.com",
+      "lat": 41.3010315,
+      "lng": 36.3305089
+    },
+    {
+      "code": "osm:way/556754797",
+      "name": "Silifke Devlet Hastahanesi",
+      "countryCode": "TR",
+      "origin": "http://www.silifkedevlethastahanesi.com",
+      "lat": 36.3423185,
+      "lng": 33.916221
+    },
+    {
+      "code": "osm:way/558072378",
+      "name": "Özel Şanmed Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://sanmedhastanesi.com",
+      "lat": 37.1736898,
+      "lng": 38.8136949
+    },
+    {
+      "code": "osm:way/566430579",
+      "name": "Karasu Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karasudh.saglik.gov.tr",
+      "lat": 41.0899789,
+      "lng": 30.7381636
+    },
+    {
+      "code": "osm:way/572106520",
+      "name": "Özel Akkuş Ağız ve Diş Sağlığı Polikliniği",
+      "countryCode": "TR",
+      "origin": "https://www.akkusdis.com",
+      "lat": 41.0384251,
+      "lng": 28.8271052
+    },
+    {
+      "code": "osm:way/573340495",
+      "name": "Biga Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bigadh.saglik.gov.tr",
+      "lat": 40.2397307,
+      "lng": 27.265061
+    },
+    {
+      "code": "osm:way/573340818",
+      "name": "Atlas Tıp Merkez",
+      "countryCode": "TR",
+      "origin": "https://atlastip.com.tr",
+      "lat": 40.1459213,
+      "lng": 26.4063022
+    },
+    {
+      "code": "osm:way/583087521",
+      "name": "Özel Aspendos Anadolu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.anatoliahospital.com",
+      "lat": 36.903646,
+      "lng": 31.072946
+    },
+    {
+      "code": "osm:way/584692601",
+      "name": "Lotus Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.lotushastanesi.com",
+      "lat": 37.2191505,
+      "lng": 38.7969107
+    },
+    {
+      "code": "osm:way/585580727",
+      "name": "Özel Edremit Körfez Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.korfezhastanesi.com.tr",
+      "lat": 39.5991571,
+      "lng": 26.9934724
+    },
+    {
+      "code": "osm:way/587520277",
+      "name": "Kocaali İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kocaalidh.saglik.gov.tr",
+      "lat": 41.0717214,
+      "lng": 30.8622802
+    },
+    {
+      "code": "osm:way/590605748",
+      "name": "Gaziosmanpaşa Fizik Tedavi Rehabilitasyon Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://gopeah.saglik.gov.tr",
+      "lat": 41.089079,
+      "lng": 28.9083256
+    },
+    {
+      "code": "osm:way/597167817",
+      "name": "Beykoz Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://beykozdh.saglik.gov.tr",
+      "lat": 41.1176139,
+      "lng": 29.0982065
+    },
+    {
+      "code": "osm:way/616198180",
+      "name": "AMATEM",
+      "countryCode": "TR",
+      "origin": "https://ankaraeah.saglik.gov.tr",
+      "lat": 39.9885106,
+      "lng": 32.7630094
+    },
+    {
+      "code": "osm:way/617098632",
+      "name": "Tekirdağ Doktor İsmail Fehmi Cumalıoğlu Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://tekirdagsehir.saglik.gov.tr",
+      "lat": 41.0073257,
+      "lng": 27.5252731
+    },
+    {
+      "code": "osm:way/617974280",
+      "name": "Iğdır Dr. Nevruz Erez Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://igdirdh.saglik.gov.tr",
+      "lat": 39.9383967,
+      "lng": 44.0739178
+    },
+    {
+      "code": "osm:way/617974298",
+      "name": "Iğdır Ağız ve Diş Sağlığı Merkezi",
+      "countryCode": "TR",
+      "origin": "https://igdiradsm.saglik.gov.tr",
+      "lat": 39.9379282,
+      "lng": 44.0713138
+    },
+    {
+      "code": "osm:way/628238526",
+      "name": "Eskişehir Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.eskisehirsehirhastanesi.com",
+      "lat": 39.7482747,
+      "lng": 30.5954565
+    },
+    {
+      "code": "osm:way/630160181",
+      "name": "Tuzla Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://tuzladh.saglik.gov.tr",
+      "lat": 40.8443897,
+      "lng": 29.3032558
+    },
+    {
+      "code": "osm:way/630767262",
+      "name": "Orhaneli Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://orhanelidh.saglik.gov.tr",
+      "lat": 39.9104446,
+      "lng": 28.9865497
+    },
+    {
+      "code": "osm:way/645072308",
+      "name": "Burhaniye Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://burhaniyedh.saglik.gov.tr",
+      "lat": 39.4978289,
+      "lng": 26.9650937
+    },
+    {
+      "code": "osm:way/650482221",
+      "name": "Özel Sevgi Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.ozelsevgihastanesi.com",
+      "lat": 39.6186081,
+      "lng": 27.8893879
+    },
+    {
+      "code": "osm:way/650745200",
+      "name": "Dr. Ali Kemal Belviranlı Kadın Doğum ve Çocuk Hastalıkları Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://konyakdch.saglik.gov.tr",
+      "lat": 37.9104079,
+      "lng": 32.5008445
+    },
+    {
+      "code": "osm:way/651758747",
+      "name": "İstinye Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.idh.gov.tr",
+      "lat": 41.1151361,
+      "lng": 29.0557561
+    },
+    {
+      "code": "osm:way/651758748",
+      "name": "İstinye Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.idh.gov.tr",
+      "lat": 41.1149992,
+      "lng": 29.0554118
+    },
+    {
+      "code": "osm:way/652478243",
+      "name": "Okan Üniversitesi Diş Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://okandis.com",
+      "lat": 40.859123,
+      "lng": 29.3017045
+    },
+    {
+      "code": "osm:way/654562508",
+      "name": "Karabük Ağız ve Diş Sağlığı Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karabukadsh.saglik.gov.tr",
+      "lat": 41.1975846,
+      "lng": 32.6097172
+    },
+    {
+      "code": "osm:way/656042802",
+      "name": "Acıpayam Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://acipayamdh.saglik.gov.tr",
+      "lat": 37.4281397,
+      "lng": 29.3352822
+    },
+    {
+      "code": "osm:way/660120597",
+      "name": "Okan Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.okanhastanesi.com.tr",
+      "lat": 40.849257,
+      "lng": 29.3018773
+    },
+    {
+      "code": "osm:way/660368299",
+      "name": "Büyükçekmece Mimar Sinan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://buyukcekmecemimarsinandh.saglik.gov.tr",
+      "lat": 41.0171073,
+      "lng": 28.5551838
+    },
+    {
+      "code": "osm:way/664096559",
+      "name": "Karlıova Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karliovadh.saglik.gov.tr",
+      "lat": 39.3080766,
+      "lng": 41.0443399
+    },
+    {
+      "code": "osm:way/666507508",
+      "name": "Erdemli Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://erdemlidh.saglik.gov.tr",
+      "lat": 36.6104372,
+      "lng": 34.3014578
+    },
+    {
+      "code": "osm:way/666689302",
+      "name": "Bursa Uludağ Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hastane.uludag.edu.tr",
+      "lat": 40.2216282,
+      "lng": 28.8698127
+    },
+    {
+      "code": "osm:way/667625955",
+      "name": "İstanbul Florence Nightingale Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.florence.com.tr",
+      "lat": 41.0695583,
+      "lng": 28.983983
+    },
+    {
+      "code": "osm:way/669971026",
+      "name": "Bower Hospital",
+      "countryCode": "TR",
+      "origin": "https://www.bowerhospital.com",
+      "lat": 37.9170091,
+      "lng": 40.2364999
+    },
+    {
+      "code": "osm:way/673444197",
+      "name": "Lokman Hekim Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://lokmanhekim.com.tr",
+      "lat": 40.9252625,
+      "lng": 29.2911887
+    },
+    {
+      "code": "osm:way/678708873",
+      "name": "Aksaray Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://aksarayeah.saglik.gov.tr",
+      "lat": 38.3735509,
+      "lng": 33.983768
+    },
+    {
+      "code": "osm:way/681390751",
+      "name": "Şereflikoçhisar Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sereflikochisardh.saglik.gov.tr",
+      "lat": 38.9548504,
+      "lng": 33.5284216
+    },
+    {
+      "code": "osm:way/684927956",
+      "name": "VM Medical Park Pendik",
+      "countryCode": "TR",
+      "origin": "https://www.medicalpark.com.tr",
+      "lat": 40.8806305,
+      "lng": 29.2565215
+    },
+    {
+      "code": "osm:way/686252217",
+      "name": "Özel Pendik Yüzyıl Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.yuzyilhastanesi.com",
+      "lat": 40.8792473,
+      "lng": 29.2612978
+    },
+    {
+      "code": "osm:way/687590567",
+      "name": "Karamürsel Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karamurseldh.saglik.gov.tr",
+      "lat": 40.6842348,
+      "lng": 29.5883555
+    },
+    {
+      "code": "osm:way/687627629",
+      "name": "KBÜ Eğitim Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karabukeah.saglik.gov.tr",
+      "lat": 41.2088692,
+      "lng": 32.6186149
+    },
+    {
+      "code": "osm:way/688849332",
+      "name": "Kozan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kozandh.saglik.gov.tr",
+      "lat": 37.4650148,
+      "lng": 35.8250262
+    },
+    {
+      "code": "osm:way/692638607",
+      "name": "Bahçesaray İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bahcesaraydh.saglik.gov.tr",
+      "lat": 38.1171133,
+      "lng": 42.8069201
+    },
+    {
+      "code": "osm:way/692640089",
+      "name": "Çatak İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://catakdh.saglik.gov.tr",
+      "lat": 38.0078115,
+      "lng": 43.0614671
+    },
+    {
+      "code": "osm:way/692641261",
+      "name": "Gevaş İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://gevasdh.saglik.gov.tr",
+      "lat": 38.3074302,
+      "lng": 43.1104473
+    },
+    {
+      "code": "osm:way/692832328",
+      "name": "Başkale Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://baskaledh.saglik.gov.tr",
+      "lat": 38.0371505,
+      "lng": 44.0211647
+    },
+    {
+      "code": "osm:way/695014246",
+      "name": "Tercan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://tercandh.saglik.gov.tr",
+      "lat": 39.7790244,
+      "lng": 40.378199
+    },
+    {
+      "code": "osm:way/695774565",
+      "name": "Kurtköy Ersoy Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.ersoyhastanesi.com.tr",
+      "lat": 40.9106189,
+      "lng": 29.2980185
+    },
+    {
+      "code": "osm:way/700044734",
+      "name": "Havran İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://havrandh.saglik.gov.tr",
+      "lat": 39.5517331,
+      "lng": 27.0969683
+    },
+    {
+      "code": "osm:way/702424713",
+      "name": "Elazığ Fethi Sekin Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://elazigsehir.saglik.gov.tr",
+      "lat": 38.6889295,
+      "lng": 39.2703645
+    },
+    {
+      "code": "osm:way/703795069",
+      "name": "Medicana İnternational İzmir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.medicana.com.tr",
+      "lat": 38.4296372,
+      "lng": 27.1572795
+    },
+    {
+      "code": "osm:way/703803080",
+      "name": "Elmalı Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://elmalidh.saglik.gov.tr",
+      "lat": 36.7306568,
+      "lng": 29.9394854
+    },
+    {
+      "code": "osm:way/707254285",
+      "name": "Özel Cihanpol Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.cihanpol.com",
+      "lat": 37.2140909,
+      "lng": 40.614298
+    },
+    {
+      "code": "osm:way/708235566",
+      "name": "Özel Medikent Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.medikent.com.trv",
+      "lat": 41.4078856,
+      "lng": 27.3325902
+    },
+    {
+      "code": "osm:way/709158370",
+      "name": "Gülnar Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://gulnardh.saglik.gov.tr",
+      "lat": 36.3240074,
+      "lng": 33.4138848
+    },
+    {
+      "code": "osm:way/711666485",
+      "name": "Çanakkale Mehmet Akif Ersoy Çanakkale Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://canakkaleism.saglik.gov.tr",
+      "lat": 40.0989146,
+      "lng": 26.417277
+    },
+    {
+      "code": "osm:way/712003348",
+      "name": "Akçakale Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://akcakaledh.saglik.gov.tr",
+      "lat": 36.7479772,
+      "lng": 38.9490204
+    },
+    {
+      "code": "osm:way/717760459",
+      "name": "Mut Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://mutdh.saglik.gov.tr",
+      "lat": 36.6634589,
+      "lng": 33.4220986
+    },
+    {
+      "code": "osm:way/719359803",
+      "name": "Güroymak Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://guroymakdh.saglik.gov.tr",
+      "lat": 38.5687944,
+      "lng": 42.0514114
+    },
+    {
+      "code": "osm:way/719465669",
+      "name": "Medicana Ataşehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.medicana.com.tr",
+      "lat": 40.9835442,
+      "lng": 29.1069977
+    },
+    {
+      "code": "osm:way/719606897",
+      "name": "Bulanık Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bulanikdh.saglik.gov.tr",
+      "lat": 39.0952571,
+      "lng": 42.275166
+    },
+    {
+      "code": "osm:way/719714417",
+      "name": "Varto Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://vartodh.saglik.gov.tr",
+      "lat": 39.156058,
+      "lng": 41.447417
+    },
+    {
+      "code": "osm:way/719906980",
+      "name": "Erzurum Hınıs Şehit Yavuz Yürekseven Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hinisdh.saglik.gov.tr",
+      "lat": 39.3680337,
+      "lng": 41.6989796
+    },
+    {
+      "code": "osm:way/724706779",
+      "name": "Özel Baypark Hospital",
+      "countryCode": "TR",
+      "origin": "https://www.baypark.com.tr",
+      "lat": 41.0630229,
+      "lng": 28.8910763
+    },
+    {
+      "code": "osm:way/724710677",
+      "name": "Ankara Bilkent Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ankarasehir.saglik.gov.tr",
+      "lat": 39.9007383,
+      "lng": 32.757011
+    },
+    {
+      "code": "osm:way/725154734",
+      "name": "Medical Park İstanbul Onkoloji Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.medicalpark.com.tr",
+      "lat": 40.9224101,
+      "lng": 29.1536688
+    },
+    {
+      "code": "osm:way/732228921",
+      "name": "Trabzon Ağız Ve Diş Sağlığı Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://trabzonadsh.saglik.gov.tr",
+      "lat": 41.0053055,
+      "lng": 39.7008207
+    },
+    {
+      "code": "osm:way/732697418",
+      "name": "Moodist Psikiyatri ve Nöroloji Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://moodisthastanesi.com",
+      "lat": 41.0023482,
+      "lng": 29.0534145
+    },
+    {
+      "code": "osm:way/732839951",
+      "name": "Acıbadem Ataşehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 40.9942682,
+      "lng": 29.1269208
+    },
+    {
+      "code": "osm:way/734632212",
+      "name": "Acıbadem Ankara Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://acibadem.com.tr",
+      "lat": 39.847527,
+      "lng": 32.8384537
+    },
+    {
+      "code": "osm:way/739867576",
+      "name": "Trakya Üniversitesi Tıp Fakültesi Acil Servis",
+      "countryCode": "TR",
+      "origin": "http://tuh.trakya.edu.tr",
+      "lat": 41.6382069,
+      "lng": 26.6153764
+    },
+    {
+      "code": "osm:way/740815393",
+      "name": "Ataşehir Ağız ve Diş Sağlığı Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://atasehiradsh.saglik.gov.tr",
+      "lat": 40.9906871,
+      "lng": 29.109163
+    },
+    {
+      "code": "osm:way/741582579",
+      "name": "Özel Klinik 99 Ağız ve Diş Sağlığı Polikliniği",
+      "countryCode": "TR",
+      "origin": "https://www.klinik99.com",
+      "lat": 39.8985816,
+      "lng": 32.8538197
+    },
+    {
+      "code": "osm:way/744835723",
+      "name": "İnegöl Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://inegoldh.saglik.gov.tr",
+      "lat": 40.0810845,
+      "lng": 29.4977
+    },
+    {
+      "code": "osm:way/745713352",
+      "name": "Acıbadem Ataşehir Cerrahi Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 40.9856026,
+      "lng": 29.1086871
+    },
+    {
+      "code": "osm:way/758860591",
+      "name": "Özel Ada Tıp Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.adatiphastanesi.com",
+      "lat": 40.7758732,
+      "lng": 30.3539908
+    },
+    {
+      "code": "osm:way/765358819",
+      "name": "Özel Ekol Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.ekolhastanesi.com.tr",
+      "lat": 41.652247,
+      "lng": 26.593721
+    },
+    {
+      "code": "osm:way/772345760",
+      "name": "Savur Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://savurdh.saglik.gov.tr",
+      "lat": 37.5450712,
+      "lng": 40.8800509
+    },
+    {
+      "code": "osm:way/785092798",
+      "name": "Taksim Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://taksimeah.saglik.gov.tr",
+      "lat": 41.0330912,
+      "lng": 28.9831326
+    },
+    {
+      "code": "osm:way/785705203",
+      "name": "Beykoz Devlet Hastanesi Toplum Ruh Sağlığı Merkezi",
+      "countryCode": "TR",
+      "origin": "http://www.pasabahcedh.gov.tr",
+      "lat": 41.1539266,
+      "lng": 29.0934474
+    },
+    {
+      "code": "osm:way/793003829",
+      "name": "Başakşehir Çam ve Sakura Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://camsakurasehir.saglik.gov.tr",
+      "lat": 41.1045261,
+      "lng": 28.7764267
+    },
+    {
+      "code": "osm:way/808146640",
+      "name": "Mecitözü İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://mecitozudh.saglik.gov.tr",
+      "lat": 40.5227812,
+      "lng": 35.2885696
+    },
+    {
+      "code": "osm:way/817841932",
+      "name": "Diyadin Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://diyadindh.saglik.gov.tr",
+      "lat": 39.5539295,
+      "lng": 43.662829
+    },
+    {
+      "code": "osm:way/830331644",
+      "name": "Şarköy Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sarkoydh.saglik.gov.tr",
+      "lat": 40.6199953,
+      "lng": 27.0941499
+    },
+    {
+      "code": "osm:way/836363002",
+      "name": "Silivri Kolan Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kolanhastanesi.com.tr",
+      "lat": 41.0720807,
+      "lng": 28.2584369
+    },
+    {
+      "code": "osm:way/836676030",
+      "name": "Acıbadem Dr. Şinasi Can (Kadıköy) Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.acibadem.com.tr",
+      "lat": 41.00716,
+      "lng": 29.0429132
+    },
+    {
+      "code": "osm:way/838436357",
+      "name": "Yedikule Surp Pırgiç Ermeni Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.surppirgic.com",
+      "lat": 40.9939031,
+      "lng": 28.9154024
+    },
+    {
+      "code": "osm:way/861271559",
+      "name": "Dr. Yusuf Azizoğlu Silvan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://silvandh.saglik.gov.tr",
+      "lat": 38.1558685,
+      "lng": 40.9683708
+    },
+    {
+      "code": "osm:way/861302200",
+      "name": "Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kayserisehir.saglik.gov.tr",
+      "lat": 38.768105,
+      "lng": 35.4090322
+    },
+    {
+      "code": "osm:way/864146796",
+      "name": "Dursunbey Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://dursunbeydh.saglik.gov.tr",
+      "lat": 39.5920245,
+      "lng": 28.6312521
+    },
+    {
+      "code": "osm:way/865968487",
+      "name": "Alsancak Nevvar - Salih İşgören Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://alsancakdh.saglik.gov.tr",
+      "lat": 38.4340751,
+      "lng": 27.1430943
+    },
+    {
+      "code": "osm:way/866159555",
+      "name": "Ento KBB Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "http://www.entokbb.con",
+      "lat": 38.4469941,
+      "lng": 27.2068073
+    },
+    {
+      "code": "osm:way/866653469",
+      "name": "AsMed",
+      "countryCode": "TR",
+      "origin": "https://www.hairtransplantfue.org",
+      "lat": 40.9921016,
+      "lng": 29.1160537
+    },
+    {
+      "code": "osm:way/866786285",
+      "name": "Ataşehir Florence Nightingale",
+      "countryCode": "TR",
+      "origin": "https://www.florence.com.tr",
+      "lat": 40.9845488,
+      "lng": 29.1092707
+    },
+    {
+      "code": "osm:way/866786287",
+      "name": "Özel Ataşehir Florence Nightingale Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.florence.com.tr",
+      "lat": 40.9847776,
+      "lng": 29.1087713
+    },
+    {
+      "code": "osm:way/866786288",
+      "name": "Esthetica",
+      "countryCode": "TR",
+      "origin": "https://estethica.com.tr",
+      "lat": 40.985173,
+      "lng": 29.1100045
+    },
+    {
+      "code": "osm:way/875361613",
+      "name": "Hacettepe Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.hastane.hacettepe.edu.tr",
+      "lat": 39.9312815,
+      "lng": 32.8639524
+    },
+    {
+      "code": "osm:way/878254965",
+      "name": "Suruç Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://surucdh.saglik.gov.tr",
+      "lat": 36.9860046,
+      "lng": 38.4215672
+    },
+    {
+      "code": "osm:way/893628162",
+      "name": "Bandırma Ağız ve Diş Sağlığı Merkezi",
+      "countryCode": "TR",
+      "origin": "https://bandirmaadsm.saglik.gov.tr",
+      "lat": 40.3408537,
+      "lng": 27.968829
+    },
+    {
+      "code": "osm:way/899763597",
+      "name": "Beşiri Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://besiridh.saglik.gov.tr",
+      "lat": 37.9212884,
+      "lng": 41.2858493
+    },
+    {
+      "code": "osm:way/903541482",
+      "name": "Özel Bandırma Royal Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.royalhastanesi.com.tr",
+      "lat": 40.340672,
+      "lng": 27.9662676
+    },
+    {
+      "code": "osm:way/909017671",
+      "name": "Sakarya Ağız ve Diş Sağlığı Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sakaryaadsh.saglik.gov.tr",
+      "lat": 40.7592295,
+      "lng": 30.3600838
+    },
+    {
+      "code": "osm:way/911506485",
+      "name": "Central Hospital",
+      "countryCode": "TR",
+      "origin": "http://centralhospital.com",
+      "lat": 40.9659101,
+      "lng": 29.1002119
+    },
+    {
+      "code": "osm:way/922058860",
+      "name": "Silivri Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://silivridh.saglik.gov.tr",
+      "lat": 41.0779119,
+      "lng": 28.2500858
+    },
+    {
+      "code": "osm:way/928086226",
+      "name": "Konya Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://konyasehir.saglik.gov.tr",
+      "lat": 37.8582388,
+      "lng": 32.5497913
+    },
+    {
+      "code": "osm:way/940208740",
+      "name": "Çerkezköy Organize Sanayi Bölgesi Kapaklı Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kapaklidh.saglik.gov.tr",
+      "lat": 41.3366432,
+      "lng": 27.9922323
+    },
+    {
+      "code": "osm:way/953832144",
+      "name": "Genç İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://gencdh.saglik.gov.tr",
+      "lat": 38.7487388,
+      "lng": 40.5496875
+    },
+    {
+      "code": "osm:way/954788780",
+      "name": "Murgul İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://murguldh.saglik.gov.tr",
+      "lat": 41.2771891,
+      "lng": 41.5626725
+    },
+    {
+      "code": "osm:way/957470519",
+      "name": "Kayseri Eğitim Ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://www.kdh.gov.tr",
+      "lat": 38.7272397,
+      "lng": 35.478162
+    },
+    {
+      "code": "osm:way/966955464",
+      "name": "Sivas Numune Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sivasnumunedh.saglik.gov.tr",
+      "lat": 39.7406046,
+      "lng": 37.0397636
+    },
+    {
+      "code": "osm:way/969591019",
+      "name": "Bayburt Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bayburtdh.saglik.gov.tr",
+      "lat": 40.2591551,
+      "lng": 40.2097792
+    },
+    {
+      "code": "osm:way/973209832",
+      "name": "Kağızman Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kagizmandh.saglik.gov.tr",
+      "lat": 40.155709,
+      "lng": 43.1174319
+    },
+    {
+      "code": "osm:way/976273188",
+      "name": "Özel Erdemli Yenişehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://erdemli.yenisehirhastanesi.com.tr",
+      "lat": 36.6057298,
+      "lng": 34.3129347
+    },
+    {
+      "code": "osm:way/989309479",
+      "name": "Polatlı Duatepe İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://polatliduatepedh.saglik.gov.tr",
+      "lat": 39.5886472,
+      "lng": 32.1671754
+    },
+    {
+      "code": "osm:way/991944588",
+      "name": "Anadolu Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://anadoluhastaneleri.com",
+      "lat": 41.0824558,
+      "lng": 28.2244311
+    },
+    {
+      "code": "osm:way/997408916",
+      "name": "Kartal Kızılay Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.kizilaysaglik.com.tr",
+      "lat": 40.890892,
+      "lng": 29.1819778
+    },
+    {
+      "code": "osm:way/997420463",
+      "name": "Kadıköy Verem Savaş Dispanseri",
+      "countryCode": "TR",
+      "origin": "http://www.istveremsavder.org",
+      "lat": 40.992901,
+      "lng": 29.0333551
+    },
+    {
+      "code": "osm:way/997688702",
+      "name": "Üsküdar Cezmi Or Verem Savaş Dispanseri",
+      "countryCode": "TR",
+      "origin": "http://www.istveremsavder.org",
+      "lat": 41.0180255,
+      "lng": 29.0121859
+    },
+    {
+      "code": "osm:way/998221556",
+      "name": "Ümraniye Verem Savaş Dispanseri",
+      "countryCode": "TR",
+      "origin": "http://www.istveremsavder.org",
+      "lat": 41.0299978,
+      "lng": 29.0894173
+    },
+    {
+      "code": "osm:way/1003341854",
+      "name": "Türkoğlu Dr. Kemal Beyazıt Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://turkogludh.saglik.gov.tr",
+      "lat": 37.3903997,
+      "lng": 36.8666903
+    },
+    {
+      "code": "osm:way/1005170088",
+      "name": "Osmancık Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://osmancikdh.saglik.gov.tr",
+      "lat": 40.9801344,
+      "lng": 34.8037951
+    },
+    {
+      "code": "osm:way/1019740207",
+      "name": "Kent Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.kenthastanesi.com",
+      "lat": 40.9134554,
+      "lng": 38.3841578
+    },
+    {
+      "code": "osm:way/1029626277",
+      "name": "ÖZEL TERMESSOS HASTANESİ",
+      "countryCode": "TR",
+      "origin": "https://www.termessoshastanesi.com",
+      "lat": 37.0351481,
+      "lng": 30.6035784
+    },
+    {
+      "code": "osm:way/1036515084",
+      "name": "Eyüpsultan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://eyupdh.saglik.gov.tr",
+      "lat": 41.0574382,
+      "lng": 28.9407454
+    },
+    {
+      "code": "osm:way/1040451805",
+      "name": "Çarşamba Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://carsambadh.saglik.gov.tr",
+      "lat": 41.2106789,
+      "lng": 36.7475268
+    },
+    {
+      "code": "osm:way/1054541850",
+      "name": "Mercan Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.mercanhastanesi.com",
+      "lat": 40.8283994,
+      "lng": 29.307574
+    },
+    {
+      "code": "osm:way/1057734064",
+      "name": "Sincan Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sincaneah.saglik.gov.tr",
+      "lat": 39.9823985,
+      "lng": 32.5723737
+    },
+    {
+      "code": "osm:way/1063507810",
+      "name": "Kızılay Altıntepe Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.kizilaysaglik.com.tr",
+      "lat": 40.9550048,
+      "lng": 29.1046337
+    },
+    {
+      "code": "osm:way/1067214692",
+      "name": "Gaziantep Şehir Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://gaziantepsehir.saglik.gov.tr",
+      "lat": 37.0153502,
+      "lng": 37.389645
+    },
+    {
+      "code": "osm:way/1069015768",
+      "name": "Medical Park Hastanesi Ataşehir",
+      "countryCode": "TR",
+      "origin": "https://www.medicalpark.com.tr",
+      "lat": 40.9878142,
+      "lng": 29.1443658
+    },
+    {
+      "code": "osm:way/1094492528",
+      "name": "Kilis Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kilisdh.saglik.gov.tr",
+      "lat": 36.7032416,
+      "lng": 37.1089239
+    },
+    {
+      "code": "osm:way/1095143975",
+      "name": "Kilis Ağız Ve Diş Sağlığı Merkezi",
+      "countryCode": "TR",
+      "origin": "https://kilisadsm.saglik.gov.tr",
+      "lat": 36.7220513,
+      "lng": 37.15416
+    },
+    {
+      "code": "osm:way/1096352283",
+      "name": "Kadıköy Florence Nightingale Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.florence.com.tr",
+      "lat": 40.9809893,
+      "lng": 29.0424148
+    },
+    {
+      "code": "osm:way/1104024331",
+      "name": "Niğde Ömer Halisdemir Ünivesitesi Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://omerhalisdemireah.saglik.gov.tr",
+      "lat": 37.9690986,
+      "lng": 34.6459139
+    },
+    {
+      "code": "osm:way/1118119467",
+      "name": "Kadıköy Belediyesi Dr. Rana Beşe Sağlık Polikinliği",
+      "countryCode": "TR",
+      "origin": "https://www.saglikpoliklinigi.org",
+      "lat": 40.9879533,
+      "lng": 29.0482808
+    },
+    {
+      "code": "osm:way/1118380096",
+      "name": "Özel Lokman Hekim Esnaf Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.esnafhastanesi.com",
+      "lat": 36.6312535,
+      "lng": 29.120119
+    },
+    {
+      "code": "osm:way/1124389460",
+      "name": "Develi Dr. Ekrem Karakaya Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://develidh.saglik.gov.tr",
+      "lat": 38.4079156,
+      "lng": 35.4871077
+    },
+    {
+      "code": "osm:way/1125692292",
+      "name": "Bayındır Hastanesi İçerenköy",
+      "countryCode": "TR",
+      "origin": "https://www.bayindirhastanesi.com.tr",
+      "lat": 40.9669337,
+      "lng": 29.1105579
+    },
+    {
+      "code": "osm:way/1132373480",
+      "name": "Bodrum Devlet Hastahanesi",
+      "countryCode": "TR",
+      "origin": "https://bodrumdh.saglik.gov.tr",
+      "lat": 37.05757,
+      "lng": 27.3664777
+    },
+    {
+      "code": "osm:way/1133074620",
+      "name": "Yatağan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://yatagandh.saglik.gov.tr",
+      "lat": 37.3531196,
+      "lng": 28.1577207
+    },
+    {
+      "code": "osm:way/1135398216",
+      "name": "Kumluca Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kumlucadh.saglik.gov.tr",
+      "lat": 36.3653992,
+      "lng": 30.3056858
+    },
+    {
+      "code": "osm:way/1147832188",
+      "name": "Sarıkaya Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sarikayadh.saglik.gov.tr",
+      "lat": 39.491107,
+      "lng": 35.3831958
+    },
+    {
+      "code": "osm:way/1150953514",
+      "name": "Ceylanpınar Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ceylanpinardh.saglik.gov.tr",
+      "lat": 36.8705067,
+      "lng": 40.0397564
+    },
+    {
+      "code": "osm:way/1156212041",
+      "name": "Musa Gül Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.musagulhastanesi.com.tr",
+      "lat": 39.1488971,
+      "lng": 34.1593431
+    },
+    {
+      "code": "osm:way/1156214991",
+      "name": "Kaman Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kamandh.saglik.gov.tr",
+      "lat": 39.3701935,
+      "lng": 33.7198702
+    },
+    {
+      "code": "osm:way/1157141758",
+      "name": "İskilip Atıf Hoca Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://iskilipdh.saglik.gov.tr",
+      "lat": 40.7273194,
+      "lng": 34.4665719
+    },
+    {
+      "code": "osm:way/1157144670",
+      "name": "Dörtyol Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://dortyoldh.saglik.gov.tr",
+      "lat": 36.8283511,
+      "lng": 36.215465
+    },
+    {
+      "code": "osm:way/1157573057",
+      "name": "Almus Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://almusdh.saglik.gov.tr",
+      "lat": 40.3747584,
+      "lng": 36.8942583
+    },
+    {
+      "code": "osm:way/1158157675",
+      "name": "Pütürge Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://puturgedh.saglik.gov.tr",
+      "lat": 38.1989505,
+      "lng": 38.8732178
+    },
+    {
+      "code": "osm:way/1158170712",
+      "name": "Vezirköprü Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://vezirkoprudh.saglik.gov.tr",
+      "lat": 41.1173017,
+      "lng": 35.4916451
+    },
+    {
+      "code": "osm:way/1161652753",
+      "name": "Şuhut Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://suhutdh.saglik.gov.tr",
+      "lat": 38.5315492,
+      "lng": 30.5592257
+    },
+    {
+      "code": "osm:way/1163593745",
+      "name": "Hazro İlçe Entegre Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hazrodh.saglik.gov.tr",
+      "lat": 38.2491216,
+      "lng": 40.7823245
+    },
+    {
+      "code": "osm:way/1188814977",
+      "name": "Kürtün Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kurtundh.saglik.gov.tr",
+      "lat": 40.7047504,
+      "lng": 39.0810841
+    },
+    {
+      "code": "osm:way/1192080025",
+      "name": "Görele Dr. Ergun Özdemir Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://goreledh.saglik.gov.tr",
+      "lat": 41.03724,
+      "lng": 38.9795139
+    },
+    {
+      "code": "osm:way/1193292547",
+      "name": "Sivrihisar İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sivrihisardh.saglik.gov.tr",
+      "lat": 39.4403388,
+      "lng": 31.5359716
+    },
+    {
+      "code": "osm:way/1193292548",
+      "name": "Sivrihisar İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://sivrihisardh.saglik.gov.tr",
+      "lat": 39.4401646,
+      "lng": 31.5362554
+    },
+    {
+      "code": "osm:way/1193547053",
+      "name": "Gaziantep MMT Amerikan Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://mmtamerikan.com",
+      "lat": 37.0595862,
+      "lng": 37.373533
+    },
+    {
+      "code": "osm:way/1200738247",
+      "name": "Çine Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://cinedh.saglik.gov.tr",
+      "lat": 37.6076726,
+      "lng": 28.0605512
+    },
+    {
+      "code": "osm:way/1201022050",
+      "name": "Hassa Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hassadh.saglik.gov.tr",
+      "lat": 36.7932367,
+      "lng": 36.5279402
+    },
+    {
+      "code": "osm:way/1201592848",
+      "name": "Pazarcık Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://pazarcikdh.saglik.gov.tr",
+      "lat": 37.5027257,
+      "lng": 37.3231777
+    },
+    {
+      "code": "osm:way/1204145544",
+      "name": "Şehit Ziya Sarpkaya Göynük İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://goynukdh.saglik.gov.tr",
+      "lat": 40.4105472,
+      "lng": 30.7809245
+    },
+    {
+      "code": "osm:way/1206122974",
+      "name": "Kaynarca Şehit Gökhan Ayder İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kaynarcadh.saglik.gov.tr",
+      "lat": 41.0413131,
+      "lng": 30.3018711
+    },
+    {
+      "code": "osm:way/1210511609",
+      "name": "Tirebolu Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://tireboludh.saglik.gov.tr",
+      "lat": 41.0038577,
+      "lng": 38.8282473
+    },
+    {
+      "code": "osm:way/1218848913",
+      "name": "Dünya Göz Suadiye",
+      "countryCode": "TR",
+      "origin": "https://www.dunyagoz.com",
+      "lat": 40.9611153,
+      "lng": 29.0750201
+    },
+    {
+      "code": "osm:way/1219279040",
+      "name": "Nizip İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://nizipdh.saglik.gov.tr",
+      "lat": 37.0085002,
+      "lng": 37.8023855
+    },
+    {
+      "code": "osm:way/1220539479",
+      "name": "Başkent Üniversitesi İstanbul Sağlık Uygulama ve Araştırma Merkezi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://istanbulbaskentuniversitesi.com",
+      "lat": 41.0249082,
+      "lng": 29.0411947
+    },
+    {
+      "code": "osm:way/1221529858",
+      "name": "Tavas Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://tavasdh.saglik.gov.tr",
+      "lat": 37.5653066,
+      "lng": 29.0746702
+    },
+    {
+      "code": "osm:way/1227534036",
+      "name": "Bahçe Fizik Tedavi ve Rehabilitasyon Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bahceftr.saglik.gov.tr",
+      "lat": 37.1973471,
+      "lng": 36.5726986
+    },
+    {
+      "code": "osm:way/1228632927",
+      "name": "Fethiye Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://fethiyedh.saglik.gov.tr",
+      "lat": 36.6529284,
+      "lng": 29.1195534
+    },
+    {
+      "code": "osm:way/1229023574",
+      "name": "Osmaniye Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://osmaniyedh.saglik.gov.tr",
+      "lat": 37.0831642,
+      "lng": 36.2741916
+    },
+    {
+      "code": "osm:way/1229024970",
+      "name": "Özel İbn-i Sina Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.ibnisinahastanesi.com.tr",
+      "lat": 37.0810382,
+      "lng": 36.2626793
+    },
+    {
+      "code": "osm:way/1229045229",
+      "name": "Kemalpaşa Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kemalpasadh.saglik.gov.tr",
+      "lat": 38.4363569,
+      "lng": 27.4098832
+    },
+    {
+      "code": "osm:way/1234578816",
+      "name": "Çat İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://catdh.saglik.gov.tr",
+      "lat": 39.6134672,
+      "lng": 40.9775088
+    },
+    {
+      "code": "osm:way/1234738065",
+      "name": "Erdek Neyyire Sıtkı Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://erdekdh.saglik.gov.tr",
+      "lat": 40.3956935,
+      "lng": 27.7921242
+    },
+    {
+      "code": "osm:way/1238251055",
+      "name": "Keskin İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://keskindh.saglik.gov.tr",
+      "lat": 39.6778964,
+      "lng": 33.5999511
+    },
+    {
+      "code": "osm:way/1240073580",
+      "name": "Taşköprü Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://taskoprudh.saglik.gov.tr",
+      "lat": 41.504159,
+      "lng": 34.213135
+    },
+    {
+      "code": "osm:way/1240076103",
+      "name": "Özel Keşan Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.kesanhastanesi.com",
+      "lat": 40.8595896,
+      "lng": 26.6200855
+    },
+    {
+      "code": "osm:way/1240077208",
+      "name": "İnebolu Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://ineboludh.saglik.gov.tr",
+      "lat": 41.9609647,
+      "lng": 33.7509431
+    },
+    {
+      "code": "osm:way/1252419719",
+      "name": "Lema Clinic",
+      "countryCode": "TR",
+      "origin": "https://lemaclinic.com",
+      "lat": 41.0525878,
+      "lng": 28.7960453
+    },
+    {
+      "code": "osm:way/1253891450",
+      "name": "Çankırı Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://cankiridh.saglik.gov.tr",
+      "lat": 40.6239965,
+      "lng": 33.6078343
+    },
+    {
+      "code": "osm:way/1258522293",
+      "name": "Özel Biga Can Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://bigacan.com.tr",
+      "lat": 40.2334105,
+      "lng": 27.2598451
+    },
+    {
+      "code": "osm:way/1267973185",
+      "name": "İrmet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://irmethospital.com",
+      "lat": 41.2936194,
+      "lng": 27.9951153
+    },
+    {
+      "code": "osm:way/1274264088",
+      "name": "Bayrampaşa İlçe Sağlık Müdürlüğü",
+      "countryCode": "TR",
+      "origin": "https://bayrampasa.istanbulsaglik.gov.tr",
+      "lat": 41.0679997,
+      "lng": 28.8842035
+    },
+    {
+      "code": "osm:way/1276304314",
+      "name": "Defne Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://defnedh.saglik.gov.tr",
+      "lat": 36.16205,
+      "lng": 36.1249054
+    },
+    {
+      "code": "osm:way/1278109719",
+      "name": "Eğil İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://egildh.saglik.gov.tr",
+      "lat": 38.2581678,
+      "lng": 40.0854996
+    },
+    {
+      "code": "osm:way/1279579048",
+      "name": "Urla Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://urladh.saglik.gov.tr",
+      "lat": 38.3305773,
+      "lng": 26.7462388
+    },
+    {
+      "code": "osm:way/1283148335",
+      "name": "Kumru Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://kumrudh.saglik.gov.tr",
+      "lat": 40.8727918,
+      "lng": 37.2689144
+    },
+    {
+      "code": "osm:way/1302233960",
+      "name": "Datça Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://datcadh.saglik.gov.tr",
+      "lat": 36.7436269,
+      "lng": 27.6702827
+    },
+    {
+      "code": "osm:way/1306193760",
+      "name": "Yalova Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://yalovadh.saglik.gov.tr",
+      "lat": 40.6317697,
+      "lng": 29.2658406
+    },
+    {
+      "code": "osm:way/1315306033",
+      "name": "Yerköy Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://yerkoydh.saglik.gov.tr",
+      "lat": 39.6580362,
+      "lng": 34.4956605
+    },
+    {
+      "code": "osm:way/1331889244",
+      "name": "Abdulkadir Yüksel Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://abdulkadiryukseldh.saglik.gov.tr",
+      "lat": 37.0564732,
+      "lng": 37.4172637
+    },
+    {
+      "code": "osm:way/1348690731",
+      "name": "Yenipazar İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://yenipazardh.saglik.gov.tr",
+      "lat": 40.1767203,
+      "lng": 30.5183404
+    },
+    {
+      "code": "osm:way/1351527614",
+      "name": "Hani Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hanidh.saglik.gov.tr",
+      "lat": 38.407514,
+      "lng": 40.4026942
+    },
+    {
+      "code": "osm:way/1355414823",
+      "name": "Bornova Ağız ve Diş Sağlığı Merkezi (Çınarlı)",
+      "countryCode": "TR",
+      "origin": "https://bornovaadsm.saglik.gov.tr",
+      "lat": 38.4396445,
+      "lng": 27.1738117
+    },
+    {
+      "code": "osm:way/1357218741",
+      "name": "İzmir Bergama Necla - Mithat Öztüre Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bergamadh.saglik.gov.tr",
+      "lat": 39.1183514,
+      "lng": 27.1979398
+    },
+    {
+      "code": "osm:way/1359824861",
+      "name": "Ağız ve Diş Sağlığı Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://agizdis.idu.edu.tr",
+      "lat": 38.3468543,
+      "lng": 27.0892711
+    },
+    {
+      "code": "osm:way/1362014518",
+      "name": "Seydikemer Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://seydikemerdh.saglik.gov.tr",
+      "lat": 36.6393462,
+      "lng": 29.3894674
+    },
+    {
+      "code": "osm:way/1364043506",
+      "name": "Erzurum Hınıs Şehit Yavuz Yürekseven Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hinisdh.saglik.gov.tr",
+      "lat": 39.3679663,
+      "lng": 41.6992792
+    },
+    {
+      "code": "osm:way/1366794961",
+      "name": "İzmir Bergama Necla - Mithat Öztüre Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bergamadh.saglik.gov.tr",
+      "lat": 39.1179666,
+      "lng": 27.1973912
+    },
+    {
+      "code": "osm:way/1368429469",
+      "name": "Özel Ömür Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.omurhastanesi.com.tr",
+      "lat": 36.9880245,
+      "lng": 35.2744991
+    },
+    {
+      "code": "osm:way/1369100585",
+      "name": "Bünyan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bunyandh.saglik.gov.tr",
+      "lat": 38.8464385,
+      "lng": 35.8725371
+    },
+    {
+      "code": "osm:way/1369919758",
+      "name": "Agagsia Dental Clinic",
+      "countryCode": "TR",
+      "origin": "https://agagsiadental.com",
+      "lat": 36.8638636,
+      "lng": 30.8254829
+    },
+    {
+      "code": "osm:way/1373679129",
+      "name": "Zara Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://zaradh.saglik.gov.tr",
+      "lat": 39.8928238,
+      "lng": 37.7493872
+    },
+    {
+      "code": "osm:way/1374959964",
+      "name": "Megapol Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://megapolhastanesi.com.tr",
+      "lat": 40.9161211,
+      "lng": 29.1994761
+    },
+    {
+      "code": "osm:way/1375092423",
+      "name": "Balıkesir Üniversitesi Sağlık Uygulama ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "http://hastane.balikesir.edu.tr",
+      "lat": 39.5489207,
+      "lng": 27.9999527
+    },
+    {
+      "code": "osm:way/1376230581",
+      "name": "Aksu Özel Göztepe Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://aksugoztepehastanesi.com.tr",
+      "lat": 40.9877901,
+      "lng": 29.061993
+    },
+    {
+      "code": "osm:way/1379875432",
+      "name": "Marmaris Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://marmarisdh.saglik.gov.tr",
+      "lat": 36.8703644,
+      "lng": 28.2679041
+    },
+    {
+      "code": "osm:way/1382237466",
+      "name": "Karakeçili İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://karakecilidh.saglik.gov.tr",
+      "lat": 39.5844175,
+      "lng": 33.3967611
+    },
+    {
+      "code": "osm:way/1382641309",
+      "name": "Central Hospital",
+      "countryCode": "TR",
+      "origin": "https://www.central.com.tr",
+      "lat": 40.9792562,
+      "lng": 29.1107195
+    },
+    {
+      "code": "osm:way/1384779431",
+      "name": "Çat İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://catdh.saglik.gov.tr",
+      "lat": 39.6134379,
+      "lng": 40.9775618
+    },
+    {
+      "code": "osm:way/1392936595",
+      "name": "Kahta Göçeri Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://goceridh.saglik.gov.tr",
+      "lat": 37.7813235,
+      "lng": 38.7470325
+    },
+    {
+      "code": "osm:way/1392961263",
+      "name": "Çayıralan İlçe Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://cayiralandh.saglik.gov.tr",
+      "lat": 39.3059264,
+      "lng": 35.6455996
+    },
+    {
+      "code": "osm:way/1393268988",
+      "name": "Tınaztepe Torbalı Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://tinaztepe.com",
+      "lat": 38.1426856,
+      "lng": 27.3664785
+    },
+    {
+      "code": "osm:way/1417231344",
+      "name": "Düziçi Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://duzicidh.saglik.gov.tr",
+      "lat": 37.2564804,
+      "lng": 36.4549775
+    },
+    {
+      "code": "osm:way/1419318286",
+      "name": "Akçakoca Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://akcakocadh.saglik.gov.tr",
+      "lat": 41.0758096,
+      "lng": 31.1237877
+    },
+    {
+      "code": "osm:way/1427486344",
+      "name": "Bozova Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://bozovadh.saglik.gov.tr",
+      "lat": 37.3613278,
+      "lng": 38.5143748
+    },
+    {
+      "code": "osm:way/1435335177",
+      "name": "Tekirdağ Namık Kemal Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hastane.nku.edu.tr",
+      "lat": 40.9969185,
+      "lng": 27.5872456
+    },
+    {
+      "code": "osm:way/1453738831",
+      "name": "Diş Hekimliği Fakültesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://dis.ikcu.edu.tr",
+      "lat": 38.5194692,
+      "lng": 27.030595
+    },
+    {
+      "code": "osm:way/1454956920",
+      "name": "Gazi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.gazihastanesi.com",
+      "lat": 38.4293802,
+      "lng": 27.1517675
+    },
+    {
+      "code": "osm:way/1455284567",
+      "name": "Mamak Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://mamakdh.saglik.gov.tr",
+      "lat": 39.914002,
+      "lng": 32.9552842
+    },
+    {
+      "code": "osm:way/1461486562",
+      "name": "Yedigün Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://yediguntipmerkezi.com",
+      "lat": 38.4754744,
+      "lng": 27.1921662
+    },
+    {
+      "code": "osm:way/1463158355",
+      "name": "Afyonkarahisar Sağlık Bilimleri Üniversitesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hastane.afsu.edu.tr",
+      "lat": 38.7849497,
+      "lng": 30.4671011
+    },
+    {
+      "code": "osm:way/1463891607",
+      "name": "İSTÜN Şişli Kolan International Hospital",
+      "countryCode": "TR",
+      "origin": "https://kolanhastanesi.com.tr",
+      "lat": 41.0648306,
+      "lng": 28.9804088
+    },
+    {
+      "code": "osm:way/1463891640",
+      "name": "Türkiye Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.turkiyehospital.org",
+      "lat": 41.0659503,
+      "lng": 28.9812954
+    },
+    {
+      "code": "osm:way/1465585338",
+      "name": "Hilvan Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://hilvandh.saglik.gov.tr",
+      "lat": 37.5994756,
+      "lng": 38.9788029
+    },
+    {
+      "code": "osm:way/1472717652",
+      "name": "Biruni Üniversitesi Tıp Fakültesi Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://www.birunihastanesi.com.tr",
+      "lat": 40.9989504,
+      "lng": 28.7955989
+    },
+    {
+      "code": "osm:way/1486431352",
+      "name": "Süleyman İlik Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://suleymanilikdh.saglik.gov.tr",
+      "lat": 40.578739,
+      "lng": 27.5702615
+    },
+    {
+      "code": "osm:way/1508068139",
+      "name": "Defa Life Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://defalife.com.tr",
+      "lat": 37.0270233,
+      "lng": 37.3306005
+    },
+    {
+      "code": "osm:way/1510204051",
+      "name": "Central Hospital",
+      "countryCode": "TR",
+      "origin": "http://centralhospital.com",
+      "lat": 40.9659176,
+      "lng": 29.100188
+    },
+    {
+      "code": "osm:way/1528814291",
+      "name": "FSM Tıp Merkezi",
+      "countryCode": "TR",
+      "origin": "https://www.fsmsaglik.com",
+      "lat": 41.0939673,
+      "lng": 29.0911337
+    },
+    {
+      "code": "osm:way/1535834803",
+      "name": "Palu Devlet Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://paludh.saglik.gov.tr",
+      "lat": 38.6949258,
+      "lng": 39.9268197
+    },
+    {
+      "code": "osm:way/1559994492",
+      "name": "Giresun Kadın Doğum ve Çocuk Hastalıkları Eğitim ve Araştırma Hastanesi",
+      "countryCode": "TR",
+      "origin": "https://giresunkdceah.saglik.gov.tr",
+      "lat": 40.9102798,
+      "lng": 38.3493132
+    }
+  ]
+}

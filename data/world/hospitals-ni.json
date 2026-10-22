@@ -1,0 +1,41 @@
+{
+  "countryCode": "NI",
+  "fetchedAt": "2026-10-21T02:16:28.053Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4270381164",
+      "name": "Centro de Salud",
+      "countryCode": "NI",
+      "origin": "https://ometepe-projekt-nicaragua.de",
+      "lat": 11.5114226,
+      "lng": -85.5543834
+    },
+    {
+      "code": "osm:way/110139036",
+      "name": "El Samaritano Centro de Salud (AMOS)",
+      "countryCode": "NI",
+      "origin": "https://www.amoshealth.org",
+      "lat": 12.1167698,
+      "lng": -86.332277
+    },
+    {
+      "code": "osm:way/315633308",
+      "name": "Hospital Primario de Chichigalpa",
+      "countryCode": "NI",
+      "origin": "https://www.minsa.gob.ni",
+      "lat": 12.589251,
+      "lng": -87.022409
+    },
+    {
+      "code": "osm:way/963634329",
+      "name": "Hospital Metropolitano Vivian Pellas",
+      "countryCode": "NI",
+      "origin": "http://www.metropolitano.com.ni",
+      "lat": 12.0858838,
+      "lng": -86.2342215
+    }
+  ]
+}

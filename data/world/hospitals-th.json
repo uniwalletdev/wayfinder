@@ -1,0 +1,2313 @@
+{
+  "countryCode": "TH",
+  "fetchedAt": "2026-10-21T02:55:32.549Z",
+  "count": 288,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/301609280",
+      "name": "โรงพยาบาลแม่สอด",
+      "countryCode": "TH",
+      "origin": "https://maesot.moph.go.th",
+      "lat": 16.7102522,
+      "lng": 98.5725201
+    },
+    {
+      "code": "osm:node/378636749",
+      "name": "โรงพยาบาลศรีนครินทร์",
+      "countryCode": "TH",
+      "origin": "http://www.srinagarind.md.kku.ac.th",
+      "lat": 16.4682595,
+      "lng": 102.8302327
+    },
+    {
+      "code": "osm:node/389407410",
+      "name": "โรงพยาบาลกรุงเทพ",
+      "countryCode": "TH",
+      "origin": "http://www.bangkokhospitalkhonkaen.com",
+      "lat": 16.4420747,
+      "lng": 102.8200449
+    },
+    {
+      "code": "osm:node/477126720",
+      "name": "โรงพยาบาลราชพฤกษ์",
+      "countryCode": "TH",
+      "origin": "http://www.rachapreukhospital.com",
+      "lat": 16.4353594,
+      "lng": 102.824182
+    },
+    {
+      "code": "osm:node/1038762165",
+      "name": "โรงพยาบาลท่าม่วง",
+      "countryCode": "TH",
+      "origin": "https://somdet19.moph.go.th",
+      "lat": 13.9759163,
+      "lng": 99.6311314
+    },
+    {
+      "code": "osm:node/1039996475",
+      "name": "โรงพยาบาล พหลพลพยุหเสนา",
+      "countryCode": "TH",
+      "origin": "https://phahol.moph.go.th",
+      "lat": 14.0057502,
+      "lng": 99.5465344
+    },
+    {
+      "code": "osm:node/1150191198",
+      "name": "โรงพยาบาลเกาะพีพี",
+      "countryCode": "TH",
+      "origin": "https://pphospital.com",
+      "lat": 7.7380885,
+      "lng": 98.7677255
+    },
+    {
+      "code": "osm:node/1177875547",
+      "name": "โรงพยาบาลนาหม่อม",
+      "countryCode": "TH",
+      "origin": "https://nmhos.moph.go.th",
+      "lat": 6.9844604,
+      "lng": 100.5856983
+    },
+    {
+      "code": "osm:node/1313558732",
+      "name": "โรงพยาบาล วัฒนา",
+      "countryCode": "TH",
+      "origin": "https://www.wattanahospital.net",
+      "lat": 17.4216091,
+      "lng": 102.7838538
+    },
+    {
+      "code": "osm:node/1402895609",
+      "name": "โรงพยาบาลมงกุฎวัฒนะ",
+      "countryCode": "TH",
+      "origin": "http://www.mongkutwattana.co.th",
+      "lat": 13.8939018,
+      "lng": 100.5616676
+    },
+    {
+      "code": "osm:node/1642379776",
+      "name": "โรงพยาบาลด่านมะขามเตี้ย",
+      "countryCode": "TH",
+      "origin": "https://danmakhamtiahospital.go.th",
+      "lat": 13.8529676,
+      "lng": 99.4091886
+    },
+    {
+      "code": "osm:node/1645930798",
+      "name": "ศูนย์การแพทย์ปัญญานันทภิกขุ ชลประทาน มหาวิทยาลัยศรีนครินทรวิโรฒ",
+      "countryCode": "TH",
+      "origin": "https://pcmc.swu.ac.th",
+      "lat": 13.8999118,
+      "lng": 100.5020172
+    },
+    {
+      "code": "osm:node/1669658716",
+      "name": "โรงพยาบาลสมุยอินเตอร์",
+      "countryCode": "TH",
+      "origin": "https://kohsamuihospitalclinic.com",
+      "lat": 9.538496,
+      "lng": 100.069983
+    },
+    {
+      "code": "osm:node/1669899706",
+      "name": "โรงพยาบาลศูนย์นครปฐม",
+      "countryCode": "TH",
+      "origin": "https://nkpthospital.com",
+      "lat": 13.8190156,
+      "lng": 100.0752367
+    },
+    {
+      "code": "osm:node/1743126086",
+      "name": "โรงพยาบาลหาดใหญ่",
+      "countryCode": "TH",
+      "origin": "https://hatyaihospital.moph.go.th",
+      "lat": 7.0166654,
+      "lng": 100.4674503
+    },
+    {
+      "code": "osm:node/1743126088",
+      "name": "โรงพยาบาลมิชชั่น ภูเก็ต",
+      "countryCode": "TH",
+      "origin": "https://www.mission-hospital.org",
+      "lat": 7.9065293,
+      "lng": 98.3909854
+    },
+    {
+      "code": "osm:node/1743126097",
+      "name": "โรงพยาบาลยะลา",
+      "countryCode": "TH",
+      "origin": "http://www.yrhyala.com",
+      "lat": 6.5480818,
+      "lng": 101.2767711
+    },
+    {
+      "code": "osm:node/2112296382",
+      "name": "โรงพยาบาลสิงห์บุรี",
+      "countryCode": "TH",
+      "origin": "https://singburihosp.moph.go.th",
+      "lat": 14.8967735,
+      "lng": 100.3974611
+    },
+    {
+      "code": "osm:node/2268777745",
+      "name": "โรงพยาบาลพะวอ",
+      "countryCode": "TH",
+      "origin": "https://pawoh.tripod.com",
+      "lat": 16.7110445,
+      "lng": 98.5641727
+    },
+    {
+      "code": "osm:node/2430814131",
+      "name": "โรงพยาบาลสวนผึ้ง",
+      "countryCode": "TH",
+      "origin": "https://sphospital.net",
+      "lat": 13.5445489,
+      "lng": 99.4394863
+    },
+    {
+      "code": "osm:node/2889115530",
+      "name": "โรงพยาบาลบ้านค่าย",
+      "countryCode": "TH",
+      "origin": "https://bankhaihospital.moph.go.th",
+      "lat": 12.7783009,
+      "lng": 101.2926381
+    },
+    {
+      "code": "osm:node/3040931236",
+      "name": "โรงพยาบาลนครธน",
+      "countryCode": "TH",
+      "origin": "https://www.nakornthon.com",
+      "lat": 13.6606056,
+      "lng": 100.4343189
+    },
+    {
+      "code": "osm:node/3048515447",
+      "name": "Trang Hospital",
+      "countryCode": "TH",
+      "origin": "http://www.tranghos.go.th",
+      "lat": 7.5723368,
+      "lng": 99.6193355
+    },
+    {
+      "code": "osm:node/3048977997",
+      "name": "โรงพยาบาลปัตตานี",
+      "countryCode": "TH",
+      "origin": "https://www.pattanihos.com",
+      "lat": 6.8694983,
+      "lng": 101.2494632
+    },
+    {
+      "code": "osm:node/3460602131",
+      "name": "โรงพยาบาลตะกั่วป่า",
+      "countryCode": "TH",
+      "origin": "http://hospital.moph.go.th",
+      "lat": 8.8637597,
+      "lng": 98.3341481
+    },
+    {
+      "code": "osm:node/4024849423",
+      "name": "โรงพยาบาลทักษิณ",
+      "countryCode": "TH",
+      "origin": "https://www.thaksinhospital.com",
+      "lat": 9.148273,
+      "lng": 99.3330607
+    },
+    {
+      "code": "osm:node/4270497798",
+      "name": "โรงพยาบาลบางกรวย",
+      "countryCode": "TH",
+      "origin": "https://www.bangkruaihospital.go.th",
+      "lat": 13.8050132,
+      "lng": 100.4722226
+    },
+    {
+      "code": "osm:node/4312157943",
+      "name": "โรงพยาบาลค่ายธนะรัชต์",
+      "countryCode": "TH",
+      "origin": "https://hosthanarat.com",
+      "lat": 12.4100882,
+      "lng": 99.9226192
+    },
+    {
+      "code": "osm:node/4382350090",
+      "name": "โรงพยาบาล สุไหงโก-ลก",
+      "countryCode": "TH",
+      "origin": "https://www.kolokhospital.com",
+      "lat": 6.0270843,
+      "lng": 101.9715011
+    },
+    {
+      "code": "osm:node/4409757993",
+      "name": "Thalang hospital",
+      "countryCode": "TH",
+      "origin": "https://www.thalanghospital.go.th",
+      "lat": 8.0230867,
+      "lng": 98.338625
+    },
+    {
+      "code": "osm:node/4447552489",
+      "name": "โรงพยาบาลสบเมย",
+      "countryCode": "TH",
+      "origin": "https://sobmoei.moph.go.th",
+      "lat": 17.9636973,
+      "lng": 97.9315006
+    },
+    {
+      "code": "osm:node/4813165821",
+      "name": "Chalong Hospital",
+      "countryCode": "TH",
+      "origin": "https://chalonghospital.moph.go.th",
+      "lat": 7.824194,
+      "lng": 98.3408379
+    },
+    {
+      "code": "osm:node/4821714521",
+      "name": "La-Ngu Hospital",
+      "countryCode": "TH",
+      "origin": "https://www.languhospital.com",
+      "lat": 6.9313357,
+      "lng": 99.7861828
+    },
+    {
+      "code": "osm:node/4890988622",
+      "name": "โรงพยาบาลสมุทรสาคร",
+      "countryCode": "TH",
+      "origin": "https://smkh.moph.go.th",
+      "lat": 13.5510326,
+      "lng": 100.2792635
+    },
+    {
+      "code": "osm:node/5068687521",
+      "name": "โรงพยาบาลกระบี่นครินทร์ อินเตอร์เนชั่นแนล",
+      "countryCode": "TH",
+      "origin": "https://www.krabinakharin.co.th",
+      "lat": 8.0807978,
+      "lng": 98.9058189
+    },
+    {
+      "code": "osm:node/5240778121",
+      "name": "Hospital central GENERAL",
+      "countryCode": "TH",
+      "origin": "https://cgh.co.th",
+      "lat": 13.8889032,
+      "lng": 100.6060256
+    },
+    {
+      "code": "osm:node/6161628876",
+      "name": "โรงพยาบาลบุ่งคล้า",
+      "countryCode": "TH",
+      "origin": "https://bungklahos.moph.go.th",
+      "lat": 18.2794945,
+      "lng": 103.9867677
+    },
+    {
+      "code": "osm:node/6169743468",
+      "name": "โรงพยาบาลพังงา",
+      "countryCode": "TH",
+      "origin": "https://pnghosp.moph.go.th",
+      "lat": 8.4486468,
+      "lng": 98.5263666
+    },
+    {
+      "code": "osm:node/6384784351",
+      "name": "โรงพยาบาลมหาวิทยาลัยนเรศวร",
+      "countryCode": "TH",
+      "origin": "http://www.med.nu.ac.th",
+      "lat": 16.7485505,
+      "lng": 100.1893614
+    },
+    {
+      "code": "osm:node/6557588675",
+      "name": "Anonymous MedConsult Clinic",
+      "countryCode": "TH",
+      "origin": "https://www.medconsultasia.com",
+      "lat": 13.7366322,
+      "lng": 100.5759328
+    },
+    {
+      "code": "osm:node/6643173705",
+      "name": "โรงพยาบาลสงขลา",
+      "countryCode": "TH",
+      "origin": "https://www.skhospital.go.th",
+      "lat": 7.141765,
+      "lng": 100.5658488
+    },
+    {
+      "code": "osm:node/6926053686",
+      "name": "โรงพยาบาลสุทธาเวช",
+      "countryCode": "TH",
+      "origin": "http://www.med.msu.ac.th",
+      "lat": 16.1997324,
+      "lng": 103.2853754
+    },
+    {
+      "code": "osm:node/7165705587",
+      "name": "ศูนย์บริการเครื่องช่วยฟังอินทิเม็กซ์",
+      "countryCode": "TH",
+      "origin": "https://www.intimexhearing.com",
+      "lat": 13.7946243,
+      "lng": 100.5385011
+    },
+    {
+      "code": "osm:node/7688192004",
+      "name": "โรงพยาบาลกระบุรี",
+      "countryCode": "TH",
+      "origin": "https://kraburihospital.moph.go.th",
+      "lat": 10.3983727,
+      "lng": 98.7786617
+    },
+    {
+      "code": "osm:node/7856632099",
+      "name": "โรงพยาบาลเมตตาประชารักษ์",
+      "countryCode": "TH",
+      "origin": "https://www.metta.go.th",
+      "lat": 13.7390047,
+      "lng": 100.2560109
+    },
+    {
+      "code": "osm:node/7856632131",
+      "name": "โรงพยาบาลจะนะ",
+      "countryCode": "TH",
+      "origin": "https://www.chanahospital.go.th",
+      "lat": 6.9151585,
+      "lng": 100.7401442
+    },
+    {
+      "code": "osm:node/7856632144",
+      "name": "โรงพยาบาลสิงหนคร",
+      "countryCode": "TH",
+      "origin": "https://shnk.moph.go.th",
+      "lat": 7.2342771,
+      "lng": 100.5297249
+    },
+    {
+      "code": "osm:node/7856632180",
+      "name": "โรงพยาบาลสมเด็จพระยุพราชเวียงสระ",
+      "countryCode": "TH",
+      "origin": "https://weingsrahosp.moph.go.th",
+      "lat": 8.6375722,
+      "lng": 99.3710375
+    },
+    {
+      "code": "osm:node/7856632184",
+      "name": "โรงพยาบาลขนอม",
+      "countryCode": "TH",
+      "origin": "https://www.khanom.org",
+      "lat": 9.2045129,
+      "lng": 99.860208
+    },
+    {
+      "code": "osm:node/7856667385",
+      "name": "โรงพยาบาลดอนสัก",
+      "countryCode": "TH",
+      "origin": "https://donsakhospital.com",
+      "lat": 9.3182967,
+      "lng": 99.6944958
+    },
+    {
+      "code": "osm:node/7856667391",
+      "name": "โรงพยาบาลพุนพิน",
+      "countryCode": "TH",
+      "origin": "https://www.pphhos.com",
+      "lat": 9.1057992,
+      "lng": 99.2325255
+    },
+    {
+      "code": "osm:node/7856667396",
+      "name": "โรงพยาบาลพระแสง",
+      "countryCode": "TH",
+      "origin": "https://www.phrasaeng-hosp.com",
+      "lat": 8.5724493,
+      "lng": 99.2431336
+    },
+    {
+      "code": "osm:node/7856667456",
+      "name": "โรงพยาบาลวังจันทร์",
+      "countryCode": "TH",
+      "origin": "https://wangchanhospital.moph.go.th",
+      "lat": 12.9390046,
+      "lng": 101.5290087
+    },
+    {
+      "code": "osm:node/7856667463",
+      "name": "โรงพยาบาลหนองใหญ่",
+      "countryCode": "TH",
+      "origin": "https://nongyaihos.moph.go.th",
+      "lat": 13.1571342,
+      "lng": 101.3636827
+    },
+    {
+      "code": "osm:node/7856667464",
+      "name": "โรงพยาบาลบ่อทอง",
+      "countryCode": "TH",
+      "origin": "https://bth.cbo.moph.go.th",
+      "lat": 13.2824684,
+      "lng": 101.4198911
+    },
+    {
+      "code": "osm:node/7856667465",
+      "name": "โรงพยาบาลปลวกแดง",
+      "countryCode": "TH",
+      "origin": "http://www.pluakdaenghospital.moph.go.th",
+      "lat": 12.9697133,
+      "lng": 101.2193048
+    },
+    {
+      "code": "osm:node/7856667471",
+      "name": "โรงพยาบาลพานทอง",
+      "countryCode": "TH",
+      "origin": "https://www.panthonghospital.com",
+      "lat": 13.4690753,
+      "lng": 101.0984713
+    },
+    {
+      "code": "osm:node/7856667679",
+      "name": "โรงพยาบาลวิชัยเวช อินเตอร์เนชั่นแนล สมุทรสาคร",
+      "countryCode": "TH",
+      "origin": "https://www.vichaivej.com",
+      "lat": 13.5760859,
+      "lng": 100.2715355
+    },
+    {
+      "code": "osm:node/7856667687",
+      "name": "โรงพยาบาลสมเด็จพระยุพราชจอมบึง",
+      "countryCode": "TH",
+      "origin": "https://ccph.moph.go.th",
+      "lat": 13.6226002,
+      "lng": 99.6304822
+    },
+    {
+      "code": "osm:node/7856667691",
+      "name": "โรงพยาบาลโพธาราม",
+      "countryCode": "TH",
+      "origin": "https://ptrh.moph.go.th",
+      "lat": 13.6941395,
+      "lng": 99.8522258
+    },
+    {
+      "code": "osm:node/7856667692",
+      "name": "โรงพยาบาลซานคามิลโล",
+      "countryCode": "TH",
+      "origin": "https://www.sancamillohospital.org",
+      "lat": 13.81042,
+      "lng": 99.8792142
+    },
+    {
+      "code": "osm:node/7856667693",
+      "name": "โรงพยาบาลบ้านโป่ง",
+      "countryCode": "TH",
+      "origin": "http://www.bph.moph.go.th",
+      "lat": 13.8170097,
+      "lng": 99.8706391
+    },
+    {
+      "code": "osm:node/7856667707",
+      "name": "โรงพยาบาลวิเศษชัยชาญ",
+      "countryCode": "TH",
+      "origin": "http://wisethos.moph.go.th",
+      "lat": 14.5933585,
+      "lng": 100.346322
+    },
+    {
+      "code": "osm:node/7856667728",
+      "name": "โรงพยาบาลมะการักษ์",
+      "countryCode": "TH",
+      "origin": "https://makarak.moph.go.th",
+      "lat": 13.9081475,
+      "lng": 99.7675967
+    },
+    {
+      "code": "osm:node/7856667765",
+      "name": "โรงพยาบาลร้องกวาง",
+      "countryCode": "TH",
+      "origin": "https://ronghosp.moph.go.th",
+      "lat": 18.3063837,
+      "lng": 100.2910995
+    },
+    {
+      "code": "osm:node/7856667766",
+      "name": "โรงพยาบาลสอง",
+      "countryCode": "TH",
+      "origin": "https://song-hospital.moph.go.th",
+      "lat": 18.4604496,
+      "lng": 100.1817917
+    },
+    {
+      "code": "osm:node/7856667769",
+      "name": "โรงพยาบาลเฉลิมพระเกียรติ",
+      "countryCode": "TH",
+      "origin": "https://chpkhos.org",
+      "lat": 19.575285,
+      "lng": 101.0818148
+    },
+    {
+      "code": "osm:node/7856667791",
+      "name": "โรงพยาบาลแม่อาย",
+      "countryCode": "TH",
+      "origin": "https://maeaihos.go.th",
+      "lat": 20.0389334,
+      "lng": 99.302212
+    },
+    {
+      "code": "osm:node/8151535229",
+      "name": "โรงพยาบาลราชพฤกษ์",
+      "countryCode": "TH",
+      "origin": "https://rph.co.th",
+      "lat": 16.4489347,
+      "lng": 102.8303815
+    },
+    {
+      "code": "osm:node/8441986661",
+      "name": "ศศิรักษ์คลินิกเวชกรรม",
+      "countryCode": "TH",
+      "origin": "https://facebook",
+      "lat": 13.7093097,
+      "lng": 100.3880494
+    },
+    {
+      "code": "osm:node/8811102698",
+      "name": "โรงพยาบาลดับเบิลยูไอเอชอินเตอร์เนชั่นแนล",
+      "countryCode": "TH",
+      "origin": "https://www.wihhospital.com",
+      "lat": 13.6638559,
+      "lng": 100.6505749
+    },
+    {
+      "code": "osm:node/9729267417",
+      "name": "Huachiew TCM",
+      "countryCode": "TH",
+      "origin": "http://huachiewtcm.com",
+      "lat": 13.7501618,
+      "lng": 100.5165921
+    },
+    {
+      "code": "osm:node/9921659987",
+      "name": "Smile Together Clinic",
+      "countryCode": "TH",
+      "origin": "https://www.smiletogetherclinic.com",
+      "lat": 13.8180636,
+      "lng": 100.6548199
+    },
+    {
+      "code": "osm:node/10127760493",
+      "name": "โรงพยาบาลกระบี่",
+      "countryCode": "TH",
+      "origin": "https://www.krabihospital.go.th",
+      "lat": 8.0758642,
+      "lng": 98.9152065
+    },
+    {
+      "code": "osm:node/10216759749",
+      "name": "Synphaet Hospital Lamlukka",
+      "countryCode": "TH",
+      "origin": "https://www.synphaet.co.th",
+      "lat": 13.931241,
+      "lng": 100.6606459
+    },
+    {
+      "code": "osm:node/10970962604",
+      "name": "MIlada Thai-Chinese Medical Clinic",
+      "countryCode": "TH",
+      "origin": "https://miladawellness.com",
+      "lat": 18.8099941,
+      "lng": 98.9738702
+    },
+    {
+      "code": "osm:node/13208119601",
+      "name": "MHCP Medical Health Clinic",
+      "countryCode": "TH",
+      "origin": "http://mhcp-clinic.com",
+      "lat": 7.9964712,
+      "lng": 98.3041765
+    },
+    {
+      "code": "osm:node/13586208402",
+      "name": "Virajsilp Hospital",
+      "countryCode": "TH",
+      "origin": "https://www.virajsilp.com",
+      "lat": 10.495231,
+      "lng": 99.174658
+    },
+    {
+      "code": "osm:node/14178641697",
+      "name": "Bangkok Hospital Maptaphut",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 12.7237894,
+      "lng": 101.1099212
+    },
+    {
+      "code": "osm:node/14178733874",
+      "name": "โรงพยาบาลจุฬารัตน์ระยอง",
+      "countryCode": "TH",
+      "origin": "https://www.chularatrayong.com",
+      "lat": 12.6852475,
+      "lng": 101.2745418
+    },
+    {
+      "code": "osm:node/14205632572",
+      "name": "โรงพยาบาลกรุงเทพปลวกแดง",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 12.9786495,
+      "lng": 101.1968877
+    },
+    {
+      "code": "osm:node/14205698968",
+      "name": "โรงพยาบาล ปิยะเวชช์ ปลวกแดง",
+      "countryCode": "TH",
+      "origin": "https://piyavate.com",
+      "lat": 12.9930126,
+      "lng": 101.2203898
+    },
+    {
+      "code": "osm:node/14205956167",
+      "name": "โรงพยาบาลพญาไทบ่อวิน",
+      "countryCode": "TH",
+      "origin": "https://www.phyathai.com",
+      "lat": 13.0424854,
+      "lng": 101.0873912
+    },
+    {
+      "code": "osm:node/14209108328",
+      "name": "โรงพยาบาลวัฒนแพทย์ ภูเก็ต",
+      "countryCode": "TH",
+      "origin": "https://wattanapatphuket.com",
+      "lat": 7.9493623,
+      "lng": 98.2853619
+    },
+    {
+      "code": "osm:node/14212035725",
+      "name": "Samitivej International Children's Hospital",
+      "countryCode": "TH",
+      "origin": "https://www.samitivejchildren.com",
+      "lat": 13.7474075,
+      "lng": 100.6388042
+    },
+    {
+      "code": "osm:node/14282918744",
+      "name": "วีคลินิก สาขาบุรีรัมย์",
+      "countryCode": "TH",
+      "origin": "https://www.facebook.com",
+      "lat": 14.9865941,
+      "lng": 103.0827534
+    },
+    {
+      "code": "osm:way/31974134",
+      "name": "โรงพยาบาลจุฬาลงกรณ์",
+      "countryCode": "TH",
+      "origin": "http://www.chulalongkornhospital.go.th",
+      "lat": 13.7327457,
+      "lng": 100.5360833
+    },
+    {
+      "code": "osm:way/40666585",
+      "name": "โรงพยาบาลพระนารายณ์มหาราช",
+      "countryCode": "TH",
+      "origin": "https://www.kingnaraihospital.go.th",
+      "lat": 14.804991,
+      "lng": 100.6532237
+    },
+    {
+      "code": "osm:way/62226123",
+      "name": "โรงพยาบาลไทยนครินทร์",
+      "countryCode": "TH",
+      "origin": "https://www.thainakarin.co.th",
+      "lat": 13.6680442,
+      "lng": 100.6384211
+    },
+    {
+      "code": "osm:way/101706800",
+      "name": "โรงพยาบาลราษฎร์ยินดี",
+      "countryCode": "TH",
+      "origin": "https://rajyindee.com",
+      "lat": 7.0007315,
+      "lng": 100.4804136
+    },
+    {
+      "code": "osm:way/102807715",
+      "name": "โรงพยาบาลแมคคอมิก",
+      "countryCode": "TH",
+      "origin": "http://www.mccormick.in.th",
+      "lat": 18.7972332,
+      "lng": 99.0106672
+    },
+    {
+      "code": "osm:way/103561795",
+      "name": "โรงพยาบาลเชียงใหม่",
+      "countryCode": "TH",
+      "origin": "https://www.chiangmai-hospital.com",
+      "lat": 18.8108548,
+      "lng": 98.9813533
+    },
+    {
+      "code": "osm:way/123189159",
+      "name": "สถานพยาบาล",
+      "countryCode": "TH",
+      "origin": "https://www.inf.ku.ac.th",
+      "lat": 13.8467299,
+      "lng": 100.5683329
+    },
+    {
+      "code": "osm:way/152774700",
+      "name": "โรงพยาบาลสิริโรจน์",
+      "countryCode": "TH",
+      "origin": "https://phuketinternationalhospital.com",
+      "lat": 7.8979336,
+      "lng": 98.3675427
+    },
+    {
+      "code": "osm:way/164007675",
+      "name": "โรงพยาบาลหัวเฉียว",
+      "countryCode": "TH",
+      "origin": "https://www.huachiewhospital.com",
+      "lat": 13.7500111,
+      "lng": 100.515513
+    },
+    {
+      "code": "osm:way/164008838",
+      "name": "โรงพยาบาลกลาง",
+      "countryCode": "TH",
+      "origin": "http://www.klanghospital.go.th",
+      "lat": 13.7464426,
+      "lng": 100.5091776
+    },
+    {
+      "code": "osm:way/169734876",
+      "name": "โรงพยาบาลไทยอินเตอร์เนชั่นเนล",
+      "countryCode": "TH",
+      "origin": "https://kohsamuihospitalclinic.com;https",
+      "lat": 9.5350773,
+      "lng": 100.0426045
+    },
+    {
+      "code": "osm:way/170218844",
+      "name": "สถาบันโรคทรวงอก",
+      "countryCode": "TH",
+      "origin": "https://ccit.go.th",
+      "lat": 13.8620951,
+      "lng": 100.5217878
+    },
+    {
+      "code": "osm:way/189618479",
+      "name": "โรงพยาบาลมหาราชนครเชียงใหม่",
+      "countryCode": "TH",
+      "origin": "https://www.med.cmu.ac.th",
+      "lat": 18.7918432,
+      "lng": 98.9742757
+    },
+    {
+      "code": "osm:way/201068611",
+      "name": "โรงพยาบาลเจตนิน",
+      "countryCode": "TH",
+      "origin": "https://www.jetanin.com",
+      "lat": 13.7471925,
+      "lng": 100.5448787
+    },
+    {
+      "code": "osm:way/206629285",
+      "name": "โรงพยาบาลบ่อเกลือ",
+      "countryCode": "TH",
+      "origin": "https://www.bkhosp.com",
+      "lat": 19.1514824,
+      "lng": 101.1536808
+    },
+    {
+      "code": "osm:way/208342323",
+      "name": "โรงพยาบาลบางบัวทอง",
+      "countryCode": "TH",
+      "origin": "https://bangbuathonghos.org",
+      "lat": 13.9182198,
+      "lng": 100.4230939
+    },
+    {
+      "code": "osm:way/209372561",
+      "name": "โรงพยาบาลเชียงดาว",
+      "countryCode": "TH",
+      "origin": "https://chiangdaohospital.moph.go.th",
+      "lat": 19.4036318,
+      "lng": 98.9743592
+    },
+    {
+      "code": "osm:way/210099832",
+      "name": "โณงพยาบาลเกษมราษฎร์ อินเตอร์เนชั่นแนล รัตนาธิเบศร์",
+      "countryCode": "TH",
+      "origin": "http://www.kasemrad.co.th",
+      "lat": 13.881229,
+      "lng": 100.4101059
+    },
+    {
+      "code": "osm:way/226823896",
+      "name": "โรงพยาบาลกรุงเทพพัทยา",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 12.9538015,
+      "lng": 100.905503
+    },
+    {
+      "code": "osm:way/228704824",
+      "name": "โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ",
+      "countryCode": "TH",
+      "origin": "https://www.hospital.tu.ac.th",
+      "lat": 14.0741459,
+      "lng": 100.6138398
+    },
+    {
+      "code": "osm:way/231413622",
+      "name": "โรงพยาบาลกรุงเทพคริสเตียน",
+      "countryCode": "TH",
+      "origin": "https://www.bch.in.th",
+      "lat": 13.7284252,
+      "lng": 100.5311844
+    },
+    {
+      "code": "osm:way/232078198",
+      "name": "โรงพยาบาลวชิระภูเก็ต",
+      "countryCode": "TH",
+      "origin": "https://www.vachiraphuket.go.th",
+      "lat": 7.8974325,
+      "lng": 98.3832358
+    },
+    {
+      "code": "osm:way/232884487",
+      "name": "โรงพยาบาลคณะทันตแพทยศาสตร์",
+      "countryCode": "TH",
+      "origin": "https://dt.mahidol.ac.th",
+      "lat": 13.7432919,
+      "lng": 100.5349465
+    },
+    {
+      "code": "osm:way/233541870",
+      "name": "โรงพยาบาลสมเด็จพระบรมราชเทวี ณ ศรีราชา",
+      "countryCode": "TH",
+      "origin": "https://www.somdej.or.th",
+      "lat": 13.1612201,
+      "lng": 100.9177234
+    },
+    {
+      "code": "osm:way/240370871",
+      "name": "โรงพยาบาลพัทยาปัทมคุณ",
+      "countryCode": "TH",
+      "origin": "https://blm.moph.go.th",
+      "lat": 12.9663293,
+      "lng": 100.90639
+    },
+    {
+      "code": "osm:way/242744729",
+      "name": "โรงพยาบาลเจ้าพระยาอภัยภูเบศร",
+      "countryCode": "TH",
+      "origin": "https://www.cpa.go.th",
+      "lat": 14.05239,
+      "lng": 101.3952265
+    },
+    {
+      "code": "osm:way/257214959",
+      "name": "โรงพยาบาลเชียงใหม่ราม",
+      "countryCode": "TH",
+      "origin": "https://www.chiangmairam.com",
+      "lat": 18.7949382,
+      "lng": 98.9774862
+    },
+    {
+      "code": "osm:way/258727420",
+      "name": "โรงพยาบาล วิภาราม",
+      "countryCode": "TH",
+      "origin": "https://www.vibharam.com",
+      "lat": 13.7347423,
+      "lng": 100.6454946
+    },
+    {
+      "code": "osm:way/258733173",
+      "name": "โรงพยาบาลสมิติเวชศรีนครินทร์",
+      "countryCode": "TH",
+      "origin": "https://www.samitivejhospitals.com",
+      "lat": 13.7486879,
+      "lng": 100.6384669
+    },
+    {
+      "code": "osm:way/258733174",
+      "name": "โรงพยาบาล รามคำแหง",
+      "countryCode": "TH",
+      "origin": "https://www.ram-hosp.co.th",
+      "lat": 13.7580245,
+      "lng": 100.6368222
+    },
+    {
+      "code": "osm:way/272256531",
+      "name": "Chaophya Hospital",
+      "countryCode": "TH",
+      "origin": "https://www.chaophya.com",
+      "lat": 13.7802789,
+      "lng": 100.470588
+    },
+    {
+      "code": "osm:way/283761802",
+      "name": "โรงพยาบาล สมเด็จพระยุพราชเชียงของ",
+      "countryCode": "TH",
+      "origin": "https://www.ckhos.go.th",
+      "lat": 20.2394284,
+      "lng": 100.4115738
+    },
+    {
+      "code": "osm:way/294031574",
+      "name": "โรงพยาบาลกรุงเทพ",
+      "countryCode": "TH",
+      "origin": "http://www.bangkokhospital-chiangmai.com",
+      "lat": 18.7887297,
+      "lng": 99.0265356
+    },
+    {
+      "code": "osm:way/296528238",
+      "name": "โรงพยาบาลสมิติเวชธนบุรี",
+      "countryCode": "TH",
+      "origin": "https://samitivejthonburi.com",
+      "lat": 13.7142787,
+      "lng": 100.4898251
+    },
+    {
+      "code": "osm:way/310777742",
+      "name": "โรงพยาบาลลำปาง",
+      "countryCode": "TH",
+      "origin": "http://www.lph.go.th",
+      "lat": 18.2871007,
+      "lng": 99.50656
+    },
+    {
+      "code": "osm:way/312058346",
+      "name": "โรงพยาบาลเทพปัญญา",
+      "countryCode": "TH",
+      "origin": "http://www.theppanya.com",
+      "lat": 18.8102857,
+      "lng": 99.0113999
+    },
+    {
+      "code": "osm:way/315323384",
+      "name": "โรงพยาบาลน่าน",
+      "countryCode": "TH",
+      "origin": "https://www.nanhospital.go.th",
+      "lat": 18.7955148,
+      "lng": 100.7886695
+    },
+    {
+      "code": "osm:way/321088066",
+      "name": "โรงพยาบาลสงขลา",
+      "countryCode": "TH",
+      "origin": "https://www.skhospital.go.th",
+      "lat": 7.1410109,
+      "lng": 100.5649298
+    },
+    {
+      "code": "osm:way/322189918",
+      "name": "โรงพยาบาลสุราษฎร์ธานี",
+      "countryCode": "TH",
+      "origin": "https://ict.srth.go.th",
+      "lat": 9.1241844,
+      "lng": 99.3096146
+    },
+    {
+      "code": "osm:way/329745925",
+      "name": "โรงพยาบาลจักษุ รัตนิน",
+      "countryCode": "TH",
+      "origin": "https://www.rutnin.com",
+      "lat": 13.7465043,
+      "lng": 100.5631219
+    },
+    {
+      "code": "osm:way/336050038",
+      "name": "Phyathai 3 Hospital",
+      "countryCode": "TH",
+      "origin": "https://www.phyathai.com",
+      "lat": 13.7230926,
+      "lng": 100.4640154
+    },
+    {
+      "code": "osm:way/337525576",
+      "name": "โรงพยาบาลเขาย้อย",
+      "countryCode": "TH",
+      "origin": "https://www.khaoyoihospital.go.th",
+      "lat": 13.239904,
+      "lng": 99.8256922
+    },
+    {
+      "code": "osm:way/338000401",
+      "name": "โรงพยาบาลสมเด็จพระปิ่นเกล้า",
+      "countryCode": "TH",
+      "origin": "https://www.spph.go.th",
+      "lat": 13.7101671,
+      "lng": 100.4847344
+    },
+    {
+      "code": "osm:way/338834271",
+      "name": "โรงพยาบาลลาดพร้าว",
+      "countryCode": "TH",
+      "origin": "https://www.ladpraohospital.com",
+      "lat": 13.7781337,
+      "lng": 100.6242922
+    },
+    {
+      "code": "osm:way/338834358",
+      "name": "โรงพยาบาลเวชธานี อินเตอร์เนชันแนล",
+      "countryCode": "TH",
+      "origin": "https://www.vejthani.com",
+      "lat": 13.7721804,
+      "lng": 100.6369087
+    },
+    {
+      "code": "osm:way/338906087",
+      "name": "โรงพยาบาลตะกั่วป่า",
+      "countryCode": "TH",
+      "origin": "https://tkphosp.moph.go.th",
+      "lat": 8.8629867,
+      "lng": 98.333594
+    },
+    {
+      "code": "osm:way/340899511",
+      "name": "โรงพยาบาลกรุงเทพหัวหิน",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 12.5540678,
+      "lng": 99.9606146
+    },
+    {
+      "code": "osm:way/341749639",
+      "name": "โรงพยาบาลนพรัตนราชธานี",
+      "countryCode": "TH",
+      "origin": "http://www.nopparat.go.th",
+      "lat": 13.8173643,
+      "lng": 100.6883458
+    },
+    {
+      "code": "osm:way/341960400",
+      "name": "โรงพยาบาลสมเด็จพระยุพราชเด่นชัย",
+      "countryCode": "TH",
+      "origin": "https://denchaihosp.moph.go.th",
+      "lat": 17.9828697,
+      "lng": 100.0545197
+    },
+    {
+      "code": "osm:way/362752793",
+      "name": "โรงพยาบาลนนทเวช",
+      "countryCode": "TH",
+      "origin": "https://www.nonthavej.co.th",
+      "lat": 13.8555341,
+      "lng": 100.5430371
+    },
+    {
+      "code": "osm:way/368093241",
+      "name": "โรงพยาบาลสายไหม",
+      "countryCode": "TH",
+      "origin": "https://www.saimai.co.th",
+      "lat": 13.9234182,
+      "lng": 100.6841823
+    },
+    {
+      "code": "osm:way/369892485",
+      "name": "ศูนย์บริการสาธารณสุข 52 สามเสนนอก",
+      "countryCode": "TH",
+      "origin": "https://webportal.bangkok.go.th",
+      "lat": 13.7774692,
+      "lng": 100.5702045
+    },
+    {
+      "code": "osm:way/371233866",
+      "name": "โรงพยาบาลแม่สาย",
+      "countryCode": "TH",
+      "origin": "https://www.maesaihospital.com",
+      "lat": 20.4292399,
+      "lng": 99.8784729
+    },
+    {
+      "code": "osm:way/384130518",
+      "name": "โรงพยาบาลสามพราน",
+      "countryCode": "TH",
+      "origin": "https://sampran-hos.moph.go.th",
+      "lat": 13.7477287,
+      "lng": 100.2607746
+    },
+    {
+      "code": "osm:way/389287222",
+      "name": "โรงพยาบาลราชบุรี",
+      "countryCode": "TH",
+      "origin": "https://www.rajburi.org",
+      "lat": 13.5308127,
+      "lng": 99.8167164
+    },
+    {
+      "code": "osm:way/390547571",
+      "name": "โรงพยาบาลน้ำปาด",
+      "countryCode": "TH",
+      "origin": "https://nampadhosp.moph.go.th",
+      "lat": 17.7253473,
+      "lng": 100.6791397
+    },
+    {
+      "code": "osm:way/397125567",
+      "name": "โรงพยาบาลกำแพงเพชร",
+      "countryCode": "TH",
+      "origin": "https://www.kph.go.th",
+      "lat": 16.4633186,
+      "lng": 99.5278035
+    },
+    {
+      "code": "osm:way/402132679",
+      "name": "โรงพยาบาลศิครินทร์",
+      "countryCode": "TH",
+      "origin": "https://www.sikarin.com",
+      "lat": 13.6542071,
+      "lng": 100.6461512
+    },
+    {
+      "code": "osm:way/402396239",
+      "name": "โรงพยาบาลเจริญกรุงประชารักษ์",
+      "countryCode": "TH",
+      "origin": "http://www.ckphosp.go.th",
+      "lat": 13.6935556,
+      "lng": 100.4947203
+    },
+    {
+      "code": "osm:way/402895256",
+      "name": "โรงพยาบาลกรุงเทพ",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 13.749195,
+      "lng": 100.5832663
+    },
+    {
+      "code": "osm:way/402913736",
+      "name": "โรงพยาบาลกรุงเทพสมุย",
+      "countryCode": "TH",
+      "origin": "https://bangkokhospitalsamui.com",
+      "lat": 9.5142821,
+      "lng": 100.0494374
+    },
+    {
+      "code": "osm:way/402940553",
+      "name": "โรงพยาบาลเอกอุดร",
+      "countryCode": "TH",
+      "origin": "https://www.aekudon.com",
+      "lat": 17.3976651,
+      "lng": 102.8029955
+    },
+    {
+      "code": "osm:way/403029534",
+      "name": "โรงพยาบาลสงขลานครินทร์",
+      "countryCode": "TH",
+      "origin": "http://hospital.psu.ac.th",
+      "lat": 7.006663,
+      "lng": 100.4945493
+    },
+    {
+      "code": "osm:way/403613179",
+      "name": "โรงพยาบาลขอนแก่นราม",
+      "countryCode": "TH",
+      "origin": "https://www.khonkaenram.com",
+      "lat": 16.433636,
+      "lng": 102.8210662
+    },
+    {
+      "code": "osm:way/405179463",
+      "name": "โรงพยาบาลยันฮี",
+      "countryCode": "TH",
+      "origin": "https://yanhee.net",
+      "lat": 13.7996304,
+      "lng": 100.511543
+    },
+    {
+      "code": "osm:way/411010746",
+      "name": "โรงพยาบาลพุทธชินราช พิษณุโลก",
+      "countryCode": "TH",
+      "origin": "http://www.budhosp.go.th",
+      "lat": 16.8059461,
+      "lng": 100.2637294
+    },
+    {
+      "code": "osm:way/411012239",
+      "name": "โรงพยาบาลพิษณุเวช",
+      "countryCode": "TH",
+      "origin": "http://www.pitsanuvej.com",
+      "lat": 16.8085813,
+      "lng": 100.2597816
+    },
+    {
+      "code": "osm:way/432515023",
+      "name": "โรงพยาบาลเนินมะปราง",
+      "countryCode": "TH",
+      "origin": "https://office.nphapp.com",
+      "lat": 16.560791,
+      "lng": 100.6249691
+    },
+    {
+      "code": "osm:way/447735125",
+      "name": "โรงพยาบาลแม่จัน",
+      "countryCode": "TH",
+      "origin": "https://maechanhospital.go.th",
+      "lat": 20.1338836,
+      "lng": 99.8589265
+    },
+    {
+      "code": "osm:way/448101548",
+      "name": "โรงพยาบาล จุฬารัตน์ 9",
+      "countryCode": "TH",
+      "origin": "https://ch9airport.com",
+      "lat": 13.6775385,
+      "lng": 100.7224494
+    },
+    {
+      "code": "osm:way/467374318",
+      "name": "Bangkok Hospital Udon",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 17.4066764,
+      "lng": 102.8035264
+    },
+    {
+      "code": "osm:way/468721675",
+      "name": "Mae Tao Clinic",
+      "countryCode": "TH",
+      "origin": "http://maetaoclinic.org",
+      "lat": 16.7186026,
+      "lng": 98.5339479
+    },
+    {
+      "code": "osm:way/479115782",
+      "name": "โรงพยาบาลไทยอินเตอร์เนชั่นแนล เกาะพะงัน",
+      "countryCode": "TH",
+      "origin": "https://kohphanganhospitalclinic.com",
+      "lat": 9.7082171,
+      "lng": 99.9973772
+    },
+    {
+      "code": "osm:way/483841193",
+      "name": "โรงพยาบาล เชียงรายประชานุเคราะห์",
+      "countryCode": "TH",
+      "origin": "https://www.crhospital.org",
+      "lat": 19.900775,
+      "lng": 99.8302868
+    },
+    {
+      "code": "osm:way/484971208",
+      "name": "โรงพยาบาลพญาไท นวมินทร์",
+      "countryCode": "TH",
+      "origin": "http://www.phyathai-nawamin.com",
+      "lat": 13.8254686,
+      "lng": 100.657498
+    },
+    {
+      "code": "osm:way/485325764",
+      "name": "โรงพยาบาลกรุงไทย",
+      "countryCode": "TH",
+      "origin": "https://www.krungthaihospital.com",
+      "lat": 13.9130933,
+      "lng": 100.5092336
+    },
+    {
+      "code": "osm:way/485326156",
+      "name": "โรงพยาบาลวิภารามปากเกร็ด",
+      "countryCode": "TH",
+      "origin": "https://www.vibharampakkred.com",
+      "lat": 13.9081828,
+      "lng": 100.4983431
+    },
+    {
+      "code": "osm:way/485839439",
+      "name": "โรงพยาบาลดีบุก",
+      "countryCode": "TH",
+      "origin": "https://dibukhospital.com",
+      "lat": 7.8719693,
+      "lng": 98.3601872
+    },
+    {
+      "code": "osm:way/487935968",
+      "name": "Phuket Provincial Hospital",
+      "countryCode": "TH",
+      "origin": "https://phuketcityhospital.org",
+      "lat": 7.8808649,
+      "lng": 98.4048755
+    },
+    {
+      "code": "osm:way/492448931",
+      "name": "โรงพยาบาลกรุงเทพ-หาดใหญ่",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 7.0160922,
+      "lng": 100.4863577
+    },
+    {
+      "code": "osm:way/516321085",
+      "name": "โรงพยาบาลพระปกเกล้า",
+      "countryCode": "TH",
+      "origin": "https://www.ppkhosp.go.th",
+      "lat": 12.6034238,
+      "lng": 102.1019252
+    },
+    {
+      "code": "osm:way/525523960",
+      "name": "โรงพยาบาลชลบุรี",
+      "countryCode": "TH",
+      "origin": "http://www.cbh.moph.go.th",
+      "lat": 13.3514795,
+      "lng": 100.9819202
+    },
+    {
+      "code": "osm:way/527539157",
+      "name": "โรงพยาบาลเชียงแสน",
+      "countryCode": "TH",
+      "origin": "https://chiangsaenhospital.go.th",
+      "lat": 20.2717356,
+      "lng": 100.0771989
+    },
+    {
+      "code": "osm:way/539990579",
+      "name": "โรงพยาบาลตากสิน",
+      "countryCode": "TH",
+      "origin": "https://www.taksinhosp.go.th",
+      "lat": 13.7308535,
+      "lng": 100.5079233
+    },
+    {
+      "code": "osm:way/544281344",
+      "name": "ศูนย์บริการสาธารณสุข 24 บางเขน",
+      "countryCode": "TH",
+      "origin": "https://webportal.bangkok.go.th",
+      "lat": 13.8497864,
+      "lng": 100.581165
+    },
+    {
+      "code": "osm:way/549066257",
+      "name": "โรงพยาบาลจิตเวชขอนแก่นราชนครินทร์",
+      "countryCode": "TH",
+      "origin": "https://www.krph.go.th",
+      "lat": 16.424786,
+      "lng": 102.849015
+    },
+    {
+      "code": "osm:way/549948901",
+      "name": "โรงพยาบาลแม่ฟ้าหลวง",
+      "countryCode": "TH",
+      "origin": "https://www.mflhospital.com",
+      "lat": 20.2495453,
+      "lng": 99.6509999
+    },
+    {
+      "code": "osm:way/555852772",
+      "name": "โรงพยาบาลเวียงแก่น",
+      "countryCode": "TH",
+      "origin": "https://wkhos.go.th",
+      "lat": 20.0692748,
+      "lng": 100.5071456
+    },
+    {
+      "code": "osm:way/639893301",
+      "name": "โรงพยาบาลป่าตอง",
+      "countryCode": "TH",
+      "origin": "http://patonghospital.com",
+      "lat": 7.8956927,
+      "lng": 98.3013405
+    },
+    {
+      "code": "osm:way/641234887",
+      "name": "Bangkok Hospital Chiang Rai",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 19.99276,
+      "lng": 99.8634925
+    },
+    {
+      "code": "osm:way/658997001",
+      "name": "โรงพยาบาลพระนั่งเกล้า",
+      "countryCode": "TH",
+      "origin": "https://www.pranangklao.go.th",
+      "lat": 13.8648237,
+      "lng": 100.4808758
+    },
+    {
+      "code": "osm:way/699477982",
+      "name": "โรงพยาบาลสิริโรจน์",
+      "countryCode": "TH",
+      "origin": "https://phuketinternationalhospital.com",
+      "lat": 7.8977383,
+      "lng": 98.3677079
+    },
+    {
+      "code": "osm:way/710584881",
+      "name": "โรงพยาบาลพบพระ",
+      "countryCode": "TH",
+      "origin": "https://pphos.go.th",
+      "lat": 16.4010675,
+      "lng": 98.6958919
+    },
+    {
+      "code": "osm:way/712600876",
+      "name": "โรงพยาบาลพระนครศรีอยุธยา",
+      "countryCode": "TH",
+      "origin": "https://www.facebook.com",
+      "lat": 14.3439311,
+      "lng": 100.5595847
+    },
+    {
+      "code": "osm:way/725901082",
+      "name": "โรงพยาบาลราชธานี",
+      "countryCode": "TH",
+      "origin": "https://www.rajthanee.com",
+      "lat": 14.3420834,
+      "lng": 100.6090853
+    },
+    {
+      "code": "osm:way/735136329",
+      "name": "โรงพยาบาลสุคิริน",
+      "countryCode": "TH",
+      "origin": "https://sukhirinhospital.moph.go.th",
+      "lat": 5.9422372,
+      "lng": 101.7771611
+    },
+    {
+      "code": "osm:way/755146497",
+      "name": "โรงพยาบาลทองผาภูมิ",
+      "countryCode": "TH",
+      "origin": "https://tpphosp.moph.go.th",
+      "lat": 14.7519936,
+      "lng": 98.6258282
+    },
+    {
+      "code": "osm:way/759790354",
+      "name": "โรงพยาบาลสังขละบุรี",
+      "countryCode": "TH",
+      "origin": "https://sskhospital.moph.go.th",
+      "lat": 15.1568226,
+      "lng": 98.4526178
+    },
+    {
+      "code": "osm:way/761165593",
+      "name": "โรงพยาบาล แม่แตง",
+      "countryCode": "TH",
+      "origin": "https://www.maetaeng.go.th",
+      "lat": 19.1371694,
+      "lng": 98.9603616
+    },
+    {
+      "code": "osm:way/762407745",
+      "name": "โรงพยาบาลบางกรวย 2",
+      "countryCode": "TH",
+      "origin": "https://www.bangkruaihospital.go.th",
+      "lat": 13.8255618,
+      "lng": 100.4524719
+    },
+    {
+      "code": "osm:way/762660850",
+      "name": "โรงพยาบาลอ่างทอง",
+      "countryCode": "TH",
+      "origin": "https://ath.moph.go.th",
+      "lat": 14.585231,
+      "lng": 100.4519227
+    },
+    {
+      "code": "osm:way/763393331",
+      "name": "โรงพยาบาลแพร่",
+      "countryCode": "TH",
+      "origin": "https://phos.moph.go.th",
+      "lat": 18.1323557,
+      "lng": 100.1550968
+    },
+    {
+      "code": "osm:way/778140572",
+      "name": "ศูนย์บริการสาธารณสุข 23 สี่พระยา",
+      "countryCode": "TH",
+      "origin": "https://www.bangkok.go.th",
+      "lat": 13.7307483,
+      "lng": 100.5203288
+    },
+    {
+      "code": "osm:way/782463031",
+      "name": "โรงพยาบาลกบินทร์บุรี",
+      "countryCode": "TH",
+      "origin": "https://kbh.moph.go.th",
+      "lat": 13.9572007,
+      "lng": 101.7277652
+    },
+    {
+      "code": "osm:way/787119675",
+      "name": "โรงพยาบาลบึงบูรพ์",
+      "countryCode": "TH",
+      "origin": "https://bbhos.com",
+      "lat": 15.3364026,
+      "lng": 104.0461937
+    },
+    {
+      "code": "osm:way/787128800",
+      "name": "โรงพยาบาลราษีไศล",
+      "countryCode": "TH",
+      "origin": "http://rasihosp.moph.go.th",
+      "lat": 15.3411448,
+      "lng": 104.1519493
+    },
+    {
+      "code": "osm:way/822493453",
+      "name": "โรงพยาบาลมุกดาหาร",
+      "countryCode": "TH",
+      "origin": "https://mukhos.moph.go.th",
+      "lat": 16.5416864,
+      "lng": 104.7269791
+    },
+    {
+      "code": "osm:way/863258748",
+      "name": "โรงพยาบาลสถาบันโรคไตภูมิราชนครินทร์",
+      "countryCode": "TH",
+      "origin": "https://www.brkidney.org",
+      "lat": 13.760003,
+      "lng": 100.5345454
+    },
+    {
+      "code": "osm:way/863465253",
+      "name": "โรงพยาบาลพระมงกุฎเกล้า",
+      "countryCode": "TH",
+      "origin": "https://www.pmk.ac.th",
+      "lat": 13.768069,
+      "lng": 100.5343175
+    },
+    {
+      "code": "osm:way/878082201",
+      "name": "โรงพยาบาลจุฬารัตน์ 1 สุวรรณภูมิ.",
+      "countryCode": "TH",
+      "origin": "https://www.chularat.com",
+      "lat": 13.6337565,
+      "lng": 100.7095496
+    },
+    {
+      "code": "osm:way/905418962",
+      "name": "โรงพยาบาลเจ้าพระยายมราช",
+      "countryCode": "TH",
+      "origin": "https://yrh.moph.go.th",
+      "lat": 14.465945,
+      "lng": 100.1160924
+    },
+    {
+      "code": "osm:way/946384818",
+      "name": "สถาบันบำราศนราดูร",
+      "countryCode": "TH",
+      "origin": "http://bamras.ddc.moph.go.th",
+      "lat": 13.8532022,
+      "lng": 100.5219522
+    },
+    {
+      "code": "osm:way/975149504",
+      "name": "โรงพยาบาลสมเด็จพระเจ้าตากสินมหาราช",
+      "countryCode": "TH",
+      "origin": "https://www.tsm.go.th",
+      "lat": 16.8729638,
+      "lng": 99.131521
+    },
+    {
+      "code": "osm:way/991657339",
+      "name": "โรงบาลค่ายเม็งรายมหาราช",
+      "countryCode": "TH",
+      "origin": "https://www.fortmengraihospital.com",
+      "lat": 19.9045666,
+      "lng": 99.8136009
+    },
+    {
+      "code": "osm:way/1016217154",
+      "name": "โรงพยาบาลโพธาราม",
+      "countryCode": "TH",
+      "origin": "https://ptrh.moph.go.th",
+      "lat": 13.6942467,
+      "lng": 99.8525879
+    },
+    {
+      "code": "osm:way/1026013873",
+      "name": "โรงพยาบาลท้ายเหมืองชัยพัฒน์",
+      "countryCode": "TH",
+      "origin": "https://thaimuang.moph.go.th",
+      "lat": 8.4010841,
+      "lng": 98.2609079
+    },
+    {
+      "code": "osm:way/1026582819",
+      "name": "โรงพยาบาลระนอง",
+      "countryCode": "TH",
+      "origin": "https://www.rnh.go.th",
+      "lat": 9.9638348,
+      "lng": 98.6431491
+    },
+    {
+      "code": "osm:way/1028937701",
+      "name": "โรงพยาบาลสามร้อยยอด",
+      "countryCode": "TH",
+      "origin": "https://samroiyodhospital.go.th",
+      "lat": 12.2096483,
+      "lng": 99.8583899
+    },
+    {
+      "code": "osm:way/1036709509",
+      "name": "โรงพยาบาลเถิน",
+      "countryCode": "TH",
+      "origin": "https://thlp.moph.go.th",
+      "lat": 17.6376014,
+      "lng": 99.2414362
+    },
+    {
+      "code": "osm:way/1038135929",
+      "name": "โรงพยาบาลศรีเชียงใหม่",
+      "countryCode": "TH",
+      "origin": "https://scmhospital.moph.go.th",
+      "lat": 17.956617,
+      "lng": 102.590936
+    },
+    {
+      "code": "osm:way/1107919558",
+      "name": "โรงพยาบาลบ้านแพ้ว",
+      "countryCode": "TH",
+      "origin": "https://www.bphosp.or.th",
+      "lat": 13.5915893,
+      "lng": 100.1032875
+    },
+    {
+      "code": "osm:way/1115112650",
+      "name": "ศูนย์ส่งเสริมพัฒนาการเด็กภาคเหนือจังหวัดเชียงใหม่",
+      "countryCode": "TH",
+      "origin": "https://www.ricd.go.th",
+      "lat": 18.8508425,
+      "lng": 98.9626035
+    },
+    {
+      "code": "osm:way/1131611366",
+      "name": "โรงพยาบาลสินแพทย์ ศรีนครินทร์",
+      "countryCode": "TH",
+      "origin": "https://www.synphaet.co.th",
+      "lat": 13.6787803,
+      "lng": 100.6483215
+    },
+    {
+      "code": "osm:way/1135585152",
+      "name": "โรงพยาบาลหนองปรือ",
+      "countryCode": "TH",
+      "origin": "https://www.hosnp.com",
+      "lat": 14.5819698,
+      "lng": 99.476512
+    },
+    {
+      "code": "osm:way/1157434761",
+      "name": "โรงพยาบาลมหาราช นครศรีธรรมราช",
+      "countryCode": "TH",
+      "origin": "https://www.mnst.go.th",
+      "lat": 8.3909728,
+      "lng": 99.9746629
+    },
+    {
+      "code": "osm:way/1184572816",
+      "name": "โรงพยาบาลมะเร็งลพบุรี",
+      "countryCode": "TH",
+      "origin": "https://www.lopburicancer.in.th",
+      "lat": 14.8038406,
+      "lng": 100.6508894
+    },
+    {
+      "code": "osm:way/1186854016",
+      "name": "โรงพยาบาลเมดพาร์ค",
+      "countryCode": "TH",
+      "origin": "https://www.medparkhospital.com",
+      "lat": 13.7217239,
+      "lng": 100.5566062
+    },
+    {
+      "code": "osm:way/1197051606",
+      "name": "โรงพยาบาลบีเอ็นเอช",
+      "countryCode": "TH",
+      "origin": "https://www.bnhhospital.com",
+      "lat": 13.7249135,
+      "lng": 100.5349843
+    },
+    {
+      "code": "osm:way/1212165124",
+      "name": "Pattaya International Hospital",
+      "countryCode": "TH",
+      "origin": "http://www.pih-inter.com",
+      "lat": 12.9440648,
+      "lng": 100.8876564
+    },
+    {
+      "code": "osm:way/1212167013",
+      "name": "โรงพยาบาลพัทยาเมโมเรียล",
+      "countryCode": "TH",
+      "origin": "https://www.pattayamemorial.com",
+      "lat": 12.9356015,
+      "lng": 100.8865577
+    },
+    {
+      "code": "osm:way/1213872967",
+      "name": "โรงพยาบาลมเหสักข์",
+      "countryCode": "TH",
+      "origin": "https://www.mahaesakhospital.co.th",
+      "lat": 13.7253986,
+      "lng": 100.5194286
+    },
+    {
+      "code": "osm:way/1215983984",
+      "name": "โรงพยาบาลระยอง",
+      "countryCode": "TH",
+      "origin": "https://www.rayonghospital.go.th",
+      "lat": 12.6827662,
+      "lng": 101.2764916
+    },
+    {
+      "code": "osm:way/1219777420",
+      "name": "โรงพยาบาลเอกชนเมืองกำแพง",
+      "countryCode": "TH",
+      "origin": "https://www.akchhospital.com",
+      "lat": 16.4590091,
+      "lng": 99.5370813
+    },
+    {
+      "code": "osm:way/1227068087",
+      "name": "Wattanapat hospital ao nang",
+      "countryCode": "TH",
+      "origin": "https://www.aonanghospital.com",
+      "lat": 8.0566041,
+      "lng": 98.8174936
+    },
+    {
+      "code": "osm:way/1229625896",
+      "name": "โรงพยาบาลธนบุรีทวีวัฒนา",
+      "countryCode": "TH",
+      "origin": "http://thonburithawiwatthana.com",
+      "lat": 13.7828078,
+      "lng": 100.4004218
+    },
+    {
+      "code": "osm:way/1229796343",
+      "name": "โรงพยาบาลกรุงเทพ สนามจันทร์",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 13.8063614,
+      "lng": 100.0383999
+    },
+    {
+      "code": "osm:way/1262489352",
+      "name": "โรงพยาบาลกรุงเทพ ภูเก็ต",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 7.9041094,
+      "lng": 98.3759977
+    },
+    {
+      "code": "osm:way/1265423676",
+      "name": "โรงพยาบาลกระทุ่มแบน",
+      "countryCode": "TH",
+      "origin": "https://ktbhos.moph.go.th",
+      "lat": 13.6546876,
+      "lng": 100.2543957
+    },
+    {
+      "code": "osm:way/1273377413",
+      "name": "โรงพยาบาลมหาราชนครราชสีมา",
+      "countryCode": "TH",
+      "origin": "https://www.mnrh.go.th",
+      "lat": 14.9845805,
+      "lng": 102.1010639
+    },
+    {
+      "code": "osm:way/1285077638",
+      "name": "โรงพยาบาลผู้สูงอายุบางขุนเทียน",
+      "countryCode": "TH",
+      "origin": "https://www.bkt-hospital.go.th",
+      "lat": 13.5725146,
+      "lng": 100.4236946
+    },
+    {
+      "code": "osm:way/1293428256",
+      "name": "โรงพยาบาลพริ้นซ์ สุวรรณภูมิ",
+      "countryCode": "TH",
+      "origin": "https://www.princsuvarnabhumi.com",
+      "lat": 13.6569727,
+      "lng": 100.6660695
+    },
+    {
+      "code": "osm:way/1313979557",
+      "name": "โรงพยาบาลส่งเสริมสุขภาพตำบลบึงบ้าน",
+      "countryCode": "TH",
+      "origin": "https://government.icti.co.th",
+      "lat": 16.3127037,
+      "lng": 100.0157297
+    },
+    {
+      "code": "osm:way/1322432427",
+      "name": "โรงพยาบาลราชพฤกษ์",
+      "countryCode": "TH",
+      "origin": "https://rph.co.th",
+      "lat": 16.4487485,
+      "lng": 102.8303621
+    },
+    {
+      "code": "osm:way/1328786930",
+      "name": "โรงพยาบาลสระบุรี",
+      "countryCode": "TH",
+      "origin": "http://www.srbr.in.th",
+      "lat": 14.5334469,
+      "lng": 100.9154931
+    },
+    {
+      "code": "osm:way/1330359921",
+      "name": "โรงพยาบาลวัดห้วยปลากั้งเพื่อสังคม",
+      "countryCode": "TH",
+      "origin": "https://www.facebook.com",
+      "lat": 19.9490313,
+      "lng": 99.8079668
+    },
+    {
+      "code": "osm:way/1359634335",
+      "name": "โรงพยาบาลบางปะอิน",
+      "countryCode": "TH",
+      "origin": "https://hospital-ayo.moph.go.th",
+      "lat": 14.2136155,
+      "lng": 100.5772611
+    },
+    {
+      "code": "osm:way/1372000452",
+      "name": "โรงพยาบาลแม่สะเรียง",
+      "countryCode": "TH",
+      "origin": "https://msrh.moph.go.th",
+      "lat": 18.1619678,
+      "lng": 97.9396732
+    },
+    {
+      "code": "osm:way/1378264697",
+      "name": "โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านทุ่งละออง",
+      "countryCode": "TH",
+      "origin": "https://www.facebook.com",
+      "lat": 9.0383606,
+      "lng": 98.3247587
+    },
+    {
+      "code": "osm:way/1396188223",
+      "name": "โรงพยาบาลศรีสังวรสุโขทัย",
+      "countryCode": "TH",
+      "origin": "https://ssw.moph.go.th",
+      "lat": 17.1663468,
+      "lng": 99.8660464
+    },
+    {
+      "code": "osm:way/1396729649",
+      "name": "โรงพยาบาลวิมุต",
+      "countryCode": "TH",
+      "origin": "https://www.vimut.com",
+      "lat": 13.7887662,
+      "lng": 100.548652
+    },
+    {
+      "code": "osm:way/1426886300",
+      "name": "โรงพยาบาลพระจอมเกล้าเจ้าคุณทหาร",
+      "countryCode": "TH",
+      "origin": "https://kmchf-pp.org",
+      "lat": 13.7319767,
+      "lng": 100.7889975
+    },
+    {
+      "code": "osm:way/1450994149",
+      "name": "Nakhon Phanom Rajanagarindra Psychiatric Hospital",
+      "countryCode": "TH",
+      "origin": "https://www.npmrph.go.th",
+      "lat": 17.4851455,
+      "lng": 104.7184234
+    },
+    {
+      "code": "osm:way/1463531899",
+      "name": "โรงพยาบาลสรรพสิทธิประสงค์",
+      "countryCode": "TH",
+      "origin": "https://www.sunpasit.go.th",
+      "lat": 15.2365981,
+      "lng": 104.8655675
+    },
+    {
+      "code": "osm:way/1474043309",
+      "name": "ศูนย์บริการสาธารณสุข 56 ทับเจริญ",
+      "countryCode": "TH",
+      "origin": "https://webportal.bangkok.go.th",
+      "lat": 13.8373104,
+      "lng": 100.6369241
+    },
+    {
+      "code": "osm:way/1497863792",
+      "name": "โรงพยาบาลเลิดสิน",
+      "countryCode": "TH",
+      "origin": "https://www.lerdsin.go.th",
+      "lat": 13.7215163,
+      "lng": 100.5177517
+    },
+    {
+      "code": "osm:way/1521246827",
+      "name": "โรงพยาบาลวิภาราม สมุทรสาคร",
+      "countryCode": "TH",
+      "origin": "https://vibharamsamutsakhon.com",
+      "lat": 13.53843,
+      "lng": 100.2293025
+    },
+    {
+      "code": "osm:way/1524819690",
+      "name": "โรงพยาบาลพานาซีพระราม 2",
+      "countryCode": "TH",
+      "origin": "https://www.panaceehospital.com",
+      "lat": 13.6005787,
+      "lng": 100.3773882
+    },
+    {
+      "code": "osm:way/1525690514",
+      "name": "โรงพยาบาลดำเนินสะดวก",
+      "countryCode": "TH",
+      "origin": "https://www.dnhospital.go.th",
+      "lat": 13.5370644,
+      "lng": 99.9662115
+    },
+    {
+      "code": "osm:way/1525978233",
+      "name": "โรงพยาบาลบางแพ",
+      "countryCode": "TH",
+      "origin": "https://bangphae.moph.go.th",
+      "lat": 13.6934861,
+      "lng": 99.921473
+    },
+    {
+      "code": "osm:way/1529240143",
+      "name": "โรงพยาบาลสมเด็จพระยุพราชจอมบึง",
+      "countryCode": "TH",
+      "origin": "https://ccph.moph.go.th",
+      "lat": 13.6237283,
+      "lng": 99.6304326
+    },
+    {
+      "code": "osm:way/1533007942",
+      "name": "โรงพยาบาลพญาไท 1",
+      "countryCode": "TH",
+      "origin": "https://www.phyathai.com",
+      "lat": 13.7561003,
+      "lng": 100.5396908
+    },
+    {
+      "code": "osm:way/1533226772",
+      "name": "โรงพยาบาลสิงหนคร",
+      "countryCode": "TH",
+      "origin": "https://shnk.moph.go.th",
+      "lat": 7.2340301,
+      "lng": 100.5296067
+    },
+    {
+      "code": "osm:way/1533755227",
+      "name": "โรงพยาบาลสบเมย",
+      "countryCode": "TH",
+      "origin": "https://sobmoei.moph.go.th",
+      "lat": 17.9642716,
+      "lng": 97.9312633
+    },
+    {
+      "code": "osm:way/1534095630",
+      "name": "โรงพยาบาลแก่งกระจาน",
+      "countryCode": "TH",
+      "origin": "https://kkc-hospital.moph.go.th",
+      "lat": 12.9238384,
+      "lng": 99.7212527
+    },
+    {
+      "code": "osm:way/1534773548",
+      "name": "โรงพยาบาลเจ้าคุณไพบูลย์พนมทวน",
+      "countryCode": "TH",
+      "origin": "https://chaokhunhos.com",
+      "lat": 14.1224499,
+      "lng": 99.6902735
+    },
+    {
+      "code": "osm:way/1535024278",
+      "name": "โรงพยาบาลปากท่อ",
+      "countryCode": "TH",
+      "origin": "http://www.pthosp.net",
+      "lat": 13.3728216,
+      "lng": 99.8409602
+    },
+    {
+      "code": "osm:way/1535125113",
+      "name": "โรงพยาบาลร้องกวาง",
+      "countryCode": "TH",
+      "origin": "https://ronghosp.moph.go.th",
+      "lat": 18.3069012,
+      "lng": 100.2907358
+    },
+    {
+      "code": "osm:way/1535744200",
+      "name": "ไรงพยาบาลนครพนม",
+      "countryCode": "TH",
+      "origin": "https://npmh.moph.go.th",
+      "lat": 17.4135268,
+      "lng": 104.7771669
+    },
+    {
+      "code": "osm:way/1536054084",
+      "name": "โรงพยาบาลหาดใหญ่",
+      "countryCode": "TH",
+      "origin": "https://hatyaihospital.moph.go.th",
+      "lat": 7.0168446,
+      "lng": 100.4688624
+    },
+    {
+      "code": "osm:way/1536256623",
+      "name": "โรงพยาบาลสตูล",
+      "countryCode": "TH",
+      "origin": "https://www.satunhospital.com",
+      "lat": 6.6178133,
+      "lng": 100.0712972
+    },
+    {
+      "code": "osm:way/1536301288",
+      "name": "โรงพยาบาลบึงกาฬ",
+      "countryCode": "TH",
+      "origin": "https://bkh.moph.go.th",
+      "lat": 18.3618097,
+      "lng": 103.6506
+    },
+    {
+      "code": "osm:way/1536319803",
+      "name": "โรงพยาบาลปากคาด",
+      "countryCode": "TH",
+      "origin": "https://pkhos.moph.go.th",
+      "lat": 18.2981956,
+      "lng": 103.3128135
+    },
+    {
+      "code": "osm:way/1536346208",
+      "name": "โรงพยาบาลบุ่งคล้า",
+      "countryCode": "TH",
+      "origin": "https://bungklahos.moph.go.th",
+      "lat": 18.2797039,
+      "lng": 103.9866199
+    },
+    {
+      "code": "osm:way/1547793841",
+      "name": "โรงพยาบาลฉลอง",
+      "countryCode": "TH",
+      "origin": "https://chalonghospital.moph.go.th",
+      "lat": 7.8242176,
+      "lng": 98.341154
+    },
+    {
+      "code": "osm:way/1547795060",
+      "name": "โรงพยาบาลถลาง",
+      "countryCode": "TH",
+      "origin": "https://www.thalanghospital.go.th",
+      "lat": 8.0237256,
+      "lng": 98.3389943
+    },
+    {
+      "code": "osm:way/1547798607",
+      "name": "โรงพยาบาลองค์การบริหารส่วนจังหวัดภูเก็ต",
+      "countryCode": "TH",
+      "origin": "https://www.phuketcityhospital.org",
+      "lat": 7.8812272,
+      "lng": 98.4043511
+    },
+    {
+      "code": "osm:way/1550436101",
+      "name": "โรงพยาบาลรัตภูมิ",
+      "countryCode": "TH",
+      "origin": "https://rattaphumhospital.go.th",
+      "lat": 7.1320738,
+      "lng": 100.252906
+    },
+    {
+      "code": "osm:way/1550438371",
+      "name": "โรงพยาบาลบางกล่ำ",
+      "countryCode": "TH",
+      "origin": "https://bangklamhospital.moph.go.th",
+      "lat": 7.0936377,
+      "lng": 100.4096313
+    },
+    {
+      "code": "osm:way/1550520564",
+      "name": "สถาบันกัลยาณ์ราชนครินทร์",
+      "countryCode": "TH",
+      "origin": "https://galya.go.th",
+      "lat": 13.7619698,
+      "lng": 100.3318345
+    },
+    {
+      "code": "osm:way/1550696902",
+      "name": "โรงพยาบาลแม่สอด",
+      "countryCode": "TH",
+      "origin": "https://maesot.moph.go.th",
+      "lat": 16.7103623,
+      "lng": 98.5728468
+    },
+    {
+      "code": "osm:way/1550723544",
+      "name": "โรงพยาบาลวังน้อย",
+      "countryCode": "TH",
+      "origin": "https://wangnoihospital.moph.go.th",
+      "lat": 14.2280646,
+      "lng": 100.698691
+    },
+    {
+      "code": "osm:way/1550873815",
+      "name": "โรงพยาบาลท่าแพ",
+      "countryCode": "TH",
+      "origin": "https://thaphaehospital.moph.go.th",
+      "lat": 6.7874835,
+      "lng": 99.9696437
+    },
+    {
+      "code": "osm:way/1558398767",
+      "name": "โรงพยาบาลบ้านค่าย",
+      "countryCode": "TH",
+      "origin": "https://bankhaihospital.moph.go.th",
+      "lat": 12.7785663,
+      "lng": 101.2924117
+    },
+    {
+      "code": "osm:way/1558743746",
+      "name": "โรงพยาบาลมะเร็งลำปาง",
+      "countryCode": "TH",
+      "origin": "http://www.lpch.go.th",
+      "lat": 18.3452456,
+      "lng": 99.5443262
+    },
+    {
+      "code": "osm:way/1559055986",
+      "name": "โรงพยาบาลสวรรค์ประชารักษ์",
+      "countryCode": "TH",
+      "origin": "http://www.spr.go.th",
+      "lat": 15.7072123,
+      "lng": 100.138367
+    },
+    {
+      "code": "osm:way/1559149213",
+      "name": "Bangkok Hospital Khon Kaen",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 16.4422538,
+      "lng": 102.8199756
+    },
+    {
+      "code": "osm:way/1559280187",
+      "name": "โรงพยาบาลอุดรธานี",
+      "countryCode": "TH",
+      "origin": "https://udh.moph.go.th",
+      "lat": 17.4159589,
+      "lng": 102.7792929
+    },
+    {
+      "code": "osm:way/1561651596",
+      "name": "Bangkok Hospital Ratchasima",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 14.9810299,
+      "lng": 102.0726901
+    },
+    {
+      "code": "osm:way/1561670934",
+      "name": "โรงพยาบาลวัฒนแพทย์ สมุย",
+      "countryCode": "TH",
+      "origin": "https://samuihospital.com",
+      "lat": 9.5490773,
+      "lng": 100.0360078
+    },
+    {
+      "code": "osm:way/1561812606",
+      "name": "โรงพยาบาลกระบี่",
+      "countryCode": "TH",
+      "origin": "https://www.krabihospital.go.th",
+      "lat": 8.0759145,
+      "lng": 98.9140159
+    },
+    {
+      "code": "osm:way/1561975901",
+      "name": "โรงพยาบาลสิรินธร",
+      "countryCode": "TH",
+      "origin": "https://www.sirindhornhosp.go.th",
+      "lat": 13.7174108,
+      "lng": 100.7068414
+    },
+    {
+      "code": "osm:way/1561991929",
+      "name": "รงพยาบาลจอมเทียน",
+      "countryCode": "TH",
+      "origin": "https://www.jomtienhospital.com;https",
+      "lat": 12.9125511,
+      "lng": 100.8977095
+    },
+    {
+      "code": "osm:way/1561994343",
+      "name": "โรงพยาบาลกรุงเทพระยอง",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 12.6742811,
+      "lng": 101.2221504
+    },
+    {
+      "code": "osm:way/1562082897",
+      "name": "โรงพยาบาลกรุงเทพเขาใหญ่",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 14.6580632,
+      "lng": 101.3893044
+    },
+    {
+      "code": "osm:way/1562090246",
+      "name": "Bangkok Hospital Khon Kaen",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 16.4420937,
+      "lng": 102.819957
+    },
+    {
+      "code": "osm:way/1562103727",
+      "name": "Bangkok Hospital Siriroj",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 7.897868,
+      "lng": 98.3673242
+    },
+    {
+      "code": "osm:way/1562104606",
+      "name": "Bangkok Hospital Surat",
+      "countryCode": "TH",
+      "origin": "https://www.bangkokhospital.com",
+      "lat": 9.1228821,
+      "lng": 99.2930236
+    },
+    {
+      "code": "osm:way/1562112661",
+      "name": "โรงพยาบาลสมเด็จพระยุพราชเวียงสระ",
+      "countryCode": "TH",
+      "origin": "https://weingsrahosp.moph.go.th",
+      "lat": 8.6378992,
+      "lng": 99.3710249
+    },
+    {
+      "code": "osm:way/1562666277",
+      "name": "โรงพยาบาลมงกุฏระยอง",
+      "countryCode": "TH",
+      "origin": "http://monmgkutrayong.com",
+      "lat": 12.7330134,
+      "lng": 101.1575634
+    },
+    {
+      "code": "osm:way/1563098111",
+      "name": "โรงพยาบาลอุบลรักษ์ ธนบุรี",
+      "countryCode": "TH",
+      "origin": "https://www.ubonrak.co.th",
+      "lat": 15.230943,
+      "lng": 104.8714007
+    },
+    {
+      "code": "osm:way/1565162004",
+      "name": "โรงพยาบาลสุโขทัย",
+      "countryCode": "TH",
+      "origin": "https://skth.moph.go.th",
+      "lat": 17.0121373,
+      "lng": 99.7960311
+    },
+    {
+      "code": "osm:way/1566815774",
+      "name": "โรงพยาบาลเวชการุณย์รัศมิ์",
+      "countryCode": "TH",
+      "origin": "http://www.wkrhosp.go.th",
+      "lat": 13.8568085,
+      "lng": 100.8590131
+    }
+  ]
+}

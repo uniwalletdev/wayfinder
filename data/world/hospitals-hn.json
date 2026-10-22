@@ -1,0 +1,41 @@
+{
+  "countryCode": "HN",
+  "fetchedAt": "2026-10-21T01:35:07.062Z",
+  "count": 4,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/32482712",
+      "name": "I.H.S.S. Periferico La Granja (Seguro Social)",
+      "countryCode": "HN",
+      "origin": "https://www.ihss.hn",
+      "lat": 14.0839085,
+      "lng": -87.2103812
+    },
+    {
+      "code": "osm:way/235351974",
+      "name": "Hospital DIME",
+      "countryCode": "HN",
+      "origin": "https://hospitaldime.com",
+      "lat": 14.0813229,
+      "lng": -87.2020094
+    },
+    {
+      "code": "osm:way/798534722",
+      "name": "Hospital María, Especialidades Pediátricas",
+      "countryCode": "HN",
+      "origin": "https://hospitalmaria.org",
+      "lat": 14.0782665,
+      "lng": -87.1624824
+    },
+    {
+      "code": "osm:way/1197764266",
+      "name": "Centro Médico Santa Rosa",
+      "countryCode": "HN",
+      "origin": "https://www.centromedicosantarosa.hn",
+      "lat": 14.782503,
+      "lng": -88.778981
+    }
+  ]
+}

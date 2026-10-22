@@ -1,0 +1,2201 @@
+{
+  "countryCode": "ES",
+  "fetchedAt": "2026-10-21T01:19:59.711Z",
+  "count": 274,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/435361082",
+      "name": "Hospital San José",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalsanjose.es",
+      "lat": 28.1433317,
+      "lng": -15.4323758
+    },
+    {
+      "code": "osm:node/444480396",
+      "name": "Hospital de Mérida",
+      "countryCode": "ES",
+      "origin": "https://clinicahospital.com",
+      "lat": 38.9122351,
+      "lng": -6.3635321
+    },
+    {
+      "code": "osm:node/504757041",
+      "name": "Fundació Hospital Asil de Granollers",
+      "countryCode": "ES",
+      "origin": "http://www.fhag.es",
+      "lat": 41.6134098,
+      "lng": 2.2959097
+    },
+    {
+      "code": "osm:node/719553597",
+      "name": "Fundació Sant Hospital",
+      "countryCode": "ES",
+      "origin": "https://fsh.cat",
+      "lat": 42.3548545,
+      "lng": 1.4609585
+    },
+    {
+      "code": "osm:node/1118666925",
+      "name": "Centro Hospitalario de Alicante-Psiquiatrico",
+      "countryCode": "ES",
+      "origin": "https://www.institucionpenitenciaria.es",
+      "lat": 38.3500732,
+      "lng": -0.563469
+    },
+    {
+      "code": "osm:node/1860507014",
+      "name": "Clínica Juaneda Menorca",
+      "countryCode": "ES",
+      "origin": "https://www.juaneda.es",
+      "lat": 40.0048071,
+      "lng": 3.8418321
+    },
+    {
+      "code": "osm:node/2441317544",
+      "name": "Clínica Vida",
+      "countryCode": "ES",
+      "origin": "https://www.clinicasvida.es",
+      "lat": 28.3860642,
+      "lng": -16.53276
+    },
+    {
+      "code": "osm:node/2864026501",
+      "name": "Centro médico Costa Rica",
+      "countryCode": "ES",
+      "origin": "https://centromedicomilenium-costarica.sanitas.es",
+      "lat": 40.4592666,
+      "lng": -3.6689294
+    },
+    {
+      "code": "osm:node/3005355600",
+      "name": "Hospital HM Vallés",
+      "countryCode": "ES",
+      "origin": "https://www.hmhospitales.com",
+      "lat": 40.4829946,
+      "lng": -3.367335
+    },
+    {
+      "code": "osm:node/3499195060",
+      "name": "Hospital d'Olot i comarcal de la Garrotxa",
+      "countryCode": "ES",
+      "origin": "https://hospiolot.com",
+      "lat": 42.1874622,
+      "lng": 2.4675162
+    },
+    {
+      "code": "osm:node/4608724758",
+      "name": "Centre de Salut Mental Infantil i Juvenil Sant Boi",
+      "countryCode": "ES",
+      "origin": "https://www.fundacioorienta.com",
+      "lat": 41.3463853,
+      "lng": 2.0380779
+    },
+    {
+      "code": "osm:node/4682149921",
+      "name": "Hospital HM Nens",
+      "countryCode": "ES",
+      "origin": "https://www.hmhospitales.com",
+      "lat": 41.3970879,
+      "lng": 2.1733003
+    },
+    {
+      "code": "osm:node/5009559952",
+      "name": "Hospital Malva-rosa",
+      "countryCode": "ES",
+      "origin": "http://clinicomalvarrosa.san.gva.es",
+      "lat": 39.4752239,
+      "lng": -0.3253542
+    },
+    {
+      "code": "osm:node/5539721124",
+      "name": "Centro de Salud San Luis",
+      "countryCode": "ES",
+      "origin": "http://torrevieja-salud.com",
+      "lat": 38.0138889,
+      "lng": -0.6918137
+    },
+    {
+      "code": "osm:node/5798867154",
+      "name": "Centro de Salud Raices-Salinas",
+      "countryCode": "ES",
+      "origin": "https://www.astursalud.es",
+      "lat": 43.5736962,
+      "lng": -5.9470423
+    },
+    {
+      "code": "osm:node/5859600196",
+      "name": "Policlinica Lacibis Cartama",
+      "countryCode": "ES",
+      "origin": "https://www.policlinicalacibis.com",
+      "lat": 36.7353335,
+      "lng": -4.6113105
+    },
+    {
+      "code": "osm:node/5971574752",
+      "name": "Centro de Especialidades El Grao",
+      "countryCode": "ES",
+      "origin": "http://clinicomalvarrosa.san.gva.es",
+      "lat": 39.460095,
+      "lng": -0.335667
+    },
+    {
+      "code": "osm:node/6060247400",
+      "name": "Hospital de Día de Salud Mental Cardenal Costa",
+      "countryCode": "ES",
+      "origin": "https://hospitalprovincial.es",
+      "lat": 39.9899471,
+      "lng": -0.0462162
+    },
+    {
+      "code": "osm:node/6357960617",
+      "name": "Hospital Quirónsalud Córdoba",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 37.8723309,
+      "lng": -4.8019351
+    },
+    {
+      "code": "osm:node/6359137876",
+      "name": "Centro Salud Corralejo",
+      "countryCode": "ES",
+      "origin": "https://centrosdesalud.com.es",
+      "lat": 28.7390985,
+      "lng": -13.8714088
+    },
+    {
+      "code": "osm:node/7238494137",
+      "name": "Hospital Recoletas Salud Cuenca",
+      "countryCode": "ES",
+      "origin": "https://www.gruporecoletas.com",
+      "lat": 40.0669973,
+      "lng": -2.1453161
+    },
+    {
+      "code": "osm:node/8214125038",
+      "name": "Instituto Valenciano de Oncologia Cuenca",
+      "countryCode": "ES",
+      "origin": "https://www.ivo.es",
+      "lat": 40.0812734,
+      "lng": -2.1500619
+    },
+    {
+      "code": "osm:node/8339920086",
+      "name": "Clínica del Pie Argüelles",
+      "countryCode": "ES",
+      "origin": "https://www.clinicadelpiearguelles.es",
+      "lat": 40.4320277,
+      "lng": -3.7180067
+    },
+    {
+      "code": "osm:node/8488677115",
+      "name": "Centro médico Illa de Salut",
+      "countryCode": "ES",
+      "origin": "https://www.illadesalut.com",
+      "lat": 41.8105471,
+      "lng": 2.742676
+    },
+    {
+      "code": "osm:node/8661142191",
+      "name": "Policlínica Águilas",
+      "countryCode": "ES",
+      "origin": "https://www.policlinicaaguilas.com",
+      "lat": 37.4037285,
+      "lng": -1.5896641
+    },
+    {
+      "code": "osm:node/8733322966",
+      "name": "Doctora Beatriz Valero",
+      "countryCode": "ES",
+      "origin": "https://www.drabeatrizvalero.com",
+      "lat": 40.0687354,
+      "lng": -2.1352178
+    },
+    {
+      "code": "osm:node/9232516016",
+      "name": "Cruz Roja Durangaldea",
+      "countryCode": "ES",
+      "origin": "https://www.cruzrojabizkaia.org",
+      "lat": 43.223767,
+      "lng": -2.7320954
+    },
+    {
+      "code": "osm:node/9582558076",
+      "name": "RB Dental",
+      "countryCode": "ES",
+      "origin": "https://www.rbdental.es",
+      "lat": 39.8823109,
+      "lng": -4.0301911
+    },
+    {
+      "code": "osm:node/9748773606",
+      "name": "Hospital Doctor López Cano",
+      "countryCode": "ES",
+      "origin": "https://www.gmlopezcano.com",
+      "lat": 36.5019728,
+      "lng": -6.2734749
+    },
+    {
+      "code": "osm:node/10982109897",
+      "name": "Dua Clinic",
+      "countryCode": "ES",
+      "origin": "https://www.duaclinic.es",
+      "lat": 38.3701775,
+      "lng": -0.4144339
+    },
+    {
+      "code": "osm:node/11519290581",
+      "name": "Cruz Roja",
+      "countryCode": "ES",
+      "origin": "https://www.cruzroja.es",
+      "lat": 28.1214311,
+      "lng": -16.7360181
+    },
+    {
+      "code": "osm:node/11805207535",
+      "name": "Hospital IMED Colón",
+      "countryCode": "ES",
+      "origin": "https://www.imedhospitales.com",
+      "lat": 39.4687393,
+      "lng": -0.3706641
+    },
+    {
+      "code": "osm:node/12238933364",
+      "name": "Unitat d'Hospitalització de la FSSJ",
+      "countryCode": "ES",
+      "origin": "https://fssj.es",
+      "lat": 41.5826044,
+      "lng": 1.6187203
+    },
+    {
+      "code": "osm:node/12601531772",
+      "name": "Villafranca dental",
+      "countryCode": "ES",
+      "origin": "https://www.villafrancadental.es",
+      "lat": 40.4656639,
+      "lng": -3.9494963
+    },
+    {
+      "code": "osm:node/12873859139",
+      "name": "CLINICFISIO Fisioteràpia i Osteopatia",
+      "countryCode": "ES",
+      "origin": "https://fisioterapia-sabadell.com",
+      "lat": 41.5502449,
+      "lng": 2.0994157
+    },
+    {
+      "code": "osm:node/12959200902",
+      "name": "Quirón prevención",
+      "countryCode": "ES",
+      "origin": "http://quironprevencio.com",
+      "lat": 28.964709,
+      "lng": -13.5583413
+    },
+    {
+      "code": "osm:node/13061879301",
+      "name": "Hospital Sanitas Valdebebas",
+      "countryCode": "ES",
+      "origin": "https://sanitas.es",
+      "lat": 40.4928222,
+      "lng": -3.606016
+    },
+    {
+      "code": "osm:node/13203804560",
+      "name": "SDS Dental Clinic",
+      "countryCode": "ES",
+      "origin": "https://sdsdental.es",
+      "lat": 41.3472929,
+      "lng": 1.7008644
+    },
+    {
+      "code": "osm:node/13409262127",
+      "name": "Clinica Mare - Medicina y Cirugía Estética",
+      "countryCode": "ES",
+      "origin": "https://www.maremedicinaestetica.es",
+      "lat": 40.4871075,
+      "lng": -3.7324268
+    },
+    {
+      "code": "osm:node/13620098635",
+      "name": "Clasalut Servicios",
+      "countryCode": "ES",
+      "origin": "https://clasalutservicios.com",
+      "lat": 41.5519715,
+      "lng": 2.2485861
+    },
+    {
+      "code": "osm:node/14254256096",
+      "name": "Clinica Dental Dra Jaume",
+      "countryCode": "ES",
+      "origin": "https://www.clinicadentaldrajaume.com",
+      "lat": 41.4751272,
+      "lng": 2.0799549
+    },
+    {
+      "code": "osm:way/4594686",
+      "name": "Hospital Clínico Universitario de Valladolid",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 41.655962,
+      "lng": -4.7187083
+    },
+    {
+      "code": "osm:way/5055199",
+      "name": "Hospital Begoña",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalbegona.com",
+      "lat": 43.5349814,
+      "lng": -5.6477612
+    },
+    {
+      "code": "osm:way/15584594",
+      "name": "Hospital Carlos III",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.4750989,
+      "lng": -3.6963786
+    },
+    {
+      "code": "osm:way/17960370",
+      "name": "Hospital de Xove / Hospital de Jove",
+      "countryCode": "ES",
+      "origin": "https://www.hospitaldejove.com",
+      "lat": 43.5498951,
+      "lng": -5.7004798
+    },
+    {
+      "code": "osm:way/21620934",
+      "name": "Clínica HLA Vistahermosa",
+      "countryCode": "ES",
+      "origin": "https://www.grupohla.com",
+      "lat": 38.3630706,
+      "lng": -0.4638787
+    },
+    {
+      "code": "osm:way/22749866",
+      "name": "Vithas hospital",
+      "countryCode": "ES",
+      "origin": "https://vithas.es",
+      "lat": 38.3526067,
+      "lng": -0.4762089
+    },
+    {
+      "code": "osm:way/22931333",
+      "name": "Hospital Universitario Marqués de Valdecilla",
+      "countryCode": "ES",
+      "origin": "http://www.humv.es",
+      "lat": 43.4559393,
+      "lng": -3.829332
+    },
+    {
+      "code": "osm:way/24582429",
+      "name": "Hospital Clínico Universitario Lozano Blesa",
+      "countryCode": "ES",
+      "origin": "http://www.hcuz.es",
+      "lat": 41.6432141,
+      "lng": -0.9034061
+    },
+    {
+      "code": "osm:way/24582484",
+      "name": "Hospital Universitario Miguel Servet",
+      "countryCode": "ES",
+      "origin": "https://sectorzaragozados.salud.aragon.es",
+      "lat": 41.6345531,
+      "lng": -0.8996445
+    },
+    {
+      "code": "osm:way/24751176",
+      "name": "Hospital La Magdalena",
+      "countryCode": "ES",
+      "origin": "https://lamagdalena.san.gva.es",
+      "lat": 40.0043187,
+      "lng": -0.0728363
+    },
+    {
+      "code": "osm:way/26734628",
+      "name": "Donostiako Unibertsitate Ospitalea",
+      "countryCode": "ES",
+      "origin": "https://www.osakidetza.euskadi.eus",
+      "lat": 43.2925584,
+      "lng": -1.9687071
+    },
+    {
+      "code": "osm:way/27125328",
+      "name": "Hospital San Rafael",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalsanrafael.es",
+      "lat": 40.45246,
+      "lng": -3.6818172
+    },
+    {
+      "code": "osm:way/27350566",
+      "name": "Hospital Vithas Virgen del Mar",
+      "countryCode": "ES",
+      "origin": "https://www.vithas.es",
+      "lat": 36.8561694,
+      "lng": -2.4176347
+    },
+    {
+      "code": "osm:way/27894003",
+      "name": "Hospital HLA La Vega",
+      "countryCode": "ES",
+      "origin": "https://www.grupohla.com",
+      "lat": 37.9928683,
+      "lng": -1.1334248
+    },
+    {
+      "code": "osm:way/28445357",
+      "name": "Hospital Quirón Murcia",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 37.9779912,
+      "lng": -1.1194244
+    },
+    {
+      "code": "osm:way/28514786",
+      "name": "Clinica HLA Belén",
+      "countryCode": "ES",
+      "origin": "https://www.grupohla.com",
+      "lat": 37.9987449,
+      "lng": -1.1304758
+    },
+    {
+      "code": "osm:way/28718224",
+      "name": "Centro de Salud San Juan de la Cruz",
+      "countryCode": "ES",
+      "origin": "http://madrid.org",
+      "lat": 40.4305663,
+      "lng": -3.8144506
+    },
+    {
+      "code": "osm:way/29192535",
+      "name": "Hospital Vithas Castellón",
+      "countryCode": "ES",
+      "origin": "https://vithas.es",
+      "lat": 39.9972777,
+      "lng": -0.0364355
+    },
+    {
+      "code": "osm:way/29730701",
+      "name": "Clínica Ruber Juan Bravo",
+      "countryCode": "ES",
+      "origin": "https://www.ruber.es",
+      "lat": 40.4330232,
+      "lng": -3.6760599
+    },
+    {
+      "code": "osm:way/32896441",
+      "name": "Hospital Profesor Nóvoa Santos",
+      "countryCode": "ES",
+      "origin": "https://ferrol.sergas.gal",
+      "lat": 43.5155252,
+      "lng": -8.2190937
+    },
+    {
+      "code": "osm:way/34149199",
+      "name": "Hospital de Mataró i Maresme",
+      "countryCode": "ES",
+      "origin": "https://www.csdm.cat",
+      "lat": 41.5556209,
+      "lng": 2.4301522
+    },
+    {
+      "code": "osm:way/34303722",
+      "name": "Hospital de l'Esperit Sant",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalesperitsant.com",
+      "lat": 41.4378737,
+      "lng": 2.2128933
+    },
+    {
+      "code": "osm:way/34304774",
+      "name": "Hospital Xeral Ribera Juan Cardona",
+      "countryCode": "ES",
+      "origin": "https://www.riberasalud.com",
+      "lat": 43.4803674,
+      "lng": -8.2027204
+    },
+    {
+      "code": "osm:way/35778595",
+      "name": "Hospital Clínico Universitario Virgen de la Victoria",
+      "countryCode": "ES",
+      "origin": "http://www.huv.es",
+      "lat": 36.7180713,
+      "lng": -4.4779726
+    },
+    {
+      "code": "osm:way/37038432",
+      "name": "Parc Sanitari Pere Virgili",
+      "countryCode": "ES",
+      "origin": "https://perevirgili.gencat.cat",
+      "lat": 41.4153287,
+      "lng": 2.1408595
+    },
+    {
+      "code": "osm:way/39991557",
+      "name": "Hospital Universitario Virgen del Rocío",
+      "countryCode": "ES",
+      "origin": "https://www.huvr.es",
+      "lat": 37.3630459,
+      "lng": -5.9792168
+    },
+    {
+      "code": "osm:way/42134250",
+      "name": "Hospital Provincial de Castelló",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalprovincial.es",
+      "lat": 39.9840763,
+      "lng": -0.0463793
+    },
+    {
+      "code": "osm:way/48007713",
+      "name": "Hospital HM Regla",
+      "countryCode": "ES",
+      "origin": "https://www.hmregla.com",
+      "lat": 42.6005795,
+      "lng": -5.5670738
+    },
+    {
+      "code": "osm:way/48625801",
+      "name": "Clínica Quirúrgica Cacereña San Francisco",
+      "countryCode": "ES",
+      "origin": "https://www.cqcsanfrancisco.es",
+      "lat": 39.4688406,
+      "lng": -6.3682558
+    },
+    {
+      "code": "osm:way/50403588",
+      "name": "Centro de Alta Resolución (CAR) de Trujillo",
+      "countryCode": "ES",
+      "origin": "https://www.areasaludcaceres.es",
+      "lat": 39.4543066,
+      "lng": -5.8831114
+    },
+    {
+      "code": "osm:way/54664790",
+      "name": "Clínica Ponferrada",
+      "countryCode": "ES",
+      "origin": "https://clinicaponferrada.es",
+      "lat": 42.5533009,
+      "lng": -6.6117028
+    },
+    {
+      "code": "osm:way/54889211",
+      "name": "Hospital de Son Espases",
+      "countryCode": "ES",
+      "origin": "http://www.hospitalsonespases.es",
+      "lat": 39.6071613,
+      "lng": 2.6446596
+    },
+    {
+      "code": "osm:way/60678204",
+      "name": "Hospital Recoletas Salud Campo Grande",
+      "countryCode": "ES",
+      "origin": "https://www.gruporecoletas.com",
+      "lat": 41.6437191,
+      "lng": -4.7281923
+    },
+    {
+      "code": "osm:way/61328188",
+      "name": "Hospital Vithas Parque San Antonio",
+      "countryCode": "ES",
+      "origin": "https://www.vithas.es",
+      "lat": 36.7227555,
+      "lng": -4.3972673
+    },
+    {
+      "code": "osm:way/63924501",
+      "name": "Hospital Dr. Josep Trueta",
+      "countryCode": "ES",
+      "origin": "https://icsgirona.cat",
+      "lat": 41.997625,
+      "lng": 2.8201258
+    },
+    {
+      "code": "osm:way/65619394",
+      "name": "Hospital Mompía",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalmompia.com",
+      "lat": 43.4344159,
+      "lng": -3.9166073
+    },
+    {
+      "code": "osm:way/70995225",
+      "name": "Hospital Recoletas Salud Felipe II",
+      "countryCode": "ES",
+      "origin": "https://www.gruporecoletas.com",
+      "lat": 41.6553159,
+      "lng": -4.7258374
+    },
+    {
+      "code": "osm:way/75601251",
+      "name": "Hospital Sagrado Corazón",
+      "countryCode": "ES",
+      "origin": "https://sscvalladolid.com",
+      "lat": 41.6498579,
+      "lng": -4.7203527
+    },
+    {
+      "code": "osm:way/84012163",
+      "name": "Hospital Recoletas Palencia",
+      "countryCode": "ES",
+      "origin": "http://www.hospitalrecoletaspalencia.es",
+      "lat": 42.0157528,
+      "lng": -4.5400712
+    },
+    {
+      "code": "osm:way/89825168",
+      "name": "Hospital Universitari de Tarragona Joan XXIII",
+      "countryCode": "ES",
+      "origin": "https://icscampdetarragona.cat",
+      "lat": 41.1246068,
+      "lng": 1.2383768
+    },
+    {
+      "code": "osm:way/92479539",
+      "name": "Hospital de Majadahonda Fremap",
+      "countryCode": "ES",
+      "origin": "https://www.fremap.es",
+      "lat": 40.4506228,
+      "lng": -3.8508908
+    },
+    {
+      "code": "osm:way/93987985",
+      "name": "Hospital do Meixoeiro",
+      "countryCode": "ES",
+      "origin": "https://xxivigo.sergas.gal",
+      "lat": 42.2151217,
+      "lng": -8.6838666
+    },
+    {
+      "code": "osm:way/96949581",
+      "name": "Hospital Universitario Reina Sofía",
+      "countryCode": "ES",
+      "origin": "http://www.sspa.juntadeandalucia.es",
+      "lat": 37.8685051,
+      "lng": -4.7971923
+    },
+    {
+      "code": "osm:way/97043763",
+      "name": "Complexo Hospitalario Universitario de Santiago",
+      "countryCode": "ES",
+      "origin": "https://xxisantiago.sergas.es",
+      "lat": 42.8698385,
+      "lng": -8.5658728
+    },
+    {
+      "code": "osm:way/99550201",
+      "name": "Hospital HM La Esperanza",
+      "countryCode": "ES",
+      "origin": "https://www.hmlaesperanza.com",
+      "lat": 42.878573,
+      "lng": -8.551698
+    },
+    {
+      "code": "osm:way/99560904",
+      "name": "Hospital Parque Vía de la Plata",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalesparque.es",
+      "lat": 38.4268284,
+      "lng": -6.4082371
+    },
+    {
+      "code": "osm:way/105443286",
+      "name": "Hospital Quirón Salud Valencia",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 39.4780196,
+      "lng": -0.3641796
+    },
+    {
+      "code": "osm:way/105547725",
+      "name": "Hospital de la Venerable Orden Tercera de San Francisco",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalvot.org",
+      "lat": 40.4087477,
+      "lng": -3.7140882
+    },
+    {
+      "code": "osm:way/109585283",
+      "name": "Ciudad Sanitaria La Paz",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.4813943,
+      "lng": -3.6873012
+    },
+    {
+      "code": "osm:way/112575130",
+      "name": "Hospital HLA San Carlos",
+      "countryCode": "ES",
+      "origin": "https://www.grupohla.com",
+      "lat": 38.8379709,
+      "lng": 0.0930578
+    },
+    {
+      "code": "osm:way/117671908",
+      "name": "Hospital San Carlos",
+      "countryCode": "ES",
+      "origin": "https://www.sspa.juntadeandalucia.es",
+      "lat": 36.4799527,
+      "lng": -6.1950774
+    },
+    {
+      "code": "osm:way/119558935",
+      "name": "Hospital de Manises",
+      "countryCode": "ES",
+      "origin": "https://manises.san.gva.es",
+      "lat": 39.4856514,
+      "lng": -0.4526179
+    },
+    {
+      "code": "osm:way/120731864",
+      "name": "Hospital HLA Inmaculada",
+      "countryCode": "ES",
+      "origin": "https://www.grupohla.com",
+      "lat": 37.1641966,
+      "lng": -3.608053
+    },
+    {
+      "code": "osm:way/121257213",
+      "name": "San Juan de Dios",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalsanjuandedios.es",
+      "lat": 42.6074987,
+      "lng": -5.59498
+    },
+    {
+      "code": "osm:way/121820687",
+      "name": "Hospital Universitario Clínico San Cecilio",
+      "countryCode": "ES",
+      "origin": "https://www.husc.es",
+      "lat": 37.1464506,
+      "lng": -3.6053995
+    },
+    {
+      "code": "osm:way/122261567",
+      "name": "Hospital Virgen de la Concha",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 41.5142056,
+      "lng": -5.7322228
+    },
+    {
+      "code": "osm:way/122421548",
+      "name": "Hospital Recoletas Zamora",
+      "countryCode": "ES",
+      "origin": "https://www.gruporecoletas.com",
+      "lat": 41.5171029,
+      "lng": -5.7469814
+    },
+    {
+      "code": "osm:way/128554630",
+      "name": "Centro de Especialidades Avenida de Portugal",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.4109266,
+      "lng": -3.7379254
+    },
+    {
+      "code": "osm:way/129927980",
+      "name": "Hospital Quirónsalud Tenerife",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 28.4711788,
+      "lng": -16.2669738
+    },
+    {
+      "code": "osm:way/130076117",
+      "name": "HM San Francisco",
+      "countryCode": "ES",
+      "origin": "http://www.clinicasanfrancisco.es",
+      "lat": 42.5900154,
+      "lng": -5.5723352
+    },
+    {
+      "code": "osm:way/131632570",
+      "name": "Galdakao-Usansoloko Ospitalea",
+      "countryCode": "ES",
+      "origin": "https://www.osakidetza.euskadi.eus",
+      "lat": 43.2235638,
+      "lng": -2.817914
+    },
+    {
+      "code": "osm:way/132578921",
+      "name": "Hospital El Pilar",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 41.4001334,
+      "lng": 2.1482111
+    },
+    {
+      "code": "osm:way/136325797",
+      "name": "Hospital Román Alberca",
+      "countryCode": "ES",
+      "origin": "https://www.murciasalud.es",
+      "lat": 37.9426771,
+      "lng": -1.1672759
+    },
+    {
+      "code": "osm:way/137082658",
+      "name": "Gurutzetako Unibertsitate Ospitalea",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalcruces.com",
+      "lat": 43.2824629,
+      "lng": -2.9844289
+    },
+    {
+      "code": "osm:way/141428107",
+      "name": "Hospital Quirónsalud",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 38.9853784,
+      "lng": -1.8441825
+    },
+    {
+      "code": "osm:way/142706661",
+      "name": "Hospital Vithas Valencia 9 de Octubre",
+      "countryCode": "ES",
+      "origin": "https://vithas.es",
+      "lat": 39.4778874,
+      "lng": -0.4014071
+    },
+    {
+      "code": "osm:way/144941147",
+      "name": "Hospital Tierra de Barros",
+      "countryCode": "ES",
+      "origin": "https://www.areadesaludmerida.es",
+      "lat": 38.6557858,
+      "lng": -6.3770168
+    },
+    {
+      "code": "osm:way/148603675",
+      "name": "Hospital Viamed Bahía de Cádiz",
+      "countryCode": "ES",
+      "origin": "https://www.viamedsalud.com",
+      "lat": 36.4208846,
+      "lng": -6.1500839
+    },
+    {
+      "code": "osm:way/149167734",
+      "name": "Hospital Vithas Nisa Valencia al Mar",
+      "countryCode": "ES",
+      "origin": "https://www.hospitales.nisa.es",
+      "lat": 39.4771428,
+      "lng": -0.330817
+    },
+    {
+      "code": "osm:way/149325394",
+      "name": "Hopital Público de Monforte de Lemos",
+      "countryCode": "ES",
+      "origin": "https://xxilugo.sergas.es",
+      "lat": 42.5273126,
+      "lng": -7.5193492
+    },
+    {
+      "code": "osm:way/152847878",
+      "name": "Hospital Virxe da Xunqueira",
+      "countryCode": "ES",
+      "origin": "https://xxicoruna.sergas.gal",
+      "lat": 42.9536948,
+      "lng": -9.1914223
+    },
+    {
+      "code": "osm:way/154849794",
+      "name": "Hospital Perpetuo Socorro",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalperpetuosocorro.es",
+      "lat": 38.9895325,
+      "lng": -1.8722165
+    },
+    {
+      "code": "osm:way/163474783",
+      "name": "Nafarroako Ospitale Unibertsitarioa",
+      "countryCode": "ES",
+      "origin": "https://chn.navarra.es",
+      "lat": 42.8050858,
+      "lng": -1.668556
+    },
+    {
+      "code": "osm:way/163760432",
+      "name": "US Naval Hospital",
+      "countryCode": "ES",
+      "origin": "http://www.med.navy.mil",
+      "lat": 36.6343787,
+      "lng": -6.3507401
+    },
+    {
+      "code": "osm:way/163961107",
+      "name": "Salus XXI Medical Group",
+      "countryCode": "ES",
+      "origin": "http://www.salusxxi.com",
+      "lat": 41.4811493,
+      "lng": 2.0608001
+    },
+    {
+      "code": "osm:way/164647097",
+      "name": "Centro Sociosanitario Hermanas Hospitalarias",
+      "countryCode": "ES",
+      "origin": "https://hospitalariaspalencia.es",
+      "lat": 41.9934563,
+      "lng": -4.5065558
+    },
+    {
+      "code": "osm:way/165395680",
+      "name": "Hospital Virgen del Alcazar",
+      "countryCode": "ES",
+      "origin": "https://www.virgendelalcazar.com",
+      "lat": 37.6696224,
+      "lng": -1.6959264
+    },
+    {
+      "code": "osm:way/169694156",
+      "name": "Sant Joan de Déu",
+      "countryCode": "ES",
+      "origin": "https://fhsjdm.cat",
+      "lat": 41.4717117,
+      "lng": 1.9203655
+    },
+    {
+      "code": "osm:way/173199108",
+      "name": "Hospital Universitario de Guadalajara",
+      "countryCode": "ES",
+      "origin": "https://hugu.sescam.jccm.es",
+      "lat": 40.6199967,
+      "lng": -3.1526143
+    },
+    {
+      "code": "osm:way/176326377",
+      "name": "Hospital de La Serranía",
+      "countryCode": "ES",
+      "origin": "https://www.sspa.juntadeandalucia.es",
+      "lat": 36.7222199,
+      "lng": -5.1468324
+    },
+    {
+      "code": "osm:way/176639640",
+      "name": "Hospital de Dénia",
+      "countryCode": "ES",
+      "origin": "https://denia.san.gva.es",
+      "lat": 38.8338329,
+      "lng": 0.0603315
+    },
+    {
+      "code": "osm:way/188367628",
+      "name": "Hospital Quirónsalud A Coruña",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 43.3287629,
+      "lng": -8.4001703
+    },
+    {
+      "code": "osm:way/190401225",
+      "name": "Hospital de Cerdanya",
+      "countryCode": "ES",
+      "origin": "https://hcerdanya.eu",
+      "lat": 42.4440626,
+      "lng": 1.9300879
+    },
+    {
+      "code": "osm:way/190760445",
+      "name": "Sanatorio Psiquiátrico Esquerdo",
+      "countryCode": "ES",
+      "origin": "http://www.sanatorioesquerdo.com",
+      "lat": 40.3818534,
+      "lng": -3.7593246
+    },
+    {
+      "code": "osm:way/196669373",
+      "name": "Hospital Metropolitano",
+      "countryCode": "ES",
+      "origin": "https://hospitalmetropolitano.es",
+      "lat": 37.7838819,
+      "lng": -3.827114
+    },
+    {
+      "code": "osm:way/197355483",
+      "name": "Hospital Universitario HM Madrid",
+      "countryCode": "ES",
+      "origin": "https://www.hmmadrid.com",
+      "lat": 40.4312748,
+      "lng": -3.7066322
+    },
+    {
+      "code": "osm:way/198497395",
+      "name": "Hospital de Guadarrama.",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.6694125,
+      "lng": -4.0860551
+    },
+    {
+      "code": "osm:way/199678883",
+      "name": "Hospital de Palamós",
+      "countryCode": "ES",
+      "origin": "https://www.ssibe.cat",
+      "lat": 41.8528043,
+      "lng": 3.1316865
+    },
+    {
+      "code": "osm:way/200221479",
+      "name": "Hospital la Pedrera",
+      "countryCode": "ES",
+      "origin": "https://denia.san.gva.es",
+      "lat": 38.8281212,
+      "lng": 0.0962473
+    },
+    {
+      "code": "osm:way/201428449",
+      "name": "Ricardo Bermingham ospitalea",
+      "countryCode": "ES",
+      "origin": "https://www.matiafundazioa.eus",
+      "lat": 43.3037136,
+      "lng": -2.0016867
+    },
+    {
+      "code": "osm:way/202952802",
+      "name": "Hospital HM Rosaleda",
+      "countryCode": "ES",
+      "origin": "https://www.hmrosaleda.com",
+      "lat": 42.871758,
+      "lng": -8.5463841
+    },
+    {
+      "code": "osm:way/203709293",
+      "name": "Hospital Universitario HM Sanchinarro",
+      "countryCode": "ES",
+      "origin": "https://www.hmhospitales.com",
+      "lat": 40.4905558,
+      "lng": -3.6671613
+    },
+    {
+      "code": "osm:way/207352232",
+      "name": "Hospital General de Tomelloso",
+      "countryCode": "ES",
+      "origin": "http://www.hgcr.es",
+      "lat": 39.1742271,
+      "lng": -3.0059706
+    },
+    {
+      "code": "osm:way/208917518",
+      "name": "Hospital Santa Isabel",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 42.5750465,
+      "lng": -5.5454991
+    },
+    {
+      "code": "osm:way/220053912",
+      "name": "Complex Sanitari de Mislata - Quart",
+      "countryCode": "ES",
+      "origin": "https://csmq.san.gva.es",
+      "lat": 39.4807973,
+      "lng": -0.4256849
+    },
+    {
+      "code": "osm:way/224738952",
+      "name": "Hospital Comarcal de Antequera",
+      "countryCode": "ES",
+      "origin": "https://juntadeandalucia.es",
+      "lat": 37.0306957,
+      "lng": -4.5282263
+    },
+    {
+      "code": "osm:way/232334384",
+      "name": "Hospital Vithas Nosa Señora de Fátima",
+      "countryCode": "ES",
+      "origin": "https://vithas.es",
+      "lat": 42.234099,
+      "lng": -8.7086366
+    },
+    {
+      "code": "osm:way/236267551",
+      "name": "Gerência de servicios sanitarios de Lanzarote",
+      "countryCode": "ES",
+      "origin": "http://www2.gobiernodecanarias.org",
+      "lat": 28.8661524,
+      "lng": -13.8317168
+    },
+    {
+      "code": "osm:way/236756335",
+      "name": "Hospital HM Modelo",
+      "countryCode": "ES",
+      "origin": "https://www.hmmodelo.com",
+      "lat": 43.3666605,
+      "lng": -8.4185967
+    },
+    {
+      "code": "osm:way/237008248",
+      "name": "Hospital Victoria Eugenia",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalveugenia.com",
+      "lat": 37.4004564,
+      "lng": -5.9827233
+    },
+    {
+      "code": "osm:way/237094321",
+      "name": "Hospital Universitario de Gran Canaria Doctor Negrín",
+      "countryCode": "ES",
+      "origin": "https://www3.gobiernodecanarias.org",
+      "lat": 28.1206351,
+      "lng": -15.4448672
+    },
+    {
+      "code": "osm:way/244926804",
+      "name": "Hospital Universitario San Rafael",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalsanrafael.es",
+      "lat": 40.4511129,
+      "lng": -3.6801174
+    },
+    {
+      "code": "osm:way/246148488",
+      "name": "Hospital Viamed Montecanal",
+      "countryCode": "ES",
+      "origin": "https://www.viamedsalud.com",
+      "lat": 41.6388479,
+      "lng": -0.9492714
+    },
+    {
+      "code": "osm:way/248055112",
+      "name": "Hospital Universitari de Bellvitge",
+      "countryCode": "ES",
+      "origin": "https://bellvitgehospital.cat",
+      "lat": 41.3452979,
+      "lng": 2.1046476
+    },
+    {
+      "code": "osm:way/251369866",
+      "name": "Hospital de la Gomera",
+      "countryCode": "ES",
+      "origin": "https://www3.gobiernodecanarias.org",
+      "lat": 28.1044288,
+      "lng": -17.1302206
+    },
+    {
+      "code": "osm:way/255860927",
+      "name": "Hospital La Luz",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 40.4441425,
+      "lng": -3.7137323
+    },
+    {
+      "code": "osm:way/258161222",
+      "name": "8- (CEMCAT) Centre d'Esclerosi Múltiple de Catalunya",
+      "countryCode": "ES",
+      "origin": "https://www.cem-cat.org",
+      "lat": 41.4292442,
+      "lng": 2.1388628
+    },
+    {
+      "code": "osm:way/260279942",
+      "name": "Hospital de Baza",
+      "countryCode": "ES",
+      "origin": "https://www.agsnordestegranada.es",
+      "lat": 37.500309,
+      "lng": -2.7522119
+    },
+    {
+      "code": "osm:way/262486036",
+      "name": "Hospital Infantil Universitario del Niño Jesús",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.4142916,
+      "lng": -3.676131
+    },
+    {
+      "code": "osm:way/273777907",
+      "name": "Fundació Puigvert - Iuna",
+      "countryCode": "ES",
+      "origin": "https://www.fundacio-puigvert.es",
+      "lat": 41.4129259,
+      "lng": 2.1727761
+    },
+    {
+      "code": "osm:way/277235315",
+      "name": "Clínica Santa Elena",
+      "countryCode": "ES",
+      "origin": "https://santaelenahospital.com",
+      "lat": 36.6456918,
+      "lng": -4.4879984
+    },
+    {
+      "code": "osm:way/279311772",
+      "name": "Centro Oncolóxico de Galicia",
+      "countryCode": "ES",
+      "origin": "https://www.cog.es",
+      "lat": 43.3368598,
+      "lng": -8.3905017
+    },
+    {
+      "code": "osm:way/284690942",
+      "name": "Hospital Cruz Roja de Córdoba",
+      "countryCode": "ES",
+      "origin": "https://hospitalcruzrojacordoba.es",
+      "lat": 37.880178,
+      "lng": -4.7845096
+    },
+    {
+      "code": "osm:way/285759145",
+      "name": "Clínica Sagrada Família",
+      "countryCode": "ES",
+      "origin": "http://csf.com.es",
+      "lat": 41.4004669,
+      "lng": 2.1341745
+    },
+    {
+      "code": "osm:way/286654287",
+      "name": "Hospital Viamed los Manzanos",
+      "countryCode": "ES",
+      "origin": "https://www.viamedlosmanzanos.com",
+      "lat": 42.4375999,
+      "lng": -2.4481839
+    },
+    {
+      "code": "osm:way/288078277",
+      "name": "Hospital Central de la Cruz Roja San José y Santa Adela",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.4479879,
+      "lng": -3.7076708
+    },
+    {
+      "code": "osm:way/291360099",
+      "name": "Hospital Doctor Gálvez",
+      "countryCode": "ES",
+      "origin": "http://www.hospitalgalvez.com",
+      "lat": 36.7209251,
+      "lng": -4.4194585
+    },
+    {
+      "code": "osm:way/295538705",
+      "name": "Hospital Universitario La Moraleja Sanitas",
+      "countryCode": "ES",
+      "origin": "https://www.hospitallamoraleja.es",
+      "lat": 40.4923127,
+      "lng": -3.6630331
+    },
+    {
+      "code": "osm:way/295643113",
+      "name": "Hospital de Cantoblanco",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.5395105,
+      "lng": -3.6931283
+    },
+    {
+      "code": "osm:way/297304432",
+      "name": "Hospital General de Segovia",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 40.9427337,
+      "lng": -4.1289101
+    },
+    {
+      "code": "osm:way/297600844",
+      "name": "Complexo Hospitalario Universitario da Coruña",
+      "countryCode": "ES",
+      "origin": "https://xxicoruna.sergas.gal",
+      "lat": 43.3442641,
+      "lng": -8.3893155
+    },
+    {
+      "code": "osm:way/300242338",
+      "name": "IMED San Jorge",
+      "countryCode": "ES",
+      "origin": "https://www.imedhospitales.com",
+      "lat": 38.6928151,
+      "lng": -0.4859392
+    },
+    {
+      "code": "osm:way/300521396",
+      "name": "Hospital Virgen de la Bella",
+      "countryCode": "ES",
+      "origin": "https://www.josemanuelpascualpascual.es",
+      "lat": 37.2604561,
+      "lng": -7.1942078
+    },
+    {
+      "code": "osm:way/301754224",
+      "name": "Hospital de Santa María del Puerto",
+      "countryCode": "ES",
+      "origin": "https://www.josemanuelpascualpascual.es",
+      "lat": 36.5982369,
+      "lng": -6.2379934
+    },
+    {
+      "code": "osm:way/306600395",
+      "name": "Hospital San Juan de Dios del Aljarafe",
+      "countryCode": "ES",
+      "origin": "https://www.hsjda.es",
+      "lat": 37.373265,
+      "lng": -6.0835225
+    },
+    {
+      "code": "osm:way/307772121",
+      "name": "Quirón San José",
+      "countryCode": "ES",
+      "origin": "http://www.quiron.es",
+      "lat": 40.4402708,
+      "lng": -3.6744495
+    },
+    {
+      "code": "osm:way/307774527",
+      "name": "Hospital Ruber Juan Bravo",
+      "countryCode": "ES",
+      "origin": "https://www.ruber.es",
+      "lat": 40.432746,
+      "lng": -3.6776665
+    },
+    {
+      "code": "osm:way/308809894",
+      "name": "Fundación Hospitalarias Cantabria",
+      "countryCode": "ES",
+      "origin": "https://fundacionhospitalarias.org",
+      "lat": 43.4774423,
+      "lng": -3.802314
+    },
+    {
+      "code": "osm:way/309394942",
+      "name": "Hospital Público do Salnés",
+      "countryCode": "ES",
+      "origin": "https://pontevedrasalnes.sergas.gal",
+      "lat": 42.5739755,
+      "lng": -8.7269657
+    },
+    {
+      "code": "osm:way/319429416",
+      "name": "Centro Hospitalario Benito Menni",
+      "countryCode": "ES",
+      "origin": "http://www.benitomenni.org",
+      "lat": 41.6280097,
+      "lng": -4.7224847
+    },
+    {
+      "code": "osm:way/320655560",
+      "name": "Hospital San Juan Grande",
+      "countryCode": "ES",
+      "origin": "http://www.hospitalsanjuangrande.es",
+      "lat": 36.6914571,
+      "lng": -6.149534
+    },
+    {
+      "code": "osm:way/355249202",
+      "name": "Clínica Fuensanta",
+      "countryCode": "ES",
+      "origin": "https://www.viamedsalud.com",
+      "lat": 40.4400668,
+      "lng": -3.6402773
+    },
+    {
+      "code": "osm:way/356096685",
+      "name": "Hospital comarcal de Benavente",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 42.0043226,
+      "lng": -5.6771404
+    },
+    {
+      "code": "osm:way/363354239",
+      "name": "Hospital Universitario de Ceuta",
+      "countryCode": "ES",
+      "origin": "http://www.areasanitariaceuta.es",
+      "lat": 35.8804231,
+      "lng": -5.3418244
+    },
+    {
+      "code": "osm:way/382850086",
+      "name": "Hospital Ambulatorio Virgen del Mar",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalvirgendelmar.es",
+      "lat": 40.4645289,
+      "lng": -3.6851488
+    },
+    {
+      "code": "osm:way/393918792",
+      "name": "Hospital Virgen de la Paloma",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalvpaloma.com",
+      "lat": 40.4453417,
+      "lng": -3.7162157
+    },
+    {
+      "code": "osm:way/394889256",
+      "name": "Hospital Universitario Infanta Leonor",
+      "countryCode": "ES",
+      "origin": "http://www.madrid.org",
+      "lat": 40.386319,
+      "lng": -3.6176825
+    },
+    {
+      "code": "osm:way/394889262",
+      "name": "Hospital Universitario Ramón y Cajal.",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.487355,
+      "lng": -3.693846
+    },
+    {
+      "code": "osm:way/394889266",
+      "name": "Hospital Dr. Rodríguez Lafora (Psiquiátrico)",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.5318173,
+      "lng": -3.6912632
+    },
+    {
+      "code": "osm:way/394889267",
+      "name": "Hospital Universitario Infanta Sofía",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.5578403,
+      "lng": -3.6105529
+    },
+    {
+      "code": "osm:way/394889268",
+      "name": "Hospital Infanta Cristina.",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.2181567,
+      "lng": -3.7829913
+    },
+    {
+      "code": "osm:way/394889270",
+      "name": "Hospital del Henares",
+      "countryCode": "ES",
+      "origin": "http://www.madrid.org",
+      "lat": 40.4185224,
+      "lng": -3.5328963
+    },
+    {
+      "code": "osm:way/394889273",
+      "name": "Hospital Fundación Jiménez Díaz",
+      "countryCode": "ES",
+      "origin": "https://www.fjd.es",
+      "lat": 40.4389164,
+      "lng": -3.7191757
+    },
+    {
+      "code": "osm:way/394889288",
+      "name": "Hospital Virgen de la Torre",
+      "countryCode": "ES",
+      "origin": "http://www.madrid.org",
+      "lat": 40.3810134,
+      "lng": -3.6192683
+    },
+    {
+      "code": "osm:way/394891283",
+      "name": "Hospital General de Collado Villalba.",
+      "countryCode": "ES",
+      "origin": "https://www.hgvillalba.es",
+      "lat": 40.6543094,
+      "lng": -4.0013911
+    },
+    {
+      "code": "osm:way/394891284",
+      "name": "Hospital de El Escorial",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.6083239,
+      "lng": -4.1208218
+    },
+    {
+      "code": "osm:way/394891289",
+      "name": "Hospital Geriátrico Virgen de la Poveda",
+      "countryCode": "ES",
+      "origin": "http://www.madrid.org",
+      "lat": 40.247886,
+      "lng": -4.2763685
+    },
+    {
+      "code": "osm:way/397270019",
+      "name": "Sermesa",
+      "countryCode": "ES",
+      "origin": "https://sermesa.es",
+      "lat": 39.4758274,
+      "lng": -0.418346
+    },
+    {
+      "code": "osm:way/403017939",
+      "name": "Hospital Vithas Aguas Vivas",
+      "countryCode": "ES",
+      "origin": "https://www.hospitales.nisa.es",
+      "lat": 39.0880936,
+      "lng": -0.3549545
+    },
+    {
+      "code": "osm:way/408645950",
+      "name": "Hospital Imed Elche",
+      "countryCode": "ES",
+      "origin": "http://www.imedelche.com",
+      "lat": 38.2880636,
+      "lng": -0.6158624
+    },
+    {
+      "code": "osm:way/408852196",
+      "name": "Hospital Universitario Río Hortega",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 41.6296598,
+      "lng": -4.7136713
+    },
+    {
+      "code": "osm:way/426983337",
+      "name": "SUMA 112. Centro Urgencias Extrahospitalarias El Molar",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.7379356,
+      "lng": -3.5821913
+    },
+    {
+      "code": "osm:way/431522684",
+      "name": "Clínica San Miguel (Hermanas Hospitalarias)",
+      "countryCode": "ES",
+      "origin": "http://www.lrhbhsc.org",
+      "lat": 40.4600755,
+      "lng": -3.6601449
+    },
+    {
+      "code": "osm:way/450132557",
+      "name": "Clínica Santa Elena",
+      "countryCode": "ES",
+      "origin": "https://www.viamedsalud.com",
+      "lat": 40.4456438,
+      "lng": -3.7166534
+    },
+    {
+      "code": "osm:way/460091643",
+      "name": "Quirón Hospital Universitario",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 40.4027249,
+      "lng": -3.7833792
+    },
+    {
+      "code": "osm:way/465976914",
+      "name": "Complex Assistencial en Salut Mental Benito Menni",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalbenitomenni.org",
+      "lat": 41.3497068,
+      "lng": 2.0369668
+    },
+    {
+      "code": "osm:way/466644674",
+      "name": "Hospital Quirónsalud Cáceres",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.com",
+      "lat": 39.4822134,
+      "lng": -6.3636873
+    },
+    {
+      "code": "osm:way/473606809",
+      "name": "Hospital Universitari de la Ribera",
+      "countryCode": "ES",
+      "origin": "https://laribera.san.gva.es",
+      "lat": 39.1595408,
+      "lng": -0.4173269
+    },
+    {
+      "code": "osm:way/484634227",
+      "name": "Hospital Quironsalud Sur",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 40.3431512,
+      "lng": -3.8491064
+    },
+    {
+      "code": "osm:way/507549064",
+      "name": "Nafarroako Unibertsitate Klinika",
+      "countryCode": "ES",
+      "origin": "https://www.cun.es",
+      "lat": 42.8057988,
+      "lng": -1.6641007
+    },
+    {
+      "code": "osm:way/518384841",
+      "name": "Centro Clínico ATAM",
+      "countryCode": "ES",
+      "origin": "https://equipoclinico.atam.es",
+      "lat": 40.4433537,
+      "lng": -3.8279734
+    },
+    {
+      "code": "osm:way/532932977",
+      "name": "Vithas Granada",
+      "countryCode": "ES",
+      "origin": "https://vithas.es",
+      "lat": 37.1646961,
+      "lng": -3.5727374
+    },
+    {
+      "code": "osm:way/543171365",
+      "name": "Hospital Mesa del Castillo",
+      "countryCode": "ES",
+      "origin": "https://www.mesadelcastillo.com",
+      "lat": 37.9693968,
+      "lng": -1.128068
+    },
+    {
+      "code": "osm:way/561320619",
+      "name": "Hospital IMED-Valencia",
+      "countryCode": "ES",
+      "origin": "http://www.imedvalencia.com",
+      "lat": 39.5020612,
+      "lng": -0.408381
+    },
+    {
+      "code": "osm:way/586137133",
+      "name": "Centro de Protonterapia de Quirónsalud",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 40.3970226,
+      "lng": -3.7905932
+    },
+    {
+      "code": "osm:way/593126619",
+      "name": "Centro de Salud",
+      "countryCode": "ES",
+      "origin": "https://lazarza.net",
+      "lat": 38.8189024,
+      "lng": -6.2162348
+    },
+    {
+      "code": "osm:way/601144107",
+      "name": "Hospital Universitari Sant Joan",
+      "countryCode": "ES",
+      "origin": "http://www.hospitalsantjoan.cat",
+      "lat": 41.1449593,
+      "lng": 1.1233642
+    },
+    {
+      "code": "osm:way/605727046",
+      "name": "Hospital Recoletas Salud Marbella",
+      "countryCode": "ES",
+      "origin": "https://recoletasmarbella.com",
+      "lat": 36.5167762,
+      "lng": -4.8967149
+    },
+    {
+      "code": "osm:way/614275845",
+      "name": "Hospital San Rafael",
+      "countryCode": "ES",
+      "origin": "https://www.imqsanrafael.es",
+      "lat": 43.3452048,
+      "lng": -8.3879001
+    },
+    {
+      "code": "osm:way/649274874",
+      "name": "Hospital Universitari Quirón Dexeus",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 41.3848057,
+      "lng": 2.1257795
+    },
+    {
+      "code": "osm:way/664117463",
+      "name": "Hospital HM Rivas",
+      "countryCode": "ES",
+      "origin": "https://www.hmrivas.com",
+      "lat": 40.3431019,
+      "lng": -3.5249872
+    },
+    {
+      "code": "osm:way/668566543",
+      "name": "Hospital Nuestra Señora del Prado",
+      "countryCode": "ES",
+      "origin": "https://sanidad.castillalamancha.es",
+      "lat": 39.9647059,
+      "lng": -4.8073603
+    },
+    {
+      "code": "osm:way/669024426",
+      "name": "Hospital Cosaga",
+      "countryCode": "ES",
+      "origin": "https://cosaga.com",
+      "lat": 42.3442313,
+      "lng": -7.8644094
+    },
+    {
+      "code": "osm:way/677742300",
+      "name": "Hospital Quirónsalud Toledo",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 39.8837769,
+      "lng": -4.0416562
+    },
+    {
+      "code": "osm:way/694021381",
+      "name": "Hospital Comarcal Santiago Apóstol",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 42.669655,
+      "lng": -2.9892368
+    },
+    {
+      "code": "osm:way/694027076",
+      "name": "Hospital Universitario de Burgos",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 42.3615884,
+      "lng": -3.6858812
+    },
+    {
+      "code": "osm:way/694030127",
+      "name": "Hospital Recoletas Salud Burgos",
+      "countryCode": "ES",
+      "origin": "https://www.gruporecoletas.com",
+      "lat": 42.3441551,
+      "lng": -3.6829278
+    },
+    {
+      "code": "osm:way/694030955",
+      "name": "Hospital San Juan de Dios",
+      "countryCode": "ES",
+      "origin": "https://sanjuandediosburgos.es",
+      "lat": 42.339401,
+      "lng": -3.7105175
+    },
+    {
+      "code": "osm:way/700327295",
+      "name": "Hospital Marítimo de Torremolinos",
+      "countryCode": "ES",
+      "origin": "https://www.huvv.es",
+      "lat": 36.6370776,
+      "lng": -4.4874551
+    },
+    {
+      "code": "osm:way/725189702",
+      "name": "Hospital MAZ de Zaragoza",
+      "countryCode": "ES",
+      "origin": "https://www.maz.es",
+      "lat": 41.6856601,
+      "lng": -0.8691086
+    },
+    {
+      "code": "osm:way/730906225",
+      "name": "Hospital Hestia Balaguer",
+      "countryCode": "ES",
+      "origin": "http://www.hestiaalliance.org",
+      "lat": 41.7890884,
+      "lng": 0.8197248
+    },
+    {
+      "code": "osm:way/759269933",
+      "name": "Hospiten Bellevue",
+      "countryCode": "ES",
+      "origin": "https://www.hospiten.com",
+      "lat": 28.4072651,
+      "lng": -16.5446896
+    },
+    {
+      "code": "osm:way/763126304",
+      "name": "Hospital San Juan de Dios",
+      "countryCode": "ES",
+      "origin": "https://hsjdpamplona.com",
+      "lat": 42.8167979,
+      "lng": -1.6236172
+    },
+    {
+      "code": "osm:way/763756662",
+      "name": "Urgencias hospital San Carlos",
+      "countryCode": "ES",
+      "origin": "https://www.sspa.juntadeandalucia.es",
+      "lat": 36.4802935,
+      "lng": -6.1954057
+    },
+    {
+      "code": "osm:way/770659186",
+      "name": "Hospital del Mar",
+      "countryCode": "ES",
+      "origin": "https://www.parcdesalutmar.cat",
+      "lat": 41.3838714,
+      "lng": 2.1938769
+    },
+    {
+      "code": "osm:way/783869636",
+      "name": "Hospital de Santa Clotilde",
+      "countryCode": "ES",
+      "origin": "https://hospitalsantaclotilde.es",
+      "lat": 43.4675028,
+      "lng": -3.7984802
+    },
+    {
+      "code": "osm:way/784872706",
+      "name": "Hospital Universitario de Cuenca",
+      "countryCode": "ES",
+      "origin": "https://gaihucu.es",
+      "lat": 40.0609953,
+      "lng": -2.1644648
+    },
+    {
+      "code": "osm:way/785933079",
+      "name": "Hospital Duran i Reynals",
+      "countryCode": "ES",
+      "origin": "https://ico.gencat.cat",
+      "lat": 41.3452981,
+      "lng": 2.1114594
+    },
+    {
+      "code": "osm:way/798153554",
+      "name": "Hospital Marítimo de Oza",
+      "countryCode": "ES",
+      "origin": "https://xxicoruna.sergas.gal",
+      "lat": 43.3463955,
+      "lng": -8.3849436
+    },
+    {
+      "code": "osm:way/798263620",
+      "name": "Hospital Abente y Lago",
+      "countryCode": "ES",
+      "origin": "https://xxicoruna.sergas.gal",
+      "lat": 43.3682203,
+      "lng": -8.389424
+    },
+    {
+      "code": "osm:way/802131975",
+      "name": "Centro de Salud Ciudad Real I",
+      "countryCode": "ES",
+      "origin": "https://sescam.castillalamancha.es",
+      "lat": 38.9843496,
+      "lng": -3.9367337
+    },
+    {
+      "code": "osm:way/805114543",
+      "name": "Hospital IMSKE",
+      "countryCode": "ES",
+      "origin": "https://www.imske.com",
+      "lat": 39.4534831,
+      "lng": -0.3367799
+    },
+    {
+      "code": "osm:way/833468874",
+      "name": "Hospital HLA El Ángel",
+      "countryCode": "ES",
+      "origin": "https://www.grupohla.com",
+      "lat": 36.715457,
+      "lng": -4.4532959
+    },
+    {
+      "code": "osm:way/862526861",
+      "name": "Hospital Mutua Montañesa",
+      "countryCode": "ES",
+      "origin": "https://www.mutuamontanesa.es",
+      "lat": 43.4826447,
+      "lng": -3.7888703
+    },
+    {
+      "code": "osm:way/871870765",
+      "name": "Hospital Psiquiátrico Fuente Bermeja",
+      "countryCode": "ES",
+      "origin": "https://www.saludcastillayleon.es",
+      "lat": 42.3469147,
+      "lng": -3.711079
+    },
+    {
+      "code": "osm:way/886140145",
+      "name": "Pius Hospital de Valls",
+      "countryCode": "ES",
+      "origin": "https://www.piushospital.cat",
+      "lat": 41.2831724,
+      "lng": 1.2512049
+    },
+    {
+      "code": "osm:way/913987904",
+      "name": "Quironsalud Clideba",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.com",
+      "lat": 38.8712013,
+      "lng": -6.9903053
+    },
+    {
+      "code": "osm:way/955375022",
+      "name": "Génesis Care",
+      "countryCode": "ES",
+      "origin": "https://www.genesiscare.com",
+      "lat": 36.7356376,
+      "lng": -4.3820527
+    },
+    {
+      "code": "osm:way/973783653",
+      "name": "Hospital Infanta Elena",
+      "countryCode": "ES",
+      "origin": "https://www.hospital-infantaelena.es",
+      "lat": 37.2804383,
+      "lng": -6.9123998
+    },
+    {
+      "code": "osm:way/1000842834",
+      "name": "Hospital Royo Villanova",
+      "countryCode": "ES",
+      "origin": "https://www.zaragoza.es",
+      "lat": 41.6920979,
+      "lng": -0.8609989
+    },
+    {
+      "code": "osm:way/1009696374",
+      "name": "Hospital Parque Vegas Altas",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalesparque.es",
+      "lat": 38.9627198,
+      "lng": -5.8562915
+    },
+    {
+      "code": "osm:way/1012586765",
+      "name": "Centro Médico Quirónsalud Valle del Henares",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 40.4976103,
+      "lng": -3.3855815
+    },
+    {
+      "code": "osm:way/1014019197",
+      "name": "Hospital Universitario Puerta de Hierro Majadahonda",
+      "countryCode": "ES",
+      "origin": "https://www.comunidad.madrid",
+      "lat": 40.4502608,
+      "lng": -3.8738374
+    },
+    {
+      "code": "osm:way/1030384603",
+      "name": "Hospital Casa Verde",
+      "countryCode": "ES",
+      "origin": "https://casaverdeneuro.com",
+      "lat": 38.9072746,
+      "lng": -6.3688809
+    },
+    {
+      "code": "osm:way/1040195565",
+      "name": "Fundació Hospital de Puigcerdà",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalpuigcerda.com",
+      "lat": 42.4323695,
+      "lng": 1.9260909
+    },
+    {
+      "code": "osm:way/1044091602",
+      "name": "HCB Dénia",
+      "countryCode": "ES",
+      "origin": "https://hcbhospitales.com",
+      "lat": 38.8427676,
+      "lng": 0.0925162
+    },
+    {
+      "code": "osm:way/1063490692",
+      "name": "Hospital Quironsalud",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 41.4158262,
+      "lng": 2.1387446
+    },
+    {
+      "code": "osm:way/1079133124",
+      "name": "Instituto de Traumatología Unión de Mutuas (ITUM)",
+      "countryCode": "ES",
+      "origin": "https://www.uniondemutuas.es",
+      "lat": 39.993061,
+      "lng": -0.0279225
+    },
+    {
+      "code": "osm:way/1090927961",
+      "name": "Clínica de Salud Mental Arévalo",
+      "countryCode": "ES",
+      "origin": "https://www.mentaliasalud.es",
+      "lat": 41.0531315,
+      "lng": -4.7207741
+    },
+    {
+      "code": "osm:way/1123417877",
+      "name": "Hospital Latorre",
+      "countryCode": "ES",
+      "origin": "https://hospital-latorre.com",
+      "lat": 41.7623158,
+      "lng": -2.482126
+    },
+    {
+      "code": "osm:way/1124286472",
+      "name": "Hospital Universitario La Moraleja - Ana de Austria",
+      "countryCode": "ES",
+      "origin": "https://www.hospitallamoraleja.es",
+      "lat": 40.4928118,
+      "lng": -3.6672775
+    },
+    {
+      "code": "osm:way/1147390405",
+      "name": "Hospital Recoletas",
+      "countryCode": "ES",
+      "origin": "https://www.gruporecoletas.com",
+      "lat": 40.9530094,
+      "lng": -4.1240444
+    },
+    {
+      "code": "osm:way/1173241319",
+      "name": "Hospital Clínic",
+      "countryCode": "ES",
+      "origin": "https://www.hospitalclinic.org",
+      "lat": 41.3894858,
+      "lng": 2.1522423
+    },
+    {
+      "code": "osm:way/1219072511",
+      "name": "Hospital Casaverde Valladolid",
+      "countryCode": "ES",
+      "origin": "https://casaverdeneuro.com",
+      "lat": 41.6523198,
+      "lng": -4.6974354
+    },
+    {
+      "code": "osm:way/1257926678",
+      "name": "Hospital Universitari Germans Trias i Pujol",
+      "countryCode": "ES",
+      "origin": "http://www.gencat.cat",
+      "lat": 41.4811168,
+      "lng": 2.2375928
+    },
+    {
+      "code": "osm:way/1280841229",
+      "name": "Hospital Universitario Vithas Madrid Arturo Soria",
+      "countryCode": "ES",
+      "origin": "https://www.vithas.es",
+      "lat": 40.4496542,
+      "lng": -3.6520719
+    },
+    {
+      "code": "osm:way/1284706960",
+      "name": "Cruz Roja",
+      "countryCode": "ES",
+      "origin": "http://www.hcrpalma.es",
+      "lat": 39.5841174,
+      "lng": 2.6534578
+    },
+    {
+      "code": "osm:way/1302897615",
+      "name": "Hospital Viamed Monegal",
+      "countryCode": "ES",
+      "origin": "https://www.viamedsalud.com",
+      "lat": 41.1188367,
+      "lng": 1.2514677
+    },
+    {
+      "code": "osm:way/1323825108",
+      "name": "Hospital Can Misses",
+      "countryCode": "ES",
+      "origin": "https://www.ibsalut.es",
+      "lat": 38.9161334,
+      "lng": 1.4197345
+    },
+    {
+      "code": "osm:way/1349594228",
+      "name": "Hospital de Formentera",
+      "countryCode": "ES",
+      "origin": "https://www.ibsalut.es",
+      "lat": 38.7073959,
+      "lng": 1.4349131
+    },
+    {
+      "code": "osm:way/1389914133",
+      "name": "Hospital Quirónsalud Campo de Gibraltar",
+      "countryCode": "ES",
+      "origin": "https://www.quironsalud.es",
+      "lat": 36.1854281,
+      "lng": -5.4308947
+    },
+    {
+      "code": "osm:way/1390984944",
+      "name": "Sanatorio Hestia La Robleda",
+      "countryCode": "ES",
+      "origin": "http://hestiaalliance.org",
+      "lat": 42.9259948,
+      "lng": -8.3979667
+    },
+    {
+      "code": "osm:way/1391148110",
+      "name": "Clínica Residencia El Pinar",
+      "countryCode": "ES",
+      "origin": "https://hospitalelpinar.com",
+      "lat": 42.2203375,
+      "lng": -8.6816074
+    },
+    {
+      "code": "osm:way/1393600306",
+      "name": "HC Marbella International Hospital",
+      "countryCode": "ES",
+      "origin": "http://hcmarbella.com",
+      "lat": 36.4849703,
+      "lng": -4.9704856
+    },
+    {
+      "code": "osm:way/1421500769",
+      "name": "Hospital La Inmaculada",
+      "countryCode": "ES",
+      "origin": "https://www.sspa.juntadeandalucia.es",
+      "lat": 37.4013857,
+      "lng": -1.9420063
+    },
+    {
+      "code": "osm:way/1431366219",
+      "name": "Hospital Universitario Hospiten Sur",
+      "countryCode": "ES",
+      "origin": "https://hospiten.com",
+      "lat": 28.0583604,
+      "lng": -16.7250263
+    },
+    {
+      "code": "osm:way/1433101184",
+      "name": "Hospital Vithas Xanit International",
+      "countryCode": "ES",
+      "origin": "https://vithas.es",
+      "lat": 36.5980973,
+      "lng": -4.5583919
+    },
+    {
+      "code": "osm:way/1442173706",
+      "name": "MiKS",
+      "countryCode": "ES",
+      "origin": "https://miks-community.com",
+      "lat": 42.8674879,
+      "lng": -2.6980559
+    },
+    {
+      "code": "osm:way/1450021866",
+      "name": "Juaneda Hospital Ciutadella",
+      "countryCode": "ES",
+      "origin": "https://www.juaneda.es",
+      "lat": 39.9905261,
+      "lng": 3.8364019
+    },
+    {
+      "code": "osm:way/1459077449",
+      "name": "Hospital Virgen del Alcázar",
+      "countryCode": "ES",
+      "origin": "https://www.virgendelalcazar.com",
+      "lat": 37.4034748,
+      "lng": -1.5959126
+    },
+    {
+      "code": "osm:way/1459147141",
+      "name": "Hospital Clínica Benidorm",
+      "countryCode": "ES",
+      "origin": "https://www.clinicabenidorm.com",
+      "lat": 38.5430847,
+      "lng": -0.1291837
+    },
+    {
+      "code": "osm:way/1468671662",
+      "name": "Centro Salud Camargo Costa",
+      "countryCode": "ES",
+      "origin": "https://www.scsalud.es",
+      "lat": 43.4211677,
+      "lng": -3.8414832
+    },
+    {
+      "code": "osm:way/1472927707",
+      "name": "Hospital Tres Mares",
+      "countryCode": "ES",
+      "origin": "https://saludcantabria.es",
+      "lat": 43.0065921,
+      "lng": -4.1323856
+    }
+  ]
+}

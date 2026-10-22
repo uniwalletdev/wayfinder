@@ -1,0 +1,1609 @@
+{
+  "countryCode": "CH",
+  "fetchedAt": "2026-10-21T01:01:58.665Z",
+  "count": 200,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/5948824485",
+      "name": "Notfallzentrum Kinder- Jugendpsychiatrie",
+      "countryCode": "CH",
+      "origin": "https://www.upd.ch",
+      "lat": 46.9673469,
+      "lng": 7.4838017
+    },
+    {
+      "code": "osm:node/7315912473",
+      "name": "ADUS Klinik",
+      "countryCode": "CH",
+      "origin": "https://www.adus-klinik.ch",
+      "lat": 47.4785723,
+      "lng": 8.4512043
+    },
+    {
+      "code": "osm:node/7315952092",
+      "name": "Adullam Spital und Pflegezentren",
+      "countryCode": "CH",
+      "origin": "https://www.adullam.ch",
+      "lat": 47.5601759,
+      "lng": 7.5796527
+    },
+    {
+      "code": "osm:node/7383484724",
+      "name": "Maison de la Santé de la Gravenne",
+      "countryCode": "CH",
+      "origin": "https://www.medidranse.ch",
+      "lat": 46.0780451,
+      "lng": 7.1462937
+    },
+    {
+      "code": "osm:node/9768039070",
+      "name": "Notfallstation Spital Männedorf",
+      "countryCode": "CH",
+      "origin": "https://www.spitalmaennedorf.ch",
+      "lat": 47.250619,
+      "lng": 8.697132
+    },
+    {
+      "code": "osm:node/9853341103",
+      "name": "Pôle Positif",
+      "countryCode": "CH",
+      "origin": "https://www.polepositif.ch",
+      "lat": 46.204179,
+      "lng": 6.1727019
+    },
+    {
+      "code": "osm:node/10767977785",
+      "name": "TellKlinik",
+      "countryCode": "CH",
+      "origin": "https://www.tellklinik.ch",
+      "lat": 47.0106466,
+      "lng": 8.6435199
+    },
+    {
+      "code": "osm:node/11056342042",
+      "name": "Swiss Visio Palézieux",
+      "countryCode": "CH",
+      "origin": "https://www.swissmedical.net",
+      "lat": 46.555841,
+      "lng": 6.8301668
+    },
+    {
+      "code": "osm:node/11505549442",
+      "name": "Augenklinik Bellavista",
+      "countryCode": "CH",
+      "origin": "https://klinik-bellavista.ch",
+      "lat": 47.4160259,
+      "lng": 9.4377694
+    },
+    {
+      "code": "osm:node/11845447220",
+      "name": "Kinderkliniken Inselspital",
+      "countryCode": "CH",
+      "origin": "http://www.kinderkliniken.insel.ch",
+      "lat": 46.9469004,
+      "lng": 7.4259426
+    },
+    {
+      "code": "osm:node/12064448952",
+      "name": "Centre Médical de Satigny",
+      "countryCode": "CH",
+      "origin": "https://www.cmsatigny.ch",
+      "lat": 46.2126998,
+      "lng": 6.0329634
+    },
+    {
+      "code": "osm:node/12495533869",
+      "name": "Notfallzentrum Spital Thun",
+      "countryCode": "CH",
+      "origin": "https://www.spitalthun.ch",
+      "lat": 46.7617707,
+      "lng": 7.6322587
+    },
+    {
+      "code": "osm:node/12635826401",
+      "name": "Centre Imagerie Servette",
+      "countryCode": "CH",
+      "origin": "https://www.magellan.ch",
+      "lat": 46.2129543,
+      "lng": 6.1253143
+    },
+    {
+      "code": "osm:node/12806467880",
+      "name": "Osteo 7/7",
+      "countryCode": "CH",
+      "origin": "https://osteo7-7.ch",
+      "lat": 46.5175847,
+      "lng": 6.6293222
+    },
+    {
+      "code": "osm:node/12889004981",
+      "name": "Hochgebirgsklinik Davos",
+      "countryCode": "CH",
+      "origin": "https://hochgebirgsklinik.ch",
+      "lat": 46.8286753,
+      "lng": 9.8558114
+    },
+    {
+      "code": "osm:node/13708629595",
+      "name": "Derma Medical Clinic",
+      "countryCode": "CH",
+      "origin": "https://dermamedicalclinic.ch",
+      "lat": 47.3569508,
+      "lng": 8.5235519
+    },
+    {
+      "code": "osm:way/22918627",
+      "name": "SRO Spital Oberaargau Langenthal",
+      "countryCode": "CH",
+      "origin": "https://www.sro.ch",
+      "lat": 47.2159329,
+      "lng": 7.793667
+    },
+    {
+      "code": "osm:way/26354291",
+      "name": "Universitäre Psychiatrische Kliniken Basel",
+      "countryCode": "CH",
+      "origin": "https://www.upk.ch",
+      "lat": 47.5712238,
+      "lng": 7.5650465
+    },
+    {
+      "code": "osm:way/28384336",
+      "name": "Ospedale Regionale di Lugano",
+      "countryCode": "CH",
+      "origin": "https://www.eoc.ch",
+      "lat": 46.0098269,
+      "lng": 8.9610242
+    },
+    {
+      "code": "osm:way/28530564",
+      "name": "GZO Spital Wetzikon",
+      "countryCode": "CH",
+      "origin": "https://www.gzo.ch",
+      "lat": 47.3214778,
+      "lng": 8.8013933
+    },
+    {
+      "code": "osm:way/31976973",
+      "name": "Réseau hospitalier neuchâtelois - Pourtalès",
+      "countryCode": "CH",
+      "origin": "https://www.rhne.ch",
+      "lat": 46.9968351,
+      "lng": 6.94278
+    },
+    {
+      "code": "osm:way/33621431",
+      "name": "Ospedale Civico",
+      "countryCode": "CH",
+      "origin": "https://www.eoc.ch",
+      "lat": 46.0177059,
+      "lng": 8.9527834
+    },
+    {
+      "code": "osm:way/34325778",
+      "name": "Spital Burgdorf",
+      "countryCode": "CH",
+      "origin": "https://www.spital-emmental.ch",
+      "lat": 47.0483572,
+      "lng": 7.6206719
+    },
+    {
+      "code": "osm:way/36878134",
+      "name": "Clinique de Genolier",
+      "countryCode": "CH",
+      "origin": "https://www.genolier.net",
+      "lat": 46.4449991,
+      "lng": 6.2167473
+    },
+    {
+      "code": "osm:way/37277021",
+      "name": "Psychiatrische Klinik Waldhaus",
+      "countryCode": "CH",
+      "origin": "https://www.pdgr.ch",
+      "lat": 46.8685293,
+      "lng": 9.5410415
+    },
+    {
+      "code": "osm:way/37370898",
+      "name": "Institution de Lavigny",
+      "countryCode": "CH",
+      "origin": "https://www.ilavigny.ch",
+      "lat": 46.5035026,
+      "lng": 6.4120011
+    },
+    {
+      "code": "osm:way/39193494",
+      "name": "Luzerner Kantonsspital",
+      "countryCode": "CH",
+      "origin": "https://www.luks.ch",
+      "lat": 47.0585605,
+      "lng": 8.2969782
+    },
+    {
+      "code": "osm:way/42156983",
+      "name": "Fachspital Sune-Egge",
+      "countryCode": "CH",
+      "origin": "https://www.swsieber.ch",
+      "lat": 47.4149478,
+      "lng": 8.5174371
+    },
+    {
+      "code": "osm:way/42876491",
+      "name": "Sonnenhofspital",
+      "countryCode": "CH",
+      "origin": "https://www.lindenhofgruppe.ch",
+      "lat": 46.942742,
+      "lng": 7.4744455
+    },
+    {
+      "code": "osm:way/46102298",
+      "name": "Klinik Beau-Site",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 46.9526076,
+      "lng": 7.4482726
+    },
+    {
+      "code": "osm:way/47318176",
+      "name": "Clinique de la Source",
+      "countryCode": "CH",
+      "origin": "https://www.lasource.ch",
+      "lat": 46.5273394,
+      "lng": 6.6282214
+    },
+    {
+      "code": "osm:way/48459417",
+      "name": "Kantonsspital Aarau",
+      "countryCode": "CH",
+      "origin": "https://www.ksa.ch",
+      "lat": 47.3883663,
+      "lng": 8.0602927
+    },
+    {
+      "code": "osm:way/48747443",
+      "name": "Hirslanden Klinik Aarau",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 47.3907026,
+      "lng": 8.04256
+    },
+    {
+      "code": "osm:way/49257022",
+      "name": "Réseau hospitalier neuchâtelois - La Chaux-de-Fonds",
+      "countryCode": "CH",
+      "origin": "https://www.rhne.ch",
+      "lat": 47.1136786,
+      "lng": 6.832978
+    },
+    {
+      "code": "osm:way/49711247",
+      "name": "Hôpitaux universitaires de Genève",
+      "countryCode": "CH",
+      "origin": "https://www.hug-ge.ch",
+      "lat": 46.1919996,
+      "lng": 6.1480997
+    },
+    {
+      "code": "osm:way/51773492",
+      "name": "Obach",
+      "countryCode": "CH",
+      "origin": "https://www.obach.ch",
+      "lat": 47.205135,
+      "lng": 7.5304309
+    },
+    {
+      "code": "osm:way/75656891",
+      "name": "Engeriedspital",
+      "countryCode": "CH",
+      "origin": "https://www.lindenhofgruppe.ch",
+      "lat": 46.9598314,
+      "lng": 7.4369561
+    },
+    {
+      "code": "osm:way/80334113",
+      "name": "Hôpital d'Yverdon-les-Bains",
+      "countryCode": "CH",
+      "origin": "https://www.ehnv.ch",
+      "lat": 46.7712838,
+      "lng": 6.6468863
+    },
+    {
+      "code": "osm:way/84837122",
+      "name": "Hôpital de Loëx",
+      "countryCode": "CH",
+      "origin": "https://www.hug-ge.ch",
+      "lat": 46.1986695,
+      "lng": 6.0848085
+    },
+    {
+      "code": "osm:way/91109658",
+      "name": "Lindenhofspital",
+      "countryCode": "CH",
+      "origin": "https://www.lindenhofgruppe.ch",
+      "lat": 46.9581739,
+      "lng": 7.427875
+    },
+    {
+      "code": "osm:way/110004582",
+      "name": "Hôpital de Morges",
+      "countryCode": "CH",
+      "origin": "https://www.ehc-vd.ch",
+      "lat": 46.5221574,
+      "lng": 6.5001346
+    },
+    {
+      "code": "osm:way/125232364",
+      "name": "Kantonsspital St. Gallen",
+      "countryCode": "CH",
+      "origin": "https://www.h-och.ch",
+      "lat": 47.430683,
+      "lng": 9.388578
+    },
+    {
+      "code": "osm:way/125667230",
+      "name": "Hirslanden Herzzentrum",
+      "countryCode": "CH",
+      "origin": "https://www.herzzentrum.ch",
+      "lat": 47.351893,
+      "lng": 8.5761561
+    },
+    {
+      "code": "osm:way/128032694",
+      "name": "Hôpital Riaz",
+      "countryCode": "CH",
+      "origin": "https://www.h-fr.ch",
+      "lat": 46.6413224,
+      "lng": 7.0601546
+    },
+    {
+      "code": "osm:way/134877023",
+      "name": "Hôpital Beau-Séjour (HUG)",
+      "countryCode": "CH",
+      "origin": "https://www.hug.ch",
+      "lat": 46.1881374,
+      "lng": 6.1499453
+    },
+    {
+      "code": "osm:way/134877024",
+      "name": "Hôpital de Bellerive (HUG)",
+      "countryCode": "CH",
+      "origin": "https://www.hug-ge.ch",
+      "lat": 46.2585593,
+      "lng": 6.2059647
+    },
+    {
+      "code": "osm:way/136281156",
+      "name": "Spital Oberengadin / Ospidel Engiadin'Ota",
+      "countryCode": "CH",
+      "origin": "https://www.spital-oberengadin.ch",
+      "lat": 46.5400078,
+      "lng": 9.8787667
+    },
+    {
+      "code": "osm:way/154469150",
+      "name": "Fondation de Nant",
+      "countryCode": "CH",
+      "origin": "https://nant.ch",
+      "lat": 46.4790737,
+      "lng": 6.8528152
+    },
+    {
+      "code": "osm:way/165321481",
+      "name": "Ambi Wattwil Berit Klinik",
+      "countryCode": "CH",
+      "origin": "https://beritklinik.ch",
+      "lat": 47.2981025,
+      "lng": 9.0839204
+    },
+    {
+      "code": "osm:way/165785776",
+      "name": "Kantonsspital Winterthur",
+      "countryCode": "CH",
+      "origin": "https://www.ksw.ch",
+      "lat": 47.506883,
+      "lng": 8.7282975
+    },
+    {
+      "code": "osm:way/170327038",
+      "name": "Klinik Barmelweid",
+      "countryCode": "CH",
+      "origin": "https://www.barmelweid.ch",
+      "lat": 47.4211947,
+      "lng": 7.971805
+    },
+    {
+      "code": "osm:way/179917655",
+      "name": "Gesundheitszentrum Rorschach",
+      "countryCode": "CH",
+      "origin": "https://www.h-och.ch",
+      "lat": 47.4789563,
+      "lng": 9.5168002
+    },
+    {
+      "code": "osm:way/181977663",
+      "name": "Psychiatrische Klinik Münsterlingen",
+      "countryCode": "CH",
+      "origin": "https://www.stgag.ch",
+      "lat": 47.6341206,
+      "lng": 9.2310244
+    },
+    {
+      "code": "osm:way/189529423",
+      "name": "Felix-Platter-Spital",
+      "countryCode": "CH",
+      "origin": "https://www.felixplatter.ch",
+      "lat": 47.5653971,
+      "lng": 7.5653389
+    },
+    {
+      "code": "osm:way/198147385",
+      "name": "Siloah",
+      "countryCode": "CH",
+      "origin": "https://www.siloah.ch",
+      "lat": 46.9314857,
+      "lng": 7.5176975
+    },
+    {
+      "code": "osm:way/200580581",
+      "name": "HRC Hôpital Riviera-Chablais",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalrivierachablais.ch",
+      "lat": 46.3799917,
+      "lng": 6.9206744
+    },
+    {
+      "code": "osm:way/200746959",
+      "name": "Psychiatrie St.Gallen",
+      "countryCode": "CH",
+      "origin": "https://www.psychiatrie-sg.ch",
+      "lat": 47.4674812,
+      "lng": 9.0374547
+    },
+    {
+      "code": "osm:way/235292955",
+      "name": "Privatklinik Hohenegg",
+      "countryCode": "CH",
+      "origin": "https://www.hohenegg.ch",
+      "lat": 47.2743619,
+      "lng": 8.6598389
+    },
+    {
+      "code": "osm:way/236595729",
+      "name": "Spital Männedorf",
+      "countryCode": "CH",
+      "origin": "https://www.spitalmaennedorf.ch",
+      "lat": 47.2508947,
+      "lng": 8.6960523
+    },
+    {
+      "code": "osm:way/241615808",
+      "name": "Irides Pflege",
+      "countryCode": "CH",
+      "origin": "https://irides.ch",
+      "lat": 47.5696473,
+      "lng": 7.6850246
+    },
+    {
+      "code": "osm:way/245858881",
+      "name": "Salem-Spital",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 46.9520936,
+      "lng": 7.4536397
+    },
+    {
+      "code": "osm:way/254602359",
+      "name": "Clinique de Belle-Idée",
+      "countryCode": "CH",
+      "origin": "https://www.hug-ge.ch",
+      "lat": 46.2063544,
+      "lng": 6.2088872
+    },
+    {
+      "code": "osm:way/254959544",
+      "name": "Kantonsspital Liestal",
+      "countryCode": "CH",
+      "origin": "http://www.ksbl.ch",
+      "lat": 47.4884481,
+      "lng": 7.7308515
+    },
+    {
+      "code": "osm:way/255669527",
+      "name": "Spital Langnau",
+      "countryCode": "CH",
+      "origin": "https://www.spital-emmental.ch",
+      "lat": 46.9432894,
+      "lng": 7.7865727
+    },
+    {
+      "code": "osm:way/264487884",
+      "name": "Institut für Pathologie Universitätsspital Basel",
+      "countryCode": "CH",
+      "origin": "https://www.unispital-basel.ch",
+      "lat": 47.5605573,
+      "lng": 7.5815841
+    },
+    {
+      "code": "osm:way/274849115",
+      "name": "Spitalzentrum Oberwallis (SZO) Brig",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalvs.ch",
+      "lat": 46.3170555,
+      "lng": 7.9818678
+    },
+    {
+      "code": "osm:way/287446153",
+      "name": "Zentrum für Stationäre Forensische Therapie und Zentrum für Integrative Psychiatrie",
+      "countryCode": "CH",
+      "origin": "https://www.pukzh.ch",
+      "lat": 47.6349183,
+      "lng": 8.6078052
+    },
+    {
+      "code": "osm:way/295261008",
+      "name": "Hôpital de Nyon",
+      "countryCode": "CH",
+      "origin": "https://www.ghol.ch",
+      "lat": 46.3832166,
+      "lng": 6.2274541
+    },
+    {
+      "code": "osm:way/302437881",
+      "name": "Ospedale Regionale di Mendrisio Beata Vergine",
+      "countryCode": "CH",
+      "origin": "https://www.eoc.ch",
+      "lat": 45.8670575,
+      "lng": 8.9824244
+    },
+    {
+      "code": "osm:way/303373857",
+      "name": "Hopital d'Aubonne",
+      "countryCode": "CH",
+      "origin": "https://www.ehc-vd.ch",
+      "lat": 46.4916164,
+      "lng": 6.3886828
+    },
+    {
+      "code": "osm:way/305875553",
+      "name": "Ospedale San Sisto",
+      "countryCode": "CH",
+      "origin": "https://www.csvp.ch",
+      "lat": 46.3226015,
+      "lng": 10.0621946
+    },
+    {
+      "code": "osm:way/309554079",
+      "name": "Oberwaid Hotel & Klink",
+      "countryCode": "CH",
+      "origin": "https://oberwaid.ch",
+      "lat": 47.4512529,
+      "lng": 9.4198354
+    },
+    {
+      "code": "osm:way/317763534",
+      "name": "See-Spital Horgen",
+      "countryCode": "CH",
+      "origin": "https://www.see-spital.ch",
+      "lat": 47.2627145,
+      "lng": 8.5899964
+    },
+    {
+      "code": "osm:way/317800156",
+      "name": "Inselspital",
+      "countryCode": "CH",
+      "origin": "https://www.insel.ch",
+      "lat": 46.9473091,
+      "lng": 7.4243945
+    },
+    {
+      "code": "osm:way/335490255",
+      "name": "Hôpital de Sion",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalduvalais.ch",
+      "lat": 46.23534,
+      "lng": 7.3869208
+    },
+    {
+      "code": "osm:way/370366918",
+      "name": "Spital Lachen",
+      "countryCode": "CH",
+      "origin": "https://www.spital-lachen.ch",
+      "lat": 47.1890514,
+      "lng": 8.8594238
+    },
+    {
+      "code": "osm:way/397457143",
+      "name": "Spital Muri",
+      "countryCode": "CH",
+      "origin": "https://www.spital-muri.ch",
+      "lat": 47.277857,
+      "lng": 8.329881
+    },
+    {
+      "code": "osm:way/445220895",
+      "name": "EHC Hôpital de Gilly",
+      "countryCode": "CH",
+      "origin": "https://www.ehc-vd.ch",
+      "lat": 46.4702974,
+      "lng": 6.3051945
+    },
+    {
+      "code": "osm:way/447694296",
+      "name": "Spital Thun",
+      "countryCode": "CH",
+      "origin": "https://spitalthun.ch",
+      "lat": 46.7610936,
+      "lng": 7.6324954
+    },
+    {
+      "code": "osm:way/450574960",
+      "name": "Hôpital Intercantonal de la Broye",
+      "countryCode": "CH",
+      "origin": "https://www.hopital-broye.ch",
+      "lat": 46.851012,
+      "lng": 6.8441944
+    },
+    {
+      "code": "osm:way/484499934",
+      "name": "Hôpital de la Tour",
+      "countryCode": "CH",
+      "origin": "https://www.la-tour.ch",
+      "lat": 46.2286207,
+      "lng": 6.0673167
+    },
+    {
+      "code": "osm:way/527550642",
+      "name": "Spital Uster",
+      "countryCode": "CH",
+      "origin": "https://www.spitaluster.ch",
+      "lat": 47.3529244,
+      "lng": 8.7241311
+    },
+    {
+      "code": "osm:way/555945140",
+      "name": "Stadtspital Triemli",
+      "countryCode": "CH",
+      "origin": "http://www.triemli.ch",
+      "lat": 47.3664766,
+      "lng": 8.4974544
+    },
+    {
+      "code": "osm:way/558245721",
+      "name": "Klinik Bethanien",
+      "countryCode": "CH",
+      "origin": "https://www.klinikbethanien.ch",
+      "lat": 47.3808225,
+      "lng": 8.5575122
+    },
+    {
+      "code": "osm:way/609537142",
+      "name": "Stadtspital Waid",
+      "countryCode": "CH",
+      "origin": "http://www.waidspital.ch",
+      "lat": 47.3984054,
+      "lng": 8.5204274
+    },
+    {
+      "code": "osm:way/612169219",
+      "name": "Spital Schwyz",
+      "countryCode": "CH",
+      "origin": "https://www.spital-schwyz.ch",
+      "lat": 47.0156387,
+      "lng": 8.6596382
+    },
+    {
+      "code": "osm:way/612170472",
+      "name": "Spital und Gesundheitszentrum Einsiedeln",
+      "countryCode": "CH",
+      "origin": "https://www.spital-einsiedeln.ch",
+      "lat": 47.1307534,
+      "lng": 8.7399243
+    },
+    {
+      "code": "osm:way/612288154",
+      "name": "Universitätsspital Zürich",
+      "countryCode": "CH",
+      "origin": "https://www.usz.ch",
+      "lat": 47.3777544,
+      "lng": 8.5507671
+    },
+    {
+      "code": "osm:way/650674013",
+      "name": "Spital Zweisimmen",
+      "countryCode": "CH",
+      "origin": "https://spitalstsag.ch",
+      "lat": 46.5577131,
+      "lng": 7.3729799
+    },
+    {
+      "code": "osm:way/651203822",
+      "name": "Frauenklinik Fontana",
+      "countryCode": "CH",
+      "origin": "https://www.ksgr.ch",
+      "lat": 46.8609503,
+      "lng": 9.5420706
+    },
+    {
+      "code": "osm:way/651229753",
+      "name": "Kantonsspital Graubünden",
+      "countryCode": "CH",
+      "origin": "https://www.ksgr.ch",
+      "lat": 46.8636829,
+      "lng": 9.5396867
+    },
+    {
+      "code": "osm:way/651557526",
+      "name": "Luzerner Psychiatrie St. Urban",
+      "countryCode": "CH",
+      "origin": "https://www.lups.ch",
+      "lat": 47.2301944,
+      "lng": 7.8433054
+    },
+    {
+      "code": "osm:way/651732956",
+      "name": "Kinder-Reha Schweiz",
+      "countryCode": "CH",
+      "origin": "https://www.kispi.uzh.ch",
+      "lat": 47.2773326,
+      "lng": 8.466881
+    },
+    {
+      "code": "osm:way/651753855",
+      "name": "Kreuzspital Chur",
+      "countryCode": "CH",
+      "origin": "https://www.ksgr.ch",
+      "lat": 46.8602687,
+      "lng": 9.536271
+    },
+    {
+      "code": "osm:way/672118527",
+      "name": "Spital Limmattal",
+      "countryCode": "CH",
+      "origin": "https://www.spital-limmattal.ch",
+      "lat": 47.3935618,
+      "lng": 8.4304696
+    },
+    {
+      "code": "osm:way/672944584",
+      "name": "Kantonsspital Frauenfeld",
+      "countryCode": "CH",
+      "origin": "https://www.stgag.ch",
+      "lat": 47.548984,
+      "lng": 8.9107944
+    },
+    {
+      "code": "osm:way/672945363",
+      "name": "Kantonsspital Baden",
+      "countryCode": "CH",
+      "origin": "https://www.kantonsspitalbaden.ch",
+      "lat": 47.4546891,
+      "lng": 8.2783045
+    },
+    {
+      "code": "osm:way/673595876",
+      "name": "Psychiatriezentrum Uster Alterstagesklinik",
+      "countryCode": "CH",
+      "origin": "https://adressverzeichnis.sozialearbeit.zhaw.ch",
+      "lat": 47.3522233,
+      "lng": 8.7277794
+    },
+    {
+      "code": "osm:way/673609234",
+      "name": "Gesundheitszentrum Dielsdorf",
+      "countryCode": "CH",
+      "origin": "https://www.gzdielsdorf.ch",
+      "lat": 47.4782993,
+      "lng": 8.451156
+    },
+    {
+      "code": "osm:way/673816076",
+      "name": "Spital Linth",
+      "countryCode": "CH",
+      "origin": "https://www.spital-linth.ch",
+      "lat": 47.2235934,
+      "lng": 8.9948398
+    },
+    {
+      "code": "osm:way/673833090",
+      "name": "Kantonsspital Münsterlingen",
+      "countryCode": "CH",
+      "origin": "https://www.stgag.ch",
+      "lat": 47.6299486,
+      "lng": 9.2358399
+    },
+    {
+      "code": "osm:way/675161468",
+      "name": "Hôpital de Rolle",
+      "countryCode": "CH",
+      "origin": "https://www.ghol.ch",
+      "lat": 46.4642065,
+      "lng": 6.3464032
+    },
+    {
+      "code": "osm:way/675163028",
+      "name": "Centre Médical de Vidy",
+      "countryCode": "CH",
+      "origin": "https://www.vidymed.ch",
+      "lat": 46.5182472,
+      "lng": 6.6005006
+    },
+    {
+      "code": "osm:way/675163855",
+      "name": "Clinique Bois-Cerf",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 46.5119115,
+      "lng": 6.6305194
+    },
+    {
+      "code": "osm:way/675167399",
+      "name": "Clinique Cecil",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 46.5202546,
+      "lng": 6.621555
+    },
+    {
+      "code": "osm:way/675174067",
+      "name": "Hôpital de la Vallée de Joux",
+      "countryCode": "CH",
+      "origin": "https://www.ehnv.ch",
+      "lat": 46.6015715,
+      "lng": 6.221694
+    },
+    {
+      "code": "osm:way/675185547",
+      "name": "Permanence d'Onex",
+      "countryCode": "CH",
+      "origin": "https://gmo.ch",
+      "lat": 46.1833055,
+      "lng": 6.0991656
+    },
+    {
+      "code": "osm:way/675191947",
+      "name": "Spital Zollikerberg",
+      "countryCode": "CH",
+      "origin": "https://www.spitalzollikerberg.ch",
+      "lat": 47.3486971,
+      "lng": 8.5989214
+    },
+    {
+      "code": "osm:way/675359360",
+      "name": "Hôpital de Martigny",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalduvalais.ch",
+      "lat": 46.0995954,
+      "lng": 7.0683195
+    },
+    {
+      "code": "osm:way/675359980",
+      "name": "Clinique Saint-Amé",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalduvalais.ch",
+      "lat": 46.213274,
+      "lng": 6.9979625
+    },
+    {
+      "code": "osm:way/675361853",
+      "name": "Hôpital du Chablais de Monthey",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalrivierachablais.ch",
+      "lat": 46.2515885,
+      "lng": 6.9411151
+    },
+    {
+      "code": "osm:way/675364422",
+      "name": "EMS Miremont",
+      "countryCode": "CH",
+      "origin": "https://www.miremont.ch",
+      "lat": 46.3417075,
+      "lng": 7.0083453
+    },
+    {
+      "code": "osm:way/675377223",
+      "name": "Spital Visp",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalduvalais.ch",
+      "lat": 46.2873615,
+      "lng": 7.8836502
+    },
+    {
+      "code": "osm:way/675378267",
+      "name": "Hôpital de Sierre",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalduvalais.ch",
+      "lat": 46.2921619,
+      "lng": 7.5214331
+    },
+    {
+      "code": "osm:way/675385958",
+      "name": "Hôpital du Pays d'Enhaut",
+      "countryCode": "CH",
+      "origin": "https://www.hopital-pae.ch",
+      "lat": 46.478179,
+      "lng": 7.1407194
+    },
+    {
+      "code": "osm:way/675406336",
+      "name": "Hirslanden Klinik Permanence",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 46.9445978,
+      "lng": 7.3922701
+    },
+    {
+      "code": "osm:way/675421946",
+      "name": "Universitätsspital Basel",
+      "countryCode": "CH",
+      "origin": "https://www.unispital-basel.ch",
+      "lat": 47.5616684,
+      "lng": 7.5833861
+    },
+    {
+      "code": "osm:way/675426880",
+      "name": "REHAB Basel",
+      "countryCode": "CH",
+      "origin": "https://www.rehab.ch",
+      "lat": 47.5722186,
+      "lng": 7.5594525
+    },
+    {
+      "code": "osm:way/675434227",
+      "name": "Geriatrische Klinik St. Gallen",
+      "countryCode": "CH",
+      "origin": "https://geriatrie-sg.ch",
+      "lat": 47.4288438,
+      "lng": 9.3891044
+    },
+    {
+      "code": "osm:way/675442483",
+      "name": "Spital und Altersheim Belp",
+      "countryCode": "CH",
+      "origin": "https://www.spitalbelp.ch",
+      "lat": 46.8920224,
+      "lng": 7.4941604
+    },
+    {
+      "code": "osm:way/675446039",
+      "name": "Bethesda Spital",
+      "countryCode": "CH",
+      "origin": "https://bethesda-spital.ch",
+      "lat": 47.5480044,
+      "lng": 7.6168493
+    },
+    {
+      "code": "osm:way/675455028",
+      "name": "Clinique de Jolimont",
+      "countryCode": "CH",
+      "origin": "https://www.hug.ch",
+      "lat": 46.2210611,
+      "lng": 6.1175635
+    },
+    {
+      "code": "osm:way/675490658",
+      "name": "HFR Fribourg – Hôpital cantonal",
+      "countryCode": "CH",
+      "origin": "https://www.h-fr.ch",
+      "lat": 46.8020355,
+      "lng": 7.1379925
+    },
+    {
+      "code": "osm:way/675593593",
+      "name": "Hôpital Daler",
+      "countryCode": "CH",
+      "origin": "https://www.daler.ch",
+      "lat": 46.800929,
+      "lng": 7.140671
+    },
+    {
+      "code": "osm:way/675593829",
+      "name": "Kantonsspital Bruderholz",
+      "countryCode": "CH",
+      "origin": "https://www.ksbl.ch",
+      "lat": 47.5279276,
+      "lng": 7.5807917
+    },
+    {
+      "code": "osm:way/675593943",
+      "name": "Spital Nidwalden",
+      "countryCode": "CH",
+      "origin": "https://www.spital-nidwalden.ch",
+      "lat": 46.9598812,
+      "lng": 8.3574082
+    },
+    {
+      "code": "osm:way/675594223",
+      "name": "Spital Wil",
+      "countryCode": "CH",
+      "origin": "https://www.srft.ch",
+      "lat": 47.4653191,
+      "lng": 9.0579104
+    },
+    {
+      "code": "osm:way/675594360",
+      "name": "Reha Rheinfelden",
+      "countryCode": "CH",
+      "origin": "https://www.reha-rheinfelden.ch",
+      "lat": 47.5586655,
+      "lng": 7.8073257
+    },
+    {
+      "code": "osm:way/675946657",
+      "name": "Clinique Vert-Pré",
+      "countryCode": "CH",
+      "origin": "https://vertpre.com",
+      "lat": 46.1875524,
+      "lng": 6.1774049
+    },
+    {
+      "code": "osm:way/675949166",
+      "name": "Hôpital de jour Clairival",
+      "countryCode": "CH",
+      "origin": "https://www.hug-ge.ch",
+      "lat": 46.2224341,
+      "lng": 6.1994683
+    },
+    {
+      "code": "osm:way/675950977",
+      "name": "St. Clara-Spital",
+      "countryCode": "CH",
+      "origin": "https://www.claraspital.ch",
+      "lat": 47.566115,
+      "lng": 7.614309
+    },
+    {
+      "code": "osm:way/675964524",
+      "name": "Merian Iselin Klinik für Orthopädie und Chirurgie",
+      "countryCode": "CH",
+      "origin": "https://merianiselin.ch",
+      "lat": 47.5555964,
+      "lng": 7.5695619
+    },
+    {
+      "code": "osm:way/675968299",
+      "name": "Adullam Spital",
+      "countryCode": "CH",
+      "origin": "https://www.adullam.ch",
+      "lat": 47.5857598,
+      "lng": 7.6554819
+    },
+    {
+      "code": "osm:way/675972086",
+      "name": "Spital Grabs",
+      "countryCode": "CH",
+      "origin": "https://srrws.ch",
+      "lat": 47.1735033,
+      "lng": 9.4488832
+    },
+    {
+      "code": "osm:way/675974237",
+      "name": "Hirslanden Klinik am Rosenberg",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 47.4463911,
+      "lng": 9.52702
+    },
+    {
+      "code": "osm:way/675977477",
+      "name": "Luzerner Kantonsspital Wolhusen",
+      "countryCode": "CH",
+      "origin": "https://www.luks.ch",
+      "lat": 47.066457,
+      "lng": 8.0738162
+    },
+    {
+      "code": "osm:way/675983597",
+      "name": "Luzerner Kantonsspital Sursee",
+      "countryCode": "CH",
+      "origin": "https://www.luks.ch",
+      "lat": 47.1684133,
+      "lng": 8.1176292
+    },
+    {
+      "code": "osm:way/675987105",
+      "name": "Klinik Adelheid",
+      "countryCode": "CH",
+      "origin": "https://www.klinik-adelheid.ch",
+      "lat": 47.1412944,
+      "lng": 8.5911604
+    },
+    {
+      "code": "osm:way/675987865",
+      "name": "Klinik Arlesheim",
+      "countryCode": "CH",
+      "origin": "https://www.klinik-arlesheim.ch",
+      "lat": 47.4939289,
+      "lng": 7.6146237
+    },
+    {
+      "code": "osm:way/675988469",
+      "name": "Gesundheitszentrum Fricktal - Spital Rheinfelden",
+      "countryCode": "CH",
+      "origin": "https://www.gzf.ch",
+      "lat": 47.5560072,
+      "lng": 7.8068831
+    },
+    {
+      "code": "osm:way/675995149",
+      "name": "Spital des Seebezirks",
+      "countryCode": "CH",
+      "origin": "https://www.h-fr.ch",
+      "lat": 46.9223007,
+      "lng": 7.1078727
+    },
+    {
+      "code": "osm:way/675997450",
+      "name": "Clinique Générale Ste-Anne",
+      "countryCode": "CH",
+      "origin": "https://www.cliniquegenerale.ch",
+      "lat": 46.7997462,
+      "lng": 7.1544687
+    },
+    {
+      "code": "osm:way/676000489",
+      "name": "Ospedale Regionale di Bellinzona e Valli",
+      "countryCode": "CH",
+      "origin": "https://www.eoc.ch",
+      "lat": 46.1834935,
+      "lng": 9.0265359
+    },
+    {
+      "code": "osm:way/676507604",
+      "name": "Psychiatrische Dienste Aargau",
+      "countryCode": "CH",
+      "origin": "https://www.pdag.ch",
+      "lat": 47.4813099,
+      "lng": 8.2172012
+    },
+    {
+      "code": "osm:way/676982757",
+      "name": "Kantonsspital Glarus",
+      "countryCode": "CH",
+      "origin": "https://www.ksgl.ch",
+      "lat": 47.0451334,
+      "lng": 9.0653615
+    },
+    {
+      "code": "osm:way/676983574",
+      "name": "Kantonsspital Uri",
+      "countryCode": "CH",
+      "origin": "https://www.ksuri.ch",
+      "lat": 46.8822997,
+      "lng": 8.6371561
+    },
+    {
+      "code": "osm:way/677000057",
+      "name": "Clinica Santa Croce",
+      "countryCode": "CH",
+      "origin": "https://www.santacroce.ch",
+      "lat": 46.1784812,
+      "lng": 8.7975805
+    },
+    {
+      "code": "osm:way/677007953",
+      "name": "Clinica Luganese Moncucco",
+      "countryCode": "CH",
+      "origin": "https://moncucco.ch",
+      "lat": 46.0050986,
+      "lng": 8.9398717
+    },
+    {
+      "code": "osm:way/677009558",
+      "name": "Ospedale Sant'Anna",
+      "countryCode": "CH",
+      "origin": "https://www.clinicasantanna.ch",
+      "lat": 46.0001818,
+      "lng": 8.939075
+    },
+    {
+      "code": "osm:way/677013731",
+      "name": "Spital Thusis",
+      "countryCode": "CH",
+      "origin": "https://www.spitalthusis.ch",
+      "lat": 46.6970981,
+      "lng": 9.436782
+    },
+    {
+      "code": "osm:way/677017569",
+      "name": "Rehaklinik Davos Clavadel",
+      "countryCode": "CH",
+      "origin": "https://valens.ch",
+      "lat": 46.7689773,
+      "lng": 9.8151844
+    },
+    {
+      "code": "osm:way/677018870",
+      "name": "Center da sandà Val Müstair",
+      "countryCode": "CH",
+      "origin": "https://www.csvm.ch",
+      "lat": 46.6066148,
+      "lng": 10.4327189
+    },
+    {
+      "code": "osm:way/677032223",
+      "name": "Psychiatriezentrum Breitenau",
+      "countryCode": "CH",
+      "origin": "https://www.spitaeler-sh.ch",
+      "lat": 47.7060913,
+      "lng": 8.6254954
+    },
+    {
+      "code": "osm:way/677036535",
+      "name": "ZURZACH Care",
+      "countryCode": "CH",
+      "origin": "https://www.rehaclinic.ch",
+      "lat": 47.5905075,
+      "lng": 8.2878156
+    },
+    {
+      "code": "osm:way/677041125",
+      "name": "Asana Spital Leuggern",
+      "countryCode": "CH",
+      "origin": "http://www.spitalleuggern.ch",
+      "lat": 47.5807315,
+      "lng": 8.2173226
+    },
+    {
+      "code": "osm:way/677058450",
+      "name": "Hôpital du Jura",
+      "countryCode": "CH",
+      "origin": "https://www.h-ju.ch",
+      "lat": 47.2570743,
+      "lng": 6.9969472
+    },
+    {
+      "code": "osm:way/677064257",
+      "name": "Hôpital neuchâtelois Le Locle",
+      "countryCode": "CH",
+      "origin": "https://www.h-ne.ch",
+      "lat": 47.0571082,
+      "lng": 6.7428744
+    },
+    {
+      "code": "osm:way/677066040",
+      "name": "Hôpital neuchâtelois Val-de-Ruz",
+      "countryCode": "CH",
+      "origin": "https://www.h-ne.ch",
+      "lat": 47.032509,
+      "lng": 6.9068031
+    },
+    {
+      "code": "osm:way/677068626",
+      "name": "Hôpital catholique de la Providence",
+      "countryCode": "CH",
+      "origin": "https://www.hopital-providence.ch",
+      "lat": 46.995288,
+      "lng": 6.9391459
+    },
+    {
+      "code": "osm:way/680278021",
+      "name": "HFR Spital Tafers",
+      "countryCode": "CH",
+      "origin": "https://www.h-fr.ch",
+      "lat": 46.8102126,
+      "lng": 7.2120315
+    },
+    {
+      "code": "osm:way/680279114",
+      "name": "Spital Riggisberg",
+      "countryCode": "CH",
+      "origin": "https://www.spitalriggisberg.ch",
+      "lat": 46.8137387,
+      "lng": 7.4781597
+    },
+    {
+      "code": "osm:way/680280598",
+      "name": "Hirslanden - Privatklinik Linde - Clinique des Tilleuls",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 47.1331928,
+      "lng": 7.263077
+    },
+    {
+      "code": "osm:way/680281113",
+      "name": "Hohmad Privatklinik",
+      "countryCode": "CH",
+      "origin": "https://www.klinikhohmad.ch",
+      "lat": 46.7495656,
+      "lng": 7.6249706
+    },
+    {
+      "code": "osm:way/680287356",
+      "name": "Reha Seewis",
+      "countryCode": "CH",
+      "origin": "https://www.rehaseewis.ch",
+      "lat": 46.9892048,
+      "lng": 9.6370067
+    },
+    {
+      "code": "osm:way/680288445",
+      "name": "Spital Altstätten",
+      "countryCode": "CH",
+      "origin": "https://www.srrws.ch",
+      "lat": 47.3824331,
+      "lng": 9.5412378
+    },
+    {
+      "code": "osm:way/680289440",
+      "name": "Medizinisches Ambulatorium",
+      "countryCode": "CH",
+      "origin": "https://www.spitalverbund.ch",
+      "lat": 47.4425154,
+      "lng": 9.5315038
+    },
+    {
+      "code": "osm:way/680299421",
+      "name": "Hôpital d'Orbe",
+      "countryCode": "CH",
+      "origin": "https://www.ehnv.ch",
+      "lat": 46.7291408,
+      "lng": 6.5333409
+    },
+    {
+      "code": "osm:way/680302059",
+      "name": "Hôpital de Chamblon",
+      "countryCode": "CH",
+      "origin": "https://www.ehnv.ch",
+      "lat": 46.7792211,
+      "lng": 6.6088979
+    },
+    {
+      "code": "osm:way/680308645",
+      "name": "Hôpital psychiatrique de Malévoz",
+      "countryCode": "CH",
+      "origin": "https://www.hopitalduvalais.ch",
+      "lat": 46.2566666,
+      "lng": 6.9442305
+    },
+    {
+      "code": "osm:way/680309346",
+      "name": "HFR Hôpital de Billens",
+      "countryCode": "CH",
+      "origin": "https://www.h-fr.ch",
+      "lat": 46.6942617,
+      "lng": 6.9022021
+    },
+    {
+      "code": "osm:way/680331032",
+      "name": "Clinique le Noirmont",
+      "countryCode": "CH",
+      "origin": "https://www.clinique-le-noirmont.ch",
+      "lat": 47.2306661,
+      "lng": 6.959118
+    },
+    {
+      "code": "osm:way/680334118",
+      "name": "Hôpital du Jura - Delémont",
+      "countryCode": "CH",
+      "origin": "https://www.h-ju.ch",
+      "lat": 47.3685294,
+      "lng": 7.3387326
+    },
+    {
+      "code": "osm:way/680338392",
+      "name": "Hôpital du Jura",
+      "countryCode": "CH",
+      "origin": "https://www.h-ju.ch",
+      "lat": 47.4193143,
+      "lng": 7.0584353
+    },
+    {
+      "code": "osm:way/680342131",
+      "name": "Reha Heiligenschwendi",
+      "countryCode": "CH",
+      "origin": "https://www.rehabern.ch",
+      "lat": 46.7499272,
+      "lng": 7.6936799
+    },
+    {
+      "code": "osm:way/680350679",
+      "name": "Ospedale Regionale La Carità",
+      "countryCode": "CH",
+      "origin": "https://www.eoc.ch",
+      "lat": 46.168628,
+      "lng": 8.7907474
+    },
+    {
+      "code": "osm:way/680352687",
+      "name": "Clinica Santa Chiara SA",
+      "countryCode": "CH",
+      "origin": "https://www.clinicasantachiara.ch",
+      "lat": 46.1670449,
+      "lng": 8.7999805
+    },
+    {
+      "code": "osm:way/680353070",
+      "name": "clinica ARS medica",
+      "countryCode": "CH",
+      "origin": "https://www.arsmedica.ch",
+      "lat": 46.0398632,
+      "lng": 8.9242408
+    },
+    {
+      "code": "osm:way/680355598",
+      "name": "Kreisspital Surses",
+      "countryCode": "CH",
+      "origin": "https://www.spital-savognin.ch",
+      "lat": 46.595191,
+      "lng": 9.6005996
+    },
+    {
+      "code": "osm:way/681047020",
+      "name": "Ospidal d'Engiadina Bassa",
+      "countryCode": "CH",
+      "origin": "https://cseb.ch",
+      "lat": 46.7998634,
+      "lng": 10.3038206
+    },
+    {
+      "code": "osm:way/681048321",
+      "name": "Spital Schiers",
+      "countryCode": "CH",
+      "origin": "https://www.flurystiftung.ch",
+      "lat": 46.9710672,
+      "lng": 9.6861621
+    },
+    {
+      "code": "osm:way/681050156",
+      "name": "Klinik Stephanshorn",
+      "countryCode": "CH",
+      "origin": "https://www.stephanshorn.ch",
+      "lat": 47.4463812,
+      "lng": 9.4123366
+    },
+    {
+      "code": "osm:way/681055950",
+      "name": "Clienia Littenheid",
+      "countryCode": "CH",
+      "origin": "https://www.clienia.ch",
+      "lat": 47.4402108,
+      "lng": 9.0085226
+    },
+    {
+      "code": "osm:way/681058653",
+      "name": "Seeklinik Brunnen",
+      "countryCode": "CH",
+      "origin": "https://seeklinik-brunnen.ch",
+      "lat": 46.9961632,
+      "lng": 8.6046354
+    },
+    {
+      "code": "osm:way/681063970",
+      "name": "Schweizer Paraplegiker-Zentrum (SPZ)",
+      "countryCode": "CH",
+      "origin": "https://www.paraplegie.ch",
+      "lat": 47.1421149,
+      "lng": 8.1308554
+    },
+    {
+      "code": "osm:way/681069457",
+      "name": "Asana Spital Menziken",
+      "countryCode": "CH",
+      "origin": "https://www.spitalmenziken.ch",
+      "lat": 47.2459567,
+      "lng": 8.1902855
+    },
+    {
+      "code": "osm:way/681071295",
+      "name": "Spital Laufenburg",
+      "countryCode": "CH",
+      "origin": "https://www.gzf.ch",
+      "lat": 47.5620777,
+      "lng": 8.0644031
+    },
+    {
+      "code": "osm:way/681075214",
+      "name": "Privatklinik Belair",
+      "countryCode": "CH",
+      "origin": "https://www.hirslanden.ch",
+      "lat": 47.7010763,
+      "lng": 8.6239373
+    },
+    {
+      "code": "osm:way/681076122",
+      "name": "Klinik Schloss Mammern",
+      "countryCode": "CH",
+      "origin": "https://klinik-schloss-mammern.ch",
+      "lat": 47.6462455,
+      "lng": 8.9189161
+    },
+    {
+      "code": "osm:way/681554155",
+      "name": "Universitäre Psychiatrische Dienste Bern",
+      "countryCode": "CH",
+      "origin": "https://www.upd.ch",
+      "lat": 46.9669583,
+      "lng": 7.4830216
+    },
+    {
+      "code": "osm:way/681557491",
+      "name": "Bürgerspital Solothurn",
+      "countryCode": "CH",
+      "origin": "https://www.solothurnerspitaeler.ch",
+      "lat": 47.1995997,
+      "lng": 7.5394685
+    },
+    {
+      "code": "osm:way/681569569",
+      "name": "Klinik Gais",
+      "countryCode": "CH",
+      "origin": "https://www.klinik-gais.ch",
+      "lat": 47.3715437,
+      "lng": 9.4736806
+    },
+    {
+      "code": "osm:way/856698475",
+      "name": "Universitätsspital Flughafen",
+      "countryCode": "CH",
+      "origin": "https://www.usz.ch",
+      "lat": 47.449175,
+      "lng": 8.5658071
+    },
+    {
+      "code": "osm:way/1031658733",
+      "name": "Herz-Neuro-Zentrum Bodensee",
+      "countryCode": "CH",
+      "origin": "https://www.herz-zentrum.com",
+      "lat": 47.6295311,
+      "lng": 9.2382875
+    },
+    {
+      "code": "osm:way/1046465229",
+      "name": "Universitäts-Kinderspital Beider Basel",
+      "countryCode": "CH",
+      "origin": "https://www.ukbb.ch",
+      "lat": 47.5635952,
+      "lng": 7.5816117
+    },
+    {
+      "code": "osm:way/1103638706",
+      "name": "Hôpital intercantonal de la Broye",
+      "countryCode": "CH",
+      "origin": "https://www.hopital-broye.ch",
+      "lat": 46.8186647,
+      "lng": 6.9462542
+    },
+    {
+      "code": "osm:way/1161606654",
+      "name": "Haus 33 Kinderspital",
+      "countryCode": "CH",
+      "origin": "https://www.luks.ch",
+      "lat": 47.0586814,
+      "lng": 8.2980087
+    },
+    {
+      "code": "osm:way/1307307466",
+      "name": "Spital Dornach",
+      "countryCode": "CH",
+      "origin": "https://www.solothurnerspitaeler.ch",
+      "lat": 47.4862701,
+      "lng": 7.6137183
+    },
+    {
+      "code": "osm:way/1365019621",
+      "name": "Zuger Kantonsspital",
+      "countryCode": "CH",
+      "origin": "https://www.zgks.ch",
+      "lat": 47.1938765,
+      "lng": 8.5181859
+    },
+    {
+      "code": "osm:way/1371182821",
+      "name": "Luzerner Psychiatrie Sarnen",
+      "countryCode": "CH",
+      "origin": "https://www.lups.ch",
+      "lat": 46.8870035,
+      "lng": 8.2476343
+    },
+    {
+      "code": "osm:way/1376669608",
+      "name": "Luzerner Psychiatrie",
+      "countryCode": "CH",
+      "origin": "https://www.lups.ch",
+      "lat": 47.0572462,
+      "lng": 8.2934118
+    }
+  ]
+}

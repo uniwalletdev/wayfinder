@@ -1,0 +1,49 @@
+{
+  "countryCode": "MW",
+  "fetchedAt": "2026-10-21T02:11:22.306Z",
+  "count": 5,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/12860610990",
+      "name": "DNA Hub Africa",
+      "countryCode": "MW",
+      "origin": "https://www.dnahubafrica.com",
+      "lat": -13.9862933,
+      "lng": 33.7661723
+    },
+    {
+      "code": "osm:way/36074669",
+      "name": "Zomba Central Hospital",
+      "countryCode": "MW",
+      "origin": "https://www.health.gov.mw",
+      "lat": -15.3995915,
+      "lng": 35.3139466
+    },
+    {
+      "code": "osm:way/266259023",
+      "name": "Mwaiwathu Private Hospital",
+      "countryCode": "MW",
+      "origin": "https://www.mwaiwathuhospital.org",
+      "lat": -15.7851183,
+      "lng": 35.0171299
+    },
+    {
+      "code": "osm:way/791436628",
+      "name": "Billy Riordan Memorial Clinic",
+      "countryCode": "MW",
+      "origin": "https://www.billysmalawiproject.org",
+      "lat": -14.031732,
+      "lng": 34.8402252
+    },
+    {
+      "code": "osm:way/808424986",
+      "name": "Kamuzu Central Hospital",
+      "countryCode": "MW",
+      "origin": "https://www.health.gov.mw",
+      "lat": -13.9769275,
+      "lng": 33.7857298
+    }
+  ]
+}

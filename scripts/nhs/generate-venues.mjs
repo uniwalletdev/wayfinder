@@ -23,7 +23,8 @@ if (!data) {
   process.exit(1)
 }
 
-const esc = (s) => String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"')
+const esc = (s) =>
+  String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t")
 
 // Hospitals only, for the same reason fetch-osm searches around hospitals only:
 // the ODS trust-site register is every location a trust operates, and nationally

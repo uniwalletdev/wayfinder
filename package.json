@@ -34,7 +34,7 @@
     "world:floorplans": "node scripts/world/generate-floorplans.mjs",
     "world:build-venues": "node scripts/world/build-venues.mjs",
     "world:registry": "node scripts/world/generate-registry.mjs",
-    "world:ingest": "npm run world:draft && npm run world:floorplans && npm run world:build-venues && npm run world:registry && npm run world:build && npm run world:venues"
+    "world:ingest": "node scripts/world/ingest-all.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.101.0",

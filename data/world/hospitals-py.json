@@ -1,0 +1,113 @@
+{
+  "countryCode": "PY",
+  "fetchedAt": "2026-10-21T02:34:32.042Z",
+  "count": 13,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/6011259029",
+      "name": "Hospital Filadelfia",
+      "countryCode": "PY",
+      "origin": "https://www.hospitalfiladelfia.org.py",
+      "lat": -22.3513707,
+      "lng": -60.0341383
+    },
+    {
+      "code": "osm:node/7617925092",
+      "name": "Consultorio Ecografico",
+      "countryCode": "PY",
+      "origin": "https://ecografia-dr-franco.negocio.site",
+      "lat": -25.3297603,
+      "lng": -57.5318013
+    },
+    {
+      "code": "osm:node/9846431627",
+      "name": "Centro Médico Maitei",
+      "countryCode": "PY",
+      "origin": "https://instagram.com",
+      "lat": -25.2415801,
+      "lng": -57.5437235
+    },
+    {
+      "code": "osm:node/9902381174",
+      "name": "Hospital Universitario Ntra. Sra. de la Asunción",
+      "countryCode": "PY",
+      "origin": "https://www.hospitaluniversitario.edu.py",
+      "lat": -25.292037,
+      "lng": -57.5619849
+    },
+    {
+      "code": "osm:node/9943551192",
+      "name": "SENADIS",
+      "countryCode": "PY",
+      "origin": "https://www.senadis.gov.py",
+      "lat": -25.3134505,
+      "lng": -57.540864
+    },
+    {
+      "code": "osm:node/13743258705",
+      "name": "Hospital Central de Policía Rigoberto Caballero",
+      "countryCode": "PY",
+      "origin": "https://hcprc.com",
+      "lat": -25.2931334,
+      "lng": -57.6030096
+    },
+    {
+      "code": "osm:way/70573910",
+      "name": "Instituto Nacional del Cáncer",
+      "countryCode": "PY",
+      "origin": "https://www.mspbs.gov.py",
+      "lat": -25.3509336,
+      "lng": -57.4166438
+    },
+    {
+      "code": "osm:way/164036832",
+      "name": "Hospital Mennonita “Km 81”",
+      "countryCode": "PY",
+      "origin": "http://www.km81.org",
+      "lat": -25.4250933,
+      "lng": -56.896446
+    },
+    {
+      "code": "osm:way/263938528",
+      "name": "Hospital Luz y Vida",
+      "countryCode": "PY",
+      "origin": "http://www.luzyvida.org.py",
+      "lat": -25.3815721,
+      "lng": -55.7049256
+    },
+    {
+      "code": "osm:way/365357628",
+      "name": "Sanatorio Americano",
+      "countryCode": "PY",
+      "origin": "https://www.doctosalud.com.py",
+      "lat": -25.2860543,
+      "lng": -57.6152826
+    },
+    {
+      "code": "osm:way/611324247",
+      "name": "Hospital Reina Sofia",
+      "countryCode": "PY",
+      "origin": "https://www.cruzroja.org.py",
+      "lat": -25.2840207,
+      "lng": -57.6222669
+    },
+    {
+      "code": "osm:way/749950561",
+      "name": "Urgencias Pediatricas H. R. C.",
+      "countryCode": "PY",
+      "origin": "https://www.mspbs.gov.py",
+      "lat": -25.3918252,
+      "lng": -57.1487164
+    },
+    {
+      "code": "osm:way/993472443",
+      "name": "IPS Luque",
+      "countryCode": "PY",
+      "origin": "https://portal.ips.gov.py",
+      "lat": -25.2825628,
+      "lng": -57.4840924
+    }
+  ]
+}

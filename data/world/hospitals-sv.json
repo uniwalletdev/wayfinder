@@ -1,0 +1,73 @@
+{
+  "countryCode": "SV",
+  "fetchedAt": "2026-10-21T02:51:47.367Z",
+  "count": 8,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/11304709178",
+      "name": "Clinica Medica ASUSA",
+      "countryCode": "SV",
+      "origin": "https://clinica-medica-asusa.negocio.site",
+      "lat": 13.9360492,
+      "lng": -89.0269682
+    },
+    {
+      "code": "osm:way/137226205",
+      "name": "Hospital Nacional San Rafael",
+      "countryCode": "SV",
+      "origin": "http://www.hsanrafael.salud.gob.sv",
+      "lat": 13.671168,
+      "lng": -89.2782914
+    },
+    {
+      "code": "osm:way/285332270",
+      "name": "Unidad Médica de Santa Ana",
+      "countryCode": "SV",
+      "origin": "https://www.transparencia.gob.sv",
+      "lat": 13.997706,
+      "lng": -89.5609406
+    },
+    {
+      "code": "osm:way/382586759",
+      "name": "Hospital Regional ISSS Santa Ana",
+      "countryCode": "SV",
+      "origin": "https://www.transparencia.gob.sv",
+      "lat": 13.9763156,
+      "lng": -89.5671711
+    },
+    {
+      "code": "osm:way/555024783",
+      "name": "Unidad de Salud de Nahuizalco",
+      "countryCode": "SV",
+      "origin": "https://www.salud.gob.sv",
+      "lat": 13.7803451,
+      "lng": -89.7371702
+    },
+    {
+      "code": "osm:way/1025944388",
+      "name": "Hospital Cáder",
+      "countryCode": "SV",
+      "origin": "https://www.hospitalcader.com",
+      "lat": 13.9917545,
+      "lng": -89.5525464
+    },
+    {
+      "code": "osm:way/1144437415",
+      "name": "Chivo Pets",
+      "countryCode": "SV",
+      "origin": "https://chivopets.sv",
+      "lat": 13.6753598,
+      "lng": -89.2520737
+    },
+    {
+      "code": "osm:way/1220540309",
+      "name": "Vacunación COVID-19 - Unidad de Salud Turin",
+      "countryCode": "SV",
+      "origin": "https://www.salud.gob.sv",
+      "lat": 13.9658691,
+      "lng": -89.7684663
+    }
+  ]
+}

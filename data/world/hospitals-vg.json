@@ -1,0 +1,17 @@
+{
+  "countryCode": "VG",
+  "fetchedAt": "2026-10-21T03:09:04.967Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/398620009",
+      "name": "Peebles Hospital",
+      "countryCode": "VG",
+      "origin": "http://www.bvihsa.vg",
+      "lat": 18.4171118,
+      "lng": -64.6194564
+    }
+  ]
+}

@@ -1,0 +1,681 @@
+{
+  "countryCode": "PE",
+  "fetchedAt": "2026-10-21T02:23:56.916Z",
+  "count": 84,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/2703608474",
+      "name": "Hospital de la Solidaridad",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0298427,
+      "lng": -77.0896429
+    },
+    {
+      "code": "osm:node/4324619170",
+      "name": "Cruz Roja",
+      "countryCode": "PE",
+      "origin": "https://www.cruzrojaarequipa.org",
+      "lat": -16.4052305,
+      "lng": -71.5311682
+    },
+    {
+      "code": "osm:node/5008524121",
+      "name": "Policlínico Peruano Japonés",
+      "countryCode": "PE",
+      "origin": "https://www.policlinicoperuanojapones.org",
+      "lat": -12.0877134,
+      "lng": -77.0546996
+    },
+    {
+      "code": "osm:node/5955588213",
+      "name": "Hospital Privado Juan Pablo II",
+      "countryCode": "PE",
+      "origin": "https://hospitaljuanpablo.pe",
+      "lat": -6.7901316,
+      "lng": -79.8469561
+    },
+    {
+      "code": "osm:node/6571247132",
+      "name": "SISOL Salud Centro Médico Trabajadores Hospital del Niño",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -11.9585671,
+      "lng": -76.990319
+    },
+    {
+      "code": "osm:way/39413837",
+      "name": "Hospital Nacional Edgardo Rebagliati Martins",
+      "countryCode": "PE",
+      "origin": "https://www.gob.pe",
+      "lat": -12.078364,
+      "lng": -77.0398924
+    },
+    {
+      "code": "osm:way/39557243",
+      "name": "Hospital Víctor Larco Herrera",
+      "countryCode": "PE",
+      "origin": "https://www.larcoherrera.gob.pe",
+      "lat": -12.0972266,
+      "lng": -77.0655498
+    },
+    {
+      "code": "osm:way/73954281",
+      "name": "Hospital Santa Rosa",
+      "countryCode": "PE",
+      "origin": "http://www.hsr.gob.pe",
+      "lat": -12.0723555,
+      "lng": -77.0610282
+    },
+    {
+      "code": "osm:way/75223325",
+      "name": "Clinica Internacional",
+      "countryCode": "PE",
+      "origin": "https://www.clinicainternacional.com.pe",
+      "lat": -12.0584645,
+      "lng": -77.0386672
+    },
+    {
+      "code": "osm:way/110061951",
+      "name": "Hospital Nacional Sergio E. Bernales",
+      "countryCode": "PE",
+      "origin": "https://www.hnseb.gob.pe",
+      "lat": -11.9141196,
+      "lng": -77.0376892
+    },
+    {
+      "code": "osm:way/117005900",
+      "name": "Hospital Carlos Alcántara Butterfield",
+      "countryCode": "PE",
+      "origin": "http://www.essalud.gob.pe",
+      "lat": -12.0618216,
+      "lng": -76.9455002
+    },
+    {
+      "code": "osm:way/126861263",
+      "name": "Hospital Uldarico Roca Fernández",
+      "countryCode": "PE",
+      "origin": "http://www.essalud.gob.pe",
+      "lat": -12.2115835,
+      "lng": -76.9318382
+    },
+    {
+      "code": "osm:way/151303103",
+      "name": "Instituto Nacional de Salud del Niño",
+      "countryCode": "PE",
+      "origin": "https://www.insnsb.gob.pe",
+      "lat": -12.0856358,
+      "lng": -76.9921762
+    },
+    {
+      "code": "osm:way/160691934",
+      "name": "Hospital María Auxiliadora",
+      "countryCode": "PE",
+      "origin": "http://www.hma.gob.pe",
+      "lat": -12.1610982,
+      "lng": -76.9582593
+    },
+    {
+      "code": "osm:way/169309866",
+      "name": "SISOL Salud San Juan de Lurigancho",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0084055,
+      "lng": -77.0036434
+    },
+    {
+      "code": "osm:way/172600382",
+      "name": "Hospital Nacional Arzobispo Loayza",
+      "countryCode": "PE",
+      "origin": "http://www.hospitalloayza.gob.pe",
+      "lat": -12.0495517,
+      "lng": -77.0446197
+    },
+    {
+      "code": "osm:way/179275482",
+      "name": "Hospital Departamental de Huancavelica",
+      "countryCode": "PE",
+      "origin": "http://www.hdhvca.com.pe",
+      "lat": -12.7876232,
+      "lng": -74.9816198
+    },
+    {
+      "code": "osm:way/185197319",
+      "name": "Hospital Municipal de Surco",
+      "countryCode": "PE",
+      "origin": "http://www.munisurco.gob.pe",
+      "lat": -12.1441317,
+      "lng": -77.0058183
+    },
+    {
+      "code": "osm:way/194898813",
+      "name": "Instituto Nacional de Salud del Niño",
+      "countryCode": "PE",
+      "origin": "http://www.insn.gob.pe",
+      "lat": -12.0649978,
+      "lng": -77.0464372
+    },
+    {
+      "code": "osm:way/195568056",
+      "name": "Clinica Centenario Peruano Japonesa",
+      "countryCode": "PE",
+      "origin": "https://www.clinicapj.org.pe",
+      "lat": -12.0730561,
+      "lng": -77.059471
+    },
+    {
+      "code": "osm:way/198248355",
+      "name": "CASE",
+      "countryCode": "PE",
+      "origin": "https://healthresearchweb.org",
+      "lat": -16.3952832,
+      "lng": -71.5296536
+    },
+    {
+      "code": "osm:way/223370761",
+      "name": "Hospital General de Huacho",
+      "countryCode": "PE",
+      "origin": "https://www.hdhuacho.gob.pe",
+      "lat": -11.1149335,
+      "lng": -77.6071418
+    },
+    {
+      "code": "osm:way/224196816",
+      "name": "Hospital II Gustavo Lanatta Luján",
+      "countryCode": "PE",
+      "origin": "https://www.facebook.com",
+      "lat": -11.1137687,
+      "lng": -77.6088655
+    },
+    {
+      "code": "osm:way/278393025",
+      "name": "Hospital Nacional PNP Luis N. Saenz",
+      "countryCode": "PE",
+      "origin": "https://www.pnp.gob.pe",
+      "lat": -12.0849729,
+      "lng": -77.0599318
+    },
+    {
+      "code": "osm:way/307663576",
+      "name": "Hospital Santa Rosa",
+      "countryCode": "PE",
+      "origin": "http://www.hospitalsantarosa.gob.pe",
+      "lat": -12.6019623,
+      "lng": -69.1832527
+    },
+    {
+      "code": "osm:way/320125239",
+      "name": "Hospital Huaycán",
+      "countryCode": "PE",
+      "origin": "https://www.hospitalhuaycan.gob.pe",
+      "lat": -12.0154571,
+      "lng": -76.8203254
+    },
+    {
+      "code": "osm:way/320415894",
+      "name": "Hospital Vitarte",
+      "countryCode": "PE",
+      "origin": "http://www.hospitalvitarte.gob.pe",
+      "lat": -12.0263522,
+      "lng": -76.919855
+    },
+    {
+      "code": "osm:way/327178876",
+      "name": "Hospital III Yanahuara",
+      "countryCode": "PE",
+      "origin": "http://www.essalud.gob.pe",
+      "lat": -16.3970619,
+      "lng": -71.5443884
+    },
+    {
+      "code": "osm:way/328480427",
+      "name": "Hospital Goyeneche",
+      "countryCode": "PE",
+      "origin": "https://www.hospitalgoyeneche.gob.pe",
+      "lat": -16.4024925,
+      "lng": -71.5279176
+    },
+    {
+      "code": "osm:way/338350659",
+      "name": "Instituto Nacional de Enfermedades Neoplásicas",
+      "countryCode": "PE",
+      "origin": "http://www.inen.sld.pe",
+      "lat": -12.1126056,
+      "lng": -76.9985145
+    },
+    {
+      "code": "osm:way/370798546",
+      "name": "Hospital Guillermo Kaelín de la Fuente",
+      "countryCode": "PE",
+      "origin": "https://www.vmtsalud.com.pe",
+      "lat": -12.1775909,
+      "lng": -76.940798
+    },
+    {
+      "code": "osm:way/372661035",
+      "name": "Hospital de Emergencias Villa El Salvador",
+      "countryCode": "PE",
+      "origin": "http://www.heves.gob.pe",
+      "lat": -12.2320835,
+      "lng": -76.9348658
+    },
+    {
+      "code": "osm:way/384203102",
+      "name": "Hospital Hermilio Valdizán",
+      "countryCode": "PE",
+      "origin": "http://www.hhv.gob.pe",
+      "lat": -12.045808,
+      "lng": -76.9459986
+    },
+    {
+      "code": "osm:way/394469163",
+      "name": "SISOL Salud Chorrillos",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.1675144,
+      "lng": -77.0191398
+    },
+    {
+      "code": "osm:way/398850206",
+      "name": "SISOL Salud Mirones",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0492017,
+      "lng": -77.0682214
+    },
+    {
+      "code": "osm:way/406620283",
+      "name": "Hospital Nacional Hipólito Unanue",
+      "countryCode": "PE",
+      "origin": "http://www.hnhu.gob.pe",
+      "lat": -12.0412612,
+      "lng": -76.992577
+    },
+    {
+      "code": "osm:way/406622143",
+      "name": "SISOL Salud El Agustino",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0394851,
+      "lng": -76.9971154
+    },
+    {
+      "code": "osm:way/413981813",
+      "name": "Centro de Salud - Raul Patrucco Puig",
+      "countryCode": "PE",
+      "origin": "https://raulpatruccopuig.weebly.com",
+      "lat": -12.0533618,
+      "lng": -77.0224306
+    },
+    {
+      "code": "osm:way/419918941",
+      "name": "Instituto Nacional de Rehabilitación",
+      "countryCode": "PE",
+      "origin": "https://www.inr.gob.pe",
+      "lat": -12.1918734,
+      "lng": -77.0031664
+    },
+    {
+      "code": "osm:way/420078496",
+      "name": "Hospital Alberto Leopoldo Barton Thompson",
+      "countryCode": "PE",
+      "origin": "https://www.callaosalud.com.pe",
+      "lat": -12.0483235,
+      "lng": -77.1077104
+    },
+    {
+      "code": "osm:way/427324297",
+      "name": "SISOL Salud Ica",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -14.0721021,
+      "lng": -75.7395563
+    },
+    {
+      "code": "osm:way/433817288",
+      "name": "Hospital Centro Médico Naval",
+      "countryCode": "PE",
+      "origin": "https://www.disamar.mil.pe",
+      "lat": -12.0587576,
+      "lng": -77.089862
+    },
+    {
+      "code": "osm:way/436278843",
+      "name": "SISOL Salud Lince",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0840314,
+      "lng": -77.0395119
+    },
+    {
+      "code": "osm:way/437496535",
+      "name": "SISOL Salud La Victoria",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0609181,
+      "lng": -77.02994
+    },
+    {
+      "code": "osm:way/437683615",
+      "name": "SISOL Salud Villa María del Triunfo",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.1716877,
+      "lng": -76.9455733
+    },
+    {
+      "code": "osm:way/438039050",
+      "name": "Hospital de la Solidaridad",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0306442,
+      "lng": -77.090178
+    },
+    {
+      "code": "osm:way/439241364",
+      "name": "SISOL Salud Metro UNI",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0131949,
+      "lng": -77.0516846
+    },
+    {
+      "code": "osm:way/439627528",
+      "name": "Hospital Luis Negreiros Vega",
+      "countryCode": "PE",
+      "origin": "http://www.essalud.gob.pe",
+      "lat": -12.0155894,
+      "lng": -77.0978726
+    },
+    {
+      "code": "osm:way/439895202",
+      "name": "Hospital Chalaco",
+      "countryCode": "PE",
+      "origin": "http://www.municallao.gob.pe",
+      "lat": -12.0200432,
+      "lng": -77.1027558
+    },
+    {
+      "code": "osm:way/442795790",
+      "name": "Instituto Nacional de Salud",
+      "countryCode": "PE",
+      "origin": "http://www.portal.ins.gob.pe",
+      "lat": -12.182453,
+      "lng": -77.0165561
+    },
+    {
+      "code": "osm:way/445266377",
+      "name": "Hospital de Alta Complejidad Virgen de la Puerta",
+      "countryCode": "PE",
+      "origin": "http://www.essalud.gob.pe",
+      "lat": -8.055174,
+      "lng": -79.0579051
+    },
+    {
+      "code": "osm:way/445502597",
+      "name": "Centro de Salud Villa Victoria",
+      "countryCode": "PE",
+      "origin": "https://www.rslc.gob.pe",
+      "lat": -12.1087954,
+      "lng": -77.0120165
+    },
+    {
+      "code": "osm:way/446920892",
+      "name": "SISOL Salud Chiclayo",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -6.7706723,
+      "lng": -79.8528487
+    },
+    {
+      "code": "osm:way/465561830",
+      "name": "SISOL Salud Puente Piedra",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -11.8690825,
+      "lng": -77.0711593
+    },
+    {
+      "code": "osm:way/485244256",
+      "name": "Hospital Nacional Docente Madre Niño San Bartolome",
+      "countryCode": "PE",
+      "origin": "http://www.sanbartolome.gob.pe",
+      "lat": -12.0497716,
+      "lng": -77.0418067
+    },
+    {
+      "code": "osm:way/485409220",
+      "name": "Hospital Especializado de Emergencias Pediatricas",
+      "countryCode": "PE",
+      "origin": "http://www.hep.gob.pe",
+      "lat": -12.0584042,
+      "lng": -77.0214361
+    },
+    {
+      "code": "osm:way/523002549",
+      "name": "Hospital Edmundo Escomel",
+      "countryCode": "PE",
+      "origin": "http://www.essalud.gob.pe",
+      "lat": -16.4172207,
+      "lng": -71.5086614
+    },
+    {
+      "code": "osm:way/523018490",
+      "name": "Hospital Geriátrico Municipal",
+      "countryCode": "PE",
+      "origin": "https://www.muniarequipa.gob.pe",
+      "lat": -16.3809656,
+      "lng": -71.5571392
+    },
+    {
+      "code": "osm:way/546452413",
+      "name": "Hospital de la Solidaridad - Larapa CUSCO",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -13.5325457,
+      "lng": -71.9035016
+    },
+    {
+      "code": "osm:way/560543075",
+      "name": "Hospital Regional de Lambayeque",
+      "countryCode": "PE",
+      "origin": "https://hospitallasmercedes.regionlambayeque.gob.pe",
+      "lat": -6.7618509,
+      "lng": -79.8630115
+    },
+    {
+      "code": "osm:way/563539320",
+      "name": "Hospital Regional Virgen de Fátima",
+      "countryCode": "PE",
+      "origin": "https://hospitalvirgendefatima.gob.pe",
+      "lat": -6.2313333,
+      "lng": -77.8663125
+    },
+    {
+      "code": "osm:way/565936062",
+      "name": "Instituto Nacional Materno Perinatal",
+      "countryCode": "PE",
+      "origin": "https://www.inmp.gob.pe",
+      "lat": -12.0522981,
+      "lng": -77.022102
+    },
+    {
+      "code": "osm:way/604765913",
+      "name": "SISOL Salud Amancaes",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0170928,
+      "lng": -77.030133
+    },
+    {
+      "code": "osm:way/607530492",
+      "name": "Hospital de Chancay",
+      "countryCode": "PE",
+      "origin": "http://www.hospitaldechancay.gob.pe",
+      "lat": -11.5607807,
+      "lng": -77.2707986
+    },
+    {
+      "code": "osm:way/618688385",
+      "name": "Hospital José Casimiro Ulloa",
+      "countryCode": "PE",
+      "origin": "http://www.hejcu.gob.pe",
+      "lat": -12.1281002,
+      "lng": -77.0177417
+    },
+    {
+      "code": "osm:way/665919603",
+      "name": "Hospital II Huánuco",
+      "countryCode": "PE",
+      "origin": "http://www.essalud.gob.pe",
+      "lat": -9.9370077,
+      "lng": -76.2394277
+    },
+    {
+      "code": "osm:way/668575501",
+      "name": "Hospital Regional del Cusco",
+      "countryCode": "PE",
+      "origin": "https://hrcusco.gob.pe",
+      "lat": -13.52352,
+      "lng": -71.9550369
+    },
+    {
+      "code": "osm:way/699538736",
+      "name": "SISOL Salud Ate",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0289805,
+      "lng": -76.9262702
+    },
+    {
+      "code": "osm:way/699540898",
+      "name": "SISOL Salud Camaná",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.0493096,
+      "lng": -77.0353334
+    },
+    {
+      "code": "osm:way/699674838",
+      "name": "SISOL Salud Los Olivos",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -11.9792433,
+      "lng": -77.0768774
+    },
+    {
+      "code": "osm:way/699686753",
+      "name": "SISOL Salud Punta Hermosa",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -12.3269934,
+      "lng": -76.8248976
+    },
+    {
+      "code": "osm:way/699804055",
+      "name": "Hospital de la Solidaridad Tumbes",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -3.5610151,
+      "lng": -80.4546316
+    },
+    {
+      "code": "osm:way/699806316",
+      "name": "SISOL Salud Cusco - Wanchaq",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -13.5226948,
+      "lng": -71.9656231
+    },
+    {
+      "code": "osm:way/699814130",
+      "name": "SISOL Salud Sullana",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -4.8984413,
+      "lng": -80.6870972
+    },
+    {
+      "code": "osm:way/699814671",
+      "name": "Hospital de la Solidaridad",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -18.0259045,
+      "lng": -70.2624863
+    },
+    {
+      "code": "osm:way/699814978",
+      "name": "SISOL Salud San Martín",
+      "countryCode": "PE",
+      "origin": "https://www.sisol.gob.pe",
+      "lat": -6.4976469,
+      "lng": -76.3693651
+    },
+    {
+      "code": "osm:way/777198537",
+      "name": "Hospital San Juan Bautista de Huaral",
+      "countryCode": "PE",
+      "origin": "https://www.hospitalhuaral.gob.pe",
+      "lat": -11.5035939,
+      "lng": -77.2134784
+    },
+    {
+      "code": "osm:way/777346011",
+      "name": "Hospital Nacional Alberto Sabogal Sologuren",
+      "countryCode": "PE",
+      "origin": "http://www.essalud.gob.pe",
+      "lat": -12.0642727,
+      "lng": -77.1218635
+    },
+    {
+      "code": "osm:way/780628452",
+      "name": "Instituto de Salud Oral FAP",
+      "countryCode": "PE",
+      "origin": "https://hospi.fap.mil.pe",
+      "lat": -12.1032022,
+      "lng": -77.020556
+    },
+    {
+      "code": "osm:way/817718681",
+      "name": "Hospital José Agurto Tello de Chosica",
+      "countryCode": "PE",
+      "origin": "http://www.hospitalchosica.gob.pe",
+      "lat": -11.9343328,
+      "lng": -76.6933969
+    },
+    {
+      "code": "osm:way/1021889903",
+      "name": "Centro Medicio CIMA SAC",
+      "countryCode": "PE",
+      "origin": "https://cima-clinic.com",
+      "lat": -13.3021768,
+      "lng": -72.1248884
+    },
+    {
+      "code": "osm:way/1340373104",
+      "name": "Hospital Nacional PNP Luis N. Saenz",
+      "countryCode": "PE",
+      "origin": "https://www.pnp.gob.pe",
+      "lat": -12.0848068,
+      "lng": -77.0591135
+    },
+    {
+      "code": "osm:way/1499461722",
+      "name": "Policlínico Suárez",
+      "countryCode": "PE",
+      "origin": "https://www.gob.pe",
+      "lat": -12.1096826,
+      "lng": -77.027185
+    },
+    {
+      "code": "osm:way/1569285459",
+      "name": "Policlínico Parroquial Nuestra Señora de los Ángeles",
+      "countryCode": "PE",
+      "origin": "https://policlinicolosangeles.com",
+      "lat": -12.0340733,
+      "lng": -77.0242893
+    }
+  ]
+}

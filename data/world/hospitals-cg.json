@@ -1,0 +1,17 @@
+{
+  "countryCode": "CG",
+  "fetchedAt": "2026-10-21T01:00:57.607Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/595440828",
+      "name": "Hôpital Général de Djiri",
+      "countryCode": "CG",
+      "origin": "https://hgd.cg",
+      "lat": -4.1922564,
+      "lng": 15.2498093
+    }
+  ]
+}

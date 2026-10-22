@@ -12,6 +12,7 @@
 // in flight, a generous per-query timeout, an honest User-Agent. Mirrors are
 // tried in order on failure only, never in parallel — that would just be
 // hitting the same community resource from two directions at once.
+import { readdirSync } from "fs"
 import { fetchRetry } from "../../nhs/lib/net.mjs"
 import { dataPath, readJson, writeJson, log } from "../../nhs/lib/paths.mjs"
 
@@ -94,6 +95,25 @@ async function queryOverpass(countryCode, { onLog } = {}) {
 
 export function hospitalsCachePath(countryCode) {
   return dataPath("world", `hospitals-${countryCode.toLowerCase()}.json`)
+}
+
+// Which countries a stage should process, shared by discover-plans.mjs,
+// approve-plans.mjs, fetch-plans.mjs and draft-sheets.mjs so a new country
+// doesn't need updating in four places. `--country` takes one code or a
+// comma-separated list (`--country US,CA` or `--country US`); with neither,
+// every country that has a cached hospital list on disk — i.e. every country
+// loadOrFetchHospitals has ever been run for — is in scope. That means a bare
+// run picks up a newly-added country automatically the moment its hospital
+// list exists, with no hardcoded list to remember to extend.
+export function countriesFromArgs(argv = process.argv) {
+  const i = argv.indexOf("--country")
+  if (i > -1) return argv[i + 1].split(",").map((c) => c.trim().toUpperCase()).filter(Boolean)
+  const dir = dataPath("world")
+  return readdirSync(dir)
+    .map((f) => /^hospitals-([a-z]{2})\.json$/.exec(f)?.[1])
+    .filter(Boolean)
+    .map((cc) => cc.toUpperCase())
+    .sort()
 }
 
 // Cached by default: this is a shared public service, and the hospital list

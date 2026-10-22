@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "slug": "franklin-type-1a",
+      "file": "map/world/auto/nz/franklin-type-1a.pdf",
+      "url": "https://franklin.oceaniahealthcare.co.nz/hubfs/Franklin%20Type%201A.pdf?hsLang=en-nz",
+      "sha256": "671f8f72ed7b74e15835160922a448916a70fed36b6d77fff3991bf9e30ff9ed",
+      "hospitalCode": "osm:way/204906049",
+      "hospitalName": "Te Mana Care Centre",
+      "countryCode": "NZ",
+      "linkText": "Download Floor Plan",
+      "kind": "floor-plan",
+      "approvedAt": "2026-10-22T02:54:33.076Z",
+      "approvedBy": "auto:high-confidence-official-domain",
+      "bytes": 277992,
+      "fetchedAt": "2026-10-22T06:23:56.977Z"
+    }
+  ]
+}

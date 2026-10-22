@@ -1,0 +1,33 @@
+{
+  "countryCode": "TM",
+  "fetchedAt": "2026-10-21T02:57:44.259Z",
+  "count": 3,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/227777953",
+      "name": "Lebap Welaýat Köpugurly Hassahanasy",
+      "countryCode": "TM",
+      "origin": "https://www.parahat.info",
+      "lat": 39.0140282,
+      "lng": 63.5977368
+    },
+    {
+      "code": "osm:way/680650669",
+      "name": "Lebap Welaýat Yokanç Keseller Hassahanasy",
+      "countryCode": "TM",
+      "origin": "https://www.saglykhm.gov.tm",
+      "lat": 38.9709629,
+      "lng": 63.5019109
+    },
+    {
+      "code": "osm:way/789132148",
+      "name": "Halkara Ýanyk Şikeslerini Bejeriş Merkezi",
+      "countryCode": "TM",
+      "origin": "https://www.saglykhm.gov.tm",
+      "lat": 37.9484475,
+      "lng": 58.3354096
+    }
+  ]
+}

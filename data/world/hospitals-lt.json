@@ -1,0 +1,361 @@
+{
+  "countryCode": "LT",
+  "fetchedAt": "2026-10-21T01:58:47.877Z",
+  "count": 44,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/844163823",
+      "name": "Joniškio ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.joniskioligonine.lt",
+      "lat": 56.2321029,
+      "lng": 23.6276078
+    },
+    {
+      "code": "osm:node/937027358",
+      "name": "Palangos reabilitacijos ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.prl.lt",
+      "lat": 55.9355852,
+      "lng": 21.0760009
+    },
+    {
+      "code": "osm:node/4009688352",
+      "name": "VšĮ Gėlos globos namai",
+      "countryCode": "LT",
+      "origin": "https://www.gelosglobosnamai.lt",
+      "lat": 54.8554127,
+      "lng": 25.5200253
+    },
+    {
+      "code": "osm:node/4202061390",
+      "name": "Santariškių klinikų Kraujo centras",
+      "countryCode": "LT",
+      "origin": "https://www.tavokraujas.lt",
+      "lat": 54.75322,
+      "lng": 25.2780168
+    },
+    {
+      "code": "osm:node/4317959291",
+      "name": "Aušros vartų ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.avl.lt",
+      "lat": 54.7186746,
+      "lng": 25.2208885
+    },
+    {
+      "code": "osm:node/4329133990",
+      "name": "Gemma",
+      "countryCode": "LT",
+      "origin": "https://www.gemma.lt",
+      "lat": 54.7057471,
+      "lng": 25.3206289
+    },
+    {
+      "code": "osm:node/14130898506",
+      "name": "Meliva Kardiolitos klinikos (Ligoninė)",
+      "countryCode": "LT",
+      "origin": "https://meliva.lt",
+      "lat": 54.6535092,
+      "lng": 25.224593
+    },
+    {
+      "code": "osm:way/25892959",
+      "name": "Respublikinė Vilniaus psichiatrijos ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.rvpl.lt",
+      "lat": 54.6836986,
+      "lng": 25.4177667
+    },
+    {
+      "code": "osm:way/28621227",
+      "name": "Meliva",
+      "countryCode": "LT",
+      "origin": "https://meliva.lt",
+      "lat": 54.7170254,
+      "lng": 25.2302473
+    },
+    {
+      "code": "osm:way/99164033",
+      "name": "Klaipėdos psichikos sveikatos centras",
+      "countryCode": "LT",
+      "origin": "https://kpsc.lt",
+      "lat": 55.7058551,
+      "lng": 21.1397158
+    },
+    {
+      "code": "osm:way/102192551",
+      "name": "Versmė",
+      "countryCode": "LT",
+      "origin": "https://www.versme.com",
+      "lat": 54.6012692,
+      "lng": 24.0277732
+    },
+    {
+      "code": "osm:way/102192561",
+      "name": "Birštono pirminės sveikatos priežiūros centras",
+      "countryCode": "LT",
+      "origin": "https://www.birstonopspc.lt",
+      "lat": 54.6070431,
+      "lng": 24.0255958
+    },
+    {
+      "code": "osm:way/136852420",
+      "name": "LSMU Kauno klinikos",
+      "countryCode": "LT",
+      "origin": "https://www.kaunoklinikos.lt",
+      "lat": 54.9195244,
+      "lng": 23.92139
+    },
+    {
+      "code": "osm:way/147615886",
+      "name": "Romainių tuberkuliozės ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.kaunoklinikos.lt",
+      "lat": 54.9232745,
+      "lng": 23.83189
+    },
+    {
+      "code": "osm:way/149408474",
+      "name": "VšĮ Radviliškio rajono pirminės sveikatos priežiūros centras",
+      "countryCode": "LT",
+      "origin": "https://www.radviliskiopoliklinika.lt",
+      "lat": 55.8105128,
+      "lng": 23.5420832
+    },
+    {
+      "code": "osm:way/149408477",
+      "name": "Všį Radviliškio ligoninė",
+      "countryCode": "LT",
+      "origin": "https://radviliskioligonine.lt",
+      "lat": 55.8111666,
+      "lng": 23.5414176
+    },
+    {
+      "code": "osm:way/170673718",
+      "name": "Raseinių ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.raseiniuligonine.lt",
+      "lat": 55.3851986,
+      "lng": 23.1198295
+    },
+    {
+      "code": "osm:way/179323350",
+      "name": "Jūrininkų ligoninės Palangos skyrius",
+      "countryCode": "LT",
+      "origin": "https://www.jurlig.lt",
+      "lat": 55.9367766,
+      "lng": 21.0870995
+    },
+    {
+      "code": "osm:way/180707793",
+      "name": "Kelmės ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.kelmesligonine.lt",
+      "lat": 55.6309922,
+      "lng": 22.9467996
+    },
+    {
+      "code": "osm:way/185968899",
+      "name": "Joniškėlio palaikomojo gydymo ir slaugos skyrius",
+      "countryCode": "LT",
+      "origin": "https://pasvalioligonine.eu",
+      "lat": 56.026384,
+      "lng": 24.1692783
+    },
+    {
+      "code": "osm:way/192092930",
+      "name": "Kuršėnų ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.kursenai-medicina.lt",
+      "lat": 56.0035319,
+      "lng": 22.9371922
+    },
+    {
+      "code": "osm:way/199339938",
+      "name": "Dienos chirurgijos centras",
+      "countryCode": "LT",
+      "origin": "https://www.rkligonine.lt",
+      "lat": 55.7123969,
+      "lng": 21.1276816
+    },
+    {
+      "code": "osm:way/200591271",
+      "name": "Baltijos Amerikos klinika",
+      "countryCode": "LT",
+      "origin": "https://www.bak.lt",
+      "lat": 54.7355196,
+      "lng": 25.3386208
+    },
+    {
+      "code": "osm:way/211438348",
+      "name": "Jonavos ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.jonavosligonine.lt",
+      "lat": 55.0798923,
+      "lng": 24.2711542
+    },
+    {
+      "code": "osm:way/216630778",
+      "name": "Biržų ligoninė",
+      "countryCode": "LT",
+      "origin": "http://www.birzuligonine.lt",
+      "lat": 56.1885538,
+      "lng": 24.759469
+    },
+    {
+      "code": "osm:way/221169551",
+      "name": "VŠĮ Valkininkų sanatorija",
+      "countryCode": "LT",
+      "origin": "http://www.valkininkusanatorija.lt",
+      "lat": 54.349486,
+      "lng": 24.7215029
+    },
+    {
+      "code": "osm:way/238181090",
+      "name": "Skaidiškių ambulatorija",
+      "countryCode": "LT",
+      "origin": "https://www.vrcp.lt",
+      "lat": 54.6068349,
+      "lng": 25.3848882
+    },
+    {
+      "code": "osm:way/242183541",
+      "name": "Tulpės",
+      "countryCode": "LT",
+      "origin": "https://www.tulpe.lt",
+      "lat": 54.6004404,
+      "lng": 24.0355722
+    },
+    {
+      "code": "osm:way/265251171",
+      "name": "Mažeikių pirminės sveikatos priežiūros centras",
+      "countryCode": "LT",
+      "origin": "https://www.mazeikiupspc.lt",
+      "lat": 56.3055302,
+      "lng": 22.3400099
+    },
+    {
+      "code": "osm:way/296000408",
+      "name": "Marijampolės ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.marijampolesligonine.lt",
+      "lat": 54.5665305,
+      "lng": 23.3445935
+    },
+    {
+      "code": "osm:way/349178622",
+      "name": "Respublikinė Klaipėdos ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.rkligonine.lt",
+      "lat": 55.7179235,
+      "lng": 21.1331886
+    },
+    {
+      "code": "osm:way/350962239",
+      "name": "Klaipėdos vaikų ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.kvl.lt",
+      "lat": 55.7146041,
+      "lng": 21.1355807
+    },
+    {
+      "code": "osm:way/356742553",
+      "name": "Vilniaus Universiteto psichiatrijos klinika",
+      "countryCode": "LT",
+      "origin": "https://www.mf.vu.lt",
+      "lat": 54.6906503,
+      "lng": 25.307081
+    },
+    {
+      "code": "osm:way/361576382",
+      "name": "Respublikinės Klaipėdos ligoninės Psichiatrijos filialas",
+      "countryCode": "LT",
+      "origin": "https://www.rkligonine.lt",
+      "lat": 55.707681,
+      "lng": 21.1438949
+    },
+    {
+      "code": "osm:way/400552243",
+      "name": "Mažeikių ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.mazeikiuligonine.lt",
+      "lat": 56.3165208,
+      "lng": 22.3445248
+    },
+    {
+      "code": "osm:way/431854716",
+      "name": "Varnių slaugos ir palaikomojo gydymo ligoninė",
+      "countryCode": "LT",
+      "origin": "https://varniupspc.lt",
+      "lat": 55.7440419,
+      "lng": 22.3668022
+    },
+    {
+      "code": "osm:way/458759143",
+      "name": "Onuškio palaikomojo gydymo ir slaugos ligoninė",
+      "countryCode": "LT",
+      "origin": "https://onuskioligonine.lt",
+      "lat": 54.4833098,
+      "lng": 24.592949
+    },
+    {
+      "code": "osm:way/630196432",
+      "name": "Respublikinė Vilniaus universitetinė ligoninė",
+      "countryCode": "LT",
+      "origin": "http://www.rvul.lt",
+      "lat": 54.6682662,
+      "lng": 25.2075975
+    },
+    {
+      "code": "osm:way/658890822",
+      "name": "K. Griniaus slaugos ir palaikomojo gydymo ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.kgriniausligonine.lt",
+      "lat": 54.8851727,
+      "lng": 23.9798672
+    },
+    {
+      "code": "osm:way/1093120683",
+      "name": "Šv. Roko ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.ligonine.eu",
+      "lat": 54.7088484,
+      "lng": 25.3148897
+    },
+    {
+      "code": "osm:way/1100989299",
+      "name": "Elektrėnų ligoninė",
+      "countryCode": "LT",
+      "origin": "https://www.eligon.lt",
+      "lat": 54.7869318,
+      "lng": 24.666207
+    },
+    {
+      "code": "osm:way/1117319517",
+      "name": "RVL šeimos sveikatingumo centras",
+      "countryCode": "LT",
+      "origin": "https://rvl.lt",
+      "lat": 54.7308426,
+      "lng": 25.1857396
+    },
+    {
+      "code": "osm:way/1161792800",
+      "name": "Vaikų ligų klinikos V. Tumėnienės vardo vaikų ankstyvosios raidos centras",
+      "countryCode": "LT",
+      "origin": "https://kaunoligonine.lt",
+      "lat": 54.8803312,
+      "lng": 23.9833122
+    },
+    {
+      "code": "osm:way/1298946135",
+      "name": "Pasvalio ligoninė",
+      "countryCode": "LT",
+      "origin": "http://www.pasvalioligonine.eu",
+      "lat": 56.0676862,
+      "lng": 24.4078
+    }
+  ]
+}

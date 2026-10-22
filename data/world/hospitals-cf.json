@@ -1,0 +1,17 @@
+{
+  "countryCode": "CF",
+  "fetchedAt": "2026-10-21T01:00:02.600Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/783882036",
+      "name": "Centre médico-social (CMS) de Bangui",
+      "countryCode": "CF",
+      "origin": "http://www.ambafrance-cf.org",
+      "lat": 4.3639277,
+      "lng": 18.5897403
+    }
+  ]
+}

@@ -1,0 +1,1217 @@
+{
+  "countryCode": "IR",
+  "fetchedAt": "2026-10-21T01:41:39.553Z",
+  "count": 151,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/3072850485",
+      "name": "بیمارستان بابل کلینیک",
+      "countryCode": "IR",
+      "origin": "https://www.babolclinic.com",
+      "lat": 36.5556226,
+      "lng": 52.6746588
+    },
+    {
+      "code": "osm:node/3076107089",
+      "name": "درمانگاه شبانه روزی آل محمد ص",
+      "countryCode": "IR",
+      "origin": "https://almohamad.com",
+      "lat": 36.2757053,
+      "lng": 59.6147915
+    },
+    {
+      "code": "osm:node/4126101175",
+      "name": "بیمارستان دکتر صولتی",
+      "countryCode": "IR",
+      "origin": "https://www.dr-soulatihosp.com",
+      "lat": 37.5452331,
+      "lng": 45.0664919
+    },
+    {
+      "code": "osm:node/5054388480",
+      "name": "بیمارستان شفا",
+      "countryCode": "IR",
+      "origin": "http://hosshafa.ir",
+      "lat": 36.6906587,
+      "lng": 52.6515509
+    },
+    {
+      "code": "osm:node/5810469343",
+      "name": "کلینیک حیوانات خانگی وتیوا",
+      "countryCode": "IR",
+      "origin": "https://kartlink.ir",
+      "lat": 38.0780469,
+      "lng": 46.3648462
+    },
+    {
+      "code": "osm:node/5895639918",
+      "name": "بیمارستان بوعلی",
+      "countryCode": "IR",
+      "origin": "https://www.boo-alihospital.com",
+      "lat": 34.7872004,
+      "lng": 48.4877691
+    },
+    {
+      "code": "osm:node/5895721239",
+      "name": "بیمارستان شهید بهشتی",
+      "countryCode": "IR",
+      "origin": "https://beheshti.umsha.ac.ir",
+      "lat": 34.782907,
+      "lng": 48.4832589
+    },
+    {
+      "code": "osm:node/6025934688",
+      "name": "اورژانس فوریت‌های پزشکی",
+      "countryCode": "IR",
+      "origin": "https://youtube.com",
+      "lat": 34.1135745,
+      "lng": 46.5376899
+    },
+    {
+      "code": "osm:node/6501557421",
+      "name": "بیمارستان تخصصی چشم پزشکی بینا",
+      "countryCode": "IR",
+      "origin": "https://www.binaeyehospital.com",
+      "lat": 35.7380742,
+      "lng": 51.4779358
+    },
+    {
+      "code": "osm:node/7057479906",
+      "name": "مجتمع پزشکی جهاد دانشگاهی",
+      "countryCode": "IR",
+      "origin": "https://jdarman.ir",
+      "lat": 36.2685524,
+      "lng": 50.0077855
+    },
+    {
+      "code": "osm:node/8018818879",
+      "name": "درمانگاه شبانه روزی مطهر",
+      "countryCode": "IR",
+      "origin": "http://www.motaharclinic.ir",
+      "lat": 35.6310016,
+      "lng": 51.3686865
+    },
+    {
+      "code": "osm:node/8189977903",
+      "name": "انجمن خیریه حمایت از بیماران کلیوی استان زنجان",
+      "countryCode": "IR",
+      "origin": "https://zanjankf.ir",
+      "lat": 36.6937888,
+      "lng": 48.4958165
+    },
+    {
+      "code": "osm:node/10173140174",
+      "name": "دکتر پرویز محمدی",
+      "countryCode": "IR",
+      "origin": "https://dr-mohammadi.com",
+      "lat": 35.7658532,
+      "lng": 51.3806161
+    },
+    {
+      "code": "osm:node/10210587611",
+      "name": "درمانگاه بُقراط",
+      "countryCode": "IR",
+      "origin": "https://instagram.com",
+      "lat": 27.1949216,
+      "lng": 56.3057705
+    },
+    {
+      "code": "osm:node/11178140425",
+      "name": "درمانگاه دندانپزشکی سیو",
+      "countryCode": "IR",
+      "origin": "https://sivdentalclinic.ir",
+      "lat": 35.4805841,
+      "lng": 51.0781511
+    },
+    {
+      "code": "osm:node/11508546845",
+      "name": "کلینیک مغز و اعصاب الیسا",
+      "countryCode": "IR",
+      "origin": "https://tehran-tms.ir",
+      "lat": 35.7584955,
+      "lng": 51.4055295
+    },
+    {
+      "code": "osm:node/11601795769",
+      "name": "درمانگاه تامین اجتماعی",
+      "countryCode": "IR",
+      "origin": "http://www.nobatalborz.tamin.ir",
+      "lat": 35.8103205,
+      "lng": 50.9482268
+    },
+    {
+      "code": "osm:node/11652452692",
+      "name": "آزمایشگاه تشخیص طبی یاس",
+      "countryCode": "IR",
+      "origin": "https://yaslab.org",
+      "lat": 27.1988592,
+      "lng": 56.3372523
+    },
+    {
+      "code": "osm:node/11915756626",
+      "name": "درمانگاه شبانه روزی و داروخانه مهر",
+      "countryCode": "IR",
+      "origin": "https://www.instagram.com",
+      "lat": 37.4818104,
+      "lng": 57.3213693
+    },
+    {
+      "code": "osm:node/11948526047",
+      "name": "کلینیک پارسیما|پوست|مو|زیبایی|لیزر|لاغری",
+      "countryCode": "IR",
+      "origin": "https://www.instagram.com",
+      "lat": 29.5788855,
+      "lng": 52.5731385
+    },
+    {
+      "code": "osm:node/12147534129",
+      "name": "بیمارستان نور",
+      "countryCode": "IR",
+      "origin": "https://rey.noorvision.com",
+      "lat": 35.6103699,
+      "lng": 51.4386695
+    },
+    {
+      "code": "osm:node/12288617197",
+      "name": "بیمارستان سینا",
+      "countryCode": "IR",
+      "origin": "https://sinahospital.tums.ac.ir",
+      "lat": 35.6863276,
+      "lng": 51.4119795
+    },
+    {
+      "code": "osm:node/12355872782",
+      "name": "مرکز تخصصی سایکوسوماتیک خراسان",
+      "countryCode": "IR",
+      "origin": "https://psychosomatic.ir",
+      "lat": 36.2978553,
+      "lng": 59.586495
+    },
+    {
+      "code": "osm:node/12615822608",
+      "name": "Turan Hearing Aid Center",
+      "countryCode": "IR",
+      "origin": "https://www.turansamak.com",
+      "lat": 35.7417034,
+      "lng": 51.5326919
+    },
+    {
+      "code": "osm:node/12788395053",
+      "name": "مرکز مشاوره نگاه دیگر",
+      "countryCode": "IR",
+      "origin": "https://negahedigar.ir",
+      "lat": 30.5565379,
+      "lng": 49.1971841
+    },
+    {
+      "code": "osm:node/13016280096",
+      "name": "درمانگاه پارسیان البرز",
+      "countryCode": "IR",
+      "origin": "https://+982644267472",
+      "lat": 35.9746319,
+      "lng": 50.7293073
+    },
+    {
+      "code": "osm:node/13016745830",
+      "name": "کلینیک فیزیوتراپی فرشته",
+      "countryCode": "IR",
+      "origin": "https://fereshtephysioclinic.com",
+      "lat": 35.7923509,
+      "lng": 51.4174712
+    },
+    {
+      "code": "osm:node/13041205657",
+      "name": "کلینیک روانپزشکی دکتر مجتبی بیوسه",
+      "countryCode": "IR",
+      "origin": "https://drbiuseh.com",
+      "lat": 35.6858822,
+      "lng": 51.0386878
+    },
+    {
+      "code": "osm:node/13051525658",
+      "name": "دکتر علی دادرس",
+      "countryCode": "IR",
+      "origin": "https://www.drdadrasali.com",
+      "lat": 35.7957769,
+      "lng": 51.4422974
+    },
+    {
+      "code": "osm:node/13051525659",
+      "name": "دکتر علی دادرس",
+      "countryCode": "IR",
+      "origin": "https://www.drdadrasali.com",
+      "lat": 35.7957976,
+      "lng": 51.4421908
+    },
+    {
+      "code": "osm:node/13068549427",
+      "name": "رادیولوژی تخصصی دهان، فک و صورت دکتر مسعود اسماعیلی",
+      "countryCode": "IR",
+      "origin": "https://drmasoudesmaeili.com",
+      "lat": 36.8311531,
+      "lng": 54.4411587
+    },
+    {
+      "code": "osm:node/13157919940",
+      "name": "فیزیوتراپی زعفرانیه",
+      "countryCode": "IR",
+      "origin": "https://zaferaniephysioclinic.com",
+      "lat": 35.7986371,
+      "lng": 51.4138193
+    },
+    {
+      "code": "osm:node/13191948053",
+      "name": "فیزیوتراپی آنیا",
+      "countryCode": "IR",
+      "origin": "https://aniaptc.com",
+      "lat": 35.7465606,
+      "lng": 51.233741
+    },
+    {
+      "code": "osm:node/13279395455",
+      "name": "zeediet",
+      "countryCode": "IR",
+      "origin": "https://zeediet.ir",
+      "lat": 30.3988272,
+      "lng": 55.9919585
+    },
+    {
+      "code": "osm:node/13374345553",
+      "name": "آزمایشگاه تشخیص پزشکی و مولکوای زرتشت",
+      "countryCode": "IR",
+      "origin": "https://zartoshtlab.com",
+      "lat": 35.6998414,
+      "lng": 50.9729132
+    },
+    {
+      "code": "osm:node/13589737914",
+      "name": "دندانپزشکی زهره(شعبه خزانه)",
+      "countryCode": "IR",
+      "origin": "https://zohre-dental.com",
+      "lat": 35.6430185,
+      "lng": 51.4209797
+    },
+    {
+      "code": "osm:node/13597422414",
+      "name": "مرکز مشاوره زندگی به رنگ خدا",
+      "countryCode": "IR",
+      "origin": "https://brangekhoda.com",
+      "lat": 34.6241261,
+      "lng": 50.8527358
+    },
+    {
+      "code": "osm:node/13916802181",
+      "name": "کلینیک تخصصی پوست ومو نوین همسا",
+      "countryCode": "IR",
+      "origin": "https://clinicarghavan.com",
+      "lat": 35.7904554,
+      "lng": 51.4758076
+    },
+    {
+      "code": "osm:node/13947210481",
+      "name": "شرکت بنیان طب جراح",
+      "countryCode": "IR",
+      "origin": "https://tanafosi.com",
+      "lat": 38.0704095,
+      "lng": 46.3105041
+    },
+    {
+      "code": "osm:node/14038866306",
+      "name": "مطب دکتر زهرا شمالی جدید",
+      "countryCode": "IR",
+      "origin": "https://drzahrashomali.com",
+      "lat": 29.6276188,
+      "lng": 52.5257672
+    },
+    {
+      "code": "osm:way/32278598",
+      "name": "بیمارستان پیامبران",
+      "countryCode": "IR",
+      "origin": "http://payambaranhospital.com",
+      "lat": 35.7346403,
+      "lng": 51.3279572
+    },
+    {
+      "code": "osm:way/54232627",
+      "name": "بیمارستان فوق تخصصی رضوی",
+      "countryCode": "IR",
+      "origin": "http://www.razavihospital.com",
+      "lat": 36.3531308,
+      "lng": 59.5472929
+    },
+    {
+      "code": "osm:way/55489234",
+      "name": "بیمارستان دکتر علی شریعتی",
+      "countryCode": "IR",
+      "origin": "https://www.mums.ac.ir",
+      "lat": 36.3456635,
+      "lng": 59.4343631
+    },
+    {
+      "code": "osm:way/68644366",
+      "name": "بیمارستان نمازی",
+      "countryCode": "IR",
+      "origin": "https://namazi.sums.ac.ir",
+      "lat": 29.6310486,
+      "lng": 52.5166636
+    },
+    {
+      "code": "osm:way/123725452",
+      "name": "بیمارستان شهید باهنر",
+      "countryCode": "IR",
+      "origin": "http://bh.kmu.ac.ir",
+      "lat": 30.2882059,
+      "lng": 57.068053
+    },
+    {
+      "code": "osm:way/129464742",
+      "name": "بیمارستان حکیم",
+      "countryCode": "IR",
+      "origin": "https://hakim.nums.ac.ir",
+      "lat": 36.2154356,
+      "lng": 58.8131513
+    },
+    {
+      "code": "osm:way/152494706",
+      "name": "بیمارستان لاله",
+      "countryCode": "IR",
+      "origin": "https://www.laleh-hospital.com",
+      "lat": 35.7524979,
+      "lng": 51.3603788
+    },
+    {
+      "code": "osm:way/181089921",
+      "name": "بیمارستان فوق تخصصی محک",
+      "countryCode": "IR",
+      "origin": "https://mahak-charity.org",
+      "lat": 35.8113108,
+      "lng": 51.5044531
+    },
+    {
+      "code": "osm:way/199617052",
+      "name": "بیمارستان سعدی",
+      "countryCode": "IR",
+      "origin": "https://www.sadihospital.com",
+      "lat": 32.639931,
+      "lng": 51.6521853
+    },
+    {
+      "code": "osm:way/220510597",
+      "name": "بیمارستان پارسیان",
+      "countryCode": "IR",
+      "origin": "http://www.parsianhospital.ir",
+      "lat": 35.7840715,
+      "lng": 51.3826901
+    },
+    {
+      "code": "osm:way/233784977",
+      "name": "بیمارستان شفا",
+      "countryCode": "IR",
+      "origin": "https://shafa-hospital.com",
+      "lat": 37.1989863,
+      "lng": 50.0093454
+    },
+    {
+      "code": "osm:way/234959293",
+      "name": "بیمارستان بوعلی سینا",
+      "countryCode": "IR",
+      "origin": "http://www.zums.ac.ir",
+      "lat": 36.1976838,
+      "lng": 49.2050689
+    },
+    {
+      "code": "osm:way/236694569",
+      "name": "بیمارستان امام رضا",
+      "countryCode": "IR",
+      "origin": "https://emamreza.mums.ac.ir",
+      "lat": 36.2885911,
+      "lng": 59.5901351
+    },
+    {
+      "code": "osm:way/244775463",
+      "name": "بیمارستان رازی",
+      "countryCode": "IR",
+      "origin": "https://razihospital.mazums.ac.ir",
+      "lat": 36.461353,
+      "lng": 52.8583302
+    },
+    {
+      "code": "osm:way/259016384",
+      "name": "بیمارستان روحانی",
+      "countryCode": "IR",
+      "origin": "http://rohani.mubabol.ac.ir",
+      "lat": 36.5296468,
+      "lng": 52.6803969
+    },
+    {
+      "code": "osm:way/265232342",
+      "name": "بیمارستان خلیج فارس",
+      "countryCode": "IR",
+      "origin": "https://nobatdarman.tamin.ir",
+      "lat": 27.2101153,
+      "lng": 56.3340883
+    },
+    {
+      "code": "osm:way/282683307",
+      "name": "بیمارستان آتیه",
+      "countryCode": "IR",
+      "origin": "https://atiehhospital.ir",
+      "lat": 35.7653354,
+      "lng": 51.3615492
+    },
+    {
+      "code": "osm:way/297218293",
+      "name": "بیمارستان فوق تخصصی صارم",
+      "countryCode": "IR",
+      "origin": "https://saremhospital.org",
+      "lat": 35.7146294,
+      "lng": 51.3111965
+    },
+    {
+      "code": "osm:way/298780298",
+      "name": "بیمارستان خاتم الانبیاء",
+      "countryCode": "IR",
+      "origin": "https://salmas.umsu.ac.ir",
+      "lat": 38.2165124,
+      "lng": 44.7700806
+    },
+    {
+      "code": "osm:way/303998262",
+      "name": "بیمارستان ولیعصر",
+      "countryCode": "IR",
+      "origin": "http://www.zums.ac.ir",
+      "lat": 36.6771818,
+      "lng": 48.5162124
+    },
+    {
+      "code": "osm:way/306188529",
+      "name": "بیمارستان چمران",
+      "countryCode": "IR",
+      "origin": "https://chamran.sums.ac.ir",
+      "lat": 29.6624824,
+      "lng": 52.4901449
+    },
+    {
+      "code": "osm:way/318988446",
+      "name": "بیمارستان شهید بهشتی انزلی",
+      "countryCode": "IR",
+      "origin": "https://nobat.gums.ac.ir",
+      "lat": 37.485116,
+      "lng": 49.4019945
+    },
+    {
+      "code": "osm:way/326965940",
+      "name": "بیمارستان امیرالمومنین ع",
+      "countryCode": "IR",
+      "origin": "https://arakmu.ac.ir",
+      "lat": 34.083502,
+      "lng": 49.6429696
+    },
+    {
+      "code": "osm:way/329420661",
+      "name": "بیمارستان دکتر محمد کرمانشاهی -فوق تخصصی کودکان",
+      "countryCode": "IR",
+      "origin": "https://www.drkermanshahi.kums.ac.ir",
+      "lat": 34.3063967,
+      "lng": 47.0595348
+    },
+    {
+      "code": "osm:way/332338180",
+      "name": "بیمارستان ولیعصر تبریز",
+      "countryCode": "IR",
+      "origin": "http://www.tabrizhospital.ir",
+      "lat": 38.0522372,
+      "lng": 46.3424895
+    },
+    {
+      "code": "osm:way/352528793",
+      "name": "بیمارستان امام خمینی",
+      "countryCode": "IR",
+      "origin": "https://nkums.ac.ir",
+      "lat": 37.3924718,
+      "lng": 57.9380337
+    },
+    {
+      "code": "osm:way/370284299",
+      "name": "بیمارستان فوق تخصصی کودکان شهدای بناب",
+      "countryCode": "IR",
+      "origin": "https://bshohadahosp.tbzmed.ac.ir",
+      "lat": 37.3009261,
+      "lng": 46.054257
+    },
+    {
+      "code": "osm:way/374366329",
+      "name": "بیمارستان سینا",
+      "countryCode": "IR",
+      "origin": "https://araksinahospital.ir",
+      "lat": 34.0966738,
+      "lng": 49.7382033
+    },
+    {
+      "code": "osm:way/385417880",
+      "name": "بیمارستان ٢٩ بهمن",
+      "countryCode": "IR",
+      "origin": "http://29bahmanhosp.ir",
+      "lat": 38.057511,
+      "lng": 46.3423272
+    },
+    {
+      "code": "osm:way/387904785",
+      "name": "بیمارستان چشم نیکوکاری",
+      "countryCode": "IR",
+      "origin": "https://nikukarihosp.tbzmed.ac.ir",
+      "lat": 38.0786389,
+      "lng": 46.3175343
+    },
+    {
+      "code": "osm:way/409980034",
+      "name": "بیمارستان شهریار",
+      "countryCode": "IR",
+      "origin": "http://www.shahryarhospital.com",
+      "lat": 38.0673433,
+      "lng": 46.3296833
+    },
+    {
+      "code": "osm:way/422783953",
+      "name": "مرکز پزشکی شهید شوریده",
+      "countryCode": "IR",
+      "origin": "https://htttp",
+      "lat": 35.6909455,
+      "lng": 51.3986154
+    },
+    {
+      "code": "osm:way/430741475",
+      "name": "بیمارستان امام حسین",
+      "countryCode": "IR",
+      "origin": "http://imamhossein-hosp.umsha.ac.ir",
+      "lat": 34.3004332,
+      "lng": 48.8472158
+    },
+    {
+      "code": "osm:way/431816200",
+      "name": "بیمارستان دی",
+      "countryCode": "IR",
+      "origin": "https://www.daygeneralhospital.ir",
+      "lat": 35.7478942,
+      "lng": 51.4110467
+    },
+    {
+      "code": "osm:way/432977277",
+      "name": "بیمارستان مصطفی خمینی",
+      "countryCode": "IR",
+      "origin": "http://mkht.ir",
+      "lat": 35.7079686,
+      "lng": 51.4010129
+    },
+    {
+      "code": "osm:way/432977348",
+      "name": "بیمارستان آریا",
+      "countryCode": "IR",
+      "origin": "https://www.aryahosp.com",
+      "lat": 35.7085947,
+      "lng": 51.397701
+    },
+    {
+      "code": "osm:way/438131359",
+      "name": "بیمارستان شفا",
+      "countryCode": "IR",
+      "origin": "https://www.tabriz-shafahospital.ir",
+      "lat": 38.0771289,
+      "lng": 46.2786255
+    },
+    {
+      "code": "osm:way/438397829",
+      "name": "بیمارستان حاج محمد اسماعیل امتیاز",
+      "countryCode": "IR",
+      "origin": "https://rajaeehosp.sums.ac.ir",
+      "lat": 29.6633191,
+      "lng": 52.489789
+    },
+    {
+      "code": "osm:way/438520347",
+      "name": "بیمارستان رسول اکرم",
+      "countryCode": "IR",
+      "origin": "https://hrmc.iums.ac.ir",
+      "lat": 35.7193411,
+      "lng": 51.3704227
+    },
+    {
+      "code": "osm:way/440720611",
+      "name": "بیمارستان فاطمه الزهرا(س) اشتهارد",
+      "countryCode": "IR",
+      "origin": "https://fatemezahra.abzums.ac.ir",
+      "lat": 35.7202947,
+      "lng": 50.3698454
+    },
+    {
+      "code": "osm:way/444405696",
+      "name": "بیمارستان چشم پزشکی نور",
+      "countryCode": "IR",
+      "origin": "https://hospital.noorvision.com",
+      "lat": 35.7712543,
+      "lng": 51.4127063
+    },
+    {
+      "code": "osm:way/446585647",
+      "name": "بیمارستان ولی عصر",
+      "countryCode": "IR",
+      "origin": "https://eghlidhospital.sums.ac.ir",
+      "lat": 30.8730914,
+      "lng": 52.6795818
+    },
+    {
+      "code": "osm:way/448993105",
+      "name": "بیمارستان شهید دکتر لواسانی",
+      "countryCode": "IR",
+      "origin": "http://lavasani.tamin.ir",
+      "lat": 35.7191501,
+      "lng": 51.6040375
+    },
+    {
+      "code": "osm:way/452970958",
+      "name": "بیمارستان اختر",
+      "countryCode": "IR",
+      "origin": "http://amc.sbmu.ac.ir",
+      "lat": 35.7891355,
+      "lng": 51.4316958
+    },
+    {
+      "code": "osm:way/452972608",
+      "name": "بیمارستان مسیح دانشوری",
+      "countryCode": "IR",
+      "origin": "http://nritld.sbmu.ac.ir",
+      "lat": 35.8158337,
+      "lng": 51.4967107
+    },
+    {
+      "code": "osm:way/452973827",
+      "name": "بیمارستان شهید باهنر",
+      "countryCode": "IR",
+      "origin": "http://www.bahonarhospital.ir",
+      "lat": 35.8133191,
+      "lng": 51.4646999
+    },
+    {
+      "code": "osm:way/452996032",
+      "name": "بیمارستان پاستور نو",
+      "countryCode": "IR",
+      "origin": "http://pastornohospital.com",
+      "lat": 35.732029,
+      "lng": 51.417352
+    },
+    {
+      "code": "osm:way/453011132",
+      "name": "بیمارستان آسیا",
+      "countryCode": "IR",
+      "origin": "https://asiahospital.ir",
+      "lat": 35.7296169,
+      "lng": 51.4183253
+    },
+    {
+      "code": "osm:way/453011274",
+      "name": "بیمارستان البرز",
+      "countryCode": "IR",
+      "origin": "https://alborzhospital.ir",
+      "lat": 35.7026234,
+      "lng": 51.4000556
+    },
+    {
+      "code": "osm:way/453016695",
+      "name": "بیمارستان مهر",
+      "countryCode": "IR",
+      "origin": "https://mehrhospitaltehran.com",
+      "lat": 35.715816,
+      "lng": 51.4025117
+    },
+    {
+      "code": "osm:way/453506982",
+      "name": "بیمارستان مروستی",
+      "countryCode": "IR",
+      "origin": "https://amiralam.tums.ac.ir",
+      "lat": 35.6969718,
+      "lng": 51.4116073
+    },
+    {
+      "code": "osm:way/453891546",
+      "name": "بیمارستان شریعت رضوی",
+      "countryCode": "IR",
+      "origin": "https://shariatrazavi.tamin.ir",
+      "lat": 35.675514,
+      "lng": 51.3287486
+    },
+    {
+      "code": "osm:way/458735430",
+      "name": "مرکز آموزش درمانی سینا - فرشچیان",
+      "countryCode": "IR",
+      "origin": "https://fsh.umsha.ac.ir",
+      "lat": 34.7878183,
+      "lng": 48.5072975
+    },
+    {
+      "code": "osm:way/464198525",
+      "name": "بیمارستان شهدا",
+      "countryCode": "IR",
+      "origin": "https://shghaen.bums.ac.ir",
+      "lat": 33.7438629,
+      "lng": 59.1723312
+    },
+    {
+      "code": "osm:way/464516017",
+      "name": "بیمارستان آرمان",
+      "countryCode": "IR",
+      "origin": "https://armanhospital.com",
+      "lat": 35.7711809,
+      "lng": 51.396418
+    },
+    {
+      "code": "osm:way/470726771",
+      "name": "بیمارستان شهید محمدی",
+      "countryCode": "IR",
+      "origin": "http://shmh.hums.ac.ir",
+      "lat": 27.1948198,
+      "lng": 56.2968527
+    },
+    {
+      "code": "osm:way/475427234",
+      "name": "بیمارستان امام رضا",
+      "countryCode": "IR",
+      "origin": "https://emamrezahospitalbnd.ir",
+      "lat": 27.1901126,
+      "lng": 56.3145229
+    },
+    {
+      "code": "osm:way/477441027",
+      "name": "بیمارستان شرکت نفت",
+      "countryCode": "IR",
+      "origin": "https://teh.piho.ir",
+      "lat": 35.6909136,
+      "lng": 51.4131025
+    },
+    {
+      "code": "osm:way/478278384",
+      "name": "بیمارستان فارابی",
+      "countryCode": "IR",
+      "origin": "https://farabi.mui.ac.ir",
+      "lat": 32.626328,
+      "lng": 51.7652415
+    },
+    {
+      "code": "osm:way/480160264",
+      "name": "بیمارستان امیراعلم",
+      "countryCode": "IR",
+      "origin": "https://amiralam.tums.ac.ir",
+      "lat": 35.6998916,
+      "lng": 51.4252485
+    },
+    {
+      "code": "osm:way/487936732",
+      "name": "بیمارستان امام علی (ع) کرج",
+      "countryCode": "IR",
+      "origin": "http://emamali.abzums.ac.ir",
+      "lat": 35.8267056,
+      "lng": 51.0177739
+    },
+    {
+      "code": "osm:way/489159622",
+      "name": "بیمارستان تأمین اجتماعی کوثر",
+      "countryCode": "IR",
+      "origin": "http://www.tamin.ir",
+      "lat": 33.8770713,
+      "lng": 48.7664231
+    },
+    {
+      "code": "osm:way/491686148",
+      "name": "بیمارستان آیت الله علیمرادیان",
+      "countryCode": "IR",
+      "origin": "http://alimoradian-hosp.umsha.ac.ir",
+      "lat": 34.1689627,
+      "lng": 48.3807417
+    },
+    {
+      "code": "osm:way/492875787",
+      "name": "بیمارستان شهید چمران",
+      "countryCode": "IR",
+      "origin": "http://chamran.lums.ac.ir",
+      "lat": 33.8969286,
+      "lng": 48.7412573
+    },
+    {
+      "code": "osm:way/493541752",
+      "name": "بیمارستان امام خمینی",
+      "countryCode": "IR",
+      "origin": "http://bih.lums.ac.ir",
+      "lat": 33.9010935,
+      "lng": 48.7474445
+    },
+    {
+      "code": "osm:way/496567099",
+      "name": "بیمارستان قمر بنی هاشم",
+      "countryCode": "IR",
+      "origin": "https://ghamar-hospital.ir",
+      "lat": 36.2031236,
+      "lng": 58.7952597
+    },
+    {
+      "code": "osm:way/497870075",
+      "name": "بیمارستان مهر",
+      "countryCode": "IR",
+      "origin": "http://mehr-hosp.umsha.ac.ir",
+      "lat": 34.3146936,
+      "lng": 48.8094993
+    },
+    {
+      "code": "osm:way/500283366",
+      "name": "بیمارستان قلب و عروق فرشچیان",
+      "countryCode": "IR",
+      "origin": "https://hcvc.umsha.ac.ir",
+      "lat": 34.7873445,
+      "lng": 48.4843097
+    },
+    {
+      "code": "osm:way/500284865",
+      "name": "بیمارستان فاطمیه",
+      "countryCode": "IR",
+      "origin": "https://fth.umsha.ac.ir",
+      "lat": 34.8012826,
+      "lng": 48.4980051
+    },
+    {
+      "code": "osm:way/500391401",
+      "name": "بیمارستان شهید حیدری",
+      "countryCode": "IR",
+      "origin": "http://heidari-hosp.umsha.ac.ir",
+      "lat": 34.194048,
+      "lng": 48.3768896
+    },
+    {
+      "code": "osm:way/504824559",
+      "name": "بیمارستان متینی",
+      "countryCode": "IR",
+      "origin": "http://matini.kaums.ac.ir",
+      "lat": 33.9770154,
+      "lng": 51.4226155
+    },
+    {
+      "code": "osm:way/505161716",
+      "name": "بیمارستان شهدای هفت تیر",
+      "countryCode": "IR",
+      "origin": "http://7etir.lums.ac.ir",
+      "lat": 33.4860564,
+      "lng": 49.0534974
+    },
+    {
+      "code": "osm:way/505161729",
+      "name": "بیمارستان نرگس",
+      "countryCode": "IR",
+      "origin": "http://narges.tamin.ir",
+      "lat": 33.493128,
+      "lng": 49.058863
+    },
+    {
+      "code": "osm:way/518427594",
+      "name": "بیمارستان شهید رجایی",
+      "countryCode": "IR",
+      "origin": "https://rajaei.abzums.ac.ir",
+      "lat": 35.8414925,
+      "lng": 50.9344275
+    },
+    {
+      "code": "osm:way/518437943",
+      "name": "بیمارستان مدنی",
+      "countryCode": "IR",
+      "origin": "http://madani.abzums.ac.ir",
+      "lat": 35.8286125,
+      "lng": 50.9899585
+    },
+    {
+      "code": "osm:way/521922995",
+      "name": "بیمارستان ابن سینا",
+      "countryCode": "IR",
+      "origin": "http://nih.lums.ac.ir",
+      "lat": 34.0672406,
+      "lng": 47.9866248
+    },
+    {
+      "code": "osm:way/523875858",
+      "name": "بیمارستان آنکولوژی امیر",
+      "countryCode": "IR",
+      "origin": "https://www.sums.ac.ir",
+      "lat": 29.648675,
+      "lng": 52.458453
+    },
+    {
+      "code": "osm:way/525045030",
+      "name": "بیمارستان پیوند اعضا ابوعلی سینا",
+      "countryCode": "IR",
+      "origin": "http://www.otc-booali.com",
+      "lat": 29.8123456,
+      "lng": 52.4693386
+    },
+    {
+      "code": "osm:way/537895961",
+      "name": "بیمارستان مریم",
+      "countryCode": "IR",
+      "origin": "http://maryamhosp.com",
+      "lat": 35.8197944,
+      "lng": 50.9357728
+    },
+    {
+      "code": "osm:way/542704223",
+      "name": "بیمارستان کمالی",
+      "countryCode": "IR",
+      "origin": "https://kamali.abzums.ac.ir",
+      "lat": 35.8166033,
+      "lng": 50.9954427
+    },
+    {
+      "code": "osm:way/545718093",
+      "name": "بیمارستان پارس",
+      "countryCode": "IR",
+      "origin": "https://parshospital.com",
+      "lat": 29.6229533,
+      "lng": 52.5198666
+    },
+    {
+      "code": "osm:way/557905810",
+      "name": "بیمارستان انکولوژی عباس ناظران",
+      "countryCode": "IR",
+      "origin": "https://www.noh.ir",
+      "lat": 36.3543477,
+      "lng": 59.4927563
+    },
+    {
+      "code": "osm:way/557950378",
+      "name": "بیمارستان امام خمینی",
+      "countryCode": "IR",
+      "origin": "http://alih.lums.ac.ir",
+      "lat": 33.8592579,
+      "lng": 48.2716228
+    },
+    {
+      "code": "osm:way/605822564",
+      "name": "بیمارستان دنا",
+      "countryCode": "IR",
+      "origin": "https://www.denahospital.com",
+      "lat": 29.638076,
+      "lng": 52.488832
+    },
+    {
+      "code": "osm:way/605908635",
+      "name": "بیمارستان بعثت",
+      "countryCode": "IR",
+      "origin": "https://besathospital.com",
+      "lat": 29.6822977,
+      "lng": 52.4493925
+    },
+    {
+      "code": "osm:way/657920905",
+      "name": "بیمارستان شهید آیت الله مدنی",
+      "countryCode": "IR",
+      "origin": "http://madani-his.lums.ac.ir",
+      "lat": 33.467903,
+      "lng": 48.3492747
+    },
+    {
+      "code": "osm:way/673679288",
+      "name": "بيمارستان شهرام",
+      "countryCode": "IR",
+      "origin": "https://shahramhospital.ir",
+      "lat": 35.7206669,
+      "lng": 51.4064637
+    },
+    {
+      "code": "osm:way/675635390",
+      "name": "بیمارستان روانپزشکی صدر",
+      "countryCode": "IR",
+      "origin": "http://www.sadrhospital.com",
+      "lat": 35.7895838,
+      "lng": 51.4557351
+    },
+    {
+      "code": "osm:way/679243015",
+      "name": "بیمارستان روان‌پزشکی ابن‌سینا",
+      "countryCode": "IR",
+      "origin": "https://ebnesina.sums.ac.ir",
+      "lat": 29.6311957,
+      "lng": 52.559489
+    },
+    {
+      "code": "osm:way/679250173",
+      "name": "بیمارستان شهید بهشتی",
+      "countryCode": "IR",
+      "origin": "https://beheshti-shiraz.tamin.ir",
+      "lat": 29.6116155,
+      "lng": 52.5555871
+    },
+    {
+      "code": "osm:way/679255015",
+      "name": "بیمارستان شهید فقیهی",
+      "countryCode": "IR",
+      "origin": "https://faghihi.sums.ac.ir",
+      "lat": 29.6267294,
+      "lng": 52.5290133
+    },
+    {
+      "code": "osm:way/680553415",
+      "name": "بيمارستان عرفان نيايش",
+      "countryCode": "IR",
+      "origin": "https://niayeshhospital.ir",
+      "lat": 35.7655826,
+      "lng": 51.3156221
+    },
+    {
+      "code": "osm:way/684014136",
+      "name": "بیمارستان سینا",
+      "countryCode": "IR",
+      "origin": "https://sinahospital.tums.ac.ir",
+      "lat": 35.6870567,
+      "lng": 51.4129346
+    },
+    {
+      "code": "osm:way/686318347",
+      "name": "مرکز تصویربرداری پزشکی نصرنبوی",
+      "countryCode": "IR",
+      "origin": "https://mrinasrnabavi",
+      "lat": 35.5397136,
+      "lng": 51.2248809
+    },
+    {
+      "code": "osm:way/689744078",
+      "name": "بیمارستان ۲۲ بهمن",
+      "countryCode": "IR",
+      "origin": "https://22bahman.nums.ac.ir",
+      "lat": 36.2075926,
+      "lng": 58.7908665
+    },
+    {
+      "code": "osm:way/710589411",
+      "name": "بیمارستان فوق تخصصی کودکان اکبر",
+      "countryCode": "IR",
+      "origin": "https://akbar.mums.ac.ir",
+      "lat": 36.2791583,
+      "lng": 59.5396806
+    },
+    {
+      "code": "osm:way/712987753",
+      "name": "بیمارستان شهریار",
+      "countryCode": "IR",
+      "origin": "https://www.shahriyarhospital.com",
+      "lat": 29.6228406,
+      "lng": 52.5311704
+    },
+    {
+      "code": "osm:way/750346134",
+      "name": "بیمارستان بهمن",
+      "countryCode": "IR",
+      "origin": "https://www.bahmanhospital.ir",
+      "lat": 31.8791866,
+      "lng": 54.3749313
+    },
+    {
+      "code": "osm:way/782615426",
+      "name": "بیمارستان کسری",
+      "countryCode": "IR",
+      "origin": "http://bimarestankasra.ir",
+      "lat": 35.826942,
+      "lng": 50.9821099
+    },
+    {
+      "code": "osm:way/818553225",
+      "name": "مرکز فوق تخصصی زنان و نازایی رویانا",
+      "countryCode": "IR",
+      "origin": "https://royanasc.ir",
+      "lat": 36.2717917,
+      "lng": 50.0056254
+    },
+    {
+      "code": "osm:way/888181039",
+      "name": "بیمارستان قدوسی",
+      "countryCode": "IR",
+      "origin": "http://ghn.umsha.ac.ir",
+      "lat": 34.209595,
+      "lng": 48.364757
+    },
+    {
+      "code": "osm:way/940697449",
+      "name": "بیمارستان کودکان زهرا مردانی آذری",
+      "countryCode": "IR",
+      "origin": "https://www.shafadoc.ir",
+      "lat": 38.0042976,
+      "lng": 46.4223065
+    },
+    {
+      "code": "osm:way/953281061",
+      "name": "بیمارستان اعصاب و روان مهر",
+      "countryCode": "IR",
+      "origin": "http://nerves.lums.ac.ir",
+      "lat": 33.4776013,
+      "lng": 48.4016696
+    },
+    {
+      "code": "osm:way/954125498",
+      "name": "بیمارستان یاس;مجتمع بیمارستانی یاس (دانشگاه علوم پزشکی تهران)",
+      "countryCode": "IR",
+      "origin": "https://yashospital.tums.ac.ir",
+      "lat": 35.7180165,
+      "lng": 51.4148931
+    },
+    {
+      "code": "osm:way/984922915",
+      "name": "آزمایشگاه رازی",
+      "countryCode": "IR",
+      "origin": "https://razipatholab.com",
+      "lat": 35.8275697,
+      "lng": 50.9689779
+    },
+    {
+      "code": "osm:way/989870815",
+      "name": "کلینیک تخصصی انجمن خیریه مهرانه",
+      "countryCode": "IR",
+      "origin": "https://www.mehranehcharity.ir",
+      "lat": 36.7038235,
+      "lng": 48.5184288
+    },
+    {
+      "code": "osm:way/1022686220",
+      "name": "بیمارستان امام رضا",
+      "countryCode": "IR",
+      "origin": "https://emamreza.savehums.ac.ir",
+      "lat": 35.2960598,
+      "lng": 50.4764338
+    },
+    {
+      "code": "osm:way/1286725384",
+      "name": "بیمارستان سرطان برکت",
+      "countryCode": "IR",
+      "origin": "https://bcc.barkathsd.com",
+      "lat": 35.7244469,
+      "lng": 51.2477237
+    },
+    {
+      "code": "osm:way/1292300184",
+      "name": "بیمارستان برکت",
+      "countryCode": "IR",
+      "origin": "https://bcc.barkathsd.com",
+      "lat": 35.7244794,
+      "lng": 51.2471216
+    },
+    {
+      "code": "osm:way/1339247546",
+      "name": "بیمارستان فوق تخصصی کودکان دکتر مرتضی شیخ",
+      "countryCode": "IR",
+      "origin": "https://sheikh.mums.ac.ir",
+      "lat": 36.3044387,
+      "lng": 59.5964673
+    },
+    {
+      "code": "osm:way/1431209101",
+      "name": "بیمارستان تخت جمشید",
+      "countryCode": "IR",
+      "origin": "http://tjmedicine.org",
+      "lat": 35.8352901,
+      "lng": 51.0085742
+    }
+  ]
+}

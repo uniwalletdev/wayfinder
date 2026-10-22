@@ -1,0 +1,57 @@
+{
+  "countryCode": "RW",
+  "fetchedAt": "2026-10-21T02:37:15.445Z",
+  "count": 6,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/12950465345",
+      "name": "Wiwo Specialized Hospital",
+      "countryCode": "RW",
+      "origin": "https://www.wiwohospital.com",
+      "lat": -1.9440648,
+      "lng": 30.067435
+    },
+    {
+      "code": "osm:node/12950467626",
+      "name": "Mbc Hospital",
+      "countryCode": "RW",
+      "origin": "https://www.mbchospital.rw",
+      "lat": -1.9642983,
+      "lng": 30.0617608
+    },
+    {
+      "code": "osm:node/12950467646",
+      "name": "University Teaching Hospital of Kigali (CHUK)",
+      "countryCode": "RW",
+      "origin": "https://www.chuk.rw",
+      "lat": -1.9559588,
+      "lng": 30.0604352
+    },
+    {
+      "code": "osm:node/12950467805",
+      "name": "Muhima Health Centre",
+      "countryCode": "RW",
+      "origin": "https://www.muhimahospital.gov.rw",
+      "lat": -1.9368669,
+      "lng": 30.0577869
+    },
+    {
+      "code": "osm:node/12950467869",
+      "name": "Ndera Hospital.",
+      "countryCode": "RW",
+      "origin": "https://www.nderahospital.rw",
+      "lat": -1.95458,
+      "lng": 30.1687763
+    },
+    {
+      "code": "osm:node/12950467871",
+      "name": "Dream Medical Center Hospital",
+      "countryCode": "RW",
+      "origin": "https://www.dreammedicalcenter.rw",
+      "lat": -1.9901018,
+      "lng": 30.0959092
+    }
+  ]
+}

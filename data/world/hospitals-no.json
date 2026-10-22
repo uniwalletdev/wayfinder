@@ -1,0 +1,225 @@
+{
+  "countryCode": "NO",
+  "fetchedAt": "2026-10-21T02:19:03.623Z",
+  "count": 27,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/191744245",
+      "name": "Sjukehuset Nordmøre og Romsdal Hjelset",
+      "countryCode": "NO",
+      "origin": "https://www.helse-mr.no",
+      "lat": 62.7811659,
+      "lng": 7.5134376
+    },
+    {
+      "code": "osm:node/1236472340",
+      "name": "Kysthospitalet i Hagavik",
+      "countryCode": "NO",
+      "origin": "https://helse-bergen.no",
+      "lat": 60.1798369,
+      "lng": 5.3948634
+    },
+    {
+      "code": "osm:node/2126289890",
+      "name": "Rønvik sykehus",
+      "countryCode": "NO",
+      "origin": "https://nordlandssykehuset.no",
+      "lat": 67.2861596,
+      "lng": 14.4365408
+    },
+    {
+      "code": "osm:node/2591277915",
+      "name": "Eigersund poliklinikk",
+      "countryCode": "NO",
+      "origin": "https://helse-stavanger.no",
+      "lat": 58.4656002,
+      "lng": 6.0178609
+    },
+    {
+      "code": "osm:node/3628512406",
+      "name": "Akuttsenter",
+      "countryCode": "NO",
+      "origin": "https://www.siv.no",
+      "lat": 59.2723767,
+      "lng": 10.4199129
+    },
+    {
+      "code": "osm:node/5003683211",
+      "name": "Sykehuset Telemark - seksjon for sykelig overvekt",
+      "countryCode": "NO",
+      "origin": "https://www.sthf.no",
+      "lat": 59.418963,
+      "lng": 9.325391
+    },
+    {
+      "code": "osm:node/5306426765",
+      "name": "Volvat Ulriksdal",
+      "countryCode": "NO",
+      "origin": "https://www.volvat.no",
+      "lat": 60.377946,
+      "lng": 5.360474
+    },
+    {
+      "code": "osm:node/5898801726",
+      "name": "Sola DPS",
+      "countryCode": "NO",
+      "origin": "https://www.sus.no",
+      "lat": 58.887865,
+      "lng": 5.654424
+    },
+    {
+      "code": "osm:node/9532261536",
+      "name": "Sykehuset Innlandet HF Brumunddal",
+      "countryCode": "NO",
+      "origin": "https://sykehuset-innlandet.no",
+      "lat": 60.8831316,
+      "lng": 10.9480292
+    },
+    {
+      "code": "osm:node/10556673294",
+      "name": "Nordhordland Legevakt",
+      "countryCode": "NO",
+      "origin": "https://www.alver.kommune.no",
+      "lat": 60.5463992,
+      "lng": 5.2913126
+    },
+    {
+      "code": "osm:node/13159302471",
+      "name": "Mosseregionens legevakt",
+      "countryCode": "NO",
+      "origin": "https://www.moss.kommune.no",
+      "lat": 59.446187,
+      "lng": 10.6970237
+    },
+    {
+      "code": "osm:way/36073467",
+      "name": "Sørlandet sykehus Kristiansand",
+      "countryCode": "NO",
+      "origin": "https://sshf.no",
+      "lat": 58.1639201,
+      "lng": 7.9819796
+    },
+    {
+      "code": "osm:way/51446838",
+      "name": "Akershus universitetssykehus",
+      "countryCode": "NO",
+      "origin": "https://www.ahus.no",
+      "lat": 59.9314479,
+      "lng": 10.9949696
+    },
+    {
+      "code": "osm:way/190025212",
+      "name": "Longyearbyen sykehus",
+      "countryCode": "NO",
+      "origin": "https://unn.no",
+      "lat": 78.2200311,
+      "lng": 15.6449229
+    },
+    {
+      "code": "osm:way/227968694",
+      "name": "Sykehuset Telemark - Notodden",
+      "countryCode": "NO",
+      "origin": "https://www.sthf.no",
+      "lat": 59.5663871,
+      "lng": 9.2557055
+    },
+    {
+      "code": "osm:way/285982048",
+      "name": "Vigør Rehabiliteringssykehus",
+      "countryCode": "NO",
+      "origin": "http://www.vigor.no",
+      "lat": 69.664876,
+      "lng": 18.951258
+    },
+    {
+      "code": "osm:way/288109824",
+      "name": "Ålesund sjukehus",
+      "countryCode": "NO",
+      "origin": "https://helse-mr.no",
+      "lat": 62.4640631,
+      "lng": 6.3124475
+    },
+    {
+      "code": "osm:way/625751300",
+      "name": "Sykehuset Innlandet HF Lillehammer",
+      "countryCode": "NO",
+      "origin": "https://sykehuset-innlandet.no",
+      "lat": 61.1124303,
+      "lng": 10.4737814
+    },
+    {
+      "code": "osm:way/649207577",
+      "name": "Sykehuset i Vestfold, Tønsberg",
+      "countryCode": "NO",
+      "origin": "https://www.siv.no",
+      "lat": 59.2722477,
+      "lng": 10.418873
+    },
+    {
+      "code": "osm:way/649210218",
+      "name": "Sykehuset i Vestfold, DPS nord",
+      "countryCode": "NO",
+      "origin": "https://www.siv.no",
+      "lat": 59.2553231,
+      "lng": 10.4242519
+    },
+    {
+      "code": "osm:way/769649008",
+      "name": "Martina Hansens hospital",
+      "countryCode": "NO",
+      "origin": "https://martinahansen.no",
+      "lat": 59.8979236,
+      "lng": 10.5078596
+    },
+    {
+      "code": "osm:way/793790365",
+      "name": "Alta helsesenter",
+      "countryCode": "NO",
+      "origin": "https://finnmarkssykehuset.no",
+      "lat": 69.9683692,
+      "lng": 23.2766283
+    },
+    {
+      "code": "osm:way/879982478",
+      "name": "Legevakten i Oslo",
+      "countryCode": "NO",
+      "origin": "https://www.oslo.kommune.no",
+      "lat": 59.9391908,
+      "lng": 10.7917043
+    },
+    {
+      "code": "osm:way/890590320",
+      "name": "Glittreklinikken",
+      "countryCode": "NO",
+      "origin": "https://www.lhl.no",
+      "lat": 60.1125135,
+      "lng": 10.878904
+    },
+    {
+      "code": "osm:way/1046174045",
+      "name": "ReHabiliteringsklinikken",
+      "countryCode": "NO",
+      "origin": "https://helse-bergen.no",
+      "lat": 60.3082322,
+      "lng": 5.3216701
+    },
+    {
+      "code": "osm:way/1239480922",
+      "name": "Røros sykehus",
+      "countryCode": "NO",
+      "origin": "https://www.stolav.no",
+      "lat": 62.5769591,
+      "lng": 11.37843
+    },
+    {
+      "code": "osm:way/1424797583",
+      "name": "Drammen sykehus",
+      "countryCode": "NO",
+      "origin": "https://www.vestreviken.no",
+      "lat": 59.7424547,
+      "lng": 10.2356164
+    }
+  ]
+}

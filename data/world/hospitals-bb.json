@@ -1,0 +1,17 @@
+{
+  "countryCode": "BB",
+  "fetchedAt": "2026-10-21T00:48:11.026Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/440523260",
+      "name": "Queen Elizabeth Hospital",
+      "countryCode": "BB",
+      "origin": "https://www.qehconnect.com",
+      "lat": 13.0956286,
+      "lng": -59.6067318
+    }
+  ]
+}

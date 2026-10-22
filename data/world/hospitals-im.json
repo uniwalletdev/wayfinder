@@ -1,0 +1,17 @@
+{
+  "countryCode": "IM",
+  "fetchedAt": "2026-10-21T01:39:01.641Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/1127979365",
+      "name": "Ramsey and District Cottage Hospital",
+      "countryCode": "IM",
+      "origin": "https://www.gov.im",
+      "lat": 54.3290264,
+      "lng": -4.3901592
+    }
+  ]
+}

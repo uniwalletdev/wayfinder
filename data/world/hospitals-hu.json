@@ -1,0 +1,729 @@
+{
+  "countryCode": "HU",
+  "fetchedAt": "2026-10-21T01:37:00.197Z",
+  "count": 90,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/2460223102",
+      "name": "Rendelőintézet Szentgotthárd",
+      "countryCode": "HU",
+      "origin": "https://www.rendelointezetsztg.hu",
+      "lat": 46.9558898,
+      "lng": 16.2679064
+    },
+    {
+      "code": "osm:node/2908901236",
+      "name": "Batthyány Kázmér Szakkórház és Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "http://www.kisberkorhaz.hu",
+      "lat": 47.4990567,
+      "lng": 18.0237076
+    },
+    {
+      "code": "osm:node/3112272512",
+      "name": "IV. sz. Háziorvosi körzet",
+      "countryCode": "HU",
+      "origin": "http://uj.dunakeszi.hu",
+      "lat": 47.6282327,
+      "lng": 19.1437567
+    },
+    {
+      "code": "osm:node/3468116073",
+      "name": "Mátrai Gyógyintézet",
+      "countryCode": "HU",
+      "origin": "http://www.matraigyogyintezet.hu",
+      "lat": 47.864633,
+      "lng": 19.973833
+    },
+    {
+      "code": "osm:node/5024510485",
+      "name": "Nappali Kórház, OORI",
+      "countryCode": "HU",
+      "origin": "http://www.rehabint.hu",
+      "lat": 47.5217419,
+      "lng": 18.9341989
+    },
+    {
+      "code": "osm:node/5024510486",
+      "name": "OORI: Országos Orvosi Rehabilitációs Intézet",
+      "countryCode": "HU",
+      "origin": "http://www.rehabint.hu",
+      "lat": 47.5233535,
+      "lng": 18.9314496
+    },
+    {
+      "code": "osm:node/5186065596",
+      "name": "Edelényi Koch Róbert Kórház és Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://www.krkedeleny.hu",
+      "lat": 48.2950356,
+      "lng": 20.7257312
+    },
+    {
+      "code": "osm:node/5573535723",
+      "name": "Start Rehabilitációs Kht.",
+      "countryCode": "HU",
+      "origin": "https://www.startrehab.hu",
+      "lat": 47.9551873,
+      "lng": 21.7255848
+    },
+    {
+      "code": "osm:node/6417639711",
+      "name": "Pest Megyei Önkormányzat Tüdőgyógyintézete",
+      "countryCode": "HU",
+      "origin": "https://torokbalintkorhaz.hu",
+      "lat": 47.4297875,
+      "lng": 18.9150184
+    },
+    {
+      "code": "osm:node/6497743873",
+      "name": "Rextra (orvosi műszer)",
+      "countryCode": "HU",
+      "origin": "https://rextra.hu",
+      "lat": 46.0714526,
+      "lng": 18.2055674
+    },
+    {
+      "code": "osm:node/6497743875",
+      "name": "OrtoProfil",
+      "countryCode": "HU",
+      "origin": "http://www.ortoprofil.hu",
+      "lat": 46.0716778,
+      "lng": 18.2058021
+    },
+    {
+      "code": "osm:node/8001537063",
+      "name": "TritonLife Róbert Magánkórház",
+      "countryCode": "HU",
+      "origin": "https://tritonlife.hu",
+      "lat": 47.5267608,
+      "lng": 19.0793198
+    },
+    {
+      "code": "osm:node/8002583352",
+      "name": "Pszichiátria OPAI",
+      "countryCode": "HU",
+      "origin": "http://nygy-opai.hu",
+      "lat": 47.5287965,
+      "lng": 19.0816373
+    },
+    {
+      "code": "osm:node/9356625466",
+      "name": "Emineo Magánkorház",
+      "countryCode": "HU",
+      "origin": "https://emineo.hu",
+      "lat": 47.4889395,
+      "lng": 19.0332757
+    },
+    {
+      "code": "osm:node/10066747140",
+      "name": "Bajcsy-Zsilinszky Kórház és Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://bajcsy.hu",
+      "lat": 47.4881829,
+      "lng": 19.1343793
+    },
+    {
+      "code": "osm:node/10611506067",
+      "name": "Neurológia és Reumatológia Magánrendelés",
+      "countryCode": "HU",
+      "origin": "https://koroknaimedical.hu",
+      "lat": 47.5190389,
+      "lng": 19.1271223
+    },
+    {
+      "code": "osm:node/12293784775",
+      "name": "Siklósi Kórház",
+      "countryCode": "HU",
+      "origin": "http://www.siklosikorhaz.hu",
+      "lat": 45.8508491,
+      "lng": 18.2982572
+    },
+    {
+      "code": "osm:way/25400999",
+      "name": "MH Egészségügyi Központ Podmaniczky utcai telephely",
+      "countryCode": "HU",
+      "origin": "https://epc.euintezmeny.hu",
+      "lat": 47.5165545,
+      "lng": 19.0729973
+    },
+    {
+      "code": "osm:way/28976793",
+      "name": "Merényi Gusztáv Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.dpckorhaz.hu",
+      "lat": 47.4666071,
+      "lng": 19.1002806
+    },
+    {
+      "code": "osm:way/30471692",
+      "name": "Szent Lukács kórház",
+      "countryCode": "HU",
+      "origin": "https://szlkorhaz.hu",
+      "lat": 46.3836539,
+      "lng": 18.143979
+    },
+    {
+      "code": "osm:way/42825349",
+      "name": "Kelen kórház",
+      "countryCode": "HU",
+      "origin": "https://kelen.hu",
+      "lat": 47.46122,
+      "lng": 19.026002
+    },
+    {
+      "code": "osm:way/83037456",
+      "name": "Szent István Kórház",
+      "countryCode": "HU",
+      "origin": "http://www.eszszk.hu",
+      "lat": 47.4770703,
+      "lng": 19.0874113
+    },
+    {
+      "code": "osm:way/88489017",
+      "name": "Markusovszky Egyetemi Oktatókórház",
+      "countryCode": "HU",
+      "origin": "https://markusovszky.hu",
+      "lat": 47.2517634,
+      "lng": 17.0836764
+    },
+    {
+      "code": "osm:way/92656272",
+      "name": "Fül- Orr- Gégészeti és Fej- Nyaksebészeti Klinika",
+      "countryCode": "HU",
+      "origin": "http://www.klinikaikozpont.u-szeged.hu",
+      "lat": 46.2453234,
+      "lng": 20.1487676
+    },
+    {
+      "code": "osm:way/92875887",
+      "name": "Szülészeti és Nőgyógyászati Klinika",
+      "countryCode": "HU",
+      "origin": "http://www.klinikaikozpont.u-szeged.hu",
+      "lat": 46.2461168,
+      "lng": 20.1472171
+    },
+    {
+      "code": "osm:way/96698738",
+      "name": "Szent-Györgyi Albert Klinikai Központ",
+      "countryCode": "HU",
+      "origin": "https://u-szeged.hu",
+      "lat": 46.2541372,
+      "lng": 20.1255814
+    },
+    {
+      "code": "osm:way/112557394",
+      "name": "Manninger Jenő Országos Traumatológiai Intézet",
+      "countryCode": "HU",
+      "origin": "https://www.peterfykh.hu",
+      "lat": 47.496434,
+      "lng": 19.0815906
+    },
+    {
+      "code": "osm:way/116721543",
+      "name": "Szent Imre Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.szentimrekorhaz.hu",
+      "lat": 47.4693412,
+      "lng": 19.03526
+    },
+    {
+      "code": "osm:way/119019454",
+      "name": "Semmelweis Tagkórház",
+      "countryCode": "HU",
+      "origin": "https://www.bazmkorhaz.hu",
+      "lat": 48.0915282,
+      "lng": 20.7884889
+    },
+    {
+      "code": "osm:way/126100930",
+      "name": "Dr. Vass László Egészségügyi Intézmény",
+      "countryCode": "HU",
+      "origin": "https://www.xv-euint.hu",
+      "lat": 47.5536243,
+      "lng": 19.1178215
+    },
+    {
+      "code": "osm:way/147249647",
+      "name": "Diósgyőri Tagkórház-Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://www.bazmkorhaz.hu",
+      "lat": 48.0903163,
+      "lng": 20.7224889
+    },
+    {
+      "code": "osm:way/166990154",
+      "name": "Csolnoky Ferenc Kórház",
+      "countryCode": "HU",
+      "origin": "https://csfk.hu",
+      "lat": 47.0904081,
+      "lng": 17.9103335
+    },
+    {
+      "code": "osm:way/171362368",
+      "name": "Misszió Egészségügyi Központ",
+      "countryCode": "HU",
+      "origin": "https://www.misszio.hu",
+      "lat": 47.6622026,
+      "lng": 19.2726896
+    },
+    {
+      "code": "osm:way/183986523",
+      "name": "Markusovszky Egyetemi Oktatókórház",
+      "countryCode": "HU",
+      "origin": "https://markusovszky.hu",
+      "lat": 47.238016,
+      "lng": 16.6179966
+    },
+    {
+      "code": "osm:way/184165371",
+      "name": "Jósa András Oktatókórház",
+      "countryCode": "HU",
+      "origin": "https://www.szszbmk.hu",
+      "lat": 47.951097,
+      "lng": 21.7305079
+    },
+    {
+      "code": "osm:way/201817071",
+      "name": "Városi Kórház Keszthely",
+      "countryCode": "HU",
+      "origin": "https://vk-keszthely.hu",
+      "lat": 46.7691242,
+      "lng": 17.2520816
+    },
+    {
+      "code": "osm:way/204961511",
+      "name": "Szigetvári Városi Kórház és Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://kk.pte.hu",
+      "lat": 46.0548506,
+      "lng": 17.7902613
+    },
+    {
+      "code": "osm:way/220246101",
+      "name": "Jahn Ferenc Dél-Pesti Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.delpestikorhaz.hu",
+      "lat": 47.4250551,
+      "lng": 19.1336074
+    },
+    {
+      "code": "osm:way/220874200",
+      "name": "Markhot Ferenc Oktatókórház és Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://www.mfkh.hu",
+      "lat": 47.9049354,
+      "lng": 20.3746013
+    },
+    {
+      "code": "osm:way/237268920",
+      "name": "Kanizsai Dorottya kórház",
+      "countryCode": "HU",
+      "origin": "https://nkkorhaz.hu",
+      "lat": 46.4516269,
+      "lng": 16.9993013
+    },
+    {
+      "code": "osm:way/249386092",
+      "name": "Arc- Állcsont- Szájsebészeti és Fogászati Klinika",
+      "countryCode": "HU",
+      "origin": "https://semmelweis.hu",
+      "lat": 47.4875187,
+      "lng": 19.0686373
+    },
+    {
+      "code": "osm:way/257821965",
+      "name": "Bethesda Gyermekkórház",
+      "countryCode": "HU",
+      "origin": "https://www.bethesda.hu",
+      "lat": 47.5175311,
+      "lng": 19.0886093
+    },
+    {
+      "code": "osm:way/264516602",
+      "name": "Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://www.furedrendelo.hu",
+      "lat": 46.9621413,
+      "lng": 17.874351
+    },
+    {
+      "code": "osm:way/268331743",
+      "name": "Kútvölgyi Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.janoskorhaz.hu",
+      "lat": 47.5109269,
+      "lng": 19.0052041
+    },
+    {
+      "code": "osm:way/268331744",
+      "name": "Pető Intézet",
+      "countryCode": "HU",
+      "origin": "http://www.peto.hu",
+      "lat": 47.5117566,
+      "lng": 19.0027934
+    },
+    {
+      "code": "osm:way/268343410",
+      "name": "Budai Gyermekkórház",
+      "countryCode": "HU",
+      "origin": "https://www.janoskorhaz.hu",
+      "lat": 47.5179232,
+      "lng": 19.0307975
+    },
+    {
+      "code": "osm:way/272537772",
+      "name": "Almási Balogh Pál Kórház",
+      "countryCode": "HU",
+      "origin": "https://ozdikorhaz.hu",
+      "lat": 48.2085501,
+      "lng": 20.2915535
+    },
+    {
+      "code": "osm:way/275183464",
+      "name": "Országos Onkológiai Intézet",
+      "countryCode": "HU",
+      "origin": "https://onkol.hu",
+      "lat": 47.5014576,
+      "lng": 19.0205127
+    },
+    {
+      "code": "osm:way/281419535",
+      "name": "Vasútegészségügyi Rehabilitációs Intézet",
+      "countryCode": "HU",
+      "origin": "https://www.vasuteu.hu",
+      "lat": 46.9590895,
+      "lng": 17.8973096
+    },
+    {
+      "code": "osm:way/282497006",
+      "name": "Kaposi Mór Oktató Kórház, Mosdósi Telephely",
+      "countryCode": "HU",
+      "origin": "https://www.kmmk.hu",
+      "lat": 46.3548618,
+      "lng": 17.9955201
+    },
+    {
+      "code": "osm:way/288186491",
+      "name": "Balassa János Kórház",
+      "countryCode": "HU",
+      "origin": "https://tmkorhaz.hu",
+      "lat": 46.3436322,
+      "lng": 18.6984765
+    },
+    {
+      "code": "osm:way/296814388",
+      "name": "Szent Rókus Kórház",
+      "countryCode": "HU",
+      "origin": "http://www.rokus.hu",
+      "lat": 47.4952751,
+      "lng": 19.068145
+    },
+    {
+      "code": "osm:way/301811567",
+      "name": "Jávorszky Ödön Kórház",
+      "countryCode": "HU",
+      "origin": "http://www.javorszky.hu",
+      "lat": 47.7839125,
+      "lng": 19.1485259
+    },
+    {
+      "code": "osm:way/311068195",
+      "name": "Péterfy Sándor Utcai Kórház Alsóerdősori Telephelye",
+      "countryCode": "HU",
+      "origin": "https://www.peterfykh.hu",
+      "lat": 47.5007542,
+      "lng": 19.0752273
+    },
+    {
+      "code": "osm:way/332401860",
+      "name": "Vásárosnaményi Kórház",
+      "countryCode": "HU",
+      "origin": "https://szszbmk.hu",
+      "lat": 48.1289356,
+      "lng": 22.3087887
+    },
+    {
+      "code": "osm:way/337346815",
+      "name": "Pécsi Irgalmasrendi Kórház",
+      "countryCode": "HU",
+      "origin": "http://www.irgalmasrend.hu",
+      "lat": 46.0748181,
+      "lng": 18.229186
+    },
+    {
+      "code": "osm:way/338096865",
+      "name": "Da Vinci magánklinika",
+      "countryCode": "HU",
+      "origin": "https://davincimaganklinika.hu",
+      "lat": 46.0897048,
+      "lng": 18.2258612
+    },
+    {
+      "code": "osm:way/363705693",
+      "name": "Szent Kozma és Damján Rehabilitációs Szakkórház",
+      "countryCode": "HU",
+      "origin": "https://www.visegradikorhaz.hu",
+      "lat": 47.7589098,
+      "lng": 18.9415512
+    },
+    {
+      "code": "osm:way/377060946",
+      "name": "Nagyatádi Kórház",
+      "countryCode": "HU",
+      "origin": "https://nagyatadikh.hu",
+      "lat": 46.2320931,
+      "lng": 17.3622547
+    },
+    {
+      "code": "osm:way/397160009",
+      "name": "Sántha Kálmán Pszichiátriai Szakkórház",
+      "countryCode": "HU",
+      "origin": "https://www.szszbmk.hu",
+      "lat": 47.8749175,
+      "lng": 21.8454764
+    },
+    {
+      "code": "osm:way/397488310",
+      "name": "Jahn Ferenc Dél-pesti Kórház Csepeli Weiss Manfréd Telephelye",
+      "countryCode": "HU",
+      "origin": "https://www.delpestikorhaz.hu",
+      "lat": 47.4247821,
+      "lng": 19.0594707
+    },
+    {
+      "code": "osm:way/420910893",
+      "name": "Margit Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.margitkorhaz.hu",
+      "lat": 47.6104011,
+      "lng": 17.2463836
+    },
+    {
+      "code": "osm:way/435563087",
+      "name": "MH Egészségügyi Központ, Repülőkórház",
+      "countryCode": "HU",
+      "origin": "https://www.mhek.hu",
+      "lat": 46.9106559,
+      "lng": 19.6797837
+    },
+    {
+      "code": "osm:way/455068477",
+      "name": "Deák Jenő Kórház",
+      "countryCode": "HU",
+      "origin": "http://www.tapolcakorhaz.hu",
+      "lat": 46.8850724,
+      "lng": 17.441426
+    },
+    {
+      "code": "osm:way/457896425",
+      "name": "Soproni Erzsébet Oktató Kórház",
+      "countryCode": "HU",
+      "origin": "http://www.sopronkorhaz.hu",
+      "lat": 47.6770138,
+      "lng": 16.5992159
+    },
+    {
+      "code": "osm:way/475352349",
+      "name": "Dr. Bugyi István Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.szentesi-korhaz.hu",
+      "lat": 46.6629207,
+      "lng": 20.2531999
+    },
+    {
+      "code": "osm:way/480256545",
+      "name": "Erzsébet Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.ujhelykorhaz.hu",
+      "lat": 48.3979321,
+      "lng": 21.6498725
+    },
+    {
+      "code": "osm:way/505257715",
+      "name": "Fehérgyarmati Kórház és Gyógyfürdő",
+      "countryCode": "HU",
+      "origin": "http://www.szszbmk.hu",
+      "lat": 47.9951115,
+      "lng": 22.513388
+    },
+    {
+      "code": "osm:way/545878056",
+      "name": "Nógrád Megyei Szent Lázár Kórház",
+      "countryCode": "HU",
+      "origin": "https://szlmk.hu",
+      "lat": 48.1147835,
+      "lng": 19.8094557
+    },
+    {
+      "code": "osm:way/550331255",
+      "name": "Bajcsy-Zsilinszky Kórház és Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://bajcsy.hu",
+      "lat": 47.4784908,
+      "lng": 19.1621514
+    },
+    {
+      "code": "osm:way/566120529",
+      "name": "Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.komloikorhaz.hu",
+      "lat": 46.1881686,
+      "lng": 18.2717216
+    },
+    {
+      "code": "osm:way/659711959",
+      "name": "IRIS Ápolási Otthon",
+      "countryCode": "HU",
+      "origin": "http://www.irisotthon.hu",
+      "lat": 46.8512252,
+      "lng": 17.8783721
+    },
+    {
+      "code": "osm:way/664375130",
+      "name": "Siófoki Kórház-Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://www.siokorhaz.hu",
+      "lat": 46.9008208,
+      "lng": 18.0436604
+    },
+    {
+      "code": "osm:way/687628000",
+      "name": "Országos Sportegészségügyi Intézet",
+      "countryCode": "HU",
+      "origin": "https://www.osei.hu",
+      "lat": 47.4789616,
+      "lng": 19.0305847
+    },
+    {
+      "code": "osm:way/692394118",
+      "name": "Szent Erzsébet Kórház",
+      "countryCode": "HU",
+      "origin": "https://jaszberenykorhaz.hu",
+      "lat": 47.4927421,
+      "lng": 19.9113599
+    },
+    {
+      "code": "osm:way/704402299",
+      "name": "Boldog Gellért Szakkórház",
+      "countryCode": "HU",
+      "origin": "https://boldoggellert.hu",
+      "lat": 47.66513,
+      "lng": 18.9668662
+    },
+    {
+      "code": "osm:way/741740066",
+      "name": "Szent Magdolna Magánkórház",
+      "countryCode": "HU",
+      "origin": "https://szentmagdolna.com",
+      "lat": 47.524356,
+      "lng": 19.036035
+    },
+    {
+      "code": "osm:way/757688076",
+      "name": "Országos Gerincgyógyászati Központ",
+      "countryCode": "HU",
+      "origin": "https://ogk.hu",
+      "lat": 47.496266,
+      "lng": 19.0223692
+    },
+    {
+      "code": "osm:way/771592645",
+      "name": "Gróf Esterházy Kórház és Rendelőintézeti Szakrendelő",
+      "countryCode": "HU",
+      "origin": "http://www.papaikorhaz.hu",
+      "lat": 47.3265633,
+      "lng": 17.470373
+    },
+    {
+      "code": "osm:way/922051608",
+      "name": "Hetényi Géza Kórház",
+      "countryCode": "HU",
+      "origin": "https://hetenyikorhaz.hu",
+      "lat": 47.1566954,
+      "lng": 20.1702648
+    },
+    {
+      "code": "osm:way/922280291",
+      "name": "Kátai Gábor Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.kgkorhaz.hu",
+      "lat": 47.3244897,
+      "lng": 20.9126526
+    },
+    {
+      "code": "osm:way/1009150629",
+      "name": "II. Rákóczi Ferenc Kórház",
+      "countryCode": "HU",
+      "origin": "http://www.hospital-szikszo.hu",
+      "lat": 48.2050667,
+      "lng": 20.9348677
+    },
+    {
+      "code": "osm:way/1073880774",
+      "name": "Észak-Pesti Centrumkórház - Honvédkórház",
+      "countryCode": "HU",
+      "origin": "https://epc.euintezmeny.hu",
+      "lat": 47.5307017,
+      "lng": 19.0727241
+    },
+    {
+      "code": "osm:way/1073886872",
+      "name": "Nyírő Gyula kórház - Országos Pszichiátriai és Addiktológiai Intézet",
+      "countryCode": "HU",
+      "origin": "http://nygy-opai.hu",
+      "lat": 47.527507,
+      "lng": 19.0804278
+    },
+    {
+      "code": "osm:way/1205578570",
+      "name": "Irisz Intézet",
+      "countryCode": "HU",
+      "origin": "http://www.irisotthon.hu",
+      "lat": 46.8506949,
+      "lng": 17.8773019
+    },
+    {
+      "code": "osm:way/1257184406",
+      "name": "Pándy Kálmán Kórház Szeghalom",
+      "countryCode": "HU",
+      "origin": "https://bmkk.eu",
+      "lat": 47.0123363,
+      "lng": 21.1704593
+    },
+    {
+      "code": "osm:way/1274915183",
+      "name": "Kiskunfélegyházi Városi Kórház",
+      "countryCode": "HU",
+      "origin": "https://www.kmk.hu",
+      "lat": 46.7112839,
+      "lng": 19.8367701
+    },
+    {
+      "code": "osm:way/1305296845",
+      "name": "Zirci Erzsébet Kórház - Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://www.zirckorhaz.hu",
+      "lat": 47.260237,
+      "lng": 17.8668617
+    },
+    {
+      "code": "osm:way/1337360334",
+      "name": "Ferencvárosi Egészségügyi Szolgáltató Központ",
+      "countryCode": "HU",
+      "origin": "https://www.feszrendelo.hu",
+      "lat": 47.4767678,
+      "lng": 19.0759591
+    },
+    {
+      "code": "osm:way/1463533034",
+      "name": "Újpesti Szakorvosi Rendelőintézet",
+      "countryCode": "HU",
+      "origin": "https://www.ujpestiszakrendelo.hu",
+      "lat": 47.5656077,
+      "lng": 19.1005111
+    }
+  ]
+}

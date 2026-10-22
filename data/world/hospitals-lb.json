@@ -1,0 +1,417 @@
+{
+  "countryCode": "LB",
+  "fetchedAt": "2026-10-21T01:54:41.659Z",
+  "count": 51,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/291591921",
+      "name": "Rosary Sisters Hospital",
+      "countryCode": "LB",
+      "origin": "http://www.hopitalrosaire.org",
+      "lat": 33.895671,
+      "lng": 35.5150606
+    },
+    {
+      "code": "osm:node/1857670915",
+      "name": "مستشفى النيني",
+      "countryCode": "LB",
+      "origin": "https://www.hopitalnini.com",
+      "lat": 34.4354153,
+      "lng": 35.830454
+    },
+    {
+      "code": "osm:node/2186083539",
+      "name": "Saydet Zgharta Hospital",
+      "countryCode": "LB",
+      "origin": "http://www.ehdenz.com",
+      "lat": 34.3996522,
+      "lng": 35.8856898
+    },
+    {
+      "code": "osm:node/3061157514",
+      "name": "مستشفى شتورا",
+      "countryCode": "LB",
+      "origin": "http://www.chtourahospital.com",
+      "lat": 33.8192371,
+      "lng": 35.8586781
+    },
+    {
+      "code": "osm:node/3854937270",
+      "name": "مستشفى سيدة المعونات جبيل",
+      "countryCode": "LB",
+      "origin": "http://chu-nds.org",
+      "lat": 34.1281622,
+      "lng": 35.6588606
+    },
+    {
+      "code": "osm:node/3938046522",
+      "name": "مستشفى مظلوم",
+      "countryCode": "LB",
+      "origin": "http://newmazloum.com",
+      "lat": 34.431834,
+      "lng": 35.8327696
+    },
+    {
+      "code": "osm:node/4461868278",
+      "name": "مستشفى سرحال",
+      "countryCode": "LB",
+      "origin": "http://www.hopitaldrsserhal.com",
+      "lat": 33.9149893,
+      "lng": 35.6085047
+    },
+    {
+      "code": "osm:node/6205014685",
+      "name": "مستشفى بخعازي",
+      "countryCode": "LB",
+      "origin": "http://www.bmg.com.lb",
+      "lat": 33.8987034,
+      "lng": 35.4843375
+    },
+    {
+      "code": "osm:node/7820608343",
+      "name": "Kassab Hospital",
+      "countryCode": "LB",
+      "origin": "https://kassabhospital.com",
+      "lat": 33.568745,
+      "lng": 35.3916326
+    },
+    {
+      "code": "osm:way/5087545",
+      "name": "دار العجزة الاسلامية",
+      "countryCode": "LB",
+      "origin": "https://www.dar-ajaza-islamia.org.lb",
+      "lat": 33.8680951,
+      "lng": 35.4988541
+    },
+    {
+      "code": "osm:way/236020132",
+      "name": "الرسول الأعظم",
+      "countryCode": "LB",
+      "origin": "http://alrassoul.org",
+      "lat": 33.8431013,
+      "lng": 35.4987114
+    },
+    {
+      "code": "osm:way/261397620",
+      "name": "مستشفى يونيفيل",
+      "countryCode": "LB",
+      "origin": "https://unifil.unmissions.org",
+      "lat": 33.1240808,
+      "lng": 35.1372511
+    },
+    {
+      "code": "osm:way/284813931",
+      "name": "مستشفى الروم",
+      "countryCode": "LB",
+      "origin": "https://www.stgeorgehospital.org",
+      "lat": 33.8939699,
+      "lng": 35.5238793
+    },
+    {
+      "code": "osm:way/287010523",
+      "name": "مستشفى المشرق",
+      "countryCode": "LB",
+      "origin": "http://www.cliniquedulevant.com",
+      "lat": 33.8714575,
+      "lng": 35.5404949
+    },
+    {
+      "code": "osm:way/302980705",
+      "name": "Hôpital Tal Chiha",
+      "countryCode": "LB",
+      "origin": "https://www.telchiha.com",
+      "lat": 33.8408246,
+      "lng": 35.9058668
+    },
+    {
+      "code": "osm:way/303946250",
+      "name": "مستشفى سان لويس جونية",
+      "countryCode": "LB",
+      "origin": "http://www.stherese.com",
+      "lat": 33.9930746,
+      "lng": 35.6407617
+    },
+    {
+      "code": "osm:way/409468812",
+      "name": "مستشفى جبل لبنان",
+      "countryCode": "LB",
+      "origin": "http://www.mlh.com.lb",
+      "lat": 33.8602146,
+      "lng": 35.5280824
+    },
+    {
+      "code": "osm:way/409961805",
+      "name": "مستشفى الحايك",
+      "countryCode": "LB",
+      "origin": "http://hayekhospital.com",
+      "lat": 33.8705154,
+      "lng": 35.5379825
+    },
+    {
+      "code": "osm:way/519087818",
+      "name": "مستشفى سانت تريز الحدث",
+      "countryCode": "LB",
+      "origin": "http://www.stherese.com",
+      "lat": 33.8444336,
+      "lng": 35.5272469
+    },
+    {
+      "code": "osm:way/547482392",
+      "name": "مستشفى بيروت العام",
+      "countryCode": "LB",
+      "origin": "http://beirutgeneralhospital.com",
+      "lat": 33.8726124,
+      "lng": 35.4919948
+    },
+    {
+      "code": "osm:way/566103031",
+      "name": "مركز كليمنصو الطبي",
+      "countryCode": "LB",
+      "origin": "https://www.cmc.com.lb",
+      "lat": 33.8975156,
+      "lng": 35.4900272
+    },
+    {
+      "code": "osm:way/583705258",
+      "name": "مستشفى القلب المقدس",
+      "countryCode": "LB",
+      "origin": "https://www.hsc-lb.com",
+      "lat": 33.8492139,
+      "lng": 35.5393817
+    },
+    {
+      "code": "osm:way/585187512",
+      "name": "طراد",
+      "countryCode": "LB",
+      "origin": "https://www.tradhospital.com",
+      "lat": 33.8969656,
+      "lng": 35.4918244
+    },
+    {
+      "code": "osm:way/642515061",
+      "name": "مستشفى الزهراء",
+      "countryCode": "LB",
+      "origin": "https://zhumc.org.lb",
+      "lat": 33.8637782,
+      "lng": 35.4870019
+    },
+    {
+      "code": "osm:way/835053990",
+      "name": "مركز كسروان الإستشفائي",
+      "countryCode": "LB",
+      "origin": "http://kmc.com.lb",
+      "lat": 34.0104391,
+      "lng": 35.647699
+    },
+    {
+      "code": "osm:way/835055600",
+      "name": "Al Iman Hospital",
+      "countryCode": "LB",
+      "origin": "http://www.imanhospital.com",
+      "lat": 33.8105746,
+      "lng": 35.6127941
+    },
+    {
+      "code": "osm:way/835249938",
+      "name": "رزق",
+      "countryCode": "LB",
+      "origin": "https://www.laumcrh.com",
+      "lat": 33.8852146,
+      "lng": 35.5151537
+    },
+    {
+      "code": "osm:way/836107076",
+      "name": "Akkar Rahal Hospital",
+      "countryCode": "LB",
+      "origin": "https://hopitalrahal.com",
+      "lat": 34.5500264,
+      "lng": 36.0789769
+    },
+    {
+      "code": "osm:way/836365776",
+      "name": "مستشفى فقيه",
+      "countryCode": "LB",
+      "origin": "http://www.drnabilfakih.com",
+      "lat": 33.4344397,
+      "lng": 35.2742403
+    },
+    {
+      "code": "osm:way/837101482",
+      "name": "Rahma Medical Center",
+      "countryCode": "LB",
+      "origin": "http://www.rahmahospital.org",
+      "lat": 34.4138292,
+      "lng": 35.8458727
+    },
+    {
+      "code": "osm:way/837924565",
+      "name": "Salah Ghandour Hospital",
+      "countryCode": "LB",
+      "origin": "http://www.hayaa.org",
+      "lat": 33.1304778,
+      "lng": 35.4298556
+    },
+    {
+      "code": "osm:way/843483047",
+      "name": "Al Koura Hospital",
+      "countryCode": "LB",
+      "origin": "http://www.hopital-alkoura.com.lb",
+      "lat": 34.3491456,
+      "lng": 35.8378064
+    },
+    {
+      "code": "osm:way/844253921",
+      "name": "مستشفى دار الأمل الجامعي",
+      "countryCode": "LB",
+      "origin": "https://www.dar-alamal.com",
+      "lat": 33.9838333,
+      "lng": 36.1611812
+    },
+    {
+      "code": "osm:way/844266947",
+      "name": "مستشفى الصليب للأمراض العقلية والنفسية",
+      "countryCode": "LB",
+      "origin": "http://www.hopitalpsychiatriquedelacroix.org.lb",
+      "lat": 33.9009606,
+      "lng": 35.5848349
+    },
+    {
+      "code": "osm:way/975076458",
+      "name": "مستشفى حمود",
+      "countryCode": "LB",
+      "origin": "http://hammoudhospital.com",
+      "lat": 33.5607047,
+      "lng": 35.3760654
+    },
+    {
+      "code": "osm:way/993570500",
+      "name": "مستشفى الحريري الحكومي",
+      "countryCode": "LB",
+      "origin": "http://www.bguh.gov.lb",
+      "lat": 33.8636574,
+      "lng": 35.4913498
+    },
+    {
+      "code": "osm:way/993574780",
+      "name": "مستشفى بيت شباب",
+      "countryCode": "LB",
+      "origin": "http://www.centrehospbc.com",
+      "lat": 33.9324382,
+      "lng": 35.6752374
+    },
+    {
+      "code": "osm:way/994902555",
+      "name": "مركز بلفو الطبي",
+      "countryCode": "LB",
+      "origin": "http://www.bmchcs.com",
+      "lat": 33.8483036,
+      "lng": 35.5594734
+    },
+    {
+      "code": "osm:way/995463969",
+      "name": "Hospital Haykel",
+      "countryCode": "LB",
+      "origin": "http://www.hopitalhaykel.com",
+      "lat": 34.4125879,
+      "lng": 35.8323953
+    },
+    {
+      "code": "osm:way/1015254075",
+      "name": "مستشفى علاء الدين",
+      "countryCode": "LB",
+      "origin": "https://hospitalalaeddine.com",
+      "lat": 33.459703,
+      "lng": 35.2892715
+    },
+    {
+      "code": "osm:way/1016333465",
+      "name": "المركز الطبي للجامعة اللبنانية الأميركية - مستشفى سان جون",
+      "countryCode": "LB",
+      "origin": "https://www.laumcsjh.com",
+      "lat": 33.9822798,
+      "lng": 35.6311707
+    },
+    {
+      "code": "osm:way/1047497756",
+      "name": "Rayak Hospital",
+      "countryCode": "LB",
+      "origin": "http://rayakhospital.com",
+      "lat": 33.8639675,
+      "lng": 36.011079
+    },
+    {
+      "code": "osm:way/1050031779",
+      "name": "Abou Jaoudeh Hospital",
+      "countryCode": "LB",
+      "origin": "https://www.hopitalaboujaoude.com",
+      "lat": 33.907491,
+      "lng": 35.5818012
+    },
+    {
+      "code": "osm:way/1052150692",
+      "name": "مستشفى البقاع",
+      "countryCode": "LB",
+      "origin": "http://www.bekaahospital.com",
+      "lat": 33.8084368,
+      "lng": 35.8677676
+    },
+    {
+      "code": "osm:way/1052244722",
+      "name": "مستشفى سني",
+      "countryCode": "LB",
+      "origin": "https://www.islamichospital.org",
+      "lat": 34.4423861,
+      "lng": 35.8324705
+    },
+    {
+      "code": "osm:way/1052267856",
+      "name": "Universal Hospital",
+      "countryCode": "LB",
+      "origin": "https://universalhospital.net",
+      "lat": 34.2689347,
+      "lng": 36.400337
+    },
+    {
+      "code": "osm:way/1052512174",
+      "name": "مستشفى الساحل العام",
+      "countryCode": "LB",
+      "origin": "https://www.sahelhospital.com",
+      "lat": 33.8579454,
+      "lng": 35.5036632
+    },
+    {
+      "code": "osm:way/1052515181",
+      "name": "المقاصد",
+      "countryCode": "LB",
+      "origin": "http://makassedhospital.org",
+      "lat": 33.8753277,
+      "lng": 35.5040836
+    },
+    {
+      "code": "osm:way/1181973647",
+      "name": "مستشفة خوري",
+      "countryCode": "LB",
+      "origin": "https://www.khouryhospital.com",
+      "lat": 33.8530183,
+      "lng": 35.8957819
+    },
+    {
+      "code": "osm:way/1473263236",
+      "name": "مستشفى جامعة نوتردام",
+      "countryCode": "LB",
+      "origin": "http://www.nduhospital.com",
+      "lat": 33.9817226,
+      "lng": 35.6278256
+    },
+    {
+      "code": "osm:way/1553951611",
+      "name": "مستشفى دلاعة",
+      "countryCode": "LB",
+      "origin": "http://www.dallaahospital.com",
+      "lat": 33.557036,
+      "lng": 35.3777235
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "countryCode": "BO",
+  "fetchedAt": "2026-10-21T00:54:52.947Z",
+  "count": 31,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:node/4652759490",
+      "name": "P.S. Tomatas",
+      "countryCode": "BO",
+      "origin": "http://en.realidad.un.centro.de.salud",
+      "lat": -21.5572409,
+      "lng": -65.6307914
+    },
+    {
+      "code": "osm:node/4965335916",
+      "name": "Hospital Materno Infantil Germán Urquidi",
+      "countryCode": "BO",
+      "origin": "https://hospitalgermanurquidi.salud.bo",
+      "lat": -17.3864666,
+      "lng": -66.1483846
+    },
+    {
+      "code": "osm:node/8343293131",
+      "name": "HOSPITAL AGRAMONT - Central de Emergencias Nueva Esperanza S.A.",
+      "countryCode": "BO",
+      "origin": "https://www.hospitalagramont.com.bo",
+      "lat": -16.5153813,
+      "lng": -68.1582361
+    },
+    {
+      "code": "osm:node/8777723542",
+      "name": "Centro Odontologico Mil Sonrisas",
+      "countryCode": "BO",
+      "origin": "https://www.milsonrisas.com.bo",
+      "lat": -16.4878949,
+      "lng": -68.1708414
+    },
+    {
+      "code": "osm:node/8777723555",
+      "name": "Centro Odontologico Mil Sonrisas",
+      "countryCode": "BO",
+      "origin": "https://www.milsonrisas.com.bo",
+      "lat": -16.4942867,
+      "lng": -68.1405212
+    },
+    {
+      "code": "osm:node/9035366542",
+      "name": "Hospital Clínico Viedma",
+      "countryCode": "BO",
+      "origin": "http://www.hospitalviedma.org",
+      "lat": -17.3856306,
+      "lng": -66.1484598
+    },
+    {
+      "code": "osm:node/9085066817",
+      "name": "Hospital Materno Infantil Lahuachaca",
+      "countryCode": "BO",
+      "origin": "https://laotra.red",
+      "lat": -17.3715741,
+      "lng": -67.6849225
+    },
+    {
+      "code": "osm:node/13343164901",
+      "name": "HOSPITAL DE POTOSÍ \"Fray Giovanni Eugenio Natalini Magnani\"",
+      "countryCode": "BO",
+      "origin": "https://www.hospitalpotosi.org.bo",
+      "lat": -19.566009,
+      "lng": -65.7754202
+    },
+    {
+      "code": "osm:node/13953183872",
+      "name": "Instituto Gastroenterológico Boliviano-Japonés",
+      "countryCode": "BO",
+      "origin": "https://www.igbj-cbba.org.bo",
+      "lat": -17.386319,
+      "lng": -66.1491126
+    },
+    {
+      "code": "osm:way/160442271",
+      "name": "Hospital Obrero N° 2",
+      "countryCode": "BO",
+      "origin": "https://cnscbba.gob.bo",
+      "lat": -17.394107,
+      "lng": -66.2056963
+    },
+    {
+      "code": "osm:way/217378793",
+      "name": "Hospital Univalle",
+      "countryCode": "BO",
+      "origin": "http://hospitalunivalle.com.bo",
+      "lat": -17.4214309,
+      "lng": -66.1328643
+    },
+    {
+      "code": "osm:way/221314638",
+      "name": "Centro de Pediatría Albina Rodrigues de Patiño",
+      "countryCode": "BO",
+      "origin": "https://pediatria.fundacionpatino.org",
+      "lat": -17.3946732,
+      "lng": -66.1495738
+    },
+    {
+      "code": "osm:way/226825198",
+      "name": "Centro Integral de Medicina Familiar Quillacollo",
+      "countryCode": "BO",
+      "origin": "http://www.cnscbba.gob.bo",
+      "lat": -17.3926486,
+      "lng": -66.2569671
+    },
+    {
+      "code": "osm:way/231406777",
+      "name": "Hospital Corporación de Seguro Social Militar 1",
+      "countryCode": "BO",
+      "origin": "http://www.cossmil.mil.bo",
+      "lat": -17.3790589,
+      "lng": -66.1449748
+    },
+    {
+      "code": "osm:way/255486706",
+      "name": "Hospital Obrero No. 12",
+      "countryCode": "BO",
+      "origin": "http://www.cns.gob.bo",
+      "lat": -20.4576233,
+      "lng": -66.8292773
+    },
+    {
+      "code": "osm:way/323041705",
+      "name": "Hospital Arco Iris",
+      "countryCode": "BO",
+      "origin": "http://www.arcoiris.org.bo",
+      "lat": -16.4842606,
+      "lng": -68.1203697
+    },
+    {
+      "code": "osm:way/348348912",
+      "name": "Hospital Harry Williams",
+      "countryCode": "BO",
+      "origin": "http://www.hospitalharrywilliams.org",
+      "lat": -17.4198831,
+      "lng": -66.1469041
+    },
+    {
+      "code": "osm:way/442131848",
+      "name": "Clínica Ángel Foianini",
+      "countryCode": "BO",
+      "origin": "http://www.clinicafoianini.com",
+      "lat": -17.7915209,
+      "lng": -63.1801284
+    },
+    {
+      "code": "osm:way/578658472",
+      "name": "Seguro Social Universitario Cochabamba",
+      "countryCode": "BO",
+      "origin": "https://ssucbba.org",
+      "lat": -17.3883183,
+      "lng": -66.1482623
+    },
+    {
+      "code": "osm:way/584004710",
+      "name": "Hospital COSSMIL",
+      "countryCode": "BO",
+      "origin": "http://www.ejercito.mil.bo",
+      "lat": -16.5049645,
+      "lng": -68.1201895
+    },
+    {
+      "code": "osm:way/674542562",
+      "name": "Hospital Materno Infantil",
+      "countryCode": "BO",
+      "origin": "http://santacruz.cns.gob.bo",
+      "lat": -17.7775374,
+      "lng": -63.1872668
+    },
+    {
+      "code": "osm:way/675938773",
+      "name": "Hospital Obrero N° 1",
+      "countryCode": "BO",
+      "origin": "https://www.cns.gob.bo",
+      "lat": -16.4992363,
+      "lng": -68.1179773
+    },
+    {
+      "code": "osm:way/686522943",
+      "name": "Hospital Belga CMQBB",
+      "countryCode": "BO",
+      "origin": "https://www.cmqbb.com",
+      "lat": -17.387643,
+      "lng": -66.1534701
+    },
+    {
+      "code": "osm:way/853546370",
+      "name": "Clínica Los Olivos",
+      "countryCode": "BO",
+      "origin": "http://www.clinicalosolivos.com",
+      "lat": -17.3895082,
+      "lng": -66.179793
+    },
+    {
+      "code": "osm:way/866768602",
+      "name": "Clínica Copacabana",
+      "countryCode": "BO",
+      "origin": "https://www.clinicacopacabana.com",
+      "lat": -17.3777969,
+      "lng": -66.1542805
+    },
+    {
+      "code": "osm:way/900528179",
+      "name": "Caja de Salud de la Banca Privada",
+      "countryCode": "BO",
+      "origin": "https://www.csbp.com.bo",
+      "lat": -17.3883386,
+      "lng": -66.15658
+    },
+    {
+      "code": "osm:way/925301287",
+      "name": "Caja de Salud CORDES",
+      "countryCode": "BO",
+      "origin": "https://cajacordescba.bo",
+      "lat": -17.3763521,
+      "lng": -66.1629203
+    },
+    {
+      "code": "osm:way/925789550",
+      "name": "Clínica Los Angeles",
+      "countryCode": "BO",
+      "origin": "http://clinicalosangeles.com.bo",
+      "lat": -17.378563,
+      "lng": -66.1647134
+    },
+    {
+      "code": "osm:way/1085267584",
+      "name": "Fundación Rosa Vera - La Escuelita Mi Hogar",
+      "countryCode": "BO",
+      "origin": "https://www.rosaverafund.org",
+      "lat": -17.3366057,
+      "lng": -63.2696084
+    },
+    {
+      "code": "osm:way/1086588474",
+      "name": "Caja de Salud de la Banca Privada",
+      "countryCode": "BO",
+      "origin": "https://www.csbp.com.bo",
+      "lat": -17.3956259,
+      "lng": -66.1607191
+    },
+    {
+      "code": "osm:way/1540295675",
+      "name": "Hospital Univalle Norte",
+      "countryCode": "BO",
+      "origin": "https://hospitalunivalle.com.bo",
+      "lat": -17.3720374,
+      "lng": -66.160845
+    }
+  ]
+}

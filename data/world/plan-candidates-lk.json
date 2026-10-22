@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-10-22T08:41:46.098Z",
+  "countryCode": "LK",
+  "description": "Candidate site-map / floor-plan PDFs found on hospital websites via OpenStreetMap's amenity=hospital directory. THIS IS A TRIAGE QUEUE. approve-plans.mjs in this directory promotes eligible entries into data/world/plan-sources-<cc>.json, which is the only list fetch-plans.mjs will download.",
+  "crawlerVersion": 6,
+  "stats": {
+    "crawlFailed": 5,
+    "botChallenged": 1,
+    "robotsBlocked": 0,
+    "withCandidates": 0,
+    "crawled": 26
+  },
+  "count": 0,
+  "crawled": {
+    "osm:node/10218912917": "failed",
+    "osm:node/12344094402": "ok",
+    "osm:node/13647227601": "ok",
+    "osm:node/1994920168": "ok",
+    "osm:node/2708944796": "ok",
+    "osm:node/2901418998": "ok",
+    "osm:node/4704694322": "ok",
+    "osm:way/102650989": "ok",
+    "osm:way/1171931307": "failed",
+    "osm:way/1229701727": "ok",
+    "osm:way/1232957081": "bot-challenge",
+    "osm:way/1556595419": "ok",
+    "osm:way/204505887": "ok",
+    "osm:way/239289194": "ok",
+    "osm:way/260647545": "ok",
+    "osm:way/304200805": "ok",
+    "osm:way/327539755": "ok",
+    "osm:way/355252669": "ok",
+    "osm:way/389071653": "ok",
+    "osm:way/513773173": "failed",
+    "osm:way/539024557": "ok",
+    "osm:way/572962990": "failed",
+    "osm:way/699018543": "failed",
+    "osm:way/792744612": "ok",
+    "osm:way/856252503": "ok",
+    "osm:way/915331141": "ok"
+  },
+  "candidates": []
+}

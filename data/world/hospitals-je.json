@@ -1,0 +1,17 @@
+{
+  "countryCode": "JE",
+  "fetchedAt": "2026-10-21T01:43:51.044Z",
+  "count": 1,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 0,
+  "hospitals": [
+    {
+      "code": "osm:way/168422036",
+      "name": "General Hospital",
+      "countryCode": "JE",
+      "origin": "http://www.gov.je",
+      "lat": 49.1875953,
+      "lng": -2.1123541
+    }
+  ]
+}

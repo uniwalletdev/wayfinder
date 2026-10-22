@@ -1,0 +1,3201 @@
+{
+  "countryCode": "ID",
+  "fetchedAt": "2026-10-21T01:37:41.805Z",
+  "count": 399,
+  "droppedNoUsableWebsite": 0,
+  "droppedNoName": 1,
+  "hospitals": [
+    {
+      "code": "osm:node/2383993355",
+      "name": "RSGMP UNSOED PURWOKERTO",
+      "countryCode": "ID",
+      "origin": "https://rsgmp.unsoed.ac.id",
+      "lat": -7.4103382,
+      "lng": 109.2537127
+    },
+    {
+      "code": "osm:node/2631261031",
+      "name": "Klinik Adhiwarga PKBI DIY",
+      "countryCode": "ID",
+      "origin": "http://www.pkbi-diy.info",
+      "lat": -7.7851411,
+      "lng": 110.3570675
+    },
+    {
+      "code": "osm:node/2641842068",
+      "name": "Praktek dokter umum pagi",
+      "countryCode": "ID",
+      "origin": "http://emailku830.wordpres.com",
+      "lat": -6.5501119,
+      "lng": 106.7987274
+    },
+    {
+      "code": "osm:node/2959526978",
+      "name": "RSUD Dr Rehatta",
+      "countryCode": "ID",
+      "origin": "https://rsudkelet.co.id",
+      "lat": -6.502031,
+      "lng": 110.9074606
+    },
+    {
+      "code": "osm:node/4203723642",
+      "name": "BNN Bangkinang",
+      "countryCode": "ID",
+      "origin": "http://rsudbangkinang.org",
+      "lat": 0.3463606,
+      "lng": 101.030545
+    },
+    {
+      "code": "osm:node/4211805430",
+      "name": "Puskesmas Tinambung",
+      "countryCode": "ID",
+      "origin": "https://www.polewalimandarkab.go.id",
+      "lat": -3.5037555,
+      "lng": 119.0247675
+    },
+    {
+      "code": "osm:node/4296598989",
+      "name": "RSIA Bunda Arif",
+      "countryCode": "ID",
+      "origin": "https://rsbundaarif.co.id",
+      "lat": -7.4207491,
+      "lng": 109.2430604
+    },
+    {
+      "code": "osm:node/4373301689",
+      "name": "RSIA Pala Raya",
+      "countryCode": "ID",
+      "origin": "http://www.rsiapalaraya.co.id",
+      "lat": -6.884161,
+      "lng": 109.1514052
+    },
+    {
+      "code": "osm:node/4519827891",
+      "name": "Puskesmas Noyan",
+      "countryCode": "ID",
+      "origin": "http://puskesmasnoyan.blogspot.co.id",
+      "lat": 0.7563958,
+      "lng": 110.5851718
+    },
+    {
+      "code": "osm:node/5761992989",
+      "name": "klinik mutiara",
+      "countryCode": "ID",
+      "origin": "http://gmail.com",
+      "lat": 5.3794992,
+      "lng": 95.9584079
+    },
+    {
+      "code": "osm:node/5904066218",
+      "name": "Rumah Sakit Ibu dan Anak Belleza",
+      "countryCode": "ID",
+      "origin": "http://www.rsiabellezakedaton.com",
+      "lat": -5.3805592,
+      "lng": 105.2582196
+    },
+    {
+      "code": "osm:node/5938000986",
+      "name": "Griya Waluya",
+      "countryCode": "ID",
+      "origin": "https://www.rs-griyawaluya.com",
+      "lat": -7.8670195,
+      "lng": 111.4752088
+    },
+    {
+      "code": "osm:node/7150095847",
+      "name": "Rumah Sakit Harapan Mulia",
+      "countryCode": "ID",
+      "origin": "https://www.rumahsakit-harapanmulia.com",
+      "lat": -6.4348412,
+      "lng": 107.0687318
+    },
+    {
+      "code": "osm:node/7331641864",
+      "name": "Rumah Sakit Siloam Yogyakarta",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -7.7833994,
+      "lng": 110.3908845
+    },
+    {
+      "code": "osm:node/7362478658",
+      "name": "RSUD Kraton Kab. Pekalongan",
+      "countryCode": "ID",
+      "origin": "https://rsudkraton.id",
+      "lat": -6.8813966,
+      "lng": 109.667363
+    },
+    {
+      "code": "osm:node/7409018393",
+      "name": "RSU Dr Raden Sodjono",
+      "countryCode": "ID",
+      "origin": "https://www.rsudselong.com",
+      "lat": -8.6505967,
+      "lng": 116.5280885
+    },
+    {
+      "code": "osm:node/7469450808",
+      "name": "Royal Baby Spa",
+      "countryCode": "ID",
+      "origin": "https://royal-baby-spa.business.site",
+      "lat": -7.6893171,
+      "lng": 110.8429846
+    },
+    {
+      "code": "osm:node/8046529285",
+      "name": "Parama Sidhi Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.rsuparamasidhi.com",
+      "lat": -8.1229735,
+      "lng": 115.0713879
+    },
+    {
+      "code": "osm:node/9454905614",
+      "name": "Puskesmas Kras",
+      "countryCode": "ID",
+      "origin": "https://puskesmas-kras.bussiness.site",
+      "lat": -7.9538746,
+      "lng": 111.9621196
+    },
+    {
+      "code": "osm:node/9694109308",
+      "name": "Rumah perawat homecare",
+      "countryCode": "ID",
+      "origin": "https://perawat-homecare-magelang.business.site",
+      "lat": -7.4332897,
+      "lng": 110.2325843
+    },
+    {
+      "code": "osm:node/9810776091",
+      "name": "Bali Royal Hospital",
+      "countryCode": "ID",
+      "origin": "https://baliroyalhospital.co.id",
+      "lat": -8.6684209,
+      "lng": 115.2278393
+    },
+    {
+      "code": "osm:node/10153772895",
+      "name": "Klinik Utama Bandung Pain Rehab Center",
+      "countryCode": "ID",
+      "origin": "https://bandungpainrehab.center",
+      "lat": -6.9029104,
+      "lng": 107.6271296
+    },
+    {
+      "code": "osm:node/10720341447",
+      "name": "RSH IN CARE (Rumah Sehat Holistik) - Bekam Jogja",
+      "countryCode": "ID",
+      "origin": "https://s.id",
+      "lat": -7.8387586,
+      "lng": 110.3097744
+    },
+    {
+      "code": "osm:node/11285959508",
+      "name": "Dermaster Pakubuwono",
+      "countryCode": "ID",
+      "origin": "https://www.dermaster-indonesia.com",
+      "lat": -6.2406027,
+      "lng": 106.7879193
+    },
+    {
+      "code": "osm:node/12160069752",
+      "name": "RSUD Tangerang Selatan",
+      "countryCode": "ID",
+      "origin": "https://tangerangselatankota.go.id",
+      "lat": -6.3379705,
+      "lng": 106.7390851
+    },
+    {
+      "code": "osm:node/12348787673",
+      "name": "Rumah Sakit Madina Bukittinggi",
+      "countryCode": "ID",
+      "origin": "https://rsmadina.id",
+      "lat": -0.3117498,
+      "lng": 100.3741807
+    },
+    {
+      "code": "osm:node/12366425305",
+      "name": "RSUD Sukowati Tangen",
+      "countryCode": "ID",
+      "origin": "https://rsudsukowati.sragenkab.go.id",
+      "lat": -7.3353445,
+      "lng": 111.0456684
+    },
+    {
+      "code": "osm:node/12662436214",
+      "name": "RSUD RH. Satibi",
+      "countryCode": "ID",
+      "origin": "https://rsudcileungsi.bogorkab.go.id",
+      "lat": -6.4329076,
+      "lng": 107.0485916
+    },
+    {
+      "code": "osm:node/12669324561",
+      "name": "RSU Dadi Keluarga",
+      "countryCode": "ID",
+      "origin": "https://rsdk-pwt.com",
+      "lat": -7.447816,
+      "lng": 109.2529568
+    },
+    {
+      "code": "osm:node/12669434849",
+      "name": "Rumah Sakit \"JIH\" Purwokerto",
+      "countryCode": "ID",
+      "origin": "https://rs-jih.co.id",
+      "lat": -7.4104573,
+      "lng": 109.2742978
+    },
+    {
+      "code": "osm:node/12669525481",
+      "name": "RS Jatiwinangun",
+      "countryCode": "ID",
+      "origin": "https://rsjatiwinangun.com",
+      "lat": -7.4171814,
+      "lng": 109.243684
+    },
+    {
+      "code": "osm:node/12670241232",
+      "name": "Rumah Sakit Orthopaedi Purwokerto",
+      "countryCode": "ID",
+      "origin": "https://rsop.co.id",
+      "lat": -7.4428093,
+      "lng": 109.2728972
+    },
+    {
+      "code": "osm:node/13188465279",
+      "name": "RSUD R. Soedjati Soemodiardjo",
+      "countryCode": "ID",
+      "origin": "https://www.rsud.grobogan.go.id",
+      "lat": -7.0845815,
+      "lng": 110.9200843
+    },
+    {
+      "code": "osm:node/13205863501",
+      "name": "Klinik Umum Dan Spesialis Ciliwung 26",
+      "countryCode": "ID",
+      "origin": "https://www.rkzsurabaya.com",
+      "lat": -7.2921556,
+      "lng": 112.7362334
+    },
+    {
+      "code": "osm:node/13420301145",
+      "name": "Ciputra SMG Eye Clinic Bali",
+      "countryCode": "ID",
+      "origin": "https://ciputrasmgeyeclinicbali.com",
+      "lat": -8.6869341,
+      "lng": 115.2633095
+    },
+    {
+      "code": "osm:node/13454929113",
+      "name": "Sinshe Tong Ren",
+      "countryCode": "ID",
+      "origin": "https://sinshetongren.com",
+      "lat": -6.2618713,
+      "lng": 106.8292364
+    },
+    {
+      "code": "osm:node/14001684201",
+      "name": "Rumah Sakit Siloam Banjarmasin",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -3.3260434,
+      "lng": 114.6049013
+    },
+    {
+      "code": "osm:node/14104829662",
+      "name": "MELANGE KOREA Aesthetic Clinic",
+      "countryCode": "ID",
+      "origin": "https://www.melangekorea.id",
+      "lat": -6.1772919,
+      "lng": 106.7895941
+    },
+    {
+      "code": "osm:node/14247740001",
+      "name": "Primaya Hospital Depok",
+      "countryCode": "ID",
+      "origin": "https://primayahospital.com",
+      "lat": -6.4076863,
+      "lng": 106.851012
+    },
+    {
+      "code": "osm:node/14257354601",
+      "name": "Rumah Sakit Jantung Dan Pembuluh Darah Oputa Yi Koo",
+      "countryCode": "ID",
+      "origin": "http://rsjpdo.sultraprov.go.id",
+      "lat": -3.9624143,
+      "lng": 122.524365
+    },
+    {
+      "code": "osm:way/46546065",
+      "name": "Eka Hospital BSD",
+      "countryCode": "ID",
+      "origin": "https://www.ekahospital.com",
+      "lat": -6.2980505,
+      "lng": 106.6696878
+    },
+    {
+      "code": "osm:way/120184483",
+      "name": "Rumah Sakit Harum Sisma Medika",
+      "countryCode": "ID",
+      "origin": "https://harumsismamedika.com",
+      "lat": -6.2481335,
+      "lng": 106.9096278
+    },
+    {
+      "code": "osm:way/121642948",
+      "name": "RS PKU Muhammadiyah",
+      "countryCode": "ID",
+      "origin": "https://rspkujogja.com",
+      "lat": -7.8006934,
+      "lng": 110.3624537
+    },
+    {
+      "code": "osm:way/121674325",
+      "name": "RSIA Hermina Bekasi",
+      "countryCode": "ID",
+      "origin": "https://herminahospitalgroup.com",
+      "lat": -6.2417963,
+      "lng": 106.9949635
+    },
+    {
+      "code": "osm:way/122425821",
+      "name": "Rumah Sakit Islam Siti Khadijah",
+      "countryCode": "ID",
+      "origin": "http://rsi-sitikhadijah.com",
+      "lat": -2.9726365,
+      "lng": 104.7321423
+    },
+    {
+      "code": "osm:way/142616948",
+      "name": "RSUD Kota Bogor",
+      "countryCode": "ID",
+      "origin": "https://rsudkotabogor.org",
+      "lat": -6.5804016,
+      "lng": 106.7783005
+    },
+    {
+      "code": "osm:way/153303478",
+      "name": "RSUD Pasar Rebo",
+      "countryCode": "ID",
+      "origin": "https://rsudpasarrebo.co.id",
+      "lat": -6.3035975,
+      "lng": 106.8620935
+    },
+    {
+      "code": "osm:way/154078977",
+      "name": "Garuda Sentra Medika",
+      "countryCode": "ID",
+      "origin": "http://www.garudasentramedika.co.id",
+      "lat": -6.1572889,
+      "lng": 106.8414238
+    },
+    {
+      "code": "osm:way/155097743",
+      "name": "Rumah Sakit Umum Kecamatan Sawah Besar",
+      "countryCode": "ID",
+      "origin": "http://103.121.149.242",
+      "lat": -6.1489007,
+      "lng": 106.829821
+    },
+    {
+      "code": "osm:way/155098189",
+      "name": "Rumah Sakit Khusus THT dan Bedah Kepala Leher Proklamasi",
+      "countryCode": "ID",
+      "origin": "https://www.rsproklamasi.co.id",
+      "lat": -6.2018877,
+      "lng": 106.8472497
+    },
+    {
+      "code": "osm:way/155115812",
+      "name": "Rumah Sakit Gigi dan Mulut Ladokgi TNI AL R.E Martadinata",
+      "countryCode": "ID",
+      "origin": "https://ladokgirem.com",
+      "lat": -6.2114473,
+      "lng": 106.8087207
+    },
+    {
+      "code": "osm:way/155115832",
+      "name": "Rumah Sakit Dr Mintohardjo",
+      "countryCode": "ID",
+      "origin": "https://www.rsalmintohardjo.com",
+      "lat": -6.2108675,
+      "lng": 106.8108281
+    },
+    {
+      "code": "osm:way/155565070",
+      "name": "Rumah Sakit Umum Pusat Dr. Kariadi",
+      "countryCode": "ID",
+      "origin": "https://rs-kariadi.go.id",
+      "lat": -6.9934226,
+      "lng": 110.4088241
+    },
+    {
+      "code": "osm:way/155926047",
+      "name": "Rumah Sakit Umum Pusat Dr. M. Djamil Padang",
+      "countryCode": "ID",
+      "origin": "https://www.rsdjamil.co.id",
+      "lat": -0.9436478,
+      "lng": 100.36868
+    },
+    {
+      "code": "osm:way/156928888",
+      "name": "Rumah Sakit Pelni Petamburan",
+      "countryCode": "ID",
+      "origin": "https://www.rspelni.co.id",
+      "lat": -6.1932311,
+      "lng": 106.8037259
+    },
+    {
+      "code": "osm:way/158405004",
+      "name": "RSUD Dr. Iskak Tulungagung",
+      "countryCode": "ID",
+      "origin": "https://rsudtulungagung.com",
+      "lat": -8.0540316,
+      "lng": 111.9181393
+    },
+    {
+      "code": "osm:way/173933328",
+      "name": "Melia Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.rsmeilia.co.id",
+      "lat": -6.3766811,
+      "lng": 106.9018538
+    },
+    {
+      "code": "osm:way/175011356",
+      "name": "Rumah Sakit Al Islam",
+      "countryCode": "ID",
+      "origin": "https://www.rsalislam.com",
+      "lat": -6.9400141,
+      "lng": 107.6688087
+    },
+    {
+      "code": "osm:way/193424969",
+      "name": "RS Bhayangkara Makassar",
+      "countryCode": "ID",
+      "origin": "https://rsbhayangkaramakassar.com",
+      "lat": -5.174781,
+      "lng": 119.4160416
+    },
+    {
+      "code": "osm:way/194433170",
+      "name": "RSUD Haji Provinsi Jawa Timur",
+      "countryCode": "ID",
+      "origin": "https://rsuhaji.jatimprov.go.id",
+      "lat": -7.2828126,
+      "lng": 112.7798288
+    },
+    {
+      "code": "osm:way/195659135",
+      "name": "Rumah Sakit Pelamonia",
+      "countryCode": "ID",
+      "origin": "http://www.rumkitpelamonia.com",
+      "lat": -5.1379423,
+      "lng": 119.4149613
+    },
+    {
+      "code": "osm:way/196056660",
+      "name": "RS Primaya Makassar",
+      "countryCode": "ID",
+      "origin": "https://primayahospital.com",
+      "lat": -5.1347648,
+      "lng": 119.4352221
+    },
+    {
+      "code": "osm:way/202763761",
+      "name": "Puskesmas Penujak",
+      "countryCode": "ID",
+      "origin": "https://puskesmaspenujak.lomboktengahkab.go.id",
+      "lat": -8.7442021,
+      "lng": 116.2404528
+    },
+    {
+      "code": "osm:way/211917628",
+      "name": "Rumah Sakit Umum Santa Elisabeth Purwokerto",
+      "countryCode": "ID",
+      "origin": "http://rsuelisabethpwt.com",
+      "lat": -7.4171271,
+      "lng": 109.2399459
+    },
+    {
+      "code": "osm:way/211923817",
+      "name": "Rumah Sakit Umum Bunda",
+      "countryCode": "ID",
+      "origin": "https://www.rsubundapwt.com",
+      "lat": -7.4289969,
+      "lng": 109.2534987
+    },
+    {
+      "code": "osm:way/221735759",
+      "name": "Rumah Sakit Umum Daerah Ulin",
+      "countryCode": "ID",
+      "origin": "https://rsulin.kalselprov.go.id",
+      "lat": -3.3224389,
+      "lng": 114.6007903
+    },
+    {
+      "code": "osm:way/227762674",
+      "name": "RS Mitra Keluarga Bekasi Timur",
+      "countryCode": "ID",
+      "origin": "https://www.mitrakeluarga.com",
+      "lat": -6.2605573,
+      "lng": 107.0133208
+    },
+    {
+      "code": "osm:way/233729584",
+      "name": "Rumah Sakit Akademik UGM",
+      "countryCode": "ID",
+      "origin": "https://rsa.ugm.ac.id",
+      "lat": -7.7431999,
+      "lng": 110.3504099
+    },
+    {
+      "code": "osm:way/234375375",
+      "name": "RSUD Indramayu",
+      "countryCode": "ID",
+      "origin": "http://rsud.indramayukab.go.id",
+      "lat": -6.3297783,
+      "lng": 108.3215371
+    },
+    {
+      "code": "osm:way/249861270",
+      "name": "Rumah Sakit Umum Daerah Raden Tumenggung Notopuro",
+      "countryCode": "ID",
+      "origin": "https://rsudrtnotopuro.sidoarjokab.go.id",
+      "lat": -7.465125,
+      "lng": 112.7155619
+    },
+    {
+      "code": "osm:way/255401747",
+      "name": "RSUD dr. Soediran Mangun Sumarso Wonogiri",
+      "countryCode": "ID",
+      "origin": "https://rsudsoediranms.com",
+      "lat": -7.8052828,
+      "lng": 110.9153858
+    },
+    {
+      "code": "osm:way/259838192",
+      "name": "RSU Islam Harapan Anda",
+      "countryCode": "ID",
+      "origin": "https://harapananda.com",
+      "lat": -6.8758583,
+      "lng": 109.1286435
+    },
+    {
+      "code": "osm:way/270040187",
+      "name": "Rumah Sakit Panti Rapih",
+      "countryCode": "ID",
+      "origin": "https://pantirapih.or.id",
+      "lat": -7.7771827,
+      "lng": 110.3776252
+    },
+    {
+      "code": "osm:way/277762806",
+      "name": "RS Paru Dr. M. Goenawan Partowidigdo",
+      "countryCode": "ID",
+      "origin": "http://www.rspg-cisarua.co.id",
+      "lat": -6.6882128,
+      "lng": 106.939556
+    },
+    {
+      "code": "osm:way/282207716",
+      "name": "Rumah Sakit Umum Daerah Kabupaten Kediri",
+      "countryCode": "ID",
+      "origin": "https://rsud.kedirikab.go.id",
+      "lat": -7.7598794,
+      "lng": 112.1758313
+    },
+    {
+      "code": "osm:way/285840472",
+      "name": "RSUD R. Syamsudin, SH.",
+      "countryCode": "ID",
+      "origin": "https://www.rsudsyamsudin.org",
+      "lat": -6.9161053,
+      "lng": 106.9345122
+    },
+    {
+      "code": "osm:way/285843555",
+      "name": "RS Kartika Kasih",
+      "countryCode": "ID",
+      "origin": "https://www.kasih-group.com",
+      "lat": -6.9220297,
+      "lng": 106.9237678
+    },
+    {
+      "code": "osm:way/288757007",
+      "name": "RSUD Margono Soekarjo Purwokerto",
+      "countryCode": "ID",
+      "origin": "https://www.rsmargono.go.id",
+      "lat": -7.4364536,
+      "lng": 109.2672917
+    },
+    {
+      "code": "osm:way/295839224",
+      "name": "Rumah Sakit Umum Sari Mulia",
+      "countryCode": "ID",
+      "origin": "https://www.rssarimulia.com",
+      "lat": -3.3271784,
+      "lng": 114.6050775
+    },
+    {
+      "code": "osm:way/297305092",
+      "name": "RSUD Salatiga",
+      "countryCode": "ID",
+      "origin": "http://rsud.salatiga.go.id",
+      "lat": -7.327215,
+      "lng": 110.4962197
+    },
+    {
+      "code": "osm:way/304084975",
+      "name": "RS Dirgahayu Samarinda",
+      "countryCode": "ID",
+      "origin": "http://www.rsdirgahayu.com",
+      "lat": -0.4975237,
+      "lng": 117.1369385
+    },
+    {
+      "code": "osm:way/304620874",
+      "name": "RSUD Jombang",
+      "countryCode": "ID",
+      "origin": "https://www.rsudjombang.jombangkab.go.id",
+      "lat": -7.5500605,
+      "lng": 112.2373467
+    },
+    {
+      "code": "osm:way/308131238",
+      "name": "Rumah Sakit Umum Cut Meutia Kabupaten Aceh Utara",
+      "countryCode": "ID",
+      "origin": "https://rscutmeutia.acehutara.go.id",
+      "lat": 5.1222654,
+      "lng": 97.156515
+    },
+    {
+      "code": "osm:way/308709336",
+      "name": "RS Citra Medika",
+      "countryCode": "ID",
+      "origin": "https://citramedikadepok.id",
+      "lat": -6.4272743,
+      "lng": 106.823244
+    },
+    {
+      "code": "osm:way/312016254",
+      "name": "RSUD Ratu Zalecha",
+      "countryCode": "ID",
+      "origin": "https://rsraza.banjarkab.go.id",
+      "lat": -3.4191808,
+      "lng": 114.8459394
+    },
+    {
+      "code": "osm:way/314263944",
+      "name": "RSUD Arifin Ahmad Pekanbaru",
+      "countryCode": "ID",
+      "origin": "http://rsudarifinachmad.riau.go.id",
+      "lat": 0.5229231,
+      "lng": 101.4513272
+    },
+    {
+      "code": "osm:way/315576123",
+      "name": "RS Angkatan Darat Udayana Denpasar",
+      "countryCode": "ID",
+      "origin": "https://rumahsakitudayanadenpasar.com",
+      "lat": -8.6631479,
+      "lng": 115.2195697
+    },
+    {
+      "code": "osm:way/316793614",
+      "name": "Rumah Sakit Islam Samarinda",
+      "countryCode": "ID",
+      "origin": "https://dhonypratama.com",
+      "lat": -0.5067751,
+      "lng": 117.1595442
+    },
+    {
+      "code": "osm:way/317142084",
+      "name": "Surya Husadha Hospital",
+      "countryCode": "ID",
+      "origin": "https://suryahusadha.com",
+      "lat": -8.6782828,
+      "lng": 115.2127699
+    },
+    {
+      "code": "osm:way/319660986",
+      "name": "RSUD dr. Murjani",
+      "countryCode": "ID",
+      "origin": "http://rsud-drmurjani.go.id",
+      "lat": -2.5429626,
+      "lng": 112.947855
+    },
+    {
+      "code": "osm:way/320182744",
+      "name": "Rumah Sakit Khusus Infeksi",
+      "countryCode": "ID",
+      "origin": "https://rski.unair.ac.id",
+      "lat": -7.2699287,
+      "lng": 112.7863259
+    },
+    {
+      "code": "osm:way/324882577",
+      "name": "Rumah Sakit Columbia Asia",
+      "countryCode": "ID",
+      "origin": "https://www.columbiaasia.com",
+      "lat": 3.5858835,
+      "lng": 98.6769592
+    },
+    {
+      "code": "osm:way/326091418",
+      "name": "RS Haji Darjad",
+      "countryCode": "ID",
+      "origin": "https://rshajidarjad.com",
+      "lat": -0.4947813,
+      "lng": 117.1487801
+    },
+    {
+      "code": "osm:way/326320746",
+      "name": "RSU Samarinda Medika Citra",
+      "countryCode": "ID",
+      "origin": "http://rsusmc.com",
+      "lat": -0.4723295,
+      "lng": 117.1245627
+    },
+    {
+      "code": "osm:way/326320969",
+      "name": "RSUD Abdul Wahab Sjahranie",
+      "countryCode": "ID",
+      "origin": "https://www.rsudaws.co.id",
+      "lat": -0.4808695,
+      "lng": 117.1441953
+    },
+    {
+      "code": "osm:way/328141196",
+      "name": "RS Ari Canti",
+      "countryCode": "ID",
+      "origin": "https://aricantihospital.com",
+      "lat": -8.5518222,
+      "lng": 115.2732252
+    },
+    {
+      "code": "osm:way/339310742",
+      "name": "Rumah sakit Ibu Anak Bunda",
+      "countryCode": "ID",
+      "origin": "https://www.bundasemarang.co.id",
+      "lat": -6.994472,
+      "lng": 110.43323
+    },
+    {
+      "code": "osm:way/347458944",
+      "name": "RS Dr. Oen Solo Baru",
+      "countryCode": "ID",
+      "origin": "https://droensolobaru.com",
+      "lat": -7.6063941,
+      "lng": 110.7981702
+    },
+    {
+      "code": "osm:way/349955138",
+      "name": "Rumah Sakit PKU Muhammadiyah Gamping",
+      "countryCode": "ID",
+      "origin": "https://pkugamping.com",
+      "lat": -7.8005273,
+      "lng": 110.3174774
+    },
+    {
+      "code": "osm:way/354214034",
+      "name": "Rumah Sakit Tk. IV",
+      "countryCode": "ID",
+      "origin": "http://kesehatan.kaltimprov.go.id",
+      "lat": -0.5013896,
+      "lng": 117.1428739
+    },
+    {
+      "code": "osm:way/355652957",
+      "name": "RS Bersalin Qurrataayun",
+      "countryCode": "ID",
+      "origin": "https://id.indonesiayp.com",
+      "lat": -0.4622561,
+      "lng": 117.1832383
+    },
+    {
+      "code": "osm:way/365353774",
+      "name": "RS Paru Jember",
+      "countryCode": "ID",
+      "origin": "https://rspjember.com",
+      "lat": -8.1597852,
+      "lng": 113.7056703
+    },
+    {
+      "code": "osm:way/365355287",
+      "name": "RUSD Dr. Soebandi Jember",
+      "countryCode": "ID",
+      "origin": "https://rsddrsoebandi.id",
+      "lat": -8.1516177,
+      "lng": 113.7155331
+    },
+    {
+      "code": "osm:way/365615473",
+      "name": "Ciputra Hospital Tangerang",
+      "countryCode": "ID",
+      "origin": "https://www.ciputrahospital.com",
+      "lat": -6.2494935,
+      "lng": 106.5215026
+    },
+    {
+      "code": "osm:way/365631722",
+      "name": "Rumah Sakit Islam Ibnu Sina",
+      "countryCode": "ID",
+      "origin": "https://rsi-ibnusina.com",
+      "lat": 0.5257578,
+      "lng": 101.4368387
+    },
+    {
+      "code": "osm:way/369970439",
+      "name": "RS Syafira Pekanbaru",
+      "countryCode": "ID",
+      "origin": "https://www.rs-syafira.com",
+      "lat": 0.4983138,
+      "lng": 101.4547917
+    },
+    {
+      "code": "osm:way/369973707",
+      "name": "Eka Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.ekahospital.com",
+      "lat": 0.4823929,
+      "lng": 101.4196855
+    },
+    {
+      "code": "osm:way/374388287",
+      "name": "RS Bhayangkara Balikpapan",
+      "countryCode": "ID",
+      "origin": "https://rsb.co.id",
+      "lat": -1.2797727,
+      "lng": 116.8197471
+    },
+    {
+      "code": "osm:way/374695054",
+      "name": "RSUD Wangaya",
+      "countryCode": "ID",
+      "origin": "https://rsudwangaya.denpasarkota.go.id",
+      "lat": -8.6485454,
+      "lng": 115.2127124
+    },
+    {
+      "code": "osm:way/375768956",
+      "name": "Rumah Sakit Ibu dan Anak Puri Bunda Denpasar",
+      "countryCode": "ID",
+      "origin": "https://www.puribunda.com",
+      "lat": -8.6387778,
+      "lng": 115.2165806
+    },
+    {
+      "code": "osm:way/377998703",
+      "name": "Rumah Sakit Bethesda",
+      "countryCode": "ID",
+      "origin": "https://bethesda.or.id",
+      "lat": -7.7839564,
+      "lng": 110.3773916
+    },
+    {
+      "code": "osm:way/380223312",
+      "name": "Rumah Sakit Santo Borromeus",
+      "countryCode": "ID",
+      "origin": "https://rsborromeus.com",
+      "lat": -6.8939306,
+      "lng": 107.6136691
+    },
+    {
+      "code": "osm:way/387754444",
+      "name": "Rumah Sakit Elisabeth",
+      "countryCode": "ID",
+      "origin": "https://www.elisabethbekasi.com",
+      "lat": -6.2760904,
+      "lng": 106.9910962
+    },
+    {
+      "code": "osm:way/388812246",
+      "name": "RS Panti Waluya Sawahan",
+      "countryCode": "ID",
+      "origin": "https://www.pantiwaluya.or.id",
+      "lat": -7.986419,
+      "lng": 112.6249269
+    },
+    {
+      "code": "osm:way/392583090",
+      "name": "RS Tentara Dr. Soepraoen",
+      "countryCode": "ID",
+      "origin": "https://www.rssoepraoen.co.id",
+      "lat": -7.9889063,
+      "lng": 112.6201865
+    },
+    {
+      "code": "osm:way/398181519",
+      "name": "RS. Khusus THT-Bedah KL Proklamasi BSD",
+      "countryCode": "ID",
+      "origin": "https://rsthtproklamasibsd.id",
+      "lat": -6.2963166,
+      "lng": 106.668528
+    },
+    {
+      "code": "osm:way/412599698",
+      "name": "RS Cahya Kawaluyaan",
+      "countryCode": "ID",
+      "origin": "https://www.rscahyakawaluyan.com",
+      "lat": -6.8655143,
+      "lng": 107.4738046
+    },
+    {
+      "code": "osm:way/416084292",
+      "name": "Bali Medical Center (BIMC)",
+      "countryCode": "ID",
+      "origin": "https://www.bimcbali.com",
+      "lat": -8.7214972,
+      "lng": 115.1844294
+    },
+    {
+      "code": "osm:way/416532856",
+      "name": "RSUD Sultan Suriansyah Banjarmasin",
+      "countryCode": "ID",
+      "origin": "https://rsudss.banjarmasinkota.go.id",
+      "lat": -3.3329945,
+      "lng": 114.5850963
+    },
+    {
+      "code": "osm:way/426695575",
+      "name": "RSUD Haulussy",
+      "countryCode": "ID",
+      "origin": "https://rsudhaulussymaluku.com",
+      "lat": -3.708686,
+      "lng": 128.1655447
+    },
+    {
+      "code": "osm:way/446524876",
+      "name": "Rumah Sakit Angkatan Laut Dr. Ramelan",
+      "countryCode": "ID",
+      "origin": "http://rsalramelansby.id",
+      "lat": -7.3096549,
+      "lng": 112.7385128
+    },
+    {
+      "code": "osm:way/446537097",
+      "name": "National Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.national-hospital.com",
+      "lat": -7.2993423,
+      "lng": 112.676384
+    },
+    {
+      "code": "osm:way/449624602",
+      "name": "Rumah Sakit Spesialis Husada Utama",
+      "countryCode": "ID",
+      "origin": "https://www.husadautamahospital.com",
+      "lat": -7.2648315,
+      "lng": 112.7561908
+    },
+    {
+      "code": "osm:way/450037646",
+      "name": "RSUD Gunung Jati Cirebon",
+      "countryCode": "ID",
+      "origin": "https://rsudgunungjati.cirebonkota.go.id",
+      "lat": -6.7304574,
+      "lng": 108.5549241
+    },
+    {
+      "code": "osm:way/450513383",
+      "name": "Siloam Hospitals",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -7.2740186,
+      "lng": 112.7463992
+    },
+    {
+      "code": "osm:way/450772004",
+      "name": "RSIA Kendangsari Merr",
+      "countryCode": "ID",
+      "origin": "https://merr.kendangsari.com",
+      "lat": -7.250642,
+      "lng": 112.7836416
+    },
+    {
+      "code": "osm:way/450895016",
+      "name": "RSUD Prof. Dr. WZ Johanes",
+      "countryCode": "ID",
+      "origin": "https://rsudwzjohanes.nttprov.go.id",
+      "lat": -10.1678548,
+      "lng": 123.5857132
+    },
+    {
+      "code": "osm:way/450927051",
+      "name": "RSUD Dr.M.Soewandhie",
+      "countryCode": "ID",
+      "origin": "https://rs-soewandhi.surabaya.go.id",
+      "lat": -7.2459712,
+      "lng": 112.7579873
+    },
+    {
+      "code": "osm:way/451670191",
+      "name": "Rumah Sakit Mitra Keluarga",
+      "countryCode": "ID",
+      "origin": "https://mitrakeluarga.com",
+      "lat": -7.2666818,
+      "lng": 112.6912576
+    },
+    {
+      "code": "osm:way/451857624",
+      "name": "RS Kodam Brawijaya",
+      "countryCode": "ID",
+      "origin": "http://rs-brawijaya.com",
+      "lat": -7.2972173,
+      "lng": 112.7228121
+    },
+    {
+      "code": "osm:way/461269463",
+      "name": "Rumah Sakit Royal Surabaya",
+      "countryCode": "ID",
+      "origin": "https://www.rsroyalsurabaya.com",
+      "lat": -7.328807,
+      "lng": 112.7509277
+    },
+    {
+      "code": "osm:way/461332157",
+      "name": "RS Urip Sumoharjo Bandar Lampung",
+      "countryCode": "ID",
+      "origin": "https://www.rsuripsumoharjo.com",
+      "lat": -5.3920296,
+      "lng": 105.276357
+    },
+    {
+      "code": "osm:way/462560032",
+      "name": "RS Dustira",
+      "countryCode": "ID",
+      "origin": "http://rsdustira.com",
+      "lat": -6.8864457,
+      "lng": 107.5340193
+    },
+    {
+      "code": "osm:way/462704784",
+      "name": "Rumah Sakit Islam Surabaya",
+      "countryCode": "ID",
+      "origin": "https://rsisurabaya.com",
+      "lat": -7.3063163,
+      "lng": 112.734857
+    },
+    {
+      "code": "osm:way/463561564",
+      "name": "RSIA Lombok Dua Dua Surabaya",
+      "countryCode": "ID",
+      "origin": "https://rsialombokduadua.com",
+      "lat": -7.2784836,
+      "lng": 112.7489193
+    },
+    {
+      "code": "osm:way/464566820",
+      "name": "RSUD Dr. Soetomo",
+      "countryCode": "ID",
+      "origin": "https://rsudrsoetomo.jatimprov.go.id",
+      "lat": -7.2682181,
+      "lng": 112.7583031
+    },
+    {
+      "code": "osm:way/464869700",
+      "name": "Rumah Sakit Mitra Plumbon",
+      "countryCode": "ID",
+      "origin": "https://mitraplumbon.com",
+      "lat": -6.7017783,
+      "lng": 108.4815245
+    },
+    {
+      "code": "osm:way/465330021",
+      "name": "Rumah Sakit Bhayangkara HS Samsoeri Mertojoso",
+      "countryCode": "ID",
+      "origin": "http://rs-bhayangkarasurabaya.jatim.polri.go.id",
+      "lat": -7.3243054,
+      "lng": 112.7302983
+    },
+    {
+      "code": "osm:way/467861431",
+      "name": "Waron Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.waronhospital.com",
+      "lat": -7.2640097,
+      "lng": 112.7713289
+    },
+    {
+      "code": "osm:way/470106207",
+      "name": "Rumah Sakit Islam Jemursari Surabaya",
+      "countryCode": "ID",
+      "origin": "https://rsisjs.id",
+      "lat": -7.3225208,
+      "lng": 112.7398926
+    },
+    {
+      "code": "osm:way/474211528",
+      "name": "Rumah Sakit Yasyfin Darussalam Gontor",
+      "countryCode": "ID",
+      "origin": "https://rsyasyfin.com",
+      "lat": -7.9251896,
+      "lng": 111.4986456
+    },
+    {
+      "code": "osm:way/480560459",
+      "name": "Rumah Sakit Putera Bahagia",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -6.7466859,
+      "lng": 108.5627118
+    },
+    {
+      "code": "osm:way/483648323",
+      "name": "Rumah Sakit Umum Daerah Budi Asih",
+      "countryCode": "ID",
+      "origin": "https://rsudbudhiasih.jakarta.go.id",
+      "lat": -6.2558465,
+      "lng": 106.8630464
+    },
+    {
+      "code": "osm:way/485813728",
+      "name": "RSU Bunda Jakarta",
+      "countryCode": "ID",
+      "origin": "https://www.bunda.co.id",
+      "lat": -6.1959654,
+      "lng": 106.8371674
+    },
+    {
+      "code": "osm:way/485813873",
+      "name": "Rumah Sakit YPK Mandiri",
+      "countryCode": "ID",
+      "origin": "https://rsypkmandiri.co.id",
+      "lat": -6.1913149,
+      "lng": 106.8278537
+    },
+    {
+      "code": "osm:way/485813973",
+      "name": "Rumah Sakit Abdi Waluyo",
+      "countryCode": "ID",
+      "origin": "https://www.abdiwaluyo.com",
+      "lat": -6.1898132,
+      "lng": 106.8293587
+    },
+    {
+      "code": "osm:way/488197083",
+      "name": "Rumah Sakit Tebet",
+      "countryCode": "ID",
+      "origin": "https://rstebet.co.id",
+      "lat": -6.2425781,
+      "lng": 106.8501822
+    },
+    {
+      "code": "osm:way/490060230",
+      "name": "Rumah Sakit Jakarta Medical Center",
+      "countryCode": "ID",
+      "origin": "https://rsjmc.com",
+      "lat": -6.27138,
+      "lng": 106.8302149
+    },
+    {
+      "code": "osm:way/492592669",
+      "name": "RSU Bali Jimbaran",
+      "countryCode": "ID",
+      "origin": "https://rsbalijimbaran.com",
+      "lat": -8.7908333,
+      "lng": 115.1768312
+    },
+    {
+      "code": "osm:way/492989001",
+      "name": "Rumah Sakit Islam Jakarta",
+      "countryCode": "ID",
+      "origin": "https://www.rsi.co.id",
+      "lat": -6.1712857,
+      "lng": 106.8713153
+    },
+    {
+      "code": "osm:way/498534952",
+      "name": "Klinik Kandungan Adinaya by dr. Widi, SpOG",
+      "countryCode": "ID",
+      "origin": "https://www.klinikadinaya.com",
+      "lat": -6.3469665,
+      "lng": 106.8947314
+    },
+    {
+      "code": "osm:way/500318061",
+      "name": "RSPAD Gatot Soebroto",
+      "countryCode": "ID",
+      "origin": "https://rspadgs.mil.id",
+      "lat": -6.1766671,
+      "lng": 106.8371519
+    },
+    {
+      "code": "osm:way/503262103",
+      "name": "RS Permata Jonggol",
+      "countryCode": "ID",
+      "origin": "https://www.rspermatajonggol.com",
+      "lat": -6.4383206,
+      "lng": 107.0535641
+    },
+    {
+      "code": "osm:way/505424728",
+      "name": "RS Permata Depok",
+      "countryCode": "ID",
+      "origin": "https://www.rspermata.co.id",
+      "lat": -6.4016681,
+      "lng": 106.7702506
+    },
+    {
+      "code": "osm:way/506663668",
+      "name": "RS Islam Jakarta Pondok Kopi",
+      "countryCode": "ID",
+      "origin": "http://www.rumahsakitislam.com",
+      "lat": -6.2202593,
+      "lng": 106.9401576
+    },
+    {
+      "code": "osm:way/507486834",
+      "name": "Ciputra Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.ciputrahospital.com",
+      "lat": -6.1231259,
+      "lng": 106.704966
+    },
+    {
+      "code": "osm:way/509360288",
+      "name": "RSIA Bunda Aliyah",
+      "countryCode": "ID",
+      "origin": "http://www.bundaaliyah.com",
+      "lat": -6.2332796,
+      "lng": 106.8971964
+    },
+    {
+      "code": "osm:way/511269098",
+      "name": "Rumah Sakit Duren Sawit",
+      "countryCode": "ID",
+      "origin": "https://rsdurensawit.jakarta.go.id",
+      "lat": -6.2318975,
+      "lng": 106.9094221
+    },
+    {
+      "code": "osm:way/513191029",
+      "name": "RS Grha Kedoya",
+      "countryCode": "ID",
+      "origin": "https://www.grhakedoya.com",
+      "lat": -6.168127,
+      "lng": 106.7648571
+    },
+    {
+      "code": "osm:way/514464730",
+      "name": "RSUD Kebayoran Baru",
+      "countryCode": "ID",
+      "origin": "https://rsudkebayoranbaru.jakarta.go.id",
+      "lat": -6.2655205,
+      "lng": 106.7986583
+    },
+    {
+      "code": "osm:way/517146116",
+      "name": "Rumah Sakit Antam Medika",
+      "countryCode": "ID",
+      "origin": "https://www.antammedika.co.id",
+      "lat": -6.1926993,
+      "lng": 106.9026918
+    },
+    {
+      "code": "osm:way/518483232",
+      "name": "Rumah Sakit Sumber Waras",
+      "countryCode": "ID",
+      "origin": "https://rssumberwaras.co.id",
+      "lat": -6.1678722,
+      "lng": 106.7979848
+    },
+    {
+      "code": "osm:way/519292932",
+      "name": "RS Sentra Medika Cibinong",
+      "countryCode": "ID",
+      "origin": "https://sentramedikahospitals.com",
+      "lat": -6.4806865,
+      "lng": 106.8649907
+    },
+    {
+      "code": "osm:way/519822952",
+      "name": "Rumah Sakit Islam Bogor",
+      "countryCode": "ID",
+      "origin": "https://www.rsislambogor.or.id",
+      "lat": -6.5590343,
+      "lng": 106.7920742
+    },
+    {
+      "code": "osm:way/527999398",
+      "name": "RSIA Brawijaya",
+      "countryCode": "ID",
+      "origin": "https://brawijayahospital.com",
+      "lat": -6.2578905,
+      "lng": 106.8075967
+    },
+    {
+      "code": "osm:way/530368744",
+      "name": "RS Karisma Cimareme",
+      "countryCode": "ID",
+      "origin": "https://www.karismahospital.com",
+      "lat": -6.8633284,
+      "lng": 107.5029701
+    },
+    {
+      "code": "osm:way/535353022",
+      "name": "RSIA Puri Betik Hati",
+      "countryCode": "ID",
+      "origin": "http://www.puribetikhati.com",
+      "lat": -5.3940559,
+      "lng": 105.2658562
+    },
+    {
+      "code": "osm:way/536583644",
+      "name": "Solo international Hospital",
+      "countryCode": "ID",
+      "origin": "https://rs-jih.co.id",
+      "lat": -7.5496793,
+      "lng": 110.7900827
+    },
+    {
+      "code": "osm:way/545463025",
+      "name": "RS Hermina Serpong",
+      "countryCode": "ID",
+      "origin": "https://herminahospitals.com",
+      "lat": -6.3463007,
+      "lng": 106.6857084
+    },
+    {
+      "code": "osm:way/546227456",
+      "name": "Rumah Sakit Dustira",
+      "countryCode": "ID",
+      "origin": "http://rsdustira.com",
+      "lat": -6.8864457,
+      "lng": 107.5338429
+    },
+    {
+      "code": "osm:way/546362807",
+      "name": "Rumah Sakit Panti Nirmala",
+      "countryCode": "ID",
+      "origin": "https://www.rspantinirmala.com",
+      "lat": -7.9946872,
+      "lng": 112.6340353
+    },
+    {
+      "code": "osm:way/550164555",
+      "name": "Rumah Sakit Umum Family Husada",
+      "countryCode": "ID",
+      "origin": "https://www.rsufamilyhusada.com",
+      "lat": -8.5406115,
+      "lng": 115.3346661
+    },
+    {
+      "code": "osm:way/551294769",
+      "name": "RSUD Dr. H. Moch. Ansari Saleh",
+      "countryCode": "ID",
+      "origin": "https://rsas.kalselprov.go.id",
+      "lat": -3.2781855,
+      "lng": 114.5876159
+    },
+    {
+      "code": "osm:way/564915182",
+      "name": "Rumah Sakit Panti Wilasa",
+      "countryCode": "ID",
+      "origin": "https://pantiwilasa.com",
+      "lat": -6.9729905,
+      "lng": 110.4349501
+    },
+    {
+      "code": "osm:way/567236108",
+      "name": "Rumah Sakit Panti Wilasa Citarum",
+      "countryCode": "ID",
+      "origin": "http://www.pantiwilasa-citarum.co.id",
+      "lat": -6.9699409,
+      "lng": 110.4397933
+    },
+    {
+      "code": "osm:way/575750252",
+      "name": "RS Kharitas Bhakti",
+      "countryCode": "ID",
+      "origin": "https://kharitasbhakti.co.id",
+      "lat": -0.030893,
+      "lng": 109.340515
+    },
+    {
+      "code": "osm:way/576146819",
+      "name": "RSI Sultan Agung",
+      "countryCode": "ID",
+      "origin": "https://rsisultanagung.co.id",
+      "lat": -6.9548118,
+      "lng": 110.461549
+    },
+    {
+      "code": "osm:way/578208841",
+      "name": "Rumah Sakit Khusus Ibu dan Anak Annisa",
+      "countryCode": "ID",
+      "origin": "https://annisa.co.id",
+      "lat": -3.3072291,
+      "lng": 114.5714834
+    },
+    {
+      "code": "osm:way/580005945",
+      "name": "Rumah Sakit Hermina Surakarta",
+      "countryCode": "ID",
+      "origin": "https://herminahospitals.com",
+      "lat": -7.5602586,
+      "lng": 110.8402198
+    },
+    {
+      "code": "osm:way/588302999",
+      "name": "RS Hermina Depok",
+      "countryCode": "ID",
+      "origin": "https://www.herminahospitalgroup.com",
+      "lat": -6.3990832,
+      "lng": 106.8255716
+    },
+    {
+      "code": "osm:way/602572389",
+      "name": "RSUD Raden Mattaher Jambi",
+      "countryCode": "ID",
+      "origin": "https://www.rs-mattaher.com",
+      "lat": -1.6027749,
+      "lng": 103.5793303
+    },
+    {
+      "code": "osm:way/605144537",
+      "name": "Rumah Sakit Muhammadiyah",
+      "countryCode": "ID",
+      "origin": "https://www.rsmp.co.id",
+      "lat": -2.9968274,
+      "lng": 104.7770607
+    },
+    {
+      "code": "osm:way/613801359",
+      "name": "Rumah Sakit Pertamina Balikpapan",
+      "countryCode": "ID",
+      "origin": "https://rspb.id",
+      "lat": -1.2785968,
+      "lng": 116.8176567
+    },
+    {
+      "code": "osm:way/616082200",
+      "name": "RS Happy Land",
+      "countryCode": "ID",
+      "origin": "https://rshappyland.com",
+      "lat": -7.7939635,
+      "lng": 110.3921868
+    },
+    {
+      "code": "osm:way/616249114",
+      "name": "RSUD Panembahan Senopati",
+      "countryCode": "ID",
+      "origin": "https://rsudps.bantulkab.go.id",
+      "lat": -7.8924266,
+      "lng": 110.3379658
+    },
+    {
+      "code": "osm:way/620063245",
+      "name": "RS DKT",
+      "countryCode": "ID",
+      "origin": "http://rstdrasmirsalatiga.co.id",
+      "lat": -7.3309272,
+      "lng": 110.5106477
+    },
+    {
+      "code": "osm:way/624934553",
+      "name": "RS Graha Husada",
+      "countryCode": "ID",
+      "origin": "https://www.rsgrahahusada.com",
+      "lat": -5.4134743,
+      "lng": 105.267747
+    },
+    {
+      "code": "osm:way/625291084",
+      "name": "Rumah Sakit Ibu dan Anak Belleza Kedaton",
+      "countryCode": "ID",
+      "origin": "http://www.rsiabellezakedaton.com",
+      "lat": -5.380591,
+      "lng": 105.2582115
+    },
+    {
+      "code": "osm:way/628585066",
+      "name": "RS Mardi Rahayu",
+      "countryCode": "ID",
+      "origin": "https://www.rsmardirahayu.com",
+      "lat": -6.8296262,
+      "lng": 110.8307916
+    },
+    {
+      "code": "osm:way/631922574",
+      "name": "RSU. Mitra Medika-Amplas",
+      "countryCode": "ID",
+      "origin": "http://mitramedika-amplas.co.id",
+      "lat": 3.5381626,
+      "lng": 98.7119183
+    },
+    {
+      "code": "osm:way/634153451",
+      "name": "Rumah Sakit Umum Mitra Medika Bandar Klippa (Tembung)",
+      "countryCode": "ID",
+      "origin": "https://mitramedika-bandarklippa.co.id",
+      "lat": 3.5982887,
+      "lng": 98.7550192
+    },
+    {
+      "code": "osm:way/634599754",
+      "name": "Rumah Sakit Dr. Soedirman Kebumen",
+      "countryCode": "ID",
+      "origin": "https://www.rsuddrsoedirman.kebumenkab.go.id",
+      "lat": -7.7012535,
+      "lng": 109.6645507
+    },
+    {
+      "code": "osm:way/643492188",
+      "name": "RS Siloam Sentosa",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -6.2427358,
+      "lng": 107.0264925
+    },
+    {
+      "code": "osm:way/647702088",
+      "name": "Rumah Sakit Vita Insani",
+      "countryCode": "ID",
+      "origin": "http://vitainsani.com",
+      "lat": 2.9613431,
+      "lng": 99.0715366
+    },
+    {
+      "code": "osm:way/658102946",
+      "name": "RSUD Dr. H. Bob Hazar, SKM",
+      "countryCode": "ID",
+      "origin": "https://rsud.lampungselatankab.go.id",
+      "lat": -5.7275486,
+      "lng": 105.596454
+    },
+    {
+      "code": "osm:way/670162181",
+      "name": "Rumah Sakit Umum Puspa Husada",
+      "countryCode": "ID",
+      "origin": "https://puspahusada.com",
+      "lat": -6.2767993,
+      "lng": 107.0197141
+    },
+    {
+      "code": "osm:way/670844776",
+      "name": "RS Awal Bros Panam",
+      "countryCode": "ID",
+      "origin": "https://awalbros.com",
+      "lat": 0.4631627,
+      "lng": 101.3903462
+    },
+    {
+      "code": "osm:way/685562165",
+      "name": "RS Medika BSD",
+      "countryCode": "ID",
+      "origin": "http://rs-medikabsd.co.id",
+      "lat": -6.2842949,
+      "lng": 106.6677787
+    },
+    {
+      "code": "osm:way/708955588",
+      "name": "Siloam Hospital Lippo Village",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -6.2251927,
+      "lng": 106.5985479
+    },
+    {
+      "code": "osm:way/714481104",
+      "name": "RS Pondok Indah Bintaro",
+      "countryCode": "ID",
+      "origin": "https://www.rspondokindah.co.id",
+      "lat": -6.2715157,
+      "lng": 106.6968544
+    },
+    {
+      "code": "osm:way/717858341",
+      "name": "Rumah Sakit Umum Suaka Insan",
+      "countryCode": "ID",
+      "origin": "http://rssuakainsan.com",
+      "lat": -3.3123631,
+      "lng": 114.5801353
+    },
+    {
+      "code": "osm:way/719922422",
+      "name": "RS Baptis Batu",
+      "countryCode": "ID",
+      "origin": "https://rsbaptisbatu.id",
+      "lat": -7.9059413,
+      "lng": 112.5384275
+    },
+    {
+      "code": "osm:way/720933355",
+      "name": "RS Umum Ciputra Mitra Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.ciputrahospital.com",
+      "lat": -3.3613375,
+      "lng": 114.6299027
+    },
+    {
+      "code": "osm:way/722182528",
+      "name": "RS Sari Asih Serang",
+      "countryCode": "ID",
+      "origin": "https://sariasihserang.com",
+      "lat": -6.1187357,
+      "lng": 106.1809437
+    },
+    {
+      "code": "osm:way/722943088",
+      "name": "Rumah Sakit Umum Daerah Bali Mandara",
+      "countryCode": "ID",
+      "origin": "https://rsbm.baliprov.go.id",
+      "lat": -8.7034946,
+      "lng": 115.2488333
+    },
+    {
+      "code": "osm:way/723010556",
+      "name": "RSUP Dr. Soeradji Tirtonegoro",
+      "countryCode": "ID",
+      "origin": "https://rsupsoeradji.id",
+      "lat": -7.714467,
+      "lng": 110.5883481
+    },
+    {
+      "code": "osm:way/749723296",
+      "name": "Siloam Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -1.25227,
+      "lng": 116.8703304
+    },
+    {
+      "code": "osm:way/750324766",
+      "name": "Rumah Sakit Umum Bunda Thamrin",
+      "countryCode": "ID",
+      "origin": "https://www.bundathamrin.com",
+      "lat": 3.5853031,
+      "lng": 98.6514744
+    },
+    {
+      "code": "osm:way/766428809",
+      "name": "RSUP Dr. Wahidin Sudirohusodo",
+      "countryCode": "ID",
+      "origin": "https://www.rsupwahidin.com",
+      "lat": -5.1350539,
+      "lng": 119.493929
+    },
+    {
+      "code": "osm:way/782605318",
+      "name": "RS Hermina Balikpapan",
+      "countryCode": "ID",
+      "origin": "https://herminahospitals.com",
+      "lat": -1.2297884,
+      "lng": 116.8744691
+    },
+    {
+      "code": "osm:way/782864372",
+      "name": "RS Azra",
+      "countryCode": "ID",
+      "origin": "https://www.rsazra.co.id",
+      "lat": -6.5791702,
+      "lng": 106.8077715
+    },
+    {
+      "code": "osm:way/782870839",
+      "name": "Eka Hospital Cibubur",
+      "countryCode": "ID",
+      "origin": "https://www.ekahospital.com",
+      "lat": -6.3851351,
+      "lng": 106.9545355
+    },
+    {
+      "code": "osm:way/782882757",
+      "name": "RS Hermina Tangkubanprahu",
+      "countryCode": "ID",
+      "origin": "https://www.herminahospitalgroup.com",
+      "lat": -7.9780265,
+      "lng": 112.6246074
+    },
+    {
+      "code": "osm:way/782883695",
+      "name": "Rumah Sakit MH Thamrin Cileungsu",
+      "countryCode": "ID",
+      "origin": "http://thamrinhospitalcileungsi.com",
+      "lat": -6.3752749,
+      "lng": 106.970457
+    },
+    {
+      "code": "osm:way/782888464",
+      "name": "Rumah Sakit Muhammadiyah Ahmad Dahlan",
+      "countryCode": "ID",
+      "origin": "https://www.rsmadkotakediri.com",
+      "lat": -7.7890084,
+      "lng": 112.00075
+    },
+    {
+      "code": "osm:way/782888735",
+      "name": "RSIA Anna Medika",
+      "countryCode": "ID",
+      "origin": "https://rsanna.co.id",
+      "lat": -6.2227241,
+      "lng": 107.0221042
+    },
+    {
+      "code": "osm:way/782895616",
+      "name": "Rumah Sakit Sariningsih",
+      "countryCode": "ID",
+      "origin": "http://rssariningsih.com",
+      "lat": -6.9065758,
+      "lng": 107.6111269
+    },
+    {
+      "code": "osm:way/782895627",
+      "name": "RS Mitra Keluarga Bintaro",
+      "countryCode": "ID",
+      "origin": "https://mitrakeluarga.com",
+      "lat": -6.2708506,
+      "lng": 106.7413097
+    },
+    {
+      "code": "osm:way/782895753",
+      "name": "Rumah Sakit Santo Antonius",
+      "countryCode": "ID",
+      "origin": "https://www.rs-antonius.com",
+      "lat": -0.0203023,
+      "lng": 109.327223
+    },
+    {
+      "code": "osm:way/782896313",
+      "name": "RS Advent Medan",
+      "countryCode": "ID",
+      "origin": "https://rsadventmedan.com",
+      "lat": 3.5895954,
+      "lng": 98.6498371
+    },
+    {
+      "code": "osm:way/782896907",
+      "name": "RSUD Kabupaten Bekasi",
+      "countryCode": "ID",
+      "origin": "https://rsud.bekasikab.go.id",
+      "lat": -6.2669456,
+      "lng": 107.0831568
+    },
+    {
+      "code": "osm:way/782898009",
+      "name": "RS Kasih Ibu",
+      "countryCode": "ID",
+      "origin": "https://rskasihibu.com",
+      "lat": -7.5630553,
+      "lng": 110.8017574
+    },
+    {
+      "code": "osm:way/782900697",
+      "name": "RS Santa Theresia",
+      "countryCode": "ID",
+      "origin": "https://www.rstheresia.com",
+      "lat": -1.5919416,
+      "lng": 103.6173935
+    },
+    {
+      "code": "osm:way/782901989",
+      "name": "Rumah Sakit Akademis Jaury Jusuf Putra",
+      "countryCode": "ID",
+      "origin": "https://www.pdpersi.co.id",
+      "lat": -5.1314199,
+      "lng": 119.4149372
+    },
+    {
+      "code": "osm:way/782902640",
+      "name": "RSU Pindad",
+      "countryCode": "ID",
+      "origin": "https://rsupindad.com",
+      "lat": -6.9399478,
+      "lng": 107.6467023
+    },
+    {
+      "code": "osm:way/782904152",
+      "name": "RS Sari Asih Ciledug",
+      "countryCode": "ID",
+      "origin": "https://www.sariasih.com",
+      "lat": -6.2283916,
+      "lng": 106.7186554
+    },
+    {
+      "code": "osm:way/782905973",
+      "name": "RSUD Sultan Syarif Mohamad Alkadrie",
+      "countryCode": "ID",
+      "origin": "https://rsud.pontianakkota.go.id",
+      "lat": -0.0092788,
+      "lng": 109.2940629
+    },
+    {
+      "code": "osm:way/782906280",
+      "name": "RSUD dr. Saiful Anwar",
+      "countryCode": "ID",
+      "origin": "https://rsusaifulanwar.jatimprov.go.id",
+      "lat": -7.9733156,
+      "lng": 112.6321391
+    },
+    {
+      "code": "osm:way/782909613",
+      "name": "RSUD Beriman Balikpapan",
+      "countryCode": "ID",
+      "origin": "https://rsud.balikpapan.go.id",
+      "lat": -1.2637336,
+      "lng": 116.8476735
+    },
+    {
+      "code": "osm:way/782912232",
+      "name": "Rumah Sakit Annisa Cikarang",
+      "countryCode": "ID",
+      "origin": "https://www.rsannisacikarang.com",
+      "lat": -6.2731652,
+      "lng": 107.1742297
+    },
+    {
+      "code": "osm:way/782912458",
+      "name": "RS Sari Asih Karawaci",
+      "countryCode": "ID",
+      "origin": "https://www.sariasih.com",
+      "lat": -6.1792106,
+      "lng": 106.6261211
+    },
+    {
+      "code": "osm:way/782913210",
+      "name": "Rumah Sakit Umum Daerah Kota Bandung",
+      "countryCode": "ID",
+      "origin": "http://rsudkotabandung.web.id",
+      "lat": -6.9156758,
+      "lng": 107.6987462
+    },
+    {
+      "code": "osm:way/782913320",
+      "name": "RS Ibu Dan Anak Citra Arafiq",
+      "countryCode": "ID",
+      "origin": "https://rscitraarafiq.com",
+      "lat": -6.3728844,
+      "lng": 106.8438704
+    },
+    {
+      "code": "osm:way/782914980",
+      "name": "RSU Royal Prima",
+      "countryCode": "ID",
+      "origin": "https://www.royalprima.com",
+      "lat": 3.5978686,
+      "lng": 98.6544172
+    },
+    {
+      "code": "osm:way/782917119",
+      "name": "RS Mulia",
+      "countryCode": "ID",
+      "origin": "https://rsmulia.co.id",
+      "lat": -6.5755554,
+      "lng": 106.8073148
+    },
+    {
+      "code": "osm:way/782917284",
+      "name": "Rumah Sakit Bina Husada",
+      "countryCode": "ID",
+      "origin": "http://binahusada.com",
+      "lat": -6.4730368,
+      "lng": 106.8636261
+    },
+    {
+      "code": "osm:way/782943205",
+      "name": "RSUD Mangusada Badung",
+      "countryCode": "ID",
+      "origin": "https://rsudmangusada.badungkab.go.id",
+      "lat": -8.5788126,
+      "lng": 115.1827394
+    },
+    {
+      "code": "osm:way/782954963",
+      "name": "RS Mardi Waluyo",
+      "countryCode": "ID",
+      "origin": "https://rsmardiwaluyo.co.id",
+      "lat": -5.1180738,
+      "lng": 105.296381
+    },
+    {
+      "code": "osm:way/782961946",
+      "name": "RSUD Majalaya",
+      "countryCode": "ID",
+      "origin": "https://rsudmajalaya.bandungkab.go.id",
+      "lat": -7.0485426,
+      "lng": 107.7721157
+    },
+    {
+      "code": "osm:way/782963159",
+      "name": "RS An-Nisa Tangerang",
+      "countryCode": "ID",
+      "origin": "http://www.rsannisa.co.id",
+      "lat": -6.1875783,
+      "lng": 106.604493
+    },
+    {
+      "code": "osm:way/782967855",
+      "name": "RSUD Soreang",
+      "countryCode": "ID",
+      "origin": "https://www.bandungkab.go.id",
+      "lat": -7.026154,
+      "lng": 107.5169954
+    },
+    {
+      "code": "osm:way/782970770",
+      "name": "Rumah Sakit Santa Elisabeth Medan",
+      "countryCode": "ID",
+      "origin": "https://rssemedan.com",
+      "lat": 3.574863,
+      "lng": 98.6766377
+    },
+    {
+      "code": "osm:way/782970865",
+      "name": "RSU Permata Ibu Kunciran",
+      "countryCode": "ID",
+      "origin": "https://rspermataibu.com",
+      "lat": -6.2268913,
+      "lng": 106.6834358
+    },
+    {
+      "code": "osm:way/782972077",
+      "name": "RS Dokter Oen Kandang Sapi",
+      "countryCode": "ID",
+      "origin": "https://www.droenska.com",
+      "lat": -7.5554899,
+      "lng": 110.8380389
+    },
+    {
+      "code": "osm:way/782975099",
+      "name": "RS Islam Faisal",
+      "countryCode": "ID",
+      "origin": "https://rsislamfaisal.com",
+      "lat": -5.1628313,
+      "lng": 119.4325732
+    },
+    {
+      "code": "osm:way/782976876",
+      "name": "RSIA Restu Kasih",
+      "countryCode": "ID",
+      "origin": "https://www.kasih-group.com",
+      "lat": -6.2657071,
+      "lng": 106.8664712
+    },
+    {
+      "code": "osm:way/782980390",
+      "name": "RS Mitra Keluarga Gading Serpong",
+      "countryCode": "ID",
+      "origin": "https://mitrakeluarga.com",
+      "lat": -6.2496158,
+      "lng": 106.6101161
+    },
+    {
+      "code": "osm:way/782982595",
+      "name": "Rumah Sakit Santosa",
+      "countryCode": "ID",
+      "origin": "https://shbc.santosa-hospital.com",
+      "lat": -6.9155012,
+      "lng": 107.6008786
+    },
+    {
+      "code": "osm:way/782991100",
+      "name": "Rumah Sakit Lavalette",
+      "countryCode": "ID",
+      "origin": "https://lavalettehospital.com",
+      "lat": -7.9655134,
+      "lng": 112.6378362
+    },
+    {
+      "code": "osm:way/782991397",
+      "name": "RS Trimitra",
+      "countryCode": "ID",
+      "origin": "http://rstrimitra.com",
+      "lat": -6.4745298,
+      "lng": 106.8472654
+    },
+    {
+      "code": "osm:way/782993726",
+      "name": "RS Lira Medika",
+      "countryCode": "ID",
+      "origin": "http://web.liramedika.com",
+      "lat": -6.3027805,
+      "lng": 107.3262857
+    },
+    {
+      "code": "osm:way/782994070",
+      "name": "RS Badan Pengusahaan (RSBP) Batam",
+      "countryCode": "ID",
+      "origin": "https://bpbatam.go.id",
+      "lat": 1.1304416,
+      "lng": 103.9312729
+    },
+    {
+      "code": "osm:way/782995198",
+      "name": "RS Angkatan Udara Dr. Esnawan Antariksa",
+      "countryCode": "ID",
+      "origin": "http://rsauesnawan.com",
+      "lat": -6.2574869,
+      "lng": 106.8921946
+    },
+    {
+      "code": "osm:way/782996943",
+      "name": "RS Dr. Hafiz",
+      "countryCode": "ID",
+      "origin": "https://www.rsdh.co.id",
+      "lat": -6.7979529,
+      "lng": 107.1748135
+    },
+    {
+      "code": "osm:way/782997619",
+      "name": "RS Kasih Bunda",
+      "countryCode": "ID",
+      "origin": "https://www.kasih-bunda.com",
+      "lat": -6.9002404,
+      "lng": 107.547196
+    },
+    {
+      "code": "osm:way/782999459",
+      "name": "Rumah Sakit Sari Asih Sangiang",
+      "countryCode": "ID",
+      "origin": "https://www.sariasih.com",
+      "lat": -6.1703676,
+      "lng": 106.6008441
+    },
+    {
+      "code": "osm:way/783001473",
+      "name": "RSUD Dr. Adjidarmo",
+      "countryCode": "ID",
+      "origin": "https://rsud-adjidarmo.id",
+      "lat": -6.3585994,
+      "lng": 106.2457049
+    },
+    {
+      "code": "osm:way/783003970",
+      "name": "RS Baiturrahim",
+      "countryCode": "ID",
+      "origin": "https://rs-baiturrahim.com",
+      "lat": -1.6057975,
+      "lng": 103.6055157
+    },
+    {
+      "code": "osm:way/783006136",
+      "name": "RSUD DR. K.H. Idham Chalid",
+      "countryCode": "ID",
+      "origin": "https://rsudciawi.bogorkab.go.id",
+      "lat": -6.660367,
+      "lng": 106.8531145
+    },
+    {
+      "code": "osm:way/783006332",
+      "name": "Rumah Sakit Immanuel",
+      "countryCode": "ID",
+      "origin": "https://www.rsimmanuel.com",
+      "lat": -6.9356594,
+      "lng": 107.5964984
+    },
+    {
+      "code": "osm:way/783007166",
+      "name": "RS Hasanah Graha Afiah",
+      "countryCode": "ID",
+      "origin": "https://rs-hga.co.id",
+      "lat": -6.4083338,
+      "lng": 106.8406994
+    },
+    {
+      "code": "osm:way/783007636",
+      "name": "RSUD Dr. Dradjat Prawiranegara",
+      "countryCode": "ID",
+      "origin": "https://rsud.serangkab.go.id",
+      "lat": -6.1206293,
+      "lng": 106.152148
+    },
+    {
+      "code": "osm:way/783008788",
+      "name": "Siloam Hospital",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -6.2567063,
+      "lng": 107.0085295
+    },
+    {
+      "code": "osm:way/783009447",
+      "name": "RS Hermina Samarinda",
+      "countryCode": "ID",
+      "origin": "https://herminahospitals.com",
+      "lat": -0.5074309,
+      "lng": 117.1092158
+    },
+    {
+      "code": "osm:way/783012077",
+      "name": "RSU Bunda",
+      "countryCode": "ID",
+      "origin": "https://www.rsbunda.co.id",
+      "lat": -2.9679588,
+      "lng": 104.7345318
+    },
+    {
+      "code": "osm:way/783013673",
+      "name": "RS Islam Arafah",
+      "countryCode": "ID",
+      "origin": "http://rsiarafah.id",
+      "lat": -1.6026972,
+      "lng": 103.6022325
+    },
+    {
+      "code": "osm:way/783014197",
+      "name": "RSUD Welas Asih",
+      "countryCode": "ID",
+      "origin": "http://rsudalihsan.jabarprov.go.id",
+      "lat": -7.0083223,
+      "lng": 107.6234209
+    },
+    {
+      "code": "osm:way/783019702",
+      "name": "RSUD Dr. Agoesdjam Ketapang",
+      "countryCode": "ID",
+      "origin": "https://www.rsudagoesdjam.com",
+      "lat": -1.83206,
+      "lng": 109.9675982
+    },
+    {
+      "code": "osm:way/783021356",
+      "name": "RS Buah Hati",
+      "countryCode": "ID",
+      "origin": "https://www.rsiabuahhati.com",
+      "lat": -6.3125213,
+      "lng": 106.7327731
+    },
+    {
+      "code": "osm:way/783041157",
+      "name": "RSIA Paramount",
+      "countryCode": "ID",
+      "origin": "https://rsiaparamount.com",
+      "lat": -5.1626052,
+      "lng": 119.4350721
+    },
+    {
+      "code": "osm:way/783081946",
+      "name": "RS Universitas Sumatera Utara",
+      "countryCode": "ID",
+      "origin": "http://rumahsakit.usu.ac.id",
+      "lat": 3.568093,
+      "lng": 98.6575228
+    },
+    {
+      "code": "osm:way/783089083",
+      "name": "RS Ortopedi Dr. Soeharso",
+      "countryCode": "ID",
+      "origin": "https://www.rso.go.id",
+      "lat": -7.5567445,
+      "lng": 110.7738013
+    },
+    {
+      "code": "osm:way/783770516",
+      "name": "RS Mulya Tangerang",
+      "countryCode": "ID",
+      "origin": "https://rumahsakitmulya.com",
+      "lat": -6.2225052,
+      "lng": 106.6887531
+    },
+    {
+      "code": "osm:way/783777998",
+      "name": "Rumah Sakit PUSRI",
+      "countryCode": "ID",
+      "origin": "https://rspusri.com",
+      "lat": -2.9707943,
+      "lng": 104.8020574
+    },
+    {
+      "code": "osm:way/783779692",
+      "name": "Rumah Sakit Umum Daerah Dr. Soedono Madiun",
+      "countryCode": "ID",
+      "origin": "https://rssoedono.jatimprov.go.id",
+      "lat": -7.6266337,
+      "lng": 111.5244934
+    },
+    {
+      "code": "osm:way/783779727",
+      "name": "RSUD H.R.M Dr. Soeselo",
+      "countryCode": "ID",
+      "origin": "https://rsudsoeselo.tegalkab.go.id",
+      "lat": -6.9937913,
+      "lng": 109.1376699
+    },
+    {
+      "code": "osm:way/783781653",
+      "name": "Rumah Sakit Medika Lestari",
+      "countryCode": "ID",
+      "origin": "https://rsmedikalestari.com",
+      "lat": -6.2248797,
+      "lng": 106.7114699
+    },
+    {
+      "code": "osm:way/783783112",
+      "name": "Rumah Sakit Charitas Km 7 (RS Myria)",
+      "countryCode": "ID",
+      "origin": "https://www.rsmyria.com",
+      "lat": -2.9400738,
+      "lng": 104.7268386
+    },
+    {
+      "code": "osm:way/783785400",
+      "name": "RS Mitra Keluarga Tegal",
+      "countryCode": "ID",
+      "origin": "https://mitrakeluarga.com",
+      "lat": -6.8667046,
+      "lng": 109.1214135
+    },
+    {
+      "code": "osm:way/783786388",
+      "name": "RS Bhayangkara TK. II Sartika Asih Bandung",
+      "countryCode": "ID",
+      "origin": "https://rsbsabandung.com",
+      "lat": -6.9567353,
+      "lng": 107.6126455
+    },
+    {
+      "code": "osm:way/783787659",
+      "name": "RSUD Dr. Achmad Mochtar",
+      "countryCode": "ID",
+      "origin": "https://rsam-bkt.sumbarprov.go.id",
+      "lat": -0.2996356,
+      "lng": 100.3657715
+    },
+    {
+      "code": "osm:way/783787985",
+      "name": "RSU Bhakti Asih",
+      "countryCode": "ID",
+      "origin": "https://rsubhaktiasih.com",
+      "lat": -6.2208553,
+      "lng": 106.7056276
+    },
+    {
+      "code": "osm:way/783788675",
+      "name": "Rumah Sakit Intan Husada Garut",
+      "countryCode": "ID",
+      "origin": "https://rsintanhusada.com",
+      "lat": -7.190943,
+      "lng": 107.8965931
+    },
+    {
+      "code": "osm:way/783788782",
+      "name": "Rumah Sakit EMC Pekayon",
+      "countryCode": "ID",
+      "origin": "https://www.emc.id",
+      "lat": -6.2691639,
+      "lng": 106.9810682
+    },
+    {
+      "code": "osm:way/783791271",
+      "name": "Rumah Sakit Awal Bros Ahmad Yani",
+      "countryCode": "ID",
+      "origin": "https://awalbros.com",
+      "lat": 0.521133,
+      "lng": 101.4441762
+    },
+    {
+      "code": "osm:way/783792352",
+      "name": "Awal Bros Hospital",
+      "countryCode": "ID",
+      "origin": "https://awalbros.com",
+      "lat": 1.1242655,
+      "lng": 104.0169025
+    },
+    {
+      "code": "osm:way/783792581",
+      "name": "Rumah Sakit Islam Siti Hajar",
+      "countryCode": "ID",
+      "origin": "https://www.rsi-sitihajar-sidoarjo.com",
+      "lat": -7.4576348,
+      "lng": 112.7218811
+    },
+    {
+      "code": "osm:way/783793571",
+      "name": "Rumah Sakit Umum Daerah Tabanan",
+      "countryCode": "ID",
+      "origin": "https://rsud.tabanankab.go.id",
+      "lat": -8.5388084,
+      "lng": 115.1320963
+    },
+    {
+      "code": "osm:way/783794523",
+      "name": "RS Muhammadiyah Lamongan",
+      "countryCode": "ID",
+      "origin": "http://www.rsmlamongan.com",
+      "lat": -7.1089196,
+      "lng": 112.4041745
+    },
+    {
+      "code": "osm:way/783795069",
+      "name": "Rumah Sakit Siloam Jambi",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -1.6285263,
+      "lng": 103.6356469
+    },
+    {
+      "code": "osm:way/783795656",
+      "name": "RS Santa Elisabeth Batam",
+      "countryCode": "ID",
+      "origin": "https://www.rsebatam.com",
+      "lat": 1.1356748,
+      "lng": 104.01555
+    },
+    {
+      "code": "osm:way/783796875",
+      "name": "RS Mandaya",
+      "countryCode": "ID",
+      "origin": "http://www.mandayahospital.com",
+      "lat": -6.3048166,
+      "lng": 107.2784726
+    },
+    {
+      "code": "osm:way/783797111",
+      "name": "RSU Islam Klaten",
+      "countryCode": "ID",
+      "origin": "https://rsuislamklaten.co.id",
+      "lat": -7.685226,
+      "lng": 110.6340643
+    },
+    {
+      "code": "osm:way/783798063",
+      "name": "RS Kartika Husada",
+      "countryCode": "ID",
+      "origin": "http://www.rskartikahusadagroup.com",
+      "lat": -6.2947505,
+      "lng": 106.9634242
+    },
+    {
+      "code": "osm:way/783804599",
+      "name": "RSUD Dr. Moewardi Surakarta",
+      "countryCode": "ID",
+      "origin": "https://rsmoewardi.com",
+      "lat": -7.5581042,
+      "lng": 110.8422004
+    },
+    {
+      "code": "osm:way/783804774",
+      "name": "RSU Sarah Medan",
+      "countryCode": "ID",
+      "origin": "https://sarahhospital.com",
+      "lat": 3.5870688,
+      "lng": 98.6632509
+    },
+    {
+      "code": "osm:way/783807234",
+      "name": "RS Kartika Cibadak",
+      "countryCode": "ID",
+      "origin": "https://www.rskartikacibadak.com",
+      "lat": -6.8942063,
+      "lng": 106.7851654
+    },
+    {
+      "code": "osm:way/783813104",
+      "name": "RS. Cibitung Medika",
+      "countryCode": "ID",
+      "origin": "http://cibitungmedika.com",
+      "lat": -6.2532539,
+      "lng": 107.0866755
+    },
+    {
+      "code": "osm:way/783814303",
+      "name": "Rumah Sakit Mitra Keluarga Waru",
+      "countryCode": "ID",
+      "origin": "https://mitrakeluarga.com",
+      "lat": -7.3627542,
+      "lng": 112.7286684
+    },
+    {
+      "code": "osm:way/783818872",
+      "name": "RS Advent Manado",
+      "countryCode": "ID",
+      "origin": "https://www.rsamanado.com",
+      "lat": 1.4660309,
+      "lng": 124.8507608
+    },
+    {
+      "code": "osm:way/783819162",
+      "name": "Santosa Hospital",
+      "countryCode": "ID",
+      "origin": "https://shbk.santosa-hospital.com",
+      "lat": -6.9527259,
+      "lng": 107.5863761
+    },
+    {
+      "code": "osm:way/783824460",
+      "name": "RS TMC",
+      "countryCode": "ID",
+      "origin": "https://www.rstmc.co.id",
+      "lat": -7.3403919,
+      "lng": 108.2165759
+    },
+    {
+      "code": "osm:way/783825375",
+      "name": "RS Panti Rahayu (60)",
+      "countryCode": "ID",
+      "origin": "https://rspantirahayu.com",
+      "lat": -7.0837918,
+      "lng": 110.9151095
+    },
+    {
+      "code": "osm:way/783832632",
+      "name": "RS Woodward Palu",
+      "countryCode": "ID",
+      "origin": "http://www.rswoodwardpalu.com",
+      "lat": -0.9041214,
+      "lng": 119.8716519
+    },
+    {
+      "code": "osm:way/783834479",
+      "name": "RS Santo Yusup",
+      "countryCode": "ID",
+      "origin": "https://www.rssantoyusup.com",
+      "lat": -6.9066587,
+      "lng": 107.6428973
+    },
+    {
+      "code": "osm:way/783836275",
+      "name": "Rumah Sakit Umum Daerah dr. R Soetrasno",
+      "countryCode": "ID",
+      "origin": "https://rsud.rembangkab.go.id",
+      "lat": -6.7087534,
+      "lng": 111.3576686
+    },
+    {
+      "code": "osm:way/783839121",
+      "name": "RS dr. AK Gani",
+      "countryCode": "ID",
+      "origin": "http://rumahsakitakgani.com",
+      "lat": -2.9902977,
+      "lng": 104.7598175
+    },
+    {
+      "code": "osm:way/783849590",
+      "name": "Rumah Sakit Salak",
+      "countryCode": "ID",
+      "origin": "https://www.rssalakbogor.com",
+      "lat": -6.5913933,
+      "lng": 106.7975874
+    },
+    {
+      "code": "osm:way/783881116",
+      "name": "RST Slamet Riyadi (DKT)",
+      "countryCode": "ID",
+      "origin": "https://rstslametriyadi.co.id",
+      "lat": -7.5659519,
+      "lng": 110.8053805
+    },
+    {
+      "code": "osm:way/783886543",
+      "name": "RSPAU dr. S. Hardjolukito",
+      "countryCode": "ID",
+      "origin": "https://www.rspauhardjolukito.com",
+      "lat": -7.7975098,
+      "lng": 110.4115735
+    },
+    {
+      "code": "osm:way/783901678",
+      "name": "RS Bhakti Kartini",
+      "countryCode": "ID",
+      "origin": "https://www.rsbhaktikartini.com",
+      "lat": -6.2480329,
+      "lng": 107.001636
+    },
+    {
+      "code": "osm:way/783903874",
+      "name": "RS Dinda",
+      "countryCode": "ID",
+      "origin": "https://www.rsudinda.co.id",
+      "lat": -6.1919982,
+      "lng": 106.5916527
+    },
+    {
+      "code": "osm:way/783905514",
+      "name": "RS Harapan Sehati",
+      "countryCode": "ID",
+      "origin": "http://rsharapansehati.co.id",
+      "lat": -6.4811309,
+      "lng": 106.8052981
+    },
+    {
+      "code": "osm:way/784091746",
+      "name": "RSUD ABEPURA",
+      "countryCode": "ID",
+      "origin": "http://rsud-abepura.papua.go.id",
+      "lat": -2.6154185,
+      "lng": 140.6687639
+    },
+    {
+      "code": "osm:way/784094426",
+      "name": "RSUD dr R. Goeteng Taroenadibrata",
+      "countryCode": "ID",
+      "origin": "https://rsud.purbalinggakab.go.id",
+      "lat": -7.3787666,
+      "lng": 109.3614339
+    },
+    {
+      "code": "osm:way/784096847",
+      "name": "RS Dewi Sri Karawang",
+      "countryCode": "ID",
+      "origin": "https://rs-dewisri.co.id",
+      "lat": -6.3047123,
+      "lng": 107.297978
+    },
+    {
+      "code": "osm:way/784097870",
+      "name": "RS Kencana Serang",
+      "countryCode": "ID",
+      "origin": "https://rskencana.com",
+      "lat": -6.118037,
+      "lng": 106.1592994
+    },
+    {
+      "code": "osm:way/784099586",
+      "name": "RS Budi Agung",
+      "countryCode": "ID",
+      "origin": "https://rsbudiagung.com",
+      "lat": -0.9076533,
+      "lng": 119.8736701
+    },
+    {
+      "code": "osm:way/784139385",
+      "name": "Rumah Sakit Ananda Bekasi",
+      "countryCode": "ID",
+      "origin": "https://rsananda.com",
+      "lat": -6.2109922,
+      "lng": 106.9772157
+    },
+    {
+      "code": "osm:way/784144839",
+      "name": "RS TK II Kartika Husada",
+      "countryCode": "ID",
+      "origin": "https://www.rskartikahusada.com",
+      "lat": -0.0704254,
+      "lng": 109.3770276
+    },
+    {
+      "code": "osm:way/784147907",
+      "name": "RS Permata Bekasi",
+      "countryCode": "ID",
+      "origin": "https://www.rspermata.co.id",
+      "lat": -6.2911547,
+      "lng": 107.0314225
+    },
+    {
+      "code": "osm:way/784158483",
+      "name": "Rumah Sakit Aminah",
+      "countryCode": "ID",
+      "origin": "https://rsaminah.com",
+      "lat": -6.2381015,
+      "lng": 106.7452201
+    },
+    {
+      "code": "osm:way/784177203",
+      "name": "RSUD dr. Loekmono Hadi Kudus",
+      "countryCode": "ID",
+      "origin": "https://www.rsuddrloekmonohadi.kuduskab.go.id",
+      "lat": -6.8188189,
+      "lng": 110.8362513
+    },
+    {
+      "code": "osm:way/784184159",
+      "name": "RS Awal Bros Palangka Raya",
+      "countryCode": "ID",
+      "origin": "https://awalbros.com",
+      "lat": -2.171967,
+      "lng": 113.8721663
+    },
+    {
+      "code": "osm:way/784433513",
+      "name": "Rumah Sakit Umum Kasih Ibu",
+      "countryCode": "ID",
+      "origin": "http://kasihibuhospital.com",
+      "lat": -8.6776499,
+      "lng": 115.2052468
+    },
+    {
+      "code": "osm:way/784433522",
+      "name": "RSUD Tangerang Selatan",
+      "countryCode": "ID",
+      "origin": "https://tangerangselatankota.go.id",
+      "lat": -6.3375999,
+      "lng": 106.7386145
+    },
+    {
+      "code": "osm:way/784660823",
+      "name": "Husada",
+      "countryCode": "ID",
+      "origin": "https://husada.co.id",
+      "lat": -6.1475417,
+      "lng": 106.829533
+    },
+    {
+      "code": "osm:way/784661144",
+      "name": "RS Sentra Medika Cisalak",
+      "countryCode": "ID",
+      "origin": "https://sentramedikahospitals.com",
+      "lat": -6.3909686,
+      "lng": 106.8652753
+    },
+    {
+      "code": "osm:way/784664351",
+      "name": "Rumah Sakit Mitra Keluarga Kenjeran",
+      "countryCode": "ID",
+      "origin": "https://mitrakeluarga.com",
+      "lat": -7.251387,
+      "lng": 112.7850088
+    },
+    {
+      "code": "osm:way/784675109",
+      "name": "RS St. Carolus Summarecon Serpong",
+      "countryCode": "ID",
+      "origin": "https://www.carolussummarecon.com",
+      "lat": -6.2470655,
+      "lng": 106.6418456
+    },
+    {
+      "code": "osm:way/784678277",
+      "name": "RS Marzoeki Mahdi",
+      "countryCode": "ID",
+      "origin": "https://www.rsmmbogor.com",
+      "lat": -6.5822299,
+      "lng": 106.7811534
+    },
+    {
+      "code": "osm:way/784683304",
+      "name": "Rumah Sakit Hermina Ciruas",
+      "countryCode": "ID",
+      "origin": "https://www.herminahospitalgroup.com",
+      "lat": -6.124714,
+      "lng": 106.2307369
+    },
+    {
+      "code": "osm:way/784701011",
+      "name": "Rumah Sakit Siti Khodijah Sepanjang",
+      "countryCode": "ID",
+      "origin": "http://sitikhodijah.com",
+      "lat": -7.3449039,
+      "lng": 112.6988798
+    },
+    {
+      "code": "osm:way/784722142",
+      "name": "Rumah Sakit Tiara Sella",
+      "countryCode": "ID",
+      "origin": "https://rstiarasella.com",
+      "lat": -3.800739,
+      "lng": 102.2714483
+    },
+    {
+      "code": "osm:way/784723170",
+      "name": "Rumah Sakit Restu Ibu",
+      "countryCode": "ID",
+      "origin": "https://rumahsakitrestuibubalikpapan.business.site",
+      "lat": -1.2723639,
+      "lng": 116.8371853
+    },
+    {
+      "code": "osm:way/784731754",
+      "name": "Rumah Sakit Grestelina",
+      "countryCode": "ID",
+      "origin": "http://www.rs-grestelina.com",
+      "lat": -5.1629012,
+      "lng": 119.4458424
+    },
+    {
+      "code": "osm:way/784742896",
+      "name": "RS Siloam Bekasi Sepanjang Jaya",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -6.2698557,
+      "lng": 106.9988737
+    },
+    {
+      "code": "osm:way/784773788",
+      "name": "RSIA Graha Bunda",
+      "countryCode": "ID",
+      "origin": "https://rsia-grhabunda.com",
+      "lat": -6.9130601,
+      "lng": 107.6455346
+    },
+    {
+      "code": "osm:way/784967771",
+      "name": "RS Mitra Kemayoran",
+      "countryCode": "ID",
+      "origin": "https://mitrakeluarga.com",
+      "lat": -6.152172,
+      "lng": 106.858545
+    },
+    {
+      "code": "osm:way/784970696",
+      "name": "RSU Bunda Margonda",
+      "countryCode": "ID",
+      "origin": "https://bunda.co.id",
+      "lat": -6.3653418,
+      "lng": 106.8347555
+    },
+    {
+      "code": "osm:way/784978246",
+      "name": "Rumah Sakit Columbia Asia",
+      "countryCode": "ID",
+      "origin": "https://www.columbiaasia.com",
+      "lat": -6.1819789,
+      "lng": 106.8911924
+    },
+    {
+      "code": "osm:way/785002796",
+      "name": "RS Qadr Islamic Village",
+      "countryCode": "ID",
+      "origin": "http://rsqadr.co.id",
+      "lat": -6.2265487,
+      "lng": 106.6171164
+    },
+    {
+      "code": "osm:way/785085541",
+      "name": "Rumah Sakit Aulia",
+      "countryCode": "ID",
+      "origin": "https://www.auliahospital.co.id",
+      "lat": 0.4634269,
+      "lng": 101.3853481
+    },
+    {
+      "code": "osm:way/787196777",
+      "name": "RS Paru dr. Ario Wirawan",
+      "countryCode": "ID",
+      "origin": "http://www.rspaw.or.id",
+      "lat": -7.3500128,
+      "lng": 110.4893566
+    },
+    {
+      "code": "osm:way/787848227",
+      "name": "RSUD Wates",
+      "countryCode": "ID",
+      "origin": "https://rsud.kulonprogokab.go.id",
+      "lat": -7.8603316,
+      "lng": 110.1467142
+    },
+    {
+      "code": "osm:way/787899959",
+      "name": "RSUD Banyumas",
+      "countryCode": "ID",
+      "origin": "https://rsudbms.banyumaskab.go.id",
+      "lat": -7.5298469,
+      "lng": 109.2917575
+    },
+    {
+      "code": "osm:way/788091640",
+      "name": "RSU Dr Chasan Boesoirie",
+      "countryCode": "ID",
+      "origin": "http://www.chasanboesoirie.com",
+      "lat": 0.7820338,
+      "lng": 127.3753822
+    },
+    {
+      "code": "osm:way/788155163",
+      "name": "RSUP Raja Ahmad Tabib",
+      "countryCode": "ID",
+      "origin": "https://rsudtpi.kepriprov.go.id",
+      "lat": 0.9241525,
+      "lng": 104.5002232
+    },
+    {
+      "code": "osm:way/788323217",
+      "name": "Karya Medika Hospital",
+      "countryCode": "ID",
+      "origin": "https://karyamedika.com",
+      "lat": -6.2674055,
+      "lng": 107.1244166
+    },
+    {
+      "code": "osm:way/788342889",
+      "name": "RSUD KOTA KENDARI",
+      "countryCode": "ID",
+      "origin": "https://rsud.kendarikota.go.id",
+      "lat": -3.9894994,
+      "lng": 122.5324877
+    },
+    {
+      "code": "osm:way/789009026",
+      "name": "Rumah Sakit Khusus Bedah Siaga",
+      "countryCode": "ID",
+      "origin": "https://rsbedahsiaga.co.id",
+      "lat": -3.3369445,
+      "lng": 114.6176381
+    },
+    {
+      "code": "osm:way/792381245",
+      "name": "Rumah Sakit GMIM Bethesda Tomohon",
+      "countryCode": "ID",
+      "origin": "https://bethesda.co.id",
+      "lat": 1.326974,
+      "lng": 124.8391036
+    },
+    {
+      "code": "osm:way/819520525",
+      "name": "Siloam Hospitals Lippo Cikarang",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -6.3314296,
+      "lng": 107.1350468
+    },
+    {
+      "code": "osm:way/893868998",
+      "name": "Rumah Sakit Umum Daerah Kecamatan Mandau",
+      "countryCode": "ID",
+      "origin": "https://rsudmandau.com",
+      "lat": 1.2795437,
+      "lng": 101.1686431
+    },
+    {
+      "code": "osm:way/917333594",
+      "name": "RSUD Pasar Minggu Jakarta",
+      "countryCode": "ID",
+      "origin": "https://rsudpasarminggu.jakarta.go.id",
+      "lat": -6.293984,
+      "lng": 106.8198692
+    },
+    {
+      "code": "osm:way/927020149",
+      "name": "Rumah Sakit Pusat Otak Nasional Prof. Dr. dr. Mahar Mardjono Jakarta",
+      "countryCode": "ID",
+      "origin": "http://www.rspon.go.id",
+      "lat": -6.2463095,
+      "lng": 106.8696599
+    },
+    {
+      "code": "osm:way/933245907",
+      "name": "Rumah Sakit Mitra Kasih",
+      "countryCode": "ID",
+      "origin": "http://rsmitrakasih.com",
+      "lat": -6.8842831,
+      "lng": 107.5526943
+    },
+    {
+      "code": "osm:way/990612489",
+      "name": "Rumah Sakit Mitra Masyarakat",
+      "countryCode": "ID",
+      "origin": "https://rsmitramasyarakat.com",
+      "lat": -4.5266852,
+      "lng": 136.8354795
+    },
+    {
+      "code": "osm:way/1026652249",
+      "name": "Rumah Sakit Umum Daerah Kota Bima",
+      "countryCode": "ID",
+      "origin": "https://rsud.bimakota.go.id",
+      "lat": -8.4498957,
+      "lng": 118.7330149
+    },
+    {
+      "code": "osm:way/1029175777",
+      "name": "Rumah Sakit BIMC Siloam",
+      "countryCode": "ID",
+      "origin": "https://bimcbali.com",
+      "lat": -8.7990325,
+      "lng": 115.2283946
+    },
+    {
+      "code": "osm:way/1061084258",
+      "name": "RST Dr. Soedjono",
+      "countryCode": "ID",
+      "origin": "https://rstdrsoedjono.co.id",
+      "lat": -7.4677196,
+      "lng": 110.2252167
+    },
+    {
+      "code": "osm:way/1062754570",
+      "name": "RS Mitra Husada",
+      "countryCode": "ID",
+      "origin": "https://www.mitrahusadapringsewu.com",
+      "lat": -5.3581881,
+      "lng": 104.9915275
+    },
+    {
+      "code": "osm:way/1084151423",
+      "name": "RSIA Brawijaya Saharjo",
+      "countryCode": "ID",
+      "origin": "https://brawijayahospital.com",
+      "lat": -6.2245723,
+      "lng": 106.8480747
+    },
+    {
+      "code": "osm:way/1102935426",
+      "name": "RSJ Dr. Radjiman Wediodiningrat",
+      "countryCode": "ID",
+      "origin": "https://rsjrw.id",
+      "lat": -7.8229564,
+      "lng": 112.7179281
+    },
+    {
+      "code": "osm:way/1123564214",
+      "name": "Bintaro Women And Children Clinic",
+      "countryCode": "ID",
+      "origin": "https://bwcc.co.id",
+      "lat": -6.2827021,
+      "lng": 106.7082348
+    },
+    {
+      "code": "osm:way/1124704303",
+      "name": "RSUP Makassar",
+      "countryCode": "ID",
+      "origin": "https://sulselprov.go.id",
+      "lat": -5.1405043,
+      "lng": 119.4005768
+    },
+    {
+      "code": "osm:way/1153265226",
+      "name": "RS EMC Alam Sutera",
+      "countryCode": "ID",
+      "origin": "https://www.emc.id",
+      "lat": -6.244951,
+      "lng": 106.651122
+    },
+    {
+      "code": "osm:way/1205351410",
+      "name": "RS Dokter Adam Talib Cikunir",
+      "countryCode": "ID",
+      "origin": "https://cikunir.rsdat.co.id",
+      "lat": -6.2781364,
+      "lng": 106.9599484
+    },
+    {
+      "code": "osm:way/1213594972",
+      "name": "Primaya Hospital Karawang",
+      "countryCode": "ID",
+      "origin": "https://primayahospital.com",
+      "lat": -6.3306036,
+      "lng": 107.2969964
+    },
+    {
+      "code": "osm:way/1215624271",
+      "name": "Siloam Hospitals",
+      "countryCode": "ID",
+      "origin": "https://www.siloamhospitals.com",
+      "lat": -6.2926861,
+      "lng": 106.7843997
+    },
+    {
+      "code": "osm:way/1215624275",
+      "name": "Mayapada Hospital",
+      "countryCode": "ID",
+      "origin": "https://mayapadahospital.com",
+      "lat": -6.2981069,
+      "lng": 106.7859833
+    },
+    {
+      "code": "osm:way/1217921180",
+      "name": "RS Mitra Keluarga Pratama Jati Asih",
+      "countryCode": "ID",
+      "origin": "https://www.mitrakeluarga.com",
+      "lat": -6.2879315,
+      "lng": 106.9535834
+    },
+    {
+      "code": "osm:way/1227580507",
+      "name": "Rumah Sakit RIS",
+      "countryCode": "ID",
+      "origin": "http://rishospital.com",
+      "lat": -6.2942773,
+      "lng": 106.6842698
+    },
+    {
+      "code": "osm:way/1265243159",
+      "name": "RSUD UMAR MAS'UD BAWEAN",
+      "countryCode": "ID",
+      "origin": "https://pgds.kemkes.go.id",
+      "lat": -5.8484102,
+      "lng": 112.6611898
+    },
+    {
+      "code": "osm:way/1282099539",
+      "name": "Rumah Sakit Dadi Keluarga Ciamis",
+      "countryCode": "ID",
+      "origin": "https://www.rsdkciamis.com",
+      "lat": -7.2950233,
+      "lng": 108.3698691
+    },
+    {
+      "code": "osm:way/1307460675",
+      "name": "Rumah Sakit Hermina Karawang",
+      "countryCode": "ID",
+      "origin": "http://herminahospitals.com",
+      "lat": -6.3085207,
+      "lng": 107.3124904
+    },
+    {
+      "code": "osm:way/1308767097",
+      "name": "RS Kemenkes Nusantara",
+      "countryCode": "ID",
+      "origin": "https://www.rsupikn.com",
+      "lat": -0.9703668,
+      "lng": 116.7039026
+    },
+    {
+      "code": "osm:way/1322974555",
+      "name": "Rumah Sakit Pertamina Cilacap",
+      "countryCode": "ID",
+      "origin": "https://rspcl.ihc.id",
+      "lat": -7.7022894,
+      "lng": 109.0454596
+    },
+    {
+      "code": "osm:way/1350747550",
+      "name": "RSUD Teuku Umar Aceh Jaya",
+      "countryCode": "ID",
+      "origin": "https://rsud.acehjayakab.go.id",
+      "lat": 4.6353485,
+      "lng": 95.5954084
+    },
+    {
+      "code": "osm:way/1361089504",
+      "name": "RS EMC Sentul",
+      "countryCode": "ID",
+      "origin": "https://www.emc.id",
+      "lat": -6.5669083,
+      "lng": 106.8537582
+    },
+    {
+      "code": "osm:way/1361614541",
+      "name": "RSIA Husada Bunda",
+      "countryCode": "ID",
+      "origin": "https://www.rsiahusadabunda.com",
+      "lat": -7.96795,
+      "lng": 112.6230827
+    },
+    {
+      "code": "osm:way/1384381186",
+      "name": "RS Permata Cirebon",
+      "countryCode": "ID",
+      "origin": "https://www.rspermatacirebon.com",
+      "lat": -6.7086211,
+      "lng": 108.5338512
+    },
+    {
+      "code": "osm:way/1388761679",
+      "name": "Rumah Sakit Umum Medimas Kota Cirebon",
+      "countryCode": "ID",
+      "origin": "https://rsumedimas.id",
+      "lat": -6.7429484,
+      "lng": 108.5396895
+    },
+    {
+      "code": "osm:way/1394070763",
+      "name": "RS Ummi",
+      "countryCode": "ID",
+      "origin": "https://rsummi.co.id",
+      "lat": -6.6088529,
+      "lng": 106.794579
+    },
+    {
+      "code": "osm:way/1413560500",
+      "name": "RS Hermina",
+      "countryCode": "ID",
+      "origin": "https://www.herminahospitals.com",
+      "lat": -0.9710595,
+      "lng": 116.713082
+    },
+    {
+      "code": "osm:way/1418836581",
+      "name": "RS Rapha Theresia",
+      "countryCode": "ID",
+      "origin": "https://jambi.rsrapha.com",
+      "lat": -1.6789607,
+      "lng": 103.6137423
+    },
+    {
+      "code": "osm:way/1421526762",
+      "name": "RS Universitas Brawijaya",
+      "countryCode": "ID",
+      "origin": "https://rumahsakit.ub.ac.id",
+      "lat": -7.9413074,
+      "lng": 112.6213578
+    },
+    {
+      "code": "osm:way/1423093877",
+      "name": "RS Hermina Periuk",
+      "countryCode": "ID",
+      "origin": "https://herminahospitals.com",
+      "lat": -6.1513086,
+      "lng": 106.5936738
+    },
+    {
+      "code": "osm:way/1423525544",
+      "name": "Rumah Sakit Pelabuhan Cirebon",
+      "countryCode": "ID",
+      "origin": "https://rsplcirebon.ihc.id",
+      "lat": -6.7131889,
+      "lng": 108.5675331
+    },
+    {
+      "code": "osm:way/1428458233",
+      "name": "RSKB Columbia Asia",
+      "countryCode": "ID",
+      "origin": "https://www.columbiaasia.com",
+      "lat": -6.9837232,
+      "lng": 110.3824241
+    },
+    {
+      "code": "osm:way/1431470351",
+      "name": "Rumah Sakit Umum Sumber Kasih",
+      "countryCode": "ID",
+      "origin": "https://www.kasih-group.com",
+      "lat": -6.7086312,
+      "lng": 108.5600929
+    },
+    {
+      "code": "osm:way/1451703252",
+      "name": "Rumah Sakit Permata Keluarga Karawang",
+      "countryCode": "ID",
+      "origin": "https://permatakeluarga.net",
+      "lat": -6.3225583,
+      "lng": 107.2916048
+    },
+    {
+      "code": "osm:way/1451703253",
+      "name": "RS Mitra Family Karawang",
+      "countryCode": "ID",
+      "origin": "https://rsmitrafamily.kasih-group.com",
+      "lat": -6.3155295,
+      "lng": 107.2941808
+    },
+    {
+      "code": "osm:way/1455742112",
+      "name": "RSU Indriati Solo Baru",
+      "countryCode": "ID",
+      "origin": "https://rsindriati.com",
+      "lat": -7.6112509,
+      "lng": 110.8086201
+    },
+    {
+      "code": "osm:way/1463510809",
+      "name": "Persada Hospital",
+      "countryCode": "ID",
+      "origin": "https://persadahospital.co.id",
+      "lat": -7.9350419,
+      "lng": 112.6505906
+    },
+    {
+      "code": "osm:way/1465016885",
+      "name": "RS Permata Bunda",
+      "countryCode": "ID",
+      "origin": "https://www.rspermatabundamalang.com",
+      "lat": -7.9389173,
+      "lng": 112.6247231
+    },
+    {
+      "code": "osm:way/1466373307",
+      "name": "RS Punten",
+      "countryCode": "ID",
+      "origin": "https://rspunten.id",
+      "lat": -7.8391685,
+      "lng": 112.5309927
+    },
+    {
+      "code": "osm:way/1473273814",
+      "name": "Rumah Sakit Kebon Jati",
+      "countryCode": "ID",
+      "origin": "https://www.rskebonjati.com",
+      "lat": -6.9159256,
+      "lng": 107.5963442
+    },
+    {
+      "code": "osm:way/1482687730",
+      "name": "BHC Baghraf Health Care",
+      "countryCode": "ID",
+      "origin": "https://baghrafhealthcare.com",
+      "lat": -7.0158302,
+      "lng": 113.8453199
+    }
+  ]
+}
