@@ -115,6 +115,7 @@ await client.connect()
 
 let matched = 0
 let unmatched = 0
+let superseded = 0
 let plansInserted = 0
 
 for (const [cc, list] of byCountry) {
@@ -126,6 +127,16 @@ for (const [cc, list] of byCountry) {
   }
   const withTokens = hospitals.map((h) => ({ ...h, tokens: nameTokens(h.name) }))
 
+  // Pass 1: match every legacy venue to a hospital and collect its usable
+  // plans, without writing anything yet. The schema only has room for one
+  // venue per hospital (world_venues.id is deterministic from the hospital's
+  // own id), so a multi-building campus with several separate legacy PDFs —
+  // one per wing — would otherwise collide: each "matches" successfully, but
+  // only the last one processed actually survives in the database, silently
+  // overwriting the others. Grouping by the resulting id first and keeping
+  // the richest candidate (most waypoints) makes that an explicit choice
+  // instead of an accident of processing order.
+  const candidates = []
   for (const v of list) {
     const tokens = nameTokens(v.name)
     let best = null
@@ -144,12 +155,6 @@ for (const [cc, list] of byCountry) {
       continue
     }
 
-    const suffix = best.id.slice(4) // "osm-w123" -> "w123"
-    const newId = `osm-${cc.toLowerCase()}-${suffix}`
-
-    // Collect usable plans before deciding whether this venue is worth
-    // publishing at all — one with no real floor plan to show is just a
-    // broken pin, not a venue.
     const plans = []
     for (const p of v.floorPlans ?? []) {
       const svg = show(`public${p.imageUrl}`)
@@ -163,15 +168,44 @@ for (const [cc, list] of byCountry) {
       }
       plans.push({ ...p, svg })
     }
+    const suffix = best.id.slice(4) // "osm-w123" -> "w123"
+    const newId = `osm-${cc.toLowerCase()}-${suffix}`
     if (!plans.length) {
       console.warn(`UNMATCHED ${cc} "${v.name}" (${v.slug}) — matched ${best.name} but has no usable plan`)
-      await client.query("delete from public.world_venues where id = $1", [newId])
-      await client.query("delete from public.world_plans where venue_id = $1", [newId])
-      // A previous (now corrected) run of this script may have marked the
-      // hospital mapped before this check existed — undo that if so, since
-      // there is in fact no venue to show for it.
-      await client.query("update public.world_hospitals set mapped = false where country = $1 and id = $2", [cc, best.id])
       unmatched++
+      // Still tracked (with no plans) so the cleanup pass below removes any
+      // stale row an earlier, less careful run of this script left behind
+      // under this id.
+      candidates.push({ v, best, plans, newId, bestScore, richness: -1 })
+      continue
+    }
+
+    candidates.push({ v, best, plans, newId, bestScore, richness: v.waypoints?.length ?? 0 })
+  }
+
+  // Pass 2: one winner per hospital id — the richest candidate with at least
+  // one usable plan — then write. Anything else that computed the same id
+  // (superseded, or matched but plan-less) is cleaned up rather than left as
+  // a stale row from an earlier run.
+  const byNewId = new Map()
+  for (const c of candidates) {
+    const prev = byNewId.get(c.newId)
+    if (!prev || c.richness > prev.richness) byNewId.set(c.newId, c)
+  }
+  for (const c of candidates) {
+    const winner = byNewId.get(c.newId)
+    if (winner !== c && winner.plans.length) {
+      console.warn(`SUPERSEDED ${cc} "${c.v.name}" (${c.v.slug}, ${c.richness} waypoints) — same hospital as "${winner.v.name}" (${winner.v.slug}, ${winner.richness} waypoints), which wins the one venue slot`)
+      superseded++
+    }
+  }
+
+  const staleIds = []
+  for (const winner of byNewId.values()) {
+    const { v, best, plans, newId, bestScore } = winner
+    if (!plans.length) {
+      staleIds.push(newId)
+      await client.query("update public.world_hospitals set mapped = false where country = $1 and id = $2", [cc, best.id])
       continue
     }
 
@@ -200,7 +234,13 @@ for (const [cc, list] of byCountry) {
     console.log(`MATCHED ${cc} "${v.name}" -> "${best.name}" (${newId}), overlap ${bestScore.toFixed(2)}, ${plans.length} plan(s)`)
     matched++
   }
+  if (staleIds.length) {
+    await client.query("delete from public.world_venues where id = any($1::text[])", [staleIds])
+    await client.query("delete from public.world_plans where venue_id = any($1::text[])", [staleIds])
+  }
 }
 
 await client.end()
-console.log(`\n${matched} matched and published, ${unmatched} unmatched (left alone), ${plansInserted} plans inserted`)
+console.log(
+  `\n${matched} matched and published, ${unmatched} unmatched (left alone), ${superseded} superseded by a richer venue for the same hospital, ${plansInserted} plans inserted`
+)
