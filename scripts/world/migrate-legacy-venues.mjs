@@ -10,6 +10,13 @@
 //
 // Needs DATABASE_URL and the backup branch's objects available locally
 // (`git fetch origin backup/legacy-world-pipeline` first if not already).
+// That means it has to run somewhere with the real secret — a throwaway
+// workflow_dispatch workflow did the job (run, then deleted; this script is
+// what's worth keeping). Re-run it, the same way, if a country among
+// US/AU/CA/IE/NZ/BE gets its hospitals published later and wasn't covered
+// yet — NZ's one legacy venue has no match until New Zealand's hospitals
+// exist in world_hospitals. Safe to re-run any time: everything is upserted
+// by the id it would publish under.
 //
 // Run: node scripts/world/migrate-legacy-venues.mjs [--dry-run]
 import { execSync } from "node:child_process"
