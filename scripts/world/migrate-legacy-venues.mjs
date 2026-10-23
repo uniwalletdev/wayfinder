@@ -26,6 +26,12 @@ const MATCH_RADIUS_M = 1500
 const MIN_OVERLAP = 0.5
 
 const sh = (cmd) => execSync(cmd, { maxBuffer: 1024 * 1024 * 64 }).toString()
+// A PDF that rasterized into thousands of pixel-sized individual shapes
+// instead of clean vector paths (seen once, in practice) produces an SVG of
+// tens of megabytes — unusable (and likely to crash a phone's browser as an
+// image overlay), not something to force into production just because the
+// data exists. A real floor plan is tens to low hundreds of KB.
+const MAX_SVG_BYTES = 5 * 1024 * 1024
 const show = (path) => {
   try {
     return sh(`git show ${REF}:${JSON.stringify(path).slice(1, -1)}`)
@@ -140,38 +146,58 @@ for (const [cc, list] of byCountry) {
 
     const suffix = best.id.slice(4) // "osm-w123" -> "w123"
     const newId = `osm-${cc.toLowerCase()}-${suffix}`
-    const venue = {
-      ...v,
-      id: newId,
-      country: cc,
-      floorPlans: (v.floorPlans ?? []).map((p) => ({ ...p, imageUrl: `/floorplans/osm/${newId}/${p.id}.svg` })),
-    }
 
-    await client.query(
-      `insert into public.world_venues (id, country, kind, venue, updated_at) values ($1,$2,'indoor',$3::jsonb, now())
-       on conflict (id) do update set country = excluded.country, kind = excluded.kind, venue = excluded.venue, updated_at = now()`,
-      [newId, cc, JSON.stringify(venue)]
-    )
-
-    const planIds = []
+    // Collect usable plans before deciding whether this venue is worth
+    // publishing at all — one with no real floor plan to show is just a
+    // broken pin, not a venue.
+    const plans = []
     for (const p of v.floorPlans ?? []) {
       const svg = show(`public${p.imageUrl}`)
       if (!svg) {
         console.warn(`  ${v.slug} plan ${p.id}: SVG missing at public${p.imageUrl}`)
         continue
       }
-      planIds.push(p.id)
+      if (Buffer.byteLength(svg) > MAX_SVG_BYTES) {
+        console.warn(`  ${v.slug} plan ${p.id}: SVG is ${(Buffer.byteLength(svg) / 1024 / 1024).toFixed(1)}MB — likely a degenerate rasterization, skipping`)
+        continue
+      }
+      plans.push({ ...p, svg })
+    }
+    if (!plans.length) {
+      console.warn(`UNMATCHED ${cc} "${v.name}" (${v.slug}) — matched ${best.name} but has no usable plan`)
+      await client.query("delete from public.world_venues where id = $1", [newId])
+      await client.query("delete from public.world_plans where venue_id = $1", [newId])
+      // A previous (now corrected) run of this script may have marked the
+      // hospital mapped before this check existed — undo that if so, since
+      // there is in fact no venue to show for it.
+      await client.query("update public.world_hospitals set mapped = false where country = $1 and id = $2", [cc, best.id])
+      unmatched++
+      continue
+    }
+
+    const venue = {
+      ...v,
+      id: newId,
+      country: cc,
+      floorPlans: plans.map(({ svg, ...p }) => ({ ...p, imageUrl: `/floorplans/osm/${newId}/${p.id}.svg` })),
+    }
+    await client.query(
+      `insert into public.world_venues (id, country, kind, venue, updated_at) values ($1,$2,'indoor',$3::jsonb, now())
+       on conflict (id) do update set country = excluded.country, kind = excluded.kind, venue = excluded.venue, updated_at = now()`,
+      [newId, cc, JSON.stringify(venue)]
+    )
+    for (const p of plans) {
       await client.query(
         `insert into public.world_plans (venue_id, plan_id, svg) values ($1,$2,$3)
          on conflict (venue_id, plan_id) do update set svg = excluded.svg`,
-        [newId, p.id, svg]
+        [newId, p.id, p.svg]
       )
       plansInserted++
     }
-    await client.query("delete from public.world_plans where venue_id = $1 and not (plan_id = any($2::text[]))", [newId, planIds])
+    await client.query("delete from public.world_plans where venue_id = $1 and not (plan_id = any($2::text[]))", [newId, plans.map((p) => p.id)])
     await client.query("update public.world_hospitals set mapped = true where country = $1 and id = $2", [cc, best.id])
 
-    console.log(`MATCHED ${cc} "${v.name}" -> "${best.name}" (${newId}), overlap ${bestScore.toFixed(2)}, ${planIds.length} plan(s)`)
+    console.log(`MATCHED ${cc} "${v.name}" -> "${best.name}" (${newId}), overlap ${bestScore.toFixed(2)}, ${plans.length} plan(s)`)
     matched++
   }
 }
