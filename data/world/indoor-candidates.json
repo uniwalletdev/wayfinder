@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-05T04:21:53.033Z",
+ "generatedAt": "2026-10-23T11:22:14.661Z",
  "countries": [
   "AT",
   "BE",
@@ -231,6 +231,26 @@
     "1",
     "2",
     "3"
+   ]
+  },
+  {
+   "id": "osm-w1066814482",
+   "country": "NL",
+   "name": "Radboud Universitair Medisch Centrum",
+   "city": "Nijmegen",
+   "lat": 51.82296,
+   "lng": 5.86228,
+   "bbox": [
+    51.82021,
+    5.85718,
+    51.82572,
+    5.86739
+   ],
+   "rooms": 17,
+   "named": 11,
+   "corridors": 8,
+   "levels": [
+    "0"
    ]
   },
   {
@@ -997,26 +1017,6 @@
    ]
   },
   {
-   "id": "osm-w550337547",
-   "country": "US",
-   "name": "Hammond-Henry Hospital",
-   "city": "Geneseo",
-   "lat": 41.45989,
-   "lng": -90.15736,
-   "bbox": [
-    41.45841,
-    -90.15834,
-    41.46137,
-    -90.15639
-   ],
-   "rooms": 6,
-   "named": 0,
-   "corridors": 0,
-   "levels": [
-    "0"
-   ]
-  },
-  {
    "id": "osm-w1218298644",
    "country": "BE",
    "name": "UZ Leuven campus Gasthuisberg",
@@ -1033,6 +1033,26 @@
    "named": 0,
    "corridors": 0,
    "levels": []
+  },
+  {
+   "id": "osm-w550337547",
+   "country": "US",
+   "name": "Hammond-Henry Hospital",
+   "city": "Geneseo",
+   "lat": 41.45989,
+   "lng": -90.15736,
+   "bbox": [
+    41.45841,
+    -90.15834,
+    41.46137,
+    -90.15639
+   ],
+   "rooms": 5,
+   "named": 0,
+   "corridors": 0,
+   "levels": [
+    "0"
+   ]
   },
   {
    "id": "osm-w464365604",
@@ -1756,7 +1776,7 @@
   {
    "id": "osm-w550011196",
    "country": "US",
-   "name": "Hoopeston Community Memorial Hospital",
+   "name": "Carle Hoopeston Regional Health Center",
    "city": "Hoopeston",
    "lat": 40.45825,
    "lng": -87.65926,

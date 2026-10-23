@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-05T04:31:17.036Z",
+ "generatedAt": "2026-10-23T15:26:48.082Z",
  "built": [
   {
    "id": "osm-us-r12130441",
@@ -59,6 +59,21 @@
    "extentM": [
     196,
     63
+   ]
+  },
+  {
+   "id": "osm-nl-w1066814482",
+   "country": "NL",
+   "name": "Radboud Universitair Medisch Centrum",
+   "rooms": 16,
+   "waypoints": 18,
+   "named": 11,
+   "floors": 1,
+   "trails": 7,
+   "corridorM": 120,
+   "extentM": [
+    93,
+    81
    ]
   },
   {
