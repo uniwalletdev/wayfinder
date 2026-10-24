@@ -69,6 +69,7 @@ function hospitalRow(el) {
   if (t["addr:street"]) row.street = [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" ")
   if (t["addr:postcode"]) row.postcode = t["addr:postcode"]
   if (t.emergency === "yes") row.emergency = true
+  if (t.website || t["contact:website"]) row.website = t.website || t["contact:website"]
   if (el.bounds) row.bbox = [r5(el.bounds.minlat), r5(el.bounds.minlon), r5(el.bounds.maxlat), r5(el.bounds.maxlon)]
   return row
 }

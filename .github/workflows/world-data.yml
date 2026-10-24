@@ -144,6 +144,16 @@ jobs:
       - name: Build the app's files
         run: node scripts/world/build.mjs
 
+      # Each hospital's own website, for a real floor-plan PDF — OpenStreetMap's
+      # indoor=* tagging (fetch-indoor.mjs, above) only ever sees a tiny,
+      # volunteer-mapped fraction of what hospitals actually publish. Must run
+      # after build.mjs: that script deletes any public/world/venues/ file it
+      # doesn't recognise, so a crawled venue written before it would be wiped
+      # immediately; written after, it simply overwrites a same-hospital sparse
+      # OSM venue, which is the right way round.
+      - name: Site plans
+        run: node scripts/world/fetch-site-plans.mjs --countries "$COUNTRIES"
+
       - name: Publish to the database
         id: publish
         if: env.DATABASE_URL != ''
