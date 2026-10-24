@@ -1,1705 +1,1450 @@
 {
- "generatedAt": "2026-10-24T01:08:07.360Z",
+ "generatedAt": "2026-10-24T05:58:32.088Z",
  "built": [
   {
-   "id": "osm-be-w456761573",
-   "country": "BE",
-   "name": "Hôpital de Libramont",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 6,
-   "waypoints": 9,
-   "trails": 9,
-   "pathM": 161,
-   "extentM": [
-    300,
-    242
-   ],
-   "score": 10
-  },
-  {
-   "id": "osm-be-w443801761",
-   "country": "BE",
-   "name": "Clinique Edmond-Jacques",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 0,
-   "facilities": 5,
-   "waypoints": 6,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    223,
-    248
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w1063940675",
-   "country": "BE",
-   "name": "Centre Hospitalier de Mouscron - Ziekenhuis Moeskroen",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 4,
-   "waypoints": 7,
-   "trails": 4,
-   "pathM": 850,
-   "extentM": [
-    308,
-    245
-   ],
-   "score": 8
-  },
-  {
-   "id": "osm-be-w668262884",
-   "country": "BE",
-   "name": "CHwapi - site Notre-Dame",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 0,
-   "facilities": 5,
-   "waypoints": 7,
-   "trails": 6,
-   "pathM": 163,
-   "extentM": [
-    267,
-    217
-   ],
-   "score": 9
-  },
-  {
-   "id": "osm-be-w669514299",
-   "country": "BE",
-   "name": "CRP Les Marronniers",
-   "buildings": 9,
-   "named": 9,
-   "entrances": 0,
-   "facilities": 8,
-   "waypoints": 17,
-   "trails": 3,
-   "pathM": 307,
-   "extentM": [
-    843,
-    524
-   ],
-   "score": 16
-  },
-  {
-   "id": "osm-be-w104314226",
-   "country": "BE",
-   "name": "EpiCURA Hôpital de Baudour",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 0,
-   "facilities": 12,
-   "waypoints": 13,
-   "trails": 2,
-   "pathM": 134,
-   "extentM": [
-    388,
-    367
-   ],
-   "score": 16
-  },
-  {
-   "id": "osm-be-w239427901",
-   "country": "BE",
-   "name": "Hôpital de Mons - Site Constantinople",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 3,
-   "facilities": 2,
-   "waypoints": 6,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    141,
-    157
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w117519002",
-   "country": "BE",
-   "name": "Hôpital de Mons - Site Kennedy",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 3,
-   "facilities": 8,
-   "waypoints": 11,
-   "trails": 8,
-   "pathM": 382,
-   "extentM": [
-    421,
-    237
-   ],
-   "score": 14
-  },
-  {
-   "id": "osm-be-w150126469",
-   "country": "BE",
-   "name": "Chêne aux Haies",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 0,
-   "facilities": 27,
-   "waypoints": 28,
-   "trails": 9,
-   "pathM": 339,
-   "extentM": [
-    879,
-    501
-   ],
-   "score": 31
-  },
-  {
-   "id": "osm-be-w393226536",
-   "country": "BE",
-   "name": "Hôpital Saint-Vincent",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 4,
-   "waypoints": 6,
-   "trails": 1,
-   "pathM": 77,
-   "extentM": [
-    379,
-    274
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w1281130758",
-   "country": "BE",
-   "name": "CHU Tivoli",
-   "buildings": 6,
-   "named": 5,
-   "entrances": 5,
-   "facilities": 34,
-   "waypoints": 38,
-   "trails": 29,
-   "pathM": 1247,
-   "extentM": [
-    527,
-    436
-   ],
-   "score": 47
-  },
-  {
-   "id": "osm-be-w1182518679",
-   "country": "BE",
-   "name": "CHU Helora - Hôpital de La Louvière - Site Jolimont",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 5,
-   "facilities": 9,
-   "waypoints": 19,
-   "trails": 18,
-   "pathM": 803,
-   "extentM": [
-    294,
-    467
-   ],
-   "score": 22
-  },
-  {
-   "id": "osm-be-w1096888525",
-   "country": "BE",
-   "name": "CHU Charleroi-Chimay - Marie Curie (Lodelinsart)",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 5,
-   "facilities": 17,
-   "waypoints": 21,
-   "trails": 7,
-   "pathM": 273,
-   "extentM": [
-    424,
-    329
-   ],
-   "score": 21
-  },
-  {
-   "id": "osm-be-w1320120284",
-   "country": "BE",
-   "name": "Campus Helha/IESCA/UCL",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 6,
-   "facilities": 9,
-   "waypoints": 19,
-   "trails": 16,
-   "pathM": 333,
-   "extentM": [
-    283,
-    347
-   ],
-   "score": 17
-  },
-  {
-   "id": "osm-be-w166658525",
-   "country": "BE",
-   "name": "Le Domaine - Centre hospitalier",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 0,
-   "facilities": 5,
-   "waypoints": 6,
-   "trails": 1,
-   "pathM": 126,
-   "extentM": [
-    239,
-    244
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w408938897",
-   "country": "BE",
-   "name": "Chirec - Hôpital de Braine-Waterloo",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 6,
-   "facilities": 4,
-   "waypoints": 15,
-   "trails": 19,
-   "pathM": 456,
-   "extentM": [
-    135,
-    291
-   ],
-   "score": 16
-  },
-  {
-   "id": "osm-be-w132706952",
-   "country": "BE",
-   "name": "Clinique Saint-Pierre",
-   "buildings": 15,
-   "named": 15,
-   "entrances": 15,
-   "facilities": 12,
-   "waypoints": 35,
-   "trails": 59,
-   "pathM": 1425,
-   "extentM": [
-    390,
-    358
-   ],
-   "score": 52
-  },
-  {
-   "id": "osm-be-w89536258",
-   "country": "BE",
-   "name": "Clinique universitaire de Mont-Godinne",
-   "buildings": 22,
-   "named": 22,
-   "entrances": 3,
-   "facilities": 16,
-   "waypoints": 41,
-   "trails": 41,
-   "pathM": 2064,
-   "extentM": [
-    688,
-    436
-   ],
-   "score": 63
-  },
-  {
-   "id": "osm-be-w105073789",
-   "country": "BE",
-   "name": "Clinique Sainte-Élisabeth",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 3,
-   "facilities": 2,
-   "waypoints": 9,
-   "trails": 1,
-   "pathM": 11,
-   "extentM": [
-    268,
-    344
-   ],
-   "score": 12
-  },
-  {
-   "id": "osm-be-w148699497",
-   "country": "BE",
-   "name": "Centre Hospitalier de la Haute Senne - site Saint Vincent",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 0,
-   "facilities": 3,
-   "waypoints": 5,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    168,
-    191
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w96236568",
-   "country": "BE",
-   "name": "Hôpital de Marche",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 4,
-   "waypoints": 6,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    369,
-    211
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w106183724",
-   "country": "BE",
-   "name": "Centre Hospitalier Régional de Huy",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 3,
-   "facilities": 2,
-   "waypoints": 6,
-   "trails": 4,
-   "pathM": 133,
-   "extentM": [
-    148,
-    233
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-be-w639616997",
-   "country": "BE",
-   "name": "Centre Neurologique et de Réadaptation Fonctionnelle",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 3,
-   "facilities": 7,
-   "waypoints": 11,
-   "trails": 4,
-   "pathM": 79,
-   "extentM": [
-    316,
-    318
-   ],
-   "score": 10
-  },
-  {
-   "id": "osm-be-w23886080",
-   "country": "BE",
-   "name": "Centre Hospitalier du Bois de l'Abbaye",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 5,
-   "facilities": 33,
-   "waypoints": 30,
-   "trails": 11,
-   "pathM": 610,
-   "extentM": [
-    455,
-    275
-   ],
-   "score": 39
-  },
-  {
-   "id": "osm-be-w53542721",
-   "country": "BE",
-   "name": "Clinique CHC MontLégia",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 5,
-   "facilities": 14,
-   "waypoints": 19,
-   "trails": 19,
-   "pathM": 1068,
-   "extentM": [
-    489,
-    559
-   ],
-   "score": 17
-  },
-  {
-   "id": "osm-be-w994895777",
-   "country": "BE",
-   "name": "CHU de Liège - Sart-Tilman",
-   "buildings": 9,
-   "named": 9,
-   "entrances": 3,
-   "facilities": 29,
-   "waypoints": 40,
-   "trails": 32,
-   "pathM": 1811,
-   "extentM": [
-    680,
-    798
-   ],
-   "score": 49
-  },
-  {
-   "id": "osm-be-w1469173912",
-   "country": "BE",
-   "name": "Hôpital le Valdor",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 0,
-   "facilities": 16,
-   "waypoints": 16,
-   "trails": 6,
-   "pathM": 303,
-   "extentM": [
-    213,
-    513
-   ],
-   "score": 18
-  },
-  {
-   "id": "osm-be-w437315419",
-   "country": "BE",
-   "name": "Hôpital de la Citadelle (CHR)",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 2,
-   "facilities": 15,
-   "waypoints": 16,
-   "trails": 17,
-   "pathM": 720,
-   "extentM": [
-    519,
-    376
-   ],
-   "score": 23
-  },
-  {
-   "id": "osm-be-w282789923",
-   "country": "BE",
-   "name": "C.H.U. Notre-dame des Bruyères",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 2,
-   "facilities": 6,
-   "waypoints": 11,
-   "trails": 9,
-   "pathM": 696,
-   "extentM": [
-    379,
-    318
-   ],
-   "score": 13
-  },
-  {
-   "id": "osm-be-w961585690",
-   "country": "BE",
-   "name": "Clinique CHC Hermalle",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 3,
-   "facilities": 12,
-   "waypoints": 15,
-   "trails": 2,
-   "pathM": 30,
-   "extentM": [
-    247,
-    178
-   ],
-   "score": 17
-  },
-  {
-   "id": "osm-be-w300835466",
-   "country": "BE",
-   "name": "Klinik St Josef",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 4,
-   "waypoints": 6,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    123,
-    254
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w785907726",
-   "country": "BE",
-   "name": "Sankt Nikolaus-Hospital",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 2,
-   "waypoints": 5,
-   "trails": 12,
-   "pathM": 344,
-   "extentM": [
-    281,
-    315
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-be-w294342529",
-   "country": "BE",
-   "name": "AZ West",
-   "buildings": 2,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 3,
-   "waypoints": 5,
-   "trails": 1,
-   "pathM": 102,
-   "extentM": [
-    414,
-    303
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-be-w815754487",
-   "country": "BE",
-   "name": "AZ Delta campus Rumbeke",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 9,
-   "facilities": 10,
-   "waypoints": 16,
-   "trails": 28,
-   "pathM": 1290,
-   "extentM": [
-    533,
-    430
-   ],
-   "score": 14
-  },
-  {
-   "id": "osm-be-w278115204",
-   "country": "BE",
-   "name": "Sint-Jozefskliniek Izegem",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 4,
-   "facilities": 6,
-   "waypoints": 10,
-   "trails": 3,
-   "pathM": 137,
-   "extentM": [
-    205,
-    367
-   ],
-   "score": 11
-  },
-  {
-   "id": "osm-be-w782660184",
-   "country": "BE",
-   "name": "AZ Groeninge - campus Kennedylaan",
-   "buildings": 8,
-   "named": 8,
-   "entrances": 17,
-   "facilities": 25,
-   "waypoints": 38,
-   "trails": 54,
-   "pathM": 3949,
-   "extentM": [
-    643,
-    526
-   ],
-   "score": 37
-  },
-  {
-   "id": "osm-be-w134200276",
-   "country": "BE",
-   "name": "Onze Lieve Vrouw van Lourdes",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 5,
-   "facilities": 10,
-   "waypoints": 15,
-   "trails": 9,
-   "pathM": 594,
-   "extentM": [
-    242,
-    369
-   ],
-   "score": 17
-  },
-  {
-   "id": "osm-be-w191757126",
-   "country": "BE",
-   "name": "AZ Oudenaarde",
-   "buildings": 8,
-   "named": 8,
-   "entrances": 1,
-   "facilities": 2,
-   "waypoints": 11,
-   "trails": 1,
-   "pathM": 30,
-   "extentM": [
-    177,
-    137
-   ],
-   "score": 19
-  },
-  {
-   "id": "osm-be-w125004971",
-   "country": "BE",
-   "name": "AZ Maria Middelares",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 3,
-   "facilities": 8,
-   "waypoints": 15,
-   "trails": 24,
-   "pathM": 1124,
-   "extentM": [
-    309,
-    620
-   ],
-   "score": 20
-  },
-  {
-   "id": "osm-be-w23379006",
-   "country": "BE",
-   "name": "Universitair Ziekenhuis Gent",
-   "buildings": 49,
-   "named": 49,
-   "entrances": 69,
-   "facilities": 55,
-   "waypoints": 167,
-   "trails": 143,
-   "pathM": 9145,
-   "extentM": [
-    864,
-    1112
-   ],
-   "score": 211
-  },
-  {
-   "id": "osm-be-w48612721",
-   "country": "BE",
-   "name": "AZ Jan Palfijn site Watersportbaan",
-   "buildings": 7,
-   "named": 7,
-   "entrances": 5,
-   "facilities": 16,
-   "waypoints": 26,
-   "trails": 23,
-   "pathM": 1711,
-   "extentM": [
-    451,
-    407
-   ],
-   "score": 23
-  },
-  {
-   "id": "osm-be-w48775180",
-   "country": "BE",
-   "name": "Psychiatrisch Centrum Dr. Guislain",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 1,
-   "facilities": 9,
-   "waypoints": 12,
-   "trails": 4,
-   "pathM": 236,
-   "extentM": [
-    481,
-    506
-   ],
-   "score": 13
-  },
-  {
-   "id": "osm-be-w48747081",
-   "country": "BE",
-   "name": "A.Z. Sint-Lucas campus Sint-Lucas",
-   "buildings": 14,
-   "named": 14,
-   "entrances": 5,
-   "facilities": 18,
-   "waypoints": 36,
-   "trails": 23,
-   "pathM": 629,
-   "extentM": [
-    392,
-    403
-   ],
-   "score": 47
-  },
-  {
-   "id": "osm-be-w172129840",
-   "country": "BE",
-   "name": "AZ Maria Middelares campus Sint-Jozef",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 1,
-   "facilities": 6,
-   "waypoints": 11,
-   "trails": 5,
-   "pathM": 149,
-   "extentM": [
-    266,
-    287
-   ],
-   "score": 10
-  },
-  {
-   "id": "osm-be-w260905076",
-   "country": "BE",
-   "name": "Psychiatrisch Centrum Gent-Sleidinge Campus Gent",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 0,
-   "facilities": 1,
-   "waypoints": 6,
-   "trails": 6,
-   "pathM": 387,
-   "extentM": [
-    226,
-    297
-   ],
-   "score": 11
-  },
-  {
-   "id": "osm-be-w87660373",
-   "country": "BE",
-   "name": "AZ Oostende - Campus Hendrik Serruys",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 1,
-   "facilities": 7,
-   "waypoints": 10,
-   "trails": 1,
-   "pathM": 82,
-   "extentM": [
-    267,
-    283
-   ],
-   "score": 12
-  },
-  {
-   "id": "osm-be-w116406882",
-   "country": "BE",
-   "name": "AZ Oostende - Damiaan",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 3,
-   "facilities": 12,
-   "waypoints": 16,
-   "trails": 12,
-   "pathM": 586,
-   "extentM": [
-    396,
-    284
-   ],
-   "score": 17
-  },
-  {
-   "id": "osm-be-w542296619",
-   "country": "BE",
-   "name": "Zeepreventorium",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 2,
-   "facilities": 1,
-   "waypoints": 7,
-   "trails": 2,
-   "pathM": 71,
-   "extentM": [
-    550,
-    614
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w437406240",
-   "country": "BE",
-   "name": "AZ Sint-Jan - Campus Sint-Jan",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 5,
-   "facilities": 11,
-   "waypoints": 19,
-   "trails": 18,
-   "pathM": 1146,
-   "extentM": [
-    688,
-    514
-   ],
-   "score": 18
-  },
-  {
-   "id": "osm-be-w235789154",
-   "country": "BE",
-   "name": "AZ Sint-Lucas",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 3,
-   "facilities": 9,
-   "waypoints": 13,
-   "trails": 7,
-   "pathM": 504,
-   "extentM": [
-    299,
-    347
-   ],
-   "score": 13
-  },
-  {
-   "id": "osm-be-w311884826",
-   "country": "BE",
-   "name": "Psychiatrisch Centrum Sint-Amandus",
-   "buildings": 31,
-   "named": 31,
-   "entrances": 0,
-   "facilities": 7,
-   "waypoints": 38,
-   "trails": 62,
-   "pathM": 3187,
-   "extentM": [
-    751,
-    1105
-   ],
-   "score": 67
-  },
-  {
-   "id": "osm-be-w346067711",
-   "country": "BE",
-   "name": "AZ Zeno campus Knokke-Heist",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 8,
-   "waypoints": 10,
-   "trails": 32,
-   "pathM": 2388,
-   "extentM": [
-    464,
-    635
-   ],
-   "score": 11
-  },
-  {
-   "id": "osm-be-w672970173",
-   "country": "BE",
-   "name": "Psychiatrisch Ziekenhuis Sint-Jan-Baptist",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 0,
-   "facilities": 4,
-   "waypoints": 5,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    509,
-    661
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-be-w189198584",
-   "country": "BE",
-   "name": "AZ Sint-Elisabeth Zottegem",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 4,
-   "waypoints": 6,
-   "trails": 5,
-   "pathM": 493,
-   "extentM": [
-    389,
-    396
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-be-w337851304",
-   "country": "BE",
-   "name": "Ziekenhuis Inkendaal",
-   "buildings": 7,
-   "named": 7,
-   "entrances": 5,
-   "facilities": 7,
-   "waypoints": 19,
-   "trails": 25,
-   "pathM": 1326,
-   "extentM": [
-    376,
-    408
-   ],
-   "score": 22
-  },
-  {
-   "id": "osm-be-w1160931471",
-   "country": "BE",
-   "name": "Hôpital Molière-Longchamp - Ziekenhuis Molière-Longchamp",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 3,
-   "facilities": 2,
-   "waypoints": 6,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    179,
-    290
-   ],
-   "score": 9
-  },
-  {
-   "id": "osm-be-r14479073",
-   "country": "BE",
-   "name": "CHU Saint-Pierre - UMC Sint-Pieter",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 2,
-   "facilities": 14,
-   "waypoints": 18,
-   "trails": 9,
-   "pathM": 155,
-   "extentM": [
-    288,
-    317
-   ],
-   "score": 20
-  },
-  {
-   "id": "osm-be-w31444460",
-   "country": "BE",
-   "name": "Centre hospitalier Etterbeek-Ixelles - Ziekenhuizencentrum Etterbeek-Elsene",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 6,
-   "facilities": 3,
-   "waypoints": 9,
-   "trails": 10,
-   "pathM": 236,
-   "extentM": [
-    237,
-    343
-   ],
-   "score": 8
-  },
-  {
-   "id": "osm-be-w1272097787",
-   "country": "BE",
-   "name": "Universitair Ziekenhuis Brussel",
-   "buildings": 6,
-   "named": 6,
-   "entrances": 7,
-   "facilities": 7,
-   "waypoints": 20,
-   "trails": 15,
-   "pathM": 516,
-   "extentM": [
-    249,
-    474
-   ],
-   "score": 21
-  },
-  {
-   "id": "osm-be-w24924235",
-   "country": "BE",
-   "name": "CHU Brugmann - UVC Brugmann",
-   "buildings": 33,
-   "named": 33,
-   "entrances": 7,
-   "facilities": 20,
-   "waypoints": 57,
-   "trails": 36,
-   "pathM": 1226,
-   "extentM": [
-    611,
-    592
-   ],
-   "score": 88
-  },
-  {
-   "id": "osm-be-w327800428",
-   "country": "BE",
-   "name": "Psychiatrisch Centrum Ariadne",
-   "buildings": 7,
-   "named": 7,
-   "entrances": 0,
-   "facilities": 12,
-   "waypoints": 19,
-   "trails": 51,
-   "pathM": 2155,
-   "extentM": [
-    452,
-    664
-   ],
-   "score": 26
-  },
-  {
-   "id": "osm-be-w104311835",
-   "country": "BE",
-   "name": "AZORG Campus Aalst - Merestraat",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 8,
-   "waypoints": 11,
-   "trails": 13,
-   "pathM": 544,
-   "extentM": [
-    356,
-    326
-   ],
-   "score": 12
-  },
-  {
-   "id": "osm-be-w104410687",
-   "country": "BE",
-   "name": "AZORG Campus Aalst Moorselbaan",
-   "buildings": 13,
-   "named": 13,
-   "entrances": 3,
-   "facilities": 4,
-   "waypoints": 19,
-   "trails": 2,
-   "pathM": 58,
-   "extentM": [
-    365,
-    255
-   ],
-   "score": 32
-  },
-  {
-   "id": "osm-be-w1128028235",
-   "country": "BE",
-   "name": "Algemeen Ziekenhuis Sint-Blasius",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 10,
-   "waypoints": 12,
-   "trails": 11,
-   "pathM": 450,
-   "extentM": [
-    427,
-    424
-   ],
-   "score": 13
-  },
-  {
-   "id": "osm-be-w40619794",
-   "country": "BE",
-   "name": "Psychiatrisch Ziekenhuis Sint-Alexius",
-   "buildings": 13,
-   "named": 13,
-   "entrances": 2,
-   "facilities": 25,
-   "waypoints": 39,
-   "trails": 17,
-   "pathM": 351,
-   "extentM": [
-    488,
-    421
-   ],
-   "score": 53
-  },
-  {
-   "id": "osm-be-r5653300",
-   "country": "BE",
-   "name": "Cliniques universitaires Saint-Luc",
+   "id": "osm-ch-w49711247",
+   "country": "CH",
+   "name": "Hôpitaux universitaires de Genève",
    "buildings": 20,
    "named": 20,
-   "entrances": 71,
-   "facilities": 45,
-   "waypoints": 100,
-   "trails": 173,
-   "pathM": 5335,
+   "entrances": 21,
+   "facilities": 25,
+   "waypoints": 63,
+   "trails": 32,
+   "pathM": 1338,
    "extentM": [
-    822,
-    336
+    400,
+    598
    ],
-   "score": 98
+   "score": 70
   },
   {
-   "id": "osm-be-w222193048",
-   "country": "BE",
-   "name": "AZ Sint-Maarten",
+   "id": "osm-ch-w254602359",
+   "country": "CH",
+   "name": "Clinique de Belle-Idée",
    "buildings": 2,
    "named": 2,
-   "entrances": 3,
-   "facilities": 12,
-   "waypoints": 17,
-   "trails": 16,
-   "pathM": 1503,
+   "entrances": 0,
+   "facilities": 17,
+   "waypoints": 19,
+   "trails": 40,
+   "pathM": 3363,
    "extentM": [
-    478,
-    443
+    876,
+    739
    ],
-   "score": 18
+   "score": 21
   },
   {
-   "id": "osm-be-w78610843",
-   "country": "BE",
-   "name": "Regionaal ziekenhuis Heilig Hart Leuven",
-   "buildings": 9,
-   "named": 9,
-   "entrances": 14,
-   "facilities": 11,
-   "waypoints": 31,
-   "trails": 12,
-   "pathM": 350,
+   "id": "osm-ch-w211971876",
+   "country": "CH",
+   "name": "EMS Maison de Vessy",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 8,
+   "trails": 4,
+   "pathM": 63,
    "extentM": [
-    202,
-    187
+    298,
+    248
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ch-w335490255",
+   "country": "CH",
+   "name": "Hôpital de Sion",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 3,
+   "facilities": 17,
+   "waypoints": 25,
+   "trails": 39,
+   "pathM": 1811,
+   "extentM": [
+    496,
+    544
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-ch-w200580581",
+   "country": "CH",
+   "name": "HRC Hôpital Riviera-Chablais",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 10,
+   "waypoints": 11,
+   "trails": 11,
+   "pathM": 1149,
+   "extentM": [
+    299,
+    526
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-ch-w28384336",
+   "country": "CH",
+   "name": "Ospedale Regionale di Lugano",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 4,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    171,
+    182
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-ch-w33621431",
+   "country": "CH",
+   "name": "Ospedale Civico",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 3,
+   "pathM": 180,
+   "extentM": [
+    292,
+    349
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-ch-w37370898",
+   "country": "CH",
+   "name": "Institution de Lavigny",
+   "buildings": 18,
+   "named": 18,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 27,
+   "trails": 24,
+   "pathM": 920,
+   "extentM": [
+    702,
+    392
+   ],
+   "score": 45
+  },
+  {
+   "id": "osm-ch-w675170961",
+   "country": "CH",
+   "name": "Fondation Asile des aveugles",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 1,
+   "facilities": 0,
+   "waypoints": 9,
+   "trails": 8,
+   "pathM": 168,
+   "extentM": [
+    182,
+    147
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-ch-w131226507",
+   "country": "CH",
+   "name": "Hôpital de Cery",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 21,
+   "trails": 23,
+   "pathM": 794,
+   "extentM": [
+    426,
+    616
    ],
    "score": 34
   },
   {
-   "id": "osm-be-w182543308",
-   "country": "BE",
-   "name": "UPC Sint-Kamillus",
-   "buildings": 27,
-   "named": 27,
+   "id": "osm-ch-r9458117",
+   "country": "CH",
+   "name": "Centre hospitalier universitaire vaudois",
+   "buildings": 39,
+   "named": 39,
+   "entrances": 16,
+   "facilities": 65,
+   "waypoints": 103,
+   "trails": 123,
+   "pathM": 5878,
+   "extentM": [
+    747,
+    722
+   ],
+   "score": 140
+  },
+  {
+   "id": "osm-ch-r18585173",
+   "country": "CH",
+   "name": "Hôpital de Saint-Loup",
+   "buildings": 10,
+   "named": 10,
    "entrances": 0,
-   "facilities": 4,
-   "waypoints": 31,
-   "trails": 21,
-   "pathM": 842,
-   "extentM": [
-    771,
-    679
-   ],
-   "score": 56
-  },
-  {
-   "id": "osm-be-w1046258089",
-   "country": "BE",
-   "name": "UZ Pellenberg",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 7,
-   "waypoints": 9,
-   "trails": 16,
-   "pathM": 1237,
-   "extentM": [
-    314,
-    369
-   ],
-   "score": 9
-  },
-  {
-   "id": "osm-be-w1218298644",
-   "country": "BE",
-   "name": "UZ Leuven campus Gasthuisberg",
-   "buildings": 43,
-   "named": 43,
-   "entrances": 13,
-   "facilities": 50,
-   "waypoints": 94,
-   "trails": 244,
-   "pathM": 10222,
-   "extentM": [
-    834,
-    997
-   ],
-   "score": 141
-  },
-  {
-   "id": "osm-be-w949102078",
-   "country": "BE",
-   "name": "Vitaz Campus Lokeren",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 0,
-   "facilities": 4,
-   "waypoints": 7,
-   "trails": 4,
-   "pathM": 211,
-   "extentM": [
-    255,
-    253
-   ],
-   "score": 8
-  },
-  {
-   "id": "osm-be-w80651478",
-   "country": "BE",
-   "name": "Algemeen Psychiatrisch Ziekenhuis Sint-Lucia",
-   "buildings": 14,
-   "named": 14,
-   "entrances": 13,
-   "facilities": 19,
-   "waypoints": 45,
-   "trails": 48,
-   "pathM": 1905,
-   "extentM": [
-    437,
-    311
-   ],
-   "score": 41
-  },
-  {
-   "id": "osm-be-w277556799",
-   "country": "BE",
-   "name": "Vitaz Campus Hospitaalstraat",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 3,
-   "facilities": 7,
-   "waypoints": 13,
-   "trails": 9,
-   "pathM": 339,
-   "extentM": [
-    319,
-    265
-   ],
-   "score": 16
-  },
-  {
-   "id": "osm-be-w132924615",
-   "country": "BE",
-   "name": "Vitaz Campus Moerlandstraat",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 1,
-   "facilities": 11,
+   "facilities": 5,
    "waypoints": 14,
-   "trails": 7,
-   "pathM": 351,
+   "trails": 26,
+   "pathM": 1244,
    "extentM": [
-    268,
-    255
+    424,
+    407
    ],
-   "score": 16
+   "score": 25
   },
   {
-   "id": "osm-be-w1335921409",
-   "country": "BE",
-   "name": "Universitair Ziekenhuis Antwerpen",
+   "id": "osm-ch-w80334113",
+   "country": "CH",
+   "name": "Hôpital d'Yverdon-les-Bains",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 12,
+   "trails": 11,
+   "pathM": 683,
+   "extentM": [
+    277,
+    328
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-ch-w1103638706",
+   "country": "CH",
+   "name": "Hôpital intercantonal de la Broye",
    "buildings": 3,
    "named": 3,
-   "entrances": 2,
-   "facilities": 16,
-   "waypoints": 18,
+   "entrances": 5,
+   "facilities": 9,
+   "waypoints": 15,
    "trails": 20,
-   "pathM": 1584,
+   "pathM": 806,
    "extentM": [
-    587,
-    690
-   ],
-   "score": 22
-  },
-  {
-   "id": "osm-be-w4382283",
-   "country": "BE",
-   "name": "ZAS Middelheim",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 3,
-   "facilities": 10,
-   "waypoints": 14,
-   "trails": 4,
-   "pathM": 650,
-   "extentM": [
-    372,
-    648
+    332,
+    278
    ],
    "score": 15
   },
   {
-   "id": "osm-be-w973139928",
-   "country": "BE",
-   "name": "Heilig Hart Ziekenhuis",
+   "id": "osm-ch-w675490658",
+   "country": "CH",
+   "name": "HFR Fribourg – Hôpital cantonal",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 12,
+   "waypoints": 17,
+   "trails": 33,
+   "pathM": 1302,
+   "extentM": [
+    328,
+    408
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-ch-w317800156",
+   "country": "CH",
+   "name": "Inselspital",
+   "buildings": 37,
+   "named": 37,
+   "entrances": 76,
+   "facilities": 50,
+   "waypoints": 142,
+   "trails": 191,
+   "pathM": 7862,
+   "extentM": [
+    746,
+    646
+   ],
+   "score": 136
+  },
+  {
+   "id": "osm-ch-w91109658",
+   "country": "CH",
+   "name": "Lindenhofspital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 7,
+   "facilities": 11,
+   "waypoints": 19,
+   "trails": 15,
+   "pathM": 703,
+   "extentM": [
+    293,
+    281
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-ch-w75656891",
+   "country": "CH",
+   "name": "Engeriedspital",
    "buildings": 2,
    "named": 2,
    "entrances": 2,
-   "facilities": 5,
-   "waypoints": 9,
-   "trails": 5,
-   "pathM": 315,
+   "facilities": 1,
+   "waypoints": 5,
+   "trails": 2,
+   "pathM": 40,
    "extentM": [
-    276,
-    348
-   ],
-   "score": 11
-  },
-  {
-   "id": "osm-be-w783100218",
-   "country": "BE",
-   "name": "ZNA Sint-Elisabeth",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 4,
-   "facilities": 4,
-   "waypoints": 9,
-   "trails": 6,
-   "pathM": 360,
-   "extentM": [
-    169,
-    157
+    187,
+    120
    ],
    "score": 7
   },
   {
-   "id": "osm-be-w45497265",
-   "country": "BE",
-   "name": "AZ Monica",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 4,
+   "id": "osm-ch-w675442483",
+   "country": "CH",
+   "name": "Spital und Altersheim Belp",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
    "facilities": 3,
-   "waypoints": 7,
-   "trails": 7,
-   "pathM": 279,
+   "waypoints": 5,
+   "trails": 5,
+   "pathM": 554,
    "extentM": [
-    195,
-    198
+    177,
+    178
    ],
    "score": 7
   },
   {
-   "id": "osm-be-w1236559765",
-   "country": "BE",
-   "name": "UPC Duffel geestelijke gezondheidszorg emmaüs",
-   "buildings": 12,
-   "named": 12,
+   "id": "osm-ch-w681554155",
+   "country": "CH",
+   "name": "Universitäre Psychiatrische Dienste Bern",
+   "buildings": 17,
+   "named": 17,
+   "entrances": 17,
+   "facilities": 10,
+   "waypoints": 44,
+   "trails": 76,
+   "pathM": 4122,
+   "extentM": [
+    782,
+    708
+   ],
+   "score": 47
+  },
+  {
+   "id": "osm-ch-w677066040",
+   "country": "CH",
+   "name": "Hôpital neuchâtelois Val-de-Ruz",
+   "buildings": 2,
+   "named": 2,
    "entrances": 0,
    "facilities": 2,
-   "waypoints": 14,
-   "trails": 16,
-   "pathM": 1043,
+   "waypoints": 4,
+   "trails": 1,
+   "pathM": 9,
    "extentM": [
-    418,
-    571
+    263,
+    237
    ],
-   "score": 26
+   "score": 6
   },
   {
-   "id": "osm-be-w10660224",
-   "country": "BE",
-   "name": "voormalig ZNA Sint-Erasmus",
+   "id": "osm-ch-w1301544953",
+   "country": "CH",
+   "name": "Centre Neuchâtelois de Psychiatrie Préfargier",
+   "buildings": 8,
+   "named": 7,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 9,
+   "trails": 22,
+   "pathM": 2566,
+   "extentM": [
+    498,
+    510
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-ch-w131205128",
+   "country": "CH",
+   "name": "Hôpital de Marsens",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 25,
+   "pathM": 1164,
+   "extentM": [
+    420,
+    457
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ch-w450574960",
+   "country": "CH",
+   "name": "Hôpital Intercantonal de la Broye",
    "buildings": 1,
    "named": 1,
    "entrances": 0,
-   "facilities": 5,
-   "waypoints": 6,
-   "trails": 7,
-   "pathM": 411,
+   "facilities": 7,
+   "waypoints": 8,
+   "trails": 11,
+   "pathM": 602,
    "extentM": [
-    204,
-    260
+    272,
+    296
    ],
-   "score": 7
+   "score": 9
   },
   {
-   "id": "osm-be-w1224726949",
-   "country": "BE",
-   "name": "AZ Herentals",
+   "id": "osm-ch-w198147385",
+   "country": "CH",
+   "name": "Siloah",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 18,
+   "waypoints": 25,
+   "trails": 25,
+   "pathM": 1315,
+   "extentM": [
+    304,
+    254
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-ch-r9638646",
+   "country": "CH",
+   "name": "Regionalspital Interlaken",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 9,
+   "trails": 21,
+   "pathM": 1250,
+   "extentM": [
+    345,
+    393
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-ch-w454675974",
+   "country": "CH",
+   "name": "Psychiatriezentrum Münsingen",
+   "buildings": 28,
+   "named": 28,
+   "entrances": 0,
+   "facilities": 11,
+   "waypoints": 38,
+   "trails": 19,
+   "pathM": 1527,
+   "extentM": [
+    513,
+    517
+   ],
+   "score": 67
+  },
+  {
+   "id": "osm-ch-w34325778",
+   "country": "CH",
+   "name": "Spital Burgdorf",
    "buildings": 1,
    "named": 1,
    "entrances": 3,
-   "facilities": 3,
-   "waypoints": 7,
-   "trails": 3,
-   "pathM": 90,
+   "facilities": 4,
+   "waypoints": 8,
+   "trails": 12,
+   "pathM": 494,
    "extentM": [
-    227,
-    255
+    249,
+    232
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-ch-w39193494",
+   "country": "CH",
+   "name": "Luzerner Kantonsspital",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 21,
+   "facilities": 24,
+   "waypoints": 61,
+   "trails": 40,
+   "pathM": 1674,
+   "extentM": [
+    616,
+    449
+   ],
+   "score": 73
+  },
+  {
+   "id": "osm-ch-w1376669608",
+   "country": "CH",
+   "name": "Luzerner Psychiatrie",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 5,
+   "facilities": 9,
+   "waypoints": 18,
+   "trails": 6,
+   "pathM": 293,
+   "extentM": [
+    212,
+    155
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-ch-r14884948",
+   "country": "CH",
+   "name": "Klinik St. Anna",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 9,
+   "pathM": 489,
+   "extentM": [
+    400,
+    198
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ch-w676983574",
+   "country": "CH",
+   "name": "Kantonsspital Uri",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 14,
+   "trails": 23,
+   "pathM": 1348,
+   "extentM": [
+    259,
+    257
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-ch-w677013731",
+   "country": "CH",
+   "name": "Spital Thusis",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 7,
+   "trails": 2,
+   "pathM": 76,
+   "extentM": [
+    134,
+    134
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-ch-w651753855",
+   "country": "CH",
+   "name": "Kreuzspital Chur",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 7,
+   "trails": 12,
+   "pathM": 388,
+   "extentM": [
+    218,
+    152
    ],
    "score": 7
   },
   {
-   "id": "osm-be-w300709408",
-   "country": "BE",
-   "name": "OPZ Geel",
+   "id": "osm-ch-w651229753",
+   "country": "CH",
+   "name": "Kantonsspital Graubünden",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 23,
+   "pathM": 756,
+   "extentM": [
+    256,
+    380
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-ch-w37277021",
+   "country": "CH",
+   "name": "Psychiatrische Klinik Waldhaus",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 9,
+   "facilities": 5,
+   "waypoints": 21,
+   "trails": 21,
+   "pathM": 1168,
+   "extentM": [
+    262,
+    495
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-ch-w1273634561",
+   "country": "CH",
+   "name": "Klinik St.Pirminsberg",
    "buildings": 2,
    "named": 2,
    "entrances": 1,
-   "facilities": 17,
-   "waypoints": 19,
+   "facilities": 12,
+   "waypoints": 15,
    "trails": 40,
-   "pathM": 2254,
+   "pathM": 2019,
    "extentM": [
-    553,
-    711
+    336,
+    351
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-ch-r15578536",
+   "country": "CH",
+   "name": "Centre hospitalier Bienne / Spitalzentrum Biel",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 21,
+   "trails": 6,
+   "pathM": 164,
+   "extentM": [
+    262,
+    421
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-ch-w680280598",
+   "country": "CH",
+   "name": "Hirslanden - Privatklinik Linde - Clinique des Tilleuls",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 8,
+   "waypoints": 12,
+   "trails": 18,
+   "pathM": 465,
+   "extentM": [
+    201,
+    149
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-ch-w681557491",
+   "country": "CH",
+   "name": "Bürgerspital Solothurn",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 14,
+   "facilities": 12,
+   "waypoints": 27,
+   "trails": 23,
+   "pathM": 1398,
+   "extentM": [
+    524,
+    462
    ],
    "score": 21
   },
   {
-   "id": "osm-be-w909952413",
-   "country": "BE",
-   "name": "AZ Klina",
+   "id": "osm-ch-w22918627",
+   "country": "CH",
+   "name": "SRO Spital Oberaargau Langenthal",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 9,
+   "facilities": 8,
+   "waypoints": 25,
+   "trails": 15,
+   "pathM": 805,
+   "extentM": [
+    253,
+    261
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-ch-w255679568",
+   "country": "CH",
+   "name": "Spital Zofingen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 10,
+   "pathM": 704,
+   "extentM": [
+    267,
+    284
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-ch-r18380217",
+   "country": "CH",
+   "name": "Kantonsspital Olten",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 16,
+   "facilities": 13,
+   "waypoints": 25,
+   "trails": 60,
+   "pathM": 2109,
+   "extentM": [
+    413,
+    355
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-ch-w48459417",
+   "country": "CH",
+   "name": "Kantonsspital Aarau",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 23,
+   "facilities": 34,
+   "waypoints": 60,
+   "trails": 89,
+   "pathM": 4931,
+   "extentM": [
+    720,
+    572
+   ],
+   "score": 52
+  },
+  {
+   "id": "osm-ch-w254959544",
+   "country": "CH",
+   "name": "Kantonsspital Liestal",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 14,
+   "trails": 18,
+   "pathM": 768,
+   "extentM": [
+    318,
+    423
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-ch-w675421946",
+   "country": "CH",
+   "name": "Universitätsspital Basel",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 16,
+   "facilities": 12,
+   "waypoints": 26,
+   "trails": 32,
+   "pathM": 1353,
+   "extentM": [
+    371,
+    400
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-ch-w675446039",
+   "country": "CH",
+   "name": "Bethesda Spital",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 15,
+   "facilities": 16,
+   "waypoints": 44,
+   "trails": 19,
+   "pathM": 1395,
+   "extentM": [
+    262,
+    389
+   ],
+   "score": 47
+  },
+  {
+   "id": "osm-ch-w675950977",
+   "country": "CH",
+   "name": "St. Clara-Spital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 13,
+   "facilities": 10,
+   "waypoints": 22,
+   "trails": 19,
+   "pathM": 982,
+   "extentM": [
+    276,
+    279
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-ch-w675594360",
+   "country": "CH",
+   "name": "Reha Rheinfelden",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 14,
+   "pathM": 1387,
+   "extentM": [
+    333,
+    307
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ch-w672945363",
+   "country": "CH",
+   "name": "Kantonsspital Baden",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 16,
+   "facilities": 15,
+   "waypoints": 39,
+   "trails": 72,
+   "pathM": 3567,
+   "extentM": [
+    518,
+    556
+   ],
+   "score": 40
+  },
+  {
+   "id": "osm-ch-w676507604",
+   "country": "CH",
+   "name": "Psychiatrische Dienste Aargau",
+   "buildings": 25,
+   "named": 25,
+   "entrances": 0,
+   "facilities": 15,
+   "waypoints": 39,
+   "trails": 68,
+   "pathM": 4152,
+   "extentM": [
+    724,
+    467
+   ],
+   "score": 65
+  },
+  {
+   "id": "osm-ch-w677036535",
+   "country": "CH",
+   "name": "ZURZACH Care",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 2,
+   "waypoints": 6,
+   "trails": 3,
+   "pathM": 167,
+   "extentM": [
+    218,
+    226
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ch-w1365019621",
+   "country": "CH",
+   "name": "Zuger Kantonsspital",
    "buildings": 1,
    "named": 1,
    "entrances": 4,
    "facilities": 9,
    "waypoints": 13,
-   "trails": 16,
-   "pathM": 500,
+   "trails": 7,
+   "pathM": 880,
    "extentM": [
-    414,
-    419
+    220,
+    220
    ],
    "score": 13
   },
   {
-   "id": "osm-be-w666232443",
-   "country": "BE",
-   "name": "Psychiatrisch Ziekenhuis Bethaniënhuis",
+   "id": "osm-ch-w612170472",
+   "country": "CH",
+   "name": "Spital und Gesundheitszentrum Einsiedeln",
    "buildings": 4,
    "named": 4,
-   "entrances": 0,
-   "facilities": 7,
-   "waypoints": 11,
-   "trails": 37,
-   "pathM": 2374,
+   "entrances": 5,
+   "facilities": 18,
+   "waypoints": 27,
+   "trails": 6,
+   "pathM": 166,
    "extentM": [
-    685,
-    1272
+    244,
+    269
    ],
-   "score": 15
+   "score": 30
   },
   {
-   "id": "osm-be-w272897102",
-   "country": "BE",
-   "name": "AZ Voorkempen",
-   "buildings": 9,
-   "named": 9,
+   "id": "osm-ch-r9065183",
+   "country": "CH",
+   "name": "Spital Affoltern am Albis",
+   "buildings": 11,
+   "named": 11,
    "entrances": 1,
    "facilities": 7,
-   "waypoints": 17,
-   "trails": 6,
-   "pathM": 654,
+   "waypoints": 19,
+   "trails": 14,
+   "pathM": 1070,
    "extentM": [
-    313,
-    466
+    248,
+    382
    ],
-   "score": 26
+   "score": 30
   },
   {
-   "id": "osm-be-w119777428",
-   "country": "BE",
-   "name": "AZ Turnhout Campus Sint Jozef",
+   "id": "osm-ch-w317763534",
+   "country": "CH",
+   "name": "See-Spital Horgen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 15,
+   "waypoints": 19,
+   "trails": 17,
+   "pathM": 531,
+   "extentM": [
+    288,
+    247
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-ch-w672118527",
+   "country": "CH",
+   "name": "Spital Limmattal",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 13,
+   "waypoints": 18,
+   "trails": 41,
+   "pathM": 2408,
+   "extentM": [
+    368,
+    249
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-ch-r18241258",
+   "country": "CH",
+   "name": "Universitäts-Kinderspital Zürich",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 17,
+   "pathM": 1444,
+   "extentM": [
+    339,
+    393
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-ch-w675191947",
+   "country": "CH",
+   "name": "Spital Zollikerberg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 6,
+   "facilities": 9,
+   "waypoints": 16,
+   "trails": 30,
+   "pathM": 1810,
+   "extentM": [
+    405,
+    311
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-ch-w555945140",
+   "country": "CH",
+   "name": "Stadtspital Triemli",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 11,
+   "facilities": 41,
+   "waypoints": 60,
+   "trails": 65,
+   "pathM": 3366,
+   "extentM": [
+    528,
+    357
+   ],
+   "score": 64
+  },
+  {
+   "id": "osm-ch-w612288154",
+   "country": "CH",
+   "name": "Universitätsspital Zürich",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 16,
+   "facilities": 25,
+   "waypoints": 43,
+   "trails": 84,
+   "pathM": 2742,
+   "extentM": [
+    413,
+    732
+   ],
+   "score": 43
+  },
+  {
+   "id": "osm-ch-w236595729",
+   "country": "CH",
+   "name": "Spital Männedorf",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 2,
+   "facilities": 9,
+   "waypoints": 19,
+   "trails": 12,
+   "pathM": 1104,
+   "extentM": [
+    405,
+    285
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-ch-w235292955",
+   "country": "CH",
+   "name": "Privatklinik Hohenegg",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 15,
+   "trails": 33,
+   "pathM": 1116,
+   "extentM": [
+    238,
+    268
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-ch-r17941802",
+   "country": "CH",
+   "name": "Clienia Schlössli",
+   "buildings": 15,
+   "named": 15,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 21,
+   "trails": 13,
+   "pathM": 769,
+   "extentM": [
+    351,
+    430
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-ch-w527550642",
+   "country": "CH",
+   "name": "Spital Uster",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 8,
+   "trails": 12,
+   "pathM": 807,
+   "extentM": [
+    217,
+    272
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ch-w28530564",
+   "country": "CH",
+   "name": "GZO Spital Wetzikon",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 3,
+   "facilities": 7,
+   "waypoints": 16,
+   "trails": 16,
+   "pathM": 634,
+   "extentM": [
+    342,
+    254
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-ch-w370366918",
+   "country": "CH",
+   "name": "Spital Lachen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 8,
+   "waypoints": 12,
+   "trails": 8,
+   "pathM": 344,
+   "extentM": [
+    226,
+    237
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-ch-w673816076",
+   "country": "CH",
+   "name": "Spital Linth",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 6,
+   "waypoints": 11,
+   "trails": 15,
+   "pathM": 930,
+   "extentM": [
+    272,
+    225
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-ch-w673609234",
+   "country": "CH",
+   "name": "Gesundheitszentrum Dielsdorf",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 12,
+   "waypoints": 19,
+   "trails": 16,
+   "pathM": 698,
+   "extentM": [
+    213,
+    259
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-ch-r9503571",
+   "country": "CH",
+   "name": "Spital Bülach",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 10,
+   "waypoints": 14,
+   "trails": 24,
+   "pathM": 836,
+   "extentM": [
+    277,
+    204
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-ch-w248637584",
+   "country": "CH",
+   "name": "Integrierte Psychiatrie Winterthur, Klinik Schlosstal",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 20,
+   "pathM": 1089,
+   "extentM": [
+    245,
+    385
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-ch-w165785776",
+   "country": "CH",
+   "name": "Kantonsspital Winterthur",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 5,
+   "facilities": 17,
+   "waypoints": 25,
+   "trails": 28,
+   "pathM": 1237,
+   "extentM": [
+    363,
+    317
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-ch-r13506524",
+   "country": "CH",
+   "name": "Kantonsspital Schaffhausen",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 3,
+   "facilities": 13,
+   "waypoints": 26,
+   "trails": 25,
+   "pathM": 1096,
+   "extentM": [
+    330,
+    280
+   ],
+   "score": 38
+  },
+  {
+   "id": "osm-ch-w672944584",
+   "country": "CH",
+   "name": "Kantonsspital Frauenfeld",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 10,
+   "facilities": 14,
+   "waypoints": 30,
+   "trails": 47,
+   "pathM": 2066,
+   "extentM": [
+    326,
+    384
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-ch-w651557526",
+   "country": "CH",
+   "name": "Luzerner Psychiatrie St. Urban",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 12,
+   "trails": 22,
+   "pathM": 1842,
+   "extentM": [
+    516,
+    337
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-ch-w287446153",
+   "country": "CH",
+   "name": "Zentrum für Stationäre Forensische Therapie und Zentrum für Integrative Psychiatrie",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 15,
+   "waypoints": 20,
+   "trails": 12,
+   "pathM": 948,
+   "extentM": [
+    794,
+    484
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-ch-w165321481",
+   "country": "CH",
+   "name": "Ambi Wattwil Berit Klinik",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 12,
+   "waypoints": 17,
+   "trails": 16,
+   "pathM": 667,
+   "extentM": [
+    137,
+    180
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-ch-r14615719",
+   "country": "CH",
+   "name": "Spital Herisau",
    "buildings": 1,
    "named": 1,
    "entrances": 2,
    "facilities": 3,
    "waypoints": 6,
-   "trails": 7,
-   "pathM": 180,
+   "trails": 8,
+   "pathM": 439,
    "extentM": [
-    397,
-    302
+    279,
+    228
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-ch-w125232364",
+   "country": "CH",
+   "name": "Kantonsspital St. Gallen",
+   "buildings": 30,
+   "named": 30,
+   "entrances": 16,
+   "facilities": 56,
+   "waypoints": 98,
+   "trails": 97,
+   "pathM": 3082,
+   "extentM": [
+    543,
+    446
+   ],
+   "score": 115
+  },
+  {
+   "id": "osm-ch-w680288445",
+   "country": "CH",
+   "name": "Spital Altstätten",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 4,
+   "pathM": 104,
+   "extentM": [
+    207,
+    210
    ],
    "score": 6
   },
   {
-   "id": "osm-be-w129440776",
-   "country": "BE",
-   "name": "AZ Turnhout Campus Sint-Elizabeth",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 2,
-   "facilities": 5,
-   "waypoints": 10,
-   "trails": 12,
-   "pathM": 896,
-   "extentM": [
-    316,
-    341
-   ],
-   "score": 13
-  },
-  {
-   "id": "osm-be-w217844890",
-   "country": "BE",
-   "name": "Regionaal Ziekenhuis Sint-Trudo",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 5,
-   "waypoints": 8,
-   "trails": 11,
-   "pathM": 515,
-   "extentM": [
-    309,
-    329
-   ],
-   "score": 9
-  },
-  {
-   "id": "osm-be-w336001617",
-   "country": "BE",
-   "name": "Myna Psychiatrisch Ziekenhuis Campus Melveren",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 1,
-   "facilities": 4,
-   "waypoints": 10,
-   "trails": 2,
-   "pathM": 152,
-   "extentM": [
-    699,
-    645
-   ],
-   "score": 15
-  },
-  {
-   "id": "osm-be-w230106127",
-   "country": "BE",
-   "name": "Jessa Ziekenhuis, campus Salvator",
+   "id": "osm-ch-w681055950",
+   "country": "CH",
+   "name": "Clienia Littenheid",
    "buildings": 3,
    "named": 3,
    "entrances": 0,
-   "facilities": 5,
-   "waypoints": 8,
-   "trails": 8,
-   "pathM": 439,
-   "extentM": [
-    352,
-    580
-   ],
-   "score": 9
-  },
-  {
-   "id": "osm-be-r19398353",
-   "country": "BE",
-   "name": "AZ Diest",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 3,
-   "facilities": 1,
-   "waypoints": 7,
-   "trails": 4,
-   "pathM": 252,
-   "extentM": [
-    184,
-    301
-   ],
-   "score": 9
-  },
-  {
-   "id": "osm-be-r17604993",
-   "country": "BE",
-   "name": "Myna Psychiatrisch Ziekenhuis Campus Munsterbilzen",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 1,
-   "facilities": 2,
-   "waypoints": 7,
-   "trails": 13,
-   "pathM": 466,
-   "extentM": [
-    331,
-    442
-   ],
-   "score": 10
-  },
-  {
-   "id": "osm-be-r7442080",
-   "country": "BE",
-   "name": "ZOL Ziekenhuis Oost-Limburg Campus Sint-Jan",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 4,
-   "waypoints": 7,
-   "trails": 4,
-   "pathM": 52,
-   "extentM": [
-    273,
-    420
-   ],
-   "score": 8
-  },
-  {
-   "id": "osm-be-w217737517",
-   "country": "BE",
-   "name": "Myna Psychiatrisch ziekenhuis Campus Stad",
-   "buildings": 9,
-   "named": 9,
-   "entrances": 0,
-   "facilities": 5,
-   "waypoints": 14,
-   "trails": 17,
-   "pathM": 697,
-   "extentM": [
-    500,
-    713
-   ],
-   "score": 23
-  },
-  {
-   "id": "osm-be-r19920904",
-   "country": "BE",
-   "name": "Openbaar Psychiatrisch Zorgcentrum Rekem",
-   "buildings": 6,
-   "named": 5,
-   "entrances": 0,
-   "facilities": 8,
-   "waypoints": 13,
-   "trails": 26,
-   "pathM": 1239,
-   "extentM": [
-    891,
-    1064
-   ],
-   "score": 16
-  },
-  {
-   "id": "osm-be-w201177070",
-   "country": "BE",
-   "name": "Ziekenhuis Geel",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 15,
-   "waypoints": 16,
-   "trails": 26,
-   "pathM": 1512,
-   "extentM": [
-    470,
-    462
-   ],
-   "score": 19
-  },
-  {
-   "id": "osm-be-w236059845",
-   "country": "BE",
-   "name": "Heilig Hart Ziekenhuis Mol",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 2,
    "facilities": 6,
-   "waypoints": 10,
-   "trails": 0,
-   "pathM": 0,
+   "waypoints": 9,
+   "trails": 5,
+   "pathM": 179,
    "extentM": [
-    252,
-    226
+    444,
+    423
    ],
-   "score": 10
+   "score": 12
   },
   {
-   "id": "osm-be-w1457004914",
-   "country": "BE",
-   "name": "Ziekenhuis Maas en Kempen",
-   "buildings": 4,
-   "named": 3,
-   "entrances": 3,
-   "facilities": 8,
-   "waypoints": 14,
-   "trails": 27,
-   "pathM": 1357,
+   "id": "osm-ch-w200746959",
+   "country": "CH",
+   "name": "Psychiatrie St.Gallen",
+   "buildings": 28,
+   "named": 28,
+   "entrances": 2,
+   "facilities": 21,
+   "waypoints": 51,
+   "trails": 53,
+   "pathM": 2534,
    "extentM": [
-    403,
-    477
+    741,
+    658
    ],
-   "score": 17
+   "score": 78
+  },
+  {
+   "id": "osm-ch-w181977663",
+   "country": "CH",
+   "name": "Psychiatrische Klinik Münsterlingen",
+   "buildings": 17,
+   "named": 17,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 23,
+   "trails": 37,
+   "pathM": 2329,
+   "extentM": [
+    608,
+    398
+   ],
+   "score": 40
+  },
+  {
+   "id": "osm-ch-w673833090",
+   "country": "CH",
+   "name": "Kantonsspital Münsterlingen",
+   "buildings": 10,
+   "named": 9,
+   "entrances": 5,
+   "facilities": 18,
+   "waypoints": 32,
+   "trails": 49,
+   "pathM": 1858,
+   "extentM": [
+    579,
+    422
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-ch-w1031658733",
+   "country": "CH",
+   "name": "Herz-Neuro-Zentrum Bodensee",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 10,
+   "pathM": 338,
+   "extentM": [
+    174,
+    153
+   ],
+   "score": 7
   },
   {
    "id": "osm-de-w40153717",
@@ -9029,361 +8774,208 @@
    "score": 11
   },
   {
-   "id": "osm-eg-w1525678372",
-   "country": "EG",
-   "name": "مستشفى العلمين النموذجي",
+   "id": "osm-de-w745416991",
+   "country": "DE",
+   "name": "Klinikum Merzig",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 8,
+   "facilities": 6,
+   "waypoints": 23,
+   "trails": 19,
+   "pathM": 1021,
+   "extentM": [
+    462,
+    356
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-de-r10788747",
+   "country": "DE",
+   "name": "SHG-Kliniken Völklingen",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 9,
+   "facilities": 9,
+   "waypoints": 27,
+   "trails": 21,
+   "pathM": 815,
+   "extentM": [
+    448,
+    317
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-de-w692560115",
+   "country": "DE",
+   "name": "Klinik Püttlingen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 9,
+   "waypoints": 13,
+   "trails": 3,
+   "pathM": 100,
+   "extentM": [
+    556,
+    239
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w125454242",
+   "country": "DE",
+   "name": "Klinikum Winterberg",
+   "buildings": 29,
+   "named": 29,
+   "entrances": 75,
+   "facilities": 59,
+   "waypoints": 114,
+   "trails": 70,
+   "pathM": 1560,
+   "extentM": [
+    787,
+    326
+   ],
+   "score": 124
+  },
+  {
+   "id": "osm-de-w401351805",
+   "country": "DE",
+   "name": "SHG Kliniken Sonnenberg",
+   "buildings": 19,
+   "named": 19,
+   "entrances": 36,
+   "facilities": 15,
+   "waypoints": 48,
+   "trails": 53,
+   "pathM": 994,
+   "extentM": [
+    414,
+    260
+   ],
+   "score": 54
+  },
+  {
+   "id": "osm-de-w98869131",
+   "country": "DE",
+   "name": "CaritasKlinikum Saarbrücken St. Theresia",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 7,
+   "facilities": 10,
+   "waypoints": 27,
+   "trails": 7,
+   "pathM": 147,
+   "extentM": [
+    365,
+    235
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-de-w161638288",
+   "country": "DE",
+   "name": "Krankenhaus Saarlouis vom DRK",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 4,
+   "trails": 4,
+   "pathM": 66,
+   "extentM": [
+    224,
+    244
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w161641881",
+   "country": "DE",
+   "name": "Marienhaus Klinikum St. Elisabeth Saarlouis",
    "buildings": 1,
    "named": 1,
    "entrances": 3,
    "facilities": 2,
    "waypoints": 6,
-   "trails": 10,
-   "pathM": 571,
+   "trails": 14,
+   "pathM": 347,
    "extentM": [
-    236,
-    187
+    275,
+    168
    ],
    "score": 6
   },
   {
-   "id": "osm-eg-w771243782",
-   "country": "EG",
-   "name": "مستشفى الشيخ زايد التخصصي",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 8,
-   "facilities": 4,
-   "waypoints": 11,
-   "trails": 4,
-   "pathM": 108,
-   "extentM": [
-    292,
-    264
-   ],
-   "score": 7
-  },
-  {
-   "id": "osm-eg-w900302929",
-   "country": "EG",
-   "name": "مستشفى بهمان",
-   "buildings": 14,
-   "named": 14,
-   "entrances": 0,
-   "facilities": 1,
-   "waypoints": 15,
-   "trails": 25,
-   "pathM": 793,
-   "extentM": [
-    231,
-    237
-   ],
-   "score": 25
-  },
-  {
-   "id": "osm-eg-r16740885",
-   "country": "EG",
-   "name": "مستشفيات جامعة القاهرة",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 2,
-   "facilities": 1,
-   "waypoints": 8,
-   "trails": 3,
-   "pathM": 109,
-   "extentM": [
-    800,
-    740
-   ],
-   "score": 11
-  },
-  {
-   "id": "osm-gh-w875374275",
-   "country": "GH",
-   "name": "Enchi Government Hospital",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 0,
-   "facilities": 3,
-   "waypoints": 6,
-   "trails": 8,
-   "pathM": 567,
-   "extentM": [
-    236,
-    397
-   ],
-   "score": 9
-  },
-  {
-   "id": "osm-gh-w787648877",
-   "country": "GH",
-   "name": "GMC Hospital",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 0,
-   "facilities": 0,
-   "waypoints": 3,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    150,
-    129
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-gh-w622139394",
-   "country": "GH",
-   "name": "Goaso Municipal Hospital",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 2,
-   "facilities": 0,
-   "waypoints": 5,
-   "trails": 1,
-   "pathM": 121,
-   "extentM": [
-    340,
-    465
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-gh-w553381087",
-   "country": "GH",
-   "name": "Bibiani Government Hospital",
+   "id": "osm-de-w785534352",
+   "country": "DE",
+   "name": "ehemalige Knappschaftsklinik Quierschied",
    "buildings": 4,
    "named": 4,
-   "entrances": 4,
-   "facilities": 1,
-   "waypoints": 9,
-   "trails": 7,
-   "pathM": 359,
-   "extentM": [
-    318,
-    276
-   ],
-   "score": 10
-  },
-  {
-   "id": "osm-gh-w556253601",
-   "country": "GH",
-   "name": "Komfo Anokye Teaching Hospital",
-   "buildings": 17,
-   "named": 17,
-   "entrances": 2,
-   "facilities": 7,
-   "waypoints": 26,
-   "trails": 1,
-   "pathM": 37,
-   "extentM": [
-    855,
-    778
-   ],
-   "score": 41
-  },
-  {
-   "id": "osm-gh-w786337395",
-   "country": "GH",
-   "name": "Tech Hospital",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 0,
-   "facilities": 2,
-   "waypoints": 5,
-   "trails": 8,
-   "pathM": 376,
-   "extentM": [
-    210,
-    150
-   ],
-   "score": 8
-  },
-  {
-   "id": "osm-gh-w786944629",
-   "country": "GH",
-   "name": "Manhyia District Hospital",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 0,
-   "facilities": 0,
-   "waypoints": 5,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    249,
-    300
-   ],
-   "score": 10
-  },
-  {
-   "id": "osm-gh-w478696524",
-   "country": "GH",
-   "name": "Eastern Regional Hospital",
-   "buildings": 11,
-   "named": 11,
    "entrances": 1,
-   "facilities": 3,
-   "waypoints": 15,
-   "trails": 1,
-   "pathM": 24,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 6,
+   "pathM": 586,
    "extentM": [
-    418,
-    392
-   ],
-   "score": 26
-  },
-  {
-   "id": "osm-gh-w303162760",
-   "country": "GH",
-   "name": "Korle Bu Teaching Hospital",
-   "buildings": 10,
-   "named": 10,
-   "entrances": 0,
-   "facilities": 10,
-   "waypoints": 20,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    546,
-    559
-   ],
-   "score": 30
-  },
-  {
-   "id": "osm-gh-w786143438",
-   "country": "GH",
-   "name": "37 Military Hospital",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 0,
-   "facilities": 10,
-   "waypoints": 11,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    577,
-    945
+    298,
+    442
    ],
    "score": 12
   },
   {
-   "id": "osm-gh-w786216093",
-   "country": "GH",
-   "name": "Pantang Hospital",
-   "buildings": 66,
-   "named": 66,
-   "entrances": 1,
-   "facilities": 2,
-   "waypoints": 69,
-   "trails": 38,
-   "pathM": 3315,
+   "id": "osm-de-w197753991",
+   "country": "DE",
+   "name": "Marienhaus Klinikum St. Wendel-Ottweiler",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 5,
+   "facilities": 5,
+   "waypoints": 15,
+   "trails": 7,
+   "pathM": 497,
    "extentM": [
-    1603,
-    1678
+    310,
+    418
    ],
-   "score": 128
+   "score": 16
   },
   {
-   "id": "osm-gh-w358337142",
-   "country": "GH",
-   "name": "Tema General Hospital",
-   "buildings": 23,
-   "named": 23,
-   "entrances": 0,
-   "facilities": 0,
-   "waypoints": 23,
-   "trails": 20,
-   "pathM": 1345,
+   "id": "osm-de-r5764790",
+   "country": "DE",
+   "name": "Universitätsklinikum des Saarlandes",
+   "buildings": 94,
+   "named": 94,
+   "entrances": 22,
+   "facilities": 79,
+   "waypoints": 184,
+   "trails": 114,
+   "pathM": 6580,
    "extentM": [
-    969,
-    1047
+    1143,
+    1329
    ],
-   "score": 46
+   "score": 275
   },
   {
-   "id": "osm-gh-w786224221",
-   "country": "GH",
-   "name": "Tetteh Quarshie Hospital",
-   "buildings": 3,
-   "named": 3,
+   "id": "osm-de-w959724442",
+   "country": "DE",
+   "name": "Knappschaftskrankenhaus Sulzbach",
+   "buildings": 1,
+   "named": 1,
    "entrances": 0,
-   "facilities": 0,
-   "waypoints": 3,
-   "trails": 0,
-   "pathM": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 14,
+   "pathM": 968,
    "extentM": [
-    259,
-    297
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-gh-w786595766",
-   "country": "GH",
-   "name": "Comboni Hospital",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 0,
-   "facilities": 0,
-   "waypoints": 3,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    192,
-    212
-   ],
-   "score": 6
-  },
-  {
-   "id": "osm-gh-w406732178",
-   "country": "GH",
-   "name": "Wa Municipal Hospital",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 0,
-   "facilities": 4,
-   "waypoints": 6,
-   "trails": 13,
-   "pathM": 569,
-   "extentM": [
-    433,
-    472
+    322,
+    284
    ],
    "score": 8
-  },
-  {
-   "id": "osm-gh-w406732179",
-   "country": "GH",
-   "name": "Upper West Regional Hospital",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 0,
-   "facilities": 5,
-   "waypoints": 8,
-   "trails": 25,
-   "pathM": 944,
-   "extentM": [
-    523,
-    522
-   ],
-   "score": 11
-  },
-  {
-   "id": "osm-gh-w441237332",
-   "country": "GH",
-   "name": "Pishigu Clinic",
-   "buildings": 6,
-   "named": 6,
-   "entrances": 0,
-   "facilities": 1,
-   "waypoints": 7,
-   "trails": 0,
-   "pathM": 0,
-   "extentM": [
-    192,
-    161
-   ],
-   "score": 11
   },
   {
    "id": "osm-ke-w666097819",
@@ -9406,10 +8998,10 @@
    "id": "osm-ke-w138227891",
    "country": "KE",
    "name": "Nairobi Hospital",
-   "buildings": 4,
-   "named": 4,
+   "buildings": 6,
+   "named": 6,
    "entrances": 0,
-   "facilities": 8,
+   "facilities": 12,
    "waypoints": 6,
    "trails": 0,
    "pathM": 0,
@@ -9417,16 +9009,16 @@
     445,
     293
    ],
-   "score": 12
+   "score": 16
   },
   {
    "id": "osm-ke-w245262898",
    "country": "KE",
    "name": "Kenyatta National Hospital",
-   "buildings": 4,
-   "named": 4,
+   "buildings": 6,
+   "named": 6,
    "entrances": 0,
-   "facilities": 18,
+   "facilities": 27,
    "waypoints": 11,
    "trails": 0,
    "pathM": 0,
@@ -9434,16 +9026,16 @@
     445,
     617
    ],
-   "score": 22
+   "score": 31
   },
   {
    "id": "osm-ke-w25473029",
    "country": "KE",
    "name": "Aga Khan University Hospital",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 2,
-   "facilities": 14,
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 21,
    "waypoints": 9,
    "trails": 0,
    "pathM": 0,
@@ -9451,7 +9043,7 @@
     397,
     268
    ],
-   "score": 16
+   "score": 23
   },
   {
    "id": "osm-ke-w879827328",
@@ -9472,8 +9064,8 @@
   }
  ],
  "refused": {
-  "no named buildings": 1573,
-  "score n": 126,
+  "no named buildings": 1209,
+  "score n": 109,
   "grounds n×n m — too large for one plan": 1
  }
 }
