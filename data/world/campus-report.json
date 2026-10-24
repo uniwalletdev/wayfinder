@@ -1,6 +1,9407 @@
 {
- "generatedAt": "2026-10-23T20:17:38.193Z",
+ "generatedAt": "2026-10-24T01:08:07.360Z",
  "built": [
+  {
+   "id": "osm-be-w456761573",
+   "country": "BE",
+   "name": "Hôpital de Libramont",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 9,
+   "pathM": 161,
+   "extentM": [
+    300,
+    242
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-be-w443801761",
+   "country": "BE",
+   "name": "Clinique Edmond-Jacques",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    223,
+    248
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w1063940675",
+   "country": "BE",
+   "name": "Centre Hospitalier de Mouscron - Ziekenhuis Moeskroen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 7,
+   "trails": 4,
+   "pathM": 850,
+   "extentM": [
+    308,
+    245
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-be-w668262884",
+   "country": "BE",
+   "name": "CHwapi - site Notre-Dame",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 7,
+   "trails": 6,
+   "pathM": 163,
+   "extentM": [
+    267,
+    217
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-be-w669514299",
+   "country": "BE",
+   "name": "CRP Les Marronniers",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 17,
+   "trails": 3,
+   "pathM": 307,
+   "extentM": [
+    843,
+    524
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-be-w104314226",
+   "country": "BE",
+   "name": "EpiCURA Hôpital de Baudour",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 12,
+   "waypoints": 13,
+   "trails": 2,
+   "pathM": 134,
+   "extentM": [
+    388,
+    367
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-be-w239427901",
+   "country": "BE",
+   "name": "Hôpital de Mons - Site Constantinople",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 2,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    141,
+    157
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w117519002",
+   "country": "BE",
+   "name": "Hôpital de Mons - Site Kennedy",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 8,
+   "waypoints": 11,
+   "trails": 8,
+   "pathM": 382,
+   "extentM": [
+    421,
+    237
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-be-w150126469",
+   "country": "BE",
+   "name": "Chêne aux Haies",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 27,
+   "waypoints": 28,
+   "trails": 9,
+   "pathM": 339,
+   "extentM": [
+    879,
+    501
+   ],
+   "score": 31
+  },
+  {
+   "id": "osm-be-w393226536",
+   "country": "BE",
+   "name": "Hôpital Saint-Vincent",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 1,
+   "pathM": 77,
+   "extentM": [
+    379,
+    274
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w1281130758",
+   "country": "BE",
+   "name": "CHU Tivoli",
+   "buildings": 6,
+   "named": 5,
+   "entrances": 5,
+   "facilities": 34,
+   "waypoints": 38,
+   "trails": 29,
+   "pathM": 1247,
+   "extentM": [
+    527,
+    436
+   ],
+   "score": 47
+  },
+  {
+   "id": "osm-be-w1182518679",
+   "country": "BE",
+   "name": "CHU Helora - Hôpital de La Louvière - Site Jolimont",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 5,
+   "facilities": 9,
+   "waypoints": 19,
+   "trails": 18,
+   "pathM": 803,
+   "extentM": [
+    294,
+    467
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-be-w1096888525",
+   "country": "BE",
+   "name": "CHU Charleroi-Chimay - Marie Curie (Lodelinsart)",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 5,
+   "facilities": 17,
+   "waypoints": 21,
+   "trails": 7,
+   "pathM": 273,
+   "extentM": [
+    424,
+    329
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-be-w1320120284",
+   "country": "BE",
+   "name": "Campus Helha/IESCA/UCL",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 6,
+   "facilities": 9,
+   "waypoints": 19,
+   "trails": 16,
+   "pathM": 333,
+   "extentM": [
+    283,
+    347
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-be-w166658525",
+   "country": "BE",
+   "name": "Le Domaine - Centre hospitalier",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 1,
+   "pathM": 126,
+   "extentM": [
+    239,
+    244
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w408938897",
+   "country": "BE",
+   "name": "Chirec - Hôpital de Braine-Waterloo",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 6,
+   "facilities": 4,
+   "waypoints": 15,
+   "trails": 19,
+   "pathM": 456,
+   "extentM": [
+    135,
+    291
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-be-w132706952",
+   "country": "BE",
+   "name": "Clinique Saint-Pierre",
+   "buildings": 15,
+   "named": 15,
+   "entrances": 15,
+   "facilities": 12,
+   "waypoints": 35,
+   "trails": 59,
+   "pathM": 1425,
+   "extentM": [
+    390,
+    358
+   ],
+   "score": 52
+  },
+  {
+   "id": "osm-be-w89536258",
+   "country": "BE",
+   "name": "Clinique universitaire de Mont-Godinne",
+   "buildings": 22,
+   "named": 22,
+   "entrances": 3,
+   "facilities": 16,
+   "waypoints": 41,
+   "trails": 41,
+   "pathM": 2064,
+   "extentM": [
+    688,
+    436
+   ],
+   "score": 63
+  },
+  {
+   "id": "osm-be-w105073789",
+   "country": "BE",
+   "name": "Clinique Sainte-Élisabeth",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 2,
+   "waypoints": 9,
+   "trails": 1,
+   "pathM": 11,
+   "extentM": [
+    268,
+    344
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-be-w148699497",
+   "country": "BE",
+   "name": "Centre Hospitalier de la Haute Senne - site Saint Vincent",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    168,
+    191
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w96236568",
+   "country": "BE",
+   "name": "Hôpital de Marche",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    369,
+    211
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w106183724",
+   "country": "BE",
+   "name": "Centre Hospitalier Régional de Huy",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 2,
+   "waypoints": 6,
+   "trails": 4,
+   "pathM": 133,
+   "extentM": [
+    148,
+    233
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-be-w639616997",
+   "country": "BE",
+   "name": "Centre Neurologique et de Réadaptation Fonctionnelle",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 7,
+   "waypoints": 11,
+   "trails": 4,
+   "pathM": 79,
+   "extentM": [
+    316,
+    318
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-be-w23886080",
+   "country": "BE",
+   "name": "Centre Hospitalier du Bois de l'Abbaye",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 5,
+   "facilities": 33,
+   "waypoints": 30,
+   "trails": 11,
+   "pathM": 610,
+   "extentM": [
+    455,
+    275
+   ],
+   "score": 39
+  },
+  {
+   "id": "osm-be-w53542721",
+   "country": "BE",
+   "name": "Clinique CHC MontLégia",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 5,
+   "facilities": 14,
+   "waypoints": 19,
+   "trails": 19,
+   "pathM": 1068,
+   "extentM": [
+    489,
+    559
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-be-w994895777",
+   "country": "BE",
+   "name": "CHU de Liège - Sart-Tilman",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 3,
+   "facilities": 29,
+   "waypoints": 40,
+   "trails": 32,
+   "pathM": 1811,
+   "extentM": [
+    680,
+    798
+   ],
+   "score": 49
+  },
+  {
+   "id": "osm-be-w1469173912",
+   "country": "BE",
+   "name": "Hôpital le Valdor",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 16,
+   "waypoints": 16,
+   "trails": 6,
+   "pathM": 303,
+   "extentM": [
+    213,
+    513
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-be-w437315419",
+   "country": "BE",
+   "name": "Hôpital de la Citadelle (CHR)",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 15,
+   "waypoints": 16,
+   "trails": 17,
+   "pathM": 720,
+   "extentM": [
+    519,
+    376
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-be-w282789923",
+   "country": "BE",
+   "name": "C.H.U. Notre-dame des Bruyères",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 11,
+   "trails": 9,
+   "pathM": 696,
+   "extentM": [
+    379,
+    318
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-be-w961585690",
+   "country": "BE",
+   "name": "Clinique CHC Hermalle",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 12,
+   "waypoints": 15,
+   "trails": 2,
+   "pathM": 30,
+   "extentM": [
+    247,
+    178
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-be-w300835466",
+   "country": "BE",
+   "name": "Klinik St Josef",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    123,
+    254
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w785907726",
+   "country": "BE",
+   "name": "Sankt Nikolaus-Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 12,
+   "pathM": 344,
+   "extentM": [
+    281,
+    315
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-be-w294342529",
+   "country": "BE",
+   "name": "AZ West",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 1,
+   "pathM": 102,
+   "extentM": [
+    414,
+    303
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-be-w815754487",
+   "country": "BE",
+   "name": "AZ Delta campus Rumbeke",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 9,
+   "facilities": 10,
+   "waypoints": 16,
+   "trails": 28,
+   "pathM": 1290,
+   "extentM": [
+    533,
+    430
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-be-w278115204",
+   "country": "BE",
+   "name": "Sint-Jozefskliniek Izegem",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 6,
+   "waypoints": 10,
+   "trails": 3,
+   "pathM": 137,
+   "extentM": [
+    205,
+    367
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-be-w782660184",
+   "country": "BE",
+   "name": "AZ Groeninge - campus Kennedylaan",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 17,
+   "facilities": 25,
+   "waypoints": 38,
+   "trails": 54,
+   "pathM": 3949,
+   "extentM": [
+    643,
+    526
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-be-w134200276",
+   "country": "BE",
+   "name": "Onze Lieve Vrouw van Lourdes",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 5,
+   "facilities": 10,
+   "waypoints": 15,
+   "trails": 9,
+   "pathM": 594,
+   "extentM": [
+    242,
+    369
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-be-w191757126",
+   "country": "BE",
+   "name": "AZ Oudenaarde",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 11,
+   "trails": 1,
+   "pathM": 30,
+   "extentM": [
+    177,
+    137
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-be-w125004971",
+   "country": "BE",
+   "name": "AZ Maria Middelares",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 3,
+   "facilities": 8,
+   "waypoints": 15,
+   "trails": 24,
+   "pathM": 1124,
+   "extentM": [
+    309,
+    620
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-be-w23379006",
+   "country": "BE",
+   "name": "Universitair Ziekenhuis Gent",
+   "buildings": 49,
+   "named": 49,
+   "entrances": 69,
+   "facilities": 55,
+   "waypoints": 167,
+   "trails": 143,
+   "pathM": 9145,
+   "extentM": [
+    864,
+    1112
+   ],
+   "score": 211
+  },
+  {
+   "id": "osm-be-w48612721",
+   "country": "BE",
+   "name": "AZ Jan Palfijn site Watersportbaan",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 5,
+   "facilities": 16,
+   "waypoints": 26,
+   "trails": 23,
+   "pathM": 1711,
+   "extentM": [
+    451,
+    407
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-be-w48775180",
+   "country": "BE",
+   "name": "Psychiatrisch Centrum Dr. Guislain",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 9,
+   "waypoints": 12,
+   "trails": 4,
+   "pathM": 236,
+   "extentM": [
+    481,
+    506
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-be-w48747081",
+   "country": "BE",
+   "name": "A.Z. Sint-Lucas campus Sint-Lucas",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 5,
+   "facilities": 18,
+   "waypoints": 36,
+   "trails": 23,
+   "pathM": 629,
+   "extentM": [
+    392,
+    403
+   ],
+   "score": 47
+  },
+  {
+   "id": "osm-be-w172129840",
+   "country": "BE",
+   "name": "AZ Maria Middelares campus Sint-Jozef",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 11,
+   "trails": 5,
+   "pathM": 149,
+   "extentM": [
+    266,
+    287
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-be-w260905076",
+   "country": "BE",
+   "name": "Psychiatrisch Centrum Gent-Sleidinge Campus Gent",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 6,
+   "trails": 6,
+   "pathM": 387,
+   "extentM": [
+    226,
+    297
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-be-w87660373",
+   "country": "BE",
+   "name": "AZ Oostende - Campus Hendrik Serruys",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 10,
+   "trails": 1,
+   "pathM": 82,
+   "extentM": [
+    267,
+    283
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-be-w116406882",
+   "country": "BE",
+   "name": "AZ Oostende - Damiaan",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 12,
+   "waypoints": 16,
+   "trails": 12,
+   "pathM": 586,
+   "extentM": [
+    396,
+    284
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-be-w542296619",
+   "country": "BE",
+   "name": "Zeepreventorium",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 1,
+   "waypoints": 7,
+   "trails": 2,
+   "pathM": 71,
+   "extentM": [
+    550,
+    614
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w437406240",
+   "country": "BE",
+   "name": "AZ Sint-Jan - Campus Sint-Jan",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 5,
+   "facilities": 11,
+   "waypoints": 19,
+   "trails": 18,
+   "pathM": 1146,
+   "extentM": [
+    688,
+    514
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-be-w235789154",
+   "country": "BE",
+   "name": "AZ Sint-Lucas",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 13,
+   "trails": 7,
+   "pathM": 504,
+   "extentM": [
+    299,
+    347
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-be-w311884826",
+   "country": "BE",
+   "name": "Psychiatrisch Centrum Sint-Amandus",
+   "buildings": 31,
+   "named": 31,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 38,
+   "trails": 62,
+   "pathM": 3187,
+   "extentM": [
+    751,
+    1105
+   ],
+   "score": 67
+  },
+  {
+   "id": "osm-be-w346067711",
+   "country": "BE",
+   "name": "AZ Zeno campus Knokke-Heist",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 8,
+   "waypoints": 10,
+   "trails": 32,
+   "pathM": 2388,
+   "extentM": [
+    464,
+    635
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-be-w672970173",
+   "country": "BE",
+   "name": "Psychiatrisch Ziekenhuis Sint-Jan-Baptist",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    509,
+    661
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-be-w189198584",
+   "country": "BE",
+   "name": "AZ Sint-Elisabeth Zottegem",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 5,
+   "pathM": 493,
+   "extentM": [
+    389,
+    396
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w337851304",
+   "country": "BE",
+   "name": "Ziekenhuis Inkendaal",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 5,
+   "facilities": 7,
+   "waypoints": 19,
+   "trails": 25,
+   "pathM": 1326,
+   "extentM": [
+    376,
+    408
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-be-w1160931471",
+   "country": "BE",
+   "name": "Hôpital Molière-Longchamp - Ziekenhuis Molière-Longchamp",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 2,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    179,
+    290
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-be-r14479073",
+   "country": "BE",
+   "name": "CHU Saint-Pierre - UMC Sint-Pieter",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 14,
+   "waypoints": 18,
+   "trails": 9,
+   "pathM": 155,
+   "extentM": [
+    288,
+    317
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-be-w31444460",
+   "country": "BE",
+   "name": "Centre hospitalier Etterbeek-Ixelles - Ziekenhuizencentrum Etterbeek-Elsene",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 6,
+   "facilities": 3,
+   "waypoints": 9,
+   "trails": 10,
+   "pathM": 236,
+   "extentM": [
+    237,
+    343
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-be-w1272097787",
+   "country": "BE",
+   "name": "Universitair Ziekenhuis Brussel",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 7,
+   "facilities": 7,
+   "waypoints": 20,
+   "trails": 15,
+   "pathM": 516,
+   "extentM": [
+    249,
+    474
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-be-w24924235",
+   "country": "BE",
+   "name": "CHU Brugmann - UVC Brugmann",
+   "buildings": 33,
+   "named": 33,
+   "entrances": 7,
+   "facilities": 20,
+   "waypoints": 57,
+   "trails": 36,
+   "pathM": 1226,
+   "extentM": [
+    611,
+    592
+   ],
+   "score": 88
+  },
+  {
+   "id": "osm-be-w327800428",
+   "country": "BE",
+   "name": "Psychiatrisch Centrum Ariadne",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 0,
+   "facilities": 12,
+   "waypoints": 19,
+   "trails": 51,
+   "pathM": 2155,
+   "extentM": [
+    452,
+    664
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-be-w104311835",
+   "country": "BE",
+   "name": "AZORG Campus Aalst - Merestraat",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 8,
+   "waypoints": 11,
+   "trails": 13,
+   "pathM": 544,
+   "extentM": [
+    356,
+    326
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-be-w104410687",
+   "country": "BE",
+   "name": "AZORG Campus Aalst Moorselbaan",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 3,
+   "facilities": 4,
+   "waypoints": 19,
+   "trails": 2,
+   "pathM": 58,
+   "extentM": [
+    365,
+    255
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-be-w1128028235",
+   "country": "BE",
+   "name": "Algemeen Ziekenhuis Sint-Blasius",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 10,
+   "waypoints": 12,
+   "trails": 11,
+   "pathM": 450,
+   "extentM": [
+    427,
+    424
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-be-w40619794",
+   "country": "BE",
+   "name": "Psychiatrisch Ziekenhuis Sint-Alexius",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 2,
+   "facilities": 25,
+   "waypoints": 39,
+   "trails": 17,
+   "pathM": 351,
+   "extentM": [
+    488,
+    421
+   ],
+   "score": 53
+  },
+  {
+   "id": "osm-be-r5653300",
+   "country": "BE",
+   "name": "Cliniques universitaires Saint-Luc",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 71,
+   "facilities": 45,
+   "waypoints": 100,
+   "trails": 173,
+   "pathM": 5335,
+   "extentM": [
+    822,
+    336
+   ],
+   "score": 98
+  },
+  {
+   "id": "osm-be-w222193048",
+   "country": "BE",
+   "name": "AZ Sint-Maarten",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 12,
+   "waypoints": 17,
+   "trails": 16,
+   "pathM": 1503,
+   "extentM": [
+    478,
+    443
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-be-w78610843",
+   "country": "BE",
+   "name": "Regionaal ziekenhuis Heilig Hart Leuven",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 14,
+   "facilities": 11,
+   "waypoints": 31,
+   "trails": 12,
+   "pathM": 350,
+   "extentM": [
+    202,
+    187
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-be-w182543308",
+   "country": "BE",
+   "name": "UPC Sint-Kamillus",
+   "buildings": 27,
+   "named": 27,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 31,
+   "trails": 21,
+   "pathM": 842,
+   "extentM": [
+    771,
+    679
+   ],
+   "score": 56
+  },
+  {
+   "id": "osm-be-w1046258089",
+   "country": "BE",
+   "name": "UZ Pellenberg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 16,
+   "pathM": 1237,
+   "extentM": [
+    314,
+    369
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-be-w1218298644",
+   "country": "BE",
+   "name": "UZ Leuven campus Gasthuisberg",
+   "buildings": 43,
+   "named": 43,
+   "entrances": 13,
+   "facilities": 50,
+   "waypoints": 94,
+   "trails": 244,
+   "pathM": 10222,
+   "extentM": [
+    834,
+    997
+   ],
+   "score": 141
+  },
+  {
+   "id": "osm-be-w949102078",
+   "country": "BE",
+   "name": "Vitaz Campus Lokeren",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 7,
+   "trails": 4,
+   "pathM": 211,
+   "extentM": [
+    255,
+    253
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-be-w80651478",
+   "country": "BE",
+   "name": "Algemeen Psychiatrisch Ziekenhuis Sint-Lucia",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 13,
+   "facilities": 19,
+   "waypoints": 45,
+   "trails": 48,
+   "pathM": 1905,
+   "extentM": [
+    437,
+    311
+   ],
+   "score": 41
+  },
+  {
+   "id": "osm-be-w277556799",
+   "country": "BE",
+   "name": "Vitaz Campus Hospitaalstraat",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 7,
+   "waypoints": 13,
+   "trails": 9,
+   "pathM": 339,
+   "extentM": [
+    319,
+    265
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-be-w132924615",
+   "country": "BE",
+   "name": "Vitaz Campus Moerlandstraat",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 11,
+   "waypoints": 14,
+   "trails": 7,
+   "pathM": 351,
+   "extentM": [
+    268,
+    255
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-be-w1335921409",
+   "country": "BE",
+   "name": "Universitair Ziekenhuis Antwerpen",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 16,
+   "waypoints": 18,
+   "trails": 20,
+   "pathM": 1584,
+   "extentM": [
+    587,
+    690
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-be-w4382283",
+   "country": "BE",
+   "name": "ZAS Middelheim",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 10,
+   "waypoints": 14,
+   "trails": 4,
+   "pathM": 650,
+   "extentM": [
+    372,
+    648
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-be-w973139928",
+   "country": "BE",
+   "name": "Heilig Hart Ziekenhuis",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 5,
+   "pathM": 315,
+   "extentM": [
+    276,
+    348
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-be-w783100218",
+   "country": "BE",
+   "name": "ZNA Sint-Elisabeth",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 6,
+   "pathM": 360,
+   "extentM": [
+    169,
+    157
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w45497265",
+   "country": "BE",
+   "name": "AZ Monica",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 7,
+   "pathM": 279,
+   "extentM": [
+    195,
+    198
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w1236559765",
+   "country": "BE",
+   "name": "UPC Duffel geestelijke gezondheidszorg emmaüs",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 14,
+   "trails": 16,
+   "pathM": 1043,
+   "extentM": [
+    418,
+    571
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-be-w10660224",
+   "country": "BE",
+   "name": "voormalig ZNA Sint-Erasmus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 7,
+   "pathM": 411,
+   "extentM": [
+    204,
+    260
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w1224726949",
+   "country": "BE",
+   "name": "AZ Herentals",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 3,
+   "pathM": 90,
+   "extentM": [
+    227,
+    255
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-be-w300709408",
+   "country": "BE",
+   "name": "OPZ Geel",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 17,
+   "waypoints": 19,
+   "trails": 40,
+   "pathM": 2254,
+   "extentM": [
+    553,
+    711
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-be-w909952413",
+   "country": "BE",
+   "name": "AZ Klina",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 9,
+   "waypoints": 13,
+   "trails": 16,
+   "pathM": 500,
+   "extentM": [
+    414,
+    419
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-be-w666232443",
+   "country": "BE",
+   "name": "Psychiatrisch Ziekenhuis Bethaniënhuis",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 11,
+   "trails": 37,
+   "pathM": 2374,
+   "extentM": [
+    685,
+    1272
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-be-w272897102",
+   "country": "BE",
+   "name": "AZ Voorkempen",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 17,
+   "trails": 6,
+   "pathM": 654,
+   "extentM": [
+    313,
+    466
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-be-w119777428",
+   "country": "BE",
+   "name": "AZ Turnhout Campus Sint Jozef",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 7,
+   "pathM": 180,
+   "extentM": [
+    397,
+    302
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-be-w129440776",
+   "country": "BE",
+   "name": "AZ Turnhout Campus Sint-Elizabeth",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 10,
+   "trails": 12,
+   "pathM": 896,
+   "extentM": [
+    316,
+    341
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-be-w217844890",
+   "country": "BE",
+   "name": "Regionaal Ziekenhuis Sint-Trudo",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 11,
+   "pathM": 515,
+   "extentM": [
+    309,
+    329
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-be-w336001617",
+   "country": "BE",
+   "name": "Myna Psychiatrisch Ziekenhuis Campus Melveren",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 10,
+   "trails": 2,
+   "pathM": 152,
+   "extentM": [
+    699,
+    645
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-be-w230106127",
+   "country": "BE",
+   "name": "Jessa Ziekenhuis, campus Salvator",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 8,
+   "pathM": 439,
+   "extentM": [
+    352,
+    580
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-be-r19398353",
+   "country": "BE",
+   "name": "AZ Diest",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 1,
+   "waypoints": 7,
+   "trails": 4,
+   "pathM": 252,
+   "extentM": [
+    184,
+    301
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-be-r17604993",
+   "country": "BE",
+   "name": "Myna Psychiatrisch Ziekenhuis Campus Munsterbilzen",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 7,
+   "trails": 13,
+   "pathM": 466,
+   "extentM": [
+    331,
+    442
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-be-r7442080",
+   "country": "BE",
+   "name": "ZOL Ziekenhuis Oost-Limburg Campus Sint-Jan",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 7,
+   "trails": 4,
+   "pathM": 52,
+   "extentM": [
+    273,
+    420
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-be-w217737517",
+   "country": "BE",
+   "name": "Myna Psychiatrisch ziekenhuis Campus Stad",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 14,
+   "trails": 17,
+   "pathM": 697,
+   "extentM": [
+    500,
+    713
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-be-r19920904",
+   "country": "BE",
+   "name": "Openbaar Psychiatrisch Zorgcentrum Rekem",
+   "buildings": 6,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 13,
+   "trails": 26,
+   "pathM": 1239,
+   "extentM": [
+    891,
+    1064
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-be-w201177070",
+   "country": "BE",
+   "name": "Ziekenhuis Geel",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 15,
+   "waypoints": 16,
+   "trails": 26,
+   "pathM": 1512,
+   "extentM": [
+    470,
+    462
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-be-w236059845",
+   "country": "BE",
+   "name": "Heilig Hart Ziekenhuis Mol",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 10,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    252,
+    226
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-be-w1457004914",
+   "country": "BE",
+   "name": "Ziekenhuis Maas en Kempen",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 8,
+   "waypoints": 14,
+   "trails": 27,
+   "pathM": 1357,
+   "extentM": [
+    403,
+    477
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w40153717",
+   "country": "DE",
+   "name": "Asklepios Fachklinikum Brandenburg",
+   "buildings": 32,
+   "named": 32,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 40,
+   "trails": 65,
+   "pathM": 6415,
+   "extentM": [
+    923,
+    1127
+   ],
+   "score": 72
+  },
+  {
+   "id": "osm-de-w40155995",
+   "country": "DE",
+   "name": "Universitätsklinikum Brandenburg an der Havel",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 2,
+   "facilities": 11,
+   "waypoints": 23,
+   "trails": 18,
+   "pathM": 527,
+   "extentM": [
+    472,
+    386
+   ],
+   "score": 33
+  },
+  {
+   "id": "osm-de-w974085208",
+   "country": "DE",
+   "name": "Klinik Ernst von Bergmann Bad Belzig",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 7,
+   "waypoints": 10,
+   "trails": 10,
+   "pathM": 707,
+   "extentM": [
+    259,
+    283
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w132075074",
+   "country": "DE",
+   "name": "REHA-Klinik \"Hoher Fläming\"",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 8,
+   "waypoints": 12,
+   "trails": 6,
+   "pathM": 520,
+   "extentM": [
+    438,
+    294
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w533946579",
+   "country": "DE",
+   "name": "Johanniter Krankenhaus Treuenbrietzen",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 1,
+   "facilities": 11,
+   "waypoints": 25,
+   "trails": 47,
+   "pathM": 2803,
+   "extentM": [
+    563,
+    453
+   ],
+   "score": 38
+  },
+  {
+   "id": "osm-de-w28410179",
+   "country": "DE",
+   "name": "Neurologisches Fachkrankenhaus für Bewegungsstörungen / Parkinson",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 3,
+   "pathM": 501,
+   "extentM": [
+    414,
+    534
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w301029863",
+   "country": "DE",
+   "name": "St.-Josefs-Krankenhaus",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 4,
+   "facilities": 5,
+   "waypoints": 18,
+   "trails": 5,
+   "pathM": 283,
+   "extentM": [
+    242,
+    170
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-w108189652",
+   "country": "DE",
+   "name": "Klinikum Ernst von Bergmann",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 46,
+   "facilities": 40,
+   "waypoints": 80,
+   "trails": 62,
+   "pathM": 1770,
+   "extentM": [
+    393,
+    402
+   ],
+   "score": 83
+  },
+  {
+   "id": "osm-de-w39771902",
+   "country": "DE",
+   "name": "Evangelisches Krankenhaus Ludwigsfelde-Teltow",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 11,
+   "trails": 3,
+   "pathM": 102,
+   "extentM": [
+    273,
+    210
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w345678519",
+   "country": "DE",
+   "name": "Klinik Rathenow",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 4,
+   "facilities": 7,
+   "waypoints": 14,
+   "trails": 21,
+   "pathM": 761,
+   "extentM": [
+    274,
+    247
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-w375971942",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Prignitz",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 2,
+   "waypoints": 4,
+   "trails": 1,
+   "pathM": 58,
+   "extentM": [
+    326,
+    402
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w500681778",
+   "country": "DE",
+   "name": "Oberhavelklinik Hennigsdorf",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 17,
+   "trails": 23,
+   "pathM": 902,
+   "extentM": [
+    414,
+    235
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w93615810",
+   "country": "DE",
+   "name": "Sana Kliniken Sommerfeld",
+   "buildings": 48,
+   "named": 48,
+   "entrances": 37,
+   "facilities": 31,
+   "waypoints": 92,
+   "trails": 63,
+   "pathM": 2750,
+   "extentM": [
+    733,
+    565
+   ],
+   "score": 92
+  },
+  {
+   "id": "osm-de-w25689758",
+   "country": "DE",
+   "name": "Oberhavel Kliniken",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 13,
+   "trails": 17,
+   "pathM": 1112,
+   "extentM": [
+    358,
+    225
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-w145402146",
+   "country": "DE",
+   "name": "ukrb Universitätsklinikum Ruppin-Brandenburg",
+   "buildings": 36,
+   "named": 36,
+   "entrances": 4,
+   "facilities": 21,
+   "waypoints": 61,
+   "trails": 34,
+   "pathM": 2534,
+   "extentM": [
+    558,
+    623
+   ],
+   "score": 92
+  },
+  {
+   "id": "osm-de-w316376130",
+   "country": "DE",
+   "name": "salus klinik Lindow",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 18,
+   "trails": 12,
+   "pathM": 865,
+   "extentM": [
+    675,
+    331
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-de-w26480964",
+   "country": "DE",
+   "name": "Sana Kliniken Niederlausitz",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 17,
+   "pathM": 442,
+   "extentM": [
+    172,
+    230
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w1565602052",
+   "country": "DE",
+   "name": "Krankenhaus Spremberg",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 3,
+   "pathM": 257,
+   "extentM": [
+    189,
+    215
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w39088899",
+   "country": "DE",
+   "name": "Ärztehaus Berliner Straße 4",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    70,
+    97
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w60544771",
+   "country": "DE",
+   "name": "Spreewaldklinik Lübben",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 16,
+   "facilities": 25,
+   "waypoints": 30,
+   "trails": 54,
+   "pathM": 1561,
+   "extentM": [
+    224,
+    285
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-de-w38026826",
+   "country": "DE",
+   "name": "Fontane-Klinik Motzen",
+   "buildings": 29,
+   "named": 29,
+   "entrances": 53,
+   "facilities": 6,
+   "waypoints": 68,
+   "trails": 25,
+   "pathM": 785,
+   "extentM": [
+    428,
+    457
+   ],
+   "score": 70
+  },
+  {
+   "id": "osm-de-w574612976",
+   "country": "DE",
+   "name": "Achenbach Krankenhaus Königs Wusterhausen",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 10,
+   "waypoints": 17,
+   "trails": 20,
+   "pathM": 1188,
+   "extentM": [
+    350,
+    425
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-w94120788",
+   "country": "DE",
+   "name": "Helios Klinikum Bad Saarow",
+   "buildings": 27,
+   "named": 27,
+   "entrances": 16,
+   "facilities": 28,
+   "waypoints": 70,
+   "trails": 41,
+   "pathM": 2100,
+   "extentM": [
+    434,
+    587
+   ],
+   "score": 81
+  },
+  {
+   "id": "osm-de-w131823815",
+   "country": "DE",
+   "name": "Medizinische Universität Lausitz – Carl Thiem",
+   "buildings": 36,
+   "named": 36,
+   "entrances": 58,
+   "facilities": 59,
+   "waypoints": 108,
+   "trails": 149,
+   "pathM": 5164,
+   "extentM": [
+    661,
+    456
+   ],
+   "score": 139
+  },
+  {
+   "id": "osm-de-w46155443",
+   "country": "DE",
+   "name": "Naëmi-Wilke-Stift",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 11,
+   "pathM": 524,
+   "extentM": [
+    246,
+    270
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w77993932",
+   "country": "DE",
+   "name": "Städtisches Krankenhaus Eisenhüttenstadt",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 7,
+   "facilities": 14,
+   "waypoints": 24,
+   "trails": 33,
+   "pathM": 2639,
+   "extentM": [
+    500,
+    497
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w43165929",
+   "country": "DE",
+   "name": "Klinikum Frankfurt (Oder)",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 8,
+   "facilities": 13,
+   "waypoints": 20,
+   "trails": 31,
+   "pathM": 2677,
+   "extentM": [
+    733,
+    597
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w45830950",
+   "country": "DE",
+   "name": "Ev. Krankenhaus Lutherstift",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 9,
+   "trails": 4,
+   "pathM": 353,
+   "extentM": [
+    202,
+    206
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w402746500",
+   "country": "DE",
+   "name": "Sana Krankenhaus Gottesfriede Woltersdorf",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 1,
+   "waypoints": 6,
+   "trails": 6,
+   "pathM": 231,
+   "extentM": [
+    183,
+    240
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w24862014",
+   "country": "DE",
+   "name": "Immanuel Klinik Rüdersdorf",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 7,
+   "facilities": 16,
+   "waypoints": 23,
+   "trails": 31,
+   "pathM": 1515,
+   "extentM": [
+    366,
+    465
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-r2736268",
+   "country": "DE",
+   "name": "Brandenburgklinik Berlin-Brandenburg",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 5,
+   "facilities": 5,
+   "waypoints": 22,
+   "trails": 36,
+   "pathM": 2193,
+   "extentM": [
+    538,
+    839
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-de-w237201588",
+   "country": "DE",
+   "name": "Immanuel Klinikum Bernau Herzzentrum Brandenburg",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 10,
+   "trails": 19,
+   "pathM": 671,
+   "extentM": [
+    256,
+    240
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w1047766622",
+   "country": "DE",
+   "name": "Krankenhaus Märkisch-Oderland",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 6,
+   "facilities": 4,
+   "waypoints": 10,
+   "trails": 13,
+   "pathM": 439,
+   "extentM": [
+    193,
+    142
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w1047826693",
+   "country": "DE",
+   "name": "GLG Fachklinik Wolletzsee",
+   "buildings": 10,
+   "named": 9,
+   "entrances": 10,
+   "facilities": 6,
+   "waypoints": 21,
+   "trails": 25,
+   "pathM": 1764,
+   "extentM": [
+    443,
+    362
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-w500403672",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Prenzlau",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 2,
+   "pathM": 64,
+   "extentM": [
+    309,
+    447
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w85826741",
+   "country": "DE",
+   "name": "Asklepios Fachklinikum Teupitz",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 16,
+   "trails": 13,
+   "pathM": 608,
+   "extentM": [
+    345,
+    413
+   ],
+   "score": 28
+  },
+  {
+   "id": "osm-de-w380400580",
+   "country": "DE",
+   "name": "Evangelisches Krankenhaus Hubertus",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 2,
+   "waypoints": 7,
+   "trails": 8,
+   "pathM": 556,
+   "extentM": [
+    419,
+    351
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w30631242",
+   "country": "DE",
+   "name": "Helios Klinikum Emil von Behring",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 8,
+   "facilities": 18,
+   "waypoints": 29,
+   "trails": 18,
+   "pathM": 857,
+   "extentM": [
+    308,
+    378
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-de-w31284439",
+   "country": "DE",
+   "name": "Krankenhaus Waldfriede",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 14,
+   "trails": 10,
+   "pathM": 606,
+   "extentM": [
+    270,
+    353
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-r17381892",
+   "country": "DE",
+   "name": "Charité – Campus Benjamin Franklin",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 4,
+   "facilities": 16,
+   "waypoints": 27,
+   "trails": 66,
+   "pathM": 3611,
+   "extentM": [
+    702,
+    708
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-de-w26775078",
+   "country": "DE",
+   "name": "Gemeinschaftskrankenhaus Havelhöhe",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 18,
+   "facilities": 24,
+   "waypoints": 53,
+   "trails": 76,
+   "pathM": 4318,
+   "extentM": [
+    1066,
+    640
+   ],
+   "score": 58
+  },
+  {
+   "id": "osm-de-w393510169",
+   "country": "DE",
+   "name": "Vivantes Klinikum Spandau",
+   "buildings": 21,
+   "named": 21,
+   "entrances": 31,
+   "facilities": 18,
+   "waypoints": 58,
+   "trails": 72,
+   "pathM": 1896,
+   "extentM": [
+    465,
+    219
+   ],
+   "score": 59
+  },
+  {
+   "id": "osm-de-w53038853",
+   "country": "DE",
+   "name": "DRK Kliniken Berlin Westend",
+   "buildings": 22,
+   "named": 22,
+   "entrances": 22,
+   "facilities": 21,
+   "waypoints": 60,
+   "trails": 61,
+   "pathM": 2227,
+   "extentM": [
+    384,
+    436
+   ],
+   "score": 80
+  },
+  {
+   "id": "osm-de-w32424425",
+   "country": "DE",
+   "name": "Auguste-Viktoria-Klinikum",
+   "buildings": 26,
+   "named": 26,
+   "entrances": 18,
+   "facilities": 11,
+   "waypoints": 52,
+   "trails": 79,
+   "pathM": 2811,
+   "extentM": [
+    264,
+    692
+   ],
+   "score": 71
+  },
+  {
+   "id": "osm-de-w119398219",
+   "country": "DE",
+   "name": "Sankt Gertrauden-Krankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 22,
+   "pathM": 1257,
+   "extentM": [
+    175,
+    258
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w48992251",
+   "country": "DE",
+   "name": "Vivantes Wenckebach-Klinikum",
+   "buildings": 28,
+   "named": 28,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 31,
+   "trails": 7,
+   "pathM": 387,
+   "extentM": [
+    429,
+    345
+   ],
+   "score": 59
+  },
+  {
+   "id": "osm-de-w168967363",
+   "country": "DE",
+   "name": "St. Joseph Krankenhaus",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 11,
+   "facilities": 8,
+   "waypoints": 16,
+   "trails": 9,
+   "pathM": 395,
+   "extentM": [
+    208,
+    182
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w305989452",
+   "country": "DE",
+   "name": "Vivantes Klinikum am Urban",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 7,
+   "waypoints": 14,
+   "trails": 15,
+   "pathM": 881,
+   "extentM": [
+    375,
+    259
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w4750929",
+   "country": "DE",
+   "name": "Charité Campus Virchow Klinikum",
+   "buildings": 16,
+   "named": 16,
+   "entrances": 68,
+   "facilities": 113,
+   "waypoints": 149,
+   "trails": 153,
+   "pathM": 4886,
+   "extentM": [
+    805,
+    710
+   ],
+   "score": 166
+  },
+  {
+   "id": "osm-de-w24931203",
+   "country": "DE",
+   "name": "Bundeswehrkrankenhaus Berlin",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 1,
+   "facilities": 1,
+   "waypoints": 12,
+   "trails": 10,
+   "pathM": 287,
+   "extentM": [
+    336,
+    364
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w24054786",
+   "country": "DE",
+   "name": "St. Hedwig-Krankenhaus",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 6,
+   "facilities": 3,
+   "waypoints": 17,
+   "trails": 16,
+   "pathM": 437,
+   "extentM": [
+    299,
+    215
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w4765926",
+   "country": "DE",
+   "name": "Vivantes Humboldt-Klinikum",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 71,
+   "facilities": 22,
+   "waypoints": 40,
+   "trails": 84,
+   "pathM": 2036,
+   "extentM": [
+    499,
+    446
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-de-w49184262",
+   "country": "DE",
+   "name": "Dominikus-Krankenhaus",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 23,
+   "pathM": 1450,
+   "extentM": [
+    355,
+    353
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w4637750",
+   "country": "DE",
+   "name": "DRK Kliniken Berlin Mitte",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 3,
+   "waypoints": 10,
+   "trails": 1,
+   "pathM": 12,
+   "extentM": [
+    233,
+    166
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w99146927",
+   "country": "DE",
+   "name": "Maria Heimsuchung Caritas Klinikum Pankow",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 8,
+   "facilities": 5,
+   "waypoints": 12,
+   "trails": 16,
+   "pathM": 687,
+   "extentM": [
+    226,
+    255
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w138150297",
+   "country": "DE",
+   "name": "Vivantes Klinikum - Neukölln",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 12,
+   "facilities": 21,
+   "waypoints": 40,
+   "trails": 54,
+   "pathM": 2219,
+   "extentM": [
+    522,
+    687
+   ],
+   "score": 39
+  },
+  {
+   "id": "osm-de-w138144499",
+   "country": "DE",
+   "name": "Ida-Wolff-Krankenhaus",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 1,
+   "waypoints": 9,
+   "trails": 8,
+   "pathM": 208,
+   "extentM": [
+    207,
+    187
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w69869582",
+   "country": "DE",
+   "name": "Krankenhaus Hedwigshöhe",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 9,
+   "facilities": 9,
+   "waypoints": 23,
+   "trails": 25,
+   "pathM": 778,
+   "extentM": [
+    221,
+    203
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w32204608",
+   "country": "DE",
+   "name": "DRK Kliniken Berlin - Köpenick",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 10,
+   "facilities": 16,
+   "waypoints": 36,
+   "trails": 21,
+   "pathM": 1294,
+   "extentM": [
+    324,
+    331
+   ],
+   "score": 44
+  },
+  {
+   "id": "osm-de-w700483283",
+   "country": "DE",
+   "name": "Klinikum im Friedrichshain",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 27,
+   "facilities": 31,
+   "waypoints": 58,
+   "trails": 55,
+   "pathM": 2175,
+   "extentM": [
+    409,
+    461
+   ],
+   "score": 70
+  },
+  {
+   "id": "osm-de-w567540939",
+   "country": "DE",
+   "name": "Alexianer St. Joseph Krankenhaus Berlin-Weißensee",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 8,
+   "facilities": 0,
+   "waypoints": 16,
+   "trails": 33,
+   "pathM": 1467,
+   "extentM": [
+    402,
+    233
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-de-w46839073",
+   "country": "DE",
+   "name": "Sana Klinikum Lichtenberg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 17,
+   "facilities": 8,
+   "waypoints": 26,
+   "trails": 10,
+   "pathM": 170,
+   "extentM": [
+    343,
+    247
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-r16389059",
+   "country": "DE",
+   "name": "Evangelisches Krankenhaus Königin Elisabeth Herzberge",
+   "buildings": 35,
+   "named": 35,
+   "entrances": 16,
+   "facilities": 17,
+   "waypoints": 67,
+   "trails": 89,
+   "pathM": 3931,
+   "extentM": [
+    749,
+    790
+   ],
+   "score": 85
+  },
+  {
+   "id": "osm-de-w158250748",
+   "country": "DE",
+   "name": "Augenklinik Berlin Marzahn",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    119,
+    100
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w158262343",
+   "country": "DE",
+   "name": "Unfallkrankenhaus Berlin",
+   "buildings": 25,
+   "named": 25,
+   "entrances": 22,
+   "facilities": 33,
+   "waypoints": 66,
+   "trails": 73,
+   "pathM": 2846,
+   "extentM": [
+    447,
+    616
+   ],
+   "score": 89
+  },
+  {
+   "id": "osm-de-w160806223",
+   "country": "DE",
+   "name": "Vivantes Klinikum Kaulsdorf",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 11,
+   "waypoints": 13,
+   "trails": 39,
+   "pathM": 2325,
+   "extentM": [
+    302,
+    374
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w188899872",
+   "country": "DE",
+   "name": "HELIOS Klinikum Berlin Buch",
+   "buildings": 39,
+   "named": 39,
+   "entrances": 21,
+   "facilities": 60,
+   "waypoints": 110,
+   "trails": 132,
+   "pathM": 8423,
+   "extentM": [
+    974,
+    988
+   ],
+   "score": 143
+  },
+  {
+   "id": "osm-de-w24950668",
+   "country": "DE",
+   "name": "Evangelisches Waldkrankenhaus Spandau",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 14,
+   "trails": 19,
+   "pathM": 1342,
+   "extentM": [
+    532,
+    715
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w137033906",
+   "country": "DE",
+   "name": "Evangelisches Geriatriezentrum Berlin",
+   "buildings": 15,
+   "named": 15,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 15,
+   "trails": 15,
+   "pathM": 1061,
+   "extentM": [
+    318,
+    233
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-de-r16711833",
+   "country": "DE",
+   "name": "Krankenhaus des Maßregelvollzugs Berlin",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 11,
+   "trails": 11,
+   "pathM": 589,
+   "extentM": [
+    344,
+    611
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w791769151",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Lörrach",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 3,
+   "pathM": 68,
+   "extentM": [
+    191,
+    159
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w278849297",
+   "country": "DE",
+   "name": "St. Elisabethen Krankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 4,
+   "pathM": 151,
+   "extentM": [
+    183,
+    176
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w36685494",
+   "country": "DE",
+   "name": "Loretto-Krankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 11,
+   "facilities": 5,
+   "waypoints": 15,
+   "trails": 23,
+   "pathM": 572,
+   "extentM": [
+    169,
+    267
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-r8845759",
+   "country": "DE",
+   "name": "Universitätsklinikum Freiburg",
+   "buildings": 61,
+   "named": 61,
+   "entrances": 74,
+   "facilities": 107,
+   "waypoints": 213,
+   "trails": 180,
+   "pathM": 6139,
+   "extentM": [
+    2329,
+    874
+   ],
+   "score": 258
+  },
+  {
+   "id": "osm-de-r17076044",
+   "country": "DE",
+   "name": "Kinder- und Jugendklinik",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 3,
+   "pathM": 64,
+   "extentM": [
+    141,
+    157
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w291788488",
+   "country": "DE",
+   "name": "Sankt Josefskrankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 5,
+   "waypoints": 7,
+   "trails": 3,
+   "pathM": 168,
+   "extentM": [
+    190,
+    206
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-r1661621",
+   "country": "DE",
+   "name": "Klinik für Psychiatrie und Psychotherapie",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 12,
+   "pathM": 642,
+   "extentM": [
+    201,
+    353
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-r1661624",
+   "country": "DE",
+   "name": "Psychiatrie und Psychotherapie",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 11,
+   "facilities": 3,
+   "waypoints": 16,
+   "trails": 19,
+   "pathM": 894,
+   "extentM": [
+    160,
+    169
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w1464238772",
+   "country": "DE",
+   "name": "Klinik für Dermatologie und Venerologie",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 4,
+   "pathM": 242,
+   "extentM": [
+    122,
+    174
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w386263507",
+   "country": "DE",
+   "name": "Evangelisches Diakoniekrankenhaus Freiburg",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 4,
+   "facilities": 4,
+   "waypoints": 12,
+   "trails": 6,
+   "pathM": 411,
+   "extentM": [
+    348,
+    321
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w27717576",
+   "country": "DE",
+   "name": "Zentrum für Psychiatrie Emmendingen",
+   "buildings": 41,
+   "named": 41,
+   "entrances": 4,
+   "facilities": 33,
+   "waypoints": 78,
+   "trails": 59,
+   "pathM": 3802,
+   "extentM": [
+    1109,
+    732
+   ],
+   "score": 118
+  },
+  {
+   "id": "osm-de-w398000721",
+   "country": "DE",
+   "name": "Földi Klinik",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 10,
+   "trails": 7,
+   "pathM": 248,
+   "extentM": [
+    170,
+    166
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w190014956",
+   "country": "DE",
+   "name": "Friedrich-Husemann-Klinik",
+   "buildings": 16,
+   "named": 16,
+   "entrances": 8,
+   "facilities": 3,
+   "waypoints": 26,
+   "trails": 14,
+   "pathM": 594,
+   "extentM": [
+    288,
+    370
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-de-w129781093",
+   "country": "DE",
+   "name": "Kliniken Schmieder Gailingen",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 19,
+   "trails": 41,
+   "pathM": 1885,
+   "extentM": [
+    451,
+    332
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-de-w1549213503",
+   "country": "DE",
+   "name": "Hegau-Jugendwerk Gailingen",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 11,
+   "facilities": 8,
+   "waypoints": 31,
+   "trails": 30,
+   "pathM": 1571,
+   "extentM": [
+    341,
+    328
+   ],
+   "score": 40
+  },
+  {
+   "id": "osm-de-w26398430",
+   "country": "DE",
+   "name": "Hegau-Bodensee-Klinikum Singen",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 8,
+   "facilities": 8,
+   "waypoints": 20,
+   "trails": 31,
+   "pathM": 1219,
+   "extentM": [
+    377,
+    414
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-w183614428",
+   "country": "DE",
+   "name": "Zentrum für Psychiatrie Reichenau",
+   "buildings": 37,
+   "named": 37,
+   "entrances": 0,
+   "facilities": 39,
+   "waypoints": 74,
+   "trails": 76,
+   "pathM": 4598,
+   "extentM": [
+    936,
+    665
+   ],
+   "score": 105
+  },
+  {
+   "id": "osm-de-w391463184",
+   "country": "DE",
+   "name": "Schwarzwald-Baar-Kliniken Donaueschingen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 11,
+   "waypoints": 13,
+   "trails": 4,
+   "pathM": 344,
+   "extentM": [
+    261,
+    253
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w128213060",
+   "country": "DE",
+   "name": "Schwarzwald-Baar Klinikum",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 9,
+   "facilities": 18,
+   "waypoints": 28,
+   "trails": 41,
+   "pathM": 2310,
+   "extentM": [
+    565,
+    435
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-de-r5248072",
+   "country": "DE",
+   "name": "Vinzenz von Paul Hospital",
+   "buildings": 30,
+   "named": 30,
+   "entrances": 37,
+   "facilities": 5,
+   "waypoints": 67,
+   "trails": 70,
+   "pathM": 3443,
+   "extentM": [
+    444,
+    822
+   ],
+   "score": 64
+  },
+  {
+   "id": "osm-de-w1213063746",
+   "country": "DE",
+   "name": "Kreisklinik Tuttlingen",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 19,
+   "trails": 9,
+   "pathM": 302,
+   "extentM": [
+    298,
+    279
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-de-w789253454",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Sigmaringen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 24,
+   "pathM": 1272,
+   "extentM": [
+    421,
+    362
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w144150178",
+   "country": "DE",
+   "name": "Klinikum Friedrichshafen",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 13,
+   "facilities": 31,
+   "waypoints": 52,
+   "trails": 46,
+   "pathM": 2108,
+   "extentM": [
+    364,
+    334
+   ],
+   "score": 50
+  },
+  {
+   "id": "osm-de-w630653306",
+   "country": "DE",
+   "name": "Zentrum für Psychatrie Weißenau",
+   "buildings": 47,
+   "named": 47,
+   "entrances": 1,
+   "facilities": 5,
+   "waypoints": 53,
+   "trails": 14,
+   "pathM": 1019,
+   "extentM": [
+    673,
+    762
+   ],
+   "score": 89
+  },
+  {
+   "id": "osm-de-w44699137",
+   "country": "DE",
+   "name": "St. Elisabethen-Klinikum",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 15,
+   "waypoints": 19,
+   "trails": 43,
+   "pathM": 2297,
+   "extentM": [
+    498,
+    304
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w789195974",
+   "country": "DE",
+   "name": "Fachkliniken Wangen",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 5,
+   "waypoints": 13,
+   "trails": 15,
+   "pathM": 899,
+   "extentM": [
+    318,
+    476
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w824966410",
+   "country": "DE",
+   "name": "Oberschwabenklinik Wangen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 7,
+   "pathM": 910,
+   "extentM": [
+    337,
+    533
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w191928069",
+   "country": "DE",
+   "name": "Argentalklinik 2",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 14,
+   "trails": 2,
+   "pathM": 97,
+   "extentM": [
+    350,
+    204
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-w191927997",
+   "country": "DE",
+   "name": "Argentalklinik 1",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 2,
+   "facilities": 2,
+   "waypoints": 9,
+   "trails": 5,
+   "pathM": 242,
+   "extentM": [
+    242,
+    227
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w1009310500",
+   "country": "DE",
+   "name": "Sana Klinikum Landkreis Biberach",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 10,
+   "facilities": 23,
+   "waypoints": 35,
+   "trails": 26,
+   "pathM": 1420,
+   "extentM": [
+    527,
+    506
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-de-w413443037",
+   "country": "DE",
+   "name": "Ortenau Klinikum Lahr-Ettenheim",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 6,
+   "facilities": 15,
+   "waypoints": 34,
+   "trails": 16,
+   "pathM": 349,
+   "extentM": [
+    350,
+    370
+   ],
+   "score": 46
+  },
+  {
+   "id": "osm-de-w426352487",
+   "country": "DE",
+   "name": "Diakonie Kork",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 24,
+   "trails": 22,
+   "pathM": 1172,
+   "extentM": [
+    526,
+    588
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-de-w675780019",
+   "country": "DE",
+   "name": "Ortenauklinikum Achern",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 4,
+   "facilities": 5,
+   "waypoints": 16,
+   "trails": 1,
+   "pathM": 16,
+   "extentM": [
+    314,
+    262
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w107107907",
+   "country": "DE",
+   "name": "Klinikum Mittelbaden Hub",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 18,
+   "trails": 7,
+   "pathM": 648,
+   "extentM": [
+    532,
+    354
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-de-w114977125",
+   "country": "DE",
+   "name": "Klinikum Mittelbaden Bühl",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 9,
+   "pathM": 134,
+   "extentM": [
+    215,
+    280
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w144452650",
+   "country": "DE",
+   "name": "ViDia Christliche Kliniken Standort Südendstraße",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 14,
+   "facilities": 9,
+   "waypoints": 33,
+   "trails": 20,
+   "pathM": 363,
+   "extentM": [
+    208,
+    153
+   ],
+   "score": 39
+  },
+  {
+   "id": "osm-de-r12011069",
+   "country": "DE",
+   "name": "Städtisches Klinikum",
+   "buildings": 31,
+   "named": 31,
+   "entrances": 49,
+   "facilities": 40,
+   "waypoints": 104,
+   "trails": 77,
+   "pathM": 3109,
+   "extentM": [
+    1106,
+    1113
+   ],
+   "score": 122
+  },
+  {
+   "id": "osm-de-w282034421",
+   "country": "DE",
+   "name": "Gesundheitszentrum Bad Sebastiansweiler",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 35,
+   "pathM": 2086,
+   "extentM": [
+    462,
+    507
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w1214645911",
+   "country": "DE",
+   "name": "Krankenhaus Herrenberg",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 6,
+   "pathM": 360,
+   "extentM": [
+    242,
+    258
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w89132589",
+   "country": "DE",
+   "name": "Kliniken Berg",
+   "buildings": 26,
+   "named": 26,
+   "entrances": 85,
+   "facilities": 84,
+   "waypoints": 125,
+   "trails": 263,
+   "pathM": 8108,
+   "extentM": [
+    1011,
+    618
+   ],
+   "score": 146
+  },
+  {
+   "id": "osm-de-r5007312",
+   "country": "DE",
+   "name": "Medizinische Klinik",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 18,
+   "facilities": 20,
+   "waypoints": 26,
+   "trails": 30,
+   "pathM": 733,
+   "extentM": [
+    1011,
+    618
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w8093153",
+   "country": "DE",
+   "name": "Berufsgenossenschaftliche Unfallklinik",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 11,
+   "facilities": 10,
+   "waypoints": 23,
+   "trails": 36,
+   "pathM": 1527,
+   "extentM": [
+    319,
+    406
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w622362546",
+   "country": "DE",
+   "name": "Kliniken Tal",
+   "buildings": 35,
+   "named": 35,
+   "entrances": 26,
+   "facilities": 60,
+   "waypoints": 99,
+   "trails": 147,
+   "pathM": 7699,
+   "extentM": [
+    958,
+    741
+   ],
+   "score": 128
+  },
+  {
+   "id": "osm-de-w1103757724",
+   "country": "DE",
+   "name": "Universitäts-Frauenklinik, Neonatologie und Medizinische-Genetik",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 9,
+   "facilities": 6,
+   "waypoints": 11,
+   "trails": 25,
+   "pathM": 566,
+   "extentM": [
+    149,
+    167
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w702159832",
+   "country": "DE",
+   "name": "Tropenklinik Paul-Lechler-Krankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 22,
+   "pathM": 406,
+   "extentM": [
+    190,
+    158
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w791726057",
+   "country": "DE",
+   "name": "Klinikum am Steinenberg",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 13,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    311,
+    325
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w302083602",
+   "country": "DE",
+   "name": "Die Filderklinik",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 10,
+   "waypoints": 13,
+   "trails": 22,
+   "pathM": 864,
+   "extentM": [
+    373,
+    254
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w1534299542",
+   "country": "DE",
+   "name": "Gesundheitscampus Calw",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 4,
+   "pathM": 163,
+   "extentM": [
+    411,
+    222
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w157012202",
+   "country": "DE",
+   "name": "Klinikum Nordschwarzwald",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 14,
+   "trails": 24,
+   "pathM": 2391,
+   "extentM": [
+    712,
+    1098
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w96866257",
+   "country": "DE",
+   "name": "Reha-Zentrum Schömberg",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 13,
+   "waypoints": 20,
+   "trails": 14,
+   "pathM": 1029,
+   "extentM": [
+    433,
+    483
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w1000264730",
+   "country": "DE",
+   "name": "ViDia Christliche Kliniken Standort Diakonissenstraße",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 10,
+   "facilities": 21,
+   "waypoints": 34,
+   "trails": 39,
+   "pathM": 954,
+   "extentM": [
+    421,
+    328
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-de-w73300022",
+   "country": "DE",
+   "name": "Siloah St. Trudpert Klinikum",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 22,
+   "pathM": 1115,
+   "extentM": [
+    320,
+    296
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w73299199",
+   "country": "DE",
+   "name": "HELIOS Klinikum Pforzheim",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 11,
+   "facilities": 6,
+   "waypoints": 28,
+   "trails": 20,
+   "pathM": 631,
+   "extentM": [
+    446,
+    344
+   ],
+   "score": 38
+  },
+  {
+   "id": "osm-de-w11987373",
+   "country": "DE",
+   "name": "Krankenhaus Leonberg",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 7,
+   "waypoints": 12,
+   "trails": 14,
+   "pathM": 421,
+   "extentM": [
+    284,
+    291
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w52130934",
+   "country": "DE",
+   "name": "Kliniken Böblingen",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 8,
+   "facilities": 10,
+   "waypoints": 21,
+   "trails": 52,
+   "pathM": 1359,
+   "extentM": [
+    557,
+    265
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w364922886",
+   "country": "DE",
+   "name": "Marienhospital",
+   "buildings": 12,
+   "named": 11,
+   "entrances": 9,
+   "facilities": 11,
+   "waypoints": 30,
+   "trails": 26,
+   "pathM": 575,
+   "extentM": [
+    189,
+    527
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-de-r3832333",
+   "country": "DE",
+   "name": "Diakonie-Klinikum Stuttgart",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 5,
+   "facilities": 10,
+   "waypoints": 14,
+   "trails": 12,
+   "pathM": 488,
+   "extentM": [
+    191,
+    171
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w135190840",
+   "country": "DE",
+   "name": "Katharinenhospital",
+   "buildings": 17,
+   "named": 17,
+   "entrances": 10,
+   "facilities": 17,
+   "waypoints": 44,
+   "trails": 23,
+   "pathM": 1137,
+   "extentM": [
+    445,
+    336
+   ],
+   "score": 54
+  },
+  {
+   "id": "osm-de-w373482229",
+   "country": "DE",
+   "name": "Olgahospital und Frauenklinik",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 5,
+   "facilities": 3,
+   "waypoints": 8,
+   "trails": 5,
+   "pathM": 254,
+   "extentM": [
+    445,
+    336
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w5385339",
+   "country": "DE",
+   "name": "Robert-Bosch-Krankenhaus",
+   "buildings": 10,
+   "named": 9,
+   "entrances": 53,
+   "facilities": 16,
+   "waypoints": 43,
+   "trails": 67,
+   "pathM": 1824,
+   "extentM": [
+    475,
+    375
+   ],
+   "score": 47
+  },
+  {
+   "id": "osm-de-r3230660",
+   "country": "DE",
+   "name": "Enzkreisklinik Mühlacker",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 6,
+   "facilities": 3,
+   "waypoints": 9,
+   "trails": 6,
+   "pathM": 250,
+   "extentM": [
+    418,
+    258
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w1055408230",
+   "country": "DE",
+   "name": "RKH Krankenhaus Mühlacker",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 5,
+   "facilities": 8,
+   "waypoints": 15,
+   "trails": 25,
+   "pathM": 839,
+   "extentM": [
+    419,
+    257
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w448415913",
+   "country": "DE",
+   "name": "Orthopädische Klinik Markgröningen",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 10,
+   "trails": 17,
+   "pathM": 667,
+   "extentM": [
+    312,
+    245
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w226740219",
+   "country": "DE",
+   "name": "Krankenhaus Ludwigsburg",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 17,
+   "waypoints": 24,
+   "trails": 13,
+   "pathM": 616,
+   "extentM": [
+    293,
+    371
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w629535389",
+   "country": "DE",
+   "name": "Krankenhaus Bietigheim-Bissingen",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 8,
+   "waypoints": 15,
+   "trails": 10,
+   "pathM": 489,
+   "extentM": [
+    212,
+    204
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w894244001",
+   "country": "DE",
+   "name": "m&i Fachkliniken Hohenurach",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 3,
+   "waypoints": 8,
+   "trails": 11,
+   "pathM": 421,
+   "extentM": [
+    188,
+    214
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w894244983",
+   "country": "DE",
+   "name": "m&i Fachkliniken Hohenurach Haus 2",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 1,
+   "waypoints": 7,
+   "trails": 11,
+   "pathM": 232,
+   "extentM": [
+    136,
+    170
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w791723040",
+   "country": "DE",
+   "name": "Ermstalklinik",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 5,
+   "trails": 10,
+   "pathM": 720,
+   "extentM": [
+    304,
+    250
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w586660653",
+   "country": "DE",
+   "name": "medius KLINIK NÜRTINGEN",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 3,
+   "waypoints": 8,
+   "trails": 23,
+   "pathM": 1137,
+   "extentM": [
+    313,
+    299
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w315305918",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Ehingen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 26,
+   "waypoints": 26,
+   "trails": 14,
+   "pathM": 447,
+   "extentM": [
+    203,
+    306
+   ],
+   "score": 31
+  },
+  {
+   "id": "osm-de-w791747389",
+   "country": "DE",
+   "name": "Alb-Donau Klinikum",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    164,
+    165
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w620853463",
+   "country": "DE",
+   "name": "Universitäts- und Rehabilitationskliniken Ulm",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 5,
+   "facilities": 14,
+   "waypoints": 21,
+   "trails": 42,
+   "pathM": 1500,
+   "extentM": [
+    330,
+    356
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w894899853",
+   "country": "DE",
+   "name": "Bundeswehrkrankenhaus Ulm",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 3,
+   "facilities": 13,
+   "waypoints": 25,
+   "trails": 32,
+   "pathM": 1310,
+   "extentM": [
+    514,
+    652
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-de-w688201128",
+   "country": "DE",
+   "name": "Kliniken Michelsberg",
+   "buildings": 7,
+   "named": 6,
+   "entrances": 9,
+   "facilities": 9,
+   "waypoints": 22,
+   "trails": 40,
+   "pathM": 1043,
+   "extentM": [
+    343,
+    402
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w101883808",
+   "country": "DE",
+   "name": "Kinder- und Jugendpsychiatrie",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 0,
+   "waypoints": 4,
+   "trails": 19,
+   "pathM": 370,
+   "extentM": [
+    225,
+    131
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w683933576",
+   "country": "DE",
+   "name": "medius Klinik Ostfildern-Ruit",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 10,
+   "waypoints": 13,
+   "trails": 11,
+   "pathM": 367,
+   "extentM": [
+    329,
+    307
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w26734605",
+   "country": "DE",
+   "name": "Klinikum Esslingen",
+   "buildings": 25,
+   "named": 25,
+   "entrances": 5,
+   "facilities": 4,
+   "waypoints": 32,
+   "trails": 22,
+   "pathM": 958,
+   "extentM": [
+    320,
+    411
+   ],
+   "score": 56
+  },
+  {
+   "id": "osm-de-w971109469",
+   "country": "DE",
+   "name": "Krankenhaus Bad Cannstatt",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 8,
+   "facilities": 5,
+   "waypoints": 11,
+   "trails": 23,
+   "pathM": 688,
+   "extentM": [
+    389,
+    234
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w83041648",
+   "country": "DE",
+   "name": "Rems-Murr-Klinikum Winnenden",
+   "buildings": 7,
+   "named": 6,
+   "entrances": 2,
+   "facilities": 24,
+   "waypoints": 30,
+   "trails": 35,
+   "pathM": 1826,
+   "extentM": [
+    425,
+    509
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-de-w32011730",
+   "country": "DE",
+   "name": "Zentrum für Psychiatrie Winnenden",
+   "buildings": 19,
+   "named": 19,
+   "entrances": 3,
+   "facilities": 3,
+   "waypoints": 9,
+   "trails": 13,
+   "pathM": 253,
+   "extentM": [
+    302,
+    146
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-de-w507848143",
+   "country": "DE",
+   "name": "Rems-Murr-Klinik Schorndorf",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 4,
+   "facilities": 10,
+   "waypoints": 17,
+   "trails": 2,
+   "pathM": 118,
+   "extentM": [
+    231,
+    231
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-w909186995",
+   "country": "DE",
+   "name": "Stauferklinikum Schwäbisch Gmünd",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 21,
+   "waypoints": 26,
+   "trails": 21,
+   "pathM": 1717,
+   "extentM": [
+    488,
+    380
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-de-w54225148",
+   "country": "DE",
+   "name": "Fürst-Stirum-Klinik",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 25,
+   "waypoints": 32,
+   "trails": 17,
+   "pathM": 553,
+   "extentM": [
+    294,
+    252
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-de-w1036017501",
+   "country": "DE",
+   "name": "Gesundheitszentren Rhein-Neckar",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 5,
+   "facilities": 19,
+   "waypoints": 30,
+   "trails": 10,
+   "pathM": 396,
+   "extentM": [
+    321,
+    231
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-de-w150890387",
+   "country": "DE",
+   "name": "Brüderklinikum Julia Lanz",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 10,
+   "facilities": 12,
+   "waypoints": 25,
+   "trails": 14,
+   "pathM": 650,
+   "extentM": [
+    251,
+    194
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-de-w321195083",
+   "country": "DE",
+   "name": "Zentralinstitut für Seelische Gesundheit",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 7,
+   "trails": 2,
+   "pathM": 105,
+   "extentM": [
+    188,
+    178
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w43793277",
+   "country": "DE",
+   "name": "Universitätsmedizin Mannheim",
+   "buildings": 30,
+   "named": 30,
+   "entrances": 34,
+   "facilities": 23,
+   "waypoints": 79,
+   "trails": 134,
+   "pathM": 5047,
+   "extentM": [
+    712,
+    529
+   ],
+   "score": 91
+  },
+  {
+   "id": "osm-de-w27849150",
+   "country": "DE",
+   "name": "Psychiatrisches Zentrum Nordbaden",
+   "buildings": 52,
+   "named": 52,
+   "entrances": 33,
+   "facilities": 52,
+   "waypoints": 132,
+   "trails": 169,
+   "pathM": 7463,
+   "extentM": [
+    1179,
+    736
+   ],
+   "score": 162
+  },
+  {
+   "id": "osm-de-w481677440",
+   "country": "DE",
+   "name": "Thoraxklinik Heidelberg",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 6,
+   "facilities": 6,
+   "waypoints": 13,
+   "trails": 12,
+   "pathM": 468,
+   "extentM": [
+    251,
+    194
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w280880306",
+   "country": "DE",
+   "name": "Bethanien-Krankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 9,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    116,
+    154
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w894614246",
+   "country": "DE",
+   "name": "Universitätsklinikum Heidelberg",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 13,
+   "waypoints": 14,
+   "trails": 45,
+   "pathM": 2189,
+   "extentM": [
+    555,
+    511
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w323478250",
+   "country": "DE",
+   "name": "Zentrum für Psychosoziale Medizin",
+   "buildings": 7,
+   "named": 6,
+   "entrances": 5,
+   "facilities": 6,
+   "waypoints": 2,
+   "trails": 1,
+   "pathM": 75,
+   "extentM": [
+    62,
+    46
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w342045912",
+   "country": "DE",
+   "name": "Klinik Sankt Elisabeth",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 7,
+   "waypoints": 11,
+   "trails": 5,
+   "pathM": 135,
+   "extentM": [
+    144,
+    177
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w789230898",
+   "country": "DE",
+   "name": "Orthopädische Klinik",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 19,
+   "facilities": 26,
+   "waypoints": 56,
+   "trails": 115,
+   "pathM": 2602,
+   "extentM": [
+    439,
+    554
+   ],
+   "score": 55
+  },
+  {
+   "id": "osm-de-w93317979",
+   "country": "DE",
+   "name": "GRN-Klinik Sinsheim",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 8,
+   "waypoints": 14,
+   "trails": 5,
+   "pathM": 349,
+   "extentM": [
+    234,
+    250
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w67713422",
+   "country": "DE",
+   "name": "SLK-Klinik Gesundbrunnen",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 7,
+   "facilities": 17,
+   "waypoints": 29,
+   "trails": 21,
+   "pathM": 917,
+   "extentM": [
+    557,
+    376
+   ],
+   "score": 33
+  },
+  {
+   "id": "osm-de-w791713476",
+   "country": "DE",
+   "name": "Neckar-Odenwald Kliniken Mosbach",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 12,
+   "pathM": 474,
+   "extentM": [
+    264,
+    306
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w91296493",
+   "country": "DE",
+   "name": "Klinikum am Plattenwald",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 12,
+   "waypoints": 15,
+   "trails": 20,
+   "pathM": 1536,
+   "extentM": [
+    428,
+    431
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w1562768177",
+   "country": "DE",
+   "name": "Diak Klinikum Landkreis Schwäbisch Hall",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 14,
+   "trails": 11,
+   "pathM": 404,
+   "extentM": [
+    538,
+    827
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w791717743",
+   "country": "DE",
+   "name": "Neckar-Odenwald Kliniken Buchen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 19,
+   "pathM": 586,
+   "extentM": [
+    458,
+    227
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w93244298",
+   "country": "DE",
+   "name": "Klinikum Heidenheim",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 10,
+   "waypoints": 18,
+   "trails": 10,
+   "pathM": 331,
+   "extentM": [
+    462,
+    334
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w398683625",
+   "country": "DE",
+   "name": "Ostalb-Klinikum Aalen",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 6,
+   "facilities": 31,
+   "waypoints": 42,
+   "trails": 12,
+   "pathM": 812,
+   "extentM": [
+    396,
+    352
+   ],
+   "score": 50
+  },
+  {
+   "id": "osm-de-w298616876",
+   "country": "DE",
+   "name": "Buchinger Wilhelmi - Fachklinik für Heilfasten",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 12,
+   "trails": 15,
+   "pathM": 900,
+   "extentM": [
+    255,
+    207
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w90355808",
+   "country": "DE",
+   "name": "Kliniken Schmieder Heidelberg",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 7,
+   "trails": 9,
+   "pathM": 339,
+   "extentM": [
+    129,
+    332
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w32401804",
+   "country": "DE",
+   "name": "Klinikum am Weissenhof",
+   "buildings": 47,
+   "named": 47,
+   "entrances": 0,
+   "facilities": 18,
+   "waypoints": 65,
+   "trails": 56,
+   "pathM": 4111,
+   "extentM": [
+    822,
+    845
+   ],
+   "score": 112
+  },
+  {
+   "id": "osm-de-w567409496",
+   "country": "DE",
+   "name": "Diakoneo",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 9,
+   "trails": 10,
+   "pathM": 932,
+   "extentM": [
+    539,
+    827
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w189936810",
+   "country": "DE",
+   "name": "Klinikum Crailsheim",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 9,
+   "trails": 1,
+   "pathM": 98,
+   "extentM": [
+    331,
+    214
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w1116611389",
+   "country": "DE",
+   "name": "Juliusspital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 9,
+   "facilities": 11,
+   "waypoints": 20,
+   "trails": 15,
+   "pathM": 366,
+   "extentM": [
+    257,
+    193
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w218574329",
+   "country": "DE",
+   "name": "KWM-Missioklinik",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 4,
+   "waypoints": 8,
+   "trails": 8,
+   "pathM": 203,
+   "extentM": [
+    321,
+    216
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w200214211",
+   "country": "DE",
+   "name": "Kliniken Oberallgäu",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 12,
+   "trails": 7,
+   "pathM": 538,
+   "extentM": [
+    348,
+    273
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w30685061",
+   "country": "DE",
+   "name": "Kliniken Sonthofen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 9,
+   "waypoints": 14,
+   "trails": 12,
+   "pathM": 503,
+   "extentM": [
+    198,
+    233
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w99077231",
+   "country": "DE",
+   "name": "Klinikum Kempten-Oberallgäu",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 10,
+   "facilities": 19,
+   "waypoints": 31,
+   "trails": 16,
+   "pathM": 551,
+   "extentM": [
+    334,
+    336
+   ],
+   "score": 28
+  },
+  {
+   "id": "osm-de-w25449545",
+   "country": "DE",
+   "name": "St. Vinzenz Klinik",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 6,
+   "facilities": 11,
+   "waypoints": 20,
+   "trails": 8,
+   "pathM": 442,
+   "extentM": [
+    299,
+    220
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-w669292859",
+   "country": "DE",
+   "name": "Fachklinik Enzensberg",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 10,
+   "trails": 5,
+   "pathM": 198,
+   "extentM": [
+    432,
+    393
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w55680047",
+   "country": "DE",
+   "name": "Klinikum Memmingen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 10,
+   "waypoints": 12,
+   "trails": 24,
+   "pathM": 1005,
+   "extentM": [
+    227,
+    260
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w128800276",
+   "country": "DE",
+   "name": "Klinikum Kaufbeuren Ostallgäu",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 8,
+   "pathM": 825,
+   "extentM": [
+    260,
+    382
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w35777900",
+   "country": "DE",
+   "name": "Klinikum Garmisch-Partenkirchen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 7,
+   "trails": 13,
+   "pathM": 303,
+   "extentM": [
+    234,
+    294
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w1089491536",
+   "country": "DE",
+   "name": "Berufsgenossenschaftliche Unfallklinik Murnau",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 14,
+   "facilities": 17,
+   "waypoints": 25,
+   "trails": 40,
+   "pathM": 1632,
+   "extentM": [
+    553,
+    487
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w1137884638",
+   "country": "DE",
+   "name": "Ohlstadtklinik",
+   "buildings": 10,
+   "named": 9,
+   "entrances": 2,
+   "facilities": 0,
+   "waypoints": 10,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    182,
+    140
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w103476932",
+   "country": "DE",
+   "name": "Fachklinik Bad Heilbrunn",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 1,
+   "waypoints": 7,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    151,
+    123
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w961286997",
+   "country": "DE",
+   "name": "Asklepios Stadtklinik",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 5,
+   "facilities": 2,
+   "waypoints": 10,
+   "trails": 5,
+   "pathM": 201,
+   "extentM": [
+    362,
+    433
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w435789320",
+   "country": "DE",
+   "name": "Klinik Höhenried",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 5,
+   "facilities": 12,
+   "waypoints": 25,
+   "trails": 7,
+   "pathM": 364,
+   "extentM": [
+    403,
+    349
+   ],
+   "score": 31
+  },
+  {
+   "id": "osm-de-r6172896",
+   "country": "DE",
+   "name": "Klinikum der Universität München",
+   "buildings": 18,
+   "named": 18,
+   "entrances": 22,
+   "facilities": 28,
+   "waypoints": 66,
+   "trails": 89,
+   "pathM": 5550,
+   "extentM": [
+    793,
+    589
+   ],
+   "score": 69
+  },
+  {
+   "id": "osm-de-w8116617",
+   "country": "DE",
+   "name": "HELIOS Klinikum München West",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 8,
+   "facilities": 11,
+   "waypoints": 22,
+   "trails": 20,
+   "pathM": 975,
+   "extentM": [
+    231,
+    370
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w448145655",
+   "country": "DE",
+   "name": "Klinik Augustinum",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 17,
+   "pathM": 1023,
+   "extentM": [
+    268,
+    233
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w8887372",
+   "country": "DE",
+   "name": "Klinikum Dritter Orden",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 10,
+   "facilities": 18,
+   "waypoints": 37,
+   "trails": 77,
+   "pathM": 2787,
+   "extentM": [
+    381,
+    389
+   ],
+   "score": 40
+  },
+  {
+   "id": "osm-de-w198989981",
+   "country": "DE",
+   "name": "Krankenhaus der Barmherzigen Brüder",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 7,
+   "facilities": 15,
+   "waypoints": 20,
+   "trails": 18,
+   "pathM": 773,
+   "extentM": [
+    309,
+    228
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-w258124384",
+   "country": "DE",
+   "name": "Rotkreuzklinikum München",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 13,
+   "trails": 10,
+   "pathM": 193,
+   "extentM": [
+    187,
+    197
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w13792215",
+   "country": "DE",
+   "name": "München Klinik Harlaching",
+   "buildings": 14,
+   "named": 13,
+   "entrances": 26,
+   "facilities": 53,
+   "waypoints": 72,
+   "trails": 86,
+   "pathM": 3605,
+   "extentM": [
+    557,
+    622
+   ],
+   "score": 93
+  },
+  {
+   "id": "osm-de-w1205813455",
+   "country": "DE",
+   "name": "Krankenhaus für Naturheilweisen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 6,
+   "pathM": 256,
+   "extentM": [
+    112,
+    107
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w8056138",
+   "country": "DE",
+   "name": "LMU Klinikum Campus Innenstadt",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 20,
+   "facilities": 18,
+   "waypoints": 43,
+   "trails": 26,
+   "pathM": 718,
+   "extentM": [
+    344,
+    390
+   ],
+   "score": 44
+  },
+  {
+   "id": "osm-de-w23684048",
+   "country": "DE",
+   "name": "Klinikum rechts der Isar",
+   "buildings": 45,
+   "named": 45,
+   "entrances": 19,
+   "facilities": 21,
+   "waypoints": 78,
+   "trails": 46,
+   "pathM": 1944,
+   "extentM": [
+    497,
+    503
+   ],
+   "score": 120
+  },
+  {
+   "id": "osm-de-w9058187",
+   "country": "DE",
+   "name": "München Klinik Neuperlach",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 12,
+   "facilities": 14,
+   "waypoints": 21,
+   "trails": 32,
+   "pathM": 646,
+   "extentM": [
+    312,
+    415
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-de-w204282271",
+   "country": "DE",
+   "name": "kbo-Isar-Amper-Klinikum München-Ost",
+   "buildings": 24,
+   "named": 24,
+   "entrances": 232,
+   "facilities": 147,
+   "waypoints": 232,
+   "trails": 333,
+   "pathM": 13143,
+   "extentM": [
+    998,
+    1017
+   ],
+   "score": 267
+  },
+  {
+   "id": "osm-de-w174549561",
+   "country": "DE",
+   "name": "TUM Klinikum Deutsches Herzzentrum",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 5,
+   "facilities": 11,
+   "waypoints": 17,
+   "trails": 8,
+   "pathM": 207,
+   "extentM": [
+    393,
+    387
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w30683541",
+   "country": "DE",
+   "name": "München Klinik Schwabing",
+   "buildings": 35,
+   "named": 35,
+   "entrances": 24,
+   "facilities": 26,
+   "waypoints": 79,
+   "trails": 60,
+   "pathM": 2894,
+   "extentM": [
+    625,
+    408
+   ],
+   "score": 102
+  },
+  {
+   "id": "osm-de-w1428000359",
+   "country": "DE",
+   "name": "Klinik und Poliklinik für Dermatologie und Allergologie am Biederstein, Technische Universität München",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 9,
+   "pathM": 379,
+   "extentM": [
+    251,
+    299
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w1026169510",
+   "country": "DE",
+   "name": "München Klinik Bogenhausen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 6,
+   "facilities": 11,
+   "waypoints": 14,
+   "trails": 44,
+   "pathM": 1526,
+   "extentM": [
+    367,
+    321
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w111345635",
+   "country": "DE",
+   "name": "Klinik Bad Trissl",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 12,
+   "trails": 5,
+   "pathM": 203,
+   "extentM": [
+    187,
+    180
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w460610721",
+   "country": "DE",
+   "name": "Medical Park Klinik Chiemsee",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 8,
+   "trails": 14,
+   "pathM": 472,
+   "extentM": [
+    251,
+    258
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w7994893",
+   "country": "DE",
+   "name": "RoMed Klinikum Rosenheim",
+   "buildings": 16,
+   "named": 16,
+   "entrances": 8,
+   "facilities": 11,
+   "waypoints": 35,
+   "trails": 16,
+   "pathM": 666,
+   "extentM": [
+    379,
+    335
+   ],
+   "score": 47
+  },
+  {
+   "id": "osm-de-w51681572",
+   "country": "DE",
+   "name": "Klinikum Ebersberg München Ost",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 8,
+   "pathM": 619,
+   "extentM": [
+    302,
+    155
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w462171591",
+   "country": "DE",
+   "name": "RoMed-Klinik Prien",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 9,
+   "waypoints": 15,
+   "trails": 13,
+   "pathM": 306,
+   "extentM": [
+    236,
+    255
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w779025478",
+   "country": "DE",
+   "name": "Simsseeklinik Bad Endorf",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 12,
+   "trails": 4,
+   "pathM": 174,
+   "extentM": [
+    388,
+    148
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w145093739",
+   "country": "DE",
+   "name": "Schön Klinik Vogtareuth",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 19,
+   "pathM": 1228,
+   "extentM": [
+    517,
+    312
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w225000855",
+   "country": "DE",
+   "name": "Kreisklinik Trostberg",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 12,
+   "trails": 9,
+   "pathM": 775,
+   "extentM": [
+    296,
+    483
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w23329962",
+   "country": "DE",
+   "name": "Inn-Salzach-Klinikum",
+   "buildings": 18,
+   "named": 18,
+   "entrances": 2,
+   "facilities": 13,
+   "waypoints": 32,
+   "trails": 58,
+   "pathM": 3373,
+   "extentM": [
+    968,
+    1069
+   ],
+   "score": 49
+  },
+  {
+   "id": "osm-de-w285092105",
+   "country": "DE",
+   "name": "Klinik Mühldorf",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 4,
+   "pathM": 142,
+   "extentM": [
+    254,
+    183
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w328199721",
+   "country": "DE",
+   "name": "Klinikum Traunstein",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 5,
+   "facilities": 11,
+   "waypoints": 20,
+   "trails": 37,
+   "pathM": 1320,
+   "extentM": [
+    277,
+    253
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w203111982",
+   "country": "DE",
+   "name": "Kreisklinik Freilassing",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 9,
+   "trails": 10,
+   "pathM": 629,
+   "extentM": [
+    276,
+    214
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w324849423",
+   "country": "DE",
+   "name": "InnKlinikum Altötting Mühldorf",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 8,
+   "waypoints": 10,
+   "trails": 20,
+   "pathM": 1260,
+   "extentM": [
+    397,
+    428
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w242798284",
+   "country": "DE",
+   "name": "Stiftungsklinik Weißenhorn",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 6,
+   "facilities": 6,
+   "waypoints": 16,
+   "trails": 11,
+   "pathM": 563,
+   "extentM": [
+    200,
+    282
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w394682818",
+   "country": "DE",
+   "name": "Bezirkskrankenhaus Günzburg",
+   "buildings": 43,
+   "named": 43,
+   "entrances": 4,
+   "facilities": 42,
+   "waypoints": 87,
+   "trails": 61,
+   "pathM": 2670,
+   "extentM": [
+    954,
+    630
+   ],
+   "score": 124
+  },
+  {
+   "id": "osm-de-w1015293197",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Günzburg",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 5,
+   "facilities": 19,
+   "waypoints": 26,
+   "trails": 41,
+   "pathM": 2166,
+   "extentM": [
+    461,
+    340
+   ],
+   "score": 28
+  },
+  {
+   "id": "osm-de-w441345783",
+   "country": "DE",
+   "name": "Bezirkskrankenhaus Augsburg",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 29,
+   "facilities": 24,
+   "waypoints": 36,
+   "trails": 56,
+   "pathM": 2844,
+   "extentM": [
+    401,
+    327
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-de-w894581519",
+   "country": "DE",
+   "name": "Universitätsklinikum Augsburg",
+   "buildings": 10,
+   "named": 9,
+   "entrances": 18,
+   "facilities": 33,
+   "waypoints": 52,
+   "trails": 53,
+   "pathM": 3046,
+   "extentM": [
+    880,
+    486
+   ],
+   "score": 49
+  },
+  {
+   "id": "osm-de-w73365606",
+   "country": "DE",
+   "name": "Stiftungskrankenhaus Nördlingen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 10,
+   "waypoints": 14,
+   "trails": 14,
+   "pathM": 902,
+   "extentM": [
+    339,
+    320
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w1295680320",
+   "country": "DE",
+   "name": "Donau-Ries-Klinik",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 12,
+   "waypoints": 16,
+   "trails": 14,
+   "pathM": 901,
+   "extentM": [
+    401,
+    419
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w165302694",
+   "country": "DE",
+   "name": "Universitätsklinikum Augsburg Süd (Haunstetten)",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 5,
+   "pathM": 301,
+   "extentM": [
+    296,
+    234
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w578221155",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Schrobenhausen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    192,
+    247
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w1126993180",
+   "country": "DE",
+   "name": "Helios Amper-Klinikum Dachau",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 9,
+   "facilities": 22,
+   "waypoints": 31,
+   "trails": 11,
+   "pathM": 277,
+   "extentM": [
+    279,
+    270
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-de-w195738244",
+   "country": "DE",
+   "name": "Klinikum Freising",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 17,
+   "facilities": 13,
+   "waypoints": 23,
+   "trails": 34,
+   "pathM": 885,
+   "extentM": [
+    249,
+    336
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w368431625",
+   "country": "DE",
+   "name": "Ilmtalklinik",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 9,
+   "facilities": 16,
+   "waypoints": 24,
+   "trails": 39,
+   "pathM": 1969,
+   "extentM": [
+    434,
+    409
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w303747509",
+   "country": "DE",
+   "name": "Klinikum Altmühlfranken Weißenburg",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 10,
+   "waypoints": 13,
+   "trails": 4,
+   "pathM": 220,
+   "extentM": [
+    364,
+    221
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w894974428",
+   "country": "DE",
+   "name": "Klinikum Ingolstadt",
+   "buildings": 6,
+   "named": 5,
+   "entrances": 27,
+   "facilities": 31,
+   "waypoints": 49,
+   "trails": 53,
+   "pathM": 3397,
+   "extentM": [
+    683,
+    481
+   ],
+   "score": 50
+  },
+  {
+   "id": "osm-de-w36387249",
+   "country": "DE",
+   "name": "Bezirksklinikum Ansbach",
+   "buildings": 40,
+   "named": 40,
+   "entrances": 0,
+   "facilities": 20,
+   "waypoints": 60,
+   "trails": 54,
+   "pathM": 2588,
+   "extentM": [
+    970,
+    554
+   ],
+   "score": 98
+  },
+  {
+   "id": "osm-de-w699345639",
+   "country": "DE",
+   "name": "Klinikum Altmühlfranken Gunzenhausen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 9,
+   "facilities": 7,
+   "waypoints": 17,
+   "trails": 14,
+   "pathM": 339,
+   "extentM": [
+    198,
+    264
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w683646657",
+   "country": "DE",
+   "name": "Main-Klinik Ochsenfurt",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 9,
+   "waypoints": 16,
+   "trails": 14,
+   "pathM": 354,
+   "extentM": [
+    300,
+    246
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w636941157",
+   "country": "DE",
+   "name": "Klinik Neustadt",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 1,
+   "pathM": 60,
+   "extentM": [
+    340,
+    204
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w114308873",
+   "country": "DE",
+   "name": "Steigerwaldklinik Burgebrach",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 12,
+   "pathM": 1010,
+   "extentM": [
+    461,
+    347
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w122747331",
+   "country": "DE",
+   "name": "Klinikum am Bruderwald",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 10,
+   "facilities": 30,
+   "waypoints": 41,
+   "trails": 39,
+   "pathM": 2244,
+   "extentM": [
+    524,
+    518
+   ],
+   "score": 40
+  },
+  {
+   "id": "osm-de-w698843847",
+   "country": "DE",
+   "name": "Kreisklinik Roth",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 13,
+   "facilities": 20,
+   "waypoints": 31,
+   "trails": 24,
+   "pathM": 994,
+   "extentM": [
+    366,
+    324
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-de-w5170502",
+   "country": "DE",
+   "name": "Stadtkrankenhaus Schwabach",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 12,
+   "waypoints": 15,
+   "trails": 30,
+   "pathM": 955,
+   "extentM": [
+    290,
+    306
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w197519624",
+   "country": "DE",
+   "name": "Klinikum Fürth",
+   "buildings": 16,
+   "named": 16,
+   "entrances": 11,
+   "facilities": 16,
+   "waypoints": 38,
+   "trails": 14,
+   "pathM": 505,
+   "extentM": [
+    505,
+    391
+   ],
+   "score": 53
+  },
+  {
+   "id": "osm-de-w139296877",
+   "country": "DE",
+   "name": "Klinikum Nürnberg Nord",
+   "buildings": 43,
+   "named": 43,
+   "entrances": 50,
+   "facilities": 16,
+   "waypoints": 100,
+   "trails": 56,
+   "pathM": 2032,
+   "extentM": [
+    632,
+    485
+   ],
+   "score": 108
+  },
+  {
+   "id": "osm-de-w236789495",
+   "country": "DE",
+   "name": "St. Theresien-Krankenhaus",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 9,
+   "waypoints": 15,
+   "trails": 4,
+   "pathM": 159,
+   "extentM": [
+    302,
+    288
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w348671545",
+   "country": "DE",
+   "name": "Krankenhaus Rummelsberg",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 3,
+   "pathM": 248,
+   "extentM": [
+    285,
+    333
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-r1132266",
+   "country": "DE",
+   "name": "Klinikum Nürnberg Süd",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 8,
+   "facilities": 17,
+   "waypoints": 33,
+   "trails": 48,
+   "pathM": 2779,
+   "extentM": [
+    621,
+    583
+   ],
+   "score": 38
+  },
+  {
+   "id": "osm-de-w79440571",
+   "country": "DE",
+   "name": "Krankenhaus Martha-Maria",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 12,
+   "pathM": 552,
+   "extentM": [
+    313,
+    238
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w281292913",
+   "country": "DE",
+   "name": "Klinikum Neumarkt i.d.OPf.",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 10,
+   "facilities": 9,
+   "waypoints": 25,
+   "trails": 15,
+   "pathM": 989,
+   "extentM": [
+    320,
+    362
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-w29217736",
+   "country": "DE",
+   "name": "Klinik Parsberg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 16,
+   "waypoints": 19,
+   "trails": 2,
+   "pathM": 162,
+   "extentM": [
+    299,
+    136
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w363100036",
+   "country": "DE",
+   "name": "Kreiskrankenhaus",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 2,
+   "waypoints": 6,
+   "trails": 4,
+   "pathM": 94,
+   "extentM": [
+    90,
+    106
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w1395723516",
+   "country": "DE",
+   "name": "Frankenalb-Klinik Engelthal",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 13,
+   "trails": 18,
+   "pathM": 1247,
+   "extentM": [
+    584,
+    340
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-r7393608",
+   "country": "DE",
+   "name": "KIRINUS PsoriSol Klinik",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 11,
+   "trails": 5,
+   "pathM": 158,
+   "extentM": [
+    212,
+    155
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w767533319",
+   "country": "DE",
+   "name": "St. Anna Krankenhaus",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 5,
+   "pathM": 248,
+   "extentM": [
+    269,
+    205
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w45856001",
+   "country": "DE",
+   "name": "Klinikum am Europakanal",
+   "buildings": 15,
+   "named": 15,
+   "entrances": 7,
+   "facilities": 16,
+   "waypoints": 36,
+   "trails": 62,
+   "pathM": 5002,
+   "extentM": [
+    666,
+    686
+   ],
+   "score": 46
+  },
+  {
+   "id": "osm-de-w122811589",
+   "country": "DE",
+   "name": "Universitätsklinikum Erlangen",
+   "buildings": 19,
+   "named": 19,
+   "entrances": 28,
+   "facilities": 32,
+   "waypoints": 70,
+   "trails": 84,
+   "pathM": 3369,
+   "extentM": [
+    643,
+    841
+   ],
+   "score": 74
+  },
+  {
+   "id": "osm-de-r3272002",
+   "country": "DE",
+   "name": "Chirurgisches Zentrum",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 10,
+   "trails": 6,
+   "pathM": 201,
+   "extentM": [
+    190,
+    188
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-r2653982",
+   "country": "DE",
+   "name": "Internistisches Zentrum",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 12,
+   "facilities": 7,
+   "waypoints": 13,
+   "trails": 33,
+   "pathM": 1796,
+   "extentM": [
+    642,
+    842
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w541091012",
+   "country": "DE",
+   "name": "HNO-Klinik",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 2,
+   "pathM": 31,
+   "extentM": [
+    120,
+    112
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w385537143",
+   "country": "DE",
+   "name": "Waldkrankenhaus St. Marien",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 15,
+   "facilities": 9,
+   "waypoints": 22,
+   "trails": 33,
+   "pathM": 779,
+   "extentM": [
+    275,
+    313
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w238738906",
+   "country": "DE",
+   "name": "Klinikum Landkreis Erding",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 6,
+   "facilities": 21,
+   "waypoints": 28,
+   "trails": 26,
+   "pathM": 1072,
+   "extentM": [
+    309,
+    281
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-de-w883870021",
+   "country": "DE",
+   "name": "LA-Regio Kliniken - Klinik Landshut-Mitte",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 5,
+   "facilities": 16,
+   "waypoints": 23,
+   "trails": 16,
+   "pathM": 1089,
+   "extentM": [
+    370,
+    409
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-w102619381",
+   "country": "DE",
+   "name": "Römerbad-Klinik",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 4,
+   "trails": 8,
+   "pathM": 368,
+   "extentM": [
+    272,
+    269
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w228062040",
+   "country": "DE",
+   "name": "Universitätsklinikum Regensburg",
+   "buildings": 27,
+   "named": 27,
+   "entrances": 26,
+   "facilities": 41,
+   "waypoints": 87,
+   "trails": 92,
+   "pathM": 5419,
+   "extentM": [
+    1116,
+    641
+   ],
+   "score": 100
+  },
+  {
+   "id": "osm-de-w27267104",
+   "country": "DE",
+   "name": "medbo Bezirksklinikum Regensburg",
+   "buildings": 50,
+   "named": 50,
+   "entrances": 45,
+   "facilities": 30,
+   "waypoints": 108,
+   "trails": 114,
+   "pathM": 3986,
+   "extentM": [
+    617,
+    757
+   ],
+   "score": 146
+  },
+  {
+   "id": "osm-de-w31469423",
+   "country": "DE",
+   "name": "Krankenhaus der Barmherzigen Brüder",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 3,
+   "facilities": 11,
+   "waypoints": 34,
+   "trails": 26,
+   "pathM": 1520,
+   "extentM": [
+    397,
+    404
+   ],
+   "score": 52
+  },
+  {
+   "id": "osm-de-w209055732",
+   "country": "DE",
+   "name": "Klinik St. Hedwig",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 1,
+   "pathM": 40,
+   "extentM": [
+    160,
+    182
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w31469427",
+   "country": "DE",
+   "name": "Caritas-Krankenhaus Sankt Josef",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 5,
+   "pathM": 307,
+   "extentM": [
+    260,
+    255
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w963866646",
+   "country": "DE",
+   "name": "Kreisklinik Mallersdorf",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 17,
+   "waypoints": 20,
+   "trails": 13,
+   "pathM": 683,
+   "extentM": [
+    315,
+    272
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-w143896723",
+   "country": "DE",
+   "name": "Caritas-Krankenhaus St. Maria",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 2,
+   "pathM": 85,
+   "extentM": [
+    126,
+    75
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w283717038",
+   "country": "DE",
+   "name": "Bezirksklinikum Mainkofen",
+   "buildings": 48,
+   "named": 48,
+   "entrances": 5,
+   "facilities": 48,
+   "waypoints": 98,
+   "trails": 62,
+   "pathM": 3135,
+   "extentM": [
+    915,
+    823
+   ],
+   "score": 143
+  },
+  {
+   "id": "osm-de-w237427612",
+   "country": "DE",
+   "name": "DONAUISAR Klinikum Deggendorf",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 11,
+   "waypoints": 17,
+   "trails": 23,
+   "pathM": 543,
+   "extentM": [
+    438,
+    247
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w59197568",
+   "country": "DE",
+   "name": "Klinikum St. Marien Amberg",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 9,
+   "waypoints": 17,
+   "trails": 8,
+   "pathM": 187,
+   "extentM": [
+    291,
+    312
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-r13568584",
+   "country": "DE",
+   "name": "Klinikum St. Marien",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 10,
+   "facilities": 5,
+   "waypoints": 12,
+   "trails": 7,
+   "pathM": 176,
+   "extentM": [
+    291,
+    312
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w963700801",
+   "country": "DE",
+   "name": "Gesundheitscampus",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 13,
+   "trails": 1,
+   "pathM": 114,
+   "extentM": [
+    279,
+    231
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w152218743",
+   "country": "DE",
+   "name": "Klinikum Weiden",
+   "buildings": 7,
+   "named": 6,
+   "entrances": 7,
+   "facilities": 8,
+   "waypoints": 19,
+   "trails": 3,
+   "pathM": 390,
+   "extentM": [
+    305,
+    330
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w225378618",
+   "country": "DE",
+   "name": "Bezirksklinikum Wöllershof",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 2,
+   "pathM": 138,
+   "extentM": [
+    633,
+    408
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-r6743509",
+   "country": "DE",
+   "name": "Klinikum Aschaffenburg",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 6,
+   "facilities": 16,
+   "waypoints": 28,
+   "trails": 21,
+   "pathM": 655,
+   "extentM": [
+    387,
+    580
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-de-w1278603481",
+   "country": "DE",
+   "name": "Klinikum Aschaffenburg-Alzenau",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 8,
+   "waypoints": 8,
+   "trails": 10,
+   "pathM": 471,
+   "extentM": [
+    204,
+    179
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w137629620",
+   "country": "DE",
+   "name": "Bezirkskrankenhaus Lohr",
+   "buildings": 30,
+   "named": 30,
+   "entrances": 22,
+   "facilities": 8,
+   "waypoints": 58,
+   "trails": 94,
+   "pathM": 6011,
+   "extentM": [
+    840,
+    549
+   ],
+   "score": 74
+  },
+  {
+   "id": "osm-de-w302286249",
+   "country": "DE",
+   "name": "Sankt Elisabeth Krankenhaus",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 8,
+   "waypoints": 12,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    191,
+    267
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w698170761",
+   "country": "DE",
+   "name": "Deegenbergklinik Bad Kissingen",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 9,
+   "trails": 16,
+   "pathM": 1023,
+   "extentM": [
+    260,
+    256
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w1027074475",
+   "country": "DE",
+   "name": "Rhönklinikum",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 25,
+   "facilities": 30,
+   "waypoints": 59,
+   "trails": 39,
+   "pathM": 1570,
+   "extentM": [
+    460,
+    455
+   ],
+   "score": 54
+  },
+  {
+   "id": "osm-de-w302888715",
+   "country": "DE",
+   "name": "Haßberg-Kliniken Haus Hassfurt",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 15,
+   "trails": 4,
+   "pathM": 224,
+   "extentM": [
+    283,
+    303
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w27990735",
+   "country": "DE",
+   "name": "Bezirksklinikum Obermain",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 25,
+   "trails": 22,
+   "pathM": 2778,
+   "extentM": [
+    582,
+    785
+   ],
+   "score": 46
+  },
+  {
+   "id": "osm-de-w411936884",
+   "country": "DE",
+   "name": "Helmuth-G.-Walther Klinikum",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 7,
+   "trails": 8,
+   "pathM": 787,
+   "extentM": [
+    388,
+    454
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w25067205",
+   "country": "DE",
+   "name": "Klinikum Bayreuth",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 9,
+   "facilities": 23,
+   "waypoints": 34,
+   "trails": 31,
+   "pathM": 1891,
+   "extentM": [
+    688,
+    417
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-de-w367208174",
+   "country": "DE",
+   "name": "Klinikum Kulmbach",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 11,
+   "waypoints": 15,
+   "trails": 9,
+   "pathM": 274,
+   "extentM": [
+    203,
+    316
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w24594709",
+   "country": "DE",
+   "name": "Bezirkskrankenhaus",
+   "buildings": 31,
+   "named": 31,
+   "entrances": 9,
+   "facilities": 45,
+   "waypoints": 79,
+   "trails": 74,
+   "pathM": 3331,
+   "extentM": [
+    671,
+    766
+   ],
+   "score": 111
+  },
+  {
+   "id": "osm-de-w222998378",
+   "country": "DE",
+   "name": "Helios Frankenwaldklinik Kronach",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 8,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    220,
+    250
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w536390909",
+   "country": "DE",
+   "name": "Kliniken Hochfranken - Klinik Naila",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 11,
+   "waypoints": 11,
+   "trails": 6,
+   "pathM": 284,
+   "extentM": [
+    302,
+    271
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w1327585247",
+   "country": "DE",
+   "name": "CuraMed Privatklinik Stillachhaus",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 4,
+   "trails": 3,
+   "pathM": 468,
+   "extentM": [
+    171,
+    286
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w38450560",
+   "country": "DE",
+   "name": "Klinik Oberammergau - Zentrum für Rheumatologie, Orthopädie und Schmerztherapie",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 7,
+   "trails": 2,
+   "pathM": 543,
+   "extentM": [
+    284,
+    210
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-r1903030",
+   "country": "DE",
+   "name": "Klinik Hochried",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 9,
+   "trails": 11,
+   "pathM": 303,
+   "extentM": [
+    375,
+    293
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w241190060",
+   "country": "DE",
+   "name": "Rotes Kreuz Krankenhaus",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 11,
+   "facilities": 15,
+   "waypoints": 30,
+   "trails": 7,
+   "pathM": 323,
+   "extentM": [
+    233,
+    188
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-de-w240888276",
+   "country": "DE",
+   "name": "DIAKO",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 13,
+   "trails": 3,
+   "pathM": 166,
+   "extentM": [
+    287,
+    232
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w205478690",
+   "country": "DE",
+   "name": "Klinikum Links der Weser",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 17,
+   "waypoints": 18,
+   "trails": 19,
+   "pathM": 1172,
+   "extentM": [
+    466,
+    474
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w242345894",
+   "country": "DE",
+   "name": "Roland-Klinik",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 9,
+   "waypoints": 10,
+   "trails": 10,
+   "pathM": 434,
+   "extentM": [
+    193,
+    189
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w48894118",
+   "country": "DE",
+   "name": "Klinikum Bremen-Mitte",
+   "buildings": 19,
+   "named": 19,
+   "entrances": 20,
+   "facilities": 38,
+   "waypoints": 69,
+   "trails": 30,
+   "pathM": 1177,
+   "extentM": [
+    643,
+    538
+   ],
+   "score": 82
+  },
+  {
+   "id": "osm-de-w233064863",
+   "country": "DE",
+   "name": "Klinikum Bremen-Ost",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 2,
+   "facilities": 4,
+   "waypoints": 10,
+   "trails": 23,
+   "pathM": 754,
+   "extentM": [
+    283,
+    215
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w122225530",
+   "country": "DE",
+   "name": "St. Joseph-Stift",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 15,
+   "waypoints": 20,
+   "trails": 20,
+   "pathM": 504,
+   "extentM": [
+    280,
+    249
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-w244070302",
+   "country": "DE",
+   "name": "Ameos Klinikum Dr. Heines",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 5,
+   "facilities": 2,
+   "waypoints": 13,
+   "trails": 30,
+   "pathM": 1417,
+   "extentM": [
+    426,
+    334
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w103959963",
+   "country": "DE",
+   "name": "Klinikum Bremerhaven-Reinkenheide",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 6,
+   "facilities": 23,
+   "waypoints": 30,
+   "trails": 39,
+   "pathM": 1627,
+   "extentM": [
+    695,
+    526
+   ],
+   "score": 33
+  },
+  {
+   "id": "osm-de-w1156029189",
+   "country": "DE",
+   "name": "St. Josef-Krankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 5,
+   "pathM": 136,
+   "extentM": [
+    114,
+    103
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w892944913",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Heppenheim",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 12,
+   "trails": 31,
+   "pathM": 2195,
+   "extentM": [
+    414,
+    658
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w1156036813",
+   "country": "DE",
+   "name": "Heilig-Geist Hospital Bensheim",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 10,
+   "waypoints": 16,
+   "trails": 9,
+   "pathM": 302,
+   "extentM": [
+    198,
+    187
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w31862979",
+   "country": "DE",
+   "name": "Philippshospital",
+   "buildings": 16,
+   "named": 16,
+   "entrances": 23,
+   "facilities": 20,
+   "waypoints": 48,
+   "trails": 62,
+   "pathM": 5210,
+   "extentM": [
+    1009,
+    1078
+   ],
+   "score": 54
+  },
+  {
+   "id": "osm-de-w431817587",
+   "country": "DE",
+   "name": "Kreisklinik Groß-Gerau",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 4,
+   "pathM": 727,
+   "extentM": [
+    269,
+    358
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w150016559",
+   "country": "DE",
+   "name": "Klinikum Darmstadt",
+   "buildings": 21,
+   "named": 21,
+   "entrances": 7,
+   "facilities": 11,
+   "waypoints": 37,
+   "trails": 21,
+   "pathM": 894,
+   "extentM": [
+    378,
+    283
+   ],
+   "score": 56
+  },
+  {
+   "id": "osm-de-w150041564",
+   "country": "DE",
+   "name": "Agaplesion Elisabethenstift",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 4,
+   "facilities": 8,
+   "waypoints": 19,
+   "trails": 11,
+   "pathM": 301,
+   "extentM": [
+    301,
+    191
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w150041731",
+   "country": "DE",
+   "name": "Alice-Hospital",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 8,
+   "facilities": 17,
+   "waypoints": 28,
+   "trails": 36,
+   "pathM": 820,
+   "extentM": [
+    316,
+    235
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-de-w932388080",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Erbach",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 1,
+   "facilities": 13,
+   "waypoints": 20,
+   "trails": 22,
+   "pathM": 587,
+   "extentM": [
+    334,
+    296
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w894177175",
+   "country": "DE",
+   "name": "Asklepios Schlossberg Klinik Bad König",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 11,
+   "pathM": 306,
+   "extentM": [
+    224,
+    200
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w1144648532",
+   "country": "DE",
+   "name": "Kreisklinik Groß-Umstadt",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 11,
+   "trails": 15,
+   "pathM": 572,
+   "extentM": [
+    339,
+    268
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-r1955493",
+   "country": "DE",
+   "name": "Psychiatrisches Zentrum für den Rheingau-Taunus-Kreis und Wiesbaden",
+   "buildings": 35,
+   "named": 35,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 41,
+   "trails": 24,
+   "pathM": 981,
+   "extentM": [
+    771,
+    531
+   ],
+   "score": 77
+  },
+  {
+   "id": "osm-de-w637294128",
+   "country": "DE",
+   "name": "Otto-Fricke-Krankenhaus",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 5,
+   "facilities": 4,
+   "waypoints": 10,
+   "trails": 13,
+   "pathM": 314,
+   "extentM": [
+    184,
+    266
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w236685701",
+   "country": "DE",
+   "name": "Dr. Horst Schmidt Kliniken",
+   "buildings": 23,
+   "named": 23,
+   "entrances": 15,
+   "facilities": 22,
+   "waypoints": 58,
+   "trails": 21,
+   "pathM": 386,
+   "extentM": [
+    528,
+    549
+   ],
+   "score": 74
+  },
+  {
+   "id": "osm-de-w30730971",
+   "country": "DE",
+   "name": "Asklepios-Paulinen-Klinik",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 16,
+   "trails": 14,
+   "pathM": 458,
+   "extentM": [
+    170,
+    225
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w62150123",
+   "country": "DE",
+   "name": "Sankt-Josefs-Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 10,
+   "trails": 6,
+   "pathM": 226,
+   "extentM": [
+    155,
+    321
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w1104650191",
+   "country": "DE",
+   "name": "Vitos Klinik Hadamar",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 10,
+   "trails": 10,
+   "pathM": 318,
+   "extentM": [
+    661,
+    358
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w134101864",
+   "country": "DE",
+   "name": "Krankenhaus Weilburg - Klinik für Neurologie",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 3,
+   "facilities": 7,
+   "waypoints": 21,
+   "trails": 29,
+   "pathM": 3595,
+   "extentM": [
+    421,
+    440
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-de-w132717911",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Weilburg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 12,
+   "waypoints": 16,
+   "trails": 2,
+   "pathM": 66,
+   "extentM": [
+    200,
+    358
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w899229430",
+   "country": "DE",
+   "name": "Falkeneck",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 5,
+   "waypoints": 10,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    149,
+    209
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-r13458950",
+   "country": "DE",
+   "name": "Vitos Klinik Herborn",
+   "buildings": 23,
+   "named": 23,
+   "entrances": 6,
+   "facilities": 32,
+   "waypoints": 60,
+   "trails": 18,
+   "pathM": 440,
+   "extentM": [
+    606,
+    760
+   ],
+   "score": 82
+  },
+  {
+   "id": "osm-de-w892343186",
+   "country": "DE",
+   "name": "Dill-Kliniken",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 7,
+   "facilities": 16,
+   "waypoints": 24,
+   "trails": 7,
+   "pathM": 196,
+   "extentM": [
+    273,
+    386
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w26596810",
+   "country": "DE",
+   "name": "GPR Klinikum",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 7,
+   "facilities": 14,
+   "waypoints": 22,
+   "trails": 20,
+   "pathM": 879,
+   "extentM": [
+    409,
+    328
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w5059310",
+   "country": "DE",
+   "name": "Asklepios Klinik Langen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 11,
+   "facilities": 14,
+   "waypoints": 23,
+   "trails": 28,
+   "pathM": 690,
+   "extentM": [
+    387,
+    367
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-r442796",
+   "country": "DE",
+   "name": "Universitätsklinikum Frankfurt",
+   "buildings": 62,
+   "named": 62,
+   "entrances": 15,
+   "facilities": 81,
+   "waypoints": 155,
+   "trails": 71,
+   "pathM": 2715,
+   "extentM": [
+    1550,
+    889
+   ],
+   "score": 207
+  },
+  {
+   "id": "osm-de-w342372717",
+   "country": "DE",
+   "name": "Agaplesion Markus Krankenhaus",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 8,
+   "facilities": 15,
+   "waypoints": 27,
+   "trails": 20,
+   "pathM": 915,
+   "extentM": [
+    214,
+    330
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w4756459",
+   "country": "DE",
+   "name": "Bürgerhospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    198,
+    141
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w42639744",
+   "country": "DE",
+   "name": "Sana Klinikum Offenbach",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 4,
+   "facilities": 16,
+   "waypoints": 29,
+   "trails": 24,
+   "pathM": 1221,
+   "extentM": [
+    463,
+    500
+   ],
+   "score": 36
+  },
+  {
+   "id": "osm-de-w4904695",
+   "country": "DE",
+   "name": "Sankt Katharinen Krankenhaus",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 16,
+   "trails": 19,
+   "pathM": 450,
+   "extentM": [
+    274,
+    290
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w12316095",
+   "country": "DE",
+   "name": "varisano Krankenhaus Bad Soden",
+   "buildings": 7,
+   "named": 6,
+   "entrances": 4,
+   "facilities": 11,
+   "waypoints": 21,
+   "trails": 19,
+   "pathM": 944,
+   "extentM": [
+    338,
+    325
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w132691396",
+   "country": "DE",
+   "name": "Hochtaunus-Kliniken Usingen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 8,
+   "trails": 2,
+   "pathM": 220,
+   "extentM": [
+    333,
+    152
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w4805807",
+   "country": "DE",
+   "name": "Krankenhaus Nordwest",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 13,
+   "facilities": 11,
+   "waypoints": 31,
+   "trails": 18,
+   "pathM": 983,
+   "extentM": [
+    401,
+    292
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-de-w1101357190",
+   "country": "DE",
+   "name": "Reha-Zentrum Bad Homburg - Klinik Wingertsberg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 17,
+   "facilities": 8,
+   "waypoints": 25,
+   "trails": 34,
+   "pathM": 1027,
+   "extentM": [
+    206,
+    282
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w4938193",
+   "country": "DE",
+   "name": "BG Unfallklinik",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 14,
+   "trails": 3,
+   "pathM": 314,
+   "extentM": [
+    336,
+    333
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-de-w110767671",
+   "country": "DE",
+   "name": "Bürgerhospital Friedberg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 4,
+   "pathM": 66,
+   "extentM": [
+    135,
+    149
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w194329108",
+   "country": "DE",
+   "name": "Asklepios Klinik Seligenstadt",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 8,
+   "facilities": 7,
+   "waypoints": 13,
+   "trails": 23,
+   "pathM": 801,
+   "extentM": [
+    286,
+    210
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-de-w160587687",
+   "country": "DE",
+   "name": "Klinikum Hanau",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 2,
+   "facilities": 10,
+   "waypoints": 32,
+   "trails": 8,
+   "pathM": 290,
+   "extentM": [
+    387,
+    349
+   ],
+   "score": 48
+  },
+  {
+   "id": "osm-de-w276656315",
+   "country": "DE",
+   "name": "Main-Kinzig-Kliniken Gelnhausen",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 3,
+   "facilities": 20,
+   "waypoints": 25,
+   "trails": 13,
+   "pathM": 485,
+   "extentM": [
+    352,
+    275
+   ],
+   "score": 39
+  },
+  {
+   "id": "osm-de-w1033559043",
+   "country": "DE",
+   "name": "Bergman Clinics Mathilden-Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    140,
+    192
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w846943399",
+   "country": "DE",
+   "name": "Klinikum Wetzlar",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 8,
+   "facilities": 32,
+   "waypoints": 41,
+   "trails": 25,
+   "pathM": 1402,
+   "extentM": [
+    447,
+    467
+   ],
+   "score": 44
+  },
+  {
+   "id": "osm-de-w930907096",
+   "country": "DE",
+   "name": "Kerckhoff Klinik",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 10,
+   "facilities": 15,
+   "waypoints": 34,
+   "trails": 35,
+   "pathM": 1114,
+   "extentM": [
+    276,
+    241
+   ],
+   "score": 38
+  },
+  {
+   "id": "osm-de-w646981992",
+   "country": "DE",
+   "name": "Asklepios Klinik Lich",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 13,
+   "waypoints": 18,
+   "trails": 9,
+   "pathM": 232,
+   "extentM": [
+    283,
+    236
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w113821149",
+   "country": "DE",
+   "name": "Agaplesion Evangelisches Krankenhaus Mittelhessen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 7,
+   "waypoints": 9,
+   "trails": 9,
+   "pathM": 379,
+   "extentM": [
+    210,
+    409
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w298829142",
+   "country": "DE",
+   "name": "Universitätsklinikum Gießen-Marburg",
+   "buildings": 17,
+   "named": 17,
+   "entrances": 19,
+   "facilities": 53,
+   "waypoints": 74,
+   "trails": 56,
+   "pathM": 1821,
+   "extentM": [
+    511,
+    613
+   ],
+   "score": 98
+  },
+  {
+   "id": "osm-de-r9170550",
+   "country": "DE",
+   "name": "Psychatrie",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 17,
+   "facilities": 10,
+   "waypoints": 17,
+   "trails": 16,
+   "pathM": 357,
+   "extentM": [
+    156,
+    157
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-de-w892230533",
+   "country": "DE",
+   "name": "St. Josefs Krankenhaus Balserische Stiftung",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 2,
+   "pathM": 41,
+   "extentM": [
+    223,
+    303
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w30449401",
+   "country": "DE",
+   "name": "Vitos Klinik für Psychiatrie und Psychotherapie",
+   "buildings": 22,
+   "named": 22,
+   "entrances": 0,
+   "facilities": 25,
+   "waypoints": 45,
+   "trails": 34,
+   "pathM": 1920,
+   "extentM": [
+    720,
+    701
+   ],
+   "score": 69
+  },
+  {
+   "id": "osm-de-w656085472",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Schotten",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 4,
+   "waypoints": 7,
+   "trails": 12,
+   "pathM": 338,
+   "extentM": [
+    177,
+    169
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w1239194770",
+   "country": "DE",
+   "name": "Reha-Kliniken Küppelsmühle",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 8,
+   "facilities": 11,
+   "waypoints": 22,
+   "trails": 14,
+   "pathM": 645,
+   "extentM": [
+    303,
+    170
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w60051010",
+   "country": "DE",
+   "name": "Spessart-Klinik",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 6,
+   "facilities": 5,
+   "waypoints": 10,
+   "trails": 18,
+   "pathM": 624,
+   "extentM": [
+    344,
+    297
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w963963641",
+   "country": "DE",
+   "name": "Main-Kinzig-Kliniken Schlüchtern",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 9,
+   "waypoints": 12,
+   "trails": 10,
+   "pathM": 621,
+   "extentM": [
+    323,
+    361
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w886019448",
+   "country": "DE",
+   "name": "Krankenhaus Eichhof",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 10,
+   "facilities": 11,
+   "waypoints": 18,
+   "trails": 7,
+   "pathM": 196,
+   "extentM": [
+    376,
+    324
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w99063356",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Alsfeld",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 8,
+   "waypoints": 14,
+   "trails": 9,
+   "pathM": 465,
+   "extentM": [
+    326,
+    335
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w892212748",
+   "country": "DE",
+   "name": "Klinikum Fulda",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 8,
+   "facilities": 60,
+   "waypoints": 71,
+   "trails": 43,
+   "pathM": 1401,
+   "extentM": [
+    562,
+    528
+   ],
+   "score": 76
+  },
+  {
+   "id": "osm-de-w892211290",
+   "country": "DE",
+   "name": "Herz-Jesu-Krankenhaus Fulda",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 7,
+   "facilities": 10,
+   "waypoints": 18,
+   "trails": 13,
+   "pathM": 536,
+   "extentM": [
+    282,
+    413
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w892200848",
+   "country": "DE",
+   "name": "Helios St. Elisabeth Klinik Hünfeld",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 6,
+   "waypoints": 11,
+   "trails": 26,
+   "pathM": 1779,
+   "extentM": [
+    389,
+    328
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w894604508",
+   "country": "DE",
+   "name": "Zentrum für Psychische Gesundheit, Universitätsklinik Marburg",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 12,
+   "trails": 5,
+   "pathM": 249,
+   "extentM": [
+    307,
+    277
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w28490393",
+   "country": "DE",
+   "name": "Universitätsklinikum Gießen und Marburg",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 15,
+   "facilities": 58,
+   "waypoints": 75,
+   "trails": 56,
+   "pathM": 1988,
+   "extentM": [
+    566,
+    710
+   ],
+   "score": 82
+  },
+  {
+   "id": "osm-de-w1009360862",
+   "country": "DE",
+   "name": "Diakonie-Krankenhaus Wehrda",
+   "buildings": 7,
+   "named": 6,
+   "entrances": 3,
+   "facilities": 8,
+   "waypoints": 17,
+   "trails": 34,
+   "pathM": 1108,
+   "extentM": [
+    247,
+    725
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w330590224",
+   "country": "DE",
+   "name": "Hephata Klinik",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 20,
+   "waypoints": 25,
+   "trails": 30,
+   "pathM": 1216,
+   "extentM": [
+    330,
+    338
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-r17507778",
+   "country": "DE",
+   "name": "Vitos Haina",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 8,
+   "facilities": 14,
+   "waypoints": 24,
+   "trails": 48,
+   "pathM": 2741,
+   "extentM": [
+    518,
+    593
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w263989649",
+   "country": "DE",
+   "name": "Klinik am Kurpark",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 9,
+   "facilities": 6,
+   "waypoints": 20,
+   "trails": 11,
+   "pathM": 238,
+   "extentM": [
+    169,
+    265
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-de-w157427248",
+   "country": "DE",
+   "name": "Asklepios Stadtklinik Bad Wildungen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 6,
+   "pathM": 245,
+   "extentM": [
+    271,
+    207
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w1389999882",
+   "country": "DE",
+   "name": "Kreisklinik Wolfhagen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 8,
+   "waypoints": 12,
+   "trails": 13,
+   "pathM": 680,
+   "extentM": [
+    168,
+    264
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w169723798",
+   "country": "DE",
+   "name": "Hospital zum Heiligen Geist",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 5,
+   "pathM": 167,
+   "extentM": [
+    236,
+    193
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w894224884",
+   "country": "DE",
+   "name": "Klinikum Bad Hersfeld",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    333,
+    325
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w563906839",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Rotenburg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 1,
+   "pathM": 20,
+   "extentM": [
+    174,
+    248
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w278179033",
+   "country": "DE",
+   "name": "Vitos Kliniken",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 10,
+   "facilities": 10,
+   "waypoints": 15,
+   "trails": 16,
+   "pathM": 352,
+   "extentM": [
+    210,
+    252
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-de-w67713251",
+   "country": "DE",
+   "name": "Agaplesion Diakonie Kliniken Kassel",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 7,
+   "facilities": 5,
+   "waypoints": 11,
+   "trails": 9,
+   "pathM": 239,
+   "extentM": [
+    257,
+    125
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w130185941",
+   "country": "DE",
+   "name": "Marienkrankenhaus Kassel",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 7,
+   "facilities": 5,
+   "waypoints": 18,
+   "trails": 9,
+   "pathM": 246,
+   "extentM": [
+    162,
+    197
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-de-r3379849",
+   "country": "DE",
+   "name": "Klinikum Kassel",
+   "buildings": 25,
+   "named": 25,
+   "entrances": 42,
+   "facilities": 41,
+   "waypoints": 94,
+   "trails": 64,
+   "pathM": 1945,
+   "extentM": [
+    500,
+    667
+   ],
+   "score": 109
+  },
+  {
+   "id": "osm-de-w414752958",
+   "country": "DE",
+   "name": "Orthopädische Klinik",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 0,
+   "facilities": 17,
+   "waypoints": 37,
+   "trails": 14,
+   "pathM": 896,
+   "extentM": [
+    585,
+    585
+   ],
+   "score": 57
+  },
+  {
+   "id": "osm-de-w316349547",
+   "country": "DE",
+   "name": "Helios Kliniken Kassel, Standort Kaufungen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    313,
+    344
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w45742127",
+   "country": "DE",
+   "name": "Klinik Hohe Mark",
+   "buildings": 21,
+   "named": 21,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 22,
+   "trails": 20,
+   "pathM": 1600,
+   "extentM": [
+    487,
+    365
+   ],
+   "score": 43
+  },
+  {
+   "id": "osm-de-w57922675",
+   "country": "DE",
+   "name": "Klinik für Psychiatrie und Psychotherapie Vitos - Standort Marburg",
+   "buildings": 24,
+   "named": 24,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 26,
+   "trails": 11,
+   "pathM": 699,
+   "extentM": [
+    608,
+    716
+   ],
+   "score": 50
+  },
+  {
+   "id": "osm-de-r4251558",
+   "country": "DE",
+   "name": "Klinik- und Rehabilitationszentrum Lippoldsberg",
+   "buildings": 36,
+   "named": 36,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 36,
+   "trails": 18,
+   "pathM": 1460,
+   "extentM": [
+    480,
+    669
+   ],
+   "score": 64
+  },
+  {
+   "id": "osm-de-w70931644",
+   "country": "DE",
+   "name": "Asklepios Klinik Harburg",
+   "buildings": 17,
+   "named": 17,
+   "entrances": 33,
+   "facilities": 18,
+   "waypoints": 60,
+   "trails": 42,
+   "pathM": 1164,
+   "extentM": [
+    529,
+    520
+   ],
+   "score": 59
+  },
+  {
+   "id": "osm-de-w537135721",
+   "country": "DE",
+   "name": "Asklepios Westklinikum Hamburg",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 6,
+   "facilities": 19,
+   "waypoints": 38,
+   "trails": 16,
+   "pathM": 1063,
+   "extentM": [
+    703,
+    232
+   ],
+   "score": 49
+  },
+  {
+   "id": "osm-de-w266443172",
+   "country": "DE",
+   "name": "Asklepios Klinik Altona",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 13,
+   "facilities": 13,
+   "waypoints": 22,
+   "trails": 55,
+   "pathM": 2072,
+   "extentM": [
+    486,
+    367
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-de-w31858245",
+   "country": "DE",
+   "name": "Altonaer Kinderkrankenhaus",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 16,
+   "facilities": 7,
+   "waypoints": 24,
+   "trails": 31,
+   "pathM": 664,
+   "extentM": [
+    183,
+    238
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-r8743422",
+   "country": "DE",
+   "name": "Universitätsklinikum Hamburg-Eppendorf",
+   "buildings": 89,
+   "named": 89,
+   "entrances": 142,
+   "facilities": 259,
+   "waypoints": 466,
+   "trails": 273,
+   "pathM": 8995,
+   "extentM": [
+    931,
+    998
+   ],
+   "score": 504
+  },
+  {
+   "id": "osm-de-w680707042",
+   "country": "DE",
+   "name": "Klinik für Kinder- und Jugendmedizin Eppendorf",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 8,
+   "facilities": 14,
+   "waypoints": 25,
+   "trails": 18,
+   "pathM": 669,
+   "extentM": [
+    220,
+    204
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-de-r13748861",
+   "country": "DE",
+   "name": "O40 Martini-Klinik",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 5,
+   "pathM": 243,
+   "extentM": [
+    96,
+    91
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w24339487",
+   "country": "DE",
+   "name": "Asklepios Klinik St. Georg",
+   "buildings": 32,
+   "named": 32,
+   "entrances": 3,
+   "facilities": 12,
+   "waypoints": 47,
+   "trails": 10,
+   "pathM": 858,
+   "extentM": [
+    452,
+    453
+   ],
+   "score": 79
+  },
+  {
+   "id": "osm-de-r3688286",
+   "country": "DE",
+   "name": "Marienkrankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 6,
+   "facilities": 8,
+   "waypoints": 13,
+   "trails": 7,
+   "pathM": 346,
+   "extentM": [
+    426,
+    332
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w147233419",
+   "country": "DE",
+   "name": "Schön Klinik Hamburg Eilbek",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 36,
+   "facilities": 20,
+   "waypoints": 64,
+   "trails": 68,
+   "pathM": 3002,
+   "extentM": [
+    510,
+    386
+   ],
+   "score": 73
+  },
+  {
+   "id": "osm-de-w936662872",
+   "country": "DE",
+   "name": "Albertinen Krankenhaus",
+   "buildings": 10,
+   "named": 9,
+   "entrances": 6,
+   "facilities": 8,
+   "waypoints": 21,
+   "trails": 9,
+   "pathM": 255,
+   "extentM": [
+    264,
+    303
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-de-w56668790",
+   "country": "DE",
+   "name": "Albertinen Haus - Medizinisch-Geriatrische Klinik",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 3,
+   "facilities": 7,
+   "waypoints": 14,
+   "trails": 1,
+   "pathM": 83,
+   "extentM": [
+    329,
+    268
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w56029210",
+   "country": "DE",
+   "name": "Israelitisches Krankenhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    175,
+    232
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-de-w32803835",
+   "country": "DE",
+   "name": "Asklepios Klinik Barmbek",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 9,
+   "facilities": 15,
+   "waypoints": 27,
+   "trails": 24,
+   "pathM": 1141,
+   "extentM": [
+    364,
+    361
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-de-w105010662",
+   "country": "DE",
+   "name": "Asklepios Klinik Nord Ochsenzoll",
+   "buildings": 31,
+   "named": 31,
+   "entrances": 18,
+   "facilities": 44,
+   "waypoints": 88,
+   "trails": 57,
+   "pathM": 2853,
+   "extentM": [
+    668,
+    454
+   ],
+   "score": 108
+  },
+  {
+   "id": "osm-de-w150455353",
+   "country": "DE",
+   "name": "Asklepios Klinik Nord Heidberg",
+   "buildings": 17,
+   "named": 17,
+   "entrances": 20,
+   "facilities": 17,
+   "waypoints": 51,
+   "trails": 43,
+   "pathM": 2361,
+   "extentM": [
+    407,
+    580
+   ],
+   "score": 59
+  },
+  {
+   "id": "osm-de-w147870893",
+   "country": "DE",
+   "name": "Asklepios Klinik Wandsbek",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 4,
+   "facilities": 8,
+   "waypoints": 24,
+   "trails": 12,
+   "pathM": 608,
+   "extentM": [
+    418,
+    261
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-de-r8765716",
+   "country": "DE",
+   "name": "Bundeswehrkrankenhaus Hamburg",
+   "buildings": 22,
+   "named": 22,
+   "entrances": 54,
+   "facilities": 12,
+   "waypoints": 67,
+   "trails": 63,
+   "pathM": 2189,
+   "extentM": [
+    499,
+    552
+   ],
+   "score": 78
+  },
+  {
+   "id": "osm-de-w39981149",
+   "country": "DE",
+   "name": "Katholisches Kinderkrankenhaus Wilhelmstift",
+   "buildings": 32,
+   "named": 32,
+   "entrances": 10,
+   "facilities": 10,
+   "waypoints": 25,
+   "trails": 38,
+   "pathM": 2620,
+   "extentM": [
+    444,
+    395
+   ],
+   "score": 48
+  },
+  {
+   "id": "osm-de-w432206655",
+   "country": "DE",
+   "name": "Westküstenklinikum Brunsbüttel",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 13,
+   "trails": 6,
+   "pathM": 166,
+   "extentM": [
+    182,
+    218
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-de-w24968543",
+   "country": "DE",
+   "name": "Regio Klinikum Pinneberg",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 9,
+   "waypoints": 14,
+   "trails": 16,
+   "pathM": 1066,
+   "extentM": [
+    242,
+    446
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w826522604",
+   "country": "DE",
+   "name": "Klinikum Itzehoe",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 47,
+   "facilities": 38,
+   "waypoints": 57,
+   "trails": 34,
+   "pathM": 1993,
+   "extentM": [
+    604,
+    464
+   ],
+   "score": 54
+  },
+  {
+   "id": "osm-de-w61785256",
+   "country": "DE",
+   "name": "Klinikum Elmshorn",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 17,
+   "trails": 12,
+   "pathM": 502,
+   "extentM": [
+    463,
+    409
+   ],
+   "score": 22
+  },
+  {
+   "id": "osm-de-w906470615",
+   "country": "DE",
+   "name": "Paracelsus-Klinik",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 4,
+   "facilities": 5,
+   "waypoints": 10,
+   "trails": 8,
+   "pathM": 464,
+   "extentM": [
+    317,
+    252
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w612194724",
+   "country": "DE",
+   "name": "Schön Klinik Bad Bramstedt",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 16,
+   "trails": 20,
+   "pathM": 654,
+   "extentM": [
+    255,
+    289
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-de-w612194743",
+   "country": "DE",
+   "name": "Klinikum Bad Bramstedt",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 21,
+   "facilities": 13,
+   "waypoints": 33,
+   "trails": 52,
+   "pathM": 3003,
+   "extentM": [
+    429,
+    565
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-de-w168100021",
+   "country": "DE",
+   "name": "Westküstenklinikum Heide",
+   "buildings": 24,
+   "named": 24,
+   "entrances": 8,
+   "facilities": 7,
+   "waypoints": 39,
+   "trails": 22,
+   "pathM": 1076,
+   "extentM": [
+    698,
+    354
+   ],
+   "score": 62
+  },
+  {
+   "id": "osm-de-w26603381",
+   "country": "DE",
+   "name": "Klinikum Nordfriesland GmbH",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 2,
+   "facilities": 9,
+   "waypoints": 22,
+   "trails": 3,
+   "pathM": 120,
+   "extentM": [
+    246,
+    333
+   ],
+   "score": 32
+  },
+  {
+   "id": "osm-de-w58379890",
+   "country": "DE",
+   "name": "HELIOS Klinikum Schleswig",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 13,
+   "facilities": 7,
+   "waypoints": 27,
+   "trails": 44,
+   "pathM": 2619,
+   "extentM": [
+    674,
+    914
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-de-w33292196",
+   "country": "DE",
+   "name": "Schön Klinik Rendsburg",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 10,
+   "facilities": 8,
+   "waypoints": 26,
+   "trails": 11,
+   "pathM": 319,
+   "extentM": [
+    435,
+    259
+   ],
+   "score": 31
+  },
+  {
+   "id": "osm-de-w907992099",
+   "country": "DE",
+   "name": "Schön Klinik Eckernförde",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 19,
+   "facilities": 5,
+   "waypoints": 19,
+   "trails": 26,
+   "pathM": 559,
+   "extentM": [
+    280,
+    310
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-de-w27110659",
+   "country": "DE",
+   "name": "Malteser Fördeklinikum St. Katharina, Standort Knuthstraße",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 6,
+   "facilities": 13,
+   "waypoints": 29,
+   "trails": 7,
+   "pathM": 455,
+   "extentM": [
+    308,
+    241
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-de-w557123810",
+   "country": "DE",
+   "name": "Johanniter-Krankenhaus Geesthacht",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 8,
+   "waypoints": 11,
+   "trails": 6,
+   "pathM": 482,
+   "extentM": [
+    302,
+    282
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w907334583",
+   "country": "DE",
+   "name": "Krankenhaus Reinbek St. Adolf-Stift",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 2,
+   "facilities": 7,
+   "waypoints": 16,
+   "trails": 18,
+   "pathM": 1212,
+   "extentM": [
+    385,
+    240
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-de-w882500055",
+   "country": "DE",
+   "name": "Klinik Manhagen",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 10,
+   "waypoints": 16,
+   "trails": 14,
+   "pathM": 770,
+   "extentM": [
+    295,
+    320
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-de-w907256427",
+   "country": "DE",
+   "name": "AMEOS Reha Klinikum Ratzeburg",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 20,
+   "waypoints": 25,
+   "trails": 11,
+   "pathM": 1238,
+   "extentM": [
+    541,
+    550
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-de-w29690665",
+   "country": "DE",
+   "name": "Heinrich Sengelmann Krankenhaus",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 22,
+   "trails": 29,
+   "pathM": 1776,
+   "extentM": [
+    743,
+    546
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-de-w110156382",
+   "country": "DE",
+   "name": "Asklepios-Klinik Bad Oldesloe",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 5,
+   "facilities": 12,
+   "waypoints": 23,
+   "trails": 11,
+   "pathM": 556,
+   "extentM": [
+    348,
+    260
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-de-w89898186",
+   "country": "DE",
+   "name": "Psychiatrisches Krankenhaus Rickling",
+   "buildings": 34,
+   "named": 34,
+   "entrances": 13,
+   "facilities": 13,
+   "waypoints": 57,
+   "trails": 31,
+   "pathM": 2594,
+   "extentM": [
+    733,
+    794
+   ],
+   "score": 79
+  },
+  {
+   "id": "osm-de-r9487074",
+   "country": "DE",
+   "name": "Sana Kliniken Lübeck",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 17,
+   "facilities": 20,
+   "waypoints": 49,
+   "trails": 48,
+   "pathM": 1443,
+   "extentM": [
+    500,
+    375
+   ],
+   "score": 66
+  },
+  {
+   "id": "osm-de-w374466261",
+   "country": "DE",
+   "name": "Universitätsklinikum Schleswig-Holstein - Campus Lübeck",
+   "buildings": 77,
+   "named": 77,
+   "entrances": 130,
+   "facilities": 126,
+   "waypoints": 274,
+   "trails": 250,
+   "pathM": 10019,
+   "extentM": [
+    980,
+    900
+   ],
+   "score": 332
+  },
+  {
+   "id": "osm-de-w907662088",
+   "country": "DE",
+   "name": "AMEOS Klinikum Middelburg",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 4,
+   "facilities": 1,
+   "waypoints": 8,
+   "trails": 9,
+   "pathM": 428,
+   "extentM": [
+    141,
+    195
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w34941740",
+   "country": "DE",
+   "name": "Asklepios Klinik am Kurpark",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 12,
+   "pathM": 651,
+   "extentM": [
+    181,
+    273
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w99501603",
+   "country": "DE",
+   "name": "Schön Klinik Neustadt",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 4,
+   "waypoints": 10,
+   "trails": 17,
+   "pathM": 1364,
+   "extentM": [
+    345,
+    360
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w13640801",
+   "country": "DE",
+   "name": "Städtisches Krankenhaus Kiel",
+   "buildings": 18,
+   "named": 18,
+   "entrances": 10,
+   "facilities": 15,
+   "waypoints": 42,
+   "trails": 20,
+   "pathM": 390,
+   "extentM": [
+    339,
+    308
+   ],
+   "score": 53
+  },
+  {
+   "id": "osm-de-r1634097",
+   "country": "DE",
+   "name": "Universitätsklinikum Schleswig-Holstein - Campus Kiel",
+   "buildings": 24,
+   "named": 24,
+   "entrances": 46,
+   "facilities": 51,
+   "waypoints": 104,
+   "trails": 106,
+   "pathM": 3909,
+   "extentM": [
+    656,
+    770
+   ],
+   "score": 112
+  },
+  {
+   "id": "osm-de-w102878575",
+   "country": "DE",
+   "name": "Kreiskrankenhaus des Kreises Plön",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 13,
+   "facilities": 11,
+   "waypoints": 22,
+   "trails": 6,
+   "pathM": 175,
+   "extentM": [
+    264,
+    168
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-de-w129405281",
+   "country": "DE",
+   "name": "Lubinus Clinicum",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 5,
+   "facilities": 13,
+   "waypoints": 22,
+   "trails": 13,
+   "pathM": 528,
+   "extentM": [
+    312,
+    358
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-de-w907339731",
+   "country": "DE",
+   "name": "AMEOS Klinikum Eutin",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 7,
+   "waypoints": 13,
+   "trails": 11,
+   "pathM": 559,
+   "extentM": [
+    413,
+    245
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w253974283",
+   "country": "DE",
+   "name": "AMEOS Klinikum Heiligenhafen",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 8,
+   "facilities": 8,
+   "waypoints": 22,
+   "trails": 29,
+   "pathM": 1873,
+   "extentM": [
+    1068,
+    762
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w998209888",
+   "country": "DE",
+   "name": "AOK Nordseeklinik",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 6,
+   "trails": 7,
+   "pathM": 699,
+   "extentM": [
+    388,
+    428
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-eg-w1525678372",
+   "country": "EG",
+   "name": "مستشفى العلمين النموذجي",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 2,
+   "waypoints": 6,
+   "trails": 10,
+   "pathM": 571,
+   "extentM": [
+    236,
+    187
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-eg-w771243782",
+   "country": "EG",
+   "name": "مستشفى الشيخ زايد التخصصي",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 8,
+   "facilities": 4,
+   "waypoints": 11,
+   "trails": 4,
+   "pathM": 108,
+   "extentM": [
+    292,
+    264
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-eg-w900302929",
+   "country": "EG",
+   "name": "مستشفى بهمان",
+   "buildings": 14,
+   "named": 14,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 15,
+   "trails": 25,
+   "pathM": 793,
+   "extentM": [
+    231,
+    237
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-eg-r16740885",
+   "country": "EG",
+   "name": "مستشفيات جامعة القاهرة",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 2,
+   "facilities": 1,
+   "waypoints": 8,
+   "trails": 3,
+   "pathM": 109,
+   "extentM": [
+    800,
+    740
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-gh-w875374275",
+   "country": "GH",
+   "name": "Enchi Government Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 8,
+   "pathM": 567,
+   "extentM": [
+    236,
+    397
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-gh-w787648877",
+   "country": "GH",
+   "name": "GMC Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 3,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    150,
+    129
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-gh-w622139394",
+   "country": "GH",
+   "name": "Goaso Municipal Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 0,
+   "waypoints": 5,
+   "trails": 1,
+   "pathM": 121,
+   "extentM": [
+    340,
+    465
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-gh-w553381087",
+   "country": "GH",
+   "name": "Bibiani Government Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 1,
+   "waypoints": 9,
+   "trails": 7,
+   "pathM": 359,
+   "extentM": [
+    318,
+    276
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-gh-w556253601",
+   "country": "GH",
+   "name": "Komfo Anokye Teaching Hospital",
+   "buildings": 17,
+   "named": 17,
+   "entrances": 2,
+   "facilities": 7,
+   "waypoints": 26,
+   "trails": 1,
+   "pathM": 37,
+   "extentM": [
+    855,
+    778
+   ],
+   "score": 41
+  },
+  {
+   "id": "osm-gh-w786337395",
+   "country": "GH",
+   "name": "Tech Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 5,
+   "trails": 8,
+   "pathM": 376,
+   "extentM": [
+    210,
+    150
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-gh-w786944629",
+   "country": "GH",
+   "name": "Manhyia District Hospital",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    249,
+    300
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-gh-w478696524",
+   "country": "GH",
+   "name": "Eastern Regional Hospital",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 1,
+   "facilities": 3,
+   "waypoints": 15,
+   "trails": 1,
+   "pathM": 24,
+   "extentM": [
+    418,
+    392
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-gh-w303162760",
+   "country": "GH",
+   "name": "Korle Bu Teaching Hospital",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 20,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    546,
+    559
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-gh-w786143438",
+   "country": "GH",
+   "name": "37 Military Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 11,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    577,
+    945
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-gh-w786216093",
+   "country": "GH",
+   "name": "Pantang Hospital",
+   "buildings": 66,
+   "named": 66,
+   "entrances": 1,
+   "facilities": 2,
+   "waypoints": 69,
+   "trails": 38,
+   "pathM": 3315,
+   "extentM": [
+    1603,
+    1678
+   ],
+   "score": 128
+  },
+  {
+   "id": "osm-gh-w358337142",
+   "country": "GH",
+   "name": "Tema General Hospital",
+   "buildings": 23,
+   "named": 23,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 23,
+   "trails": 20,
+   "pathM": 1345,
+   "extentM": [
+    969,
+    1047
+   ],
+   "score": 46
+  },
+  {
+   "id": "osm-gh-w786224221",
+   "country": "GH",
+   "name": "Tetteh Quarshie Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 3,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    259,
+    297
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-gh-w786595766",
+   "country": "GH",
+   "name": "Comboni Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 3,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    192,
+    212
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-gh-w406732178",
+   "country": "GH",
+   "name": "Wa Municipal Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 13,
+   "pathM": 569,
+   "extentM": [
+    433,
+    472
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-gh-w406732179",
+   "country": "GH",
+   "name": "Upper West Regional Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 25,
+   "pathM": 944,
+   "extentM": [
+    523,
+    522
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-gh-w441237332",
+   "country": "GH",
+   "name": "Pishigu Clinic",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 1,
+   "waypoints": 7,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    192,
+    161
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-ke-w666097819",
+   "country": "KE",
+   "name": "Bungoma county referral Hospital",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 0,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    168,
+    307
+   ],
+   "score": 6
+  },
   {
    "id": "osm-ke-w138227891",
    "country": "KE",
@@ -71,7 +9472,8 @@
   }
  ],
  "refused": {
-  "no named buildings": 416,
-  "score n": 9
+  "no named buildings": 1573,
+  "score n": 126,
+  "grounds n×n m — too large for one plan": 1
  }
 }
