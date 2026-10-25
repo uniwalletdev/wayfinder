@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T20:29:57.693Z",
+ "generatedAt": "2026-10-25T01:20:09.363Z",
  "built": [
   {
    "id": "osm-de-w40153717",
@@ -4881,21 +4881,38 @@
    "score": 16
   },
   {
+   "id": "osm-de-w696894170",
+   "country": "DE",
+   "name": "Psychosomatische Klinik Bad Neustadt",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 6,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 10,
+   "pathM": 265,
+   "extentM": [
+    130,
+    191
+   ],
+   "score": 8
+  },
+  {
    "id": "osm-de-w1027074475",
    "country": "DE",
    "name": "Rhönklinikum",
-   "buildings": 7,
-   "named": 7,
-   "entrances": 25,
-   "facilities": 30,
+   "buildings": 14,
+   "named": 14,
+   "entrances": 50,
+   "facilities": 60,
    "waypoints": 59,
-   "trails": 39,
-   "pathM": 1570,
+   "trails": 78,
+   "pathM": 3140,
    "extentM": [
     460,
     455
    ],
-   "score": 54
+   "score": 94
   },
   {
    "id": "osm-de-w302888715",
@@ -5003,10 +5020,10 @@
    "id": "osm-de-w222998378",
    "country": "DE",
    "name": "Helios Frankenwaldklinik Kronach",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 2,
-   "facilities": 4,
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 8,
    "waypoints": 8,
    "trails": 0,
    "pathM": 0,
@@ -5014,24 +5031,24 @@
     220,
     250
    ],
-   "score": 9
+   "score": 14
   },
   {
    "id": "osm-de-w536390909",
    "country": "DE",
    "name": "Kliniken Hochfranken - Klinik Naila",
-   "buildings": 1,
-   "named": 1,
+   "buildings": 2,
+   "named": 2,
    "entrances": 0,
-   "facilities": 11,
+   "facilities": 22,
    "waypoints": 11,
-   "trails": 6,
-   "pathM": 284,
+   "trails": 12,
+   "pathM": 569,
    "extentM": [
     302,
     271
    ],
-   "score": 13
+   "score": 24
   },
   {
    "id": "osm-de-w1327585247",
@@ -9253,137 +9270,137 @@
    "id": "osm-de-r13279232",
    "country": "DE",
    "name": "Asklepios Fachklinikum Tiefenbrunn",
-   "buildings": 21,
-   "named": 21,
-   "entrances": 23,
-   "facilities": 11,
+   "buildings": 42,
+   "named": 42,
+   "entrances": 46,
+   "facilities": 22,
    "waypoints": 51,
-   "trails": 102,
-   "pathM": 6148,
+   "trails": 204,
+   "pathM": 12296,
    "extentM": [
     1110,
     591
    ],
-   "score": 64
+   "score": 90
   },
   {
    "id": "osm-de-w304494593",
    "country": "DE",
    "name": "Asklepios Fachklinikum Göttingen",
-   "buildings": 8,
-   "named": 7,
-   "entrances": 3,
-   "facilities": 13,
+   "buildings": 16,
+   "named": 14,
+   "entrances": 6,
+   "facilities": 26,
    "waypoints": 22,
-   "trails": 69,
-   "pathM": 5135,
+   "trails": 138,
+   "pathM": 10271,
    "extentM": [
     706,
     479
    ],
-   "score": 27
+   "score": 40
   },
   {
    "id": "osm-de-w421596004",
    "country": "DE",
    "name": "Herz- & Gefäßzentrum Göttingen",
-   "buildings": 3,
-   "named": 3,
-   "entrances": 3,
-   "facilities": 7,
+   "buildings": 6,
+   "named": 6,
+   "entrances": 6,
+   "facilities": 14,
    "waypoints": 13,
-   "trails": 1,
-   "pathM": 27,
+   "trails": 2,
+   "pathM": 53,
    "extentM": [
     115,
     80
    ],
-   "score": 16
+   "score": 26
   },
   {
    "id": "osm-de-w360936754",
    "country": "DE",
    "name": "Agaplesion Neu-Bethlehem",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 8,
-   "facilities": 12,
+   "buildings": 8,
+   "named": 8,
+   "entrances": 16,
+   "facilities": 24,
    "waypoints": 23,
-   "trails": 16,
-   "pathM": 477,
+   "trails": 32,
+   "pathM": 953,
    "extentM": [
     197,
     166
    ],
-   "score": 24
+   "score": 40
   },
   {
    "id": "osm-de-w421596006",
    "country": "DE",
    "name": "Neu-Mariahilf",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 7,
-   "facilities": 7,
+   "buildings": 4,
+   "named": 4,
+   "entrances": 14,
+   "facilities": 14,
    "waypoints": 13,
-   "trails": 11,
-   "pathM": 477,
+   "trails": 22,
+   "pathM": 954,
    "extentM": [
     173,
     185
    ],
-   "score": 15
+   "score": 26
   },
   {
    "id": "osm-de-w1296019900",
    "country": "DE",
    "name": "Klinik für Psychosomatische Medizin und Psychotherapie",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 3,
-   "facilities": 5,
+   "buildings": 4,
+   "named": 4,
+   "entrances": 6,
+   "facilities": 10,
    "waypoints": 10,
-   "trails": 16,
-   "pathM": 426,
+   "trails": 32,
+   "pathM": 852,
    "extentM": [
     198,
     221
    ],
-   "score": 11
+   "score": 18
   },
   {
    "id": "osm-de-w316457574",
    "country": "DE",
    "name": "Universitätsmedizin Göttingen",
-   "buildings": 24,
-   "named": 24,
-   "entrances": 29,
-   "facilities": 83,
+   "buildings": 48,
+   "named": 48,
+   "entrances": 58,
+   "facilities": 166,
    "waypoints": 124,
-   "trails": 108,
-   "pathM": 4431,
+   "trails": 216,
+   "pathM": 8862,
    "extentM": [
     608,
     638
    ],
-   "score": 140
+   "score": 238
   },
   {
    "id": "osm-de-w286720618",
    "country": "DE",
    "name": "Evangelisches Krankenhaus Weende",
-   "buildings": 14,
-   "named": 14,
-   "entrances": 9,
-   "facilities": 22,
+   "buildings": 28,
+   "named": 28,
+   "entrances": 18,
+   "facilities": 44,
    "waypoints": 42,
-   "trails": 28,
-   "pathM": 1309,
+   "trails": 56,
+   "pathM": 2619,
    "extentM": [
     440,
     330
    ],
-   "score": 51
+   "score": 76
   },
   {
    "id": "osm-de-r18240770",
@@ -9423,103 +9440,103 @@
    "id": "osm-de-w298817500",
    "country": "DE",
    "name": "Eichsfeld Klinikum Haus St. Vincenz Heiligenstadt",
-   "buildings": 5,
-   "named": 5,
-   "entrances": 7,
-   "facilities": 14,
+   "buildings": 10,
+   "named": 10,
+   "entrances": 14,
+   "facilities": 28,
    "waypoints": 26,
-   "trails": 21,
-   "pathM": 369,
+   "trails": 42,
+   "pathM": 739,
    "extentM": [
     168,
     222
    ],
-   "score": 29
+   "score": 48
   },
   {
    "id": "osm-de-w717484422",
    "country": "DE",
    "name": "Eichsfeld Klinikum gGmbH-Haus Reifenstein",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 2,
-   "facilities": 9,
+   "buildings": 4,
+   "named": 4,
+   "entrances": 4,
+   "facilities": 18,
    "waypoints": 13,
-   "trails": 16,
-   "pathM": 1349,
+   "trails": 32,
+   "pathM": 2698,
    "extentM": [
     365,
     365
    ],
-   "score": 13
+   "score": 22
   },
   {
    "id": "osm-de-w1091346721",
    "country": "DE",
    "name": "St. Martini Krankenhaus",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 1,
-   "facilities": 4,
+   "buildings": 8,
+   "named": 8,
+   "entrances": 2,
+   "facilities": 8,
    "waypoints": 9,
-   "trails": 10,
-   "pathM": 323,
+   "trails": 20,
+   "pathM": 646,
    "extentM": [
     329,
     236
    ],
-   "score": 12
+   "score": 16
   },
   {
    "id": "osm-de-w562731993",
    "country": "DE",
    "name": "KMG Klinikum Sondershausen",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 2,
-   "facilities": 14,
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 22,
    "waypoints": 10,
-   "trails": 14,
-   "pathM": 605,
+   "trails": 21,
+   "pathM": 908,
    "extentM": [
     233,
     222
    ],
-   "score": 18
+   "score": 27
   },
   {
    "id": "osm-de-w562720584",
    "country": "DE",
    "name": "Südharz Klinikum",
-   "buildings": 11,
-   "named": 11,
-   "entrances": 19,
-   "facilities": 41,
+   "buildings": 18,
+   "named": 18,
+   "entrances": 29,
+   "facilities": 62,
    "waypoints": 36,
-   "trails": 121,
-   "pathM": 3839,
+   "trails": 183,
+   "pathM": 5755,
    "extentM": [
     494,
     385
    ],
-   "score": 57
+   "score": 79
   },
   {
    "id": "osm-de-w448363045",
    "country": "DE",
    "name": "Reha-Klinik am Kyffhäuser für Kinder und Jugendliche",
-   "buildings": 8,
-   "named": 8,
-   "entrances": 9,
-   "facilities": 10,
+   "buildings": 12,
+   "named": 12,
+   "entrances": 14,
+   "facilities": 15,
    "waypoints": 14,
-   "trails": 14,
-   "pathM": 1387,
+   "trails": 21,
+   "pathM": 2075,
    "extentM": [
     339,
     241
    ],
-   "score": 18
+   "score": 23
   },
   {
    "id": "osm-de-w107463422",
@@ -9709,38 +9726,55 @@
    "score": 98
   },
   {
+   "id": "osm-de-w120426524",
+   "country": "DE",
+   "name": "Fachklinik Rusteberg",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 4,
+   "trails": 30,
+   "pathM": 602,
+   "extentM": [
+    207,
+    191
+   ],
+   "score": 8
+  },
+  {
    "id": "osm-de-w448534614",
    "country": "DE",
    "name": "Deutsche Rentenversicherung BUND – Reha-Zentrum Bad Frankenhausen",
-   "buildings": 8,
-   "named": 8,
+   "buildings": 12,
+   "named": 12,
    "entrances": 0,
-   "facilities": 8,
+   "facilities": 12,
    "waypoints": 8,
-   "trails": 52,
-   "pathM": 4899,
+   "trails": 78,
+   "pathM": 7349,
    "extentM": [
     504,
     434
    ],
-   "score": 16
+   "score": 20
   },
   {
    "id": "osm-de-w448537187",
    "country": "DE",
    "name": "Ökumenisches Hainich Klinikum - Klinik Bad Frankenhausen",
-   "buildings": 2,
-   "named": 2,
+   "buildings": 3,
+   "named": 3,
    "entrances": 0,
-   "facilities": 6,
+   "facilities": 9,
    "waypoints": 3,
-   "trails": 10,
-   "pathM": 118,
+   "trails": 15,
+   "pathM": 176,
    "extentM": [
     115,
     102
    ],
-   "score": 8
+   "score": 11
   },
   {
    "id": "osm-de-w309947703",
@@ -13364,55 +13398,72 @@
    "score": 37
   },
   {
+   "id": "osm-de-w903569329",
+   "country": "DE",
+   "name": "Klinik Adorf",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 4,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    306,
+    255
+   ],
+   "score": 8
+  },
+  {
    "id": "osm-de-w199053738",
    "country": "DE",
    "name": "Helios Vogtland-Klinikum Plauen",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 3,
-   "facilities": 10,
+   "buildings": 8,
+   "named": 8,
+   "entrances": 6,
+   "facilities": 20,
    "waypoints": 16,
-   "trails": 30,
-   "pathM": 1313,
+   "trails": 60,
+   "pathM": 2625,
    "extentM": [
     540,
     499
    ],
-   "score": 20
+   "score": 32
   },
   {
    "id": "osm-de-w400767601",
    "country": "DE",
    "name": "Klinikum Obergöltzsch",
-   "buildings": 1,
-   "named": 1,
+   "buildings": 2,
+   "named": 2,
    "entrances": 0,
-   "facilities": 7,
+   "facilities": 14,
    "waypoints": 8,
-   "trails": 25,
-   "pathM": 1062,
+   "trails": 50,
+   "pathM": 2125,
    "extentM": [
     303,
     307
    ],
-   "score": 9
+   "score": 16
   },
   {
    "id": "osm-de-w656900575",
    "country": "DE",
    "name": "Heinrich-Braun-Klinikum, Standort Kirchberg",
-   "buildings": 1,
-   "named": 1,
+   "buildings": 2,
+   "named": 2,
    "entrances": 0,
-   "facilities": 6,
+   "facilities": 12,
    "waypoints": 6,
-   "trails": 3,
-   "pathM": 168,
+   "trails": 6,
+   "pathM": 336,
    "extentM": [
     249,
     236
    ],
-   "score": 8
+   "score": 14
   },
   {
    "id": "osm-de-w1149816910",
@@ -13469,35 +13520,35 @@
    "id": "osm-de-w162613711",
    "country": "DE",
    "name": "Heinrich-Braun-Klinikum",
-   "buildings": 15,
-   "named": 15,
-   "entrances": 5,
-   "facilities": 34,
+   "buildings": 30,
+   "named": 30,
+   "entrances": 10,
+   "facilities": 68,
    "waypoints": 54,
-   "trails": 33,
-   "pathM": 2154,
+   "trails": 66,
+   "pathM": 4309,
    "extentM": [
     847,
     1029
    ],
-   "score": 67
+   "score": 104
   },
   {
    "id": "osm-de-w41399504",
    "country": "DE",
    "name": "Heinrich-Braun-Klinikum, Standort Werdauer Straße",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 2,
-   "facilities": 9,
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 18,
    "waypoints": 12,
-   "trails": 8,
-   "pathM": 360,
+   "trails": 16,
+   "pathM": 719,
    "extentM": [
     253,
     326
    ],
-   "score": 13
+   "score": 24
   },
   {
    "id": "osm-de-r10761727",
@@ -13520,78 +13571,78 @@
    "id": "osm-de-w899232345",
    "country": "DE",
    "name": "Waldkliniken Eisenberg",
-   "buildings": 4,
-   "named": 2,
-   "entrances": 16,
-   "facilities": 16,
+   "buildings": 6,
+   "named": 3,
+   "entrances": 24,
+   "facilities": 24,
    "waypoints": 17,
-   "trails": 50,
-   "pathM": 2876,
+   "trails": 75,
+   "pathM": 4314,
    "extentM": [
     700,
     351
    ],
-   "score": 28
+   "score": 41
   },
   {
    "id": "osm-de-w706095879",
    "country": "DE",
    "name": "SRH Wald-Klinikum Gera",
-   "buildings": 12,
-   "named": 12,
-   "entrances": 14,
-   "facilities": 11,
+   "buildings": 24,
+   "named": 24,
+   "entrances": 28,
+   "facilities": 22,
    "waypoints": 31,
-   "trails": 44,
-   "pathM": 3219,
+   "trails": 88,
+   "pathM": 6439,
    "extentM": [
     849,
     455
    ],
-   "score": 36
+   "score": 50
   },
   {
    "id": "osm-de-w233304989",
    "country": "DE",
    "name": "Rudolf Virchow Klinikum Glauchau",
-   "buildings": 14,
-   "named": 14,
-   "entrances": 10,
-   "facilities": 15,
+   "buildings": 28,
+   "named": 28,
+   "entrances": 20,
+   "facilities": 30,
    "waypoints": 38,
-   "trails": 49,
-   "pathM": 1782,
+   "trails": 98,
+   "pathM": 3564,
    "extentM": [
     465,
     524
    ],
-   "score": 45
+   "score": 62
   },
   {
    "id": "osm-de-w206817866",
    "country": "DE",
    "name": "Klinikum Altenburger Land",
-   "buildings": 6,
-   "named": 4,
-   "entrances": 14,
-   "facilities": 24,
+   "buildings": 9,
+   "named": 6,
+   "entrances": 21,
+   "facilities": 36,
    "waypoints": 19,
-   "trails": 74,
-   "pathM": 3346,
+   "trails": 111,
+   "pathM": 5019,
    "extentM": [
     505,
     489
    ],
-   "score": 38
+   "score": 55
   },
   {
    "id": "osm-de-w525580259",
    "country": "DE",
    "name": "Klinik für Psychiatrie, Psychotherapie und Psychosomatik",
-   "buildings": 6,
-   "named": 6,
-   "entrances": 2,
-   "facilities": 4,
+   "buildings": 9,
+   "named": 9,
+   "entrances": 3,
+   "facilities": 6,
    "waypoints": 6,
    "trails": 0,
    "pathM": 0,
@@ -13599,7 +13650,7 @@
     379,
     208
    ],
-   "score": 12
+   "score": 15
   },
   {
    "id": "osm-de-w32611814",
@@ -13651,6 +13702,23 @@
     417
    ],
    "score": 75
+  },
+  {
+   "id": "osm-de-w498404495",
+   "country": "DE",
+   "name": "Kreiskrankenhaus Ronneburg",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 3,
+   "trails": 6,
+   "pathM": 277,
+   "extentM": [
+    195,
+    135
+   ],
+   "score": 6
   },
   {
    "id": "osm-de-w205402586",
@@ -13979,265 +14047,265 @@
    "id": "osm-de-w194815022",
    "country": "DE",
    "name": "Klinik Weißenfels",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 6,
-   "facilities": 22,
+   "buildings": 3,
+   "named": 3,
+   "entrances": 9,
+   "facilities": 33,
    "waypoints": 14,
-   "trails": 20,
-   "pathM": 1240,
+   "trails": 30,
+   "pathM": 1859,
    "extentM": [
     591,
     290
    ],
-   "score": 26
+   "score": 38
   },
   {
    "id": "osm-de-w989866000",
    "country": "DE",
    "name": "Carl-von-Basedow-Klinikum",
-   "buildings": 2,
-   "named": 2,
+   "buildings": 3,
+   "named": 3,
    "entrances": 0,
-   "facilities": 8,
+   "facilities": 12,
    "waypoints": 5,
-   "trails": 30,
-   "pathM": 1074,
+   "trails": 45,
+   "pathM": 1611,
    "extentM": [
     231,
     192
    ],
-   "score": 10
+   "score": 14
   },
   {
    "id": "osm-de-w26383640",
    "country": "DE",
    "name": "Universitätsklinikum Halle (Saale)",
-   "buildings": 42,
-   "named": 42,
-   "entrances": 32,
-   "facilities": 46,
+   "buildings": 63,
+   "named": 63,
+   "entrances": 48,
+   "facilities": 69,
    "waypoints": 55,
-   "trails": 46,
-   "pathM": 1654,
+   "trails": 69,
+   "pathM": 2482,
    "extentM": [
     542,
     313
    ],
-   "score": 102
+   "score": 132
   },
   {
    "id": "osm-de-w184130233",
    "country": "DE",
    "name": "Christliches Klinikum Halle (Saale) - Standort Dölau",
-   "buildings": 6,
-   "named": 6,
-   "entrances": 14,
-   "facilities": 32,
+   "buildings": 9,
+   "named": 9,
+   "entrances": 21,
+   "facilities": 48,
    "waypoints": 24,
-   "trails": 52,
-   "pathM": 3460,
+   "trails": 78,
+   "pathM": 5189,
    "extentM": [
     668,
     487
    ],
-   "score": 46
+   "score": 66
   },
   {
    "id": "osm-de-w244178434",
    "country": "DE",
    "name": "Christliches Klinikum Halle (Saale) - Standort St. Barbara",
-   "buildings": 10,
-   "named": 10,
-   "entrances": 6,
-   "facilities": 6,
+   "buildings": 15,
+   "named": 15,
+   "entrances": 9,
+   "facilities": 9,
    "waypoints": 11,
-   "trails": 6,
-   "pathM": 259,
+   "trails": 9,
+   "pathM": 388,
    "extentM": [
     209,
     188
    ],
-   "score": 18
+   "score": 22
   },
   {
    "id": "osm-de-w24733974",
    "country": "DE",
    "name": "BG Klinikum Bergmannstrost Halle (Saale)",
-   "buildings": 6,
-   "named": 6,
-   "entrances": 14,
-   "facilities": 22,
+   "buildings": 9,
+   "named": 9,
+   "entrances": 21,
+   "facilities": 33,
    "waypoints": 21,
-   "trails": 52,
-   "pathM": 3334,
+   "trails": 78,
+   "pathM": 5002,
    "extentM": [
     392,
     277
    ],
-   "score": 32
+   "score": 45
   },
   {
    "id": "osm-de-w303956275",
    "country": "DE",
    "name": "Christliches Klinikum Halle (Saale) - Standort St. Elisabeth",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 20,
-   "facilities": 22,
+   "buildings": 6,
+   "named": 6,
+   "entrances": 30,
+   "facilities": 33,
    "waypoints": 22,
-   "trails": 56,
-   "pathM": 1704,
+   "trails": 84,
+   "pathM": 2556,
    "extentM": [
     253,
     224
    ],
-   "score": 32
+   "score": 46
   },
   {
    "id": "osm-de-w28975167",
    "country": "DE",
    "name": "Diakoniekrankenhaus Halle (Saale)",
-   "buildings": 16,
-   "named": 16,
-   "entrances": 64,
-   "facilities": 42,
+   "buildings": 24,
+   "named": 24,
+   "entrances": 96,
+   "facilities": 63,
    "waypoints": 36,
-   "trails": 128,
-   "pathM": 2445,
+   "trails": 192,
+   "pathM": 3667,
    "extentM": [
     288,
     217
    ],
-   "score": 66
+   "score": 91
   },
   {
    "id": "osm-de-w573158875",
    "country": "DE",
    "name": "Klinik Schkeuditz",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 2,
-   "facilities": 10,
+   "buildings": 6,
+   "named": 6,
+   "entrances": 3,
+   "facilities": 15,
    "waypoints": 8,
-   "trails": 48,
-   "pathM": 2930,
+   "trails": 72,
+   "pathM": 4395,
    "extentM": [
     387,
     313
    ],
-   "score": 14
+   "score": 20
   },
   {
    "id": "osm-de-w1125403263",
    "country": "DE",
    "name": "Robert-Koch-Klinikum",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 10,
-   "facilities": 26,
+   "buildings": 3,
+   "named": 3,
+   "entrances": 15,
+   "facilities": 39,
    "waypoints": 19,
-   "trails": 12,
-   "pathM": 776,
+   "trails": 18,
+   "pathM": 1164,
    "extentM": [
     197,
     237
    ],
-   "score": 32
+   "score": 47
   },
   {
    "id": "osm-de-w400738359",
    "country": "DE",
    "name": "Evangelisches Diakonissenkrankenhaus Leipzig",
-   "buildings": 24,
-   "named": 24,
-   "entrances": 8,
-   "facilities": 48,
+   "buildings": 36,
+   "named": 36,
+   "entrances": 12,
+   "facilities": 72,
    "waypoints": 37,
-   "trails": 52,
-   "pathM": 1204,
+   "trails": 78,
+   "pathM": 1805,
    "extentM": [
     265,
     334
    ],
-   "score": 74
+   "score": 99
   },
   {
    "id": "osm-de-w1199902953",
    "country": "DE",
    "name": "St. Elisabeth-Krankenhaus",
-   "buildings": 24,
-   "named": 24,
-   "entrances": 32,
-   "facilities": 26,
+   "buildings": 36,
+   "named": 36,
+   "entrances": 48,
+   "facilities": 39,
    "waypoints": 37,
-   "trails": 168,
-   "pathM": 5122,
+   "trails": 252,
+   "pathM": 7683,
    "extentM": [
     374,
     347
    ],
-   "score": 58
+   "score": 75
   },
   {
    "id": "osm-de-w402967441",
    "country": "DE",
    "name": "Universitätsklinikum Leipzig",
-   "buildings": 82,
-   "named": 82,
-   "entrances": 80,
-   "facilities": 214,
+   "buildings": 123,
+   "named": 123,
+   "entrances": 120,
+   "facilities": 321,
    "waypoints": 165,
-   "trails": 218,
-   "pathM": 6660,
+   "trails": 327,
+   "pathM": 9990,
    "extentM": [
     895,
     603
    ],
-   "score": 320
+   "score": 441
   },
   {
    "id": "osm-de-w402966423",
    "country": "DE",
    "name": "Universitätsklinikum Leipzig",
-   "buildings": 6,
-   "named": 6,
-   "entrances": 4,
-   "facilities": 34,
+   "buildings": 9,
+   "named": 9,
+   "entrances": 6,
+   "facilities": 51,
    "waypoints": 16,
-   "trails": 16,
-   "pathM": 501,
+   "trails": 24,
+   "pathM": 752,
    "extentM": [
     308,
     205
    ],
-   "score": 40
+   "score": 57
   },
   {
    "id": "osm-de-r5333051",
    "country": "DE",
    "name": "Städtisches Klinikum St. Georg",
-   "buildings": 88,
-   "named": 88,
-   "entrances": 24,
-   "facilities": 68,
+   "buildings": 132,
+   "named": 132,
+   "entrances": 36,
+   "facilities": 102,
    "waypoints": 86,
-   "trails": 156,
-   "pathM": 6622,
+   "trails": 234,
+   "pathM": 9933,
    "extentM": [
     778,
     798
    ],
-   "score": 158
+   "score": 193
   },
   {
    "id": "osm-de-w84735856",
    "country": "DE",
    "name": "Haus 20",
-   "buildings": 4,
-   "named": 2,
-   "entrances": 4,
-   "facilities": 2,
+   "buildings": 6,
+   "named": 3,
+   "entrances": 6,
+   "facilities": 3,
    "waypoints": 4,
    "trails": 0,
    "pathM": 0,
@@ -14245,41 +14313,41 @@
     112,
     121
    ],
-   "score": 8
+   "score": 11
   },
   {
    "id": "osm-de-w43137382",
    "country": "DE",
    "name": "Kreiskrankenhaus Delitzsch",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 4,
-   "facilities": 4,
+   "buildings": 3,
+   "named": 3,
+   "entrances": 6,
+   "facilities": 6,
    "waypoints": 5,
-   "trails": 2,
-   "pathM": 20,
+   "trails": 3,
+   "pathM": 30,
    "extentM": [
     157,
     215
    ],
-   "score": 10
+   "score": 14
   },
   {
    "id": "osm-de-w901111331",
    "country": "DE",
    "name": "Waldkrankenhaus Bad Düben",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 4,
-   "facilities": 4,
+   "buildings": 3,
+   "named": 3,
+   "entrances": 6,
+   "facilities": 6,
    "waypoints": 4,
-   "trails": 26,
-   "pathM": 1288,
+   "trails": 39,
+   "pathM": 1932,
    "extentM": [
     230,
     241
    ],
-   "score": 6
+   "score": 8
   },
   {
    "id": "osm-de-w89058781",
@@ -14302,35 +14370,35 @@
    "id": "osm-de-w397312810",
    "country": "DE",
    "name": "Klinik Eilenburg",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 4,
-   "facilities": 8,
+   "buildings": 3,
+   "named": 3,
+   "entrances": 6,
+   "facilities": 12,
    "waypoints": 7,
-   "trails": 10,
-   "pathM": 180,
+   "trails": 15,
+   "pathM": 270,
    "extentM": [
     201,
     165
    ],
-   "score": 12
+   "score": 17
   },
   {
    "id": "osm-de-w26735250",
    "country": "DE",
    "name": "Goitzsche Klinikum",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 6,
-   "facilities": 6,
+   "buildings": 3,
+   "named": 3,
+   "entrances": 9,
+   "facilities": 9,
    "waypoints": 7,
-   "trails": 24,
-   "pathM": 933,
+   "trails": 36,
+   "pathM": 1400,
    "extentM": [
     263,
     354
    ],
-   "score": 14
+   "score": 20
   },
   {
    "id": "osm-de-w449382601",
@@ -14404,86 +14472,86 @@
    "id": "osm-de-w147965214",
    "country": "DE",
    "name": "Katholisches Krankenhaus \"St. Johann Nepomuk\" Erfurt",
-   "buildings": 2,
-   "named": 2,
-   "entrances": 8,
-   "facilities": 5,
+   "buildings": 4,
+   "named": 4,
+   "entrances": 16,
+   "facilities": 10,
    "waypoints": 13,
-   "trails": 23,
-   "pathM": 1211,
+   "trails": 46,
+   "pathM": 2421,
    "extentM": [
     352,
     379
    ],
-   "score": 15
+   "score": 26
   },
   {
    "id": "osm-de-w1121987644",
    "country": "DE",
    "name": "Sophien- und Hufeland- Klinikum Weimar",
-   "buildings": 4,
-   "named": 4,
-   "entrances": 4,
-   "facilities": 11,
+   "buildings": 8,
+   "named": 8,
+   "entrances": 8,
+   "facilities": 22,
    "waypoints": 19,
-   "trails": 18,
-   "pathM": 942,
+   "trails": 36,
+   "pathM": 1883,
    "extentM": [
     346,
     361
    ],
-   "score": 20
+   "score": 32
   },
   {
    "id": "osm-de-w28902971",
    "country": "DE",
    "name": "Helios Klinikum Erfurt",
-   "buildings": 15,
-   "named": 15,
-   "entrances": 9,
-   "facilities": 18,
+   "buildings": 30,
+   "named": 30,
+   "entrances": 18,
+   "facilities": 36,
    "waypoints": 42,
-   "trails": 71,
-   "pathM": 2802,
+   "trails": 142,
+   "pathM": 5604,
    "extentM": [
     589,
     867
    ],
-   "score": 53
+   "score": 76
   },
   {
    "id": "osm-de-w282949547",
    "country": "DE",
    "name": "Robert-Koch-Krankenhaus Apolda",
-   "buildings": 1,
-   "named": 1,
-   "entrances": 1,
-   "facilities": 7,
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 14,
    "waypoints": 9,
-   "trails": 30,
-   "pathM": 1189,
+   "trails": 60,
+   "pathM": 2378,
    "extentM": [
     241,
     362
    ],
-   "score": 10
+   "score": 18
   },
   {
    "id": "osm-de-w107577774",
    "country": "DE",
    "name": "SRH Klinikum Naumburg",
-   "buildings": 8,
-   "named": 8,
-   "entrances": 2,
-   "facilities": 7,
+   "buildings": 16,
+   "named": 16,
+   "entrances": 4,
+   "facilities": 14,
    "waypoints": 17,
-   "trails": 9,
-   "pathM": 351,
+   "trails": 18,
+   "pathM": 703,
    "extentM": [
     272,
     252
    ],
-   "score": 24
+   "score": 32
   },
   {
    "id": "osm-de-r15048435",
@@ -14671,6 +14739,312 @@
     567
    ],
    "score": 10
+  },
+  {
+   "id": "osm-de-w80172097",
+   "country": "DE",
+   "name": "Helios Klinikum Meiningen",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 25,
+   "waypoints": 28,
+   "trails": 28,
+   "pathM": 1052,
+   "extentM": [
+    423,
+    320
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-de-w958153823",
+   "country": "DE",
+   "name": "Geriatrische Fachklinik \"Georgenhaus\"",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 16,
+   "pathM": 971,
+   "extentM": [
+    186,
+    351
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-de-w958132217",
+   "country": "DE",
+   "name": "REGIOMED Klinikum Hildburghausen",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 12,
+   "waypoints": 16,
+   "trails": 3,
+   "pathM": 79,
+   "extentM": [
+    138,
+    182
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-de-w168857105",
+   "country": "DE",
+   "name": "Zentralklinikum Suhl",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 20,
+   "waypoints": 23,
+   "trails": 16,
+   "pathM": 1465,
+   "extentM": [
+    499,
+    532
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w455055494",
+   "country": "DE",
+   "name": "DRK-Vorsorge- und Rehaeinrichtung für Mutter und Kind - \"Schloss Neuhaus\"",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 0,
+   "waypoints": 4,
+   "trails": 14,
+   "pathM": 499,
+   "extentM": [
+    205,
+    241
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w54181023",
+   "country": "DE",
+   "name": "REGIOMED Klinikum Sonneberg/Neuhaus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 8,
+   "waypoints": 11,
+   "trails": 6,
+   "pathM": 242,
+   "extentM": [
+    315,
+    254
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-de-w37855880",
+   "country": "DE",
+   "name": "Ilm-Kreis-Kliniken Arnstadt-Ilmenau - Standort Ilmenau",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 4,
+   "facilities": 18,
+   "waypoints": 24,
+   "trails": 19,
+   "pathM": 520,
+   "extentM": [
+    270,
+    298
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-de-w812813511",
+   "country": "DE",
+   "name": "Klinik Bergfried Saalfeld",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 4,
+   "pathM": 339,
+   "extentM": [
+    250,
+    247
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-de-w304455456",
+   "country": "DE",
+   "name": "Thüringen-Kliniken \"Georgius Agricola\"- Standort Saalfeld",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 23,
+   "facilities": 23,
+   "waypoints": 34,
+   "trails": 44,
+   "pathM": 1857,
+   "extentM": [
+    422,
+    445
+   ],
+   "score": 31
+  },
+  {
+   "id": "osm-de-w23949832",
+   "country": "DE",
+   "name": "Klinikum Bad Salzungen",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 5,
+   "pathM": 631,
+   "extentM": [
+    369,
+    337
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w27262681",
+   "country": "DE",
+   "name": "St. Georg Klinikum Eisenach",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 13,
+   "facilities": 22,
+   "waypoints": 32,
+   "trails": 54,
+   "pathM": 1499,
+   "extentM": [
+    312,
+    361
+   ],
+   "score": 37
+  },
+  {
+   "id": "osm-de-w702893471",
+   "country": "DE",
+   "name": "Helios Klinikum Gotha",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 9,
+   "pathM": 928,
+   "extentM": [
+    417,
+    399
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w137426401",
+   "country": "DE",
+   "name": "Ilm-Kreis-Kliniken Arnstadt-Ilmenau GmbH - Standort Arnstadt",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 12,
+   "pathM": 284,
+   "extentM": [
+    270,
+    167
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-de-w148323090",
+   "country": "DE",
+   "name": "Zentralklinik Bad Berka",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 11,
+   "facilities": 9,
+   "waypoints": 18,
+   "trails": 25,
+   "pathM": 1787,
+   "extentM": [
+    609,
+    491
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-de-w365080363",
+   "country": "DE",
+   "name": "Asklepios Fachklinikum Stadtroda",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 20,
+   "pathM": 860,
+   "extentM": [
+    448,
+    405
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-de-w958226190",
+   "country": "DE",
+   "name": "Universitätsklinikum Jena",
+   "buildings": 21,
+   "named": 21,
+   "entrances": 25,
+   "facilities": 39,
+   "waypoints": 79,
+   "trails": 107,
+   "pathM": 4145,
+   "extentM": [
+    682,
+    594
+   ],
+   "score": 90
+  },
+  {
+   "id": "osm-de-w26585770",
+   "country": "DE",
+   "name": "Universitätsklinikum Jena - Standort Bachstraße",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 1,
+   "facilities": 18,
+   "waypoints": 29,
+   "trails": 14,
+   "pathM": 454,
+   "extentM": [
+    376,
+    252
+   ],
+   "score": 39
+  },
+  {
+   "id": "osm-de-w107465336",
+   "country": "DE",
+   "name": "Ökumenisches Hainich Klinikum",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 8,
+   "waypoints": 13,
+   "trails": 58,
+   "pathM": 3672,
+   "extentM": [
+    912,
+    879
+   ],
+   "score": 16
   },
   {
    "id": "osm-us-w445120364",
@@ -19212,6 +19586,482 @@
    "score": 6
   },
   {
+   "id": "osm-us-w397787281",
+   "country": "US",
+   "name": "Norwalk Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 11,
+   "waypoints": 12,
+   "trails": 11,
+   "pathM": 902,
+   "extentM": [
+    355,
+    452
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-w188554959",
+   "country": "US",
+   "name": "Saint Vincent's Medical Center",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 5,
+   "facilities": 4,
+   "waypoints": 10,
+   "trails": 7,
+   "pathM": 962,
+   "extentM": [
+    270,
+    282
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w557148404",
+   "country": "US",
+   "name": "Yale New Haven Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 5,
+   "pathM": 211,
+   "extentM": [
+    220,
+    264
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w442001687",
+   "country": "US",
+   "name": "Yale New Haven Hospital Saint Raphael Campus",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 8,
+   "trails": 4,
+   "pathM": 906,
+   "extentM": [
+    398,
+    280
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w167649827",
+   "country": "US",
+   "name": "Danbury Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 10,
+   "trails": 16,
+   "pathM": 1190,
+   "extentM": [
+    681,
+    381
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-us-w223882753",
+   "country": "US",
+   "name": "Griffin Hospital",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 33,
+   "waypoints": 37,
+   "trails": 4,
+   "pathM": 216,
+   "extentM": [
+    351,
+    547
+   ],
+   "score": 42
+  },
+  {
+   "id": "osm-us-r7139675",
+   "country": "US",
+   "name": "Saint Mary's Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 7,
+   "trails": 10,
+   "pathM": 1007,
+   "extentM": [
+    307,
+    336
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w442356799",
+   "country": "US",
+   "name": "Bristol Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 15,
+   "waypoints": 17,
+   "trails": 28,
+   "pathM": 1624,
+   "extentM": [
+    375,
+    444
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w442469056",
+   "country": "US",
+   "name": "The Hospital of Central Connecticut - New Britain General Campus",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 13,
+   "waypoints": 16,
+   "trails": 1,
+   "pathM": 31,
+   "extentM": [
+    496,
+    265
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w441986343",
+   "country": "US",
+   "name": "Middlesex Hospital",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 24,
+   "facilities": 9,
+   "waypoints": 30,
+   "trails": 65,
+   "pathM": 1929,
+   "extentM": [
+    333,
+    355
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-us-w441986340",
+   "country": "US",
+   "name": "Connecticut Valley Hospital",
+   "buildings": 30,
+   "named": 30,
+   "entrances": 1,
+   "facilities": 19,
+   "waypoints": 50,
+   "trails": 205,
+   "pathM": 8068,
+   "extentM": [
+    1332,
+    1425
+   ],
+   "score": 78
+  },
+  {
+   "id": "osm-us-w442473876",
+   "country": "US",
+   "name": "Mid State Medical Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 44,
+   "pathM": 2202,
+   "extentM": [
+    629,
+    615
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-r11552927",
+   "country": "US",
+   "name": "Lawrence+Memorial Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 2,
+   "pathM": 54,
+   "extentM": [
+    470,
+    329
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w442469061",
+   "country": "US",
+   "name": "University of Connecticut Health Center",
+   "buildings": 12,
+   "named": 12,
+   "entrances": 9,
+   "facilities": 26,
+   "waypoints": 46,
+   "trails": 84,
+   "pathM": 6561,
+   "extentM": [
+    955,
+    1361
+   ],
+   "score": 44
+  },
+  {
+   "id": "osm-us-r8220465",
+   "country": "US",
+   "name": "John Dempsey Hospital",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 6,
+   "waypoints": 9,
+   "trails": 38,
+   "pathM": 1179,
+   "extentM": [
+    294,
+    318
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w441851372",
+   "country": "US",
+   "name": "Saint Francis Hospital and Medical Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 2,
+   "facilities": 11,
+   "waypoints": 14,
+   "trails": 12,
+   "pathM": 1976,
+   "extentM": [
+    480,
+    614
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-r16143702",
+   "country": "US",
+   "name": "Hartford Hospital",
+   "buildings": 13,
+   "named": 13,
+   "entrances": 1,
+   "facilities": 19,
+   "waypoints": 30,
+   "trails": 18,
+   "pathM": 2222,
+   "extentM": [
+    618,
+    724
+   ],
+   "score": 39
+  },
+  {
+   "id": "osm-us-r12409840",
+   "country": "US",
+   "name": "Saint Francis Hospital and Medical Center - Mount Sinai Campus",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 6,
+   "pathM": 1153,
+   "extentM": [
+    614,
+    208
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-us-w442144913",
+   "country": "US",
+   "name": "Manchester Memorial Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 1,
+   "pathM": 117,
+   "extentM": [
+    309,
+    383
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w940867029",
+   "country": "US",
+   "name": "Windham Hospital",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 8,
+   "facilities": 20,
+   "waypoints": 30,
+   "trails": 81,
+   "pathM": 1845,
+   "extentM": [
+    632,
+    554
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-us-w516253617",
+   "country": "US",
+   "name": "Inova Alexandria Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 11,
+   "waypoints": 13,
+   "trails": 12,
+   "pathM": 360,
+   "extentM": [
+    446,
+    456
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w464217042",
+   "country": "US",
+   "name": "MedStar Georgetown University Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 16,
+   "pathM": 599,
+   "extentM": [
+    208,
+    272
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-w464250576",
+   "country": "US",
+   "name": "Howard University Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 5,
+   "facilities": 11,
+   "waypoints": 19,
+   "trails": 25,
+   "pathM": 1827,
+   "extentM": [
+    385,
+    332
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w464307669",
+   "country": "US",
+   "name": "Medstar Washington Hospital Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 27,
+   "waypoints": 26,
+   "trails": 39,
+   "pathM": 1719,
+   "extentM": [
+    476,
+    326
+   ],
+   "score": 30
+  },
+  {
+   "id": "osm-us-w464307673",
+   "country": "US",
+   "name": "Washington DC VA Medical Center",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 21,
+   "waypoints": 23,
+   "trails": 48,
+   "pathM": 1969,
+   "extentM": [
+    450,
+    576
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-us-w464231464",
+   "country": "US",
+   "name": "Sibley Memorial Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 3,
+   "facilities": 12,
+   "waypoints": 18,
+   "trails": 14,
+   "pathM": 819,
+   "extentM": [
+    590,
+    222
+   ],
+   "score": 20
+  },
+  {
+   "id": "osm-us-w464307671",
+   "country": "US",
+   "name": "National Rehabilitation Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 9,
+   "pathM": 538,
+   "extentM": [
+    393,
+    123
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w464250823",
+   "country": "US",
+   "name": "Providence Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 24,
+   "pathM": 1363,
+   "extentM": [
+    596,
+    403
+   ],
+   "score": 8
+  },
+  {
    "id": "osm-us-w581584017",
    "country": "US",
    "name": "Portneuf Medical Center",
@@ -19380,11 +20230,1490 @@
     433
    ],
    "score": 12
+  },
+  {
+   "id": "osm-us-w83070035",
+   "country": "US",
+   "name": "Harrisburg Medical Center",
+   "buildings": 5,
+   "named": 4,
+   "entrances": 8,
+   "facilities": 6,
+   "waypoints": 15,
+   "trails": 3,
+   "pathM": 72,
+   "extentM": [
+    282,
+    286
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-us-w546488906",
+   "country": "US",
+   "name": "Hamilton Memorial Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 22,
+   "waypoints": 18,
+   "trails": 1,
+   "pathM": 26,
+   "extentM": [
+    221,
+    234
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-us-w547508782",
+   "country": "US",
+   "name": "Memorial Hospital in Belleville",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 8,
+   "trails": 14,
+   "pathM": 1210,
+   "extentM": [
+    826,
+    632
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-us-w547555279",
+   "country": "US",
+   "name": "Alton Memorial Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 1,
+   "facilities": 1,
+   "waypoints": 6,
+   "trails": 15,
+   "pathM": 437,
+   "extentM": [
+    575,
+    379
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-us-w549909878",
+   "country": "US",
+   "name": "Memorial Medical Center",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 1,
+   "facilities": 25,
+   "waypoints": 28,
+   "trails": 157,
+   "pathM": 5069,
+   "extentM": [
+    522,
+    605
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-us-w129381115",
+   "country": "US",
+   "name": "HSHS Saint John's Hospital",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 1,
+   "facilities": 10,
+   "waypoints": 18,
+   "trails": 68,
+   "pathM": 2537,
+   "extentM": [
+    497,
+    397
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-us-w550191781",
+   "country": "US",
+   "name": "Carle Health Pekin Hospital Grounds",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 11,
+   "trails": 31,
+   "pathM": 1785,
+   "extentM": [
+    287,
+    419
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w550245679",
+   "country": "US",
+   "name": "UnityPoint Health - Methodist",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 16,
+   "facilities": 20,
+   "waypoints": 35,
+   "trails": 125,
+   "pathM": 4350,
+   "extentM": [
+    468,
+    720
+   ],
+   "score": 43
+  },
+  {
+   "id": "osm-us-w550094236",
+   "country": "US",
+   "name": "Carle BroMenn Medical Center",
+   "buildings": 6,
+   "named": 5,
+   "entrances": 2,
+   "facilities": 7,
+   "waypoints": 14,
+   "trails": 55,
+   "pathM": 3258,
+   "extentM": [
+    501,
+    356
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-us-r11821191",
+   "country": "US",
+   "name": "Trinity Medical Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 3,
+   "facilities": 19,
+   "waypoints": 23,
+   "trails": 38,
+   "pathM": 2484,
+   "extentM": [
+    642,
+    773
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-us-w550337547",
+   "country": "US",
+   "name": "Hammond-Henry Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 5,
+   "facilities": 5,
+   "waypoints": 10,
+   "trails": 31,
+   "pathM": 844,
+   "extentM": [
+    177,
+    340
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w550245677",
+   "country": "US",
+   "name": "OSF Saint Francis Medical Center",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 16,
+   "pathM": 1764,
+   "extentM": [
+    605,
+    668
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-us-w550263850",
+   "country": "US",
+   "name": "UnityPoint Health - Proctor",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 6,
+   "facilities": 2,
+   "waypoints": 10,
+   "trails": 7,
+   "pathM": 757,
+   "extentM": [
+    861,
+    512
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w142439020",
+   "country": "US",
+   "name": "OSF HealthCare Sacred Heart Medical Center – Urbana",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 5,
+   "facilities": 14,
+   "waypoints": 21,
+   "trails": 39,
+   "pathM": 1694,
+   "extentM": [
+    442,
+    303
+   ],
+   "score": 21
+  },
+  {
+   "id": "osm-us-w142289621",
+   "country": "US",
+   "name": "Carle Foundation Hospital",
+   "buildings": 10,
+   "named": 10,
+   "entrances": 22,
+   "facilities": 29,
+   "waypoints": 53,
+   "trails": 134,
+   "pathM": 4473,
+   "extentM": [
+    608,
+    407
+   ],
+   "score": 59
+  },
+  {
+   "id": "osm-us-w550668370",
+   "country": "US",
+   "name": "OSF Saint Elizabeth Medical Center",
+   "buildings": 6,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    629,
+    558
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w551247981",
+   "country": "US",
+   "name": "Saint Joseph Medical Center",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 8,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    524,
+    577
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w72691933",
+   "country": "US",
+   "name": "Riverside Medical Center",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 6,
+   "pathM": 743,
+   "extentM": [
+    585,
+    428
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w550703832",
+   "country": "US",
+   "name": "UW Health SwedishAmerican Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 1,
+   "facilities": 19,
+   "waypoints": 22,
+   "trails": 4,
+   "pathM": 377,
+   "extentM": [
+    453,
+    361
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-us-w550705887",
+   "country": "US",
+   "name": "Mercyhealth Hospital–Rockton Avenue",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 12,
+   "facilities": 5,
+   "waypoints": 14,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    339,
+    603
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w550711402",
+   "country": "US",
+   "name": "Rush Copley Medical Center",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 26,
+   "waypoints": 30,
+   "trails": 58,
+   "pathM": 3124,
+   "extentM": [
+    1062,
+    784
+   ],
+   "score": 34
+  },
+  {
+   "id": "osm-us-w554049527",
+   "country": "US",
+   "name": "Mercy Medical Center",
+   "buildings": 6,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 21,
+   "waypoints": 27,
+   "trails": 74,
+   "pathM": 6293,
+   "extentM": [
+    872,
+    889
+   ],
+   "score": 33
+  },
+  {
+   "id": "osm-us-w551311747",
+   "country": "US",
+   "name": "Northwestern Medicine Delnor Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 9,
+   "facilities": 20,
+   "waypoints": 32,
+   "trails": 49,
+   "pathM": 3751,
+   "extentM": [
+    555,
+    768
+   ],
+   "score": 33
+  },
+  {
+   "id": "osm-us-w200448881",
+   "country": "US",
+   "name": "Edward Hospital",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 0,
+   "facilities": 14,
+   "waypoints": 21,
+   "trails": 77,
+   "pathM": 3841,
+   "extentM": [
+    838,
+    536
+   ],
+   "score": 28
+  },
+  {
+   "id": "osm-us-w551322486",
+   "country": "US",
+   "name": "Marianjoy Rehabilitation Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 7,
+   "trails": 2,
+   "pathM": 1231,
+   "extentM": [
+    513,
+    883
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w551315016",
+   "country": "US",
+   "name": "Northwestern Medicine Central DuPage Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 7,
+   "facilities": 11,
+   "waypoints": 22,
+   "trails": 20,
+   "pathM": 2717,
+   "extentM": [
+    442,
+    493
+   ],
+   "score": 25
+  },
+  {
+   "id": "osm-us-w550932032",
+   "country": "US",
+   "name": "Saint Joseph Hospital Elgin",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 12,
+   "waypoints": 13,
+   "trails": 1,
+   "pathM": 34,
+   "extentM": [
+    514,
+    451
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w550920278",
+   "country": "US",
+   "name": "Ascension Saint Alexius Medical Center",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 0,
+   "facilities": 12,
+   "waypoints": 20,
+   "trails": 56,
+   "pathM": 2621,
+   "extentM": [
+    499,
+    577
+   ],
+   "score": 26
+  },
+  {
+   "id": "osm-us-w550717425",
+   "country": "US",
+   "name": "Northwestern Medicine Huntley",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 19,
+   "facilities": 12,
+   "waypoints": 28,
+   "trails": 91,
+   "pathM": 2927,
+   "extentM": [
+    390,
+    678
+   ],
+   "score": 24
+  },
+  {
+   "id": "osm-us-w407922155",
+   "country": "US",
+   "name": "Northwestern Medicine McHenry Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 13,
+   "waypoints": 14,
+   "trails": 9,
+   "pathM": 1155,
+   "extentM": [
+    997,
+    611
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-us-w551258102",
+   "country": "US",
+   "name": "Silver Cross Hospital",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 6,
+   "trails": 6,
+   "pathM": 470,
+   "extentM": [
+    853,
+    797
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w551182671",
+   "country": "US",
+   "name": "Palos Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 10,
+   "trails": 11,
+   "pathM": 240,
+   "extentM": [
+    510,
+    536
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w440555192",
+   "country": "US",
+   "name": "Advocate Christ Medical Center",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 17,
+   "waypoints": 21,
+   "trails": 41,
+   "pathM": 3737,
+   "extentM": [
+    766,
+    447
+   ],
+   "score": 19
+  },
+  {
+   "id": "osm-us-w229123103",
+   "country": "US",
+   "name": "Advocate Good Samaritan Hospital",
+   "buildings": 5,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 14,
+   "trails": 1,
+   "pathM": 584,
+   "extentM": [
+    458,
+    827
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w225179700",
+   "country": "US",
+   "name": "UChicago Medicine AdventHealth Hinsdale",
+   "buildings": 7,
+   "named": 7,
+   "entrances": 12,
+   "facilities": 14,
+   "waypoints": 29,
+   "trails": 38,
+   "pathM": 1750,
+   "extentM": [
+    366,
+    258
+   ],
+   "score": 28
+  },
+  {
+   "id": "osm-us-r18292356",
+   "country": "US",
+   "name": "Edward Hines, Jr. VA Hospital",
+   "buildings": 56,
+   "named": 56,
+   "entrances": 5,
+   "facilities": 39,
+   "waypoints": 100,
+   "trails": 27,
+   "pathM": 4177,
+   "extentM": [
+    924,
+    1619
+   ],
+   "score": 131
+  },
+  {
+   "id": "osm-us-w406072957",
+   "country": "US",
+   "name": "MacNeal Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    322,
+    403
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w1172890593",
+   "country": "US",
+   "name": "Main Hospital",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 2,
+   "facilities": 1,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    142,
+    138
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-r18292358",
+   "country": "US",
+   "name": "Loyola University Medical Center",
+   "buildings": 11,
+   "named": 11,
+   "entrances": 1,
+   "facilities": 19,
+   "waypoints": 31,
+   "trails": 4,
+   "pathM": 90,
+   "extentM": [
+    363,
+    856
+   ],
+   "score": 41
+  },
+  {
+   "id": "osm-us-r18292357",
+   "country": "US",
+   "name": "Madden Mental Health Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 7,
+   "trails": 23,
+   "pathM": 1075,
+   "extentM": [
+    507,
+    334
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w551062630",
+   "country": "US",
+   "name": "West Suburban Medical Center",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 27,
+   "pathM": 835,
+   "extentM": [
+    212,
+    261
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-us-w242228765",
+   "country": "US",
+   "name": "Mount Sinai Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 7,
+   "trails": 30,
+   "pathM": 1456,
+   "extentM": [
+    269,
+    396
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-us-r20590371",
+   "country": "US",
+   "name": "John H. Stroger, Jr. Hospital of Cook County",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 5,
+   "facilities": 24,
+   "waypoints": 27,
+   "trails": 64,
+   "pathM": 3603,
+   "extentM": [
+    422,
+    425
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-us-w537392585",
+   "country": "US",
+   "name": "Jesse Brown VA Medical Center",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 18,
+   "facilities": 14,
+   "waypoints": 36,
+   "trails": 53,
+   "pathM": 2396,
+   "extentM": [
+    249,
+    281
+   ],
+   "score": 35
+  },
+  {
+   "id": "osm-us-r20590975",
+   "country": "US",
+   "name": "Rush University Medical Center",
+   "buildings": 20,
+   "named": 20,
+   "entrances": 28,
+   "facilities": 42,
+   "waypoints": 82,
+   "trails": 173,
+   "pathM": 8297,
+   "extentM": [
+    882,
+    438
+   ],
+   "score": 96
+  },
+  {
+   "id": "osm-us-r18907604",
+   "country": "US",
+   "name": "Humboldt Park Health",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 10,
+   "trails": 35,
+   "pathM": 1864,
+   "extentM": [
+    325,
+    367
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w527062348",
+   "country": "US",
+   "name": "Ingalls Memorial Hospital",
+   "buildings": 6,
+   "named": 5,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 9,
+   "trails": 24,
+   "pathM": 1553,
+   "extentM": [
+    261,
+    569
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w241870223",
+   "country": "US",
+   "name": "Advocate Trinity Hospital",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 11,
+   "waypoints": 13,
+   "trails": 11,
+   "pathM": 907,
+   "extentM": [
+    211,
+    314
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-w229438623",
+   "country": "US",
+   "name": "University of Chicago Medicine Campus",
+   "buildings": 26,
+   "named": 26,
+   "entrances": 9,
+   "facilities": 14,
+   "waypoints": 48,
+   "trails": 52,
+   "pathM": 3186,
+   "extentM": [
+    434,
+    588
+   ],
+   "score": 64
+  },
+  {
+   "id": "osm-us-w1446950437",
+   "country": "US",
+   "name": "La Rabida Children's Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 7,
+   "facilities": 1,
+   "waypoints": 9,
+   "trails": 12,
+   "pathM": 295,
+   "extentM": [
+    180,
+    178
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w244945457",
+   "country": "US",
+   "name": "Provident Hospital of Cook County",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 2,
+   "facilities": 3,
+   "waypoints": 7,
+   "trails": 13,
+   "pathM": 984,
+   "extentM": [
+    216,
+    218
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-r17607255",
+   "country": "US",
+   "name": "Northwestern Memorial Hospital",
+   "buildings": 8,
+   "named": 8,
+   "entrances": 18,
+   "facilities": 30,
+   "waypoints": 44,
+   "trails": 48,
+   "pathM": 2789,
+   "extentM": [
+    281,
+    402
+   ],
+   "score": 47
+  },
+  {
+   "id": "osm-us-r18239404",
+   "country": "US",
+   "name": "Advocate Illinois Masonic Hospital",
+   "buildings": 16,
+   "named": 16,
+   "entrances": 2,
+   "facilities": 22,
+   "waypoints": 37,
+   "trails": 44,
+   "pathM": 3442,
+   "extentM": [
+    428,
+    431
+   ],
+   "score": 53
+  },
+  {
+   "id": "osm-us-w211090327",
+   "country": "US",
+   "name": "Saint Joseph Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 3,
+   "facilities": 7,
+   "waypoints": 13,
+   "trails": 10,
+   "pathM": 534,
+   "extentM": [
+    259,
+    251
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w550941626",
+   "country": "US",
+   "name": "Ascension Alexian Brothers Medical Center",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 14,
+   "trails": 9,
+   "pathM": 1443,
+   "extentM": [
+    446,
+    362
+   ],
+   "score": 16
+  },
+  {
+   "id": "osm-us-w110582617",
+   "country": "US",
+   "name": "Northwest Community Hospital",
+   "buildings": 9,
+   "named": 9,
+   "entrances": 0,
+   "facilities": 15,
+   "waypoints": 24,
+   "trails": 7,
+   "pathM": 621,
+   "extentM": [
+    557,
+    519
+   ],
+   "score": 33
+  },
+  {
+   "id": "osm-us-w28755306",
+   "country": "US",
+   "name": "Resurrection Medical Center",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 11,
+   "trails": 2,
+   "pathM": 393,
+   "extentM": [
+    435,
+    540
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w230163731",
+   "country": "US",
+   "name": "Advocate Lutheran General Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 15,
+   "waypoints": 17,
+   "trails": 15,
+   "pathM": 624,
+   "extentM": [
+    531,
+    340
+   ],
+   "score": 17
+  },
+  {
+   "id": "osm-us-w209730046",
+   "country": "US",
+   "name": "Swedish Covenant Hospital",
+   "buildings": 8,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 6,
+   "waypoints": 12,
+   "trails": 21,
+   "pathM": 1328,
+   "extentM": [
+    342,
+    328
+   ],
+   "score": 18
+  },
+  {
+   "id": "osm-us-r20009652",
+   "country": "US",
+   "name": "Evanston Hospital",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 9,
+   "trails": 9,
+   "pathM": 1293,
+   "extentM": [
+    237,
+    613
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-w550912500",
+   "country": "US",
+   "name": "Glenbrook Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 1,
+   "facilities": 6,
+   "waypoints": 8,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    844,
+    327
+   ],
+   "score": 9
+  },
+  {
+   "id": "osm-us-w545326496",
+   "country": "US",
+   "name": "Highland Park Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 8,
+   "waypoints": 7,
+   "trails": 43,
+   "pathM": 1864,
+   "extentM": [
+    291,
+    409
+   ],
+   "score": 10
+  },
+  {
+   "id": "osm-us-w550895078",
+   "country": "US",
+   "name": "Northwestern Medicine Lake Forest Hospital",
+   "buildings": 11,
+   "named": 10,
+   "entrances": 54,
+   "facilities": 9,
+   "waypoints": 43,
+   "trails": 163,
+   "pathM": 12099,
+   "extentM": [
+    816,
+    1820
+   ],
+   "score": 29
+  },
+  {
+   "id": "osm-us-r15967941",
+   "country": "US",
+   "name": "Captain James A. Lovell Federal Health Care Center",
+   "buildings": 26,
+   "named": 26,
+   "entrances": 17,
+   "facilities": 28,
+   "waypoints": 68,
+   "trails": 116,
+   "pathM": 6706,
+   "extentM": [
+    939,
+    740
+   ],
+   "score": 81
+  },
+  {
+   "id": "osm-us-w211323371",
+   "country": "US",
+   "name": "Louis A. Weiss Memorial Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 8,
+   "trails": 17,
+   "pathM": 811,
+   "extentM": [
+    206,
+    273
+   ],
+   "score": 11
+  },
+  {
+   "id": "osm-us-r8042814",
+   "country": "US",
+   "name": "Memorial Hospital of Carbondale",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    354,
+    262
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w1001927237",
+   "country": "US",
+   "name": "Marion VA Medical Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 9,
+   "pathM": 3143,
+   "extentM": [
+    713,
+    920
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-us-w504025814",
+   "country": "US",
+   "name": "OSF Saint Anthony's Health Center",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 7,
+   "waypoints": 11,
+   "trails": 3,
+   "pathM": 737,
+   "extentM": [
+    407,
+    556
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-us-w547136496",
+   "country": "US",
+   "name": "Lawrence County Memorial Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    398,
+    268
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w178701135",
+   "country": "US",
+   "name": "Sarah Bush Lincoln Health Center",
+   "buildings": 4,
+   "named": 3,
+   "entrances": 0,
+   "facilities": 22,
+   "waypoints": 25,
+   "trails": 2,
+   "pathM": 117,
+   "extentM": [
+    786,
+    770
+   ],
+   "score": 28
+  },
+  {
+   "id": "osm-us-w550293721",
+   "country": "US",
+   "name": "Genesis, Aledo",
+   "buildings": 4,
+   "named": 4,
+   "entrances": 0,
+   "facilities": 2,
+   "waypoints": 6,
+   "trails": 3,
+   "pathM": 127,
+   "extentM": [
+    290,
+    334
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w587562441",
+   "country": "US",
+   "name": "MercyOne Genesis Silvis Medical Center",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 11,
+   "waypoints": 12,
+   "trails": 7,
+   "pathM": 312,
+   "extentM": [
+    417,
+    278
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-w550011196",
+   "country": "US",
+   "name": "Carle Hoopeston Regional Health Center",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 10,
+   "waypoints": 12,
+   "trails": 19,
+   "pathM": 903,
+   "extentM": [
+    277,
+    216
+   ],
+   "score": 12
+  },
+  {
+   "id": "osm-us-w483300628",
+   "country": "US",
+   "name": "Franciscan Health Dyer",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 17,
+   "pathM": 913,
+   "extentM": [
+    466,
+    575
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w656319790",
+   "country": "US",
+   "name": "St. Alexius Medical Plaza",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    304,
+    230
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-w28709496",
+   "country": "US",
+   "name": "Skokie Hospital",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 1,
+   "pathM": 146,
+   "extentM": [
+    350,
+    323
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-w325933787",
+   "country": "US",
+   "name": "Our Lady of the Sea General Hospital",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 5,
+   "trails": 4,
+   "pathM": 246,
+   "extentM": [
+    353,
+    260
+   ],
+   "score": 6
+  },
+  {
+   "id": "osm-us-w430207528",
+   "country": "US",
+   "name": "MaineHealth Maine Medical Center Sanford",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    374,
+    351
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-w443127417",
+   "country": "US",
+   "name": "Northern Light Mercy Hospital",
+   "buildings": 3,
+   "named": 3,
+   "entrances": 7,
+   "facilities": 16,
+   "waypoints": 26,
+   "trails": 74,
+   "pathM": 2795,
+   "extentM": [
+    422,
+    684
+   ],
+   "score": 27
+  },
+  {
+   "id": "osm-us-w443127416",
+   "country": "US",
+   "name": "Maine Medical Center",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 3,
+   "facilities": 9,
+   "waypoints": 14,
+   "trails": 1,
+   "pathM": 59,
+   "extentM": [
+    410,
+    380
+   ],
+   "score": 14
+  },
+  {
+   "id": "osm-us-w39754741",
+   "country": "US",
+   "name": "Thayer Center for Health",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 9,
+   "waypoints": 11,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    374,
+    403
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-w443044201",
+   "country": "US",
+   "name": "Eastern Maine Medical Center",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 13,
+   "waypoints": 14,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    752,
+    662
+   ],
+   "score": 15
+  },
+  {
+   "id": "osm-us-r14228833",
+   "country": "US",
+   "name": "Northern Light A.R. Gould Hospital",
+   "buildings": 2,
+   "named": 1,
+   "entrances": 8,
+   "facilities": 13,
+   "waypoints": 22,
+   "trails": 1,
+   "pathM": 18,
+   "extentM": [
+    277,
+    512
+   ],
+   "score": 23
+  },
+  {
+   "id": "osm-us-w385510233",
+   "country": "US",
+   "name": "Rumford Hospital",
+   "buildings": 3,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 3,
+   "waypoints": 5,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    270,
+    278
+   ],
+   "score": 7
+  },
+  {
+   "id": "osm-us-r17833558",
+   "country": "US",
+   "name": "Lincoln Hospital Miles Campus",
+   "buildings": 2,
+   "named": 2,
+   "entrances": 0,
+   "facilities": 4,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    428,
+    273
+   ],
+   "score": 8
+  },
+  {
+   "id": "osm-us-r20232376",
+   "country": "US",
+   "name": "Riverview Psychiatric Center",
+   "buildings": 7,
+   "named": 6,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 11,
+   "trails": 41,
+   "pathM": 1155,
+   "extentM": [
+    401,
+    370
+   ],
+   "score": 13
+  },
+  {
+   "id": "osm-us-w443091868",
+   "country": "US",
+   "name": "Down East Community Hospital",
+   "buildings": 1,
+   "named": 1,
+   "entrances": 0,
+   "facilities": 5,
+   "waypoints": 6,
+   "trails": 0,
+   "pathM": 0,
+   "extentM": [
+    421,
+    363
+   ],
+   "score": 7
   }
  ],
  "refused": {
-  "no named buildings": 1555,
-  "score n": 231,
+  "no named buildings": 1762,
+  "score n": 258,
   "grounds n×n m — too large for one plan": 2
  }
 }
