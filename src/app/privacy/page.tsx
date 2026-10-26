@@ -6,6 +6,7 @@ import DataControls from "@/components/DataControls"
 export const metadata: Metadata = {
   title: "Privacy",
   description: "What Findway keeps on your device, what it sends to the server, and what it never collects.",
+  alternates: { canonical: "/privacy" },
 }
 
 // A technical summary of what the app does with data, written from the code

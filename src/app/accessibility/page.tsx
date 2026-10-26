@@ -5,6 +5,7 @@ import InfoPage from "@/components/InfoPage"
 export const metadata: Metadata = {
   title: "Accessibility",
   description: "How Findway works with screen readers, keyboards, zoom and reduced motion, and what it cannot yet do.",
+  alternates: { canonical: "/accessibility" },
 }
 
 // A plain account of what the app does for people who use it differently, and
