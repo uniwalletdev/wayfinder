@@ -6,6 +6,7 @@ import SupportForm from "@/components/SupportForm"
 export const metadata: Metadata = {
   title: "Help and support",
   description: "Answers to common questions about Findway, the rules for places people share, and how to contact the Findway team.",
+  alternates: { canonical: "/support" },
 }
 
 // The app's Help button and the stores' Support URL lead here: help with the
