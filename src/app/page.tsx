@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import WayfinderApp from "@/components/WayfinderApp"
 import JsonLd from "@/components/JsonLd"
@@ -9,6 +10,9 @@ import { floorLabel } from "@/lib/waypoint-meta"
 import { HOSPITALS_PATH } from "@/lib/hospital-pages"
 import { appNode, graph, organizationNode, websiteNode } from "@/lib/structured-data"
 import { siteUrl } from "@/lib/site-url"
+
+// One address for the home page, whichever host or query string reached it.
+export const metadata: Metadata = { alternates: { canonical: "/" } }
 
 // Every link on this page goes somewhere: the product story below, the map,
 // the trusts' call to action, and the accessibility statement. They were
