@@ -28,6 +28,13 @@ const MAX_DEPTH = 2
 const MAX_SITEMAP_PAGES = 40
 const RESERVED_FOR_DEEPER = 15
 const SITE_CONCURRENCY = 6
+// A hospital whose site is slow but never quite times out (every request
+// just under fetchHtml's own per-page timeout) can otherwise run the page
+// budget all the way to 60 pages — observed in production stalling a run
+// for 3+ hours on a single near-empty country, eating the whole job's
+// 330-minute ceiling on one hospital. The per-page timeouts bound each
+// fetch; nothing bounded the hospital as a whole until now.
+const MAX_HOSPITAL_MS = 90_000
 
 const COUNTRIES = countriesFromArgs()
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -74,6 +81,7 @@ function candidatesPath(countryCode) {
 let candidatesForCountry = []
 
 async function crawlHospital(hospital) {
+  const deadline = Date.now() + MAX_HOSPITAL_MS
   const origin = hospital.origin
   const pause = Math.max(MIN_PAUSE_MS, await crawlDelayFor(origin))
   const found = new Map()
@@ -140,7 +148,7 @@ async function crawlHospital(hospital) {
 
     let fetched = 0
     let fetchedAtDepthOne = 0
-    while (queue.length && fetched < budget) {
+    while (queue.length && fetched < budget && Date.now() < deadline) {
       let index = 0
       if (fetchedAtDepthOne >= depthOneCap) {
         index = queue.findIndex((p) => p.depth > 1)
