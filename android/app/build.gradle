@@ -4,7 +4,7 @@ apply plugin: 'com.android.application'
 // new build number without this file being edited; a local build keeps the
 // defaults. versionName is the version people see and is bumped by hand.
 def findwayVersionCode = (project.findProperty("versionCode") ?: "1").toString().toInteger()
-def findwayVersionName = (project.findProperty("versionName") ?: "1.0").toString()
+def findwayVersionName = (project.findProperty("versionName") ?: "1.0.1").toString()
 
 android {
     namespace = "ai.findway.app"

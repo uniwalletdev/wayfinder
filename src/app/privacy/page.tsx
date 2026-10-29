@@ -84,6 +84,12 @@ export default function PrivacyPage() {
           <strong>Reports and support messages.</strong> What you write, the place a report is about, and your email address if you give one,
           so the team can reply. Kept while the team deals with it and for 180 days after, and never more than a year.
         </li>
+        <li>
+          <strong>Findway in ChatGPT and other AI assistants.</strong> When you ask an assistant to use Findway, it sends Findway the hospital and
+          the place you asked about, and Findway answers with where it is and a link to directions. Findway does not receive your conversation,
+          your name or your account, does not use anything else the assistant sends with the question, and does not keep the question once it
+          has answered. The assistant&apos;s own privacy policy covers what it does with your conversation.
+        </li>
       </ul>
 
       <h2>Not collected</h2>

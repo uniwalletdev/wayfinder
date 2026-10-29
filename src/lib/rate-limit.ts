@@ -132,6 +132,11 @@ export const LIMITS = {
   // Across-every-hospital search: read-only, from shipped data, but it ranks
   // several thousand rows per call.
   search: { limit: 120, windowMs: 60 * 1000 }, // 120/min
+  // The MCP endpoint (the Findway app in ChatGPT): read-only, from shipped
+  // data. Every ChatGPT user's questions arrive from OpenAI's servers, a few
+  // addresses shared by everyone, so this is per those addresses, not per
+  // person, and generous accordingly.
+  mcp: { limit: 600, windowMs: 60 * 1000 }, // 600/min
 } as const
 
 // ── Request body caps ───────────────────────────────────────────────────────
@@ -166,6 +171,8 @@ export const BODY_LIMITS = {
   cspReport: 16 * 1024,
   // Up to MAX_TRAIL_POINTS (400) trail points plus their keys.
   signals: 64 * 1024,
+  // A JSON-RPC message, or a small batch: a tool name and two short strings.
+  mcp: 64 * 1024,
 } as const
 
 export type CappedBody<T> =

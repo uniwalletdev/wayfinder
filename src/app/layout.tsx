@@ -3,6 +3,8 @@ import localFont from "next/font/local"
 import { ClerkProvider } from "@clerk/nextjs"
 import ServiceWorkerRegistrar from "@/components/ServiceWorkerRegistrar"
 import { siteUrl } from "@/lib/site-url"
+import { IS_APP_SHELL } from "@/lib/app-shell"
+import { APP_STORE_ID } from "@/lib/store-links"
 import "./globals.css"
 
 // The two typefaces ship in the repo (src/app/fonts) rather than coming from
@@ -66,6 +68,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   appleWebApp: { capable: true, title: "Findway", statusBarStyle: "black-translucent" },
+  // Safari on an iPhone offers the App Store app at the top of the website, or
+  // Open once it is installed. Not inside the apps, which are the app.
+  ...(IS_APP_SHELL ? {} : { itunes: { appId: APP_STORE_ID } }),
 }
 
 export const viewport: Viewport = {
