@@ -26,7 +26,7 @@ The pages and `/llms.txt` exist only on the website. The app build leaves them o
 1. **Google Search Console** (search.google.com/search-console): add `findway.ai` as a domain property and verify it with the DNS record it gives you. Then submit `https://findway.ai/sitemap.xml` under Sitemaps.
 2. **Bing Webmaster Tools** (bing.com/webmasters): add the site. You can import it from Search Console. Submit the same sitemap. ChatGPT search and Copilot answer from Bing's index.
 3. **`NEXT_PUBLIC_SITE_URL=https://findway.ai`** in Vercel's environment variables. Every absolute address in the sitemap, canonical links, structured data and llms.txt is built from it. Without it they fall back to the Vercel production domain. If that isn't findway.ai, the IndexNow run fails and says so.
-4. **The App Store link:** once Apple approves the app, set `APP_STORE_URL` in `src/lib/store-links.ts`. The pages then offer the App Store and say "iPhone".
+4. **The App Store link** is set: `APP_STORE_ID` in `src/lib/store-links.ts` (Findway Map, `6818029311`). The pages offer the App Store, say "iPhone", and Safari on an iPhone shows the App Store banner.
 
 ## IndexNow
 
